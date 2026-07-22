@@ -1,0 +1,721 @@
+{
+  "entity": "Agility Robotics",
+  "slug": "agility-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-07-22",
+  "assessment_file": "research/assessments/agility-robotics-2026-07-22.md",
+  "supersedes": "research/change-proposals/agility-robotics-2026-05-21.json",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 20,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 61.9,
+    "band": "established",
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 3.4,
+      "ACT": 3.8,
+      "EQU": 3.2,
+      "BND": 3.8,
+      "ACC": 3.2,
+      "SYS": 3.4,
+      "INT": 3.4
+    }
+  },
+  "score_delta": 1,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "In-window: Agility's Digit v5 is being designed as 'cooperatively safe' - able to sense humans and work fence-free alongside people rather than in a robot-only zone (TechCrunch, 2026-07-17). This is genuine positive safety-design conduct.",
+    "In-window: Digit is in real (not pilot) warehouse deployment for Amazon, GXO, Schaeffler and Toyota, and moved 100,000 totes at a GXO facility (TechCrunch, 2026-07-17).",
+    "The May proposal dropped Agility ~17 points (to 43.8) on Toyota RaaS partnership grounds; a commercial partnership is not compassion-negative and that delta is dropped.",
+    "No in-window negative conduct by Agility itself was found; the rigorous review reproduces the established-band baseline."
+  ],
+  "evidence": [
+    {
+      "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone.",
+      "claim": "Agility is designing Digit v5 to sense humans and work fence-free alongside people.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 2
+    },
+    {
+      "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada.",
+      "claim": "Digit is in real revenue-generating warehouse deployment for Amazon, GXO, Schaeffler and Toyota.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Digits have moved 100,000 totes at a GXO logistics facility.",
+      "claim": "Digit robots have moved 100,000 totes at a GXO logistics facility.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 2
+    }
+  ],
+  "calibration_note": "Agility Robotics is a near-placeholder entry receiving its first rigorous 40-subdimension review. The May 2026 proposal dropped it ~17 points on the Toyota RaaS partnership; per the task a commercial partnership is not compassion-negative and that delta is dropped. Fresh in-window evidence shows a genuine positive: designing robots to be 'cooperatively safe' and fence-free around human workers. The honest rigorous score (61.9) reproduces the published baseline (60.9) within ~1 point. Movement is placeholder-vs-researched arithmetic; recommendation CONFIRM, no band change.",
+  "recommendation": "confirm",
+  "status": "confirmed-no-change",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed-no-change",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The robot is already generating revenue, carrying totes and bins in manufacturing and warehouse settings for customers like Amazon, GXO, Schaeffler, and Toyota Motor Manufacturing Canada."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won't need to be kept in a robot-only zone."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "Let's start with the bins and the totes, and then let's do the picking and the kitting...now we're at 100 million robots, you know? A trillion-dollar company."
+        }
+      ]
+    }
+  ],
+  "triage_note": "Re-assessment 2026-07-22 (founder-requested resolution of held-needs-reassessment). Fresh in-window review confirms current published score within threshold (delta 1); no change to apply. Supersedes stale 2026-05-21 proposal."
+}

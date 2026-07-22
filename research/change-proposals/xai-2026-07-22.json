@@ -1,0 +1,741 @@
+{
+  "entity": "xAI/Grok",
+  "slug": "xai",
+  "index": "ai-labs",
+  "assessment_date": "2026-07-22",
+  "assessment_file": "research/assessments/xai-2026-07-22.md",
+  "supersedes": "research/change-proposals/xai-2026-05-21.json",
+  "published_scores": {
+    "composite": 0,
+    "band": "critical",
+    "rank": 50,
+    "dimensions": {
+      "AWR": 1,
+      "EMP": 1,
+      "ACT": 1,
+      "EQU": 1,
+      "BND": 1,
+      "ACC": 1,
+      "SYS": 1,
+      "INT": 1
+    }
+  },
+  "proposed_scores": {
+    "composite": 0,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 1,
+      "EMP": 1,
+      "ACT": 1,
+      "EQU": 1,
+      "BND": 1,
+      "ACC": 1,
+      "SYS": 1,
+      "INT": 1
+    }
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "confidence": "high",
+  "key_evidence": [
+    "In-window: xAI's own product Grok used to generate 7,000+ CSAM images of a single child victim (Techdirt, 2026-07-21); the class action against xAI was amended in early July 2026 to add minor plaintiffs.",
+    "In-window: on 2026-07-16 xAI sued its own user rather than remediating, invoking a terms-of-service indemnification clause to shift liability for victims onto the user (PetaPixel; Techdirt).",
+    "xAI's stated safety response is reactive and legally-mandated only: account suspensions and NCMEC reports (federally required), 52,222 suspensions / 73,604 NCMEC reports in 2026 (PetaPixel, 2026-07-16).",
+    "Child-safety harm is SUBSTANTIATED in-window; the May finding is not stale. xAI is already at the index floor (0) and a score cannot go below 0."
+  ],
+  "evidence": [
+    {
+      "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms.",
+      "claim": "Grok, xAI's own product, was used to generate more than 7,000 CSAM images of one child victim.",
+      "source": "Techdirt",
+      "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+      "publishedDate": "2026-07-21",
+      "sourceTier": 2
+    },
+    {
+      "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay.",
+      "claim": "Rather than remediate, xAI sued its own user and sought to shift victim-compensation liability via an indemnification clause.",
+      "source": "Techdirt",
+      "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+      "publishedDate": "2026-07-21",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm.",
+      "claim": "xAI's complaint frames the harm to real child victims as profound and lasting.",
+      "source": "PetaPixel",
+      "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    },
+    {
+      "quote": "xAI claims to have suspended 52,222 accounts and made 73,604 reports to the NCMEC in 2026, which has purportedly led to at least 244 arrests.",
+      "claim": "xAI's safety response is limited to legally-mandated NCMEC reporting and account suspensions after harm occurs.",
+      "source": "PetaPixel",
+      "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    }
+  ],
+  "calibration_note": "xAI/Grok is already at the absolute index floor (composite 0, harm-flag). The May 2026 proposal of 11.7 would have RAISED the score; that is inconsistent both with a floor entity and with fresh in-window evidence of continuing child-safety harm. The honest outcome is a CONFIRM at 0. A score cannot go below 0, so ongoing harm cannot be expressed as a further numeric drop; it is recorded as sustained floor placement with high confidence.",
+  "recommendation": "confirm",
+  "status": "confirmed-no-change",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed-no-change",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        },
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "The company enforces its rules against violators through account suspensions, account terminations, and by reporting suspected child sexual abuse material to the NCMEC."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "The company enforces its rules against violators through account suspensions, account terminations, and by reporting suspected child sexual abuse material to the NCMEC."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "The company enforces its rules against violators through account suspensions, account terminations, and by reporting suspected child sexual abuse material to the NCMEC."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "The company enforces its rules against violators through account suspensions, account terminations, and by reporting suspected child sexual abuse material to the NCMEC."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "xAI claims to have suspended 52,222 accounts and made 73,604 reports to the NCMEC in 2026, which has purportedly led to at least 244 arrests."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "xAI claims to have suspended 52,222 accounts and made 73,604 reports to the NCMEC in 2026, which has purportedly led to at least 244 arrests."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "xAI claims to have suspended 52,222 accounts and made 73,604 reports to the NCMEC in 2026, which has purportedly led to at least 244 arrests."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "Using Grok, the stepfather created more than 7,000 CSAM-related images of her. He also shared and traded the images with others on social media platforms."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "Defendant's actions were a calculated scheme to weaponize Plaintiff's tool for criminal ends, exposing real victims to profound and lasting harm."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://petapixel.com/2026/07/16/xai-sues-man-for-using-grok-to-create-csam-deepfakes/",
+          "date": "2026-07-16",
+          "quote": "xAI claims to have suspended 52,222 accounts and made 73,604 reports to the NCMEC in 2026, which has purportedly led to at least 244 arrests."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "xAI...has now directly sued one of its own users, Terry Harwood, for creating CSAM with Grok, arguing that the indemnification clause in the terms of service means that the court should order Harwood to pay."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.techdirt.com/2026/07/21/xai-which-is-being-sued-over-groks-csam-problem-sues-a-user-over-groks-csam-problem/",
+          "date": "2026-07-21",
+          "quote": "suing one of its own users for doing, in a horrific and illegal way, exactly the kind of thing Musk himself had promoted."
+        }
+      ]
+    }
+  ],
+  "triage_note": "Re-assessment 2026-07-22 (founder-requested resolution of held-needs-reassessment). Fresh in-window review confirms current published score within threshold (delta 0); no change to apply. Supersedes stale 2026-05-21 proposal."
+}

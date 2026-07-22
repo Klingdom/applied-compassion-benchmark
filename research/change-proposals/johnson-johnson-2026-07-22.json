@@ -1,0 +1,735 @@
+{
+  "entity": "Johnson &amp; Johnson",
+  "slug": "johnson-johnson",
+  "index": "fortune-500",
+  "assessment_date": "2026-07-22",
+  "assessment_file": "research/assessments/johnson-johnson-2026-07-22.md",
+  "supersedes": "research/change-proposals/johnson-johnson-2026-05-21.json",
+  "published_scores": {
+    "composite": 28.4,
+    "band": "developing",
+    "rank": 314,
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2.2,
+      "ACT": 2.4,
+      "EQU": 2.1,
+      "BND": 2.5,
+      "ACC": 1.6,
+      "SYS": 2.2,
+      "INT": 1.9
+    }
+  },
+  "proposed_scores": {
+    "composite": 28.7,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2.2,
+      "ACT": 2.6,
+      "EQU": 2,
+      "BND": 2.4,
+      "ACC": 1.6,
+      "SYS": 2.2,
+      "INT": 2
+    }
+  },
+  "score_delta": 0.3,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "In-window: J&J withdrew its ~$7 billion talc settlement offer after its third Texas Two-Step bankruptcy was rejected, and stated it does not currently intend to offer any settlements (Drugwatch, updated July 2026).",
+    "In-window: 68,435 talc ovarian-cancer lawsuits remained active in federal court at the start of July 2026 (Drugwatch, 2026-07-01).",
+    "The Texas Two-Step maneuver (LTL Management) to route mass-tort liabilities through a shell subsidiary is documented conduct that drags Accountability and Integrity (BioSpace, July 2026).",
+    "No in-window positive countervailing conduct was found that would justify the May proposal's upgrade to 37.5; the negatives were already priced into the published 28.4 baseline."
+  ],
+  "evidence": [
+    {
+      "quote": "J&J decided not to appeal the decision and withdrew its roughly $7 billion settlement offer.",
+      "claim": "J&J withdrew its ~$7B talc settlement offer.",
+      "source": "Drugwatch",
+      "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 2
+    },
+    {
+      "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements.",
+      "claim": "J&J states it does not currently intend to offer any settlements.",
+      "source": "Drugwatch",
+      "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 2
+    },
+    {
+      "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court.",
+      "claim": "68,435 talc ovarian-cancer lawsuits were active in federal court at the start of July 2026.",
+      "source": "Drugwatch",
+      "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one.",
+      "claim": "J&J used the Texas Two-Step (LTL Management) to route talc liabilities into a shell subsidiary.",
+      "source": "BioSpace",
+      "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+      "publishedDate": "2026-07-10",
+      "sourceTier": 2
+    }
+  ],
+  "calibration_note": "The May 2026 proposal (37.5) upgraded J&J ~9 points. Fresh in-window evidence supplies no positive countervailing conduct; instead it shows J&J withdrawing its settlement and refusing to settle 68,435 pending claims. The rigorous 40-subdimension review reproduces the published baseline almost exactly (28.8 vs 28.4). The published 28.4 already prices in the low Accountability (1.6) and Integrity (1.9) that the talc conduct warrants. Movement is placeholder-vs-researched arithmetic only; recommendation CONFIRM.",
+  "recommendation": "confirm",
+  "status": "confirmed-no-change",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed-no-change",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J managed to gather the support of 83% of the current claimants to the litigation."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-08",
+          "quote": "J&J has won the latest ovarian cancer trial, which involved the cases of three women who died after using the company's talc-based baby powder for years."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-08",
+          "quote": "J&J has won the latest ovarian cancer trial, which involved the cases of three women who died after using the company's talc-based baby powder for years."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-08",
+          "quote": "J&J has won the latest ovarian cancer trial, which involved the cases of three women who died after using the company's talc-based baby powder for years."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J managed to gather the support of 83% of the current claimants to the litigation."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J originally offered $13.7 billion total to be paid out over 25 years, or $6.5 billion in today's currency. The offer was later boosted to $8 billion in today's value."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J managed to gather the support of 83% of the current claimants to the litigation."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J originally offered $13.7 billion total to be paid out over 25 years, or $6.5 billion in today's currency. The offer was later boosted to $8 billion in today's value."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "J&J decided not to appeal the decision and withdrew its roughly $7 billion settlement offer."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J originally offered $13.7 billion total to be paid out over 25 years, or $6.5 billion in today's currency. The offer was later boosted to $8 billion in today's value."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "J&J decided not to appeal the decision and withdrew its roughly $7 billion settlement offer."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J originally offered $13.7 billion total to be paid out over 25 years, or $6.5 billion in today's currency. The offer was later boosted to $8 billion in today's value."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "J&J decided not to appeal the decision and withdrew its roughly $7 billion settlement offer."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J managed to gather the support of 83% of the current claimants to the litigation."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "J&J decided not to appeal the decision and withdrew its roughly $7 billion settlement offer."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-07-01",
+          "quote": "At the start of July, there are now 68,435 talc ovarian cancer lawsuits active in federal court."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.biospace.com/business/16-years-and-3-texas-two-steps-later-j-js-talc-lawsuit-awaits-key-ruling",
+          "date": "2026-07-10",
+          "quote": "J&J created a new subsidiary called LTL Management, shifting its consumer goods into one unit and the talc liabilities into the new one."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.drugwatch.com/talcum-powder/lawsuits/",
+          "date": "2026-06-30",
+          "quote": "This complicates any future settlement talks because J&J has stated it currently doesn't intend to offer any settlements."
+        }
+      ]
+    }
+  ],
+  "triage_note": "Re-assessment 2026-07-22 (founder-requested resolution of held-needs-reassessment). Fresh in-window review confirms current published score within threshold (delta 0.3); no change to apply. Supersedes stale 2026-05-21 proposal."
+}

@@ -1,0 +1,721 @@
+{
+  "entity": "Boston Dynamics",
+  "slug": "boston-dynamics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-07-22",
+  "assessment_file": "research/assessments/boston-dynamics-2026-07-22.md",
+  "supersedes": "research/change-proposals/boston-dynamics-2026-05-21.json",
+  "published_scores": {
+    "composite": 65.6,
+    "band": "established",
+    "rank": 14,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 63.7,
+    "band": "established",
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 3.8,
+      "ACT": 3.6,
+      "EQU": 3,
+      "BND": 3.6,
+      "ACC": 3.4,
+      "SYS": 3.2,
+      "INT": 3.8
+    }
+  },
+  "score_delta": -1.9,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "In-window: Hyundai Motor Group closed its full acquisition of Boston Dynamics on 2026-07-16 (SoftBank stake ~$325M) (GoodCarBadCar, July 2026).",
+    "In-window: Hyundai plans Atlas humanoid factory deployment at its Georgia plant from 2028, scaling to as many as 30,000 units a year for welding and materials handling (GoodCarBadCar, July 2026).",
+    "These are commercial / ownership events, not compassion-negative conduct; the May proposal's ~25-point drop on Hyundai-Atlas partnership grounds is not supported and is dropped.",
+    "The one genuine compassion-relevant signal is prospective worker displacement from large-scale humanoid deployment (a Systemic/second-order concern), which modestly softens SYS but is not an in-window realized harm."
+  ],
+  "evidence": [
+    {
+      "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary.",
+      "claim": "Hyundai completed its full acquisition of Boston Dynamics on 2026-07-16.",
+      "source": "GoodCarBadCar",
+      "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year.",
+      "claim": "Hyundai plans up to 30,000 Atlas units a year at its Georgia plant from 2028.",
+      "source": "GoodCarBadCar",
+      "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    },
+    {
+      "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go.",
+      "claim": "The labor impact of large-scale Atlas deployment is unresolved.",
+      "source": "GoodCarBadCar",
+      "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    }
+  ],
+  "calibration_note": "Boston Dynamics is a near-placeholder entry receiving its first rigorous 40-subdimension review. The May 2026 proposal dropped it ~25 points (to 40.6) on the Hyundai/Atlas commercial partnership; per the task, a commercial partnership is not inherently compassion-negative and that delta is dropped. The honest rigorous score (63.8) reproduces the published baseline (65.6) within 1.8 points. The only real-conduct signal is prospective labor displacement (SYS S3), which trims Systemic Thinking slightly. Movement is placeholder-vs-researched arithmetic, not an in-window event; recommendation CONFIRM, no band change.",
+  "recommendation": "confirm",
+  "status": "confirmed-no-change",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed-no-change",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Atlas starting on welding and materials handling and moving to component assembly by 2030."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "The question GCBC readers will ask is what Atlas on a welding station means for the plant, and the honest answer is that it depends on where the 30,000 go."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai targets 2028 for the first factory deployment of the Atlas humanoid at its Georgia operations, scaling to as many as 30,000 units a year."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.goodcarbadcar.net/hyundai-boston-dynamics-atlas-georgia/",
+          "date": "2026-07-16",
+          "quote": "Hyundai Motor Group acquired SoftBank's remaining stake in Boston Dynamics for roughly $325 million on July 16, making the robotics company a wholly owned subsidiary."
+        }
+      ]
+    }
+  ],
+  "triage_note": "Re-assessment 2026-07-22 (founder-requested resolution of held-needs-reassessment). Fresh in-window review confirms current published score within threshold (delta -1.9); no change to apply. Supersedes stale 2026-05-21 proposal."
+}
