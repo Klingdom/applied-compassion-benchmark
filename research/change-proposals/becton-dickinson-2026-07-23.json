@@ -1,0 +1,66 @@
+{
+  "entity": "Becton Dickinson",
+  "slug": "becton-dickinson",
+  "index": "fortune-500",
+  "assessment_date": "2026-07-23",
+  "assessment_file": "research/assessments/becton-dickinson-2026-07-23.md",
+  "published_scores": {
+    "composite": 54.1,
+    "band": "Functional",
+    "rank": 74,
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.8,
+      "ACT": 3.1,
+      "EQU": 2.5,
+      "BND": 2.5,
+      "ACC": 2.2,
+      "SYS": 3.1,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 42.2,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.8,
+      "ACT": 3.1,
+      "EQU": 2.5,
+      "BND": 2.5,
+      "ACC": 2.2,
+      "SYS": 3.1,
+      "INT": 2.5
+    }
+  },
+  "score_delta": -11.9,
+  "band_change": false,
+  "confidence": "high",
+  "key_evidence": [
+    "MATH-HYGIENE: Becton Dickinson's published composite (54.1) does not reconstruct from its own stored dimensions, which yield 42.2 under the canonical computeCompositeFromDimensions formula (diff 11.9). Confirmed by site/scripts/validate-indexes.mjs (error-level).",
+    "Dimensions are UNCHANGED. This is an arithmetic correction to the composite field, not an evidence-driven downgrade; the entity remains Functional band (41-60) under both values.",
+    "The July 9, 2026 FDA alert on BD's ChloraPrep/FREPP applicator recall (970+ lots) is a single data point that confirms the existing dimension profile; a self-reported recall is consistent with functional-band Awareness/Action."
+  ],
+  "evidence": [
+    {
+      "claim": "The published composite 54.1 does not match Becton Dickinson's stored dimensions, which produce 42.2 under the canonical formula (diff 11.9, error-level).",
+      "source": "Compassion Benchmark validate-indexes.mjs (canonical scoring formula, computeCompositeFromDimensions)",
+      "url": null,
+      "publishedDate": "2026-07-23",
+      "sourceTier": 5
+    },
+    {
+      "quote": "FDA shares Medline's recall of more than 970 lots of convenience kits",
+      "claim": "BD ChloraPrep/FREPP applicators were recalled across 970+ lots over contamination risk; a single in-window data point confirming (not changing) the dimension profile.",
+      "source": "Oncology Nursing Society / FDA",
+      "url": "https://www.ons.org/publications-research/voice/news-views/07-2026/fda-shares-medlines-recall-more-970-lots-convenience-kits",
+      "publishedDate": "2026-07-09",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

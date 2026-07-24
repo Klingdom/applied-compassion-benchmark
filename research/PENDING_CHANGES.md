@@ -8159,3 +8159,72 @@ The scan's own `scoring_note` documents a third consecutive cycle of severity in
 - Scan runtime: 2026-07-22T02:00Z-07:10Z (~5h10m); 297 searches (165 T1 / 112 T2 / 20 T3); all 108 required batches searched; 47 entities evidenced, 100% sourced, 100% in-window dated. Passed the integrity gate on the first attempt (second consecutive clean pass).
 - Assessor runtime: 2026-07-22T02:30:00Z-16:24:59Z; 15 entities assessed (15 priority, 0 rotation); 1 proposal (flag-for-review, NOT applied); 14 confirmations; 15 subdim sidecars written.
 - Total pending proposals in queue after tonight: 1 (Baxter International, filed 2026-07-22, status pending).
+
+---
+
+## 2026-07-23 — Two Proposals (Guinea-Bissau Band Crossing + Becton Dickinson Math-Hygiene), Both PENDING, Neither Applied | 13 Confirmations | 15 Assessed
+
+### Summary — 2026-07-23
+
+Two change proposals generated tonight, both `pending` and NOT applied. This scan passed the `validate-scan.mjs` integrity gate on the first attempt for the third consecutive cycle (also 2026-07-21, 2026-07-22): 291 searches, all 111 required batches searched, 31 entities evidenced, 100% sourced and in-window dated.
+
+**Guinea-Bissau (countries) — 20.3 to 13.1 (-7.2), BAND CROSSING Developing to Critical, pending.** This is a genuine downgrade on the ruling military government's own conduct, not a placeholder-arithmetic artifact: the published 20.3 predates the November 23-26, 2025 coup and has never been individually assessed. Evidence: ECOWAS/AU/CPLP suspension, an 8-point Freedom House cut (33/100, "Partly Free"), and former PM Domingos Simoes Pereira ordered back to prison on July 10, 2026 (ECOWAS demanded release of all detained political figures on July 21, 2026). Confidence: medium. This is the most substantive finding of the night.
+
+**Becton Dickinson (fortune-500) — 54.1 to 42.2 (-11.9), NO band change (Functional to Functional), filed flag-for-review, pending.** This is a MATH-HYGIENE / DATA-INTEGRITY finding, not an evidence-driven decline: BDs published composite does not reconstruct from its own stored dimensions, which yield 42.2 under the canonical formula (confirmed error-level by validate-indexes.mjs). Dimensions are unchanged. The July 9, 2026 FDA ChloraPrep/FREPP recall (970+ lots) is a single confirming data point, not the cause of the 11.9-point gap. Do NOT read this as BDs compassion declining; it is functional-band under both the published and corrected composite.
+
+Thirteen entities confirmed within threshold, largest delta DR Congo at -1.0 (Ebola outbreak, 1,033 deaths / 2,536 cases, fastest-growing on record). Screening rule 3 held cleanly across the conflict cluster: Israel (0.0), Russia (0.0), Iran (2.5), and DR Congo (1.3) were all confirmed on their OWN conduct, while Ukraine (50.0) and Palestine (25.0) correctly held unchanged despite rising casualties, because that harm is inflicted BY others, not by Ukraines or Palestines own institutions.
+
+The scans own scoring_note documents a fourth consecutive cycle of severity inversion (also 2026-07-20, 07-21, 07-22): active mass-casualty conflicts and famine-risk states (Sudan, Iran, Israel/Palestine, Russia/Ukraine, DRC, Haiti, South Sudan, Somalia, Nigeria, Mali, Afghanistan, Pakistan) frequently score at or below routine, never-assessed Fortune-500/AI-lab entities purely on staleness-formula mechanics. Sudan carries an active, severity-critical siege at El Obeid but scored priority_score=17 with no evidence_found this cycle because the most recent confirmed reporting (Jul 2-6) fell just outside the 14-day window. Unresolved; needs a human decision.
+
+**New data-quality note:** validate-indexes.mjs also flags composite_override drift candidates on Mauritius, Vanuatu, Cummins, and Houston, separate from the Becton Dickinson finding, but part of the same broader registry-hygiene pattern of published composites not cleanly reconstructing from stored data. Worth a coordinator-level audit.
+
+**Process observation:** six change-proposal files dated 2026-07-22 (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) were found in research/change-proposals/ that do not appear in the 2026-07-22 digest or elsewhere in this log. Each carries a supersedes pointer to a stale 2026-05-21 proposal. Tonights scoped assessor-summary and scan inputs did not cover these six entities, so they are not evaluated here; flagged for coordinator-level reconciliation so they are not silently lost from the queue.
+
+### High Priority — 2026-07-23 (Band Change Proposed, NOT Applied)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Guinea-Bissau | countries | 20.3 | 13.1 | -7.2 | medium | downgrade (band crossing Developing to Critical) | 2026-07-23 | [guinea-bissau-2026-07-23](change-proposals/guinea-bissau-2026-07-23.json) |
+
+### Standard — 2026-07-23 (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Becton Dickinson | fortune-500 | 54.1 | 42.2 | -11.9 | high | flag-for-review (math-hygiene, NOT a compassion decline) | 2026-07-23 | [becton-dickinson-2026-07-23](change-proposals/becton-dickinson-2026-07-23.json) |
+
+**Calibration note (verbatim excerpt, Becton Dickinson):** "MATH-HYGIENE: Becton Dickinson's published composite (54.1) does not reconstruct from its own stored dimensions, which yield 42.2 under the canonical computeCompositeFromDimensions formula (diff 11.9). Confirmed by site/scripts/validate-indexes.mjs (error-level). Dimensions are UNCHANGED. This is an arithmetic correction to the composite field, not an evidence-driven downgrade; the entity remains Functional band (41-60) under both values."
+
+### Confirmations — 2026-07-23 (13 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Democratic Republic of the Congo | countries | 2.3 | 1.3 | -1.0 | Ebola outbreak reached 1,033 deaths / 2,536 cases, fastest-growing on record |
+| Meta Platforms | fortune-500 | 7.8 | 6.9 | -0.9 | AI-layoff discrimination suit (26 plaintiffs) consistent with existing near-floor score |
+| Hong Kong | global-cities | 32.8 | 32.5 | -0.3 | Jul 15 bookseller round-up is government's own conduct, consistent with existing profile |
+| DuPont | fortune-500 | 29.7 | 29.4 | -0.3 | Jul 9 NY AG PFAS suit reinforces, does not newly establish, existing weak profile |
+| Libya | countries | 4.7 | 4.4 | -0.3 | Jul 16 ICC war-crimes confirmation is externally driven (the ICC), not Libya's own conduct |
+| Ahmedabad | global-cities | 18.8 | 18.8 | 0.0 | Jul 23-24 flash flood is one data point against thin, reactive municipal capacity |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Own cross-border strikes on Kuwait/Jordan already priced into near-floor score |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Rising casualties are harm inflicted ON Ukraine, not its own conduct - screening rule 3 |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Absolute floor; continued conduct confirms, cannot lower, the floor |
+| Palestine | countries | 25.0 | 25.0 | 0.0 | Harm inflicted upon, not authored by, Palestinian institutions - screening rule 3 |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Absolute floor; 37% civilian-casualty rise is Russia's own conduct, confirms floor |
+| Haiti | countries | 4.7 | 5.0 | +0.3 | UN: 1.5M displaced, gangs control 70-75% of capital; near-total institutional collapse |
+| Poland | countries | 42.2 | 42.5 | +0.3 | Mixed, roughly offsetting: new rights commissioner vs. hate crimes against Ukrainians up ~30% |
+
+### Open Calibration Flags — 2026-07-23
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~30 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~13 days |
+| Severity-inversion in scan prioritization formula | Recurred for a fourth consecutive cycle tonight; needs human decision | Open since 2026-07-20 |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | New tonight; needs coordinator-level audit | Open since 2026-07-23 |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Found outside tonight's scoped assessor run; needs reconciliation into this log | Open since 2026-07-22 (discovered 2026-07-23) |
+
+### Operational Notes — 2026-07-23
+
+- Scan runtime: 2026-07-23T02:00Z-09:45Z (~7h45m); 291 searches (150 T1 / 111 T2 / 30 T3); all 111 required batches searched; 31 entities evidenced, 100% sourced, 100% in-window dated. Passed the integrity gate on the first attempt (third consecutive clean pass: 2026-07-21, 07-22, 07-23).
+- Assessor runtime: 2026-07-23T02:30:00Z-05:10:00Z (~2h40m); 15 entities assessed (15 priority, 0 rotation); 2 proposals (1 downgrade/band-crossing, 1 flag-for-review math-hygiene), both pending, neither applied; 13 confirmations; 15 subdim sidecars written.
+- Internal artifact note: the Becton Dickinson assessment .md file computes a slightly different composite (41.9, from marginally adjusted "researched" dimensions) than the change-proposal JSON (42.2, from the unchanged published dimensions), a 0.3pt discrepancy between the two artifacts that is immaterial to the finding but should be reconciled before this proposal is actioned.
+- Total pending proposals in queue after tonight: 3 (Baxter International carried forward from 2026-07-22; Guinea-Bissau and Becton Dickinson new tonight).
