@@ -8228,3 +8228,71 @@ The scans own scoring_note documents a fourth consecutive cycle of severity inve
 - Assessor runtime: 2026-07-23T02:30:00Z-05:10:00Z (~2h40m); 15 entities assessed (15 priority, 0 rotation); 2 proposals (1 downgrade/band-crossing, 1 flag-for-review math-hygiene), both pending, neither applied; 13 confirmations; 15 subdim sidecars written.
 - Internal artifact note: the Becton Dickinson assessment .md file computes a slightly different composite (41.9, from marginally adjusted "researched" dimensions) than the change-proposal JSON (42.2, from the unchanged published dimensions), a 0.3pt discrepancy between the two artifacts that is immaterial to the finding but should be reconciled before this proposal is actioned.
 - Total pending proposals in queue after tonight: 3 (Baxter International carried forward from 2026-07-22; Guinea-Bissau and Becton Dickinson new tonight).
+
+
+---
+
+## 2026-07-24 — RECOVERY RUN | One Proposal (Ecuador Downgrade), PENDING, Not Applied | 14 Confirmations | 15 Assessed | 5 Scanner Date Corrections
+
+### Summary — 2026-07-24
+
+**RECOVERY RUN.** The 2026-07-24 nightly pipeline completed the scanner stage and crashed during the assessor stage. The assessor stage was re-run and fully validated on 2026-07-25, using assessment_date 2026-07-24 throughout. Five subdimension sidecars that survived the crash with no parent .md report (bangladesh, iran, pakistan, russia, ukraine) were treated as untrusted and overwritten — a spot-check found iran's carried-forward sidecar had evidence quotes byte-identical to 2026-07-23, indicating carry-forward rather than fresh assessment. Every subdimension in this run traces to evidence gathered in this run.
+
+**EVIDENCE-DATE CONTAMINATION IN THE SCAN.** The scan systematically shifted 2025 events into 2026, affecting five priority entities beyond Thailand and Cambodia's shared border-war error: (1) **thailand/cambodia** — the scanner cited a 24 July 2026 border war (38+ killed, ~300,000 displaced, 28 July ceasefire) sourced only to a Wikipedia year-in-review page; those are July 2025 events, and HRW World Report 2026 (Cambodia chapter) states verbatim "Fighting in July 2025 killed and injured civilians, including children, displaced around 300,000 people." No primary source reports any Thailand-Cambodia clash between 2026-07-10 and 2026-07-24. Both entities were re-scored on genuine in-window evidence instead. (2) **best-buy** — the 161-person Best Buy Health layoff notice was filed 2025-07-11 (Healthcare Dive, verified by direct fetch). (3) **delta-air-lines** — the $8.1 million DOJ False Claims Act settlement was announced July 2025 (Aviation A2Z 16 Jul 2025, Claims Journal 22 Jul 2025). (4) **ukraine/russia** — the scanner's "1,674 casualties, record month" figure is the July 2025 UN figure; the correct in-window figure (HRMMU, 14 Jul 2026) is June 2026 as the deadliest month since April 2022 (293 killed, 1,990 injured; H1 2026 at 1,396 killed / 7,978 injured, up 37% YoY). Sources whose URL carries no date (Wikipedia year-in-review pages, undated publisher slugs) were the common factor in every contaminated item — recommend scanner-owner review of date-verification gating for such sources.
+
+**CHANGE PROPOSAL. Ecuador (countries) — 35.9 to 25.6 (-10.3), NO band change (Developing to Developing), pending.** A Human Rights Watch investigation published 21 July 2026, based on 62 interviews, documents torture, airstrikes on homes, and armed drone strikes on fishing boats by Ecuadorian security forces, with no prosecutions (soldiers provided no evidence). The published 35.9 is an un-revised bulk-import seed value with no entry in APPLIED_CHANGES.md; the 2026-05-06 first-agent baseline confirmed it as a boundary case and explicitly queued a 60-day re-evaluation on structural torture and extrajudicial-killing proceedings — the 21 July HRW report is exactly that evidence. Confidence: high. Directionality matches (negative evidence, downgrade). Peer placement checked: Ecuador at 25.6 sits above Tunisia (23.8) and well below Poland (42.2), reflecting that Ecuadorian courts and elections still function. This is not a calibration reset.
+
+Fourteen entities confirmed within threshold. **Attribution rule applied cleanly:** ukraine, iran, and russia were confirmed because harm inflicted on an entity by another actor does not lower that entity's score (floor entities also cannot move lower); kansas-city was confirmed on the same rule — the detentions were federal conduct, while the city's own conduct (amicus brief, five-year moratorium on non-municipal detention facilities) ran counter to it.
+
+**WATCH FLAGS for next cycle:** bangladesh (-4.8, medium confidence; anti-disappearance ordinances allowed to lapse, replacement bill would bar the national human rights commission from investigating security forces; published 39.8 sits just 0.2 points below the Functional boundary) and waymo (-4.6, medium confidence; NHTSA's end-of-July 2026 deadline outcome falls outside this window).
+
+**MATH HYGIENE.** Canonical reconstruction (computeCompositeFromDimensions, methodology v1.2) reproduced every published composite exactly for all 15 entities. No math-hygiene issues found.
+
+**ROTATION STATE.** research/rotation-state.json was updated for last_assessed, last_scanned, and last_evidence_touch only; composite, band, and rank were left at published values per the integrity rule. last_change_proposal was set only for ecuador. One pre-existing drift was corrected to the published value: pakistan rank 153 to 154.
+
+### High Priority — 2026-07-24 (Band Change or Delta >15)
+
+None this cycle.
+
+### Standard — 2026-07-24 (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Ecuador | countries | 35.9 | 25.6 | -10.3 | high | 2026-07-24 | [ecuador](change-proposals/ecuador.json) |
+
+### Confirmations — 2026-07-24 (14 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Thailand | countries | 32.8 | 31.3 | -1.5 | Border-war evidence mis-dated to 2025; real in-window evidence is 4 UNHCR-recognised Chinese refugees held under pressure from Beijing |
+| Cambodia | countries | 12.5 | 10.6 | -1.9 | Same mis-dated border war; genuine record still severe (civil society "almost entirely constrained," <1 in 5 scam compounds investigated) |
+| Pakistan | countries | 17.2 | 16.9 | -0.3 | Operation Shaban (129 militants reported killed 5-16 Jul) is the same pattern at higher intensity; rotation-state rank drift corrected 153->154 |
+| Best Buy | fortune-500 | 62.5 | 61.9 | -0.6 | Layoff notice that flagged Best Buy was filed 11 Jul 2025, not 2026 |
+| South Korea | countries | 62.5 | 61.2 | -1.3 | Yellow Envelope Law expansion (Mar 2026) and Jul 21 labour-dispute narrowing roughly offset |
+| Barbados | countries | 62.5 | 62.5 | 0.0 | Protection of Wages Bill (debated 21-22 Jul) answered exploitation allegation with law |
+| Kansas City | us-cities | 35.9 | 36.9 | +1.0 | Detentions were federal conduct; city joined amicus brief and passed 5-year moratorium on non-municipal detention facilities |
+| Delta Air Lines | fortune-500 | 62.5 | 61.9 | -0.6 | $8.1M DOJ settlement that flagged Delta was announced Jul 2025, not 2026 |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Jul 2026 casualties inflicted by Russia; Ukraine opened own investigation into event-risk assessment — screening rule 3 |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Executed 5 political prisoners 16-22 Jul 2026, ~1/day; confirms rather than changes near-floor score |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Absolute floor; 24 Jul strike killing 10 at Kyiv-region event is Russia's own conduct, confirms floor |
+| Tunisia | countries | 23.8 | 23.1 | -0.7 | 85-year-old political prisoner fainted at Mornaguia prison (52°C) on 23 Jul; worsens conditions already scored |
+| Bangladesh | countries | 39.8 | 35.0 | -4.8 | First enforced disappearance since 2024 uprising; anti-disappearance ordinances lapsed; published score 0.2pt below Functional boundary; WATCH FLAG |
+| Waymo | ai-labs | 35.9 | 31.3 | -4.6 | Dozens of vehicles stalled 4 Jul days after claimed fix; NHTSA end-of-July deadline falls outside window; WATCH FLAG |
+
+### Open Calibration Flags — 2026-07-24
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~31 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~14 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 1 day |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 1 day |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 1 day |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 2 days |
+
+### Operational Notes — 2026-07-24
+
+- Scan runtime: 2026-07-24T02:00Z-07:45Z (~5h45m); 295 searches (150 T1 individual / 127 T2 batched / 18 T3 sector sweeps); 1,290 entities scanned; 30 entities evidenced.
+- Assessor runtime (recovery, executed 2026-07-25): 2026-07-25T09:05:00Z-11:40:00Z (~2h35m); 15 entities assessed (15 priority, 0 rotation); 1 change proposal (downgrade, no band change), pending, NOT applied; 14 confirmations; 15 subdim sidecars written (all fresh, none carried forward).
+- Scan self-flagged and the assessor independently confirmed a five-item evidence-date contamination pattern (see Summary above); none of the five entered the queue as a scored finding.
+- Total pending proposals in queue after tonight: 4 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador).

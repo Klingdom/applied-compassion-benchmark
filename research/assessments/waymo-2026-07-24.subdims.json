@@ -1,0 +1,688 @@
+{
+  "entity": "Waymo",
+  "slug": "waymo",
+  "index": "ai-labs",
+  "assessment_date": "2026-07-24",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26001-10005.pdf",
+          "date": "2026-01-23",
+          "quote": "Summary: on 23 January 2026 Waymo reported that a Waymo automated vehicle struck a child near an elementary school; ODI opened a Preliminary Evaluation."
+        }
+      ],
+      "note": "Waymo self-reported the 23 January 2026 child-strike incident to NHTSA, and operates extensive fleet telemetry."
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "No differentiated detection for emergency-scene contexts; firefighters filed 31 reports before the pattern was addressed."
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "The pattern of driving into active emergency scenes was documented by the regulator, not surfaced by Waymo."
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "First responders’ concerns reached Waymo only through internal fire-department reports and city officials."
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.thedriverlessdigest.com/p/multiple-waymos-stall-again-in-san",
+          "date": "2026-07-06",
+          "quote": "Summary: multiple Waymo vehicles stalled again in San Francisco on 4 July 2026, triggering gridlock across transit corridors."
+        }
+      ],
+      "note": "The 4 July 2026 mass stall — batteries depleted in gridlock — indicates a failure mode that was not anticipated."
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "San Francisco firefighters describe being repeatedly obstructed, with no evidence of a responsive relationship."
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "Vehicle behaviour shows no modelling of what an ambulance crew or fire crew needs from surrounding traffic."
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "No evidence of identity-based differential treatment was found in the reviewed sources."
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26001-10005.pdf",
+          "date": "2026-01-23",
+          "quote": "Summary: on 23 January 2026 Waymo reported that a Waymo automated vehicle struck a child near an elementary school; ODI opened a Preliminary Evaluation."
+        }
+      ],
+      "note": "Waymo reported the child-strike incident rather than contesting it."
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Community impact in San Francisco is contested by a city supervisor rather than jointly addressed."
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "Waymo told Austin ISD the school-bus issue was fixed by 17 November; a further violation was recorded on 1 December."
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Response to the July gridlock came after a federal deadline rather than on Waymo’s own timetable."
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "The remedy did not work: five violations occurred after the 10 December recall, the most recent on 14 January 2026."
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/",
+          "date": "2025-12-10",
+          "quote": "Summary: Waymo issued a voluntary software recall in December 2025 after school-bus safety failures."
+        }
+      ],
+      "note": "Substantial engineering resources are applied to safety software and recalls."
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://spectrumlocalnews.com/tx/austin/news/2026/03/03/ntsb-publishes-report-on-waymo-safety-investigations",
+          "date": "2026-03-03",
+          "quote": "Summary: the National Transportation Safety Board published a preliminary report on its Waymo safety investigations."
+        }
+      ],
+      "note": "Waymo continues to cooperate with NTSB and NHTSA investigations over time."
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "Emergency responders and people in medical crises are the group least served by the current behaviour."
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "Under competing priorities, emergency-scene handling was not prioritised until the regulator intervened."
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "No disaggregated public data on where and for whom failures concentrate."
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Service design does not accommodate the access needs created by blocked transit and emergency corridors."
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "No acknowledgment of the cumulative harm recorded in 31 fire-department reports since April 2025."
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/",
+          "date": "2025-12-10",
+          "quote": "Summary: Waymo issued a voluntary software recall in December 2025 after school-bus safety failures."
+        }
+      ],
+      "note": "Waymo maintains an engineering and safety organisation capable of issuing voluntary recalls."
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Deployment expands city dependence on the service while its emergency behaviour is unresolved."
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "Waymo stated the school-bus issue was resolved when it was not, overstating its scope of control."
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26001-10005.pdf",
+          "date": "2026-01-23",
+          "quote": "Summary: on 23 January 2026 Waymo reported that a Waymo automated vehicle struck a child near an elementary school; ODI opened a Preliminary Evaluation."
+        }
+      ],
+      "note": "Waymo files incident reports and recall documentation through formal federal channels."
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "Cities and first responders did not consent to the emergency-scene risk the fleet creates."
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26001-10005.pdf",
+          "date": "2026-01-23",
+          "quote": "Summary: on 23 January 2026 Waymo reported that a Waymo automated vehicle struck a child near an elementary school; ODI opened a Preliminary Evaluation."
+        }
+      ],
+      "note": "Waymo self-reported the child-strike incident to NHTSA on 23 January 2026, before external establishment."
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/",
+          "date": "2025-12-10",
+          "quote": "Summary: Waymo issued a voluntary software recall in December 2025 after school-bus safety failures."
+        }
+      ],
+      "note": "Waymo issued a voluntary software recall in December 2025 in response to documented school-bus failures."
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://spectrumlocalnews.com/tx/austin/news/2026/03/03/ntsb-publishes-report-on-waymo-safety-investigations",
+          "date": "2026-03-03",
+          "quote": "Summary: the National Transportation Safety Board published a preliminary report on its Waymo safety investigations."
+        }
+      ],
+      "note": "Safety data and investigation materials are public through NHTSA and NTSB dockets."
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "The same failures recurred after remediation — five school-bus violations after the recall, then a mass emergency-scene failure on 4 July 2026."
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "No documented repair to the San Francisco Fire Department or to affected residents."
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "Fixes target specific detection failures rather than the underlying question of how the fleet behaves in unmodelled conditions."
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/",
+          "date": "2025-12-10",
+          "quote": "Summary: Waymo issued a voluntary software recall in December 2025 after school-bus safety failures."
+        }
+      ],
+      "note": "Waymo pursues a long-horizon safety-case programme with published methodology."
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2026/07/10/waymo-robotaxi-emergency-response/",
+          "date": "2026-07-10",
+          "quote": "Summary: since April 2025 San Francisco firefighters have filed at least 31 internal reports documenting Waymo and other robotaxis obstructing emergency operations."
+        }
+      ],
+      "note": "Repeated failure to account for effects on the emergency-response system, an adjacent safety-critical system, over 15 months."
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Waymo does not publicly examine whether its deployment model outpaces its emergency-behaviour capability."
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techcrunch.com/2026/07/12/techcrunch-mobility-a-robotaxi-ultimatum/",
+          "date": "2026-07-12",
+          "quote": "Summary: NHTSA Administrator Jonathan Morrison issued a formal call to action after documenting a pattern of autonomous vehicles driving into active emergency scenes, blocking ambulances and fire crews, and failing to react to flashing lights, flares, smoke or cones."
+        }
+      ],
+      "note": "Waymo participates in the industry-wide NHTSA process alongside other operators."
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline/",
+          "date": "2026-07-13",
+          "quote": "Summary: NHTSA gave robotaxi companies until the end of July 2026 to fix emergency-responder detection after Waymo vehicles stalled in San Francisco’s 4 July gridlock; batteries depleted, some were towed."
+        }
+      ],
+      "note": "Deployment continued at scale while a known emergency-response failure remained unresolved."
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "Public safety claims were made before the underlying issue was actually fixed."
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26001-10005.pdf",
+          "date": "2026-01-23",
+          "quote": "Summary: on 23 January 2026 Waymo reported that a Waymo automated vehicle struck a child near an elementary school; ODI opened a Preliminary Evaluation."
+        }
+      ],
+      "note": "Internal reporting practice appears consistent, with incidents disclosed to regulators."
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.kxan.com/investigations/waymo-recalls-software-for-self-driving-cars-following-school-bus-violations/",
+          "date": "2026-01-20",
+          "quote": "Summary: Waymo told Austin ISD it completed software updates addressing school-bus violations by 17 November, but the district provided video of another violation on 1 December; five violations occurred after the 10 December voluntary recall, the most recent on 14 January 2026."
+        }
+      ],
+      "note": "The 17 November \"completed\" claim was not aligned with the observed behaviour on 1 December."
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/",
+          "date": "2025-12-10",
+          "quote": "Summary: Waymo issued a voluntary software recall in December 2025 after school-bus safety failures."
+        }
+      ],
+      "note": "Safety-reporting and recall practices have persisted across multiple incident cycles."
+    }
+  ]
+}
