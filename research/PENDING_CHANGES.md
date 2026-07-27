@@ -8296,3 +8296,86 @@ None this cycle.
 - Assessor runtime (recovery, executed 2026-07-25): 2026-07-25T09:05:00Z-11:40:00Z (~2h35m); 15 entities assessed (15 priority, 0 rotation); 1 change proposal (downgrade, no band change), pending, NOT applied; 14 confirmations; 15 subdim sidecars written (all fresh, none carried forward).
 - Scan self-flagged and the assessor independently confirmed a five-item evidence-date contamination pattern (see Summary above); none of the five entered the queue as a scored finding.
 - Total pending proposals in queue after tonight: 4 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador).
+
+
+---
+
+## 2026-07-25 — BACKFILL RUN | One Proposal (Microsoft AI, flag-for-review — NOT a downgrade), PENDING, Not Applied | 19 Confirmations | 20 Assessed | 2 Scanner Date Corrections
+
+### Summary — 2026-07-25
+
+**BACKFILL RUN.** The 2026-07-25 assessor stage was reconstructed on 2026-07-27, using assessment_date 2026-07-25 throughout every artifact. Strict evidence-date discipline was applied: no source dated after 2026-07-25 was used to support a scored finding.
+
+**SCANNER DATE CONTAMINATION, SECOND CONSECUTIVE NIGHT.** Two items, following the five-item pattern the night before. (1) **microsoft-ai** — the scan's headline figure of "roughly 9,000 layoffs, about 4% of workforce" is the **July 2025** Microsoft layoff, verified against TechCrunch of 2 July 2025. The genuine July 2026 figure is about 4,800 roles (2.1%), announced 6 July 2026, plus a voluntary buyout offer to roughly 7% of US staff. (2) **ukraine** — the scan attributed "at least 14 dead in Kyiv on 24 July" to UN News story 1167875, which is actually dated 6 July 2026 and describes the 6 July Kyiv attack. The genuine 24 July 2026 event (a Russian ballistic missile strike on a Kyiv Oblast arms exhibition, ≥10 killed, 100+ injured) was verified independently via Kyiv Independent and Ukrainska Pravda. Neither error reached a published score.
+
+**CHANGE PROPOSAL — evidence-standard hold, not a downgrade. Microsoft AI (ai-labs) — 81.4 to 75.9 (-5.5), band crossing Exemplary to Established if applied, `flag-for-review`, `pending`.** Real July 2026 conduct (4,800 layoffs, two law-firm WARN Act compliance investigations, a Maryland WARN disclosure showing 213 Elder Scrolls Online staff cut, and union legal action over the Xbox layoffs) would cross Microsoft AI from Exemplary into Established. However, the benchmark's band-crossing sourcing bar requires at least two distinct sources with at least one at tier ≥4; the strongest available sources here are tier-2 trade press, tier-2 law-firm case-intake pages, and one tier-1 advocacy site. No tier-4+ source was found. The assessor therefore filed the finding as `flag-for-review` rather than `downgrade`, explicitly requesting human judgment. **The published score of 81.4 is unchanged.** Only B1 Self-Sustainability and I3 Internal Consistency moved (both 4 to 3). Attribution caveat: the layoffs are Microsoft Corporation conduct while the index entity is the Microsoft AI division.
+
+**ANTI-FALSE-POSITIVE SCREENING** caught four artifacts that would otherwise have looked like upward movement: Freddie Mac (+2.5 on zero in-window evidence, corrected to 0.0 delta), Palestine (+0.6 on evidence entirely Israeli conduct, corrected to 0.0 delta), DR Congo (+0.8 on non-state ADF attacks, corrected to +0.2), and Clearview AI (an initial -5.9 reconstruction that was mostly assessor-to-assessor variance rather than new conduct, corrected to a confirmed -2.8).
+
+**ATTRIBUTION RULE APPLIED** to six entities: islamabad, jordan, ukraine, palestine, democratic-republic-of-c, israel — harm inflicted by another actor does not lower the subject entity's own-conduct score.
+
+**BAND OBSERVATIONS WITHOUT BAND CHANGES.** Honduras assessed 18.8 (Critical) against published 20.3 (Developing); Papua New Guinea assessed 20.0 (Critical) against published 20.3 (Developing). Both sub-threshold (delta -1.5 and -0.3 respectively); per the confirmation rule, a sub-threshold delta cannot change a band. Both carry watch flags.
+
+**INDEX DATA-QUALITY FLAGS, NOT SCORE CHANGES.** Halcon Resources filed Chapter 11 in 2019 and was renamed Battalion Oil Corporation in January 2020 under the same SEC filer (CIK 1282648) — the index entry has not described a real company under that name for six years. Enservco has filed no annual or quarterly SEC report since December 2024 and has contracted to one business line. Both confirmed at sub-threshold deltas; both flagged for index maintenance, not conduct.
+
+**MATH HYGIENE.** Canonical reconstruction (computeCompositeFromDimensions, methodology v1.2) reproduced every published composite exactly for all 20 entities. No math-hygiene issues found.
+
+**ROTATION STATE.** research/rotation-state.json was updated for last_assessed, last_scanned, and last_evidence_touch only; composite, band, and rank were left at published values per the integrity rule. last_change_proposal was set only for microsoft-ai. Six pre-existing rank drifts were corrected to the published index values: nike 174 to 173, ups 35 to 34, honduras 139 to 140, papua-new-guinea 142 to 143, freddie-mac 32 to 31, halcon-resources 402 to 401.
+
+**WATCH FLAGS for next cycle (7):** nike (post-trial motions / company response), microsoft-ai (whether WARN Act investigations become filed complaints, supplying a tier-4+ source), clearview-ai (settlement outcome on remand), ups (whether the 2026 job-cut programme produces further findings), honduras (charges dropped / Inter-American judgment implemented), papua-new-guinea (flag-burning prosecution outcome / Bush Wara resettlement), islamabad (any own-conduct evidence, since this cycle found none).
+
+### High Priority — 2026-07-25 (Band Change or Delta >15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Microsoft AI | ai-labs | 81.4 | 75.9 | -5.5 | medium | flag-for-review (band crossing Exemplary to Established — sourcing bar NOT met, NOT a downgrade recommendation) | 2026-07-25 | [microsoft-ai](change-proposals/microsoft-ai.json) |
+
+**Sourcing-bar note (verbatim excerpt, Microsoft AI):** "BAND-CROSSING SOURCING BAR NOT MET: the proposal would move Microsoft AI from Exemplary to Established, and band crossings require at least two distinct sources with at least one at sourceTier 4 or above. No source at tier 4 or above was found. The recommendation is therefore routed as flag-for-review rather than downgrade, and human judgment is requested."
+
+### Standard — 2026-07-25 (Delta 5-15, No Band Change)
+
+None this cycle.
+
+### Confirmations — 2026-07-25 (19 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Nike | fortune-500 | 46.9 | 43.8 | -3.1 | Federal jury found gender-based pay/promotion discrimination, $19,730 damages + at least $7.5M punitive - WATCH FLAG |
+| Clearview AI | ai-labs | 10.9 | 8.1 | -2.8 | Seventh Circuit vacated the only pending settlement/repair over unequal per-state payouts - WATCH FLAG |
+| Honduras | countries | 20.3 | 18.8 | -1.5 | 200+ police evicted Garifuna community of San Juan from land an Inter-American Court ruling recognized as theirs; sub-threshold band gap - WATCH FLAG |
+| Enservco | fortune-500 | 18.8 | 16.9 | -1.9 | No SEC filing since Dec 2024; entity-record data-quality flag, not a conduct finding |
+| UPS | fortune-500 | 62.5 | 60.6 | -1.9 | $238M discrimination award vacated on appeal, confidential settlement, no public admission - WATCH FLAG |
+| Halcon Resources | fortune-500 | 18.8 | 17.5 | -1.3 | Renamed Battalion Oil Corp in Jan 2020; entity-record data-quality flag, not a conduct finding |
+| Ally Financial | fortune-500 | 77.9 | 77.2 | -0.7 | Rotation, no in-window evidence; score rests on 2013 fair-lending settlement structure |
+| Huntington Bancshares | fortune-500 | 77.9 | 77.2 | -0.7 | Rotation; Fed praised community-development record, offset by 63 Dallas job cuts (Veritex integration) |
+| Nicaragua | countries | 7.8 | 7.5 | -0.3 | 46 arbitrary political detentions; 80-year-old Bishop Abelardo Mata's whereabouts withheld since 29 June |
+| Papua New Guinea | countries | 20.3 | 20.0 | -0.3 | Six men prosecuted for flag-burning at Bush Wara eviction protest; sub-threshold band gap - WATCH FLAG |
+| Jordan | countries | 35.9 | 35.6 | -0.3 | 20 July IRGC strike on Al-Azraq air base is Iranian conduct - attribution rule |
+| Isomorphic Labs | ai-labs | 60.9 | 60.6 | -0.3 | Positive finding: joint DeepMind/Isomorphic bioresilience unit announced 16 July |
+| Islamabad | global-cities | 18.8 | 18.8 | 0.0 | Kashmir deaths are federal/AJK conduct, several hundred km away - attribution rule - WATCH FLAG |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | 24 July Russian missile strike on Kyiv Oblast arms exhibition is Russian conduct; Ukraine's own investigation into event-risk assessment is what was scored |
+| Iran | countries | 2.5 | 2.5 | 0.0 | ~1,500 death-row prisoners began hunger strike 13 July, some sewing lips shut; confirms near-floor |
+| Palestine | countries | 25.0 | 25.0 | 0.0 | 4 Palestinians killed at al-Tal near Nablus by Israeli settlers/soldiers - attribution rule |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Absolute floor; HRW's 24 July warning on settler violence confirms, cannot lower |
+| Democratic Republic of the Congo | countries | 2.3 | 2.5 | +0.2 | 16 killed in suspected ADF (non-state) attack; state's own conduct is beating anti-term-extension protesters |
+| Freddie Mac | fortune-500 | 62.5 | 62.5 | 0.0 | Rotation, no in-window evidence; national loss-mitigation structure holds score against rising Q1 2026 foreclosures |
+
+### Open Calibration Flags — 2026-07-25
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~33 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~16 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 2 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 2 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 1 day |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 2 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 3 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | New tonight; needs coordinator-level decision on whether to retire or relabel | Open since 2026-07-25 |
+
+### Operational Notes — 2026-07-25
+
+- Scan runtime: 2026-07-25T02:00Z-09:10Z (~7h10m); 265 searches (150 T1 individual / 99 T2 batched / 16 T3 sector sweeps); 1,290 entities scanned; 20 entities evidenced.
+- Assessor runtime (BACKFILL, executed 2026-07-27): 2026-07-27T10:45:00Z-12:45:00Z (~2h00m); 20 entities assessed (15 priority, 5 rotation); 1 change proposal (flag-for-review, band-crossing candidate), pending, NOT applied; 19 confirmations; 20 subdim sidecars written, all fresh.
+- Scanner date contamination for a second consecutive night (2 items tonight vs. 5 the night before); both caught and corrected before scoring; none entered the queue as a scored finding.
+- Total pending proposals in queue after tonight: 5 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI).
