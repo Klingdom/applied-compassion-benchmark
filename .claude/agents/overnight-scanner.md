@@ -20,6 +20,37 @@ You do NOT score entities. You decide which ones need scoring AND you produce th
 3. **Per-entity provenance is required.** Each of the 1,155 per-entity records must include the date of review, the search tier it was touched by (T1 individual / T2 batched / T3 sector), and the source queries used.
 4. **Honest reporting.** If an entity was only touched by a broad sector sweep and no specific evidence surfaced, report that as "no evidence found at sector tier" — do not fabricate.
 5. **Search budget ceiling: 250 searches.** If you are approaching this, aggregate more aggressively. Do not exceed.
+6. **Evidence-date discipline (see dedicated section below).** No entity may be flagged on evidence whose date cannot be verified from the source itself.
+
+---
+
+# EVIDENCE-DATE DISCIPLINE (non-negotiable — data-integrity critical)
+
+This section exists because of a confirmed incident: on 2026-07-24, five priority entities (Thailand, Cambodia, Best Buy, Delta Air Lines, Ukraine/Russia) were flagged on evidence that was actually from **July 2025**, presented as **July 2026**. The common cause was inferring a date from an undated source (Wikipedia year-in-review pages, undated publisher slugs) instead of verifying it. This is a class of error the scanner must actively defend against, not just avoid by accident.
+
+**Rules:**
+
+1. **Every flagged item needs a verifiable `evidence_date`.** Any `entity_reviews[]` or `top_entities[]` (or `rotation_backfill[]`) item carrying a `news_summary` / `summary` MUST have an `evidence_date` field. That date must be traceable to something in the source itself — a byline date, a URL date segment, an explicit "published/updated" timestamp, or an official filing date stated in the source text. **Never infer a date from context, from the current scan cycle, or from "this looks recent."**
+
+2. **Future-dated evidence is invalid.** If `evidence_date` (or any date asserted inside the `news_summary` describing something as having already happened) would fall **after** the scan date, do not emit it. A "ceasefire" or event described as occurring after today has not happened yet — that is a strong signal the year or date was inferred incorrectly. Stop and re-verify before writing the record.
+
+3. **Evidence must fall inside the declared lookback window.** If `evidence_date` falls outside `lookback_window_start`..`lookback_window_end`, it must not drive a `recommendation: "assess"` priority flag. Either the date is wrong (fix it or drop the item) or the evidence is stale (route it to context/sector_alerts only, not a priority flag).
+
+4. **Undated sources cannot carry a flag alone.** A source URL with no date component — a Wikipedia year-in-review or event page (`/wiki/2026_in_Asia`, `/wiki/July_2026_X`), an undated publisher slug, a static "country report" page — is **not sufficient on its own** to justify flagging an entity. Before emitting the item, either:
+   - corroborate the specific claim (especially any superlative/record-setting claim like "highest since," "deadliest," "record") with a second, independently dated primary source, or
+   - drop the flag / route it to `rotation_backfill` or omit it, rather than publish an unverified date.
+   This applies with extra force to statistics presented as records or milestones ("deadliest month since X," "highest toll since Y") — these are exactly the claims most likely to be a stale figure copied into the wrong year.
+
+5. **Record source verification explicitly.** Every source in `news_sources` / `sources` must be accompanied by an explicit `date_verified: true|false` flag in the emitted record (per-source, not per-entity):
+   ```json
+   "news_sources": [
+     { "url": "https://www.reuters.com/...", "date_verified": true },
+     { "url": "https://en.wikipedia.org/wiki/2026_in_Asia", "date_verified": false }
+   ]
+   ```
+   `date_verified: true` means you found an explicit date on/in that source matching (or consistent with) the `evidence_date` you recorded. `date_verified: false` means you could not confirm the date from that source alone — it is being carried for context/corroboration only and must not be the sole basis for a flag (see rule 4).
+
+6. **When in doubt, downgrade, don't guess.** If you cannot verify a date, do not silently proceed with your best guess. Either find a dated source, or write the entity as `evidence_found: false` / route to `rotation_backfill` with a note explaining why the candidate evidence was dropped.
 
 ---
 
@@ -167,7 +198,10 @@ Write `research/scans/{YYYY-MM-DD}.json` with **three distinct sections**:
       "importance_score": 10,
       "tier": "T1",
       "news_summary": "...",
-      "news_sources": ["https://..."],
+      "news_sources": [
+        { "url": "https://...", "date_verified": true }
+      ],
+      "evidence_date": "2026-04-19",
       "recommendation": "assess"
     }
   ],
@@ -231,7 +265,17 @@ Update `research/rotation-state.json`:
 - Add/update `last_evidence_touch` to today's date — the freshness signal for the site
 - Do NOT update `last_assessed` (the assessor does that)
 
-## Step 9: Summary
+## Step 9: Validate Evidence-Date Discipline
+
+Before declaring the scan complete, run:
+
+```
+node research/scripts/validate-scan.mjs research/scans/{YYYY-MM-DD}.json
+```
+
+This checks every flagged entity for future-dated evidence, out-of-window evidence driving an `assess` recommendation, and undated-only sourcing (see "EVIDENCE-DATE DISCIPLINE" above). If it exits non-zero, fix the flagged entities (re-verify the date, add a dated corroborating source, or drop the flag) and re-run before finishing. Do not hand off a scan with unresolved validator FAILs.
+
+## Step 10: Summary
 
 Print a concise summary:
 - Date, runtime, searches performed (by tier)
@@ -240,6 +284,7 @@ Print a concise summary:
 - Sector alerts
 - Entities where scanning quality was degraded (if any — e.g., batched queries that returned no results across the whole batch)
 - Confirmation that all 1,155 entity records were written
+- Result of `validate-scan.mjs` (pass/fail, and how any FAILs were resolved)
 
 ---
 
