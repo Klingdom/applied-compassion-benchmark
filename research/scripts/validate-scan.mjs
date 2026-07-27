@@ -43,6 +43,9 @@ const MIN_T1_SEARCHES = 150;
 const MIN_T3_SEARCHES = 15;
 const MAX_BATCH_SIZE = 12;
 const REGRESSION_DROP_THRESHOLD = 10;
+const URL_DATE_FAIL_GAP_DAYS = 31; // URL-embedded date older than evidence_date by more than this -> blocking
+const URL_DATE_WARN_GAP_DAYS = 8; // ...older by at least this many days -> warning
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 // ── Source-date verification helpers (added 2026-07-27) ────────────────────
 //
@@ -107,6 +110,90 @@ function extractTextDateMentions(text, assumedYear) {
     out.push({ token: m[0], date: new Date(Date.UTC(assumedYear, monthIdx, day)) });
   }
   return out;
+}
+
+/**
+ * Extract a date embedded in a source URL, distinguishing day-precision
+ * (an exact date is present) from month-precision (only year+month is
+ * present — e.g. /2026/07/ with no day segment). Conservative: returns
+ * null rather than guessing when no pattern matches with confidence.
+ * Wikipedia is excluded for the same reason as isDatedUrl (topic-label
+ * years are not publish dates).
+ *
+ * Day-precision result: { precision: "day", date }.
+ * Month-precision result: { precision: "month", monthStart, monthEnd } —
+ * both ends of the month are kept because a single "resolved" date would
+ * bias one direction of the caller's older/later comparison. monthEnd
+ * (last day of month) is the conservative choice for the "is this stale"
+ * test; monthStart (first day) is the conservative choice for the "is
+ * this from the future" test. A genuine same-month article satisfies
+ * neither test, by design (see validate-scan.mjs regression tests).
+ */
+function parseUrlEmbeddedDate(rawUrl) {
+  let u;
+  try {
+    u = new URL(rawUrl);
+  } catch {
+    return null;
+  }
+  if (/(^|\.)wikipedia\.org$/i.test(u.hostname)) return null;
+
+  const s = decodeURIComponent(u.pathname + u.search);
+  let m;
+
+  // Day-precision, numeric: 2026/07/24, 2026-07-24
+  m = s.match(/\b(19|20)(\d{2})[/-](0?[1-9]|1[0-2])[/-](0?[1-9]|[12]\d|3[01])(?:[/-]|\b)/);
+  if (m) {
+    return { precision: "day", date: new Date(Date.UTC(Number(m[1] + m[2]), Number(m[3]) - 1, Number(m[4]))) };
+  }
+
+  // Day-precision, YYYYMMDD run
+  m = s.match(/\b(19|20)(\d{2})(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])\b/);
+  if (m) {
+    return { precision: "day", date: new Date(Date.UTC(Number(m[1] + m[2]), Number(m[3]) - 1, Number(m[4]))) };
+  }
+
+  // Day-precision, month-name first: jul-24-2026 / july-24-2026
+  m = s.match(new RegExp(`\\b(${MONTH_RE})[a-z]*[-](0?[1-9]|[12]\\d|3[01])[-]((?:19|20)\\d{2})\\b`, "i"));
+  if (m) {
+    const monthIdx = monthIndexFromToken(m[1]);
+    if (monthIdx !== null) return { precision: "day", date: new Date(Date.UTC(Number(m[3]), monthIdx, Number(m[2]))) };
+  }
+
+  // Day-precision, day first: 24-july-2026
+  m = s.match(new RegExp(`\\b(0?[1-9]|[12]\\d|3[01])[-](${MONTH_RE})[a-z]*[-]((?:19|20)\\d{2})\\b`, "i"));
+  if (m) {
+    const monthIdx = monthIndexFromToken(m[2]);
+    if (monthIdx !== null) return { precision: "day", date: new Date(Date.UTC(Number(m[3]), monthIdx, Number(m[1]))) };
+  }
+
+  // Month-precision, numeric: 2026/07, 2026-07
+  m = s.match(/\b(19|20)(\d{2})[/-](0?[1-9]|1[0-2])(?:[/-]|\b)/);
+  if (m) {
+    const year = Number(m[1] + m[2]);
+    const month = Number(m[3]);
+    return { precision: "month", monthStart: new Date(Date.UTC(year, month - 1, 1)), monthEnd: new Date(Date.UTC(year, month, 0)) };
+  }
+
+  // Month-precision, month-name + year: july-2026 / jul-2026
+  m = s.match(new RegExp(`\\b(${MONTH_RE})[a-z]*[-]((?:19|20)\\d{2})\\b`, "i"));
+  if (m) {
+    const monthIdx = monthIndexFromToken(m[1]);
+    if (monthIdx !== null) {
+      const year = Number(m[2]);
+      return { precision: "month", monthStart: new Date(Date.UTC(year, monthIdx, 1)), monthEnd: new Date(Date.UTC(year, monthIdx + 1, 0)) };
+    }
+  }
+
+  // Month-precision, numeric month/year: 07-2026, 07/2026
+  m = s.match(/\b(0?[1-9]|1[0-2])[/-]((?:19|20)\d{2})\b/);
+  if (m) {
+    const year = Number(m[2]);
+    const month = Number(m[1]);
+    return { precision: "month", monthStart: new Date(Date.UTC(year, month - 1, 1)), monthEnd: new Date(Date.UTC(year, month, 0)) };
+  }
+
+  return null;
 }
 
 const SUPERLATIVE_PATTERNS = [
@@ -335,6 +422,83 @@ if (unverifiedSuperlatives.length) {
       `partly on undated sourcing — this is the exact pattern behind the confirmed 07-24 defect (a stale prior-year ` +
       `statistic presented as current). Requires manual corroboration before publishing: ` +
       `${unverifiedSuperlatives.map((r) => r.name).join(", ")}`,
+  );
+}
+
+// ── 4c. URL-EMBEDDED-DATE vs CLAIMED evidence_date CROSS-CHECK (2026-07-27) ─
+// Section 4a proves a source URL carries A date. It does not prove that date
+// agrees with the evidence_date the scan attached to it. Confirmed defect
+// (2026-07-25 Ukraine record): evidence_date 2026-07-24, cited
+// https://news.un.org/en/story/2026/07/1167875 — a UN News URL whose path
+// only encodes year+month (2026/07); the article itself is independently
+// verifiable as published 2026-07-06 (article:published_time meta, not
+// present in the URL string). At month granularity that source is
+// consistent with the claimed date (both fall in July 2026) and is
+// correctly NOT flagged below — the day-level discrepancy is invisible to
+// URL-string parsing without fetching the page, which this gate deliberately
+// does not do (see file header). What this check DOES catch: a URL whose
+// embedded date — day-precision, or month-precision resolved conservatively
+// per parseUrlEmbeddedDate — falls outside a plausible window around the
+// claimed evidence_date, which is the general shape of "stale article cited
+// as current."
+const urlDateFailures = [];
+const urlDateWarnOld = [];
+const urlDateWarnLater = [];
+for (const r of evidenced) {
+  if (!r.evidence_date) continue;
+  const claimed = new Date(r.evidence_date);
+  if (Number.isNaN(claimed.getTime())) continue;
+  const sources = (r.sources ?? []).map(normalizeSource).filter((s) => s.url);
+  for (const s of sources) {
+    const parsed = parseUrlEmbeddedDate(s.url);
+    if (!parsed) continue;
+
+    if (parsed.precision === "day") {
+      const gapDays = Math.round((claimed.getTime() - parsed.date.getTime()) / MS_PER_DAY);
+      const urlDateStr = parsed.date.toISOString().slice(0, 10);
+      if (gapDays > URL_DATE_FAIL_GAP_DAYS) {
+        urlDateFailures.push({ r, url: s.url, urlDateStr, gapDays });
+      } else if (gapDays >= URL_DATE_WARN_GAP_DAYS) {
+        urlDateWarnOld.push({ r, url: s.url, urlDateStr, gapDays });
+      } else if (gapDays < 0) {
+        urlDateWarnLater.push({ r, url: s.url, urlDateStr, gapDays: -gapDays });
+      }
+    } else {
+      // Month precision: use the boundary that is conservative for each
+      // direction of test, so a genuine same-month article triggers neither.
+      const gapDaysOld = Math.round((claimed.getTime() - parsed.monthEnd.getTime()) / MS_PER_DAY);
+      const gapDaysLater = Math.round((claimed.getTime() - parsed.monthStart.getTime()) / MS_PER_DAY);
+      const urlDateStr = `~${parsed.monthStart.toISOString().slice(0, 7)}`;
+      if (gapDaysOld > URL_DATE_FAIL_GAP_DAYS) {
+        urlDateFailures.push({ r, url: s.url, urlDateStr, gapDays: gapDaysOld });
+      } else if (gapDaysOld >= URL_DATE_WARN_GAP_DAYS) {
+        urlDateWarnOld.push({ r, url: s.url, urlDateStr, gapDays: gapDaysOld });
+      } else if (gapDaysLater < 0) {
+        urlDateWarnLater.push({ r, url: s.url, urlDateStr, gapDays: -gapDaysLater });
+      }
+    }
+  }
+}
+
+if (urlDateFailures.length) {
+  fail(
+    `${urlDateFailures.length} source URL(s) carry an embedded date more than ${URL_DATE_FAIL_GAP_DAYS} days ` +
+      `older than the claimed evidence_date — a stale article cited as current: ` +
+      `${urlDateFailures.slice(0, 6).map((x) => `${x.r.name}[${x.url}]: url~${x.urlDateStr} vs evidence_date ${x.r.evidence_date} (${x.gapDays}d older)`).join("; ")}`,
+  );
+}
+if (urlDateWarnOld.length) {
+  warn(
+    `${urlDateWarnOld.length} source URL(s) carry an embedded date ${URL_DATE_WARN_GAP_DAYS}-${URL_DATE_FAIL_GAP_DAYS} days ` +
+      `older than the claimed evidence_date — verify the event date, not just the source: ` +
+      `${urlDateWarnOld.slice(0, 6).map((x) => `${x.r.name}[${x.url}]: url~${x.urlDateStr} vs evidence_date ${x.r.evidence_date} (${x.gapDays}d older)`).join("; ")}`,
+  );
+}
+if (urlDateWarnLater.length) {
+  warn(
+    `${urlDateWarnLater.length} source URL(s) carry an embedded date AFTER the claimed evidence_date — a different ` +
+      `kind of inconsistency, verify which is correct: ` +
+      `${urlDateWarnLater.slice(0, 6).map((x) => `${x.r.name}[${x.url}]: url~${x.urlDateStr} vs evidence_date ${x.r.evidence_date} (${x.gapDays}d later)`).join("; ")}`,
   );
 }
 
