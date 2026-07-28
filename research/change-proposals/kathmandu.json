@@ -1,0 +1,743 @@
+{
+  "entity": "Kathmandu",
+  "slug": "kathmandu",
+  "index": "global-cities",
+  "assessment_date": "2026-07-26",
+  "assessment_file": "research/assessments/kathmandu-2026-07-26.md",
+  "published_scores": {
+    "composite": 18.8,
+    "band": "critical",
+    "rank": 198,
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 1.5,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 13.8,
+    "band": "Critical",
+    "dimensions": {
+      "AWR": 1.6,
+      "EMP": 1.8,
+      "ACT": 1.8,
+      "EQU": 1.4,
+      "BND": 1.4,
+      "ACC": 1.2,
+      "SYS": 1.8,
+      "INT": 1.4
+    }
+  },
+  "score_delta": -5,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "Kathmandu has never been formally assessed. rotation-state records last_assessed: null and there is no Kathmandu assessment file; the published 18.8 is a bulk-import placeholder with no evidence behind any dimension value.",
+    "Police detained three activists on 11 July 2026 after they visited the Kirtipur holding centre, where families displaced by forced evictions were sheltering from flooding. Video reportedly showed verbal abuse and physical force.",
+    "Majid Ansari was discharged from hospital on 15 July 2026 after five days, still in custody, and said he had received no arrest papers while officers pressured him to sign a document.",
+    "Police contested his account, saying he was not arrested and was injured when two sides clashed at the holding centre gate.",
+    "Amnesty International Nepal called for his immediate and unconditional release and for the right to protest to be ensured.",
+    "No band crossing: 18.8 and 13.8 are both Critical."
+  ],
+  "evidence": [
+    {
+      "quote": "I have not received any arrest papers. Police officers keep coming and pressuring me to sign a document, but I have refused.",
+      "claim": "the detainee was held without arrest papers and pressured to sign a document",
+      "source": "The Kathmandu Post",
+      "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+      "publishedDate": "2026-07-15",
+      "sourceTier": 2
+    },
+    {
+      "quote": "I was grabbed from behind and beaten. My vision became blurred and I could not see properly for some time.",
+      "claim": "the detainee alleges he was beaten by police and sustained injuries requiring five days of hospital treatment",
+      "source": "The Kathmandu Post",
+      "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+      "publishedDate": "2026-07-15",
+      "sourceTier": 2
+    },
+    {
+      "quote": "He was not arrested. Police intervened when two sides clashed at the holding centre gate, and he was injured in the process.",
+      "claim": "police denied the arrest and attributed the injury to a clash, which is anchor-1 harm-acknowledgment behaviour",
+      "source": "Nepal Police, quoted by The Kathmandu Post",
+      "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+      "publishedDate": "2026-07-15",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Rights activists have repeatedly urged authorities to respect due legal process and the constitutional right to peaceful protest while maintaining public order.",
+      "claim": "the detention is contested as inconsistent with due process and the constitutional right to peaceful protest",
+      "source": "The Kathmandu Post",
+      "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+      "publishedDate": "2026-07-15",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Amnesty International called for the immediate and unconditional release of the detained activist and for the right to protest to be ensured",
+      "source": "Amnesty International Nepal",
+      "url": "https://amnestynepal.org/press_release/nepal-immediately-release-detained-activist-ansari-and-ensure-right-to-protest",
+      "publishedDate": "2026-07-13",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Three youth activists were detained after visiting the Kirtipur holding centre housing people displaced by forced evictions",
+      "source": "The Kathmandu Post",
+      "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+      "publishedDate": "2026-07-11",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "notes": "ROUTED AS FLAG-FOR-REVIEW. The delta of -5.0 sits exactly at the change-proposal threshold and is a first evidence-based baseline for an entity that has never been assessed. Because a five-point move on a first baseline is partly a change in what has been measured rather than a change in conduct, human judgment is requested rather than an asserted downgrade. NO BAND CROSSING: 18.8 and 13.8 are both Critical, so the two-source tier-4 bar does not apply. BASELINE-PROVENANCE CHECK PERFORMED: rotation-state records last_assessed: null and no Kathmandu assessment file exists, so the first-baseline rationale is supported by the record rather than contradicted by it. DIRECTIONALITY CHECK: negative in-window evidence produces a negative proposal. SOURCING CAVEAT: evidence comes largely from one newspaper group plus an Amnesty press release; no court record of the detention’s legal basis and no Nepal Police formal statement beyond the quoted denial were obtained. This is why confidence is medium and the routing is flag-for-review.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+          "date": "2026-07-15",
+          "quote": "I was grabbed from behind and beaten. My vision became blurred and I could not see properly for some time."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+          "date": "2026-07-15",
+          "quote": "He was not arrested. Police intervened when two sides clashed at the holding centre gate, and he was injured in the process."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+          "date": "2026-07-15",
+          "quote": "I have not received any arrest papers. Police officers keep coming and pressuring me to sign a document, but I have refused."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+          "date": "2026-07-15",
+          "quote": "He was not arrested. Police intervened when two sides clashed at the holding centre gate, and he was injured in the process."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://amnestynepal.org/press_release/nepal-immediately-release-detained-activist-ansari-and-ensure-right-to-protest",
+          "date": "2026-07-13",
+          "quote": "Nepal: Immediately release detained activist Ansari and ensure right to protest"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://amnestynepal.org/press_release/nepal-immediately-release-detained-activist-ansari-and-ensure-right-to-protest",
+          "date": "2026-07-13",
+          "quote": "Nepal: Immediately release detained activist Ansari and ensure right to protest"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/11/three-youth-activists-detained-from-kirtipur-holding-centre",
+          "date": "2026-07-11",
+          "quote": "Three youth activists detained from Kirtipur holding centre"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://thehimalayantimes.com/kathmandu/amnesty-international-calls-for-release-of-detained-activist-majid-ansari",
+          "date": "2026-07-13",
+          "quote": "Amnesty International calls for release of detained activist Majid Ansari"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/interviews/2026/07/19/they-could-not-defeat-our-legal-arguments-in-the-courtroom-so-they-resorted-to-physical-violence",
+          "date": "2026-07-19",
+          "quote": "They could not defeat our legal arguments in the courtroom, so they resorted to physical violence"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://kathmandupost.com/national/2026/07/15/majid-ansari-discharged-from-hospital-after-five-days-questions-legal-basis-of-police-detention",
+          "date": "2026-07-15",
+          "quote": "Rights activists have repeatedly urged authorities to respect due legal process and the constitutional right to peaceful protest while maintaining public order."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://english.khabarhub.com/2026/11/558074/",
+          "date": "2026-07-12",
+          "quote": "Flood displaces families at Kirtipur holding centre"
+        }
+      ]
+    }
+  ]
+}

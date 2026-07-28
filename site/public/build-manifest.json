@@ -1,9 +1,9 @@
 {
-  "buildDate": "2026-06-26T02:08:24.093Z",
-  "buildTimestamp": 1782439704093,
+  "buildDate": "2026-07-27T20:21:53.927Z",
+  "buildTimestamp": 1785183713927,
   "git": {
-    "sha": "3daa4faf",
-    "branch": "page-improvements-updates-methodology",
+    "sha": "3837a03b",
+    "branch": "nightly-research-2026-07-24-27",
     "dirty": true
   },
   "methodologyVersion": "v1.2",
@@ -28,8 +28,8 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:876635a25d0ed35132e96e16b9762638062db9ee332955177b18aad20fb38591",
-      "meanScore": 36.5,
+      "hash": "sha256:5f21fef38736105950fa6d2745616d12a0e23f2c640483e23cabb2ed74ddf9cd",
+      "meanScore": 36.4,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
@@ -44,14 +44,14 @@
       "name": "fortune-500",
       "rankingsCount": 448,
       "entityCount": 448,
-      "hash": "sha256:e0ab8d3d9fe1d5a55821ce627e5184462c9e2fd44776df15eb686bfb76a534c0",
-      "meanScore": 39.3,
+      "hash": "sha256:2239fa5202512800d1fbc55e272c1607f343995e9bd2a6f557159b43c5d15e0e",
+      "meanScore": 39.1,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 7,
-        "Established": 55,
-        "Functional": 117,
-        "Developing": 216,
+        "Established": 51,
+        "Functional": 120,
+        "Developing": 217,
         "Critical": 53
       },
       "floorDesignations": 0
@@ -122,163 +122,163 @@
     },
     {
       "name": "us-states",
-      "rankingsCount": 21,
-      "entityCount": 21,
-      "hash": "sha256:6ecfe81d95291611e98c37a9c4d4f126fec793c5c1c8fc99808c8e1c5ef65526",
-      "meanScore": 46.9,
-      "medianScore": 25,
+      "rankingsCount": 51,
+      "entityCount": 51,
+      "hash": "sha256:3e999658359f502e501b38b0a781379a49d04eff1ce26ce13554eeb47c23e3c6",
+      "meanScore": 45.4,
+      "medianScore": 45.6,
       "bands": {
-        "Exemplary": 8,
-        "Established": 0,
-        "Functional": 0,
-        "Developing": 9,
-        "Critical": 4
+        "Exemplary": 0,
+        "Established": 1,
+        "Functional": 32,
+        "Developing": 18,
+        "Critical": 0
       },
       "floorDesignations": 0
     }
   ],
-  "totalEntities": 1256,
+  "totalEntities": 1286,
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
     {
-      "slug": "humana",
-      "entity": "Humana",
+      "slug": "alabama-2026-07-19",
+      "entity": "Alabama",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "alaska-2026-07-19",
+      "entity": "Alaska",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "arizona-2026-07-19",
+      "entity": "Arizona",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "arkansas-2026-07-19",
+      "entity": "Arkansas",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "california-2026-07-19",
+      "entity": "California",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "colorado-2026-07-19",
+      "entity": "Colorado",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "connecticut-2026-07-19",
+      "entity": "Connecticut",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "delaware-2026-07-19",
+      "entity": "Delaware",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "district-of-columbia-2026-07-19",
+      "entity": "District of Columbia",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "egypt-2026-07-20",
+      "entity": "Egypt",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "fidelity-investments-2026-07-20",
+      "entity": "Fidelity Investments",
       "index": "fortune-500",
-      "decision": "apply",
-      "appliedDate": "2026-06-21"
-    },
-    {
-      "slug": "figure-ai-2026-06-19",
-      "entity": "Figure AI",
-      "index": "ai-labs",
-      "decision": "approve",
-      "appliedDate": "2026-06-19"
-    },
-    {
-      "slug": "nigeria-2026-06-19",
-      "entity": "Nigeria",
-      "index": "countries",
-      "decision": "approve",
-      "appliedDate": "2026-06-19"
-    },
-    {
-      "slug": "humana-2026-06-18",
-      "entity": "Humana",
-      "index": "fortune-500",
-      "decision": "approve",
-      "appliedDate": "2026-06-18"
-    },
-    {
-      "slug": "bangladesh-2026-06-16",
-      "entity": "Bangladesh",
-      "index": "countries",
       "decision": "approved",
-      "appliedDate": "2026-06-16"
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "bolivia-2026-06-12",
-      "entity": "Bolivia",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-06-14"
+      "slug": "florida-2026-07-19",
+      "entity": "Florida",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "bolivia-2026-06-14",
-      "entity": "Bolivia",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-06-14"
-    },
-    {
-      "slug": "oracle-2026-06-12",
-      "entity": "Oracle Corporation",
+      "slug": "freeport-mcmoran-2026-07-20",
+      "entity": "Freeport-McMoRan",
       "index": "fortune-500",
       "decision": "approved",
-      "appliedDate": "2026-06-14"
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "procter-gamble-2026-06-12",
-      "entity": "Procter & Gamble",
+      "slug": "georgia-us-states-2026-07-19",
+      "entity": "Georgia",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "hawaii-2026-07-19",
+      "entity": "Hawaii",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
+    },
+    {
+      "slug": "hca-healthcare-2026-07-20",
+      "entity": "HCA Healthcare",
       "index": "fortune-500",
       "decision": "approved",
-      "appliedDate": "2026-06-14"
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "bolivia-2026-06-06",
-      "entity": "Bolivia",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-09"
+      "slug": "idaho-2026-07-19",
+      "entity": "Idaho",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "united-arab-emirates-2026-06-08",
-      "entity": "UAE",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-09"
+      "slug": "illinois-2026-07-19",
+      "entity": "Illinois",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "united-states-2026-06-04",
-      "entity": "United States",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-09"
+      "slug": "indiana-2026-07-19",
+      "entity": "Indiana",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
     },
     {
-      "slug": "germany-2026-06-02",
-      "entity": "Germany",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-04"
-    },
-    {
-      "slug": "india-2026-06-01",
-      "entity": "India",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-04"
-    },
-    {
-      "slug": "burkina-faso-2026-05-31",
-      "entity": "Burkina Faso",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-01"
-    },
-    {
-      "slug": "deepmind-google-2026-05-30",
-      "entity": "DeepMind/Google",
-      "index": "ai-labs",
-      "decision": null,
-      "appliedDate": "2026-06-01"
-    },
-    {
-      "slug": "hungary-2026-05-30",
-      "entity": "Hungary",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-06-01"
-    },
-    {
-      "slug": "afghanistan-2026-05-29",
-      "entity": "Afghanistan",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "anthropic-2026-05-29",
-      "entity": "Anthropic",
-      "index": "ai-labs",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "democratic-republic-of-c-2026-05-29",
-      "entity": "Democratic Republic of the Congo",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
+      "slug": "iowa-2026-07-19",
+      "entity": "Iowa",
+      "index": "us-states",
+      "decision": "applied",
+      "appliedDate": "2026-07-21"
     }
   ]
 }

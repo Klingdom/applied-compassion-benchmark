@@ -8379,3 +8379,95 @@ None this cycle.
 - Assessor runtime (BACKFILL, executed 2026-07-27): 2026-07-27T10:45:00Z-12:45:00Z (~2h00m); 20 entities assessed (15 priority, 5 rotation); 1 change proposal (flag-for-review, band-crossing candidate), pending, NOT applied; 19 confirmations; 20 subdim sidecars written, all fresh.
 - Scanner date contamination for a second consecutive night (2 items tonight vs. 5 the night before); both caught and corrected before scoring; none entered the queue as a scored finding.
 - Total pending proposals in queue after tonight: 5 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI).
+
+
+---
+
+## 2026-07-26 — BACKFILL RUN | Three Proposals (Tunis Downgrade + Uganda Band-Crossing Hold + Kathmandu First-Baseline Hold), All PENDING, None Applied | 17 Confirmations | 20 Assessed | 6 Scanner Date/Attribution Corrections
+
+### Summary — 2026-07-26
+
+**BACKFILL RUN.** The 2026-07-26 assessor stage was reconstructed on 2026-07-27, using assessment_date 2026-07-26 throughout every artifact. Strict evidence-date discipline was applied: no source dated after 2026-07-26 was used to support a scored finding.
+
+**SCANNER DATE/ATTRIBUTION CONTAMINATION, THIRD CONSECUTIVE NIGHT.** Six items, following the two-item pattern the night before and the five-item pattern the night before that. (1) **unitree-robotics** — the scan placed the Pentagon's flagging of Unitree as Chinese military-linked technology on 20 July 2026, which is the TechTimes article date. The Department of Defense actually added Unitree to its Section 1260H list on 8 June 2026, corroborated by TechCrunch (8 June 2026) and a WilmerHale client alert (11 June 2026). Re-dated to background, out of window. (2) **unitree-robotics** — a second claim that the G1 humanoid continuously transmits sensor data to Chinese servers had no dated source anywhere and was dropped entirely rather than inferred. (3) **kuala-lumpur** — the scan stated a Migrant Welfare Network letter urged the Malaysian government to negotiate a binding bilateral labour agreement; primary sources (Daily Star, Business Standard) show the letter was addressed to Bangladesh's head of government ahead of a state visit to Malaysia. Attribution corrected before scoring. (4) **tunis** — the scan dated a rally 26 July 2026; Al Jazeera, published 26 July, places the march on Saturday, which was 25 July 2026. Event re-dated; both dates remain inside the window. (5) **boston-dynamics** — the prior assessment of 2026-07-22 recorded the Hyundai acquisition as completing 16 July 2026; multiple dated sources place the true closing at 20 July 2026 (the SoftBank put-option deadline), with the June transaction being the purchase of the remaining 9.65% stake. Corrected. (6) **agilent-technologies** — reported Biovectra subsidiary staff cuts and a claim of 1–3% annual workforce reductions for three years carry no verifiable date; not scored, recorded as an evidence gap.
+
+**CHANGE PROPOSAL. Tunis (global-cities) — 34.4 to 22.5 (-11.9), NO band change (Developing to Developing), recommendation downgrade, pending.** First evidence-based baseline: rotation-state records last_assessed: null and the published 34.4 is numerically identical to the un-assessed seed Tunisia the country carried before its own first assessment on 2026-07-10. Human Rights Watch (8 July 2026): Tunisia's human rights situation "has deteriorated dramatically" across five years of emergency rule, with systematic repression of civil society, journalists, lawyers, and migrants; UN independent experts condemned the prosecution and sentencing of judges and human rights defenders. Thousands rallied on Habib Bourguiba Avenue on 25 July 2026 (reported 26 July) demanding President Kais Saied's resignation. Sourcing exceeds the band-crossing bar even though no band crossing occurs: tier-5 OHCHR press release, tier-3 HRW analysis, two tier-2 wire reports. Confidence: medium. The assessed 22.5 sits within a point of Tunisia the country's own most recent assessment of 23.1 (2026-07-24), the consistency check this proposal rests on.
+
+**CHANGE PROPOSAL — evidence-standard hold, not a downgrade. Uganda (countries) — 20.3 to 13.1 (-7.2), BAND CROSSING Developing to Critical if applied, `flag-for-review`, `pending`.** Human Rights Watch (16 July 2026): "Since mid-June 2026, security forces have unlawfully seized at least five critics of President Yoweri Museveni and his son, General Muhoozi Kainerugaba, the chief of the Uganda People's Defence Force (UPDF)," and since 28 June the military has laid siege to Nation Media Group, Uganda's largest independent media company, after Kainerugaba ordered its television and newspaper operations shut down. However, the move crosses a band label and the band-crossing bar requires at least two distinct sources with at least one at sourceTier 4 or above; the strongest in-window source is HRW at tier 3, and a tier-5 UN Secretary-General note on the same pattern is dated 2 July 2026, outside the 12–26 July window. Routed for human judgment rather than asserted as a downgrade. Baseline-provenance check performed: Uganda's 2026-07-12 assessment was a screening confirmation on disease containment only and explicitly did not evaluate the June-July military seizures. No stale-baseline rationale is asserted against a documented recent assessment. **The published score of 20.3 is unchanged.**
+
+**CHANGE PROPOSAL — evidence-standard hold, first baseline at threshold. Kathmandu (global-cities) — 18.8 to 13.8 (-5.0), NO band change (Critical to Critical), `flag-for-review`, `pending`.** First evidence-based baseline (last_assessed: null, no prior assessment file). Police detained three activists on 11 July 2026 after they visited a Kirtipur holding centre sheltering families displaced by forced evictions and flooding; Majid Ansari was discharged from hospital on 15 July after five days, still in custody, saying he had received no arrest papers while officers pressured him to sign a document. Police disputed the account. Amnesty International Nepal called for his immediate and unconditional release. Routed as flag-for-review because a five-point move on a first baseline is partly a change in what has been measured rather than a change in conduct, and because sourcing rests largely on one newspaper group plus one advocacy statement (confidence: medium). **The published score of 18.8 is unchanged.**
+
+**ANTI-FALSE-POSITIVE SCREENING** caught five artifacts that would otherwise have looked like upward movement or fresh findings: Vanuatu (the only in-window item is a delivery-gap commentary already priced by the 2026-05-23 applied change; re-scoring would double-count, so the assessed +1.7 against published 41.4 is only +0.3 against the canonical reconstruction of 42.8), Florida (the execution record is material but was already available at the 2026-07-19 first baseline; scoring it now would be assessor-to-assessor variance, held sub-threshold at -0.6 with a watch flag), Hong Kong (a competent typhoon response is not a structural positive; assessed 32.5 reproduces the 2026-07-23 baseline almost exactly), Addis Ababa (permitting one demonstration aligned with the federal government's own position is not evidence of improved civic space), Boston Dynamics/Unitree Robotics (dimensions with no in-window evidence held at published-consistent values rather than re-derived from scratch).
+
+**ATTRIBUTION RULE APPLIED** to seven entities: Eswatini (split decision — the US transfer is US conduct, continued detention without charge inside Eswatini is Eswatini conduct), Dhaka (the 44 flood deaths occurred in southeastern Bangladesh, not Dhaka; the police baton charge on protesting students in Dhaka is city-located conduct), Addis Ababa (abductions/forced recruitment in Tigray are Tigray regional conduct), Johannesburg (split decision — Operation Dudula violence is non-state conduct, failure to keep public clinics accessible is municipal conduct), Niger (jihadist attacks are non-state conduct; the arbitrary detentions and pretrial-detention amendment are state conduct), Boston Dynamics (the Ulsan labor dispute is Hyundai Motor's, scored against Boston Dynamics only where its own product/deployment design is implicated), Kuala Lumpur (national labour-recruitment policy is federal Malaysian policy, informs the city score only as sector context).
+
+**MATH HYGIENE.** Canonical reconstruction (computeCompositeFromDimensions, methodology v1.2) reproduced 19 of 20 published composites exactly. **ONE GENUINE MATH-HYGIENE ISSUE, VANUATU:** published composite 41.4 vs. canonical reconstruction 42.8 (diff +1.4), outside the 0.5-point tolerance. Independently confirmed by `site/scripts/validate-indexes.mjs`, which also flags a composite_override set on Vanuatu while it does not appear in ASSESSOR_OVERRIDE_NAMES. Referred for index maintenance; not a scoring finding, no proposal filed.
+
+**BAND OBSERVATIONS WITHOUT BAND CHANGES.** Four confirmations landed in a band different from their published label while remaining inside the 5-point threshold: Dhaka assessed exactly 20.0 Critical against published 23.4 Developing; Niger assessed 8.8 against published 12.5, both Critical; A.O. Smith 58.7, ADP 58.1, Aon 57.5, and Citigroup 60.0 all assessed Functional against a published Established label. Because every delta is sub-threshold, band_change is recorded false and the published band stands in each case.
+
+**DATA-QUALITY ITEM, NOT A CONDUCT FINDING.** 324 entities outside this assessment list carry a one-position rank drift against the published indexes, with composite and band matching in every case. Outside assessor scope, not touched.
+
+**SCANNER FEEDBACK.** Citigroup was routed to rotation on a finding of "no compassion-relevant evidence," but a dated in-window ruling of 24 July 2026 (a federal judge compelling former employees' wage claims to arbitration) was found on direct search. Recorded for scanner tuning, not as a scoring dispute.
+
+### High Priority — 2026-07-26 (Band Change or Delta >15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Uganda | countries | 20.3 | 13.1 | -7.2 | medium | flag-for-review (band crossing Developing to Critical — sourcing bar NOT met, NOT a downgrade recommendation) | 2026-07-26 | [uganda](change-proposals/uganda.json) |
+
+**Sourcing-bar note (verbatim excerpt, Uganda):** "The move crosses a band label: published band developing at 20.3 against an assessed Critical at 13.1. The band-crossing bar requires at least two distinct sources with at least one at sourceTier 4 or above. The strongest in-window source is Human Rights Watch at tier 3; the tier-5 UN Secretary-General note is dated 2 July 2026 and falls outside the 12-26 July window. Human judgment is requested on whether an out-of-window tier-5 corroboration of the same pattern satisfies the bar."
+
+### Standard — 2026-07-26 (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Tunis | global-cities | 34.4 | 22.5 | -11.9 | medium | downgrade | 2026-07-26 | [tunis](change-proposals/tunis.json) |
+| Kathmandu | global-cities | 18.8 | 13.8 | -5.0 | medium | flag-for-review (first-baseline move exactly at proposal threshold) | 2026-07-26 | [kathmandu](change-proposals/kathmandu.json) |
+
+**Routing note (verbatim excerpt, Kathmandu):** "Because a five-point move on a first baseline is partly a change in what has been measured rather than a change in conduct, human judgment is requested rather than an asserted downgrade... Sourcing caveat: evidence comes largely from one newspaper group plus an Amnesty press release; no court record of the detention's legal basis and no Nepal Police formal statement beyond the quoted denial were obtained."
+
+### Confirmations — 2026-07-26 (17 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Eswatini | countries | 9.4 | 8.7 | -0.7 | Split attribution decision; ~30 men transferred from the US remain detained without charge at Matsapha prison, some for a full year — WATCH FLAG |
+| Vanuatu | countries | 41.4 | 43.1 | +1.7 | Only +0.3 vs canonical 42.8; ICJ delivery-gap commentary already priced by 2026-05-23 applied change; math-hygiene gap referred for maintenance, not scored |
+| Niger | countries | 12.5 | 8.8 | -3.7 | Pretrial detention extended to 4 years the week rights defender Tiangari's lawyers sought his release — WATCH FLAG |
+| Dhaka | global-cities | 23.4 | 20.0 | -3.4 | Flood deaths occurred in southeastern Bangladesh, not Dhaka (attribution rule); police baton charge on exam protesters is city conduct — WATCH FLAG |
+| Kuala Lumpur | global-cities | 40.6 | 36.9 | -3.7 | Migrant Welfare Network letter addressee reversed by scan (Bangladesh, not Malaysia); labour recruitment policy is federal, not municipal — WATCH FLAG |
+| Addis Ababa | global-cities | 18.8 | 15.6 | -3.2 | Tigray abductions not Addis conduct (attribution rule); permitted rally screened out as a civic-space positive — WATCH FLAG |
+| Johannesburg | global-cities | 32.8 | 29.4 | -3.4 | Split attribution decision; Operation Dudula violence non-state, clinic-access failure is municipal conduct — WATCH FLAG |
+| Hong Kong | global-cities | 32.8 | 32.5 | -0.3 | One well-run typhoon response screened out as non-structural |
+| Boston Dynamics | robotics-labs | 65.6 | 63.1 | -2.5 | Hyundai closed acquisition 20 Jul 2026 (date-corrected), same day 35,000 Ulsan workers struck over Atlas — WATCH FLAG |
+| Unitree Robotics | robotics-labs | 35.9 | 34.4 | -1.5 | Pentagon designation date-corrected to 8 Jun 2026 (was misdated to 20 Jul); undated G1-sensor claim dropped — WATCH FLAG |
+| Apple | fortune-500 | 59.4 | 58.1 | -1.3 | Early DOJ settlement talks over 2024 iPhone antitrust case, no trial date set — WATCH FLAG |
+| Florida | us-states | 38.1 | 37.5 | -0.6 | Execution record material but available at 07-19 baseline; held to avoid assessor variance — WATCH FLAG |
+| A.O. Smith | fortune-500 | 60.9 | 58.7 | -2.2 | Rotation; WARN filing to close 2 Ohio plants predates evidence window |
+| ADP | fortune-500 | 60.9 | 58.1 | -2.8 | Rotation; no in-window evidence, 2026 retirement-fee settlement remains strongest signal |
+| Agilent Technologies | fortune-500 | 77.9 | 77.9 | 0.0 | Rotation; two workforce-cut claims undated, not scored |
+| Aon | fortune-500 | 60.9 | 57.5 | -3.4 | Rotation; 14-month data-breach detection gap |
+| Citigroup | fortune-500 | 62.5 | 60.0 | -2.5 | Rotation; wage claims compelled to arbitration 24 Jul 2026 — scanner initially reported no evidence (see Scanner Feedback) |
+
+### Open Calibration Flags — 2026-07-26
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~34 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~17 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 3 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 3 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 2 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 1 day |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 3 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 4 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 1 day |
+| Rotation batches drawing exclusively from one index (Fortune 500) for 2 consecutive nights | New tonight; recommend coordinator-level check on rotation selector diversification | Open since 2026-07-26 |
+
+### Operational Notes — 2026-07-26
+
+- Scan runtime: 2026-07-26T02:00Z-10:40Z (~8h40m); 265 searches (150 T1 individual / 99 T2 batched / 16 T3 sector sweeps); 1,290 entities scanned; 15 entities evidenced pre-assessment.
+- Assessor runtime (BACKFILL, executed 2026-07-27): 2026-07-27T14:10:00Z-16:25:00Z (~2h15m); 20 entities assessed (15 priority, 5 rotation); 3 change proposals (1 downgrade, 2 flag-for-review), all pending, NONE applied; 17 confirmations; 20 subdim sidecars written, all fresh.
+- Scanner date/attribution contamination for a third consecutive night (6 items tonight vs. 2 the night before and 5 the night before that); all six caught and corrected before scoring; none entered the queue as a scored finding.
+- Scanner feedback: Citigroup recall gap (see Summary above) recorded for scanner tuning.
+- Rotation state: last_assessed/last_scanned/last_evidence_touch updated for all 20 entities; last_change_proposal set only for tunis, uganda, kathmandu. Five pre-existing rank drifts corrected: uganda 144->145, apple 64->59, a-o-smith 36->35, adp 37->36, aon 38->37.
+- Total pending proposals in queue after tonight: 8 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu).
