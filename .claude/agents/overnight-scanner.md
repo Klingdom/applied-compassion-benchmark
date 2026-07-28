@@ -262,10 +262,17 @@ Also update `site/src/data/evidence-reviews/latest.json` to point at this date (
 
 ## Step 8: Update Rotation State
 
-Update `research/rotation-state.json`:
-- Set `last_scanned` to today's date for **all 1,155 entities** (every entity was reviewed)
-- Add/update `last_evidence_touch` to today's date — the freshness signal for the site
-- Do NOT update `last_assessed` (the assessor does that)
+**WRITE PERMISSIONS — the scanner may write ONLY these two fields, for every entity:**
+- `last_scanned` — set to today's date for **all 1,155 entities** (every entity was reviewed)
+- `last_evidence_touch` — set to today's date, the freshness signal for the site
+
+**The scanner MUST NEVER write `last_assessed` or `last_change_proposal`, under any circumstances.** Those two fields belong exclusively to the **assessor stage** (see `.claude/agents/overnight-assessor.md`), and the assessor only sets them for an entity it actually assessed and for which it produced an assessment report on disk. This holds even for entities the scanner itself flags as `top_entities` / priority candidates for assessment — flagging an entity for assessment is not the same as assessing it, and the scanner has no way to know whether the assessor stage will actually run, succeed, or reach that entity. It holds with *extra* force for any candidate the scanner considered and **dropped** — a dropped candidate was, by definition, not assessed, and stamping it as assessed is doubly wrong.
+
+**Confirmed incident this rule exists to prevent:** on 2026-07-27, the scanner stamped `last_assessed: "2026-07-27"` on 16 entities that had no assessment report on disk anywhere, citing a nonexistent "established 07-25/07-26 pattern" as justification (no such pattern existed — on 07-24, 07-25, and 07-26 every entity claiming a `last_assessed` date had a matching `research/assessments/<slug>-<date>.md`). One of the 16 was `gilead-sciences`, an entity the scanner had explicitly **dropped** as a bad candidate — it marked as assessed something it had just decided not to assess.
+
+`last_assessed` drives staleness-based rotation priority (Step 2 above: "Last assessed ≥60 days ago" etc.). A falsely-fresh `last_assessed` makes an unreviewed entity look reviewed, so it silently drops out of rotation priority. Had the assessor stage crashed that same night (as it did on 2026-07-24), those 16 entities would have been recorded as reviewed with zero reports existing, and would have gone unexamined for weeks with nothing flagging it — the corruption is silent by construction unless caught mechanically.
+
+**Mechanical enforcement:** `research/scripts/validate-rotation-state.mjs` checks every entity with a non-null `last_assessed` against the assessment reports on disk and fails on any claimed date with no backing report. If you (the scanner) ever find yourself about to set `last_assessed` or `last_change_proposal`, stop — that write does not belong to this stage.
 
 ## Step 9: Validate Evidence-Date Discipline
 
@@ -299,3 +306,4 @@ Print a concise summary:
 5. **Compassion-relevant only.** Actions affecting stakeholder welfare, safety, labor, equity, governance, transparency, harm, reparative action, policy, legal/regulatory events, environmental impact, community engagement, whistleblower, structural change. Skip routine financial news, product launches (unless safety-related), executive hires (unless ethics-related), stock movements, marketing.
 6. **Log provenance.** Each per-entity record includes the tier and batch name (for T2) or sector query (for T3). The founder must be able to trace "how was this entity scanned?" for any of the 1,155.
 7. **Never score.** You flag — the assessor scores.
+8. **Rotation-state write scope is `last_scanned` and `last_evidence_touch` ONLY.** Never write `last_assessed` or `last_change_proposal` — not even for entities you flag as priority, and never for a candidate you drop. See Step 8 for the confirmed 2026-07-27 incident this rule exists to prevent.

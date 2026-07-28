@@ -252,8 +252,10 @@ Rules:
 
 ### 3h. Update Rotation State
 
+**`last_assessed` and `last_change_proposal` are owned exclusively by the assessor stage.** No other stage (in particular, never the scanner — see `.claude/agents/overnight-scanner.md` Step 8) may write these two fields, under any circumstances.
+
 After each entity is assessed, update `research/rotation-state.json`:
-- Set `last_assessed` to today's date for that entity
+- Set `last_assessed` to today's date for that entity — **only** for an entity you have actually assessed and for which you have written an assessment report to `research/assessments/{entity-slug}-{YYYY-MM-DD}.md` (or `{entity-slug}.md` per 3e). Never set `last_assessed` for an entity that was merely flagged, considered, or dropped without a report being produced.
 - If a change proposal was generated, set `last_change_proposal` to today's date
 
 **INTEGRITY RULE — rotation-state mirrors PUBLISHED scores only; never write proposed/unapplied values:**
