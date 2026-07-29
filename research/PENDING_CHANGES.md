@@ -8471,3 +8471,91 @@ None this cycle.
 - Scanner feedback: Citigroup recall gap (see Summary above) recorded for scanner tuning.
 - Rotation state: last_assessed/last_scanned/last_evidence_touch updated for all 20 entities; last_change_proposal set only for tunis, uganda, kathmandu. Five pre-existing rank drifts corrected: uganda 144->145, apple 64->59, a-o-smith 36->35, adp 37->36, aon 38->37.
 - Total pending proposals in queue after tonight: 8 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu).
+
+
+---
+
+## 2026-07-27 — BACKFILL RUN | Zero New Proposals, Zero Band Changes | 20 Confirmations | 20 Assessed | 6 Scanner Date/Attribution Corrections | GEO Group Math-Hygiene Referral (Not a Conduct Finding)
+
+### Summary — 2026-07-27
+
+**BACKFILL RUN.** The 2026-07-27 assessor stage was reconstructed on 2026-07-28, the fourth and final night of a four-night catch-up (2026-07-24 through 2026-07-27), using assessment_date 2026-07-27 throughout every artifact. Strict evidence-date discipline was applied: no source dated after 2026-07-27 was used to support a scored finding.
+
+**ZERO CHANGE PROPOSALS.** All 20 entities assessed (15 priority, 5 rotation) confirmed within the five-point threshold. This is a clean confirmation night, consistent with the precedent set on 2026-07-21: a real and reportable result, not an absence of scrutiny.
+
+**SCANNER DATE/ATTRIBUTION CONTAMINATION, FOURTH CONSECUTIVE NIGHT.** Four claims dropped, two re-dated and kept, following the six-item pattern the night before, the two-item pattern the night before that, and the five-item pattern before that. (1) **unitedhealth-group** — the scan presented the HHS OIG finding that UnitedHealthcare denied 71% of long-term acute-care hospital admission requests as an in-window item; the OIG report is dated 8 June 2026, verified against the OIG report page. Re-dated to background; the in-window item scored is the Senate PSI (Blumenthal/Hawley) records demand from mid-July 2026. (2) **geo-group** — a Cal/OSHA workplace-safety settlement article dated 7 July 2026 describes a settlement signed in May 2026; both pre-window. Dropped as in-window evidence. (3) **atlanta** — the scan attributed a ~$1bn ICE detention-warehouse abandonment to Atlanta in July; the event is June 2026 and concerns Social Circle, Georgia, a separate municipality of ~5,000 people. Dropped on both date and attribution grounds. (4) **afghanistan** — reported figures of ~80 injured and 100+ missing from flash floods could not be tied to any dated statement; the UN's verified count of 26 killed, 9 injured was used instead. Re-dated but kept: (a) **geo-group** — Citizens Bank lending exit re-dated 2026-07-20 to 2026-07-17. (b) **atlanta** — ICE-office vigil re-dated 2026-07-26 to 2026-07-25.
+
+**GEO GROUP MATH-HYGIENE REFERRAL — NOT A CONDUCT FINDING.** GEO Group assessed at 11.9 against a published 6.6, a delta of +5.3 that numerically crosses the proposal threshold. **No proposal was emitted, and that is correct.** GEO Group publishes all eight dimensions at 1.5, which reconstructs canonically to 12.5, not 6.6 — a 5.9-point gap independently confirmed by `node site/scripts/validate-indexes.mjs`. The movement is pure arithmetic, not improved conduct; GEO Group's actual conduct finding (weakest dimensions: Awareness, Empathy, Equity, Accountability, Integrity, all raw 1.4) did not improve. Referred for index maintenance.
+
+**ASSESSOR-VARIANCE CONTROL — DELHI.** Delhi was anchored to its 2026-07-21 assessment (composite 31.9) and moved only on the five dimensions with direct in-window evidence, producing -4.7 (published 32.8 to assessed 28.1). An unanchored re-derivation from scratch produced roughly -6.5. The 1.8-point gap is assessor-to-assessor variance, not conduct; the anchored figure stands and no proposal was filed.
+
+**ANTI-FALSE-POSITIVE SCREENING** caught four items that would otherwise have looked like new findings: India (+1.3 from verified in-window government concessions — the education minister resigned 25 July and all three protester demands were accepted — but the entity surfaced on negative evidence, so no upgrade proposal was filed and the movement stays sub-threshold), Detroit (a Detroit-officials DHS letter is ~8 July 2026, pre-window, recorded as background), Atlanta and Abridge (+0.3 each, ordinary assessment variance with no backing conduct).
+
+**ATTRIBUTION RULE APPLIED** to eight entities: afghanistan and sudan (floors confirmed at 0 — floods and donor funding cuts are not state conduct), palantir-ai (floor confirmed at 0 — on its own conduct, ICE forwarding improperly obtained Medicaid data to Palantir's ELITE system), delhi/mumbai/kolkata (excessive force is Delhi-specific; Mumbai and Kolkata hosted peaceful protest only), geo-group (a lender's exit decision is not GEO Group's own conduct).
+
+**PRE-ADJUDICATION SCREENS APPLIED.** Two. UnitedHealth Group: a congressional records demand is an investigation, not a court finding; the denial-of-care pattern is already priced into the baseline. UC San Diego: the DOJ Title VI finding of 20 July 2026 is a contested agency determination in an open enforcement matter with no court decision, and the university publicly disputes it.
+
+**BAND CROSSINGS.** None. No entity assessed this cycle crossed a band, and band_change is false on all 20 results.
+
+**MATH-HYGIENE RECONSTRUCTION.** Canonical reconstruction was run against the published dimensions of all 20 entities. Nineteen reconstruct within the 0.5-point tolerance. GEO Group is the exception (published 6.6 vs. canonical 12.5, difference 5.9), independently confirmed by `validate-indexes.mjs` and referred for maintenance, not re-litigated as a scoring finding.
+
+**ROTATION-STATE.** `last_assessed`/`last_scanned`/`last_evidence_touch` updated for all 20 entities assessed. No composite, band, or rank was changed to a proposed figure, and `last_change_proposal` was not touched on any entity (zero proposals generated). Two pre-existing rank drifts corrected to published values: india 154 to 155, charter-communications 318 to 317.
+
+### High Priority — 2026-07-27 (Band Change or Delta >15)
+
+None this cycle.
+
+### Standard — 2026-07-27 (Delta 5-15, No Band Change)
+
+None this cycle.
+
+### Confirmations — 2026-07-27 (20 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Afghanistan | countries | 0.0 | 0.0 | 0.0 | Published floor; flash floods (26 killed) are a natural hazard, not state conduct — attribution rule — WATCH FLAG |
+| India | countries | 15.6 | 16.9 | +1.3 | Education minister resigned 25 Jul, all 3 protester demands accepted; entity surfaced on negative evidence (crackdown) so no upgrade proposal filed — WATCH FLAG |
+| Delhi | global-cities | 32.8 | 28.1 | -4.7 | Tear gas/batons on peaceful march, internet shutdown, forced hospitalization of hunger striker 20 Jul; anchored to 07-21 baseline to control assessor variance — WATCH FLAG |
+| Mumbai | global-cities | 32.8 | 31.9 | -0.9 | Hosted solidarity protest only; excessive force occurred in Delhi — attribution rule |
+| Kolkata | global-cities | 31.3 | 30.6 | -0.7 | Hosted solidarity protest only; excessive force occurred in Delhi — attribution rule |
+| Lahore | global-cities | 18.8 | 17.5 | -1.3 | Nationwide monsoon toll (109 dead) concentrated in Khyber Pakhtunkhwa, not Lahore; city's own drainage failure scored |
+| Detroit | us-cities | 37.5 | 38.1 | +0.6 | Officials' DHS pursuit-policy letter predates window (~8 Jul); federal enforcement conduct not scored as city conduct |
+| Atlanta | us-cities | 39.1 | 39.4 | +0.3 | Resident vigil outside federal ICE office, no City of Atlanta involvement documented; $1bn detention-warehouse claim dropped (Social Circle, GA, June 2026, different municipality) — WATCH FLAG |
+| Guatemala City | global-cities | 18.8 | 18.1 | -0.7 | Captured national justice system is Guatemala's Public Ministry/courts conduct, not municipal — attribution rule — WATCH FLAG |
+| UnitedHealth Group | fortune-500 | 10.2 | 9.4 | -0.8 | 71% denial figure resolves to 8 Jun 2026 OIG report, not July; in-window item is Senate PSI records demand — pre-adjudication screen — WATCH FLAG |
+| Palantir AI | ai-labs | 0.0 | 0.0 | 0.0 | Published floor; ICE forwarded improperly obtained Medicaid data to Palantir's ELITE deportation-targeting tool (court filings, 17 Jul) — WATCH FLAG |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Published floor; WFP warns of famine-recovery reversal from aid-funding cuts and conflict — WATCH FLAG |
+| Charter Communications | fortune-500 | 26.6 | 24.4 | -2.2 | NY appeals court upheld retaliation finding against employee age-discrimination complainant, 23 Jul |
+| University of California, San Diego | universities | 45.3 | 44.4 | -0.9 | DOJ Title VI admissions accusation is contested agency finding, no court decision, university disputes — pre-adjudication screen — WATCH FLAG |
+| GEO Group | fortune-500 | 6.6 | 11.9 | +5.3 | MATH-HYGIENE, NOT A CONDUCT FINDING: all 8 published dims at 1.5 reconstruct to canonical 12.5, not 6.6 (diff 5.9); confirmed by validate-indexes.mjs; referred for maintenance — WATCH FLAG |
+| Croatia | countries | 40.6 | 40.6 | 0.0 | Rotation; no in-window evidence; May 2026 rule-of-law downgrade baseline holds |
+| Timor-Leste | countries | 40.6 | 40.6 | 0.0 | Rotation; no in-window evidence; poverty/ASEAN-accession structure already priced |
+| Abraxas Petroleum | fortune-500 | 18.8 | 18.8 | 0.0 | Rotation; no in-window evidence, small producer with limited public disclosure |
+| Abridge | ai-labs | 60.9 | 61.2 | +0.3 | Rotation; no in-window evidence; ordinary assessment variance |
+| AI21 Labs | ai-labs | 60.9 | 60.6 | -0.3 | Rotation; no in-window evidence; sector-wide safety reporting only |
+
+### Open Calibration Flags — 2026-07-27
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~32 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~15 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 4 days |
+| Baxter International band-crossing proposal (60.9 -> 55.0) | Carried forward from 2026-07-22, still pending, not applied | 5 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 4 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 3 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 2 days |
+| Tunis first-baseline downgrade (34.4 -> 22.5) | Carried forward from 2026-07-26, still pending, not applied | 1 day |
+| Uganda band-crossing hold (20.3 -> 13.1) | Carried forward from 2026-07-26, still pending, not applied | 1 day |
+| Kathmandu first-baseline hold (18.8 -> 13.8) | Carried forward from 2026-07-26, still pending, not applied | 1 day |
+| GEO Group math-hygiene gap (published 6.6, canonical 12.5) | New tonight; not a conduct finding; needs coordinator-level index correction | Open since 2026-07-27 |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 4 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 5 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 2 days |
+
+### Operational Notes — 2026-07-27
+
+- Assessor runtime (BACKFILL, executed 2026-07-28): 2026-07-28T18:05:00Z-19:55:00Z (~1h50m); 20 entities assessed (15 priority, 5 rotation); 0 change proposals; 20 confirmations; 20 subdim sidecars written, all fresh.
+- Scanner date/attribution contamination for a fourth consecutive night (4 items tonight vs. 6 the night before, 2 the night before that, and 5 the night before that); all four caught and corrected before scoring; none entered the queue as a scored finding.
+- GEO Group's +5.3 delta numerically crossed the proposal threshold but was correctly withheld as a proposal because the movement is a stored math-hygiene artifact (published 6.6 vs. canonical 12.5), not a conduct change. Referred for index maintenance.
+- Total pending proposals in queue after tonight: 8 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu). None were touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
