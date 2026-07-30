@@ -8559,3 +8559,91 @@ None this cycle.
 - Scanner date/attribution contamination for a fourth consecutive night (4 items tonight vs. 6 the night before, 2 the night before that, and 5 the night before that); all four caught and corrected before scoring; none entered the queue as a scored finding.
 - GEO Group's +5.3 delta numerically crossed the proposal threshold but was correctly withheld as a proposal because the movement is a stored math-hygiene artifact (published 6.6 vs. canonical 12.5), not a conduct change. Referred for index maintenance.
 - Total pending proposals in queue after tonight: 8 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu). None were touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
+
+
+## 2026-07-28 — BACKFILL RUN | One Proposal (Taipei, flag-for-review — magnitude hold, NOT a sourcing hold), PENDING, Not Applied | 19 Confirmations | 20 Assessed | 7 Scanner Date/Attribution Corrections | Tier-1 Coverage Re-Run Surfaced Mauritania + Monrovia
+
+### Summary — 2026-07-28
+
+**BACKFILL RUN.** The 2026-07-28 assessor stage was executed 2026-07-30, with `assessment_date: 2026-07-28` throughout every artifact. Strict evidence-date discipline applied: no source dated after 2026-07-28 was scored, cited or referenced.
+
+**SCANNER TIER-1 COVERAGE RE-RUN.** The first 2026-07-28 scan pass grouped Tier-1 entities 2-9 per query for time efficiency while its own accounting still declared 150 individual searches. `validate-scan.mjs`'s Tier-1 coverage gate caught the mismatch once the accounting was corrected honestly, and the scan failed the documented floor (`tier_1_individual_searches 0 < required 150`). Rather than relax the floor, all 150 Tier-1 entities were re-searched individually on 2026-07-29/30. That re-run surfaced the two highest-priority findings of the night, both missed entirely by the grouped pass: **Mauritania** (144 migrants dead or missing off its coast, 14-18 July 2026, UNHCR, three independently dated sources) and **Monrovia** (mass opposition protest of 17 July 2026 and a disproportionate police response). Because the priority list is capped at 15, Mauritania and Monrovia displaced Florida and HCA Healthcare, whose findings remain recorded but were not assessed this cycle. Tier-2 (79 batched queries) and Tier-3 (17 sector sweeps) were not re-executed; their findings carry forward unchanged from the original batched pass.
+
+**ONE CHANGE PROPOSAL — TAIPEI, A NEW KIND OF HOLD.** Taipei assessed at 73.3 against a published 81.4 (delta -8.1), crossing Exemplary → Established. Unlike every other pending band-crossing this week, this is **not** a sourcing hold — the two-source, tier-4 bar is fully met (Taiwan's Control Yuan, a constitutional oversight body, censured the Taipei Department of Labor on 22 July 2026 over its handling of a 16-year-old McDonald's employee's sexual-assault report; the department's 27 July response blamed central-government law rather than acknowledging its own failure; this is the city's own agency, so the attribution rule does not shield it). It is a **magnitude** hold: only four of eight dimensions moved, each by 0.2 raw points or less (0.7 raw points total), but Taipei's published profile had exactly one dimension below 4.0, and moving three more below that line collapses the composite formula's integration premium from 8.0 to 2.0 — a mechanical ~6.0-point loss unrelated to the size of the underlying evidence. Recommendation is flag-for-review, status pending, not applied. Published score remains 81.4.
+
+**AUSTRIA DELIBERATELY NOT CROSSED OUT OF EXEMPLARY.** Austria confirmed at 81.8 against a published 83.0 (delta -1.2). A wider version of tonight's finding (scoring the family-reunification suspension across Empathy and Integrity as well as Equity) would have produced a composite near 76.5 and crossed Austria out of the Exemplary band — but the sourcing behind that wider version is tier-2/tier-3 only, with no tier-4 source, so it was not asserted. The narrower, better-sourced 81.8 stands. Published score remains 83.0.
+
+**SEVEN SCANNER DATE/ATTRIBUTION CORRECTIONS, FIFTH CONSECUTIVE NIGHT.** Austria's deportation-and-UN-inquiry claim (stale by a full year — 3 July 2025 deportation / 6 August 2025 UN letter, not 2026); Karachi's "triple its monthly rainfall" claim (traces to an AccuWeather title for Murtaza Wahab predating his June 2023 mayoralty); Mauritania's "intensified crackdown" claim (no in-window dated source); Medan's Siallagan detention (March 2024, inside a July-published HRW report); two Guayaquil misattributions (all incidents predate the window; the "near Guayaquil" drone-strike framing is geographically wrong — the documented torture was in Sucumbíos on the Colombian border); Amazon's layoff (decided May 2026, staff notified June 2026 — the in-window items are the WARN filing and its coverage).
+
+**FOUR ANTI-FALSE-POSITIVE SCREENS APPLIED.** Amazon (+0.3 raw from mechanical grid rounding with no supporting conduct, anchored back to published, net -0.3), Guayaquil and Mauritania (+0.3 each, arithmetic rebalancing not new conduct), Johnson & Johnson (+1.0, genuinely evidence-backed on the settlement-without-admission precedent but sub-threshold, no upgrade proposed).
+
+**SCOPE SEPARATION — META PLATFORMS VS. META AI.** Both share the 14 July 2026 AI-assisted-layoff-lawsuit triggering event but were scored on non-overlapping dimensions with no mirroring: Meta Platforms on the employment decision (AWR/EMP/ACT/INT, delta -1.5); Meta AI on system-design and fairness-testing disclosure (AWR/EQU/ACC, delta -1.9). The pre-existing ~8,000-person layoff (applied 26 May 2026) was not re-scored.
+
+**MATH-HYGIENE RECONSTRUCTION.** All 20 entities reconstruct within the 0.5-point tolerance (largest: Amazon 0.3, Meta AI 0.1). No new flags. Vanuatu and GEO Group remain open from prior cycles, referred for maintenance, not re-litigated.
+
+**ROTATION-STATE.** `last_assessed`/`last_scanned`/`last_evidence_touch` updated for exactly the 20 entities assessed. `last_change_proposal` set for Taipei only. No composite/band/rank was changed to a proposed figure. Five pre-existing rank drifts corrected to published values: Johnson & Johnson 315→314, Ford Motor 177→176, Mauritania 141→142, Albemarle 185→184, Ball Corporation 40→39. `validate-rotation-state.mjs` failures fell from 98 to 97 (Ford Motor's phantom 2026-06-18 assessment claim, with no report on disk, was corrected).
+
+### High Priority — 2026-07-28 (Band Change or Delta >15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Taipei | global-cities | 81.4 | 73.3 | -8.1 | medium | 2026-07-28 | [proposal](change-proposals/taipei.json) |
+
+*Note: Taipei is a magnitude hold, not a sourcing hold — see Summary above. The band-crossing sourcing bar (two independent sources, one tier-4, carrying a constitutional oversight body's determination) is fully met; the hold exists because roughly 6.0 of the 8.1-point composite fall is a scoring-formula effect (weakness-factor integration-premium collapse) rather than the size of the underlying evidence (0.7 raw dimension points across four areas).*
+
+### Standard — 2026-07-28 (Delta 5-15, No Band Change)
+
+None this cycle.
+
+### Confirmations — 2026-07-28 (19 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Johnson & Johnson | fortune-500 | 28.4 | 29.4 | +1.0 | $5.5B talc settlement, no liability admission — settlement-without-admission protocol, sub-threshold |
+| Meta Platforms | fortune-500 | 7.8 | 6.3 | -1.5 | AI-assisted layoff lawsuit; employment-decision dimensions; pre-adjudication screen — WATCH FLAG |
+| Meta AI | ai-labs | 26.3 | 24.4 | -1.9 | Same lawsuit; system-design/fairness-testing dimensions, no mirroring — WATCH FLAG |
+| Baku | global-cities | 18.8 | 16.9 | -1.9 | 9 journalists sentenced 12-15yr, Toplum TV case; national court, not municipal — WATCH FLAG |
+| Austria | countries | 83.0 | 81.8 | -1.2 | Family-reunification suspension (Equity only); wider scoring deliberately not asserted — WATCH FLAG |
+| Medan | global-cities | 18.8 | 18.1 | -0.7 | HRW case is March 2024 national-police conduct, outside window — WATCH FLAG |
+| Karachi | global-cities | 18.8 | 18.1 | -0.7 | Mayor's rain emergency; nationwide monsoon toll not attributed to city — WATCH FLAG |
+| Tegucigalpa | global-cities | 18.8 | 17.5 | -1.3 | Water rationing to 1.6M people; supply projected out 22 Aug — WATCH FLAG |
+| Ford Motor | fortune-500 | 42.5 | 41.9 | -0.6 | 60 recalls in 2026 vs. GM's 19; no injuries/deaths in-window — WATCH FLAG |
+| Amazon | fortune-500 | 12.8 | 12.5 | -0.3 | Port St. Lucie layoff decided May, notified June — screened false positive |
+| Guayaquil | global-cities | 20.3 | 20.6 | +0.3 | HRW report is US/Ecuador national conduct, pre-window — screened false positive — WATCH FLAG |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | Anchored to 07-24 baseline; toll roughly doubled, house-collapse cause data — WATCH FLAG |
+| Mauritania | countries | 20.3 | 20.6 | +0.3 | 144 dead at sea (not Mauritanian conduct) vs. 387 rescued (is) — screened false positive — WATCH FLAG |
+| Monrovia | global-cities | 18.8 | 17.5 | -1.3 | First-ever assessment; national police response to protest, not municipal — WATCH FLAG |
+| Albemarle | fortune-500 | 37.5 | 37.5 | 0.0 | Rotation; no in-window evidence |
+| Ball Corporation | fortune-500 | 60.9 | 60.6 | -0.3 | Rotation; no in-window evidence |
+| Barrick Gold | fortune-500 | 18.8 | 18.8 | 0.0 | Rotation; no in-window evidence — WATCH FLAG |
+| Colgate-Palmolive | fortune-500 | 62.5 | 62.5 | 0.0 | Rotation; no in-window evidence |
+| Corning | fortune-500 | 77.9 | 77.9 | 0.0 | Rotation; no in-window evidence |
+
+### Open Calibration Flags — 2026-07-28
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~33 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~17 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 5 days |
+| Baxter International band-crossing proposal (60.9 -> 55.0) | Carried forward from 2026-07-22, still pending, not applied | 6 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 5 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 4 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 3 days |
+| Tunis first-baseline downgrade (34.4 -> 22.5) | Carried forward from 2026-07-26, still pending, not applied | 2 days |
+| Uganda band-crossing hold (20.3 -> 13.1) | Carried forward from 2026-07-26, still pending, not applied | 2 days |
+| Kathmandu first-baseline hold (18.8 -> 13.8) | Carried forward from 2026-07-26, still pending, not applied | 2 days |
+| Taipei band-crossing magnitude hold (81.4 -> 73.3) | New tonight; sourcing bar met, magnitude needs coordinator-level calibration decision | Open since 2026-07-28 |
+| GEO Group math-hygiene gap (published 6.6, canonical 12.5) | Carried forward from 2026-07-27; not a conduct finding; needs coordinator-level index correction | 1 day |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 5 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 6 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 3 days |
+| Florida / HCA Healthcare deferred coverage | New tonight; both displaced from the top-15 priority list by Mauritania and Monrovia; findings recorded, not assessed | Open since 2026-07-28 |
+
+### Operational Notes — 2026-07-28
+
+- Assessor runtime (BACKFILL, executed 2026-07-30): 2026-07-30T09:10:00Z-11:40:00Z (~2h30m); 20 entities assessed (15 priority, 5 rotation); 1 change proposal; 19 confirmations; 20 subdim sidecars written, all fresh.
+- Scanner Tier-1 coverage re-run (executed 2026-07-29/30): 150 individually named Tier-1 searches replacing the original grouped pass; 7 verification searches for date corroboration; 253 total searches recorded, 3 over the 250-search methodology ceiling, disclosed as date-verification diligence rather than trimmed.
+- Scanner date/attribution contamination for a fifth consecutive night (7 items tonight vs. 4, 6, 2, and 5 the four nights before); all seven caught and corrected before scoring; none entered the queue as a scored finding.
+- Taipei's +5.3-point-equivalent magnitude hold is a distinct failure mode from the four sourcing-bar holds already in the queue (Baxter, Guinea-Bissau, Uganda, Microsoft AI) — it needs a coordinator-level formula-calibration decision, not additional sourcing.
+- Total pending proposals in queue after tonight: 9 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei). None were touched tonight except Taipei's addition; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as unapplied at their original published scores.

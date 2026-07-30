@@ -1,0 +1,90 @@
+{
+  "entity": "Taipei",
+  "slug": "taipei",
+  "index": "global-cities",
+  "assessment_date": "2026-07-28",
+  "assessment_file": "research/assessments/taipei-2026-07-28.md",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 16,
+    "dimensions": { "AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 4 }
+  },
+  "proposed_scores": {
+    "composite": 73.3,
+    "band": "Established",
+    "dimensions": { "AWR": 4, "EMP": 4, "ACT": 3.8, "EQU": 3.4, "BND": 4, "ACC": 3.8, "SYS": 3.8, "INT": 4 }
+  },
+  "score_delta": -8.1,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Taiwan's Control Yuan passed an investigation report and censure motion against the Taipei Department of Labor on 22 July 2026 over its handling of a sexual-assault case involving a 16-year-old McDonald's employee who later died by suicide.",
+    "The Control Yuan found the department failed to apply the best-interests-of-the-child principle, failed to guide the employer in time or provide and refer support to the victim, and had insufficient cross-agency communication.",
+    "The Taipei Department of Labor's public response on 27 July 2026 was that the problem lies in current central-government systems and law and that it had acted according to law — a deflection rather than an acknowledgment.",
+    "The Taipei Department of Labor is a Taipei City Government agency, so this is the entity's own conduct and the attribution rule does not shield the city.",
+    "Only four of eight dimensions moved, each by 0.2 or less on the raw 1-5 scale. The 8.1-point composite fall is amplified by the weakness factor in the scoring formula, which cuts the integration premium from 8.0 to 2.0 once four dimensions sit below 4.0."
+  ],
+  "evidence": [
+    {
+      "quote": "The department should have provided tangible assistance and initiated safety protocols, but instead only logged the incident in the system",
+      "claim": "The Control Yuan found the Taipei Department of Labor logged the report of the assault without providing the victim any support.",
+      "source": "Taipei Times, quoting Control Yuan member Yeh Ta-hua",
+      "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/07/25/2003861359",
+      "publishedDate": "2026-07-25",
+      "sourceTier": 2
+    },
+    {
+      "claim": "On 22 July 2026 the Control Yuan's Social Welfare and Health Environment Committee passed the investigation report and censure motion against the Taipei Department of Labor, identifying failures in child-best-interest prioritisation, timely employer guidance and victim resource referral, and cross-agency communication.",
+      "source": "Central News Agency (CNA), reporting the Control Yuan's formal censure",
+      "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 4
+    },
+    {
+      "claim": "After the censure, the Taipei Department of Labor responded that the problem lies in current central-government systems and laws.",
+      "source": "Chinese Television System (CTS)",
+      "url": "https://news.cts.com.tw/cts/life/202607/202607273060146.html",
+      "publishedDate": "2026-07-27",
+      "sourceTier": 2
+    },
+    {
+      "claim": "The Control Yuan identified three principal deficiencies in the Taipei Department of Labor's handling of the case and urged central ministries to develop cross-regulatory guidelines for underage part-time workers.",
+      "source": "Chinese Television System (CTS)",
+      "url": "https://news.cts.com.tw/cts/politics/202607/202607243059322.html",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "notes": "FLAG ONLY. Not applied to any published index. Recommendation is flag-for-review rather than downgrade because the direction of travel is clear and evidence-backed, but the magnitude is amplified by a known nonlinearity in the scoring formula and the finding rests on a single case. Taipei's published profile had exactly one dimension below 4.0 (weakness factor 0.8, integration premium 8.0). Moving three further dimensions below 4.0 cuts the premium to 2.0, so roughly 6.0 of the 8.1-point fall is the premium collapse rather than the raw dimension movement, which totals 0.7 raw points across four dimensions. Band-crossing sourcing bar IS met: two independent in-window sources with the Central News Agency report carrying a constitutional oversight body's formal determination. Human calibration is requested before a band change is applied. TRIGGERING-EVENT DATE: 22 July 2026 (Control Yuan committee passage and service of notice on the Taipei City Government). Taipei Times coverage of 25 July 2026 is follow-up. DEFICIENCY COUNT: outlets differ, CNA reports four and CTS three; this proposal describes the findings rather than asserting a count.",
+  "proposed_subdimensions": [
+    { "code": "AC1", "dimension": "ACT", "name": "Responsiveness", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24", "quote": "監院糾正北市勞動局" }] },
+    { "code": "AC2", "dimension": "ACT", "name": "Proportionality", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "AC3", "dimension": "ACT", "name": "Efficacy", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "AC4", "dimension": "ACT", "name": "Resource Mobilization", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "AC5", "dimension": "ACT", "name": "Follow-Through", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+
+    { "code": "EQ1", "dimension": "EQU", "name": "Universality", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "EQ2", "dimension": "EQU", "name": "Priority for Vulnerable", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/07/25/2003861359", "date": "2026-07-25", "quote": "The department should have provided tangible assistance and initiated safety protocols, but instead only logged the incident in the system" }] },
+    { "code": "EQ3", "dimension": "EQU", "name": "Bias Awareness", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://news.cts.com.tw/cts/politics/202607/202607243059322.html", "date": "2026-07-24" }] },
+    { "code": "EQ4", "dimension": "EQU", "name": "Access Design", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "EQ5", "dimension": "EQU", "name": "Historical Harm Acknowledgment", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://news.cts.com.tw/cts/politics/202607/202607243059322.html", "date": "2026-07-24" }] },
+
+    { "code": "AB1", "dimension": "ACC", "name": "Harm Acknowledgment", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://news.cts.com.tw/cts/life/202607/202607273060146.html", "date": "2026-07-27" }] },
+    { "code": "AB2", "dimension": "ACC", "name": "Correction Willingness", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "AB3", "dimension": "ACC", "name": "Transparency", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "AB4", "dimension": "ACC", "name": "Systemic Learning", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/07/25/2003861359", "date": "2026-07-25" }] },
+    { "code": "AB5", "dimension": "ACC", "name": "Reparative Action", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 2, "url": "https://news.cts.com.tw/cts/politics/202607/202607243059322.html", "date": "2026-07-24" }] },
+
+    { "code": "S1", "dimension": "SYS", "name": "Root Cause Orientation", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "S2", "dimension": "SYS", "name": "Long-Term Impact", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "S3", "dimension": "SYS", "name": "Interconnection Awareness", "score": 3, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "S4", "dimension": "SYS", "name": "Structural Critique", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] },
+    { "code": "S5", "dimension": "SYS", "name": "Coalitional Compassion", "score": 4, "confidence": "medium", "assessed_date": "2026-07-28", "evidence": [{ "tier": 4, "url": "https://www.cna.com.tw/news/aipl/202607240174.aspx", "date": "2026-07-24" }] }
+  ]
+}
