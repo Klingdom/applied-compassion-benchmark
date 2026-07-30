@@ -24,6 +24,13 @@
  * the date being claimed, and surface future-dated text and unverifiable
  * superlative/record claims — the specific pattern that produced the defect.
  *
+ * Extended 2026-07-30 after a fourth failure mode: the coverage-floor check
+ * in section 5 (MIN_T1_SEARCHES) proves a declared count meets a minimum but
+ * never checks it against what was actually reviewed. Section 5a cross-checks
+ * declared tier_breakdown counts against the actual tier assigned to each
+ * entity_reviews record, and checks that Tier-1 search counts cannot exceed
+ * the number of Tier-1 entities under the one-search-per-entity rule.
+ *
  * Usage:
  *   node research/scripts/validate-scan.mjs 2026-07-20
  *   node research/scripts/validate-scan.mjs 2026-07-20 --baseline research/scans/superseded/2026-07-20.v2-preclean.json
@@ -515,6 +522,55 @@ if (t3Searches < MIN_T3_SEARCHES) {
   fail(`Tier-3 sector sweeps ${t3Searches} < required ${MIN_T3_SEARCHES}`);
 }
 
+// ── 5a. TIER-COUNT CONSISTENCY: declared tier_breakdown vs actual records ──
+// Added 2026-07-30. The floor check above only proves the declared search
+// count meets MIN_T1_SEARCHES — it never proves that count agrees with the
+// tier the scan actually assigned each entity. Two confirmed defects slipped
+// through on exactly that gap:
+//   (1) 2026-07-29 carried 151 entity_reviews tagged tier:"T1" while
+//       declaring tier_1_entities:150 and tier_1_individual_searches:150.
+//       It passed because 150 >= MIN_T1_SEARCHES; the real defect (Arizona,
+//       base_priority 3, mistagged T1 when it actually surfaced through a
+//       Tier-3 sector sweep) was invisible to the floor check. Already fixed
+//       in that file.
+//   (2) 2026-07-27 declares tier_1_individual_searches:155 against
+//       tier_1_entities:150. Under a one-search-per-entity Tier-1 rule that
+//       is arithmetically impossible — you cannot run more individual
+//       one-per-entity searches than you have Tier-1 entities — and is one
+//       of the tells that these figures were equivalence estimates rather
+//       than real per-entity counts.
+const t1Records = reviews.filter((r) => r.tier === "T1").length;
+const t2Records = reviews.filter((r) => r.tier === "T2").length;
+const declaredT1Entities = tb.tier_1_entities;
+const declaredT2Entities = tb.tier_2_entities;
+
+if (declaredT1Entities !== undefined && t1Records !== declaredT1Entities) {
+  fail(
+    `Tier-1 entity_reviews count (${t1Records}) != declared tier_breakdown.tier_1_entities (${declaredT1Entities}) ` +
+      `— an entity is mistagged, or the declared count does not reflect what was actually reviewed`,
+  );
+}
+if (declaredT2Entities !== undefined && t2Records !== declaredT2Entities) {
+  fail(
+    `Tier-2 entity_reviews count (${t2Records}) != declared tier_breakdown.tier_2_entities (${declaredT2Entities}) ` +
+      `— an entity is mistagged, or the declared count does not reflect what was actually reviewed`,
+  );
+}
+
+if (t1Searches > t1Records) {
+  fail(
+    `tier_1_individual_searches (${t1Searches}) exceeds the number of Tier-1 entity_reviews records (${t1Records}) ` +
+      `— under a one-search-per-entity Tier-1 rule this is arithmetically impossible; the declared search count ` +
+      `cannot be genuine`,
+  );
+} else if (t1Searches < t1Records) {
+  warn(
+    `tier_1_individual_searches (${t1Searches}) is fewer than the number of Tier-1 entity_reviews records ` +
+      `(${t1Records}) — ${t1Records - t1Searches} Tier-1 entities may be under-covered; the MIN_T1_SEARCHES floor ` +
+      `may or may not already catch this depending on the numbers`,
+  );
+}
+
 // Every declared batch must have a search behind it. This is the exact
 // failure mode of run 1: 122 batches labelled, 14 searched.
 const batches = new Map();
@@ -613,6 +669,7 @@ console.log(`  entities reviewed : ${reviews.length}`);
 console.log(`  with evidence     : ${evidenced.length}`);
 console.log(`  fully sourced     : ${evidenced.length - unsourced.length}`);
 console.log(`  searches          : T1=${t1Searches} T2=${t2Searches} T3=${t3Searches} (total ${t1Searches + t2Searches + t3Searches})`);
+console.log(`  tier counts       : T1 records=${t1Records} (declared ${declaredT1Entities ?? "n/a"}), T2 records=${t2Records} (declared ${declaredT2Entities ?? "n/a"})`);
 console.log(`  batches           : ${batches.size} declared, ${batches.size - unsearchedBatches.length} searched`);
 console.log(`  source-dated      : ${evidenced.length - allUndatedEntities.length - mixedDatingEntities.length}/${evidenced.length} fully dated, ${mixedDatingEntities.length} mixed, ${allUndatedEntities.length} undated-only`);
 console.log("\n  per index (total / evidence / sourced):");
