@@ -13,3 +13,10 @@ site/out/
 # Pipeline temp files
 research/logs/
 *.tmp
+
+# Agent scratch generators (date-stamped, created per-run, never part of the pipeline)
+# Prevents a careless `git add -A` sweeping them into history.
+# See the prior cleanup commit "Remove agent scratch files committed by mistake".
+research/scripts/*_2026_*
+research/scripts/*_2027_*
+research/scripts/.gen-results-*.json
