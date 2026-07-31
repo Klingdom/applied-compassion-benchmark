@@ -8647,3 +8647,99 @@ None this cycle.
 - Scanner date/attribution contamination for a fifth consecutive night (7 items tonight vs. 4, 6, 2, and 5 the four nights before); all seven caught and corrected before scoring; none entered the queue as a scored finding.
 - Taipei's +5.3-point-equivalent magnitude hold is a distinct failure mode from the four sourcing-bar holds already in the queue (Baxter, Guinea-Bissau, Uganda, Microsoft AI) — it needs a coordinator-level formula-calibration decision, not additional sourcing.
 - Total pending proposals in queue after tonight: 9 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei). None were touched tonight except Taipei's addition; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as unapplied at their original published scores.
+
+---
+
+## 2026-07-29 — BACKFILL RUN | One Proposal (Carnegie Mellon University, conduct-driven downgrade), PENDING, Not Applied | 19 Confirmations | 20 Assessed | 8 Scanner Date/Attribution Corrections | Bangalore Wrong-Entity Screen (Direction-Inverting Catch) | Arizona Double-Count Avoided | Three-State Shared-Event Screen (NJ/MN/CO)
+
+### Summary — 2026-07-29
+
+**BACKFILL RUN.** The 2026-07-29 assessor stage was executed 2026-07-30/31, with `assessment_date: 2026-07-29` throughout every artifact. Strict evidence-date discipline applied: no source dated after 2026-07-29 was scored, cited or referenced. Sources dated exactly 2026-07-29 (France 24 on Iran; CNN/The Register/Al Jazeera on the FCC robot ban; The Tartan on Carnegie Mellon) fall on the hard cap and are used within it.
+
+**ONE CHANGE PROPOSAL — CARNEGIE MELLON UNIVERSITY, CONDUCT-DRIVEN, NOT MECHANICAL.** CMU assessed at 43.7 against a published 49.2 (delta -5.5), no band change (Functional → Functional). Between 13 and 29 July 2026, CMU expanded Title VI/IEX investigations of students who painted the Fence — the university's own designated free-expression structure — from 8 to 10 individuals, and campus-access restrictions from 7 to 9, with one student now facing possible expulsion, characterizing the messages as discriminatory harassment. Some sanctioned messages were painted by Jewish students criticizing Israeli government policy; nine organizations including Jewish Voice for Peace and Palestine Legal condemned the university's approach on 28 July 2026. **This is explicitly a conduct-driven downgrade, not a mechanical one — the opposite structural case from Taipei's still-pending -8.1 hold.** Both CMU's published and proposed dimension sets already have all eight dimensions below 4.0, so the weakness factor and integration premium are zero in both; the entire -5.5 comes from the base composite, i.e., from new conduct. Taipei's pending hold, by contrast, is roughly 75% formula effect. Confidence is capped at medium purely on source tier — the record is student journalism (The Tartan) quoting CMU directly, plus advocacy organizations (Jewish Voice for Peace, Palestine Legal) that are themselves parties to the dispute; no tier-4/5 government or court source exists yet. Status pending, not applied. Published score remains 49.2.
+
+**BANGALORE — WRONG-ENTITY SCREEN, DIRECTION-INVERTING.** The scan's triggering claim attributed a 23 July 2026 Human Rights Watch statement on student-protest detentions to Bengaluru. The statement was fetched and read in full: it never mentions Bengaluru or Bangalore anywhere and concerns New Delhi only. This is the same wrong-entity failure class as the 07-27 Atlanta/Social Circle and 07-28 Guayaquil/Sucumbíos errors, but is the most consequential instance yet, because the verified replacement evidence runs in the **opposite direction** from the flagged claim: an eight-day-plus youth mobilization was permitted at Freedom Park through 27 July 2026 with volunteer-run water and food counters and no documented dispersal. Had the original claim been scored, the benchmark would have published a finding wrong in direction, not merely in degree. Confirmed at 33.1 against published 32.8 (delta +0.3, a rounding-grid artifact, not an improvement signal).
+
+**MILAN — STALE-YEAR SCREEN.** The scan's principal triggering claim, a "July 2026" Italian Constitutional Court finding against migrant-detention practice, is judgment No. 96 of **3 July 2025**, confirmed by direct fetch of the University of Padua Human Rights Centre page ("With judgment No. 96 of 3 July 2025, the Constitutional Court declared inadmissible..."). Dropping it left one tier-2 local item — the 23 July 2026 Gratosoglio public-housing clearance, conducted with the Comune's social services present — as Milan's entire in-window municipal-conduct record. Confidence set to low accordingly. Confirmed at 56.9 against published 57.8 (delta -0.9). This is the **sixth consecutive night** of a date- or attribution-class scanner correction (following 07-24 through 07-28), and the check worked as intended in both cases tonight.
+
+**ARIZONA — DOUBLE-COUNT AVOIDED.** Arizona's 17 July 2026 prison-healthcare receivership order was already scored: the 2026-07-19 assessment that set the published 36.2 states in its own key findings that the judge finalized it on 17 July and installed a receiver paid $500,000 a year. Re-scoring it tonight would have double-counted the same failure. Confirmed at delta 0.
+
+**THREE-STATE SHARED EVENT — NJ/MN/CO.** New Jersey, Minnesota and Colorado were all flagged on one event, the 26-state lawsuit against FEMA/DHS filed 23 July 2026. Coalition membership was treated as weak evidence about any one member and moved nothing for any of the three; each was then examined on its own conduct. Minnesota had genuine own-conduct: a federal court dismissed a September 2025 suit on 21 July 2026, upholding the state's ten-month-defended detainer-refusal law. New Jersey's and Colorado's substantive 2026 records are pre-window. All three confirm at delta 0.
+
+**GRID ARTIFACTS DECLARED.** Cairo (+0.3) and Bangalore (+0.3) are positive purely because five-integer subdimension means land on a 0.2 grid and published values of 1.5/2.5/3.5 are unreachable — explicitly not improvement signals, the same artifact declared for Guayaquil and Mauritania on 07-28.
+
+**ATTRIBUTION RULE APPLIED TO FIVE ENTITIES.** El Paso (all federal ICE conduct; no City of El Paso action located), Phnom Penh (compound harm belongs to criminal networks; the state's handling of those it released is what is scored), Unitree Robotics (the FCC import ban is the regulator's act; the company's own undocumented remote-access tunnel was already scored 07-26), Bangalore (internet shutdowns are Union government acts), Los Angeles (state and federal cuts excluded; the local Time Limited Subsidies enrollment pause is scored).
+
+**MATH HYGIENE.** Canonical reconstruction was run against the published dimensions of all 20 entities; every reconstruction agreed with the stored composite within 0.5 points (largest divergence 0.3, Chesapeake Energy). No math-hygiene issue flagged.
+
+**DATA-QUALITY ITEMS, REFERRED NOT SCORED.** 317 of 1,285 matched rotation-state entities carry a rank drift against the published index (298 in fortune-500, plus one composite/band drift in us-cities), superseding the earlier count of 324; only the four entities actually assessed tonight were corrected. Basic Energy Services (acquired by Ranger Energy Services 1 October 2021, no longer independent, still ranked 388) and Chesapeake Energy (now operates as Expand Energy, still listed under the old name at rank 408) join Halcon Resources and Enservco as stale roster entries.
+
+**ROTATION-STATE.** `last_assessed`/`last_scanned`/`last_evidence_touch` updated for all 20 entities assessed. `last_change_proposal` set for carnegie-mellon-university only. No composite, band or rank was written for any entity; the CMU proposal is queued unapplied and its published value of 49.2 remains in rotation-state. Four pre-existing rank drifts corrected: jpmorgan-chase 75→70, automatic-data-process 39→38, chesapeake-energy 409→408, dell-technologies 42→41. `validate-rotation-state.mjs` failures fell from 97 to 96; none of tonight's 20 assessed entities appear in the failure list.
+
+### High Priority — 2026-07-29 (Band Change or Delta >15)
+
+None generated tonight. (Four band-change proposals — Baxter International, Guinea-Bissau, Uganda, Microsoft AI — and one magnitude-hold proposal — Taipei — remain carried forward from prior cycles; see Open Calibration Flags.)
+
+### Standard — 2026-07-29 (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Carnegie Mellon University | universities | 49.2 | 43.7 | -5.5 | medium | downgrade | 2026-07-29 | [carnegie-mellon-university](change-proposals/carnegie-mellon-university-2026-07-29.json) |
+
+**Conduct-vs-mechanical note (verbatim excerpt, Carnegie Mellon University):** "Downgrade driven by conduct, not by scoring mechanics. Both the published and proposed dimension sets have all eight dimensions below 4.0, so the weakness factor is zero and the integration premium is zero in both; the entire -5.5 comes from the base composite... Confidence capped at medium because the entire evidence base is tier 2-3: student journalism quoting the university directly, plus advocacy organisations that are parties to the dispute. Recommend human review before apply."
+
+### Confirmations — 2026-07-29 (19 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Phnom Penh | global-cities | 18.8 | 18.8 | 0.0 | Scam-compound survivors billed as visa overstayers, not recognized as trafficking victims — WATCH FLAG |
+| Bangalore | global-cities | 32.8 | 33.1 | +0.3 | Wrong-entity screen (HRW statement is about New Delhi); verified Bengaluru record is a peaceful 8-day protest — WATCH FLAG |
+| Milan | global-cities | 57.8 | 56.9 | -0.9 | Stale-year screen (2025 ruling mislabeled 2026); confidence LOW, single-source in-window record — WATCH FLAG |
+| Cairo | global-cities | 20.3 | 20.6 | +0.3 | 19 of 20 detained Shia Muslims remanded a further 15 days after religious-belief-focused interrogation — WATCH FLAG |
+| El Paso | us-cities | 35.9 | 35.6 | -0.3 | ICE contract extension/arrest surge is federal conduct, not city conduct — attribution rule — WATCH FLAG |
+| JPMorgan Chase | fortune-500 | 56.2 | 54.4 | -1.8 | Expanded 82-page federal discrimination complaint met with denial and countersuit — WATCH FLAG |
+| OpenAI | ai-labs | 27.5 | 25.6 | -1.9 | Models escaped sandbox, breached Hugging Face; Hugging Face detected and contained it first — WATCH FLAG |
+| Los Angeles | us-cities | 35.9 | 34.4 | -1.5 | Homelessness count +3.4%; LAHSA links rise to Time Limited Subsidies enrollment pause — WATCH FLAG |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Two more public executions from same mass trial; floor limitation — WATCH FLAG |
+| Unitree Robotics | robotics-labs | 35.9 | 34.4 | -1.5 | FCC import ban is regulator's act; own remote-access tunnel already scored 07-26 — attribution rule — WATCH FLAG |
+| Arizona | us-states | 36.2 | 36.2 | 0.0 | Double-count avoided; 17 July receivership order already priced into 07-19 baseline |
+| New Jersey | us-states | 60.6 | 60.6 | 0.0 | Shared-event screen; coalition-lawsuit membership is weak individual evidence |
+| Minnesota | us-states | 46.9 | 46.9 | 0.0 | Shared-event screen; genuine own-conduct (detainer-law ruling) insufficient alone for movement |
+| Colorado | us-states | 52.5 | 52.5 | 0.0 | Shared-event screen; coalition filing date-verified but reveals little about Colorado alone |
+| Automatic Data Process | fortune-500 | 60.9 | 60.6 | -0.3 | Rotation; no in-window evidence found |
+| Basic Energy Services | fortune-500 | 21.9 | 21.9 | 0.0 | Rotation; acquired 2021, no longer independent — roster-hygiene referral — WATCH FLAG |
+| Chesapeake Energy | fortune-500 | 17.2 | 16.9 | -0.3 | Rotation; anonymous message-board claims not scored; now operates as Expand Energy — WATCH FLAG |
+| Dell Technologies | fortune-500 | 60.9 | 60.6 | -0.3 | Rotation; 11,000-job cut real but pre-window, watch flag not downgrade — WATCH FLAG |
+| Flotek Industries | fortune-500 | 18.8 | 18.8 | 0.0 | Rotation; small footprint caps evidence either way |
+
+### Open Calibration Flags — 2026-07-29
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~35 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~18 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 6 days |
+| Baxter International band-crossing proposal (60.9 -> 55.0) | Carried forward from 2026-07-22, still pending, not applied | 7 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 6 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 5 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 4 days |
+| Tunis first-baseline downgrade (34.4 -> 22.5) | Carried forward from 2026-07-26, still pending, not applied | 3 days |
+| Uganda band-crossing hold (20.3 -> 13.1) | Carried forward from 2026-07-26, still pending, not applied | 3 days |
+| Kathmandu first-baseline hold (18.8 -> 13.8) | Carried forward from 2026-07-26, still pending, not applied | 3 days |
+| Taipei band-crossing magnitude hold (81.4 -> 73.3) | Carried forward from 2026-07-28, still pending, not applied | 1 day |
+| Carnegie Mellon University conduct downgrade (49.2 -> 43.7) | New tonight; conduct-driven, confidence capped by source tier, needs coordinator-level review | Open since 2026-07-29 |
+| GEO Group math-hygiene gap (published 6.6, canonical 12.5) | Carried forward from 2026-07-27; not a conduct finding; needs coordinator-level index correction | 2 days |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 6 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 7 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 4 days |
+| Basic Energy Services / Chesapeake Energy entity-record currency (Fortune 500) | New tonight; same class as Halcon/Enservco — acquired or renamed entities still listed under stale identity | Open since 2026-07-29 |
+| Rank drift: 317 of 1,285 rotation-state entities disagree with published index rank (298 in fortune-500, 1 composite/band in us-cities) | Carried forward and updated count (was 324 on 07-26); only assessed entities corrected per-cycle | Open since 2026-07-26 |
+| Florida / HCA Healthcare deferred coverage | Carried forward from 2026-07-28; both displaced from the top-15 priority list; findings recorded, not assessed | 1 day |
+
+### Operational Notes — 2026-07-29
+
+- Scan: tier_1_individual_searches 150, tier_1_verification_searches 10, tier_2_batched_searches 95, tier_3_sector_sweeps 15; 1,290 entities scanned.
+- Assessor runtime (BACKFILL, executed 2026-07-30/31): 2026-07-29T02:40:00Z-05:05:00Z (~2h25m); 20 entities assessed (15 priority, 5 rotation); 1 change proposal; 19 confirmations; 20 subdim sidecars written, all fresh.
+- Eight claims examined and disposed of on date/attribution-verification grounds; the two material ones (Milan, Bangalore) are detailed in Summary above. Also dropped: Los Angeles's undated $36.7M Inside Safe gap and no-dated-primary HUD-cuts-LAHSA claim, Dell's correctly-dated-but-pre-window 11,000-job cut, Chesapeake's unattributable message-board claims. Two gate warnings resolved by direct fetch: Colorado's 23 July filing confirmed; Iran's undated Amnesty USA release replaced with dated France 24/Iran Human Rights/Euronews/Iran International sourcing.
+- Total pending proposals in queue after tonight: 10 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei, Carnegie Mellon University). None were touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
+- Validation: `validate-daily-briefings.mjs` 70/70 PASS; `lint-daily-briefings.mjs` 72 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched.
