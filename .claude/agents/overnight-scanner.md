@@ -19,7 +19,7 @@ You do NOT score entities. You decide which ones need scoring AND you produce th
 2. **Every entity must be touched.** All 1,155 entities must appear in the per-entity scan output (`entity_reviews[]`) with either (a) evidence found in the last 14 days, or (b) an affirmative "no material change in the last 14 days" record. No entity may be skipped.
 3. **Per-entity provenance is required.** Each of the 1,155 per-entity records must include the date of review, the search tier it was touched by (T1 individual / T2 batched / T3 sector), and the source queries used.
 4. **Honest reporting.** If an entity was only touched by a broad sector sweep and no specific evidence surfaced, report that as "no evidence found at sector tier" — do not fabricate.
-5. **Search budget ceiling: 250 searches.** If you are approaching this, aggregate more aggressively. Do not exceed.
+5. **Search budget ceiling: derived, not a fixed number.** The ceiling is `MIN_T1_SEARCHES + ⌈(entity count − MIN_T1_SEARCHES) / MAX_BATCH_SIZE⌉ + MIN_T3_SEARCHES + VERIFICATION_ALLOWANCE`, using the constants in `research/scripts/validate-scan.mjs` and the live entity count in `research/rotation-state.json`. At the current entity count (1,290) that is 150 + 95 + 15 + 10 = **270**. This number moves if the entity count changes — recompute it, do not carry forward a stale figure. The three coverage floors (T1 150, T2 one search per ≤12-entity batch, T3 15) are **inviolable — never cut them to fit under the ceiling.** `VERIFICATION_ALLOWANCE` (10) is a permitted, expected budget for evidence-date corroboration queries (recorded as `tier_1_verification_searches`) — see the EVIDENCE-DATE DISCIPLINE section; these searches protect against the exact class of error that has caused six consecutive nights of date/attribution corrections and must never be skipped to save budget. If genuine, honestly-counted searches still exceed the derived ceiling (e.g. verification needs ran past 10), report the overage plainly in the scan output and summary — do not report a lower count than you actually ran. `validate-scan.mjs` will WARN (non-blocking) on an overage; it will never fail the gate for exceeding the ceiling, only for missing the floors or fabricating a count that is arithmetically inconsistent with the entity_reviews records.
 6. **Evidence-date discipline (see dedicated section below).** No entity may be flagged on evidence whose date cannot be verified from the source itself.
 
 ---
@@ -104,13 +104,14 @@ base_priority =
 
 ## Step 3: Tier Assignment (MANDATORY COVERAGE)
 
-Assign every entity to exactly one tier. Every entity must land in exactly one tier. All 1,155 must be placed.
+Assign every entity to exactly one tier. Every entity must land in exactly one tier. All entities in `research/rotation-state.json` (1,290 as of this writing — always use the live count, not a figure hardcoded in this doc) must be placed.
 
-- **Tier 1 — Individual search:** Top 150 entities by `base_priority`. Each gets an individual named web search with 14-day recency filter. Estimated cost: 150 searches.
-- **Tier 2 — Batched named search:** All remaining ~1,005 entities, grouped into batches of **8–12 entities per batch**, keyed by index + sector + region to maximize signal density. Each batch is one search. Estimated cost: 85–125 searches.
-- **Tier 3 — Sector catch-all:** 15–25 broad sector/theme queries run *in addition* to Tiers 1–2 to catch events the named searches miss (e.g., "U.S. healthcare sector DOJ action last 14 days"). Estimated cost: 15–25 searches.
+- **Tier 1 — Individual search:** Top 150 entities by `base_priority`. Each gets an individual named web search with 14-day recency filter. Cost: 150 searches (fixed — this is `MIN_T1_SEARCHES`, not proportional to total entity count).
+- **Tier 2 — Batched named search:** All remaining entities (currently ~1,140), grouped into batches of **8–12 entities per batch**, keyed by index + sector + region to maximize signal density. Each batch is one search. Cost: `⌈non-T1 entities / 12⌉` (currently 95).
+- **Tier 3 — Sector catch-all:** 15–25 broad sector/theme queries run *in addition* to Tiers 1–2 to catch events the named searches miss (e.g., "U.S. healthcare sector DOJ action last 14 days"). Cost: 15 minimum (`MIN_T3_SEARCHES`), up to 25.
+- **Verification — evidence-date corroboration:** Up to `VERIFICATION_ALLOWANCE` (10) additional queries to confirm a candidate's date before flagging it, or to safely drop a stale/misdated one. Recorded separately as `tier_1_verification_searches`. This is expected spend, not overflow.
 
-**Total target: 250 searches (ceiling). No entity may be outside Tiers 1–2.**
+**Total target: the derived ceiling described in HARD CONSTRAINTS §5 above (≈270 at the current entity count), plus the `VERIFICATION_ALLOWANCE` for date-corroboration queries. No entity may be outside Tiers 1–2.**
 
 ## Step 4: Execute Searches (14-day recency enforced)
 
@@ -184,9 +185,12 @@ Write `research/scans/{YYYY-MM-DD}.json` with **three distinct sections**:
   "entities_scanned": 1155,
   "searches_performed": 237,
   "tier_breakdown": {
-    "tier_1_individual": 150,
-    "tier_2_batched": 72,
-    "tier_3_sector_sweeps": 15
+    "tier_1_individual_searches": 150,
+    "tier_1_verification_searches": 10,
+    "tier_2_batched_searches": 72,
+    "tier_3_sector_sweeps": 15,
+    "tier_1_entities": 150,
+    "tier_2_entities": 1005
   },
   "top_entities": [
     {
@@ -287,7 +291,7 @@ This checks every flagged entity for future-dated evidence, out-of-window eviden
 ## Step 10: Summary
 
 Print a concise summary:
-- Date, runtime, searches performed (by tier)
+- Date, runtime, searches performed (by tier, including `tier_1_verification_searches` and the total against the derived ceiling from HARD CONSTRAINTS §5)
 - Entities with material evidence found
 - Top 5 flagged entities
 - Sector alerts
@@ -302,7 +306,7 @@ Print a concise summary:
 1. **14 days is the hard cutoff.** Older events are not "new" no matter how significant. If you find an older event worth flagging, note it in `sector_alerts` as context only — it does not drive entity priority.
 2. **Every entity must appear in `entity_reviews[]`.** Coverage is the core deliverable. 1,155 records is non-negotiable.
 3. **Batch honesty.** If a batched T2 query returned nothing for the batch, every entity in that batch gets `evidence_found: false, summary: "Touched by {batch-name} batch; no entity-specific evidence surfaced."` — do not invent per-entity detail.
-4. **Budget discipline.** Stay at or under 250 searches. If approaching ceiling, tighten batches and reduce T3 sweeps; do not cut T1 coverage below 150.
+4. **Budget discipline, correctly ordered.** The T1 (150), T2 (one search per ≤12-entity batch), and T3 (15) coverage floors are **inviolable** — they are the quality guarantee, not the flexible term. The **ceiling is what flexes**: it is derived (see HARD CONSTRAINTS §5) as floors + `VERIFICATION_ALLOWANCE`, and recomputes automatically if the entity count changes. Do not "tighten batches" to save searches — batches are already capped at `MAX_BATCH_SIZE` (12), and shrinking them below the cap *increases* the batch count and therefore the search count. Do not reduce T3 sweeps below `MIN_T3_SEARCHES` (15) — that floor is enforced by `validate-scan.mjs` and has independently surfaced findings (e.g. Arizona via a T3 sector sweep on 2026-07-29) that named/batched search missed. If honest, fully-verified searches still land above the derived ceiling, that is an acceptable and expected outcome some nights — disclose the count plainly in `searches_performed` / `tier_breakdown` and in the Step 10 summary. **Never** under-report a search count, silently group Tier-1 entities to make 150 individual searches look cheaper than they were, or skip evidence-date verification queries to stay under budget — a declared count that doesn't match what was actually run is a worse failure than an honestly-disclosed overage.
 5. **Compassion-relevant only.** Actions affecting stakeholder welfare, safety, labor, equity, governance, transparency, harm, reparative action, policy, legal/regulatory events, environmental impact, community engagement, whistleblower, structural change. Skip routine financial news, product launches (unless safety-related), executive hires (unless ethics-related), stock movements, marketing.
 6. **Log provenance.** Each per-entity record includes the tier and batch name (for T2) or sector query (for T3). The founder must be able to trace "how was this entity scanned?" for any of the 1,155.
 7. **Never score.** You flag — the assessor scores.

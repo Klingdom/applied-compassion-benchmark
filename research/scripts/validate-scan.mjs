@@ -49,6 +49,16 @@ const LOOKBACK_DAYS = 14;
 const MIN_T1_SEARCHES = 150;
 const MIN_T3_SEARCHES = 15;
 const MAX_BATCH_SIZE = 12;
+// Permitted budget for evidence-date corroboration queries (recorded as
+// tier_1_verification_searches), on top of the T1/T2/T3 coverage floors.
+// Added 2026-07-31 after 07-29 (10 verification searches) and 07-30 (9)
+// both had to breach the old fixed 250-search ceiling — undisclosed the
+// first time this happened (07-24), honestly disclosed since. See the
+// SEARCH_CEILING derivation below: floors alone (150 + 95 T2 batches + 15
+// at the current 1,290-entity rotation count) already total 260, before a
+// single verification query — the fixed 250 ceiling was arithmetically
+// unsatisfiable together with the floors it was supposed to coexist with.
+const VERIFICATION_ALLOWANCE = 10;
 const REGRESSION_DROP_THRESHOLD = 10;
 const URL_DATE_FAIL_GAP_DAYS = 31; // URL-embedded date older than evidence_date by more than this -> blocking
 const URL_DATE_WARN_GAP_DAYS = 8; // ...older by at least this many days -> warning
@@ -512,14 +522,41 @@ if (urlDateWarnLater.length) {
 // ── 5. Search coverage actually performed ──────────────────────────────────
 const tb = scan.tier_breakdown ?? {};
 const t1Searches = tb.tier_1_individual_searches ?? tb.tier_1_individual ?? 0;
+const t1VerificationSearches = tb.tier_1_verification_searches ?? 0;
 const t2Searches = tb.tier_2_batched_searches ?? 0;
 const t3Searches = tb.tier_3_sector_sweeps ?? 0;
+const totalSearches = t1Searches + t1VerificationSearches + t2Searches + t3Searches;
+
+// Derived search ceiling — NOT a fixed magic number. Recomputes from the
+// live rotation-state.json entity count so it does not silently go stale
+// the way the old fixed "250" did (floors alone reached 260 once the
+// rotation grew past ~1,190 entities at MAX_BATCH_SIZE=12, before this was
+// caught on 2026-07-31). T1 is a fixed-size tier (top 150 by priority, not
+// proportional to total entity count) per overnight-scanner.md Step 3.
+const nonT1Entities = Math.max(rotationKeys.length - MIN_T1_SEARCHES, 0);
+const requiredT2Batches = Math.ceil(nonT1Entities / MAX_BATCH_SIZE);
+const searchCeiling = MIN_T1_SEARCHES + requiredT2Batches + MIN_T3_SEARCHES + VERIFICATION_ALLOWANCE;
 
 if (t1Searches < MIN_T1_SEARCHES) {
   fail(`Tier-1 individual searches ${t1Searches} < required ${MIN_T1_SEARCHES}`);
 }
 if (t3Searches < MIN_T3_SEARCHES) {
   fail(`Tier-3 sector sweeps ${t3Searches} < required ${MIN_T3_SEARCHES}`);
+}
+
+// Ceiling is a non-blocking signal, not a floor. The T1/T2/T3 floors above
+// are the quality guarantee; a scanner should never be pushed toward
+// under-reporting a search count (or skipping evidence-date verification)
+// just to land under this number. WARN only — never fail here.
+if (totalSearches > searchCeiling) {
+  warn(
+    `Total searches ${totalSearches} exceed the derived ceiling ${searchCeiling} ` +
+      `(= ${MIN_T1_SEARCHES} T1 + ${requiredT2Batches} T2 batches [⌈${nonT1Entities} non-T1 entities / ${MAX_BATCH_SIZE}⌉] ` +
+      `+ ${MIN_T3_SEARCHES} T3 + ${VERIFICATION_ALLOWANCE} verification allowance, for ${rotationKeys.length} rotation entities). ` +
+      `Non-blocking: coverage floors take priority over the ceiling. If this is driven by ` +
+      `tier_1_verification_searches (${t1VerificationSearches}) doing real evidence-date corroboration, that is ` +
+      `expected and acceptable — disclose it, do not fabricate a lower count to hide it.`,
+  );
 }
 
 // ── 5a. TIER-COUNT CONSISTENCY: declared tier_breakdown vs actual records ──
@@ -668,7 +705,7 @@ console.log(`\nScan integrity gate — ${date}`);
 console.log(`  entities reviewed : ${reviews.length}`);
 console.log(`  with evidence     : ${evidenced.length}`);
 console.log(`  fully sourced     : ${evidenced.length - unsourced.length}`);
-console.log(`  searches          : T1=${t1Searches} T2=${t2Searches} T3=${t3Searches} (total ${t1Searches + t2Searches + t3Searches})`);
+console.log(`  searches          : T1=${t1Searches} verification=${t1VerificationSearches} T2=${t2Searches} T3=${t3Searches} (total ${totalSearches}, derived ceiling ${searchCeiling})`);
 console.log(`  tier counts       : T1 records=${t1Records} (declared ${declaredT1Entities ?? "n/a"}), T2 records=${t2Records} (declared ${declaredT2Entities ?? "n/a"})`);
 console.log(`  batches           : ${batches.size} declared, ${batches.size - unsearchedBatches.length} searched`);
 console.log(`  source-dated      : ${evidenced.length - allUndatedEntities.length - mixedDatingEntities.length}/${evidenced.length} fully dated, ${mixedDatingEntities.length} mixed, ${allUndatedEntities.length} undated-only`);
