@@ -1,0 +1,337 @@
+{
+  "entity": "Portugal",
+  "slug": "portugal",
+  "index": "countries",
+  "assessment_date": "2026-07-30",
+  "assessment_file": "research/assessments/portugal-2026-07-30.md",
+  "published_scores": {
+    "composite": 65.6,
+    "band": "Established",
+    "rank": 22,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 4,
+      "ACT": 3.5,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 60.6,
+    "band": "Established",
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 3.4,
+      "ACT": 3.4,
+      "EQU": 3.2,
+      "BND": 3.8,
+      "ACC": 3.4,
+      "SYS": 3.4,
+      "INT": 3.4
+    }
+  },
+  "score_delta": -5,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "Portugal's parliament passed a blanket ban on face-concealing clothing in public spaces on 17 July 2026 with a two-thirds majority; fines run from EUR200 to EUR4,000 and forcing another person to wear a face veil carries up to three years' imprisonment.",
+    "Amnesty International Portugal's executive director Joao Godinho Martins said the law is discriminatory and a threat to human rights, and Amnesty says removing explicit references to Islam from earlier drafts did not change that it disproportionately affects Muslim women who cover their faces as religious practice.",
+    "The bill originated with the far-right Chega party; the final text was reframed around security and public order with specified exceptions, partly to survive constitutional scrutiny under Article 41 of the Portuguese Constitution.",
+    "Movement is concentrated in Empathy (-0.6 raw, on Non-Judgment, Perspective-Taking and Cultural Empathy), Equity (-0.3 raw, on Universality and Bias Awareness) and Boundaries (-0.2 raw, on Consent Orientation). The remaining five dimensions move only 0.1 raw each on the integer scoring grid.",
+    "No band crossing occurs: Portugal moves from 65.6 to 60.6 and remains Established. Approximately -1.6 of the -5.0 is grid rounding and approximately -3.4 is conduct.",
+    "Recommendation is flag-for-review rather than downgrade because the law's human rights characterisation rests on a single tier-3 source (Amnesty International); no treaty body, Council of Europe or Portuguese court assessment exists yet."
+  ],
+  "evidence": [
+    {
+      "quote": "Portugal: Blanket ban on face coverings threatens several human rights",
+      "claim": "Amnesty International publicly assessed the July 2026 Portuguese face-covering ban as a threat to human rights",
+      "source": "Amnesty International",
+      "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+      "publishedDate": "2026-07-20",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Portugal legislation banning face coverings in public sparks criticism",
+      "claim": "Portugal's parliament passed legislation banning face coverings in public and it drew rights-group criticism",
+      "source": "JURIST",
+      "url": "https://www.jurist.org/news/2026/07/rights-group-criticizes-new-portugal-legislation-aiming-to-ban-face-coverings-in-public/",
+      "publishedDate": "2026-07-20",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Burqa ban passes in parliament as Amnesty International warns of rights violations",
+      "claim": "The ban cleared the Portuguese parliament and Amnesty International warned of rights violations",
+      "source": "Portugal Resident",
+      "url": "https://www.portugalresident.com/burqa-ban-passes-in-parliament-as-amnesty-international-warns-of-rights-violations/",
+      "publishedDate": "2026-07-20",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Portugal Parliament approved ban on burkas in public spaces",
+      "claim": "The Portuguese Parliament approved the ban on burqas in public spaces in July 2026",
+      "source": "The Portugal News",
+      "url": "https://www.theportugalnews.com/news/2026-07-09/portugal-parliament-approved-ban-on-burkas-in-public-spaces/1052861",
+      "publishedDate": "2026-07-09",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Portugal's parliament approves far-right party's bill to ban face veils",
+      "claim": "The measure originated as a bill from the far-right Chega party and had cleared an earlier parliamentary vote in October 2025",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2025/10/17/portugals-parliament-approves-far-right-partys-bill-to-ban-face-veils",
+      "publishedDate": "2025-10-17",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "notes": "Sub-threshold-adjacent proposal at exactly -5.0. No band change is asserted. Sourcing check: the law's existence, majority, penalty range and origin are corroborated across at least five independent tier-2 outlets, but its human rights characterisation rests on one tier-3 organisation and no tier-4-or-above assessment exists, so this is filed as flag-for-review under the precedent set for Microsoft AI (2026-07-25) and Uganda (2026-07-26). Scoring-mechanics check: the weakness factor is 0 in both the published and proposed sets, so no part of the delta is an integration-premium effect - this is the Carnegie Mellon (2026-07-29) case, not the Taipei (2026-07-28) case. Anti-false-positive screening: directionality matches (negative evidence, negative delta); no stale-baseline rationale is invoked; calibration is not relitigated.",
+  "proposed_subdimensions": [
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.humanrightsresearch.org/post/portugal-s-face-covering-ban-draws-human-rights-criticism",
+          "date": "2026-07",
+          "quote": "Portugal’s Face Covering Ban Draws Human Rights Criticism"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+          "date": "2026-07",
+          "quote": "Portugal: Blanket ban on face coverings threatens several human rights"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+          "date": "2026-07",
+          "quote": "Portugal: Blanket ban on face coverings threatens several human rights"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.jurist.org/news/2026/07/rights-group-criticizes-new-portugal-legislation-aiming-to-ban-face-coverings-in-public/",
+          "date": "2026-07",
+          "quote": "Portugal legislation banning face coverings in public sparks criticism"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+          "date": "2026-07",
+          "quote": "Portugal: Blanket ban on face coverings threatens several human rights"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+          "date": "2026-07",
+          "quote": "Portugal: Blanket ban on face coverings threatens several human rights"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.humanrightsresearch.org/post/portugal-s-face-covering-ban-draws-human-rights-criticism",
+          "date": "2026-07",
+          "quote": "Portugal’s Face Covering Ban Draws Human Rights Criticism"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/portugal-blanket-ban-on-face-coverings-threatens-several-human-rights/",
+          "date": "2026-07",
+          "quote": "Portugal: Blanket ban on face coverings threatens several human rights"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.theportugalnews.com/news/2026-07-09/portugal-parliament-approved-ban-on-burkas-in-public-spaces/1052861",
+          "date": "2026-07-09",
+          "quote": "Portugal Parliament approved ban on burkas in public spaces"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.humanrightsresearch.org/post/portugal-s-face-covering-ban-draws-human-rights-criticism",
+          "date": "2026-07",
+          "quote": "Portugal’s Face Covering Ban Draws Human Rights Criticism"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.humanrightsresearch.org/post/portugal-s-face-covering-ban-draws-human-rights-criticism",
+          "date": "2026-07",
+          "quote": "Portugal’s Face Covering Ban Draws Human Rights Criticism"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.humanrightsresearch.org/post/portugal-s-face-covering-ban-draws-human-rights-criticism",
+          "date": "2026-07",
+          "quote": "Portugal’s Face Covering Ban Draws Human Rights Criticism"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.theportugalnews.com/news/2026-07-09/portugal-parliament-approved-ban-on-burkas-in-public-spaces/1052861",
+          "date": "2026-07-09",
+          "quote": "Portugal Parliament approved ban on burkas in public spaces"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.theportugalnews.com/news/2026-07-09/portugal-parliament-approved-ban-on-burkas-in-public-spaces/1052861",
+          "date": "2026-07-09",
+          "quote": "Portugal Parliament approved ban on burkas in public spaces"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-30",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.jurist.org/news/2026/07/rights-group-criticizes-new-portugal-legislation-aiming-to-ban-face-coverings-in-public/",
+          "date": "2026-07",
+          "quote": "Portugal legislation banning face coverings in public sparks criticism"
+        }
+      ]
+    }
+  ]
+}
