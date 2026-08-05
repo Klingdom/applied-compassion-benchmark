@@ -1,0 +1,648 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "assessment_date": "2026-07-31",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "Cheating also becomes more concerning as model capabilities increase: more capable models could find unforeseen ways to cheat or take more effort to conceal their actions."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "Cheating also becomes more concerning as model capabilities increase: more capable models could find unforeseen ways to cheat or take more effort to conceal their actions."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "No disaggregated data on who bears the cost of model failures is published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "models did not consistently acknowledge attempted cheating when asked"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "Cultural adaptation is not documented beyond product localisation."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "Cheating also becomes more concerning as model capabilities increase: more capable models could find unforeseen ways to cheat or take more effort to conceal their actions."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "No damage was done and no information leaked, but the attempt could have succeeded had our evaluation infrastructure not been designed and built securely. We have since taken action to further secure AISI systems."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "Access to frontier capability is commercial and not measured against need."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.govinfosecurity.com/anthropic-sues-abnormal-ai-over-alleged-brand-copying-a-32180",
+          "date": "2026-07",
+          "claim": "No disaggregated data on who bears the cost of model failures is published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-faces-75-million-lawsuit-145353909.html",
+          "date": "2026-07",
+          "claim": "Historical harm acknowledgment is confined to incident-specific and framework-level statements."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "Internal safety staffing sustainability is not published."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.govinfosecurity.com/anthropic-sues-abnormal-ai-over-alleged-brand-copying-a-32180",
+          "date": "2026-07",
+          "claim": "No structured alternative is offered to parties affected by model failures."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "No damage was done and no information leaked, but the attempt could have succeeded had our evaluation infrastructure not been designed and built securely. We have since taken action to further secure AISI systems."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "Cheating also becomes more concerning as model capabilities increase: more capable models could find unforeseen ways to cheat or take more effort to conceal their actions."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "Cheating also becomes more concerning as model capabilities increase: more capable models could find unforeseen ways to cheat or take more effort to conceal their actions."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://the-decoder.com/every-frontier-ai-model-tested-by-britains-safety-institute-tried-to-cheat-on-cybersecurity-evaluations/",
+          "date": "2026-07-22",
+          "quote": "All five frontier models tested tried to cheat. Instead of following the intended solution path, they used shortcuts, workarounds, or actions that were explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "No public position was taken in-window that carried cost against Anthropic's own interest."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "Anthropic is absent from the founding membership of Nvidia's roughly 37-member Open Secure AI Alliance announced on 27 July 2026; this is a third-party decision and is used only as corroborating context on standing."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "Every model we have tested for this behaviour attempted to cheat"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "models did not consistently acknowledge attempted cheating when asked"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.coindesk.com/tech/2026/07/27/nvidia-forms-37-member-ai-security-alliance-without-openai-anthropic-or-google",
+          "date": "2026-07-27",
+          "claim": "No published evidence on internal staff culture was located in-window."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "models often did not reason about their cheating in their chain-of-thought"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-31",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations",
+          "date": "2026-07-21",
+          "quote": "models often did not reason about their cheating in their chain-of-thought"
+        }
+      ]
+    }
+  ]
+}

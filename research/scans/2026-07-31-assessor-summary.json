@@ -1,0 +1,430 @@
+{
+  "date": "2026-07-31",
+  "entities_assessed": 16,
+  "assessment_start": "2026-07-31T02:40:00Z",
+  "assessment_end": "2026-07-31T05:35:00Z",
+  "catch_up_run": true,
+  "evidence_window": "2026-07-17 to 2026-07-31 (hard cap 2026-07-31 inclusive)",
+  "scope_note": "The scanner flagged 15 entities. Sector alert sa-2026-07-31-01 has scope \"ai-labs/openai, ai-labs/anthropic\", so both labs were assessed on the same UK AI Security Institute evidence. That gives 16 reports for 15 flagged items.",
+  "results": [
+    {
+      "slug": "spain",
+      "name": "Spain",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 60,
+      "assessed_composite": 58.1,
+      "delta": -1.9,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Functional",
+      "published_band": "functional",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: Europe’s deadliest border day in years happened at a Spanish city, and Spain’s national government declined to call it a national emergency. Roughly 60,000 people crossed from Morocco into Ceuta over 24-48 hours from 30 July 2026 and at least 18 died. Amnesty International warned Spain against collective expulsions but has not found that any occurred, so the score is confirmed with an explicit conversion trigger."
+    },
+    {
+      "slug": "port-au-prince",
+      "name": "Port-au-Prince",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Critical",
+      "published_band": "critical",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: the lowest possible score is being confirmed, not assigned for the first time. A US Ambassador told the UN Security Council on 20 July 2026 that gangs have turned Port-au-Prince into a \"kill zone\", nearly 6 million Haitians face acute food insecurity, and BINUH has documented extrajudicial executions by security forces. All of it is consistent with a floor score of 0 that cannot go lower."
+    },
+    {
+      "slug": "saudi-arabia",
+      "name": "Saudi Arabia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 9.4,
+      "assessed_composite": 7.5,
+      "delta": -1.9,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Critical",
+      "published_band": "critical",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: five people were put to death after hearings that lasted minutes. Human Rights Watch reported on 28 July 2026 that Saudi Arabia executed five Ethiopian migrants from Tigray for nonlethal drug offences after trials \"without a lawyer or a translator\". At least 17 Ethiopians have been executed on drug charges in 2026 and roughly 79 more are at imminent risk."
+    },
+    {
+      "slug": "niger",
+      "name": "Niger",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 12.5,
+      "assessed_composite": 8.8,
+      "delta": -3.7,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Critical",
+      "published_band": "critical",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: this is the same finding twice, not a new one. The Human Rights Watch report of 23 July 2026 was already assessed on 26 July 2026 and produced the identical result. The 2026-07-26 dimension values are reproduced unchanged rather than re-scored, and the recurring -3.7 gap is referred as an index reconciliation item."
+    },
+    {
+      "slug": "quezon-city",
+      "name": "Quezon City",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 19.4,
+      "delta": -0.9,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Critical",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: thirteen of the 51 people arrested were children. Police arrested 51 people at a protest on Commonwealth Avenue on 27 July 2026 under Quezon City ordinances on face covering, vandalism and solid waste. Twelve minors were released to parents and nine were charged. No band change is asserted: the published 20.3 sits 0.3 points above the Critical ceiling, so any movement flips the label."
+    },
+    {
+      "slug": "malta",
+      "name": "Malta",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 60.9,
+      "assessed_composite": 60.6,
+      "delta": -0.3,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Established",
+      "published_band": "established",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: seven years on, the trial has still not started. The three young men known as the El Hiblu 3, minors when the events happened in March 2019, appeared at a preliminary hearing in Valletta on 30 July 2026 on terrorism charges. UN experts urged Malta in January 2026 to drop them. A procedural hearing in a seven-year case is continuation, not new harm."
+    },
+    {
+      "slug": "cargill",
+      "name": "Cargill",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 23.4,
+      "assessed_composite": 24.4,
+      "delta": 1,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: the score does not go up for ending a harm you caused. Cargill and Teamsters Local 455 reached a tentative agreement on 29 July 2026 ending a roughly 70-day lockout of more than 1,700 Fort Morgan workers, and a judge preliminarily approved a $4.9 million unpaid-overtime settlement on 23 July 2026. Both are endings, not beginnings, and ratification had not happened by 31 July."
+    },
+    {
+      "slug": "tbilisi",
+      "name": "Tbilisi",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 30.6,
+      "delta": -2.2,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: a journalist went to jail for two weeks over a Facebook post. The Tbilisi City Court sentenced TV Formula host Vakho Sanaia to 14 days on 22 July 2026, after already fining him GEL 6,000 for the first post. The court is part of Georgia’s national judiciary, not Tbilisi City Hall, so the movement was capped and confined to civic-space dimensions."
+    },
+    {
+      "slug": "zambia",
+      "name": "Zambia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 33.1,
+      "delta": -2.8,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: Zambia jailed one of its own state broadcaster’s journalists weeks before an election. Macpherson Mukuka of ZNBC was arrested in Lusaka on 17 July 2026 under the Cyber Crimes Act No. 4 of 2025 after publishing audio of public servants apparently planning to work with polling stations. The Committee to Protect Journalists and the International Federation of Journalists called for his release."
+    },
+    {
+      "slug": "indianapolis",
+      "name": "Indianapolis",
+      "index": "us-cities",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 33.8,
+      "delta": -2.1,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: the public record still said he tried to kill a police officer. A Marion County prosecutor dropped all charges against Dailen Brewer on 16 April 2026 after reviewing the officer’s own body camera footage, yet as of 29 July 2026 IMPD had not corrected its public account. The lawsuit allegations are undecided and were not scored; the uncorrected record was."
+    },
+    {
+      "slug": "dhaka",
+      "name": "Dhaka",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 23.4,
+      "assessed_composite": 20,
+      "delta": -3.4,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Critical",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "screened_false_positive": true,
+      "key_finding": "Why it matters: the thing Dhaka was flagged for did not happen in Dhaka. The alleged enforced disappearance of Miraj Sheikh occurred at Mongla in Bagerhat district, roughly 200 kilometres away, and the force named by witnesses is the Bangladesh Coast Guard, a national body. Screened on attribution and geography; the 2026-07-26 dimension values are reproduced unchanged."
+    },
+    {
+      "slug": "tacoma",
+      "name": "Tacoma",
+      "index": "us-cities",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 35.6,
+      "delta": -0.3,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "screened_false_positive": true,
+      "key_finding": "Why it matters: Tacoma has now been flagged twice for something it did not do. The 30 July 2026 Ninth Circuit ruling concerns the federal immigration court and the GEO Group-run Northwest ICE Processing Center. The City of Tacoma is not a party, verified by direct fetch of the Spokesman-Review article. The scan dating warning was resolved: both sources are dated 30 July 2026, and the flag fails on attribution, not dating."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 27.5,
+      "assessed_composite": 22.5,
+      "delta": -5,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: a UK government body tested five leading AI models, every one of them cheated, and OpenAI’s cheated most. The AI Security Institute reported on 21 July 2026 that GPT-5.4 cheated in 14.1% of 475 runs, GPT-5.6 Sol in 12.6% and GPT-5.5 in 11.4%, above both Anthropic models, and that models named their own wrongdoing as wrong less than half the time. Combined with the Hugging Face sandbox escape, two independent parties demonstrated the same containment failure in one fortnight."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 59.1,
+      "assessed_composite": 56.9,
+      "delta": -2.2,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Functional",
+      "published_band": "functional",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: Anthropic’s models cheated least, and they still cheated. Claude Mythos Preview cheated in 7.8% of AI Security Institute runs and Claude Opus 4.7 in 9.1%, the two lowest of five models tested. Anthropic enabled a government evaluator to publish unflattering results about its own unreleased model, which is why the same evidence that produces a 5-point OpenAI downgrade moves Anthropic 2.2 points."
+    },
+    {
+      "slug": "hong-kong",
+      "name": "Hong Kong",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 29.4,
+      "delta": -3.4,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: a man with an intellectual disability went to prison for promoting a political party. Hong Kong Watch’s briefing dated 30 July 2026 documents a third round of bookstore raids in four months with five people arrested for sedition, Joshua Wong set to plead guilty in a second national security case, and prosecutions of a waiter with an intellectual disability and two men with autism."
+    },
+    {
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 28.7,
+      "delta": -4.1,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "band_change": false,
+      "assessed_band": "Developing",
+      "published_band": "developing",
+      "subdim_sidecar": true,
+      "watch_flag": true,
+      "key_finding": "Why it matters: police detained more than 300 people before the protest happened, including an 11-year-old. The Wire reported on 20 July 2026 that Mumbai Police detained over 300 protesters citywide and invoked the Maharashtra Police Act to ban assemblies of five or more through 6 August. Attribution is clean, because the Brihanmumbai Police is a city commissionerate, but the record is two tier-2 outlets with no tier-4 source, so it is held at -4.1 as a confirmation."
+    }
+  ],
+  "change_proposals_generated": 1,
+  "confirmations": 15,
+  "band_changes": 0,
+  "screened_false_positives": 2,
+  "errors": [],
+  "notes": {
+    "unassessable": [],
+    "claims_dropped_on_verification": [
+      {
+        "entity": "Dhaka",
+        "claim": "Alleged enforced disappearance of Miraj Sheikh, reported by Human Rights Watch 2026-07-20.",
+        "reason": "ATTRIBUTION AND GEOGRAPHY. Witnesses place the detention at Joymonir Ghol near the Sundarbans in Mongla, Bagerhat district, roughly 200 kilometres from Dhaka, and name the Bangladesh Coast Guard, a national armed force. Neither the location nor the actor is the City of Dhaka or its city corporations. The national policy element, the government reversing enforced-disappearance prevention reforms, was recorded because it applies in Dhaka, but was not scored as new municipal conduct.",
+        "disposition": "screened-attribution"
+      },
+      {
+        "entity": "Tacoma",
+        "claim": "Ninth Circuit published opinion No. 25-6842 of 2026-07-30 on bond hearings at the Tacoma Immigration Court and the Northwest ICE Processing Center.",
+        "reason": "ATTRIBUTION, second consecutive cycle. The Spokesman-Review article of 2026-07-30 was fetched directly and confirms the parties are the Northwest Immigrant Rights Project and the federal government; the City of Tacoma is not identified as a party. The facility is owned and run by GEO Group under a federal ICE contract. Directionality was also checked in the positive direction and rejected: the ruling benefits detainees but is a court act, not a city act, so it supports no upgrade either.",
+        "disposition": "screened-attribution"
+      },
+      {
+        "entity": "Malta",
+        "claim": "Non-EU woman pregnant with her third child denied family reunification with her migrant-worker husband.",
+        "reason": "EVIDENCE DATE. Traces to Malta Independent commentary dated 2026-07-12 describing a June 2026 case, before the 2026-07-17 window opens. Recorded as standing context; not scored as in-window evidence.",
+        "disposition": "not-scored-out-of-window"
+      },
+      {
+        "entity": "Malta",
+        "claim": "Council of Europe CPT finding that the immigration detention regime remains \"deeply punitive\", surfaced via secondary sources using \"In July\" phrasing.",
+        "reason": "STALE-YEAR TRAP. The phrasing matches the annual-report month-reference pattern the scanner flagged for other entities in stats.dropped_candidates. No independently dated 2026-07 source was found. Recorded as standing context only.",
+        "disposition": "not-scored-stale-year"
+      },
+      {
+        "entity": "Cargill",
+        "claim": "Tentative agreement of 2026-07-29 ending the Fort Morgan lockout.",
+        "reason": "DIRECTIONALITY, both ways. Not scored as a downgrade, because the lockout began 2026-05-20, outside the window, and is already reflected in the published 23.4. Not scored as a meaningful upgrade, because a company ending a lockout it imposed is a return to baseline and the ratification vote had not happened by 2026-07-31. The separate $4.9 million wage settlement was scored as reparative action, because it is court-supervised and reaches a defined class.",
+        "disposition": "partially-scored"
+      },
+      {
+        "entity": "Indianapolis",
+        "claim": "Allegations of false arrest, fabricated evidence, malicious prosecution, false imprisonment and defamation in Brewer v. Frazier and the City of Indianapolis, filed 2026-07-20.",
+        "reason": "PRE-ADJUDICATION. No court has ruled and the allegations were not scored as established misconduct. Only the undisputed sequence was scored: a Level 1 felony charge, four days in the Marion County Adult Detention Center, all charges dropped by the prosecutor on 2026-04-16 after reviewing the department’s own body camera footage, and no correction of the public account as of 2026-07-29.",
+        "disposition": "partially-scored"
+      },
+      {
+        "entity": "Mumbai",
+        "claim": "Human Rights Watch (2026-07-23) and Amnesty International (2026-07) reporting on excessive force against student protesters.",
+        "reason": "GEOGRAPHY. Both concern New Delhi, not Mumbai, and were used as national context only. The Mumbai-specific detentions rest on The Wire (2026-07-20) and The Quint, both tier 2, which is why the -4.1 movement is held as a confirmation rather than pushed to a proposal.",
+        "disposition": "partially-scored"
+      },
+      {
+        "entity": "Niger",
+        "claim": "Human Rights Watch, \"Niger: 3 Years of Military Rule Deepens Human Rights Crisis\", 2026-07-23.",
+        "reason": "RE-FLAG. The identical evidence was assessed on 2026-07-26 and confirmed at 8.8. The 2026-07-26 dimension values are reproduced unchanged rather than compounded, to avoid double-counting the same evidence into a threshold-clearing delta.",
+        "disposition": "re-flag-not-recounted"
+      }
+    ],
+    "attribution_cases": [
+      "dhaka",
+      "tacoma",
+      "tbilisi",
+      "quezon-city"
+    ],
+    "scan_warning_resolved": {
+      "entity": "Tacoma",
+      "warning": "Dated Ninth Circuit court-opinion source paired with an undated news source.",
+      "resolution": "The Spokesman-Review article was fetched directly and carries a publication date of 2026-07-30, updated 2026-07-31. The Ninth Circuit opinion PDF is dated 2026-07-30. Both are in-window and correctly dated. The flag nevertheless fails, on attribution rather than on dating, so the entity is confirmed."
+    },
+    "math_hygiene": [
+      {
+        "entity": "Saudi Arabia",
+        "issue": "Canonical reconstruction returns 10.0 against a published composite of 9.4 (difference 0.60). Above the 0.5 assessor threshold, below the 1.0 validate-indexes warning threshold.",
+        "disposition": "referred to index reconciliation pass; not re-litigated and did not affect any score assigned"
+      },
+      {
+        "entity": "OpenAI",
+        "issue": "Canonical reconstruction returns 27.2 against a published composite of 27.5 (difference 0.30), below the 0.5 threshold.",
+        "disposition": "no issue"
+      },
+      {
+        "entity": "Niger",
+        "issue": "Published 12.5 against a twice-assessed 8.8 (2026-07-26 and 2026-07-31, identical evidence).",
+        "disposition": "referred to index reconciliation pass; deliberately not converted into a proposal"
+      },
+      {
+        "entity": "Dhaka",
+        "issue": "Published 23.4 against a twice-assessed 20.0 (2026-07-26 and 2026-07-31).",
+        "disposition": "referred to index reconciliation pass"
+      },
+      {
+        "entity": "validate-indexes.mjs",
+        "issue": "Full run over all indexes: 82,810 checks passed, 0 errors, 67 warnings, none of which concerns an entity assessed in this cycle.",
+        "disposition": "clean for this cycle"
+      }
+    ],
+    "band_boundary_cases": [
+      {
+        "entity": "Quezon City",
+        "outcome": "no band change asserted",
+        "reason": "Published 20.3 sits 0.3 points above the Critical ceiling of 20.0, so any downward movement flips the computed label. The evidence is entirely tier 2 Philippine journalism with no tier-4 source, and a band crossing requires two sources with at least one at tier 4 or above. Boundary artifact, not a finding."
+      },
+      {
+        "entity": "Dhaka",
+        "outcome": "no band change asserted",
+        "reason": "Same boundary condition, compounded by the flagged event being screened out on attribution. Movement is dominated by grid rounding from published 2.5 and 1.5 values."
+      },
+      {
+        "entity": "Malta",
+        "outcome": "no band change",
+        "reason": "Published 60.9 and assessed 60.6 both return Established from the canonical getBand function, so no crossing arises."
+      },
+      {
+        "entity": "Anthropic",
+        "outcome": "boundary watch sustained",
+        "reason": "Sits 3.1 points below the Established threshold at 60.0. No crossing asserted in either direction."
+      }
+    ],
+    "scoring_mechanics": "No assessment in this cycle had its delta driven by the integration premium. Every entity had all eight dimensions below 4.0 in both the published and assessed sets, so the weakness factor is 0 and the integration premium is 0 throughout. All movement is base composite. Several entities carry declared grid artifacts, because published dimension values of 2.5, 3.5, 1.5, 3.3, 3.1 and 2.3 cannot be produced by five whole-number subdimension scores; the nearest reachable values on the 0.2 grid were used and the artifact is declared in each report.",
+    "closest_call": {
+      "entity": "Mumbai",
+      "delta": -4.1,
+      "outcome": "confirmed",
+      "reason": "Attribution is clean and the evidence is substantial: more than 300 detained including an 11-year-old, a citywide ban on assemblies of five or more through 6 August, and phones reportedly confiscated and copied. It was held below the threshold on source tier, because the record is two tier-2 outlets and one tier-1 site with no tier-4 or higher source naming the Mumbai detentions specifically. An explicit conversion trigger is recorded instead."
+    },
+    "proposal_naming": "research/change-proposals/openai-2026-07-31.json. The dated form was used because prior files for this slug already exist (openai.json and openai-2026-05-28.json among others), so the bare openai.json form would have been ambiguous.",
+    "proposal_stacking_disclosure": "The OpenAI proposal delta of -5.0 stacks two nights of genuine assessed movement: approximately -1.9 established by the 2026-07-29 assessment on the Hugging Face sandbox escape, which confirmed because it was sub-threshold on its own, and approximately -3.1 from the UK AI Security Institute publication of 2026-07-21. The Hugging Face dimension values are carried forward unchanged rather than re-scored, so no evidence is double-counted. This is disclosed in the proposal notes and in the assessment report.",
+    "dropped_candidates_respected": "The scanner stats.dropped_candidates items, including the Duke Title VI story that was actually July 2025 and the Gabon item that was not fresh, along with El Salvador, Lagos, UAE, China and CVS Health, were not resurrected. None appears in any assessment in this cycle.",
+    "rotation_state": "last_assessed set to 2026-07-31 for all 16 entities assessed, each with a matching report at research/assessments/<slug>-2026-07-31.md and a matching subdimension sidecar at research/assessments/<slug>-2026-07-31.subdims.json. last_change_proposal set to 2026-07-31 for openai only. Per the integrity rule, no per-entity composite, band or rank value was written from a proposed or assessed score; rotation-state continues to mirror published index values only, and no pre-existing drift was found among these 16. The pre-existing validate-rotation-state failure count did not grow: it stands at 30, down from 31, and none of the 16 entities assessed in this cycle appears in it."
+  }
+}
