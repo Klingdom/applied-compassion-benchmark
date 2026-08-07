@@ -1,0 +1,360 @@
+{
+  "date": "2026-08-01",
+  "entities_assessed": 15,
+  "assessment_start": "2026-08-01T02:40:00Z",
+  "assessment_end": "2026-08-01T05:20:00Z",
+  "catch_up_run": true,
+  "evidence_window": "2026-07-19 to 2026-08-01 (hard cap 2026-08-01 inclusive)",
+  "scope_note": "The scanner flagged 15 entities for assessment. All 15 were assessed. Four pairs shared a single piece of evidence and two entities were repeat flags on evidence already scored; handling for each is recorded below.",
+  "results": [
+    {
+      "slug": "uganda",
+      "name": "Uganda",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 11.9,
+      "delta": -8.4,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "subdim_sidecar": true,
+      "key_finding": "UN Human Rights Office finding of 30 July 2026 raises the evidence tier on Uganda's post-election crackdown from watchdog reporting to a UN determination: 50+ opposition figures, 5 human rights defenders and 5 journalists harmed since January, 10 civil society organisations suspended, and a May 2026 statute carrying 10-year sentences for foreign-funded civic work."
+    },
+    {
+      "slug": "philippines",
+      "name": "Philippines",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 29.4,
+      "delta": -3.4,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Philippine National Police arrested about 51 protesters including 13 minors at a Quezon City demonstration on 27 July 2026; tier-2 evidence on one protest moves three of 40 subdimensions, below threshold."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50,
+      "assessed_composite": 50,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "The 31 July 2026 strike on Kyiv was carried out by Russia; Ukraine is the target, its own conduct was protective, and the scan's casualty figure of 32 killed matches the attack of 31 July 2025, a year earlier."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 15.6,
+      "assessed_composite": 16.9,
+      "delta": 1.3,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Same 20 July 2026 Delhi protest already assessed on 27 July; the scan's claim of a subsequent invocation of extraordinary detention powers does not hold, as the National Security Act renewal was issued 7 July and took effect 19 July, before the protest."
+    },
+    {
+      "slug": "saudi-arabia",
+      "name": "Saudi Arabia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 9.4,
+      "assessed_composite": 7.5,
+      "delta": -1.9,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Repeat flag on the identical 28 July 2026 Human Rights Watch report already assessed 31 July; the referred 0.60 reconstruction gap is resolved as a rounding artifact from one-decimal dimension storage, not a math error."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 2.5,
+      "assessed_composite": 2.5,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Five political executions between 16 and 22 July 2026 and a 1,500-prisoner hunger strike, already assessed 29 July; at a published 2.5 the maximum available delta is 2.5, so a proposal is arithmetically impossible."
+    },
+    {
+      "slug": "shanghai-jiao-tong-university",
+      "name": "Shanghai Jiao Tong University",
+      "index": "universities",
+      "source": "priority",
+      "published_composite": 22.7,
+      "assessed_composite": 23.1,
+      "delta": 0.4,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Flag screened as a false positive on attribution: a US Department of Defense Section 1286 research-funding ban is evidence about US risk posture, not about the university's own compassion conduct."
+    },
+    {
+      "slug": "kyiv",
+      "name": "Kyiv",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 50,
+      "assessed_composite": 46.9,
+      "delta": -3.1,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Same Russian strike as Ukraine; the city opened metro shelters and coordinated first responders, and the scan's casualty figures are a year-confusion with the 31 July 2025 attack."
+    },
+    {
+      "slug": "delhi",
+      "name": "Delhi",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 28.1,
+      "delta": -4.7,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Same protest as India, already assessed 27 July; Delhi Police is a central force under the Union Home Ministry, so the policing conduct is attributed to the national government, not the city."
+    },
+    {
+      "slug": "quezon-city",
+      "name": "Quezon City",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 19.4,
+      "delta": -0.9,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Repeat flag on the identical 27 July 2026 State of the Nation Address arrests already held on 31 July; reproduced without compounding, and no band change asserted at a 0.3-point boundary on tier-2 evidence."
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 56.2,
+      "assessed_composite": 54.4,
+      "delta": -1.8,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Expanded federal complaint of 27 July 2026 alleging racism and sexual coercion is an unproven pleading that JPMorgan Chase disputes; scored as a live allegation, not an established finding."
+    },
+    {
+      "slug": "louisiana",
+      "name": "Louisiana",
+      "index": "us-states",
+      "source": "priority",
+      "published_composite": 42.5,
+      "assessed_composite": 42.5,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Attribution screening decisive: the 528-bed detention facility is federally funded and privately operated, the deciding body is a local special district, and its protest-permit resolution had not been adopted within the window. No State of Louisiana conduct in the record."
+    },
+    {
+      "slug": "niger",
+      "name": "Niger",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 12.5,
+      "assessed_composite": 8.8,
+      "delta": -3.7,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Third flag in seven days on one Human Rights Watch report of 23 July 2026, already assessed 26 July and 31 July; prior values reproduced, no compounding."
+    },
+    {
+      "slug": "northwestern-university",
+      "name": "Northwestern University",
+      "index": "universities",
+      "source": "priority",
+      "published_composite": 42.2,
+      "assessed_composite": 42.5,
+      "delta": 0.3,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Court-compelled settlement payouts of 20-24 July 2026 from Northwestern's 43.5 million dollar share are offset by an AAUP statement of 22 July alleging a toxic corporate governance culture; the two cancel."
+    },
+    {
+      "slug": "fudan-university",
+      "name": "Fudan University",
+      "index": "universities",
+      "source": "priority",
+      "published_composite": 28.1,
+      "assessed_composite": 28.1,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Repeat flag on the identical Pentagon Section 1286 listing already screened as a false positive on 30 July; reproduced unchanged."
+    }
+  ],
+  "change_proposals_generated": 1,
+  "confirmations": 14,
+  "band_changes_proposed": 1,
+  "screened_false_positives": 3,
+  "paired_evidence_handling": [
+    {
+      "pair": [
+        "ukraine",
+        "kyiv"
+      ],
+      "shared_evidence": "Russian combined missile and drone strike on Kyiv, 2026-07-31",
+      "resolution": "Perpetrator is the Russian Federation. Neither entity is charged with the harm. Each was scored only on its own protective conduct: State Emergency Service rescue operations, metro stations opened as shelters, and mayoral coordination of first responders. Confirmed at delta 0.0 (Ukraine) and -3.1 (Kyiv). Scan casualty figures corrected as a year-confusion with the 2025-07-31 attack."
+    },
+    {
+      "pair": [
+        "india",
+        "delhi"
+      ],
+      "shared_evidence": "Policing of the Sansad Chalo protest, New Delhi, 2026-07-20",
+      "resolution": "Delhi Police is a central force reporting to the Union Home Ministry, not to the Delhi city government, so the policing conduct is attributed to India and only the municipal-controlled surface is scored at city level. Both entities had already been assessed on this evidence on 2026-07-27; prior values reproduced, not compounded. The scan claim of a subsequent invocation of extraordinary detention powers was screened out as a false positive."
+    },
+    {
+      "pair": [
+        "philippines",
+        "quezon-city"
+      ],
+      "shared_evidence": "Arrest of about 51 State of the Nation Address protesters including 13 minors, Quezon City, 2026-07-27",
+      "resolution": "The arresting agency is the national Philippine National Police, so the policing decision sits at national level; the city share is the face-covering ordinance cited as one ground for arrest. Quezon City had already been assessed on this exact evidence on 2026-07-31 and held, so its 40 values were reproduced without re-litigation or compounding. The Philippines moved three of 40 subdimensions. Both confirmed."
+    },
+    {
+      "pair": [
+        "shanghai-jiao-tong-university",
+        "fudan-university"
+      ],
+      "shared_evidence": "US Department of Defense Section 1286 list update, 2026-07-23",
+      "resolution": "Screened as a false positive on attribution at both entities independently. A foreign government's national-security research-funding decision is evidence about that government's risk posture, not about the listed institution's own compassion conduct. Fudan University had already been screened on this basis on 2026-07-30 and its values were reproduced. Shanghai Jiao Tong University received its first full 40-subdimension assessment, scored on its own institutional conduct. Both confirmed."
+    }
+  ],
+  "repeat_flag_handling": [
+    {
+      "slug": "saudi-arabia",
+      "prior_assessments": [
+        "2026-07-31"
+      ],
+      "handling": "Identical Human Rights Watch report of 2026-07-28. All 40 subdimension values reproduced unchanged. No second downgrade applied."
+    },
+    {
+      "slug": "niger",
+      "prior_assessments": [
+        "2026-07-26",
+        "2026-07-31"
+      ],
+      "handling": "Third flag on the Human Rights Watch report of 2026-07-23. All 40 values reproduced unchanged. No third downgrade applied."
+    },
+    {
+      "slug": "quezon-city",
+      "prior_assessments": [
+        "2026-07-31"
+      ],
+      "handling": "Identical State of the Nation Address arrest evidence. All 40 values reproduced. No band change asserted at the 0.3-point boundary."
+    },
+    {
+      "slug": "fudan-university",
+      "prior_assessments": [
+        "2026-07-30"
+      ],
+      "handling": "Identical Section 1286 listing, already marked screened_false_positive. All 40 values reproduced."
+    },
+    {
+      "slug": "india",
+      "prior_assessments": [
+        "2026-07-27"
+      ],
+      "handling": "Identical 2026-07-20 protest evidence. All 40 values reproduced."
+    },
+    {
+      "slug": "delhi",
+      "prior_assessments": [
+        "2026-07-27"
+      ],
+      "handling": "Identical 2026-07-20 protest evidence. All 40 values reproduced."
+    }
+  ],
+  "uganda_escalation_note": "Uganda is the one proposal and it is an escalation rather than a compounding. The 2026-07-26 assessment returned 13.1 against a published 20.3 and produced a flag-for-review, not an applied change, because the evidence was tier-3 Human Rights Watch reporting on military seizures. The trigger this cycle is a distinct and higher-tier document: the UN Human Rights Office statement of 2026-07-30, which documents a wider pattern (50+ opposition figures, 5 human rights defenders, 5 journalists, 10 civil society organisations suspended, the May 2026 Protection of Sovereignty Act). That raises the evidence tier from 3 to 5 and is what converts the standing flag into a proposal. Band crossing (Developing to Critical) is supported by two independent sources with one at tier 5, and the assessed 11.9 sits 8.1 points clear of the boundary, so it is not a rounding artifact.",
+  "math_hygiene": [
+    {
+      "slug": "saudi-arabia",
+      "published_composite": 9.4,
+      "canonical_reconstruction": 10,
+      "diff": 0.6,
+      "action": "no-change",
+      "resolution": "ROUNDING ARTIFACT, NOT AN ERROR. Referred open item resolved. The published 9.4 was set by the proposal applied 2026-04-20 whose dimensions were recorded on the 0-100 scaled axis (14.1, 9.4, 14.1, 6.3, 14.1, 3.1, 14.1, 0), mean exactly 9.4, with a zero integration premium because all dimensions are below 4.0. Converted to the 1-5 axis those are 1.564, 1.376, 1.564, 1.252, 1.564, 1.124, 1.564, 1.000. The index stores dimension raws at one decimal place, giving 1.6, 1.4, 1.6, 1.3, 1.6, 1.1, 1.6, 1.0. Recomputing the canonical formula from the ROUNDED stored values yields 10.0; recomputing from the UNROUNDED values yields 9.4 exactly. The 0.60 gap is rounding propagation amplified by the 25x scale factor between the 1-5 and 0-100 axes. The published 9.4 is the mathematically correct value from the underlying dimension scores. No change made to the published score. validate-indexes.mjs reports 0 errors and does not flag this entity, consistent with a warning threshold of 1.0 against a worst-case propagation of about 1.25."
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "published_composite": 56.2,
+      "canonical_reconstruction": 56.3,
+      "diff": 0.1,
+      "action": "no-change",
+      "resolution": "Within the 0.5-point assessor tolerance; ordinary one-decimal rounding. No action."
+    },
+    {
+      "slug": "all-others",
+      "action": "no-change",
+      "resolution": "The remaining 13 entities reconstruct to their published composites with a difference of 0.00."
+    }
+  ],
+  "scan_corrections": [
+    {
+      "slug": "ukraine",
+      "correction": "Scan reported 32 killed and almost 180 injured in Kyiv on 2026-07-31. Contemporaneous reporting gives 1 to 3 killed in the capital and about 8 to 9 killed nationwide. The higher figure closely matches the Kyiv strike of 2025-07-31, one year earlier, and appears to be a year-confusion."
+    },
+    {
+      "slug": "ukraine",
+      "correction": "Scan reported July 2026 as the highest monthly civilian casualty toll in Ukraine since 2022. The UN Human Rights Monitoring Mission in Ukraine reported on 2026-07-14 that JUNE 2026 was the worst month since April 2022, with at least 293 civilians killed and 1,990 injured."
+    },
+    {
+      "slug": "ukraine",
+      "correction": "The Al Jazeera article cited by the scanner for the Kyiv casualty figures does not contain those figures; the CNN gas-station article returned HTTP 451 and could not be verified, so the 200-plus figure was not relied upon in scoring."
+    },
+    {
+      "slug": "india",
+      "correction": "Scan reported a subsequent invocation of extraordinary detention powers after the 2026-07-20 protest. The National Security Act renewal for the Delhi Police Commissioner was issued 2026-07-07, effective 2026-07-19 to 2026-10-18, before the protest, as a routine periodic renewal. Delhi Police stated the linkage claims were misleading and lawyers for the protest movement confirmed all detainees had been released. Not scored."
+    },
+    {
+      "slug": "louisiana",
+      "correction": "Scan framed the 2026-07-23 protest-permit resolution as a restriction in force. The England Economic and Industrial Development District board took public comment and scheduled a vote for its August meeting; the measure was not adopted within the window and was not scored as enacted."
+    }
+  ],
+  "stale_scratchpad_false_positives_respected": "Tacoma and Dhaka were not resurrected. Both were screened as attribution false positives on 2026-07-31 and neither appears in any assessment in this cycle.",
+  "flags_for_coordinator": [
+    "Scanner rule: foreign-government sanctions and watchlist actions (for example a US Department of Defense Section 1286 listing) should not raise entity flags in this benchmark. One listing generated 2 of this cycle 15 flags and both resolved to confirmations.",
+    "Scanner rule: suppress re-flags where the primary source date has already been scored in a completed assessment. Six of 15 entities this cycle (Saudi Arabia, Niger, Quezon City, Fudan University, India, Delhi) were reproductions of prior assessments on identical evidence. Niger has now been flagged three times in seven days on one report.",
+    "Methodology note: reconstruction gaps below about 1.25 points on near-floor entities are expected rounding propagation from one-decimal dimension storage and should not be treated as math-hygiene findings. Consider two-decimal storage for dimension raws if tighter reconstruction is wanted.",
+    "Calibration note (flag-for-review, not a score move): Iran at a published 2.5 has four of eight dimensions at the absolute minimum of 1.0, so the maximum available delta is 2.5 and no evidence of any severity can clear the 5-point proposal threshold. Floor compression at the bottom of the countries index is a band-level calibration question for the coordinator, not something to relitigate through one-off score moves.",
+    "Data note: the Louisiana assessment file of 2026-07-19 records a published baseline of 21.9 at rank 16, while the index and rotation-state carry 42.5 at rank 28. The index value is authoritative and was used; the stale reference in the older assessment file is noted for the record."
+  ],
+  "rotation_state": "last_assessed set to 2026-08-01 for all 15 entities assessed, each with a matching report at research/assessments/<slug>-2026-08-01.md and a matching sidecar at research/assessments/<slug>-2026-08-01.subdims.json. last_change_proposal set to 2026-08-01 for uganda only. Per the integrity rule, no per-entity composite, band or rank was written from a proposed or assessed score; rotation-state continues to mirror published index values only. The Uganda proposal is pending and its 11.9 lives only in research/change-proposals/uganda-2026-08-01.json.",
+  "errors": []
+}

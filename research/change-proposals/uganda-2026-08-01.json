@@ -1,0 +1,738 @@
+{
+  "entity": "Uganda",
+  "slug": "uganda",
+  "index": "countries",
+  "assessment_date": "2026-08-01",
+  "assessment_file": "research/assessments/uganda-2026-08-01.md",
+  "published_scores": {
+    "composite": 20.3,
+    "band": "developing",
+    "rank": 145,
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 11.9,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 1.4,
+      "EMP": 1.4,
+      "ACT": 2,
+      "EQU": 1.6,
+      "BND": 1.6,
+      "ACC": 1,
+      "SYS": 1.8,
+      "INT": 1
+    }
+  },
+  "score_delta": -8.4,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "UN Human Rights Office, 30 July 2026: High Commissioner Volker Turk denounced Uganda's crackdown on dissent, erosion of the rule of law, increased military involvement in civilian institutions and shrinking civic space, describing a climate of fear across the country.",
+    "Since the 15 January 2026 general elections, at least 50 opposition leaders and supporters, five human rights defenders and five journalists have been subjected to human rights violations, including enforced disappearance, torture and arbitrary detention.",
+    "Ten leading civil society organisations have been suspended since January 2026; the May 2026 Protection of Sovereignty Act restricts international funding and foreign engagement with civil society and carries prison sentences of up to 10 years.",
+    "Human Rights Watch, 23 July 2026: armed soldiers seized National Unity Platform deputy president Muwanga Kivumbi on 10 July 2026, the day after a court released him on bail, and held him incommunicado for 13 days.",
+    "Escalation, not compounding: the 26 July 2026 assessment returned 13.1 and a flag-for-review on tier-3 evidence alone; the UN finding of 30 July 2026 raises the evidence tier to 5 and widens the documented pattern, which is what converts the flag into a proposal."
+  ],
+  "evidence": [
+    {
+      "quote": "Those who dare to speak out are silenced.",
+      "claim": "UN High Commissioner for Human Rights Volker Turk characterised Uganda's post-election crackdown on dissent.",
+      "source": "UN Office of the High Commissioner for Human Rights (verbatim reprint)",
+      "url": "https://www.miragenews.com/uganda-crackdown-on-fundamental-freedoms-1719245/",
+      "publishedDate": "2026-07-31",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Since the 15 January 2026 elections at least 50 opposition leaders and supporters, five human rights defenders and five journalists have been subjected to human rights violations, and 10 leading civil society organisations have been suspended.",
+      "source": "UN Office of the High Commissioner for Human Rights",
+      "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+      "publishedDate": "2026-07-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "It has been 13 days since armed soldiers seized Muwanga Kivumbi, a deputy president for the National Unity Platform, Uganda’s main opposition party.",
+      "claim": "Uganda's military forcibly disappeared a senior opposition figure and held him incommunicado.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+      "publishedDate": "2026-07-23",
+      "sourceTier": 3
+    },
+    {
+      "quote": "On July 10, the day after a court released Kivumbi on bail on politically related terrorism charges, armed plainclothes and uniformed soldiers dragged him from his car at a police roadblock.",
+      "claim": "The military acted directly against a court order granting bail.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+      "publishedDate": "2026-07-23",
+      "sourceTier": 3
+    },
+    {
+      "claim": "The UN demanded an end to the Ugandan clampdown on dissent following the January 2026 elections.",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+      "publishedDate": "2026-07-30",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "band_change_direction": "developing-to-critical",
+  "band_boundary_sensitivity": false,
+  "band_crossing_support": "Two independent sources, one at tier 5 (UN Office of the High Commissioner for Human Rights, 2026-07-30) and one at tier 3 (Human Rights Watch, 2026-07-23). Assessed value 11.9 sits 8.1 points below the Critical ceiling of 20.0, so the crossing is not a rounding artifact.",
+  "anti_false_positive_screening": "Baseline provenance checked against research/APPLIED_CHANGES.md and assessments dated 2026-06-01 through 2026-07-26; the published 20.3 is a long-standing baseline not set by this evidence. Directionality matches (negative evidence, downgrade). Not compounding: the 2026-07-26 run scored tier-3 HRW reporting and produced a flag-for-review with no applied change; the trigger here is a distinct tier-5 UN finding of 2026-07-30. No stale-baseline or calibration rationale is used.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The state tracks its critics closely but detects need only through crisis; the UN Human Rights Office had to compile the violation record from outside."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No differentiated pathway exists for opposition supporters, journalists or human rights defenders; the same coercive process is applied to all three groups."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No process exists to identify whose suffering is being missed; the UN, not the government, produced the count of those harmed."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Channels for low-power voices are being closed rather than opened: 10 leading civil society organisations have been suspended since January 2026."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The May 2026 Protection of Sovereignty Act was enacted without any published harm assessment of its effect on civil society."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.miragenews.com/uganda-crackdown-on-fundamental-freedoms-1719245/",
+          "date": "2026-07-31",
+          "quote": "Those who dare to speak out are silenced.",
+          "claim": "Interactions with critics are coercive rather than caring; the UN describes a climate of fear across the country."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+          "date": "2026-07-23",
+          "claim": "HRW records that soldiers dragged an opposition deputy president from his car the day after a court granted him bail, with no regard for his position or his family."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Treatment is explicitly differentiated by political affiliation: repression has increased against all those perceived to oppose the government."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Accounts of enforced disappearance, torture and arbitrary detention are not validated by the state; they are documented by the UN and by HRW."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+          "date": "2026-07-30",
+          "claim": "No evidence of cultural adaptation in state practice was found in-window; scored at the low-middle anchor on absence."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The state responds fast to dissent and slowly to need; there are no published response standards for citizen concerns."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Response is not calibrated to need: the Protection of Sovereignty Act imposes prison sentences of up to 10 years for foreign-funded civil society engagement."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+          "date": "2026-07-30",
+          "claim": "No outcome data on public services was published in-window; activity is not distinguished from effect."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/16/uganda-military-seizing-government-critics",
+          "date": "2026-07-16",
+          "claim": "Resources are visibly mobilised for security operations rather than for the populations the UN identifies as harmed."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+          "date": "2026-07-23",
+          "claim": "No follow-through mechanism exists for those detained or disappeared; families are left to pursue courts alone."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Care does not extend to those identified as opponents; at least 50 opposition leaders and supporters have been subjected to violations since the January 2026 elections."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Under pressure the state deprioritises the least powerful: five human rights defenders and five journalists were among those subjected to violations."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No disaggregated outcome data is published and political bias in treatment is denied rather than investigated."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+          "date": "2026-07-23",
+          "claim": "Access to legal process is obstructed; HRW records a deputy president held 13 days after armed soldiers seized him."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No acknowledgment of or reparation for prior post-election violence; the pattern is repeating after the January 2026 elections."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+          "date": "2026-07-30",
+          "claim": "No public evidence in-window on the sustainability of Uganda’s own frontline public services; scored conservatively."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The Protection of Sovereignty Act removes rather than builds civil society autonomy, restricting international funding and foreign engagement with civil society organisations."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The state communicates its rules clearly; the problem is the content of the rules, not their clarity."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+          "date": "2026-07-23",
+          "claim": "Refusal is delivered through prosecution rather than through alternatives; no structured alternative pathway exists."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/16/uganda-military-seizing-government-critics",
+          "date": "2026-07-16",
+          "claim": "Consent is absent where people are seized by soldiers and held incommunicado before being handed over for prosecution."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Harm is denied rather than acknowledged; the government has not accepted the UN Human Rights Office findings."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/23/ugandas-military-forcibly-disappears-opposition-politician",
+          "date": "2026-07-23",
+          "claim": "HRW documented military seizures on 16 July 2026 and again on 23 July 2026; the practice continued, and the UN issued its statement on 30 July 2026."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No performance or violation data is published by the state; the record is entirely external."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The same failure recurs across election cycles with no systemic review or change."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No reparative action toward those detained, disappeared or suspended is evidenced."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Root causes of political grievance are addressed by suppression rather than by reform."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+          "date": "2026-07-30",
+          "claim": "Long-horizon planning exists on paper in national development terms but is not connected to the rights harms documented."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Second-order effects on media, aid and civic institutions are visible but not addressed; media outlets have been forced to temporarily close."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "No institutional structural critique is possible where the structures in question are the ones doing the harm."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Coalitional capacity has been actively reduced: 10 leading civil society organisations suspended and foreign-funded engagement criminalised carries a direct penalty for coalition work."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Constitutional and African Charter commitments were abandoned under post-election political pressure."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/7/30/un-demands-end-of-ugandan-clampdown-on-dissent",
+          "date": "2026-07-30",
+          "claim": "Reform language is used internationally while the domestic practice runs the other way."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Military involvement in civilian institutions indicates internal culture is further from stated values than external communication."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "Decisions contradict the Ugandan Constitution and the African Charter without acknowledgment, per the UN High Commissioner."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "date": "2026-07-30",
+          "claim": "The practice has persisted and deepened across successive electoral cycles."
+        }
+      ]
+    }
+  ]
+}

@@ -8941,3 +8941,96 @@ None generated tonight. (Five band-crossing proposals — Guinea-Bissau, Baxter 
 - Two declared false positives on attribution (Tacoma, 2nd consecutive cycle; Dhaka), one closest-call held on source tier (Mumbai), one non-upgrade discipline case (Cargill), one re-flag-not-recounted (Niger), and one shared-evidence-divergent-outcome case (OpenAI proposal vs. Anthropic confirmation on identical AISI evidence) — six distinct methodology disciplines exercised in a single 16-entity cycle.
 - Total pending proposals in queue after tonight: 12 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei, Carnegie Mellon University, Portugal, OpenAI). None of the 11 carried-forward proposals were touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
 - Validation: `validate-daily-briefings.mjs` 72/72 PASS; `lint-daily-briefings.mjs` 74 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposals applied.
+
+## 2026-08-01 — CATCH-UP RUN | One Proposal (Uganda, downgrade/band-crossing on evidence-tier escalation), PENDING, Not Applied | 14 Confirmations | 15 Assessed | Benchmark Self-Correction (Kyiv Casualty Year-Confusion, "Worst Month" Claim) | Three Attribution False Positives (Shanghai Jiao Tong University, Fudan University, Louisiana) | India NSA-Renewal False Claim Screened Out
+
+### Summary — 2026-08-01
+
+**CATCH-UP RUN.** Scanner flagged 15 entities, all priority/repeat. Tier-1 coverage verified, gate exit 0.
+
+**ONE CHANGE PROPOSAL — UGANDA, DOWNGRADE/BAND-CROSSING, PENDING, NOT APPLIED.** Uganda assessed at 11.9 against a published 20.3 (delta -8.4), band crossing Developing to Critical. The UN Office of the High Commissioner for Human Rights said on 30 July 2026 that Uganda's crackdown on dissent, military involvement in civilian institutions and shrinking civic space amounts to a climate of fear, with High Commissioner Volker Turk quoted: "Those who dare to speak out are silenced." Since the 15 January 2026 elections: at least 50 opposition figures, 5 human rights defenders and 5 journalists subjected to enforced disappearance, torture or arbitrary detention; 10 civil society organisations suspended; the May 2026 Protection of Sovereignty Act carries up to 10-year sentences for foreign-funded civic work. Corroborated by Human Rights Watch, 23 July 2026 (tier 3): armed soldiers seized National Unity Platform deputy president Muwanga Kivumbi the day after a court granted him bail, holding him incommunicado for 13 days. **This is an escalation, not a compounding, of the 2026-07-26 review.** That review scored the same underlying pattern on tier-3 HRW evidence alone, returned 13.1, and produced a flag-for-review with no applied change. The UN Human Rights Office statement raises the evidence tier from 3 to 5 and widens the documented pattern, which is what converts the standing watch item into a formal proposal. Band-crossing support: two independent sources, one at tier 5 (UN OHCHR) and one at tier 3 (HRW); the assessed 11.9 sits 8.1 points inside the Critical band, clear of the 20.0 boundary. Confidence: medium. Filed at downgrade, status pending, not applied. **Published score remains 20.3.** Filed as `research/change-proposals/uganda-2026-08-01.json`. The prior 2026-07-26 flag-for-review (`research/change-proposals/uganda.json`, 13.1) also remains on file, `status: "pending"`; both describe the same standing finding at different evidence tiers, and neither has been applied.
+
+**THE NIGHT'S STRONGEST STORY WAS THE BENCHMARK CORRECTING ITSELF.** Two factual errors in the scanner's report on the 31 July 2026 Russian strike on Kyiv were caught before either could inflate a published score. First, the scan reported 32 killed and almost 180 injured in Kyiv on 31 July 2026, calling it the deadliest strike on the capital this year. Contemporaneous reporting gives one to three killed in Kyiv itself and about eight to nine killed nationwide; the larger figures closely match the Kyiv strike of 31 July 2025, exactly one year earlier — a year-confusion, not a finding. Second, the scan claimed July 2026 was the worst month for Ukrainian civilian casualties since 2022; the UN Human Rights Monitoring Mission in Ukraine had already reported on 14 July 2026 that June 2026 held that record (at least 293 killed, 1,990 injured). Both corrections bore on two scores, not one, because Ukraine and Kyiv are reviewed separately on the same strike. Neither entity lost points for being attacked: Russia is the perpetrator, and both Ukraine's State Emergency Service and Kyiv's city government were scored only on their own protective conduct (rescue operations; metro shelters opened; first responders coordinated). Ukraine confirmed at 50.0 (delta 0.0); Kyiv confirmed at 46.9 (delta -3.1, carried forward from 22 July, not driven by this window's event).
+
+**THREE DECLARED FALSE POSITIVES ON ATTRIBUTION.** Shanghai Jiao Tong University and Fudan University were both flagged on the US Department of Defense's Section 1286 research-funding list update of 23 July 2026, which named 130 foreign institutions including both. Screened as false positives at both: a foreign government's national-security funding decision describes that government's own risk posture, not the university's own conduct toward the people it serves. Shanghai Jiao Tong received its first full assessment this cycle (confirmed 23.1 against published 22.7, delta +0.4); Fudan was already screened on 30 July and its values reproduced unchanged (28.1, delta 0.0). Separately, Louisiana was screened as a false positive on attribution: a planned 528-bed immigration detention facility is federally funded and privately operated by the LaSalle Family Foundation under a contract with the England Economic and Industrial Development District, an unelected local special district — not the State of Louisiana. That same board's protest-permit resolution had not been adopted within the window. No Louisiana state conduct appears in the record. Confirmed at 42.5, delta 0.0, carried forward from 19 July.
+
+**A FALSE DETENTION-POWERS CLAIM WAS SCREENED OUT IN INDIA.** The scan claimed Indian authorities followed the 20 July 2026 Sansad Chalo protest in New Delhi with a new invocation of the National Security Act. The Delhi Police Commissioner's NSA authority was actually renewed on 7 July 2026, effective 19 July to 18 October, one day before the protest, as a routine periodic renewal — not a response to it. Delhi Police stated linkage claims were misleading; lawyers for the protest movement confirmed all detainees released. The underlying protest-policing finding (already assessed 27 July 2026) was still counted: India confirmed at 16.9 against published 15.6 (delta +1.3, wrong direction for a downgrade); Delhi confirmed at 28.1 against published 32.8 (delta -4.7), with most of the policing conduct attributed to India via Delhi Police's central-government chain of command.
+
+**FOUR REPEAT FLAGS ON EVIDENCE ALREADY SCORED, NONE RECOUNTED.** Saudi Arabia (identical 28 July HRW execution report, already assessed 31 July; confirmed 7.5, delta -1.9), Niger (third flag in seven days on one HRW report, already assessed 26 and 31 July; confirmed 8.8, delta -3.7), Quezon City (identical 27 July SONA arrest evidence, already held 31 July; confirmed 19.4, delta -0.9, no band change asserted at the 0.3-point boundary), and JPMorgan Chase (identical expanded federal discrimination complaint, already assessed 29 July; confirmed 54.4, delta -1.8) were all reproduced from prior assessments without compounding.
+
+**PHILIPPINES AND NORTHWESTERN UNIVERSITY — ORDINARY CONFIRMATIONS.** Philippines confirmed at 29.4 against published 32.8 (delta -3.4) on the same 27 July SONA arrests as Quezon City, attributed nationally to the Philippine National Police. Northwestern University confirmed at 42.5 against published 42.2 (delta +0.3): settlement payouts from a $284 million financial-aid antitrust settlement were offset by an AAUP allegation of a "toxic corporate governance culture," and the two largely cancel.
+
+**MATH HYGIENE, REFERRED NOT RE-LITIGATED.** Saudi Arabia: canonical reconstruction 10.0 vs. published 9.4 (diff 0.60) resolved as a rounding-propagation artifact from one-decimal dimension storage — the unrounded reconstruction returns 9.4 exactly. JPMorgan Chase: canonical 56.3 vs. published 56.2 (diff 0.1, within tolerance). All 13 other entities reconstruct exactly to their published composites.
+
+**ROTATION-STATE.** `last_assessed` set to 2026-08-01 for all 15 entities assessed. `last_change_proposal` set for uganda only. No composite, band or rank was written for any entity from a proposed or assessed score.
+
+### High Priority — 2026-08-01 (Band Change or Delta >15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Uganda | countries | 20.3 | 11.9 | -8.4 | medium | 2026-08-01 | [uganda](change-proposals/uganda-2026-08-01.json) |
+
+**Escalation note (verbatim excerpt, Uganda):** "Uganda is the one proposal and it is an escalation rather than a compounding. The 2026-07-26 assessment returned 13.1 against a published 20.3 and produced a flag-for-review, not an applied change, because the evidence was tier-3 Human Rights Watch reporting on military seizures. The trigger this cycle is a distinct and higher-tier document: the UN Human Rights Office statement of 2026-07-30... That raises the evidence tier from 3 to 5 and is what converts the standing flag into a proposal. Band crossing (Developing to Critical) is supported by two independent sources with one at tier 5, and the assessed 11.9 sits 8.1 points clear of the boundary, so it is not a rounding artifact."
+
+### Standard — 2026-08-01 (Delta 5-15, No Band Change)
+
+None generated tonight. (Seven standard proposals — Becton Dickinson, Ecuador, Tunis, Kathmandu, Carnegie Mellon University, Portugal, OpenAI — remain carried forward from prior cycles; see Open Calibration Flags.)
+
+### Confirmations — 2026-08-01 (14 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Philippines | countries | 32.8 | 29.4 | -3.4 | 51 arrested incl. 13 minors at Quezon City SONA protest, 27 July; national attribution (PNP) — WATCH FLAG |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Russian strike on Kyiv, 31 July; scored on own protective response only. Scan's 32-killed figure corrected — matches the 2025 strike, not 2026 — WATCH FLAG |
+| India | countries | 15.6 | 16.9 | +1.3 | Re-flag of 20 July Delhi protest already assessed 27 July; claimed NSA invocation screened out (order predates protest) |
+| Saudi Arabia | countries | 9.4 | 7.5 | -1.9 | Repeat flag on identical 28 July HRW report already assessed 31 July; reproduced, not recounted |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Floor limitation: four of eight dimensions already at 1.0 minimum; no further downgrade arithmetically possible |
+| Shanghai Jiao Tong University | universities | 22.7 | 23.1 | +0.4 | Declared false positive (attribution): Pentagon Section 1286 listing is US government act, not SJTU conduct; first full assessment |
+| Kyiv | global-cities | 50.0 | 46.9 | -3.1 | Same Russian strike and casualty-figure correction as Ukraine; metro shelters opened, first responders coordinated — WATCH FLAG |
+| Delhi | global-cities | 32.8 | 28.1 | -4.7 | Re-flag of same protest already assessed 27 July; Delhi Police is a central force under the Union Home Ministry |
+| Quezon City | global-cities | 20.3 | 19.4 | -0.9 | Repeat flag on identical 27 July SONA arrest evidence already held 31 July; no band change at the 0.3-point boundary |
+| JPMorgan Chase | fortune-500 | 56.2 | 54.4 | -1.8 | Repeat flag on identical expanded federal discrimination complaint already assessed 29 July; reproduced |
+| Louisiana | us-states | 42.5 | 42.5 | 0.0 | Declared false positive (attribution): detention facility federally funded, privately operated by a local special district; protest-permit resolution not adopted |
+| Niger | countries | 12.5 | 8.8 | -3.7 | Third flag in seven days on one HRW report, already assessed 26 and 31 July; reproduced, not recounted |
+| Northwestern University | universities | 42.2 | 42.5 | +0.3 | Settlement payouts (reparative) offset by AAUP "toxic governance culture" allegation; largely cancel — WATCH FLAG |
+| Fudan University | universities | 28.1 | 28.1 | 0.0 | Repeat flag on identical Pentagon Section 1286 listing already screened false-positive 30 July; reproduced unchanged |
+
+### Open Calibration Flags — 2026-08-01
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~38 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~21 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 9 days |
+| Baxter International band-crossing proposal (60.9 -> 55.0) | Carried forward from 2026-07-22, still pending, not applied | 10 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 9 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 8 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 7 days |
+| Tunis first-baseline downgrade (34.4 -> 22.5) | Carried forward from 2026-07-26, still pending, not applied | 6 days |
+| Kathmandu first-baseline hold (18.8 -> 13.8) | Carried forward from 2026-07-26, still pending, not applied | 6 days |
+| Taipei band-crossing magnitude hold (81.4 -> 73.3) | Carried forward from 2026-07-28, still pending, not applied | 4 days |
+| Carnegie Mellon University conduct downgrade (49.2 -> 43.7) | Carried forward from 2026-07-29, still pending, not applied | 3 days |
+| Portugal band-crossing-considered-and-rejected (65.6 -> 60.6) | Carried forward from 2026-07-30, still pending, not applied | 2 days |
+| OpenAI downgrade on shared AISI evidence (27.5 -> 22.5) | Carried forward from 2026-07-31, still pending, not applied | 1 day |
+| Uganda evidence-tier escalation (20.3 -> 11.9, band crossing Developing to Critical) | New tonight; supersedes the 2026-07-26 hold at 20.3 -> 13.1 with a higher-tier UN finding; pending, not applied | Open since 2026-08-01 |
+| Scanner year-confusion pattern (Kyiv strike casualty figures matched a strike exactly one calendar year prior) | New tonight; recurring failure class, second instance this month; needs scanner-tuning attention | Open since 2026-08-01 |
+| GEO Group math-hygiene gap (published 6.6, canonical 12.5) | Carried forward from 2026-07-27; not a conduct finding; needs coordinator-level index correction | 5 days |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 9 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 10 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 7 days |
+| Basic Energy Services / Chesapeake Energy entity-record currency (Fortune 500) | Carried forward from 2026-07-29 | 3 days |
+| Rank drift: 317 of 1,285 rotation-state entities disagree with published index rank | Carried forward from 2026-07-26/29 | Open since 2026-07-26 |
+| Singapore math-hygiene gap (published 62.2, canonical 63.1) + cross-index slug collision | Carried forward from 2026-07-30; needs coordinator-level index reconciliation | 2 days |
+| Erie Indemnity band-boundary label gap (60.9 falls between documented Functional/Established boundaries) | Carried forward from 2026-07-30; needs coordinator-level boundary-table correction | 2 days |
+| Saudi Arabia math-hygiene gap (published 9.4, canonical 10.0) | Carried forward from 2026-07-31; below validate-indexes warning threshold; needs coordinator-level index reconciliation | 1 day |
+| Niger published-vs-assessed gap (published 12.5, thrice-assessed 8.8 on 07-26, 07-31 and 08-01) | Carried forward from 2026-07-31; needs coordinator-level index reconciliation | 1 day |
+| Dhaka published-vs-assessed gap (published 23.4, twice-assessed 20.0 on 07-26 and 07-31) | Carried forward from 2026-07-31; needs coordinator-level index reconciliation | 1 day |
+
+### Operational Notes — 2026-08-01
+
+- Scan: 1,290 entities scanned; gate exit 0. Scanner flagged 15 entities, all priority/repeat.
+- Assessor runtime (CATCH-UP): 2026-08-01T02:40:00Z-05:20:00Z (~2h40m); 15 entities assessed; 1 change proposal; 14 confirmations; 15 subdim sidecars written, all fresh.
+- Four pairs shared a single piece of evidence (Ukraine/Kyiv on the Russian strike; India/Delhi on the Sansad Chalo protest; Philippines/Quezon City on the SONA arrests; Shanghai Jiao Tong/Fudan on the Section 1286 listing); each resolved without compounding.
+- Two scanner factual errors caught and corrected on the Kyiv strike (year-confused casualty count; wrong "worst month" claim), one false claim screened out in India (NSA renewal predates the protest), one false framing corrected in Louisiana (protest-permit resolution not adopted) — the strongest finding of the cycle is this self-correction discipline, not the one proposal.
+- Total pending proposals in queue after tonight: 12 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei, Carnegie Mellon University, Portugal, OpenAI). Uganda's entry updates in place with an escalated reading (20.3 -> 11.9, superseding the 2026-07-26 hold at 20.3 -> 13.1); no net-new entity was added to the queue. The other 11 carried-forward proposals were not touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
+- Validation: `validate-daily-briefings.mjs` 73/73 PASS; `lint-daily-briefings.mjs` 75 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposals applied.
