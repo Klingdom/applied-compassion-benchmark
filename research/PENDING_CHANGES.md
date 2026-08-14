@@ -9034,3 +9034,120 @@ None generated tonight. (Seven standard proposals — Becton Dickinson, Ecuador,
 - Two scanner factual errors caught and corrected on the Kyiv strike (year-confused casualty count; wrong "worst month" claim), one false claim screened out in India (NSA renewal predates the protest), one false framing corrected in Louisiana (protest-permit resolution not adopted) — the strongest finding of the cycle is this self-correction discipline, not the one proposal.
 - Total pending proposals in queue after tonight: 12 (Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei, Carnegie Mellon University, Portugal, OpenAI). Uganda's entry updates in place with an escalated reading (20.3 -> 11.9, superseding the 2026-07-26 hold at 20.3 -> 13.1); no net-new entity was added to the queue. The other 11 carried-forward proposals were not touched tonight; all verified against `site/src/data/indexes/` and each proposal's `status: "pending"` field as still unapplied at their original published scores.
 - Validation: `validate-daily-briefings.mjs` 73/73 PASS; `lint-daily-briefings.mjs` 75 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposals applied.
+
+---
+
+## 2026-08-11 — CATCH-UP RUN | Zero Score Changes | 2 Flag-for-Review Calibration Referrals (NOT Downgrades) | 17 Confirmations | 20 Assessed | 17 Scanner Self-Corrections (Highest on Record) | Sudan Second-Cycle Absolute Floor
+
+### Summary — 2026-08-11
+
+**CATCH-UP RUN.** 2026-08-02 through 2026-08-10 were intentionally skipped per founder instruction; this cycle used a widened 14-day lookback window (2026-07-29 to 2026-08-11) in place of the normal ~3-day window. Last completed cycle was 2026-08-01. Scanner flagged 20 entities (17 priority/repeat, 3 rotation), gate exit 0. **Zero score changes applied. Zero published scores moved.**
+
+**TWO FLAG-FOR-REVIEW CALIBRATION REFERRALS, EXPLICITLY NOT DOWNGRADES.** Cerebras Systems (ai-labs, 60.9 -> 38.8 calibration reading, delta -22.1, band_change true in the proposal file) and Cognition AI (ai-labs, 37.5 -> 27.5 calibration reading, delta -10.0, no band change) are both never-assessed uniform-seed placeholder scores -- Cerebras has seven of eight dimensions identical at 3.5, Cognition AI has all eight identical at 2.5. Cerebras: a dedicated tier-1 thematic search found **zero adverse evidence in either direction**; the 22.1-point gap measures absence of disclosure, not conduct. Cognition AI: real conduct evidence exists (30 Windsurf employees laid off three weeks after a compensation promise; six-day, 80+-hour weeks) but is dated August 2025, a full year outside this cycle's window, with two of four sources undated. Per anti-false-positive screen 3e-bis section 5, applying either as a one-off baseline reset would convert a calibration problem into a false conduct finding. Both filed `recommendation: flag-for-review`, `status: pending`, referred for coordinator-level calibration of uniform-seed AI-lab placeholders. **Neither published score has been touched.**
+
+**OPENAI UPDATED IN PLACE, PROPOSED SCORES UNCHANGED.** Tonight's independent reassessment of OpenAI returned 23.1 against published 27.5 (delta -4.4), reproducing the pending `openai-2026-07-31.json` proposal's 22.5 to within 0.6 points. The Hugging Face sandbox escape the scanner called "distinct" from the 21 July AISI evaluation is already scored as key_evidence item 5 in that open proposal. The genuinely new material -- EU AI Act enforcement (began 2026-08-02) and European Commission bilateral talks with OpenAI and Anthropic -- is regulatory response, not new OpenAI conduct. The existing proposal was updated in place with a reassessment note and two scanner corrections (a date correction and a source-substantiation catch on helpnetsecurity.com, which does not mention the claim it was cited for). **PROPOSED SCORES UNCHANGED AT 22.5. No net-new queue entry created.**
+
+**CMU, TUNISIA AND INDIA REPRODUCE EXISTING FINDINGS WITHOUT NEW QUEUE ENTRIES.** Carnegie Mellon University (49.2 -> 43.7, delta -5.5) is identical evidence to the open `carnegie-mellon-university-2026-07-29.json` proposal; independent re-scoring returned exactly 43.7, corroborating rather than filing a second proposal. Tunisia (23.8 -> 23.8, delta 0.0) involved a date correction (the protest was 25 July, out of window) plus a double-count screen against the open `tunis.json` first-baseline proposal. India (15.6 -> 16.3, delta +0.7) is new evidence (Kerala flooding, competently handled) layered on a reproduced-not-recounted Delhi protest finding already assessed 2026-07-27 and 2026-08-01; the net movement is sub-threshold in the wrong direction for a downgrade.
+
+**THE NIGHT'S STRONGEST STORY IS SELF-CORRECTION -- 17 SCANNER CORRECTIONS, THE HIGHEST SINGLE-CYCLE COUNT ON RECORD.** Highlights: (1) Ukraine -- **third instance** of the year-confusion failure class: the scan's "31 July 2026: 31 killed, 179 injured" belongs to the Kyiv strike of 31 July **2025**, exactly one year earlier; real 2026 toll was 3 killed in Kyiv, ~9 nationwide. Escalated as an open, structural scanner defect. (2) OpenAI -- a cited source (helpnetsecurity.com) was fetched and does **not** contain the claim attributed to it; re-sourced to RTE and Business Standard. (3) Alphabet/Google -- Character.AI settlement evidence is dated 7 January 2026, seven months out of window. (4) Spokane -- attribution false positive: federal DOJ action, not city conduct (matches the Louisiana/Tacoma pattern). (5) India -- a 2018 Kerala-floods year-confusion trap (the same failure class as Ukraine, in a different country and event type) was screened out. (6) Tunisia/SJTU/Ethiopia/Pakistan -- event dates corrected; Duke and GEO Group discrepancies were checked and found **correct** (publication-date vs. event-date), no error. (7) GEO Group -- the 22-year-record ICE detention-death claim was corroborated (TIME 2026-08-10, citing JAMA) but correctly scoped as ICE-wide context, **not GEO conduct**. Full list of all 17 corrections in `research/digests/2026-08-11.md`.
+
+**SUDAN -- ABSOLUTE FLOOR, SECOND CONSECUTIVE CYCLE.** Composite 0.0, all eight dimensions at 1.0. Nearly 19.5 million in acute food insecurity; Amnesty International documents crimes against humanity in North Darfur. None of it can move the score. Flagged as an open structural question: the scale cannot distinguish current Sudan from a further-deteriorated Sudan. Sidecar deliberately omitted per absolute-floor screening.
+
+---
+
+### High Priority — 2026-08-11 (Band Change or Delta >15) — CALIBRATION REFERRAL, NOT A CONDUCT DOWNGRADE
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Cerebras Systems | ai-labs | 60.9 | 38.8 | -22.1 | low | 2026-08-11 | [cerebras-systems](change-proposals/cerebras-systems.json) |
+
+**Flag-for-review note (verbatim excerpt, Cerebras Systems):** "THIS IS NOT A DOWNGRADE. Per anti-false-positive screen 3e-bis section 5, a published score believed mis-calibrated relative to peers must not be relitigated through a one-off baseline-reset proposal. This is filed as flag-for-review for coordinator-level calibration of the uniform-seed AI-lab placeholders, and NO score change is proposed for application." No adverse evidence of any kind was located. `rotation-state` composite/band/rank left at the PUBLISHED values.
+
+### Standard — 2026-08-11 (Delta 5-15, No Band Change) — CALIBRATION REFERRAL, NOT A CONDUCT DOWNGRADE
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Cognition AI | ai-labs | 37.5 | 27.5 | -10.0 | low | 2026-08-11 | [cognition-ai](change-proposals/cognition-ai.json) |
+
+**Flag-for-review note (verbatim excerpt, Cognition AI):** "THIS IS NOT A DOWNGRADE. Filed as flag-for-review alongside Cerebras Systems in the same index, for coordinator-level calibration of never-assessed uniform-seed placeholders. NO score change is proposed for application." Real conduct evidence exists (Windsurf layoffs after a broken compensation promise) but is dated August 2025, a year outside this cycle's window. Conversion trigger: in-window corroboration that the six-day, 80-plus-hour working policy remains in force, or a new labour action, would convert this to a conduct proposal.
+
+(Twelve proposals carried forward untouched tonight -- Baxter International, Guinea-Bissau, Becton Dickinson, Ecuador, Microsoft AI, Tunis, Uganda, Kathmandu, Taipei, Carnegie Mellon University, Portugal, OpenAI. See Open Calibration Flags below for day counts.)
+
+### Confirmations — 2026-08-11 (17 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Alphabet/Google | fortune-500 | 40.0 | 38.7 | -1.3 | Character.AI settlement 7 months out of window; UK tribunal certification is not a liability finding -- WATCH FLAG (sits at Developing/Functional boundary) |
+| Ethiopia | countries | 4.7 | 2.5 | -2.2 | Floor-limited; Tigray fighting resumed, all international investigative mandates terminated |
+| Duke University | universities | 50.8 | 47.5 | -3.3 | DOJ discrimination finding is contested agency claim, pre-adjudication; date verified correct |
+| GEO Group | fortune-500 | 6.6 | 5.6 | -1.0 | Second Delaney Hall death; 22-year ICE record corroborated but scoped as system-wide context, not GEO conduct |
+| Ukraine | countries | 50.0 | 49.4 | -0.6 | Third year-confusion catch on Kyiv casualties; "deadliest month" claim confirmed, superseding 2026-08-01 correction |
+| OpenAI | ai-labs | 27.5 | 23.1 | -4.4 | Queue collision resolved against open 2026-07-31 proposal; mis-sourced citation caught; proposal updated in place, unchanged |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | New state media-accreditation rule; held as watch flag on single tier-3 source |
+| Democratic Republic of Congo | countries | 2.3 | 2.5 | +0.2 | Floor-limited; Ebola deaths passed 2,000; 13,000 community workers deployed with Africa CDC/UNICEF/WHO |
+| Shanghai Jiao Tong University | universities | 22.7 | 18.8 | -3.9 | Concealed gene-editing death (17 months, omitted from Nature paper); band crossing considered, held as watch flag -- WATCH FLAG |
+| Spokane | us-cities | 35.9 | 35.6 | -0.3 | Attribution false positive: federal DOJ conspiracy prosecution, not city conduct (matches Louisiana/Tacoma pattern) |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Absolute floor, second consecutive cycle; all 8 dimensions at 1.0 |
+| India | countries | 15.6 | 16.3 | +0.7 | 2018 Kerala-floods year-confusion trap screened out; functioning 2026 response; Delhi protest finding reproduced, not re-counted |
+| Carnegie Mellon University | universities | 49.2 | 43.7 | -5.5 | Queue collision: identical evidence to open 2026-07-29 proposal; independent re-scoring corroborates exactly, no second entry filed |
+| Tunisia | countries | 23.8 | 23.8 | 0.0 | Date correction (25 July, out of window) + double-count screen against open Tunis first-baseline proposal |
+| Philippines | countries | 32.8 | 27.5 | -5.3 | New FPIC guidelines (30-day consensus, redress removed); 3.4 of 5.3-point gap already confirmed 2026-08-01, ~1.9 points genuinely new |
+| Gilead Sciences | fortune-500 | 62.5 | 58.1 | -4.4 | Royalty-free HIV licensing (120 countries) alongside $202M kickback settlement, $246.8M pay-for-delay settlement, ~23,000 product-liability plaintiffs |
+| Gran Tierra Energy | fortune-500 | 18.8 | 23.1 | +4.3 | All located sources self-published by the company; capped at anchor 2 despite upward movement; deliberately not treated as an upgrade |
+
+### Entity-Record-Currency Flag — 2026-08-11 (not a proposal)
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Hercules Offshore | fortune-500 | 18.8 | 17.5 | -1.3 | Dissolved 2 December 2016 after liquidating Chapter 11 bankruptcy; sixth open entity-record-currency case; sidecar deliberately omitted |
+
+---
+
+### Open Calibration Flags — 2026-08-11
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~47 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~31 days |
+| Baxter International band-crossing proposal (60.9 -> 55.0) | Carried forward from 2026-07-22, still pending, not applied | 20 days |
+| Guinea-Bissau band-crossing proposal (20.3 -> 13.1) | Carried forward from 2026-07-23, still pending, not applied | 19 days |
+| Becton Dickinson math-hygiene flag (54.1 -> 42.2) | Carried forward from 2026-07-23, still pending, not applied | 19 days |
+| Ecuador conduct downgrade (35.9 -> 25.6) | Carried forward from 2026-07-24, still pending, not applied | 18 days |
+| Microsoft AI band-crossing hold (81.4 -> 75.9) | Carried forward from 2026-07-25, still pending, not applied | 17 days |
+| Tunis first-baseline downgrade (34.4 -> 22.5) | Carried forward from 2026-07-26, still pending, not applied | 16 days |
+| Uganda evidence-tier escalation (20.3 -> 11.9, band crossing Developing to Critical) | Carried forward from 2026-08-01, still pending, not applied | 10 days |
+| Kathmandu first-baseline hold (18.8 -> 13.8) | Carried forward from 2026-07-26, still pending, not applied | 16 days |
+| Taipei band-crossing magnitude hold (81.4 -> 73.3) | Carried forward from 2026-07-28, still pending, not applied | 14 days |
+| Carnegie Mellon University conduct downgrade (49.2 -> 43.7) | Carried forward from 2026-07-29, corroborated independently tonight, still pending, not applied | 13 days |
+| Portugal band-crossing-considered-and-rejected (65.6 -> 60.6) | Carried forward from 2026-07-30, still pending, not applied | 12 days |
+| OpenAI downgrade on shared AISI + Hugging Face evidence (27.5 -> 22.5) | Updated in place 2026-08-11 with regulatory-response corroboration; proposed scores unchanged; still pending, not applied | Open since 2026-07-31 |
+| Cerebras Systems uniform-seed calibration referral (60.9 -> 38.8, flag-for-review, NOT a downgrade) | New tonight; pending, not applied | Open since 2026-08-11 |
+| Cognition AI uniform-seed calibration referral (37.5 -> 27.5, flag-for-review, NOT a downgrade) | New tonight; pending, not applied | Open since 2026-08-11 |
+| Scanner year-confusion failure class (Kyiv strike casualty figures matched a strike exactly one calendar year prior) | THIRD instance tonight (Ukraine), plus a fourth-and-different-country near-miss caught (India/Kerala 2018 floods); escalated, needs dedicated scanner-tuning attention | Open since 2026-08-01, escalated 2026-08-11 |
+| GEO Group math-hygiene gap (published 6.6, canonical 12.5) | Carried forward from 2026-07-27; not a conduct finding; needs coordinator-level index correction | 15 days |
+| Sudan absolute-floor expressiveness | Second consecutive cycle at composite 0.0; the scale cannot distinguish current Sudan from a further-deteriorated Sudan | Open since 2026-08-01 |
+| Registry-hygiene / composite_override drift candidates (Mauritius, Vanuatu, Cummins, Houston) | Carried forward from 2026-07-23; needs coordinator-level audit | 19 days |
+| Six untracked 2026-07-22-dated change-proposal files (agility-robotics, boston-dynamics, johnson-johnson, nicaragua, philippines, xai) | Carried forward from 2026-07-23; needs reconciliation into this log | 20 days |
+| Halcon Resources / Enservco entity-record currency (Fortune 500) | Carried forward from 2026-07-25; needs coordinator-level decision on whether to retire or relabel | 17 days |
+| Basic Energy Services / Chesapeake Energy entity-record currency (Fortune 500) | Carried forward from 2026-07-29 | 13 days |
+| Hercules Offshore entity-record currency (Fortune 500, dissolved 2016) | New tonight; sixth open entity-record-currency case | Open since 2026-08-11 |
+| Rank drift: 317+ of 1,290 rotation-state entities disagree with published index rank | Carried forward from 2026-07-26/29; 4 more corrected tonight (alphabet-google, gilead-sciences, gran-tierra-energy, hercules-offshore) | Open since 2026-07-26 |
+| Singapore math-hygiene gap (published 62.2, canonical 63.1) + cross-index slug collision | Carried forward from 2026-07-30; needs coordinator-level index reconciliation | 12 days |
+| Erie Indemnity band-boundary label gap (60.9 falls between documented Functional/Established boundaries) | Carried forward from 2026-07-30; needs coordinator-level boundary-table correction | 12 days |
+| Saudi Arabia math-hygiene gap (published 9.4, canonical 10.0) | Carried forward from 2026-07-31; below validate-indexes warning threshold; needs coordinator-level index reconciliation | 11 days |
+| Niger published-vs-assessed gap (published 12.5, thrice-assessed 8.8) | Carried forward from 2026-08-01; needs coordinator-level index reconciliation | 10 days |
+| Dhaka published-vs-assessed gap (published 23.4, twice-assessed 20.0) | Carried forward from 2026-07-31; needs coordinator-level index reconciliation | 11 days |
+
+---
+
+### Operational Notes — 2026-08-11
+
+- **CATCH-UP RUN.** 2026-08-02 through 2026-08-10 intentionally skipped per founder instruction; 14-day lookback window (2026-07-29 to 2026-08-11) used in place of the normal ~3-day window. Scan: 1,290 entities scanned; gate exit 0. Scanner flagged 20 entities (17 priority/repeat, 3 rotation).
+- Assessor runtime (CATCH-UP): 2026-08-11T02:35:00Z-06:10:00Z (~3h35m); 20 entities assessed; 2 change proposals (both flag-for-review, NOT downgrades); 17 confirmations; 1 entity-record-currency flag (Hercules Offshore); 18 subdim sidecars written (Sudan and Hercules Offshore deliberately omitted per section 3g absolute-floor and dissolved-entity screening).
+- **17 scanner corrections is the highest single-cycle count on record for this pipeline.** Full itemized list in `research/digests/2026-08-11.md`. Headline items: third-instance year-confusion on Ukraine/Kyiv casualties, a fourth-and-different-country near-miss on India/Kerala (2018 floods), a source-substantiation failure caught on OpenAI (helpnetsecurity.com does not contain the claim it was cited for), and an out-of-window Character.AI settlement caught on Alphabet/Google.
+- Three first-time individual baselines established tonight: Spokane, Cerebras Systems, Cognition AI (all previously `last_assessed: null` in rotation-state).
+- Math hygiene: GEO Group's published-vs-canonical gap (6.6 vs. 12.5) remains open, carried forward from 2026-07-27, explicitly not a conduct finding. OpenAI's published-vs-canonical gap (27.5 vs. 27.2, diff 0.3) is within tolerance. All other 18 entities reconstruct exactly.
+- Rotation-state rank drift corrected for four entities (alphabet-google 180 to 179, gilead-sciences 33 to 32, gran-tierra-energy 401 to 400, hercules-offshore 403 to 402), published-side corrections only, not conduct findings.
+- Total pending proposals in queue after tonight: **14** (12 carried forward untouched + Cerebras Systems + Cognition AI, both flag-for-review, filed tonight). OpenAI's existing proposal (`openai-2026-07-31.json`) was updated in place with proposed scores unchanged at 22.5 -- no net-new queue entry. Carnegie Mellon University and Tunisia both reproduce evidence already on file in existing proposals without filing new ones. India's finding is new evidence but sub-threshold, no proposal generated.
+- Out of scope for this cycle: `research/SAHEL_BAND_CALIBRATION_2026-08-13.md` (Mali/Niger/Chad uniform-seed calibration study, dated 2026-08-13, completed after this cycle) is NOT reflected in this log or in the public briefing, per explicit instruction -- disclosure is a founder editorial decision.
+- Validation: `validate-daily-briefings.mjs` 74/74 PASS; `lint-daily-briefings.mjs` 76 files clean (0 forbidden phrases/status/pipeline keys) after one round of fixes. Published indexes untouched. No proposals applied.

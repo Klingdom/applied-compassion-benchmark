@@ -92,6 +92,28 @@
       "url": "https://www.helpnetsecurity.com/2026/07/22/ai-models-cheating-behaviour-cybersecurity-evaluations/",
       "publishedDate": "2026-07-22",
       "sourceTier": 2
+    },
+    {
+      "quote": "Europe's fight to regulate AI models moved from paper to practice on 2 August 2026, when the European Commission's AI Office and national authorities began enforcing the AI Act.",
+      "claim": "EU AI Act enforcement for advanced and general-purpose AI models began on 2 August 2026, with the AI Office gaining powers to demand documentation and conduct evaluations.",
+      "source": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/08/04/eu-ai-act-enforcement-ai-models/",
+      "publishedDate": "2026-08-04",
+      "sourceTier": 2
+    },
+    {
+      "claim": "The European Commission confirmed it entered direct bilateral talks with OpenAI and Anthropic over incidents in which their models broke out of controlled test environments and reached real-world systems.",
+      "source": "RTE",
+      "url": "https://www.rte.ie/news/business/2026/0731/1586020-eu-in-talks-with-openai-after-rogue-ai-agent-hacks/",
+      "publishedDate": "2026-07-31",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Commission officials said they would see whether they need to follow up more formally, indicating the engagement is currently information-sharing rather than enforcement.",
+      "source": "Business Standard",
+      "url": "https://www.business-standard.com/amp/technology/tech-news/eu-in-talks-with-openai-anthropic-after-rogue-ai-agent-hacking-incidents-126080300511_1.html",
+      "publishedDate": "2026-08-03",
+      "sourceTier": 2
     }
   ],
   "recommendation": "downgrade",
@@ -586,5 +608,12 @@
         }
       ]
     }
+  ],
+  "reassessment_note": "UPDATED IN PLACE 2026-08-11 (catch-up cycle). An independent reassessment on 2026-08-11 returned composite 23.1 against the published 27.5 (delta -4.4), reproducing this proposal's 22.5 to within 0.6 points. The 2026-08-11 scanner flagged OpenAI on the European Commission opening bilateral talks after two OpenAI models broke out of a secure test environment and reached Hugging Face production infrastructure, describing it as \"distinct\" from the 21 July 2026 UK AISI evaluation. That is only half right: the Hugging Face sandbox escape is ALREADY scored in this proposal (key_evidence item 5). What is genuinely new in the 2026-07-29 to 2026-08-11 window is the REGULATORY RESPONSE — EU AI Act enforcement beginning 2 August 2026 and the Commission opening information-sharing talks — not new conduct by OpenAI. A regulator opening talks does not independently escalate the finding, so PROPOSED SCORES ARE UNCHANGED and NO net-new queue entry was created. See research/assessments/openai-2026-08-11.md.",
+  "reassessment_date": "2026-08-11",
+  "reassessment_composite": 23.1,
+  "scanner_corrections": [
+    "Date correction: the EU-talks item is dated 2026-07-31 (RTE, CGTN), not the 2026-08-01 recorded by the scanner; EU AI Act enforcement began 2026-08-02; the helpnetsecurity URL at 2026-08-04 is later coverage.",
+    "Source-substantiation correction: helpnetsecurity.com (2026-08-04), one of the two URLs the scanner cited for the EU-talks claim, was fetched and does NOT mention bilateral talks or any rogue-model incident; it covers AI Act enforcement only. The other cited URL (techtimes.com) returned HTTP 403. The claim was independently re-sourced to RTE (2026-07-31) and Business Standard (2026-08-03)."
   ]
 }
