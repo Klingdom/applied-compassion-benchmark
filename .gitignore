@@ -10,8 +10,12 @@ research/rotation-state.json.tmp
 site/.next/
 site/out/
 
+# Dependencies (worker/ has no local .gitignore; site/ is covered by site/.gitignore)
+node_modules/
+
 # Pipeline temp files
 research/logs/
+tmp/
 *.tmp
 
 # Agent scratch generators (date-stamped, created per-run, never part of the pipeline)
@@ -19,4 +23,5 @@ research/logs/
 # See the prior cleanup commit "Remove agent scratch files committed by mistake".
 research/scripts/*_2026_*
 research/scripts/*_2027_*
+research/scripts/_tmp_*
 research/scripts/.gen-results-*.json
