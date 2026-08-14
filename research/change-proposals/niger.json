@@ -1,0 +1,202 @@
+{
+  "entity": "Niger",
+  "slug": "niger",
+  "index": "countries",
+  "assessment_date": "2026-08-13",
+  "assessment_file": "research/assessments/niger-2026-08-13.md",
+  "subdim_sidecar_file": "research/assessments/niger-2026-08-13.subdims.json",
+  "kind": "flat-seed-de-seeding-cross-peer-calibration",
+  "study": "research/SAHEL_BAND_CALIBRATION_2026-08-13.md",
+  "calibration_anchor": "Burkina Faso 2026-05-31 reweight (composite 6.3) — fixed, not re-scored",
+  "disambiguation": "This proposal concerns the Republic of the Niger (capital Niamey). It is NOT Nigeria. Nigeria has separate records under slug 'nigeria'.",
+  "published_scores": {
+    "composite": 12.5,
+    "band": "critical",
+    "rank": 161,
+    "dimensions": {
+      "AWR": 1.5,
+      "EMP": 1.5,
+      "ACT": 1.5,
+      "EQU": 1.5,
+      "BND": 1.5,
+      "ACC": 1.5,
+      "SYS": 1.5,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 3.7,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 1.2,
+      "EMP": 1.2,
+      "ACT": 1.2,
+      "EQU": 1.0,
+      "BND": 1.2,
+      "ACC": 1.0,
+      "SYS": 1.4,
+      "INT": 1.0
+    }
+  },
+  "proposed_subdimensions": {
+    "AWR": { "A1": 2, "A2": 1, "A3": 1, "A4": 1, "A5": 1 },
+    "EMP": { "E1": 1, "E2": 1, "E3": 1, "E4": 1, "E5": 2 },
+    "ACT": { "AC1": 1, "AC2": 1, "AC3": 1, "AC4": 2, "AC5": 1 },
+    "EQU": { "EQ1": 1, "EQ2": 1, "EQ3": 1, "EQ4": 1, "EQ5": 1 },
+    "BND": { "B1": 2, "B2": 1, "B3": 1, "B4": 1, "B5": 1 },
+    "ACC": { "AB1": 1, "AB2": 1, "AB3": 1, "AB4": 1, "AB5": 1 },
+    "SYS": { "S1": 2, "S2": 1, "S3": 1, "S4": 2, "S5": 1 },
+    "INT": { "I1": 1, "I2": 1, "I3": 1, "I4": 1, "I5": 1 }
+  },
+  "score_delta": -8.8,
+  "band_change": false,
+  "boundary_case": false,
+  "floor_designation": false,
+  "harm_flag": false,
+  "confidence": "high",
+  "supersedes_assessments": [
+    "research/assessments/niger-2026-07-26.md",
+    "research/assessments/niger-2026-07-31.md",
+    "research/assessments/niger-2026-08-01.md"
+  ],
+  "methodology_note": "This is a de-seeding, not a downgrade for new misconduct. The published Niger vector was a flat uniform seed (all eight dimensions at exactly 1.5). TRACEABILITY DEFECT: Niger was already assessed three times — 2026-07-26, 2026-07-31 and 2026-08-01 — each returning composite 8.8 with a full 40-subdimension sidecar. Each returned a delta of -3.7 against the published 12.5, below the 5.0-point proposal threshold, so no proposal was ever filed and the seed survived three correct assessments. This is the first Niger change proposal on record. The present re-score applies the Burkina Faso calibration anchor consistently and moves Niger from the prior 8.8 to 3.7; the change from 8.8 is calibration, not new evidence. Composite computed by computeCompositeFromDimensions (site/scripts/lib/scoring.mjs, methodology v1.2): base composite 3.75, stdDev 0.15 so consistencyMult 1.0, but 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0. Three dimensions (EQU, ACC, INT) land at raw 1.0, the absolute floor; further downward movement is arithmetically unavailable. No 0.0 harm flag is applied: the dominant mass-casualty violence in Niger is non-state and the state retains functioning institutions, matching the Burkina Faso anchor's reasoning for stopping above the absolute floor.",
+  "attribution_note": "Non-state harm is not scored as Nigerien state conduct. Islamic State Sahel killed at least 46 worshippers at Fambita mosque on 21 March and over 70 at Manda mosque on 21 June; none of that is scored against Niger. What IS scored as state conduct: the January 2026 Nigerien military drone strike that killed at least 17 civilians at a crowded market; the detention of former President Bazoum since July 2023 without access to family or lawyers, ruled arbitrary by the UN Working Group on Arbitrary Detention; dissolution of all political parties and suspension of dozens of civil society organisations; retroactive amendment of detention law to four years after a detainee applied for release; withdrawal from ECOWAS and the ICC; and the documented failure to act on advance warnings of attacks.",
+  "calibration_deltas_vs_prior_8_8": [
+    "A5 lowered 2 to 1: the January 2026 market drone strike is anti-anticipatory conduct, not partial anticipatory capacity",
+    "E3 lowered 2 to 1: belief-based 30-day suspension of Canal 3 TV is documented differential treatment, not merely unmeasured non-judgment",
+    "AC1 and AC2 lowered 2 to 1: the Burkina Faso anchor scores a state that cannot or will not respond at 1",
+    "EQ5 lowered 2 to 1: ICC withdrawal is active foreclosure of historical-harm acknowledgement, not vague acknowledgement",
+    "B3 lowered 2 to 1: sovereignty claims that overstate protective capacity are not proactive limitation-setting",
+    "B5 lowered 2 to 1: retroactive extension of detention law against a specific detainee is the inverse of consent",
+    "S1, S2, S5 realigned to the anchor's treatment of structural rhetoric disconnected from resource allocation"
+  ],
+  "key_evidence": [
+    "HRW 2026-07-23: a Nigerien military drone strike killed at least 17 civilians at a crowded market in January 2026, violating prohibitions against indiscriminate attacks",
+    "HRW 2026-07-23: after Tiangari's legal team filed for release in June, the junta amended the law extending maximum detention to four years, retroactively justifying continued imprisonment",
+    "HRW 2026-07-23: the junta has dissolved all political parties and suspended dozens of civil society organisations; Niger withdrew from the ICC in June 2026",
+    "HRW World Report 2026: Bazoum and his wife detained at the presidential palace since July 2023 with no access to family members or lawyers; UN Working Group on Arbitrary Detention called for their immediate release",
+    "HRW World Report 2026: the Nigerien army did not adequately respond to warnings of attacks; four justice sector unions dissolved by the interior minister",
+    "Global Centre for R2P: December general mobilization granting sweeping powers to requisition civilians and resources; March plan for territorial self-defense organisations raising risk of retaliatory violence"
+  ],
+  "evidence": [
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "A Nigerien military drone strike killed at least 17 civilians at a crowded market in January 2026, violating prohibitions against indiscriminate attacks.",
+      "supports": ["A5", "AB1"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "After Tiangari's legal team filed for release in June, the junta amended the law extending maximum detention to four years - retroactively justifying continued imprisonment.",
+      "supports": ["B5", "AB2"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "The junta has since dissolved all political parties and suspended dozens of civil society organizations.",
+      "supports": ["A2", "I4"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "Niger withdrew from the International Criminal Court in June 2026, joining Mali and Burkina Faso in restricting international accountability mechanisms.",
+      "supports": ["A3", "EQ5", "AB5", "S5"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "complicity in distributing documents likely to disturb public order",
+      "supports": ["A4"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
+      "date": "2026-07-23",
+      "quote": "The regime continues holding former President Bazoum, his wife, former Interior Minister Hama Amadou Souley, and activist Moussa Tiangari without due process.",
+      "supports": ["EQ3"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "the Nigerien army did not adequately respond to warnings of attacks",
+      "supports": ["A1", "AC1", "EQ1", "AB4"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "have been detained at the presidential palace in Niamey...with no access to family members or lawyers",
+      "supports": ["E1", "B4"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "arbitrary and called for their immediate release",
+      "supports": ["E4", "I1"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "Four justice sector unions dissolved by interior minister",
+      "supports": ["B2", "I3"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "Three Sahara FM journalists detained twice within 24 hours for reporting on security cooperation changes",
+      "supports": ["AB3"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "over 70 worshippers, including 5 children",
+      "supports": ["AC3"]
+    },
+    {
+      "tier": 5,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
+      "date": "2026-01-01",
+      "quote": "Garkuwar Kassa militia initiative launched, raising concerns about the creation of abusive militias",
+      "supports": ["I2"]
+    },
+    {
+      "tier": 4,
+      "url": "https://www.globalr2p.org/countries/niger/",
+      "date": "2026-06-01",
+      "quote": "In December the military authorities declared a 'general mobilization,' granting sweeping powers to requisition civilians and resources for counterinsurgency operations.",
+      "supports": ["AC2", "B1"]
+    },
+    {
+      "tier": 4,
+      "url": "https://www.globalr2p.org/countries/niger/",
+      "date": "2026-06-01",
+      "quote": "In March authorities also announced plans to establish territorial self-defense organizations, raising concerns about the proliferation of community-based armed actors and the risk of retaliatory violence.",
+      "supports": ["AC4"]
+    },
+    {
+      "tier": 4,
+      "url": "https://www.globalr2p.org/countries/niger/",
+      "date": "2026-06-01",
+      "quote": "Civilians, particularly in Tillaberi, remain caught between armed Islamist groups, self-defense militias and increasing counterterrorism operations by state security forces.",
+      "supports": ["E5", "EQ2"]
+    }
+  ],
+  "tier_classification": "A",
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": null
+}
