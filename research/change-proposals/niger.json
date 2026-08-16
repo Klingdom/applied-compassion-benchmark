@@ -31,22 +31,70 @@
       "AWR": 1.2,
       "EMP": 1.2,
       "ACT": 1.2,
-      "EQU": 1.0,
+      "EQU": 1,
       "BND": 1.2,
-      "ACC": 1.0,
+      "ACC": 1,
       "SYS": 1.4,
-      "INT": 1.0
+      "INT": 1
     }
   },
   "proposed_subdimensions": {
-    "AWR": { "A1": 2, "A2": 1, "A3": 1, "A4": 1, "A5": 1 },
-    "EMP": { "E1": 1, "E2": 1, "E3": 1, "E4": 1, "E5": 2 },
-    "ACT": { "AC1": 1, "AC2": 1, "AC3": 1, "AC4": 2, "AC5": 1 },
-    "EQU": { "EQ1": 1, "EQ2": 1, "EQ3": 1, "EQ4": 1, "EQ5": 1 },
-    "BND": { "B1": 2, "B2": 1, "B3": 1, "B4": 1, "B5": 1 },
-    "ACC": { "AB1": 1, "AB2": 1, "AB3": 1, "AB4": 1, "AB5": 1 },
-    "SYS": { "S1": 2, "S2": 1, "S3": 1, "S4": 2, "S5": 1 },
-    "INT": { "I1": 1, "I2": 1, "I3": 1, "I4": 1, "I5": 1 }
+    "AWR": {
+      "A1": 2,
+      "A2": 1,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 1,
+      "E5": 2
+    },
+    "ACT": {
+      "AC1": 1,
+      "AC2": 1,
+      "AC3": 1,
+      "AC4": 2,
+      "AC5": 1
+    },
+    "EQU": {
+      "EQ1": 1,
+      "EQ2": 1,
+      "EQ3": 1,
+      "EQ4": 1,
+      "EQ5": 1
+    },
+    "BND": {
+      "B1": 2,
+      "B2": 1,
+      "B3": 1,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 1,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 1
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 1,
+      "S3": 1,
+      "S4": 2,
+      "S5": 1
+    },
+    "INT": {
+      "I1": 1,
+      "I2": 1,
+      "I3": 1,
+      "I4": 1,
+      "I5": 1
+    }
   },
   "score_delta": -8.8,
   "band_change": false,
@@ -84,119 +132,165 @@
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "A Nigerien military drone strike killed at least 17 civilians at a crowded market in January 2026, violating prohibitions against indiscriminate attacks.",
-      "supports": ["A5", "AB1"]
+      "supports": [
+        "A5",
+        "AB1"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "After Tiangari's legal team filed for release in June, the junta amended the law extending maximum detention to four years - retroactively justifying continued imprisonment.",
-      "supports": ["B5", "AB2"]
+      "supports": [
+        "B5",
+        "AB2"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "The junta has since dissolved all political parties and suspended dozens of civil society organizations.",
-      "supports": ["A2", "I4"]
+      "supports": [
+        "A2",
+        "I4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "Niger withdrew from the International Criminal Court in June 2026, joining Mali and Burkina Faso in restricting international accountability mechanisms.",
-      "supports": ["A3", "EQ5", "AB5", "S5"]
+      "supports": [
+        "A3",
+        "EQ5",
+        "AB5",
+        "S5"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "complicity in distributing documents likely to disturb public order",
-      "supports": ["A4"]
+      "supports": [
+        "A4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/07/23/niger-3-years-of-military-rule-deepens-human-rights-crisis",
       "date": "2026-07-23",
       "quote": "The regime continues holding former President Bazoum, his wife, former Interior Minister Hama Amadou Souley, and activist Moussa Tiangari without due process.",
-      "supports": ["EQ3"]
+      "supports": [
+        "EQ3"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "the Nigerien army did not adequately respond to warnings of attacks",
-      "supports": ["A1", "AC1", "EQ1", "AB4"]
+      "supports": [
+        "A1",
+        "AC1",
+        "EQ1",
+        "AB4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "have been detained at the presidential palace in Niamey...with no access to family members or lawyers",
-      "supports": ["E1", "B4"]
+      "supports": [
+        "E1",
+        "B4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "arbitrary and called for their immediate release",
-      "supports": ["E4", "I1"]
+      "supports": [
+        "E4",
+        "I1"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "Four justice sector unions dissolved by interior minister",
-      "supports": ["B2", "I3"]
+      "supports": [
+        "B2",
+        "I3"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "Three Sahara FM journalists detained twice within 24 hours for reporting on security cooperation changes",
-      "supports": ["AB3"]
+      "supports": [
+        "AB3"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "over 70 worshippers, including 5 children",
-      "supports": ["AC3"]
+      "supports": [
+        "AC3"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/niger",
       "date": "2026-01-01",
       "quote": "Garkuwar Kassa militia initiative launched, raising concerns about the creation of abusive militias",
-      "supports": ["I2"]
+      "supports": [
+        "I2"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/niger/",
       "date": "2026-06-01",
       "quote": "In December the military authorities declared a 'general mobilization,' granting sweeping powers to requisition civilians and resources for counterinsurgency operations.",
-      "supports": ["AC2", "B1"]
+      "supports": [
+        "AC2",
+        "B1"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/niger/",
       "date": "2026-06-01",
       "quote": "In March authorities also announced plans to establish territorial self-defense organizations, raising concerns about the proliferation of community-based armed actors and the risk of retaliatory violence.",
-      "supports": ["AC4"]
+      "supports": [
+        "AC4"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/niger/",
       "date": "2026-06-01",
       "quote": "Civilians, particularly in Tillaberi, remain caught between armed Islamist groups, self-defense militias and increasing counterterrorism operations by state security forces.",
-      "supports": ["E5", "EQ2"]
+      "supports": [
+        "E5",
+        "EQ2"
+      ]
     }
   ],
   "tier_classification": "A",
   "recommendation": "flag-for-review",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
-  "applied_date": null
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-14",
+  "decision": "approved",
+  "applied_date": "2026-08-16"
 }

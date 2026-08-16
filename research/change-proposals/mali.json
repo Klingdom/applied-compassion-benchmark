@@ -30,22 +30,70 @@
       "AWR": 1.2,
       "EMP": 1.2,
       "ACT": 1.2,
-      "EQU": 1.0,
-      "BND": 1.0,
-      "ACC": 1.0,
+      "EQU": 1,
+      "BND": 1,
+      "ACC": 1,
       "SYS": 1.4,
-      "INT": 1.0
+      "INT": 1
     }
   },
   "proposed_subdimensions": {
-    "AWR": { "A1": 2, "A2": 1, "A3": 1, "A4": 1, "A5": 1 },
-    "EMP": { "E1": 1, "E2": 1, "E3": 1, "E4": 1, "E5": 2 },
-    "ACT": { "AC1": 1, "AC2": 1, "AC3": 1, "AC4": 2, "AC5": 1 },
-    "EQU": { "EQ1": 1, "EQ2": 1, "EQ3": 1, "EQ4": 1, "EQ5": 1 },
-    "BND": { "B1": 1, "B2": 1, "B3": 1, "B4": 1, "B5": 1 },
-    "ACC": { "AB1": 1, "AB2": 1, "AB3": 1, "AB4": 1, "AB5": 1 },
-    "SYS": { "S1": 2, "S2": 1, "S3": 1, "S4": 2, "S5": 1 },
-    "INT": { "I1": 1, "I2": 1, "I3": 1, "I4": 1, "I5": 1 }
+    "AWR": {
+      "A1": 2,
+      "A2": 1,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 1,
+      "E5": 2
+    },
+    "ACT": {
+      "AC1": 1,
+      "AC2": 1,
+      "AC3": 1,
+      "AC4": 2,
+      "AC5": 1
+    },
+    "EQU": {
+      "EQ1": 1,
+      "EQ2": 1,
+      "EQ3": 1,
+      "EQ4": 1,
+      "EQ5": 1
+    },
+    "BND": {
+      "B1": 1,
+      "B2": 1,
+      "B3": 1,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 1,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 1
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 1,
+      "S3": 1,
+      "S4": 2,
+      "S5": 1
+    },
+    "INT": {
+      "I1": 1,
+      "I2": 1,
+      "I3": 1,
+      "I4": 1,
+      "I5": 1
+    }
   },
   "score_delta": -9.4,
   "band_change": false,
@@ -69,119 +117,162 @@
       "url": "https://www.hrw.org/news/2026/06/28/mali-grave-abuses-amid-renewed-fighting",
       "date": "2026-06-28",
       "quote": "The Dozo and the soldiers just opened fire.… They chased us like hunters pursuing guinea fowls",
-      "supports": ["E1", "EQ2", "A5"]
+      "supports": [
+        "E1",
+        "EQ2",
+        "A5"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/06/28/mali-grave-abuses-amid-renewed-fighting",
       "date": "2026-06-28",
       "quote": "The military authorities have failed to hold those responsible for grave violations accountable, fostering impunity and emboldening abusive commanders.",
-      "supports": ["AB1", "AB2", "EQ3", "I1"]
+      "supports": [
+        "AB1",
+        "AB2",
+        "EQ3",
+        "I1"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2026/06/28/mali-grave-abuses-amid-renewed-fighting",
       "date": "2026-06-28",
       "quote": "My brother came out and was shot in front of my eyes",
-      "supports": ["E4"]
+      "supports": [
+        "E4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "summarily executed six Fulani men to punish the local community for its presumed collaboration with JNIM",
-      "supports": ["A2", "E3"]
+      "supports": [
+        "A2",
+        "E3"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "22 bodies in two mass graves",
-      "supports": ["E2"]
+      "supports": [
+        "E2"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "12 Fulani men at the cattle market in Kourma village...remain missing",
-      "supports": ["B4"]
+      "supports": [
+        "B4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "held incommunicado in a container for two weeks",
-      "supports": ["B5"]
+      "supports": [
+        "B5"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "No progress in government investigations",
-      "supports": ["A3", "AB2"]
+      "supports": [
+        "A3",
+        "AB2"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "adopted a bill abolishing multiparty politics",
-      "supports": ["A4", "I4"]
+      "supports": [
+        "A4",
+        "I4"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/world-report/2026/country-chapters/mali",
       "date": "2026-01-01",
       "quote": "a five-year presidential mandate, renewable 'as many times as necessary'",
-      "supports": ["B3", "S2", "I5"]
+      "supports": [
+        "B3",
+        "S2",
+        "I5"
+      ]
     },
     {
       "tier": 5,
       "url": "https://www.hrw.org/news/2025/07/22/mali-army-wagner-group-disappear-execute-fulani-civilians",
       "date": "2025-07-22",
       "quote": "Islamist armed groups have concentrated their recruitment efforts within the Fulani community and government forces have long conflated the Fulani with Islamist fighters, targeting them for killings and other abuses.",
-      "supports": ["E3", "AB4"]
+      "supports": [
+        "E3",
+        "AB4"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/mali/",
       "date": "2026-06-01",
       "quote": "summary executions, indiscriminate airstrikes, rape and sexual violence, pillaging and torture against civilians",
-      "supports": ["AC2"]
+      "supports": [
+        "AC2"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/mali/",
       "date": "2026-06-01",
       "quote": "first confirmed use of Russian-made cluster munitions in Mali",
-      "supports": ["I2"]
+      "supports": [
+        "I2"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.globalr2p.org/countries/mali/",
       "date": "2026-06-01",
       "quote": "929 civil society groups were suspended between April and May 2026 alone.",
-      "supports": ["B2"]
+      "supports": [
+        "B2"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.unocha.org/publications/report/mali/mali-2026-humanitarian-needs-and-response-plan-executive-summary",
       "date": "2026-01-01",
       "quote": "Out of 5.1 million people in need, the humanitarian community will target 3.8 million people, with a funding requirement of US$577.9 million.",
-      "supports": ["A1"]
+      "supports": [
+        "A1"
+      ]
     },
     {
       "tier": 4,
       "url": "https://www.unocha.org/publications/report/mali/mali-2026-humanitarian-needs-and-response-plan-executive-summary",
       "date": "2026-01-01",
       "quote": "Last year's plan received just over 21 per cent of the $771 million required - the lowest funding rate of the past 10 years.",
-      "supports": ["AC4"]
+      "supports": [
+        "AC4"
+      ]
     }
   ],
   "tier_classification": "A",
   "recommendation": "flag-for-review",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
-  "applied_date": null
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-14",
+  "decision": "approved",
+  "applied_date": "2026-08-16"
 }

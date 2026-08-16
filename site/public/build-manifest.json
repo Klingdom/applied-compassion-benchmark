@@ -1,8 +1,8 @@
 {
-  "buildDate": "2026-07-31T05:02:53.137Z",
-  "buildTimestamp": 1785474173137,
+  "buildDate": "2026-08-16T17:00:23.694Z",
+  "buildTimestamp": 1786899623694,
   "git": {
-    "sha": "010c2187",
+    "sha": "d77d0d20",
     "branch": "nightly-research-2026-07-24-27",
     "dirty": true
   },
@@ -12,14 +12,14 @@
       "name": "ai-labs",
       "rankingsCount": 50,
       "entityCount": 50,
-      "hash": "sha256:e199f2cbe5519d2d57600acd4ded8093479431e0e1aa88917326cf229065a020",
-      "meanScore": 43.4,
-      "medianScore": 46.1,
+      "hash": "sha256:af61d3b6c749f7463200549a3b0243156ff9478144f625a7838dce69cba72eb0",
+      "meanScore": 42.6,
+      "medianScore": 45.3,
       "bands": {
-        "Exemplary": 4,
+        "Exemplary": 3,
         "Established": 8,
         "Functional": 15,
-        "Developing": 18,
+        "Developing": 19,
         "Critical": 5
       },
       "floorDesignations": 3
@@ -28,15 +28,15 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:5f21fef38736105950fa6d2745616d12a0e23f2c640483e23cabb2ed74ddf9cd",
-      "meanScore": 36.4,
+      "hash": "sha256:cf032a82430dd4aecf1dde28c4809ca63cd0b72f14e6429ef107bc10c959fc96",
+      "meanScore": 36.2,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
         "Established": 26,
         "Functional": 29,
-        "Developing": 78,
-        "Critical": 46
+        "Developing": 76,
+        "Critical": 48
       },
       "floorDesignations": 4
     },
@@ -44,13 +44,13 @@
       "name": "fortune-500",
       "rankingsCount": 448,
       "entityCount": 448,
-      "hash": "sha256:2239fa5202512800d1fbc55e272c1607f343995e9bd2a6f557159b43c5d15e0e",
+      "hash": "sha256:7e15cc879754569f2b3e474fb9961e272c133bd09a1f0fbbce51dd5160b89d97",
       "meanScore": 39.1,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 7,
-        "Established": 51,
-        "Functional": 120,
+        "Established": 50,
+        "Functional": 121,
         "Developing": 217,
         "Critical": 53
       },
@@ -60,12 +60,12 @@
       "name": "global-cities",
       "rankingsCount": 250,
       "entityCount": 250,
-      "hash": "sha256:71448ac2d97a7149719cc6ade35578baceec963c9e6cc8705199140b6ae12538",
-      "meanScore": 35.2,
+      "hash": "sha256:ac3194a2d024873e370c2378d2bcd2d03ff9a36af2a6035c2cd6fdb6012b0c24",
+      "meanScore": 35.1,
       "medianScore": 31.3,
       "bands": {
-        "Exemplary": 16,
-        "Established": 25,
+        "Exemplary": 15,
+        "Established": 26,
         "Functional": 35,
         "Developing": 106,
         "Critical": 68
@@ -92,7 +92,7 @@
       "name": "universities",
       "rankingsCount": 100,
       "entityCount": 100,
-      "hash": "sha256:88538b11f184970bb2745d0c3fd7ac0753abff090b7d687ef039fa524ce8b9d7",
+      "hash": "sha256:6355f53bdfdb355ca20a3485f3f84686155111887c05b60d1890a16df36e18af",
       "meanScore": 46.2,
       "medianScore": 46.9,
       "bands": {
@@ -141,6 +141,118 @@
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
     {
+      "slug": "baxter-international-2026-07-22",
+      "entity": "Baxter International",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "becton-dickinson-2026-07-23",
+      "entity": "Becton Dickinson",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "carnegie-mellon-university-2026-07-29",
+      "entity": "Carnegie Mellon University",
+      "index": "universities",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "cerebras-systems",
+      "entity": "Cerebras Systems",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "cognition-ai",
+      "entity": "Cognition AI",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "ecuador",
+      "entity": "Ecuador",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "guinea-bissau-2026-07-23",
+      "entity": "Guinea-Bissau",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "kathmandu",
+      "entity": "Kathmandu",
+      "index": "global-cities",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "mali",
+      "entity": "Mali",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "microsoft-ai",
+      "entity": "Microsoft AI",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "niger",
+      "entity": "Niger",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "openai-2026-07-31",
+      "entity": "OpenAI",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "portugal-2026-07-30",
+      "entity": "Portugal",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "taipei",
+      "entity": "Taipei",
+      "index": "global-cities",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "tunis",
+      "entity": "Tunis",
+      "index": "global-cities",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
+      "slug": "uganda-2026-08-01",
+      "entity": "Uganda",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-16"
+    },
+    {
       "slug": "alabama-2026-07-19",
       "entity": "Alabama",
       "index": "us-states",
@@ -164,118 +276,6 @@
     {
       "slug": "arkansas-2026-07-19",
       "entity": "Arkansas",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "california-2026-07-19",
-      "entity": "California",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "colorado-2026-07-19",
-      "entity": "Colorado",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "connecticut-2026-07-19",
-      "entity": "Connecticut",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "delaware-2026-07-19",
-      "entity": "Delaware",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "district-of-columbia-2026-07-19",
-      "entity": "District of Columbia",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "egypt-2026-07-20",
-      "entity": "Egypt",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "fidelity-investments-2026-07-20",
-      "entity": "Fidelity Investments",
-      "index": "fortune-500",
-      "decision": "approved",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "florida-2026-07-19",
-      "entity": "Florida",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "freeport-mcmoran-2026-07-20",
-      "entity": "Freeport-McMoRan",
-      "index": "fortune-500",
-      "decision": "approved",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "georgia-us-states-2026-07-19",
-      "entity": "Georgia",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "hawaii-2026-07-19",
-      "entity": "Hawaii",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "hca-healthcare-2026-07-20",
-      "entity": "HCA Healthcare",
-      "index": "fortune-500",
-      "decision": "approved",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "idaho-2026-07-19",
-      "entity": "Idaho",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "illinois-2026-07-19",
-      "entity": "Illinois",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "indiana-2026-07-19",
-      "entity": "Indiana",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "iowa-2026-07-19",
-      "entity": "Iowa",
       "index": "us-states",
       "decision": "applied",
       "appliedDate": "2026-07-21"

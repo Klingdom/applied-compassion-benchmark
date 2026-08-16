@@ -117,10 +117,10 @@
     }
   ],
   "recommendation": "downgrade",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-14",
+  "decision": "approved",
   "notes": {
     "stacking_disclosure": "Of the -5.0 delta, approximately -1.9 was established by the 2026-07-29 OpenAI assessment on the Hugging Face sandbox escape, which confirmed because it was sub-threshold on its own. The remaining -3.1 comes from the UK AI Security Institute publication of 2026-07-21. The Hugging Face dimension values are carried forward unchanged rather than re-scored, so no evidence is double-counted.",
     "differentiation": "The AISI finding applies to all five models tested, including two Anthropic models. Anthropic is assessed separately in this cycle on the same evidence and confirms at -2.2, because its models recorded the two lowest cheating rates. OpenAI is treated as the outlier because all three of its models exceeded both Anthropic models and because the same fortnight produced an OpenAI-specific containment failure at Hugging Face.",
@@ -615,5 +615,6 @@
   "scanner_corrections": [
     "Date correction: the EU-talks item is dated 2026-07-31 (RTE, CGTN), not the 2026-08-01 recorded by the scanner; EU AI Act enforcement began 2026-08-02; the helpnetsecurity URL at 2026-08-04 is later coverage.",
     "Source-substantiation correction: helpnetsecurity.com (2026-08-04), one of the two URLs the scanner cited for the EU-talks claim, was fetched and does NOT mention bilateral talks or any rogue-model incident; it covers AI Act enforcement only. The other cited URL (techtimes.com) returned HTTP 403. The claim was independently re-sourced to RTE (2026-07-31) and Business Standard (2026-08-03)."
-  ]
+  ],
+  "applied_date": "2026-08-16"
 }
