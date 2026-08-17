@@ -1,0 +1,155 @@
+{
+  "entity": "Republic of Congo",
+  "slug": "republic-of-congo",
+  "index": "countries",
+  "proposal_date": "2026-08-16",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "rationale": "Republic of Congo is published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145. This full 40-subdimension assessment replaces the seed with evidence and returns 10.6, a difference of -9.7 points. The band moves from Developing to Critical.",
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 10.6,
+    "band": "critical",
+    "scores": {
+      "AWR": 1.4,
+      "EMP": 1.2,
+      "ACT": 1.8,
+      "EQU": 1.6,
+      "BND": 1.6,
+      "ACC": 1,
+      "SYS": 1.6,
+      "INT": 1.2
+    }
+  },
+  "score_delta": -9.7,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 6,
+    "max_tier": 4,
+    "passes": true
+  },
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "proposed_subdimensions": {
+    "AWR": {
+      "A1": 2,
+      "A2": 2,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 1,
+      "E5": 2
+    },
+    "ACT": {
+      "AC1": 2,
+      "AC2": 2,
+      "AC3": 2,
+      "AC4": 1,
+      "AC5": 2
+    },
+    "EQU": {
+      "EQ1": 2,
+      "EQ2": 2,
+      "EQ3": 1,
+      "EQ4": 1,
+      "EQ5": 2
+    },
+    "BND": {
+      "B1": 2,
+      "B2": 2,
+      "B3": 2,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 1,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 1
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 2,
+      "S3": 1,
+      "S4": 1,
+      "S5": 2
+    },
+    "INT": {
+      "I1": 1,
+      "I2": 1,
+      "I3": 2,
+      "I4": 1,
+      "I5": 1
+    }
+  },
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://bti-project.org/en/reports/country-report/COG",
+      "date": "2026-01-01",
+      "quote": "Social conditions in education and health have stagnated, and the government has shown little willingness to implement long-term development strategies."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/congo/report-congo/",
+      "date": "2026-01-01",
+      "quote": "In June, the International Federation for Human Rights and the Congolese Observatory for Human Rights condemned repeated bans on public demonstrations organized by civil society organizations and opposition parties, and their lack of representation on state media."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.aljazeera.com/news/2026/3/17/congos-president-nguesso-to-secure-fifth-term-provisional-results-predict",
+      "date": "2026-03-17",
+      "quote": "Sassou Nguesso was re-elected to a fifth term with 95% of the vote, on a reported turnout of 85%. The elections were held amid widespread allegations of unfair electoral practices, with major opposition parties boycotting the vote, human rights activists arrested in the lead-up to polling day, and a nationwide internet blackout occurring on election day."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.worldbank.org/ext/en/country/congo",
+      "date": "2026-01-01",
+      "quote": "Poverty edged up slightly to 51.7% at the $3.00 (2021 PPP) poverty line. Moderate growth in both oil and non-oil sectors has coincided with rising poverty and youth unemployment."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://borgenproject.org/poverty-reduction-in-the-republic-of-congo/",
+      "date": "2026-01-01",
+      "quote": "Telema, a national program with initiatives to support poverty reduction in the regions of Brazzaville, Point-Noire and Pool, mobilizes micro-entrepreneurs and those vulnerable to poverty to start micro-projects, with the government providing participants with grants and skills training."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://lansinginstitute.org/2025/12/12/elections-without-choice-power-ethnicity-and-foreign-influence-in-congo-brazzaville/",
+      "date": "2025-12-12",
+      "quote": "With his long record of corruption, economic mismanagement, and human rights abuses, civil society groups estimated that 15,000 citizens died and perhaps 100,000 were displaced following a 2016 military assault on the Pool region."
+    }
+  ],
+  "assessment_file": "research/assessments/republic-of-congo-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/republic-of-congo-2026-08-16.subdims.json"
+}

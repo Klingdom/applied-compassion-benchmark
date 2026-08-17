@@ -1,0 +1,126 @@
+{
+  "entity": "Honduras",
+  "slug": "honduras",
+  "index": "countries",
+  "proposal_date": "2026-08-16",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "rationale": "Honduras is published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145. This full 40-subdimension assessment replaces the seed with evidence and returns 26.9, a difference of +6.6 points.",
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 26.9,
+    "band": "developing",
+    "scores": {
+      "AWR": 2.2,
+      "EMP": 1.6,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 1.8,
+      "ACC": 2.2,
+      "SYS": 2.2,
+      "INT": 2.4
+    }
+  },
+  "score_delta": 6.6,
+  "band_change": false,
+  "band_change_evidence_test": null,
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "proposed_subdimensions": {
+    "AWR": {
+      "A1": 3,
+      "A2": 3,
+      "A3": 2,
+      "A4": 2,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 2,
+      "E2": 2,
+      "E3": 1,
+      "E4": 2,
+      "E5": 1
+    },
+    "ACT": {
+      "AC1": 2,
+      "AC2": 2,
+      "AC3": 3,
+      "AC4": 2,
+      "AC5": 2
+    },
+    "EQU": {
+      "EQ1": 2,
+      "EQ2": 2,
+      "EQ3": 2,
+      "EQ4": 2,
+      "EQ5": 2
+    },
+    "BND": {
+      "B1": 2,
+      "B2": 2,
+      "B3": 2,
+      "B4": 2,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 2,
+      "AB2": 3,
+      "AB3": 3,
+      "AB4": 1,
+      "AB5": 2
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 2,
+      "S3": 2,
+      "S4": 3,
+      "S5": 2
+    },
+    "INT": {
+      "I1": 3,
+      "I2": 2,
+      "I3": 2,
+      "I4": 2,
+      "I5": 3
+    }
+  },
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/honduras",
+      "date": "2026-01-01",
+      "quote": "The National Human Rights Commissioner registered over 800 complaints against security forces as of April. The state of emergency in place since 2022 is linked to arbitrary detentions, extrajudicial executions, and other abuses."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.usnews.com/news/world/articles/2026-01-27/honduras-asfura-to-take-office-after-razor-thin-election",
+      "date": "2026-01-27",
+      "quote": "Conservative politician Nasry Asfura won a closely contested election over centrist candidate Salvador Nasralla by a margin of 26,000 votes, and was sworn in as president on January 27, 2026."
+    }
+  ],
+  "assessment_file": "research/assessments/honduras-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/honduras-2026-08-16.subdims.json"
+}

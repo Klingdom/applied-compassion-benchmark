@@ -1,0 +1,587 @@
+{
+  "entity": "Djibouti",
+  "slug": "djibouti",
+  "index": "countries",
+  "assessment_date": "2026-08-16",
+  "proposal_date": "2026-08-16",
+  "assessment_file": "research/assessments/djibouti-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/djibouti-2026-08-16.subdims.json",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "filing_clause": "band-crossing",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "confidence_rationale": "The five sources are all secondary observers rather than Djiboutian state disclosures, and two of the five (allafrica.com, aljazeera.com) sit at tier 3. Two of the low scores rest on the absence of published state data rather than on a positive finding, and the Amnesty International country page could not be retrieved (HTTP 504). The direction of the movement is well supported; the exact magnitude is not independently corroborated.",
+  "rationale": "Djibouti is published at composite 20.3 on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5) shared byte-identically by twelve countries at ranks 134-145 of the countries index. A full 40-subdimension assessment dated 2026-08-16 replaces that seed with evidence and returns 17.5, a delta of -2.8 points. That delta is below the 5.0-point filing threshold but the band changes from Developing to Critical, so the proposal is filed under the band-crossing clause.",
+  "published_scores": {
+    "composite": 20.3,
+    "band": "Developing",
+    "rank": 136,
+    "rank_of": 193,
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 17.5,
+    "band": "Critical",
+    "scores": {
+      "AWR": 1.6,
+      "EMP": 1.6,
+      "ACT": 2,
+      "EQU": 1.8,
+      "BND": 2,
+      "ACC": 1,
+      "SYS": 2,
+      "INT": 1.6
+    }
+  },
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 17.5,
+    "band": "Critical",
+    "scores": {
+      "AWR": 1.6,
+      "EMP": 1.6,
+      "ACT": 2,
+      "EQU": 1.8,
+      "BND": 2,
+      "ACC": 1,
+      "SYS": 2,
+      "INT": 1.6
+    }
+  },
+  "score_delta": -2.8,
+  "band_change": true,
+  "published_composite_reconstruction": {
+    "note": "Canonical reconstruction of the published seed vector via computeCompositeFromDimensions.",
+    "reconstructed": 20.3,
+    "reconstructed_band": "Developing",
+    "published": 20.3,
+    "difference": 0,
+    "math_hygiene_issue": false
+  },
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "EQU",
+    "ACC",
+    "INT"
+  ],
+  "unchanged_dimensions": [
+    "ACT",
+    "BND",
+    "SYS"
+  ],
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 5,
+    "independent_source_domains": [
+      "news.un.org",
+      "unhcr.org",
+      "freedomhouse.org",
+      "allafrica.com",
+      "aljazeera.com"
+    ],
+    "max_tier": 4,
+    "tier4_plus_sources": [
+      "news.un.org",
+      "unhcr.org",
+      "freedomhouse.org"
+    ],
+    "passed": true,
+    "note": "Counted by distinct publishing organisation, not by URL. Freedom House and UN sources are counted separately; UNHCR and UN News are both UN bodies, so on the most conservative count that treats them as one source the test still returns 4 independent sources with at least one at tier 4."
+  },
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Djibouti participates in UN-backed food security monitoring, but the alert that 25 per cent of the population faces crisis hunger was produced externally.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://news.un.org/en/story/2026/07/1167971",
+          "publishedDate": "2026-07-17",
+          "quote": "More than 256,000 people in Djibouti, around 25 per cent of the population, are likely to face crisis or emergency level hunger over the coming months. Nearly 70 per cent of their population, over 21,000 people, have been classified under the crisis level or above."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The government has taken documented steps to include refugees from three nationalities in national education, health care and employment systems, a genuine adaptation with acknowledged gaps.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No process exists to find who is missed; local human rights groups working on sensitive matters cannot operate freely.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "Police regularly use violence to disperse unauthorized protests and arrest participants, and local human rights groups that work on politically sensitive matters cannot operate freely, face difficulties in registering with the authorities, and are subject to government harassment."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Channels for low-power voices are closed: human rights groups face registration difficulties and government harassment.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "Police regularly use violence to disperse unauthorized protests and arrest participants, and local human rights groups that work on politically sensitive matters cannot operate freely, face difficulties in registering with the authorities, and are subject to government harassment."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The constitutional amendment lifting the age limit was passed without any published assessment of its effect.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://allafrica.com/stories/202510270030.html",
+          "publishedDate": "2025-11-02",
+          "quote": "A constitutional amendment was passed in 2025 that allowed him to run again. The amendment, which was ratified by parliament on 2 November 2025, was criticised by the president of the Djiboutian League for Human Rights, Omar Ali Ewado, stating that the change prepared Djibouti for a presidency for life under Guelleh."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "justification": "Refugee villages provide services to about 32,000 people, but interactions with critics are coercive.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Djibouti hosts approximately 32,000 people forced to flee, including over 23,000 refugees and 8,000 asylum-seekers, primarily from Somalia, Ethiopia, and Yemen. Around 85% reside in refugee villages such as Ali Addeh, Holl-Holl, and Markazi."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The constitutional change and the 2026 election proceeded with the opposition boycotting or absorbed; no mechanism modelled their position.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://www.aljazeera.com/amp/news/2026/4/10/djibouti-votes-as-long-time-leader-seeks-sixth-presidential-term",
+          "publishedDate": "2026-04-10",
+          "quote": "Presidential elections were held in Djibouti on 10 April 2026, and incumbent fifth term president Ismail Omar Guelleh was re-elected to a sixth term, having been president since 1999. Most of the opposition parties either boycotted the election or decided to support Guelleh."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Refugee inclusion crosses national and ethnic lines, but political dissent is punished.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Accounts of harm are not validated; journalists and activists who criticise are regularly harassed or arrested.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Refugee villages serve Somali, Ethiopian and Yemeni communities, an adaptation across cultures, but it is not co-designed with them on the record.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Djibouti hosts approximately 32,000 people forced to flee, including over 23,000 refugees and 8,000 asylum-seekers, primarily from Somalia, Ethiopia, and Yemen. Around 85% reside in refugee villages such as Ali Addeh, Holl-Holl, and Markazi."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Care extends to non-citizens by policy: refugees are included in national education, health care and employment, with coverage data published by UNHCR.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Priority is stated but allocation does not follow need: the highest-need group, camp residents, is 70 per cent in crisis hunger.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://news.un.org/en/story/2026/07/1167971",
+          "publishedDate": "2026-07-17",
+          "quote": "More than 256,000 people in Djibouti, around 25 per cent of the population, are likely to face crisis or emergency level hunger over the coming months. Nearly 70 per cent of their population, over 21,000 people, have been classified under the crisis level or above."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No disaggregated bias data is published and disparities are not investigated.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "Police regularly use violence to disperse unauthorized protests and arrest participants, and local human rights groups that work on politically sensitive matters cannot operate freely, face difficulties in registering with the authorities, and are subject to government harassment."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Refugee access to schools and clinics was opened by policy, but no formal barrier mapping is documented.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No acknowledgement of historical harms; the political system does not permit the question.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Harm to detained journalists and activists is not acknowledged.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Rather than correcting course, parliament amended the constitution on 2 November 2025 to remove the age limit blocking a sixth term.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://allafrica.com/stories/202510270030.html",
+          "publishedDate": "2025-11-02",
+          "quote": "A constitutional amendment was passed in 2025 that allowed him to run again. The amendment, which was ratified by parliament on 2 November 2025, was criticised by the president of the Djiboutian League for Human Rights, Omar Ali Ewado, stating that the change prepared Djibouti for a presidency for life under Guelleh."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No performance or failure data is published by the state.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "Police regularly use violence to disperse unauthorized protests and arrest participants, and local human rights groups that work on politically sensitive matters cannot operate freely, face difficulties in registering with the authorities, and are subject to government harassment."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The same pattern has recurred across six presidential terms since 1999 with no systemic review.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://www.aljazeera.com/amp/news/2026/4/10/djibouti-votes-as-long-time-leader-seeks-sixth-presidential-term",
+          "publishedDate": "2026-04-10",
+          "quote": "Presidential elections were held in Djibouti on 10 April 2026, and incumbent fifth term president Ismail Omar Guelleh was re-elected to a sixth term, having been president since 1999. Most of the opposition parties either boycotted the election or decided to support Guelleh."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No reparative action toward those harassed, arrested or excluded is evidenced.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Djibouti has held its open-door refugee policy through recurrent drought while 25 per cent of its own population faces crisis hunger, a commitment maintained at real cost.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://news.un.org/en/story/2026/07/1167971",
+          "publishedDate": "2026-07-17",
+          "quote": "More than 256,000 people in Djibouti, around 25 per cent of the population, are likely to face crisis or emergency level hunger over the coming months. Nearly 70 per cent of their population, over 21,000 people, have been classified under the crisis level or above."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The refugee policy earns international standing, but it has been sustained for decades rather than switched on for visibility.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+          "publishedDate": "2026-01-01",
+          "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Internal critics fare worse than the external message: journalists and activists are regularly harassed or arrested.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+          "publishedDate": "2026-01-01",
+          "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The constitution was amended to suit the incumbent, contradicting stated democratic values without acknowledgement.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://allafrica.com/stories/202510270030.html",
+          "publishedDate": "2025-11-02",
+          "quote": "A constitutional amendment was passed in 2025 that allowed him to run again. The amendment, which was ratified by parliament on 2 November 2025, was criticised by the president of the Djiboutian League for Human Rights, Omar Ali Ewado, stating that the change prepared Djibouti for a presidency for life under Guelleh."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No leadership transition since 1999; practices are entirely untested and personality-dependent.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://www.aljazeera.com/amp/news/2026/4/10/djibouti-votes-as-long-time-leader-seeks-sixth-presidential-term",
+          "publishedDate": "2026-04-10",
+          "quote": "Presidential elections were held in Djibouti on 10 April 2026, and incumbent fifth term president Ismail Omar Guelleh was re-elected to a sixth term, having been president since 1999. Most of the opposition parties either boycotted the election or decided to support Guelleh."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://news.un.org/en/story/2026/07/1167971",
+      "publishedDate": "2026-07-17",
+      "quote": "More than 256,000 people in Djibouti, around 25 per cent of the population, are likely to face crisis or emergency level hunger over the coming months. Nearly 70 per cent of their population, over 21,000 people, have been classified under the crisis level or above."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+      "publishedDate": "2026-01-01",
+      "quote": "Despite recurrent droughts and limited resources, Djibouti has maintained a long-standing open-door policy and has been recognized as a regional leader in implementing the Comprehensive Refugee Response Framework (CRRF). The Government has taken bold steps to include refugees in national systems such as education, health care, and employment."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+      "publishedDate": "2026-01-01",
+      "quote": "Police regularly use violence to disperse unauthorized protests and arrest participants, and local human rights groups that work on politically sensitive matters cannot operate freely, face difficulties in registering with the authorities, and are subject to government harassment."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.unhcr.org/us/where-we-work/countries/djibouti",
+      "publishedDate": "2026-01-01",
+      "quote": "Djibouti hosts approximately 32,000 people forced to flee, including over 23,000 refugees and 8,000 asylum-seekers, primarily from Somalia, Ethiopia, and Yemen. Around 85% reside in refugee villages such as Ali Addeh, Holl-Holl, and Markazi."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://freedomhouse.org/country/djibouti/freedom-world/2026",
+      "publishedDate": "2026-01-01",
+      "quote": "The opposition's ability to operate is severely constrained, and journalists and activists who air criticism of Guelleh or the UMP are regularly harassed or arrested."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://allafrica.com/stories/202510270030.html",
+      "publishedDate": "2025-11-02",
+      "quote": "A constitutional amendment was passed in 2025 that allowed him to run again. The amendment, which was ratified by parliament on 2 November 2025, was criticised by the president of the Djiboutian League for Human Rights, Omar Ali Ewado, stating that the change prepared Djibouti for a presidency for life under Guelleh."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.aljazeera.com/amp/news/2026/4/10/djibouti-votes-as-long-time-leader-seeks-sixth-presidential-term",
+      "publishedDate": "2026-04-10",
+      "quote": "Presidential elections were held in Djibouti on 10 April 2026, and incumbent fifth term president Ismail Omar Guelleh was re-elected to a sixth term, having been president since 1999. Most of the opposition parties either boycotted the election or decided to support Guelleh."
+    }
+  ],
+  "notes": "Filed under the revised band-crossing clause: a proposal may be filed when EITHER the absolute composite delta is at least 5.0 points OR the assessed band differs from the published band, at any delta. This proposal is filed on the second condition. The composite delta is -2.8 points, which would NOT have been filable under the previous 5.0-point-only rule, and the original Djibouti assessment therefore recorded \"do not file\" on that basis. The movement is a seed-baseline de-seeding, not a finding of new misconduct: Djibouti was published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145 of the countries index. Replacing that placeholder with 40 measured subdimension scores moves the composite to 17.5, which crosses the 20.0 boundary from Developing into Critical. No subdimension score, evidence item or composite has been re-scored or altered for this filing; every value is carried verbatim from the 2026-08-16 assessment and its sidecar."
+}

@@ -120,7 +120,12 @@ When any doubt remains after these checks: **confirm + watch flag, do not propos
 
 ### 3f. Generate Change Proposal (If Warranted)
 
-If the composite score delta is >= 5 points (absolute value) AND the proposal clears ALL of the 3e-bis screening checks, write a change proposal to `research/change-proposals/{entity-slug}.json`:
+Write a change proposal to `research/change-proposals/{entity-slug}.json` when the proposal clears ALL of the 3e-bis screening checks AND **either** of the following filing triggers is met:
+
+- **Magnitude trigger:** the composite score delta is >= 5 points (absolute value), **OR**
+- **Band-crossing trigger:** the assessed band differs from the published band, **at any delta, however small**.
+
+The band-crossing trigger is not optional and has no minimum delta. A published band label that the evidence contradicts is the most visible error the benchmark can make, and it must always be filable.
 
 ```json
 {
@@ -209,10 +214,12 @@ If the composite score delta is >= 5 points (absolute value) AND the proposal cl
 **Recommendation values:**
 - **upgrade**: Proposed score is meaningfully higher than published
 - **downgrade**: Proposed score is meaningfully lower than published
-- **confirm**: Delta < 5, scores are broadly consistent
+- **confirm**: Delta < 5 AND no band change; scores are broadly consistent
 - **flag-for-review**: Evidence is ambiguous or conflicting, human judgment needed
 
-If the delta is < 5 points, do NOT write a change proposal. The scores are considered consistent.
+If the delta is < 5 points **and the assessed band matches the published band**, do NOT write a change proposal. The scores are considered consistent.
+
+If the delta is < 5 points **but the assessed band differs from the published band**, you MUST still write a change proposal under the band-crossing trigger (§3f). Record in `notes` that it was filed on the band-crossing clause at a sub-5-point delta. Precedent: the 2026-08-16 20.3-cluster study moved Djibouti and Mauritania from Developing to Critical on a delta of just -2.8; under the previous magnitude-only rule both were unfilable, leaving two published band labels provably wrong with no route to correct them.
 
 ### 3g. Write Subdimension Sidecar (REQUIRED for full assessments)
 
@@ -315,7 +322,7 @@ Print to the console:
 3. **Score conservatively.** When in doubt, round down. The institution's credibility depends on rigorous, defensible scores.
 4. **Be balanced.** Search for both positive and negative evidence. Do not cherry-pick.
 5. **Include sources.** Every subdimension score must cite specific evidence with URLs.
-6. **Respect the 5-point threshold.** Only generate change proposals when the composite delta is >= 5 points.
+6. **Respect the filing triggers.** Generate a change proposal when the composite delta is >= 5 points **OR** when the assessed band differs from the published band at any delta. A band crossing is always filable, however small the movement — see §3f.
 6a. **Screen out false positives (see 3e-bis).** Before any proposal: read the entity's recent score history (`APPLIED_CHANGES.md` + recent digests), reject "stale baseline" rationales the history contradicts, require upgrades to be backed by new positive within-window conduct (not the absence of harm), and never emit a proposal whose rationale conflicts with the documented history. Treat calibration concerns as `flag-for-review`, never as one-off resets. When in doubt: confirm + watch, do not propose.
 7. **Handle errors gracefully.** If you cannot assess an entity (no public information, search failures), log it in the errors array and move to the next entity.
 8. **Do not modify published index JSON files.** Your job is to write proposals. The score-updater agent applies approved changes.

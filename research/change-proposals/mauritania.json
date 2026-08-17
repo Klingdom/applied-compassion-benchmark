@@ -1,0 +1,773 @@
+{
+  "entity": "Mauritania",
+  "slug": "mauritania",
+  "index": "countries",
+  "assessment_date": "2026-08-16",
+  "proposal_date": "2026-08-16",
+  "assessment_file": "research/assessments/mauritania-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/mauritania-2026-08-16.subdims.json",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "filing_clause": "band-crossing",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "confidence_rationale": "The harm evidence is strong: Human Rights Watch (tier 5) and the UN Office of the High Commissioner for Human Rights (tier 5) directly document the conduct scored. Confidence is held at medium rather than high because no independent outcome evaluation of the Tekavoul safety net was located, so the positive dimensions (Action, Equity) rest on coverage figures rather than measured effect, and two subdimensions rely on unwatch.org at tier 3.",
+  "rationale": "Mauritania is published at composite 20.3 on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5) shared byte-identically by twelve countries at ranks 134-145 of the countries index. A full 40-subdimension assessment dated 2026-08-16 replaces that seed with evidence and returns 17.5, a delta of -2.8 points. That delta is below the 5.0-point filing threshold but the band changes from Developing to Critical, so the proposal is filed under the band-crossing clause.",
+  "published_scores": {
+    "composite": 20.3,
+    "band": "Developing",
+    "rank": 141,
+    "rank_of": 193,
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 17.5,
+    "band": "Critical",
+    "scores": {
+      "AWR": 2,
+      "EMP": 1.2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 1.6,
+      "ACC": 1.2,
+      "SYS": 1.8,
+      "INT": 1.6
+    }
+  },
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 17.5,
+    "band": "Critical",
+    "scores": {
+      "AWR": 2,
+      "EMP": 1.2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 1.6,
+      "ACC": 1.2,
+      "SYS": 1.8,
+      "INT": 1.6
+    }
+  },
+  "score_delta": -2.8,
+  "band_change": true,
+  "published_composite_reconstruction": {
+    "note": "Canonical reconstruction of the published seed vector via computeCompositeFromDimensions.",
+    "reconstructed": 20.3,
+    "reconstructed_band": "Developing",
+    "published": 20.3,
+    "difference": 0,
+    "math_hygiene_issue": false
+  },
+  "changed_dimensions": [
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "unchanged_dimensions": [
+    "AWR"
+  ],
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 6,
+    "independent_source_domains": [
+      "hrw.org",
+      "ohchr.org",
+      "alliance-sahel.org",
+      "amnesty.org",
+      "unwatch.org",
+      "bti-project.org"
+    ],
+    "max_tier": 5,
+    "tier4_plus_sources": [
+      "hrw.org",
+      "ohchr.org",
+      "alliance-sahel.org",
+      "amnesty.org",
+      "unwatch.org",
+      "bti-project.org"
+    ],
+    "passed": true,
+    "note": "Counted by distinct publishing organisation, not by URL. The two Human Rights Watch URLs are counted once. Human Rights Watch and the UN Office of the High Commissioner for Human Rights both sit at tier 5."
+  },
+  "proposed_subdimensions": [
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Tekavoul pairs cash transfers with social promotion sessions, a relational element, but treatment of migrants is documented as cruel.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Decisions are made without modelling the experience of those affected: torture, rape, racist treatment and collective expulsions are documented.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Racist treatment of West and Central African migrants is documented, alongside descent-based caste exclusion.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The state denies to UN bodies that slavery exists, which is the direct invalidation of victims' accounts.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://unwatch.org/mauritania-to-un-watch-no-slavery-in-the-country/",
+          "publishedDate": "2026-01-01",
+          "quote": "Mauritania to UN Watch: No slavery in the country."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Harm is itself culturally targeted: descent-based slavery and the exclusion of Haratine and Afro-Mauritanian communities persist.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.ohchr.org/en/countries/mauritania",
+          "publishedDate": "2026-07-01",
+          "quote": "In the July report on Mauritania, the UN Special Rapporteur on contemporary forms of slavery noted the persistence of both descent-based and modern forms of slavery in certain parts of the country, and highlighted the social, economic and political exclusion experienced by currently and formerly enslaved individuals and their descendants."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Transfers are delivered on a defined quarterly cycle, but no published response standards exist for citizen concerns.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Transfers were augmented over time, from 1,500 to 3,600 MRU per household per quarter between 2021 and 2024, and targeted through the registry.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "justification": "No independent outcome evaluation of Tekavoul was located; coverage figures are activity data.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The government finances 76,929 of the 133,510 covered households from its own budget, a majority share, and scaled the programme nationwide.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "There is no follow-through for those summarily and collectively expelled.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The social register covers a third of the population nationwide, with published household coverage data.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Tekavoul explicitly targets extremely poor households and the transfer value was raised three times between 2021 and 2024.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No disaggregated bias data is published and at least 149,000 people remained enslaved as of 2023 while the state denies slavery exists.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://unwatch.org/un-watch-calls-on-mauritania-to-strengthen-anti-slavery-laws/",
+          "publishedDate": "2026-01-01",
+          "quote": "According to the Global Slavery Index, as of 2023, at least 149,000 people in Mauritania remained enslaved. Despite legal prohibitions and repeated government commitments, slavery remains prevalent."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The registry removes the identification barrier and the nationwide rollout removes the geographic one, but no formal barrier mapping with communities is documented.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Historical harms are effectively denied: the president has responded coolly to the African Commission and the UN Committee on Enforced Disappearances on reconciliation for violence against Afro-Mauritanians.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://bti-project.org/en/reports/country-report/MRT",
+          "publishedDate": "2026-01-01",
+          "quote": "President Ould Ghazouani has responded coolly to international pressure from the African Commission on Human and Peoples' Rights, the U.N. Committee on Enforced Disappearances, and other bodies to pursue reconciliation initiatives related to historical violence against Afro-Mauritanians."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "justification": "The safety net is majority government-financed, a partial signal of sustainability, but no frontline staffing data exists.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Social promotion sessions accompany transfers and aim at capacity, but autonomy outcomes are not measured.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "justification": "Entitlements are defined by programme rules, but limitations are not proactively communicated.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "People are turned away without explanation or alternatives, through summary and collective expulsions.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Consent is absent where arbitrary arrest, inhumane detention and expulsion are documented.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Harm is denied rather than acknowledged; the state tells UN bodies there is no slavery.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://unwatch.org/mauritania-to-un-watch-no-slavery-in-the-country/",
+          "publishedDate": "2026-01-01",
+          "quote": "Mauritania to UN Watch: No slavery in the country."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Correction came eventually and under pressure: anti-slavery legislation exists and slavery is criminalised, but at least 149,000 people remained enslaved as of 2023.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://unwatch.org/un-watch-calls-on-mauritania-to-strengthen-anti-slavery-laws/",
+          "publishedDate": "2026-01-01",
+          "quote": "According to the Global Slavery Index, as of 2023, at least 149,000 people in Mauritania remained enslaved. Despite legal prohibitions and repeated government commitments, slavery remains prevalent."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No performance or violation data is published; internet disruption was used against expression.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/mauritania/report-mauritania/",
+          "publishedDate": "2026-01-01",
+          "quote": "The rights to freedom of expression and peaceful assembly were violated by repressive measures including internet disruption and excessive use of force."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The same failures recurred across five years, from 2020 to early 2025.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+          "publishedDate": "2025-08-27",
+          "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "No reparative action for historical violence against Afro-Mauritanians is evidenced; reconciliation calls were met coolly.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://bti-project.org/en/reports/country-report/MRT",
+          "publishedDate": "2026-01-01",
+          "quote": "President Ould Ghazouani has responded coolly to international pressure from the African Commission on Human and Peoples' Rights, the U.N. Committee on Enforced Disappearances, and other bodies to pursue reconciliation initiatives related to historical violence against Afro-Mauritanians."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Tekavoul plus the shock-responsive ELMAOUNA scheme is an upstream intervention against chronic and seasonal poverty, with resources attached.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The safety net has been scaled progressively since 2021, but no published theory of change with long-horizon tracking was located.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Second-order effects are unmanaged: mass expulsions triggered political tensions with Mali and Senegal.",
+      "evidence": [
+        {
+          "sourceTier": 5,
+          "url": "https://www.hrw.org/news/2025/08/27/mauritania-years-of-migration-control-abuses",
+          "publishedDate": "2025-08-27",
+          "quote": "Between January and April 2025 alone, some 30,000 irregular migrants were reported to have been apprehended in sweeping raids."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The state denies the existence of the structure that produces the suffering.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://unwatch.org/mauritania-to-un-watch-no-slavery-in-the-country/",
+          "publishedDate": "2026-01-01",
+          "quote": "Mauritania to UN Watch: No slavery in the country."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "Mauritania works with the World Bank and the Sahel Adaptive Social Protection Programme, but joint outcomes are not documented.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The government kept scaling Tekavoul and raising transfer values through fiscal stress, financing the majority share itself.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "Anti-slavery law exists for international audiences while the state tells UN bodies slavery does not exist.",
+      "evidence": [
+        {
+          "sourceTier": 3,
+          "url": "https://unwatch.org/mauritania-to-un-watch-no-slavery-in-the-country/",
+          "publishedDate": "2026-01-01",
+          "quote": "Mauritania to UN Watch: No slavery in the country."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "justification": "No specific internal-culture evidence was located; scored at the low-middle anchor on absence.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/mauritania/report-mauritania/",
+          "publishedDate": "2026-01-01",
+          "quote": "The rights to freedom of expression and peaceful assembly were violated by repressive measures including internet disruption and excessive use of force."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "justification": "The constitution and law prohibit slavery, yet at least 149,000 people remained enslaved as of 2023, without acknowledgement.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://unwatch.org/un-watch-calls-on-mauritania-to-strengthen-anti-slavery-laws/",
+          "publishedDate": "2026-01-01",
+          "quote": "According to the Global Slavery Index, as of 2023, at least 149,000 people in Mauritania remained enslaved. Despite legal prohibitions and repeated government commitments, slavery remains prevalent."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "justification": "The safety net survived a change of government and continued to expand, but political practice has not been tested by a genuine transition.",
+      "evidence": [
+        {
+          "sourceTier": 4,
+          "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+          "publishedDate": "2026-01-01",
+          "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "sourceTier": 5,
+      "url": "https://www.hrw.org/news/2025/08/27/mauritania-years-of-migration-control-abuses",
+      "publishedDate": "2025-08-27",
+      "quote": "Between January and April 2025 alone, some 30,000 irregular migrants were reported to have been apprehended in sweeping raids."
+    },
+    {
+      "sourceTier": 5,
+      "url": "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu",
+      "publishedDate": "2025-08-27",
+      "quote": "Mauritanian security forces committed serious human rights violations between 2020 and early 2025 against largely West and Central African migrants and asylum seekers. The violations include torture, rape, and other violence; sexual harassment; arbitrary arrests and detention; inhumane detention conditions; racist treatment; extortion and theft; and summary and collective expulsions."
+    },
+    {
+      "sourceTier": 5,
+      "url": "https://www.ohchr.org/en/countries/mauritania",
+      "publishedDate": "2026-07-01",
+      "quote": "In the July report on Mauritania, the UN Special Rapporteur on contemporary forms of slavery noted the persistence of both descent-based and modern forms of slavery in certain parts of the country, and highlighted the social, economic and political exclusion experienced by currently and formerly enslaved individuals and their descendants."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.alliance-sahel.org/en/news/social-safety-nets-mauritania-tekavoul/",
+      "publishedDate": "2026-01-01",
+      "quote": "The Tekavoul social transfer program covers 133,510 extremely poor households, with 56,581 financed by the project and 76,929 by the government budget. The social register includes over 200,000 households, representing a third of the Mauritanian population, and covers the entire country."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.alliance-sahel.org/en/projects/support-project-for-the-rollout-of-the-social-registry-and-social-safety-net-program/",
+      "publishedDate": "2026-01-01",
+      "quote": "The Mauritanian government has decided to scale up the Tekavoul programme nationwide, increasing the amount of the quarterly cash transfer per household from 1,500 to 2,200 in 2021, then 2,900 in 2023 and reaching 3,600 MRU in 2024. The World Bank is supporting the deployment of the national Social Registry, the TEKAVOUL social transfer program, and its shock-responsive social safety net program, ELMAOUNA."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/mauritania/report-mauritania/",
+      "publishedDate": "2026-01-01",
+      "quote": "The rights to freedom of expression and peaceful assembly were violated by repressive measures including internet disruption and excessive use of force."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://unwatch.org/un-watch-calls-on-mauritania-to-strengthen-anti-slavery-laws/",
+      "publishedDate": "2026-01-01",
+      "quote": "According to the Global Slavery Index, as of 2023, at least 149,000 people in Mauritania remained enslaved. Despite legal prohibitions and repeated government commitments, slavery remains prevalent."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://bti-project.org/en/reports/country-report/MRT",
+      "publishedDate": "2026-01-01",
+      "quote": "President Ould Ghazouani has responded coolly to international pressure from the African Commission on Human and Peoples' Rights, the U.N. Committee on Enforced Disappearances, and other bodies to pursue reconciliation initiatives related to historical violence against Afro-Mauritanians."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://unwatch.org/mauritania-to-un-watch-no-slavery-in-the-country/",
+      "publishedDate": "2026-01-01",
+      "quote": "Mauritania to UN Watch: No slavery in the country."
+    }
+  ],
+  "notes": "Filed under the revised band-crossing clause: a proposal may be filed when EITHER the absolute composite delta is at least 5.0 points OR the assessed band differs from the published band, at any delta. This proposal is filed on the second condition. The composite delta is -2.8 points, which would NOT have been filable under the previous 5.0-point-only rule, and the original Mauritania assessment therefore recorded \"do not file\" on that basis. The movement is a seed-baseline de-seeding, not a finding of new misconduct: Mauritania was published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145 of the countries index. Replacing that placeholder with 40 measured subdimension scores moves the composite to 17.5, which crosses the 20.0 boundary from Developing into Critical. No subdimension score, evidence item or composite has been re-scored or altered for this filing; every value is carried verbatim from the 2026-08-16 assessment and its sidecar."
+}

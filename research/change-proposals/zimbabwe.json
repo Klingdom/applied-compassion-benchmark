@@ -1,0 +1,167 @@
+{
+  "entity": "Zimbabwe",
+  "slug": "zimbabwe",
+  "index": "countries",
+  "proposal_date": "2026-08-16",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "rationale": "Zimbabwe is published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145. This full 40-subdimension assessment replaces the seed with evidence and returns 10, a difference of -10.3 points. The band moves from Developing to Critical.",
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 10,
+    "band": "critical",
+    "scores": {
+      "AWR": 1.4,
+      "EMP": 1.2,
+      "ACT": 1.6,
+      "EQU": 1.6,
+      "BND": 1.2,
+      "ACC": 1.2,
+      "SYS": 1.8,
+      "INT": 1.2
+    }
+  },
+  "score_delta": -10.3,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 3,
+    "max_tier": 4,
+    "passes": true
+  },
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "proposed_subdimensions": {
+    "AWR": {
+      "A1": 2,
+      "A2": 2,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 1,
+      "E5": 2
+    },
+    "ACT": {
+      "AC1": 2,
+      "AC2": 1,
+      "AC3": 2,
+      "AC4": 2,
+      "AC5": 1
+    },
+    "EQU": {
+      "EQ1": 2,
+      "EQ2": 1,
+      "EQ3": 1,
+      "EQ4": 2,
+      "EQ5": 2
+    },
+    "BND": {
+      "B1": 1,
+      "B2": 1,
+      "B3": 2,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 2,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 1
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 2,
+      "S3": 1,
+      "S4": 2,
+      "S5": 2
+    },
+    "INT": {
+      "I1": 1,
+      "I2": 2,
+      "I3": 1,
+      "I4": 1,
+      "I5": 1
+    }
+  },
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/zimbabwe",
+      "date": "2026-01-01",
+      "quote": "President Mnangagwa signed the Private Voluntary Organizations Amendment Act into law on April 11, 2025, which empowers authorities to deregister and seize the assets of nongovernmental groups deemed to be acting in a politically partisan manner, with little to no judicial recourse."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2026/03/10/zimbabwe-violence-and-intimidation-against-opponents-of-presidential-term-extension",
+      "date": "2026-03-10",
+      "quote": "Authorities in Zimbabwe have intensified their crackdown against critics of an effort by the ruling ZANU-PF party to push forward a constitutional amendment to extend President Emmerson Mnangagwa's term of office. The government gazetted Constitutional Amendment No 3 on February 16, 2026, which would extend the term of office for both the president and parliament from five to seven years, effectively postponing the 2028 elections until 2030."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2026/04/24/zimbabwe-crackdown-on-student-protesters-intensifies",
+      "date": "2026-04-24",
+      "quote": "Zimbabwean authorities have harassed, abducted, and arbitrarily detained student leaders protesting a proposed constitutional amendment to extend presidential terms. In November 2025, two students, Marlvin Madanda, 23, and Lindon Zanga, 21, were reportedly abducted while campaigning on campus at the Chinhoyi University of Technology and were found the next day after being allegedly assaulted and tortured."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/zimbabwe",
+      "date": "2025-08-30",
+      "quote": "Job Sikhala's home was bombed August 30, 2025; police provided no response despite his report."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://deathpenaltyproject.org/press-release-zimbabwe-takes-historic-decision-to-abolish-the-death-penalty/",
+      "date": "2024-12-31",
+      "quote": "President Emmerson Mnangagwa signed into law the Death Penalty Abolition Act on December 31, 2024. The law abolishes the death penalty for all crimes and provides that dozens of people currently under a death sentence in Zimbabwe will now be resentenced."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/zimbabwe",
+      "date": "2025-08-21",
+      "quote": "Three human rights defenders, Robson Chere, Namatai Kwekweza, and Samuel Gwenzi, were acquitted August 21, 2025, after a year-long trial involving documented torture and incommunicado detention."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2026/07/08/zimbabwe-constitution-amended-to-extend-presidents-term",
+      "date": "2026-07-08",
+      "quote": "Zimbabwe Constitution Amended to Extend President's Term."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.newsday.co.zw/amp/local-news/article/200059118/eu-commits-us345-000-to-zimbabwe-cholera-response-returnee-crisis",
+      "date": "2026-01-01",
+      "quote": "The European Union committed US$345,000 in emergency humanitarian funding to help Zimbabwe combat a worsening cholera outbreak. Zimbabwe has endured recurrent cholera outbreaks for more than two decades, highlighting persistent deficiencies in water infrastructure, sanitation systems and public health services."
+    }
+  ],
+  "assessment_file": "research/assessments/zimbabwe-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/zimbabwe-2026-08-16.subdims.json"
+}

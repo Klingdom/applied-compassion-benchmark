@@ -1,0 +1,161 @@
+{
+  "entity": "Cameroon",
+  "slug": "cameroon",
+  "index": "countries",
+  "proposal_date": "2026-08-16",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "rationale": "Cameroon is published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145. This full 40-subdimension assessment replaces the seed with evidence and returns 11.3, a difference of -9 points. The band moves from Developing to Critical.",
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 11.3,
+    "band": "critical",
+    "scores": {
+      "AWR": 1.4,
+      "EMP": 1.4,
+      "ACT": 1.8,
+      "EQU": 1.4,
+      "BND": 1.4,
+      "ACC": 1.4,
+      "SYS": 1.8,
+      "INT": 1
+    }
+  },
+  "score_delta": -9,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 6,
+    "max_tier": 4,
+    "passes": true
+  },
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "proposed_subdimensions": {
+    "AWR": {
+      "A1": 2,
+      "A2": 2,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 2,
+      "E5": 2
+    },
+    "ACT": {
+      "AC1": 2,
+      "AC2": 2,
+      "AC3": 2,
+      "AC4": 2,
+      "AC5": 1
+    },
+    "EQU": {
+      "EQ1": 2,
+      "EQ2": 1,
+      "EQ3": 1,
+      "EQ4": 1,
+      "EQ5": 2
+    },
+    "BND": {
+      "B1": 2,
+      "B2": 1,
+      "B3": 2,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 3,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 1
+    },
+    "SYS": {
+      "S1": 2,
+      "S2": 2,
+      "S3": 1,
+      "S4": 2,
+      "S5": 2
+    },
+    "INT": {
+      "I1": 1,
+      "I2": 1,
+      "I3": 1,
+      "I4": 1,
+      "I5": 1
+    }
+  },
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://www.acaps.org/en/countries/cameroon",
+      "date": "2026-01-01",
+      "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+      "date": "2025-09-30",
+      "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2025/10/28/cameroon-biya-declared-the-winner-amid-post-election-violence",
+      "date": "2025-10-28",
+      "quote": "In the months preceding the election, authorities closed civic space, imposing harsh restrictions on freedom of expression, assembly, and association."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+      "date": "2025-11-12",
+      "quote": "Following the October 12, 2025 elections, Cameroon's authorities responded to widespread opposition-led protests with lethal force and mass arrests of protesters and other citizens."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://achpr.au.int/en/news/press-releases/2025-10-31/situation-des-droits-de-lhomme-en-republique-du-cameroun-eng",
+      "date": "2025-10-31",
+      "quote": "The African Commission on Human and Peoples' Rights expressed alarm over loss of life resulting from the use of excessive force and the arrest of individuals to suppress and disperse demonstrators."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://english.news.cn/africa/20260320/d9dc866ad1fc42848f1e49b239461909/c.html",
+      "date": "2026-03-19",
+      "quote": "On March 19, 2026, the Supreme Court of Cameroon quashed the ruling of the Centre Regional Court of Appeal, which had previously upheld the life sentences imposed on the defendants, and ordered a completely fresh hearing before a different and legally constituted jury."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.globalsecurity.org/military/world/africa/cm-politics-2025.htm",
+      "date": "2025-11-06",
+      "quote": "President Biya, the world's longest-serving head of state, has ruled Cameroon since 1982, scrapping presidential term limits in 2008. Biya was sworn in for an eighth term on November 6."
+    }
+  ],
+  "assessment_file": "research/assessments/cameroon-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/cameroon-2026-08-16.subdims.json"
+}

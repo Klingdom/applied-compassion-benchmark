@@ -1,0 +1,153 @@
+{
+  "entity": "Guinea",
+  "slug": "guinea",
+  "index": "countries",
+  "proposal_date": "2026-08-16",
+  "status": "pending",
+  "recommendation": "flag-for-review",
+  "confidence": "medium",
+  "study": "20.3 seed-cluster de-seeding study (2026-08-16)",
+  "rationale": "Guinea is published on a never-assessed uniform seed vector (2/2/2/1.5/2/1.5/2/1.5, composite 20.3) shared byte-identically by twelve countries at ranks 134-145. This full 40-subdimension assessment replaces the seed with evidence and returns 14.4, a difference of -5.9 points. The band moves from Developing to Critical.",
+  "current": {
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed": {
+    "composite": 14.4,
+    "band": "critical",
+    "scores": {
+      "AWR": 1.4,
+      "EMP": 1.2,
+      "ACT": 2,
+      "EQU": 1.4,
+      "BND": 1.2,
+      "ACC": 1.4,
+      "SYS": 2.6,
+      "INT": 1.4
+    }
+  },
+  "score_delta": -5.9,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources, at least 1 at sourceTier >= 4",
+    "independent_sources": 6,
+    "max_tier": 4,
+    "passes": true
+  },
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "proposed_subdimensions": {
+    "AWR": {
+      "A1": 2,
+      "A2": 2,
+      "A3": 1,
+      "A4": 1,
+      "A5": 1
+    },
+    "EMP": {
+      "E1": 1,
+      "E2": 1,
+      "E3": 1,
+      "E4": 1,
+      "E5": 2
+    },
+    "EQU": {
+      "EQ1": 1,
+      "EQ2": 2,
+      "EQ3": 1,
+      "EQ4": 1,
+      "EQ5": 2
+    },
+    "BND": {
+      "B1": 2,
+      "B2": 1,
+      "B3": 1,
+      "B4": 1,
+      "B5": 1
+    },
+    "ACC": {
+      "AB1": 1,
+      "AB2": 2,
+      "AB3": 1,
+      "AB4": 1,
+      "AB5": 2
+    },
+    "SYS": {
+      "S1": 3,
+      "S2": 3,
+      "S3": 2,
+      "S4": 3,
+      "S5": 2
+    },
+    "INT": {
+      "I1": 2,
+      "I2": 1,
+      "I3": 2,
+      "I4": 1,
+      "I5": 1
+    }
+  },
+  "evidence": [
+    {
+      "sourceTier": 4,
+      "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+      "date": "2025-07-09",
+      "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.amnesty.org/en/latest/news/2026/07/guinea-fndc-impunity/",
+      "date": "2026-07-01",
+      "quote": "Guinea: Two years after the enforced disappearance of FNDC activists, abductions and disappearances continue with impunity."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+      "date": "2026-03-07",
+      "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+    },
+    {
+      "sourceTier": 4,
+      "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+      "date": "2024-07-31",
+      "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+      "date": "2026-04-04",
+      "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://www.pbs.org/newshour/amp/world/guineas-junta-leader-wins-presidency-in-first-election-since-2021-coup",
+      "date": "2025-12-28",
+      "quote": "Doumbouya won the country's first election since the 2021 coup after polling 86.7% of the votes. Opposition parties condemned the fact that the transitional president, who assumed power through a coup in 2021, ran as a candidate in violation of the transition charter."
+    },
+    {
+      "sourceTier": 3,
+      "url": "https://african.business/2025/12/resources/simandou-can-be-turning-point-for-guinea",
+      "date": "2025-12-01",
+      "quote": "Guinea has announced the Fonds de Richesse Simandou, its first sovereign wealth fund, capitalized at around US$1 billion and expected to launch in 2026, with its mandate to channel mining revenues into long-term investments in education, infrastructure, agriculture and industry."
+    }
+  ],
+  "assessment_file": "research/assessments/guinea-2026-08-16.md",
+  "subdim_sidecar": "research/assessments/guinea-2026-08-16.subdims.json"
+}
