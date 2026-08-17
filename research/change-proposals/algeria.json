@@ -53,57 +53,568 @@
     "SYS",
     "INT"
   ],
-  "proposed_subdimensions": {
-    "AWR": {
-      "A1": 2,
-      "A2": 2,
-      "A3": 1,
-      "A4": 1,
-      "A5": 1
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
     },
-    "EMP": {
-      "E1": 2,
-      "E2": 1,
-      "E3": 1,
-      "E4": 1,
-      "E5": 2
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to arbitrarily and collectively expel migrants of various African nationalities, including children, to the desert at the border with Niger, often without individual screenings or due process and accompanied by abusive treatment."
+        }
+      ]
     },
-    "EQU": {
-      "EQ1": 2,
-      "EQ2": 2,
-      "EQ3": 1,
-      "EQ4": 2,
-      "EQ5": 1
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Accountability: No prosecutions of perpetrators documented in findings."
+        }
+      ]
     },
-    "BND": {
-      "B1": 2,
-      "B2": 1,
-      "B3": 2,
-      "B4": 1,
-      "B5": 1
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Proposed new associations law would grant Interior Ministry sweeping control over civil society organizations."
+        }
+      ]
     },
-    "ACC": {
-      "AB1": 1,
-      "AB2": 1,
-      "AB3": 1,
-      "AB4": 1,
-      "AB5": 1
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to arbitrarily and collectively expel migrants of various African nationalities, including children, to the desert at the border with Niger, often without individual screenings or due process and accompanied by abusive treatment."
+        }
+      ]
     },
-    "SYS": {
-      "S1": 2,
-      "S2": 2,
-      "S3": 1,
-      "S4": 1,
-      "S5": 2
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://monitor.civicus.org/explore/convictions-against-dissent-continue-unabated/",
+          "date": "2025-11-12",
+          "quote": "On 12th November 2025, President Abdelmadjid Tebboune pardoned Franco-Algerian writer Boualem Sansal, who had been detained since November 2024."
+        }
+      ]
     },
-    "INT": {
-      "I1": 1,
-      "I2": 1,
-      "I3": 1,
-      "I4": 1,
-      "I5": 2
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algeria expelled about 5,000 people to Niger between January and April and documented at least five deaths due to abuse or harsh conditions of expulsion for the same period."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "January 20, 2025: Mohamed Tadjadit sentenced to five years in prison for social media posts using #ManichRadi hashtag, charged with 'undermining national unity' and 'insulting a public authority'."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2026/05/algeria-authorities-must-release-arbitrarily-detained-journalists-and-uphold-press-freedom/",
+          "date": "2026-05-01",
+          "quote": "The Algerian authorities must immediately and unconditionally release all arbitrarily detained journalists targeted for exercising their right to freedom of expression, including Abdelwakil Blamm, Hassan Bouras and Christophe Gleizes."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Same-sex relations remain punishable under article 338 of the penal code by up to two years in prison."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "June 4, 2025: Niger reported 16,000 people expelled from Algeria in April-May alone."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algeria expelled about 5,000 people to Niger between January and April and documented at least five deaths due to abuse or harsh conditions of expulsion for the same period."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to arbitrarily and collectively expel migrants of various African nationalities, including children, to the desert at the border with Niger, often without individual screenings or due process and accompanied by abusive treatment."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Accountability: No prosecutions of perpetrators documented in findings."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Proposed new associations law would grant Interior Ministry sweeping control over civil society organizations."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to arbitrarily and collectively expel migrants of various African nationalities, including children, to the desert at the border with Niger, often without individual screenings or due process and accompanied by abusive treatment."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "August 20, 2025: Security forces prevented gathering and arrested dozens of activists."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algeria expelled about 5,000 people to Niger between January and April and documented at least five deaths due to abuse or harsh conditions of expulsion for the same period."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "June 4, 2025: Niger reported 16,000 people expelled from Algeria in April-May alone."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Accountability: No prosecutions of perpetrators documented in findings."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "January 20, 2025: Mohamed Tadjadit sentenced to five years in prison for social media posts using #ManichRadi hashtag, charged with 'undermining national unity' and 'insulting a public authority'."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://monitor.civicus.org/explore/convictions-against-dissent-continue-unabated/",
+          "date": "2025-11-12",
+          "quote": "On 12th November 2025, President Abdelmadjid Tebboune pardoned Franco-Algerian writer Boualem Sansal, who had been detained since November 2024."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "June 4, 2025: Niger reported 16,000 people expelled from Algeria in April-May alone."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "January 20, 2025: Mohamed Tadjadit sentenced to five years in prison for social media posts using #ManichRadi hashtag, charged with 'undermining national unity' and 'insulting a public authority'."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "January 20, 2025: Mohamed Tadjadit sentenced to five years in prison for social media posts using #ManichRadi hashtag, charged with 'undermining national unity' and 'insulting a public authority'."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://monitor.civicus.org/explore/convictions-against-dissent-continue-unabated/",
+          "date": "2025-11-12",
+          "quote": "On 12th November 2025, President Abdelmadjid Tebboune pardoned Franco-Algerian writer Boualem Sansal, who had been detained since November 2024."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Proposed new associations law would grant Interior Ministry sweeping control over civil society organizations."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "January 20, 2025: Mohamed Tadjadit sentenced to five years in prison for social media posts using #ManichRadi hashtag, charged with 'undermining national unity' and 'insulting a public authority'."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/algeria",
+          "date": "2026-02-04",
+          "quote": "Algerian authorities continued to implement arbitrary travel bans to silence perceived critics, including activists, journalists, trade unionists, and academics, which can be imposed without formal notice, are often unlimited in duration, and are almost impossible to challenge."
+        }
+      ]
     }
-  },
+  ],
   "evidence": [
     {
       "sourceTier": 4,
@@ -125,5 +636,39 @@
     }
   ],
   "assessment_file": "research/assessments/algeria-2026-08-16.md",
-  "subdim_sidecar": "research/assessments/algeria-2026-08-16.subdims.json"
+  "subdim_sidecar": "research/assessments/algeria-2026-08-16.subdims.json",
+  "published_scores": {
+    "composite": 20.3,
+    "band": "developing",
+    "rank": 134,
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 11.2,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 1.4,
+      "EMP": 1.4,
+      "ACT": 2,
+      "EQU": 1.6,
+      "BND": 1.4,
+      "ACC": 1,
+      "SYS": 1.6,
+      "INT": 1.2
+    }
+  },
+  "schema_normalised": {
+    "date": "2026-08-17",
+    "reason": "Rewritten from current/proposed + nested subdim map into the shape apply-entity-record.mjs requires. Subdimension scores and evidence copied verbatim from the assessment sidecar; nothing re-scored.",
+    "source_sidecar": "research/assessments/algeria-2026-08-16.subdims.json"
+  }
 }

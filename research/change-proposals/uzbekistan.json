@@ -48,57 +48,568 @@
     "SYS",
     "INT"
   ],
-  "proposed_subdimensions": {
-    "EMP": {
-      "E1": 2,
-      "E2": 2,
-      "E3": 1,
-      "E4": 1,
-      "E5": 1
+  "proposed_subdimensions": [
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
     },
-    "ACT": {
-      "AC1": 2,
-      "AC2": 3,
-      "AC3": 3,
-      "AC4": 3,
-      "AC5": 2
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/03/04/uzbekistans-domestic-violence-reforms-fall-short",
+          "date": "2026-03-04",
+          "quote": "In February 2026, the government approved a new state program to strengthen penalties for violence against women and children, improve enforcement, expand support services, and introduce measurable benchmarks. However, the International Partnership for Human Rights noted important legal reforms but found serious gaps in implementation, including Uzbekistan's continued use of reconciliation in domestic violence cases and restricted access to shelters, services, and legal aid."
+        }
+      ]
     },
-    "EQU": {
-      "EQ1": 3,
-      "EQ2": 3,
-      "EQ3": 1,
-      "EQ4": 3,
-      "EQ5": 1
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "Article 120 of the criminal code punishes consensual same-sex conduct between men; authorities prosecuted at least 16 people under this provision in 2025."
+        }
+      ]
     },
-    "BND": {
-      "B1": 2,
-      "B2": 2,
-      "B3": 2,
-      "B4": 1,
-      "B5": 1
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/03/04/uzbekistans-domestic-violence-reforms-fall-short",
+          "date": "2026-03-04",
+          "quote": "In February 2026, the government approved a new state program to strengthen penalties for violence against women and children, improve enforcement, expand support services, and introduce measurable benchmarks. However, the International Partnership for Human Rights noted important legal reforms but found serious gaps in implementation, including Uzbekistan's continued use of reconciliation in domestic violence cases and restricted access to shelters, services, and legal aid."
+        }
+      ]
     },
-    "ACC": {
-      "AB1": 1,
-      "AB2": 3,
-      "AB3": 2,
-      "AB4": 3,
-      "AB5": 1
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "The UN Working Group on Arbitrary Detention found lawyer Dauletmurat Tazhimuratov's detention arbitrary in March 2025, noting allegations of mental and physical torture. At least 14 individuals faced criminal charges for separatist social media posts regarding Karakalpakstan independence."
+        }
+      ]
     },
-    "SYS": {
-      "S1": 3,
-      "S2": 3,
-      "S3": 2,
-      "S4": 3,
-      "S5": 3
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
     },
-    "INT": {
-      "I1": 3,
-      "I2": 2,
-      "I3": 2,
-      "I4": 1,
-      "I5": 3
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.unicef.org/uzbekistan/en/social-protection-system-digitalized",
+          "date": "2026-01-01",
+          "quote": "The Single Registry is a management information system jointly developed by the Ministry of Finance of Uzbekistan, the World Bank, and UNICEF to enhance the social protection system through reducing barriers in accessing social protection via digitalization. The registry is aimed to support the effective administration of social protection programmes from applications, verification, and registration to payments and monitoring."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/03/04/uzbekistans-domestic-violence-reforms-fall-short",
+          "date": "2026-03-04",
+          "quote": "In February 2026, the government approved a new state program to strengthen penalties for violence against women and children, improve enforcement, expand support services, and introduce measurable benchmarks. However, the International Partnership for Human Rights noted important legal reforms but found serious gaps in implementation, including Uzbekistan's continued use of reconciliation in domestic violence cases and restricted access to shelters, services, and legal aid."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.unicef.org/uzbekistan/en/social-protection-system-digitalized",
+          "date": "2026-01-01",
+          "quote": "The Single Registry is a management information system jointly developed by the Ministry of Finance of Uzbekistan, the World Bank, and UNICEF to enhance the social protection system through reducing barriers in accessing social protection via digitalization. The registry is aimed to support the effective administration of social protection programmes from applications, verification, and registration to payments and monitoring."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "Article 120 of the criminal code punishes consensual same-sex conduct between men; authorities prosecuted at least 16 people under this provision in 2025."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.unicef.org/uzbekistan/en/social-protection-system-digitalized",
+          "date": "2026-01-01",
+          "quote": "The Single Registry is a management information system jointly developed by the Ministry of Finance of Uzbekistan, the World Bank, and UNICEF to enhance the social protection system through reducing barriers in accessing social protection via digitalization. The registry is aimed to support the effective administration of social protection programmes from applications, verification, and registration to payments and monitoring."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/europe/central-asia/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "The Uzbekistan government never commissioned an independent investigation into the 2005 Andijan massacre, and authorities continued to deny accountability for the deaths and grave injuries that occurred in July 2022 in Karakalpakstan when security forces used unjustified force against protesters."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.unicef.org/uzbekistan/en/social-protection-system-digitalized",
+          "date": "2026-01-01",
+          "quote": "The Single Registry is a management information system jointly developed by the Ministry of Finance of Uzbekistan, the World Bank, and UNICEF to enhance the social protection system through reducing barriers in accessing social protection via digitalization. The registry is aimed to support the effective administration of social protection programmes from applications, verification, and registration to payments and monitoring."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/03/04/uzbekistans-domestic-violence-reforms-fall-short",
+          "date": "2026-03-04",
+          "quote": "In February 2026, the government approved a new state program to strengthen penalties for violence against women and children, improve enforcement, expand support services, and introduce measurable benchmarks. However, the International Partnership for Human Rights noted important legal reforms but found serious gaps in implementation, including Uzbekistan's continued use of reconciliation in domestic violence cases and restricted access to shelters, services, and legal aid."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2025-02-28",
+          "quote": "On February 28, 2025, the UN Working Group on Arbitrary Detention ruled that blogger Valijon Kalonov's psychiatric hospitalization was unfounded and arbitrary, yet he remained detained at time of reporting."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/europe/central-asia/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "The Uzbekistan government never commissioned an independent investigation into the 2005 Andijan massacre, and authorities continued to deny accountability for the deaths and grave injuries that occurred in July 2022 in Karakalpakstan when security forces used unjustified force against protesters."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2025-05-01",
+          "quote": "In May 2025 a Tashkent court found three police officers guilty of torturing suspects, sentencing two to five years and one month, and one to 10 years imprisonment."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/02/16/uzbekistan-cotton-wheat-farmers-exploited-abused",
+          "date": "2026-02-16",
+          "quote": "Though the government has ended state-imposed forced labor of cotton pickers in the cotton harvest and has committed to broader reforms, the remaining system of strategic crop cultivation and production in Uzbekistan still creates a risk of forced labor for cotton and wheat farmers."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/europe/central-asia/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "The Uzbekistan government never commissioned an independent investigation into the 2005 Andijan massacre, and authorities continued to deny accountability for the deaths and grave injuries that occurred in July 2022 in Karakalpakstan when security forces used unjustified force against protesters."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://blogs.worldbank.org/en/opendata/charting-uzbekistan-s-path-to-poverty-reduction--insights-from-i",
+          "date": "2026-01-01",
+          "quote": "In 2021, with assistance from the World Bank, the Government of Uzbekistan adopted a new methodology and set an ambitious national target to halve the poverty rate by 2026."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://blogs.worldbank.org/en/opendata/charting-uzbekistan-s-path-to-poverty-reduction--insights-from-i",
+          "date": "2026-01-01",
+          "quote": "In 2021, with assistance from the World Bank, the Government of Uzbekistan adopted a new methodology and set an ambitious national target to halve the poverty rate by 2026."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/02/16/uzbekistan-cotton-wheat-farmers-exploited-abused",
+          "date": "2026-02-16",
+          "quote": "Though the government has ended state-imposed forced labor of cotton pickers in the cotton harvest and has committed to broader reforms, the remaining system of strategic crop cultivation and production in Uzbekistan still creates a risk of forced labor for cotton and wheat farmers."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/02/16/uzbekistan-cotton-wheat-farmers-exploited-abused",
+          "date": "2026-02-16",
+          "quote": "Though the government has ended state-imposed forced labor of cotton pickers in the cotton harvest and has committed to broader reforms, the remaining system of strategic crop cultivation and production in Uzbekistan still creates a risk of forced labor for cotton and wheat farmers."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.unicef.org/uzbekistan/en/social-protection-system-digitalized",
+          "date": "2026-01-01",
+          "quote": "The Single Registry is a management information system jointly developed by the Ministry of Finance of Uzbekistan, the World Bank, and UNICEF to enhance the social protection system through reducing barriers in accessing social protection via digitalization. The registry is aimed to support the effective administration of social protection programmes from applications, verification, and registration to payments and monitoring."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/02/16/uzbekistan-cotton-wheat-farmers-exploited-abused",
+          "date": "2026-02-16",
+          "quote": "Though the government has ended state-imposed forced labor of cotton pickers in the cotton harvest and has committed to broader reforms, the remaining system of strategic crop cultivation and production in Uzbekistan still creates a risk of forced labor for cotton and wheat farmers."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2026/03/04/uzbekistans-domestic-violence-reforms-fall-short",
+          "date": "2026-03-04",
+          "quote": "In February 2026, the government approved a new state program to strengthen penalties for violence against women and children, improve enforcement, expand support services, and introduce measurable benchmarks. However, the International Partnership for Human Rights noted important legal reforms but found serious gaps in implementation, including Uzbekistan's continued use of reconciliation in domestic violence cases and restricted access to shelters, services, and legal aid."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "Authorities imprisoned individuals for insulting the president online. President Mirziyoyev pledged in 2020 to decriminalize defamation and insult, yet these remain criminalized offenses."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/uzbekistan",
+          "date": "2026-01-01",
+          "quote": "Authorities imprisoned individuals for insulting the president online. President Mirziyoyev pledged in 2020 to decriminalize defamation and insult, yet these remain criminalized offenses."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/07/16/helping-uzbekistan-undertake-a-historic-social-and-economic-transformation",
+          "date": "2024-07-16",
+          "quote": "By 2023 the new National Agency for Social Protection and community Inson service centers were delivering aid to roughly 2.3 million needy families, about a four-fold increase from 2017. In mid-2024 the Bank approved an additional $100 million INSON project to improve social care for vulnerable groups."
+        }
+      ]
     }
-  },
+  ],
   "evidence": [
     {
       "sourceTier": 4,
@@ -150,5 +661,39 @@
     }
   ],
   "assessment_file": "research/assessments/uzbekistan-2026-08-16.md",
-  "subdim_sidecar": "research/assessments/uzbekistan-2026-08-16.subdims.json"
+  "subdim_sidecar": "research/assessments/uzbekistan-2026-08-16.subdims.json",
+  "published_scores": {
+    "composite": 20.3,
+    "band": "developing",
+    "rank": 144,
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 27.5,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 1.4,
+      "ACT": 2.6,
+      "EQU": 2.2,
+      "BND": 1.6,
+      "ACC": 2,
+      "SYS": 2.8,
+      "INT": 2.2
+    }
+  },
+  "schema_normalised": {
+    "date": "2026-08-17",
+    "reason": "Rewritten from current/proposed + nested subdim map into the shape apply-entity-record.mjs requires. Subdimension scores and evidence copied verbatim from the assessment sidecar; nothing re-scored.",
+    "source_sidecar": "research/assessments/uzbekistan-2026-08-16.subdims.json"
+  }
 }
