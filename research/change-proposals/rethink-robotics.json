@@ -1,0 +1,743 @@
+{
+  "entity": "Rethink Robotics",
+  "slug": "rethink-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-16",
+  "assessment_file": "research/assessments/rethink-robotics-2026-08-16.md",
+  "study": "robotics-labs 60.9 seed-cluster de-seeding study",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 27,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 13.1,
+    "band": "Critical",
+    "dimensions": {
+      "AWR": 1.6,
+      "EMP": 1.8,
+      "ACT": 1.2,
+      "EQU": 1.8,
+      "BND": 1.2,
+      "ACC": 1.4,
+      "SYS": 1.8,
+      "INT": 1.4
+    }
+  },
+  "score_delta": -47.8,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PARTIAL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "explanation": "The two-source requirement passes: The Robot Report and Plastics News are independent publications, and the 2018 closure and the 2024 relaunch are separately corroborated. The tier requirement does not pass. The corporate-status finding rests on trade reporting at tier 3; no insolvency filing, court record or company statement was obtained directly, so United Robotics Group’s bankruptcy is established only through secondary reporting. The result is recorded as PARTIAL. In this case the tier shortfall matters less than usual, because the finding at issue is a verifiable factual question about corporate status rather than a judgment about practice, and it is separately corroborated across two publications and across a seven-year span. A coordinator should confirm the corporate status against a primary filing before any delisting decision.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Rethink Robotics is not an operating company. The benchmark publishes it at rank 27 with the band \"Established\", which is the second-highest label the benchmark issues.",
+    "The Robot Report reported on 16 September 2025 that Rethink Robotics had shut down for the second time. United Robotics Group’s investors withdrew funding, the parent filed for bankruptcy, and Rethink Robotics was discontinued in the United States.",
+    "The original Rethink Robotics closed in 2018 and HAHN Group bought its technology. United Robotics Group relaunched the brand in September 2024. The relaunch lasted twelve months.",
+    "The former chief executive said the products \"weren’t ready to be released, so sales was behind plan\", and described letting go of a newly hired team as \"heartbreaking\".",
+    "A customer asked publicly, \"I have a new arm from Rethink robotics, what can I do?\" No answer is recorded. The fate of the company’s intellectual property and latest models had not been announced."
+  ],
+  "evidence": [
+    {
+      "claim": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced.",
+      "source": "The Robot Report — Rethink Robotics shuts down, again",
+      "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+      "publishedDate": "2025-09-16",
+      "sourceTier": 3
+    },
+    {
+      "claim": "I just had hired new staff and invested heavily into marketing and stock. [It was] heartbreaking to let go on a team that was all in an excited to help Americas manufacturing industry to automate.",
+      "source": "The Robot Report — Rethink Robotics shuts down, again: statement by former CEO Julia Astrid Riemenschneider",
+      "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+      "publishedDate": "2025-09-16",
+      "sourceTier": 3
+    },
+    {
+      "claim": "At the end of 2024, United Robotics Group relaunched Rethink Robotics with the portfolio of white-labeled cobots, AMRs, and MMRs from a German robot startup. However, the products weren’t ready to be released, so sales was behind plan.",
+      "source": "The Robot Report — Rethink Robotics relaunch and product readiness",
+      "url": "https://www.therobotreport.com/tag/rethink-robotics/",
+      "publishedDate": "2025-09-16",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Rethink relaunched, rebranded, and overhauled its robot portfolio, debuting its new lineup of Reacher robot arms, Ryder autonomous mobile robots (AMRs) and the Riser mobile manipulation robot (MMR) at IMTS 2024.",
+      "source": "The Robot Report — Inside HAHN Group’s plan to revive Rethink Robotics",
+      "url": "https://www.therobotreport.com/hahn-group-rethink-robotics-sawyer-cobot/",
+      "publishedDate": "2024-09-09",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Rethink Robotics closed in 2018 and its technology was purchased by Germany’s HAHN Group GmbH.",
+      "source": "Plastics News — HAHN Group buys cobot technology from shuttered Rethink Robotics",
+      "url": "https://www.plasticsnews.com/article/20181025/NEWS/181029949/hahn-group-buys-cobot-technology-from-shuttered-rethink-robotics/",
+      "publishedDate": "2018-10-25",
+      "sourceTier": 3
+    },
+    {
+      "claim": "I have a new arm from Rethink robotics, what can I do?",
+      "source": "The Robot Report — Rethink Robotics shuts down, again: reader comment from a customer",
+      "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+      "publishedDate": "2025-09-16",
+      "sourceTier": 2
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/tag/rethink-robotics/",
+          "date": "2025-09-16",
+          "quote": "At the end of 2024, United Robotics Group relaunched Rethink Robotics with the portfolio of white-labeled cobots, AMRs, and MMRs from a German robot startup. However, the products weren’t ready to be released, so sales was behind plan."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/tag/rethink-robotics/",
+          "date": "2025-09-16",
+          "quote": "At the end of 2024, United Robotics Group relaunched Rethink Robotics with the portfolio of white-labeled cobots, AMRs, and MMRs from a German robot startup. However, the products weren’t ready to be released, so sales was behind plan."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I have a new arm from Rethink robotics, what can I do?"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I have a new arm from Rethink robotics, what can I do?"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/tag/rethink-robotics/",
+          "date": "2025-09-16",
+          "quote": "At the end of 2024, United Robotics Group relaunched Rethink Robotics with the portfolio of white-labeled cobots, AMRs, and MMRs from a German robot startup. However, the products weren’t ready to be released, so sales was behind plan."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.plasticsnews.com/article/20181025/NEWS/181029949/hahn-group-buys-cobot-technology-from-shuttered-rethink-robotics/",
+          "date": "2018-10-25",
+          "quote": "Rethink Robotics closed in 2018 and its technology was purchased by Germany’s HAHN Group GmbH."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I just had hired new staff and invested heavily into marketing and stock. [It was] heartbreaking to let go on a team that was all in an excited to help Americas manufacturing industry to automate."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I have a new arm from Rethink robotics, what can I do?"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/tag/rethink-robotics/",
+          "date": "2025-09-16",
+          "quote": "At the end of 2024, United Robotics Group relaunched Rethink Robotics with the portfolio of white-labeled cobots, AMRs, and MMRs from a German robot startup. However, the products weren’t ready to be released, so sales was behind plan."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I just had hired new staff and invested heavily into marketing and stock. [It was] heartbreaking to let go on a team that was all in an excited to help Americas manufacturing industry to automate."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I just had hired new staff and invested heavily into marketing and stock. [It was] heartbreaking to let go on a team that was all in an excited to help Americas manufacturing industry to automate."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.plasticsnews.com/article/20181025/NEWS/181029949/hahn-group-buys-cobot-technology-from-shuttered-rethink-robotics/",
+          "date": "2018-10-25",
+          "quote": "Rethink Robotics closed in 2018 and its technology was purchased by Germany’s HAHN Group GmbH."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/hahn-group-rethink-robotics-sawyer-cobot/",
+          "date": "2024-09-09",
+          "quote": "Rethink relaunched, rebranded, and overhauled its robot portfolio, debuting its new lineup of Reacher robot arms, Ryder autonomous mobile robots (AMRs) and the Riser mobile manipulation robot (MMR) at IMTS 2024."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/hahn-group-rethink-robotics-sawyer-cobot/",
+          "date": "2024-09-09",
+          "quote": "Rethink relaunched, rebranded, and overhauled its robot portfolio, debuting its new lineup of Reacher robot arms, Ryder autonomous mobile robots (AMRs) and the Riser mobile manipulation robot (MMR) at IMTS 2024."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "I just had hired new staff and invested heavily into marketing and stock. [It was] heartbreaking to let go on a team that was all in an excited to help Americas manufacturing industry to automate."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/rethink-robotics-shuts-down-again/",
+          "date": "2025-09-16",
+          "quote": "The investors of United Robotics Group decided to pull back their funds and let the group file bankruptcy, which led to the discontinuation of Rethink Robotics in the U.S. The fate of Hebron, Ky.-based Rethink Robotics’ IP and latest models has not yet been announced."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.plasticsnews.com/article/20181025/NEWS/181029949/hahn-group-buys-cobot-technology-from-shuttered-rethink-robotics/",
+          "date": "2018-10-25",
+          "quote": "Rethink Robotics closed in 2018 and its technology was purchased by Germany’s HAHN Group GmbH."
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — PRIMARY ISSUE IS ENTITY-RECORD CURRENCY, NOT SCORE. Rethink Robotics ceased operations for the second time in September 2025 after United Robotics Group’s investors withdrew funding and the parent filed for bankruptcy. It is not an operating company. The index carries it at rank 27 with band \"Established\", which is the benchmark’s second-highest label applied to a dissolved entity. THE RECOMMENDED REMEDY IS DELISTING OR A SUCCESSOR RECORD WITH ACCURATE STATUS, not the application of a score. The 13.1 composite is included because the methodology has no not-applicable state and a carried entity must be scorable; it states that no compassion infrastructure exists, and it should not be read as a conduct judgment on a company that ran out of money. This is the sixth open entity-currency case in the backlog alongside Hercules Offshore (dissolved 2016)."
+}

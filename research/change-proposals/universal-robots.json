@@ -1,0 +1,776 @@
+{
+  "entity": "Universal Robots (Teradyne)",
+  "slug": "universal-robots",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-16",
+  "assessment_file": "research/assessments/universal-robots-2026-08-16.md",
+  "study": "robotics-labs 60.9 seed-cluster de-seeding study",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 28,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 40,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.4,
+      "ACT": 2.6,
+      "EQU": 2.4,
+      "BND": 2.4,
+      "ACC": 2.6,
+      "SYS": 3,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -20.9,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "explanation": "Four independent sources at tier 4 or above support the band change. ISO/TS 15066:2016 is an International Organization for Standardization technical specification (tier 5). Teradyne’s 2024 Corporate Social Responsibility Report and the 2025 report with its May 2026 supplement are published institutional data (tier 4). Universal Robots A/S files a statutory responsibility statement under the Danish Financial Statements Act (tier 4). Two further independent tier-3 sources, The Robot Report of February 2025 and November 2025, document the layoffs.",
+    "sources_at_tier4_or_above": [
+      "https://www.iso.org/standard/62996.html",
+      "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+      "https://www.teradyne.com/company/corporate-social-responsibility/",
+      "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Universal Robots scores highest of the ten de-seeded labs, and it still lands 20.9 points below its published number. The gap is disclosure, not misconduct.",
+    "Universal Robots helped draft ISO/TS 15066:2016, the collaborative-robot safety specification that sets pain thresholds by body part. That is the single strongest piece of compassion evidence found anywhere in this cluster, and it benefits every competitor.",
+    "Universal Robots A/S publishes an annual statutory corporate responsibility statement, and parent Teradyne publishes a group CSR report that explicitly covers Universal Robots A/S and its subsidiaries — rare tier-4 disclosure in this sector.",
+    "Teradyne Robotics cut roughly a quarter of its division headcount across two rounds in 2025, about 140 people in January and a further 14% in November, including 6% in Denmark where Universal Robots is based.",
+    "Nothing was found on empathy, equity or reparative action. Those four dimensions sit at the low anchor because no disclosure exists, which is an evidence finding rather than an adverse finding."
+  ],
+  "evidence": [
+    {
+      "claim": "ISO/TS 15066:2016 specifies safety requirements for collaborative industrial robot systems and the work environment, and supplements the requirements and guidance on collaborative industrial robot operation given in ISO 10218-1 and ISO 10218-2.",
+      "source": "ISO/TS 15066:2016 — Robots and robotic devices: Collaborative robots",
+      "url": "https://www.iso.org/standard/62996.html",
+      "publishedDate": "2016-02-01",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Universal Robots was part of the committee drafting the ISO/TS 15066 specifications. In addition to design and risk assessment requirements, it also presents a research study on pain thresholds vs. robot speed, pressure and impact for specific body parts.",
+      "source": "Universal Robots — Welcomes the new Technical Specification on collaborative robot design",
+      "url": "https://www.universal-robots.com/about-universal-robots/news-centre/universal-robots-welcomes-the-new-technical-specification-on-collaborative-robot-design/",
+      "publishedDate": "2016-03-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "It is your responsibility to make sure your robotic cell is safe enough for human-robot collaboration.",
+      "source": "Universal Robots — Collaborative robots ISO Technical Specification (safety guidance)",
+      "url": "https://www.universal-robots.com/blog/collaborative-robots-iso-technical-specification/",
+      "publishedDate": "2016-03-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections.",
+      "source": "Universal Robots A/S — Corporate Social Responsibility Report 2022 (statutory statement, Danish Financial Statements Act s.99a)",
+      "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+      "publishedDate": "2023-03-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page.",
+      "source": "Teradyne, Inc. — 2024 Corporate Social Responsibility Report",
+      "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+      "publishedDate": "2025-03-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury.",
+      "source": "Teradyne — Corporate Social Responsibility (2025 CSR Report and May 2026 CSR Supplement)",
+      "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+      "publishedDate": "2026-05-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Teradyne is an affiliate member of the RBA, and its responsible sourcing program requires suppliers to adhere to environmental and social responsibility principles consistent with those outlined by the Responsible Business Alliance.",
+      "source": "Teradyne CSR Report 2025 — responsible sourcing / Responsible Business Alliance affiliate membership",
+      "url": "https://www.marketscreener.com/news/teradyne-csr-report-2025-ce7d5bd8dd88f022",
+      "publishedDate": "2026-04-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "In January, the company cut roughly 10% of its global robotics staff — approximately 140 employees. The 10% reduction included a 6% layoff in Denmark, where both Universal Robots (UR) and Mobile Industrial Robots (MiR) are headquartered.",
+      "source": "The Robot Report — Teradyne robotics group lays off 10% of global staff",
+      "url": "https://www.therobotreport.com/teradyne-robotics-group-lays-off-10-percent-global-staff/",
+      "publishedDate": "2025-02-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "In November, the company executed a second reduction affecting approximately 14% of the remaining workforce. Combined, the two rounds reduced the division’s headcount by roughly a quarter.",
+      "source": "The Robot Report — Teradyne Robotics lays off another 14% of workforce",
+      "url": "https://www.therobotreport.com/teradyne-robotics-lays-off-another-14-of-workforce/",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Roberta Nelson Shea is a Global Technical Compliance Officer at Universal Robots responsible for product safety.",
+      "source": "Universal Robots — Safety Made Easy (product safety documentation)",
+      "url": "https://www.universal-robots.com/media/1805223/28_05_2019-ur_safety_made_easy.pdf",
+      "publishedDate": "2019-05-28",
+      "sourceTier": 3
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+          "date": "2026-05-01",
+          "quote": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/about-universal-robots/news-centre/universal-robots-welcomes-the-new-technical-specification-on-collaborative-robot-design/",
+          "date": "2016-03-01",
+          "quote": "Universal Robots was part of the committee drafting the ISO/TS 15066 specifications. In addition to design and risk assessment requirements, it also presents a research study on pain thresholds vs. robot speed, pressure and impact for specific body parts."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.marketscreener.com/news/teradyne-csr-report-2025-ce7d5bd8dd88f022",
+          "date": "2026-04-01",
+          "quote": "Teradyne is an affiliate member of the RBA, and its responsible sourcing program requires suppliers to adhere to environmental and social responsibility principles consistent with those outlined by the Responsible Business Alliance."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.iso.org/standard/62996.html",
+          "date": "2016-02-01",
+          "quote": "ISO/TS 15066:2016 specifies safety requirements for collaborative industrial robot systems and the work environment, and supplements the requirements and guidance on collaborative industrial robot operation given in ISO 10218-1 and ISO 10218-2."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/about-universal-robots/news-centre/universal-robots-welcomes-the-new-technical-specification-on-collaborative-robot-design/",
+          "date": "2016-03-01",
+          "quote": "Universal Robots was part of the committee drafting the ISO/TS 15066 specifications. In addition to design and risk assessment requirements, it also presents a research study on pain thresholds vs. robot speed, pressure and impact for specific body parts."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/media/1805223/28_05_2019-ur_safety_made_easy.pdf",
+          "date": "2019-05-28",
+          "quote": "Roberta Nelson Shea is a Global Technical Compliance Officer at Universal Robots responsible for product safety."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+          "date": "2026-05-01",
+          "quote": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teradyne-robotics-lays-off-another-14-of-workforce/",
+          "date": "2025-11-01",
+          "quote": "In November, the company executed a second reduction affecting approximately 14% of the remaining workforce. Combined, the two rounds reduced the division’s headcount by roughly a quarter."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/media/1805223/28_05_2019-ur_safety_made_easy.pdf",
+          "date": "2019-05-28",
+          "quote": "Roberta Nelson Shea is a Global Technical Compliance Officer at Universal Robots responsible for product safety."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/media/1805223/28_05_2019-ur_safety_made_easy.pdf",
+          "date": "2019-05-28",
+          "quote": "Roberta Nelson Shea is a Global Technical Compliance Officer at Universal Robots responsible for product safety."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teradyne-robotics-group-lays-off-10-percent-global-staff/",
+          "date": "2025-02-01",
+          "quote": "In January, the company cut roughly 10% of its global robotics staff — approximately 140 employees. The 10% reduction included a 6% layoff in Denmark, where both Universal Robots (UR) and Mobile Industrial Robots (MiR) are headquartered."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/blog/collaborative-robots-iso-technical-specification/",
+          "date": "2016-03-01",
+          "quote": "It is your responsibility to make sure your robotic cell is safe enough for human-robot collaboration."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/about-universal-robots/news-centre/universal-robots-welcomes-the-new-technical-specification-on-collaborative-robot-design/",
+          "date": "2016-03-01",
+          "quote": "Universal Robots was part of the committee drafting the ISO/TS 15066 specifications. In addition to design and risk assessment requirements, it also presents a research study on pain thresholds vs. robot speed, pressure and impact for specific body parts."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+          "date": "2026-05-01",
+          "quote": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.iso.org/standard/62996.html",
+          "date": "2016-02-01",
+          "quote": "ISO/TS 15066:2016 specifies safety requirements for collaborative industrial robot systems and the work environment, and supplements the requirements and guidance on collaborative industrial robot operation given in ISO 10218-1 and ISO 10218-2."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+          "date": "2026-05-01",
+          "quote": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.teradyne.com/company/corporate-social-responsibility/",
+          "date": "2026-05-01",
+          "quote": "The 2025 CSR Report also highlights collaborative robots that reduce repetitive stress on workers and zero-emission autonomous mobile robots that move goods in warehouse settings, reducing the risk of human injury."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teradyne-robotics-lays-off-another-14-of-workforce/",
+          "date": "2025-11-01",
+          "quote": "In November, the company executed a second reduction affecting approximately 14% of the remaining workforce. Combined, the two rounds reduced the division’s headcount by roughly a quarter."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.universal-robots.com/about-universal-robots/news-centre/universal-robots-welcomes-the-new-technical-specification-on-collaborative-robot-design/",
+          "date": "2016-03-01",
+          "quote": "Universal Robots was part of the committee drafting the ISO/TS 15066 specifications. In addition to design and risk assessment requirements, it also presents a research study on pain thresholds vs. robot speed, pressure and impact for specific body parts."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.iso.org/standard/62996.html",
+          "date": "2016-02-01",
+          "quote": "ISO/TS 15066:2016 specifies safety requirements for collaborative industrial robot systems and the work environment, and supplements the requirements and guidance on collaborative industrial robot operation given in ISO 10218-1 and ISO 10218-2."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teradyne-robotics-lays-off-another-14-of-workforce/",
+          "date": "2025-11-01",
+          "quote": "In November, the company executed a second reduction affecting approximately 14% of the remaining workforce. Combined, the two rounds reduced the division’s headcount by roughly a quarter."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.iso.org/standard/62996.html",
+          "date": "2016-02-01",
+          "quote": "ISO/TS 15066:2016 specifies safety requirements for collaborative industrial robot systems and the work environment, and supplements the requirements and guidance on collaborative industrial robot operation given in ISO 10218-1 and ISO 10218-2."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teradyne-robotics-group-lays-off-10-percent-global-staff/",
+          "date": "2025-02-01",
+          "quote": "In January, the company cut roughly 10% of its global robotics staff — approximately 140 employees. The 10% reduction included a 6% layoff in Denmark, where both Universal Robots (UR) and Mobile Industrial Robots (MiR) are headquartered."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.responsibilityreports.com/HostedData/ResponsibilityReports/PDF/NASDAQ_TER_2024.pdf",
+          "date": "2025-03-01",
+          "quote": "Teradyne, Inc. is a U.S. publicly traded company with a global CSR program which covers Universal Robots A/S and its global subsidiaries, with policies and guidelines available on Teradyne’s CSR web page."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.universal-robots.com/media/1826949/02_2023_ur_csr-repoart_a4_web_final.pdf",
+          "date": "2023-03-01",
+          "quote": "Universal Robots follows Teradyne’s commitment to comply with all Responsible Business Alliance Code of Conduct requirements. The company protects employees’ rights through policies that ensure living wages, limits on working hours, and freedom of association and other protections."
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 60.9 is a never-assessed uniform placeholder shared byte-for-byte with nine other robotics labs at consecutive ranks 19-28. Universal Robots has never been individually assessed. The 20.9-point gap is predominantly an evidence-absence gap: 22 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. The one located adverse item is the 2025 pair of layoff rounds. Positive findings — ISO/TS 15066 committee participation and statutory CSR reporting — make this the strongest of the ten. Referred for coordinator-level calibration of the robotics-labs 60.9 seed cluster."
+}

@@ -1,0 +1,743 @@
+{
+  "entity": "Agility Robotics",
+  "slug": "agility-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-16",
+  "assessment_file": "research/assessments/agility-robotics-2026-08-16.md",
+  "study": "robotics-labs 60.9 seed-cluster de-seeding study",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 20,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 30.6,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2.2,
+      "ACT": 2.6,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2,
+      "SYS": 2.2,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -30.3,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "explanation": "The test fails on the tier requirement. Six independent sources were used — TechCrunch, The Robot Report, TT News, TechTimes, TSG Invest and the company website — which satisfies the two-source part comfortably. None reaches tier 4. Agility Robotics is private, publishes no institutional data and no responsibility report, and no independent audit of it exists. The pending Churchill Capital Corp XI merger will create public reporting obligations but had not done so at the assessment date. The strongest available evidence is tier-3 trade reporting of forward-looking product claims.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "low",
+  "key_evidence": [
+    "Why it matters: Agility Robotics builds a humanoid that does warehouse work, and it publishes nothing about what happens to the workers whose tasks it takes.",
+    "Digit version 5 is being built to sense humans and work without a safety fence alongside warehouse staff. That is a genuine worker-safety design commitment and it is the company’s strongest compassion evidence.",
+    "Digit works commercial shifts at Toyota Motor Manufacturing Canada in Ontario and at a GXO warehouse in Flowery Branch, Georgia, and has moved 100,000 totes at one GXO site.",
+    "The IEEE Humanoids 2026 conference has made labour displacement its defining theme. No Agility position on the displacement its own product causes was located.",
+    "This assessment supersedes the 2026-07-22 Agility file, which returned 61.9 and recommended CONFIRM. That file cited a single TechCrunch article for all 40 subdimensions and is not a valid 40-subdimension assessment."
+  ],
+  "evidence": [
+    {
+      "claim": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility.",
+      "source": "TechCrunch — Agility Robotics plants its flag in Tesla’s backyard",
+      "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 3
+    },
+    {
+      "claim": "As part of Agility’s ongoing efforts to structure the company for success, we have parted ways with a small number of employees that were not central to core product development and commercialization.",
+      "source": "The Robot Report — Agility Robotics partners with leading WMS provider, cuts staff",
+      "url": "https://www.therobotreport.com/agility-robotics-partners-with-leading-wms-provider-cuts-staff/",
+      "publishedDate": "2024-04-04",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Agility Robotics’ Digit is working commercial shifts at Toyota Motor Manufacturing Canada’s Ontario facility and at a GXO Logistics warehouse in Flowery Branch, Georgia, as the company announced a merger with Churchill Capital Corp XI on June 24, 2026, valuing it at $2.5 billion.",
+      "source": "TT News — Agility Robotics Bets on Staffing Warehouses With Humanoids (Churchill Capital SPAC merger and deployments)",
+      "url": "https://www.ttnews.com/articles/agility-robotics-warehouses",
+      "publishedDate": "2026-06-24",
+      "sourceTier": 3
+    },
+    {
+      "claim": "The IEEE Humanoids 2026 conference is shaping programming around questions of who deploys these systems, under what labor conditions, with what safety certification, and with what economic consequences for the workers already doing the jobs the robots will assume.",
+      "source": "TechTimes — Humanoid Robots Enter the Factory: IEEE Humanoids 2026 Sets Labor Displacement as Its Defining Theme",
+      "url": "https://www.techtimes.com/articles/321587/20260725/humanoid-robots-enter-factory-ieee-humanoids-2026-sets-labor-displacement-its-defining-theme.htm",
+      "publishedDate": "2026-07-25",
+      "sourceTier": 3
+    },
+    {
+      "claim": "OSHA and international regulators have not yet established comprehensive standards for humanoid robots in the workplace, and new regulations governing safety, liability, or worker displacement could increase compliance costs or slow adoption.",
+      "source": "TSG Invest — Agility Robotics: regulatory and safety-standard exposure",
+      "url": "https://tsginvest.com/agility-robotics/",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Industrial Humanoid Automation.",
+      "source": "Agility Robotics — Humanoid Solutions (company website)",
+      "url": "https://www.agilityrobotics.com/solutions",
+      "publishedDate": "2026-08-01",
+      "sourceTier": 2
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.techtimes.com/articles/321587/20260725/humanoid-robots-enter-factory-ieee-humanoids-2026-sets-labor-displacement-its-defining-theme.htm",
+          "date": "2026-07-25",
+          "quote": "The IEEE Humanoids 2026 conference is shaping programming around questions of who deploys these systems, under what labor conditions, with what safety certification, and with what economic consequences for the workers already doing the jobs the robots will assume."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tsginvest.com/agility-robotics/",
+          "date": "2026-07-01",
+          "quote": "OSHA and international regulators have not yet established comprehensive standards for humanoid robots in the workplace, and new regulations governing safety, liability, or worker displacement could increase compliance costs or slow adoption."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ttnews.com/articles/agility-robotics-warehouses",
+          "date": "2026-06-24",
+          "quote": "Agility Robotics’ Digit is working commercial shifts at Toyota Motor Manufacturing Canada’s Ontario facility and at a GXO Logistics warehouse in Flowery Branch, Georgia, as the company announced a merger with Churchill Capital Corp XI on June 24, 2026, valuing it at $2.5 billion."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ttnews.com/articles/agility-robotics-warehouses",
+          "date": "2026-06-24",
+          "quote": "Agility Robotics’ Digit is working commercial shifts at Toyota Motor Manufacturing Canada’s Ontario facility and at a GXO Logistics warehouse in Flowery Branch, Georgia, as the company announced a merger with Churchill Capital Corp XI on June 24, 2026, valuing it at $2.5 billion."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.techtimes.com/articles/321587/20260725/humanoid-robots-enter-factory-ieee-humanoids-2026-sets-labor-displacement-its-defining-theme.htm",
+          "date": "2026-07-25",
+          "quote": "The IEEE Humanoids 2026 conference is shaping programming around questions of who deploys these systems, under what labor conditions, with what safety certification, and with what economic consequences for the workers already doing the jobs the robots will assume."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/agility-robotics-partners-with-leading-wms-provider-cuts-staff/",
+          "date": "2024-04-04",
+          "quote": "As part of Agility’s ongoing efforts to structure the company for success, we have parted ways with a small number of employees that were not central to core product development and commercialization."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tsginvest.com/agility-robotics/",
+          "date": "2026-07-01",
+          "quote": "OSHA and international regulators have not yet established comprehensive standards for humanoid robots in the workplace, and new regulations governing safety, liability, or worker displacement could increase compliance costs or slow adoption."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ttnews.com/articles/agility-robotics-warehouses",
+          "date": "2026-06-24",
+          "quote": "Agility Robotics’ Digit is working commercial shifts at Toyota Motor Manufacturing Canada’s Ontario facility and at a GXO Logistics warehouse in Flowery Branch, Georgia, as the company announced a merger with Churchill Capital Corp XI on June 24, 2026, valuing it at $2.5 billion."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.techtimes.com/articles/321587/20260725/humanoid-robots-enter-factory-ieee-humanoids-2026-sets-labor-displacement-its-defining-theme.htm",
+          "date": "2026-07-25",
+          "quote": "The IEEE Humanoids 2026 conference is shaping programming around questions of who deploys these systems, under what labor conditions, with what safety certification, and with what economic consequences for the workers already doing the jobs the robots will assume."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.techtimes.com/articles/321587/20260725/humanoid-robots-enter-factory-ieee-humanoids-2026-sets-labor-displacement-its-defining-theme.htm",
+          "date": "2026-07-25",
+          "quote": "The IEEE Humanoids 2026 conference is shaping programming around questions of who deploys these systems, under what labor conditions, with what safety certification, and with what economic consequences for the workers already doing the jobs the robots will assume."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/agility-robotics-partners-with-leading-wms-provider-cuts-staff/",
+          "date": "2024-04-04",
+          "quote": "As part of Agility’s ongoing efforts to structure the company for success, we have parted ways with a small number of employees that were not central to core product development and commercialization."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+          "date": "2026-07-17",
+          "quote": "The version 5, expected to be unveiled this fall, will have the ability to sense humans and won’t need to be kept in a robot-only zone. Digits have moved 100,000 totes at a GXO logistics facility."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/agility-robotics-partners-with-leading-wms-provider-cuts-staff/",
+          "date": "2024-04-04",
+          "quote": "As part of Agility’s ongoing efforts to structure the company for success, we have parted ways with a small number of employees that were not central to core product development and commercialization."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.agilityrobotics.com/solutions",
+          "date": "2026-08-01",
+          "quote": "Industrial Humanoid Automation."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ttnews.com/articles/agility-robotics-warehouses",
+          "date": "2026-06-24",
+          "quote": "Agility Robotics’ Digit is working commercial shifts at Toyota Motor Manufacturing Canada’s Ontario facility and at a GXO Logistics warehouse in Flowery Branch, Georgia, as the company announced a merger with Churchill Capital Corp XI on June 24, 2026, valuing it at $2.5 billion."
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 60.9 is a never-assessed uniform placeholder shared byte-for-byte with nine other robotics labs. NO adverse evidence of any kind was located beyond an undated April 2024 staff reduction. The 30.3-point gap measures missing disclosure against a placeholder; 26 of 40 subdimensions score at the low anchor for absence of disclosure. IMPORTANT RECONCILIATION: this supersedes research/assessments/agility-robotics-2026-07-22.md, which returned 61.9 and recommended CONFIRM. That file cited one TechCrunch article for all 40 subdimensions and therefore restated the seed rather than testing it. The band-change evidence test FAILS on tier: no source at tier 4 or above exists for this entity because it publishes no institutional data."
+}

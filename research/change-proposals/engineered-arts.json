@@ -1,0 +1,736 @@
+{
+  "entity": "Engineered Arts",
+  "slug": "engineered-arts",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-16",
+  "assessment_file": "research/assessments/engineered-arts-2026-08-16.md",
+  "study": "robotics-labs 60.9 seed-cluster de-seeding study",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 23,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 32.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2.4,
+      "ACT": 2.2,
+      "EQU": 2.2,
+      "BND": 2.4,
+      "ACC": 2,
+      "SYS": 2.4,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -28.4,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "explanation": "The test fails on the tier requirement. Five sources were used and they are independent of one another — two Wikipedia articles, the company website, a technology outlet and a Cornwall technology festival listing — which satisfies the two-source part. But none reaches tier 3, let alone tier 4. Engineered Arts publishes no institutional data, no responsibility report and no audited disclosure, and no independent assessment of the company exists. This failure is itself the finding: a placeholder asserting tier-4-level practice across all eight dimensions was indefensible for an entity that cannot be verified above tier 2 in either direction.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "low",
+  "key_evidence": [
+    "Why it matters: Engineered Arts is the only lab in this cluster whose highest-scoring dimension is Integrity, and the reason is a refusal it has held for twenty years.",
+    "Founder Will Jackson has positioned the company the same way since October 2004 — robots for communication and entertainment, explicitly not labour — and the company states Ameca is not meant to replace humans.",
+    "That position has cost the company. It has held it for twenty years while the humanoid sector raised billions on the opposite promise, including through a December 2024 venture round.",
+    "Twenty-nine Ameca units were deployed worldwide as of 2025, in museums, science centres, research labs and universities rather than in workplaces.",
+    "Engineered Arts publishes no responsibility report, no workforce data and no failure disclosure. Its entire Accountability dimension scores 2.0 on absence of disclosure, not on located misconduct."
+  ],
+  "evidence": [
+    {
+      "claim": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California.",
+      "source": "Wikipedia — Engineered Arts (company history, founding, restructuring)",
+      "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities.",
+      "source": "Wikipedia — Ameca (robot): deployment and purpose",
+      "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us.",
+      "source": "Engineered Arts — Ameca, World’s Most Advanced Humanoid Robot (company website)",
+      "url": "https://engineeredarts.com/uk/robots/ameca",
+      "publishedDate": "2026-08-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous.",
+      "source": "TS2 — Meet Ameca: The Humanoid Robot Wowing the World in 2025 (founder positioning and company history)",
+      "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Ameca generation 3 has been released and showcased at ICRA 2025 along with Ami.",
+      "source": "Cornwall Festival of Tech — Ameca: A Robot’s Journey to Creation",
+      "url": "https://cornwallfestivaloftech.co.uk/etn/ameca-a-robots-journey-to-creation/",
+      "publishedDate": "2025-09-01",
+      "sourceTier": 2
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+          "date": "2026-06-01",
+          "quote": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ameca_(robot)",
+          "date": "2026-06-01",
+          "quote": "Ameca is a robotic humanoid created in 2021 by Engineered Arts for human interaction. Its head alone contains 27 motors that help it replicate human facial movements. As of 2025, 29 Ameca units have been deployed worldwide in museums, science centers, research labs and universities."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+          "date": "2026-06-01",
+          "quote": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+          "date": "2026-06-01",
+          "quote": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://engineeredarts.com/uk/robots/ameca",
+          "date": "2026-08-01",
+          "quote": "The company has publicly stated that Ameca is not meant to replace humans, but to collaborate with and assist us."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://cornwallfestivaloftech.co.uk/etn/ameca-a-robots-journey-to-creation/",
+          "date": "2025-09-01",
+          "quote": "Ameca generation 3 has been released and showcased at ICRA 2025 along with Ami."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+          "date": "2026-06-01",
+          "quote": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ts2.tech/en/meet-ameca-the-humanoid-robot-wowing-the-world-in-2025/",
+          "date": "2025-06-01",
+          "quote": "Founder Will Jackson’s positioning has been consistent for twenty years: robots for communication and entertainment, explicitly not labor. The company spent its first two decades selling RoboThespian theater robots before Ameca made it famous."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Engineered_Arts",
+          "date": "2026-06-01",
+          "quote": "Engineered Arts Ltd is a humanoid robot engineering, design and manufacturing company based in Cornwall, England, founded in October 2004 by Will Jackson. In December 2024 the company restructured as a US company and raised a $10 million Series A led by Helium-3 Ventures ($16.2 million total), and set up in Redwood City, California."
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 60.9 is a never-assessed uniform placeholder shared byte-for-byte with nine other robotics labs. Engineered Arts has never been individually assessed. NO adverse evidence of any kind was located. The 28.4-point gap measures missing disclosure against a placeholder. The band-change evidence test FAILS: the entire evidence base is tier 2, because this small private company publishes no institutional data and no independent assessment of it exists. A coordinator should treat the band change as provisional, and the twenty-year non-labour positioning that drives three of the eight dimensions should be verified against a primary company statement before reliance."
+}
