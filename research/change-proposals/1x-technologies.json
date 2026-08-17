@@ -1,0 +1,752 @@
+{
+  "entity": "1X Technologies",
+  "slug": "1x-technologies",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/1x-technologies-2026-08-17.md",
+  "study": "robotics-labs Exemplary seed-cluster de-seeding study (Cluster B, published 81.4)",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 10,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 26.9,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2.2,
+      "ACT": 2,
+      "EQU": 2,
+      "BND": 2.4,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "score_delta": -54.5,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "passed": false,
+    "explanation": "No INDEPENDENT source at evidence tier 4 or above was located for 1X Technologies. Self-published company material was excluded from the test. 6 independent sources were located but none reaches tier 4. The band change is filed anyway and the failure is recorded honestly: the entity cannot be verified at tier 4 in either direction, which is itself the strongest argument that a tier-4-level placeholder was never publishable for it.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: 1X Technologies is published as \"Exemplary\" in one index and \"Functional\" in another. The same company holds two Compassion Benchmark scores 31.4 points apart. Both are placeholders.",
+    "NEO, the $20,000 home humanoid, relies on \"Expert Mode\": a 1X employee in the United States watches a customer’s home through the robot’s cameras in a virtual reality headset and drives the robot.",
+    "1X does build real consent machinery. Sessions happen only in windows the owner chooses, each needs explicit approval, and light rings signal when an operator is active. That is why Consent Orientation scores 3 rather than 2.",
+    "The gap is bystanders. Independent legal analysis notes that children, family members and visitors in the home cannot meaningfully consent, and that 1X’s privacy policy has no section specific to robot camera feeds.",
+    "Thirty-four of 40 subdimensions sit at the low anchor because no disclosure exists. 1X publishes no institutional data on harm, equity, staff wellbeing, repair or values governance."
+  ],
+  "corporate_status": "Operating. DUPLICATE-ENTITY DEFECT: 1X Technologies also appears in the ai-labs index at rank 14 with a composite of 50.0. The same entity therefore carries two published composites 31.4 points apart, in two bands. This assessment addresses the robotics-labs entry only.",
+  "evidence": [
+    {
+      "claim": "Teleop, not autonomy, is the path for 1X’s Neo humanoid",
+      "source": "www.therobotreport.com",
+      "url": "https://www.therobotreport.com/teleop-not-autonomy-the-path-for-1x-neo-humanoid/",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Domestic robots and the right to privacy: the case of NEO by 1X Technologies",
+      "source": "lawandtech.ie",
+      "url": "https://lawandtech.ie/domestic-robots-and-the-right-to-privacy-the-case-of-neo-by-1x-technologies/",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Privacy Policy | 1X® Technologies",
+      "source": "1xtechnologies.com",
+      "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live",
+      "source": "www.humanoidsdaily.com",
+      "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+      "publishedDate": "2025-10-28",
+      "sourceTier": 3
+    },
+    {
+      "claim": "1X Opens Preorders for NEO, a Humanoid Home Robot, Draws Criticism for Teleoperation",
+      "source": "ground.news",
+      "url": "https://ground.news/article/1x-opens-preorders-for-neo-a-humanoid-home-robot-draws-criticism-for-teleoperation_aebb9a",
+      "publishedDate": "2025-10-28",
+      "sourceTier": 3
+    },
+    {
+      "claim": "The 1X Neo Home Robot is breaking the internet — but there’s one huge problem",
+      "source": "www.tomsguide.com",
+      "url": "https://www.tomsguide.com/home/smart-home/the-neo-home-robot-thats-breaking-the-internet-promises-to-change-the-world-but-theres-one-huge-problem",
+      "publishedDate": "2025-10-29",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Privacy and Security Risks of the 1X Neo Robot",
+      "source": "captaincompliance.com",
+      "url": "https://captaincompliance.com/education/privacy-and-security-risks-of-the-1x-neo-robot/",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 2
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://lawandtech.ie/domestic-robots-and-the-right-to-privacy-the-case-of-neo-by-1x-technologies/",
+          "date": "2025-11-01",
+          "quote": "Domestic robots and the right to privacy: the case of NEO by 1X Technologies"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://lawandtech.ie/domestic-robots-and-the-right-to-privacy-the-case-of-neo-by-1x-technologies/",
+          "date": "2025-11-01",
+          "quote": "Domestic robots and the right to privacy: the case of NEO by 1X Technologies"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ground.news/article/1x-opens-preorders-for-neo-a-humanoid-home-robot-draws-criticism-for-teleoperation_aebb9a",
+          "date": "2025-10-28",
+          "quote": "1X Opens Preorders for NEO, a Humanoid Home Robot, Draws Criticism for Teleoperation"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.tomsguide.com/home/smart-home/the-neo-home-robot-thats-breaking-the-internet-promises-to-change-the-world-but-theres-one-huge-problem",
+          "date": "2025-10-29",
+          "quote": "The 1X Neo Home Robot is breaking the internet — but there’s one huge problem"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teleop-not-autonomy-the-path-for-1x-neo-humanoid/",
+          "date": "2025-10-01",
+          "quote": "Teleop, not autonomy, is the path for 1X’s Neo humanoid"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.humanoidsdaily.com/news/1x-details-neo-human-in-the-loop-strategy-and-hardware-as-pre-orders-go-live",
+          "date": "2025-10-28",
+          "quote": "1X Details NEO’s ‘Human-in-the-Loop’ Strategy and Hardware as $20,000 Pre-Orders Go Live"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://lawandtech.ie/domestic-robots-and-the-right-to-privacy-the-case-of-neo-by-1x-technologies/",
+          "date": "2025-11-01",
+          "quote": "Domestic robots and the right to privacy: the case of NEO by 1X Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ground.news/article/1x-opens-preorders-for-neo-a-humanoid-home-robot-draws-criticism-for-teleoperation_aebb9a",
+          "date": "2025-10-28",
+          "quote": "1X Opens Preorders for NEO, a Humanoid Home Robot, Draws Criticism for Teleoperation"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://lawandtech.ie/domestic-robots-and-the-right-to-privacy-the-case-of-neo-by-1x-technologies/",
+          "date": "2025-11-01",
+          "quote": "Domestic robots and the right to privacy: the case of NEO by 1X Technologies"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/teleop-not-autonomy-the-path-for-1x-neo-humanoid/",
+          "date": "2025-10-01",
+          "quote": "Teleop, not autonomy, is the path for 1X’s Neo humanoid"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://1xtechnologies.com/about-1x/privacy-policy/",
+          "date": "2026-01-01",
+          "quote": "Privacy Policy | 1X® Technologies"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 81.4 is a never-assessed uniform placeholder shared byte-for-byte with three other robotics labs at consecutive alphabetical ranks. 1X Technologies has never been individually assessed. 37 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. No score change is applied by this study."
+}

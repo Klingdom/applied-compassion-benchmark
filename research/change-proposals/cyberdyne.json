@@ -1,0 +1,769 @@
+{
+  "entity": "Cyberdyne Inc.",
+  "slug": "cyberdyne",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/cyberdyne-2026-08-17.md",
+  "study": "robotics-labs Exemplary seed-cluster de-seeding study (Cluster A, published 83)",
+  "published_scores": {
+    "composite": 83,
+    "band": "exemplary",
+    "rank": 4,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4.5,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 45,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.4,
+      "ACT": 3,
+      "EQU": 3,
+      "BND": 3,
+      "ACC": 2.4,
+      "SYS": 3.2,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -38,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "passed": true,
+    "explanation": "2 independent sources support the band change, of which 2 sit at evidence tier 4 or above. Self-published company material was excluded from the test.",
+    "sources_at_tier4_or_above": [
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+      "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1462072/full"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Cyberdyne holds the highest published claim the benchmark makes — \"Exemplary\" — on a placeholder it shares byte-for-byte with five other labs. Its real evidence supports \"Functional\", not \"Exemplary\".",
+    "Cyberdyne won the world’s first public health insurance coverage for a robotic treatment, in Japan on 25 April 2016. Coverage was later extended to further rare diseases including HAM and hereditary spastic paraplegia. That is an unusually strong access result.",
+    "The efficacy evidence is real and independent. A multicentre randomised controlled crossover trial (NCY-3001) across nine hospitals underpinned the insurance decision, and it is published in the peer-reviewed literature.",
+    "Cyberdyne rents HAL rather than selling it, which lowers the cost barrier for patients — the opposite of the six-figure purchase model used by most exoskeleton makers.",
+    "Nothing was found on empathy practice, bias monitoring, harm acknowledgment or repair. Fifteen of 40 subdimensions sit at the low anchor because no disclosure exists, not because harm was found."
+  ],
+  "corporate_status": "Operating. Listed on the Tokyo Stock Exchange. No status defect found.",
+  "evidence": [
+    {
+      "claim": "Commencement of the world’s first insured robotic treatment covered under general public health insurance",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+      "publishedDate": "2016-04-25",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Cybernic treatment with wearable cyborg Hybrid Assistive Limb (HAL) improves ambulatory function in patients with slowly progressive rare neuromuscular diseases: a multicentre, randomised, controlled crossover trial for efficacy and safety (NCY-3001)",
+      "source": "www.ncbi.nlm.nih.gov",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+      "publishedDate": "2021-07-01",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Rentals within Japan of the world’s first robot medical device HAL® for Medical Use (Lower Limb Type) to launch in late August",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4571",
+      "publishedDate": "2016-08-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+      "publishedDate": "2023-01-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "HAL Identified as the Only Device to Induce Neuroplasticity",
+      "source": "www.cyberdyne.eu",
+      "url": "https://www.cyberdyne.eu/en/news/hal-identified-as-the-only-device-to-induce-neuroplasticity-and-provide/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Cybernics Treatment - CYBERDYNE",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Rising Momentum for “Cybernics × Medical Healthcare” in Türkiye — International Event Spurs Accelerated Business Collaboration Around Japan-Originated Cybernics Technology",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/en/news/15471.html",
+      "publishedDate": "2026-01-30",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Post list for IR News",
+      "source": "www.cyberdyne.jp",
+      "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Study on intervention effect of Wearable Cyborg HAL through narrative analysis",
+      "source": "www.frontiersin.org",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1462072/full",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+          "date": "2021-07-01",
+          "quote": "Cybernic treatment with wearable cyborg Hybrid Assistive Limb (HAL) improves ambulatory function in patients with slowly progressive rare neuromuscular diseases: a multicentre, randomised, controlled crossover trial for efficacy and safety (NCY-3001)"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+          "date": "2016-04-25",
+          "quote": "Commencement of the world’s first insured robotic treatment covered under general public health insurance"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1462072/full",
+          "date": "2025-01-01",
+          "quote": "Study on intervention effect of Wearable Cyborg HAL through narrative analysis"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1462072/full",
+          "date": "2025-01-01",
+          "quote": "Study on intervention effect of Wearable Cyborg HAL through narrative analysis"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/en/news/15471.html",
+          "date": "2026-01-30",
+          "quote": "Rising Momentum for “Cybernics × Medical Healthcare” in Türkiye — International Event Spurs Accelerated Business Collaboration Around Japan-Originated Cybernics Technology"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+          "date": "2021-07-01",
+          "quote": "Cybernic treatment with wearable cyborg Hybrid Assistive Limb (HAL) improves ambulatory function in patients with slowly progressive rare neuromuscular diseases: a multicentre, randomised, controlled crossover trial for efficacy and safety (NCY-3001)"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4571",
+          "date": "2016-08-01",
+          "quote": "Rentals within Japan of the world’s first robot medical device HAL® for Medical Use (Lower Limb Type) to launch in late August"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+          "date": "2016-04-25",
+          "quote": "Commencement of the world’s first insured robotic treatment covered under general public health insurance"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4571",
+          "date": "2016-08-01",
+          "quote": "Rentals within Japan of the world’s first robot medical device HAL® for Medical Use (Lower Limb Type) to launch in late August"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.eu/en/news/hal-identified-as-the-only-device-to-induce-neuroplasticity-and-provide/",
+          "date": "2025-06-01",
+          "quote": "HAL Identified as the Only Device to Induce Neuroplasticity"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+          "date": "2016-04-25",
+          "quote": "Commencement of the world’s first insured robotic treatment covered under general public health insurance"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+          "date": "2021-07-01",
+          "quote": "Cybernic treatment with wearable cyborg Hybrid Assistive Limb (HAL) improves ambulatory function in patients with slowly progressive rare neuromuscular diseases: a multicentre, randomised, controlled crossover trial for efficacy and safety (NCY-3001)"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.eu/en/news/hal-identified-as-the-only-device-to-induce-neuroplasticity-and-provide/",
+          "date": "2025-06-01",
+          "quote": "HAL Identified as the Only Device to Induce Neuroplasticity"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+          "date": "2016-04-25",
+          "quote": "Commencement of the world’s first insured robotic treatment covered under general public health insurance"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=4419",
+          "date": "2016-04-25",
+          "quote": "Commencement of the world’s first insured robotic treatment covered under general public health insurance"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8261928/",
+          "date": "2021-07-01",
+          "quote": "Cybernic treatment with wearable cyborg Hybrid Assistive Limb (HAL) improves ambulatory function in patients with slowly progressive rare neuromuscular diseases: a multicentre, randomised, controlled crossover trial for efficacy and safety (NCY-3001)"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/english/company/PressReleases_detail.html?id=13641",
+          "date": "2023-01-01",
+          "quote": "Insurance coverage approved for the treatment of HAM and Hereditary Spastic Paraplegia using Medical HAL"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cyberdyne.jp/english/services/CybernicsTreatment.html",
+          "date": "2026-01-01",
+          "quote": "Cybernics Treatment - CYBERDYNE"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyberdyne.jp/en/news/c/ir-english",
+          "date": "2026-06-01",
+          "quote": "Post list for IR News"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 83 is a never-assessed uniform placeholder shared byte-for-byte with five other robotics labs at consecutive alphabetical ranks. Cyberdyne Inc. has never been individually assessed. 15 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. No score change is applied by this study."
+}

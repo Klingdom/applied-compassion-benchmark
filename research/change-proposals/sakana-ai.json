@@ -1,0 +1,784 @@
+{
+  "entity": "Sakana AI",
+  "slug": "sakana-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/sakana-ai-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/sakana-ai-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_2026-08-17.md",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 10,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 33.1,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2.2,
+      "ACT": 2.2,
+      "EQU": 2.6,
+      "BND": 2.2,
+      "ACC": 2,
+      "SYS": 2.8,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -27.8,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "low",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4",
+    "passed": true,
+    "result": "PASS",
+    "reason": "A peer-reviewed independent evaluation published in ACM SIGIR Forum (tier 4), IEEE Spectrum reporting (tier 3) and TechCrunch reporting of the Current AI nonprofit partnership (tier 3). Multiple independent sources, at least one at tier 4."
+  },
+  "key_evidence": [
+    "Sakana AI's flagship claim did not survive independent review. A peer-reviewed evaluation in ACM SIGIR Forum found its 'AI Scientist' has a 42% experimental failure rate and produces manuscripts with structural errors and misleading claims. IEEE Spectrum reported that critics worry about unfounded hype.",
+    "The company's best compassion evidence is its deal with the nonprofit Current AI to build a shared open-source AI stack for the Japanese language and for Global South communities that dominant AI systems ignore. That is resource sharing with no commercial return.",
+    "In 2026 Sakana also partnered with DEEP DIVE on AI-powered information analysis, a push into defence and intelligence. Open-science positioning and defence work have not been publicly reconciled.",
+    "Nothing was located showing Sakana acknowledged or corrected the failure rate that outside researchers documented. Accountability is the lowest dimension at 2.0.",
+    "The score falls 27.8 points from the published 60.9. Twenty-six of 40 subdimensions rest on absence of disclosure."
+  ],
+  "evidence": [
+    {
+      "claim": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+      "source": "ACM SIGIR Forum, 'Evaluating Sakana's AI Scientist: Bold Claims, Mixed Results'",
+      "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "The AI scientist is billed as the first tool that automates the entire scientific process, from hypothesis generation to writeup. However, critics worry about unfounded hype.",
+      "source": "IEEE Spectrum, 'The AI Scientist: A Tool from Sakana AI Stirs Up Controversy'",
+      "url": "https://spectrum.ieee.org/ai-for-science-2",
+      "publishedDate": "2024-09-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Based on Sakana's released information, most readers will understand that the AI Scientist appears to be a fully-functional system.",
+      "source": "Independent evaluation of the AI Scientist for autonomous research",
+      "url": "https://arxiv.org/html/2502.14297v3",
+      "publishedDate": "2025-02-20",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+      "source": "TechCrunch on Current AI and Sakana AI",
+      "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+      "publishedDate": "2026-07-19",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Sakana AI announced a partnership with the general incorporated association DEEP DIVE, focusing on AI-powered information analysis, signalling a push into the defence and intelligence sectors.",
+      "source": "StartupHub on the Sakana AI and DEEP DIVE partnership",
+      "url": "https://www.startuphub.ai/ai-news/technology/2026/sakana-ai-partners-with-deep-dive-for-intel",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+      "source": "Gigazine interview with Sakana AI chief executive David Ha",
+      "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+      "publishedDate": "2026-06-26",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — NOT A DOWNGRADE. No score change is proposed for application. The published 60.9 is a never-assessed uniform-seed placeholder shared byte-for-byte with six other ai-labs entities at consecutive alphabetical ranks; the rank is an artefact of the tie. No adverse conduct was located. The entire gap measures disclosure, not conduct. Applying a one-off baseline reset on evidence-absence alone would convert a calibration problem into a conduct finding, which the anti-false-positive screen forbids. Referred for coordinator-level calibration of the ai-labs 60.9 and 48.4 uniform-seed clusters. rotation-state composite/band/rank left at the PUBLISHED values.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No mechanism located for detecting harm among the people affected by Sakana's systems."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "The open stack is explicitly designed for Japanese language and culture as an underserved context, and for Global South communities. That is a genuine effort to adapt to who is actually being served."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No process for identifying blind spots located. The 42% experimental failure rate of the flagship system was established by outside evaluators, not by Sakana."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "The Current AI partnership names communities that dominant AI systems have largely ignored and builds for them, which amplifies concerns that would otherwise go unheard."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "An autonomous research system was released with a documented 42% experimental failure rate. No pre-release harm assessment was located."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No evidence located on how users experience Sakana's care."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No formal perspective-taking mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No response located to the independent evaluations finding structural errors and misleading claims."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "Building models around Japanese language and culture, described by the chief executive as Japanese-style AI, is a genuine adaptation to non-dominant cultural context."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "An independent peer-reviewed evaluation found the flagship system does not do what was claimed. No correction or outcome revision was located."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "A dedicated partnership with a nonprofit to build a shared open stack commits resources beyond the company's commercial programme."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "Open-source small models lower the access floor for users who cannot run frontier systems. Coverage is not measured."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "The Current AI stack explicitly targets communities that dominant systems ignore, which is a documented prioritisation of the least-served."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "Smaller and more cost-efficient models are a documented compute-barrier removal."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No turnover or staff wellbeing data published."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "Users can exclude models they do not want to use and run open models locally, which is a stated autonomy and sovereignty design."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arxiv.org/html/2502.14297v3",
+          "date": "2025-02-20",
+          "quote": "Based on Sakana's released information, most readers will understand that the AI Scientist appears to be a fully-functional system.",
+          "note": "Independent reviewers record that the AI Scientist was presented so that most readers would understand it to be a fully functional system. Scope was overstated relative to a 42% failure rate."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No consent practice located."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No harm acknowledgment located."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No correction located following the independent evaluations."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No failure disclosure located. The flagship system's failure rate was established externally."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dl.acm.org/doi/10.1145/3769733.3769747",
+          "date": "2025-01-01",
+          "quote": "Sakana's AI Scientist superficially automates the research process but fails to perform deep literature reviews, robust experiment validation, or quality manuscript production, exhibiting a 42% experimental failure rate and producing manuscripts with structural errors and misleading claims.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "No root-cause strategy located beyond product positioning."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "A stated multi-year commitment to an open shared stack with specific long-term goals for language and regional coverage."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.startuphub.ai/ai-news/technology/2026/sakana-ai-partners-with-deep-dive-for-intel",
+          "date": "2026-01-01",
+          "quote": "Sakana AI announced a partnership with the general incorporated association DEEP DIVE, focusing on AI-powered information analysis, signalling a push into the defence and intelligence sectors.",
+          "note": "The move into defence and intelligence analysis is a significant adjacent-system effect with no published assessment."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "Publicly arguing for AI sovereignty and for non-dominant-language AI, and building to it, carries commercial risk against the frontier-model incumbents."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "Building a shared open stack with a nonprofit, for communities the company will not monetise, is genuine resource sharing with a better-positioned actor."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "date": "2026-07-19",
+          "quote": "Sakana AI struck a deal with nonprofit Current AI to build a shared open source AI stack, designed to support the Japanese language and culture, but also communities across the Global South that dominant AI systems have largely ignored.",
+          "note": "The Current AI nonprofit work carries limited commercial return."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No staff culture data published."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.startuphub.ai/ai-news/technology/2026/sakana-ai-partners-with-deep-dive-for-intel",
+          "date": "2026-01-01",
+          "quote": "Sakana AI announced a partnership with the general incorporated association DEEP DIVE, focusing on AI-powered information analysis, signalling a push into the defence and intelligence sectors.",
+          "note": "Open-science and Global South positioning sits against a partnership pushing into defence and intelligence analysis. No reconciliation of the two has been published."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gigazine.net/gsc_news/en/20260626-sakana-ai-david-ha/",
+          "date": "2026-06-26",
+          "quote": "Sakana AI combines proprietary models, open-source models and American frontier models, allowing users to exclude models they don't want to use.",
+          "note": "No leadership transition tested."
+        }
+      ]
+    }
+  ]
+}

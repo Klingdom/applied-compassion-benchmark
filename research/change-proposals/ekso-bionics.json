@@ -1,0 +1,778 @@
+{
+  "entity": "Ekso Bionics",
+  "slug": "ekso-bionics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/ekso-bionics-2026-08-17.md",
+  "study": "robotics-labs Exemplary seed-cluster de-seeding study (Cluster A, published 83)",
+  "published_scores": {
+    "composite": 83,
+    "band": "exemplary",
+    "rank": 6,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4.5,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 41.3,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.4,
+      "ACT": 2.8,
+      "EQU": 3,
+      "BND": 3,
+      "ACC": 2,
+      "SYS": 2.6,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -41.7,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "passed": true,
+    "explanation": "6 independent sources support the band change, of which 4 sit at evidence tier 4 or above. Self-published company material was excluded from the test.",
+    "sources_at_tier4_or_above": [
+      "https://www.neurologylive.com/view/fda-clears-eksonr-robotic-exoskeleton-rehabilitation-multiple-sclerosis/1000",
+      "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=15462835&pc=PHL",
+      "https://www.mddionline.com/medical-device-regulations/powered-exoskeletons-deemed-class-ii-devices"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Ekso Bionics has genuine, independently checkable evidence that its product helps people — but it does not have the audited, community-verified practice that an \"Exemplary\" band asserts.",
+    "The strongest single finding is access, not technology. A revised US Department of Veterans Affairs policy lets qualified veterans receive the Ekso Indego Personal exoskeleton at no cost to the veteran.",
+    "Ekso holds four separate FDA clearances covering stroke, spinal cord injury, acquired brain injury (2020) and multiple sclerosis (June 2022). Each clearance extended the device to a group previously excluded.",
+    "The company is financially fragile. It ran a 1-for-15 reverse stock split effective 2 June 2025 after a December 2024 Nasdaq notice that its share price was too low. A depleted foundation is a Boundaries problem, and it is scored as one.",
+    "Accountability is the weakest dimension at 2.0 of 5. Adverse events appear in the FDA MAUDE database because reporting is legally required. No voluntary harm acknowledgment, correction or repair was found."
+  ],
+  "corporate_status": "Operating. Listed on Nasdaq as EKSO. Financially distressed: a 1-for-15 reverse stock split took effect on 2 June 2025 to regain compliance with the Nasdaq $1.00 minimum bid price rule, following a non-compliance notice in December 2024.",
+  "evidence": [
+    {
+      "claim": "Ekso Bionics Receives FDA Clearance to Market its EksoNR™ Robotic Exoskeleton for Use with Multiple Sclerosis Patients",
+      "source": "ir.eksobionics.com",
+      "url": "https://ir.eksobionics.com/press-releases/detail/729/ekso-bionics-receives-fda-clearance-to-market-its-eksonr",
+      "publishedDate": "2022-06-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Ekso Bionics® Receives FDA Clearance to Market its EksoNR™ Robotic Exoskeleton for Use with Acquired Brain Injury Patients",
+      "source": "ir.eksobionics.com",
+      "url": "https://ir.eksobionics.com/press-releases/detail/689/ekso-bionics-receives-fda-clearance-to-market-its",
+      "publishedDate": "2020-07-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "FDA Clears EksoNR Robotic Exoskeleton for Rehabilitation in Multiple Sclerosis",
+      "source": "www.neurologylive.com",
+      "url": "https://www.neurologylive.com/view/fda-clears-eksonr-robotic-exoskeleton-rehabilitation-multiple-sclerosis/1000",
+      "publishedDate": "2022-06-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Veterans - Eksobionics",
+      "source": "eksobionics.com",
+      "url": "https://eksobionics.com/veterans/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Standing Tall: How SoldierStrong’s Partnership with Ekso Bionics is Transforming Veterans’ Lives",
+      "source": "www.soldierstrong.org",
+      "url": "https://www.soldierstrong.org/standing-tall-how-soldierstrongs-partnership-with-ekso-bionics-is-transforming-veterans-lives/",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "EksoNR - Robotic Therapy, Simplified",
+      "source": "eksobionics.com",
+      "url": "https://eksobionics.com/eksonr/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Ekso Bionics Announces Reverse Stock Split",
+      "source": "www.sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+      "publishedDate": "2025-05-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Ekso Bionics sets new date for reverse stock split",
+      "source": "www.investing.com",
+      "url": "https://www.investing.com/news/company-news/ekso-bionics-sets-new-date-for-reverse-stock-split-93CH-4058295",
+      "publishedDate": "2025-05-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "MAUDE Adverse Event Report: EKSO BIONICS EKSO BIONICS NR EXOSKELETON; POWERED EXOSKELETON",
+      "source": "www.accessdata.fda.gov",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=15462835&pc=PHL",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Powered Exoskeletons Deemed Class II Devices",
+      "source": "www.mddionline.com",
+      "url": "https://www.mddionline.com/medical-device-regulations/powered-exoskeletons-deemed-class-ii-devices",
+      "publishedDate": "2015-01-01",
+      "sourceTier": 4
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://eksobionics.com/eksonr/",
+          "date": "2025-01-01",
+          "quote": "EksoNR - Robotic Therapy, Simplified"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.eksobionics.com/press-releases/detail/729/ekso-bionics-receives-fda-clearance-to-market-its-eksonr",
+          "date": "2022-06-01",
+          "quote": "Ekso Bionics Receives FDA Clearance to Market its EksoNR™ Robotic Exoskeleton for Use with Multiple Sclerosis Patients"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.eksobionics.com/press-releases/detail/729/ekso-bionics-receives-fda-clearance-to-market-its-eksonr",
+          "date": "2022-06-01",
+          "quote": "Ekso Bionics Receives FDA Clearance to Market its EksoNR™ Robotic Exoskeleton for Use with Multiple Sclerosis Patients"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.soldierstrong.org/standing-tall-how-soldierstrongs-partnership-with-ekso-bionics-is-transforming-veterans-lives/",
+          "date": "2024-01-01",
+          "quote": "Standing Tall: How SoldierStrong’s Partnership with Ekso Bionics is Transforming Veterans’ Lives"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mddionline.com/medical-device-regulations/powered-exoskeletons-deemed-class-ii-devices",
+          "date": "2015-01-01",
+          "quote": "Powered Exoskeletons Deemed Class II Devices"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://eksobionics.com/eksonr/",
+          "date": "2025-01-01",
+          "quote": "EksoNR - Robotic Therapy, Simplified"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.neurologylive.com/view/fda-clears-eksonr-robotic-exoskeleton-rehabilitation-multiple-sclerosis/1000",
+          "date": "2022-06-01",
+          "quote": "FDA Clears EksoNR Robotic Exoskeleton for Rehabilitation in Multiple Sclerosis"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=15462835&pc=PHL",
+          "date": "2024-01-01",
+          "quote": "MAUDE Adverse Event Report: EKSO BIONICS EKSO BIONICS NR EXOSKELETON; POWERED EXOSKELETON"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://eksobionics.com/eksonr/",
+          "date": "2025-01-01",
+          "quote": "EksoNR - Robotic Therapy, Simplified"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.neurologylive.com/view/fda-clears-eksonr-robotic-exoskeleton-rehabilitation-multiple-sclerosis/1000",
+          "date": "2022-06-01",
+          "quote": "FDA Clears EksoNR Robotic Exoskeleton for Rehabilitation in Multiple Sclerosis"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.investing.com/news/company-news/ekso-bionics-sets-new-date-for-reverse-stock-split-93CH-4058295",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics sets new date for reverse stock split"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://eksobionics.com/eksonr/",
+          "date": "2025-01-01",
+          "quote": "EksoNR - Robotic Therapy, Simplified"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.investing.com/news/company-news/ekso-bionics-sets-new-date-for-reverse-stock-split-93CH-4058295",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics sets new date for reverse stock split"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mddionline.com/medical-device-regulations/powered-exoskeletons-deemed-class-ii-devices",
+          "date": "2015-01-01",
+          "quote": "Powered Exoskeletons Deemed Class II Devices"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=15462835&pc=PHL",
+          "date": "2024-01-01",
+          "quote": "MAUDE Adverse Event Report: EKSO BIONICS EKSO BIONICS NR EXOSKELETON; POWERED EXOSKELETON"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://eksobionics.com/eksonr/",
+          "date": "2025-01-01",
+          "quote": "EksoNR - Robotic Therapy, Simplified"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://eksobionics.com/veterans/",
+          "date": "2025-01-01",
+          "quote": "Veterans - Eksobionics"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.eksobionics.com/press-releases/detail/729/ekso-bionics-receives-fda-clearance-to-market-its-eksonr",
+          "date": "2022-06-01",
+          "quote": "Ekso Bionics Receives FDA Clearance to Market its EksoNR™ Robotic Exoskeleton for Use with Multiple Sclerosis Patients"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.soldierstrong.org/standing-tall-how-soldierstrongs-partnership-with-ekso-bionics-is-transforming-veterans-lives/",
+          "date": "2024-01-01",
+          "quote": "Standing Tall: How SoldierStrong’s Partnership with Ekso Bionics is Transforming Veterans’ Lives"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.investing.com/news/company-news/ekso-bionics-sets-new-date-for-reverse-stock-split-93CH-4058295",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics sets new date for reverse stock split"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.soldierstrong.org/standing-tall-how-soldierstrongs-partnership-with-ekso-bionics-is-transforming-veterans-lives/",
+          "date": "2024-01-01",
+          "quote": "Standing Tall: How SoldierStrong’s Partnership with Ekso Bionics is Transforming Veterans’ Lives"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sec.gov/Archives/edgar/data/1549084/000143774925017680/ex_820494.htm",
+          "date": "2025-05-01",
+          "quote": "Ekso Bionics Announces Reverse Stock Split"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 83 is a never-assessed uniform placeholder shared byte-for-byte with five other robotics labs at consecutive alphabetical ranks. Ekso Bionics has never been individually assessed. 20 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. No score change is applied by this study."
+}

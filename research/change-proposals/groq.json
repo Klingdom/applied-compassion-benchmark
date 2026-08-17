@@ -1,0 +1,770 @@
+{
+  "entity": "Groq",
+  "slug": "groq",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/groq-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/groq-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_2026-08-17.md",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 18,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 27.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2.2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -20.9,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "low",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4",
+    "passed": false,
+    "result": "FAIL",
+    "reason": "FAIL. Multiple independent sources were located — Axios, CNBC, TechCrunch and Data Center Dynamics — but none above tier 3. The reported Senate scrutiny of the Nvidia arrangement was found only in secondary coverage; no primary congressional document was obtained. Groq cannot be verified at tier 4 in either direction."
+  },
+  "key_evidence": [
+    "Groq is not the company the index entry describes. In December 2025 it did a roughly $20 billion licensing deal with Nvidia under which around 90% of its employees moved to Nvidia, including chief executive Jonathan Ross and president Sunny Madra.",
+    "It is still operating. A new chief executive, former finance chief Simon Edwards, runs it, and it confirmed a $650 million raise in June 2026 and is re-staffing.",
+    "The one clearly positive fact is how staff were treated: departing employees were paid cash for all vested shares. In a transaction where they had no leverage, that is a real choice.",
+    "No responsible-AI policy, safety commitment, workforce data or failure disclosure of any kind was located. Thirty-six of 40 subdimensions rest on absence of disclosure.",
+    "No source above tier 3 was obtained. Groq cannot be verified at tier 4 in either direction, which is the strongest argument that a tier-4-level placeholder was never publishable for it."
+  ],
+  "evidence": [
+    {
+      "claim": "Around 90% of Groq employees are said to be joining Nvidia, and they will be paid cash for all vested shares. Groq chief executive Jonathan Ross and president Sunny Madra would join Nvidia, while Groq would continue to operate as a standalone company led by new chief executive Simon Edwards.",
+      "source": "Axios on the Nvidia and Groq arrangement",
+      "url": "https://www.axios.com/2025/12/28/nvidia-groq-shareholders",
+      "publishedDate": "2025-12-28",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+      "source": "TechCrunch on Groq's $650 million raise",
+      "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+      "publishedDate": "2026-06-22",
+      "sourceTier": 3
+    },
+    {
+      "claim": "The Nvidia-Groq deal is structured to keep the fiction of competition alive, an analyst says.",
+      "source": "CNBC on the structure of the Nvidia and Groq deal",
+      "url": "https://www.cnbc.com/2025/12/26/nvidia-groq-deal-is-structured-to-keep-fiction-of-competition-alive.html",
+      "publishedDate": "2025-12-26",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Groq secured a $1.5 billion commitment from Saudi Arabia to expand its Dammam data centre, supporting the Saudi Data and Artificial Intelligence Authority's Arabic large language model, ALLaM.",
+      "source": "Data Center Dynamics on the Saudi commitment to Groq",
+      "url": "https://www.datacenterdynamics.com/en/news/groq-secures-15bn-from-saudi-arabia-to-expand-ai-inference-infrastructure-in-the-region/",
+      "publishedDate": "2025-02-01",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — NOT A DOWNGRADE. No score change is proposed for application. The published 48.4 is a never-assessed uniform-seed placeholder shared byte-for-byte with seven other ai-labs entities at consecutive alphabetical ranks; the rank is an artefact of the tie. No adverse conduct was located. The entire gap measures disclosure, not conduct. Applying a one-off baseline reset on evidence-absence alone would convert a calibration problem into a conduct finding, which the anti-false-positive screen forbids. Referred for coordinator-level calibration of the ai-labs 60.9 and 48.4 uniform-seed clusters. rotation-state composite/band/rank left at the PUBLISHED values.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No suffering-detection mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No differentiated process by population located."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No blind-spot process located."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No alternative channel for low-power voices located."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.datacenterdynamics.com/en/news/groq-secures-15bn-from-saudi-arabia-to-expand-ai-inference-infrastructure-in-the-region/",
+          "date": "2025-02-01",
+          "quote": "Groq secured a $1.5 billion commitment from Saudi Arabia to expand its Dammam data centre, supporting the Saudi Data and Artificial Intelligence Authority's Arabic large language model, ALLaM.",
+          "note": "No published harm assessment located for the Dammam deployment or for any other major decision."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No evidence located on how anyone experiences Groq's care."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No perspective-taking mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No validation practice located."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.datacenterdynamics.com/en/news/groq-secures-15bn-from-saudi-arabia-to-expand-ai-inference-infrastructure-in-the-region/",
+          "date": "2025-02-01",
+          "quote": "Groq secured a $1.5 billion commitment from Saudi Arabia to expand its Dammam data centre, supporting the Saudi Data and Artificial Intelligence Authority's Arabic large language model, ALLaM.",
+          "note": "The Dammam deployment supports a national Arabic large language model, which is a genuine non-English language adaptation, though commercially driven."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No outcome measurement located."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "A $650 million round was raised and the company is re-staffing after losing roughly 90% of its workforce, which is a documented attempt to rebuild capacity."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No coverage or access data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No prioritisation evidence located."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No access barrier mapping located."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axios.com/2025/12/28/nvidia-groq-shareholders",
+          "date": "2025-12-28",
+          "quote": "Around 90% of Groq employees are said to be joining Nvidia, and they will be paid cash for all vested shares. Groq chief executive Jonathan Ross and president Sunny Madra would join Nvidia, while Groq would continue to operate as a standalone company led by new chief executive Simon Edwards.",
+          "note": "In the Nvidia arrangement, departing employees were paid cash for all vested shares. That is a documented and non-trivial treatment of staff in a transaction that could have left them holding illiquid paper."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No capacity-building or exit design located."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cnbc.com/2025/12/26/nvidia-groq-deal-is-structured-to-keep-fiction-of-competition-alive.html",
+          "date": "2025-12-26",
+          "quote": "The Nvidia-Groq deal is structured to keep the fiction of competition alive, an analyst says.",
+          "note": "Groq described the Nvidia arrangement as a non-exclusive licensing agreement. An analyst quoted by CNBC says the structure keeps the fiction of competition alive. Scope communication is contested."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No consent practice located."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No harm acknowledgment located."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No correction evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No performance, workforce or failure data published."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No root-cause work located."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No long-horizon impact model located."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.datacenterdynamics.com/en/news/groq-secures-15bn-from-saudi-arabia-to-expand-ai-inference-infrastructure-in-the-region/",
+          "date": "2025-02-01",
+          "quote": "Groq secured a $1.5 billion commitment from Saudi Arabia to expand its Dammam data centre, supporting the Saudi Data and Artificial Intelligence Authority's Arabic large language model, ALLaM.",
+          "note": "No mapping of second-order effects located, including for state-linked deployments."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No structural critique located."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No coalition contribution located."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No practice located that is maintained where it is invisible."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axios.com/2025/12/28/nvidia-groq-shareholders",
+          "date": "2025-12-28",
+          "quote": "Around 90% of Groq employees are said to be joining Nvidia, and they will be paid cash for all vested shares. Groq chief executive Jonathan Ross and president Sunny Madra would join Nvidia, while Groq would continue to operate as a standalone company led by new chief executive Simon Edwards.",
+          "note": "Paying out all vested shares in cash to roughly 90% of the workforce is documented internal treatment at a moment of maximum leverage over those employees."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
+          "date": "2026-06-22",
+          "quote": "Groq confirmed a $650 million funding round and is re-staffing after the Nvidia arrangement. Groq described the deal as a non-exclusive licensing agreement.",
+          "note": "No values-alignment review located."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axios.com/2025/12/28/nvidia-groq-shareholders",
+          "date": "2025-12-28",
+          "quote": "Around 90% of Groq employees are said to be joining Nvidia, and they will be paid cash for all vested shares. Groq chief executive Jonathan Ross and president Sunny Madra would join Nvidia, while Groq would continue to operate as a standalone company led by new chief executive Simon Edwards.",
+          "note": "The founding chief executive and president both left for Nvidia in December 2025. No practice has been shown to survive the transition."
+        }
+      ]
+    }
+  ]
+}

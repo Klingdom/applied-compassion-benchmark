@@ -1,0 +1,688 @@
+{
+  "entity": "Harvey AI",
+  "slug": "harvey-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No mechanism located for detecting harm to the people affected by legal work done with Harvey."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.law.com/legaltechnews/2026/06/18/harvey-announces-development-of-custom-legal-specific-ai-models-/",
+          "date": "2026-06-18",
+          "quote": "Harvey co-founder Winston Weinberg described the company as starting to support smaller firms, nonprofits, and government agencies.",
+          "note": "Offerings are being differentiated for smaller firms, nonprofits and government agencies alongside the large-firm customer base."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "Harvey publishes its own hallucination rate, which is a structured self-assessment of a known failure mode that has produced a specific finding."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No structural channel located through which unrepresented parties or legal aid clients reach Harvey's decisions."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No published pre-launch harm assessment located."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No evidence located on how users experience Harvey's care."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No formal perspective-taking mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.haqq.ai/blog/harvey-ai-review-alternatives",
+          "date": "2026-01-01",
+          "quote": "Harvey publishes a BigLaw Bench claim of 91% accuracy, but on published benchmark scores it is consistently good, never great, and Harvey hasn't published independent hallucination benchmarks.",
+          "note": "No acknowledgment-first practice located."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No cultural adaptation located."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "Hallucination and accuracy outcome data are published and reviewed across model versions. The data is self-generated; independent reviewers note Harvey has not published independent benchmarks."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No resource gap analysis located. The legal aid programme exists but access is limited."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No coverage data published. The customer base is the largest law firms."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "Support for nonprofits is stated but the Pro Bono Institute reports access to Harvey's legal aid programme is limited. Priority is stated; allocation does not follow need."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No access barrier mapping located. Free tools are reported to be more accessible to legal aid organisations than Harvey is."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No turnover or staff wellbeing data published."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No capacity-building or exit design located."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "Harvey publishes its own error rate and states that outputs require verification, which communicates a real limitation before customers rely on it."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No consent practice located."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No harm acknowledgment located."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No correction on harm evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "The BigLaw Bench hallucination post discloses that the product does hallucinate, and gives a rate. That is an unflattering finding published voluntarily."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "Access to justice is named as a direction of travel but deployment is overwhelmingly to the best-resourced firms."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.law.com/legaltechnews/2026/06/18/harvey-announces-development-of-custom-legal-specific-ai-models-/",
+          "date": "2026-06-18",
+          "quote": "Harvey co-founder Winston Weinberg described the company as starting to support smaller firms, nonprofits, and government agencies.",
+          "note": "No long-horizon impact model located."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No cross-system mapping located."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No public position taken that carries institutional risk."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No coalition contribution with documented joint outcomes located."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "Publishing its own error rate is not reputationally advantageous and is maintained across releases."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.harvey.ai/blog/biglaw-bench-hallucinations",
+          "date": "2025-01-01",
+          "quote": "On BigLaw Bench tasks, Harvey's Assistant model hallucinates around 1 in 500 claims, or 0.2%, while foundation models hallucinate between 1 in 150 and 1 in 110.",
+          "note": "No staff culture data published."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.probonoinst.org/2026/02/06/ai-and-technology-help-bridge-access-to-justice/",
+          "date": "2026-02-06",
+          "quote": "Harvey has a legal aid program, but access is limited; free tools are more accessible for legal aid organizations.",
+          "note": "No values-alignment review located."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.law.com/legaltechnews/2026/06/18/harvey-announces-development-of-custom-legal-specific-ai-models-/",
+          "date": "2026-06-18",
+          "quote": "Harvey co-founder Winston Weinberg described the company as starting to support smaller firms, nonprofits, and government agencies.",
+          "note": "No leadership transition tested."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "entity": "Databricks",
+  "slug": "databricks",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/databricks-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/databricks-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_2026-08-17.md",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 17,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 31.3,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2.2,
+      "ACT": 2.2,
+      "EQU": 2.2,
+      "BND": 2.4,
+      "ACC": 2.2,
+      "SYS": 2.4,
+      "INT": 2
+    }
+  },
+  "score_delta": -17.1,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "low",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Federal court rulings in Nazemian et al. v. Databricks (N.D. Cal.) reported by Bloomberg Law and Publishers Lunch (tier 4), plus the company's published AI Governance Framework and Responsible AI documentation (tier 3). Multiple independent sources, at least one at tier 4."
+  },
+  "key_evidence": [
+    "Databricks publishes more governance material than any other lab in Cluster B. Its AI Governance Framework and responsible AI documentation set out an ethics, transparency and interpretability pillar, and it gives them away for the whole field to use.",
+    "None of it is measured. There is no outcome data on whether the framework changes anything, no workforce data, no failure disclosure, and no independent audit. Databricks is private and discloses accordingly.",
+    "Authors sued Databricks in March 2024 alleging its MosaicML models were trained on Books3, a dataset of nearly 197,000 pirated books. Courts have split the case: the direct claims over DBRX were dismissed, and the claims over MPT continue. Nothing is decided and nothing here is scored as proven harm.",
+    "The published 48.4 implied formal pathways and some outcome data across all eight areas. Databricks has framework documents and no outcome data at all.",
+    "The score falls 17.1 points, the smallest fall in Cluster B, because Databricks genuinely publishes more than its cluster peers."
+  ],
+  "evidence": [
+    {
+      "claim": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+      "source": "Databricks AI Governance Framework",
+      "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+      "source": "Databricks on responsible AI",
+      "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "The judge denied the defendants' motion to dismiss, stating: Defendants may ultimately prevail on this issue, but for now, Plaintiffs' allegations are sufficient.",
+      "source": "Publishers Lunch on the authors' copyright suit against Databricks",
+      "url": "https://lunch.publishersmarketplace.com/2026/04/authors-copyright-suit-against-databricks-will-continue/",
+      "publishedDate": "2026-04-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Judge Breyer dismissed the direct copyright infringement claims against Databricks over its DBRX model, while the proposed class of authors retains pending infringement claims over MPT, created by Databricks unit MosaicML.",
+      "source": "Bloomberg Law on the Databricks copyright rulings",
+      "url": "https://news.bloomberglaw.com/litigation/databricks-beats-authors-copyright-claims-over-one-ai-model",
+      "publishedDate": "2025-06-26",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Authors allege their works were part of a dataset of nearly 197,000 books, the Books3 dataset, used to train Databricks' MosaicML models.",
+      "source": "Databricks large language model litigation summary",
+      "url": "https://www.saverilawfirm.com/databricks-inc.-large-language-model-litigation",
+      "publishedDate": "2024-03-08",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — NOT A DOWNGRADE. No score change is proposed for application. The published 48.4 is a never-assessed uniform-seed placeholder shared byte-for-byte with seven other ai-labs entities at consecutive alphabetical ranks; the rank is an artefact of the tie. No adverse conduct was located. The entire gap measures disclosure, not conduct. Applying a one-off baseline reset on evidence-absence alone would convert a calibration problem into a conduct finding, which the anti-false-positive screen forbids. Referred for coordinator-level calibration of the ai-labs 60.9 and 48.4 uniform-seed clusters. rotation-state composite/band/rank left at the PUBLISHED values.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "No mechanism located for detecting distress among the people affected by Databricks' platform."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "No differentiated process by population located."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The AI Governance Framework is a structured process for identifying risks a deployment may be missing, published for use across the field."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "No alternative channel for low-power voices located."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The framework is an explicit pre-deployment risk assessment, published. It applies to customer deployments rather than to Databricks' own major decisions."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No evidence located on how individuals experience Databricks."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No formal perspective-taking mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "Fairness is named as an explicit pillar of the published responsible AI framework, with human oversight required. No disaggregated outcome data."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lunch.publishersmarketplace.com/2026/04/authors-copyright-suit-against-databricks-will-continue/",
+          "date": "2026-04-01",
+          "quote": "The judge denied the defendants' motion to dismiss, stating: Defendants may ultimately prevail on this issue, but for now, Plaintiffs' allegations are sufficient.",
+          "note": "No acknowledgment-first practice located. The authors' claims are contested."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No cultural adaptation located."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No outcome measurement of the governance framework's effect located."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "A dedicated governance and security programme is resourced and published, though its effect is not measured."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No coverage or access data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No prioritisation evidence located."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "Bias and fairness are addressed explicitly in the published governance framework. No disaggregated outcome data or audit published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No access barrier mapping located."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.saverilawfirm.com/databricks-inc.-large-language-model-litigation",
+          "date": "2024-03-08",
+          "quote": "Authors allege their works were part of a dataset of nearly 197,000 books, the Books3 dataset, used to train Databricks' MosaicML models.",
+          "note": "No acknowledgment of historical harm located, including in relation to the Books3 dataset."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No turnover or staff wellbeing data published. Databricks is private and discloses no workforce data."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The governance framework is published for customers and the wider field to apply independently, which builds capability rather than dependency."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The framework documents the limits of interpretability and states that human oversight is required, which communicates what the technology cannot do."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.saverilawfirm.com/databricks-inc.-large-language-model-litigation",
+          "date": "2024-03-08",
+          "quote": "Authors allege their works were part of a dataset of nearly 197,000 books, the Books3 dataset, used to train Databricks' MosaicML models.",
+          "note": "Authors allege their works entered training data through the Books3 dataset of nearly 197,000 books without permission. The claims are contested and undecided. No consent practice toward rights holders was located."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lunch.publishersmarketplace.com/2026/04/authors-copyright-suit-against-databricks-will-continue/",
+          "date": "2026-04-01",
+          "quote": "The judge denied the defendants' motion to dismiss, stating: Defendants may ultimately prevail on this issue, but for now, Plaintiffs' allegations are sufficient.",
+          "note": "No harm acknowledgment located."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/litigation/databricks-beats-authors-copyright-claims-over-one-ai-model",
+          "date": "2025-06-26",
+          "quote": "Judge Breyer dismissed the direct copyright infringement claims against Databricks over its DBRX model, while the proposed class of authors retains pending infringement claims over MPT, created by Databricks unit MosaicML.",
+          "note": "No documented correction following the rulings allowing the MPT claims to continue."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "Databricks publishes detailed governance and security frameworks. As a private company it publishes no financial, workforce or failure data."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lunch.publishersmarketplace.com/2026/04/authors-copyright-suit-against-databricks-will-continue/",
+          "date": "2026-04-01",
+          "quote": "The judge denied the defendants' motion to dismiss, stating: Defendants may ultimately prevail on this issue, but for now, Plaintiffs' allegations are sufficient.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No root-cause work located."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No long-horizon impact model located."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The governance framework maps risk across connected systems in an AI deployment, which is systematic cross-system mapping for customers."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No structural critique located."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/introducing-databricks-ai-governance-framework",
+          "date": "2025-01-01",
+          "quote": "The Databricks AI Governance Framework sets out pillars for governing AI deployments, including an Ethics, Transparency and Interpretability pillar covering fairness, accountability and human oversight.",
+          "note": "The framework is published openly for the field rather than restricted to customers, which is a documented contribution."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lunch.publishersmarketplace.com/2026/04/authors-copyright-suit-against-databricks-will-continue/",
+          "date": "2026-04-01",
+          "quote": "The judge denied the defendants' motion to dismiss, stating: Defendants may ultimately prevail on this issue, but for now, Plaintiffs' allegations are sufficient.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No practice located that is maintained where it is invisible."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No staff culture data published."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.saverilawfirm.com/databricks-inc.-large-language-model-litigation",
+          "date": "2024-03-08",
+          "quote": "Authors allege their works were part of a dataset of nearly 197,000 books, the Books3 dataset, used to train Databricks' MosaicML models.",
+          "note": "A published ethics and transparency framework sits against contested claims that nearly 197,000 pirated books were used in training. The two have not been publicly reconciled."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.databricks.com/blog/responsible-ai-databricks-data-intelligence-platform",
+          "date": "2025-01-01",
+          "quote": "Databricks describes an Ethics, Transparency and Interpretability pillar that supports organisations in building trustworthy and responsible AI systems.",
+          "note": "No leadership transition has tested whether the practices are structural."
+        }
+      ]
+    }
+  ]
+}

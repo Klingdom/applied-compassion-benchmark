@@ -1,0 +1,770 @@
+{
+  "entity": "Wandercraft",
+  "slug": "wandercraft",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/wandercraft-2026-08-17.md",
+  "study": "robotics-labs Exemplary seed-cluster de-seeding study (Cluster A, published 83)",
+  "published_scores": {
+    "composite": 83,
+    "band": "exemplary",
+    "rank": 9,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4.5,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 46.2,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.8,
+      "EMP": 2.6,
+      "ACT": 3,
+      "EQU": 3,
+      "BND": 2.8,
+      "ACC": 2.2,
+      "SYS": 3.2,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -36.8,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "passed": true,
+    "explanation": "6 independent sources support the band change, of which 3 sit at evidence tier 4 or above. Self-published company material was excluded from the test.",
+    "sources_at_tier4_or_above": [
+      "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+      "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+      "https://asia-spinalinjury.org/wp-content/uploads/2025/05/Wandercraft_ASIApresentation_04.25.25.pdf"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Wandercraft has the strongest evidence base of any of the ten labs, and it still does not reach the \"Exemplary\" band the index publishes for it. That gap is the clearest proof the 83.0 value was never measured.",
+    "Wandercraft is the only lab in the study that published a peer-reviewed safety evaluation of its device in patients outside its cleared indication — people with tetraplegia and high paraplegia. It then used that evidence to extend the label to them.",
+    "The FDA extended Atalante X indications a second time on 3 November 2025, covering spinal cord injury from C4 to L5 and multiple sclerosis. Each extension reaches a group that was previously excluded.",
+    "Its Walk as a Service programme took the exoskeleton out of hospitals and into a long-term care residence. The published case study reports a 58% increase in walking distance and a Functional Independence Measure score rising from 69 to 104 over a year.",
+    "Accountability scores 2.2 of 5 and Integrity 2.2 of 5. Wandercraft publishes clinical evidence but no institutional data on harm, correction, repair, staff wellbeing or values governance."
+  ],
+  "corporate_status": "Operating. Privately held. No status defect found.",
+  "evidence": [
+    {
+      "claim": "Wandercraft Gains Second FDA Indication Extension for Atalante X in Less Than Two Years, Extending Advanced Robotic Rehabilitation for More Patients with Severe Mobility Loss",
+      "source": "www.globenewswire.com",
+      "url": "https://www.globenewswire.com/news-release/2025/11/03/3179388/0/en/wandercraft-gains-second-fda-indication-extension-for-atalante-x-in-less-than-two-years-extending-advanced-robotic-rehabilitation-for-more-patients-with-severe-mobility-loss.html",
+      "publishedDate": "2025-11-03",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia",
+      "source": "pubmed.ncbi.nlm.nih.gov",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care",
+      "source": "www.wandercraft.eu",
+      "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "FDA clears Wandercraft’s Eve exoskeleton for wheelchair users",
+      "source": "www.mobihealthnews.com",
+      "url": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "claim": "FDA expands indications for Wandercraft robotic exoskeleton",
+      "source": "www.massdevice.com",
+      "url": "https://www.massdevice.com/fda-expands-indications-wandercraft-atalante-exoskeleton/",
+      "publishedDate": "2025-11-03",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Robotic Exoskeletons April 25, 2025",
+      "source": "asia-spinalinjury.org",
+      "url": "https://asia-spinalinjury.org/wp-content/uploads/2025/05/Wandercraft_ASIApresentation_04.25.25.pdf",
+      "publishedDate": "2025-04-25",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership",
+      "source": "sifted.eu",
+      "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Wandercraft enrolls first patient in self-balancing exoskeleton study",
+      "source": "www.massdevice.com",
+      "url": "https://www.massdevice.com/wandercraft-first-patient-self-balancing-exoskeleton-study/",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Wandercraft tacks on 2nd FDA nod for self-balancing exoskeleton suit",
+      "source": "www.fiercebiotech.com",
+      "url": "https://www.fiercebiotech.com/medtech/wandercraft-tacks-2nd-fda-nod-self-balancing-exoskeleton-suit",
+      "publishedDate": "2025-11-03",
+      "sourceTier": 3
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.globenewswire.com/news-release/2025/11/03/3179388/0/en/wandercraft-gains-second-fda-indication-extension-for-atalante-x-in-less-than-two-years-extending-advanced-robotic-rehabilitation-for-more-patients-with-severe-mobility-loss.html",
+          "date": "2025-11-03",
+          "quote": "Wandercraft Gains Second FDA Indication Extension for Atalante X in Less Than Two Years, Extending Advanced Robotic Rehabilitation for More Patients with Severe Mobility Loss"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+          "date": "2025-01-01",
+          "quote": "FDA clears Wandercraft’s Eve exoskeleton for wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+          "date": "2025-01-01",
+          "quote": "FDA clears Wandercraft’s Eve exoskeleton for wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.globenewswire.com/news-release/2025/11/03/3179388/0/en/wandercraft-gains-second-fda-indication-extension-for-atalante-x-in-less-than-two-years-extending-advanced-robotic-rehabilitation-for-more-patients-with-severe-mobility-loss.html",
+          "date": "2025-11-03",
+          "quote": "Wandercraft Gains Second FDA Indication Extension for Atalante X in Less Than Two Years, Extending Advanced Robotic Rehabilitation for More Patients with Severe Mobility Loss"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+          "date": "2025-01-01",
+          "quote": "FDA clears Wandercraft’s Eve exoskeleton for wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.globenewswire.com/news-release/2025/11/03/3179388/0/en/wandercraft-gains-second-fda-indication-extension-for-atalante-x-in-less-than-two-years-extending-advanced-robotic-rehabilitation-for-more-patients-with-severe-mobility-loss.html",
+          "date": "2025-11-03",
+          "quote": "Wandercraft Gains Second FDA Indication Extension for Atalante X in Less Than Two Years, Extending Advanced Robotic Rehabilitation for More Patients with Severe Mobility Loss"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+          "date": "2025-01-01",
+          "quote": "FDA clears Wandercraft’s Eve exoskeleton for wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.massdevice.com/fda-expands-indications-wandercraft-atalante-exoskeleton/",
+          "date": "2025-11-03",
+          "quote": "FDA expands indications for Wandercraft robotic exoskeleton"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.massdevice.com/wandercraft-first-patient-self-balancing-exoskeleton-study/",
+          "date": "2024-01-01",
+          "quote": "Wandercraft enrolls first patient in self-balancing exoskeleton study"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wandercraft.eu/articles/wandercraft-publishes-first-case-study-of-exoskeleton-use-in-long-term-care-new-results-from-the-walk-as-a-service-waas-program",
+          "date": "2025-01-01",
+          "quote": "Wandercraft Publishes First Case Study of Exoskeleton Use in Long-Term Care"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42547495/",
+          "date": "2025-01-01",
+          "quote": "Retrospective safety evaluation of the atalante exoskeleton in a clinical setting in patients with tetraplegia and high paraplegia"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sifted.eu/articles/wandercraft-75m-series-d",
+          "date": "2025-01-01",
+          "quote": "Wandercraft raises $75m and expands into humanoid robots with Renault partnership"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 83 is a never-assessed uniform placeholder shared byte-for-byte with five other robotics labs at consecutive alphabetical ranks. Wandercraft has never been individually assessed. 16 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. No score change is applied by this study."
+}

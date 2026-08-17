@@ -1,0 +1,688 @@
+{
+  "entity": "Abridge",
+  "slug": "abridge",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://academic.oup.com/jamiaopen/article/8/1/ooaf013/8029407",
+          "date": "2025-02-25",
+          "quote": "Clinicians using Abridge were seven times more likely to find their documentation workflow easy; 67% felt less at risk of burnout due to documentation.",
+          "note": "Abridge runs structured pre- and post-intervention measurement of documentation burden on the clinicians it serves, published in a peer-reviewed journal. Detection is proactive for clinicians but not for patients."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/cambridge-health-alliance-taps-abridge-ai-medical-scribe-support",
+          "date": "2025-06-01",
+          "quote": "Cambridge Health Alliance, the only public academic health system in Massachusetts, is deploying Abridge across its 600 clinicians. Nearly half — 43% — of the population it serves speaks a language other than English as a primary language.",
+          "note": "Speech recognition is validated for 28 languages including the 16 most spoken in the United States, and deployments are differentiated for multilingual safety-net populations at two named systems."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "No published process for identifying whose experience is missed. The patient-consent gap was surfaced by litigation in April 2026, not by self-assessment."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "No structural channel located through which patients can raise concerns about being recorded. The three named plaintiffs used a federal court."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.americanbar.org/groups/health_law/news/2026/ambient-ai-scribes-privacy-cybersecurity/",
+          "date": "2026-01-01",
+          "quote": "The consent script that Abridge recommends does not specify where the audio is sent, how long it is retained, which subprocessors handle the data, or whether the audio trains the next model.",
+          "note": "No published pre-deployment harm assessment. The recommended consent script omits destination, retention, subprocessors and training use — the exact facts the state wiretap claims turn on."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://academic.oup.com/jamiaopen/article/8/1/ooaf013/8029407",
+          "date": "2025-02-25",
+          "quote": "Clinicians using Abridge were seven times more likely to find their documentation workflow easy; 67% felt less at risk of burnout due to documentation.",
+          "note": "81% of surveyed clinicians said the tool made their workflow easy and 77% said it improved patient care by decreasing documentation burden. This is product satisfaction reported by beneficiaries, not independently verified institutional care."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.abridge.com/blog/kumc-research-studies",
+          "date": "2025-03-01",
+          "quote": "A randomized crossover study of 40 ambulatory clinicians found a 61% reduction in cognitive load as measured by the NASA-TLX index.",
+          "note": "Product design is built from observed clinician workload and tested against it in a randomized crossover design, which is a formal perspective-taking mechanism."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No disaggregated outcome data by patient or clinician group is published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "Abridge's terms place consent responsibility on the clinician user. No structure was located in which a patient's account of harm is acknowledged before investigation."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/press-release/altamed-abridge",
+          "date": "2025-04-01",
+          "quote": "Abridge partnered with AltaMed Health Services, the largest Federally Qualified Health Center in the United States, to bring its multilingual documentation platform to community clinics.",
+          "note": "Genuine adaptation for Spanish- and Portuguese-speaking patients, deployed at the largest Federally Qualified Health Center in the United States. Co-design with those communities is not evidenced."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No published response-time standard for patient or clinician harm reports."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No evidence located that response is calibrated to need rather than to contract."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.abridge.com/blog/kumc-research-studies",
+          "date": "2025-01-01",
+          "quote": "A Kaiser Permanente study published in NEJM AI covered 1,306 clinicians, 8,986 note quality ratings and more than 4 million patient encounters over six months.",
+          "note": "The Kaiser Permanente evaluation in NEJM AI covers 1,306 clinicians and more than 4 million encounters and is the largest published independent validation of any ambient AI scribe. Outcome data exists, is peer-reviewed and is partly independent of the company."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/press-release/altamed-abridge",
+          "date": "2025-04-01",
+          "quote": "Abridge partnered with AltaMed Health Services, the largest Federally Qualified Health Center in the United States, to bring its multilingual documentation platform to community clinics.",
+          "note": "Deployment resources are directed at safety-net and Federally Qualified Health Center providers, but no gap analysis against unmet need is published."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.abridge.com/blog/kumc-research-studies",
+          "date": "2025-01-01",
+          "quote": "A Kaiser Permanente study published in NEJM AI covered 1,306 clinicians, 8,986 note quality ratings and more than 4 million patient encounters over six months.",
+          "note": "The Kaiser evaluation runs six months. No longer follow-through protocol is published by Abridge."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/cambridge-health-alliance-taps-abridge-ai-medical-scribe-support",
+          "date": "2025-06-01",
+          "quote": "Cambridge Health Alliance, the only public academic health system in Massachusetts, is deploying Abridge across its 600 clinicians. Nearly half — 43% — of the population it serves speaks a language other than English as a primary language.",
+          "note": "Deployment at a public safety-net academic health system extends reach to Medicaid and limited-English-proficiency populations. Coverage is not disaggregated or published."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/press-release/altamed-abridge",
+          "date": "2025-04-01",
+          "quote": "Abridge partnered with AltaMed Health Services, the largest Federally Qualified Health Center in the United States, to bring its multilingual documentation platform to community clinics.",
+          "note": "Building for the 16 most spoken United States languages and deploying at the largest Federally Qualified Health Center is a documented prioritisation decision."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "Word error rate is claimed by language but no independent disaggregated audit is published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/cambridge-health-alliance-taps-abridge-ai-medical-scribe-support",
+          "date": "2025-06-01",
+          "quote": "Cambridge Health Alliance, the only public academic health system in Massachusetts, is deploying Abridge across its 600 clinicians. Nearly half — 43% — of the population it serves speaks a language other than English as a primary language.",
+          "note": "Language access is an ongoing programme with evidence at multiple named sites: Cambridge Health Alliance, where 43% of patients speak a language other than English at home, and AltaMed."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No turnover, burnout or staff wellbeing data published."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "The product creates workflow dependency. No capacity-building or exit design located."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.americanbar.org/groups/health_law/news/2026/ambient-ai-scribes-privacy-cybersecurity/",
+          "date": "2026-01-01",
+          "quote": "The consent script that Abridge recommends does not specify where the audio is sent, how long it is retained, which subprocessors handle the data, or whether the audio trains the next model.",
+          "note": "The recommended consent script omits where audio goes, how long it is kept, who processes it and whether it trains the next model. Those are scope facts discovered after use, not before."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No refusal or alternative-provision practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "Consent responsibility is delegated to the customer and the recommended script omits material facts. Three patients allege in federal court that they were never asked. The allegations are not decided; the script content is documented."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "No acknowledgment of harm located. Abridge is not a defendant and has not made a public statement on the consent claims."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.americanbar.org/groups/health_law/news/2026/ambient-ai-scribes-privacy-cybersecurity/",
+          "date": "2026-01-01",
+          "quote": "The consent script that Abridge recommends does not specify where the audio is sent, how long it is retained, which subprocessors handle the data, or whether the audio trains the next model.",
+          "note": "No documented change to consent practice following the April 2026 filings."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.abridge.com/blog/kumc-research-studies",
+          "date": "2025-01-01",
+          "quote": "A Kaiser Permanente study published in NEJM AI covered 1,306 clinicians, 8,986 note quality ratings and more than 4 million patient encounters over six months.",
+          "note": "Abridge publishes peer-reviewed results including work run by third parties, plus a privacy policy setting out retention. No report disclosing an unflattering finding was located."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://academic.oup.com/jamiaopen/article/8/1/ooaf013/8029407",
+          "date": "2025-02-25",
+          "quote": "Clinicians using Abridge were seven times more likely to find their documentation workflow easy; 67% felt less at risk of burnout due to documentation.",
+          "note": "The product targets documentation burden, a documented root cause of clinician burnout, rather than treating burnout downstream, and the peer-reviewed data show reduced after-hours documentation: 73% of surveyed clinicians reported less time documenting outside clinical hours."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No published theory of change or long-horizon outcome model."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.americanbar.org/groups/health_law/news/2026/ambient-ai-scribes-privacy-cybersecurity/",
+          "date": "2026-01-01",
+          "quote": "The consent script that Abridge recommends does not specify where the audio is sent, how long it is retained, which subprocessors handle the data, or whether the audio trains the next model.",
+          "note": "The second-order effect on customers under state wiretap statutes was not anticipated. The American Bar Association notes a vendor can be HIPAA-compliant and still expose its hospital client to per-encounter statutory damages."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No structural critique of the conditions producing documentation burden located."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.abridge.com/blog/kumc-research-studies",
+          "date": "2025-01-01",
+          "quote": "A Kaiser Permanente study published in NEJM AI covered 1,306 clinicians, 8,986 note quality ratings and more than 4 million patient encounters over six months.",
+          "note": "Collaborations with academic health systems and Kaiser Permanente that publish independently of Abridge."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No case located of Abridge bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/press-release/altamed-abridge",
+          "date": "2025-04-01",
+          "quote": "Abridge partnered with AltaMed Health Services, the largest Federally Qualified Health Center in the United States, to bring its multilingual documentation platform to community clinics.",
+          "note": "Multilingual investment for safety-net providers is a genuine practice, though it is also a marketed differentiator."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "No staff culture data published."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "date": "2026-04-14",
+          "quote": "The lawsuit names Sutter Health and Memorial Healthcare Services as defendants. Abridge AI, Inc. is not named as a defendant, though it developed the AI platform at issue.",
+          "note": "A patient-benefit mission stated alongside a consent posture that delegates the patient conversation to the customer is a values tension the company has not addressed publicly."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.abridge.com/privacy",
+          "date": "2026-01-01",
+          "quote": "Abridge's clinician terms place responsibility for obtaining patient consent on the user; audio and transcripts are deleted on the enterprise customer's schedule, commonly around 30 days.",
+          "note": "Founder-led. No leadership transition has tested whether the practices are structural."
+        }
+      ]
+    }
+  ]
+}

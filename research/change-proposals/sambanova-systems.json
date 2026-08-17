@@ -1,0 +1,770 @@
+{
+  "entity": "SambaNova Systems",
+  "slug": "sambanova-systems",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/sambanova-systems-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/sambanova-systems-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_2026-08-17.md",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 22,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 25.6,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "score_delta": -22.8,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "low",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4",
+    "passed": null,
+    "result": "PARTIAL",
+    "reason": "PARTIAL. Three Worker Adjustment and Retraining Notification filings covering 87 workers in April 2025 are state regulatory records and are tier 4 in origin, but they were reached through an aggregator rather than a state registry, so the tier-4 claim is not fully verified. Data Center Dynamics and EE Times corroborate the layoff and the strategic pivot at tier 3. No fully verified tier-4 source was obtained."
+  },
+  "key_evidence": [
+    "SambaNova Systems publishes nothing that bears on compassion. No responsible-AI policy, no workforce data, no impact reporting, no failure disclosure. Thirty-nine of 40 subdimensions rest on absence of evidence.",
+    "The only located facts about how it treats people are a layoff of 77 employees, about 15% of the workforce, on 22 April 2025, and three statutory Worker Adjustment and Retraining Notification filings covering 87 workers. Statutory notice is the legal minimum.",
+    "No adverse conduct was found. No lawsuits, no safety incidents, no labour findings, no regulatory action. The 22.8-point fall is entirely a disclosure gap.",
+    "The company is still operating independently with 407 employees as of June 2026, having raised funding rather than selling to Intel.",
+    "SambaNova and Typeface land on identical dimension vectors, because near-total absence of evidence produces the same floor. That is a floor artefact of the method, not a new seed."
+  ],
+  "evidence": [
+    {
+      "claim": "SambaNova Systems laid off 77 employees, around 15% of its 500-strong workforce, on 22 April 2025, pivoting away from training workloads and AI cloud services toward inference.",
+      "source": "Data Center Dynamics on the SambaNova layoffs",
+      "url": "https://www.datacenterdynamics.com/en/news/sambanova-lays-off-77-employees-as-company-pivots-focus-from-training-to-inference/",
+      "publishedDate": "2025-04-22",
+      "sourceTier": 3
+    },
+    {
+      "claim": "SambaNova layoffs: 87 workers across 3 WARN notices in April 2025.",
+      "source": "Worker Adjustment and Retraining Notification records for SambaNova Systems",
+      "url": "https://www.warntracker.com/company/sambanova-systems",
+      "publishedDate": "2025-04-22",
+      "sourceTier": 3
+    },
+    {
+      "claim": "SambaNova abandoned an Intel acquisition and raised funding instead. Chief executive Rodrigo Liang said a funding round was the right decision for the company.",
+      "source": "EE Times on SambaNova and Intel",
+      "url": "https://www.eetimes.com/sambanova-abandons-intel-acquisition-raises-funding-instead/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+      "source": "Company profile of SambaNova Systems",
+      "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+      "publishedDate": "2026-06-26",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — NOT A DOWNGRADE. No score change is proposed for application. The published 48.4 is a never-assessed uniform-seed placeholder shared byte-for-byte with seven other ai-labs entities at consecutive alphabetical ranks; the rank is an artefact of the tie. No adverse conduct was located. The entire gap measures disclosure, not conduct. Applying a one-off baseline reset on evidence-absence alone would convert a calibration problem into a conduct finding, which the anti-false-positive screen forbids. Referred for coordinator-level calibration of the ai-labs 60.9 and 48.4 uniform-seed clusters. rotation-state composite/band/rank left at the PUBLISHED values.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No suffering-detection mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No differentiated process by population located."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No blind-spot process located."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No alternative channel for low-power voices located."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No pre-launch harm assessment located."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No evidence located on how anyone experiences SambaNova's care."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No perspective-taking mechanism located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No validation practice located."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No cultural adaptation located."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No outcome measurement located."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.eetimes.com/sambanova-abandons-intel-acquisition-raises-funding-instead/",
+          "date": "2026-01-01",
+          "quote": "SambaNova abandoned an Intel acquisition and raised funding instead. Chief executive Rodrigo Liang said a funding round was the right decision for the company.",
+          "note": "SambaNova raised a funding round rather than accepting an acquisition, which is a documented attempt to bring resources to bear to keep operating independently."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No coverage or access data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No prioritisation evidence located."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No access barrier mapping located."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.datacenterdynamics.com/en/news/sambanova-lays-off-77-employees-as-company-pivots-focus-from-training-to-inference/",
+          "date": "2025-04-22",
+          "quote": "SambaNova Systems laid off 77 employees, around 15% of its 500-strong workforce, on 22 April 2025, pivoting away from training workloads and AI cloud services toward inference.",
+          "note": "Seventy-seven employees, about 15% of the workforce, were cut on 22 April 2025. No turnover or wellbeing data is published in either direction."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No capacity-building or exit design located."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.warntracker.com/company/sambanova-systems",
+          "date": "2025-04-22",
+          "quote": "SambaNova layoffs: 87 workers across 3 WARN notices in April 2025.",
+          "note": "Three Worker Adjustment and Retraining Notification filings covering 87 workers were made in April 2025. Statutory notice is the legal minimum, not a practice beyond it."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No consent practice located."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No harm acknowledgment located."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.datacenterdynamics.com/en/news/sambanova-lays-off-77-employees-as-company-pivots-focus-from-training-to-inference/",
+          "date": "2025-04-22",
+          "quote": "SambaNova Systems laid off 77 employees, around 15% of its 500-strong workforce, on 22 April 2025, pivoting away from training workloads and AI cloud services toward inference.",
+          "note": "The 2025 pivot from training to inference was a commercial correction driven by market conditions, not a response to harm evidence."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.warntracker.com/company/sambanova-systems",
+          "date": "2025-04-22",
+          "quote": "SambaNova layoffs: 87 workers across 3 WARN notices in April 2025.",
+          "note": "The only public disclosure located is statutory layoff notice. No voluntary performance or failure data is published."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No reparative action located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No root-cause work located."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.eetimes.com/sambanova-abandons-intel-acquisition-raises-funding-instead/",
+          "date": "2026-01-01",
+          "quote": "SambaNova abandoned an Intel acquisition and raised funding instead. Chief executive Rodrigo Liang said a funding round was the right decision for the company.",
+          "note": "No long-horizon impact model located."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No cross-system mapping located."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No structural critique located."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No coalition contribution located."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.eetimes.com/sambanova-abandons-intel-acquisition-raises-funding-instead/",
+          "date": "2026-01-01",
+          "quote": "SambaNova abandoned an Intel acquisition and raised funding instead. Chief executive Rodrigo Liang said a funding round was the right decision for the company.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No practice located that is maintained where it is invisible."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.warntracker.com/company/sambanova-systems",
+          "date": "2025-04-22",
+          "quote": "SambaNova layoffs: 87 workers across 3 WARN notices in April 2025.",
+          "note": "Statutory notice was given to 87 workers in April 2025. That is legal compliance and neither a positive practice nor a documented failure."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://tracxn.com/d/companies/sambanova-systems/__TvzSIBPeKIVjGmWovhh4uYJ9eAl6FPYF0Iwfg8H-YJg",
+          "date": "2026-06-26",
+          "quote": "SambaNova Systems has 407 employees as of 26 June 2026, continuing to operate independently.",
+          "note": "No values-alignment review located."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.eetimes.com/sambanova-abandons-intel-acquisition-raises-funding-instead/",
+          "date": "2026-01-01",
+          "quote": "SambaNova abandoned an Intel acquisition and raised funding instead. Chief executive Rodrigo Liang said a funding round was the right decision for the company.",
+          "note": "Founding leadership remains, so no transition has tested whether any practice is structural."
+        }
+      ]
+    }
+  ]
+}

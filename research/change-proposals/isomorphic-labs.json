@@ -1,0 +1,784 @@
+{
+  "entity": "Isomorphic Labs",
+  "slug": "isomorphic-labs",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/isomorphic-labs-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/isomorphic-labs-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_2026-08-17.md",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 8,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 34.4,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2.2,
+      "SYS": 3,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -26.5,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "low",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Science (AAAS) and Nature reporting on the AlphaFold3 access backlash, including a protest letter signed by more than 1,000 scientists (tier 4), plus the company's own bioresilience programme documentation and technical report (tier 3), plus Axios (tier 2). Multiple independent sources, at least one above tier 4."
+  },
+  "key_evidence": [
+    "Isomorphic Labs is the clearest case in this study of real anticipatory work. Its bioresilience programme with Google DeepMind builds outbreak-detection infrastructure and screens for model misuse before harm occurs, with more than 15 government agencies and biosecurity organisations engaged.",
+    "It is also the clearest case of closing access. More than 1,000 scientists signed a letter objecting that AlphaFold3 was published without usable code. Isomorphic's successor engine, IsoDDE, was described in a 27-page report in February 2026 and not released at all.",
+    "No Isomorphic drug has reached a patient. First-in-human trials slipped from 2025 to the end of 2026. The company disclosed the delay itself, which is worth credit; but it means there is no clinical outcome evidence to score.",
+    "A mission described as solving all disease sits against a decision to withdraw tools from the scientists who would help do it. That tension is documented in Science and Nature and has not been publicly reconciled.",
+    "The score falls 26.5 points. Most of that is the gap between a placeholder asserting published data and independent verification, and a company at the pre-clinical stage with none."
+  ],
+  "evidence": [
+    {
+      "claim": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+      "source": "Google DeepMind and Isomorphic Labs, 'Our approach to bioresilience'",
+      "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Engagement with more than 15 government agencies and biosecurity organisations.",
+      "source": "Axios on the DeepMind and Isomorphic biosecurity programme",
+      "url": "https://www.axios.com/2026/07/16/google-deepmind-biosecurity-safety",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 2
+    },
+    {
+      "claim": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+      "source": "Science (AAAS), 'Limits on access to DeepMind's new protein program trigger backlash'",
+      "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+      "publishedDate": "2024-05-13",
+      "sourceTier": 4
+    },
+    {
+      "claim": "The amount of disclosure in the AlphaFold3 publication is appropriate for an announcement on a company website, but it fails to meet the scientific community's standards of being usable, scalable, and transparent.",
+      "source": "Nature, 'AlphaFold3 — why did Nature publish it without its code?'",
+      "url": "https://www.nature.com/articles/d41586-024-01463-0",
+      "publishedDate": "2024-05-22",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+      "source": "Isomorphic Labs, IsoDDE technical report",
+      "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+      "publishedDate": "2026-02-10",
+      "sourceTier": 3
+    },
+    {
+      "claim": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+      "source": "Clinical Trials Arena on Isomorphic Labs",
+      "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — NOT A DOWNGRADE. No score change is proposed for application. The published 60.9 is a never-assessed uniform-seed placeholder shared byte-for-byte with six other ai-labs entities at consecutive alphabetical ranks; the rank is an artefact of the tie. No adverse conduct was located. The entire gap measures disclosure, not conduct. Applying a one-off baseline reset on evidence-absence alone would convert a calibration problem into a conduct finding, which the anti-false-positive screen forbids. Referred for coordinator-level calibration of the ai-labs 60.9 and 48.4 uniform-seed clusters. rotation-state composite/band/rank left at the PUBLISHED values.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "The bioresilience programme builds structured detection infrastructure for emerging disease, using AlphaEvolve to speed up metagenomic sequencing analysis so outbreaks are found faster. That is a formal proactive pathway, published, with named government partners."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "The programme names governments, scientists and biosecurity experts as distinct audiences. Adaptation to affected patient populations is not detailed."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "Misuse risk is named as a known blind spot with a screening commitment attached. No external audit finding is published."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.axios.com/2026/07/16/google-deepmind-biosecurity-safety",
+          "date": "2026-07-16",
+          "quote": "Engagement with more than 15 government agencies and biosecurity organisations.",
+          "note": "More than 15 government agencies and biosecurity organisations are engaged, but no patient or affected-community voice is named anywhere in the programme."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "The stated dual approach is explicitly anticipatory: preventing misuse before harm occurs, with external biosecurity bodies consulted before deployment."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No drug has yet reached a patient. No evidence located on how individuals experience the company."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No formal mechanism located for modelling the experience of patients or of the research community."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+          "date": "2024-05-13",
+          "quote": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+          "note": "More than 1,000 scientists signed a letter objecting to the AlphaFold3 access restrictions. The successor engine, IsoDDE, is more closed still. The objection was not treated as legitimate in any located response."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No cultural adaptation located."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No response standard located."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No needs-calibration evidence located."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No drug has reached a patient and no clinical outcome data exists. This is the honest score for a pre-clinical company, not a criticism of it."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "Seventeen active programmes across oncology, immunology and cardiovascular disease, resourced by a $2.1 billion Series B. No gap analysis against unmet need is published."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No follow-through protocol located."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+          "date": "2024-05-13",
+          "quote": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+          "note": "No coverage or access data published. Access to the underlying tools has narrowed rather than widened."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No prioritisation of higher-need disease areas over commercially attractive ones located."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No disaggregated outcome data published."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nature.com/articles/d41586-024-01463-0",
+          "date": "2024-05-22",
+          "quote": "The amount of disclosure in the AlphaFold3 publication is appropriate for an announcement on a company website, but it fails to meet the scientific community's standards of being usable, scalable, and transparent.",
+          "note": "Access barriers to the scientific community were identified and chosen rather than removed. AlphaFold3 was published without usable code, and IsoDDE was described in a report without release."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No acknowledgment of historical harm located."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No turnover or staff wellbeing data published by the company."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "Closed models create dependency by construction. No capacity-building for external researchers located."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "The company publicly communicated the slip of first-in-human trials from 2025 to the end of 2026, and published a 27-page technical report describing what the engine does and does not do."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No refusal-with-alternatives practice located."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "No consent practice located; no human trials have begun."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+          "date": "2024-05-13",
+          "quote": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+          "note": "No harm acknowledgment located in response to the access objections."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nature.com/articles/d41586-024-01463-0",
+          "date": "2024-05-22",
+          "quote": "The amount of disclosure in the AlphaFold3 publication is appropriate for an announcement on a company website, but it fails to meet the scientific community's standards of being usable, scalable, and transparent.",
+          "note": "No correction to the access position. The successor engine is less open than the model that drew the objection."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "The company published a 27-page technical report and disclosed the delay of first-in-human trials from 2025 to end-2026, which is an unflattering disclosure made voluntarily."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No systemic learning process located."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+          "date": "2024-05-13",
+          "quote": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+          "note": "No reparative action toward the research community located."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "Designing medicines for previously undruggable targets, and building outbreak-detection infrastructure upstream of outbreaks, are both explicit root-cause strategies, published with named partners."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "A stated multi-year mission with a published pipeline of 17 programmes and specific trial milestones."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "The bioresilience work explicitly maps misuse spillover into adjacent biosecurity systems and responds to it with screening."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nature.com/articles/d41586-024-01463-0",
+          "date": "2024-05-22",
+          "quote": "The amount of disclosure in the AlphaFold3 publication is appropriate for an announcement on a company website, but it fails to meet the scientific community's standards of being usable, scalable, and transparent.",
+          "note": "No structural critique located. Nature reports the company's own model of proprietary disclosure was itself the subject of criticism."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.axios.com/2026/07/16/google-deepmind-biosecurity-safety",
+          "date": "2026-07-16",
+          "quote": "Engagement with more than 15 government agencies and biosecurity organisations.",
+          "note": "Engagement with more than 15 government agencies and biosecurity organisations is an active coalition contribution."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier",
+          "date": "2026-02-10",
+          "quote": "Isomorphic Labs set out the capabilities of its drug-discovery engine, IsoDDE, in a 27-page technical report released on 10 February 2026, without releasing the model.",
+          "note": "No case located of bearing real cost to maintain a commitment."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+          "date": "2026-07-16",
+          "quote": "Isomorphic is building detection infrastructure for emerging disease, using AlphaEvolve to optimise metagenomic sequencing analysis so outbreaks are found faster, alongside screening to prevent threat actors misusing models.",
+          "note": "Biosecurity screening work carries cost and limited commercial return, and is documented."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No staff culture data published by the company."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.science.org/content/article/limits-access-deepmind-s-new-protein-program-trigger-backlash",
+          "date": "2024-05-13",
+          "quote": "The omission of open source code has sparked outcry from the research community, culminating in a protest letter signed by more than 1,000 scientists.",
+          "note": "A mission stated as solving all disease sits against the withdrawal of tools from the scientific community, an inconsistency 1,000 scientists objected to in writing and which has not been reconciled publicly."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.clinicaltrialsarena.com/news/isomorphic-labs-prepares-trials-ai-designed-drugs/",
+          "date": "2026-01-01",
+          "quote": "First-in-human trials are now expected by the end of 2026, a delay from 2025. The company has 17 active programmes across oncology, immunology and cardiovascular disease.",
+          "note": "No leadership transition tested."
+        }
+      ]
+    }
+  ]
+}

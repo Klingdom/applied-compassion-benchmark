@@ -1,0 +1,761 @@
+{
+  "entity": "Diligent Robotics",
+  "slug": "diligent-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/diligent-robotics-2026-08-17.md",
+  "study": "robotics-labs Exemplary seed-cluster de-seeding study (Cluster A, published 83)",
+  "published_scores": {
+    "composite": 83,
+    "band": "exemplary",
+    "rank": 5,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4.5,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 31.9,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2.4,
+      "ACT": 2.4,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2.2,
+      "SYS": 2.4,
+      "INT": 2
+    }
+  },
+  "score_delta": -51.1,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4",
+    "passed": true,
+    "explanation": "6 independent sources support the band change, of which 1 sit at evidence tier 4 or above. Self-published company material was excluded from the test.",
+    "sources_at_tier4_or_above": [
+      "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Why it matters: Diligent Robotics is the weakest of the six labs published at 83.0, and it is also the one the index describes wrongly. It is now a Serve Robotics subsidiary, not a standalone company.",
+    "Moxi was built to reduce nurse burnout, and that mission is genuine. But the only independent investigation of the programme found two hospitals removed the robot — Good Samaritan in July 2024 and Tacoma General in August 2025.",
+    "Nurses told Proof News the robot needed constant escorting. One asked: \"Why do we have the robot if we have a human with her all the time?\" That is the opposite of the burnout relief the product promises.",
+    "The company did correct course. Moxi 2.0, rolling out from 17 August 2026, processes its surroundings 10 to 15 times faster than the previous generation, addressing the navigation failures nurses described.",
+    "All five Equity subdimensions score at the low anchor. No access programme, no disaggregated data and no pricing relief for safety-net hospitals was found. This is an absence of disclosure, not a finding of harm."
+  ],
+  "corporate_status": "ENTITY-CURRENCY DEFECT. Diligent Robotics is no longer an independent company. Serve Robotics agreed to acquire it on 19 January 2026 in an all-stock deal valued at $29 million plus a $5.3 million earn-out, and by 17 August 2026 the company describes itself as \"Diligent Robotics, a Serve Robotics Company\". The index carries it as a standalone entity.",
+  "evidence": [
+    {
+      "claim": "Why do we have the robot if we have a human with her all the time?",
+      "source": "www.proofnews.org",
+      "url": "https://www.proofnews.org/moxi/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "they were concerned it wouldn’t reach the lab fast enough to be usable",
+      "source": "www.proofnews.org",
+      "url": "https://www.proofnews.org/moxi/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "refine elevator integration",
+      "source": "www.proofnews.org",
+      "url": "https://www.proofnews.org/moxi/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Serve Robotics to Acquire Diligent Robotics, Expanding Physical AI Platform Beyond the Sidewalk",
+      "source": "ir.serverobotics.com",
+      "url": "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai",
+      "publishedDate": "2026-01-19",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Diligent Robotics, a Serve Robotics Company, Begins Rolling Out Moxi 2.0",
+      "source": "www.roboticstomorrow.com",
+      "url": "https://www.roboticstomorrow.com/news/2026/08/17/diligent-robotics-a-serve-robotics-company-begins-rolling-out-moxi-20/26959/",
+      "publishedDate": "2026-08-17",
+      "sourceTier": 3
+    },
+    {
+      "claim": "To prevent nurse burnout, a 35-year-old engineer built a time-saving robot that’s now deployed at top U.S. hospitals",
+      "source": "www.grasp.upenn.edu",
+      "url": "https://www.grasp.upenn.edu/news/to-prevent-nurse-burnout-a-35-year-old-engineer-built-a-time-saving-robot-thats-now-deployed-at-top-u-s-hospitals/",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "You’ve Got Moxi: Hospitals ‘Hire’ Robots to Help Nurses",
+      "source": "nursingcecentral.com",
+      "url": "https://nursingcecentral.com/youve-got-moxi-hospitals-hire-robots-to-help-nurses/",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Serve Robotics to acquire hospital logistics provider Diligent Robotics",
+      "source": "www.therobotreport.com",
+      "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+      "publishedDate": "2026-01-20",
+      "sourceTier": 3
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.grasp.upenn.edu/news/to-prevent-nurse-burnout-a-35-year-old-engineer-built-a-time-saving-robot-thats-now-deployed-at-top-u-s-hospitals/",
+          "date": "2024-01-01",
+          "quote": "To prevent nurse burnout, a 35-year-old engineer built a time-saving robot that’s now deployed at top U.S. hospitals"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nursingcecentral.com/youve-got-moxi-hospitals-hire-robots-to-help-nurses/",
+          "date": "2024-01-01",
+          "quote": "You’ve Got Moxi: Hospitals ‘Hire’ Robots to Help Nurses"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "Why do we have the robot if we have a human with her all the time?"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nursingcecentral.com/youve-got-moxi-hospitals-hire-robots-to-help-nurses/",
+          "date": "2024-01-01",
+          "quote": "You’ve Got Moxi: Hospitals ‘Hire’ Robots to Help Nurses"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "Why do we have the robot if we have a human with her all the time?"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nursingcecentral.com/youve-got-moxi-hospitals-hire-robots-to-help-nurses/",
+          "date": "2024-01-01",
+          "quote": "You’ve Got Moxi: Hospitals ‘Hire’ Robots to Help Nurses"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.grasp.upenn.edu/news/to-prevent-nurse-burnout-a-35-year-old-engineer-built-a-time-saving-robot-thats-now-deployed-at-top-u-s-hospitals/",
+          "date": "2024-01-01",
+          "quote": "To prevent nurse burnout, a 35-year-old engineer built a time-saving robot that’s now deployed at top U.S. hospitals"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "refine elevator integration"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "they were concerned it wouldn’t reach the lab fast enough to be usable"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.roboticstomorrow.com/news/2026/08/17/diligent-robotics-a-serve-robotics-company-begins-rolling-out-moxi-20/26959/",
+          "date": "2026-08-17",
+          "quote": "Diligent Robotics, a Serve Robotics Company, Begins Rolling Out Moxi 2.0"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai",
+          "date": "2026-01-19",
+          "quote": "Serve Robotics to Acquire Diligent Robotics, Expanding Physical AI Platform Beyond the Sidewalk"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "Why do we have the robot if we have a human with her all the time?"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai",
+          "date": "2026-01-19",
+          "quote": "Serve Robotics to Acquire Diligent Robotics, Expanding Physical AI Platform Beyond the Sidewalk"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.grasp.upenn.edu/news/to-prevent-nurse-burnout-a-35-year-old-engineer-built-a-time-saving-robot-thats-now-deployed-at-top-u-s-hospitals/",
+          "date": "2024-01-01",
+          "quote": "To prevent nurse burnout, a 35-year-old engineer built a time-saving robot that’s now deployed at top U.S. hospitals"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "refine elevator integration"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "refine elevator integration"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.roboticstomorrow.com/news/2026/08/17/diligent-robotics-a-serve-robotics-company-begins-rolling-out-moxi-20/26959/",
+          "date": "2026-08-17",
+          "quote": "Diligent Robotics, a Serve Robotics Company, Begins Rolling Out Moxi 2.0"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "Why do we have the robot if we have a human with her all the time?"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "refine elevator integration"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.grasp.upenn.edu/news/to-prevent-nurse-burnout-a-35-year-old-engineer-built-a-time-saving-robot-thats-now-deployed-at-top-u-s-hospitals/",
+          "date": "2024-01-01",
+          "quote": "To prevent nurse burnout, a 35-year-old engineer built a time-saving robot that’s now deployed at top U.S. hospitals"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.proofnews.org/moxi/",
+          "date": "2026-01-01",
+          "quote": "Why do we have the robot if we have a human with her all the time?"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nursingcecentral.com/youve-got-moxi-hospitals-hire-robots-to-help-nurses/",
+          "date": "2024-01-01",
+          "quote": "You’ve Got Moxi: Hospitals ‘Hire’ Robots to Help Nurses"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai",
+          "date": "2026-01-19",
+          "quote": "Serve Robotics to Acquire Diligent Robotics, Expanding Physical AI Platform Beyond the Sidewalk"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.therobotreport.com/serve-robotics-acquires-diligent-robotics/",
+          "date": "2026-01-20",
+          "quote": "Serve Robotics to acquire hospital logistics provider Diligent Robotics"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ir.serverobotics.com/news-releases/news-release-details/serve-robotics-acquire-diligent-robotics-expanding-physical-ai",
+          "date": "2026-01-19",
+          "quote": "Serve Robotics to Acquire Diligent Robotics, Expanding Physical AI Platform Beyond the Sidewalk"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 83 is a never-assessed uniform placeholder shared byte-for-byte with five other robotics labs at consecutive alphabetical ranks. Diligent Robotics has never been individually assessed. 29 of 40 subdimensions score at the low anchor because no disclosure exists, not because adverse conduct was found. No score change is applied by this study."
+}
