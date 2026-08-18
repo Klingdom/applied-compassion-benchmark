@@ -1,0 +1,62 @@
+{
+  "entity": "Waymo",
+  "slug": "waymo",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/waymo-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/waymo-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_LOW_2026-08-17.md",
+  "seed_cluster": "ai-labs 35.9 (Developing), ranks 31-34",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 34,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 42.5,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.4,
+      "ACT": 3,
+      "EQU": 2.2,
+      "BND": 2.4,
+      "ACC": 2.8,
+      "SYS": 3,
+      "INT": 2.6
+    }
+  },
+  "score_delta": 6.6,
+  "band_change": true,
+  "filing_clause": "both",
+  "confidence": "medium",
+  "absence_convention": "2 (absence of disclosure scores 2, never 1; the floor of 1 is reserved for positive documented evidence of a specific failure). Applied identically to all seven labs in this study.",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Two independent tier-5 sources plus one tier-3. National Highway Traffic Safety Administration Office of Defects Investigation resume PE25013 and recall report RCAK-26E035 are regulator records (tier 5). The Traffic Injury Prevention crash-rate comparison passed independent journal peer review (tier 5), though its authors are Waymo employees. Mission Local's video investigation of the KitKat death is independent (tier 3). Waymo's own Safety Impact Data Hub was excluded from the test as self-published corporate material, per the robotics Exemplary study's tightened rule."
+  },
+  "key_evidence": [
+    "Waymo is the only entity in this study that moved UP. It assesses at 42.5 against a published 35.9, a rise of 6.6 points, and it crosses from Developing into Functional.",
+    "The rise rests on published outcome evidence no other lab in the cluster has. A peer-reviewed comparison in Traffic Injury Prevention and an independent Swiss Re liability-claims analysis support crash reductions of 94 percent for serious injuries and 93 percent for pedestrian injuries across 220.6 million driverless miles through March 2026.",
+    "Waymo publishes downloadable crash datasets by city and crash type and states the weaknesses of its own benchmark, including that no perfect human-versus-machine comparison exists. That drives Transparency to 4, the highest single subdimension score outside Action.",
+    "Evidence in the other direction was scored and it holds the composite down. The federal regulator opened Preliminary Evaluation PE25013 on 17 October 2025 into Waymo behaviour around stopped school buses; a Texas school district recorded 19 illegal passes; a further violation was recorded on 1 December 2025, two weeks after the remedy software update.",
+    "Equity is Waymo's weakest dimension at 2.2. No autonomous vehicle company offers a fully driverless wheelchair-accessible service, and Waymo backed a Washington DC robotaxi bill that never mentions wheelchairs.",
+    "This is a calibration correction upward, not an endorsement. The published 35.9 was a placeholder shared with three other labs and carried no information about Waymo."
+  ],
+  "proposed_subdimensions": "research/assessments/waymo-2026-08-17.subdims.json",
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "UPWARD movement. The published 35.9 was a uniform placeholder shared by four labs and was never measured. This proposal raises Waymo because it is the only entity in the cluster that publishes peer-reviewed outcome data about its own effects. It is a measurement correction, not a finding that Waymo is free of harm: the open school-bus investigation, the emergency-scene interference reports and the absence of any driverless wheelchair-accessible service are all scored and all hold the composite down. Waymo reaches no dimension at 4.0 and the integration premium is 0."
+}

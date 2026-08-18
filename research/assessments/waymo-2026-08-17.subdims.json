@@ -1,0 +1,688 @@
+{
+  "entity": "Waymo",
+  "slug": "waymo",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo publishes crash counts disaggregated by city and crash type across 220.6 million driverless miles and files every crash to the federal regulator. Formal pathways with regular review; not independently audited.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Differentiated detection and design for blind riders (screen reader, purpose-built car sounds, haptic cues) and first responders, but no driverless wheelchair-accessible service anywhere.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://waymo.com/waymo-accessibility-network/",
+          "date": "2026-01-01",
+          "quote": "Waymo Accessibility Network"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The school-bus failure pattern was surfaced by a school district and the regulator, not by Waymo. Waymo did file voluntary recalls afterwards, so a process exists and produced findings.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2025/INOA-PE25013-23069.pdf",
+          "date": "2025-10-17",
+          "quote": "the performance of the Waymo ADS around stopped school buses, how the system is designed to comply with school bus traffic safety laws"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo runs an Accessibility Network with the National Federation of the Blind and a Trusted Tester programme with wheelchair users; in-app accessibility features changed as a result.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://waymo.com/community/articles/waymo-teams-up-with-the-northern-california-spinal-cord-injury-foundation-to/",
+          "date": "2026-01-01",
+          "quote": "Waymo teams up with the Northern California Spinal Cord Injury Foundation to capture insights from wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "A June 2026 recall shows pre-deployment assessment did not catch construction-zone behaviour; Waymo restricted freeway operations while it fixed the software.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/rcl/2026/RCAK-26E035-6843.pdf",
+          "date": "2026-06-12",
+          "quote": "Mfr's Report Date: June 12, 2026 NHTSA Campaign Number"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Independent nonprofit reporting describes blind riders gaining independence, privacy and control. Genuine but narrow testimony.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://cpnri.org/how-a-ride-share-is-expanding-independence-for-blind-riders/",
+          "date": "2026-01-01",
+          "quote": "How A Ride Share Is Expanding Independence for Blind Riders"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Wheelchair users and blind riders are consulted through named community partners and specific product changes followed.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://waymo.com/community/articles/waymo-teams-up-with-the-northern-california-spinal-cord-injury-foundation-to/",
+          "date": "2026-01-01",
+          "quote": "Waymo teams up with the Northern California Spinal Cord Injury Foundation to capture insights from wheelchair users"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No disaggregated rider-outcome data by identity was located. Absence of disclosure, not evidence of harm.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo said the cat 'darted' under the car; video obtained by Mission Local showed the cat under the vehicle for about 25 seconds. The community account was not treated as primary evidence.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://missionlocal.org/2025/12/sf-waymo-kitkat-video/",
+          "date": "2025-12-01",
+          "quote": "Video of KitKat killing by Waymo undercuts company's claim"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No cultural adaptation evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Voluntary recalls filed with the federal regulator with a stated remedy date; a further school-bus violation was recorded two weeks after the November 2025 software update.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/rcl/2026/RCAK-26E035-6843.pdf",
+          "date": "2026-06-12",
+          "quote": "Mfr's Report Date: June 12, 2026 NHTSA Campaign Number"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No evidence located that response is calibrated to level of need rather than applied fleet-wide. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Peer-reviewed crash-rate comparison published in Traffic Injury Prevention, plus an independent Swiss Re liability-claims analysis. Outcome data, not activity metrics.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.tandfonline.com/doi/full/10.1080/15389588.2025.2499887",
+          "date": "2025-05-21",
+          "quote": "Comparison of Waymo Rider-Only crash rates by crash type to human benchmarks at 56.7 million miles"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "In-person training delivered to more than 35,000 first responders at over 150 agencies, with published interaction protocols.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://waymo.com/firstresponders/",
+          "date": "2026-01-01",
+          "quote": "in-person training for 35,000+ first responders at 150+ agencies"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The Safety Impact Data Hub is a living dataset updated repeatedly from 7.1 million to 220.6 million miles. Longitudinal, but about vehicles rather than people served.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20251216.pdf",
+          "date": "2025-12-16",
+          "quote": "The Waymo Safety Impact Data Hub highlights Waymo's"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Service is geofenced to five metropolitan areas and Waymo's wheelchair-accessible vans are driven by humans. An entire population is excluded from the driverless service.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://support.google.com/waymo/answer/10656347?hl=en",
+          "date": "2026-01-01",
+          "quote": "Wheelchair-accessible vehicles"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo backed a Washington DC robotaxi bill that contains no wheelchair-accessibility requirement. Priority is stated; allocation does not follow need.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.notus.org/metro/disabled-riders-dc-transit-waymo",
+          "date": "2026-07-20",
+          "quote": "D.C.'s Disabled Residents Have Dismal Transit Options. Would Waymo Help?"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No disaggregated service or outcome data by rider demographics located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Documented barrier removals for blind riders, welcomed publicly by the National Council on Independent Living. The most access-challenged group still has no driverless option.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ncil.org/news/announcements/waymo-dc/",
+          "date": "2026-01-01",
+          "quote": "NCIL Welcomes Waymo to Washington, DC; Advocates for Inclusive Innovation in Autonomous Transportation"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "No acknowledgment of historical harm located. A San Francisco supervisor introduced a reform resolution after the KitKat death.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.kqed.org/news/12062777/san-francisco-supervisor-calls-for-robotaxi-reform-after-waymo-kills-neighborhood-cat",
+          "date": "2025-11-01",
+          "quote": "San Francisco Supervisor Calls for Robotaxi Reform After Waymo Kills Neighborhood Cat"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No workforce wellbeing, turnover or burnout data located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Independent reporting documents blind riders gaining travel independence they did not previously have.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://cpnri.org/how-a-ride-share-is-expanding-independence-for-blind-riders/",
+          "date": "2026-01-01",
+          "quote": "How A Ride Share Is Expanding Independence for Blind Riders"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo publicly states the limits of its own comparison, including that no perfect human-versus-machine comparison exists and that many human crashes go unreported.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "There is no perfect 'apples-to-apples' comparison between human and AV data available today"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No protocol located for declining service with a concrete alternative. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://support.google.com/waymo/answer/10656347?hl=en",
+          "date": "2026-01-01",
+          "quote": "Wheelchair-accessible vehicles"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Rider data collection was criticised publicly by a city supervisor; no informed-consent verification located.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.kqed.org/news/12062777/san-francisco-supervisor-calls-for-robotaxi-reform-after-waymo-kills-neighborhood-cat",
+          "date": "2025-11-01",
+          "quote": "San Francisco Supervisor Calls for Robotaxi Reform After Waymo Kills Neighborhood Cat"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Crash reporting to the federal regulator is legally mandatory, and Waymo's public account of the KitKat death was contradicted by video.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://missionlocal.org/2025/12/sf-waymo-kitkat-video/",
+          "date": "2025-12-01",
+          "quote": "Video of KitKat killing by Waymo undercuts company's claim"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Multiple documented software recalls filed with the federal regulator, including school-bus behaviour and construction zones, each following external attention.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/rcl/2026/RCAK-26E035-6843.pdf",
+          "date": "2026-06-12",
+          "quote": "Mfr's Report Date: June 12, 2026 NHTSA Campaign Number"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Downloadable crash datasets with per-city miles and stated methodological limits, updated on a published schedule. The most complete public safety disclosure of any lab in this study.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20251216.pdf",
+          "date": "2025-12-16",
+          "quote": "The Waymo Safety Impact Data Hub highlights Waymo's"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Two or more documented systemic software changes following failure analysis, recorded in regulator filings.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/inv/2025/INOA-PE25013-23069.pdf",
+          "date": "2025-10-17",
+          "quote": "the performance of the Waymo ADS around stopped school buses, how the system is designed to comply with school bus traffic safety laws"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No repair to harmed parties located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://missionlocal.org/2025/12/sf-waymo-kitkat-video/",
+          "date": "2025-12-01",
+          "quote": "Video of KitKat killing by Waymo undercuts company's claim"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The company's stated purpose is upstream: removing the human driver as a cause of crashes, with peer-reviewed evidence of 94 percent fewer serious-injury crashes.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.tandfonline.com/doi/full/10.1080/15389588.2025.2499887",
+          "date": "2025-05-21",
+          "quote": "Comparison of Waymo Rider-Only crash rates by crash type to human benchmarks at 56.7 million miles"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "A multi-year benchmark research programme with a published methodology, but no ten-year impact model located.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo trains first responders at more than 150 agencies, which is active cross-system work; emergency-scene interference was nonetheless documented.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://waymo.com/firstresponders/",
+          "date": "2026-01-01",
+          "quote": "in-person training for 35,000+ first responders at 150+ agencies"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo backed legislation that labour unions say removes worker protections. It advocates in its own interest, not against it.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/dc-teamsters-labor-coalition-demand-city-council-reject-anti-worker-waymo-bill-302824265.html",
+          "date": "2026-07-13",
+          "quote": "DC TEAMSTERS, LABOR COALITION DEMAND CITY COUNCIL REJECT ANTI-WORKER WAYMO BILL"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo releases crash CSVs so outside researchers can reproduce its results, alongside the Waymo Open Dataset.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20251216.pdf",
+          "date": "2025-12-16",
+          "quote": "The Waymo Safety Impact Data Hub highlights Waymo's"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo restricted freeway operations pending a software fix, a real commercial cost borne to maintain a safety commitment.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://static.nhtsa.gov/odi/rcl/2026/RCAK-26E035-6843.pdf",
+          "date": "2026-06-12",
+          "quote": "Mfr's Report Date: June 12, 2026 NHTSA Campaign Number"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo publishes its own at-fault crashes and the weaknesses of its own benchmark, which is unflattering material. Crash reporting is, however, legally required.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "There is no perfect 'apples-to-apples' comparison between human and AV data available today"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No staff culture or internal-treatment evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://waymo.com/safety/impact/",
+          "date": "2026-03-31",
+          "quote": "Through March 2026, Waymo has driven 220.6 million rider-only (RO) miles"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Waymo's stated commitment to accessibility sits against its support for a bill that never mentions wheelchairs.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.notus.org/metro/disabled-riders-dc-transit-waymo",
+          "date": "2026-07-20",
+          "quote": "D.C.'s Disabled Residents Have Dismal Transit Options. Would Waymo Help?"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The safety-reporting practice is in published policy and has persisted across leadership and scale changes.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20251216.pdf",
+          "date": "2025-12-16",
+          "quote": "The Waymo Safety Impact Data Hub highlights Waymo's"
+        }
+      ]
+    }
+  ]
+}

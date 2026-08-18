@@ -1,0 +1,62 @@
+{
+  "entity": "Stability AI",
+  "slug": "stability-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/stability-ai-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/stability-ai-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_LOW_2026-08-17.md",
+  "seed_cluster": "ai-labs 32.8 (Developing), ranks 35-37",
+  "published_scores": {
+    "composite": 32.8,
+    "band": "developing",
+    "rank": 37,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2,
+      "SYS": 2.5,
+      "INT": 2
+    }
+  },
+  "proposed_scores": {
+    "composite": 26.2,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2,
+      "SYS": 2.2,
+      "INT": 2
+    }
+  },
+  "score_delta": -6.6,
+  "band_change": false,
+  "filing_clause": "composite-delta",
+  "confidence": "medium",
+  "absence_convention": "2 (absence of disclosure scores 2, never 1; the floor of 1 is reserved for positive documented evidence of a specific failure). Applied identically to all seven labs in this study.",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Not required, because no band change is proposed. Recorded for completeness: the Stanford Internet Observatory finding on child sexual abuse material in LAION-5B, as reported by 404 Media, is tier 5 research; the England and Wales High Court judgment Getty Images v Stability AI [2025] EWHC 2863 (Ch) of 4 November 2025 is a court record at tier 5; the Latham and Watkins analysis of that judgment is tier 4. The test would pass."
+  },
+  "key_evidence": [
+    "Stability AI assesses at 26.2 against a published 32.8, a fall of 6.6 points. The band does not change; it stays Developing.",
+    "PRE-ADJUDICATION CHECK PERFORMED. The UK case is now decided and Stability largely won. On 4 November 2025 the High Court rejected Getty's secondary copyright and passing-off claims and found only a trademark infringement the court described as historic and extremely limited. Getty abandoned its primary copyright and database claims before closing submissions and was granted leave to appeal in December 2025.",
+    "Two US cases remain undecided: Getty Images v. Stability AI, refiled in the Northern District of California on 14 August 2025, and Andersen v. Stability AI, where a third amended complaint was filed in February 2026. Neither was scored as proven harm.",
+    "The most serious located finding is not the litigation. The Stanford Internet Observatory found 3,226 suspected child sexual abuse images inside LAION-5B, the dataset behind Stable Diffusion, collected from the web without any consultation with child safety experts.",
+    "Stability's public response emphasised that its models trained on a filtered subset and that it did not release the version Stanford examined. That is distancing rather than acknowledgment, which is why Historical Harm Acknowledgment scores 2.",
+    "CORPORATE-STATUS ITEM: founder Emad Mostaque left in March 2024; Prem Akkaraju became chief executive in June 2024 alongside an 80 million dollar recapitalisation after losses above 30 million dollars in one quarter on under 5 million dollars of revenue. The company operates."
+  ],
+  "proposed_subdimensions": "research/assessments/stability-ai-2026-08-17.subdims.json",
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "The pre-adjudication check changed the finding. The UK Getty case has concluded largely in Stability's favour and is scored as decided, not as an allegation. The two US cases are undecided and were not scored as harm. What drives the score is not litigation at all but the training-data supply chain: an outside research institute found verified child sexual abuse material in the dataset and Stability distanced itself rather than acknowledging. Thirty-one of 40 subdimensions rest on absence of disclosure."
+}

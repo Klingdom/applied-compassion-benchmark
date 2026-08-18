@@ -1,0 +1,688 @@
+{
+  "entity": "Axon AI",
+  "slug": "axon-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Axon launched a national database tracking gun-related deaths between police and the public, a proactive mechanism aimed at the harm it says it exists to reduce.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-national-database-to-track-gun-related-deaths-between-police-and-public-301956987.html",
+          "date": "2023-11-01",
+          "quote": "Axon Launches National Database to Track Gun-Related Deaths Between Police and Public"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Axon issues population-specific warnings for people who are agitated, intoxicated or have impaired heart function, groups Reuters found over-represented among Taser deaths.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "Reuters documented more than 1,000 cases through the end of 2018 in which people died after being shocked by police with a Taser"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Nine of twelve AI Ethics Board members resigned in June 2022, stating the company disregarded their advice. The blind-spot mechanism existed and was overridden.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.policingproject.org/statement-of-resigning-axon-ai-ethics-board-members",
+          "date": "2022-06-06",
+          "quote": "Statement of Resigning Axon AI Ethics Board Members"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Reuters documented Axon working to place vendor-paid experts first into investigations of Taser-related deaths, which is the opposite of amplifying the affected party.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "a sweeping operation by Axon Enterprise Inc., the new name of Taser's manufacturer, to make sure that vendor-paid experts were often the first to provide analysis and expertise when Taser-related deaths were investigated"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The Electronic Frontier Foundation found Draft One shipped without audit capability by design, and Axon proceeded with Taser drones after its ethics board advised against.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/07/axons-draft-one-designed-defy-transparency",
+          "date": "2025-07-16",
+          "quote": "Axon's Draft One Is Designed to Defy Transparency"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No evidence located on how affected members of the public experience Axon's products. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Asked how agencies could audit AI-written reports, Axon replied that this 'wasn't a scenario we anticipated needing to make easy'.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/07/axons-draft-one-designed-defy-transparency",
+          "date": "2025-07-16",
+          "quote": "To set expectations, it's not going to be graceful, but this wasn't a scenario we anticipated needing to make easy."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Reuters found at least 32 percent of people who died after Taser shocks were Black, a disproportionate share. No Axon investigation of that disparity was located.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pbs.org/newshour/show/police-killed-1000-people-tasers-since-2000",
+          "date": "2017-08-01",
+          "quote": "police killed 1000 people tasers since 2000"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Documented pattern of contesting rather than validating accounts of Taser-related deaths. Scored at the absence anchor because the Reuters window closes in 2018.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "a sweeping operation by Axon Enterprise Inc., the new name of Taser's manufacturer, to make sure that vendor-paid experts were often the first to provide analysis and expertise when Taser-related deaths were investigated"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No cultural adaptation evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No published response standards for harm reports located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No evidence located that response is calibrated to need. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Axon reports combined police-public fatalities declined nearly 10 percent in 2025 and cites one sheriff's office reporting a 42 percent reduction in deputy-involved shootings.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.investing.com/news/company-news/axon-q2-2026-slides-show-35-growth-but-shares-fall-on-margin-worries-93CH-4839831",
+          "date": "2026-08-01",
+          "quote": "Axon Q2 2026 slides show 35% growth, but shares fall on margin worries"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "A national database and a stated ten-year goal represent a documented attempt to mobilise resources beyond product sales.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-national-database-to-track-gun-related-deaths-between-police-and-public-301956987.html",
+          "date": "2023-11-01",
+          "quote": "Axon Launches National Database to Track Gun-Related Deaths Between Police and Public"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The Moonshot has run since October 2022 with published year-on-year data roundtables.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axon.com/moonshot/blog/moonshot-roundtables-what-weve-learned-so-far",
+          "date": "2024-01-01",
+          "quote": "MOONSHOT50IN10: Perspectives on One Year of Data"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No coverage data by population located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "Priority for vulnerable groups is stated in the Moonshot framing; no allocation evidence located.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-moonshot-goal-and-rallies-support-to-cut-gun-related-deaths-between-police-and-public-by-50-in-10-years-301655561.html",
+          "date": "2022-10-01",
+          "quote": "Axon Launches Moonshot Goal and Rallies Support to Cut Gun-Related Deaths Between Police and Public by 50% in 10 Years"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Racial disproportionality in Taser deaths is documented externally; no Axon disaggregated review or corrective action located.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pbs.org/newshour/show/police-killed-1000-people-tasers-since-2000",
+          "date": "2017-08-01",
+          "quote": "police killed 1000 people tasers since 2000"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No access-barrier mapping located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Reuters records the manufacturer's standing claim that no one has died directly from the device's shock, against more than 1,000 documented deaths after Taser use.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "Reuters documented more than 1,000 cases through the end of 2018 in which people died after being shocked by police with a Taser"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No workforce wellbeing data located in filings or reports. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/0001069183/000162828026053646/axon-20260630.htm",
+          "date": "2026-06-30",
+          "quote": "AXON ENTERPRISE, INC. - Form 10-Q - FY2026"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No autonomy-building programme located; the product model creates ongoing agency dependence on Axon's cloud.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The Electronic Frontier Foundation found that when a report contains errors or bias there is no record of whether the officer or the AI produced it, and that limitation was not proactively disclosed.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/12/ai-police-reports-year-review",
+          "date": "2025-12-01",
+          "quote": "when a police report includes biased language, inaccuracies, misinterpretations, or lies, there's no record showing whether the culprit was the officer or the AI"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No refusal protocol located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Draft One erases the initial AI draft on export, removing the record a defendant would need. Designed to protect the institution rather than inform the affected person.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/07/axons-draft-one-designed-defy-transparency",
+          "date": "2025-07-16",
+          "quote": "Axon's Draft One Is Designed to Defy Transparency"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Harm acknowledgment follows external establishment rather than preceding it.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "a sweeping operation by Axon Enterprise Inc., the new name of Taser's manufacturer, to make sure that vendor-paid experts were often the first to provide analysis and expertise when Taser-related deaths were investigated"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "After the EFF investigation and California Senate Bill 524, Axon stated a commitment to compliance and supplied code to extract usage data. Correction under pressure, minimal.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/10/victory-california-requires-transparency-ai-police-reports",
+          "date": "2025-10-01",
+          "quote": "Victory! California Requires Transparency for AI Police Reports"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Axon is a registered public reporting company and publishes a 2025 Responsibility Report plus a public database counting police-public gun deaths, an unflattering number for a weapons maker.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filecache.investorroom.com/mr5ir_axon/572/Axon_Responsibility_Report_2025.pdf",
+          "date": "2025-01-01",
+          "quote": "PROTECT RESPONSIBILITY PROTECT LIFE 2025 Responsibility Report"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No systemic learning process located that connects harm findings to practice change.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/press/releases/eff-investigation-ai-product-police-reports-designed-hinder-audits",
+          "date": "2025-07-16",
+          "quote": "EFF Investigation: AI Product for Police Reports is Designed to Hinder Audits"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No reparative action to families of people who died after Taser use located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://gijn.org/stories/how-they-did-it-reuters-massive-database-of-taser-deaths/",
+          "date": "2019-01-01",
+          "quote": "Reuters documented more than 1,000 cases through the end of 2018 in which people died after being shocked by police with a Taser"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The Moonshot targets the underlying rate of lethal force rather than only selling equipment, and the national database is upstream infrastructure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-moonshot-goal-and-rallies-support-to-cut-gun-related-deaths-between-police-and-public-by-50-in-10-years-301655561.html",
+          "date": "2022-10-01",
+          "quote": "Axon Launches Moonshot Goal and Rallies Support to Cut Gun-Related Deaths Between Police and Public by 50% in 10 Years"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "A ten-year goal running from 2022 to 2033 with a tracking database and published interim data.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-moonshot-goal-and-rallies-support-to-cut-gun-related-deaths-between-police-and-public-by-50-in-10-years-301655561.html",
+          "date": "2022-10-01",
+          "quote": "Axon Launches Moonshot Goal and Rallies Support to Cut Gun-Related Deaths Between Police and Public by 50% in 10 Years"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Draft One's effect on courts, defendants and public records was identified by outside groups, not mapped by Axon.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.eff.org/deeplinks/2025/12/ai-police-reports-year-review",
+          "date": "2025-12-01",
+          "quote": "when a police report includes biased language, inaccuracies, misinterpretations, or lies, there's no record showing whether the culprit was the officer or the AI"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Axon moved to exclude a shareholder proposal on political spending transparency, prompting the Nathan Cummings Foundation to sue in February 2026.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.iccr.org/nathan-cummings-foundation-files-suit-to-prevent-axon-from-excluding-shareholder-proposal-on-political-spending-transparency/",
+          "date": "2026-02-17",
+          "quote": "Nathan Cummings Foundation Files Suit to Prevent Axon from Excluding Shareholder Proposal on Political Spending Transparency"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Moonshot roundtables convene police leaders, academics and community representatives with published outputs.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axon.com/moonshot/blog/moonshot-roundtables-what-weve-learned-so-far",
+          "date": "2024-01-01",
+          "quote": "MOONSHOT50IN10: Perspectives on One Year of Data"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Axon announced Taser-equipped drones for schools against its ethics board's advice, then paused the programme only after nine members resigned.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.securitymagazine.com/articles/97753-axon-ethics-board-members-resign-after-company-announces-plans-to-build-taser-equipped-drones",
+          "date": "2022-06-06",
+          "quote": "Axon Ethics Board members resign after company announces plans to build taser-equipped drones"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "Independent analysts describe the Moonshot plan as vague. No practice located that is maintained without reputational benefit.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ipvm.com/reports/axon-moonshot",
+          "date": "2022-10-01",
+          "quote": "Axon 'Moonshot': Cut Police/Public Gun Deaths 50% But Plan Vague"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No internal culture evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/0001069183/000162828026053646/axon-20260630.htm",
+          "date": "2026-06-30",
+          "quote": "AXON ENTERPRISE, INC. - Form 10-Q - FY2026"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Two documented cases of decisions contradicting stated values: the drone programme and the attempt to exclude a governance shareholder proposal.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.policingproject.org/statement-of-resigning-axon-ai-ethics-board-members",
+          "date": "2022-06-06",
+          "quote": "Statement of Resigning Axon AI Ethics Board Members"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The Moonshot has persisted since 2022, but under the same founder-chief executive. No leadership transition has tested it.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.prnewswire.com/news-releases/axon-launches-moonshot-goal-and-rallies-support-to-cut-gun-related-deaths-between-police-and-public-by-50-in-10-years-301655561.html",
+          "date": "2022-10-01",
+          "quote": "Axon Launches Moonshot Goal and Rallies Support to Cut Gun-Related Deaths Between Police and Public by 50% in 10 Years"
+        }
+      ]
+    }
+  ]
+}

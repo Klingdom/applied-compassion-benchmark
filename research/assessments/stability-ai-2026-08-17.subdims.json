@@ -1,0 +1,688 @@
+{
+  "entity": "Stability AI",
+  "slug": "stability-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The Stanford Internet Observatory, not Stability, found 3,226 suspected child sexual abuse images in the LAION-5B dataset used to train Stable Diffusion.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.404media.co/laion-datasets-removed-stanford-csam-child-abuse/",
+          "date": "2023-12-20",
+          "quote": "Largest Dataset Powering AI Images Removed After Discovery of Child Sexual Abuse Material"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No population-differentiated processes located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The largest documented blind spot in Stability's supply chain was found by an outside research institute.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.techpolicy.press/laion5b-stable-diffusion-and-the-original-sin-of-generative-ai/",
+          "date": "2023-12-01",
+          "quote": "LAION-5B, Stable Diffusion 1.5, and the Original Sin of Generative AI"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No channel located for people depicted in training data. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Stability says its models were trained on a filtered subset and later fine-tuned to mitigate residual behaviours; the source dataset was never checked against known abuse lists.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No evidence located on how affected people experience Stability. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No perspective-taking mechanism located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No disaggregated outcome data located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Stability's public response emphasised that the version examined by Stanford was one it did not release, which is distancing rather than validating.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No cultural adaptation evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Input-prompt and output-image filters were applied and models fine-tuned after the finding, but no response standards or data were located.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No needs-based calibration located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No outcome data on filter effectiveness located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "The company raised 80 million dollars in a June 2024 recapitalisation after losses above 30 million dollars in one quarter. Resources went to survival, not to affected parties.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bloomberg.com/news/articles/2024-06-25/stability-ai-names-new-ceo-raises-80-million-in-fresh-funds",
+          "date": "2024-06-25",
+          "quote": "Stability AI Names New CEO, Raises $80 Million in Fresh Funds"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No follow-through protocol located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Open weights once made the technology broadly available; the company has since moved to monetised, safety-filtered commercial endpoints.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sacra.com/c/stability-ai/",
+          "date": "2026-01-01",
+          "quote": "Stability AI's transition from open-source releases to monetized, safety-filtered commercial endpoints"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No prioritisation decision located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No bias monitoring located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Free open weights lowered cost barriers for researchers and small developers, but no access-barrier mapping was located and the practice has narrowed.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sacra.com/c/stability-ai/",
+          "date": "2026-01-01",
+          "quote": "Stability AI's transition from open-source releases to monetized, safety-filtered commercial endpoints"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "No acknowledgment located of Stability's own responsibility for training on a dataset that contained verified child sexual abuse material.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.404media.co/laion-datasets-removed-stanford-csam-child-abuse/",
+          "date": "2023-12-20",
+          "quote": "Largest Dataset Powering AI Images Removed After Discovery of Child Sexual Abuse Material"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Founder departure, heavy losses and a rescue recapitalisation. No workforce wellbeing data located.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bloomberg.com/news/articles/2024-06-25/stability-ai-names-new-ceo-raises-80-million-in-fresh-funds",
+          "date": "2024-06-25",
+          "quote": "Stability AI Names New CEO, Raises $80 Million in Fresh Funds"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Open-weight releases let others build and operate independently of Stability, which is capacity-building by construction.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sacra.com/c/stability-ai/",
+          "date": "2026-01-01",
+          "quote": "Stability AI's transition from open-source releases to monetized, safety-filtered commercial endpoints"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No proactive scope communication located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No refusal protocol located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Training data was taken without the consent of artists and stock libraries. Three cases are active and none is decided; scored at the absence anchor.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ailawsuittracker.com/cases/andersen-v-stability-ai-ltd-3-23-cv-00201/",
+          "date": "2026-02-01",
+          "quote": "Andersen v. Stability AI Ltd. - Case Status & Rulings (2026)"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "Acknowledgment followed external establishment by Stanford and by journalists.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.techpolicy.press/laion5b-stable-diffusion-and-the-original-sin-of-generative-ai/",
+          "date": "2023-12-01",
+          "quote": "LAION-5B, Stable Diffusion 1.5, and the Original Sin of Generative AI"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Filters and fine-tuning followed the finding, and LAION released a cleaned dataset. Correction under external pressure, minimal, and largely by the dataset maintainer.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.techcrunch.com/2024/08/30/the-org-behind-the-data-set-used-to-train-stable-diffusion-claims-it-has-removed-csam",
+          "date": "2024-08-30",
+          "quote": "the org behind the data set used to train stable diffusion claims it has removed csam"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No transparency report located; financial performance surfaced through press rather than disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bloomberg.com/news/articles/2024-06-25/stability-ai-names-new-ceo-raises-80-million-in-fresh-funds",
+          "date": "2024-06-25",
+          "quote": "Stability AI Names New CEO, Raises $80 Million in Fresh Funds"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No systemic learning process located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "No repair located to artists, stock libraries or children depicted. The UK judgment of 4 November 2025 largely rejected Getty's claims.",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.judiciary.uk/judgments/getty-images-v-stability-ai/",
+          "date": "2025-11-04",
+          "quote": "Getty Images -v- Stability AI"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No root-cause programme located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No long-horizon plan located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No second-order effect analysis located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Stability's structural position, that model weights contain no copies of training works, was argued in its own commercial interest and was accepted by the High Court.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.lw.com/en/insights/getty-images-v-stability-ai-english-high-court-rejects-secondary-copyright-claim",
+          "date": "2025-11-13",
+          "quote": "Getty Images v. Stability AI: English High Court Rejects Secondary Copyright Claim"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "note": "Open-weight releases and collaboration with the LAION research community made model capability broadly available to others.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sacra.com/c/stability-ai/",
+          "date": "2026-01-01",
+          "quote": "Stability AI's transition from open-source releases to monetized, safety-filtered commercial endpoints"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No case located of bearing a real cost to maintain a commitment. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bloomberg.com/news/articles/2024-06-25/stability-ai-names-new-ceo-raises-80-million-in-fresh-funds",
+          "date": "2024-06-25",
+          "quote": "Stability AI Names New CEO, Raises $80 Million in Fresh Funds"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No practice maintained without visibility located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No internal culture evidence located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bloomberg.com/news/articles/2024-06-25/stability-ai-names-new-ceo-raises-80-million-in-fresh-funds",
+          "date": "2024-06-25",
+          "quote": "Stability AI Names New CEO, Raises $80 Million in Fresh Funds"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "note": "No values-alignment process located. Absence of disclosure.",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://techstrong.ai/articles/ai-child-abuse-imagery-discovery-raises-alarms/",
+          "date": "2023-12-20",
+          "quote": "Stability AI models were trained on a filtered subset of that dataset"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "note": "The founder left in March 2024, Prem Akkaraju became chief executive in June 2024, and the open-release practice with the clearest compassion reading was narrowed afterwards.",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/stability-ai-secures-significant-new-investment-from-world-class-investor-group-and-appoints-prem-akkaraju-as-ceo-302181923.html",
+          "date": "2024-06-25",
+          "quote": "Stability AI Secures Significant New Investment from World-Class Investor Group and Appoints Prem Akkaraju as CEO"
+        }
+      ]
+    }
+  ]
+}

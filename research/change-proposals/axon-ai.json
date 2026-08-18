@@ -1,0 +1,62 @@
+{
+  "entity": "Axon AI",
+  "slug": "axon-ai",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/axon-ai-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/axon-ai-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_LOW_2026-08-17.md",
+  "seed_cluster": "ai-labs 35.9 (Developing), ranks 31-34",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 31,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 30.6,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2,
+      "ACT": 2.6,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2.2,
+      "SYS": 2.6,
+      "INT": 2
+    }
+  },
+  "score_delta": -5.3,
+  "band_change": false,
+  "filing_clause": "composite-delta",
+  "confidence": "medium",
+  "absence_convention": "2 (absence of disclosure scores 2, never 1; the floor of 1 is reserved for positive documented evidence of a specific failure). Applied identically to all seven labs in this study.",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Not required, because no band change is proposed. Recorded for completeness: the Electronic Frontier Foundation's Draft One investigation, built on public records from dozens of police agencies, is tier 4 and independent; the Reuters Taser-deaths database is tier 5 and independent; the resigning AI Ethics Board members' statement published by the Policing Project is tier 4 and independent. The test would pass."
+  },
+  "key_evidence": [
+    "Axon assesses at 30.6 against a published 35.9, a fall of 5.3 points. The band does not change; it stays Developing.",
+    "Both directions are documented. Axon runs a public Moonshot goal to cut gun deaths between police and the public by half by 2033 and a national database tracking those deaths, and reports combined fatalities fell nearly 10 percent in 2025. That lifts Action to 2.6 and Systemic Thinking to 2.6, the two highest dimensions.",
+    "The Electronic Frontier Foundation, using public records from dozens of police agencies, found Axon's Draft One erases the initial AI draft on export, so no record shows whether a mistake in a police report came from the officer or the AI. Asked about auditing, Axon replied that this 'wasn't a scenario we anticipated needing to make easy'.",
+    "Nine of twelve members of Axon's own AI Ethics Board resigned on 6 June 2022 after the company announced Taser-equipped drones for schools against their advice. A blind-spot mechanism existed and was overridden, which is why Blind Spot Mitigation and Values Alignment both score 2.",
+    "Reuters documented more than 1,000 deaths after police Taser use through 2018 and a company operation to place vendor-paid experts first into those investigations. That evidence is outside the two-to-three-year currency window and was scored at the absence anchor of 2, not at the floor.",
+    "ENTITY-NAMING DEFECT: the index publishes 'Axon AI'. The operating company is Axon Enterprise, Inc., listed on Nasdaq as AXON. 'Axon AI' is a product family, not a legal entity."
+  ],
+  "proposed_subdimensions": "research/assessments/axon-ai-2026-08-17.subdims.json",
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "The index entry 'Axon AI' does not name an operating entity. All scoring was performed against Axon Enterprise, Inc. (Nasdaq: AXON), whose AI products include Draft One. The record should be renamed. On score: this is a mixed-evidence case, not an absence case. Axon publishes a genuine harm-reduction goal with a public dataset, and independent investigators have documented specific design decisions that defeat oversight. Both were scored. The Reuters Taser findings close in 2018 and were deliberately scored at the absence anchor rather than the floor."
+}

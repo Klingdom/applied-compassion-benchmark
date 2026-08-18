@@ -1,0 +1,62 @@
+{
+  "entity": "Runway",
+  "slug": "runway",
+  "index": "ai-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/runway-2026-08-17.md",
+  "subdim_sidecar": "research/assessments/runway-2026-08-17.subdims.json",
+  "study": "research/SEED_CLUSTER_AI_LABS_LOW_2026-08-17.md",
+  "seed_cluster": "ai-labs 35.9 (Developing), ranks 31-34",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 32,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 27.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2,
+      "SYS": 2.4,
+      "INT": 2
+    }
+  },
+  "score_delta": -8.4,
+  "band_change": false,
+  "filing_clause": "composite-delta",
+  "confidence": "medium",
+  "absence_convention": "2 (absence of disclosure scores 2, never 1; the floor of 1 is reserved for positive documented evidence of a specific failure). Applied identically to all seven labs in this study.",
+  "band_change_evidence_test": {
+    "required": "at least 2 independent sources with at least 1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "result": "PASS",
+    "reason": "Not required, because no band change is proposed. Recorded for completeness: the 404 Media investigation is based on a primary internal company document and is tier 4 and independent; the Businessing LLC v. Runway AI complaint in the Southern District of New York is a court record at tier 5. Runway's own safety and provenance pages were excluded as self-published. The test would pass."
+  },
+  "key_evidence": [
+    "Runway assesses at 27.5 against a published 35.9, a fall of 8.4 points. The band does not change; it stays Developing.",
+    "404 Media obtained an internal Runway spreadsheet showing the company trained on thousands of YouTube creators' videos and pirated films, downloaded with open-source tooling through purchased proxies to avoid being blocked.",
+    "A proposed class action, Businessing LLC v. Runway AI, was filed in the Southern District of New York on 27 February 2026 alleging circumvention under the Digital Millennium Copyright Act. Nothing is decided and nothing was scored as proven harm.",
+    "The strongest positive evidence is resource mobilisation. The Hundred Film Fund carries 5 million dollars with a stated potential 10 million plus 2 million in credits, is open to documentary and experimental makers, and a 10 million dollar Builders fund launched on 31 March 2026.",
+    "Runway embeds C2PA provenance in all outputs and publicly states that provenance is not a complete solution. That lifts Systemic Thinking to 2.4, the highest dimension.",
+    "Twenty-nine of 40 subdimensions rest on absence of disclosure, not on evidence of harm."
+  ],
+  "proposed_subdimensions": "research/assessments/runway-2026-08-17.subdims.json",
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "notes": "This is a mixed case with a large absence component. Twenty-nine of 40 subdimensions rest on nothing being found in either direction. The documented scraping is conduct evidence at tier 4; the litigation is undecided and was not scored as harm. The published 35.9 was a uniform placeholder shared by four labs."
+}
