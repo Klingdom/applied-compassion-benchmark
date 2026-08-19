@@ -1,0 +1,738 @@
+{
+  "entity": "Harmonic Bionics",
+  "slug": "harmonic-bionics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/harmonic-bionics-2026-08-17.md",
+  "study": "robotics-labs mid/low seed-cluster de-seeding study (62.5 / 48.4 / 35.9)",
+  "cluster": "A (62.5)",
+  "published_scores": {
+    "composite": 62.5,
+    "band": "established",
+    "rank": 17,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 4,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 30,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2,
+      "ACT": 2.4,
+      "EQU": 2,
+      "BND": 2.4,
+      "ACC": 2.4,
+      "SYS": 2.2,
+      "INT": 2
+    }
+  },
+  "score_delta": -32.5,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "explanation": "Three independent sources support the band change, of which three sit at tier 4 or above: a US Food and Drug Administration MAUDE adverse event record, a ClinicalTrials.gov registration sponsored by Shirley Ryan AbilityLab with results posted, and the acquirer Bioness Medical's announcement, which is third-party relative to Harmonic Bionics. Harmonic Bionics' own commercial-launch release was excluded as self-published.",
+    "sources_at_tier4_or_above": [
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+      "https://clinicaltrials.gov/study/NCT05251077",
+      "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "**Why it matters: this company held the benchmark's second-highest band on a placeholder, and it no longer exists on its own.** Bioness Medical acquired the assets and business of Harmonic Bionics on 18 June 2025.",
+    "**It is the strongest of the three labs at this seed, and for a concrete reason.** Shirley Ryan AbilityLab ran an independent trial of the Harmony SHR in 21 acute stroke patients, completed it on 30 May 2023, and posted the results.",
+    "**The company warned all its customers after one machine malfunctioned.** During a demonstration, a customer hit the emergency stop and saw smoke in the rear enclosure. No patient was in the device. The company sent a precautionary notice to other customers in 2024.",
+    "**No access or affordability evidence was found.** Unlike exoskeleton makers with published Medicare or Medi-Cal decisions, nothing was located on how patients pay for Harmony SHR therapy.",
+    "**Roughly 30 of the 40 scores rest on the absence of any published evidence.** That is not a finding of harm."
+  ],
+  "corporate_status": "STATUS DEFECT. Bioness Medical announced on 18 June 2025 that it had acquired the assets and business of Harmonic Bionics, Inc. of Austin, Texas. The index carries it as a standalone entity. The record should show the parent.",
+  "evidence": [
+    {
+      "claim": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy",
+      "source": "prnewswire.com",
+      "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+      "publishedDate": "2025-06-18",
+      "sourceTier": 4
+    },
+    {
+      "claim": "MAUDE Adverse Event Report: HARMONIC BIONICS INC. HARMONY SHR; UPPER EXTREMITY ROBOTIC REHABILITATION DEVICE",
+      "source": "accessdata.fda.gov",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+      "publishedDate": "2024",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Safety, Reliability, and Efficacy of the Harmony SHR Upper Extremity Robotic Rehabilitation System in the Inpatient Rehabilitation Setting for Patients With Acute Stroke",
+      "source": "clinicaltrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05251077",
+      "publishedDate": "2023-05-30",
+      "sourceTier": 5
+    },
+    {
+      "claim": "HARMONIC BIONICS ANNOUNCES COMMERCIAL LAUNCH OF THE HARMONY SHR™ ROBOTIC REHABILITATION SYSTEM FOLLOWING FDA REGISTRATION",
+      "source": "harmonicbionics.com",
+      "url": "https://harmonicbionics.com/about/news/harmonic-bionics-announces-commercial-launch-of-the-harmony-shr-robotic-rehabilitation-system-following-fda-registration/",
+      "publishedDate": "2023-04-18",
+      "sourceTier": 2
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+          "date": "2024",
+          "quote": "MAUDE Adverse Event Report: HARMONIC BIONICS INC. HARMONY SHR; UPPER EXTREMITY ROBOTIC REHABILITATION DEVICE"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+          "date": "2024",
+          "quote": "MAUDE Adverse Event Report: HARMONIC BIONICS INC. HARMONY SHR; UPPER EXTREMITY ROBOTIC REHABILITATION DEVICE"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://clinicaltrials.gov/study/NCT05251077",
+          "date": "2023-05-30",
+          "quote": "Safety, Reliability, and Efficacy of the Harmony SHR Upper Extremity Robotic Rehabilitation System in the Inpatient Rehabilitation Setting for Patients With Acute Stroke"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://clinicaltrials.gov/study/NCT05251077",
+          "date": "2023-05-30",
+          "quote": "Safety, Reliability, and Efficacy of the Harmony SHR Upper Extremity Robotic Rehabilitation System in the Inpatient Rehabilitation Setting for Patients With Acute Stroke"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://harmonicbionics.com/about/news/harmonic-bionics-announces-commercial-launch-of-the-harmony-shr-robotic-rehabilitation-system-following-fda-registration/",
+          "date": "2023-04-18",
+          "quote": "HARMONIC BIONICS ANNOUNCES COMMERCIAL LAUNCH OF THE HARMONY SHR™ ROBOTIC REHABILITATION SYSTEM FOLLOWING FDA REGISTRATION"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+          "date": "2024",
+          "quote": "MAUDE Adverse Event Report: HARMONIC BIONICS INC. HARMONY SHR; UPPER EXTREMITY ROBOTIC REHABILITATION DEVICE"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=18920917&pc=IKK",
+          "date": "2024",
+          "quote": "MAUDE Adverse Event Report: HARMONIC BIONICS INC. HARMONY SHR; UPPER EXTREMITY ROBOTIC REHABILITATION DEVICE"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://clinicaltrials.gov/study/NCT05251077",
+          "date": "2023-05-30",
+          "quote": "Safety, Reliability, and Efficacy of the Harmony SHR Upper Extremity Robotic Rehabilitation System in the Inpatient Rehabilitation Setting for Patients With Acute Stroke"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prnewswire.com/news-releases/bioness-medical-announces-acquisition-of-the-assets-and-business-of-harmonic-bionics-302485121.html",
+          "date": "2025-06-18",
+          "quote": "a bilateral upper extremity robotic exoskeleton that works with a patient's scapulohumeral rhythm (SHR) to enable natural, comprehensive arm and shoulder therapy"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "methodology_version": "v1.2",
+  "scoring_convention": "2-convention: absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence of disclosure is NOT evidence of harm.",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION PLUS A CORPORATE-STATUS DEFECT. The published 62.5 is a never-assessed uniform placeholder. Harmonic Bionics is the strongest of the three labs at this seed and the reason is specific and creditable: an independent hospital, Shirley Ryan AbilityLab, ran a completed trial of its device and posted the results, and the company voluntarily warned all its customers after a single machine malfunctioned. No adverse conduct finding is attached. Roughly 30 of 40 subdimensions score at the low anchor because no disclosure exists. No score change is applied by this study."
+}

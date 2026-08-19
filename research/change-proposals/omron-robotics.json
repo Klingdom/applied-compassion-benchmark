@@ -1,0 +1,774 @@
+{
+  "entity": "Omron Robotics",
+  "slug": "omron-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/omron-robotics-2026-08-17.md",
+  "study": "robotics-labs mid/low seed-cluster de-seeding study (62.5 / 48.4 / 35.9)",
+  "cluster": "B (48.4)",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 35,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 31.3,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2,
+      "ACT": 2.4,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2.6,
+      "SYS": 2.4,
+      "INT": 2
+    }
+  },
+  "score_delta": -17.1,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": false,
+    "explanation": "Every located source sits on omron.com and is therefore self-published corporate material, excluded from the independence test. The Responsible Business Alliance audit findings are genuinely third-party in origin and are strong scoring evidence, but no RBA-published document, regulator finding or independent evaluation was obtained. Omron Robotics cannot be verified at tier 4 by an independent source in either direction. This is the clearest case in the study of a company with substantial disclosure and no external verification of it.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "**Why it matters: publishing your own bad audit result is worth more than any policy statement.** An outside auditor found overtime miscalculation and excessive working hours at OMRON's Vietnam site in November 2025. OMRON published the finding.",
+    "**The people the audit protected do not work for OMRON.** The excessive hours were worked by employees of a contracted security company on OMRON's site — the least powerful group there.",
+    "**OMRON re-audits the same sites.** Its Dalian factory in China was audited again in October 2025 and kept PLATINUM recognition, \"as was in the previous audit\".",
+    "**OMRON cut about 2,000 jobs while profitable.** The NEXT 2025 programme, announced 26 February 2024, completed 1,206 retirements in Japan on 20 July 2024 and 1,055 overseas. That holds its Boundaries and Integrity scores at the baseline.",
+    "**Attribution matters here.** All the scoreable disclosure belongs to the parent, OMRON Corporation, not to the robotics subsidiary. It is credited because it is group-level, and the parent's job cuts are charged for the same reason."
+  ],
+  "corporate_status": "Operating. Subsidiary of OMRON Corporation, listed on the Tokyo Stock Exchange. NAMING NOTE: the index says 'Omron Robotics'; the operating company is Omron Robotics and Safety Technologies, Inc., and all scoreable disclosure belongs to the parent, OMRON Corporation. Attribution ruling recorded in the assessment: group-level instruments are credited and named, and the group's NEXT 2025 job cuts are charged on the same basis.",
+  "evidence": [
+    {
+      "claim": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services.",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+      "publishedDate": "2025-11",
+      "sourceTier": 5
+    },
+    {
+      "claim": "The Dalian factory in China underwent RBA's external audit in October 2025, being awarded PLATINUM recognition as was in the previous audit.",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+      "publishedDate": "2025-10",
+      "sourceTier": 5
+    },
+    {
+      "claim": "For suppliers deemed to have sustainability risks as a result of surveys/audits, OMRON requests them to submit improvement plans and take corrective actions",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "OMRON Group Modern Slavery Act Statement for FY2025",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Occupational Safety and Health | Social | Sustainability | About OMRON | OMRON Global",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/social/health-and-safety/",
+      "publishedDate": "2024",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Compliance and Risk Management | Governance | Sustainability | About OMRON | OMRON Global",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/compliance/",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Sustainability Targets and Results | Sustainability | OMRON Global",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/sustainability/omron_csr/tasks_goals/",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Notice Concerning Structural Reform Program NEXT 2025",
+      "source": "omron.com",
+      "url": "https://www.omron.com/global/en/news/2024/02/c0226.html",
+      "publishedDate": "2024-02-26",
+      "sourceTier": 4
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/compliance/",
+          "date": "2025",
+          "quote": "Compliance and Risk Management | Governance | Sustainability | About OMRON | OMRON Global"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-11",
+          "quote": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-11",
+          "quote": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025",
+          "quote": "For suppliers deemed to have sustainability risks as a result of surveys/audits, OMRON requests them to submit improvement plans and take corrective actions"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-10",
+          "quote": "The Dalian factory in China underwent RBA's external audit in October 2025, being awarded PLATINUM recognition as was in the previous audit."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-11",
+          "quote": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/social/health-and-safety/",
+          "date": "2024",
+          "quote": "Occupational Safety and Health | Social | Sustainability | About OMRON | OMRON Global"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/news/2024/02/c0226.html",
+          "date": "2024-02-26",
+          "quote": "Notice Concerning Structural Reform Program NEXT 2025"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-11",
+          "quote": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025",
+          "quote": "For suppliers deemed to have sustainability risks as a result of surveys/audits, OMRON requests them to submit improvement plans and take corrective actions"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-11",
+          "quote": "An external audit by RBA was also carried out at the production site in Vietnam in November 2025, through which issues were identified, including deficiencies in the calculation method for overtime payments to employees and excessive working hours among employees of a contracted security company providing onsite services."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-10",
+          "quote": "The Dalian factory in China underwent RBA's external audit in October 2025, being awarded PLATINUM recognition as was in the previous audit."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/omron_csr/tasks_goals/",
+          "date": "2025",
+          "quote": "Sustainability Targets and Results | Sustainability | OMRON Global"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.omron.com/global/en/sustainability/procurement/suppliers/",
+          "date": "2025-10",
+          "quote": "The Dalian factory in China underwent RBA's external audit in October 2025, being awarded PLATINUM recognition as was in the previous audit."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/news/2024/02/c0226.html",
+          "date": "2024-02-26",
+          "quote": "Notice Concerning Structural Reform Program NEXT 2025"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/news/2024/02/c0226.html",
+          "date": "2024-02-26",
+          "quote": "Notice Concerning Structural Reform Program NEXT 2025"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.omron.com/global/en/sustainability/about/corporate/purchase/index/img/ogs_fy2025_eng.pdf",
+          "date": "2025",
+          "quote": "OMRON Group Modern Slavery Act Statement for FY2025"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "methodology_version": "v1.2",
+  "scoring_convention": "2-convention: absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence of disclosure is NOT evidence of harm.",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. At 31.3 this is the second-highest assessed value in the 14-entity study and the highest in its cluster, because OMRON publishes third-party audit findings that are unflattering to itself. Roughly 24 of 40 subdimensions score at the low anchor because no disclosure exists. The one adverse item scored is the NEXT 2025 restructuring, which removed about 2,000 jobs while the company was profitable; that holds Boundaries and Integrity at baseline rather than pushing them below it. Direct fetches of omron.com returned HTTP 403 throughout and content was obtained through search extracts of the same pages. No score change is applied by this study."
+}

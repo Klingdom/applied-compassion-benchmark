@@ -1,0 +1,763 @@
+{
+  "entity": "Richtech Robotics",
+  "slug": "richtech-robotics",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/richtech-robotics-2026-08-17.md",
+  "study": "robotics-labs mid/low seed-cluster de-seeding study (62.5 / 48.4 / 35.9)",
+  "cluster": "C (35.9)",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 40,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 24.4,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 1.8,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "score_delta": -11.5,
+  "band_change": false,
+  "filing_clause": "composite-delta >= 5.0 only",
+  "band_change_evidence_test": {
+    "result": "NOT-APPLICABLE",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": null,
+    "explanation": "No band change: the entity stays in the Developing band. The test is only required for band crossings. For information, the underlying evidence would have passed it: two US Securities and Exchange Commission filings at tier 5 and two independent filing-analysis reports at tier 4.",
+    "sources_at_tier4_or_above": [
+      "https://www.sec.gov/Archives/edgar/data/1963685/000121390026082295/ea0299578-8k_richtech.htm",
+      "https://www.sec.gov/Archives/edgar/data/1963685/000121390026090252/ea0302284-nt10q_richtech.htm"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "**Why it matters: Richtech Robotics puts robots in senior living homes and publishes nothing about how residents experience them.** No resident consultation, complaint pathway or outcome measurement was located.",
+    "**Two fiscal years of Richtech's audited accounts cannot be relied upon.** Its Audit Committee reached that conclusion on 9 June 2026 and the company is restating fiscal 2024 and 2025.",
+    "**A control failure the company said it had fixed had not been fixed.** The material weakness identified as at 30 September 2025 was not remediated as previously indicated, and a further weakness is expected.",
+    "**Nasdaq found Richtech out of compliance on 22 May 2026** for failing to file its quarterly report on time. The company submitted a compliance plan on 20 July 2026.",
+    "**Richtech wrote off $9.8 million of software in one quarter** while reporting about $3.9 million of revenue for the nine months to 30 June 2026."
+  ],
+  "corporate_status": "Operating. Nasdaq-listed as RR, Las Vegas, Nevada. Under a Nasdaq listing-rule compliance plan submitted 20 July 2026 after a 22 May 2026 non-compliance notice for late filing. No name or ownership defect found.",
+  "evidence": [
+    {
+      "claim": "the Company fully impaired the remaining carrying values of $9.8 million of the affected assets as general and administrative expense",
+      "source": "sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026090252/ea0302284-nt10q_richtech.htm",
+      "publishedDate": "2026-08-14",
+      "sourceTier": 5
+    },
+    {
+      "claim": "the Company is not in compliance with Nasdaq Listing Rule 5250(c)(1) (the “ Rule ”), because it has not timely filed its Quarterly Report on Form 10-Q for the period ended March 31, 2026",
+      "source": "sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026082295/ea0299578-8k_richtech.htm",
+      "publishedDate": "2026-07-28",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Richtech Robotics to Restate 2024–2025 Financials",
+      "source": "stocktitan.net",
+      "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-77e2fa77ca6f.html",
+      "publishedDate": "2026-06-09",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Richtech Robotics changes auditor, notes control weakness",
+      "source": "stocktitan.net",
+      "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-33f1798dddb0.html",
+      "publishedDate": "2026",
+      "sourceTier": 4
+    },
+    {
+      "claim": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024",
+      "source": "sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+      "publishedDate": "2025",
+      "sourceTier": 5
+    },
+    {
+      "claim": "RICHTECH ROBOTICS INC. - Form 10-K/A - FY2025",
+      "source": "sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001963685/000121390026086751/ea0298288-10ka1_richtech.htm",
+      "publishedDate": "2026-08-07",
+      "sourceTier": 5
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026090252/ea0302284-nt10q_richtech.htm",
+          "date": "2026-08-14",
+          "quote": "the Company fully impaired the remaining carrying values of $9.8 million of the affected assets as general and administrative expense"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026090252/ea0302284-nt10q_richtech.htm",
+          "date": "2026-08-14",
+          "quote": "the Company fully impaired the remaining carrying values of $9.8 million of the affected assets as general and administrative expense"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026082295/ea0299578-8k_richtech.htm",
+          "date": "2026-07-28",
+          "quote": "the Company is not in compliance with Nasdaq Listing Rule 5250(c)(1) (the “ Rule ”), because it has not timely filed its Quarterly Report on Form 10-Q for the period ended March 31, 2026"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-77e2fa77ca6f.html",
+          "date": "2026-06-09",
+          "quote": "Richtech Robotics to Restate 2024–2025 Financials"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-33f1798dddb0.html",
+          "date": "2026",
+          "quote": "Richtech Robotics changes auditor, notes control weakness"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026082295/ea0299578-8k_richtech.htm",
+          "date": "2026-07-28",
+          "quote": "the Company is not in compliance with Nasdaq Listing Rule 5250(c)(1) (the “ Rule ”), because it has not timely filed its Quarterly Report on Form 10-Q for the period ended March 31, 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-77e2fa77ca6f.html",
+          "date": "2026-06-09",
+          "quote": "Richtech Robotics to Restate 2024–2025 Financials"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-33f1798dddb0.html",
+          "date": "2026",
+          "quote": "Richtech Robotics changes auditor, notes control weakness"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/0001963685/000121390026086751/ea0298288-10ka1_richtech.htm",
+          "date": "2026-08-07",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K/A - FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-77e2fa77ca6f.html",
+          "date": "2026-06-09",
+          "quote": "Richtech Robotics to Restate 2024–2025 Financials"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390026090252/ea0302284-nt10q_richtech.htm",
+          "date": "2026-08-14",
+          "quote": "the Company fully impaired the remaining carrying values of $9.8 million of the affected assets as general and administrative expense"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.stocktitan.net/sec-filings/RR/8-k-richtech-robotics-inc-reports-material-event-33f1798dddb0.html",
+          "date": "2026",
+          "quote": "Richtech Robotics changes auditor, notes control weakness"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1963685/000121390025003458/ea0226831-10k_richtech.htm",
+          "date": "2025",
+          "quote": "RICHTECH ROBOTICS INC. - Form 10-K - FY2024"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "methodology_version": "v1.2",
+  "scoring_convention": "2-convention: absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence of disclosure is NOT evidence of harm.",
+  "notes": "FLAG FOR REVIEW — PART CALIBRATION, PART CONDUCT FINDING. The published 35.9 is a never-assessed uniform placeholder shared byte-for-byte with four other labs at consecutive alphabetical ranks 39 to 43. Unlike most entities in this study, part of the movement rests on documented failure rather than on absence: a material weakness in internal control that the company represented as remediated and which was not, plus a restatement of two fiscal years of audited accounts and a Nasdaq non-compliance notice. That produces the study's lowest single dimension score, Accountability at 1.8. The most important gap is that nothing was located about how residents of senior living homes experience these robots. No score change is applied by this study."
+}

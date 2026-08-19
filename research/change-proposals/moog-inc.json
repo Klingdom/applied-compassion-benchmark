@@ -1,0 +1,756 @@
+{
+  "entity": "Moog Inc.",
+  "slug": "moog-inc",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/moog-inc-2026-08-17.md",
+  "study": "robotics-labs mid/low seed-cluster de-seeding study (62.5 / 48.4 / 35.9)",
+  "cluster": "B (48.4)",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 34,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 27.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2.2,
+      "SYS": 2.2,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -20.9,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": false,
+    "explanation": "Only one qualifying source was located: Moog's Form 10-K filed with the US Securities and Exchange Commission. Every other source is a page on moog.com and was excluded as self-published corporate material. The requirement for two independent sources is not met. Moog's disclosure is substantial in volume but is almost entirely self-reported, and no third-party audit, regulator finding or independent evaluation of its practice was located.",
+    "sources_at_tier4_or_above": [
+      "https://www.sec.gov/Archives/edgar/data/67887/000162828025054103/mog-20250927.htm"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "**Why it matters: real ESG reporting is not the same as compassion infrastructure.** Moog Inc. reports annually against three external frameworks and still scores 27.5 of 100, because those frameworks measure climate and governance rather than how the company treats people in distress.",
+    "**Moog's human rights commitment is clear but static.** It prohibits forced labour and respects union rights. The document is dated August 2020 and reports no outcomes, no grievance numbers and no supplier audit results.",
+    "**Board oversight is real but thin.** Moog's board reviews sustainability twice a year through its Nominating and Governance Committee.",
+    "**Moog is a defence contractor, which is a compassion-relevant surface.** Its products control military aircraft and missiles. No evidence was found either way about how Moog assesses the human effects of those sales.",
+    "**Roughly 26 of the 40 scores rest on absence of disclosure — the second-lowest absence count in this study.** Moog publishes more than most of its peers here; it publishes little that this framework can score."
+  ],
+  "corporate_status": "Operating. New York Stock Exchange-listed, headquartered in East Aurora, New York. No status defect found. NOTE: a Buffalo News report of 489 layoffs could not be dated reliably and matched the pattern of 1990s defence-cut coverage; it was excluded rather than scored.",
+  "evidence": [
+    {
+      "claim": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee",
+      "source": "moog.com",
+      "url": "https://www.moog.com/sustainability/governance.html",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "strategic guidance framework for Environmental and Social Governance",
+      "source": "moog.com",
+      "url": "https://www.moog.com/sustainability/governance.html",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "claim": "We prohibit the use of all forms of forced labor, including prison labor, indentured labor, bonded labor, military labor, slave labor, and any form of human trafficking.",
+      "source": "moog.com",
+      "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+      "publishedDate": "2020-08",
+      "sourceTier": 4
+    },
+    {
+      "claim": "We respect our employees' right to join, form, or not to join a labor union without fear of retaliation, intimidation, or harassment.",
+      "source": "moog.com",
+      "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+      "publishedDate": "2020-08",
+      "sourceTier": 4
+    },
+    {
+      "claim": "2025 Sustainability Report",
+      "source": "moog.com",
+      "url": "https://www.moog.com/content/dam/moog/literature/Corporate/sustainability/Moog-2025-Sustainability-Report.pdf",
+      "publishedDate": "2025",
+      "sourceTier": 3
+    },
+    {
+      "claim": "MOOG INC. - Form 10-K - FY2025",
+      "source": "sec.gov",
+      "url": "https://www.sec.gov/Archives/edgar/data/67887/000162828025054103/mog-20250927.htm",
+      "publishedDate": "2025-09-27",
+      "sourceTier": 5
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.moog.com/content/dam/moog/literature/Corporate/sustainability/Moog-2025-Sustainability-Report.pdf",
+          "date": "2025",
+          "quote": "2025 Sustainability Report"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.moog.com/content/dam/moog/literature/Corporate/sustainability/Moog-2025-Sustainability-Report.pdf",
+          "date": "2025",
+          "quote": "2025 Sustainability Report"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+          "date": "2020-08",
+          "quote": "We respect our employees' right to join, form, or not to join a labor union without fear of retaliation, intimidation, or harassment."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/67887/000162828025054103/mog-20250927.htm",
+          "date": "2025-09-27",
+          "quote": "MOOG INC. - Form 10-K - FY2025"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+          "date": "2020-08",
+          "quote": "We prohibit the use of all forms of forced labor, including prison labor, indentured labor, bonded labor, military labor, slave labor, and any form of human trafficking."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+          "date": "2020-08",
+          "quote": "We prohibit the use of all forms of forced labor, including prison labor, indentured labor, bonded labor, military labor, slave labor, and any form of human trafficking."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+          "date": "2020-08",
+          "quote": "We prohibit the use of all forms of forced labor, including prison labor, indentured labor, bonded labor, military labor, slave labor, and any form of human trafficking."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.moog.com/content/dam/moog/literature/Corporate/sustainability/Moog-2025-Sustainability-Report.pdf",
+          "date": "2025",
+          "quote": "2025 Sustainability Report"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "strategic guidance framework for Environmental and Social Governance"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "strategic guidance framework for Environmental and Social Governance"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "strategic guidance framework for Environmental and Social Governance"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/67887/000162828025054103/mog-20250927.htm",
+          "date": "2025-09-27",
+          "quote": "MOOG INC. - Form 10-K - FY2025"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/investors/corporate-governance/human-rights-committment.html",
+          "date": "2020-08",
+          "quote": "We respect our employees' right to join, form, or not to join a labor union without fear of retaliation, intimidation, or harassment."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.moog.com/sustainability/governance.html",
+          "date": "2025",
+          "quote": "discusses sustainability topics, confirms goals, and monitors progress twice a year through the Nominating and Governance Committee"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "methodology_version": "v1.2",
+  "scoring_convention": "2-convention: absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence of disclosure is NOT evidence of harm.",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. No regulatory action, safety finding or labour case against Moog was verified in the assessment window. Roughly 26 of 40 subdimensions score at the low anchor because no disclosure exists — the second-lowest absence count in this study, reflecting that Moog does publish more than most peers here. The 2025 Sustainability Report PDF exceeded the fetch size limit and could not be read; Moog is a plausible candidate to score higher on a future cycle if that document is read in full. No score change is applied by this study."
+}

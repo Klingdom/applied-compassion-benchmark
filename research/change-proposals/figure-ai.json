@@ -1,0 +1,729 @@
+{
+  "entity": "Figure AI",
+  "slug": "figure-ai",
+  "index": "robotics-labs",
+  "assessment_date": "2026-08-17",
+  "assessment_file": "research/assessments/figure-ai-2026-08-17.md",
+  "study": "robotics-labs mid/low seed-cluster de-seeding study (62.5 / 48.4 / 35.9)",
+  "cluster": "B (48.4)",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 32,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 25.6,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 2,
+      "BND": 2,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "score_delta": -22.8,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "PASS",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": true,
+    "explanation": "Three independent sources support the band change, of which one sits at tier 4: CNBC's report of the whistleblower lawsuit. Interesting Engineering (tier 3) and a technology review of Figure 03's safety specification (tier 2) provide corroboration. Figure AI's own news pages were excluded as self-published.",
+    "sources_at_tier4_or_above": [
+      "https://www.cnbc.com/2025/11/21/figure-ai-sued.html"
+    ]
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "**Why it matters: the benchmark publishes two different scores for Figure AI.** The ai-labs record was assessed and moved to 31.3 on 19 June 2026. The robotics-labs record still sits at the untouched 48.4 placeholder — a 17.1-point gap for one company.",
+    "**A safety engineer's lawsuit against Figure AI has not been decided in court.** Robert Gruendel filed suit on 21 November 2025 alleging he was fired for raising safety warnings. Figure says he was let go for poor performance. This assessment records the dispute and does not score the allegations as established.",
+    "**Figure does publish real safety engineering detail for its home robot.** Figure 03 uses soft washable textiles, multi-density foam over pinch points, and a battery certified to UN38.3. This is the company's single strongest compassion-relevant disclosure.",
+    "**Figure publishes no responsibility report, grievance data or outcome measurement.** Roughly 32 of the 40 scores rest on absence of disclosure.",
+    "**The correction here is a measurement fix, not an accusation.** No regulatory finding, safety recall or court judgment against Figure AI was located."
+  ],
+  "corporate_status": "Operating. Privately held, Sunnyvale, California. CROSS-INDEX DUPLICATE DEFECT: Figure AI also holds an ai-labs record, assessed on 2026-06-19 at composite 31.3. The ai-labs record was NOT opened or modified by this study. The robotics-labs record proposed here is 25.6. The benchmark should decide which index owns this company.",
+  "evidence": [
+    {
+      "claim": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'",
+      "source": "cnbc.com",
+      "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+      "publishedDate": "2025-11-21",
+      "sourceTier": 4
+    },
+    {
+      "claim": "Figure engineered Figure 03 for home safety with soft washable textiles, multi-density foam over pinch points, and a drop-tested structural battery certified to UN38.3 with UL2271 in process.",
+      "source": "blog.robozaps.com",
+      "url": "https://blog.robozaps.com/b/figure-03-review",
+      "publishedDate": "2026",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Figure claims new BotQ facility can make one humanoid robot per hour",
+      "source": "interestingengineering.com",
+      "url": "https://interestingengineering.com/ai-robotics/figure-humanoid-robot-production-scale-up",
+      "publishedDate": "2026",
+      "sourceTier": 3
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://blog.robozaps.com/b/figure-03-review",
+          "date": "2026",
+          "quote": "Figure engineered Figure 03 for home safety with soft washable textiles, multi-density foam over pinch points, and a drop-tested structural battery certified to UN38.3 with UL2271 in process."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://interestingengineering.com/ai-robotics/figure-humanoid-robot-production-scale-up",
+          "date": "2026",
+          "quote": "Figure claims new BotQ facility can make one humanoid robot per hour"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://blog.robozaps.com/b/figure-03-review",
+          "date": "2026",
+          "quote": "Figure engineered Figure 03 for home safety with soft washable textiles, multi-density foam over pinch points, and a drop-tested structural battery certified to UN38.3 with UL2271 in process."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnbc.com/2025/11/21/figure-ai-sued.html",
+          "date": "2025-11-21",
+          "quote": "Figure AI sued by whistleblower who warned that startup's robots could 'fracture a human skull'"
+        }
+      ]
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "methodology_version": "v1.2",
+  "scoring_convention": "2-convention: absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence of disclosure is NOT evidence of harm.",
+  "notes": "FLAG FOR REVIEW — SEED CORRECTION, NOT A CONDUCT DOWNGRADE. The published 48.4 is a never-assessed uniform placeholder shared byte-for-byte with five other labs at consecutive alphabetical ranks 32 to 37. IMPORTANT: the Gruendel whistleblower lawsuit filed on 21 November 2025 in the Northern District of California has NOT been decided in court as of August 2026, and Figure AI denies the claims. This assessment records the dispute as context and does NOT score its allegations as established facts. No subdimension was reduced because of it. Roughly 32 of 40 subdimensions score at the low anchor because no disclosure exists. No score change is applied by this study, and no change is proposed to the ai-labs record."
+}
