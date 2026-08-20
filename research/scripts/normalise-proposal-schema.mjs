@@ -37,7 +37,16 @@ const WRITE = process.argv.includes("--write");
 
 // Explicit allowlist. This script must never sweep proposals it was not
 // pointed at — other studies may be writing concurrently.
+//
+// Two distinct non-conforming shapes have been seen, both fixed by the same
+// derivation (rebuild the flat array from the assessment's subdim sidecar):
+//   - 20.3 country cluster: `proposed_subdimensions` was a nested map keyed by
+//     dimension, and scores lived under `current` / `proposed`.
+//   - ai-labs low cluster:  `proposed_subdimensions` was a STRING filepath
+//     pointing at the sidecar, with scores already under
+//     `published_scores` / `proposed_scores`.
 const TARGETS = [
+  // 20.3 country cluster (2026-08-16)
   "zimbabwe",
   "republic-of-congo",
   "algeria",
@@ -46,6 +55,13 @@ const TARGETS = [
   "honduras",
   "uzbekistan",
   "papua-new-guinea",
+  // ai-labs low cluster (2026-08-17) — run interrupted by a transient 529
+  "axon-ai",
+  "pika-labs",
+  "runway",
+  "scale-ai",
+  "stability-ai",
+  "waymo",
 ];
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
@@ -79,18 +95,24 @@ for (const slug of TARGETS) {
     continue;
   }
 
-  if (!proposal.proposed?.scores || !proposal.current?.scores) {
-    console.error(`FAIL  ${slug} — no current/proposed scores to derive from`);
+  // Accept either shape: legacy `current`/`proposed`, or the already-correct
+  // `published_scores`/`proposed_scores`. Normalise to a common view.
+  const currentScores =
+    proposal.current?.scores ?? proposal.published_scores?.dimensions;
+  const proposedScores =
+    proposal.proposed?.scores ?? proposal.proposed_scores?.dimensions;
+
+  if (!currentScores || !proposedScores) {
+    console.error(`FAIL  ${slug} — no current/proposed dimension scores to derive from`);
     failures++;
     continue;
   }
 
   // Sidecar carries per-subdimension evidence; it is the only honest source
   // for the flat array. Without it we would have to invent evidence.
-  const sidecarPath = path.join(
-    ASSESSMENT_DIR,
-    `${slug}-${proposal.proposal_date || "2026-08-16"}.subdims.json`,
-  );
+  const sidecarDate =
+    proposal.assessment_date || proposal.proposal_date || "2026-08-16";
+  const sidecarPath = path.join(ASSESSMENT_DIR, `${slug}-${sidecarDate}.subdims.json`);
   if (!fs.existsSync(sidecarPath)) {
     console.error(`FAIL  ${slug} — sidecar missing: ${path.basename(sidecarPath)}`);
     failures++;
@@ -106,7 +128,7 @@ for (const slug of TARGETS) {
   // Integrity gate: every proposed dimension score must equal the mean of its
   // five sidecar subdimension scores. Refuse rather than paper over a mismatch.
   const mismatches = [];
-  for (const [dim, target] of Object.entries(proposal.proposed.scores)) {
+  for (const [dim, target] of Object.entries(proposedScores)) {
     const subs = byDim[dim];
     if (!subs || subs.length !== 5) {
       mismatches.push(`${dim}: ${subs ? subs.length : 0} subdims`);
@@ -125,8 +147,8 @@ for (const slug of TARGETS) {
   }
 
   // Only dimensions whose raw score changed need subdimension entries.
-  const changedDims = Object.entries(proposal.proposed.scores)
-    .filter(([dim, v]) => proposal.current.scores[dim] !== v)
+  const changedDims = Object.entries(proposedScores)
+    .filter(([dim, v]) => currentScores[dim] !== v)
     .map(([dim]) => dim);
 
   const flatSubdims = [];
@@ -145,24 +167,30 @@ for (const slug of TARGETS) {
   }
 
   const out = { ...proposal };
-  out.published_scores = {
+  out.published_scores = proposal.published_scores ?? {
     composite: proposal.current.composite,
     band: proposal.current.band,
     rank: publishedRank(proposal.index, proposal.entity),
-    dimensions: { ...proposal.current.scores },
+    dimensions: { ...currentScores },
   };
-  out.proposed_scores = {
+  out.proposed_scores = proposal.proposed_scores ?? {
     composite: proposal.proposed.composite,
     band: proposal.proposed.band,
-    dimensions: { ...proposal.proposed.scores },
+    dimensions: { ...proposedScores },
   };
   out.proposed_subdimensions = flatSubdims;
   out.schema_normalised = {
     date: new Date().toISOString().slice(0, 10),
     reason:
-      "Rewritten from current/proposed + nested subdim map into the shape " +
-      "apply-entity-record.mjs requires. Subdimension scores and evidence " +
-      "copied verbatim from the assessment sidecar; nothing re-scored.",
+      `Rebuilt into the shape apply-entity-record.mjs requires. ` +
+      `Original proposed_subdimensions was ${
+        typeof proposal.proposed_subdimensions === "string"
+          ? "a string filepath"
+          : Array.isArray(proposal.proposed_subdimensions)
+            ? "an array"
+            : "a nested map keyed by dimension"
+      }. Subdimension scores and evidence copied verbatim from the ` +
+      `assessment sidecar; nothing re-scored.`,
     source_sidecar: path.relative(ROOT, sidecarPath).replace(/\\/g, "/"),
   };
 

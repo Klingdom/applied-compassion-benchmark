@@ -55,8 +55,414 @@
     "The only located institutional facts are commercial: 135 million dollars raised across six rounds, a valuation reported near 900 million dollars, and 109 employees as of 30 June 2026.",
     "SCOPE QUESTION, not a scoring question: whether an entity with no public record beyond funding data belongs in a published compassion ranking at all."
   ],
-  "proposed_subdimensions": "research/assessments/pika-labs-2026-08-17.subdims.json",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://pika-labs.org/faq/",
+          "date": "2026-01-01",
+          "quote": "Pika AI FAQ - 100+ Questions Answered for Creators (2026)"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://pika-labs.org/faq/",
+          "date": "2026-01-01",
+          "quote": "Pika AI FAQ - 100+ Questions Answered for Creators (2026)"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sacra.com/c/pika/",
+          "date": "2026-01-01",
+          "quote": "Pika valuation, funding & news"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cbinsights.com/company/pika-labs",
+          "date": "2026-06-30",
+          "quote": "Pika Labs - Products, Competitors, Financials, Employees, Headquarters Locations"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://pika-labs.org/faq/",
+          "date": "2026-01-01",
+          "quote": "Pika AI FAQ - 100+ Questions Answered for Creators (2026)"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://aiimagetovideo.pro/blog/pika-ai/",
+          "date": "2026-01-01",
+          "quote": "Pika's privacy policy is vague at best, leaving users uncertain about how their data is being used, stored, or protected."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-17",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://vibedex.ai/blog/pika-ai-review-2026",
+          "date": "2026-01-01",
+          "quote": "no robust independent review sample yet (thin evidence, not a known problem)"
+        }
+      ]
+    }
+  ],
   "recommendation": "flag-for-review",
   "status": "pending",
-  "notes": "Absence of disclosure only. No adverse conduct of any kind was located, and no compassion practice was located either. The movement is entirely the distance between a placeholder asserting formal mechanisms across eight dimensions and a company that publishes almost nothing a compassion benchmark can read. The band-change evidence test is recorded as failed because no independent tier-4 source exists about this company in either direction, which is itself the strongest argument that a placeholder was never publishable for it."
+  "notes": "Absence of disclosure only. No adverse conduct of any kind was located, and no compassion practice was located either. The movement is entirely the distance between a placeholder asserting formal mechanisms across eight dimensions and a company that publishes almost nothing a compassion benchmark can read. The band-change evidence test is recorded as failed because no independent tier-4 source exists about this company in either direction, which is itself the strongest argument that a placeholder was never publishable for it.",
+  "schema_normalised": {
+    "date": "2026-08-20",
+    "reason": "Rebuilt into the shape apply-entity-record.mjs requires. Original proposed_subdimensions was a string filepath. Subdimension scores and evidence copied verbatim from the assessment sidecar; nothing re-scored.",
+    "source_sidecar": "research/assessments/pika-labs-2026-08-17.subdims.json"
+  }
 }
