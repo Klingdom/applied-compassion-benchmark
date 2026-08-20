@@ -1,0 +1,441 @@
+{
+  "date": "2026-08-18",
+  "entities_assessed": 20,
+  "assessment_start": "2026-08-18T10:00:00Z",
+  "assessment_end": "2026-08-18T16:40:00Z",
+  "scan_file": "research/scans/2026-08-18.json",
+  "methodology_version": "v1.2",
+  "filing_rule": "composite-delta >= 5.0 OR assessed band differs from published band at any delta",
+  "scoring_convention": "Absence of disclosure scored at the low anchor of 2 and stated explicitly as an absence of disclosure, never as a conduct finding.",
+  "results": [
+    {
+      "slug": "harvard-university",
+      "name": "Harvard University",
+      "index": "universities",
+      "source": "priority",
+      "published_composite": 52.3,
+      "assessed_composite": 53.8,
+      "delta": 1.5,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "A federal judge dismissed the Trump administration antisemitism suit on 13 August 2026. Harvard held a costly litigation position and won, but its treatment of staff and graduate workers pulls Boundaries down to 2.80 of 5."
+    },
+    {
+      "slug": "washington-university-in-st-louis",
+      "name": "Washington University in St. Louis",
+      "index": "universities",
+      "source": "priority",
+      "published_composite": 50.8,
+      "assessed_composite": 41.9,
+      "delta": -8.9,
+      "band_change": false,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "subdim_sidecar": true,
+      "key_finding": "The EEOC sued the university on 12 August 2026, alleging it eliminated the job of an employee who complained about race-based separation in a mandatory training. With 316 layoffs and skipped merit raises, Accountability falls to 2.20 of 5."
+    },
+    {
+      "slug": "wandercraft",
+      "name": "Wandercraft",
+      "index": "robotics-labs",
+      "source": "priority",
+      "published_composite": 83,
+      "assessed_composite": 46.2,
+      "delta": -36.8,
+      "band_change": true,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": false,
+      "key_finding": "REPRODUCED EVIDENCE. The 2026-08-17 assessment already scored the Eve FDA clearance at four subdimensions, so no second proposal is filed and the open 83.0 to 46.2 proposal stands unchanged."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 14.7,
+      "assessed_composite": 15,
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "A further layoff round is planned before the 1 September 2026 quarter start. Oracle filings put the fiscal-2026 reduction at 21,000 (13%) rather than the 30,000 used to set the current score, a correction that argues against deepening it."
+    },
+    {
+      "slug": "chad",
+      "name": "Chad",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 10.9,
+      "assessed_composite": 11.2,
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "President Deby pardoned Succes Masra and eight other jailed opposition figures on 14 August 2026, moving AB2 from 1 to 2. The decree cancels sentences but leaves convictions and political disqualification intact."
+    },
+    {
+      "slug": "latvia",
+      "name": "Latvia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 62.5,
+      "assessed_composite": 48.8,
+      "delta": -13.7,
+      "band_change": true,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "The Latvian published vector is byte-identical to the Czech Republic, Lithuania and Slovenia, marking it a seed placeholder. Measured against documented border pushbacks and NGO criminalisation it lands at 48.8, between Hungary (50.2) and Poland (42.2)."
+    },
+    {
+      "slug": "lagos",
+      "name": "Lagos",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 16.9,
+      "delta": -3.4,
+      "band_change": true,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "subdim_sidecar": true,
+      "key_finding": "The Lagos State Government cleared waterfront settlements, destroying over 3,000 homes, schools and clinics and displacing about 10,000 people. UN experts condemned it, and the score crosses into Critical on a sub-5 delta."
+    },
+    {
+      "slug": "paraguay",
+      "name": "Paraguay",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 25,
+      "assessed_composite": 20.6,
+      "delta": -4.4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Law 7363/24 restricts civil-society organisations and 38 groups have petitioned the Supreme Court against it. The assessed 20.6 is below the filing trigger, and a Latin-America cohort calibration review is recorded instead."
+    },
+    {
+      "slug": "lebanon",
+      "name": "Lebanon",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 17.2,
+      "assessed_composite": 18.1,
+      "delta": 0.9,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": false,
+      "key_finding": "Acute food insecurity rose to about 1.24 million people, but the harm is conflict-caused. The attribution-hold is maintained and only the Lebanese state response is scored."
+    },
+    {
+      "slug": "sri-lanka",
+      "name": "Sri Lanka",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 34.4,
+      "assessed_composite": 30,
+      "delta": -4.4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Prisons hold about 41,000 people in a system built for 10,000, after the government own anti-drug crackdown. The Justice Minister accepted responsibility in Parliament and legislated bail reform, making Accountability (2.80) the strongest dimension."
+    },
+    {
+      "slug": "thailand",
+      "name": "Thailand",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 32.8,
+      "assessed_composite": 29.4,
+      "delta": -3.4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Thai officials and the military raided a Karen village on 10 August 2026 and propose to deport 26 people to Myanmar. Myanmar conduct is not scored against Thailand, but every link in the detention and removal chain is Thai."
+    },
+    {
+      "slug": "zambia",
+      "name": "Zambia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 31.9,
+      "delta": -4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Amnesty International documented a pre-election crackdown on assembly, association and media freedom on 10 August 2026. The state also arrested nine people over a polling agent killing and disclosed why it suspended the count."
+    },
+    {
+      "slug": "haiti",
+      "name": "Haiti",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 4.7,
+      "assessed_composite": 5,
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "subdim_sidecar": false,
+      "key_finding": "Gang attacks continued at Gros-Morne on 7-8 August 2026, but the harm is non-state and Haiti already sits at the floor anchor on 25 of 40 subdimensions. No movement is possible or warranted."
+    },
+    {
+      "slug": "kenya",
+      "name": "Kenya",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 32.5,
+      "delta": -3.4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "Six activists were arrested on 17 August 2026 outside police headquarters. IPOA investigates in public, but activists are campaigning to give it arrest powers because its findings do not produce consequences."
+    },
+    {
+      "slug": "arkansas",
+      "name": "Arkansas",
+      "index": "us-states",
+      "source": "priority",
+      "published_composite": 33.1,
+      "assessed_composite": 31.9,
+      "delta": -1.2,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "key_finding": "An Arkansas State Police trooper punched an 18-year-old during a 1 August 2026 traffic stop, confirmed by a use-of-force report. The trooper remains on active duty, moving AB2 from 3 to 2."
+    },
+    {
+      "slug": "home-depot",
+      "name": "Home Depot",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 57.8,
+      "assessed_composite": 41.3,
+      "delta": -16.5,
+      "band_change": false,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "First measurement of an original-build baseline. Home Depot litigated to the Eighth Circuit to restrict union insignia and repeated a 2024 pricing violation in 2026, against genuine strengths in the Homer Fund and 739 million dollars of hourly bonuses."
+    },
+    {
+      "slug": "hp-inc",
+      "name": "HP Inc.",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 60.9,
+      "assessed_composite": 42.5,
+      "delta": -18.4,
+      "band_change": true,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "SEED RECALIBRATION. The HP supplier human-rights programme is genuinely strong (AB3 4 of 5), but HP discloses almost nothing about its own workforce and announced cuts of up to 10% of global headcount by fiscal 2028."
+    },
+    {
+      "slug": "marriott-international",
+      "name": "Marriott International",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 60.9,
+      "assessed_composite": 44.4,
+      "delta": -16.5,
+      "band_change": true,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "SEED RECALIBRATION. Marriott has trained 1.2 million associates on trafficking since 2016, the strongest programme of the three seed companies, but its own San Francisco workers needed a three-month strike to win understaffing protections."
+    },
+    {
+      "slug": "metlife",
+      "name": "MetLife",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 60.9,
+      "assessed_composite": 33.1,
+      "delta": -27.8,
+      "band_change": true,
+      "change_proposal": true,
+      "confidence": "low",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "SEED RECALIBRATION, LOW CONFIDENCE. MetLife publishes no claims approval, denial or complaint data, so 16 of 40 subdimensions rest on absence of disclosure. It settled a 23 million dollar pension class action one day before trial."
+    },
+    {
+      "slug": "tenet-healthcare",
+      "name": "Tenet Healthcare",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 37.5,
+      "assessed_composite": 31.9,
+      "delta": -5.6,
+      "band_change": false,
+      "change_proposal": true,
+      "confidence": "low",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "key_finding": "The Tenet board disbanded its ESG Committee in 2025 and has published no plan to hold coverage against a forecast 250 million dollar ACA subsidy hit. The delta clears the filing trigger by only 0.6 points on a thin recent evidence base."
+    }
+  ],
+  "change_proposals_generated": 8,
+  "confirmations": 12,
+  "band_crossing_filings": [
+    "lagos — FILED ON THE BAND-CROSSING CLAUSE AT A SUB-5 DELTA (-3.4), Developing to Critical. Precedent: the 2026-08-16 20.3-cluster study (Djibouti, Mauritania) at -2.8.",
+    "latvia — Established to Functional at -13.7 (both triggers met)",
+    "hp-inc — Established to Functional at -18.4 (both triggers met)",
+    "marriott-international — Established to Functional at -16.5 (both triggers met)",
+    "metlife — Established to Developing at -27.8 (both triggers met)"
+  ],
+  "band_change_evidence_test_results": {
+    "passed": [
+      "lagos"
+    ],
+    "failed_and_recorded_honestly": [
+      "latvia",
+      "hp-inc",
+      "marriott-international",
+      "metlife"
+    ],
+    "note": "Four of five band crossings FAIL the evidence test and are recorded as passed:false rather than suppressed. In each case multiple independent sources support the finding, but no source at sourceTier 4 or above, excluding self-published material, makes an entity-specific adverse determination. For the three seed companies and Latvia the strongest evidence for the band change is structural — a byte-identical published vector shared across many entities — rather than adjudicative."
+  },
+  "proposals_updating_existing_queue_entries": [],
+  "open_proposal_collisions_resolved": [
+    {
+      "slug": "wandercraft",
+      "outcome": "CONFIRM, no second proposal, existing queue entry NOT modified",
+      "reason": "The scanner 2026-08-11 Eve FDA clearance evidence was already considered by the 2026-08-17 assessment, which cites it at subdimensions E1, E2, EQ1 and B2. Reproduced evidence, not new. The open 83.0 to 46.2 flag-for-review proposal stands unchanged."
+    }
+  ],
+  "scanner_corrections": [
+    {
+      "entity": "Latvia",
+      "type": "evidence-date — SCANNER WAS WRONG",
+      "detail": "Scanner evidence_date 2026-08-06 is incorrect. The Vilkatis/Werewolf border operation launched 2026-08-11 per the Latvian Ministry of Defence, Euronews and Bloomberg. No 6 August event is corroborated by any source located. The scanner 9,310 interception figure is also superseded by the official 9,521."
+    },
+    {
+      "entity": "Harvard University",
+      "type": "evidence-date — NO CONFLICT",
+      "detail": "The Stearns ruling is dated 2026-08-13 (Harvard Crimson, URL path /2026/8/13/). The NPR URL dated 2026-08-14 is a next-day report of the same event, not a second event. Conduct date 2026-08-13 confirmed."
+    },
+    {
+      "entity": "Wandercraft",
+      "type": "future-date verification — GENUINE",
+      "detail": "The 2026-09-17 date is a genuinely scheduled future action: the US commercial launch of Eve at the Cure campus in New York City with the United Spinal Association. Not a misdated past event. Not scored."
+    },
+    {
+      "entity": "Oracle Corporation",
+      "type": "future-date verification — GENUINE",
+      "detail": "1 September 2026 is a genuinely scheduled future date: the start of the Oracle fiscal second quarter, before which the reported payroll reduction is planned. Not a misdated past event. Scored as a plan, not a completed action."
+    },
+    {
+      "entity": "Wandercraft",
+      "type": "inherited date-hygiene error — CORRECTED",
+      "detail": "The 2026-08-17 assessment recorded the MobiHealthNews Eve item with a placeholder date of 2025-01-01, its default for undated sources. The correct date is 2026-08-11. Corrected in this record; no score change results."
+    },
+    {
+      "entity": "Arkansas",
+      "type": "evidence-date — CONDUCT DATE DIFFERS FROM FILING DATE",
+      "detail": "Scanner evidence_date 2026-08-12 is the lawsuit filing date. The underlying conduct date is 2026-08-01, when the traffic stop occurred near Manila in Mississippi County. Both are in window; the conduct date governs."
+    },
+    {
+      "entity": "Oracle Corporation",
+      "type": "evidence correction — SCALE OVERSTATED IN THE EXISTING BASELINE",
+      "detail": "The 2026-06-14 applied change cited 30,000 layoffs at about 18% of workforce. Oracle own fiscal-2026 disclosure records 21,000 at 13%. The correct figure is LOWER than the one used to set the current score. Recorded because it argues AGAINST deepening the score, not for it."
+    },
+    {
+      "entity": "Lagos",
+      "type": "attribution — SCANNER EVENT REJECTED AS ENTITY CONDUCT",
+      "detail": "The scanner flagged the 2026-08-05 protest dispersed with tear gas by security operatives. Policing in Nigeria is a FEDERAL function; the Nigeria Police Force does not report to Lagos State. That dispersal is NOT scored as the city entity conduct. The proposal rests instead on the Lagos State Government own waterfront demolition programme."
+    },
+    {
+      "entity": "Thailand",
+      "type": "attribution — THIRD-STATE HARM SEPARATED",
+      "detail": "The danger the Karen villagers face in Myanmar is created by Myanmar and is NOT scored against Thailand. Every link in the raid, arrest, detention and proposed removal chain is Thai conduct and IS scored."
+    },
+    {
+      "entity": "Haiti",
+      "type": "attribution — NON-STATE HARM SEPARATED",
+      "detail": "The Gros-Morne killings were carried out by the Kokorat San Ras gang, a non-state armed group. Gang violence is not scored against the Haitian state; only the state response is scored. Attribution-hold maintained."
+    },
+    {
+      "entity": "Lebanon",
+      "type": "attribution — CONFLICT-CAUSED HARM SEPARATED",
+      "detail": "Displacement and food insecurity are conflict-caused, not the product of Lebanese state decisions. The attribution-hold recorded on 2026-07-18 is maintained; only the state own response is scored."
+    },
+    {
+      "entity": "Zambia",
+      "type": "attribution — BOTH DIRECTIONS",
+      "detail": "The killing of a polling agent was by persons unknown, not the state. What is scored is the state response of nine arrests, credited as a positive. The vague pre-election laws ARE state conduct and are scored against Zambia."
+    },
+    {
+      "entity": "Arkansas",
+      "type": "attribution — CONFIRMED CORRECT",
+      "detail": "The Arkansas State Police is a STATE agency, not federal or municipal. Attribution holds and the incident is scored against Arkansas."
+    },
+    {
+      "entity": "Tenet Healthcare",
+      "type": "attribution — FEDERAL POLICY SEPARATED",
+      "detail": "The expiry of ACA subsidies is federal policy and is not scored against Tenet. What is scored is that Tenet has published no plan to hold coverage for affected patients."
+    },
+    {
+      "entity": "Chad, Paraguay, Sri Lanka, Kenya, Wandercraft",
+      "type": "undated-source discipline",
+      "detail": "Each carried at least one undated scanner source: bssnews.net, telesurtv.net, srilankabrief.org, k24.digital and massdevice.com respectively. Every undated source was DISREGARDED and replaced with, or corroborated by, at least two independently dated sources before any score movement."
+    }
+  ],
+  "additional_findings": [
+    {
+      "type": "SEED-CLUSTER DISCOVERY IN THE COUNTRIES INDEX — NOT PREVIOUSLY FLAGGED",
+      "detail": "The Latvian published vector {3.5,3.5,3.5,3,4,3.5,3.5,3.5} is byte-identical to those of the Czech Republic (rank 28), Lithuania (rank 31) and Slovenia (rank 33). This is a countries-index analogue of the Fortune-500 60.9 seed cluster. RECOMMENDATION: extend the de-seeding programme to the Czech Republic, Lithuania and Slovenia."
+    },
+    {
+      "type": "rotation-state rank divergence — PRE-EXISTING, SYSTEMIC, DELIBERATELY NOT CORRECTED",
+      "detail": "622 of 1,222 matched entities carry a rotation-state rank that differs from the published index rank. This is far beyond the 20-entity scope of this cycle, and correcting only these 20 would make the file less internally consistent. The composite and band fields matched published values for all 20 assessed entities, so no drift correction was required there. Flagged for coordinator-level repair."
+    },
+    {
+      "type": "CALIBRATION FLAG — recorded as a note, NOT encoded as a score change",
+      "detail": "Rigorous application of the absence-of-disclosure convention lands Paraguay at 20.6, below Guatemala (23.4) and level with Honduras (20.3). The Paraguayan institutional record does not obviously belong there. Per anti-false-positive rule 5, this is recorded as a cohort-calibration question for meta-level review of the Latin-America band, NOT as a one-off score change. Paraguay is confirmed at 25.0."
+    },
+    {
+      "type": "math-hygiene",
+      "detail": "All 20 published dimension vectors reconstruct EXACTLY to their published composites under the canonical computeCompositeFromDimensions formula in site/scripts/lib/scoring.mjs. Zero math-hygiene issues found."
+    },
+    {
+      "type": "partial sidecars",
+      "detail": "Seventeen of twenty entities have a subdimension sidecar. Three are omitted entirely (Haiti, Lebanon, Wandercraft) because no subdimension was re-scored. Four are partial, containing only the dimensions actually re-scored: Chad (ACC only), Thailand (EMP, EQU, BND), Zambia (AWR, INT) and Arkansas (EQU, ACC)."
+    }
+  ],
+  "errors": []
+}

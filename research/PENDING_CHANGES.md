@@ -9153,3 +9153,167 @@ None generated tonight. (Seven standard proposals — Becton Dickinson, Ecuador,
 - Total pending proposals in queue after tonight: **14** (12 carried forward untouched + Cerebras Systems + Cognition AI, both flag-for-review, filed tonight). OpenAI's existing proposal (`openai-2026-07-31.json`) was updated in place with proposed scores unchanged at 22.5 -- no net-new queue entry. Carnegie Mellon University and Tunisia both reproduce evidence already on file in existing proposals without filing new ones. India's finding is new evidence but sub-threshold, no proposal generated.
 - Out of scope for this cycle: `research/SAHEL_BAND_CALIBRATION_2026-08-13.md` (Mali/Niger/Chad uniform-seed calibration study, dated 2026-08-13, completed after this cycle) is NOT reflected in this log or in the public briefing, per explicit instruction -- disclosure is a founder editorial decision.
 - Validation: `validate-daily-briefings.mjs` 74/74 PASS; `lint-daily-briefings.mjs` 76 files clean (0 forbidden phrases/status/pipeline keys) after one round of fixes. Published indexes untouched. No proposals applied.
+
+---
+
+## 2026-08-18 -- GAP-COVERAGE CYCLE | 8 New Proposals (5 Band Crossings, 3 Within-Band) | 12 Confirmations | 20 Assessed | 15 Scanner Corrections | First Filing Under the Sub-Threshold Band-Crossing Clause (Lagos)
+
+### Summary -- 2026-08-18
+
+**GAP-COVERAGE CYCLE.** Seven days were uncovered between the 2026-08-11 catch-up cycle and tonight (2026-08-12 through 2026-08-18). Tonight's scan used a 14-day lookback (2026-08-04 to 2026-08-18) to cover the gap with a complete, non-overlapping evidence picture. 20 entities assessed (15 priority, 5 rotation), 8 change proposals generated, 12 confirmations, 0 errors. **Zero scores applied tonight.**
+
+**QUEUE WAS EMPTY ENTERING TONIGHT.** All 14 proposals carried forward from the 2026-08-11 digest, plus Mali and Niger from the separate Sahel calibration study, were applied on 2026-08-16 (16 total, founder-approved override batch -- see `APPLIED_CHANGES.md` `## 2026-08-16`). A structural cleanup on 2026-08-17 merged a duplicate Fortune-500 record (Automatic Data Process into ADP, no score change). **Tonight's 8 proposals are therefore the entire pending queue.**
+
+**LAGOS IS THE FIRST PROPOSAL EVER FILED UNDER THE SUB-THRESHOLD BAND-CROSSING CLAUSE.** Its -3.4 delta is below the standard 5.0-point filing trigger, but the movement crosses the published band line (Developing to Critical), and the filing rule (`composite-delta >= 5.0 OR assessed band differs from published band at any delta`) requires filing regardless of delta size. Precedent: the 2026-08-16 Djibouti/Mauritania cluster at -2.8. Lagos is also the **only one of five band crossings filed tonight to pass the band-crossing evidence test** -- on a UN OHCHR press release naming the Lagos State Government's demolition programme directly. The proposal explicitly rejects the scanner's original trigger (a 2026-08-05 tear-gassing by federal police) as wrong-entity attribution; policing is a federal function in Nigeria, not a Lagos State one.
+
+**THE BAND-CROSSING EVIDENCE TEST FAILED ON 4 OF 5 CROSSINGS AND WAS RECORDED HONESTLY, NOT SUPPRESSED.** Latvia, HP Inc., Marriott International and MetLife all cross bands on tonight's proposed scores, but none has an independent, non-self-published source at tier 4+ making an entity-specific adverse determination. In each case the strongest evidence for the movement is structural -- a published dimension vector byte-identical to dozens of peer entities -- not adjudicative. All four are filed with `band_change_evidence_test.passed: false` explicitly recorded in the proposal file, per instruction not to suppress a failed test.
+
+**THREE PROPOSALS ARE PLACEHOLDER CORRECTIONS, NOT CONDUCT FINDINGS.** MetLife (60.9 -> 33.1), HP Inc. (60.9 -> 42.5) and Marriott International (60.9 -> 44.4) were all published at an identical never-assessed seed value shared by 23 Fortune-500 companies. These are first measurements of a placeholder, not evidence that the three companies got worse. MetLife carries the lowest confidence of the eight and the largest delta (-27.8); the proposal file explicitly recommends a targeted evidence pass on state insurance department complaint indices and NAIC complaint ratios before any application decision.
+
+**FIVE PROPOSALS REST ON A GENUINE, INDIVIDUAL ASSESSMENT:** Home Depot (57.8 -> 41.3, unique vector, first pipeline assessment), Latvia (62.5 -> 48.8, first individual assessment plus a real border-operation finding), Washington University in St. Louis (50.8 -> 41.9, first assessment, EEOC suit), Tenet Healthcare (37.5 -> 31.9, first assessment, low confidence), and Lagos (20.3 -> 16.9, first assessment, band-crossing clause).
+
+**SELF-CORRECTION IS AGAIN THE STRONGEST STORY.** Latvia -- the scanner was wrong: its claimed 2026-08-06 evidence date is unsupported; Operation Vilkatis/Werewolf launched 2026-08-11 per the Latvian Ministry of Defence, Euronews and Bloomberg, and the scanner's 9,310 interception figure is superseded by the official 9,521. Oracle -- a correction that argues AGAINST a harsher score: a June baseline cited 30,000 layoffs (~18%); Oracle's own filings say 21,000 (13%), recorded even though it weakens the case for a downgrade. Lagos, Thailand, Haiti, Lebanon and Zambia all required separating third-party harm from entity conduct. Wandercraft was flagged on FDA-clearance evidence already counted in its 2026-08-17 assessment; reproduced, not new, so it was confirmed rather than double-counted and no duplicate queue entry was created. 11 candidates were dropped at the scan stage, including two that resolved to August **2025** rather than 2026 (a DRC/MONUSCO item and a Sudan/AllAfrica-republished UN Geneva item, both traced to their original 2025 URLs).
+
+**A NEW PLACEHOLDER CLUSTER WAS DISCOVERED IN THE COUNTRIES INDEX, UNPROMPTED.** Latvia's published dimension vector {3.5,3.5,3.5,3,4,3.5,3.5,3.5} is byte-identical to the Czech Republic (rank 28), Lithuania (rank 31) and Slovenia (rank 33) -- a countries-index analogue of the Fortune-500 60.9 seed cluster. Recommend extending the de-seeding programme to those three entities.
+
+**HAITI NEAR THE FLOOR.** Confirmed at 5.0 of 100 (published 4.7), one of the lowest scores in the countries index, with the Gros-Morne gang attack (7-8 August 2026) scored as non-state harm and not counted against the Haitian state.
+
+---
+
+### High Priority -- 2026-08-18 (Band Change or Delta >15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Evidence Test | Date | File |
+|--------|-------|-----------|----------|-------|------------|--------------|----------------|------|------|
+| Lagos | global-cities | 20.3 | 16.9 | -3.4 | medium | Yes -- Developing to Critical (filed under sub-threshold clause) | **PASSED** (UN OHCHR, tier 5) | 2026-08-18 | [lagos](change-proposals/lagos.json) |
+| MetLife | fortune-500 | 60.9 | 33.1 | -27.8 | **low** | Yes -- Established to Developing | FAILED (recorded honestly) | 2026-08-18 | [metlife](change-proposals/metlife.json) |
+| HP Inc. | fortune-500 | 60.9 | 42.5 | -18.4 | medium | Yes -- Established to Functional | FAILED (recorded honestly) | 2026-08-18 | [hp-inc](change-proposals/hp-inc.json) |
+| Home Depot | fortune-500 | 57.8 | 41.3 | -16.5 | medium | No (Functional sustained) | n/a | 2026-08-18 | [home-depot](change-proposals/home-depot.json) |
+| Marriott International | fortune-500 | 60.9 | 44.4 | -16.5 | medium | Yes -- Established to Functional | FAILED (recorded honestly) | 2026-08-18 | [marriott-international](change-proposals/marriott-international.json) |
+| Latvia | countries | 62.5 | 48.8 | -13.7 | medium | Yes -- Established to Functional | FAILED (recorded honestly) | 2026-08-18 | [latvia](change-proposals/latvia.json) |
+
+### Standard -- 2026-08-18 (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Washington University in St. Louis | universities | 50.8 | 41.9 | -8.9 | medium | 2026-08-18 | [washington-university-in-st-louis](change-proposals/washington-university-in-st-louis.json) |
+| Tenet Healthcare | fortune-500 | 37.5 | 31.9 | -5.6 | low | 2026-08-18 | [tenet-healthcare](change-proposals/tenet-healthcare.json) |
+
+### Confirmations -- 2026-08-18 (12 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Harvard University | universities | 52.3 | 53.8 | +1.5 | Federal antisemitism suit dismissed 2026-08-13; graduate-worker treatment holds Boundaries down |
+| Wandercraft | robotics-labs | 83.0 | 46.2 | -36.8 | REPRODUCED EVIDENCE -- already scored 2026-08-17; existing 83.0->46.2 proposal stands, no second filing |
+| Oracle Corporation | fortune-500 | 14.7 | 15.0 | +0.3 | Layoff figure corrected from 30,000 (~18%) to 21,000 (13%) -- argues against a harsher score |
+| Chad | countries | 10.9 | 11.2 | +0.3 | President Deby pardoned Succes Masra and 8 others; convictions/disqualification intact |
+| Paraguay | countries | 25.0 | 20.6 | -4.4 | Below filing trigger; Latin-America cohort calibration question recorded, not a one-off change |
+| Lebanon | countries | 17.2 | 18.1 | +0.9 | Food-insecurity harm is conflict-caused; attribution-hold maintained |
+| Sri Lanka | countries | 34.4 | 30.0 | -4.4 | Prison overcrowding from own anti-drug crackdown; Justice Minister accepted responsibility, legislated bail reform |
+| Thailand | countries | 32.8 | 29.4 | -3.4 | Karen village raid/proposed deportation to Myanmar; Myanmar-side danger not scored against Thailand |
+| Zambia | countries | 35.9 | 31.9 | -4.0 | Pre-election crackdown on assembly/media; state also arrested 9 over polling-agent killing |
+| Haiti | countries | 4.7 | 5.0 | +0.3 | Near the floor; gang violence is non-state harm, attribution-hold maintained |
+| Kenya | countries | 35.9 | 32.5 | -3.4 | 6 activists arrested 2026-08-17; IPOA investigates publicly but lacks enforcement teeth |
+| Arkansas | us-states | 33.1 | 31.9 | -1.2 | State trooper punched 18-year-old during traffic stop; trooper remains on active duty |
+
+---
+
+### Scanner Corrections -- 2026-08-18 (15 total)
+
+| Entity | Type | Detail |
+|--------|------|--------|
+| Latvia | evidence-date -- SCANNER WAS WRONG | Claimed 2026-08-06 unsupported; Operation Vilkatis/Werewolf launched 2026-08-11 per Latvian MoD, Euronews, Bloomberg; interception figure corrected 9,310 -> 9,521 |
+| Harvard University | evidence-date -- no conflict | Stearns ruling dated 2026-08-13 confirmed; NPR 2026-08-14 URL is next-day coverage of the same event |
+| Wandercraft | future-date verification -- genuine | 2026-09-17 US commercial launch of Eve is a genuinely scheduled future event, not a misdated past one |
+| Oracle Corporation | future-date verification -- genuine | 2026-09-01 fiscal Q2 start is genuinely scheduled; planned reduction scored as a plan, not a completed action |
+| Wandercraft | inherited date-hygiene error -- corrected | 2026-08-17 assessment's MobiHealthNews Eve item placeholder date (2025-01-01) corrected to 2026-08-11; no score change |
+| Arkansas | evidence-date differs from conduct date | Scanner's 2026-08-12 is the lawsuit filing date; the traffic stop occurred 2026-08-01; conduct date governs |
+| Oracle Corporation | evidence correction -- scale overstated in existing baseline | 2026-06-14 applied change cited 30,000 layoffs (~18%); Oracle's own disclosure records 21,000 (13%) -- argues against deepening the score |
+| Lagos | attribution -- scanner event rejected as entity conduct | 2026-08-05 tear-gassing by federal police is NOT scored as Lagos State conduct; proposal rests on the state's own demolition programme |
+| Thailand | attribution -- third-state harm separated | Danger Karen villagers face in Myanmar is Myanmar's, not Thailand's; the raid/detention/removal chain is Thai conduct |
+| Haiti | attribution -- non-state harm separated | Gros-Morne killings by the Kokorat San Ras gang are not scored against the Haitian state |
+| Lebanon | attribution -- conflict-caused harm separated | Displacement/food insecurity are conflict-caused, not Lebanese state decisions; attribution-hold maintained |
+| Zambia | attribution -- both directions | Polling-agent killing (unknown assailant) not scored against the state; vague pre-election laws ARE state conduct |
+| Arkansas | attribution -- confirmed correct | Arkansas State Police is a state agency; attribution holds |
+| Tenet Healthcare | attribution -- federal policy separated | ACA subsidy expiry is federal policy, not scored against Tenet; only the absence of a coverage plan is scored |
+| Chad, Paraguay, Sri Lanka, Kenya, Wandercraft | undated-source discipline | Each carried an undated scanner source (bssnews.net, telesurtv.net, srilankabrief.org, k24.digital, massdevice.com); each disregarded and replaced with/corroborated by 2+ dated sources |
+
+---
+
+### Open Calibration Flags -- 2026-08-18
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Lagos band-crossing proposal (20.3 -> 16.9, filed under sub-threshold clause, PASSED evidence test) | New tonight, pending, not applied | Open since 2026-08-18 |
+| Latvia band-crossing proposal (62.5 -> 48.8, FAILED evidence test) | New tonight, pending, not applied | Open since 2026-08-18 |
+| HP Inc. band-crossing proposal (60.9 -> 42.5, FAILED evidence test) | New tonight, pending, not applied | Open since 2026-08-18 |
+| Marriott International band-crossing proposal (60.9 -> 44.4, FAILED evidence test) | New tonight, pending, not applied | Open since 2026-08-18 |
+| MetLife band-crossing proposal (60.9 -> 33.1, LOW CONFIDENCE, FAILED evidence test, largest delta of the batch) | New tonight, pending, not applied; recommend targeted NAIC/state-insurance evidence pass before any decision | Open since 2026-08-18 |
+| Home Depot conduct/first-baseline proposal (57.8 -> 41.3) | New tonight, pending, not applied | Open since 2026-08-18 |
+| Washington University in St. Louis conduct downgrade (50.8 -> 41.9) | New tonight, pending, not applied | Open since 2026-08-18 |
+| Tenet Healthcare conduct proposal (37.5 -> 31.9, LOW CONFIDENCE, clears trigger by 0.6pt) | New tonight, pending, not applied | Open since 2026-08-18 |
+| Countries-index placeholder cluster (Latvia/Czech Republic/Lithuania/Slovenia byte-identical vectors) | New tonight; needs coordinator-level de-seeding decision, mirroring the Fortune-500 and Sahel precedents | Open since 2026-08-18 |
+| Rank drift: 622 of 1,222 matched entities disagree with published index rank | Carried forward from 2026-08-01; far beyond this cycle's scope | Open since 2026-08-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~54 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~38 days |
+
+---
+
+### Operational Notes -- 2026-08-18
+
+- Scan: 1,289 entities scanned (down from 1,290 after the 2026-08-17 ADP/Automatic Data Process merge); 274 searches performed; gate exit clean; 14-day lookback (2026-08-04 to 2026-08-18) covering the 7-day gap since 2026-08-11.
+- Assessor runtime: 2026-08-18T10:00:00Z-16:40:00Z (~6h40m); 20 entities assessed (15 priority, 5 rotation); 8 change proposals; 12 confirmations; 17 of 20 subdimension sidecars written (Haiti, Lebanon, Wandercraft omitted -- no subdimension re-scored).
+- Math hygiene: all 20 published dimension vectors reconstruct exactly to their published composites under `computeCompositeFromDimensions`. Zero math-hygiene issues found tonight.
+- 14 robotics-labs entities under an independent, concurrent study were scanned normally but excluded from this cycle's assessment (`recommendation: excluded_concurrent_study`).
+- 51 entities carrying open proposals from the 2026-08-16/17 calibration programme were screened to a higher bar (genuinely new, dated, in-window evidence only); none surfaced qualifying evidence and none were re-flagged.
+- Total pending proposals in queue after tonight: **8** (queue was empty entering the cycle; all 8 are new tonight).
+- Validation: `validate-daily-briefings.mjs` 75/75 PASS; `lint-daily-briefings.mjs` 77 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposals applied. Nothing committed.
+
+---
+
+## 2026-08-19 — QUEUE ACCOUNTING CORRECTION (coordinator)
+
+**The 2026-08-18 entry above understates the pending queue. It records 8 and states the
+queue was empty entering the cycle. The true figure is 72.**
+
+### What happened
+
+`PENDING_CHANGES.md` is written by the digest stage, which sees only the nightly pipeline
+lineage: scanner → assessor → digest. Between 2026-08-16 and 2026-08-18 a separate
+calibration programme ran six seed-cluster de-seeding studies through `benchmark-research`.
+Those studies wrote **64 proposals directly to `research/change-proposals/`** and never
+passed through a digest, so no digest ever recorded them here.
+
+The digest's arithmetic was correct for the lineage it can observe. The defect is structural:
+**a proposal can enter the queue by a path that never updates the queue's own log.**
+
+### True queue composition — 72 pending
+
+| Source | Assessment date | Count |
+|---|---|---:|
+| Sahel + 20.3 country de-seeding studies | 2026-08-16 | 20 |
+| robotics + ai-labs de-seeding studies | 2026-08-17 | 44 |
+| Nightly cycle (recorded above) | 2026-08-18 | 8 |
+| **Total** | | **72** |
+
+Of the 64 calibration proposals, all are `flag-for-review` / `pending` and none has been
+applied. Their syntheses are in `research/SEED_CLUSTER_*.md` and
+`research/SAHEL_BAND_CALIBRATION_2026-08-13.md`.
+
+### Why this matters
+
+This log is the artefact a reviewer reads to decide what to approve. Read literally on
+2026-08-18 it would have hidden 64 proposals — including every band correction in the
+robotics and ai-labs indexes, and 10 of the 12 countries de-seeded from the 20.3 cluster.
+
+### Remediation
+
+1. Treat `research/change-proposals/*.json` with `status: "pending"` as the authoritative
+   queue. This log is derived and can lag.
+2. Any future study that files proposals outside the nightly lineage must append its own
+   entry here, or the digest must be given a whole-directory reconciliation step rather than
+   counting only its own cycle.
+3. Recommended: add a queue-count assertion to the validation gate so a stated total that
+   disagrees with the directory fails loudly instead of silently.
+
+No score, proposal or assessment was modified by this correction. It amends the record only.
+

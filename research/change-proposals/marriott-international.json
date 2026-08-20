@@ -1,0 +1,760 @@
+{
+  "entity": "Marriott International",
+  "slug": "marriott-international",
+  "index": "fortune-500",
+  "assessment_date": "2026-08-18",
+  "assessment_file": "research/assessments/marriott-international-2026-08-18.md",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 44,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 44.4,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.6,
+      "ACT": 3.2,
+      "EQU": 2.6,
+      "BND": 2.6,
+      "ACC": 2.6,
+      "SYS": 3,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -16.5,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": false,
+    "explanation": "FAILS HONESTLY. Independent sources include UNITE HERE (worker testimony, tier 3), The San Francisco Standard and Hotel Dive (tier 2). The only tier-4 material is Marriott's own Serve 360 report and Modern Slavery Statement, which are self-published and excluded by the test. The strongest evidence for the band change is structural: the published vector is byte-identical across 22 Fortune-500 companies. Recorded as passed:false rather than suppressing the filing.",
+    "sources_at_tier4_or_above": []
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "SEED-BASELINE RECALIBRATION: Marriott's published 60.9 vector is byte-identical across 22 Fortune-500 companies, verified against fortune-500.json. It was never individually measured.",
+    "Marriott has trained more than 1.2 million managed and franchised associates in human trafficking awareness since 2016, and in 2024 commissioned a third-party human rights consultancy to map risks across its value chain, reporting to a standing Human Rights Council. Action scores 3.20 of 5.",
+    "The programme for guests and suppliers is stronger than the deal for its own staff. About 2,000 Marriott workers in San Francisco struck for nearly three months over pay and understaffing, 1,500 of them continuously.",
+    "They then ratified a four-year contract by 99.8% - one creating new protections against understaffing. The remedy existed; it took a three-month strike to obtain it. AB1 and I1 both score 2 of 5.",
+    "Strike action involving Marriott workers continued into 2026 in Philadelphia."
+  ],
+  "evidence": [
+    {
+      "quote": "Marriott International Releases Annual Serve 360 Report",
+      "claim": "Marriott publishes an annual Serve 360 report on environmental, social and governance progress against stated goals.",
+      "source": "Marriott International",
+      "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Marriott International Highlights ESG Progress in Annual Serve 360 Report",
+      "claim": "Marriott has trained more than 1.2 million managed and franchised associates in human trafficking awareness since 2016, and conducted a 2024 human rights mapping exercise with a third-party consultancy reporting to its Human Rights Council.",
+      "source": "Hospitality Net",
+      "url": "https://www.hospitalitynet.org/news/4122845.html",
+      "publishedDate": "2025-07-02",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Marriott Workers Vote by 99.8% to Ratify New Contract; Strikes Continue at Hilton and Hyatt",
+      "claim": "About 2,000 Marriott workers in San Francisco ratified a four-year contract by 99.8% after a strike, creating new protections against understaffing.",
+      "source": "UNITE HERE",
+      "url": "https://unitehere.org/press-releases/marriott-workers-vote-by-99-8-to-ratify-new-contract-strikes-continue-at-hilton-and-hyatt/",
+      "publishedDate": "2024-12-19",
+      "sourceTier": 3
+    },
+    {
+      "quote": "San Francisco Hotel Strike Expands as 500 Workers at San Francisco Marriott Marquis Walk Off the Job",
+      "claim": "The San Francisco hotel strike expanded to include workers at the Marriott Marquis.",
+      "source": "UNITE HERE",
+      "url": "https://unitehere.org/press-releases/san-francisco-hotel-strike-expands-as-500-workers-at-san-francisco-marriott-marquis-walk-off-the-job/",
+      "publishedDate": "2024-11-25",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Biggest SF hotel chain makes deal with union to end strike",
+      "claim": "Marriott settled the San Francisco dispute after a strike lasting nearly three months.",
+      "source": "The San Francisco Standard",
+      "url": "https://sfstandard.com/2024/12/19/marriot-hotel-strike/",
+      "publishedDate": "2024-12-19",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Marriott, Hilton workers strike in Philadelphia",
+      "claim": "Strike action involving Marriott workers continued into 2026 in Philadelphia.",
+      "source": "Hotel Dive",
+      "url": "https://www.hoteldive.com/news/union-hotel-workers-strike-philadelphia/802157/",
+      "publishedDate": "2026-02-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Modern Slavery Statement",
+      "claim": "Marriott publishes a Modern Slavery Statement setting out the scope and limits of its anti-trafficking programme.",
+      "source": "Marriott International",
+      "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+      "publishedDate": "2024-06-01",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2025/07/2025AroundTheWorld.pdf",
+          "date": "2025-07-01",
+          "quote": "2025 Serve 360 Report: Around the World Highlights"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hospitalitynet.org/news/4122845.html",
+          "date": "2025-07-02",
+          "quote": "Marriott International Highlights ESG Progress in Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/marriott-workers-vote-by-99-8-to-ratify-new-contract-strikes-continue-at-hilton-and-hyatt/",
+          "date": "2024-12-19",
+          "quote": "Marriott Workers Vote by 99.8% to Ratify New Contract; Strikes Continue at Hilton and Hyatt"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/san-francisco-hotel-strike-expands-as-500-workers-at-san-francisco-marriott-marquis-walk-off-the-job/",
+          "date": "2024-11-25",
+          "quote": "San Francisco Hotel Strike Expands as 500 Workers at San Francisco Marriott Marquis Walk Off the Job"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2025/07/2025AroundTheWorld.pdf",
+          "date": "2025-07-01",
+          "quote": "2025 Serve 360 Report: Around the World Highlights"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hospitalitynet.org/news/4122845.html",
+          "date": "2025-07-02",
+          "quote": "Marriott International Highlights ESG Progress in Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2025/07/2025AroundTheWorld.pdf",
+          "date": "2025-07-01",
+          "quote": "2025 Serve 360 Report: Around the World Highlights"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hospitalitynet.org/news/4122845.html",
+          "date": "2025-07-02",
+          "quote": "Marriott International Highlights ESG Progress in Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.workersofmarriott.org/campaigns/united-states/",
+          "date": "2026-01-01",
+          "quote": "UNITED STATES - Marriott Worldwide Workers Together!"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/san-francisco-hotel-strike-expands-as-500-workers-at-san-francisco-marriott-marquis-walk-off-the-job/",
+          "date": "2024-11-25",
+          "quote": "San Francisco Hotel Strike Expands as 500 Workers at San Francisco Marriott Marquis Walk Off the Job"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2025/07/2025AroundTheWorld.pdf",
+          "date": "2025-07-01",
+          "quote": "2025 Serve 360 Report: Around the World Highlights"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.workersofmarriott.org/campaigns/united-states/",
+          "date": "2026-01-01",
+          "quote": "UNITED STATES - Marriott Worldwide Workers Together!"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/san-francisco-hotel-strike-expands-as-500-workers-at-san-francisco-marriott-marquis-walk-off-the-job/",
+          "date": "2024-11-25",
+          "quote": "San Francisco Hotel Strike Expands as 500 Workers at San Francisco Marriott Marquis Walk Off the Job"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/marriott-workers-vote-by-99-8-to-ratify-new-contract-strikes-continue-at-hilton-and-hyatt/",
+          "date": "2024-12-19",
+          "quote": "Marriott Workers Vote by 99.8% to Ratify New Contract; Strikes Continue at Hilton and Hyatt"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2024/12/19/marriot-hotel-strike/",
+          "date": "2024-12-19",
+          "quote": "Biggest SF hotel chain makes deal with union to end strike"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2025/07/2025AroundTheWorld.pdf",
+          "date": "2025-07-01",
+          "quote": "2025 Serve 360 Report: Around the World Highlights"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://sfstandard.com/2024/12/19/marriot-hotel-strike/",
+          "date": "2024-12-19",
+          "quote": "Biggest SF hotel chain makes deal with union to end strike"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://serve360.marriott.com/wp-content/uploads/2024/06/Marriott_Statement_2024.pdf",
+          "date": "2024-06-01",
+          "quote": "Modern Slavery Statement"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hoteldive.com/news/union-hotel-workers-strike-philadelphia/802157/",
+          "date": "2026-02-01",
+          "quote": "Marriott, Hilton workers strike in Philadelphia"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://unitehere.org/press-releases/marriott-workers-vote-by-99-8-to-ratify-new-contract-strikes-continue-at-hilton-and-hyatt/",
+          "date": "2024-12-19",
+          "quote": "Marriott Workers Vote by 99.8% to Ratify New Contract; Strikes Continue at Hilton and Hyatt"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-releases-annual-serve-360-report",
+          "date": "2025-07-01",
+          "quote": "Marriott International Releases Annual Serve 360 Report"
+        }
+      ]
+    }
+  ],
+  "notes": "SEED-BASELINE RECALIBRATION - NOT A CONDUCT DOWNGRADE. Marriott has never been individually assessed (last_assessed: null) and sits in the 22-company byte-identical 60.9 cluster. Of the three 60.9 seed companies assessed this cycle, Marriott has the strongest documented social programme and lands highest of the three. Strike action is WORKER conduct; what is scored is Marriott's RESPONSE to it. Band-crossing evidence test recorded as passed:false."
+}

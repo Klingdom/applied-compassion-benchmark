@@ -1,0 +1,754 @@
+{
+  "entity": "MetLife",
+  "slug": "metlife",
+  "index": "fortune-500",
+  "assessment_date": "2026-08-18",
+  "assessment_file": "research/assessments/metlife-2026-08-18.md",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 46,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 33.1,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2,
+      "ACT": 2.4,
+      "EQU": 2.2,
+      "BND": 2.2,
+      "ACC": 2.2,
+      "SYS": 2.6,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -27.8,
+  "band_change": true,
+  "filing_clause": "composite-delta >= 5.0 AND band-change",
+  "band_change_evidence_test": {
+    "result": "FAIL",
+    "requirement": ">=2 independent sources with >=1 at sourceTier >= 4, excluding self-published corporate material",
+    "passed": false,
+    "explanation": "FAILS HONESTLY, and this is the most important caveat on the proposal. Bloomberg Law (tier 4 for court-reported facts) and PLANADVISER (tier 3) independently report the $23 million settlement, but NO independent source at tier 4 or above makes an adverse determination about MetLife's conduct that would support a two-band move. The score falls chiefly because MetLife publishes almost nothing about claims handling - an ABSENCE OF DISCLOSURE scored at the low anchor - not because harm was independently established. Recorded as passed:false; this proposal should not be applied without a targeted evidence-gathering pass.",
+    "sources_at_tier4_or_above": [
+      "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial"
+    ]
+  },
+  "confidence": "low",
+  "key_evidence": [
+    "SEED-BASELINE RECALIBRATION: MetLife's published 60.9 vector is byte-identical across 22 Fortune-500 companies, verified against fortune-500.json. It was never individually measured.",
+    "MetLife publishes almost nothing about the thing it does. It pays insurance claims and releases no data on approvals, denials, complaint volumes or claimant experience. Sixteen of forty subdimensions sit at the low anchor for ABSENCE OF DISCLOSURE - explicitly NOT a finding of harm.",
+    "MetLife settled a class action by more than 6,000 retirees over pension calculations for $23 million, one day before trial. The deal permanently increases monthly benefits for married retirees who began receiving them from 2013 - substantive repair, but delivered only at the point of maximum litigation pressure.",
+    "MetLife's own annual report records no material adverse findings from state insurance department examinations as of 31 December 2025, 2024 and 2023. AB3 (Transparency) scores 3 of 5 on that verifiable regulatory record.",
+    "EVIDENCE-QUALITY WARNING: searches surfaced large volumes of plaintiff-attorney marketing pages asserting denial patterns. These are commercially motivated advocacy, not evidence, and NO subdimension is scored on them."
+  ],
+  "evidence": [
+    {
+      "quote": "MetLife Settles Pension Math Class Action, Heading Off Trial",
+      "claim": "MetLife settled a class action over pension calculations one day before it was due to go to trial.",
+      "source": "Bloomberg Law",
+      "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "MetLife Strikes Class Deal Worth $23 Million Over Pension Math",
+      "claim": "The settlement is worth $23 million and covers more than 6,000 retirees, permanently increasing monthly benefits for married retirees who began receiving benefits from 2013.",
+      "source": "Bloomberg Law",
+      "url": "https://news.bloomberglaw.com/employee-benefits/metlife-strikes-class-deal-worth-23-million-over-pension-math",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "$23M Settlement Ends MetLife’s Mortality Table Case",
+      "claim": "Independent benefits trade press confirms the settlement and its subject matter.",
+      "source": "PLANADVISER",
+      "url": "https://www.planadviser.com/23m-settlement-ends-metlifes-mortality-table-case/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "2025 Annual Report",
+      "claim": "MetLife records that it received no material adverse findings from state insurance department examinations of its insurance subsidiaries as of 31 December 2025, 2024 and 2023.",
+      "source": "MetLife",
+      "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+      "publishedDate": "2026-02-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being",
+      "claim": "MetLife tailors company-paid and subsidised benefits to each market and operates a global BeWell wellbeing initiative for employees.",
+      "source": "CSRwire / MetLife",
+      "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "MetLife Unit Inks $1.8 Billion Pension Risk Transfer Deal With Kodak",
+      "claim": "Metropolitan Tower Life Insurance Co. entered a $1.8 billion pension risk transfer agreement with Eastman Kodak.",
+      "source": "AM Best",
+      "url": "https://news.ambest.com/newscontent.aspx?refnum=270169&altsrc=23",
+      "publishedDate": "2026-03-01",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://news.ambest.com/newscontent.aspx?refnum=270169&altsrc=23",
+          "date": "2026-03-01",
+          "quote": "MetLife Unit Inks $1.8 Billion Pension Risk Transfer Deal With Kodak"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/responsible-governance/",
+          "date": "2025-06-01",
+          "quote": "Responsible Governance"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+          "date": "2026-01-01",
+          "quote": "MetLife Settles Pension Math Class Action, Heading Off Trial"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+          "date": "2026-02-01",
+          "quote": "2025 Annual Report"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/sustainability/social/",
+          "date": "2025-06-01",
+          "quote": "Social Responsibility"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/sustainability/social/",
+          "date": "2025-06-01",
+          "quote": "Social Responsibility"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/responsible-governance/",
+          "date": "2025-06-01",
+          "quote": "Responsible Governance"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.planadviser.com/23m-settlement-ends-metlifes-mortality-table-case/",
+          "date": "2026-01-01",
+          "quote": "$23M Settlement Ends MetLife’s Mortality Table Case"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/sustainability/social/",
+          "date": "2025-06-01",
+          "quote": "Social Responsibility"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+          "date": "2026-02-01",
+          "quote": "2025 Annual Report"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.planadviser.com/23m-settlement-ends-metlifes-mortality-table-case/",
+          "date": "2026-01-01",
+          "quote": "$23M Settlement Ends MetLife’s Mortality Table Case"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+          "date": "2026-02-01",
+          "quote": "2025 Annual Report"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+          "date": "2026-01-01",
+          "quote": "MetLife Settles Pension Math Class Action, Heading Off Trial"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-strikes-class-deal-worth-23-million-over-pension-math",
+          "date": "2026-01-01",
+          "quote": "MetLife Strikes Class Deal Worth $23 Million Over Pension Math"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+          "date": "2026-02-01",
+          "quote": "2025 Annual Report"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.planadviser.com/23m-settlement-ends-metlifes-mortality-table-case/",
+          "date": "2026-01-01",
+          "quote": "$23M Settlement Ends MetLife’s Mortality Table Case"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-strikes-class-deal-worth-23-million-over-pension-math",
+          "date": "2026-01-01",
+          "quote": "MetLife Strikes Class Deal Worth $23 Million Over Pension Math"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/sustainability/social/",
+          "date": "2025-06-01",
+          "quote": "Social Responsibility"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/",
+          "date": "2025-06-01",
+          "quote": "MetLife Sustainability Report 2025 | Social & Climate Impact"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://news.ambest.com/newscontent.aspx?refnum=270169&altsrc=23",
+          "date": "2026-03-01",
+          "quote": "MetLife Unit Inks $1.8 Billion Pension Risk Transfer Deal With Kodak"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/responsible-governance/",
+          "date": "2025-06-01",
+          "quote": "Responsible Governance"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://s201.q4cdn.com/280976757/files/doc_financials/2025/ar/MetLife-Annual-Report-2025.pdf",
+          "date": "2026-02-01",
+          "quote": "2025 Annual Report"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+          "date": "2026-01-01",
+          "quote": "MetLife Settles Pension Math Class Action, Heading Off Trial"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/sustainability/social/",
+          "date": "2025-06-01",
+          "quote": "Social Responsibility"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://csrwire.com/press-release/metlife-2025-sustainability-report-benefits-and-well-being/",
+          "date": "2025-06-01",
+          "quote": "MetLife 2025 Sustainability Report: Benefits and Well-Being"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.planadviser.com/23m-settlement-ends-metlifes-mortality-table-case/",
+          "date": "2026-01-01",
+          "quote": "$23M Settlement Ends MetLife’s Mortality Table Case"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-18",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.metlife.com/global/impact/sustainability/report/responsible-governance/",
+          "date": "2025-06-01",
+          "quote": "Responsible Governance"
+        }
+      ]
+    }
+  ],
+  "notes": "SEED-BASELINE RECALIBRATION - NOT A CONDUCT DOWNGRADE. LOW CONFIDENCE - DO NOT APPLY WITHOUT REVIEW. MetLife has never been individually assessed (last_assessed: null) and sits in the 22-company byte-identical 60.9 cluster. This is the largest delta in the 2026-08-18 cycle (-27.8) and carries the weakest evidence base. The fall is driven overwhelmingly by ABSENCE OF DISCLOSURE about claims handling, scored at the low anchor per the cycle scoring convention, and NOT by any independently established harm. Plaintiff-attorney marketing material asserting denial patterns was EXCLUDED as commercially motivated advocacy. RECOMMENDED BEFORE ANY DECISION: a targeted evidence pass on state insurance department complaint indices, NAIC complaint ratios and any independent claims audit. Band-crossing evidence test recorded as passed:false."
+}

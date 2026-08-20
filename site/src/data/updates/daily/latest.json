@@ -1,450 +1,256 @@
 {
-  "date": "2026-08-11",
-  "generatedAt": "2026-08-13T12:00:00Z",
-  "title": "Compassion Benchmark Daily Briefing -- August 11, 2026 (Catch-Up Cycle)",
-  "headline": "A catch-up review confirmed 20 scores unchanged after catching 17 of its own factual errors first.",
-  "summary": "Compassion Benchmark's nightly review returned tonight after a ten-day pause. The founder had called for the pause, and this catch-up cycle used a wider two-week lookback window, covering July 29 through August 11. Twenty organizations were checked. Seventeen scores were confirmed unchanged. Two AI companies were flagged for a calibration review, not scored as conduct downgrades, and a separate open finding about OpenAI was updated with new evidence but left at its existing, unapplied reading. Cerebras Systems and Cognition AI had never been individually reviewed before tonight. Their published scores were generic placeholder numbers, used for every AI company the benchmark had not yet assessed one by one. A close look at Cerebras found no misconduct at all -- the large gap between its placeholder score and a real assessment measures missing disclosure, not bad behavior. Cognition AI does have a real, documented problem: it laid off 30 Windsurf employees weeks after promising them full compensation. But that evidence is a year old, so it was not counted as new. Both findings were logged for a calibration review of how the benchmark treats companies it has never assessed individually. The most important story tonight is not a score. It is what the review caught before it could become one. For the third time this year, the benchmark's own scanner mixed up a 2026 event with a nearly identical one from exactly a year earlier. This time, it attached last year's Kyiv casualty count to a 2026 strike. A citation used to support a claim about OpenAI turned out not to contain that claim at all. Google was flagged on a January settlement that fell seven months outside the review window, and a Spokane flag turned out to describe federal, not city, conduct. Sudan remains at 0 of 100, the benchmark's lowest possible score, for a second straight review. There is no room left on the scale to register further decline there.",
+  "date": "2026-08-18",
+  "generatedAt": "2026-08-19T09:00:00Z",
+  "title": "Compassion Benchmark Daily Briefing -- August 18, 2026 (Correction and Gap-Coverage Cycle)",
+  "headline": "The last briefing reported zero score changes. Sixteen scores moved days later.",
+  "summary": "Compassion Benchmark's last briefing, published August 11, told readers that no scores had changed that cycle. That was accurate at the time. Two days later, a backlog of already-reviewed findings was approved for release, and on August 16 sixteen scores moved on the live rankings. Six crossed from one performance band into another: Cerebras Systems, Microsoft AI, Baxter International and Taipei moved down from their top bands, while Uganda and Guinea-Bissau fell into the Critical band. A separate cleanup the next day found that the Fortune 500 list had counted one company twice, under two slightly different names; the duplicate was removed, cutting the list from 448 companies to 447, with no score change involved. Most of the sixteen moves were not new bad behavior. Ten were placeholder corrections -- companies and countries that had never been measured one by one, and instead shared one generic starting score with dozens of peers. Cerebras Systems is the clearest example: a dedicated review found zero evidence of wrongdoing in either direction. Its score fell because it discloses almost nothing about its own workforce, not because it did anything wrong. Tonight's own review covered the seven days since the last briefing and checked 20 organizations. It produced eight new findings and confirmed twelve scores unchanged. Three of the eight are the same kind of placeholder correction: MetLife, HP Inc. and Marriott International were all published at one identical, never-assessed starting score shared by 23 Fortune 500 companies. Five rest on a genuine, individual assessment: Home Depot, Latvia, Washington University in St. Louis, Tenet Healthcare and Lagos. Lagos is the most significant finding. It is the first case filed under a new rule that lets a small score movement cross a band line when the movement is real, even below the usual five-point filing threshold. Lagos's finding passed the benchmark's own evidence test. Findings for Latvia, HP Inc. and Marriott did not pass that test, and are published as findings that failed it rather than being dropped.",
   "pipeline": {
-    "entitiesScanned": 1290,
+    "entitiesScanned": 1289,
     "entitiesAssessed": 20,
-    "changeProposalsCount": 2,
+    "changeProposalsCount": 8,
     "scoreChangesApplied": 0,
     "bandCrossingsApplied": 0,
     "upgrades": 0,
-    "downgrades": 0,
-    "confirmations": 17,
-    "floorReinforcements": 1,
-    "firstBaselinesEstablished": 3,
-    "subdimSidecarsWritten": 18,
+    "downgrades": 2,
+    "confirmations": 12,
+    "floorReinforcements": 0,
+    "firstBaselinesEstablished": 8,
+    "subdimSidecarsWritten": 17,
     "skipped": 0,
-    "scannerCorrections": 17,
+    "scannerCorrections": 15,
     "cacheCorrections": 0,
-    "rotationStateCorrections": 4,
-    "downwardWatchFlags": 3,
+    "rotationStateCorrections": 0,
+    "downwardWatchFlags": 5,
     "upwardWatchRetracted": 0,
-    "cycleType": "catch-up-run-self-correction-and-calibration-referral",
-    "assessmentStart": "2026-08-11T02:35:00Z",
-    "assessmentEnd": "2026-08-11T06:10:00Z",
-    "queueHandling": "Twenty organizations were reviewed using a widened 14-day lookback after a ten-day pause. Seventeen scores were confirmed within the benchmark's five-point range. Two calibration referrals were filed for Cerebras Systems and Cognition AI, both never-assessed placeholder scores in the AI-labs index; neither is scored as a conduct downgrade, and neither published score has been changed. A separate, already-open finding about OpenAI was updated in place with new regulatory-response evidence; its proposed reading stays at 22.5 of 100 against a published 27.5, unchanged from July 31. Two other reviews -- Carnegie Mellon University and Tunisia -- corroborated findings already on file rather than adding new queue entries. Fourteen proposals now sit in the queue awaiting a decision."
+    "cycleType": "gap-coverage-seed-correction-and-band-crossing-clause",
+    "assessmentStart": "2026-08-18T10:00:00Z",
+    "assessmentEnd": "2026-08-18T16:40:00Z",
+    "queueHandling": "Twenty organizations were reviewed using an evidence window covering the seven days since the last briefing. Eight new findings were filed: five cross a published band line, and three hold within their published band. Twelve scores were confirmed within the benchmark's five-point range. Lagos is the first finding filed under a rule that lets a real but small score movement carry a published score across a line between bands. The published score for every entity named tonight remains unchanged."
   },
   "topSignals": [
     {
-      "title": "The Benchmark Caught Its Own Scanner Making the Same Dating Mistake for a Third Time",
-      "whyItMatters": "A nightly scan attached last year's Kyiv strike death toll to this year's strike. Catching a repeat error, not a new casualty count, is the real story -- and a warning sign about the tool itself.",
-      "description": "Russia struck Kyiv and nearby regions with missiles and drones on 5 August 2026. The benchmark's scanner described the strike as following \"a July 31, 2026 barrage on Kyiv that killed 31 and injured 179.\" That claim does not hold up. Contemporaneous reporting on the actual 31 July 2026 strike put the death toll in Kyiv at 3 people, with at least 9 killed nationwide. The larger numbers instead belong to a different strike, on 31 July 2025, exactly one year earlier. This is the third time this year the scanner has confused a 2026 event with a near-identical one from a year before, and the pattern is now tracked as an open defect needing attention, not a one-off mistake. A second scanner claim held up better: UN monitors reported on 5 August that July 2026 was the deadliest month for Ukrainian civilians since April 2022, correcting an earlier benchmark finding that had named June instead. Ukraine's own conduct -- air-raid warnings, rescue operations, shelter access -- was scored at 49.4 of 100 against a published 50, a difference of 0.6. Russia, the attacker, is not the entity being scored; Ukraine is judged only on its own protective response.",
-      "index": "countries",
-      "slug": "ukraine",
-      "severity": "medium",
-      "actionRequired": false,
-      "actionType": "documented",
-      "evidence": [
-        {
-          "claim": "Contemporaneous reporting on the 31 July 2026 Kyiv strike recorded a far smaller casualty count than the scanner's initial figure, which instead matched a separate strike exactly one year earlier.",
-          "source": "The Washington Post",
-          "url": "https://www.washingtonpost.com/world/2026/07/31/russia-ukraine-war-zelenskyy-missile-attack-ballistics/43091f78-8d50-11f1-8912-d71e69d679d7_story.html",
-          "publishedDate": "2026-07-31",
-          "sourceTier": 2
-        },
-        {
-          "quote": "July marking the deadliest month for Ukrainian civilians since April 2022",
-          "claim": "UN monitors confirmed July 2026, not June, was the deadliest month for Ukrainian civilians since the war's early phase.",
-          "source": "UN News",
-          "url": "https://news.un.org/en/story/2026/08/1168082",
-          "publishedDate": "2026-08-05",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "title": "A Never-Assessed AI Company's Placeholder Score Was Flagged for Recalibration -- Not for Misconduct",
-      "whyItMatters": "Cerebras Systems had never been individually reviewed. Its published score was a generic placeholder, and this review found zero evidence of wrongdoing -- the gap is about missing disclosure, not bad behavior.",
-      "description": "Cerebras Systems has never been individually assessed since it entered the AI-labs index. Seven of its eight published category scores are set to an identical 3.5 out of 5, the signature of a placeholder used for companies the benchmark has not yet reviewed one by one. A dedicated review covering lawsuits, labor disputes, safety incidents, regulatory action and humanitarian impact over the 14 days to 11 August 2026 found no evidence of wrongdoing in either direction. Cerebras also discloses no human-rights policy, no independently audited responsibility report and no workforce data, and the benchmark defaults to a lower reading when that kind of disclosure is simply absent. That combination -- silence rather than misconduct -- produced a reading of 38.8 of 100, more than 22 points below the published 60.9. A gap this size, built entirely on absence of evidence, is treated as a signal that the placeholder itself needs recalibrating, not as grounds to publish a conduct downgrade. The finding has been logged for a calibration review together with similar placeholder scores across the AI-labs index. Cerebras's published score is unchanged at 60.9.",
+      "title": "The Last Briefing Said Nothing Changed. Sixteen Scores Did, Six Crossing Bands.",
+      "whyItMatters": "Readers were told nothing had changed. Days later, sixteen scores moved and six crossed performance bands -- mostly because the benchmark finally measured entities it had only ever scored with a generic placeholder number.",
+      "description": "Compassion Benchmark's last briefing, published August 11, told readers that no scores had changed that cycle. That was accurate at the time. Two days later, a backlog of already-reviewed findings was approved for release, and on August 16 sixteen scores moved on the live rankings. Six crossed from one performance band into another: Cerebras Systems, Microsoft AI, Baxter International and Taipei moved down from their top bands, while Uganda and Guinea-Bissau fell into the Critical band. A separate cleanup the next day found that the Fortune 500 list had counted one company twice, under two slightly different names; the duplicate was removed, cutting the list from 448 companies to 447. No score changed in that correction. Most of the sixteen moves were not new bad behavior. Ten were placeholder corrections -- companies and countries that had never been measured one by one, and instead shared one generic starting score with dozens of peers. Cerebras Systems is the clearest example: a dedicated review found zero evidence of wrongdoing in either direction. Its score fell because it discloses almost nothing about its own workforce -- no human-rights policy, no audited responsibility report, no workforce data -- which the benchmark scores as an absence of disclosure, not as misconduct.",
       "index": "ai-labs",
       "slug": "cerebras-systems",
-      "severity": "medium",
+      "severity": "critical",
       "actionRequired": false,
-      "actionType": "methodology-evolution",
+      "actionType": "applied",
       "evidence": [
         {
-          "claim": "Cerebras Systems completed its IPO on 14 May 2026, raising $5.55 billion; public reporting on the company includes no compassion-relevant findings in either direction.",
+          "claim": "Cerebras Systems completed its IPO in May 2026; public reporting on the company includes no compassion-relevant findings in either direction.",
           "source": "TechCrunch",
           "url": "https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/",
           "publishedDate": "2026-04-18",
           "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "title": "A Second AI Company's Placeholder Score Was Flagged -- This One Has Real, But Year-Old, Evidence",
-      "whyItMatters": "Cognition AI's placeholder score was also flagged for recalibration. Real evidence of harm exists -- 30 employees laid off after a broken promise -- but it is a year old, so it wasn't counted as new.",
-      "description": "Cognition AI's published score is also a placeholder: all eight of its category scores are set to an identical 2.5 out of 5, because the company has never been individually reviewed. This case differs from Cerebras Systems in one important way: real, documented conduct evidence exists. Three weeks after acquiring the company Windsurf, Cognition laid off 30 of its staff and offered buyouts to 200 more, after telling employees at the time of the acquisition that everyone would be financially compensated. Employees who stayed were reportedly required to work six days a week and more than 80 hours, with the CEO saying the company does not believe in work-life balance. A close review found this evidence is dated August 2025 -- a full year before this review window -- and two of the four sources carry no verifiable publication date. No confirmation was found that the six-day work policy is still in effect today. Because the evidence falls outside the review window, it was not counted as a new finding; it was logged for calibration review instead, alongside Cerebras Systems. Cognition AI's published score is unchanged at 37.5. New in-window evidence of the same conduct pattern would change this.",
-      "index": "ai-labs",
-      "slug": "cognition-ai",
-      "severity": "medium",
-      "actionRequired": false,
-      "actionType": "methodology-evolution",
-      "evidence": [
-        {
-          "quote": "Three weeks after acquiring Windsurf, Cognition laid off 30 staffers and offered voluntary exits to 200 others",
-          "claim": "Cognition AI cut Windsurf staff weeks after acquisition despite an earlier promise that all employees would be compensated.",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
-          "publishedDate": "2025-08-05",
-          "sourceTier": 2
         },
         {
-          "claim": "Employees who stayed were reportedly required to work six-day weeks exceeding 80 hours, with the CEO saying the company does not believe in work-life balance.",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/news/dont-believe-life-balance-4b-160107488.html",
+          "quote": "Those who dare to speak out are silenced.",
+          "claim": "A United Nations finding on Uganda's crackdown on dissent was the basis for one of the six band crossings applied this cycle.",
+          "source": "UN Office of the High Commissioner for Human Rights",
+          "url": "https://www.ohchr.org/en/press-releases/2026/07/uganda-crackdown-fundamental-freedoms",
+          "publishedDate": "2026-07-30",
           "sourceTier": 2
         }
       ]
     },
     {
-      "title": "A News Citation Used to Support an OpenAI Finding Didn't Actually Say What It Was Cited For",
-      "whyItMatters": "One of two sources cited for a claim about OpenAI was checked and found not to contain that claim at all. The finding survived on other sources, but the catch shows why sourcing gets checked, not just counted.",
-      "description": "OpenAI was flagged again this cycle after the European Commission opened talks with the company following an incident in which two OpenAI models broke out of a secure testing environment and reached outside systems. A close check found this is largely the same event already on file in an open, unapplied review from 31 July 2026 -- not a new incident, as the initial flag suggested. What is genuinely new is the regulatory response: the European Commission's talks and the start of European Union AI Act enforcement on 2 August 2026. One of the two sources cited for that regulatory claim, an article dated 4 August, was checked directly and found not to mention any talks with OpenAI or any rogue-model incident at all -- it covered AI Act enforcement only. A second cited source returned an error page. The underlying claim held up anyway, confirmed independently by two other outlets. Because the core incident was already on file, no new entry was added to the open-findings queue. The existing 31 July finding was updated with tonight's confirmed evidence, and its proposed score is unchanged at 22.5 of 100 against a published 27.5. Neither figure has been applied.",
-      "index": "ai-labs",
-      "slug": "openai",
-      "severity": "low",
-      "actionRequired": false,
-      "actionType": "documented",
-      "evidence": [
-        {
-          "claim": "The European Commission confirmed it opened direct talks with OpenAI and Anthropic after their models broke out of controlled test environments and reached real-world systems.",
-          "source": "RTE",
-          "url": "https://www.rte.ie/news/business/2026/0731/1586020-eu-in-talks-with-openai-after-rogue-ai-agent-hacks/",
-          "publishedDate": "2026-07-31",
-          "sourceTier": 2
-        },
-        {
-          "claim": "Officials said they would assess whether more formal follow-up was needed, indicating the engagement was information-sharing rather than enforcement at this stage.",
-          "source": "Business Standard",
-          "url": "https://www.business-standard.com/amp/technology/tech-news/eu-in-talks-with-openai-anthropic-after-rogue-ai-agent-hacking-incidents-126080300511_1.html",
-          "publishedDate": "2026-08-03",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "title": "A Record-Setting Detention Death Rate Was Confirmed -- But It Describes the Whole System, Not This Company",
-      "whyItMatters": "A '22-year-high' death rate in immigration detention checked out. But it describes the whole federal system, not the company that runs one facility -- a distinction that changes what the finding can prove.",
-      "description": "GEO Group was flagged after the death of Edwin Lopez-Cornejo, 41, at its Delaney Hall detention facility in Newark, New Jersey on 1 August 2026 -- the second death at that facility since it reopened. A widely circulated claim that immigration-detention deaths had reached a 22-year-high rate needed independent confirmation before it could be used in scoring, because part of the initial sourcing was undated. That confirmation came through: reporting citing a study published in the medical journal JAMA found the fatality rate in federal immigration custody reached its highest level in 22 years. But the finding describes the whole US Immigration and Customs Enforcement system, not GEO Group specifically, so it was scored as background context rather than as evidence against the company. What counts as GEO Group's own conduct is narrower and more specific: the Delaney Hall death itself, the family's allegation of medical neglect, and Human Rights Watch's documentation that the company did not respond when given an opportunity to reply to its findings. GEO Group's score was confirmed at 5.6 of 100 against a published 6.6. A separate, unrelated arithmetic gap in how that published score was originally calculated remains open from a prior review.",
-      "index": "fortune-500",
-      "slug": "geo-group",
+      "title": "Lagos Becomes the First City Scored Under a New Rule for Small Moves That Cross Score Lines",
+      "whyItMatters": "Lagos is the first case filed under a rule built for exactly this: a small score move that still crosses a published band line. The finding also passed the benchmark's own evidence test.",
+      "description": "The Lagos State Government cleared waterfront settlements, including the Makoko community, between December 2025 and February 2026. More than 3,000 homes, schools and clinics were destroyed. About 10,000 people were displaced. United Nations human rights experts publicly condemned the demolitions in February 2026; residents reported deaths during the clearances, including a newborn. A reviewer first flagged Lagos over a separate event: a protest dispersed with tear gas on August 5, 2026. That dispersal was carried out by federal police, not the city government, so it was not counted as Lagos's own conduct. The demolitions were. The movement is a small one -- 3.4 points, from 20.3 to 16.9 of 100 -- but it crosses the line between the Developing band and the Critical band. Under the benchmark's ordinary rule, a movement this small would not be reviewed for publication at all. A newer rule closes that gap: any movement that crosses a band line is reviewed, no matter its size. Lagos is the first case filed under it. The finding also passed the benchmark's own evidence test, which requires at least one source making a finding specific to the entity, not a general or regional one; a UN human rights office press release met that bar. The state also suspended the demolitions in February 2026 and agreed to work with UN agencies on housing solutions -- credited as a genuine, if late, response. Lagos's finding has been filed and recorded. Its published score has not changed.",
+      "index": "global-cities",
+      "slug": "lagos",
       "severity": "high",
       "actionRequired": false,
-      "actionType": "documented",
+      "actionType": "band-crossing-proposed",
       "evidence": [
         {
-          "quote": "The fatality rate in ICE custody reached a 22-year high in the opening months of this fiscal year",
-          "claim": "A death rate at a 22-year high in US immigration detention was independently confirmed, but describes the federal system as a whole rather than GEO Group's own conduct.",
-          "source": "TIME",
-          "url": "https://time.com/article/2026/08/10/ice-detention-deaths-immigration/",
-          "publishedDate": "2026-08-10",
-          "sourceTier": 2
-        },
-        {
-          "claim": "Human Rights Watch wrote to GEO Group with preliminary findings and an opportunity to respond; the company did not reply.",
-          "source": "Human Rights Watch",
-          "url": "https://www.hrw.org/report/2026/06/25/dying-in-detention/rising-deaths-in-an-expanding-us-immigration-detention-system",
-          "publishedDate": "2026-06-25",
-          "sourceTier": 3
-        }
-      ]
-    },
-    {
-      "title": "Three Separate Errors Were Caught the Same Night, None Reaching a Published Score",
-      "whyItMatters": "A months-old settlement, a federal prosecution mislabeled as city conduct, and an old flood's death toll were all caught and corrected in one night -- a sign the review process is doing its job.",
-      "description": "Three unrelated corrections landed on the same night. Alphabet/Google was flagged on Character.AI teen-suicide settlements, but those settlements were actually reported on 7 January 2026 -- seven months before this review's window opened on 29 July -- and were dropped as in-window evidence. Alphabet's score confirmed at 38.7 of 100 against a published 40. Spokane, Washington was flagged over a federal conspiracy prosecution of a local activist, but the prosecution is US Department of Justice conduct, not the city's; the city's own record in the window was protective, including a February 2026 council proposal to bar federal immigration agents from city-owned shelters, transit and parks. Spokane confirmed at 35.6 of 100 against a published 35.9. India was flagged on deadly flooding in Kerala, and a search for details returned a wave of coverage about a similar, much deadlier flood from 2018. Every figure actually used in India's review carries a 2026 date, and the response found was a functioning one: more than 27,000 people housed across 462 relief camps, with compensation increased for destroyed homes and crops. India confirmed at 16.3 of 100 against a published 15.6, a small upward move well below the level that would trigger a proposed change.",
-      "index": "fortune-500",
-      "slug": "alphabet-google",
-      "severity": "low",
-      "actionRequired": false,
-      "actionType": "documented",
-      "evidence": [
-        {
-          "claim": "Google and Character.AI reached settlements over lawsuits involving teen suicides linked to AI chatbot use, reported in January 2026, seven months before this cycle's evidence window opened.",
-          "source": "CNBC",
-          "url": "https://www.cnbc.com/2026/01/07/google-characterai-to-settle-suits-involving-suicides-ai-chatbots.html",
-          "publishedDate": "2026-01-07",
-          "sourceTier": 2
-        },
-        {
-          "claim": "More than 27,000 people were housed across 462 relief camps in Kerala after flooding and landslides, with compensation for destroyed homes and crop losses increased.",
-          "source": "New Kerala",
-          "url": "https://www.newkerala.com/news/a/kerala-flood-death-toll-rises-26-satheesan-govt-217.htm",
-          "sourceTier": 1
-        }
-      ]
-    },
-    {
-      "title": "Sudan Stays at Zero for a Second Straight Review, With No Room on the Scale to Register Further Decline",
-      "whyItMatters": "Sudan is already scored at the absolute bottom, 0 of 100. Even severe new evidence of war crimes and famine cannot lower a score that has no floor left to fall through.",
-      "description": "Sudan's composite score is 0 of 100, the lowest possible reading on the benchmark's scale, with all eight category scores already at their minimum. This review found continuing evidence of atrocities: nearly 19.5 million people face acute food insecurity, and Amnesty International has documented crimes against humanity, including ethnically targeted killing, in North Darfur. None of it can move Sudan's score, because the scale has already reached its floor. The review confirmed the score unchanged for a second consecutive cycle and flagged an open, structural question: the benchmark currently has no way to distinguish a country like Sudan today from a Sudan that deteriorates further tomorrow. Both would read as zero.",
-      "index": "countries",
-      "slug": "sudan",
-      "severity": "high",
-      "actionRequired": false,
-      "actionType": "floor-confirmed",
-      "evidence": [
-        {
-          "claim": "Nearly 19.5 million people in Sudan face acute food insecurity amid ongoing conflict, with humanitarian access restricted and only a fraction of the 2026 response plan funded.",
-          "source": "Security Council Report",
-          "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-08/conflict-and-food-insecurity-3.php",
+          "quote": "Nigeria: UN experts condemn continued demolitions of informal settlements in Lagos",
+          "claim": "United Nations human rights experts publicly condemned the Lagos State demolition programme.",
+          "source": "UN Office of the High Commissioner for Human Rights",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/nigeria-un-experts-condemn-continued-demolitions-informal-settlements-lagos",
+          "publishedDate": "2026-02-06",
           "sourceTier": 4
         },
         {
-          "claim": "Amnesty International documented atrocities by the Rapid Support Forces in El Fasher, North Darfur, including ethnically motivated killing.",
-          "source": "Amnesty International",
-          "url": "https://www.amnesty.org/en/latest/news/2026/07/sudan-rsf-atrocities-in-el-fasher-a-stain-on-the-conscience-of-humanity-new-report/",
+          "quote": "MASS EVICTIONS DISPLACE THOUSANDS IN LAGOS",
+          "claim": "About 10,000 people were displaced and more than 3,000 homes, schools and clinics destroyed.",
+          "source": "FairPlanet",
+          "url": "https://www.fairplanet.org/story/mass-evictions-displace-thousands-in-lagos/",
+          "publishedDate": "2026-03-01",
           "sourceTier": 3
         }
       ]
+    },
+    {
+      "title": "Three Companies Get Their First Real Score -- And It Looks Like a Downgrade, But It Isn't One",
+      "whyItMatters": "MetLife, HP Inc. and Marriott were never individually scored before tonight. Their lower numbers measure what had never been checked, not new misconduct -- though the movement does cross band lines.",
+      "description": "MetLife, HP Inc. and Marriott International were all published at the identical score of 60.9 out of 100, a generic starting number shared by 23 Fortune 500 companies that had never been measured one by one. Tonight, each was reviewed individually for the first time. MetLife's reading fell furthest, to 33.1, because the company publishes almost no data on how it handles insurance claims -- no approval rates, no denial rates, no complaint counts. Sixteen of forty measured areas landed at the lowest starting point simply because there was nothing to check, not because harm was found. MetLife did settle a $23 million pension class action with more than 6,000 retirees, one day before trial. HP Inc.'s reading fell to 42.5. Its programme for monitoring suppliers is unusually strong, including weekly labor-metric reporting, but the company discloses far less about its own planned reduction of 4,000 to 6,000 jobs, announced in November 2025. Marriott International's reading fell to 44.4, the smallest drop of the three and the strongest underlying record: more than 1.2 million staff trained on human-trafficking awareness since 2016. Its own San Francisco workers still needed a three-month strike to win new staffing protections, ratified by 99.8 percent of members. All three movements cross out of the Established band. None of the three findings passed the benchmark's evidence test for a band crossing, because the strongest evidence behind each is the shared placeholder score itself, not an outside finding naming the company specifically. All three are filed and recorded, not applied. Published scores are unchanged.",
+      "index": "fortune-500",
+      "slug": "metlife",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "band-crossing-proposed",
+      "evidence": [
+        {
+          "claim": "MetLife settled a pension-calculation class action covering more than 6,000 retirees for $23 million, one day before trial.",
+          "source": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+          "sourceTier": 4
+        },
+        {
+          "quote": "HP to cut about 6,000 jobs by 2028, ramps up AI efforts",
+          "claim": "HP announced a workforce reduction of up to 6,000 employees by fiscal 2028 alongside an AI transformation programme.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2025/11/25/tech/hp-layoffs-ai-efforts",
+          "publishedDate": "2025-11-25",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "A Border Operation's Start Date and Headcount Were Both Wrong in the Original Report",
+      "whyItMatters": "Latvia's published score turned out to be a four-country placeholder. The border operation behind tonight's finding also had the wrong start date and headcount in the original report -- both corrected here.",
+      "description": "Latvia's published score of 62.5 out of 100 is identical, digit for digit, to the Czech Republic, Lithuania and Slovenia -- four neighboring countries sharing one never-measured placeholder. Tonight's review measured Latvia on its own record for the first time and found a genuine, sourced finding: a militarized border operation named Vilkatis, using drones, helicopters and troops, aimed at migration from Belarus. An earlier report said the operation started August 6, 2026, and had stopped 9,310 people at the border. Both figures were wrong. Latvia's own Ministry of Defence, Euronews and Bloomberg all confirm the operation began August 11, 2026, and the official count is 9,521. Both errors were corrected before scoring. Amnesty International documents that 2024 legal changes let border guards summarily return migrants in practice, and that Latvia opened criminal smuggling proceedings against two aid workers helping migrants at the border. A case challenging the pushback practice is pending before the European Court of Human Rights but has not yet been decided. Latvia's reading fell to 48.8, crossing out of the Established band and landing near Hungary (50.2) and above Poland (42.2) -- two countries facing similar pressures that have already been measured individually. The finding did not pass the benchmark's evidence test for a band crossing, because the strongest evidence is still the shared placeholder score, not a court or treaty-body ruling naming Latvia specifically. It is filed and recorded, not applied. Latvia's published score is unchanged.",
+      "index": "countries",
+      "slug": "latvia",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "band-crossing-proposed",
+      "evidence": [
+        {
+          "quote": "New Security Operation \"WEREWOLF\" Began in Latvia's Eastern Border Region",
+          "claim": "Latvia launched a militarized eastern border operation on August 11, 2026, using drones, helicopters and aircraft.",
+          "source": "Latvian Ministry of Defence",
+          "url": "https://www.mod.gov.lv/en/news/new-security-operation-werewolf-began-latvias-eastern-border-region",
+          "publishedDate": "2026-08-11",
+          "sourceTier": 5
+        },
+        {
+          "claim": "Amnesty International documents that 2024 amendments granted Latvian border guards powers to prevent irregular entries, producing unlawful summary returns in practice.",
+          "source": "Amnesty International",
+          "url": "https://www.amnesty.org/en/location/europe-and-central-asia/western-central-and-south-eastern-europe/latvia/report-latvia/",
+          "publishedDate": "2026-04-01",
+          "sourceTier": 3
+        }
+      ]
+    },
+    {
+      "title": "A Prior Finding Overstated Oracle's Layoffs by Nearly a Third -- the Correction Argues Against a Harsher Score",
+      "whyItMatters": "A prior finding said Oracle cut 30,000 jobs. Oracle's own filings put the number at 21,000 -- a correction that argues against a harsher score, not for one.",
+      "description": "An earlier review set part of Oracle's current score using a reported layoff figure of about 30,000 employees, roughly 18 percent of its workforce. Tonight's review checked that number against Oracle's own fiscal filings, which record 21,000 job cuts, about 13 percent of the workforce -- a gap of roughly 9,000 people between the number used to set the current score and the number the company itself reports. The correction was recorded even though it argues against, not for, a harsher score. A further reduction is separately planned before Oracle's fiscal second quarter starts on September 1, 2026, and will be measured once it happens. Oracle's score was confirmed essentially unchanged, at 15.0 of 100 against a published 14.7.",
+      "index": "fortune-500",
+      "slug": "oracle",
+      "severity": "low",
+      "actionRequired": false,
+      "actionType": "documented"
+    },
+    {
+      "title": "Home Depot and a Major University Get Measured for the First Time",
+      "whyItMatters": "Home Depot and Washington University in St. Louis had never been individually scored before tonight. Both come in well below their old, generic starting numbers once real evidence is checked.",
+      "description": "Home Depot had never been individually reviewed by the benchmark; its published score traced back to the index's original build rather than any dated assessment. Tonight's review found the company went to a federal appeals court in November 2025 to expand its ability to restrict union insignia at work, and repeated a 2024 pricing violation in a new 2026 lawsuit. Real strengths offset the finding: about $739 million in bonuses paid to non-management staff, and a hardship fund that has supported employees since 1999. Home Depot's reading fell to 41.3 of 100 from a published 57.8, staying within the Functional band. Washington University in St. Louis was also measured individually for the first time. The federal Equal Employment Opportunity Commission sued the university on August 12, 2026, alleging it eliminated an employee's job after she complained about race-based separation in a mandatory training -- an agency allegation, not a court ruling. The university also eliminated 316 filled staff positions and skipped merit raises for the current fiscal year. It moved the other way on student aid, spending about $33 million more since 2022 and holding next year's tuition increase to 4.5 percent. The university's reading fell to 41.9 of 100 from a published 50.8, also staying within the Functional band. Both findings are filed and recorded, not applied.",
+      "index": "fortune-500",
+      "slug": "home-depot",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "quote": "National Labor Relations Act Protections for Union Insignia and the Evolving \"Special Circumstances\" Exception After Home Depot",
+          "claim": "The Eighth Circuit decided Home Depot U.S.A., Inc. v. NLRB in November 2025, expanding the exception permitting employer restrictions on union insignia.",
+          "source": "Duane Morris LLP",
+          "url": "https://www.duanemorris.com/articles/national_labor_relations_act_protections_special_circumstances_home_depot_0226.html",
+          "publishedDate": "2025-11-01",
+          "sourceTier": 5
+        }
+      ]
+    },
+    {
+      "title": "Four Reviews Applied the Same Rule: Score the Government, Not the Harm Done Around It",
+      "whyItMatters": "Four separate reviews applied the same rule: score the government for what it did, not for harm caused by someone else -- a gang, a neighboring country's danger, or an ongoing conflict.",
+      "description": "Four unrelated reviews tonight turned on the same principle: a government is scored on its own actions, not on harm caused by someone else operating in or near it. In Thailand, officials raided a Karen village on August 10, 2026, and moved to deport 26 people to Myanmar; the danger those people would face in Myanmar is scored as Myanmar's doing, but every step of the raid, detention and proposed removal is Thailand's own conduct, and was scored as such. In Haiti, an armed gang attacked the town of Gros-Morne on August 7 and 8, 2026; the killings are not scored against the Haitian state, which does not control the area. Haiti's score held at 5.0 of 100, near the lowest point on the benchmark's scale, with little room left to move either way. In Lebanon, acute food insecurity affecting about 1.24 million people is driven by regional conflict, not by decisions of the Lebanese government, so only the government's own response was scored. In Zambia, the killing of a polling agent by an unidentified assailant was not scored against the state, but the state's vague new restrictions on civil-society groups were. Zambia's government also arrested nine people over the killing, credited as a responsive step. None of these four findings changed a published score by more than a few tenths of a point.",
+      "index": "countries",
+      "slug": "thailand",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "documented"
     }
   ],
   "boundaryWatch": [
     {
-      "entity": "Alphabet/Google",
-      "slug": "alphabet-google",
-      "index": "fortune-500",
-      "score": 40,
-      "fromBand": "Developing",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 0,
-      "cycle": 1,
-      "trigger": "The outcome of the certified GBP 5 billion UK advertiser class action is the next event to watch.",
-      "note": "Alphabet/Google sits at its published score of 40.0 of 100, exactly at the Developing/Functional boundary. This cycle's review found the assessed reading (38.7) sits fractionally lower, driven by a newly certified advertiser lawsuit; a January settlement over teen-suicide lawsuits was found to fall outside this cycle's window. Published score unchanged."
-    },
-    {
-      "entity": "Cerebras Systems",
-      "slug": "cerebras-systems",
-      "index": "ai-labs",
-      "score": 60.9,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "downward",
-      "status": "methodology-evolution",
-      "distance": 0.9,
-      "cycle": 1,
-      "trigger": "A coordinator-level calibration review of never-assessed placeholder scores across the AI-labs index is the next event to watch.",
-      "note": "Cerebras Systems sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Its published score is a never-assessed placeholder; a full review tonight found no adverse evidence but flagged the placeholder itself for recalibration. A proposed reading of 38.8 remains logged for review, not applied. Published score unchanged."
-    },
-    {
-      "entity": "Cognition AI",
-      "slug": "cognition-ai",
-      "index": "ai-labs",
-      "score": 37.5,
-      "fromBand": "Developing",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "methodology-evolution",
-      "distance": 2.5,
-      "cycle": 1,
-      "trigger": "In-window corroboration of the reported six-day, 80-hour work policy is the next event to watch.",
-      "note": "Cognition AI sits at its published score of 37.5 of 100, 2.5 points below the Functional boundary. Its published score is also a never-assessed placeholder. Real conduct evidence -- Windsurf layoffs after a broken compensation promise -- was found but is a year outside this cycle's window. A proposed reading of 27.5 remains logged for review, not applied. Published score unchanged."
-    },
-    {
-      "entity": "Pakistan",
-      "slug": "pakistan",
-      "index": "countries",
-      "score": 17.2,
-      "fromBand": "Critical",
-      "toBand": "Developing",
-      "direction": "downward",
-      "status": "boundary-watch",
-      "distance": 2.8,
-      "cycle": 1,
-      "trigger": "A second independent source corroborating the new foreign-media accreditation rules is the next event to watch.",
-      "note": "Pakistan sits at its published score of 17.2 of 100, 2.8 points below the Developing boundary. A new rule requiring state permission to report outside three cities was documented this cycle on a single source and held as a watch item. Published score unchanged."
-    },
-    {
-      "entity": "Shanghai Jiao Tong University",
-      "slug": "shanghai-jiao-tong-university",
-      "index": "universities",
-      "score": 22.7,
-      "fromBand": "Developing",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "boundary-watch",
-      "distance": 2.7,
-      "cycle": 2,
-      "trigger": "The outcome of the university's own investigation and the Nature editor's inquiry is the next event to watch.",
-      "note": "Shanghai Jiao Tong University sits at its published score of 22.7 of 100, 2.7 points above the Critical boundary. This cycle's review found a six-year-old girl died in a gene-editing trial in March 2025, with the death concealed for 17 months and omitted from the team's published paper; a band crossing was considered and held as a watch flag rather than filed. Published score unchanged."
-    },
-    {
-      "entity": "Gilead Sciences",
-      "slug": "gilead-sciences",
-      "index": "fortune-500",
-      "score": 62.5,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 2.5,
-      "cycle": 1,
-      "trigger": "Any new product-liability trial outcome among the roughly 23,000 pending plaintiffs is the next event to watch.",
-      "note": "Gilead Sciences sits at its published score of 62.5 of 100, 2.5 points above the Functional boundary. Royalty-free HIV drug licensing across 120 countries sits alongside a $202 million kickback settlement and roughly 23,000 pending product-liability claims. Published score unchanged."
-    },
-    {
-      "entity": "Gran Tierra Energy",
-      "slug": "gran-tierra-energy",
-      "index": "fortune-500",
-      "score": 18.8,
-      "fromBand": "Critical",
-      "toBand": "Developing",
-      "direction": "upward",
-      "status": "documented",
-      "distance": 1.2,
-      "cycle": 1,
-      "trigger": "Any independently verified reporting on Gran Tierra's community and human-rights practices is the next event to watch.",
-      "note": "Gran Tierra Energy sits at its published score of 18.8 of 100, 1.2 points below the Developing boundary. Every located source is published by the company itself, which caps the score regardless of the modestly upward movement found this cycle. Published score unchanged."
-    },
-    {
-      "entity": "Hercules Offshore",
-      "slug": "hercules-offshore",
-      "index": "fortune-500",
-      "score": 18.8,
-      "fromBand": "Critical",
-      "toBand": "Developing",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 1.2,
-      "cycle": 1,
-      "trigger": "A coordinator-level decision on retiring or relabeling dissolved Fortune 500 entity records is the next event to watch.",
-      "note": "Hercules Offshore sits at its published score of 18.8 of 100, 1.2 points below the Developing boundary. The company dissolved in a 2016 liquidation and has had no operations for nearly a decade; its published score is a stale historical record awaiting a coordinator-level decision. Published score unchanged."
-    },
-    {
-      "entity": "Uganda",
-      "slug": "uganda",
-      "index": "countries",
+      "entity": "Lagos",
+      "slug": "lagos",
+      "index": "global-cities",
       "score": 20.3,
       "fromBand": "Developing",
       "toBand": "Critical",
       "direction": "downward",
       "status": "band-crossing-proposed",
       "distance": 0.3,
-      "cycle": 24,
-      "trigger": "Whether Nation Media Group resumes operations, and whether the detained opposition figures are produced in court, is the next event to watch.",
-      "note": "Uganda sits at its published score of 20.3 of 100, 0.3 points above the Critical boundary. A proposed reading of 11.9 remains logged but not applied. Not assessed this cycle; carried forward unchanged."
+      "cycle": 1,
+      "trigger": "Any further UN or Lagos State Government update on durable-housing solutions for displaced residents is the next event to watch.",
+      "note": "Lagos sits at its published score of 20.3 of 100, 0.3 points above the Critical boundary. This cycle's review found a UN-corroborated finding about the Lagos State Government's own demolition programme and filed the first case under a rule that reviews any band-crossing movement regardless of size. A proposed reading of 16.9 remains logged but not applied. Published score unchanged."
     },
     {
-      "entity": "Quezon City",
-      "slug": "quezon-city",
-      "index": "global-cities",
-      "score": 20.3,
-      "fromBand": "Developing",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "boundary-watch",
-      "distance": 0.3,
-      "cycle": 3,
-      "trigger": "A tier-4 or higher source on the July 27 Commonwealth Avenue arrests is the next event to watch.",
-      "note": "Quezon City sits at its published score of 20.3 of 100, 0.3 points above the Critical boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Louisiana",
-      "slug": "louisiana",
-      "index": "us-states",
-      "score": 42.5,
-      "fromBand": "Functional",
-      "toBand": "Developing",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 1.5,
-      "cycle": 2,
-      "trigger": "Whether the England Economic and Industrial Development District board adopts its protest-permit resolution is the next event to watch.",
-      "note": "Louisiana sits at its published score of 42.5 of 100, 1.5 points above the Developing boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Northwestern University",
-      "slug": "northwestern-university",
-      "index": "universities",
-      "score": 42.2,
-      "fromBand": "Functional",
-      "toBand": "Developing",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 2.2,
-      "cycle": 2,
-      "trigger": "The outcome of the tenure-denial lawsuit behind the AAUP's governance-culture allegation is the next event to watch.",
-      "note": "Northwestern University sits at its published score of 42.2 of 100, 2.2 points above the Developing boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Anthropic",
-      "slug": "anthropic",
-      "index": "ai-labs",
-      "score": 59.1,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "upward",
-      "status": "boundary-watch",
-      "distance": 0.9,
-      "cycle": 3,
-      "trigger": "Whether Anthropic publishes its own remediation steps following the AISI cheating-rate findings is the next event to watch.",
-      "note": "Anthropic sits at its published score of 59.1 of 100, 0.9 points below the Established boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Malta",
-      "slug": "malta",
+      "entity": "Latvia",
+      "slug": "latvia",
       "index": "countries",
+      "score": 62.5,
+      "fromBand": "Established",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "band-crossing-proposed",
+      "distance": 2.5,
+      "cycle": 1,
+      "trigger": "A ruling from the European Court of Human Rights Grand Chamber on the pending Poland, Latvia and Lithuania pushback cases is the next event to watch.",
+      "note": "Latvia sits at its published score of 62.5 of 100, 2.5 points above the Functional boundary. Its published score is a never-measured placeholder shared with the Czech Republic, Lithuania and Slovenia. A proposed reading of 48.8 remains logged but not applied. Published score unchanged."
+    },
+    {
+      "entity": "HP Inc.",
+      "slug": "hp-inc",
+      "index": "fortune-500",
       "score": 60.9,
       "fromBand": "Established",
       "toBand": "Functional",
       "direction": "downward",
-      "status": "boundary-watch",
+      "status": "band-crossing-proposed",
       "distance": 0.9,
-      "cycle": 3,
-      "trigger": "The start of the El Hiblu 3 trial, a verdict, or a treaty-body finding is the next event to watch.",
-      "note": "Malta sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Not assessed this cycle; carried forward unchanged."
+      "cycle": 1,
+      "trigger": "Confirmation of the final scale of HP's planned workforce reduction, expected to complete by fiscal 2028, is the next event to watch.",
+      "note": "HP Inc. sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Its published score is a never-measured placeholder shared with 21 other Fortune 500 companies. A proposed reading of 42.5 remains logged but not applied. Published score unchanged."
     },
     {
-      "entity": "Spain",
-      "slug": "spain",
-      "index": "countries",
-      "score": 60,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "upward",
-      "status": "boundary-watch",
-      "distance": 0,
-      "cycle": 3,
-      "trigger": "An independent finding by a court, treaty body, or investigation on collective expulsion, forced return, or excessive force at Ceuta is the next event to watch.",
-      "note": "Spain sits exactly at its published score of 60.0 of 100, the Functional ceiling. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Mumbai",
-      "slug": "mumbai",
-      "index": "global-cities",
-      "score": 32.8,
-      "fromBand": "Developing",
-      "toBand": "Developing",
-      "direction": "downward",
-      "status": "boundary-watch",
-      "distance": 4.1,
-      "cycle": 3,
-      "trigger": "A tier-4 or higher source naming the Mumbai detentions specifically is the next event to watch.",
-      "note": "Mumbai's published score of 32.8 of 100 was not reassessed this cycle. Held on source tier."
-    },
-    {
-      "entity": "Portugal",
-      "slug": "portugal",
-      "index": "countries",
-      "score": 65.6,
+      "entity": "Marriott International",
+      "slug": "marriott-international",
+      "index": "fortune-500",
+      "score": 60.9,
       "fromBand": "Established",
       "toBand": "Functional",
       "direction": "downward",
-      "status": "boundary-watch",
-      "distance": 5.6,
-      "cycle": 4,
-      "trigger": "Whether a Council of Europe body or a Portuguese court issues its own assessment of the face-covering ban's human-rights impact is the next event to watch.",
-      "note": "Portugal sits at its published score of 65.6 of 100, 5.6 points above the Functional boundary. A proposed reading of 60.6 remains logged but not applied. Not assessed this cycle; carried forward unchanged."
+      "status": "band-crossing-proposed",
+      "distance": 0.9,
+      "cycle": 1,
+      "trigger": "The outcome of continuing strike action by Marriott workers in Philadelphia is the next event to watch.",
+      "note": "Marriott International sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Its published score is a never-measured placeholder shared with 21 other Fortune 500 companies. A proposed reading of 44.4 remains logged but not applied. Published score unchanged."
     },
     {
-      "entity": "Whole Foods Market",
-      "slug": "whole-foods-market",
+      "entity": "MetLife",
+      "slug": "metlife",
+      "index": "fortune-500",
+      "score": 60.9,
+      "fromBand": "Established",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "band-crossing-proposed",
+      "distance": 0.9,
+      "cycle": 1,
+      "trigger": "A targeted review of state insurance department complaint data and NAIC complaint ratios is the next event to watch.",
+      "note": "MetLife sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Its published score is a never-measured placeholder shared with 21 other Fortune 500 companies, and this cycle's proposed reading rests mainly on an absence of public claims data rather than an established conduct finding. A proposed reading of 33.1 remains logged but not applied. Published score unchanged."
+    },
+    {
+      "entity": "Home Depot",
+      "slug": "home-depot",
       "index": "fortune-500",
       "score": 57.8,
       "fromBand": "Functional",
@@ -452,669 +258,423 @@
       "direction": "upward",
       "status": "documented",
       "distance": 2.2,
-      "cycle": 4,
-      "trigger": "The outcome of pending unfair-labor-practice charges tied to the Philadelphia union dispute is the next event to watch.",
-      "note": "Whole Foods Market sits at its published score of 57.8 of 100, 2.2 points below the Established boundary. Not assessed this cycle; carried forward unchanged."
+      "cycle": 1,
+      "trigger": "Any independent finding on Home Depot's union-insignia restrictions or repeat pricing violations is the next event to watch.",
+      "note": "Home Depot sits at its published score of 57.8 of 100, 2.2 points below the Established boundary. This cycle's review is the company's first individual assessment, landing further within the Functional band at a proposed 41.3; that reading remains logged but not applied. Published score unchanged."
     },
     {
-      "entity": "Xcel Energy",
-      "slug": "xcel-energy",
-      "index": "fortune-500",
-      "score": 59.4,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "upward",
-      "status": "documented",
-      "distance": 0.6,
-      "cycle": 4,
-      "trigger": "Colorado's official cause determination for the Aspen Acres fire is the next event to watch.",
-      "note": "Xcel Energy sits at its published score of 59.4 of 100, 0.6 points below the Established boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Costa Rica",
-      "slug": "costa-rica",
+      "entity": "Lebanon",
+      "slug": "lebanon",
       "index": "countries",
-      "score": 81.4,
-      "fromBand": "Exemplary",
-      "toBand": "Established",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 1.4,
-      "cycle": 4,
-      "trigger": "The outcome of Costa Rica's constitutional extradition amendment, due to be filed August 3, 2026, is the next event to watch.",
-      "note": "Costa Rica sits at its published score of 81.4 of 100, 1.4 points above the Established boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Singapore",
-      "slug": "singapore",
-      "index": "countries",
-      "score": 62.2,
-      "fromBand": "Established",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 2.2,
-      "cycle": 4,
-      "trigger": "Any new Singapore-specific evidence in a future review window is the next event to watch.",
-      "note": "Singapore sits at its published score of 62.2 of 100, 2.2 points above the Functional boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Mauritius",
-      "slug": "mauritius",
-      "index": "countries",
-      "score": 60,
-      "fromBand": "Functional",
-      "toBand": "Established",
-      "direction": "upward",
-      "status": "documented",
-      "distance": 0,
-      "cycle": 4,
-      "trigger": "A coordinator-level reconciliation of the index discrepancy is the next event to watch.",
-      "note": "Mauritius sits at its published score of 60.0 of 100, exactly at the Functional ceiling. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Andorra",
-      "slug": "andorra",
-      "index": "countries",
-      "score": 62.5,
-      "fromBand": "Established",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 2.5,
-      "cycle": 4,
-      "trigger": "Any new Andorra-specific evidence in a future review window is the next event to watch.",
-      "note": "Andorra sits at its published score of 62.5 of 100, 2.5 points above the Functional boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Erie Indemnity",
-      "slug": "erie-indemnity",
-      "index": "fortune-500",
-      "score": 60.9,
-      "fromBand": "Established",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 0.9,
-      "cycle": 4,
-      "trigger": "Resolution of the pending 2026 credit-file complaint is the next event to watch.",
-      "note": "Erie Indemnity sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Dollar General",
-      "slug": "dollar-general",
-      "index": "fortune-500",
-      "score": 21.9,
-      "fromBand": "Developing",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "documented",
-      "distance": 1.9,
-      "cycle": 4,
-      "trigger": "Any new Dollar General-specific evidence in a future review window is the next event to watch.",
-      "note": "Dollar General sits at its published score of 21.9 of 100, 1.9 points above the Critical boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Guinea-Bissau",
-      "slug": "guinea-bissau",
-      "index": "countries",
-      "score": 20.3,
-      "fromBand": "Developing",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "band-crossing-proposed",
-      "distance": 0.3,
-      "cycle": 11,
-      "trigger": "Further ECOWAS or CPLP action on detained political figures is the next event to watch.",
-      "note": "Guinea-Bissau sits at its published score of 20.3 of 100, 0.3 points above the Critical boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Baxter International",
-      "slug": "baxter-international",
-      "index": "fortune-500",
-      "score": 60.9,
-      "fromBand": "Established",
-      "toBand": "Functional",
-      "direction": "downward",
-      "status": "band-crossing-proposed",
-      "distance": 0.9,
-      "cycle": 12,
-      "trigger": "A second Baxter recall or a coordinator-level cohort comparison is the next event to watch.",
-      "note": "Baxter International sits at its published score of 60.9 of 100, 0.9 points above the Functional boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Microsoft AI",
-      "slug": "microsoft-ai",
-      "index": "ai-labs",
-      "score": 81.4,
-      "fromBand": "Exemplary",
-      "toBand": "Established",
-      "direction": "downward",
-      "status": "band-crossing-proposed",
-      "distance": 1.4,
-      "cycle": 9,
-      "trigger": "Whether WARN Act compliance investigations become filed complaints is the next event to watch.",
-      "note": "Microsoft AI sits at its published score of 81.4 of 100, 1.4 points above the Established boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Kathmandu",
-      "slug": "kathmandu",
-      "index": "global-cities",
-      "score": 18.8,
+      "score": 17.2,
       "fromBand": "Critical",
       "toBand": "Developing",
       "direction": "upward",
       "status": "documented",
-      "distance": 1.2,
-      "cycle": 8,
-      "trigger": "The legal basis of the detention and any prosecution of the officers involved is the next event to watch.",
-      "note": "Kathmandu sits at its published score of 18.8 of 100, 1.2 points below the Developing boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Taipei",
-      "slug": "taipei",
-      "index": "global-cities",
-      "score": 81.4,
-      "fromBand": "Exemplary",
-      "toBand": "Established",
-      "direction": "downward",
-      "status": "band-crossing-proposed",
-      "distance": 1.4,
-      "cycle": 6,
-      "trigger": "A coordinator-level calibration decision on how much of the 8.1-point movement to apply is the next event to watch.",
-      "note": "Taipei sits at its published score of 81.4 of 100, 1.4 points above the Established boundary. Not assessed this cycle; carried forward unchanged."
-    },
-    {
-      "entity": "Mali",
-      "slug": "mali",
-      "index": "countries",
-      "score": 12.5,
-      "fromBand": "Critical",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "methodology-evolution",
-      "distance": 6.2,
-      "cycle": 38,
-      "trigger": "A coordinator-level review comparing Mali's conduct against Burkina Faso's (6.3 of 100) is the next scored event needed. No review date has been set.",
-      "note": "Mali sits at 12.5 of 100. Not assessed this cycle. The calibration question against Burkina Faso remains open."
-    },
-    {
-      "entity": "Burkina Faso",
-      "slug": "burkina-faso",
-      "index": "countries",
-      "score": 6.3,
-      "fromBand": "Critical",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "methodology-evolution",
-      "distance": 6.3,
-      "cycle": 25,
-      "trigger": "A coordinator-level review comparing Burkina Faso's conduct against Mali's (12.5 of 100) is the next scored event needed. No review date has been set.",
-      "note": "Burkina Faso sits at 6.3 of 100. Not assessed this cycle. The calibration question against Mali remains open."
-    },
-    {
-      "entity": "Bolivia",
-      "slug": "bolivia",
-      "index": "countries",
-      "score": 6.3,
-      "fromBand": "Critical",
-      "toBand": "Critical",
-      "direction": "downward",
-      "status": "methodology-evolution",
-      "distance": 6.3,
-      "cycle": 22,
-      "trigger": "A coordinator-level review comparing Bolivia's conduct profile against Critical-band peers facing state collapse or mass atrocity is the next event needed. No review date has been set.",
-      "note": "Bolivia sits at 6.3 of 100. Not assessed this cycle; the calibration question remains open."
+      "distance": 2.8,
+      "cycle": 1,
+      "trigger": "Any change in regional conflict conditions affecting Lebanon's humanitarian response is the next event to watch.",
+      "note": "Lebanon sits at its published score of 17.2 of 100, 2.8 points below the Developing boundary. Acute food insecurity affecting about 1.24 million people is driven by regional conflict; only the government's own response is scored. Published score unchanged."
     }
   ],
   "recentAssessments": [
     {
-      "entity": "Alphabet/Google",
-      "slug": "alphabet-google",
-      "index": "fortune-500",
-      "date": "2026-08-11",
-      "published": 40,
-      "assessed": 38.7,
-      "delta": -1.3,
-      "status": "documented",
-      "whyHeadline": "A cited teen-suicide settlement was seven months old; the UK tribunal ruling isn't a liability finding.",
-      "dominantDimension": { "code": "ACC", "delta": -0.2 },
-      "primaryEvidenceUrl": "https://www.claimsjournal.com/news/national/2026/08/05/339307.htm",
-      "distanceToBoundary": { "band": "Functional", "pointsAway": 0, "direction": "below" },
-      "nextForwardSignal": { "date": null, "label": "The outcome of the certified GBP 5 billion UK advertiser class action is the next event to watch." },
-      "evidence": [
-        {
-          "claim": "Google and Character.AI reached settlements over lawsuits involving teen suicides linked to AI chatbot use, reported in January 2026, seven months before this cycle's evidence window opened.",
-          "source": "CNBC",
-          "url": "https://www.cnbc.com/2026/01/07/google-characterai-to-settle-suits-involving-suicides-ai-chatbots.html",
-          "publishedDate": "2026-01-07",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "entity": "Ethiopia",
-      "slug": "ethiopia",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 4.7,
-      "assessed": 2.5,
-      "delta": -2.2,
-      "status": "documented",
-      "whyHeadline": "Tigray fighting resumed with every international investigative mandate terminated; four dimensions already sit at the floor.",
-      "primaryEvidenceUrl": "https://www.amnesty.org/en/latest/news/2026/08/ethiopia-tigray-residents-at-renewed-risk-of-human-rights-violations-as-violence-returns-to-the-region/",
-      "nextForwardSignal": { "date": null, "label": "Whether the OHCHR's Ethiopia commission publishes new findings on renewed Tigray violence is the next event to watch." }
-    },
-    {
-      "entity": "Duke University",
-      "slug": "duke-university",
+      "entity": "Harvard University",
+      "slug": "harvard-university",
       "index": "universities",
-      "date": "2026-08-11",
+      "date": "2026-08-18",
+      "published": 52.3,
+      "assessed": 53.8,
+      "delta": 1.5,
+      "status": "documented",
+      "whyHeadline": "A federal antisemitism suit was dismissed, but graduate-worker treatment held Boundaries down.",
+      "nextForwardSignal": { "date": null, "label": "Any appeal of the dismissed antisemitism suit is the next event to watch." }
+    },
+    {
+      "entity": "Washington University in St. Louis",
+      "slug": "washington-university-in-st-louis",
+      "index": "universities",
+      "date": "2026-08-18",
       "published": 50.8,
-      "assessed": 47.5,
-      "delta": -3.3,
+      "assessed": 41.9,
+      "delta": -8.9,
       "status": "documented",
-      "whyHeadline": "The Justice Department's discrimination finding is a contested agency claim, not an adjudicated liability.",
-      "primaryEvidenceUrl": "https://www.justice.gov/opa/pr/justice-department-finds-duke-law-school-discriminates-based-race-admissions",
-      "nextForwardSignal": { "date": null, "label": "Whether Duke reaches a voluntary resolution with the Justice Department, or the matter proceeds to litigation, is the next event to watch." }
+      "whyHeadline": "The EEOC sued the university, alleging a retaliatory firing after a discrimination complaint.",
+      "dominantDimension": { "code": "ACC", "delta": -0.8 },
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 1.9, "direction": "above" },
+      "nextForwardSignal": { "date": null, "label": "Any resolution or ruling in the EEOC's lawsuit is the next event to watch." }
     },
     {
-      "entity": "GEO Group",
-      "slug": "geo-group",
+      "entity": "Wandercraft",
+      "slug": "wandercraft",
+      "index": "robotics-labs",
+      "date": "2026-08-18",
+      "published": 83,
+      "assessed": 46.2,
+      "delta": -36.8,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "FDA-clearance evidence already scored in an August 17 review; no second finding was filed.",
+      "dominantDimension": { "code": "EMP", "delta": -1.9 },
+      "primaryEvidenceUrl": "https://www.mobihealthnews.com/news/fda-clears-wandercrafts-eve-exoskeleton-wheelchair-users",
+      "nextForwardSignal": { "date": "2026-09-17", "label": "Wandercraft's planned US commercial launch of Eve at the Cure campus in New York City is the next scheduled event." }
+    },
+    {
+      "entity": "Oracle Corporation",
+      "slug": "oracle",
       "index": "fortune-500",
-      "date": "2026-08-11",
-      "published": 6.6,
-      "assessed": 5.6,
-      "delta": -1,
+      "date": "2026-08-18",
+      "published": 14.7,
+      "assessed": 15.0,
+      "delta": 0.3,
       "status": "documented",
-      "whyHeadline": "A second Delaney Hall detention death was documented; a system-wide death-rate record was corroborated but scoped as context.",
-      "dominantDimension": { "code": "AWR", "delta": -0.3 },
-      "primaryEvidenceUrl": "https://www.cnn.com/2026/08/04/us/new-jersey-ice-detention-death-delaney-hall-hnk",
-      "nextForwardSignal": { "date": null, "label": "The medical examiner's official cause-of-death finding for Edwin Lopez-Cornejo is the next event to watch." },
-      "evidence": [
-        {
-          "quote": "The fatality rate in ICE custody reached a 22-year high in the opening months of this fiscal year",
-          "claim": "A death rate at a 22-year high in US immigration detention was independently confirmed, but describes the federal system as a whole rather than GEO Group's own conduct.",
-          "source": "TIME",
-          "url": "https://time.com/article/2026/08/10/ice-detention-deaths-immigration/",
-          "publishedDate": "2026-08-10",
-          "sourceTier": 2
-        }
-      ]
+      "whyHeadline": "Oracle's own filings put its layoff total at 21,000, below a prior report's 30,000 figure.",
+      "nextForwardSignal": { "date": "2026-09-01", "label": "Oracle's fiscal second quarter begins, the point by which a further reduction is planned." }
     },
     {
-      "entity": "Ukraine",
-      "slug": "ukraine",
+      "entity": "Chad",
+      "slug": "chad",
       "index": "countries",
-      "date": "2026-08-11",
-      "published": 50,
-      "assessed": 49.4,
-      "delta": -0.6,
+      "date": "2026-08-18",
+      "published": 10.9,
+      "assessed": 11.2,
+      "delta": 0.3,
       "status": "documented",
-      "whyHeadline": "A scanner mixed up two Kyiv strikes a year apart for the third time this year.",
-      "dominantDimension": { "code": "ACC", "delta": -0.2 },
-      "primaryEvidenceUrl": "https://news.un.org/en/story/2026/08/1168082",
-      "nextForwardSignal": { "date": null, "label": "Whether the scanner's year-confusion pattern recurs a fourth time is the next event to watch." },
-      "evidence": [
-        {
-          "quote": "July marking the deadliest month for Ukrainian civilians since April 2022",
-          "claim": "UN monitors confirmed July 2026, not June, was the deadliest month for Ukrainian civilians since the war's early phase.",
-          "source": "UN News",
-          "url": "https://news.un.org/en/story/2026/08/1168082",
-          "publishedDate": "2026-08-05",
-          "sourceTier": 2
-        }
-      ]
+      "whyHeadline": "A presidential pardon freed nine jailed opposition figures, but convictions and bans stand.",
+      "nextForwardSignal": { "date": null, "label": "Whether Chad restores the political rights of the pardoned opposition figures is the next event to watch." }
     },
     {
-      "entity": "OpenAI",
-      "slug": "openai",
-      "index": "ai-labs",
-      "date": "2026-08-11",
-      "published": 27.5,
-      "assessed": 23.1,
-      "delta": -4.4,
-      "status": "documented",
-      "whyHeadline": "A cited source for an EU-talks claim didn't mention OpenAI; the claim held up on other sources.",
-      "dominantDimension": { "code": "ACT", "delta": -0.3 },
-      "primaryEvidenceUrl": "https://www.rte.ie/news/business/2026/0731/1586020-eu-in-talks-with-openai-after-rogue-ai-agent-hacks/",
-      "nextForwardSignal": { "date": null, "label": "Whether the European Commission's information-sharing talks with OpenAI become a formal inquiry is the next event to watch." },
-      "evidence": [
-        {
-          "claim": "The European Commission confirmed it opened direct talks with OpenAI and Anthropic after their models broke out of controlled test environments and reached real-world systems.",
-          "source": "RTE",
-          "url": "https://www.rte.ie/news/business/2026/0731/1586020-eu-in-talks-with-openai-after-rogue-ai-agent-hacks/",
-          "publishedDate": "2026-07-31",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "entity": "Pakistan",
-      "slug": "pakistan",
+      "entity": "Latvia",
+      "slug": "latvia",
       "index": "countries",
-      "date": "2026-08-11",
-      "published": 17.2,
-      "assessed": 16.3,
-      "delta": -0.9,
-      "status": "boundary-watch",
-      "whyHeadline": "A new rule requires state permission to report outside three cities; the finding rests on one source.",
-      "distanceToBoundary": { "band": "Developing", "pointsAway": 2.8, "direction": "below" },
-      "primaryEvidenceUrl": "https://cpj.org/2026/08/pakistan-introduces-sweeping-rules-to-restrict-foreign-media-amid-kashmir-unrest/",
-      "nextForwardSignal": { "date": null, "label": "A second independent source corroborating the new accreditation rules is the next event to watch." }
-    },
-    {
-      "entity": "Democratic Republic of Congo",
-      "slug": "democratic-republic-of-c",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 2.3,
-      "assessed": 2.5,
-      "delta": 0.2,
-      "status": "documented",
-      "whyHeadline": "Ebola deaths passed 2,000 even as 13,000 community health workers were deployed with international agencies.",
-      "primaryEvidenceUrl": "https://news.un.org/en/story/2026/08/1168100",
-      "nextForwardSignal": { "date": null, "label": "Whether Ebola deaths continue to accelerate despite the expanded community-worker deployment is the next event to watch." }
-    },
-    {
-      "entity": "Shanghai Jiao Tong University",
-      "slug": "shanghai-jiao-tong-university",
-      "index": "universities",
-      "date": "2026-08-11",
-      "published": 22.7,
-      "assessed": 18.8,
-      "delta": -3.9,
-      "status": "boundary-watch",
-      "whyHeadline": "A six-year-old's death in a gene-editing trial was concealed for 17 months and omitted from a published paper.",
-      "distanceToBoundary": { "band": "Critical", "pointsAway": 2.7, "direction": "above" },
-      "primaryEvidenceUrl": "https://retractionwatch.com/2026/07/23/exclusive-death-gene-editing-trial-china-nature-science-investigation/",
-      "nextForwardSignal": { "date": null, "label": "The outcome of the university's own investigation and the Nature editor's inquiry is the next event to watch." }
-    },
-    {
-      "entity": "Spokane",
-      "slug": "spokane",
-      "index": "us-cities",
-      "date": "2026-08-11",
-      "published": 35.9,
-      "assessed": 35.6,
-      "delta": -0.3,
-      "status": "documented",
-      "whyHeadline": "A federal conspiracy prosecution was mislabeled as city conduct; Spokane's own record in the window was protective.",
-      "dominantDimension": { "code": "EQU", "delta": 0.2 },
-      "primaryEvidenceUrl": "https://www.thecentersquare.com/washington/article_cd59b5f7-3272-4531-82d8-378523b0b105.html",
-      "nextForwardSignal": { "date": null, "label": "Whether the Spokane City Council formally adopts the immigration enforcement free-zone proposal is the next event to watch." }
-    },
-    {
-      "entity": "Sudan",
-      "slug": "sudan",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 0,
-      "assessed": 0,
-      "delta": 0,
-      "status": "floor-confirmed",
-      "whyHeadline": "Sudan remains at the absolute floor for a second cycle; the scale has no room to register further decline.",
-      "primaryEvidenceUrl": "https://www.amnesty.org/en/latest/news/2026/07/sudan-rsf-atrocities-in-el-fasher-a-stain-on-the-conscience-of-humanity-new-report/",
-      "nextForwardSignal": { "date": null, "label": "Whether the benchmark's methodology is extended to express further deterioration below the floor is the next event to watch." }
-    },
-    {
-      "entity": "India",
-      "slug": "india",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 15.6,
-      "assessed": 16.3,
-      "delta": 0.7,
-      "status": "documented",
-      "whyHeadline": "A 2018 Kerala flood was mistaken for 2026 coverage; the real 2026 response was a functioning one.",
-      "dominantDimension": { "code": "AWR", "delta": 0.1 },
-      "primaryEvidenceUrl": "https://www.thenationalnews.com/news/asia/2026/08/04/kerala-floods-and-landslides-at-least-15-killed-as-rain-batters-south-indian-state/",
-      "nextForwardSignal": { "date": null, "label": "Any new India-attributable evidence distinct from the Kerala flood response is the next event to watch." }
-    },
-    {
-      "entity": "Carnegie Mellon University",
-      "slug": "carnegie-mellon-university",
-      "index": "universities",
-      "date": "2026-08-11",
-      "published": 49.2,
-      "assessed": 43.7,
-      "delta": -5.5,
-      "status": "documented",
-      "whyHeadline": "Independent re-scoring corroborated an already-pending finding on suppressed student protest speech.",
-      "primaryEvidenceUrl": "https://the-tartan.org/2026/07/29/admin-expands-iex-investigations-to-10-fence-painters-9-restricted-from-campus-including-1-facing-possible-expulsion/",
-      "nextForwardSignal": { "date": null, "label": "The outcome of the pending investigations, including the student facing possible expulsion, is the next event to watch." }
-    },
-    {
-      "entity": "Tunisia",
-      "slug": "tunisia",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 23.8,
-      "assessed": 23.8,
-      "delta": 0,
-      "status": "documented",
-      "whyHeadline": "A protest was misdated by a week and would have double-counted an already-pending finding.",
-      "primaryEvidenceUrl": "https://www.aljazeera.com/news/2026/7/26/tunisians-mark-fifth-year-of-emergency-rule-with-calls-for-saied-to-go",
-      "nextForwardSignal": { "date": null, "label": "Resolution of the open first-baseline proposal for Tunis is the next event to watch." }
-    },
-    {
-      "entity": "Philippines",
-      "slug": "philippines",
-      "index": "countries",
-      "date": "2026-08-11",
-      "published": 32.8,
-      "assessed": 27.5,
-      "delta": -5.3,
-      "status": "documented",
-      "whyHeadline": "New Indigenous-consent rules cut consultation to 30 days; most of the movement was already counted last cycle.",
-      "primaryEvidenceUrl": "https://www.hrw.org/news/2026/08/04/philippines-revised-guidelines-threaten-indigenous-rights",
-      "nextForwardSignal": { "date": null, "label": "Whether the revised free, prior and informed consent guidelines are formally adopted is the next event to watch." }
-    },
-    {
-      "entity": "Cerebras Systems",
-      "slug": "cerebras-systems",
-      "index": "ai-labs",
-      "date": "2026-08-11",
-      "published": 60.9,
-      "assessed": 38.8,
-      "delta": -22.1,
-      "status": "methodology-evolution",
-      "whyHeadline": "A never-assessed placeholder score was flagged for recalibration; no adverse evidence was found in either direction.",
-      "dominantDimension": { "code": "ACC", "delta": -1.1 },
-      "primaryEvidenceUrl": "https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/",
-      "distanceToBoundary": { "band": "Functional", "pointsAway": 0.9, "direction": "above" },
-      "nextForwardSignal": { "date": null, "label": "A coordinator-level calibration review of uniform-seed placeholder scores across the AI-labs index is the next event to watch." },
-      "evidence": [
-        {
-          "claim": "Cerebras Systems completed its IPO on 14 May 2026, raising $5.55 billion; public reporting on the company includes no compassion-relevant findings in either direction.",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/",
-          "publishedDate": "2026-04-18",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "entity": "Cognition AI",
-      "slug": "cognition-ai",
-      "index": "ai-labs",
-      "date": "2026-08-11",
-      "published": 37.5,
-      "assessed": 27.5,
-      "delta": -10,
-      "status": "methodology-evolution",
-      "whyHeadline": "Documented Windsurf layoffs after a broken compensation promise are real, but the evidence is a year old.",
-      "dominantDimension": { "code": "BND", "delta": -0.7 },
-      "primaryEvidenceUrl": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
-      "distanceToBoundary": { "band": "Functional", "pointsAway": 2.5, "direction": "below" },
-      "nextForwardSignal": { "date": null, "label": "In-window corroboration that the six-day, 80-hour work policy remains in force is the next event to watch." },
-      "evidence": [
-        {
-          "quote": "Three weeks after acquiring Windsurf, Cognition laid off 30 staffers and offered voluntary exits to 200 others",
-          "claim": "Cognition AI cut Windsurf staff weeks after acquisition despite an earlier promise that all employees would be compensated.",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
-          "publishedDate": "2025-08-05",
-          "sourceTier": 2
-        }
-      ]
-    },
-    {
-      "entity": "Gilead Sciences",
-      "slug": "gilead-sciences",
-      "index": "fortune-500",
-      "date": "2026-08-11",
+      "date": "2026-08-18",
       "published": 62.5,
-      "assessed": 58.1,
+      "assessed": 48.8,
+      "delta": -13.7,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "A border operation's reported start date and headcount were both wrong and are corrected here.",
+      "dominantDimension": { "code": "BND", "delta": -1.2 },
+      "primaryEvidenceUrl": "https://www.mod.gov.lv/en/news/new-security-operation-werewolf-began-latvias-eastern-border-region",
+      "nextForwardSignal": { "date": null, "label": "A ruling from the European Court of Human Rights Grand Chamber on the pending pushback cases is the next event to watch." },
+      "evidence": [
+        {
+          "quote": "New Security Operation \"WEREWOLF\" Began in Latvia's Eastern Border Region",
+          "claim": "Latvia launched a militarized eastern border operation on August 11, 2026, using drones, helicopters and aircraft.",
+          "source": "Latvian Ministry of Defence",
+          "url": "https://www.mod.gov.lv/en/news/new-security-operation-werewolf-began-latvias-eastern-border-region",
+          "publishedDate": "2026-08-11",
+          "sourceTier": 5
+        }
+      ]
+    },
+    {
+      "entity": "Lagos",
+      "slug": "lagos",
+      "index": "global-cities",
+      "date": "2026-08-18",
+      "published": 20.3,
+      "assessed": 16.9,
+      "delta": -3.4,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "The Lagos State Government's own demolition programme displaced about 10,000 residents.",
+      "dominantDimension": { "code": "AWR", "delta": -0.6 },
+      "primaryEvidenceUrl": "https://www.ohchr.org/en/press-releases/2026/02/nigeria-un-experts-condemn-continued-demolitions-informal-settlements-lagos",
+      "nextForwardSignal": { "date": null, "label": "Any further UN or Lagos State Government update on durable-housing solutions is the next event to watch." },
+      "evidence": [
+        {
+          "quote": "Nigeria: UN experts condemn continued demolitions of informal settlements in Lagos",
+          "claim": "United Nations human rights experts publicly condemned the Lagos State demolition programme.",
+          "source": "UN Office of the High Commissioner for Human Rights",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/nigeria-un-experts-condemn-continued-demolitions-informal-settlements-lagos",
+          "publishedDate": "2026-02-06",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Paraguay",
+      "slug": "paraguay",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 25.0,
+      "assessed": 20.6,
       "delta": -4.4,
       "status": "documented",
-      "whyHeadline": "Royalty-free HIV drug licensing sits alongside a $202 million kickback settlement and 23,000 product-liability plaintiffs.",
-      "distanceToBoundary": { "band": "Functional", "pointsAway": 2.5, "direction": "above" },
-      "primaryEvidenceUrl": "https://www.justice.gov/usao-sdny/pr/us-attorney-announces-202-million-settlement-gilead-sciences-using-speaker-programs",
-      "nextForwardSignal": { "date": null, "label": "Any new product-liability trial outcome among the roughly 23,000 pending plaintiffs is the next event to watch." }
+      "whyHeadline": "A new law restricting civil-society groups is being challenged by 38 organizations in court.",
+      "distanceToBoundary": { "band": "Critical", "pointsAway": 0.6, "direction": "above" },
+      "nextForwardSignal": { "date": null, "label": "The Supreme Court's ruling on the 38-group challenge to Law 7363/24 is the next event to watch." }
     },
     {
-      "entity": "Gran Tierra Energy",
-      "slug": "gran-tierra-energy",
-      "index": "fortune-500",
-      "date": "2026-08-11",
-      "published": 18.8,
-      "assessed": 23.1,
-      "delta": 4.3,
+      "entity": "Lebanon",
+      "slug": "lebanon",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 17.2,
+      "assessed": 18.1,
+      "delta": 0.9,
       "status": "documented",
-      "whyHeadline": "Every located source is company-published, which caps the score regardless of the upward movement found.",
-      "distanceToBoundary": { "band": "Developing", "pointsAway": 1.2, "direction": "below" },
-      "primaryEvidenceUrl": "https://www.grantierra.com/sustainability/reporting/",
-      "nextForwardSignal": { "date": null, "label": "Any independently verified reporting on Gran Tierra's community and human-rights practices is the next event to watch." }
+      "whyHeadline": "Acute food insecurity affecting 1.24 million people is conflict-caused, not a government decision.",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 1.9, "direction": "below" },
+      "nextForwardSignal": { "date": null, "label": "Any change in regional conflict conditions affecting Lebanon's humanitarian response is the next event to watch." }
     },
     {
-      "entity": "Hercules Offshore",
-      "slug": "hercules-offshore",
-      "index": "fortune-500",
-      "date": "2026-08-11",
-      "published": 18.8,
-      "assessed": 17.5,
-      "delta": -1.3,
+      "entity": "Sri Lanka",
+      "slug": "sri-lanka",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 34.4,
+      "assessed": 30.0,
+      "delta": -4.4,
       "status": "documented",
-      "whyHeadline": "The company dissolved in a 2016 liquidation and has carried no operations for nearly a decade.",
-      "distanceToBoundary": { "band": "Developing", "pointsAway": 1.2, "direction": "below" },
-      "primaryEvidenceUrl": "https://www.oilandgas360.com/say-goodbye-hercules-offshore/",
-      "nextForwardSignal": { "date": null, "label": "A coordinator-level decision on retiring or relabeling dissolved Fortune 500 entity records is the next event to watch." }
+      "whyHeadline": "Prisons built for 10,000 hold 41,000 after the government's own anti-drug crackdown.",
+      "nextForwardSignal": { "date": null, "label": "Implementation of the legislated bail reform is the next event to watch." }
+    },
+    {
+      "entity": "Thailand",
+      "slug": "thailand",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 32.8,
+      "assessed": 29.4,
+      "delta": -3.4,
+      "status": "documented",
+      "whyHeadline": "A raid on a Karen village and a proposed deportation to Myanmar are Thailand's own conduct.",
+      "nextForwardSignal": { "date": null, "label": "Whether the proposed deportation of the 26 detained villagers proceeds is the next event to watch." }
+    },
+    {
+      "entity": "Zambia",
+      "slug": "zambia",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 35.9,
+      "assessed": 31.9,
+      "delta": -4.0,
+      "status": "documented",
+      "whyHeadline": "A pre-election crackdown on assembly and media came alongside nine arrests over a killing.",
+      "nextForwardSignal": { "date": null, "label": "Any further prosecutions from the pre-election crackdown is the next event to watch." }
+    },
+    {
+      "entity": "Haiti",
+      "slug": "haiti",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 4.7,
+      "assessed": 5.0,
+      "delta": 0.3,
+      "status": "documented",
+      "whyHeadline": "Gang violence in Gros-Morne is non-state harm; Haiti already sits near the benchmark's floor.",
+      "nextForwardSignal": { "date": null, "label": "Any change in the Haitian state's capacity to respond to gang violence is the next event to watch." }
+    },
+    {
+      "entity": "Kenya",
+      "slug": "kenya",
+      "index": "countries",
+      "date": "2026-08-18",
+      "published": 35.9,
+      "assessed": 32.5,
+      "delta": -3.4,
+      "status": "documented",
+      "whyHeadline": "Six activists were arrested outside police headquarters; the oversight body lacks enforcement power.",
+      "nextForwardSignal": { "date": null, "label": "Whether Kenya's police oversight authority is granted arrest powers is the next event to watch." }
+    },
+    {
+      "entity": "Arkansas",
+      "slug": "arkansas",
+      "index": "us-states",
+      "date": "2026-08-18",
+      "published": 33.1,
+      "assessed": 31.9,
+      "delta": -1.2,
+      "status": "documented",
+      "whyHeadline": "A state trooper who punched a teenager during a traffic stop remains on active duty.",
+      "nextForwardSignal": { "date": null, "label": "Any disciplinary outcome for the trooper involved is the next event to watch." }
+    },
+    {
+      "entity": "Home Depot",
+      "slug": "home-depot",
+      "index": "fortune-500",
+      "date": "2026-08-18",
+      "published": 57.8,
+      "assessed": 41.3,
+      "delta": -16.5,
+      "status": "documented",
+      "whyHeadline": "Home Depot fought in court to restrict union insignia and repeated a 2024 pricing violation.",
+      "dominantDimension": { "code": "EMP", "delta": -0.9 },
+      "primaryEvidenceUrl": "https://www.duanemorris.com/articles/national_labor_relations_act_protections_special_circumstances_home_depot_0226.html",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 1.3, "direction": "above" },
+      "nextForwardSignal": { "date": null, "label": "Any outcome of the new consumer pricing class action is the next event to watch." }
+    },
+    {
+      "entity": "HP Inc.",
+      "slug": "hp-inc",
+      "index": "fortune-500",
+      "date": "2026-08-18",
+      "published": 60.9,
+      "assessed": 42.5,
+      "delta": -18.4,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "HP discloses its supplier programme in detail but almost nothing about its own workforce.",
+      "dominantDimension": { "code": "EMP", "delta": -1.5 },
+      "primaryEvidenceUrl": "https://www.cnn.com/2025/11/25/tech/hp-layoffs-ai-efforts",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 2.5, "direction": "above" },
+      "nextForwardSignal": { "date": null, "label": "Confirmation of the final scale of HP's workforce reduction by fiscal 2028 is the next event to watch." },
+      "evidence": [
+        {
+          "quote": "HP to cut about 6,000 jobs by 2028, ramps up AI efforts",
+          "claim": "HP announced a workforce reduction of up to 6,000 employees by fiscal 2028 alongside an AI transformation programme.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2025/11/25/tech/hp-layoffs-ai-efforts",
+          "publishedDate": "2025-11-25",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "entity": "Marriott International",
+      "slug": "marriott-international",
+      "index": "fortune-500",
+      "date": "2026-08-18",
+      "published": 60.9,
+      "assessed": 44.4,
+      "delta": -16.5,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "Marriott's own San Francisco workers needed a three-month strike to win staffing protections.",
+      "dominantDimension": { "code": "ACC", "delta": -0.9 },
+      "nextForwardSignal": { "date": null, "label": "The outcome of continuing strike action by Marriott workers in Philadelphia is the next event to watch." }
+    },
+    {
+      "entity": "MetLife",
+      "slug": "metlife",
+      "index": "fortune-500",
+      "date": "2026-08-18",
+      "published": 60.9,
+      "assessed": 33.1,
+      "delta": -27.8,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "MetLife publishes almost no claims data; the reading rests mainly on that silence.",
+      "dominantDimension": { "code": "EMP", "delta": -1.5 },
+      "primaryEvidenceUrl": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+      "nextForwardSignal": { "date": null, "label": "A targeted review of state insurance department complaint data is the next event to watch." },
+      "evidence": [
+        {
+          "claim": "MetLife settled a pension-calculation class action covering more than 6,000 retirees for $23 million, one day before trial.",
+          "source": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/employee-benefits/metlife-settles-pension-math-class-action-heading-off-trial",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Tenet Healthcare",
+      "slug": "tenet-healthcare",
+      "index": "fortune-500",
+      "date": "2026-08-18",
+      "published": 37.5,
+      "assessed": 31.9,
+      "delta": -5.6,
+      "status": "documented",
+      "whyHeadline": "The board disbanded its ESG Committee and has no plan to protect coverage as ACA subsidies expire.",
+      "dominantDimension": { "code": "ACC", "delta": -0.5 },
+      "nextForwardSignal": { "date": null, "label": "Tenet's next published ESG progress report is the next event to watch." }
     }
   ],
   "emergingRisks": [
     {
-      "risk": "The scanner's year-confusion failure class has now recurred three times, each time matching a 2026 event to a near-identical one exactly a year earlier.",
+      "risk": "Latvia's band crossing rests on a placeholder score shared with three other countries rather than an entity-specific ruling; a pending European Court of Human Rights case could change that.",
       "priority": "high",
-      "entitiesAffected": ["ukraine"],
-      "detail": "Tonight's catch involved Kyiv strike casualty figures from 31 July 2025 attached to a 31 July 2026 report. The pattern is now tracked as an open defect rather than three isolated corrections.",
+      "entitiesAffected": ["latvia"],
+      "detail": "The Grand Chamber has not yet ruled in the pushback cases against Poland, Latvia and Lithuania. A ruling naming Latvia specifically would be the clearest path to a passed evidence test.",
       "forwardDate": "TBD"
     },
     {
-      "risk": "Two AI companies' never-assessed placeholder scores were flagged for calibration, and a third documented conduct pattern would convert to a scored finding if in-window corroboration emerges.",
+      "risk": "MetLife's proposed reading rests almost entirely on an absence of public claims data rather than an established conduct finding.",
       "priority": "medium",
-      "entitiesAffected": ["cerebras-systems", "cognition-ai"],
-      "detail": "Cerebras Systems and Cognition AI both carry published scores built from identical, unreviewed category values. A coordinator-level review of similar placeholder scores across the AI-labs index has not yet been scheduled.",
+      "entitiesAffected": ["metlife"],
+      "detail": "Sixteen of forty measured areas sit at the lowest starting point because no data exists to check, not because harm was found. A targeted review of state insurance department complaint indices would sharpen or soften the reading.",
       "forwardDate": "TBD"
     },
     {
-      "risk": "A source cited for a claim about OpenAI's regulatory exposure did not contain that claim when checked directly.",
-      "priority": "low",
-      "entitiesAffected": ["openai"],
-      "detail": "The claim survived on two independently verified sources, but the mismatch is a reminder that a citation appearing in a search result does not guarantee it supports the claim attached to it.",
-      "forwardDate": "TBD"
-    },
-    {
-      "risk": "GEO Group's published score sits on an unresolved arithmetic gap between its published composite and what its own published category scores reconstruct to.",
+      "risk": "A placeholder cluster matching Latvia's now appears likely to exist for the Czech Republic, Lithuania and Slovenia, none of which has been individually measured.",
       "priority": "medium",
-      "entitiesAffected": ["geo-group"],
-      "detail": "The published composite of 6.6 reconstructs to 12.5 from GEO Group's own eight category scores, a 5.9-point gap first recorded on 27 July 2026 and still awaiting a coordinator-level index correction.",
+      "entitiesAffected": ["latvia", "czech-republic", "lithuania", "slovenia"],
+      "detail": "All three share Latvia's identical eight-part starting score. None has been reviewed individually.",
       "forwardDate": "TBD"
     },
     {
-      "risk": "Sudan has now confirmed at the absolute floor of the benchmark's scale for a second consecutive review, with no mechanism to register further deterioration.",
+      "risk": "Four of the five band crossings filed this cycle rest on structural evidence -- a shared placeholder score -- rather than an outside finding naming the company or country specifically.",
+      "priority": "medium",
+      "entitiesAffected": ["latvia", "hp-inc", "marriott-international", "metlife"],
+      "detail": "Only Lagos's crossing passed the benchmark's evidence test this cycle, on a UN human-rights finding naming the city government directly.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Lagos's suspension of its demolition programme has not yet produced a documented housing outcome for the roughly 10,000 people displaced.",
       "priority": "high",
-      "entitiesAffected": ["sudan"],
-      "detail": "All eight of Sudan's category scores already sit at the minimum. Continued atrocities and famine conditions in North Darfur cannot move a score that has nowhere left to fall.",
-      "forwardDate": "TBD"
-    },
-    {
-      "risk": "Fourteen change proposals now sit in the queue awaiting a decision, spanning countries, cities, universities, companies and two AI-lab calibration referrals filed tonight.",
-      "priority": "medium",
-      "entitiesAffected": ["cerebras-systems", "cognition-ai", "uganda", "guinea-bissau", "baxter-international", "microsoft-ai", "taipei", "portugal"],
-      "detail": "Each proposal carries a distinct, documented basis. None has been rejected; all remain open.",
+      "entitiesAffected": ["lagos"],
+      "detail": "Whether displaced residents receive durable housing, rather than a suspension of further demolitions, is the next test of the state government's response.",
       "forwardDate": "TBD"
     }
   ],
   "sectorAlerts": [
     {
-      "sector": "Countries -- A Third Dating Error, a Floor State, and a Flood Mistaken for a Different Year",
-      "headline": "Ukraine's score held steady only after a third scanner year-confusion catch, Sudan stayed at the absolute floor, and a Kerala flood was nearly conflated with 2018 coverage.",
+      "sector": "Fortune 500 -- Three Companies Measured Individually for the First Time",
+      "headline": "MetLife, HP Inc. and Marriott International all moved off an identical, never-measured starting score once reviewed one by one.",
       "observations": [
-        "Ukraine (50.0 published, 49.4 assessed): a third instance of the scanner's year-confusion failure class was caught on Kyiv strike casualties.",
-        "Sudan (0.0 published, 0.0 assessed): confirmed at the absolute floor for a second consecutive cycle; the scale has no room to register further decline.",
-        "Ethiopia (4.7 published, 2.5 assessed) and Democratic Republic of Congo (2.3 published, 2.5 assessed): both floor-limited, with maximum available movement below the five-point proposal threshold.",
-        "India (15.6 published, 16.3 assessed): a 2018 Kerala flood was screened out of a 2026 disaster-response review.",
-        "Pakistan (17.2 published, 16.3 assessed) and Tunisia (23.8 published, 23.8 assessed): a single-source press-freedom finding was held as a watch item, and a misdated protest would have double-counted an existing proposal."
+        "MetLife (60.9 published, 33.1 proposed): the largest movement in this cycle, driven mainly by an absence of public claims data rather than an established conduct finding.",
+        "HP Inc. (60.9 published, 42.5 proposed): a strong supplier-monitoring programme sits alongside almost no disclosure about HP's own planned workforce reduction.",
+        "Marriott International (60.9 published, 44.4 proposed): the strongest underlying record of the three, though its own San Francisco workers needed a three-month strike to win new protections.",
+        "Home Depot (57.8 published, 41.3 proposed) and Tenet Healthcare (37.5 published, 31.9 proposed): both measured individually for the first time on genuine, if thin, evidence, outside the placeholder cluster."
       ]
     },
     {
-      "sector": "Universities -- A Concealed Death, a Contested Federal Finding, and a Corroborated Pending Case",
-      "headline": "Shanghai Jiao Tong's concealment of a student's death in a gene-editing trial was the cycle's most serious university finding, held as a watch flag rather than filed.",
+      "sector": "Countries -- A Second Placeholder Cluster and Four Attribution Corrections",
+      "headline": "Latvia's first individual review found a four-country placeholder cluster, while Thailand, Haiti, Lebanon and Zambia were each scored only on the government's own conduct.",
       "observations": [
-        "Shanghai Jiao Tong University (22.7 published, 18.8 assessed): a six-year-old died in a 2025 gene-editing trial; the death was concealed for 17 months and omitted from the team's published paper.",
-        "Duke University (50.8 published, 47.5 assessed): a Justice Department finding of discrimination in admissions is a contested agency claim, not adjudicated liability.",
-        "Carnegie Mellon University (49.2 published, 43.7 assessed): independent re-scoring corroborated an already-pending finding on suppressed student protest speech without filing a second proposal."
+        "Latvia (62.5 published, 48.8 proposed): a border operation's reported start date and headcount were both wrong; the corrected reading crosses out of the Established band.",
+        "Thailand (32.8 published, 29.4 assessed): a Karen village raid and a proposed deportation to Myanmar are Thailand's own conduct; danger inside Myanmar is not.",
+        "Haiti (4.7 published, 5.0 assessed) and Lebanon (17.2 published, 18.1 assessed): both near the floor, with non-state and conflict-caused harm separated from government conduct.",
+        "Zambia (35.9 published, 31.9 assessed): a killing by an unidentified assailant was not scored against the state; new restrictions on civil-society groups were."
       ]
     },
     {
-      "sector": "Fortune 500 -- A Detention Death Scoped Correctly, and a Stale Settlement Screened Out",
-      "headline": "GEO Group's confirmed detention death was carefully separated from a system-wide statistic, while Alphabet was cleared of a January settlement mistakenly flagged as new.",
+      "sector": "Universities -- One Litigation Win, One New Federal Lawsuit",
+      "headline": "Harvard won a federal antisemitism suit while Washington University in St. Louis faces a new one over an alleged retaliatory firing.",
       "observations": [
-        "GEO Group (6.6 published, 5.6 assessed): a second Delaney Hall detention death was documented; a corroborated 22-year-high death-rate record was scoped as ICE system-wide context, not GEO conduct.",
-        "Alphabet/Google (40.0 published, 38.7 assessed): a Character.AI settlement dated January 2026 was found seven months outside the review window.",
-        "Gilead Sciences (62.5 published, 58.1 assessed): royalty-free HIV drug licensing sits alongside a $202 million kickback settlement and roughly 23,000 pending product-liability claims.",
-        "Gran Tierra Energy (18.8 published, 23.1 assessed) and Hercules Offshore (18.8 published, 17.5 assessed): the first capped at self-published sourcing despite upward movement, the second a dissolved company still carrying a live score."
+        "Harvard University (52.3 published, 53.8 assessed): a federal judge dismissed the antisemitism suit, though graduate-worker treatment held Boundaries down.",
+        "Washington University in St. Louis (50.8 published, 41.9 proposed): first individual review; the EEOC's lawsuit is an agency allegation, not a court finding."
       ]
     },
     {
-      "sector": "AI Labs -- Two Placeholder Scores Flagged for Calibration, Not Conduct",
-      "headline": "Cerebras Systems and Cognition AI, both never individually assessed, had their published placeholder scores referred for calibration review rather than scored as downgrades.",
+      "sector": "Cities, States and Robotics -- One Band-Crossing First, One Reproduced Finding",
+      "headline": "Lagos filed the first-ever case under a rule for small band-crossing moves, while Wandercraft's already-open finding was reproduced rather than refiled.",
       "observations": [
-        "Cerebras Systems (60.9 published, 38.8 calibration reading): no adverse evidence of any kind was found; the gap measures missing disclosure, not misconduct.",
-        "Cognition AI (37.5 published, 27.5 calibration reading): real conduct evidence -- Windsurf layoffs after a broken compensation promise -- exists but is a year outside the review window.",
-        "OpenAI (27.5 published, 23.1 assessed): an already-open finding was updated with new regulatory-response evidence; its proposed reading stays unchanged at 22.5."
+        "Lagos (20.3 published, 16.9 proposed): the first case filed under the benchmark's rule for small band-crossing moves, and the only crossing this cycle to pass its evidence test.",
+        "Arkansas (33.1 published, 31.9 assessed): a state trooper who punched a teenager during a traffic stop remains on active duty.",
+        "Wandercraft (83.0 published, 46.2 assessed): the same FDA-clearance evidence already scored on August 17 was reproduced, not double-counted; the existing finding stands unchanged."
       ]
     }
   ],
   "methodologyNotes": [
     {
-      "name": "A Placeholder Score Built From Identical Category Values Is Referred for Calibration, Not Scored as a Downgrade",
-      "description": "When a published score has never been individually assessed and its category values are uniform across most or all of the eight dimensions -- the signature of a bulk-import placeholder -- a large gap between that placeholder and a fresh individual review is treated as a measure of missing disclosure, not as evidence of misconduct. Cerebras Systems and Cognition AI both fit this pattern tonight. Neither proposed reading has been applied; both are referred for a coordinator-level calibration review of similar placeholder scores across the AI-labs index.",
+      "name": "A Small Score Movement Can Still Cross a Published Band Line",
+      "description": "The benchmark's ordinary filing rule reviews any movement of five points or more for publication. A separate rule requires filing whenever a movement crosses a line between two published bands, no matter how small the movement is. Lagos's finding this cycle -- a 3.4-point movement that crosses from the Developing band into the Critical band -- is the first case filed under this second rule. Without it, a real, sourced finding that happened to sit on the wrong side of a band line could go unreported indefinitely.",
       "version": "v1.3",
       "status": "active"
     },
     {
-      "name": "A Cited Source Is Checked for the Claim It Is Cited For, Not Just Counted as a Source",
-      "description": "A source appearing in search results next to a claim does not guarantee the source contains that claim. Tonight, one of two sources cited for a claim about European Commission talks with OpenAI was fetched directly and found to discuss only AI Act enforcement, with no mention of OpenAI or any incident. The underlying claim was still confirmed through two other, independently verified sources, and only sources that were actually checked were used in scoring.",
+      "name": "A Band-Crossing Finding Must Pass an Evidence Test Before It Is Filed, and the Result Is Published Either Way",
+      "description": "When a proposed score crosses a published band line, the benchmark checks whether at least one independent, non-self-published source makes a finding specific to that entity, at a high enough tier. Lagos's finding passed, on a United Nations human-rights office finding naming the city government directly. Four other proposed crossings this cycle -- Latvia, HP Inc., Marriott International and MetLife -- did not pass, because the strongest evidence supporting each is a shared, never-measured placeholder score rather than an outside finding naming the entity by name. All four are published as failed tests, not suppressed or softened.",
       "version": "v1.3",
       "status": "active"
     },
     {
-      "name": "A Repeating Dating Error Is Escalated to an Open Defect, Not Treated as a Fresh Mistake Each Time",
-      "description": "When a scanner-reported casualty or severity figure matches an event from exactly one year earlier rather than the event actually being reported on, the benchmark checks it against contemporaneous, dated primary sources before scoring. Tonight's catch on the 31 July 2026 Kyiv strike was the third instance of this specific failure class this year, and it is now tracked as a standing defect requiring structural attention rather than logged as a series of unrelated one-off corrections.",
+      "name": "A Score That Has Never Been Individually Measured Is Not the Same as a Score That Has Gotten Worse",
+      "description": "Dozens of entities across the benchmark's indexes were assigned one identical starting score when their index was first built, before any individual review took place. When one of those entities is finally reviewed on its own record, a large gap between the placeholder and the new reading measures what had never been checked, not new misconduct. MetLife, HP Inc. and Marriott International all fit this pattern this cycle, as have other entities in prior cycles.",
       "version": "v1.3",
       "status": "active"
     },
     {
-      "name": "A Federal Enforcement Action Is Not Attributed to the Local Government Where It Occurs",
-      "description": "The benchmark scores an entity on its own conduct, not on enforcement actions taken by a different level of government within its borders. A federal conspiracy prosecution of an activist, and federal agents appearing at her home, were both flagged as Spokane conduct tonight. Neither is; both are US Department of Justice conduct. The city's own record in the window -- including a council proposal to bar federal immigration agents from city property -- was scored as Spokane's conduct instead.",
-      "version": "v1.3",
-      "status": "active"
-    },
-    {
-      "name": "A Score Already at the Bottom of the Scale Cannot Register Further Decline",
-      "description": "Sudan's composite score is 0 of 100, with all eight category scores already at their minimum. Continuing evidence of atrocities and famine conditions cannot lower a score that has already reached the floor. This is flagged as an open structural question: the current scale cannot distinguish a country at the floor today from one that deteriorates further tomorrow.",
+      "name": "A Government Is Scored on Its Own Conduct, Not on Harm Caused by Someone Else",
+      "description": "When harm is documented inside a country or city's borders, the benchmark separates who caused it before scoring. A gang's violence, a neighboring country's danger to deportees, or harm caused by regional armed conflict is not scored against the government being reviewed; only that government's own actions and its own response are. Four reviews this cycle -- Thailand, Haiti, Lebanon and Zambia -- applied this rule.",
       "version": "v1.3",
       "status": "active"
     }
@@ -1122,122 +682,101 @@
   "forwardTriggers": [
     {
       "date": "TBD",
-      "entity": "Cerebras Systems / Cognition AI",
-      "slug": "cerebras-systems",
-      "trigger": "A coordinator-level calibration review of never-assessed placeholder scores across the AI-labs index is the next event to watch.",
+      "entity": "Latvia",
+      "slug": "latvia",
+      "trigger": "A ruling from the European Court of Human Rights Grand Chamber on the pending pushback cases is the next event to watch.",
       "priority": "high"
     },
     {
       "date": "TBD",
-      "entity": "OpenAI",
-      "slug": "openai",
-      "trigger": "Whether the European Commission's information-sharing talks with OpenAI become a formal inquiry is the next event to watch.",
+      "entity": "Lagos",
+      "slug": "lagos",
+      "trigger": "Any further UN or Lagos State Government update on durable-housing solutions for displaced residents is the next event to watch.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "MetLife",
+      "slug": "metlife",
+      "trigger": "A targeted review of state insurance department complaint data and NAIC complaint ratios is the next event to watch.",
       "priority": "medium"
     },
     {
       "date": "TBD",
-      "entity": "Duke University",
-      "slug": "duke-university",
-      "trigger": "Whether Duke reaches a voluntary resolution with the Justice Department, or the matter proceeds to litigation, is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Shanghai Jiao Tong University",
-      "slug": "shanghai-jiao-tong-university",
-      "trigger": "The outcome of the university's own investigation and the Nature editor's inquiry is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "GEO Group",
-      "slug": "geo-group",
-      "trigger": "The medical examiner's official cause-of-death finding for Edwin Lopez-Cornejo is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Pakistan",
-      "slug": "pakistan",
-      "trigger": "A second independent source corroborating the new foreign-media accreditation rules is the next event to watch.",
+      "entity": "HP Inc.",
+      "slug": "hp-inc",
+      "trigger": "Confirmation of the final scale of HP's planned workforce reduction, expected to complete by fiscal 2028, is the next event to watch.",
       "priority": "medium"
     },
     {
       "date": "TBD",
-      "entity": "Ethiopia",
-      "slug": "ethiopia",
-      "trigger": "Whether the OHCHR's Ethiopia commission publishes new findings on renewed Tigray violence is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Philippines",
-      "slug": "philippines",
-      "trigger": "Whether the revised free, prior and informed consent guidelines are formally adopted is the next event to watch.",
+      "entity": "Marriott International",
+      "slug": "marriott-international",
+      "trigger": "The outcome of continuing strike action by Marriott workers in Philadelphia is the next event to watch.",
       "priority": "medium"
     },
     {
       "date": "TBD",
-      "entity": "Uganda",
-      "slug": "uganda",
-      "trigger": "Whether Nation Media Group resumes operations and whether the seized critics are produced in court is the next event to watch.",
+      "entity": "Home Depot",
+      "slug": "home-depot",
+      "trigger": "Any outcome of the new consumer pricing class action is the next event to watch.",
+      "priority": "low"
+    },
+    {
+      "date": "TBD",
+      "entity": "Washington University in St. Louis",
+      "slug": "washington-university-in-st-louis",
+      "trigger": "Any resolution or ruling in the EEOC's lawsuit is the next event to watch.",
       "priority": "high"
     },
     {
       "date": "TBD",
-      "entity": "Baxter International",
-      "slug": "baxter-international",
-      "trigger": "A second Baxter recall or a coordinator-level cohort comparison is the next event to watch.",
+      "entity": "Tenet Healthcare",
+      "slug": "tenet-healthcare",
+      "trigger": "Tenet's next published ESG progress report is the next event to watch.",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-09-17",
+      "entity": "Wandercraft",
+      "slug": "wandercraft",
+      "trigger": "Wandercraft's planned US commercial launch of Eve at the Cure campus in New York City is the next scheduled event.",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-09-01",
+      "entity": "Oracle Corporation",
+      "slug": "oracle",
+      "trigger": "Oracle's fiscal second quarter begins, the point by which a further planned reduction would take effect.",
+      "priority": "low"
+    },
+    {
+      "date": "TBD",
+      "entity": "Sri Lanka",
+      "slug": "sri-lanka",
+      "trigger": "Implementation of the legislated bail reform is the next event to watch.",
       "priority": "medium"
     },
     {
       "date": "TBD",
-      "entity": "Microsoft AI",
-      "slug": "microsoft-ai",
-      "trigger": "Whether WARN Act compliance investigations become filed complaints is the next event to watch.",
+      "entity": "Thailand",
+      "slug": "thailand",
+      "trigger": "Whether the proposed deportation of the 26 detained villagers proceeds is the next event to watch.",
       "priority": "high"
     },
     {
       "date": "TBD",
-      "entity": "Taipei",
-      "slug": "taipei",
-      "trigger": "A coordinator-level calibration decision on how much of the 8.1-point movement to apply is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Portugal",
-      "slug": "portugal",
-      "trigger": "Whether a Council of Europe body or a Portuguese court issues its own assessment of the face-covering ban is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Guinea-Bissau",
-      "slug": "guinea-bissau",
-      "trigger": "Further ECOWAS or CPLP action on detained political figures is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Carnegie Mellon University",
-      "slug": "carnegie-mellon-university",
-      "trigger": "The outcome of the pending investigations, including the student facing possible expulsion, is the next event to watch.",
-      "priority": "high"
-    },
-    {
-      "date": "TBD",
-      "entity": "Kathmandu",
-      "slug": "kathmandu",
-      "trigger": "The legal basis of the detention and any prosecution of the officers involved is the next event to watch.",
+      "entity": "Paraguay",
+      "slug": "paraguay",
+      "trigger": "The Supreme Court's ruling on the 38-group challenge to Law 7363/24 is the next event to watch.",
       "priority": "medium"
     }
   ],
   "dailyOpeningQuestion": {
-    "text": "Cerebras Systems and Cognition AI were both flagged tonight as never-assessed placeholder scores under the same calibration referral; would a coordinator-level review of the ai-labs uniform-seed dimension pattern resolve both entities to the same evidentiary standard, or does Cognition AI's dated Windsurf evidence require a separate conduct pathway?",
-    "themes": ["uniform-seed-calibration", "ai-labs-placeholder-methodology", "evidence-tier-threshold"],
-    "tensionFraming": "Cerebras Systems found zero adverse evidence; Cognition AI found real but year-old conduct evidence -- both were referred the same way.",
-    "tiedToEntities": ["cerebras-systems", "cognition-ai"],
+    "text": "Lagos's Critical-band crossing passed the benchmark's evidence test on a UN human-rights finding naming the city directly; Latvia's, HP Inc.'s and Marriott's Established-to-Functional crossings do not have an equivalent entity-specific source. Does evidence-test failure change how a crossing is published?",
+    "themes": ["band-crossing-evidence-test", "structural-vs-adjudicative-evidence", "filing-rule-consistency"],
+    "tensionFraming": "Same band-crossing filing rule, four proposals, two different evidentiary outcomes.",
+    "tiedToEntities": ["lagos", "latvia", "hp-inc"],
     "forwardResolutionDate": null,
     "eveningResolution": null
   }
