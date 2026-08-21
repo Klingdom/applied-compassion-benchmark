@@ -112,6 +112,10 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
+      # Needed by the freshness assertion below, which compares what this
+      # commit expects to publish against what the live host actually serves.
+      - uses: actions/checkout@v4
+
       - name: Wait for container restart (~30s)
         run: sleep 30
 
@@ -140,3 +144,44 @@ jobs:
           composite=$(echo "$payload" | grep -oP '"composite"\s*:\s*\K[0-9.]+' | head -1)
           updated=$(echo "$payload" | grep -oP '"updatedAt"\s*:\s*"\K[0-9-]+' | head -1)
           echo "Slovakia composite=$composite updatedAt=$updated"
+
+      # ────────────────────────────────────────────────────────────────
+      # FRESHNESS ASSERTION — the check that actually proves a deploy landed.
+      #
+      # Every probe above passes against a STALE container. The site is a
+      # static export baked into the image at build time, so if `docker compose
+      # build` reuses a cached layer the container restarts happily, returns
+      # 200 everywhere, and serves last week's scores.
+      #
+      # That is not hypothetical: between 2026-08-16 and 2026-08-19 the live
+      # site served Uganda at 20.3 while main had 11.9, across six pushes,
+      # with every check above green throughout.
+      #
+      # This step compares the briefing date THIS COMMIT expects to publish
+      # against the one the live host is actually serving. They must match.
+      # ────────────────────────────────────────────────────────────────
+      - name: "Live site serves this commit's content (freshness assertion)"
+        run: |
+          expected=$(node -p "require('./site/src/data/updates/manifest.json').latest")
+          if [ -z "$expected" ] || [ "$expected" = "undefined" ]; then
+            echo "::error::Could not read .latest from site/src/data/updates/manifest.json"
+            exit 1
+          fi
+
+          live=$(curl -fsS https://compassionbenchmark.com/updates/feed.json \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{
+                const f=JSON.parse(s);
+                const i=(f.items||[])[0]||{};
+                process.stdout.write(String(i.date_published||'').slice(0,10));
+              });")
+
+          echo "expected latest briefing: $expected"
+          echo "live latest briefing:     $live"
+
+          if [ "$expected" != "$live" ]; then
+            echo "::error::STALE DEPLOY — the host is serving '$live' but this commit publishes '$expected'."
+            echo "::error::The container restarted but did not pick up new content (cached Docker layer)."
+            echo "::error::Remedy on the VPS: docker compose build --no-cache web && docker compose up -d"
+            exit 1
+          fi
+          echo "Freshness OK — live content matches this commit."
