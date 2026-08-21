@@ -1,8 +1,8 @@
 {
-  "buildDate": "2026-08-21T03:07:06.851Z",
-  "buildTimestamp": 1787281626851,
+  "buildDate": "2026-08-21T22:12:02.158Z",
+  "buildTimestamp": 1787350322158,
   "git": {
-    "sha": "0c7a6118",
+    "sha": "28b5b382",
     "branch": "nightly-research-2026-07-24-27",
     "dirty": true
   },
@@ -12,14 +12,14 @@
       "name": "ai-labs",
       "rankingsCount": 50,
       "entityCount": 50,
-      "hash": "sha256:af61d3b6c749f7463200549a3b0243156ff9478144f625a7838dce69cba72eb0",
-      "meanScore": 42.6,
+      "hash": "sha256:a5b23c1e40582e7b5784641e1536d3a9f1d8444998143e43a70f89951d88d848",
+      "meanScore": 42,
       "medianScore": 45.3,
       "bands": {
         "Exemplary": 3,
         "Established": 8,
-        "Functional": 15,
-        "Developing": 19,
+        "Functional": 16,
+        "Developing": 18,
         "Critical": 5
       },
       "floorDesignations": 3
@@ -28,15 +28,15 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:cf032a82430dd4aecf1dde28c4809ca63cd0b72f14e6429ef107bc10c959fc96",
-      "meanScore": 36.2,
+      "hash": "sha256:3631e441ce1a1d91a85611f4c37cf37d14bc6fe2eb572f31467f2a34c363afed",
+      "meanScore": 36,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
         "Established": 26,
         "Functional": 29,
-        "Developing": 76,
-        "Critical": 48
+        "Developing": 68,
+        "Critical": 56
       },
       "floorDesignations": 4
     },
@@ -44,14 +44,14 @@
       "name": "fortune-500",
       "rankingsCount": 447,
       "entityCount": 447,
-      "hash": "sha256:fe6a83d980d83758658b0ebbe4cbe97906cdf03fe12c8504284546383e5c70df",
-      "meanScore": 39.1,
+      "hash": "sha256:170ce6c3f470cb40d90656f41eef7e667d8a77f0ca5a298a354827fa4b8aeee4",
+      "meanScore": 38.9,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 7,
-        "Established": 49,
-        "Functional": 121,
-        "Developing": 217,
+        "Established": 46,
+        "Functional": 123,
+        "Developing": 218,
         "Critical": 53
       },
       "floorDesignations": 0
@@ -60,30 +60,30 @@
       "name": "global-cities",
       "rankingsCount": 250,
       "entityCount": 250,
-      "hash": "sha256:ac3194a2d024873e370c2378d2bcd2d03ff9a36af2a6035c2cd6fdb6012b0c24",
+      "hash": "sha256:42d8b4a51064031fe0d6a98017c89009f355e378079d0c73e2b423ae2b53baff",
       "meanScore": 35.1,
       "medianScore": 31.3,
       "bands": {
         "Exemplary": 15,
         "Established": 26,
         "Functional": 35,
-        "Developing": 106,
-        "Critical": 68
+        "Developing": 105,
+        "Critical": 69
       },
       "floorDesignations": 0
     },
     {
       "name": "robotics-labs",
-      "rankingsCount": 50,
-      "entityCount": 50,
-      "hash": "sha256:07202e8c655f44e3ed5cf1a916bb2efaa68964613a23c40abfd3d1dc03ed0a29",
-      "meanScore": 56.7,
-      "medianScore": 60.9,
+      "rankingsCount": 63,
+      "entityCount": 63,
+      "hash": "sha256:18b287c9e98bf4840fb3e233c012e8add223f5dbb7654c2c379b652aadcee51d",
+      "meanScore": 48.7,
+      "medianScore": 48.4,
       "bands": {
-        "Exemplary": 13,
-        "Established": 15,
-        "Functional": 10,
-        "Developing": 10,
+        "Exemplary": 12,
+        "Established": 11,
+        "Functional": 11,
+        "Developing": 27,
         "Critical": 2
       },
       "floorDesignations": 1
@@ -92,9 +92,9 @@
       "name": "universities",
       "rankingsCount": 100,
       "entityCount": 100,
-      "hash": "sha256:6355f53bdfdb355ca20a3485f3f84686155111887c05b60d1890a16df36e18af",
-      "meanScore": 46.2,
-      "medianScore": 46.9,
+      "hash": "sha256:00e5051c793dc11b1ad993b6f6f7844a46b6a2d248bc7b020c8417f934c944af",
+      "meanScore": 46.1,
+      "medianScore": 46.1,
       "bands": {
         "Exemplary": 0,
         "Established": 3,
@@ -137,148 +137,148 @@
       "floorDesignations": 0
     }
   ],
-  "totalEntities": 1285,
+  "totalEntities": 1298,
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
     {
-      "slug": "baxter-international-2026-07-22",
-      "entity": "Baxter International",
+      "slug": "aethon",
+      "entity": "Aethon (Teradyne)",
+      "index": "robotics-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "agility-robotics",
+      "entity": "Agility Robotics",
+      "index": "robotics-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "algeria",
+      "entity": "Algeria",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "axon-ai",
+      "entity": "Axon AI",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "cameroon",
+      "entity": "Cameroon",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "djibouti",
+      "entity": "Djibouti",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "guinea",
+      "entity": "Guinea",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "home-depot",
+      "entity": "Home Depot",
       "index": "fortune-500",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "becton-dickinson-2026-07-23",
-      "entity": "Becton Dickinson",
+      "slug": "honduras",
+      "entity": "Honduras",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "hp-inc",
+      "entity": "HP Inc.",
       "index": "fortune-500",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "carnegie-mellon-university-2026-07-29",
-      "entity": "Carnegie Mellon University",
-      "index": "universities",
+      "slug": "intercontinental-hotel",
+      "entity": "InterContinental Hotel",
+      "index": "fortune-500",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "cerebras-systems",
-      "entity": "Cerebras Systems",
-      "index": "ai-labs",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "cognition-ai",
-      "entity": "Cognition AI",
-      "index": "ai-labs",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "ecuador",
-      "entity": "Ecuador",
+      "slug": "kazakhstan",
+      "entity": "Kazakhstan",
       "index": "countries",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "guinea-bissau-2026-07-23",
-      "entity": "Guinea-Bissau",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "kathmandu",
-      "entity": "Kathmandu",
+      "slug": "lagos",
+      "entity": "Lagos",
       "index": "global-cities",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "mali",
-      "entity": "Mali",
+      "slug": "marriott-international",
+      "entity": "Marriott International",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "mauritania",
+      "entity": "Mauritania",
       "index": "countries",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "microsoft-ai",
-      "entity": "Microsoft AI",
+      "slug": "naver-labs",
+      "entity": "Naver Labs",
+      "index": "robotics-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "neura-robotics",
+      "entity": "Neura Robotics",
+      "index": "robotics-labs",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "papua-new-guinea",
+      "entity": "Papua New Guinea",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-08-20"
+    },
+    {
+      "slug": "pika-labs",
+      "entity": "Pika Labs",
       "index": "ai-labs",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
+      "appliedDate": "2026-08-20"
     },
     {
-      "slug": "niger",
-      "entity": "Niger",
+      "slug": "republic-of-congo",
+      "entity": "Republic of Congo",
       "index": "countries",
       "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "openai-2026-07-31",
-      "entity": "OpenAI",
-      "index": "ai-labs",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "portugal-2026-07-30",
-      "entity": "Portugal",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "taipei",
-      "entity": "Taipei",
-      "index": "global-cities",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "tunis",
-      "entity": "Tunis",
-      "index": "global-cities",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "uganda-2026-08-01",
-      "entity": "Uganda",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-08-16"
-    },
-    {
-      "slug": "alabama-2026-07-19",
-      "entity": "Alabama",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "alaska-2026-07-19",
-      "entity": "Alaska",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "arizona-2026-07-19",
-      "entity": "Arizona",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
-    },
-    {
-      "slug": "arkansas-2026-07-19",
-      "entity": "Arkansas",
-      "index": "us-states",
-      "decision": "applied",
-      "appliedDate": "2026-07-21"
+      "appliedDate": "2026-08-20"
     }
   ]
 }

@@ -698,11 +698,15 @@
     }
   ],
   "recommendation": "flag-for-review",
-  "status": "pending",
+  "status": "applied",
   "notes": "UPWARD movement. The published 35.9 was a uniform placeholder shared by four labs and was never measured. This proposal raises Waymo because it is the only entity in the cluster that publishes peer-reviewed outcome data about its own effects. It is a measurement correction, not a finding that Waymo is free of harm: the open school-bus investigation, the emergency-scene interference reports and the absence of any driverless wheelchair-accessible service are all scored and all hold the composite down. Waymo reaches no dimension at 4.0 and the integration premium is 0.",
   "schema_normalised": {
     "date": "2026-08-20",
     "reason": "Rebuilt into the shape apply-entity-record.mjs requires. Original proposed_subdimensions was a string filepath. Subdimension scores and evidence copied verbatim from the assessment sidecar; nothing re-scored.",
     "source_sidecar": "research/assessments/waymo-2026-08-17.subdims.json"
-  }
+  },
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-20",
+  "decision": "approved",
+  "applied_date": "2026-08-20"
 }

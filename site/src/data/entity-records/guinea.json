@@ -5,19 +5,19 @@
   "name": "Guinea",
   "index_slug": "countries",
   "kind": "country",
-  "composite": 20.3,
-  "band": "Developing",
-  "rank": 138,
+  "composite": 14.4,
+  "band": "Critical",
+  "rank": 149,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2,
-    "EMP": 2,
+    "AWR": 1.4,
+    "EMP": 1.2,
     "ACT": 2,
-    "EQU": 1.5,
-    "BND": 2,
-    "ACC": 1.5,
-    "SYS": 2,
-    "INT": 1.5
+    "EQU": 1.4,
+    "BND": 1.2,
+    "ACC": 1.4,
+    "SYS": 2.6,
+    "INT": 1.4
   },
   "subdimensions": [
     {
@@ -25,10 +25,17 @@
       "dimension": "AWR",
       "name": "Suffering Detection",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "A2",
@@ -36,79 +43,135 @@
       "name": "Contextual Sensitivity",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/guinea-fndc-impunity/",
+          "date": "2026-07-01",
+          "quote": "Guinea: Two years after the enforced disappearance of FNDC activists, abductions and disappearances continue with impunity."
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.pbs.org/newshour/amp/world/guineas-junta-leader-wins-presidency-in-first-election-since-2021-coup",
+          "date": "2025-12-28",
+          "quote": "Doumbouya won the country's first election since the 2021 coup after polling 86.7% of the votes. Opposition parties condemned the fact that the transitional president, who assumed power through a coup in 2021, ran as a candidate in violation of the transition charter."
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/guinea-fndc-impunity/",
+          "date": "2026-07-01",
+          "quote": "Guinea: Two years after the enforced disappearance of FNDC activists, abductions and disappearances continue with impunity."
+        }
+      ]
     },
     {
       "code": "E5",
@@ -116,9 +179,16 @@
       "name": "Cultural Empathy",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "AC1",
@@ -174,51 +244,86 @@
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://african.business/2025/12/resources/simandou-can-be-turning-point-for-guinea",
+          "date": "2025-12-01",
+          "quote": "Guinea has announced the Fonds de Richesse Simandou, its first sovereign wealth fund, capitalized at around US$1 billion and expected to launch in 2026, with its mandate to channel mining revenues into long-term investments in education, infrastructure, agriculture and industry."
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+          "date": "2024-07-31",
+          "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+        }
+      ]
     },
     {
       "code": "B1",
@@ -226,119 +331,203 @@
       "name": "Self-Sustainability",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.pbs.org/newshour/amp/world/guineas-junta-leader-wins-presidency-in-first-election-since-2021-coup",
+          "date": "2025-12-28",
+          "quote": "Doumbouya won the country's first election since the 2021 coup after polling 86.7% of the votes. Opposition parties condemned the fact that the transitional president, who assumed power through a coup in 2021, ran as a candidate in violation of the transition charter."
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/guinea-fndc-impunity/",
+          "date": "2026-07-01",
+          "quote": "Guinea: Two years after the enforced disappearance of FNDC activists, abductions and disappearances continue with impunity."
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+          "date": "2024-07-31",
+          "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/07/09/a-year-on-guinean-activists-still-missing",
+          "date": "2025-07-09",
+          "quote": "The crackdown has led to the death of dozens of protesters and other residents of Conakry, Guinea's capital, since January 2024. During the same period, the junta suspended at least six independent media outlets, arbitrarily arrested at least ten journalists, and disappeared and allegedly tortured two prominent political activists."
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2026/07/guinea-fndc-impunity/",
+          "date": "2026-07-01",
+          "quote": "Guinea: Two years after the enforced disappearance of FNDC activists, abductions and disappearances continue with impunity."
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+          "date": "2024-07-31",
+          "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://african.business/2025/12/resources/simandou-can-be-turning-point-for-guinea",
+          "date": "2025-12-01",
+          "quote": "Guinea has announced the Fonds de Richesse Simandou, its first sovereign wealth fund, capitalized at around US$1 billion and expected to launch in 2026, with its mandate to channel mining revenues into long-term investments in education, infrastructure, agriculture and industry."
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "S3",
@@ -346,19 +535,33 @@
       "name": "Interconnection Awareness",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+          "date": "2024-07-31",
+          "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+        }
+      ]
     },
     {
       "code": "S5",
@@ -366,63 +569,105 @@
       "name": "Coalitional Compassion",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://african.business/2025/12/resources/simandou-can-be-turning-point-for-guinea",
+          "date": "2025-12-01",
+          "quote": "Guinea has announced the Fonds de Richesse Simandou, its first sovereign wealth fund, capitalized at around US$1 billion and expected to launch in 2026, with its mandate to channel mining revenues into long-term investments in education, infrastructure, agriculture and industry."
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.amnesty.org/en/latest/news/2024/07/guinea-convictions-for-crimes-against-humanity-following-28-september-2009-massacre-trial-a-historic-moment/",
+          "date": "2024-07-31",
+          "quote": "Moussa Dadis Camara was sentenced to a 20-year prison term for crimes against humanity. The court ordered those convicted to provide reparations to the victims and their families."
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 1.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ecofinagency.com/news/0404-54422-guinea-raises-2026-budget-18-3-targets-9-5-growth-under-simandou-2040-plan",
+          "date": "2026-04-04",
+          "quote": "Guinea Raises 2026 Budget 18.3%, Targets 9.5% Growth Under Simandou 2040 Plan. Public expenditure increased by 22.8 per cent under the 2025 Amended Finance Law, including additional allocations for education and health."
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.pbs.org/newshour/amp/world/guineas-junta-leader-wins-presidency-in-first-election-since-2021-coup",
+          "date": "2025-12-28",
+          "quote": "Doumbouya won the country's first election since the 2021 coup after polling 86.7% of the votes. Opposition parties condemned the fact that the transitional president, who assumed power through a coup in 2021, ran as a candidate in violation of the transition charter."
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.france24.com/en/africa/20260307-guinea-orders-dissolution-40-political-parties-including-three-main-opposition-goups",
+          "date": "2026-03-07",
+          "quote": "Guinea has dissolved 40 political parties, including its three main opposition groups, via a late-night decree, in the latest crackdown on civil liberties under longtime strongman Mamady Doumbouya."
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/guinea-2026-08-16.md",
+  "subdims_source": "assessed",
+  "generated_at": "2026-08-21T03:59:30.485Z",
+  "generator": "apply-entity-record.mjs@28b5b382"
 }

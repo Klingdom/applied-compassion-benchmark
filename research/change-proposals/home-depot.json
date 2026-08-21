@@ -95,10 +95,10 @@
     }
   ],
   "recommendation": "flag-for-review",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-20",
+  "decision": "approved",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -741,5 +741,6 @@
       ]
     }
   ],
-  "notes": "FIRST MEASUREMENT OF AN ORIGINAL-BUILD BASELINE. Home Depot carries a UNIQUE vector in fortune-500.json and is NOT part of the 22-company 60.9 seed cluster, so it is treated as a differentiated baseline per the cycle brief. However, rotation-state records last_assessed: null and there is no APPLIED_CHANGES entry or prior assessment file, so the 57.8 originates from the original index build rather than from a nightly-pipeline assessment. NO in-window evidence produced this movement; the scanner found none. Recommendation is flag-for-review rather than downgrade for that reason. Privacy and consumer class actions are unadjudicated and are scored as allegations. Home Depot's most recent publicly available ESG report predates 2026, which is a material recency gap."
+  "notes": "FIRST MEASUREMENT OF AN ORIGINAL-BUILD BASELINE. Home Depot carries a UNIQUE vector in fortune-500.json and is NOT part of the 22-company 60.9 seed cluster, so it is treated as a differentiated baseline per the cycle brief. However, rotation-state records last_assessed: null and there is no APPLIED_CHANGES entry or prior assessment file, so the 57.8 originates from the original index build rather than from a nightly-pipeline assessment. NO in-window evidence produced this movement; the scanner found none. Recommendation is flag-for-review rather than downgrade for that reason. Privacy and consumer class actions are unadjudicated and are scored as allegations. Home Depot's most recent publicly available ESG report predates 2026, which is a material recency gap.",
+  "applied_date": "2026-08-20"
 }

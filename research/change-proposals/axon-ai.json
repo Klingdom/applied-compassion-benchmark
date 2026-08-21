@@ -618,11 +618,15 @@
     }
   ],
   "recommendation": "flag-for-review",
-  "status": "pending",
+  "status": "applied",
   "notes": "The index entry 'Axon AI' does not name an operating entity. All scoring was performed against Axon Enterprise, Inc. (Nasdaq: AXON), whose AI products include Draft One. The record should be renamed. On score: this is a mixed-evidence case, not an absence case. Axon publishes a genuine harm-reduction goal with a public dataset, and independent investigators have documented specific design decisions that defeat oversight. Both were scored. The Reuters Taser findings close in 2018 and were deliberately scored at the absence anchor rather than the floor.",
   "schema_normalised": {
     "date": "2026-08-20",
     "reason": "Rebuilt into the shape apply-entity-record.mjs requires. Original proposed_subdimensions was a string filepath. Subdimension scores and evidence copied verbatim from the assessment sidecar; nothing re-scored.",
     "source_sidecar": "research/assessments/axon-ai-2026-08-17.subdims.json"
-  }
+  },
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-20",
+  "decision": "approved",
+  "applied_date": "2026-08-20"
 }

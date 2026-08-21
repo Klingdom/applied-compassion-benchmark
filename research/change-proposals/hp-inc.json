@@ -94,10 +94,10 @@
     }
   ],
   "recommendation": "flag-for-review",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-08-20",
+  "decision": "approved",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -740,5 +740,6 @@
       ]
     }
   ],
-  "notes": "SEED-BASELINE RECALIBRATION - NOT A CONDUCT DOWNGRADE. HP has never been individually assessed (last_assessed: null) and sits in the 22-company byte-identical 60.9 cluster. A large delta is the EXPECTED result of measuring a placeholder for the first time and does NOT imply HP has got worse; precedents are Cerebras Systems 60.9 -> 38.8 (applied) and Baxter International 60.9 -> 55.0. Twelve of forty subdimensions rest on absence of disclosure and are scored at the low anchor per the cycle scoring convention; that is explicitly NOT treated as evidence of harm. Band-crossing evidence test recorded as passed:false. Slug derived per site/src/lib/slugify.ts: \"HP Inc.\" -> \"hp-inc\"."
+  "notes": "SEED-BASELINE RECALIBRATION - NOT A CONDUCT DOWNGRADE. HP has never been individually assessed (last_assessed: null) and sits in the 22-company byte-identical 60.9 cluster. A large delta is the EXPECTED result of measuring a placeholder for the first time and does NOT imply HP has got worse; precedents are Cerebras Systems 60.9 -> 38.8 (applied) and Baxter International 60.9 -> 55.0. Twelve of forty subdimensions rest on absence of disclosure and are scored at the low anchor per the cycle scoring convention; that is explicitly NOT treated as evidence of harm. Band-crossing evidence test recorded as passed:false. Slug derived per site/src/lib/slugify.ts: \"HP Inc.\" -> \"hp-inc\".",
+  "applied_date": "2026-08-20"
 }

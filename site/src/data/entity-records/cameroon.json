@@ -5,19 +5,19 @@
   "name": "Cameroon",
   "index_slug": "countries",
   "kind": "country",
-  "composite": 20.3,
-  "band": "Developing",
-  "rank": 135,
+  "composite": 11.3,
+  "band": "Critical",
+  "rank": 156,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2,
-    "EMP": 2,
-    "ACT": 2,
-    "EQU": 1.5,
-    "BND": 2,
-    "ACC": 1.5,
-    "SYS": 2,
-    "INT": 1.5
+    "AWR": 1.4,
+    "EMP": 1.4,
+    "ACT": 1.8,
+    "EQU": 1.4,
+    "BND": 1.4,
+    "ACC": 1.4,
+    "SYS": 1.8,
+    "INT": 1
   },
   "subdimensions": [
     {
@@ -25,90 +25,153 @@
       "dimension": "AWR",
       "name": "Suffering Detection",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/10/28/cameroon-biya-declared-the-winner-amid-post-election-violence",
+          "date": "2025-10-28",
+          "quote": "In the months preceding the election, authorities closed civic space, imposing harsh restrictions on freedom of expression, assembly, and association."
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "Following the October 12, 2025 elections, Cameroon's authorities responded to widespread opposition-led protests with lethal force and mass arrests of protesters and other citizens."
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "At least six people are being held at the State Defense Secretariat, a detention facility where Human Rights Watch has documented routine use of torture."
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "UN sources estimate at least 48 people were killed, while opposition groups put the toll at 55."
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "According to a pool of 149 lawyers formed to provide pro-bono assistance to those held during and after protests, security forces detained up to 2,000 people, including several minors."
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://english.news.cn/africa/20260320/d9dc866ad1fc42848f1e49b239461909/c.html",
+          "date": "2026-03-19",
+          "quote": "On March 19, 2026, the Supreme Court of Cameroon quashed the ruling of the Centre Regional Court of Appeal, which had previously upheld the life sentences imposed on the defendants, and ordered a completely fresh hearing before a different and legally constituted jury."
+        }
+      ]
     },
     {
       "code": "E5",
@@ -116,29 +179,50 @@
       "name": "Cultural Empathy",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.globalsecurity.org/military/world/africa/cm-politics-2025.htm",
+          "date": "2025-11-06",
+          "quote": "President Biya, the world's longest-serving head of state, has ruled Cameroon since 1982, scrapping presidential term limits in 2008. Biya was sworn in for an eighth term on November 6."
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "AC3",
@@ -146,79 +230,135 @@
       "name": "Efficacy",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "Following the October 12, 2025 elections, Cameroon's authorities responded to widespread opposition-led protests with lethal force and mass arrests of protesters and other citizens."
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/10/28/cameroon-biya-declared-the-winner-amid-post-election-violence",
+          "date": "2025-10-28",
+          "quote": "In the months preceding the election, authorities closed civic space, imposing harsh restrictions on freedom of expression, assembly, and association."
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://english.news.cn/africa/20260320/d9dc866ad1fc42848f1e49b239461909/c.html",
+          "date": "2026-03-19",
+          "quote": "On March 19, 2026, the Supreme Court of Cameroon quashed the ruling of the Centre Regional Court of Appeal, which had previously upheld the life sentences imposed on the defendants, and ordered a completely fresh hearing before a different and legally constituted jury."
+        }
+      ]
     },
     {
       "code": "B1",
@@ -226,19 +366,33 @@
       "name": "Self-Sustainability",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/10/28/cameroon-biya-declared-the-winner-amid-post-election-violence",
+          "date": "2025-10-28",
+          "quote": "In the months preceding the election, authorities closed civic space, imposing harsh restrictions on freedom of expression, assembly, and association."
+        }
+      ]
     },
     {
       "code": "B3",
@@ -246,89 +400,152 @@
       "name": "Scope Clarity",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.globalsecurity.org/military/world/africa/cm-politics-2025.htm",
+          "date": "2025-11-06",
+          "quote": "President Biya, the world's longest-serving head of state, has ruled Cameroon since 1982, scrapping presidential term limits in 2008. Biya was sworn in for an eighth term on November 6."
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "Following the October 12, 2025 elections, Cameroon's authorities responded to widespread opposition-led protests with lethal force and mass arrests of protesters and other citizens."
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "According to a pool of 149 lawyers formed to provide pro-bono assistance to those held during and after protests, security forces detained up to 2,000 people, including several minors."
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "At least six people are being held at the State Defense Secretariat, a detention facility where Human Rights Watch has documented routine use of torture."
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://english.news.cn/africa/20260320/d9dc866ad1fc42848f1e49b239461909/c.html",
+          "date": "2026-03-19",
+          "quote": "On March 19, 2026, the Supreme Court of Cameroon quashed the ruling of the Centre Regional Court of Appeal, which had previously upheld the life sentences imposed on the defendants, and ordered a completely fresh hearing before a different and legally constituted jury."
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "UN sources estimate at least 48 people were killed, while opposition groups put the toll at 55."
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.globalsecurity.org/military/world/africa/cm-politics-2025.htm",
+          "date": "2025-11-06",
+          "quote": "President Biya, the world's longest-serving head of state, has ruled Cameroon since 1982, scrapping presidential term limits in 2008. Biya was sworn in for an eighth term on November 6."
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "UN sources estimate at least 48 people were killed, while opposition groups put the toll at 55."
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "S2",
@@ -336,93 +553,156 @@
       "name": "Long-Term Impact",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://english.news.cn/africa/20260320/d9dc866ad1fc42848f1e49b239461909/c.html",
+          "date": "2026-03-19",
+          "quote": "On March 19, 2026, the Supreme Court of Cameroon quashed the ruling of the Centre Regional Court of Appeal, which had previously upheld the life sentences imposed on the defendants, and ordered a completely fresh hearing before a different and legally constituted jury."
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://crisisresponse.iom.int/response/cameroon-crisis-response-plan-2025-2026",
+          "date": "2025-09-30",
+          "quote": "As of September 2025, displacement remains protracted, with 844,953 internally displaced persons, 736,918 returnees, and 460,000 refugees from the Central African Republic and Nigeria hosted in the East, North, and Adamawa regions."
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/11/12/cameroon-killings-mass-arrests-follow-disputed-elections",
+          "date": "2025-11-12",
+          "quote": "Following the October 12, 2025 elections, Cameroon's authorities responded to widespread opposition-led protests with lethal force and mass arrests of protesters and other citizens."
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2025/10/28/cameroon-biya-declared-the-winner-amid-post-election-violence",
+          "date": "2025-10-28",
+          "quote": "In the months preceding the election, authorities closed civic space, imposing harsh restrictions on freedom of expression, assembly, and association."
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acaps.org/en/countries/cameroon",
+          "date": "2026-01-01",
+          "quote": "In 2026, 2.9 million people in Cameroon will need humanitarian aid. In 2025, Cameroon topped NRC's annual list of most neglected displacement crises in the world."
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://achpr.au.int/en/news/press-releases/2025-10-31/situation-des-droits-de-lhomme-en-republique-du-cameroun-eng",
+          "date": "2025-10-31",
+          "quote": "The African Commission on Human and Peoples' Rights expressed alarm over loss of life resulting from the use of excessive force and the arrest of individuals to suppress and disperse demonstrators."
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-08-16",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.globalsecurity.org/military/world/africa/cm-politics-2025.htm",
+          "date": "2025-11-06",
+          "quote": "President Biya, the world's longest-serving head of state, has ruled Cameroon since 1982, scrapping presidential term limits in 2008. Biya was sworn in for an eighth term on November 6."
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/cameroon-2026-08-16.md",
+  "subdims_source": "assessed",
+  "generated_at": "2026-08-21T03:59:30.169Z",
+  "generator": "apply-entity-record.mjs@28b5b382"
 }
