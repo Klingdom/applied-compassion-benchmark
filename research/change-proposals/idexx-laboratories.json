@@ -1,0 +1,690 @@
+{
+  "entity": "IDEXX Laboratories",
+  "slug": "idexx-laboratories",
+  "index": "fortune-500",
+  "assessment_date": "2026-08-20",
+  "assessment_file": "research/assessments/idexx-laboratories-2026-08-20.md",
+  "published_scores": {
+    "composite": 77.9,
+    "band": "established",
+    "rank": 15,
+    "dimensions": {
+      "AWR": 4,
+      "EMP": 4,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 45.6,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.6,
+      "ACT": 3,
+      "EQU": 3,
+      "BND": 2.6,
+      "ACC": 2.8,
+      "SYS": 3,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -32.3,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "IDEXX Laboratories has never been assessed by this benchmark. Its published 77.9 is a placeholder shared with ten other companies. This is the first real measurement, landing at 45.6.",
+    "No adverse evidence about IDEXX was found at all — no regulatory finding, no lawsuit, no labour dispute, no complaint. The score moves because IDEXX does not publish in eight of the forty areas the benchmark measures, and absence of disclosure is scored at the low anchor.",
+    "That distinction matters and should not be lost: absence of disclosure is not evidence of harm. IDEXX is not being marked down for anything it did.",
+    "IDEXX does publish substantial, goal-tracked work: 121,400 hours of learning and development in a year, more than 24,000 volunteer hours against a 15,000-hour target, external recognition as a top disability-inclusive employer, and an on-track 2030 emissions target.",
+    "The evidence test for a band change failed, because no independent adverse determination exists to pass it with. That failure is recorded rather than hidden."
+  ],
+  "evidence": [
+    {
+      "claim": "IDEXX Laboratories has never been individually assessed by this pipeline (last_assessed: null) and its published composite of 77.9 is a seed value shared byte-for-byte with ten other Fortune-500 companies, including Hyatt Hotels.",
+      "source": "Compassion Benchmark index data and rotation state",
+      "url": "https://compassionbenchmark.com/fortune-500",
+      "publishedDate": "2026-08-20",
+      "sourceTier": 4
+    },
+    {
+      "claim": "IDEXX released its 2025 Corporate Responsibility Report on 28 July 2026, reporting 121,400 hours of learning and development including 46,700 hours of STEM and AI learning, more than 24,000 volunteer hours against a 15,000-hour goal, recognition as a top disability-inclusive business by the Disability Index, and on-track status for its 2030 greenhouse-gas reduction target.",
+      "source": "Business Wire via Morningstar",
+      "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+      "publishedDate": "2026-07-28",
+      "sourceTier": 2
+    },
+    {
+      "claim": "No regulatory finding, litigation, labour dispute, worker complaint or independent adverse determination about IDEXX Laboratories was located in this assessment. The downward movement rests on placeholder correction and absence of disclosure, not on established harm.",
+      "source": "Compassion Benchmark assessment, 2026-08-20",
+      "url": "https://www.csrhub.com/CSR_and_sustainability_information/IDEXX-Laboratories-Inc",
+      "publishedDate": "2026-08-20",
+      "sourceTier": 2
+    }
+  ],
+  "band_change_evidence_test": {
+    "passed": false,
+    "requirement": ">=2 independent sources with >=1 at tier >=4, excluding self-published corporate material",
+    "sources_counted": 3,
+    "highest_tier": 5,
+    "failure_reason": "The only tier-5 source is IDEXX's own SEC Form DEF 14A, which is self-published corporate material filed by the company and is therefore excluded by the test. No independent source at any tier makes an adverse determination about IDEXX, because none exists in the located record. The band crossing rests entirely on placeholder correction plus absence of disclosure.",
+    "honest_note": "Recorded as FAILED. This is the correct and honest result: it is not possible to pass an adverse-evidence test when no adverse evidence exists. The filing is made anyway because the published 77.9 is a demonstrable placeholder, and leaving a provably unmeasured band label in place is the more visible error.",
+    "independent_streams": [
+      "Business newswire (Business Wire via Morningstar)",
+      "ESG data aggregator (CSRHub)",
+      "Corporate reporting archive (ResponsibilityReports)"
+    ]
+  },
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "notes": "FILED ON BOTH TRIGGERS (delta -32.3, and band crossing Established to Functional). RECOMMENDATION IS flag-for-review, NOT downgrade. CONFIDENCE IS LOW. DO NOT APPLY WITHOUT A TARGETED EVIDENCE PASS. THIS IS THE CLEANEST CASE IN THE BATCH AND MUST BE FRAMED CAREFULLY: zero adverse evidence about IDEXX was located, in either direction. No regulatory finding, litigation, labour dispute or independent adverse determination exists in the record. The entire movement is (a) correction of a never-measured eleven-company seed placeholder and (b) the absence-of-disclosure convention, which scores 8 of 40 subdimensions at the low anchor because IDEXX does not publish in those areas. This is the Cerebras Systems profile identified in the 2026-08-18 digest. IDEXX lands at 45.6, marginally above Hyatt Hotels (44.4, same seed cluster, this cycle) and above ManpowerGroup (46.9 — actually marginally below), an ordering driven by the strength of IDEXX's published goal-tracking. RECOMMEND A TARGETED PASS on: employee complaint and turnover data, any US Food and Drug Administration or Environmental Protection Agency enforcement history, veterinary-customer complaint patterns, and supply-chain labour standards.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000087471626000064/idxx-20260327.htm",
+          "date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.csrhub.com/CSR_and_sustainability_information/IDEXX-Laboratories-Inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.responsibilityreports.com/Company/idexx-laboratories-inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.responsibilityreports.com/Company/idexx-laboratories-inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.csrhub.com/CSR_and_sustainability_information/IDEXX-Laboratories-Inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.responsibilityreports.com/Company/idexx-laboratories-inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000087471626000064/idxx-20260327.htm",
+          "date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.csrhub.com/CSR_and_sustainability_information/IDEXX-Laboratories-Inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.responsibilityreports.com/Company/idexx-laboratories-inc",
+          "date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://ir.idexx.com/news-events/press-releases/detail/413/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.morningstar.com/news/business-wire/20260728755319/idexx-releases-2025-corporate-responsibility-report-highlighting-progress-against-its-goals",
+          "date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000087471626000064/idxx-20260327.htm",
+          "date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.responsibilityreports.com/Company/idexx-laboratories-inc",
+          "date": "2026-01-01"
+        }
+      ]
+    }
+  ]
+}

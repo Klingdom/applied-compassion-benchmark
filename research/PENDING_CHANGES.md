@@ -9317,3 +9317,123 @@ robotics and ai-labs indexes, and 10 of the 12 countries de-seeded from the 20.3
 
 No score, proposal or assessment was modified by this correction. It amends the record only.
 
+
+---
+
+## 2026-08-20 -- Floor-Limitation Finding (8 entities) | 7 New Proposals (1 Passed Band-Crossing Evidence Test) | 13 Confirmations | True Queue = 79
+
+### Summary -- 2026-08-20
+
+Short gap-run cycle (2026-08-19 through 2026-08-20). 20 entities assessed, 7 change proposals generated, 13 confirmations, 0 errors. **Zero scores applied.** The lead finding is not a proposal: eight of twenty entities checked tonight were evidence-insensitive at or near the bottom of the scale. Sudan, South Sudan, Yemen, Israel and Myanmar are all at composite 0.0 with all 40 subdimensions at the 1.0 minimum -- further downgrade is arithmetically impossible. Somalia (4.7 published, 5.0 assessed) and Haiti (4.7 published, 3.1 assessed) have only ~5 points of downward room, at or below the 5.0-point filing trigger. DR Congo (2.3 published, 2.5 assessed) has 2.3-2.5 points of room, less than half the trigger, and is already in the lowest band so the band-crossing clause cannot apply either. This is a methodology finding, recorded honestly, not a score change.
+
+**TRUE PENDING QUEUE TOTAL: 79** (72 carried forward + 7 new tonight). Verified directly by counting `research/change-proposals/*.json` files with `"status": "pending"` -- per the remediation instruction logged in the 2026-08-19 queue-accounting correction above, this total is NOT derived by incrementing the prior digest's stated figure.
+
+---
+
+### High Priority (band change or delta > 15) -- 2026-08-20
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence | Evidence Test | Date | File |
+|---|---|---|---|---|---|---|---|---|---|
+| Kazakhstan | countries | 20.3 | 13.7 | -6.6 | Developing -> Critical | medium | PASSED (UN Human Rights Committee July 2026, tier 4) | 2026-08-20 | [proposal](change-proposals/kazakhstan.json) |
+| Hyatt Hotels | fortune-500 | 77.9 | 44.4 | -33.5 | Established -> Functional | LOW | FAILED (thin, largely self-published) | 2026-08-20 | [proposal](change-proposals/hyatt-hotels.json) |
+| IDEXX Laboratories | fortune-500 | 77.9 | 45.6 | -32.3 | Established -> Functional | LOW | FAILED (zero adverse evidence to cite) | 2026-08-20 | [proposal](change-proposals/idexx-laboratories.json) |
+| InterContinental Hotel | fortune-500 | 60.9 | 34.4 | -26.5 | Established -> Developing (two-band) | medium | FAILED (venue-only tier-3 item, not entity-specific tier 4+) | 2026-08-20 | [proposal](change-proposals/intercontinental-hotel.json) |
+| ManpowerGroup | fortune-500 | 60.9 | 46.9 | -14.0 | Established -> Functional | LOW | FAILED (zero adverse evidence to cite) | 2026-08-20 | [proposal](change-proposals/manpowergroup.json) |
+
+Four of five band crossings failed the evidence test and are recorded as passed:false rather than suppressed, per the standing rule. Only Kazakhstan passed, on a UN treaty-body finding plus an eight-year prison sentence for journalist Gulnara Bazhkenova.
+
+FOUR PROPOSALS ARE LOW OR MEDIUM CONFIDENCE AND NEED A TARGETED EVIDENCE PASS BEFORE ANY DECISION: Hyatt Hotels, IDEXX Laboratories, ManpowerGroup (all LOW), and Interpublic Group below (LOW). All reached the queue as rotation backfill on staleness alone; the scanner found NO compassion-relevant evidence for IDEXX or ManpowerGroup in either direction. Same profile as MetLife (2026-08-18) and Cerebras Systems (2026-08-16). IDEXX Laboratories and ManpowerGroup must not be reported as findings that either company got worse -- zero adverse evidence was located for either, in either direction.
+
+---
+
+### Standard (delta 5-15, no band change) -- 2026-08-20
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|---|---|---|---|---|---|---|---|
+| Zambia | countries | 35.9 | 28.7 | -7.2 | medium | 2026-08-20 | [proposal](change-proposals/zambia.json) |
+| Interpublic Group | fortune-500 | 40.0 | 31.3 | -8.7 | LOW | 2026-08-20 | [proposal](change-proposals/interpublic-group.json) |
+
+Zambia: third consecutive cycle below the published value (33.1 on 07-31, 31.9 on 08-18, 28.7 tonight), each on new, dated, within-window conduct -- the UN High Commissioner publicly told Zambia to stop arbitrary arrests on 19 August, and Zambia's own Human Rights Commission was denied access to a detainee.
+
+Interpublic Group -- ENTITY-RECORD DEFECT DOMINATES. THE SCORE IS NOT THE POINT. Interpublic Group was acquired by Omnicom Group; the merger completed November 2025. IPG no longer exists as an independent Fortune-500 company. Same defect class as the "Automatic Data Process" duplicate merged into ADP on 2026-08-17. THIS PROPOSAL MUST NOT BE APPLIED UNTIL THE ENTITY RECORD IS RESOLVED, regardless of the number attached to it.
+
+---
+
+### Confirmations (delta < 5, no proposal generated) -- 2026-08-20
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|---|---|---|---|---|---|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Floor confirmed (2nd consecutive cycle); attribution corrected -- 2 August North Darfur court strike (35+ killed) is Sudanese Armed Forces conduct, not RSF paramilitary conduct as originally scanned |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | Floor confirmed; 36 aid workers killed since January, corroborated against dated UN primary source (Xinhua, 2026-08-19), exceeds all of 2025 |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Floor confirmed (5th consecutive); West Bank "at the breaking point" per UNSCO, 1,430+ settler incidents in 2026 |
+| Myanmar | countries | 0.0 | 0.0 | 0.0 | Floor confirmed; Myanmar Air Force killed 14 civilians aged 9-88 in Kyauk Gyi village, 10 August |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | Floor confirmed; rank 193 of 193; humanitarian appeal 20% funded |
+| Somalia | countries | 4.7 | 5.0 | +0.3 | Near-floor; Baidoa militia assault, federal response caused civilian deaths; 4.7pt downward room, below filing trigger |
+| Haiti | countries | 4.7 | 3.1 | -1.6 | Near-floor; 613 killed in two Port-au-Prince neighbourhoods is gang conduct, not state conduct; no arithmetic room for a downgrade proposal even if it were |
+| Democratic Republic of the Congo | countries | 2.3 | 2.5 | +0.2 | Near-floor; 2.3pt downward room, less than half the filing trigger; already lowest band so band-crossing clause unavailable; entity-record defect below |
+| Venezuela | countries | 18.0 | 18.1 | +0.1 | 3e-bis screen held: surfaced on POSITIVE evidence (131 announced releases); stale-baseline upgrade rationale explicitly checked and REJECTED -- score set/confirmed entirely post-Maduro (removed 2026-01-03; score set 2026-04-19, confirmed 07-17/07-18); releases scored at independently verified floor (40-43 per Foro Penal/Vente Venezuela) against 391 still detained |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | Two journalists (Razi Tahir, Muhammad Saif) seized from Islamabad office 1 August remain unaccounted for; movement within confirmation range |
+| Harvard University | universities | 52.3 | 53.8 | +1.5 | Confirmed unchanged from 08-18; court dismissal and DOJ whistleblower disclosure are not Harvard's own conduct; 165 FAS positions eliminated already inside existing downward watch flag |
+| Massachusetts | us-states | 59.4 | 59.4 | 0.0 | State-legislated abortion-access expansion (10 August, verified as state not federal action) offset by 1/3 cut to emergency family shelter caseload cap |
+| Marathon Petroleum | fortune-500 | 15.6 | 13.7 | -1.9 | First individual assessment; El Paso refinery release under-reported by 10+ tons, corrected by TCEQ; low-income neighbourhood exposure burden not measured by Marathon |
+
+---
+
+### Floor-Limitation Finding -- 2026-08-20 (methodology, not a score change)
+
+| Entity | Published | Downward Room | Status |
+|---|---|---|---|
+| Sudan | 0.0 | 0.0 (all 40 subdimensions at minimum) | Arithmetic floor; 2nd consecutive cycle |
+| South Sudan | 0.0 | 0.0 (all 40 subdimensions at minimum) | Arithmetic floor |
+| Yemen | 0.0 | 0.0 (all 40 subdimensions at minimum) | Arithmetic floor |
+| Israel | 0.0 | 0.0 (all 40 subdimensions at minimum) | Arithmetic floor |
+| Myanmar | 0.0 | 0.0 (all 40 subdimensions at minimum) | Arithmetic floor |
+| Somalia | 4.7 | ~4.7pt, below the 5.0 filing trigger | Below trigger |
+| Haiti | 4.7 | ~4.7pt, below the 5.0 filing trigger | Below trigger |
+| Democratic Republic of the Congo | 2.3 | ~2.3pt, less than half the filing trigger; already lowest band | Below trigger; band-crossing clause also unavailable |
+
+RECOMMENDATION TO COORDINATOR (carried from the assessor's cycle notes, not actioned tonight): consider a sub-floor severity annotation carried alongside the score so floor entities remain responsive to evidence. This is a methodology-level question, not a per-cycle score proposal.
+
+---
+
+### Entity-Record Defects -- 2026-08-20
+
+| Entity/Field | Defect | Status |
+|---|---|---|
+| Interpublic Group | Acquired by Omnicom Group; merger completed November 2025; no longer exists as an independent company. Same defect class as the ADP/Automatic Data Process duplicate merged 2026-08-17. | Proposal must not be applied until the entity record is resolved. |
+| "Democratic Republic of C" | Published countries-index name truncated at 24 characters; real entity is the Democratic Republic of the Congo. Slug democratic-republic-of-c retained for linkage. | Logged for coordinator repair; not silently renamed; no score effect. |
+| "InterContinental Hotel" | Published fortune-500 index name appears truncated relative to InterContinental Hotels Group PLC. | Logged for coordinator review; no score effect. |
+
+---
+
+### Open Calibration Flags -- 2026-08-20
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Kazakhstan inter-assessment variance -- assessed at 24.4 on 2026-08-16 (de-seeding study, seed understated it, +4.1, no proposal filed) and at 13.7 on 2026-08-20 (band-crossing proposal filed, 20.3->13.7) -- a 10.7-point swing in four days, pointing in opposite directions relative to the 20.3 seed. The 08-20 decline rests on genuinely new in-window evidence (the 18 August sentencing) the earlier study could not have seen, so it is not a contradiction on its face -- but a 10.7-point swing on one event, producing a band crossing, needs founder attention before application. | New tonight, open | Open since 2026-08-20 |
+| Kazakhstan band-crossing proposal (20.3 -> 13.7, PASSED evidence test) | New tonight, pending, not applied | Open since 2026-08-20 |
+| Hyatt Hotels band-crossing proposal (77.9 -> 44.4, LOW CONFIDENCE, FAILED evidence test) | New tonight, pending, not applied | Open since 2026-08-20 |
+| IDEXX Laboratories band-crossing proposal (77.9 -> 45.6, LOW CONFIDENCE, FAILED evidence test, zero adverse evidence) | New tonight, pending, not applied | Open since 2026-08-20 |
+| InterContinental Hotel band-crossing proposal (60.9 -> 34.4, two-band move, FAILED evidence test) | New tonight, pending, not applied | Open since 2026-08-20 |
+| ManpowerGroup band-crossing proposal (60.9 -> 46.9, LOW CONFIDENCE, FAILED evidence test, zero adverse evidence) | New tonight, pending, not applied | Open since 2026-08-20 |
+| Zambia conduct proposal (35.9 -> 28.7, third consecutive cycle below published) | New tonight, pending, not applied | Open since 2026-08-20 |
+| Interpublic Group entity-record defect (40.0 -> 31.3 provisional; company no longer independently exists) | New tonight, pending; must not be applied until entity record is resolved | Open since 2026-08-20 |
+| Countries-index 20.3 seed cluster -- 8 members remain unexamined (Algeria, Cameroon, Gabon, Guinea, Honduras, Papua New Guinea, Republic of Congo, Uzbekistan) | Carried forward | Open since 2026-08-16 |
+| Fortune-500 60.9 seed cluster -- 17 members remain unexamined | Carried forward | Open since 2026-08-16 |
+| Rank drift: 622 of 1,222 matched entities disagree with published index rank | Carried forward from 2026-08-01; far beyond this cycle's scope | Open since 2026-08-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~56 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~40 days |
+
+---
+
+### Operational Notes -- 2026-08-20
+
+- Scan: 1,289 entities scanned; 279 searches performed (disclosed overage of 9 over the derived 270-search ceiling: 4 from index-coherent T2 batch chunking, 5 from verification allowance); gate exit clean; 14-day lookback (2026-08-06 to 2026-08-20) covering the 2-day gap since 2026-08-18.
+- 20 candidates investigated and dropped pre-publication -- an unusually high count -- including two (a synthetic-media company, a West African state) caught only after already being drafted into top_entities, when a mandatory undated-source check forced a follow-up date-verification search that found their headline events dated 2024 and 2025 respectively. Both were swapped out (for democratic-republic-of-c and haiti) before the scan was finalized.
+- Assessor runtime: 2026-08-20T17:05:00Z-2026-08-21T02:06:08Z (~9h); 20 entities assessed (15 priority, 5 rotation); 7 change proposals; 13 confirmations; 20 of 20 subdimension sidecars written.
+- Math hygiene: validate-indexes.mjs -- 82,747 checks passed, 0 errors, 65 warnings (all out of scope). No math-hygiene issue for any of the 20 entities in scope. The Venezuela 0.40-point reconstruction residue (carried since 2026-07-17) remains below the 0.5-point flag threshold and is unresolved because Venezuela was confirmed rather than changed.
+- Rotation-state integrity: 9 pre-existing rank drifts corrected to published values (somalia, haiti, zambia, venezuela, pakistan, marathon-petroleum, intercontinental-hotel, interpublic-group, manpowergroup). No composite or band value was written from a proposed (unapplied) figure; all mirror the published index.
+- 72 entities carrying open, unapplied proposals from the 2026-08-16/17/18 calibration programme were screened to a higher bar (genuinely new, dated, in-window evidence only); none surfaced qualifying evidence and none were re-flagged.
+- Validation: validate-daily-briefings.mjs 76/76 PASS; lint-daily-briefings.mjs 78 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified.
