@@ -797,3 +797,91 @@ Removed the `apexica-robokind` entry. Added 14 new entries (`intuition-robotics`
 `node site/scripts/validate-indexes.mjs`: 0 errors, 65 warnings, 83,592 checks passed -- matches the stated baseline (0 errors, 65 warnings) exactly; no new warning classes introduced by this operation. All 63 robotics-labs entity records now carry ranks matching the live index.
 
 Out of scope, untouched per instruction: all other indexes; all `research/change-proposals/*.json` (37 held on self-veto grounds, 13 on entity-record grounds, none in scope here); `site/src/data/updates/**`; `research/digests/**`; `research/assessments/**` (no assessment file deleted). No commit performed.
+
+## 2026-08-23
+
+**Founder-directed structural operation, not a score-updater proposal cycle.** 29 first-ever baseline assessments inserted into `robotics-labs` in one pass (one re-sort), from `research/INDEX_ADDITIONS_ROBOTICS_BATCH2_2026-08-23.json` (15 of 15 rows) and `research/INDEX_ADDITIONS_ROBOTICS_BATCH3_2026-08-23.json` (14 of 15 rows — Zimmer Biomet held, see below). Entity count 63 to 92. None of the 29 held a prior published composite anywhere in the benchmark — these are first-ever baseline assessments dated 2026-08-23, not score changes, and are not entered in the delta table above because there is no "old score" to diff against. All 30 manifest composites (29 inserted + the held Zimmer Biomet row) were independently re-verified in this session to reproduce exactly (diff = 0.0000 in all 30 cases) via `computeCompositeFromDimensions` against each entity's 40-subdimension sidecar (`research/assessments/<slug>-2026-08-23.subdims.json`) before anything was written to the index — no score was derived, adjusted, or invented.
+
+**Insertion order and ranking.** The 29 new rows were appended (in manifest order: Batch 2 in full, then Batch 3 minus Zimmer Biomet) to the end of the existing 63-row array, then the combined 92-row array was stable-sorted descending by composite and re-ranked 1-92. This reproduces the Batch 1 (2026-08-20) precedent for tie handling: existing rows keep their relative order within a composite tie, and new rows sort after existing same-composite rows in their own manifest order (verified against Batch 1's own tie placements, e.g. `pudu-robotics` before `german-bionic` at 26.9, both preserved from the Batch 1 manifest order).
+
+### The 29 inserted (final rank / name / composite / band)
+
+| Rank | Name | Composite | Band |
+|---:|---|---:|---|
+| 44 | Esper Bionics | 33.7 | Developing |
+| 46 | Myomo, Inc. | 32.5 | Developing |
+| 52 | Glidance, Inc. | 30.6 | Developing |
+| 53 | PROCEPT BioRobotics Corporation | 30.6 | Developing |
+| 57 | Skydio, Inc. | 28.1 | Developing |
+| 59 | Tyromotion GmbH | 27.5 | Developing |
+| 62 | Carbon Robotics | 26.9 | Developing |
+| 63 | Exotec | 26.9 | Developing |
+| 64 | Scewo AG | 26.9 | Developing |
+| 65 | Distalmotion SA | 26.9 | Developing |
+| 66 | Ecovacs Robotics Co., Ltd. | 26.3 | Developing |
+| 68 | LimX Dynamics | 26.2 | Developing |
+| 69 | WHILL, Inc. | 26.2 | Developing |
+| 70 | Moon Surgical | 26.2 | Developing |
+| 71 | Noah Medical | 26.2 | Developing |
+| 72 | Doosan Robotics Inc. | 26.2 | Developing |
+| 73 | Beijing Roborock Technology Co., Ltd. | 26.2 | Developing |
+| 76 | Beijing Geekplus Technology Co., Ltd. | 25.6 | Developing |
+| 77 | Franka Robotics GmbH | 25.6 | Developing |
+| 78 | Mujin, Inc. | 25.6 | Developing |
+| 79 | EngineAI Robotics | 25.0 | Developing |
+| 80 | Galbot | 25.0 | Developing |
+| 81 | Locus Robotics | 25.0 | Developing |
+| 82 | Robot Era | 25.0 | Developing |
+| 83 | Globus Medical, Inc. | 25.0 | Developing |
+| 84 | Rainbow Robotics Co., Ltd. | 25.0 | Developing |
+| 85 | Dexterity, Inc. | 25.0 | Developing |
+| 86 | Avidbots Corp. | 25.0 | Developing |
+| 87 | Brain Corp | 25.0 | Developing |
+
+All 29 land in Developing (21-40); the structural floor at 25.0 (absence-baseline dimension scores of 2.0 across all 8 dimensions) is visible directly — 11 of the 29 sit exactly on it.
+
+### Zimmer Biomet — held, not inserted into either index
+
+**Zimmer Biomet Holdings, Inc.** (`zimmer-biomet`, manifest composite 32.5, Developing) was assessed and its composite independently re-verified (diff 0.0000) but **was not inserted into `robotics-labs` or any other index**, per founder instruction pending a founder decision on index destination. Zimmer Biomet is confirmed absent from `fortune-500.json` (checked directly against the live file), so there is no collision today. But the assessing agent applied the scope study's own R-SUB-4 rule and found it points to fortune-500, not robotics-labs: the ROSA robotic surgical system is a minority segment of a roughly US$8.232bn implant business, the identical test that excluded Medtronic and Stryker from robotics-labs in earlier scoping. Its manifest row, assessment (`research/assessments/zimmer-biomet-2026-08-23.md`) and sidecar (`research/assessments/zimmer-biomet-2026-08-23.subdims.json`) were left in place, untouched.
+
+### Franka Robotics GmbH — inserted, corporate-status flagged
+
+**Franka Robotics GmbH** (`franka-robotics`, rank 77, composite 25.6) carries `corporate_status: "operating-flagged"` in the manifest and was scored as fully operating. Franka Emika GmbH filed for insolvency in September 2023; Agile Robots AG acquired it 2 November 2023, retaining roughly 100 staff. It operates today under the Franka Robotics name, and because Agile Robots AG holds no published composite anywhere in the benchmark, listing under the scoping study's subsidiary rule is permitted. **This is the third time in three batches** (after Hocoma in Batch 1 and ABB Robotics' pending divestiture) that an `Operating (assumed)` scope-study row concealed an insolvency or change of control — a scoping-methodology finding, not a scoring one.
+
+### Rainbow Robotics — subsidiary rules cleared
+
+**Rainbow Robotics Co., Ltd.** (`rainbow-robotics`, rank 84, composite 25.0) was checked against both subsidiary-exclusion rules before insertion: all eight index files were searched for "Samsung" with zero matches, and Rainbow Robotics is separately incorporated on KOSDAQ (277810) with its own accounts. Cleared for inclusion.
+
+### Rank-cascade remediation
+
+Inserting 29 rows and fully re-sorting/re-ranking all 92 rows of `robotics-labs` desynced the frozen `rank` field on 20 other, untouched pre-existing robotics-labs entity records (a G1-invariant consequence, not a substantive score change — same mechanical effect as the 2026-07-21 / 2026-08-16 / 2026-08-17 / 2026-08-20 precedents). All 20 (`abb-robotics`, `aethon-teradyne`, `agibot`, `agility-robotics`, `bear-robotics`, `boston-dynamics-spot-demo`, `fanuc-corporation`, `german-bionic`, `ghost-robotics`, `keenon-robotics`, `kepler-exploration-robot`, `kuka`, `neura-robotics`, `paladin-ai-shield-ai`, `promobot`, `pudu-robotics`, `relay-robotics`, `symbotic`, `tesla-optimus`, `yaskawa-electric`) were verified to have matching composite and band before their `rank` field was mechanically resynced to the live index position — 0 composite/band mismatches found. 72 of the 92 pre-existing robotics-labs records required no rank change.
+
+### Entity records
+
+All 29 additions were written via `node site/scripts/apply-entity-record.mjs --from-proposal <proposal.json>`, sourcing `proposed_subdimensions` from each entity's `subdim_sidecar` (via temporary, non-committed proposal files constructed for this operation and deleted after use). Every explicit manifest `slug` field was used verbatim — the Batch 1 slug-fallback mismatch (8 of 14 wrongly slugified from legal names) did not recur, since Batch 2 and Batch 3 rows already carried the corrected explicit `slug` field. All 29 records resolved to their manifest slug on the first pass, with G1/G2/G3 passing for every one (derived composite matched published composite exactly, diff 0.0000 — no `ASSESSOR_OVERRIDE_NAMES` entries needed).
+
+### Index meta and bands
+
+`site/src/data/indexes/robotics-labs.json`: `meta.entityCount` 63 to 92, `meanScore` 48.7 to 41.8, `medianScore` 48.4 to 31.9. Confirmed (again) that `robotics-labs.json` carries only one `bands` array (top-level, no separate `meta.bands`). The top-level `bands` array was recomputed using the same threshold convention as `getBand()` (Critical up to 20, Developing up to 40, Functional up to 60, Established up to 80, Exemplary above 80): Exemplary 12 to 12 (unchanged, 19% to 13%), Established 11 to 11 (unchanged, 17% to 12%), Functional 11 to 11 (unchanged, 17% to 12%), Developing 27 to 56 (43% to 61%), Critical 2 to 2 (unchanged, 3% to 2%).
+
+### rotation-state.json
+
+Added 29 new entries (`esper-bionics`, `myomo`, `glidance`, `skydio`, `tyromotion`, `carbon-robotics`, `exotec`, `scewo`, `limx-dynamics`, `whill`, `geekplus`, `engineai-robotics`, `galbot`, `locus-robotics`, `robot-era`, `procept-biorobotics`, `distalmotion`, `ecovacs-robotics`, `moon-surgical`, `noah-medical`, `doosan-robotics`, `roborock`, `franka-robotics`, `mujin`, `globus-medical`, `rainbow-robotics`, `dexterity-inc`, `avidbots`, `brain-corp`) with `composite`/`band`/`rank` mirroring the published index rows, `last_assessed: "2026-08-23"` (the genuine assessment date), `last_scanned: null`, `last_change_proposal: null`. `entity_count` corrected 1302 to 1331, matching the `entities` key count exactly. No pre-existing entity's `last_assessed` was touched.
+
+### Validation
+
+`node site/scripts/validate-indexes.mjs`: 0 errors, 65 warnings, 85,477 checks passed — matches the stated baseline (0 errors, 65 warnings) exactly; no new warning classes introduced by this operation. All 92 robotics-labs entity records now carry ranks matching the live index.
+
+### Cohort-level note — correction to the instructed figure
+
+The originating instruction for this operation stated "batches 1-3 produced 43 of 44 entities in Developing." A recount from the actual scored rosters (Batch 1: 14 scored, of which 13 Developing + 1 Functional [Intuition Robotics, 45.0]; Batch 2: 15 scored, all Developing; Batch 3: 14 scored [Zimmer Biomet held, uncounted], all Developing) gives **42 of 43 scored entities in Developing**, not 43 of 44. This is logged here rather than silently corrected, since the instructed figure is understood to be a founder-authored editorial claim and the discrepancy should be visible for the founder to reconcile against whatever "44" was meant to include.
+
+### Publication blocker carried forward
+
+Disclosure density and an `adverse_findings_located` field must be published before these entities go live. Globus Medical's 25.0 and Dexterity's 25.0 are opposite measurements — one is a regulator finding that a harm-detection system did not work (see `research/assessments/globus-medical-2026-08-23.md`), the other is silence. The index cannot currently distinguish them from the composite alone.
+
+### Known open duplicates, still not addressed
+
+`robotics-labs` still contains two unresolved duplicate pairs, unchanged by this operation and awaiting founder disposition: **Boston Dynamics** appears twice (rank shifted by the re-sort but composite unchanged — 65.6, and 20.3 as "SPOT demo"), and **Halodi Robotics is 1X Technologies** (62.5 vs. 81.4, published separately since the 2023 rename).
+
+Out of scope, untouched per instruction: all other indexes; all `research/change-proposals/*.json` (37 held on self-veto grounds, 13 on entity-record grounds, none in scope here); `site/src/data/updates/**`; `research/digests/**`; `research/assessments/**` (no assessment file deleted or modified). No commit performed.

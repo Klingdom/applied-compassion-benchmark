@@ -2,9 +2,9 @@
   "meta": {
     "title": "Humanoid Robotics Labs Index 2026",
     "year": 2026,
-    "entityCount": 63,
-    "meanScore": 48.7,
-    "medianScore": 48.4,
+    "entityCount": 92,
+    "meanScore": 41.8,
+    "medianScore": 31.9,
     "dimensions": [
       "AWR",
       "EMP",
@@ -21,31 +21,31 @@
       "name": "Exemplary",
       "range": "81-100",
       "count": 12,
-      "pct": "19%"
+      "pct": "13%"
     },
     {
       "name": "Established",
       "range": "61-80",
       "count": 11,
-      "pct": "17%"
+      "pct": "12%"
     },
     {
       "name": "Functional",
       "range": "41-60",
       "count": 11,
-      "pct": "17%"
+      "pct": "12%"
     },
     {
       "name": "Developing",
       "range": "21-40",
-      "count": 27,
-      "pct": "43%"
+      "count": 56,
+      "pct": "61%"
     },
     {
       "name": "Critical",
       "range": "0-20",
       "count": 2,
-      "pct": "3%"
+      "pct": "2%"
     }
   ],
   "rankings": [
@@ -644,6 +644,7 @@
       }
     },
     {
+      "rank": 34,
       "name": "Intuition Robotics",
       "country": "Israel",
       "category": "Care/Companionship",
@@ -659,10 +660,10 @@
         "SYS": 2.8,
         "INT": 2.4
       },
-      "rank": 34,
       "slug": "intuition-robotics"
     },
     {
+      "rank": 35,
       "name": "Intuitive Surgical, Inc.",
       "country": "USA",
       "category": "Healthcare/Surgical",
@@ -678,10 +679,10 @@
         "SYS": 2.6,
         "INT": 2.2
       },
-      "rank": 35,
       "slug": "intuitive-surgical"
     },
     {
+      "rank": 36,
       "name": "CMR Surgical Ltd",
       "country": "United Kingdom",
       "category": "Healthcare/Surgical",
@@ -697,7 +698,6 @@
         "SYS": 2.4,
         "INT": 2.2
       },
-      "rank": 36,
       "slug": "cmr-surgical"
     },
     {
@@ -828,6 +828,25 @@
     },
     {
       "rank": 44,
+      "name": "Esper Bionics",
+      "country": "Ukraine/USA",
+      "category": "Healthcare/Prosthetics",
+      "composite": 33.7,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.6,
+        "EMP": 2,
+        "ACT": 2.4,
+        "EQU": 2.8,
+        "BND": 2.2,
+        "ACC": 2,
+        "SYS": 2.4,
+        "INT": 2.4
+      },
+      "slug": "esper-bionics"
+    },
+    {
+      "rank": 45,
       "name": "Aethon (Teradyne)",
       "country": "USA",
       "category": "Healthcare/Service",
@@ -845,7 +864,26 @@
       }
     },
     {
-      "rank": 45,
+      "rank": 46,
+      "name": "Myomo, Inc.",
+      "country": "USA",
+      "category": "Healthcare/Assistive",
+      "composite": 32.5,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.4,
+        "EMP": 2,
+        "ACT": 2.4,
+        "EQU": 2.4,
+        "BND": 2.4,
+        "ACC": 2.2,
+        "SYS": 2.4,
+        "INT": 2.2
+      },
+      "slug": "myomo"
+    },
+    {
+      "rank": 47,
       "name": "Tesla Optimus",
       "country": "USA",
       "category": "Labor/Consumer",
@@ -863,6 +901,7 @@
       }
     },
     {
+      "rank": 48,
       "name": "Yaskawa Electric Corporation",
       "country": "Japan",
       "category": "Industrial",
@@ -878,10 +917,10 @@
         "SYS": 2.2,
         "INT": 2.2
       },
-      "rank": 46,
       "slug": "yaskawa-electric"
     },
     {
+      "rank": 49,
       "name": "KUKA AG",
       "country": "Germany",
       "category": "Industrial",
@@ -897,11 +936,10 @@
         "SYS": 2.2,
         "INT": 2.4
       },
-      "rank": 47,
       "slug": "kuka"
     },
     {
-      "rank": 48,
+      "rank": 50,
       "name": "Agility Robotics",
       "country": "USA",
       "category": "Labor/Industrial",
@@ -919,6 +957,7 @@
       }
     },
     {
+      "rank": 51,
       "name": "ABB Robotics",
       "country": "Switzerland/Sweden",
       "category": "Industrial",
@@ -934,10 +973,48 @@
         "SYS": 2.4,
         "INT": 2
       },
-      "rank": 49,
       "slug": "abb-robotics"
     },
     {
+      "rank": 52,
+      "name": "Glidance, Inc.",
+      "country": "USA",
+      "category": "Accessibility/Blind mobility",
+      "composite": 30.6,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.6,
+        "EMP": 2.2,
+        "ACT": 2,
+        "EQU": 2.2,
+        "BND": 2.4,
+        "ACC": 2.2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "glidance"
+    },
+    {
+      "rank": 53,
+      "name": "PROCEPT BioRobotics Corporation",
+      "country": "USA",
+      "category": "Healthcare/Urology",
+      "composite": 30.6,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2.6,
+        "EQU": 2.4,
+        "BND": 2.2,
+        "ACC": 2.2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "procept-biorobotics"
+    },
+    {
+      "rank": 54,
       "name": "FANUC Corporation",
       "country": "Japan",
       "category": "Industrial",
@@ -953,11 +1030,10 @@
         "SYS": 2.4,
         "INT": 2
       },
-      "rank": 50,
       "slug": "fanuc-corporation"
     },
     {
-      "rank": 51,
+      "rank": 55,
       "name": "Neura Robotics",
       "country": "Germany",
       "category": "Research/Service",
@@ -975,6 +1051,7 @@
       }
     },
     {
+      "rank": 56,
       "name": "Relay Robotics, Inc.",
       "country": "USA",
       "category": "Healthcare/Service",
@@ -990,10 +1067,29 @@
         "SYS": 2.2,
         "INT": 2
       },
-      "rank": 52,
       "slug": "relay-robotics"
     },
     {
+      "rank": 57,
+      "name": "Skydio, Inc.",
+      "country": "USA",
+      "category": "Defence/Inspection",
+      "composite": 28.1,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2.2,
+        "ACC": 2,
+        "SYS": 2.4,
+        "INT": 2.2
+      },
+      "slug": "skydio"
+    },
+    {
+      "rank": 58,
       "name": "Symbotic Inc.",
       "country": "USA",
       "category": "Logistics/Warehouse",
@@ -1009,10 +1105,29 @@
         "SYS": 2,
         "INT": 2
       },
-      "rank": 53,
       "slug": "symbotic"
     },
     {
+      "rank": 59,
+      "name": "Tyromotion GmbH",
+      "country": "Austria",
+      "category": "Healthcare/Rehab",
+      "composite": 27.5,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2.2,
+        "EQU": 2,
+        "BND": 2.2,
+        "ACC": 2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "tyromotion"
+    },
+    {
+      "rank": 60,
       "name": "Pudu Robotics",
       "country": "China",
       "category": "Service/Hospitality",
@@ -1028,10 +1143,10 @@
         "SYS": 2.2,
         "INT": 2
       },
-      "rank": 54,
       "slug": "pudu-robotics"
     },
     {
+      "rank": 61,
       "name": "German Bionic Systems GmbH",
       "country": "Germany",
       "category": "Industrial/Exoskeleton",
@@ -1047,10 +1162,105 @@
         "SYS": 2.2,
         "INT": 2
       },
-      "rank": 55,
       "slug": "german-bionic"
     },
     {
+      "rank": 62,
+      "name": "Carbon Robotics",
+      "country": "USA",
+      "category": "Agriculture",
+      "composite": 26.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2.2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.4,
+        "INT": 2
+      },
+      "slug": "carbon-robotics"
+    },
+    {
+      "rank": 63,
+      "name": "Exotec",
+      "country": "France",
+      "category": "Logistics/Warehouse",
+      "composite": 26.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2.2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "exotec"
+    },
+    {
+      "rank": 64,
+      "name": "Scewo AG",
+      "country": "Switzerland",
+      "category": "Accessibility/Wheelchair",
+      "composite": 26.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2.2,
+        "BND": 2.4,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "scewo"
+    },
+    {
+      "rank": 65,
+      "name": "Distalmotion SA",
+      "country": "Switzerland",
+      "category": "Healthcare/Surgical",
+      "composite": 26.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2.2,
+        "EQU": 2.2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "distalmotion"
+    },
+    {
+      "rank": 66,
+      "name": "Ecovacs Robotics Co., Ltd.",
+      "country": "China",
+      "category": "Consumer/Home",
+      "composite": 26.3,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 1.8,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.4,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "ecovacs-robotics"
+    },
+    {
+      "rank": 67,
       "name": "Keenon Robotics",
       "country": "China",
       "category": "Service/Healthcare",
@@ -1066,10 +1276,124 @@
         "SYS": 2,
         "INT": 2
       },
-      "rank": 56,
       "slug": "keenon-robotics"
     },
     {
+      "rank": 68,
+      "name": "LimX Dynamics",
+      "country": "China",
+      "category": "Research/Humanoid",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2.2,
+        "ACC": 2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "limx-dynamics"
+    },
+    {
+      "rank": 69,
+      "name": "WHILL, Inc.",
+      "country": "Japan",
+      "category": "Accessibility/Personal mobility",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2.2,
+        "BND": 2.2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "whill"
+    },
+    {
+      "rank": 70,
+      "name": "Moon Surgical",
+      "country": "France",
+      "category": "Healthcare/Surgical",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.4,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "moon-surgical"
+    },
+    {
+      "rank": 71,
+      "name": "Noah Medical",
+      "country": "USA",
+      "category": "Healthcare/Bronchoscopy",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2.2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "noah-medical"
+    },
+    {
+      "rank": 72,
+      "name": "Doosan Robotics Inc.",
+      "country": "South Korea",
+      "category": "Industrial/Collaborative",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "doosan-robotics"
+    },
+    {
+      "rank": 73,
+      "name": "Beijing Roborock Technology Co., Ltd.",
+      "country": "China",
+      "category": "Consumer/Home",
+      "composite": 26.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2.4,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "roborock"
+    },
+    {
+      "rank": 74,
       "name": "AgiBot (Zhiyuan Robotics)",
       "country": "China",
       "category": "Labor/Humanoid",
@@ -1085,10 +1409,10 @@
         "SYS": 2,
         "INT": 2
       },
-      "rank": 57,
       "slug": "agibot"
     },
     {
+      "rank": 75,
       "name": "Bear Robotics",
       "country": "USA/South Korea",
       "category": "Service/Hospitality",
@@ -1104,11 +1428,238 @@
         "SYS": 2,
         "INT": 2
       },
-      "rank": 58,
       "slug": "bear-robotics"
     },
     {
-      "rank": 59,
+      "rank": 76,
+      "name": "Beijing Geekplus Technology Co., Ltd.",
+      "country": "China",
+      "category": "Logistics/Warehouse",
+      "composite": 25.6,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "geekplus"
+    },
+    {
+      "rank": 77,
+      "name": "Franka Robotics GmbH",
+      "country": "Germany",
+      "category": "Research/Collaborative",
+      "composite": 25.6,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "franka-robotics"
+    },
+    {
+      "rank": 78,
+      "name": "Mujin, Inc.",
+      "country": "Japan",
+      "category": "Logistics/Industrial",
+      "composite": 25.6,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.2,
+        "INT": 2
+      },
+      "slug": "mujin"
+    },
+    {
+      "rank": 79,
+      "name": "EngineAI Robotics",
+      "country": "China",
+      "category": "Research/Humanoid",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "engineai-robotics"
+    },
+    {
+      "rank": 80,
+      "name": "Galbot",
+      "country": "China",
+      "category": "Service/Humanoid",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "galbot"
+    },
+    {
+      "rank": 81,
+      "name": "Locus Robotics",
+      "country": "USA",
+      "category": "Logistics/Warehouse",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "locus-robotics"
+    },
+    {
+      "rank": 82,
+      "name": "Robot Era",
+      "country": "China",
+      "category": "Research/Humanoid",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "robot-era"
+    },
+    {
+      "rank": 83,
+      "name": "Globus Medical, Inc.",
+      "country": "USA",
+      "category": "Healthcare/Spine",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 1.8,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "globus-medical"
+    },
+    {
+      "rank": 84,
+      "name": "Rainbow Robotics Co., Ltd.",
+      "country": "South Korea",
+      "category": "Research/Humanoid",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "rainbow-robotics"
+    },
+    {
+      "rank": 85,
+      "name": "Dexterity, Inc.",
+      "country": "USA",
+      "category": "Logistics/Industrial",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "dexterity-inc"
+    },
+    {
+      "rank": 86,
+      "name": "Avidbots Corp.",
+      "country": "Canada",
+      "category": "Service/Cleaning",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "avidbots"
+    },
+    {
+      "rank": 87,
+      "name": "Brain Corp",
+      "country": "USA",
+      "category": "Service/Cleaning",
+      "composite": 25,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "slug": "brain-corp"
+    },
+    {
+      "rank": 88,
       "name": "Kepler Exploration Robot",
       "country": "China",
       "category": "Industrial",
@@ -1126,7 +1677,7 @@
       }
     },
     {
-      "rank": 60,
+      "rank": 89,
       "name": "Promobot",
       "country": "Russia",
       "category": "Consumer/Service",
@@ -1144,7 +1695,7 @@
       }
     },
     {
-      "rank": 61,
+      "rank": 90,
       "name": "Boston Dynamics (SPOT demo)",
       "country": "USA",
       "category": "Defense/Security",
@@ -1162,7 +1713,7 @@
       }
     },
     {
-      "rank": 62,
+      "rank": 91,
       "name": "Paladin AI (Shield AI)",
       "country": "USA",
       "category": "Defense/Security",
@@ -1180,7 +1731,7 @@
       }
     },
     {
-      "rank": 63,
+      "rank": 92,
       "name": "Ghost Robotics",
       "country": "USA",
       "category": "Defense/Security",

@@ -24,4 +24,7 @@ tmp/
 research/scripts/*_2026_*
 research/scripts/*_2027_*
 research/scripts/_tmp_*
+# Per-batch generators from the index-expansion studies (batch3-generate.mjs etc).
+# The manifests and sidecars are the durable artefacts; these are throwaway.
+research/scripts/batch[0-9]*-*
 research/scripts/.gen-results-*.json
