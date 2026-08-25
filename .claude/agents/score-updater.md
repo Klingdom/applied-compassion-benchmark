@@ -120,7 +120,18 @@ Append a row to `research/APPLIED_CHANGES.md`:
 
 Update `research/rotation-state.json`:
 - Set the entity's `composite`, `band`, and `rank` to the **now-applied published values** from the index row (Steps 2c–2e). This is the ONLY place rotation-state's score fields change — keep them in lockstep with the index so rotation-state always mirrors the published score.
-- Set `last_assessed` to today's date.
+- **NEVER write `last_assessed`.** That field is owned exclusively by the assessor stage
+  (`.claude/agents/overnight-assessor.md` §3h) and records **when the entity was assessed** — never
+  when a proposal was applied. Leave whatever value is already there untouched.
+
+  > This instruction previously read "Set `last_assessed` to today's date." That is the direct
+  > cause of **INC-003**: on 2026-08-16 an override batch stamped apply-dates over assessment
+  > dates for sixteen entities, making them appear freshly assessed and suppressing their rescan
+  > priority. `validate-rotation-state.mjs` failures rose 29 → 41. Repaired 2026-08-19 by
+  > `research/scripts/reconcile-last-assessed.mjs`, which reconciled 27 entities in total (20
+  > overstating freshness, 7 understating it) and brought failures down to 24 — the lowest
+  > recorded. See `INCIDENTS.md` INC-003 and `AUTONOMY.md` §4.
+
 - Set the entity's `last_change_proposal` to null (it's been applied)
 
 ### 2i. Write Entity Record from proposed_subdimensions (REQUIRED)
