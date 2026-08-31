@@ -1,0 +1,729 @@
+{
+  "entity": "Abbott Laboratories",
+  "slug": "abbott-laboratories",
+  "index": "fortune-500",
+  "assessment_date": "2026-08-26",
+  "assessment_file": "research/assessments/abbott-laboratories-2026-08-26.md",
+  "subdim_sidecar": "research/assessments/abbott-laboratories-2026-08-26.subdims.json",
+  "published_scores": {
+    "composite": 57.8,
+    "band": "functional",
+    "rank": 60,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.3,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.3,
+      "ACC": 3,
+      "SYS": 3.8,
+      "INT": 3.3
+    }
+  },
+  "proposed_scores": {
+    "composite": 50,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.8,
+      "ACT": 3.4,
+      "EQU": 2.8,
+      "BND": 2.8,
+      "ACC": 2.6,
+      "SYS": 3.6,
+      "INT": 2.8
+    }
+  },
+  "score_delta": -7.8,
+  "band_change": false,
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. No subdimension in this assessment rests on absence of disclosure; every movement is backed by a specific dated document or court action. This is a conduct assessment, not a de-seeding.",
+  "measures_absence_not_misconduct": false,
+  "key_evidence": [
+    "Abbott agreed on 20 August 2026 to pay $670 million to settle roughly 2,000 lawsuits alleging its preterm-infant formula concealed the risk of necrotizing enterocolitis, a bowel disease with an estimated mortality rate above 20% in premature newborns.",
+    "Abbott dropped its appeal of a $495 million jury verdict after a Missouri appeals court upheld that verdict in May 2026 — converting a contested trial-court verdict into a final civil failure-to-warn judgment. This is the single most probative new fact since the 2026-04-20 baseline.",
+    "Abbott did not admit liability and stated it remains confident in the safety of its infant formula products, so Harm Acknowledgment (AB1) and Historical Harm Acknowledgment (EQ5) stay at 2.",
+    "About 1,700 lawsuits covering up to 12,700 infants remain pending; the August settlement resolves roughly a tenth of claimants.",
+    "FAVOURABLE COUNTERWEIGHT, SCORED: Correction Willingness (AB2) rises to 3 because paying and abandoning the appeal is a real course correction after a period of pure denial recorded at the April baseline."
+  ],
+  "evidence": [
+    {
+      "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products.",
+      "claim": "Abbott settled without admitting liability and reaffirmed product safety on the day of settlement, holding AB1/EQ5/I4 down.",
+      "source": "Claims Journal (wire report)",
+      "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Abbott said interest on the 2024 verdict would have entitled the plaintiff to about $600 million, and the company chose to reach a settlement.",
+      "claim": "Abbott dropped its appeal and chose to settle after the Missouri appeals court upheld the $495 million verdict in May 2026 — a documented course correction (AB2 up to 3).",
+      "source": "Claims Journal (wire report)",
+      "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Necrotizing enterocolitis, which mostly affects premature newborns, causes the death of bowel tissue and has an estimated mortality rate of more than 20%.",
+      "claim": "The harm at issue is severe and concentrated in the most vulnerable population Abbott serves, supporting A2 and EQ2 at 3 rather than higher.",
+      "source": "Claims Journal (wire report)",
+      "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Abbott will pay $670 million to end roughly 2,000 infant-formula claims; about 1,700 suits covering up to 12,700 infants remain.",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+      "publishedDate": "2026-08-20",
+      "sourceTier": 2
+    },
+    {
+      "claim": "In May 2022 the US District Court for the Western District of Michigan entered a consent decree of permanent injunction requiring Abbott Nutrition to retain an independent expert, implement a sanitation plan, environmental monitoring and employee training, and conduct root-cause investigation before resuming production at Sturgis. This supports AB4 and S1 at 3-4 and is prior, already-priced context, not new evidence.",
+      "source": "US Department of Justice, US Attorney's Office, Western District of Michigan",
+      "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+      "publishedDate": "2022-05-16",
+      "sourceTier": 5
+    },
+    {
+      "claim": "A separate Cook County jury awarded $70 million against Abbott in April 2026 in an infant-formula case, supporting B5 (Consent Orientation) at 2.",
+      "source": "Chicago Sun-Times",
+      "url": "https://chicago.suntimes.com/2026/04/10/abbott-laboratories-to-pay-70m-in-damages-infant-formula-lawsuits",
+      "publishedDate": "2026-04-10",
+      "sourceTier": 2
+    }
+  ],
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 57.8 was set on 2026-04-20 by a first-time baseline (research/assessments/abbott-laboratories.md) that cut Abbott from 87.4. That baseline already priced the NEC multidistrict litigation, the original $495 million verdict, the $70 million April 2026 verdict, the 2022 Sturgis recall and Abbott's denial pattern. Verified by reading the April report, not assumed.",
+    "no_stale_baseline_rationale": "This proposal does NOT rest on the baseline being old. It rests on four developments after 20 April 2026: the May 2026 appellate affirmance, Abbott dropping its appeal, the 20 August 2026 $670 million payment, and the disclosed residual exposure of ~1,700 suits / up to 12,700 infants.",
+    "no_double_counting": "Facts already priced in April are explicitly excluded from the movement and are cited only as context.",
+    "directionality": "Surfaced on negative within-window evidence; proposal is a downgrade. Consistent.",
+    "not_calibration": "This is a conduct assessment. No peer-calibration argument is used anywhere.",
+    "settlement_is_not_admission": "Recorded explicitly. The $670 million is not scored as proof of causation. The appellate-affirmed failure-to-warn judgment, which is an adjudicated civil finding, carries the adverse weight."
+  },
+  "band_change_evidence_test": {
+    "required": false,
+    "reason": "No band crossing: Functional at both published (57.8) and proposed (50.0).",
+    "passed": null
+  },
+  "recommendation": "downgrade",
+  "notes": "Filed under the magnitude trigger (delta -7.8). No band change. The strongest new fact — the May 2026 Missouri Court of Appeals affirmance of the $495 million verdict — is reported by trade press; the opinion itself was not obtained, which is why confidence is medium rather than high. One subdimension moves UP (AB2 Correction Willingness, to 3) because Abbott genuinely corrected course by paying and abandoning its appeal; the report states this explicitly so the downgrade cannot be read as ignoring it.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+          "date": "2022-05-16"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Necrotizing enterocolitis, which mostly affects premature newborns, causes the death of bowel tissue and has an estimated mortality rate of more than 20%."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fda.gov/media/158736/download",
+          "date": "2022-05-26"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Necrotizing enterocolitis, which mostly affects premature newborns, causes the death of bowel tissue and has an estimated mortality rate of more than 20%."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+          "date": "2022-05-16"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fda.gov/media/158736/download",
+          "date": "2022-05-26"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Necrotizing enterocolitis, which mostly affects premature newborns, causes the death of bowel tissue and has an estimated mortality rate of more than 20%."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://chicago.suntimes.com/2026/04/10/abbott-laboratories-to-pay-70m-in-damages-infant-formula-lawsuits",
+          "date": "2026-04-10"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott said interest on the 2024 verdict would have entitled the plaintiff to about $600 million, and the company chose to reach a settlement."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+          "date": "2022-05-16"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fda.gov/media/158736/download",
+          "date": "2022-05-26"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fda.gov/media/158736/download",
+          "date": "2022-05-26"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+          "date": "2022-05-16"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fda.gov/media/158736/download",
+          "date": "2022-05-26"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott said interest on the 2024 verdict would have entitled the plaintiff to about $600 million, and the company chose to reach a settlement."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://qz.com/abbott-670-million-settlement-preterm-baby-formula-lawsuits-082126",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/abbott-will-pay-670-million-to-end-2-000-infant-formula-claims",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/21/339713.htm",
+          "date": "2026-08-21",
+          "quote": "Abbott did not admit liability in Thursday's settlement, saying it remains confident in the safety of its infant formula products."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.justice.gov/Usao-wdmi/pr/2022_0516_Abbott",
+          "date": "2022-05-16"
+        }
+      ]
+    }
+  ],
+  "proposal_file": "research/change-proposals/abbott-laboratories-2026-08-26.json"
+}

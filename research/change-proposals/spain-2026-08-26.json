@@ -1,0 +1,742 @@
+{
+  "entity": "Spain",
+  "slug": "spain",
+  "index": "countries",
+  "assessment_date": "2026-08-26",
+  "assessment_file": "research/assessments/spain-2026-08-26.md",
+  "subdim_sidecar": "research/assessments/spain-2026-08-26.subdims.json",
+  "published_scores": {
+    "composite": 60,
+    "band": "functional",
+    "rank": 42,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.4,
+      "EQU": 3.3,
+      "BND": 3.4,
+      "ACC": 3.2,
+      "SYS": 3.5,
+      "INT": 3.4
+    }
+  },
+  "proposed_scores": {
+    "composite": 50.6,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 2.6,
+      "EQU": 2.8,
+      "BND": 3.2,
+      "ACC": 3,
+      "SYS": 3.4,
+      "INT": 3.2
+    }
+  },
+  "score_delta": -9.4,
+  "band_change": false,
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. No subdimension here scores 1 and none rests on absence of disclosure. Every movement is backed by Human Rights Watch field documentation with named locations, dated events and counted populations. This is a conduct assessment, not a de-seeding.",
+  "measures_absence_not_misconduct": false,
+  "key_evidence": [
+    "Human Rights Watch documented on 21 August 2026 that thousands of people had been in the streets of Ceuta 'in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks'.",
+    "Between 1,385 and 2,168 unaccompanied children were among those unsheltered; 700-750 women were held in open-air sports facilities; over 1,000 men and boys lived in makeshift huts on Trampolin beach; hundreds slept on cardboard in warehouse districts.",
+    "The Spanish Interior and Inclusion ministries announced tent camps on 17 August 2026 — eighteen days after the 30-31 July crossing. HRW found the provision fell short of need. This mitigating fact is scored, and is why Boundaries, Accountability, Systemic Thinking and Integrity move only 0.1-0.2.",
+    "SCANNER CORRECTION: the scan recorded 'about 1,500 arrivals July 20-29'. HRW documents a mass crossing on 30-31 July 2026, with the Spanish Interior Minister saying 5,000 remain and local organisations estimating up to 10,000. The scan understated the scale and mis-dated the crossing by about ten days.",
+    "ATTRIBUTION: the migration event itself is not scored against Spain. HRW states both Spanish central authorities and the Ceuta local government share responsibility; only the national-government share is scored, because Spain sits in the countries index.",
+    "The movement is FULLY LINEAR — all eight dimensions were already below 4.0 at the published values, so the integration premium was already zero. No formula threshold effect contributes to the -9.4."
+  ],
+  "evidence": [
+    {
+      "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks.",
+      "claim": "Spain's response to the Ceuta arrivals left thousands without basic protection for nearly three weeks, driving AC1 from 4 to 2 and A1/A2/E1/E2 from 4 to 3.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 3
+    },
+    {
+      "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco",
+      "claim": "HRW's asks indicate asylum claims were not being fully examined and deportation to Morocco was a live risk, supporting E4 and B4 at 3.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 3
+    },
+    {
+      "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents.",
+      "claim": "Local activist Halima Ahmed's account establishes second-order effects on Ceuta residents that Spain identified but did not plan for, supporting S3 at 3.",
+      "source": "Human Rights Watch, quoting local activist Halima Ahmed",
+      "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 3
+    },
+    {
+      "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son.",
+      "claim": "A 47-year-old Moroccan woman fleeing domestic violence was among those left unsheltered, establishing that no differentiated pathway operated for a recognised vulnerability category (A2 at 3, EQ2 at 2).",
+      "source": "Human Rights Watch, quoting a 47-year-old Moroccan woman",
+      "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Independent same-date corroboration of the Ceuta humanitarian and rights crisis and of HRW's call on Spain and Ceuta authorities to shelter those affected.",
+      "source": "Arab News",
+      "url": "https://www.arabnews.com/node/2655412/world",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 2
+    }
+  ],
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 60.0 was applied on 2026-05-04 from proposal spain-2026-05-02.json (60.9 to 60.0, -0.9). Spain was re-assessed on 2026-07-31, which produced 58.1 and a CONFIRM with no proposal. Verified by reading research/assessments/spain-2026-07-31.subdims.json and research/APPLIED_CHANGES.md. The baseline is recent and evidence-based.",
+    "no_stale_baseline_rationale": "This proposal does not rest on the baseline being old. It rests on a HRW field investigation dated 21 August 2026 documenting conditions that arose after 30 July 2026 — entirely after the 31 July assessment.",
+    "directionality": "Surfaced on negative within-window evidence; proposal is a downgrade. Consistent.",
+    "not_calibration": "Conduct assessment. No peer-calibration argument is used.",
+    "mitigating_evidence_scored": "The 17 August ministerial tent-camp decision is scored upward at AB2 and AC4 and is stated in the report and in key_evidence, so the downgrade cannot be read as ignoring Spain's response.",
+    "no_formula_artefact": "All eight published dimensions were already below 4.0, so the integration premium was already zero. The -9.4 is fully linear."
+  },
+  "band_change_evidence_test": {
+    "required": false,
+    "reason": "No band crossing: Functional at both published (60.0) and proposed (50.6).",
+    "passed": null
+  },
+  "recommendation": "downgrade",
+  "notes": "Filed under the magnitude trigger (delta -9.4). No band change. Confidence is medium, not high, for one specific reason a reviewer should weigh: the entire adverse finding rests on a single named international rights organisation's field documentation (HRW, tier 3), corroborated on date and substance by one general news source (tier 2). NO tier-4-or-above source — no UN body, EU institution or court finding — was located on the Ceuta situation. Had this been a band crossing it would have failed the evidence test; it is not, so the magnitude trigger applies on its own terms. The mitigating fact that Spain's Interior and Inclusion ministries did act on 17 August 2026 is scored and disclosed.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "I left my country not because I'm hungry, but because my husband is a drug addict; he beats me and my son."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "Thousands of people have been in the streets in a legal vacuum, exposed to sexual violence and without adequate shelter, food, or sanitation for almost three weeks."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "catastrophic situation without precedents…There is so much uncertainty and that generates fear among residents."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/08/21/spain-humanitarian-and-rights-crisis-in-ceuta",
+          "date": "2026-08-21",
+          "quote": "ensure full examination of asylum claims and refrain from deporting third-country nationals...to Morocco"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.arabnews.com/node/2655412/world",
+          "date": "2026-08-21"
+        }
+      ]
+    }
+  ],
+  "proposal_file": "research/change-proposals/spain-2026-08-26.json"
+}

@@ -1,0 +1,740 @@
+{
+  "entity": "General Motors",
+  "slug": "general-motors",
+  "index": "fortune-500",
+  "assessment_date": "2026-08-26",
+  "assessment_file": "research/assessments/general-motors-2026-08-26.md",
+  "subdim_sidecar": "research/assessments/general-motors-2026-08-26.subdims.json",
+  "published_scores": {
+    "composite": 40.6,
+    "band": "functional",
+    "rank": 176,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 33.7,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2.4,
+      "ACT": 2.4,
+      "EQU": 2.4,
+      "BND": 2.8,
+      "ACC": 2,
+      "SYS": 2.2,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -6.9,
+  "band_change": true,
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. No subdimension here scores 1. Every movement rests on a specific documented count from the federal defect docket, not on missing disclosure. Correction Willingness (AB2) is deliberately held at 2 rather than 1 because GM is not obliged to expand a recall while an Engineering Analysis is open — the absence of an expansion is NOT scored as documented refusal.",
+  "measures_absence_not_misconduct": false,
+  "key_evidence": [
+    "NHTSA opened Engineering Analysis EA26005 on 20 August 2026 covering 997,743 GM vehicles (model years 2021-2026) fitted with the 6.2L L87 V8.",
+    "499 owners reported engine failure in vehicles that had ALREADY received the recall repair under Recall 25V-274 — 473 after an oil-viscosity change and 26 after a complete engine replacement. The remedy did not work.",
+    "A further 191 failures were reported in engines built after GM's 31 May 2024 recall cutoff, for 690 new failure reports in total. The failure mode recurred in post-cutoff production.",
+    "Independent analyses attribute the root cause to microscopic ridges on the L87 crankshaft causing severe oil-pressure fluctuation — i.e. most owners received an oil change for a suspected metal defect.",
+    "NO INJURY EVIDENCE WAS LOCATED in any source. The documented harm is loss of the vehicle and a repair that did not hold. Several subdimensions are scored at 2 rather than 1 for this reason, and Boundaries is held at 2.80.",
+    "ATTRIBUTION: NHTSA opening the investigation is the regulator's act and is NOT scored as GM conduct. What is scored is GM's engine, GM's chosen remedy, and GM's response to 690 subsequent reports."
+  ],
+  "evidence": [
+    {
+      "quote": "The National Highway Traffic Safety Administration (NHTSA) opened an Engineering Analysis last week, on August 20, 2026.",
+      "claim": "The federal Engineering Analysis EA26005 opened on 20 August 2026 — one day earlier than the scanner's recorded evidence_date of 2026-08-21.",
+      "source": "auto123",
+      "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+      "publishedDate": "2026-08-24",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs.",
+      "claim": "GM's recall remedy failed for 499 owners, which is the central Action/Efficacy (AC3) finding.",
+      "source": "auto123",
+      "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+      "publishedDate": "2026-08-24",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Independent analyses suggest the root cause may involve microscopic ridges on the L87's crankshaft that induce severe oil pressure fluctuations.",
+      "claim": "The remedy (oil-viscosity change for 473 of 499 complainants) addressed a symptom rather than the suspected manufacturing cause, supporting AC2 and S1 at 2.",
+      "source": "auto123",
+      "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+      "publishedDate": "2026-08-24",
+      "sourceTier": 2
+    },
+    {
+      "claim": "NHTSA escalated the 6.2L V8 probe to 997,743 vehicles across model years 2021-2026, adding 2025 and 2026 model years for the first time; 191 failures were reported in engines built after the 31 May 2024 recall cutoff.",
+      "source": "GM-Trucks.com",
+      "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+      "publishedDate": "2026-08-22",
+      "sourceTier": 1
+    },
+    {
+      "claim": "US regulator probes GM engine recall fix covering about 998,000 vehicles.",
+      "source": "Fuels & Lubes",
+      "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+      "publishedDate": "2026-08-24",
+      "sourceTier": 1
+    },
+    {
+      "claim": "Engine-failure concerns prompted the NHTSA probe of GM pickups and SUVs; GM's existing recall covers 597,630 vehicles.",
+      "source": "The Detroit News",
+      "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+      "publishedDate": "2026-08-21",
+      "sourceTier": 2
+    }
+  ],
+  "date_corrections": [
+    "Scanner evidence_date 2026-08-21 CORRECTED to 2026-08-20, the date NHTSA's Office of Defects Investigation opened EA26005. The 2026-08-21 Detroit News URL and 2026-08-24 Claims Journal URL are publication dates of coverage. Correction does not affect any score; both dates are in window."
+  ],
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 40.6 was set before 2026-05-30 and reconfirmed unchanged by a rotation-staleness confirmation on 2026-05-30 (research/assessments/general-motors-2026-05-30.md), which recorded canonical reconstruction 40.6 exact, drift 0, and an explicit BOUNDARY-PROXIMITY NOTE that 40.6 sits 0.6pt above the 40.0 band boundary. Verified by reading that report.",
+    "no_stale_baseline_rationale": "This proposal does not rest on the baseline being old. It rests on a federal defect investigation opened on 20 August 2026 documenting 690 post-recall failure reports.",
+    "directionality": "Surfaced on negative within-window evidence; proposal is a downgrade. Consistent.",
+    "not_calibration": "Conduct assessment. No peer-calibration argument used.",
+    "boundary_proximity_disclosed": "The band crossing is arithmetically near-inevitable because the published value sat 0.6pt above the boundary. Disclosed in the report and here so the crossing is not read as a dramatic reclassification."
+  },
+  "band_change_evidence_test": {
+    "required": true,
+    "passed": false,
+    "independent_sources": 4,
+    "highest_tier_obtained": 2,
+    "self_published_corporate_excluded": true,
+    "reason": "FAILS the tier bar. The primary record is NHTSA Engineering Analysis EA26005, a US federal docket that would be tier 5, but nhtsa.gov returned HTTP 403 and the document could not be fetched or quoted. All four cited sources are trade or general press (tier 1-2) reporting the docket's contents; they agree on every figure. The conduct finding is not in doubt; the sourcing tier is. Recorded as a failure honestly, per the cycle rule."
+  },
+  "recommendation": "flag-for-review",
+  "notes": "FLAG FOR REVIEW ON THE SOURCING BAR, NOT ON THE FINDING. Filed under both the magnitude trigger (delta -6.9) and the band-crossing trigger (Functional to Developing). The routing follows the 2026-08-16 Microsoft AI precedent: the band crossing lacks a tier-4-or-above source because the NHTSA docket could not be fetched, not because the evidence is disputed. A reviewer wanting to clear this should retrieve NHTSA EA26005 directly. Two further caveats a reviewer should weigh: (1) BOUNDARY PROXIMITY — the published 40.6 sat 0.6pt above the 40.0 boundary, so any downward movement crosses the band; (2) NO INJURY EVIDENCE was located, so the harm documented is economic and potential-safety, which is why no subdimension scores 1.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "The National Highway Traffic Safety Administration (NHTSA) opened an Engineering Analysis last week, on August 20, 2026."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Independent analyses suggest the root cause may involve microscopic ridges on the L87's crankshaft that induce severe oil pressure fluctuations."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "The National Highway Traffic Safety Administration (NHTSA) opened an Engineering Analysis last week, on August 20, 2026."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "The National Highway Traffic Safety Administration (NHTSA) opened an Engineering Analysis last week, on August 20, 2026."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Independent analyses suggest the root cause may involve microscopic ridges on the L87's crankshaft that induce severe oil pressure fluctuations."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Independent analyses suggest the root cause may involve microscopic ridges on the L87's crankshaft that induce severe oil pressure fluctuations."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.detroitnews.com/story/business/autos/general-motors/2026/08/21/engine-failure-concerns-prompt-nhtsa-probe-of-gm-pickups-suvs/91401320007/",
+          "date": "2026-08-21"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "The National Highway Traffic Safety Administration (NHTSA) opened an Engineering Analysis last week, on August 20, 2026."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.gm-trucks.com/nhtsa-gm-62l-v8-engine-investigation-expands/",
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.claimsjournal.com/news/national/2026/08/24/339741.htm",
+          "date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.auto123.com/en/news/nhtsa-investigation-gm-v8-engine/74166/",
+          "date": "2026-08-24",
+          "quote": "Regulators have logged 499 complaints of engine failure in vehicles that had already undergone recall repairs."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-08-26",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.fuelsandlubes.com/u-s-regulator-probes-gm-engine-recall-fix-on-998000-vehicles/",
+          "date": "2026-08-24"
+        }
+      ]
+    }
+  ],
+  "proposal_file": "research/change-proposals/general-motors-2026-08-26.json"
+}

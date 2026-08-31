@@ -9445,3 +9445,123 @@ No score was applied by this cycle. site/src/data/indexes/*.json and research/ro
 
 A founder instruction later the same day authorized applying the full approved queue (66 files with status="approved", reviewed_date 2026-08-20). 29 were applied (see the APPLIED 2026-08-20 block at the top of this file and research/APPLIED_CHANGES.md); 37 were held because their own notes/rationale explicitly instructed against application (self-veto) regardless of the approved status flag -- see research/APPLIED_CHANGES.md for the full held list and reasoning. Kazakhstan, InterContinental Hotel, and Zambia (tabled above as pending earlier tonight) are struck through above as APPLIED. Hyatt Hotels, IDEXX Laboratories, and ManpowerGroup (tabled above) remain pending -- HELD on self-veto grounds, not on confidence or evidence-test grounds alone. Interpublic Group remains pending -- held on pre-existing entity-record grounds (Omnicom merger), unrelated to and untouched by this update. validate-indexes.mjs: 0 errors, 65 warnings (unchanged baseline) after the apply. Nothing in this file below this point (or above the APPLIED 2026-08-20 block) was altered; historical digest entries are left as originally written for the historical record, per this file's established convention of appending an APPLIED summary rather than retroactively editing prior nightly narrative.
 
+
+
+---
+
+## 2026-08-26 -- Evidence-Lifecycle Retraction (Peru) | 3 New Proposals (1 Band Crossing, Sourcing-Bar Held) | 16 Confirmations | 2 Upward Crossings Measured But Not Filed | True Queue = 16
+
+### Summary -- 2026-08-26
+
+Catch-up cycle covering six uncovered days (2026-08-21 through 2026-08-26). Roster grew from 1,289 to **1,331** entities: robotics-labs expanded 50 -> 92 with 43 first-ever baseline assessments, and one entity (Apexica/RoboKind) was delisted. 20 entities assessed, 3 change proposals generated, 16 confirmations, 1 entity withheld (Bionik Laboratories, corporate status unresolved), 0 errors. **Zero scores applied.**
+
+**LEAD FINDING IS NOT A PROPOSAL.** The scan's triggering item for Peru -- a reported killing of Asheninka leader Americo Pascual Tumisha -- did not happen. He is alive; the Indigenous federation that raised the alarm (ORAU) retracted its own alert after a river patrol confirmed him safe. Both of the scanner's original sources were correctly dated at scan time and were later retracted -- a new **evidence-lifecycle failure class** the pipeline's existing date-verification gates do not catch. See the digest narrative (research/digests/2026-08-26.md) for full detail. No score change resulted; Peru confirms at 36.2 (+0.3) on a separate, genuinely new event (a landmark 15-35 year sentencing for a different defender's 2023 murder).
+
+**TRUE PENDING QUEUE TOTAL: 16.** Verified directly by counting research/change-proposals/*.json files with "status": "pending" -- 13 carried forward (11 from the 2026-08-16/17 robotics-labs seed-correction batch, Sarcos Technology from 2026-08-17, and Interpublic Group from 2026-08-20) plus 3 new tonight. Per the remediation instruction logged in the 2026-08-19 queue-accounting correction, this total is NOT derived by incrementing the prior digest's stated figure -- it is counted fresh from the directory. Note that many files in research/change-proposals/ carry other statuses (approved, superseded, documented, auto-confirm-eligible, and several one-off statuses from other study lineages) and are correctly excluded from this "pending" count; they represent proposals already reviewed, applied, or resolved through other means, not open queue items.
+
+---
+
+### High Priority (band change or delta > 15) -- 2026-08-26
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence | Evidence Test | Date | File |
+|---|---|---|---|---|---|---|---|---|---|
+| General Motors | fortune-500 | 40.6 | 33.7 | -6.9 | Functional -> Developing | medium | FAILED (finding not disputed; primary NHTSA docket returned HTTP 403, all four sources are trade/general press) | 2026-08-26 | [proposal](change-proposals/general-motors-2026-08-26.json) |
+
+General Motors' delta (-6.9) does not exceed 15 on its own, but the band crossing brings it into this tier per the standing rule. This is the only band crossing filed tonight, and it is held on the sourcing bar, not on doubt about the underlying facts: NHTSA opened Engineering Analysis EA26005 on 20 August 2026 over 997,743 vehicles after 499 owners reported the recall repair failed. A reviewer wanting to clear this should retrieve the NHTSA docket directly. Boundary proximity disclosed: published 40.6 sat only 0.6pt above the 40.0 boundary.
+
+**Carried forward, unchanged tonight (11 items from the 2026-08-16/17 robotics-labs seed-correction batch, all status: "pending", all self-identified as seed corrections rather than conduct downgrades):** Rethink Robotics (60.9->13.1, -47.8), 1X Technologies (81.4->26.9, -54.5), Bionik Laboratories (62.5->25.6, -36.9, see withhold note below), Cyberdyne Inc. (83->45, -38), Diligent Robotics (83->31.9, -51.1), Figure AI (48.4->25.6, -22.8), Halodi Robotics (62.5->25, -37.5, LOW confidence), Harmonic Bionics (62.5->30, -32.5), Picasso Labs/Machina (48.4->25, -23.4, LOW confidence), ReWalk Robotics (83->38.1, -44.9), Sanctuary AI (81.4->25.6, -55.8). None were re-flagged, re-touched, or superseded this cycle; the 2026-08-26 scan explicitly screened all robotics-labs held proposals against fresh evidence and found nothing that changes any of them.
+
+---
+
+### Standard (delta 5-15, no band change) -- 2026-08-26
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|---|---|---|---|---|---|---|---|
+| Spain | countries | 60.0 | 50.6 | -9.4 | medium | 2026-08-26 | [proposal](change-proposals/spain-2026-08-26.json) |
+| Abbott Laboratories | fortune-500 | 57.8 | 50.0 | -7.8 | medium | 2026-08-26 | [proposal](change-proposals/abbott-laboratories-2026-08-26.json) |
+
+Spain: HRW documented a three-week humanitarian crisis in Ceuta after a mass crossing on 30-31 July 2026 (corrected from the scan's "about 1,500 arrivals July 20-29" to HRW's 5,000-10,000 remaining). Mitigation is scored: Spain's ministries announced tent camps 17 August, which is why the downgrade isn't larger. No band change -- published 60.0 sat exactly at the Functional/Established boundary; proposed 50.6 moves well clear of it into Functional interior.
+
+Abbott Laboratories -- $670m settlement of ~2,000 preterm-formula NEC claims, following an appellate court's May 2026 affirmance of a $495m verdict that Abbott chose to stop appealing. A settlement is not an admission; Abbott still says its products are safe. One subdimension (Correction Willingness) moves up, disclosed explicitly so the downgrade isn't read as ignoring Abbott's real course correction.
+
+**Carried forward, unchanged tonight:** Sarcos Technology (35.9->25, -10.9, medium confidence, filed 2026-08-17), Interpublic Group (40.0->31.3, -8.7, LOW confidence, filed 2026-08-20 -- still held on pre-existing entity-record grounds, the Omnicom merger, and must not be applied until that record is resolved regardless of any other decision on the number itself).
+
+---
+
+### Confirmations (delta < 5, no proposal generated) -- 2026-08-26
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|---|---|---|---|---|---|
+| Peru | countries | 35.9 | 36.2 | +0.3 | Retraction confirmed at source; see lead finding above. Reported killing did not happen; landmark defender-murder sentencing (15-35 years, four men) is the genuinely new in-window fact. |
+| Meta Platforms | fortune-500 | 7.8 | 8.1 | +0.3 | State settlement worth up to $17bn is Meta's first corrective/reparative act on record (Accountability 1.0->1.4); settlement is not an admission. |
+| OpenAI | ai-labs | 22.5 | 22.5 | 0.0 | Alabama AG subpoena investigates the already-scored July Hugging Face containment failure; re-scoring would double-count. |
+| Greece | countries | 39.1 | 36.3 | -2.8 | Sintiki detention riot is predominantly detainee conduct, not scored against Greece; most of the delta is an integer-grid rounding artefact on published half-step values, not new harm. |
+| GEO Group | fortune-500 | 6.6 | 5.6 | -1.0 | Coverage-gap self-correction: the 2026-08-11 assessment of this same company missed a 7 August NJ civil-rights subpoena, four days after it was announced. Score unchanged -- near floor, 28/40 subdims at 1. |
+| UnitedHealth Group | fortune-500 | 10.2 | 9.4 | -0.8 | Amended shareholder complaint alleges CEO backed shutting a Medicare audit; unproven allegation, no subdimension moved on the pleading alone. |
+| Germany | countries | 77.1 | 74.5 | -2.6 | 23 Afghan deportees (corrected from "roughly 30"); formula sensitivity disclosed -- one defensible 1-step subdim call would produce a filable -5.2 instead. |
+| Marathon Petroleum | fortune-500 | 15.6 | 13.7 | -1.9 | Duplicate-event re-flag of the same El Paso release scored 2026-08-20; no new conduct, re-affirmed unchanged. |
+| Santa Fe | us-cities | 46.9 | 44.4 | -2.5 | ICE arrests are federal, not city, conduct (Lagos precedent); city's own ICE-staging ordinances remain drafted, not enacted. |
+| Malaysia | countries | 46.9 | 43.8 | -3.1 | Nepali-recruitment restriction to 25 agencies; no worker yet documented harmed. |
+| PAL Robotics | robotics-labs | 81.4 | 81.4 | 0.0 | Staleness-only; existing unrelated -38.3 proposal untouched. |
+| AnyBotics | robotics-labs | 60.9 | 60.9 | 0.0 | Staleness-only; existing unrelated -24.7 proposal untouched. |
+| Clone Robotics | robotics-labs | 60.9 | 60.9 | 0.0 | Staleness-only; existing unrelated -38.4 proposal untouched. |
+| Engineered Arts | robotics-labs | 60.9 | 60.9 | 0.0 | Staleness-only; existing unrelated -28.4 proposal untouched. |
+| Freetown | global-cities | 18.8 | 38.1 | +19.3 | Measured, NOT filed -- see below. Crosses Critical->Developing; evidence test PASSES but screening check 3 fails (standing programme, not new conduct). |
+| Abuja | global-cities | 18.8 | 27.5 | +8.7 | Measured, NOT filed -- see below. Crosses Critical->Developing; evidence test FAILS at tier 2 (all Nigerian general press). |
+
+---
+
+### Band Crossings Measured But Not Filed -- 2026-08-26
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Evidence Test | Reason Not Filed |
+|---|---|---|---|---|---|---|---|
+| Freetown | global-cities | 18.8 | 38.1 | +19.3 | Critical -> Developing | PASSED (UNEP, GFDRR/World Bank at tier 4) | Positive evidence is standing programme evidence (Transform Freetown), not new within-window conduct. Screening check 3 fails. |
+| Abuja | global-cities | 18.8 | 27.5 | +8.7 | Critical -> Developing | FAILED (highest tier obtained is 2; no tier-4+ source) | Screening check 3 marginal; band-crossing evidence test independently fails at the source-tier bar. |
+
+Both share a byte-identical published dimension vector and are last_assessed: null -- the placeholder signature identified by the 2026-08-16/17 de-seeding studies. Referred upward as one coordinator-level placeholder-cohort calibration question rather than filed as two one-off upgrades. Worth noting: the benchmark declined to publish measured improvements it found, under the identical discipline that has held back low-confidence downgrades in prior cycles -- evidence the anti-false-positive screen runs in both directions.
+
+---
+
+### Entity Withheld -- 2026-08-26
+
+| Entity | Index | Published | Status | Reason |
+|---|---|---|---|---|
+| Bionik Laboratories | robotics-labs | 62.5 | Withheld -- no score produced | SEC Form 15-12G filed 30 June 2023, nothing since; no dated evidence of operation after 2024; one search result shows an abandoned-domain signature ("Beste nettcasino") on the company's own overview page, reported as an unverified signal because the domain returned HTTP 403 and could not be fetched to confirm. Follows the 2026-08-21 Hocoma precedent. Existing unapplied proposal (bionik-laboratories.json, 62.5->25.6, filed 2026-08-17, self-vetoed pending exactly this corporate-status check) left untouched -- no duplicate queue entry created. |
+
+---
+
+### GEO Group -- Coverage Gap in the Benchmark's Own Prior Work -- 2026-08-26
+
+The scan had merged three distinct GEO Group-related events into one flag. Untangled: the 1 August 2026 death at Delaney Hall was already scored on 2026-08-11; the 18 August 2026 item is POGO reporting about the ICE inspection system generally, not GEO conduct; the genuinely new item is a New Jersey Division on Civil Rights investigative subpoena announced 7 August 2026 (tier-1 government source), which the 2026-08-11 assessment did not record -- checked directly, the words naming the investigation appear nowhere in that report. Recorded here as an assessor coverage gap. Score unchanged at 5.6 (near-floor). A separate, pre-existing math-hygiene gap (published 6.6 vs. canonical formula output 12.5, diff 5.9, open since 2026-07-27) remains open and is explicitly not a conduct finding -- needs coordinator-level index correction, unrelated to tonight's cycle.
+
+---
+
+### Open Calibration Flags -- 2026-08-26
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| General Motors band-crossing proposal (40.6 -> 33.7, sourcing-bar held, NHTSA docket returned HTTP 403) | New tonight, pending, not applied | Open since 2026-08-26 |
+| Spain conduct proposal (60.0 -> 50.6, published score sat exactly at the Functional/Established boundary) | New tonight, pending, not applied | Open since 2026-08-26 |
+| Abbott Laboratories conduct proposal (57.8 -> 50.0, settlement not admission) | New tonight, pending, not applied | Open since 2026-08-26 |
+| Peru evidence-lifecycle failure class -- retraction caught before publication; recommend a standing retraction re-check on score-moving single-incident reports before a proposal is filed | New tonight, methodology recommendation, not a score change | Open since 2026-08-26 |
+| Freetown/Abuja placeholder-cohort calibration (both measure well above a shared 18.8 vector; neither upgrade filed) | Carried forward from 2026-08-16/17, reinforced tonight | Open since 2026-08-16 |
+| Bionik Laboratories corporate status -- needs Delaware/Ontario registry lookup, then a founder disposition decision, before any fresh assessment | Carried forward from 2026-08-17, reinforced tonight (Hocoma precedent applied 2026-08-21) | Open since 2026-08-17 |
+| GEO Group math-hygiene gap (published 6.6 vs. canonical 12.5, diff 5.9) | Carried forward, not a conduct finding | Open since 2026-07-27 |
+| Countries-index 20.3 seed cluster -- 8 members remain unexamined (Algeria, Cameroon, Gabon, Guinea, Honduras, Papua New Guinea, Republic of Congo, Uzbekistan) | Carried forward | Open since 2026-08-16 |
+| Fortune-500 60.9 seed cluster -- 17 members remain unexamined | Carried forward | Open since 2026-08-16 |
+| Rank drift: 622 of 1,222 matched entities disagree with published index rank (pre-roster-growth figure; not re-measured against the 1,331-entity roster) | Carried forward from 2026-08-01 | Open since 2026-08-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~62 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~46 days |
+
+---
+
+### Operational Notes -- 2026-08-26
+
+- Scan: 1,331 entities scanned (roster grew from 1,289 -- robotics-labs expanded 50->92 with 43 first-ever baseline assessments, Apexica/RoboKind delisted 2026-08-21); 279 searches performed against a derived ceiling of 274 (disclosed 5-search overage: 3 from index-coherent T2 batch chunking, 2 from verification allowance); 14-day lookback (2026-08-12 to 2026-08-26) covering the 6-day gap since 2026-08-20.
+- 11 candidates dropped pre-publication, including two the scanner caught in its own drafts after a mandatory date-verification follow-up: an Amazon warehouse-death story actually dated April 2026, and a Meta AI-layoff hearing whose sources predated the hearing. Both were swapped for Santa Fe and Malaysia before the scan was finalized.
+- Assessor runtime: 2026-08-26T02:10:00Z-07:40:00Z (~5.5h); 20 entities assessed (all priority source); 3 change proposals; 16 confirmations; 1 withheld; 15 of 15 required subdimension sidecars written.
+- Math hygiene: validate-indexes.mjs -- 85,477 checks passed, 0 errors, 65 warnings (all pre-existing, out of scope). No new math-hygiene issue for any of the 20 entities in scope tonight.
+- Rotation-state integrity: validate-rotation-state.mjs FAIL -- 24 pre-existing phantom last_assessed entries from May/June 2026; none of tonight's 20 entities appears in the failure list, this run neither created nor worsened it.
+- Validation: validate-daily-briefings.mjs 77/77 PASS; lint-daily-briefings.mjs 79 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified.
