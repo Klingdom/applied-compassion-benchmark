@@ -238,9 +238,24 @@ function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
   const title = source.meta.title;
   const slugCounts = new Map<string, number>();
 
+  // An index row may declare an explicit `slug`, which takes precedence over
+  // slugify(name). Used where the legal name slugs badly ("Intuitive Surgical,
+  // Inc." → intuitive-surgical-inc) or where two indexes share a name
+  // (us-states Georgia vs countries Georgia → georgia-us-states).
+  //
+  // This must be honoured HERE as well as by apply-entity-record.mjs. When it
+  // was honoured only there, 26 entities ended up with an entity record at the
+  // declared slug and a page at slugify(name) — the record and the page were
+  // different URLs, so anything resolving by declared slug 404'd, including
+  // /data/scores/<slug>.json and the badge Worker that reads it.
+  const rowSlug = (row: { name: string; slug?: string }): string =>
+    typeof row.slug === "string" && row.slug.trim().length > 0
+      ? row.slug.trim()
+      : slugify(row.name);
+
   // First pass: collision counts
   for (const row of source.rankings) {
-    const baseSlug = slugify(row.name);
+    const baseSlug = rowSlug(row);
     slugCounts.set(baseSlug, (slugCounts.get(baseSlug) || 0) + 1);
   }
 
@@ -248,7 +263,7 @@ function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
   const out: Entity[] = [];
 
   for (const row of source.rankings) {
-    const baseSlug = slugify(row.name);
+    const baseSlug = rowSlug(row);
     // Disambiguate: if multiple entities share a slug, append rank
     let slug = baseSlug;
     if ((slugCounts.get(baseSlug) || 0) > 1) {
