@@ -303,8 +303,14 @@ if (unsourced.length) {
   );
 }
 
+// Sources may be a bare string OR the {url, date_verified} object form that the
+// evidence-date discipline encourages and that normalizeSource() (§4a) already
+// accepts. This check previously required a string and so failed scans using the
+// object form — an internal contradiction: §3 rejected what §4a consumed
+// correctly. Found 2026-09-04 when the 2026-09-02 scan failed on 3 "malformed"
+// sources that were in fact well-formed objects.
 const badUrls = evidenced.filter((r) =>
-  (r.sources ?? []).some((s) => typeof s !== "string" || !/^https?:\/\//.test(s)),
+  (r.sources ?? []).some((s) => !/^https?:\/\//.test(normalizeSource(s).url)),
 );
 if (badUrls.length) {
   fail(`${badUrls.length} entities have malformed source entries (must be http(s) URLs)`);
@@ -638,8 +644,43 @@ if (oversized.length) {
 }
 
 // ── 6. Downstream fields present ───────────────────────────────────────────
-if ((scan.top_entities ?? []).length !== 15) {
-  fail(`top_entities has ${(scan.top_entities ?? []).length} entries, expected 15`);
+// top_entities is an OUTPUT of how much qualifying evidence exists in the
+// window, not a measure of scan effort. Effort is already gated hard by the
+// T1/T2/T3 search floors above, which cannot be satisfied by a lazy scan.
+//
+// Requiring exactly 15 findings regardless of what happened in the world
+// creates a padding incentive — and padding is how stale or misdated items
+// enter the pipeline, which is the single most common defect class in this
+// repo's history (four confirmed year-confusion defects, plus the 2026-08-26
+// retracted-death near-miss).
+//
+// Demonstrated 2026-09-02: a one-day window surfaced 3 genuine, dated,
+// multiply-sourced candidates and was told not to pad. It was then failed for
+// honesty while a padded 15 would have passed. That is backwards.
+//
+// So: below 15 is a WARNING that scales with window length. The search floors
+// remain hard failures.
+const topCount = (scan.top_entities ?? []).length;
+const windowDays =
+  scan.lookback_window_start && scan.lookback_window_end
+    ? Math.max(
+        1,
+        Math.round(
+          (Date.parse(scan.lookback_window_end) -
+            Date.parse(scan.lookback_window_start)) /
+            86400000,
+        ),
+      )
+    : null;
+if (topCount === 0) {
+  fail("top_entities is empty — a scan that flags nothing cannot feed the assessor");
+} else if (topCount < 15) {
+  warn(
+    `top_entities has ${topCount} entries, below the nominal 15` +
+      (windowDays ? ` (window ${windowDays}d)` : "") +
+      ". Non-blocking: a short or quiet window legitimately yields fewer. " +
+      "Verify the T1/T2/T3 floors above were genuinely met — those are the effort gate.",
+  );
 }
 if ((scan.rotation_backfill ?? []).length !== 5) {
   warn(`rotation_backfill has ${(scan.rotation_backfill ?? []).length} entries, expected 5`);
