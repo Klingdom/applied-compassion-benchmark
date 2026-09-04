@@ -1,0 +1,757 @@
+{
+  "entity": "Regions Financial",
+  "slug": "regions-financial",
+  "index": "fortune-500",
+  "assessment_date": "2026-09-01",
+  "assessment_file": "research/assessments/regions-financial-2026-09-01.md",
+  "subdim_sidecar_file": "research/assessments/regions-financial-2026-09-01.subdims.json",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "established",
+    "rank": 48,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 22.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 1.8,
+      "ACT": 2,
+      "EQU": 1.8,
+      "BND": 2,
+      "ACC": 1.8,
+      "SYS": 2,
+      "INT": 1.8
+    }
+  },
+  "score_delta": -38.4,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": ">=2 independent sources with >=1 at sourceTier >=4, excluding self-published corporate material",
+    "independent_sources_found": 4,
+    "highest_tier_found": 5,
+    "passed": true,
+    "detail": "PASSES. Consumer Financial Protection Bureau newsroom release and the 2015 CFPB consent order document are both tier-5 primary government sources. Banking Dive, Law360 and the ABA Banking Journal are three independent tier-2 sources. No self-published Regions material is relied on for the band crossing. CURRENCY CAVEAT: the CFPB order is dated 2022-09-28 and covers conduct from August 2018 to July 2021; the prior order is 2015. The only within-currency item is the November 2025 Delaware Court of Chancery refusal to dismiss the derivative suit, which is treated as context and NOT scored as a finding."
+  },
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence is not evidence of harm.",
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 60.9 with a vector of exactly 3.5 on seven dimensions and 3.0 on Equity. rotation-state records last_assessed: null — NEVER INDIVIDUALLY ASSESSED. Verified directly in site/src/data/indexes/fortune-500.json (composite 60.9, rank 48, band established). APPLIED_CHANGES.md contains no Regions Financial entry. THREE OTHER ENTITIES IN THIS SAME ROTATION BACKFILL CARRY THE IDENTICAL VECTOR AND COMPOSITE: Nationwide (rank 44), Principal Financial (rank 46), Raymond James Financial (rank 47).",
+    "stale_baseline_rationale_used": true,
+    "stale_baseline_note": "A seed-replacement rationale IS used here, and it is valid because the history supports it rather than contradicting it: rotation-state records last_assessed: null, APPLIED_CHANGES.md has no entry, and three unrelated entities share the identical vector at consecutive ranks. This is not an assertion that a real assessment has gone stale; it is the documented fact that no assessment was ever made.",
+    "directionality": "Entity surfaced on ROTATION STALENESS with no within-window evidence in either direction. This proposal moves DOWNWARD. There is no directionality conflict — the prohibited pattern is negative evidence yielding an upgrade.",
+    "rationale_vs_history_consistent": true,
+    "calibration_component_disclosed": true,
+    "calibration_note": "THE MAJORITY OF THIS MOVEMENT IS CALIBRATION (de-seeding), NOT CONDUCT. The three cluster peers with zero adverse evidence assess at 25.0, 25.6 and 26.9 — that range is what absence of disclosure alone produces in this sector. Regions assesses at 22.5, roughly 2 to 4 points below them. THAT SMALLER GAP IS THE CONDUCT COMPONENT. Reporting the full -38.4 as a decline in Regions behaviour would be factually wrong.",
+    "why_filed_when_cluster_peers_were_not": "Screening check 5 requires a PURE calibration concern to be confirmed and routed for cohort review rather than filed as a one-off baseline reset. That is exactly how Nationwide, Principal Financial and Raymond James were handled in this cycle — confirmed, no proposal, cohort flag. Regions is a MIXED case: it carries a $191 million federal consent order for a REPEAT violation of the same kind. Confirming an Established band label (\"systematic, documented, and improving\") against that record would leave a published band label the evidence contradicts. It is therefore filed, but as flag-for-review, not as a recommended downgrade.",
+    "measures_absence_not_misconduct": true,
+    "measures_absence_note": "REQUIRED DISCLOSURE PER AUTONOMY.md RULE R9, STATED IN THE PRESCRIBED WORDS: most of this score movement MEASURES ABSENCE OF ASSESSMENT AGAINST A PLACEHOLDER, NOT MISCONDUCT. 31 of 40 subdimensions rest on absence of disclosure and are scored 2, never 1. The nine that rest on documented conduct (E4, EQ2, EQ5, AB1, AB2, AB4, AB5, I2, I4) are dated 2015, 2022 and 2025 in their evidence rows."
+  },
+  "key_evidence": [
+    "The CFPB ordered Regions Bank to pay $191 million — $141 million in consumer redress and a $50 million civil money penalty — for charging overdraft fees on transactions after telling customers they had sufficient funds, violating the Consumer Financial Protection Act of 2010 (tier 5, 2022-09-28, covering August 2018 to July 2021 conduct).",
+    "REPEAT VIOLATION: the CFPB had already ordered Regions in 2015 to refund $49 million and pay a $7.5 million penalty over overdraft charges to customers who had not opted in or had been told they would not be charged. The same category of failure, twice, seven years apart — the defining condition of anchor 1 for systemic learning (AB4).",
+    "LIVE ELEMENT: in November 2025 the Delaware Court of Chancery declined to dismiss a shareholder derivative suit against Regions board members over the $191 million consent order. Treated as an undecided allegation and NOT scored as a finding.",
+    "CREDITED UPWARD: $141 million was paid directly to affected consumers. AB5 (reparative action) is scored 3, the single strongest item in the file.",
+    "SEED CLUSTER: published 60.9 is a never-assessed uniform vector (3.5 on seven dimensions, 3.0 on Equity) shared identically with Nationwide, Principal Financial and Raymond James Financial at consecutive ranks 44 to 48."
+  ],
+  "evidence": [
+    {
+      "quote": "CFPB Orders Regions Bank to Pay $191 Million for Illegal Surprise Overdraft Fees",
+      "claim": "The Consumer Financial Protection Bureau imposed a $191 million order on Regions Bank for illegal surprise overdraft fees.",
+      "source": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+      "publishedDate": "2022-09-28",
+      "sourceTier": 5
+    },
+    {
+      "quote": "authorized-positive overdraft fees",
+      "claim": "The violation consisted of charging overdraft fees on ATM and debit transactions after telling consumers they had sufficient funds.",
+      "source": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+      "publishedDate": "2022-09-28",
+      "sourceTier": 5
+    },
+    {
+      "quote": "CFPB fines Regions $191M on overdraft practices",
+      "claim": "Independent trade-press corroboration of the $191 million CFPB action.",
+      "source": "Banking Dive",
+      "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+      "publishedDate": "2022-09-28",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Delaware chancellor declines to dismiss lawsuit against Regions Bank board members over $191 million CFPB consent order",
+      "claim": "A shareholder derivative action over the consent order survived a motion to dismiss in November 2025 — the only within-currency element, treated as context and not scored as a finding.",
+      "source": "ABA Banking Journal",
+      "url": "https://bankingjournal.aba.com/2025/11/delaware-chancellor-declines-to-dismiss-lawsuit-against-regions-bank-board-members-over-191-million-cfpb-consent-order/",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Regions Bank To Pay $191M In CFPB Overdraft Fee Deal",
+      "claim": "Second independent corroboration of the CFPB action.",
+      "source": "Law360",
+      "url": "https://www.law360.com/articles/1534825/regions-bank-to-pay-191m-in-cfpb-overdraft-fee-deal",
+      "publishedDate": "2022-09-28",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "notes": "FLAG FOR REVIEW — NOT A CLEAN DOWNGRADE AND NOT A CLEAN DE-SEEDING. THIS IS A MIXED CASE AND IS ROUTED TO A HUMAN FOR THAT REASON. REQUIRED R9 DISCLOSURE: MOST OF THIS MOVEMENT MEASURES ABSENCE OF ASSESSMENT AGAINST A PLACEHOLDER, NOT MISCONDUCT. The published 60.9 is a never-assessed uniform seed shared identically with Nationwide, Principal Financial and Raymond James Financial at consecutive ranks 44 to 48. The three cluster peers, with ZERO adverse evidence, assess at 25.0, 25.6 and 26.9 — that range is what absence of disclosure alone produces. Regions assesses at 22.5, roughly 2 to 4 points below them, AND THAT SMALLER GAP IS THE CONDUCT COMPONENT. Reporting the full -38.4 as a decline in Regions behaviour would be FACTUALLY WRONG. CURRENCY LIMITATION, STATED PLAINLY: the CFPB consent order is dated 2022 and covers 2018-2021 conduct; the prior order is 2015. No 2026 conduct finding was located and none is asserted. The only within-currency item is the November 2025 Delaware Chancery refusal to dismiss a derivative suit, which is an UNDECIDED ALLEGATION and is NOT scored as a finding. RECOMMENDED REMEDY: handle Regions inside a four-entity cohort de-seeding study covering all 60.9 seed entities in this backfill, on the model of the 2026-08-20 20.3 seed-cluster study — NOT as an isolated overnight move. WHY THIS WAS FILED WHEN ITS THREE CLUSTER PEERS WERE NOT: they carry no adverse evidence, so under screening check 5 a pure calibration concern is confirmed and routed for cohort review rather than filed; Regions carries a federal consent order for a repeat violation, and confirming an Established band label against that record would leave a published band label the evidence contradicts. IF APPLIED, THE APPLIED RECORD MUST STATE both that most of the movement measures absence of assessment rather than misconduct, and that the conduct evidence is dated 2022 for 2018-2021 conduct.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "authorized-positive overdraft fees"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "CFPB Orders Regions Bank to Pay $191 Million for Illegal Surprise Overdraft Fees"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "CFPB Orders Regions Bank to Pay $191 Million for Illegal Surprise Overdraft Fees"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "CFPB Orders Regions Bank to Pay $191 Million for Illegal Surprise Overdraft Fees"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://files.consumerfinance.gov/f/201504_cfpb_consent-order_regions-bank.pdf",
+          "date": "2015-04-28",
+          "quote": "UNITED STATES OF AMERICA CONSUMER FINANCIAL PROTECTION BUREAU"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://files.consumerfinance.gov/f/201504_cfpb_consent-order_regions-bank.pdf",
+          "date": "2015-04-28",
+          "quote": "UNITED STATES OF AMERICA CONSUMER FINANCIAL PROTECTION BUREAU"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "CFPB Orders Regions Bank to Pay $191 Million for Illegal Surprise Overdraft Fees"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://bankingjournal.aba.com/2025/11/delaware-chancellor-declines-to-dismiss-lawsuit-against-regions-bank-board-members-over-191-million-cfpb-consent-order/",
+          "date": "2025-11-01",
+          "quote": "Delaware chancellor declines to dismiss lawsuit against Regions Bank board members over $191 million CFPB consent order"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.consumerfinance.gov/archive/newsroom/cfpb-orders-regions-bank-pay-191-million-for-illegal-surprise-overdraft-fees/",
+          "date": "2022-09-28",
+          "quote": "authorized-positive overdraft fees"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bankingdive.com/news/cfpb-fines-regions-191m-on-overdraft-practices/632883/",
+          "date": "2022-09-28",
+          "quote": "CFPB fines Regions $191M on overdraft practices"
+        }
+      ]
+    }
+  ]
+}

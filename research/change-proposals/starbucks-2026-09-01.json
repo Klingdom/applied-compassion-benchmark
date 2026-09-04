@@ -1,0 +1,748 @@
+{
+  "entity": "Starbucks",
+  "slug": "starbucks",
+  "index": "fortune-500",
+  "assessment_date": "2026-09-01",
+  "assessment_file": "research/assessments/starbucks-2026-09-01.md",
+  "subdim_sidecar_file": "research/assessments/starbucks-2026-09-01.subdims.json",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 152,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3,
+      "ACC": 2.5,
+      "SYS": 3,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 43.1,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.8,
+      "ACT": 2.8,
+      "EQU": 2.8,
+      "BND": 3,
+      "ACC": 2.2,
+      "SYS": 2.8,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -5.3,
+  "band_change": false,
+  "band_change_evidence_test": {
+    "applicable": false,
+    "passed": null,
+    "detail": "NOT APPLICABLE. Assessed 43.1 and published 48.4 are both inside the Functional band (41-60). No band boundary is crossed, so the band-crossing sourcing bar is not engaged. Filed on the MAGNITUDE trigger only (|delta| 5.3 >= 5.0). NOTE FOR THE REVIEWER: 43.1 sits only 2.1 points above the Developing boundary at 41.0. Any further downward movement would engage the band-crossing bar, which would require >=2 independent sources with >=1 at tier >=4 EXCLUDING self-published corporate material. No tier-4-or-above source on this dispute was located in this cycle, so that bar is NOT currently met and a band crossing would not presently be filable."
+  },
+  "confidence": "low",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence is not evidence of harm.",
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 48.4 with ACC 2.5 and INT 2.5. rotation-state records last_assessed 2026-06-21, last_change_proposal null. APPLIED_CHANGES.md contains no Starbucks entry. The published Accountability and Integrity scores of 2.5 already partly encode the labour dispute, which is why this proposal does not treat the five-year bargaining failure as an entirely new finding.",
+    "stale_baseline_rationale_used": false,
+    "stale_baseline_note": "No stale-baseline argument used.",
+    "directionality": "Entity surfaced on within-window evidence that is largely NOT its own conduct. This proposal is a DOWNGRADE and rests only on the residue that IS company conduct. Direction matches the retained evidence.",
+    "rationale_vs_history_consistent": true,
+    "attribution_exclusions": "THE BOYCOTT IS NOT SCORED. Starbucks Workers United announcing a boycott on 2026-08-25, the AFL-CIO joining, and the 25,000-member Chicago Teachers Union voting to join on 2026-08-26 are acts of OTHER ORGANISATIONS — a campaign against the company, not company conduct. All three are excluded from scoring. Only Starbucks own conduct is scored: the unconcluded first contract with a unit organised in late 2021, and the company's own public statements.",
+    "evidence_deliberately_excluded": "UNION-ASSERTED UNFAIR-LABOR-PRACTICE COUNTS WERE NOT RELIED ON. Labor Notes reports \"550 still unresolved\"; Starbucks Workers United's own site reports \"more than 700\"; other advocacy sources cite \"more than 400 labor law violations\" found by administrative law judges. These come from a party to the dispute, they contradict each other by 150 or more, and none was verifiable against a primary National Labor Relations Board record. NO subdimension rests on them. Had they been used the movement would have been substantially larger.",
+    "countervailing_evidence_credited": "A 2026 United States Court of Appeals for the Fifth Circuit decision vacated an NLRB unfair labor practice ruling against Starbucks — the adjudicated record is contested, not settled against the company. Starbucks provides health coverage to part-time workers and tuition support; Boundaries is HELD at 3.0 and five subdimensions are scored 3 on these grounds.",
+    "calibration_component_disclosed": false,
+    "measures_absence_not_misconduct": false,
+    "measures_absence_note": "No subdimension in this assessment is scored 1. The movement measures documented conduct — an unconcluded five-year negotiation and the company's public statements about it — not absence of disclosure."
+  },
+  "key_evidence": [
+    "Starbucks and Starbucks Workers United have not concluded a first contract for a bargaining unit that organised in late 2021 — approaching five years. Verified via CNBC and the Texarkana Gazette wire report, not only union sources.",
+    "Starbucks spokesperson Jaci Anderson: \"As we have always been, we're committed to engaging in productive bargaining.\" The company also stated it had seen no impact to its business from the boycott.",
+    "THE BOYCOTT ITSELF IS EXCLUDED AS THIRD-PARTY CONDUCT. A campaign against a company is not something the company did. This removes most of the evidence the scanner surfaced.",
+    "The largest single subdimension movement is AC5 (follow-through) from 3 to 2: engagement that has run since late 2021 without reaching resolution.",
+    "CREDITED AGAINST THE MOVEMENT: part-time health coverage and tuition support are genuine structural benefits; Boundaries is held at 3.0 and no subdimension is scored 1."
+  ],
+  "evidence": [
+    {
+      "quote": "As we have always been, we’re committed to engaging in productive bargaining.",
+      "claim": "Starbucks publicly restated its bargaining position rather than acknowledging responsibility for the five-year delay.",
+      "source": "Texarkana Gazette",
+      "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+      "publishedDate": "2026-08-27",
+      "sourceTier": 2
+    },
+    {
+      "quote": "been trying to get a contract with the coffee giant since late 2021",
+      "claim": "The bargaining unit organised in late 2021 and no first contract has been concluded.",
+      "source": "Labor Notes",
+      "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+      "publishedDate": "2026-08-27",
+      "sourceTier": 1
+    },
+    {
+      "quote": "three people on the floor at all times",
+      "claim": "The union's core staffing demand, which the company has not matched — used for proportionality, not as a finding against the company.",
+      "source": "Labor Notes",
+      "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+      "publishedDate": "2026-08-27",
+      "sourceTier": 1
+    },
+    {
+      "quote": "Starbucks union sent the company a proposed contract. Here’s what baristas want",
+      "claim": "The union submitted a written contract proposal in March 2026 and the company returned to the bargaining table — credited under Perspective-Taking.",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/13/starbucks-workers-united-union-contract-proposal.html",
+      "publishedDate": "2026-03-13",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "notes": "FLAG FOR REVIEW — NOT A RECOMMENDED DOWNGRADE. Filed on the magnitude trigger (-5.3); no band crossing. THE ROUTING REASON IS EVIDENTIAL WEIGHT, NOT DOUBT ABOUT THE FACTS. Once the boycott, the AFL-CIO endorsement and the Chicago Teachers Union vote are correctly EXCLUDED as third-party conduct — a campaign against Starbucks is not something Starbucks did — the genuinely new in-window company conduct amounts to another month passing without a contract and one spokesperson statement. That is thin evidence for a 5.3-point move. The magnitude rests principally on the CUMULATIVE five-year bargaining failure, which is not new and is already partly reflected in the published Accountability and Integrity scores of 2.5. A FOUNDER MAY REASONABLY CONCLUDE THIS IS BETTER HANDLED AS A CONFIRMATION WITH A DOWNWARD WATCH FLAG, and that conclusion would be defensible on this file. EVIDENCE DELIBERATELY NOT USED: all union-asserted unfair-labor-practice counts (550 / 700+ / 400+ violations) — party-sourced, mutually contradictory, unverifiable against a primary NLRB record. Using them would have produced a larger movement on weaker evidence. COUNTERVAILING EVIDENCE CREDITED: a 2026 Fifth Circuit decision vacated an NLRB ruling against Starbucks; part-time health coverage and tuition support hold Boundaries at 3.0. CONFIDENCE LOW on evidence quality — the primary gap is the absence of any primary National Labor Relations Board record. This is NOT a self-veto; the figure is internally sound and may be applied if the founder judges the cumulative reading correct.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/03/13/starbucks-workers-united-union-contract-proposal.html",
+          "date": "2026-03-13",
+          "quote": "Starbucks union sent the company a proposed contract. Here’s what baristas want"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/03/13/starbucks-workers-united-union-contract-proposal.html",
+          "date": "2026-03-13",
+          "quote": "Starbucks union sent the company a proposed contract. Here’s what baristas want"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/03/13/starbucks-workers-united-union-contract-proposal.html",
+          "date": "2026-03-13",
+          "quote": "Starbucks union sent the company a proposed contract. Here’s what baristas want"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "three people on the floor at all times"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "three people on the floor at all times"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/03/13/starbucks-workers-united-union-contract-proposal.html",
+          "date": "2026-03-13",
+          "quote": "Starbucks union sent the company a proposed contract. Here’s what baristas want"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.restaurantdive.com/news/starbucks-workers-united-boycott-investor-board-chair-ceo-proposal/829158/",
+          "date": "2026-08-26",
+          "quote": "Starbucks Workers United boycott"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://labornotes.org/2026/08/baristas-ask-organizations-boycott-until-starbucks-signs-contract",
+          "date": "2026-08-27",
+          "quote": "been trying to get a contract with the coffee giant since late 2021"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.texarkanagazette.com/news/2026/aug/27/starbucks-union-calls-for-boycott-as-contract/",
+          "date": "2026-08-27",
+          "quote": "As we have always been, we’re committed to engaging in productive bargaining."
+        }
+      ]
+    }
+  ]
+}

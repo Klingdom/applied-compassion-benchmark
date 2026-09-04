@@ -9565,3 +9565,142 @@ The scan had merged three distinct GEO Group-related events into one flag. Untan
 - Validation: validate-daily-briefings.mjs 77/77 PASS; lint-daily-briefings.mjs 79 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified.
+
+---
+
+## 2026-09-01 -- Chile Self-Correction (2023 Source Excluded) | Ethiopia Unfilable Floor Harm | 4 Proposals | 16 Confirmations
+
+### Summary -- 2026-09-01
+
+Catch-up cycle covering 2026-08-27 -> 2026-09-01 (six days left uncovered after the 2026-08-26 cycle closed). Roster held at 1,331 entities. **Zero scores applied tonight.**
+
+**Lead finding: Chile.** The scan's search synthesis produced what appeared to be a 2026 UN Special Procedures communication to Chile plus specific migrant-detention and healthcare/school data-sharing claims. On direct re-fetch, the underlying Global Detention Project pages are dated 2023-06-01 and 2023-12-12, and the UN communication is dated 2023-05-24 -- three years outside the window. The real 2023 detention figures differ from the scan's claim (48 hours to 7 days, not 5 to 60), and the healthcare/school data-sharing claim appears in neither page. ALL OF IT WAS EXCLUDED. With that material removed, no tier-4-or-above source remains, so Chile's `band_change_evidence_test` returns `passed: false` even though the -20.0 movement and the Established->Functional band crossing are filed on the surviving real conduct (migrant-registration freeze, deportation flights, an 8-amendment 240-day emergency-powers package). This is the second consecutive cycle in which the benchmark's own evidence-verification step caught fabricated/stale-dated material before it could move a published score (cf. Peru, 2026-08-26 -- and Peru's same false story resurfaced via unretracted wire pickups tonight and was caught a second time before being dropped again).
+
+**Second finding: Ethiopia -- a real, evidenced harm the filing rule cannot record.** Ethiopia's federal military (ENDF) conducted sustained drone strikes across Tigray including a strike on a school in Merewa. The assessed movement is a real -2.8 (4.7 -> 1.9), but Ethiopia only had 4.7 points of downward room against the 5.0-point magnitude trigger, and it is already in the lowest band so the band-crossing clause cannot fire either. No movement was manufactured; the deterioration goes unrecorded and is reported here rather than rounded away. Four more entities (Sudan 0.0, Israel 0.0, DR Congo 2.3, Haiti 4.7) share the same floor-insensitivity condition this cycle -- five of twenty entities assessed tonight have less downward room than the filing threshold.
+
+Four change proposals filed: Chile (-20.0, band crossing, evidence test FAILED), Regions Financial (-38.4, band crossing, evidence test PASSED, mostly seed-placeholder replacement with a genuine $191M CFPB repeat-violation conduct component), Kenya (-5.9, third protest-policing incident, pre-committed escalation rule), Starbucks (-5.3, union boycott excluded as third-party conduct, thin surviving evidence). Sixteen confirmations, including a new 60.9 placeholder cluster (Nationwide, Principal Financial, Raymond James Financial, Regions Financial) where three peers with zero adverse evidence confirmed at 25.0-26.9 -- only Regions was filed, because it additionally carries documented federal conduct. McKesson's headline "284 million patient records" breach claim did not survive verification (it is a database row count, not a patient count, per the attacker's own clarification); confirmed at -0.7. 3M measured a filable +5.3 improvement and deliberately was not filed, because the entity was flagged on new negative evidence while the qualifying positive conduct (a completed PFAS manufacturing exit) finished outside this window -- the second cycle running the benchmark has declined to publish a measured improvement.
+
+Queue: 20 pending proposals total (16 carried forward + 4 new tonight), counted directly from `research/change-proposals/*.json` with `"status": "pending"`.
+
+---
+
+### Score Changes Proposed -- 2026-09-01
+
+#### Chile (countries) -- 62.5 -> 42.5 (-20.0) -- BAND CROSSING, EVIDENCE TEST FAILED
+- **Confidence:** medium
+- **Band change:** YES -- Established -> Functional, but `band_change_evidence_test.passed = false` (3 independent sources found: HRW tier 3, NPR tier 2, MercoPress tier 2; no tier-4+ source located after the 2023-dated UN material was excluded)
+- **Key evidence:**
+  - Kast government suspended a regularisation decree covering ~182,000 already-registered migrants (MercoPress, 2026-03-31): "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+  - First deportation flights, 40 migrants expelled to Bolivia, Ecuador and Colombia (MercoPress, 2026-04-17).
+  - Two bills before Congress limiting migrants' social-security access (NPR, 2026-05-23); campaign rhetoric targeted ~336,000 people for expulsion.
+  - Eight constitutional amendments submitted 2026-08-18 allowing a 240-day "public security" emergency without congressional approval (HRW, 2026-09-01, tier 3): "This is a dangerous power grab that puts the rights of all Chileans at risk."
+  - SEPARATE FINDING: a purported 2026 UN Special Procedures communication and specific detention-extension/healthcare-data-sharing claims were re-fetched and found dated 2023-05-24/2023-06-01/2023-12-12. EXCLUDED IN FULL; none of it scored.
+- **Recommendation:** flag-for-review. Recommended remedy: handle inside a cohort review of never-individually-assessed Established-band countries with near-uniform 3.5 vectors (published 62.5 rested on seven of eight dimensions at exactly 3.5), not as an isolated 20-point move.
+- **File:** [proposal](change-proposals/chile-2026-09-01.json)
+
+#### Regions Financial (fortune-500) -- 60.9 -> 22.5 (-38.4) -- BAND CROSSING, EVIDENCE TEST PASSED
+- **Confidence:** medium
+- **Band change:** YES -- Established -> Developing (4 independent sources, highest tier 5: CFPB newsroom + 2015 consent order document, both primary government sources)
+- **Key evidence:**
+  - CFPB $191M consent order (tier 5, 2022-09-28): "$141 million in consumer redress and a $50 million civil money penalty" for charging overdraft fees after telling customers they had sufficient funds.
+  - REPEAT VIOLATION: CFPB had already ordered Regions in 2015 to refund $49M and pay a $7.5M penalty for the same category of failure -- seven years apart.
+  - SEED-CLUSTER CONTEXT: published 60.9 is a never-individually-assessed uniform vector shared identically with Nationwide (rank 44), Principal Financial (rank 46) and Raymond James Financial (rank 47). The three peers, with zero adverse evidence, assess at 25.0/25.6/26.9 -- that 2-4 point range below Regions' 22.5 is the actual conduct component; most of the -38.4 measures absence of assessment, not misconduct.
+- **Recommendation:** flag-for-review. A four-entity coordinator-level cohort de-seeding study is recommended (model: the 2026-08-20 20.3 seed-cluster study). Regions was the only one of the four filed, because confirming an Established label against a federal repeat-violation order would leave a label the evidence contradicts.
+- **File:** [proposal](change-proposals/regions-financial-2026-09-01.json)
+
+#### Kenya (countries) -- 35.9 -> 30.0 (-5.9) -- magnitude trigger only, no band change
+- **Confidence:** medium
+- **Band change:** No (Developing sustained; band-crossing evidence bar not engaged, though it would have been met -- 4 sources including one tier-4)
+- **Key evidence:**
+  - THIRD documented protest-policing incident in three consecutive cycles: tear-gassing of small-scale traders protesting an import-duty hike, 2026-08-28 (Al Jazeera, tier 2): "fired tear gas at small-scale traders who are protesting against a hike in import duties."
+  - IPOA investigating protest-policing brutality since June 25 (Kenyans.co.ke, tier 4, 2026-06-30) while protest policing continued through two further documented incidents (17 August activist arrests; 28 August tear-gassing).
+  - The 2026-08-18 assessment pre-committed IN WRITING to escalate on a third incident; it landed 2026-08-28.
+  - Sourcing limitation disclosed: the triggering incident rests on one tier-2 source (no injury/arrest figures reported).
+  - Countervailing/credited: IPOA is a funded, active statutory body (scored 3); Kenya Revenue Authority publicly defended the contested customs measure (scored 3).
+- **Recommendation:** downgrade (not flag-for-review -- the escalation rule was self-imposed by the benchmark's own prior cycle, before this incident occurred).
+- **File:** [proposal](change-proposals/kenya-2026-09-01.json)
+
+#### Starbucks (fortune-500) -- 48.4 -> 43.1 (-5.3) -- magnitude trigger only, no band change
+- **Confidence:** low
+- **Band change:** No (Functional sustained; proposed 43.1 sits only 2.1 points above the Developing boundary at 41.0)
+- **Key evidence:**
+  - Unconcluded first contract, approaching five years since the bargaining unit organised late 2021 (verified via CNBC, Texarkana Gazette).
+  - Company statement (Texarkana Gazette, 2026-08-27): "As we have always been, we're committed to engaging in productive bargaining."
+  - EXCLUDED ENTIRELY AS THIRD-PARTY CONDUCT: the union boycott (announced 2026-08-25), AFL-CIO endorsement, Chicago Teachers Union vote. Union-asserted unfair-labor-practice counts (550/700+/400+, mutually contradictory by 150+, unverifiable against a primary NLRB record) NOT relied on.
+  - Countervailing/credited: 2026 Fifth Circuit vacated an earlier NLRB ruling against Starbucks; part-time health coverage and tuition support hold Boundaries at 3.0.
+- **Recommendation:** flag-for-review, NOT a recommended downgrade. Routing reason is evidential weight, not doubt about the facts -- once third-party conduct is excluded, the genuinely new in-window company conduct is thin for a 5.3-point move. A founder may reasonably conclude this is better handled as a confirmation with a downward watch flag; this is NOT a self-veto and the figure may be applied as filed.
+- **File:** [proposal](change-proposals/starbucks-2026-09-01.json)
+
+---
+
+### Band Crossings Measured But Not Filed -- 2026-09-01
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Reason Not Filed |
+|---|---|---|---|---|---|---|
+| Nationwide | fortune-500 | 60.9 | 25.0 | -35.9 | Established -> Developing | Zero adverse evidence; pure calibration concern routed to cohort review per screening check 5, not filed as a one-off. |
+| Principal Financial | fortune-500 | 60.9 | 26.9 | -34.0 | Established -> Developing | Same as above; strongest discloser of the four (53.6% emissions cut quantified) but still zero adverse evidence. |
+| Raymond James Financial | fortune-500 | 60.9 | 25.6 | -35.3 | Established -> Developing | Same as above. Separate record defect noted (index name/slug truncated to "Raymond James Financia") -- NOT corrected, renames require founder approval under AUTONOMY.md section 1b. |
+
+All three share the identical published vector with Regions Financial (filed above) at consecutive ranks 44-48, all with rotation-state `last_assessed: null`. Referred as one coordinator-level four-entity cohort de-seeding study rather than four one-off moves.
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-01
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|---|---|---|---|---|---|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Floor confirmation, zero downward room. Scan's "six civilians killed" claim (20 Aug RSF attacks) was NOT in the cited Al Jazeera article; dropped. |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Floor confirmation, zero downward room. HRW documents 107 communities, 5,900 Palestinians displaced, 6.6 settler attacks/day. |
+| Haiti | countries | 4.7 | 3.1 | -1.6 | Kenscoff massacre re-fetched, stands (47 killed, 50+ kidnapped). Gang conduct not scored against the state; protective failure and prompt public acknowledgment scored. Only 4.7pt of room vs 5.0 trigger. |
+| Nigeria | countries | 18.0 | 17.5 | -0.5 | FIGURE CORRECTION: scan said 963 killed; both cited sources say 1,142 (up from 762). Kidnappings +66% to 7,825. Non-state conduct not scored against the state. |
+| India | countries | 15.6 | 16.3 | +0.7 | ATTRIBUTION SPLIT: Manipur tear-gas + 7 detentions scored as state action; 2 Kangpokpi deaths (suspected militants) NOT scored against the state. Single partisan scan source corroborated against 4 Indian outlets. |
+| Ethiopia | countries | 4.7 | 1.9 | -2.8 | See lead finding above. Real, evidenced, UNFILABLE -- only 4.7pt of room vs 5.0 trigger. |
+| Democratic Republic of Congo | countries | 2.3 | 3.1 | +0.8 | Scan missed the deadliest Ebola outbreak in DRC history (UN News tier 4, 2,325 deaths). M23 allegation of DRC drone strikes on Minembwe unverified by Al Jazeera, NOT scored. Only 2.3pt of room vs 5.0 trigger. |
+| Cameroon | countries | 11.3 | 11.3 | 0.0 | Exact confirmation, arrived at not assumed: Transparency +1 step (ministry admits femicide data is "tip of the iceberg"); Resource Mobilization -1 step (HRW chronic underinvestment). |
+| 3M | fortune-500 | 20.3 | 25.6 | +5.3 | MEASURED, DELIBERATELY NOT FILED. Filable on magnitude but flagged on negative evidence (new Hastings PFOA lawsuit, pre-adjudication) while the qualifying positive conduct (completed PFAS manufacturing exit) finished end-2025, outside window. Routed for coordinator-level calibration on the 20.3 seed value. |
+| Guinea-Bissau | countries | 13.1 | 11.9 | -1.2 | Referendum consolidating presidential power moved consent orientation and structural critique to the floor; incident-free 55%+ turnout credited. |
+| Bangladesh | countries | 39.8 | 35.0 | -4.8 | SOURCE INDEPENDENCE FAILS: scan's two sources are the same IANS wire republished. No state attribution in the underlying report. Held at 2026-07-24 vector. Second consecutive cycle 0.2pt inside filing threshold. |
+| McKesson | fortune-500 | 31.3 | 30.6 | -0.7 | GATE WARNING RESOLVED: "284 million patient records" is an attacker row-count claim, not a patient count; McKesson confirmed no figure. Fast voluntary SEC disclosure (3 days) offset by no evidenced patient notification. |
+| Nationwide | fortune-500 | 60.9 | 25.0 | -35.9 | See Band Crossings Measured But Not Filed above. |
+| Norfolk Southern | fortune-500 | 21.9 | 23.8 | +1.9 | The one backfill entity that is NOT a 60.9 seed. NTSB found withheld tank temperatures and vent-and-burn used without considering safer options; $622M in settlements credited. |
+| Principal Financial | fortune-500 | 60.9 | 26.9 | -34.0 | See Band Crossings Measured But Not Filed above. |
+| Raymond James Financial | fortune-500 | 60.9 | 25.6 | -35.3 | See Band Crossings Measured But Not Filed above. |
+
+---
+
+### Dropped Candidates Worth Recording -- 2026-09-01
+
+**Peru's Americo Pascual Tumisha "killing" resurfaced and was caught a second time.** The scan re-surfaced the SAME false story the 2026-08-26 cycle already investigated and retracted (the man is alive; ORAU retracted its own alert after a river patrol confirmed him safe) -- this time via unretracted wire pickups (Manila Times, Cambodianess) dated 2026-08-26 that had not caught up to the correction. Dropped again before it could be published a second time. Peru's score is unchanged from the 2026-08-26 review (36.2). This is the second consecutive cycle this evidence-lifecycle failure pattern has been caught before publication -- a correctly dated source can still carry a story already proven false.
+
+---
+
+### Open Calibration Flags -- 2026-09-01
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Chile band-crossing evidence gap (no tier-4+ source after 2023 material excluded) | New tonight, pending, not applied | Open since 2026-09-01 |
+| Five-entity floor-insensitivity finding (Sudan, Israel, DR Congo, Haiti, Ethiopia have less downward room than the 5.0-point filing trigger) | New tonight, methodology recommendation (sub-floor severity annotation), not a score change | Open since 2026-09-01 |
+| Fortune-500 60.9 seed cluster -- Nationwide, Principal Financial, Raymond James Financial, Regions Financial (4 members identified; Regions filed, 3 confirmed) | New tonight, coordinator-level cohort de-seeding study recommended | Open since 2026-09-01 |
+| 3M calibration question -- published 20.3 is the same seed value identified in the 2026-08-20 20.3-cluster study; +5.3 measured improvement not filed | Carried forward and reinforced tonight | Open since 2026-08-20 |
+| Raymond James Financial record defect -- index name/slug truncated ("Financia"), needs founder-approved rename | New tonight, cosmetic record defect, not an identity defect | Open since 2026-09-01 |
+| Peru evidence-lifecycle failure class -- second consecutive cycle the same retracted story was caught before publication via un-retracted wire pickups | Carried forward and reinforced tonight | Open since 2026-08-26 |
+| Countries-index 20.3 seed cluster -- 8 members remain unexamined (Algeria, Cameroon, Gabon, Guinea, Honduras, Papua New Guinea, Republic of Congo, Uzbekistan) | Carried forward | Open since 2026-08-16 |
+| Fortune-500 60.9 seed cluster (original, pre-tonight) -- members remain unexamined beyond the four identified tonight | Carried forward | Open since 2026-08-16 |
+| Bionik Laboratories corporate status -- needs Delaware/Ontario registry lookup, then a founder disposition decision | Carried forward from 2026-08-17, reinforced 2026-08-21 (Hocoma precedent) | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~69 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~53 days |
+
+---
+
+### Operational Notes -- 2026-09-01
+
+- Scan: 1,331 entities scanned (roster unchanged); 278 searches performed against a derived ceiling of 274 (4-search overage disclosed, an honest closing pass to meet the T1 coverage floor, not padding); 14-day lookback (2026-08-27 to 2026-09-01) covering the six-day gap since 2026-08-26.
+- 10 candidates dropped pre-publication -- see research/scans/2026-09-01.json `stats.dropped_candidates` for full per-candidate reasoning, including the Peru re-catch, a one-year-off date-confusion trap (Iraq Ja'afari Personal Status Code, actually 2025), and a three-year-off trap (Cigna PxDx lawsuit, actually 2023).
+- Assessor runtime: 2026-09-01T02:30:00Z-06:15:00Z (~3h45m); 20 entities assessed (15 priority, 5 rotation); 4 change proposals; 16 confirmations; 20 of 20 required subdimension sidecars written.
+- Math hygiene: NONE FOUND. `computeCompositeFromDimensions` reproduces every published composite in this cohort exactly, including all four 60.9 seed vectors, Chile's 62.5, and Sudan's/Israel's 0.0. No discrepancy exceeds 0.5 points anywhere.
+- Rotation-state drift: composite and band match the published index for all 20 entities (score-bearing integrity invariant holds). RANK disagrees for 14 of 20 -- rank is owned by score-updater per AUTONOMY.md section 4, not written by this stage.
+- Validation: validate-daily-briefings.mjs 78/78 PASS; lint-daily-briefings.mjs 80 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
+
+**Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, not incremented from the prior digest's figure): 20** -- 16 carried forward from 2026-08-16/17/20/26 + 4 new tonight (Chile, Kenya, Starbucks, Regions Financial).
+
+No score was applied by this cycle. `site/src/data/indexes/*.json` and `research/rotation-state.json` were not modified.

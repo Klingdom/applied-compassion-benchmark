@@ -1,0 +1,772 @@
+{
+  "entity": "Chile",
+  "slug": "chile",
+  "index": "countries",
+  "assessment_date": "2026-09-01",
+  "assessment_file": "research/assessments/chile-2026-09-01.md",
+  "subdim_sidecar_file": "research/assessments/chile-2026-09-01.subdims.json",
+  "published_scores": {
+    "composite": 62.5,
+    "band": "established",
+    "rank": 27,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 4,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 42.5,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.4,
+      "ACT": 3.4,
+      "EQU": 2.4,
+      "BND": 2.6,
+      "ACC": 2.6,
+      "SYS": 2.6,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -20,
+  "band_change": true,
+  "band_change_evidence_test": {
+    "required": ">=2 independent sources with >=1 at sourceTier >=4, excluding self-published corporate material",
+    "independent_sources_found": 3,
+    "highest_tier_found": 3,
+    "passed": false,
+    "detail": "Human Rights Watch (tier 3, 2026-09-01), NPR (tier 2, 2026-05-23) and MercoPress (tier 2, 2026-03-31) are three independent, dated, within-period sources. No tier-4-or-above source (UN body, treaty body, court, international organisation) was located for Chile's 2026 conduct. Material that initially appeared to be a 2026 UN Special Procedures communication was re-fetched and found to be dated 2023; it was excluded. The band-crossing evidence bar is therefore NOT met and the band change is filed as unproven."
+  },
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence is not evidence of harm.",
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 62.5 was last reviewed on 2026-05-03 (research/digests/2026-05-03.md, Chile 62.5 -> 65.0 proposed, +2.5, sub-threshold confirmation) on pension-reform gender-equity evidence from the previous administration. rotation-state records last_assessed 2026-05-03, last_change_proposal null. APPLIED_CHANGES.md contains no Chile score entry. The published vector is near-uniform (seven of eight dimensions at exactly 3.5).",
+    "stale_baseline_rationale_used": false,
+    "stale_baseline_note": "This proposal does NOT rest on a stale-baseline argument. It rests on documented conduct by the current government within the period: the regularisation freeze (2026-03-31), the first deportation flight (2026-04-17), two bills sent to Congress (2026-05-23), and the eight-amendment constitutional package submitted to the Senate (2026-08-18).",
+    "directionality": "Entity surfaced on NEGATIVE within-window evidence and this proposal is a DOWNGRADE. Direction matches the evidence.",
+    "rationale_vs_history_consistent": true,
+    "calibration_component_disclosed": true,
+    "calibration_note": "Part of the movement replaces a near-uniform seed vector with an evidence-based one. This is disclosed rather than presented as pure conduct. If the founder judges the calibration component dominant, the correct remedy is a cohort review of never-individually-assessed Established-band countries carrying near-uniform 3.5 vectors, not an isolated 20-point move on Chile.",
+    "measures_absence_not_misconduct": false,
+    "measures_absence_note": "This movement measures documented conduct, not absence of disclosure. Two subdimensions (B1 self-sustainability, I3 internal consistency) rest on evidence gaps and were scored 3 on general institutional functioning rather than scored down."
+  },
+  "key_evidence": [
+    "Chile suspended a decree that would have regularised roughly 182,000 people who had already voluntarily registered with immigration authorities (MercoPress, 2026-03-31).",
+    "Two bills before Congress would criminalise irregular entry and limit migrants' access to social security benefits (NPR, 2026-05-23).",
+    "Eight constitutional amendments submitted to the Senate on 2026-08-18 would allow a \"public security\" state of emergency of up to 240 days without congressional approval, suspending freedom of movement and assembly (Human Rights Watch, 2026-09-01).",
+    "Chile’s GES/AUGE explicit health guarantees and CASEN survey remain genuine institutional strengths; Action (3.4) and Awareness (3.2) are scored accordingly and are the reason this is not a Developing-band outcome.",
+    "A claimed 2026 UN finding against Chile was re-fetched and proved to be dated 2023. It was excluded and did not score."
+  ],
+  "evidence": [
+    {
+      "quote": "This is a dangerous power grab that puts the rights of all Chileans at risk.",
+      "claim": "Human Rights Watch characterises the Kast government's eight constitutional amendments as a power grab endangering rights.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+      "publishedDate": "2026-09-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The proposed constitutional amendments threaten the rights of Chileans and endanger their institutions.",
+      "claim": "HRW finds the amendment package threatens rights and institutions.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+      "publishedDate": "2026-09-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "do not align or attempt to align with these human rights frameworks",
+      "claim": "HRW finds the package does not engage the international frameworks governing emergency derogations of rights.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+      "publishedDate": "2026-09-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government.",
+      "claim": "Chile's National Migration Service head confirmed suspension of the regularisation decree covering about 182,000 registered migrants.",
+      "source": "MercoPress",
+      "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+      "publishedDate": "2026-03-31",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Chile has been undermined by illegal immigration, drug trafficking, and organized crime.",
+      "claim": "President Kast publicly framed migrants as a cause of national harm.",
+      "source": "MercoPress",
+      "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+      "publishedDate": "2026-03-31",
+      "sourceTier": 2
+    },
+    {
+      "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits.",
+      "claim": "Legislation before Chile's Congress would cut a named population out of social security.",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+      "publishedDate": "2026-05-23",
+      "sourceTier": 2
+    },
+    {
+      "quote": "During the campaign, Kast regularly threatened the 336,000 migrants living illegally in Chile with expulsion.",
+      "claim": "The scale of the population targeted for expulsion is roughly 336,000 people.",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+      "publishedDate": "2026-05-23",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "notes": "FLAG FOR REVIEW — NOT A CLEAN DOWNGRADE. Two procedural reasons, neither of which disputes the underlying facts. (1) The BAND-CROSSING EVIDENCE TEST FAILED: no tier-4-or-above within-period source was located, so the Established-to-Functional crossing is not proven to the benchmark's own standard. (2) The -20.0 magnitude MIXES CONDUCT WITH SEED REPLACEMENT: the published 62.5 rested on a near-uniform vector (seven of eight dimensions at exactly 3.5) that had never been individually evidenced. Reporting the whole -20.0 as new Chilean misconduct would be factually wrong. RECOMMENDED REMEDY: handle Chile inside a cohort review of never-individually-assessed Established-band countries with near-uniform 3.5 vectors, rather than as an isolated move. If applied anyway, the applied record MUST state both that part of the movement replaces a seed and that no tier-4 source supports the band change. SEPARATE FINDING RECORDED IN THE ASSESSMENT: a purported 2026 UN Special Procedures communication to Chile was re-fetched and found to be dated 24 May 2023, on Global Detention Project pages dated 2023-06-01 and 2023-12-12; associated detention-period and healthcare/school data-sharing claims were excluded and did not score.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "During the campaign, Kast regularly threatened the 336,000 migrants living illegally in Chile with expulsion."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "The proposed constitutional amendments threaten the rights of Chileans and endanger their institutions."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "This is a dangerous power grab that puts the rights of all Chileans at risk."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "do not align or attempt to align with these human rights frameworks"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "Chile has been undermined by illegal immigration, drug trafficking, and organized crime."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "The proposed constitutional amendments threaten the rights of Chileans and endanger their institutions."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/04/17/chile-launches-deportation-flights-under-kast-with-40-migrants-expelled-to-bolivia-ecuador-and-colombia",
+          "date": "2026-04-17",
+          "quote": "Chile launches deportation flights under Kast with 40 migrants expelled to Bolivia, Ecuador and Colombia"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "Chile has been undermined by illegal immigration, drug trafficking, and organized crime."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "The proposed constitutional amendments threaten the rights of Chileans and endanger their institutions."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "every one of them knows they will have to face the state at some point."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/04/17/chile-launches-deportation-flights-under-kast-with-40-migrants-expelled-to-bolivia-ecuador-and-colombia",
+          "date": "2026-04-17",
+          "quote": "Chile launches deportation flights under Kast with 40 migrants expelled to Bolivia, Ecuador and Colombia"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "This is a dangerous power grab that puts the rights of all Chileans at risk."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "do not align or attempt to align with these human rights frameworks"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "The proposed constitutional amendments threaten the rights of Chileans and endanger their institutions."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "During the campaign, Kast regularly threatened the 336,000 migrants living illegally in Chile with expulsion."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "This is a dangerous power grab that puts the rights of all Chileans at risk."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/04/17/chile-launches-deportation-flights-under-kast-with-40-migrants-expelled-to-bolivia-ecuador-and-colombia",
+          "date": "2026-04-17",
+          "quote": "Chile launches deportation flights under Kast with 40 migrants expelled to Bolivia, Ecuador and Colombia"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.npr.org/2026/05/23/nx-s1-5806607/chile-maga-inspired-border-control",
+          "date": "2026-05-23",
+          "quote": "The Kast government has already sent two bills to congress which would criminalise illegal entry, as well as limit immigrants’ access to social security benefits."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/01/chile-reject-constitutional-changes",
+          "date": "2026-09-01",
+          "quote": "do not align or attempt to align with these human rights frameworks"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.mercopress.com/2026/03/31/chile-s-new-government-freezes-migrant-legalization-eyes-deportations",
+          "date": "2026-03-31",
+          "quote": "We are not going to carry out a mass regularization like the one proposed under the Boric government."
+        }
+      ]
+    }
+  ]
+}

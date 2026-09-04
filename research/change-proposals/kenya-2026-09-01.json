@@ -1,0 +1,747 @@
+{
+  "entity": "Kenya",
+  "slug": "kenya",
+  "index": "countries",
+  "assessment_date": "2026-09-01",
+  "assessment_file": "research/assessments/kenya-2026-09-01.md",
+  "subdim_sidecar_file": "research/assessments/kenya-2026-09-01.subdims.json",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 87,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 2.5,
+      "ACC": 2.5,
+      "SYS": 2.5,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 30,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2.2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2.4,
+      "ACC": 2,
+      "SYS": 2.4,
+      "INT": 2
+    }
+  },
+  "score_delta": -5.9,
+  "band_change": false,
+  "band_change_evidence_test": {
+    "applicable": false,
+    "passed": null,
+    "detail": "NOT APPLICABLE. Assessed 30.0 and published 35.9 are both inside the Developing band (21-40). No band boundary is crossed, so the >=2-independent-sources / >=1-at-tier-4 band-crossing bar is not engaged. This proposal is filed on the MAGNITUDE trigger only (|delta| 5.9 >= 5.0). Recorded explicitly so the absence of a band-crossing test is not mistaken for an omission. Separately, and for transparency: the underlying three-cycle pattern IS corroborated by four sources including one at tier 4 (Kenyans.co.ke reporting the IPOA investigation, 2026-06-30), so the bar would have been met had it applied."
+  },
+  "confidence": "medium",
+  "scoring_convention": "Absence of disclosure scores 2, never 1. A score of 1 requires positive documented evidence of a specific failure. Absence is not evidence of harm.",
+  "anti_false_positive_screening": {
+    "baseline_provenance": "Published 35.9 was confirmed on 2026-07-08 with a downward watch flag, and confirmed again on 2026-08-18 at an assessed 32.5 with the watch flag escalated to a pre-committed third-incident trigger. rotation-state records last_assessed 2026-08-18, last_change_proposal null. This is a recent, twice-reviewed, evidence-based baseline.",
+    "stale_baseline_rationale_used": false,
+    "stale_baseline_note": "No stale-baseline argument is used or available. The baseline is six weeks old and has been reviewed twice in that period.",
+    "directionality": "Entity surfaced on NEGATIVE within-window evidence (police tear-gassing traders) and this proposal is a DOWNGRADE. Direction matches the evidence.",
+    "rationale_vs_history_consistent": true,
+    "pre_committed_escalation": "The escalation condition was set by the benchmark's own 2026-08-18 assessment, in writing, BEFORE the triggering incident occurred. Verbatim watch_flag from research/assessments/kenya-2026-08-18.md: \"downward — second consecutive cycle carrying a downward flag; escalate to a proposal if a third protest-policing incident lands\". The third incident landed on 2026-08-28. This proposal applies a pre-existing rule; it does not construct a rationale after the fact.",
+    "calibration_component_disclosed": false,
+    "calibration_note": "No calibration component. Kenya's published vector is not a uniform seed and has been individually assessed at least three times.",
+    "measures_absence_not_misconduct": false,
+    "measures_absence_note": "This movement measures documented conduct. All four moved subdimensions (E1, AC1, AB2, I1) rest on positive documented acts by Kenyan police, not on absence of disclosure."
+  },
+  "key_evidence": [
+    "Kenyan police fired tear gas at small-scale traders protesting an import-duty increase in central Nairobi on 2026-08-28; hundreds of businesses closed (Al Jazeera, tier 2).",
+    "This is the THIRD documented protest-policing incident across three consecutive assessment cycles: 25 June 2026 protest abductions and brutality now under IPOA investigation (tier 4); six activists arrested outside police headquarters 17 August 2026 (tier 2); traders tear-gassed 28 August 2026 (tier 2).",
+    "The load-bearing subdimension movement is AB2 (correction willingness) from 2 to 1: Kenya's own police oversight body has been investigating protest-policing brutality since June, and protest policing has continued unchanged through two further documented incidents. That is the anchor-1 description exactly.",
+    "COUNTERVAILING AND CREDITED: the Independent Policing Oversight Authority is a funded statutory body with a live caseload that treats complainant accounts as investigable (E4, AC4, A1 all held at 3). The Kenya Revenue Authority publicly defended and clarified the contested measure (AB3 held at 3). Five of eight dimensions are unchanged.",
+    "No band crossing. Assessed 30.0 and published 35.9 are both in the Developing band."
+  ],
+  "evidence": [
+    {
+      "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties",
+      "claim": "Kenyan police dispersed a protest by small traders in central Nairobi with tear gas on 28 August 2026.",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+      "publishedDate": "2026-08-28",
+      "sourceTier": 2
+    },
+    {
+      "quote": "designed to tackle the under-declaration and undervaluation of imported goods",
+      "claim": "The Kenya Revenue Authority publicly defended and explained the contested customs measure — countervailing evidence, credited.",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+      "publishedDate": "2026-08-28",
+      "sourceTier": 2
+    },
+    {
+      "quote": "IPOA probes June 25 protest abductions, police brutality",
+      "claim": "Kenya's Independent Policing Oversight Authority opened an investigation into protest abductions and police brutality on 25 June 2026 — the first of the three incidents, and the reason continued protest policing scores at anchor 1 for correction willingness.",
+      "source": "Kenyans.co.ke",
+      "url": "https://www.kenyans.co.ke/news/124849-ipoa-probes-june-25-protest-abductions-police-brutality",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Six Activists Arrested At Kenya Protest Demanding Police Chief Kanja’s Resignation",
+      "claim": "Six activists were arrested outside Nairobi police headquarters on 17 August 2026 while demanding the Inspector General resign over police brutality — the second of the three incidents.",
+      "source": "Sahara Reporters",
+      "url": "https://saharareporters.com/2026/08/17/six-activists-arrested-kenya-protest-demanding-police-chief-kanjas-resignation",
+      "publishedDate": "2026-08-17",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "downgrade",
+  "notes": "FILED ON THE MAGNITUDE TRIGGER (-5.9). No band crossing — 30.0 and 35.9 are both Developing. SOURCING LIMITATION, DISCLOSED IN FULL: the 28 August triggering incident rests on ONE tier-2 source, and Al Jazeera reports no injury or arrest figures. The magnitude of this proposal derives principally from the THREE-CYCLE PATTERN (corroborated across four sources including one at tier 4), not from the severity of the single triggering incident. A reviewer who reads -5.9 as a penalty for one tear-gas dispersal will have misread it. WHY THIS IS FILED AS `downgrade` AND NOT `flag-for-review`: the escalation condition was set in writing by the benchmark's own 2026-08-18 assessment BEFORE this incident occurred — \"escalate to a proposal if a third protest-policing incident lands\". Routing to human review now would second-guess a rule the benchmark set for itself. The single-source limitation is disclosed here so the founder can weigh it. COUNTERVAILING EVIDENCE CREDITED: IPOA is a funded statutory oversight body with a live caseload and is scored 3 on three subdimensions (A1, E4, AC4); the Kenya Revenue Authority's public defence of the measure is scored 3 (AB3). Five of eight dimensions are held unchanged from 2026-08-18. This is not a self-veto: the proposal is ready to apply as filed.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kenyans.co.ke/news/124849-ipoa-probes-june-25-protest-abductions-police-brutality",
+          "date": "2026-06-30",
+          "quote": "IPOA probes June 25 protest abductions, police brutality"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kenyans.co.ke/news/124849-ipoa-probes-june-25-protest-abductions-police-brutality",
+          "date": "2026-06-30",
+          "quote": "IPOA probes June 25 protest abductions, police brutality"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kenyans.co.ke/news/124849-ipoa-probes-june-25-protest-abductions-police-brutality",
+          "date": "2026-06-30",
+          "quote": "IPOA probes June 25 protest abductions, police brutality"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "designed to tackle the under-declaration and undervaluation of imported goods"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://saharareporters.com/2026/08/17/six-activists-arrested-kenya-protest-demanding-police-chief-kanjas-resignation",
+          "date": "2026-08-17",
+          "quote": "Six Activists Arrested At Kenya Protest Demanding Police Chief Kanja’s Resignation"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/8/28/kenyan-police-fire-tear-gas-at-nairobi-protest-against-import-duty-hike",
+          "date": "2026-08-28",
+          "quote": "fired tear gas at small-scale traders who are protesting against a hike in import duties"
+        }
+      ]
+    }
+  ]
+}
