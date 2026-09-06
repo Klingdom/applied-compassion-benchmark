@@ -261,3 +261,78 @@ Recorded here because a quarantine event that leaves no trace in a top-level log
 minor observability gap (see `OBSERVABILITY.md`).
 
 **Status:** Closed. The scan was correctly blocked; no bad data reached the assessor or index.
+
+---
+
+## INC-008 — Session WebSearch budget exhausted; three scan attempts lost
+
+| Field | Value |
+|---|---|
+| **Opened** | 2026-09-06 |
+| **Status** | Open — requires a fresh session or a raised cap |
+| **Severity** | Medium. No published data affected; research coverage for 2026-09-02 → 09-06 is missing. |
+| **Detection** | The third scan agent reported `2000 of 2000 WebSearch calls` used at session start and refused to write output. |
+
+### What happened
+
+Three consecutive attempts to scan the 2026-09-02 → 09-06 period failed, and the
+root cause was misdiagnosed twice before being identified.
+
+| Attempt | T1 (floor 150) | T2 batches | T3 (floor 15) | Outcome |
+|---|---|---|---|---|
+| 2026-09-02 | 63 | 102 | 15 | quarantined |
+| 2026-09-03 | 150 | 32 of 102 | 0 | quarantined |
+| 2026-09-06 | 0 | 0 | 0 | nothing written |
+
+The binding constraint was a **session-wide WebSearch cap of 2,000 calls**, shared
+across every agent run in the session — not the ~270-search budget a single scan
+is meant to operate under. The 09-03 agent ran all 150 Tier-1 searches genuinely,
+then hit the cap mid-Tier-2, which is why Tier-3 never started.
+
+### Misdiagnosis, recorded because it matters
+
+The coordinator attributed the 09-03 failure to its own briefing having
+over-emphasised Tier 1 at the expense of Tier 3, and told the founder so. That
+was a confident explanation of the wrong cause. The agent's own report — a hard
+tool cap, unrelated to briefing emphasis — was the actual reason. A third attempt
+was launched on the strength of the wrong diagnosis and could not run at all.
+
+**Lesson: when two agents fail in complementary ways, check for a shared external
+constraint before rewriting the brief.**
+
+### What the agents did correctly under failure
+
+- The 09-03 agent updated `last_scanned` for exactly the **521 entities it genuinely
+  touched**, leaving the other 810 at prior values, and did not repoint
+  `evidence-reviews/latest.json`.
+- It found and fixed a real bug mid-run: its batch generator dropped the `index`
+  field, silently collapsing 102 declared batches into one `"unbatched"` bucket —
+  the cause of the validator's `1 of 1 batches` message.
+- It rejected a factual error the coordinator had passed down from the quarantined
+  09-02 scan: WHO's 2026-08-25 "outbreak over" declaration applied to **Uganda's**
+  portion of the Ebola outbreak only. The DR Congo outbreak remains the worst ever
+  recorded there and is still expanding.
+- It declined a Nepal death toll of 1,259 that appeared only in an undated
+  aggregation, using the dated NDRRMA figure of 1,114 instead.
+- The 09-06 agent wrote **nothing at all** rather than fabricate coverage, and
+  preserved its computed tier plan for reuse.
+
+### Remediation
+
+1. Raise `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, or run each nightly cycle in
+   its own session. A full cycle costs ~265–280 searches against 1,331 entities;
+   a session running several cycles plus research studies will exhaust 2,000.
+2. `last_scanned` was reverted from 09-02/09-03 to **2026-09-01**, the last passing
+   scan, for all 1,331 entities. A quarantined scan did not happen for pipeline
+   purposes, and leaving the later dates would have suppressed those entities'
+   priority in the next real cycle.
+3. The 2026-09-02 → 09-06 window remains uncovered and should be the next cycle's
+   lookback.
+
+### Preserved
+
+Both quarantined scans are in `research/scans/superseded/`. Genuine findings worth
+re-verifying in the next cycle: **Boeing** (FAA $3.1M fine paid January 2026, first
+public 09-02), **Nepal** (1,114 dead, early-warning failure), **Jamaica** (~$1B for
+268 homes for Hurricane Melissa survivors — positive), **Los Angeles** (LAHSA
+funding scandal).
