@@ -4,12 +4,15 @@
 in `research/SYSTEM_HEALTH.md` and is not duplicated here (see
 `docs/CB_MODEL_INTEGRATION_2026-09-06.md` CONFLICT-01).
 
-**Last updated:** 2026-09-06 by system-architect, from direct file inspection.
+**Last updated:** 2026-09-07 by backend-engineer — added the product-separation guard (WQ-P1-07,
+`DECISIONS.md` D-23) to the "Operational" table below and its finding to "Broken".
 **Basis:** `docs/CB_MODEL_INTEGRATION_2026-09-06.md`. Every line below traces to a file read in that
-assessment.
+assessment, except the 2026-09-07 addition, which traces to this task's own run output.
 
 > **Programme status: PRE-EVALUATION.** No model has been evaluated. No model score exists. All
 > five ledgers are empty and say so. Nothing in this directory should be read as a measurement.
+> Phase 0, item P0.6 (the separation guard) is now built and mechanically confirms the separation
+> risk named in §2.2 of the assessment is real and currently unmitigated in published data.
 
 ---
 
@@ -25,7 +28,8 @@ Things that exist, work, and are verified.
 | Human authority boundary | `AUTONOMY.md` (432 lines) | Stronger than the package's `HUMAN-AUTHORITY-BOUNDARY.md`; every rule traces to a dated event. |
 | Publication authorisation mechanism | `status: "approved"` in a per-entity JSON; `AUTONOMY.md` §5 R5–R7 | Directly usable as CB-MODEL's publication gate. |
 | Append-only applied record | `research/APPLIED_CHANGES.md`; `AUTONOMY.md` §6 R8 | By convention, not by hash. See "Partial". |
-| Governance record | `DECISIONS.md` (D-00…D-22), `RISKS.md` (RISK-001…008), `INCIDENTS.md` (INC-001…008), `AGENT-ROUTING.md` | Authoritative. `.benchmark-ops/` does not fork these. |
+| Governance record | `DECISIONS.md` (D-00…D-23), `RISKS.md` (RISK-001…008), `INCIDENTS.md` (INC-001…008), `AGENT-ROUTING.md` | Authoritative. `.benchmark-ops/` does not fork these. |
+| Product-separation guard | `site/scripts/validate-product-separation.mjs`, `site/scripts/lib/product-separation.mjs`, `site/scripts/lib/deployed-ai-audit-subjects.mjs`, `site/scripts/test-product-separation.mjs` (16/16 pass, wired into `npm test`) | Mechanically checks "never merge model behaviour and lab governance into one score" across 4 checks. Built 2026-09-07 (D-23, WQ-P1-07). Runs standalone via `npm run validate:product-separation`; not wired into `npm run build`. |
 
 ## Partial
 
@@ -53,6 +57,7 @@ Verified defects, currently live.
 | `xAI/Grok` publishes one composite (0.0) for a fused organisation-and-model identity. `DeepMind/Google` fuses two organisations. | `ai-labs.json` ranks 50 and 13 | proposed RISK-012; `WQ-P0-04` |
 | ≥10 `ai-labs.json` rows score **deployed product configurations** (Replika, Character AI, Perplexity, Midjourney, Clearview AI, Waymo, Abridge, Harvey AI, Typeface, Pika Labs), ranked against organisational governance scores. | `ai-labs.json` roster | proposed RISK-013 |
 | Three companies hold two published composites each: Microsoft AI 75.9 / Microsoft 65.3; Amazon AWS AI 35.9 / Amazon 12.8; Meta AI 26.3 / Meta Platforms 7.8. | index files | existing **RISK-003**; blocked by D-13 R-SUB-3, status `proposed`, unratified |
+| **Mechanically confirmed 2026-09-07** by the new product-separation guard: 6 duplicate-composite groups (not 3) — the three above, plus Figure AI (ai-labs 31.3 / robotics-labs 48.4), Boston Dynamics (65.6 / 20.3, same file), and 1X Technologies / Halodi Robotics (81.4, 50.0, 62.5 across two files). Plus the two name-fusion rows (`xAI/Grok`, `DeepMind/Google`) as FAIL, and 10 Deployed-AI-Audit-subject rows inside `ai-labs.json` as WARN. | `site/scripts/validate-product-separation.mjs` output, 2026-09-07 | `DECISIONS.md` D-23; `.benchmark-ops/VALIDATION_LEDGER.md` |
 | Release intelligence cannot run. | `INCIDENTS.md` INC-008 | `BLK-001` |
 | Auto-deploy has never succeeded (25+ failures since 2026-07-19). | `INCIDENTS.md` INC-001 | existing **RISK-004** |
 

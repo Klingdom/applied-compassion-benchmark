@@ -14,7 +14,19 @@ Single-authority file. The record of whether the benchmark measures what it clai
 > claim `HUMAN-AUTHORITY-BOUNDARY.md` forbids**: *"Representing a draft as peer reviewed, validated,
 > certified, legally compliant, or independently audited."*
 
-**Last updated:** 2026-09-06 (created).
+**Last updated:** 2026-09-07 — added the product-separation guard row below. This is a mechanical
+data-integrity/naming check, not a validity study (it does not belong to the schema in the next
+section, which is reserved for `content`/`structural`/`convergent`/etc. validity studies against
+model behaviour data — there is no model behaviour data yet). Recorded here anyway because it is
+the closest existing home for "did we mechanically check that the instrument's structure holds."
+
+---
+
+## Mechanical structural checks (not validity studies — see note above)
+
+| Check | Tool | First-run result (2026-09-07) | Severity |
+|---|---|---|---|
+| Product-separation guard | `site/scripts/validate-product-separation.mjs` | **FAIL** — 8 blocking findings, 10 warnings against live `site/src/data/indexes/*.json` | See `DECISIONS.md` D-23 for the full finding list |
 
 ---
 

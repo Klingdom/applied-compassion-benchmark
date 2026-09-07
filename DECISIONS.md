@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-23 | 2026-09-07 | Build a mechanical product-separation guard for CB-MODEL's three-product rule | active |
 | D-22 | 2026-08-24 | `DECISIONS.md` supersedes `.claude/decisions.md` | active |
 | D-21 | 2026-08-23 | Disclosure density must publish before the robotics batches go live | active (blocker) |
 | D-20 | 2026-08-23 | Zimmer Biomet index destination | **unresolved** |
@@ -46,6 +47,61 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-23 — 2026-09-07 · Build a mechanical product-separation guard for CB-MODEL's three-product rule
+
+**Decision.** Implemented `site/scripts/validate-product-separation.mjs` (+ pure detection logic in
+`site/scripts/lib/product-separation.mjs`, a maintained denylist in
+`site/scripts/lib/deployed-ai-audit-subjects.mjs`, and fixture tests in
+`site/scripts/test-product-separation.mjs`, wired into `npm test`). It mechanically checks the
+CB-MODEL package's rule "Never merge model behavior and lab governance into one score" across the
+three declared products — Model Index, AI Labs Index, Deployed AI Audit
+(`docs/CB_MODEL_INTEGRATION_2026-09-06.md`).
+
+**Context.** Before this task the rule was prose in a package with no check that it held.
+`docs/CB_MODEL_INTEGRATION_2026-09-06.md` §2.2 names this "the highest-priority separation risk, and
+it is currently unmitigated." Authorised as CB-MODEL Phase 1, Item 1
+(`.benchmark-ops/WORK_QUEUE.md` WQ-P1-07): buildable now, no external dependency, reversible,
+touches no index.
+
+**What it found on first run against live data (expected — not tuned to pass, no index modified):**
+- **Check 1 (name fusion, FAIL):** `xAI/Grok` (ai-labs, rank 50, composite 0.0) — organisation/model
+  fusion. `DeepMind/Google` (ai-labs, rank 13, composite 56.9) — organisation/organisation fusion.
+  Both detected by a general pattern (a separator joining two capitalised tokens), not hardcoded.
+- **Check 2 (duplicate composite publication, FAIL, citing D-13):** 6 duplicate groups across
+  `ai-labs.json` / `fortune-500.json` / `robotics-labs.json` — Microsoft, Amazon, Meta (cross-index,
+  differing legal suffixes normalized), Figure AI (cross-index, identical name), Boston Dynamics
+  (same-index, parenthetical variant), and 1X Technologies / Halodi Robotics (cross-index, 3
+  occurrences — Halodi is 1X's pre-rebrand name, caught via a maintained alias map, not
+  normalization, since no string transform turns one name into the other).
+- **Check 3 (deployed product inside `ai-labs.json`, WARN, maintained list not inference):** 10
+  matches — Replika, Character AI, Perplexity AI, Midjourney, Clearview AI, Waymo, Abridge, Harvey
+  AI, Typeface, Pika Labs.
+- **Check 4 (model score without a product discriminator, FAIL when triggered):** vacuous pass —
+  no index currently declares `meta.isModelIndex = true`, so the check has verified nothing yet, and
+  says so in its own output rather than appearing to have passed a real assertion.
+
+**Alternatives considered.** (a) Heuristic detection of "deployed product vs organisation" by name
+pattern or composite threshold — rejected; checked against the live corpus and both approaches
+either miss real cases (Anthropic, OpenAI are also consumer-facing) or misfire on organisations.
+Implemented as an honest maintained list instead, documented as such. (b) Unscoped duplicate-name
+detection across all eight indexes — rejected; produces ~18 false positives from legitimate
+same-name geographic entities (Singapore as country and city, Georgia as country and state, several
+US/global city pairs). Scoped to the three organisational indexes instead, verified empirically
+before finalizing.
+
+**Consequence.** The validator FAILS today (8 blocking findings, 10 warnings) against real,
+already-published data. This is the correct and intended first result, not a defect in the
+validator. It is not wired into `npm run build` (would block every current build on pre-existing,
+already-logged defects the founder has not yet authorised fixing) — only into `npm test`, alongside
+its own fixture suite. `npm run validate:product-separation` runs it standalone.
+
+**Status:** active. **Evidence:** `site/scripts/validate-product-separation.mjs`,
+`site/scripts/lib/product-separation.mjs`, `site/scripts/lib/deployed-ai-audit-subjects.mjs`,
+`site/scripts/test-product-separation.mjs`; `.benchmark-ops/VALIDATION_LEDGER.md`;
+`.benchmark-ops/WORK_QUEUE.md` WQ-P1-07.
 
 ---
 
