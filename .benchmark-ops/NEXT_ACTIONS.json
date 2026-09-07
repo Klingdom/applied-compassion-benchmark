@@ -1,0 +1,87 @@
+{
+  "_comment": "CB-MODEL next actions. Ordered. The first three are the exact next three actions once blockers clear, per the end-of-cycle report requirement in 00-MASTER-CONDUCTOR. All three are founder actions: none is agent-executable while BLK-001, BLK-002 and BLK-004 remain open.",
+  "schema_version": "0.1.0-draft",
+  "generated_at": "2026-09-06",
+  "generated_by": "system-architect",
+  "programme_status": "PRE_EVALUATION",
+  "open_blockers": ["BLK-001", "BLK-002", "BLK-003", "BLK-004", "BLK-005", "BLK-006"],
+
+  "next_three_actions": [
+    {
+      "order": 1,
+      "id": "NA-001",
+      "action": "Approve a model spend budget and provision provider access.",
+      "owner": "founder",
+      "agent_executable": false,
+      "clears": "BLK-002",
+      "unblocks": ["WQ-P2-02", "Phase 2 in full", "COST_LEDGER.md first entry", "sentinel probes in 02-RELEASE-INTELLIGENCE"],
+      "authority_basis": "HUMAN-AUTHORITY-BOUNDARY.md requires owner approval before creating paid accounts or committing funds beyond an approved budget. AUTONOMY.md 1b independently escalates any secret or credential operation.",
+      "decision_points": [
+        "Which providers, and at which access tiers? 07-PUBLICATION requires consumer / api_default / base / fine_tune / agent / deployed_system to be scored and displayed separately, so this choice determines the shape of the first result.",
+        "A currency ceiling per evaluation wave, and who may spend against it.",
+        "Whether provider-donated access is acceptable. 11-FUNDING requires donated model access and compute to be disclosed, and caps any single developer or affiliated source at 20 percent of annual programme funding after Year 1."
+      ],
+      "acceptance_criteria": "A written budget with a named ceiling exists; credentials are provisioned; COST_LEDGER.md opens with the ceiling recorded and cumulative spend 0.",
+      "cost_estimate": null,
+      "cost_estimate_note": "Deliberately null. Producing an estimate would require inventing per-token prices, trial counts and item counts that no artifact in this repository supports. The founder sets the ceiling first; the ledger then records actuals against it."
+    },
+    {
+      "order": 2,
+      "id": "NA-002",
+      "action": "Raise the session WebSearch cap, or run each cycle in its own session, then run the first model-release scan and write the first RELEASE_WATCH.md record.",
+      "owner": "founder",
+      "agent_executable": false,
+      "clears": "BLK-001",
+      "unblocks": ["WQ-P0-02", "RELEASE_WATCH.md first scan", "MODEL_REGISTRY.md first row", "the 2026-09-02 to 2026-09-06 institution coverage gap"],
+      "evidence": "INCIDENTS.md INC-008: 2000 of 2000 WebSearch calls used; three consecutive scans failed 2026-09-02, 09-03, 09-06; the 09-06 agent wrote nothing rather than fabricate coverage.",
+      "remediation_from_incident": "Raise CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION, or run each nightly cycle in its own session. A full institution cycle costs approximately 265-280 searches against 1,331 entities; a session running several cycles plus research studies will exhaust 2,000.",
+      "acceptance_criteria": "One scan completes and passes validate-scan.mjs; RELEASE_WATCH.md carries a first dated scan record with a source registry and retrieval timestamps; if no release qualifies, the completed scan is still recorded.",
+      "sequencing_note": "Do this before NA-001 spends anything. A scan is what identifies which model snapshot is worth paying to evaluate; buying access before knowing the target inverts the order."
+    },
+    {
+      "order": 3,
+      "id": "NA-003",
+      "action": "Supply the extracted text of Compassion_Benchmark_AI_Model_Program_Plan.docx, and confirm or correct the missing starting prompt.",
+      "owner": "founder",
+      "agent_executable": false,
+      "clears": ["BLK-004", "BLK-003"],
+      "unblocks": ["ASM-001", "ASM-002", "ASM-003 reconciliation", "any SLA or version commitment"],
+      "why": "Three supplied 'established facts' have no primary source this session could reach. Grep across all 15 readable package files returns zero hits for CB-MODEL, 72, 30-day, three-year, Version 1, 2026, three-layer and public reference. The 72-hour and 30-day SLAs in particular must not be published as promises until confirmed.",
+      "precise_questions": [
+        "What are the actual rapid-check and full-run deadlines in the program plan? 02-RELEASE-INTELLIGENCE mandates deadlines but names no numbers.",
+        "Is the battery three layers or the six pools that 03-BENCHMARK-BATTERY specifies (Core Public, Secure Standard, Challenge, Incident Regression, Arena, Specialized Track, with targets of 64 / 128 per form / 48 / 240+)?",
+        "Was the intended starting prompt 00-MASTER-CONDUCTOR-SUPER-PROMPT.md, or a different prompt not included in the package? The instruction read 'use this prompt as guidance and starting point:' with no prompt following."
+      ],
+      "acceptance_criteria": "ASM-001, ASM-002 and ASM-003 are each either verified into CURRENT_STATE.md 'Operational' or falsified into a risk. BLK-003 is closed with the founder's answer."
+    }
+  ],
+
+  "buildable_now_with_every_blocker_open": {
+    "_comment": "Phase 0 work requiring no credentials, no money and no people. Reversible repository work inside AUTONOMY.md 1a write scope. None touches site/src/data/indexes/**. Available for a coding agent the moment the founder authorises it.",
+    "items": [
+      {"id": "WQ-P1-04", "action": "Extract the 33 prompts from page.tsx into a versioned task bank at research/model-index/tasks/v0/ with the 03-BENCHMARK-BATTERY item schema. Every item validation_status = unvalidated."},
+      {"id": "WQ-P1-05", "action": "Resolve or draft-flag the 4 unexecutable prompts: ACC-1-A, INT-1-B, INT-1-C, INT-3-A."},
+      {"id": "WQ-P1-06", "action": "Build the analysis layer against synthetic fixtures: bootstrap 95 percent CIs, statistical tie groups, weighted kappa, matched-pair equity gap, min-dimension and critical-harm gates. Reuse compositeCore unchanged. Add test-model-analysis.mjs alongside the existing 69 scoring cases."},
+      {"id": "WQ-P1-07", "action": "Build the separation guard asserting that no model score and no lab score share an aggregate and that no entity holds two published composites. Wire into validate-indexes.mjs. It will correctly fail on Microsoft, Amazon and Meta on first run."},
+      {"id": "WQ-P1-08", "action": "Write the model registry and run manifest schemas with the acceptance test that a changed model snapshot cannot overwrite an old identity."}
+    ]
+  },
+
+  "founder_decisions_awaiting_answer": [
+    {"draft": "D-23", "question": "Where AUTONOMY.md and HUMAN-AUTHORITY-BOUNDARY.md differ, which governs CB-MODEL work?", "recommendation": "AUTONOMY.md governs; its ten stop-and-report triggers extend to CB-MODEL."},
+    {"draft": "D-24", "question": "One band vocabulary or two?", "recommendation": "One. dimensions.ts BANDS is canonical. Seven ai-labs.json rows at 60.9 currently fall in a gap in their own file's band table. Requires BLK-006."},
+    {"draft": "D-25", "question": "One 40-subdimension taxonomy or two?", "recommendation": "One. Only 7 of 40 names currently match; AWR, EQU, BND and INT overlap on zero. Requires BLK-006."},
+    {"draft": "D-26", "question": "One composite formula or two?", "recommendation": "One. Composite 60.5 bands as Established on one page and Functional on another."},
+    {"draft": "D-27", "question": "Does xAI/Grok stay as a fused organisation-and-model row?", "recommendation": "No. Rename to the organisation before any model score publishes, as a structural operation with no score change. Same question for DeepMind/Google."},
+    {"draft": "D-28", "question": "Which absence-of-disclosure convention does CB-MODEL use, 2 or 3?", "recommendation": "Decide before the first run. D-14 is unresolved in the institution product; carrying it into a second product doubles the problem."},
+    {"item": "WQ-P0-03", "question": "Restore the /ai-evaluation-suite scoring tool from legacy-html under the canonical formula, or rewrite the page to describe what it actually is?", "recommendation": "Either is acceptable; doing neither is not. The page currently advertises four capabilities it does not have, next to two License the Platform CTAs."},
+    {"item": "WQ-P0-05", "question": "Ratify or reject D-13 index demarcation.", "recommendation": "Ratify or reject explicitly. It is being cited as governing while its own status is proposed."}
+  ],
+
+  "hard_stops": [
+    "Do not publish any score derived from the public 33-prompt pool as a measurement. All 33 items and 165 rubric anchors are permanently public with answer keys (RISK-015).",
+    "Do not commit to a 72-hour SLA until BLK-004 clears.",
+    "Do not recruit raters before the welfare protocol exists (WQ-P2-04, RISK-016). The item set already contains suicide, domestic violence, psychosis and miscarriage content.",
+    "Do not add a row to any ledger in this directory that did not come from executed, evidenced work."
+  ]
+}
