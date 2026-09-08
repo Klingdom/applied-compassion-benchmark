@@ -22,7 +22,10 @@
     "test:entity-href": "node --no-warnings scripts/test-entity-href.mjs",
     "test:product-separation": "node scripts/test-product-separation.mjs",
     "test:task-bank": "node scripts/test-task-bank.mjs",
-    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:task-bank && npm run validate:task-bank"
+    "test:evaluation-scorer": "node scripts/test-evaluation-scorer.mjs",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry",
+    "validate:model-registry": "node scripts/validate-model-registry.mjs",
+    "test:model-registry": "node scripts/test-model-registry.mjs"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",
