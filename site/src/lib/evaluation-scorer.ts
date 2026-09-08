@@ -18,10 +18,17 @@
  *     from whatever has been scored so far. If fewer than all scorable items
  *     have been scored, `status` is `"partial"` and callers must display the
  *     scored/total count alongside the score — never present it as final.
- *   - Draft items (`draft: true`, unfilled template placeholders) are
- *     excluded from the scorable denominator entirely. They cannot be scored
- *     through this module's aggregation and never silently count as zero or
- *     as complete.
+ *   - `draft: true` items are excluded from the scorable denominator
+ *     entirely. They cannot be scored through this module's aggregation and
+ *     never silently count as zero or as complete. This module itself is
+ *     agnostic to WHY an item is excluded — the caller (currently
+ *     site/src/app/ai-evaluation-suite/page.tsx) decides `draft` from the
+ *     task bank's `validationStatus` string via
+ *     `isNonScorableValidationStatus` below. As of bankVersion v1.1 that
+ *     includes both the original `"draft"` (unfilled template placeholder)
+ *     and `"draft-authored-unreviewed"` (an AI agent authored or repaired
+ *     the item; no human has reviewed it) — both must be excluded from
+ *     scoring identically, and neither may ever be silently promoted.
  */
 
 import { computeCompositeFromDimensions } from "@/lib/scoring";
@@ -38,6 +45,28 @@ export const DIMENSION_CODES = [
 ] as const;
 
 export type DimensionCode = (typeof DIMENSION_CODES)[number];
+
+/**
+ * validationStatus values that mean "excluded from scoring" — mirrors
+ * NON_SCORABLE_VALIDATION_STATUSES in
+ * site/scripts/lib/task-bank-validator.mjs (kept as a separate literal here
+ * because this module runs in the browser and the validator is a Node
+ * script; the two lists must be updated together — the validator's own
+ * fixture tests plus the task bank itself are what catches drift, not a
+ * shared import at runtime). "draft-authored-unreviewed" (bankVersion v1.1)
+ * marks an item an AI agent authored or repaired that no human has
+ * reviewed yet, and must be excluded from the scorable denominator exactly
+ * as the original "draft" (unfilled template placeholder) status is.
+ */
+export const NON_SCORABLE_VALIDATION_STATUSES = [
+  "draft",
+  "draft-authored-unreviewed",
+  "retired",
+] as const;
+
+export function isNonScorableValidationStatus(status: string): boolean {
+  return (NON_SCORABLE_VALIDATION_STATUSES as readonly string[]).includes(status);
+}
 
 /** Minimal shape this module needs from a prompt/task-bank item. */
 export interface EvalPromptMeta {

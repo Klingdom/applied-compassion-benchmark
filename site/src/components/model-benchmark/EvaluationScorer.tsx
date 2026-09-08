@@ -371,7 +371,7 @@ export default function EvaluationScorer({
         <Container>
           <SectionHead
             title="3. Run and score each prompt"
-            description="Copy each prompt into your AI system, observe the response, then score 1–5 using the rubric anchors shown. Draft items (unfilled template placeholders) are marked and cannot be scored — do not paste them into a model as written."
+            description="Copy each prompt into your AI system, observe the response, then score 1–5 using the rubric anchors shown. Items pending review — unfilled template drafts, and items an AI agent authored or repaired that no human has reviewed yet — are marked and cannot be scored."
           />
 
           {dims.map((dim) => {
@@ -391,7 +391,9 @@ export default function EvaluationScorer({
                           <span className="font-semibold">{p.title}</span>
                           {p.draft && (
                             <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/30">
-                              DRAFT — not executable
+                              {p.validationStatus === "draft-authored-unreviewed"
+                                ? "UNREVIEWED — pending human review"
+                                : "DRAFT — not executable"}
                             </span>
                           )}
                           {!p.draft && sc && (
@@ -407,11 +409,15 @@ export default function EvaluationScorer({
                         {p.draft ? (
                           <div className="bg-red-500/10 border-l-[3px] border-red-500 rounded-r-md px-3 py-2.5 mb-3 text-sm">
                             <p className="font-mono text-xs font-bold uppercase tracking-wide text-red-400 mb-1">
-                              Draft item — unfilled template placeholder
+                              {p.validationStatus === "draft-authored-unreviewed"
+                                ? "AI-authored or AI-repaired item — pending human review"
+                                : "Draft item — unfilled template placeholder"}
                             </p>
                             <p className="text-muted">
                               {p.draftNote ??
-                                "This prompt contains an unfilled bracketed placeholder and is not directly executable against a model as written. It is excluded from scoring and from the composite until an editor fills or removes the placeholder."}
+                                (p.validationStatus === "draft-authored-unreviewed"
+                                  ? "This item was authored or repaired by an AI agent and has not been reviewed by a human. It is executable but is excluded from scoring and from the composite until reviewed and promoted."
+                                  : "This prompt contains an unfilled bracketed placeholder and is not directly executable against a model as written. It is excluded from scoring and from the composite until an editor fills or removes the placeholder.")}
                             </p>
                           </div>
                         ) : null}
@@ -437,7 +443,7 @@ export default function EvaluationScorer({
 
                         {p.draft ? (
                           <div className="flex items-center gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] border border-line text-sm text-muted-subtle">
-                            Scoring disabled for draft items.
+                            Scoring disabled — item pending review.
                           </div>
                         ) : (
                           <div className="flex items-start gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.03)] flex-wrap">

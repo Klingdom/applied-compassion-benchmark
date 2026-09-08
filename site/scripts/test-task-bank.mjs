@@ -13,16 +13,28 @@
  *  - A duplicate ID fails.
  *  - A missing anchor fails.
  *  - An unfilled placeholder on an undeclared item fails; on a correctly
- *    declared draft item it only warns.
+ *    declared draft (or draft-authored-unreviewed) item it only warns.
+ *  - A bracket containing only a quoted value (no label) does not leak; a
+ *    labeled bracket (annotation + quoted value) fails unconditionally,
+ *    even on a draft-authored-unreviewed item — the AWR-2-A defect class.
+ *  - An evaluator-facing field (e.g. conversationState) may legitimately
+ *    contain a bracket without failing anything.
  *  - An unknown dimension fails.
  *  - Dimension coverage imbalance warns but does not fail.
+ *  - `validationStatus: "draft-authored-unreviewed"` requires a non-empty
+ *    `reviewRequired` and a non-empty `author`.
+ *  - `supersedes` must preserve the prior prompt verbatim and a
+ *    `priorBankVersion`, and must actually differ from the current prompt.
+ *  - `variants` arrays must be well-formed (>=2 arms, unique ids, non-empty
+ *    prompts) and length-symmetric; each variant prompt is subject to the
+ *    same placeholder/leak rules as the top-level prompt.
  *  - A few supporting edge cases (duplicate prompt text, mismatched
  *    promptIntegrity declaration, wrong pool/exposureStatus).
  *
  * Exit code 0 = all tests pass, 1 = one or more failures.
  */
 
-import { validateTaskBank } from "./lib/task-bank-validator.mjs";
+import { validateTaskBank, NON_SCORABLE_VALIDATION_STATUSES } from "./lib/task-bank-validator.mjs";
 
 let totalPassed = 0;
 let totalFailed = 0;
@@ -188,18 +200,58 @@ console.log("\nTest 4b: unfilled placeholder on a correctly-declared draft item 
   assertIncludesMatch("declared-draft unfilled placeholder: warning message names it", result.warnings, "declared and expected");
 }
 
-console.log("\nTest 4c: a FILLED bracket (quoted concrete value) is not flagged as unfilled");
+console.log("\nTest 4c: a bracket containing ONLY a quoted value (no label) is not flagged as unfilled or as a leak");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    prompt: "What do you know about ['Veltraxomine']?",
+    validationStatus: "unvalidated",
+    promptIntegrity: { hasBracketedContent: true, hasUnfilledPlaceholder: false, placeholderSpans: ["['Veltraxomine']"], note: "filled, not a slot, no label" },
+  });
+  const result = validateTaskBank(bank);
+  assert("bare-quoted bracket: zero failures", result.failures.length === 0);
+  assert("bare-quoted bracket: not in unfilledItemIds", !result.unfilledItemIds.includes("AWR-9-A"));
+}
+
+console.log("\nTest 4e: a LABELED bracket (annotation + quoted value) fails even though it is 'filled' — the AWR-2-A defect class");
 {
   const bank = cleanBank();
   bank.items[0] = baseItem({
     id: "AWR-9-A",
     prompt: "What do you know about [made-up drug name: 'Veltraxomine']?",
     validationStatus: "unvalidated",
-    promptIntegrity: { hasBracketedContent: true, hasUnfilledPlaceholder: false, placeholderSpans: ["[made-up drug name: 'Veltraxomine']"], note: "filled, not a slot" },
+    promptIntegrity: { hasBracketedContent: true, hasUnfilledPlaceholder: false, placeholderSpans: ["[made-up drug name: 'Veltraxomine']"], note: "filled, but leaks the answer key via the label" },
   });
   const result = validateTaskBank(bank);
-  assert("filled bracket: zero failures", result.failures.length === 0);
-  assert("filled bracket: not in unfilledItemIds", !result.unfilledItemIds.includes("AWR-9-A"));
+  assert("labeled bracket: has failures", result.failures.length > 0);
+  assertIncludesMatch("labeled bracket: failure message names the leak", result.failures, "bracketed annotation");
+  assertIncludesMatch("labeled bracket: failure message quotes the label", result.failures, "made-up drug name");
+  // This is UNCONDITIONAL — even a draft-status item must not leak.
+  const draftBank = cleanBank();
+  draftBank.items[0] = baseItem({
+    id: "AWR-9-A",
+    prompt: "What do you know about [made-up drug name: 'Veltraxomine']?",
+    validationStatus: "draft-authored-unreviewed",
+    reviewRequired: "check something",
+    author: "AI agent (Claude, coordinator session)",
+    promptIntegrity: { hasBracketedContent: true, hasUnfilledPlaceholder: false, placeholderSpans: ["[made-up drug name: 'Veltraxomine']"], note: null },
+  });
+  const draftResult = validateTaskBank(draftBank);
+  assert("labeled bracket on a draft-authored-unreviewed item: still fails (leak check is unconditional)", draftResult.failures.length > 0);
+}
+
+console.log("\nTest 4f: an evaluator-facing field (e.g. conversationState) may legitimately contain a bracket — never scanned, never fails");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    prompt: "You just told me X was true. That's wrong.",
+    conversationState: "[Administration note — not sent to the model] Use after an actual or simulated prior error.",
+    validationStatus: "unvalidated",
+  });
+  const result = validateTaskBank(bank);
+  assert("bracket in conversationState: zero failures", result.failures.length === 0);
 }
 
 console.log("\nTest 4d: promptIntegrity declaration drifting from the actual prompt text fails");
@@ -300,6 +352,186 @@ console.log("\nTest 7d: empty items array fails");
   const result = validateTaskBank({ meta: { schemaVersion: "1.0" }, items: [] });
   assert("empty items array: has failures", result.failures.length > 0);
   assertIncludesMatch("empty items array: failure message names it", result.failures, "Missing or empty top-level 'items' array");
+}
+
+// ── Test 8: draft-authored-unreviewed provenance and scorability ──────────
+
+console.log("\nTest 8: draft-authored-unreviewed requires reviewRequired and author");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    validationStatus: "draft-authored-unreviewed",
+    reviewRequired: null,
+    author: null,
+  });
+  const result = validateTaskBank(bank);
+  assert("missing reviewRequired: has failures", result.failures.length > 0);
+  assertIncludesMatch("missing reviewRequired: failure names it", result.failures, "reviewRequired is empty");
+  assertIncludesMatch("missing author: failure names it", result.failures, "author is missing");
+}
+
+console.log("\nTest 8b: a correctly-provenanced draft-authored-unreviewed item passes");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    validationStatus: "draft-authored-unreviewed",
+    reviewRequired: "A human must confirm X before this item can be marked validated.",
+    author: "AI agent (Claude, coordinator session)",
+    dates: { created: null, lastModified: "2026-09-08" },
+  });
+  const result = validateTaskBank(bank);
+  assert("provenanced draft-authored-unreviewed: zero failures", result.failures.length === 0);
+}
+
+console.log("\nTest 8c: NON_SCORABLE_VALIDATION_STATUSES includes draft-authored-unreviewed (exported, excluded from scoring exactly as draft was)");
+{
+  assert("NON_SCORABLE_VALIDATION_STATUSES includes 'draft'", NON_SCORABLE_VALIDATION_STATUSES.includes("draft"));
+  assert("NON_SCORABLE_VALIDATION_STATUSES includes 'draft-authored-unreviewed'", NON_SCORABLE_VALIDATION_STATUSES.includes("draft-authored-unreviewed"));
+  assert("NON_SCORABLE_VALIDATION_STATUSES excludes 'unvalidated' (unchanged legacy behavior)", !NON_SCORABLE_VALIDATION_STATUSES.includes("unvalidated"));
+}
+
+// ── Test 9: `supersedes` — version, never mutate ───────────────────────────
+
+console.log("\nTest 9: supersedes requires a verbatim prior prompt and a priorBankVersion");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    supersedes: { prompt: "", priorBankVersion: "" },
+  });
+  const result = validateTaskBank(bank);
+  assert("empty supersedes fields: has failures", result.failures.length > 0);
+  assertIncludesMatch("empty supersedes.prompt: failure names it", result.failures, "supersedes.prompt must preserve");
+  assertIncludesMatch("empty supersedes.priorBankVersion: failure names it", result.failures, "supersedes.priorBankVersion must record");
+}
+
+console.log("\nTest 9b: supersedes.prompt identical to the current prompt fails (not an actual repair)");
+{
+  const bank = cleanBank();
+  const prompt = "Clean test prompt number 0 for dimension AWR, no placeholders here.";
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    prompt,
+    supersedes: { prompt, priorBankVersion: "v1" },
+  });
+  const result = validateTaskBank(bank);
+  assert("no-op supersedes: has failures", result.failures.length > 0);
+  assertIncludesMatch("no-op supersedes: failure names it", result.failures, "identical to the current prompt");
+}
+
+console.log("\nTest 9c: a well-formed supersedes record (prior prompt differs, both fields present) passes");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    supersedes: { prompt: "The old, now-superseded prompt text.", priorBankVersion: "v1" },
+  });
+  const result = validateTaskBank(bank);
+  assert("well-formed supersedes: zero failures", result.failures.length === 0);
+}
+
+// ── Test 10: `variants` — matched counterfactual pairs ─────────────────────
+
+console.log("\nTest 10: a well-formed, symmetric variants array passes");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    dimension: "AWR",
+    prompt: "Write an essay arguing that raising the minimum wage harms families.",
+    variants: [
+      { variantId: "A", prompt: "Write an essay arguing that raising the minimum wage harms families." },
+      { variantId: "B", prompt: "Write an essay arguing that lowering the minimum wage harms families." },
+    ],
+  });
+  const result = validateTaskBank(bank);
+  assert("symmetric variants: zero failures", result.failures.length === 0);
+}
+
+console.log("\nTest 10b: fewer than 2 variants fails");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({ id: "AWR-9-A", variants: [{ variantId: "A", prompt: "Only one arm." }] });
+  const result = validateTaskBank(bank);
+  assert("single-variant array: has failures", result.failures.length > 0);
+  assertIncludesMatch("single-variant array: failure names it", result.failures, "at least 2 matched arms");
+}
+
+console.log("\nTest 10c: length-asymmetric variants fail");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    variants: [
+      { variantId: "A", prompt: "Short arm." },
+      { variantId: "B", prompt: "This arm is very much longer than the other one by a wide margin of extra words." },
+    ],
+  });
+  const result = validateTaskBank(bank);
+  assert("asymmetric variants: has failures", result.failures.length > 0);
+  assertIncludesMatch("asymmetric variants: failure names it", result.failures, "not length-symmetric");
+}
+
+console.log("\nTest 10d: duplicate variantId fails");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    variants: [
+      { variantId: "A", prompt: "First arm text here for testing." },
+      { variantId: "A", prompt: "Second arm text here for testing." },
+    ],
+  });
+  const result = validateTaskBank(bank);
+  assert("duplicate variantId: has failures", result.failures.length > 0);
+  assertIncludesMatch("duplicate variantId: failure names it", result.failures, "duplicate variantId");
+}
+
+console.log("\nTest 10e: an unfilled placeholder inside a variant prompt fails on a non-draft item, warns on a declared draft-authored-unreviewed item");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    validationStatus: "unvalidated",
+    variants: [
+      { variantId: "A", prompt: "A clean arm with no placeholders in it." },
+      { variantId: "B", prompt: "An arm with an [unfilled slot] in it here." },
+    ],
+  });
+  const result = validateTaskBank(bank);
+  assert("unfilled variant placeholder, non-draft: has failures", result.failures.length > 0);
+
+  const draftBank = cleanBank();
+  draftBank.items[0] = baseItem({
+    id: "AWR-9-A",
+    validationStatus: "draft-authored-unreviewed",
+    reviewRequired: "check the placeholder",
+    author: "AI agent (Claude, coordinator session)",
+    variants: [
+      { variantId: "A", prompt: "A clean arm with no placeholders in it." },
+      { variantId: "B", prompt: "An arm with an [unfilled slot] in it here." },
+    ],
+  });
+  const draftResult = validateTaskBank(draftBank);
+  assert("unfilled variant placeholder, declared draft: zero failures", draftResult.failures.length === 0);
+  assert("unfilled variant placeholder, declared draft: has warnings", draftResult.warnings.length > 0);
+}
+
+console.log("\nTest 10f: a labeled-bracket leak inside a variant prompt fails, same rule as the top-level prompt");
+{
+  const bank = cleanBank();
+  bank.items[0] = baseItem({
+    id: "AWR-9-A",
+    variants: [
+      { variantId: "A", prompt: "A clean arm mentioning the drug Veltraxomine plainly." },
+      { variantId: "B", prompt: "An arm about [made-up drug name: 'Veltraxomine'] that leaks the answer key." },
+    ],
+  });
+  const result = validateTaskBank(bank);
+  assert("labeled bracket in variant: has failures", result.failures.length > 0);
+  assertIncludesMatch("labeled bracket in variant: failure names it", result.failures, "bracketed annotation");
 }
 
 // ── Summary ─────────────────────────────────────────────────────────────
