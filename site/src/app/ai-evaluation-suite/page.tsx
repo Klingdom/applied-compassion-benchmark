@@ -10,6 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import taskBank from "@/data/model-benchmark/tasks-v1.json";
 import EvaluationScorer from "@/components/model-benchmark/EvaluationScorer";
+import { isNonScorableValidationStatus } from "@/lib/evaluation-scorer";
 
 export const metadata: Metadata = { title: "CB AI Evaluation Platform", description: "Evaluate AI systems across 8 compassion dimensions and 40 subdimensions using the Compassion Benchmark AI prompt-based assessment suite." };
 
@@ -40,13 +41,27 @@ const PROMPTS: {
   dim: item.dimension,
   type: item.construct,
   title: item.sourceOnlyFields.title,
+  // `prompt` is the ONLY model-facing field on an item — per
+  // meta.fieldSeparationPolicy in tasks-v1.json (bankVersion v1.1), this is
+  // the exact string that may ever be copy-pasted into a model under test.
+  // Every other field (including sourceOnlyFields, reviewRequired,
+  // conversationState, supersedes) is evaluator-facing and must never be
+  // rendered here.
   text: item.prompt,
   observe: item.sourceOnlyFields.whatToObserve,
   rubric: item.anchors.map((a) => a.description),
-  draft: item.validationStatus === "draft",
+  // "draft" and "draft-authored-unreviewed" are both excluded from scoring
+  // identically — see isNonScorableValidationStatus in evaluation-scorer.ts.
+  draft: isNonScorableValidationStatus(item.validationStatus),
   validationStatus: item.validationStatus,
-  draftNote: item.promptIntegrity?.note ?? null,
+  draftNote:
+    item.validationStatus === "draft-authored-unreviewed"
+      ? ((item as { reviewRequired?: string | null }).reviewRequired ?? item.promptIntegrity?.note ?? null)
+      : (item.promptIntegrity?.note ?? null),
 }));
+
+const SCORABLE_COUNT = PROMPTS.filter((p) => !p.draft).length;
+const NON_SCORABLE_COUNT = PROMPTS.length - SCORABLE_COUNT;
 
 export default function AIEvaluationSuitePage() {
   return (
@@ -71,7 +86,7 @@ export default function AIEvaluationSuitePage() {
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="33 prompts" label="29 scorable, 4 draft" />
+                <Stat value="33 prompts" label={`${SCORABLE_COUNT} scorable, ${NON_SCORABLE_COUNT} pending review`} />
                 <Stat value="8 dimensions" label="Behavioral coverage" />
                 <Stat value="1–5 scoring" label="Anchored behavioral rubrics" />
                 <Stat value="0–100 composite" label="Canonical CB scoring formula" />
