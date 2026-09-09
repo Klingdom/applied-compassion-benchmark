@@ -23,11 +23,12 @@
     "test:product-separation": "node scripts/test-product-separation.mjs",
     "test:task-bank": "node scripts/test-task-bank.mjs",
     "test:evaluation-scorer": "node scripts/test-evaluation-scorer.mjs",
-    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run && npm run test:model-harness",
     "validate:model-registry": "node scripts/validate-model-registry.mjs",
     "test:model-registry": "node scripts/test-model-registry.mjs",
     "validate:evaluation-run": "node scripts/validate-evaluation-run.mjs",
-    "test:evaluation-statistics": "node scripts/test-evaluation-statistics.mjs"
+    "test:evaluation-statistics": "node scripts/test-evaluation-statistics.mjs",
+    "test:model-harness": "node ../research/scripts/model-harness/tests/acceptance.test.mjs"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",
