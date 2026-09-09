@@ -11,6 +11,7 @@ import Callout from "@/components/ui/Callout";
 import ResearchConfigurator from "@/components/purchase/ResearchConfigurator";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { GUMROAD, US_CITIES_INDEX, US_STATES_INDEX } from "@/data/gumroad";
+import roboticsLabs from "@/data/indexes/robotics-labs.json";
 
 export const metadata: Metadata = {
   title: "Purchase Research",
@@ -332,7 +333,7 @@ export default function PurchaseResearchPage() {
                   ["U.S. States Index", "All 50 states and DC", "Public policy teams, advocacy groups, political analysts", "PDF, PDF + appendix, internal team pack"],
                   ["Fortune 500 Index", "Large U.S. corporate benchmark", "Executives, boards, enterprise strategy teams, media", "PDF, PDF + appendix, board deck"],
                   ["AI Labs Index", "Leading frontier and applied AI labs", "AI governance teams, tech media, enterprise leaders", "PDF, PDF + appendix, briefing package"],
-                  ["Humanoid Robotics Labs Index", "Top 50 global humanoid robotics developers", "Technology strategists, robotics observers, policy teams", "PDF, PDF + appendix, strategic brief"],
+                  ["Humanoid Robotics Labs Index", `${roboticsLabs.rankings.length} global humanoid robotics developers`, "Technology strategists, robotics observers, policy teams", "PDF, PDF + appendix, strategic brief"],
                   ["Annual All-Indexes Bundle", "Full multi-sector benchmark package", "Institutions, investors, enterprise teams, research groups", "Bundle PDF set, appendices, enterprise pack"],
                 ].map(([report, coverage, buyer, formats]) => (
                   <tr key={report}>

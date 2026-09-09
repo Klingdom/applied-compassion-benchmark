@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import roboticsLabs from "@/data/indexes/robotics-labs.json";
 
 export const metadata: Metadata = { title: "Data Licenses", description: "License structured Compassion Benchmark datasets for internal analysis, academic research, editorial use, or enterprise intelligence workflows." };
 
@@ -146,7 +147,7 @@ export default function DataLicensesPage() {
                   ["U.S. States Dataset", "All 50 states and DC", "Domestic policy comparison and public-system research", "Internal, academic, editorial"],
                   ["Fortune 500 Dataset", "Large-company benchmark data", "Corporate analysis, governance review, strategy work", "Internal, enterprise"],
                   ["AI Labs Dataset", "Leading AI labs", "AI governance, safety, and competitive analysis", "Internal, academic, enterprise"],
-                  ["Humanoid Robotics Dataset", "Top 50 robotics labs", "Technology, robotics, labor, and policy analysis", "Internal, academic, enterprise"],
+                  ["Humanoid Robotics Dataset", `${roboticsLabs.rankings.length} global humanoid robotics labs`, "Technology, robotics, labor, and policy analysis", "Internal, academic, enterprise"],
                   ["Annual Cross-Index Bundle", "All current-year published benchmark datasets", "Institutional analysis across multiple sectors", "Enterprise, internal multi-team"],
                 ].map(([dataset, coverage, use, fit]) => (
                   <tr key={dataset}>

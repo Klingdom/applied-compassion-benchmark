@@ -17,7 +17,7 @@ import data from "@/data/indexes/robotics-labs.json";
 export const metadata: Metadata = {
   title: "Most & Least Compassionate Robotics Labs 2026 — Compassion Benchmark",
   description:
-    "See which humanoid robotics labs rank most and least compassionate in 2026. Compassion Benchmark scores 50 global labs across healthcare, labor, accessibility, governance, and ethical deployment.",
+    `See which humanoid robotics labs rank most and least compassionate in 2026. Compassion Benchmark scores ${data.rankings.length} global labs across healthcare, labor, accessibility, governance, and ethical deployment.`,
 };
 
 const columns: ColumnDef[] = [
@@ -72,7 +72,7 @@ export default function RoboticsLabsPage() {
     <>
       <DatasetJsonLd
         name="Compassion Benchmark Humanoid Robotics Labs Index 2026"
-        description="Rankings of 50 global humanoid robotics labs across 8 dimensions of institutional compassion including healthcare, labor, accessibility, governance, and ethical deployment."
+        description={`Rankings of ${data.rankings.length} global humanoid robotics labs across 8 dimensions of institutional compassion including healthcare, labor, accessibility, governance, and ethical deployment.`}
         url="/robotics-labs"
         indexSlug="robotics-labs"
         entityCount={data.rankings.length}
@@ -101,7 +101,7 @@ export default function RoboticsLabsPage() {
       <IndexHero
         eyebrow="Humanoid Robotics Labs Compassion Benchmark · 2026"
         title="Most & Least Compassionate Robotics Labs 2026"
-        description="Benchmark of the top 50 global humanoid robotics labs across healthcare, labor, accessibility, governance, ethical deployment, and societal impact."
+        description={`Benchmark of ${data.rankings.length} global humanoid robotics labs across healthcare, labor, accessibility, governance, ethical deployment, and societal impact.`}
         stats={[
           { value: String(data.meta.entityCount || 50), label: "Labs ranked" },
           { value: String(data.meta.meanScore || "—"), label: "Mean score" },
@@ -136,7 +136,7 @@ export default function RoboticsLabsPage() {
             filterKey="category"
             filterLabel="All categories"
             ctaText="Purchase the Robotics Labs Index Report — $195, delivered as PDF"
-            ctaDescription="Complete rankings for 50 robotics labs with category analysis, deployment risk assessment, and dimensional findings."
+            ctaDescription={`Complete rankings for ${data.rankings.length} robotics labs with category analysis, deployment risk assessment, and dimensional findings.`}
             ctaLink={GUMROAD.roboticsIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
