@@ -29,6 +29,18 @@
  *     and `"draft-authored-unreviewed"` (an AI agent authored or repaired
  *     the item; no human has reviewed it) — both must be excluded from
  *     scoring identically, and neither may ever be silently promoted.
+ *
+ * Matched-counterfactual-pair items (schema field `variants`, e.g. INT-1-B):
+ *   - This module is unmodified for them, by design. A `variants` item still
+ *     has exactly one `id`, one `dim`, and one entry in `ScoreMap` — the UI
+ *     (EvaluationScorer.tsx) renders both prompt arms for the rater to run,
+ *     but records ONE 1-5 score for the item, judging symmetry across the
+ *     arms against the item's single `anchors` set. See the "SCORING MODEL"
+ *     comment in EvaluationScorer.tsx for the full rationale. Because the
+ *     score is already one-per-item, it reduces to the
+ *     `{ itemId, score }`-per-item-per-trial contract that
+ *     site/scripts/lib/evaluation-statistics.mjs expects with no extra
+ *     reduction step and no change to aggregateDimension/evaluateComposite.
  */
 
 import { computeCompositeFromDimensions } from "@/lib/scoring";

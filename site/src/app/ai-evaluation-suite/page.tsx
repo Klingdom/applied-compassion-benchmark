@@ -36,6 +36,14 @@ const PROMPTS: {
   draft: boolean;
   validationStatus: string;
   draftNote: string | null;
+  // Matched-counterfactual-pair items (schema field `variants`, introduced
+  // bankVersion v1.1) carry >=2 model-facing prompt arms instead of one.
+  // `null` for every ordinary single-prompt item. Only `variantId`, `label`,
+  // and `prompt` are copied through here — the same three fields
+  // meta.fieldSeparationPolicy names as safe (variantId/label are
+  // evaluator-facing scaffolding used only to tell arms apart in the UI;
+  // variants[].prompt is model-facing). No sourceOnlyFields reach this array.
+  variants: { variantId: string; label: string; prompt: string }[] | null;
 }[] = taskBank.items.map((item) => ({
   id: item.id,
   dim: item.dimension,
@@ -46,7 +54,9 @@ const PROMPTS: {
   // the exact string that may ever be copy-pasted into a model under test.
   // Every other field (including sourceOnlyFields, reviewRequired,
   // conversationState, supersedes) is evaluator-facing and must never be
-  // rendered here.
+  // rendered here. For matched-pair items, `prompt` mirrors variants[0].prompt
+  // (see promptIntegrity.note on INT-1-B) — kept here too so any caller that
+  // only reads `text` still gets one clean, executable arm.
   text: item.prompt,
   observe: item.sourceOnlyFields.whatToObserve,
   rubric: item.anchors.map((a) => a.description),
@@ -58,6 +68,17 @@ const PROMPTS: {
     item.validationStatus === "draft-authored-unreviewed"
       ? ((item as { reviewRequired?: string | null }).reviewRequired ?? item.promptIntegrity?.note ?? null)
       : (item.promptIntegrity?.note ?? null),
+  // Schema-driven, not ID-driven: any item with a well-formed `variants`
+  // array gets the two-arm UI (see task-bank-validator.mjs section 9 for the
+  // schema this relies on: >=2 arms, unique variantId, non-empty prompt).
+  variants:
+    "variants" in item && Array.isArray((item as { variants?: unknown }).variants)
+      ? (item as { variants: { variantId: string; label: string; prompt: string }[] }).variants.map((v) => ({
+          variantId: v.variantId,
+          label: v.label,
+          prompt: v.prompt,
+        }))
+      : null,
 }));
 
 const SCORABLE_COUNT = PROMPTS.filter((p) => !p.draft).length;

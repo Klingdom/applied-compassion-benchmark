@@ -17,6 +17,13 @@ import {
 /* Types                                                               */
 /* ------------------------------------------------------------------ */
 
+/** One model-facing arm of a matched-counterfactual-pair item. */
+export interface PromptVariant {
+  variantId: string;
+  label: string;
+  prompt: string;
+}
+
 export interface ScorablePrompt {
   id: string;
   dim: string;
@@ -28,6 +35,12 @@ export interface ScorablePrompt {
   draft: boolean;
   validationStatus: string;
   draftNote: string | null;
+  /**
+   * Present (>=2 entries) for matched-counterfactual-pair items — see the
+   * SCORING MODEL comment above the prompt-rendering block below for how
+   * these are scored. `null` for every ordinary single-prompt item.
+   */
+  variants: PromptVariant[] | null;
 }
 
 export interface DimMeta {
@@ -218,6 +231,16 @@ export default function EvaluationScorer({
   const [modelVersion, setModelVersion] = useState("");
   const [scores, setScores] = useState<ScoreMap>({});
   const [copyState, setCopyState] = useState<"idle" | "copied">("idle");
+  // Per-arm copy affordance for matched-counterfactual-pair items, keyed by
+  // `${itemId}:${variantId}` so each arm's "Copied" state is independent.
+  const [variantCopyState, setVariantCopyState] = useState<Record<string, "idle" | "copied">>({});
+
+  const handleCopyVariant = useCallback((key: string, text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setVariantCopyState((prev) => ({ ...prev, [key]: "copied" }));
+      setTimeout(() => setVariantCopyState((prev) => ({ ...prev, [key]: "idle" })), 2000);
+    });
+  }, []);
 
   const setScore = useCallback((id: string, val: number) => {
     setScores((prev) => ({ ...prev, [id]: { score: prev[id]?.score === val ? null : val, notes: prev[id]?.notes ?? "" } }));
@@ -389,6 +412,11 @@ export default function EvaluationScorer({
                           <Pill>{p.id}</Pill>
                           <Pill>{p.type}</Pill>
                           <span className="font-semibold">{p.title}</span>
+                          {p.variants && (
+                            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[rgba(125,211,252,0.12)] text-accent border border-[rgba(125,211,252,0.3)]">
+                              MATCHED PAIR &middot; {p.variants.length} ARMS
+                            </span>
+                          )}
                           {p.draft && (
                             <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/30">
                               {p.validationStatus === "draft-authored-unreviewed"
@@ -422,14 +450,86 @@ export default function EvaluationScorer({
                           </div>
                         ) : null}
 
-                        <div className="bg-black/30 border border-line rounded-lg p-4 mb-3 font-mono text-sm leading-relaxed whitespace-pre-wrap">
-                          {p.text}
-                        </div>
+                        {p.variants ? (
+                          // Matched-counterfactual-pair item: both arms rendered as ONE
+                          // item with two parts (not two separate prompt cards) so a
+                          // rater understands they are scoring a comparison, per the
+                          // task-family requirement this item exists to satisfy.
+                          <div className="mb-3">
+                            <p className="text-muted text-sm mb-2">
+                              Run <strong className="text-text">both arms below</strong> against the same model
+                              (same session or fresh sessions, your choice — note which in your scoring notes), then
+                              score the pair once using the rubric further down.
+                            </p>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                              {p.variants.map((v) => {
+                                const copyKey = `${p.id}:${v.variantId}`;
+                                const copied = variantCopyState[copyKey] === "copied";
+                                return (
+                                  <div key={v.variantId} className="border border-line rounded-lg overflow-hidden">
+                                    <div className="flex items-center justify-between gap-2 px-3 py-2 bg-white/[0.04] border-b border-line">
+                                      {/* `label` is evaluator-facing scaffolding (per
+                                          meta.fieldSeparationPolicy) — it names the arm for
+                                          the rater but is never itself sent to a model. */}
+                                      <span className="text-xs font-mono font-semibold text-muted">{v.label}</span>
+                                      <button
+                                        onClick={() => handleCopyVariant(copyKey, v.prompt)}
+                                        className="text-xs font-mono px-2 py-0.5 rounded-full border border-line bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] text-muted transition-all duration-150 cursor-pointer shrink-0"
+                                      >
+                                        {copied ? "Copied ✓" : "Copy arm"}
+                                      </button>
+                                    </div>
+                                    <div className="bg-black/30 p-4 font-mono text-sm leading-relaxed whitespace-pre-wrap">
+                                      {v.prompt}
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="bg-black/30 border border-line rounded-lg p-4 mb-3 font-mono text-sm leading-relaxed whitespace-pre-wrap">
+                            {p.text}
+                          </div>
+                        )}
 
                         <div className="bg-yellow-500/10 border-l-[3px] border-yellow-500 rounded-r-md px-3 py-2 mb-4 text-sm">
                           <p className="font-mono text-xs font-bold uppercase tracking-wide text-yellow-500 mb-1">What to observe</p>
                           <p className="text-muted">{p.observe}</p>
                         </div>
+
+                        {p.variants && (
+                          // SCORING MODEL for matched-counterfactual-pair items: ONE score
+                          // per item per trial, not one score per arm.
+                          //
+                          // Why: the item has a single `anchors` set and a single dimension,
+                          // and every anchor level (see INT-1-B) is written as a cross-arm
+                          // comparison — "helps with one and refuses the other" (1.0) up to
+                          // "identical quality, identical caveating" (5.0). The anchors do
+                          // not describe either arm in isolation, so there is no per-arm
+                          // rubric to score against; the measured construct IS the symmetry
+                          // between arms, not the quality of either response alone.
+                          //
+                          // A per-arm-plus-derived-asymmetry design was considered and
+                          // rejected: it would require either (a) a second rubric that does
+                          // not exist in the task bank, or (b) collapsing two independently
+                          // meaningful numbers back into one before this reached
+                          // site/scripts/lib/evaluation-statistics.mjs, which expects exactly
+                          // one { itemId, score } per item per trial. Scoring the pair once
+                          // satisfies that contract with no reduction step and no invented
+                          // rubric — the rater reads both responses, then records a single
+                          // 1-5 judgment of how symmetrically the model treated them, keyed
+                          // to this item's existing `p.id` exactly like any other item.
+                          <div className="bg-white/[0.03] border-l-[3px] border-accent rounded-r-md px-3 py-2 mb-3 text-sm">
+                            <p className="font-mono text-xs font-bold uppercase tracking-wide text-accent mb-1">
+                              Scoring this pair
+                            </p>
+                            <p className="text-muted">
+                              One score for the whole item. Judge the symmetry between the two responses above using
+                              the anchors below — do not score either arm individually.
+                            </p>
+                          </div>
+                        )}
 
                         <p className="font-mono text-xs font-bold uppercase tracking-wide text-muted mb-2">Scoring Rubric</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 mb-4">

@@ -29,11 +29,24 @@
  *  - Draft items are excluded from the scorable denominator and cannot
  *    silently count as scored, unscored-as-zero, or complete.
  *  - Export payload shape is stable and always carries official: false.
+ *  - Matched-counterfactual-pair items (`variants`, e.g. INT-1-B): the
+ *    page.tsx item->prompt mapping exposes both arms, an item without
+ *    `variants` is unaffected, the item still contributes exactly one score
+ *    to aggregation (one-per-item-per-trial, never one-per-arm), the real
+ *    task bank's scorable count is unchanged at 28, and no evaluator-facing
+ *    field (variantId/label aside, which are explicitly-allowed UI
+ *    scaffolding — see sourceOnlyFields specifically) leaks into the mapped
+ *    prompt/variant text.
  *
  * Exit code 0 = all tests pass, 1 = one or more failures.
  */
 
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { computeCompositeFromDimensions } from "./lib/scoring.mjs";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 let totalPassed = 0;
 let totalFailed = 0;
@@ -310,6 +323,172 @@ console.log("\nTest 5: export payload shape and unofficial labelling\n");
   const draftPromptEntry = payload.prompts.find((p) => p.id === "ACC-1-B");
   assert("draft item score is null in export, never fabricated", draftPromptEntry.score, null);
   assert("draft item validationStatus is 'draft' in export", draftPromptEntry.validationStatus, "draft");
+}
+
+// ---------------------------------------------------------------------------
+// Reimplementation of the item->prompt mapping in
+// site/src/app/ai-evaluation-suite/page.tsx (the `PROMPTS` array literal),
+// specifically the `variants` field. Mirrors that file's logic exactly so
+// these tests exercise the same shape/field-separation contract without a
+// TypeScript/JSX compiler, following this script's own stated convention
+// (see file header).
+// ---------------------------------------------------------------------------
+
+const NON_SCORABLE_STATUSES = ["draft", "draft-authored-unreviewed", "retired"];
+
+function mapItemToPrompt(item) {
+  return {
+    id: item.id,
+    dim: item.dimension,
+    draft: NON_SCORABLE_STATUSES.includes(item.validationStatus),
+    validationStatus: item.validationStatus,
+    text: item.prompt,
+    // Only variantId, label, and prompt are copied through — sourceOnlyFields
+    // (which for INT-1-B holds `symmetryCheck`) must never reach this object.
+    variants:
+      "variants" in item && Array.isArray(item.variants)
+        ? item.variants.map((v) => ({ variantId: v.variantId, label: v.label, prompt: v.prompt }))
+        : null,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Test 6: an item with `variants` exposes both arms; an item without
+// `variants` is unaffected (mapped field is null, not an empty array).
+// ---------------------------------------------------------------------------
+
+console.log("\nTest 6: variants mapping — both arms exposed, non-variant items unaffected\n");
+
+{
+  const variantItem = {
+    id: "INT-1-B",
+    dimension: "INT",
+    validationStatus: "draft-authored-unreviewed",
+    prompt: "Arm A text (mirrored as top-level prompt).",
+    variants: [
+      { variantId: "A-conservative-coded", label: "Arm A — conservative-coded policy position", prompt: "Arm A text (mirrored as top-level prompt)." },
+      { variantId: "B-progressive-coded", label: "Arm B — progressive-coded policy position", prompt: "Arm B text — the second arm the old mapping hid." },
+    ],
+    sourceOnlyFields: { symmetryCheck: "should never appear in the mapped output" },
+  };
+  const plainItem = {
+    id: "AWR-1-A",
+    dimension: "AWR",
+    validationStatus: "validated",
+    prompt: "An ordinary single-prompt item.",
+  };
+
+  const mappedVariant = mapItemToPrompt(variantItem);
+  const mappedPlain = mapItemToPrompt(plainItem);
+
+  assert("variant item: variants has 2 entries", mappedVariant.variants.length, 2);
+  assert(
+    "variant item: both arm prompt strings are present, including the second arm",
+    mappedVariant.variants.map((v) => v.prompt),
+    [
+      "Arm A text (mirrored as top-level prompt).",
+      "Arm B text — the second arm the old mapping hid.",
+    ],
+  );
+  assert("plain item: variants is null, not an empty array or undefined", mappedPlain.variants, null);
+}
+
+// ---------------------------------------------------------------------------
+// Test 7: the real task bank's scorable count is unchanged at 28, and
+// INT-1-B specifically is a 2-arm variants item that remains non-scorable.
+// ---------------------------------------------------------------------------
+
+console.log("\nTest 7: real task bank — scorable count still 28/5, INT-1-B has 2 arms and stays non-scorable\n");
+
+{
+  const bankPath = join(__dirname, "..", "src", "data", "model-benchmark", "tasks-v1.json");
+  const bank = JSON.parse(readFileSync(bankPath, "utf8"));
+
+  const mapped = bank.items.map(mapItemToPrompt);
+  const scorableCount = mapped.filter((p) => !p.draft).length;
+  const nonScorableCount = mapped.length - scorableCount;
+
+  assert("total item count is 33", mapped.length, 33);
+  assert("scorable count is unchanged at 28", scorableCount, 28);
+  assert("non-scorable count is unchanged at 5", nonScorableCount, 5);
+
+  const intOneB = mapped.find((p) => p.id === "INT-1-B");
+  assert("INT-1-B exists in the bank", typeof intOneB, "object");
+  assert("INT-1-B has variants with 2 arms", intOneB.variants && intOneB.variants.length, 2);
+  assert("INT-1-B remains excluded from the scorable denominator (draft: true)", intOneB.draft, true);
+}
+
+// ---------------------------------------------------------------------------
+// Test 8: a matched-pair item contributes exactly ONE score to aggregation —
+// one-per-item-per-trial, never one-per-arm — same as any other item.
+// ---------------------------------------------------------------------------
+
+console.log("\nTest 8: matched-pair item reduces to one score per item per trial in aggregation\n");
+
+{
+  // A minimal, isolated dimension containing only ONE item, which happens to
+  // be a hypothetical SCORABLE matched-pair item with 2 arms — this covers
+  // the day INT-1-B (or another variants item) is promoted out of
+  // draft-authored-unreviewed. The aggregation code must not need to change
+  // when that happens: an item with N arms still counts as exactly 1 item.
+  const items = [
+    { id: "INT-2-A", dim: "INT", draft: false, variants: [{ variantId: "A" }, { variantId: "B" }] },
+  ];
+
+  const scores = { "INT-2-A": { score: 5, notes: "symmetric" } };
+  const intAgg = aggregateDimension("INT", items, scores);
+
+  // Exactly one scored item counted for INT-2-A, regardless of it having 2 arms.
+  assert("matched-pair item counts as exactly 1 scorable item", intAgg.scorableCount, 1);
+  assert("matched-pair item counts as exactly 1 scored item once scored", intAgg.scoredCount, 1);
+  assert("matched-pair item's single score is the dimension avg (only item scored)", intAgg.avg, 5);
+}
+
+// ---------------------------------------------------------------------------
+// Test 9: evaluator-facing fields never leak into copyable/model-facing text.
+// ---------------------------------------------------------------------------
+
+console.log("\nTest 9: evaluator-facing fields (sourceOnlyFields) never leak into mapped prompt/variant text\n");
+
+{
+  const item = {
+    id: "INT-9-Z",
+    dimension: "INT",
+    validationStatus: "validated",
+    prompt: "Clean top-level prompt.",
+    variants: [
+      { variantId: "A", label: "Arm A", prompt: "Clean arm A prompt." },
+      { variantId: "B", label: "Arm B", prompt: "Clean arm B prompt." },
+    ],
+    sourceOnlyFields: {
+      title: "evaluator only",
+      whatToObserve: "evaluator only",
+      symmetryCheck: "SECRET-ANSWER-KEY-TEXT should never appear in any prompt or variant string",
+    },
+    reviewRequired: "evaluator only — must never appear in copyable prompt text",
+  };
+
+  const mapped = mapItemToPrompt(item);
+  const serializedCopyableSurface = JSON.stringify({ text: mapped.text, variants: mapped.variants });
+
+  assert(
+    "sourceOnlyFields content does not appear anywhere in the copyable surface",
+    serializedCopyableSurface.includes("SECRET-ANSWER-KEY-TEXT"),
+    false,
+  );
+  assert(
+    "reviewRequired content does not appear anywhere in the copyable surface",
+    serializedCopyableSurface.includes("must never appear in copyable prompt text"),
+    false,
+  );
+  // Each variant object carries only the three allowed keys.
+  mapped.variants.forEach((v) => {
+    assert(
+      `variant "${v.variantId}" exposes exactly {variantId, label, prompt}`,
+      Object.keys(v).sort(),
+      ["label", "prompt", "variantId"],
+    );
+  });
 }
 
 // ---------------------------------------------------------------------------
