@@ -17,7 +17,7 @@ import data from "@/data/indexes/ai-labs.json";
 export const metadata: Metadata = {
   title: "Most & Least Compassionate AI Labs 2026 — Compassion Benchmark",
   description:
-    "See which AI labs rank most and least compassionate in 2026. Compassion Benchmark scores 50 leading AI organizations across safety governance, accountability, deployment boundaries, equity, and integrity.",
+    `See which AI labs rank most and least compassionate in 2026. Compassion Benchmark scores ${data.rankings.length} leading AI organizations across safety governance, accountability, deployment boundaries, equity, and integrity.`,
 };
 
 const columns: ColumnDef[] = [
@@ -72,7 +72,7 @@ export default function AILabsPage() {
     <>
       <DatasetJsonLd
         name="Compassion Benchmark AI Labs Index 2026"
-        description="Rankings of 50 leading AI organizations across 8 dimensions of institutional compassion including safety governance, transparency, accountability, deployment boundaries, and equity."
+        description={`Rankings of ${data.rankings.length} leading AI organizations across 8 dimensions of institutional compassion including safety governance, transparency, accountability, deployment boundaries, and equity.`}
         url="/ai-labs"
         indexSlug="ai-labs"
         entityCount={data.rankings.length}
@@ -101,7 +101,7 @@ export default function AILabsPage() {
       <IndexHero
         eyebrow="AI Labs Compassion Benchmark · 2026"
         title="Most & Least Compassionate AI Labs 2026"
-        description="Benchmark of 50 leading AI organizations across safety governance, transparency, accountability, deployment boundaries, equity, and institutional integrity."
+        description={`Benchmark of ${data.rankings.length} leading AI organizations across safety governance, transparency, accountability, deployment boundaries, equity, and institutional integrity.`}
         stats={[
           { value: String(data.meta.entityCount || 50), label: "Labs ranked" },
           { value: String(data.meta.meanScore || "—"), label: "Mean score" },
@@ -136,7 +136,7 @@ export default function AILabsPage() {
             filterKey="sector"
             filterLabel="All sectors"
             ctaText="Purchase the AI Labs Index Report — $195, delivered as PDF"
-            ctaDescription="Complete rankings for 50 AI labs with safety governance analysis, deployment risk assessment, and dimensional findings."
+            ctaDescription={`Complete rankings for ${data.rankings.length} AI labs with safety governance analysis, deployment risk assessment, and dimensional findings.`}
             ctaLink={GUMROAD.aiLabsIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"

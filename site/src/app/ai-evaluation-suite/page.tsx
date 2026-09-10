@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import { BANDS } from "@/data/dimensions";
 import taskBank from "@/data/model-benchmark/tasks-v1.json";
 import EvaluationScorer from "@/components/model-benchmark/EvaluationScorer";
 import { isNonScorableValidationStatus } from "@/lib/evaluation-scorer";
@@ -150,7 +151,7 @@ export default function AIEvaluationSuitePage() {
               <p className="pt-2"><strong className="text-text">weaknessFactor</strong> = max(0, 1 - weakDims x 0.2), where weakDims = count of dims below 4.0</p>
               <p className="pt-2"><strong className="text-text">integrationPremium</strong> = 0 if any dim = 0 (harm flag), else 10 x consistencyMult x weaknessFactor</p>
               <p className="pt-2"><strong className="text-text">composite</strong> = clamp(baseComposite + integrationPremium, 0, 100)</p>
-              <p className="pt-2"><strong className="text-text">Score bands:</strong> 81–100 Exemplary | 61–80 Established | 41–60 Functional | 21–40 Developing | 0–20 Critical</p>
+              <p className="pt-2"><strong className="text-text">Score bands:</strong> {[...BANDS].reverse().map((b) => `${b.range} ${b.name}`).join(" | ")}</p>
             </div>
           </Callout>
         </Container>
