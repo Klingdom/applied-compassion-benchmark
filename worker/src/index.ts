@@ -685,8 +685,68 @@ async function updateListmonkWatchStatus(
  *
  * PRIVACY NOTE: do not include subscriber email addresses in the message string.
  */
+/** Hard cap on an outbound admin alert — long errors are where payloads hide. */
+const ADMIN_ALERT_MAX_CHARS = 600;
+
+/** Env fields that are secrets. Their VALUES must never leave the Worker. */
+const SECRET_ENV_KEYS = [
+  "LISTMONK_API_TOKEN",
+  "LISTMONK_API_USER",
+  "UNSUBSCRIBE_HMAC_SECRET",
+  "INTERNAL_API_TOKEN",
+  "ADMIN_API_TOKEN",
+  "GUMROAD_SELLER_ID",
+] as const satisfies readonly (keyof Env)[];
+
+/**
+ * Scrub an admin alert before it leaves the Worker.
+ *
+ * Every notifyAdmin() caller in the global catch passes `err.message` verbatim.
+ * Provider SDKs and fetch implementations routinely embed request context —
+ * including Authorization headers — into error messages, and this message is
+ * POSTed to Listmonk and then emailed in plaintext. A failing Listmonk call is
+ * the worst case: its own error can carry the Basic auth header built from
+ * LISTMONK_API_TOKEN.
+ *
+ * Two layers, because neither alone is sufficient:
+ *   1. Exact-value redaction of known secrets — catches a real token whatever
+ *      shape it takes. Values under 12 chars are skipped, since redacting a
+ *      short id would mangle messages without protecting anything meaningful.
+ *   2. Shape-based scrubbing — catches credentials this Worker never held, such
+ *      as an upstream provider key echoed back inside an error.
+ *
+ * Applied inside notifyAdmin rather than at each call site, so it covers all
+ * current callers and any added later. Identified as F-04 in
+ * docs/SECURITY_BYO_SCORING.md.
+ */
+export function redactAdminAlert(env: Env, message: string): string {
+  let out = String(message ?? "");
+
+  for (const key of SECRET_ENV_KEYS) {
+    const value = env[key];
+    if (typeof value === "string" && value.length >= 12) {
+      out = out.split(value).join(`[REDACTED:${key}]`);
+    }
+  }
+
+  out = out
+    .replace(/\b(Bearer|Basic|Token)\s+[A-Za-z0-9._\-+/=]{8,}/gi, "$1 [REDACTED]")
+    .replace(/\b(authorization|api[-_]?key|secret|token|password|passwd|cookie)\b(\s*[:=]\s*)\S+/gi, "$1$2[REDACTED]")
+    .replace(/\b[A-Za-z0-9_-]{24,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b/g, "[REDACTED:JWT]")
+    // Bare high-entropy runs: long base64/hex blobs that no legitimate error text needs.
+    .replace(/\b[A-Fa-f0-9]{32,}\b/g, "[REDACTED:HEX]")
+    .replace(/\b[A-Za-z0-9+/]{40,}={0,2}\b/g, "[REDACTED:B64]");
+
+  if (out.length > ADMIN_ALERT_MAX_CHARS) {
+    out = `${out.slice(0, ADMIN_ALERT_MAX_CHARS)}… [truncated ${out.length - ADMIN_ALERT_MAX_CHARS} chars]`;
+  }
+
+  return out;
+}
+
 async function notifyAdmin(env: Env, message: string): Promise<void> {
   const auth = listmonkAuth(env);
+  const safeMessage = redactAdminAlert(env, message);
   await fetch(`${env.LISTMONK_API_URL}/api/tx`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: auth },
@@ -695,7 +755,7 @@ async function notifyAdmin(env: Env, message: string): Promise<void> {
       // Use a pre-created raw admin-alert template in Listmonk
       // Template body should just render {{ .Data.message }}
       template_id: 1, // Update this to the actual admin alert template ID in Listmonk
-      data: { message },
+      data: { message: safeMessage },
     }),
   }).catch(() => {
     // Swallow — admin notify is always best-effort
