@@ -43,6 +43,7 @@ import {
   ORG_DUPLICATE_SCOPE_FILES,
 } from "./lib/product-separation.mjs";
 import { DEPLOYED_AI_AUDIT_SUBJECT_NAMES } from "./lib/deployed-ai-audit-subjects.mjs";
+import { loadWaivers, applyWaivers } from "./lib/separation-waivers.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
@@ -214,22 +215,63 @@ if (warnings.length > 0) {
   }
 }
 
-if (failures.length > 0) {
+// ─────────────────────────────────────────────────────────────────────────
+// Waivers — named, owned, dated, EXPIRING exceptions for known adjudicated debt.
+// A waived failure is reported, never silent. An expired waiver blocks again.
+// Any failure not matched by a live waiver blocks. See product-separation-waivers.json.
+// ─────────────────────────────────────────────────────────────────────────
+
+const waivers = loadWaivers(join(__dirname, "product-separation-waivers.json"));
+const today = new Date().toISOString().slice(0, 10);
+const { blocking, waived, expired, stale } = applyWaivers(failures, waivers, today);
+
+if (waived.length > 0) {
   console.log(`\n${sep}`);
-  console.log(`FAILURES (blocking) — ${failures.length}`);
+  console.log(`WAIVED (known debt, non-blocking) — ${waived.length}`);
   console.log(sep);
-  for (const f of failures) {
+  for (const { failure, waiver } of waived) {
+    console.log(`  [${failure.check}] ${failure.message}`);
+    console.log(`      waiver ${waiver.id} — owner ${waiver.owner}, expires ${waiver.expires} (${waiver.decision ?? "no decision ref"})`);
+  }
+}
+
+if (stale.length > 0) {
+  console.log(`\n${sep}`);
+  console.log(`STALE WAIVERS (matched nothing — remove them) — ${stale.length}`);
+  console.log(sep);
+  for (const w of stale) {
+    console.log(`  ${w.id} (${w.check} / "${w.entityKey}") — the violation it describes no longer exists.`);
+  }
+}
+
+if (expired.length > 0) {
+  console.log(`\n${sep}`);
+  console.log(`EXPIRED WAIVERS (now blocking again) — ${expired.length}`);
+  console.log(sep);
+  for (const { waiver } of expired) {
+    console.log(`  ${waiver.id} expired ${waiver.expires} — owner ${waiver.owner}. Remediate or consciously extend.`);
+    if (waiver.remediation) console.log(`      remediation: ${waiver.remediation}`);
+  }
+}
+
+if (blocking.length > 0) {
+  console.log(`\n${sep}`);
+  console.log(`FAILURES (blocking) — ${blocking.length}`);
+  console.log(sep);
+  for (const f of blocking) {
     console.log(`  [${f.check}] ${f.message}`);
   }
 }
 
 console.log(`\n${sep}`);
-if (failures.length > 0) {
-  console.log(`RESULT: FAIL (${failures.length} blocking failure(s), ${warnings.length} warning(s))`);
+if (blocking.length > 0) {
+  console.log(
+    `RESULT: FAIL (${blocking.length} blocking failure(s), ${waived.length} waived, ${warnings.length} warning(s))`,
+  );
   console.log(sep + "\n");
   process.exit(1);
 } else {
-  console.log(`RESULT: PASS (${warnings.length} warning(s))`);
+  console.log(`RESULT: PASS (${waived.length} waived, ${warnings.length} warning(s))`);
   console.log(sep + "\n");
   process.exit(0);
 }

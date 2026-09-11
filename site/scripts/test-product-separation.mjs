@@ -299,22 +299,46 @@ test("geographic same-name entities (country vs city) are NOT flagged as duplica
 // header). Does not assert a specific finding count, so a legitimate future
 // data fix does not break this test file for an unrelated reason.
 
-test("CLI smoke test: validate-product-separation.mjs runs against live data and exits non-zero", () => {
+test("CLI smoke test: validate-product-separation.mjs passes against live data with known debt waived, and surfaces it", () => {
+  // This test previously asserted the CLI exits NON-zero, encoding the broken
+  // state as the expected baseline. That was correct while the guard was wired
+  // to nothing. Since 2026-09-10 the live validator runs in `npm test` and
+  // `npm run build`, with known adjudicated debt carried as named, owned,
+  // EXPIRING waivers (product-separation-waivers.json).
+  //
+  // The meaningful property is no longer "it fails" — it is:
+  //   (a) it passes, so the guard can be armed in CI without breaking builds;
+  //   (b) the outstanding debt is still REPORTED, never silently swallowed.
+  // Property (c) — that an UNWAIVED failure blocks — is pinned in
+  // test-separation-waivers.mjs, which is the test that must never be weakened.
   const scriptPath = join(__dirname, "validate-product-separation.mjs");
   let exitCode = 0;
   let stdout = "";
   try {
     stdout = execFileSync(process.execPath, [scriptPath], { encoding: "utf8" });
   } catch (err) {
-    // execFileSync throws when the child process exits non-zero — that IS
-    // the expected outcome today, so capture status/stdout instead of
-    // treating this as a test infrastructure failure.
     exitCode = err.status ?? 1;
     stdout = err.stdout ?? "";
   }
-  assertTrue(exitCode !== 0, "expected the CLI to exit non-zero against live, uncorrected index data (this is the known-defect baseline)");
-  assertTrue(stdout.includes("RESULT: FAIL"), "expected a RESULT: FAIL line in stdout");
-  assertTrue(stdout.includes("FAILURES (blocking)"), "expected a FAILURES (blocking) section header in stdout");
+  assertTrue(
+    exitCode === 0,
+    `expected the CLI to exit 0 with all known debt waived, got ${exitCode}. ` +
+      `A non-zero exit means a NEW separation violation appeared that no waiver covers — ` +
+      `fix the violation, do not add a waiver to silence it.`,
+  );
+  assertTrue(stdout.includes("RESULT: PASS"), "expected a RESULT: PASS line in stdout");
+  assertTrue(
+    stdout.includes("WAIVED (known debt, non-blocking)"),
+    "expected the outstanding debt to be reported in a WAIVED section — waived must never mean hidden",
+  );
+  assertTrue(
+    !stdout.includes("STALE WAIVERS"),
+    "a STALE waiver means the waiver list describes a violation that no longer exists; remove it",
+  );
+  assertTrue(
+    !stdout.includes("EXPIRED WAIVERS"),
+    "an EXPIRED waiver means known debt has passed its review date; remediate it or consciously extend the expiry",
+  );
 });
 
 // ── Summary ──────────────────────────────────────────────────────────────

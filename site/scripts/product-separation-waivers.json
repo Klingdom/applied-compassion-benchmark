@@ -1,0 +1,93 @@
+{
+  "$schema": "./lib/separation-waivers.schema.md",
+  "$comment": [
+    "Named, owned, dated, EXPIRING exceptions to the product-separation validator.",
+    "",
+    "Why this file exists: before 2026-09-10 the live validator was wired to nothing.",
+    "`npm test` ran test:product-separation (the FIXTURE test) and `npm run build` ran",
+    "validate-indexes.mjs, but neither ever ran validate-product-separation.mjs against",
+    "live index data. The detector's unit tests passed in CI on every push while the data",
+    "it exists to police had never been checked. A ninth separation failure would have",
+    "deployed green.",
+    "",
+    "The fix is NOT to leave the guard off until the backlog is clear. Eight named, owned,",
+    "dated, expiring exceptions is a governable state; 'the validator is off' is not.",
+    "",
+    "RULES:",
+    "  - A waived failure is reported visibly on every run. It is never silent.",
+    "  - An EXPIRED waiver blocks again. Expiry is the forcing function; extending it is a",
+    "    deliberate, reviewable act, not a default.",
+    "  - A waiver matching nothing warns as STALE, so this list cannot rot into fiction.",
+    "  - Any failure NOT matched by a live waiver blocks the build. That is the whole point.",
+    "  - Waivers cover KNOWN, ADJUDICATED debt only. Never add one to silence a new finding."
+  ],
+  "version": 1,
+  "waivers": [
+    {
+      "id": "D13-1x-technologies",
+      "check": "2-duplicate",
+      "entityKey": "1x technologies",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-13 (proposed, not ratified)",
+      "reason": "Three published composites for one canonical entity across two indexes: ai-labs.json '1X Technologies' (50), robotics-labs.json '1X Technologies' (81.4), robotics-labs.json 'Halodi Robotics' (62.5, the acquired entity). A 31.4-point spread on one organisation. Resolving this means deciding which index owns the entity and retiring the others, which is blocked on ratifying D-13.",
+      "remediation": "Ratify D-13, then delist the non-owning rows and add redirects."
+    },
+    {
+      "id": "D13-amazon",
+      "check": "2-duplicate",
+      "entityKey": "amazon",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-13 (proposed, not ratified)",
+      "reason": "ai-labs.json 'Amazon AWS AI' (35.9) and fortune-500.json 'Amazon' (12.8) — 23.1-point spread. Arguably a genuine scope distinction (an AI division vs the parent corporation) rather than a duplicate, which is precisely what D-13 must settle.",
+      "remediation": "Ratify D-13. If divisional scoring is permitted, the validator's canonicalisation needs a division-aware rule rather than a waiver."
+    },
+    {
+      "id": "D23-boston-dynamics-spot-demo",
+      "check": "2-duplicate",
+      "entityKey": "boston dynamics",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-23 / three-product separation",
+      "reason": "SAME-index duplicate: robotics-labs.json 'Boston Dynamics' (65.6) and 'Boston Dynamics (SPOT demo)' (20.3) — 45.3-point spread. This is misfiled rather than duplicated: a DEPLOYED CONFIGURATION sitting in an organisations index, which check 3 should have caught. It surfaces through check 2 only because PARENTHETICAL_SUFFIX_RE strips '(SPOT demo)' — the same regex that is CORRECT for '(Teradyne)'. One regex, two semantics.",
+      "remediation": "Not a D-13 case. Move the SPOT demo row out of the labs index into the Deployed AI Audit product, and split the regex so corporate-parent suffixes and configuration suffixes are handled differently."
+    },
+    {
+      "id": "D13-figure",
+      "check": "2-duplicate",
+      "entityKey": "figure",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-13 (proposed, not ratified)",
+      "reason": "ai-labs.json 'Figure AI' (31.3) and robotics-labs.json 'Figure AI' (48.4) — 17.1-point spread on an identical name. The clearest true duplicate of the six: same entity, same name, two indexes, two scores.",
+      "remediation": "Ratify D-13, keep the robotics-labs row (primary domain), delist the ai-labs row, redirect."
+    },
+    {
+      "id": "D13-meta",
+      "check": "2-duplicate",
+      "entityKey": "meta",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-13 (proposed, not ratified)",
+      "reason": "ai-labs.json 'Meta AI' (26.3) and fortune-500.json 'Meta Platforms' (7.8) — 18.5-point spread. Same division-vs-parent question as Amazon.",
+      "remediation": "Ratify D-13; resolve jointly with D13-amazon and D13-microsoft as one division-scoping decision."
+    },
+    {
+      "id": "D13-microsoft",
+      "check": "2-duplicate",
+      "entityKey": "microsoft",
+      "owner": "founder",
+      "created": "2026-09-10",
+      "expires": "2026-12-09",
+      "decision": "D-13 (proposed, not ratified)",
+      "reason": "ai-labs.json 'Microsoft AI' (75.9) and fortune-500.json 'Microsoft' (65.3) — 10.6-point spread, the narrowest of the six. Division-vs-parent again.",
+      "remediation": "Ratify D-13; resolve jointly with D13-amazon and D13-meta."
+    }
+  ]
+}
