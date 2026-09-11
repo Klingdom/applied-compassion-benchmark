@@ -44,6 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/assess-your-organization",
   ];
 
+  // AI Model Compassion Benchmark — pre-registration pages. Per DECISIONS.md
+  // D-29, exactly these two routes ship before any model is evaluated; no
+  // per-model or leaderboard route exists yet to derive here.
+  const aiModelPages = ["/ai-models", "/ai-models/methodology"];
+
   const infoPages = [
     "/methodology",
     "/research",
@@ -85,6 +90,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    ...aiModelPages.map((path) => ({
+      url: `${BASE}${path}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
     })),
     ...infoPages.map((path) => ({
       url: `${BASE}${path}`,
