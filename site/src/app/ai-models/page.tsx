@@ -11,6 +11,7 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import SubjectLine from "@/components/model-benchmark/SubjectLine";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
+import { RELEASE_WATCH_FACTS as R } from "@/lib/release-watch-facts";
 
 // No Dataset or ItemList JSON-LD is emitted while F.hasResults is false.
 // An empty Dataset advertising 0 entities is a machine-readable non-thing.
@@ -252,6 +253,71 @@ export default function AiModelsPage() {
               <Button href="/methodology">The 8-dimension framework</Button>
             </div>
           </Callout>
+        </Container>
+      </section>
+
+      {/* Release watch — a separate, honest layer from the Model Index result
+          itself. Tracking a release is NOT evaluating it: no entry here may
+          imply a pending score, and there is no SLA (DECISIONS.md D-30;
+          docs/PRD_RELEASE_WATCH_AND_BYO_SCORING.md §3). Every count below is
+          read from RELEASE_WATCH_FACTS, which derives it from
+          releases-v1.json at build time — never hardcoded here. */}
+      <section className="py-[30px]" id="release-watch">
+        <Container>
+          <SectionHead
+            title="Release watch"
+            description="A separate, honest layer on top of the Model Index: has Compassion Benchmark even looked at a given model release yet? Tracking a release is not evaluating it — no entry below implies a pending score."
+          />
+
+          {R.scanState === "never-scanned" ? (
+            <Callout className="mb-5">
+              <p className="text-muted">
+                <strong className="text-text">No release scan has ever run.</strong> That is a different fact from
+                &ldquo;nothing has shipped&rdquo; &mdash; it means Compassion Benchmark has not yet looked, not that
+                the AI industry has been quiet. {R.coverageClaimNote}
+              </p>
+            </Callout>
+          ) : (
+            <Callout className="mb-5">
+              <p className="text-muted">
+                <strong className="text-text">
+                  {R.scanState === "current"
+                    ? "Scan coverage is current."
+                    : R.scanState === "stale"
+                      ? "Scan coverage is stale."
+                      : "Scan coverage is degraded."}
+                </strong>{" "}
+                Last completed scan: {R.lastScanCompletedAt ?? "unknown"}. Coverage through:{" "}
+                {R.coverageThrough ?? "never"}.
+              </p>
+            </Callout>
+          )}
+
+          <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] mb-4">
+            <Stat value={String(R.completedScanCount)} label="Scans completed" />
+            <Stat value={String(R.confirmedReleaseCount)} label="Confirmed releases tracked" />
+            <Stat value={String(R.evaluatedReleaseCount)} label="Tracked releases evaluated" />
+            <Stat value={R.coverageThrough ?? "Never"} label="Coverage through" />
+          </div>
+
+          <Panel>
+            <h3 className="text-[1.05rem] mb-2">Tracking a release is not evaluating it</h3>
+            <p className="text-muted text-[0.93rem] leading-relaxed mb-3">
+              An entry in this tracker records that a model shipped, with a dated, independently checkable primary
+              source &mdash; never that it has been tested against the task bank. A tracked release carries no
+              score, no band, and no queue position with a promised date. Publishing a result requires a frozen
+              snapshot, two independent human raters and adjudication (see the method); none of that is automatic,
+              and there is no service-level commitment for when, or whether, a tracked release will be evaluated.
+            </p>
+            <p className="text-muted text-[0.93rem] leading-relaxed">
+              What not to infer from this section: that no models have shipped (many have &mdash; this tracker is
+              evidence about our monitoring, not about the industry); that Compassion Benchmark monitors releases
+              continuously today (it does not &mdash; {R.completedScanCount} scan
+              {R.completedScanCount === 1 ? " has" : "s have"} ever completed); that a developer or model absent
+              from this list has been assessed and cleared; or that the counts above form a ratio of anything
+              &mdash; there is no denominator here.
+            </p>
+          </Panel>
         </Container>
       </section>
 

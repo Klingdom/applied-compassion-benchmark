@@ -128,6 +128,8 @@ export default function AIEvaluationSuitePage() {
               </p>
               <p className="text-[0.8rem] text-muted-subtle mt-3">
                 Self-serve evaluation aid for a single human rater &mdash; not an official Compassion Benchmark score.
+                An optional AI-judge mode lets a second AI model score the response instead of you doing it by hand
+                (still self-serve, still unofficial, still no 0&ndash;100 composite &mdash; see below).
               </p>
             </Panel>
           </div>
@@ -154,6 +156,40 @@ export default function AIEvaluationSuitePage() {
               <p className="pt-2"><strong className="text-text">Score bands:</strong> {[...BANDS].reverse().map((b) => `${b.range} ${b.name}`).join(" | ")}</p>
             </div>
           </Callout>
+        </Container>
+      </section>
+
+      {/* AI-judge mode FAQ — a distinct disclosure from the subject-model
+          contamination note above, per docs/PRD_RELEASE_WATCH_AND_BYO_SCORING.md §6.
+          The judge, not just the subject, may have memorised the public rubric. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="AI-judge mode: what it is, and what it is not"
+            description="A clipboard round-trip, not an integration. No API key, no network call this tool makes, no hosted endpoint — you run the judge yourself, in an assistant you already have."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Card>
+              <h3 className="text-[1rem] font-bold mb-2">Isn&apos;t the judge just another rater?</h3>
+              <p className="text-muted text-sm">
+                No. All 33 items are public with full five-anchor rubrics, so the model you use to judge a response
+                may have been trained on the exact answer key it is applying — a risk distinct from, and in addition
+                to, the subject-model contamination already disclosed above. This tool cannot detect or correct for
+                it; every AI-judged item is stamped with that disclosure, unconditionally.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="text-[1rem] font-bold mb-2">Why is there no 0&ndash;100 composite in AI-judge mode?</h3>
+              <p className="text-muted text-sm">
+                A self-serve run where one AI model judges another&apos;s pasted output is unverifiable in both
+                directions: nothing binds the pasted text to any real model, and nothing binds the judge to being
+                independent of it. That combination can only measure a text, not a model, so this tool withholds the
+                composite entirely for any run that includes an AI-judged item &mdash; the same &ldquo;composite
+                unavailable&rdquo; state the tool already uses for incomplete coverage, applied here by design
+                rather than by accident.
+              </p>
+            </Card>
+          </div>
         </Container>
       </section>
 
