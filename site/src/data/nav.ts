@@ -2,6 +2,7 @@ import { INDEX_REGISTRY } from "./indexRegistry";
 
 export const mainNav = [
   { label: "Indexes", href: "/indexes" },
+  { label: "AI Models", href: "/ai-models" },
   { label: "Updates", href: "/updates" },
   { label: "Methodology", href: "/methodology" },
   { label: "Research", href: "/research" },

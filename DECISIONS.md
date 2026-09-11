@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-29 | 2026-09-10 | Model Index lives at `/ai-models`; pre-result pages ship as pre-registration | active |
 | D-23 | 2026-09-07 | Build a mechanical product-separation guard for CB-MODEL's three-product rule | active |
 | D-22 | 2026-08-24 | `DECISIONS.md` supersedes `.claude/decisions.md` | active |
 | D-21 | 2026-08-23 | Disclosure density must publish before the robotics batches go live | active (blocker) |
@@ -47,6 +48,46 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-29 — 2026-09-10 · Model Index lives at `/ai-models`; pre-result pages ship as pre-registration
+
+**Decision.** The AI Model Compassion Benchmark is published under **`/ai-models`**, with
+`/ai-models/methodology` as its second page. Exactly two pages ship before any model is evaluated.
+
+**Route name.** Three specs proposed three names independently — `/ai-model-benchmark` (PRD),
+`/model-index` (UX), `/ai-models` (SEO/AEO). `/ai-models` is ratified. This product's distribution
+channel is citation by answer engines, so query shape outranks internal naming convention. The
+Model Index is also **not** an entry in `INDEX_REGISTRY`: that registry is keyed to `EntityKind` and
+drives entity search, footer nav, the sitemap entity loop and the Worker badge endpoint. A model
+snapshot entering `EntityKind` would become badge-able alongside a country with no code change and
+no review. A separate registry, same fail-loud pattern, different table.
+
+**Pre-registration framing.** The pages describe the instrument, never a result. The honest genre is
+**pre-registration**: method, item bank and falsification conditions published *before* any score
+exists — a claim about sequence, checkable against git history, not a promotional one. Headline:
+*"The method is published. No model has been scored yet."*
+
+**What must NOT ship before a model is evaluated.** No leaderboard. No per-model page or "not yet
+evaluated" stub (a doorway pattern). No `Dataset` or `ItemList` JSON-LD while `registry-v1.json`
+holds 0 entries — an empty Dataset advertising `0 entities` is a machine-readable non-thing. No
+model composite or band, anywhere, in any form. No "evaluation underway" language, and no 72h/30d
+SLA — those figures trace to no primary source (BLK-004).
+
+**Context.** `registry-v1.json` is empty: zero models have ever been evaluated. The 33-item bank has
+**zero** human-reviewed items (28 `unvalidated`, 5 `draft-authored-unreviewed`) and scorable coverage
+as thin as 2 items for SYS and INT. All 33 items are `pool: "core-public"`, published with full
+five-anchor rubrics; the bank's own note calls them *"permanently burned for any blinded use"*, and
+the harness design states plainly that **no cross-model comparison on the public pool is valid**.
+Promoting a benchmark with those properties as if it held results would be exactly the unevidenced
+institutional claim this benchmark exists to score other people down for.
+
+**Consequence.** Counts on these pages derive from the data files at build time, never hardcoded —
+the defect class that left six stale "50" claims on a 92-entity index and a JSON-LD `description`
+contradicting `entityCount` in the same element. A duty-of-care exclusion also binds: these pages
+describe *how models behave on crisis-adjacent test items*, and never advise which model to use in a
+crisis.
 
 ---
 
