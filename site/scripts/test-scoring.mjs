@@ -90,6 +90,94 @@ function getBandColor(band) {
   return map[band] ?? "#7dd3fc";
 }
 
+// computeCompositeFromDimensions (lenient) — re-implemented for the strict-
+// wrapper tests below, mirroring src/lib/scoring.ts exactly.
+const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
+const SUBDIM_CODES = ALL_SUBDIM_CODES;
+
+function computeCompositeFromDimensions(dimScores) {
+  const dimVals = DIM_CODES.map((c) => dimScores[c] ?? 1);
+  const dimCount = dimVals.length;
+
+  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
+  const baseComposite = ((baseAvg - 1) / 4) * 100;
+
+  const mean = baseAvg;
+  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
+  const stdDev = Math.sqrt(variance);
+
+  let consistencyMult;
+  if (stdDev <= 1.5) consistencyMult = 1.0;
+  else if (stdDev <= 3.0) consistencyMult = 0.75;
+  else if (stdDev <= 5.0) consistencyMult = 0.4;
+  else consistencyMult = 0.1;
+
+  const weakDims = dimVals.filter((v) => v < 4.0).length;
+  const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
+
+  const hasHarm = dimVals.some((v) => v === 0);
+  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
+
+  const raw = Math.min(100, Math.max(0, baseComposite + integrationPremium));
+  const composite = Math.round(raw * 10) / 10;
+
+  return {
+    composite,
+    band: getBand(composite),
+    baseComposite: Math.round(baseComposite * 10) / 10,
+    integrationPremium: Math.round(integrationPremium * 10) / 10,
+    stdDev: Math.round(stdDev * 100) / 100,
+    consistencyMult,
+    weaknessFactor: Math.round(weaknessFactor * 100) / 100,
+    weakDims,
+    hasHarm,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Strict-completeness primitives (Option B) — re-implemented for the same
+// self-contained-harness reason as everything above. Must stay in lockstep
+// with the assertComplete / isComplete / computeCompositeFromDimensionsStrict
+// exports in src/lib/scoring.ts.
+// ---------------------------------------------------------------------------
+
+class IncompleteScoreError extends Error {
+  constructor(kind, missing) {
+    super(`Missing ${missing.length} ${kind} score${missing.length === 1 ? "" : "s"}: ${missing.join(", ")}`);
+    this.name = "IncompleteScoreError";
+    this.kind = kind;
+    this.missing = missing;
+  }
+}
+
+function codesFor(kind) {
+  return kind === "dimension" ? DIM_CODES : SUBDIM_CODES;
+}
+
+function findMissing(scores, kind) {
+  return codesFor(kind).filter((code) => {
+    const v = scores[code];
+    return v === undefined || v === null || Number.isNaN(v);
+  });
+}
+
+function isComplete(scores, kind = "dimension") {
+  const missing = findMissing(scores, kind);
+  return { complete: missing.length === 0, missing, kind };
+}
+
+function assertComplete(scores, kind = "dimension") {
+  const missing = findMissing(scores, kind);
+  if (missing.length > 0) {
+    throw new IncompleteScoreError(kind, missing);
+  }
+}
+
+function computeCompositeFromDimensionsStrict(dimScores) {
+  assertComplete(dimScores, "dimension");
+  return computeCompositeFromDimensions(dimScores);
+}
+
 // ---------------------------------------------------------------------------
 // Test harness
 // ---------------------------------------------------------------------------
@@ -321,6 +409,224 @@ console.log("\ncalcScores — high variance forces deeper consistency penalty\n"
   assertApprox("all-4: final ≈ 85", result.final, 85, 0.1);
   assertApprox("all-4: integrationPremium = 10", result.integrationPremium, 10, 0.01);
   assert("all-4: band = Exemplary", getBand(result.final), "Exemplary");
+}
+
+// ---------------------------------------------------------------------------
+// Regression guard — lenient functions still default missing input to 1.
+//
+// This is intentional, disclosed behaviour (SelfAssessment.tsx confirm
+// dialog; bootstrapCompositeUncertainty in evaluation-statistics.mjs). A
+// future agent must not "fix" calcScores or computeCompositeFromDimensions
+// to throw on missing input without failing this test — use the strict
+// wrappers below instead.
+// ---------------------------------------------------------------------------
+
+console.log("\nRegression guard — lenient functions still default missing input to 1\n");
+
+{
+  // computeCompositeFromDimensions: omit INT entirely → treated as 1.
+  const dimsMissingInt = { AWR: 5, EMP: 5, ACT: 5, EQU: 5, BND: 5, ACC: 5, SYS: 5 };
+  const withMissing = computeCompositeFromDimensions(dimsMissingInt);
+  const withExplicitOne = computeCompositeFromDimensions({ ...dimsMissingInt, INT: 1 });
+  assert(
+    "lenient computeCompositeFromDimensions: missing INT === explicit INT=1 (composite)",
+    withMissing.composite,
+    withExplicitOne.composite,
+  );
+  assert(
+    "lenient computeCompositeFromDimensions: missing INT === explicit INT=1 (band)",
+    withMissing.band,
+    withExplicitOne.band,
+  );
+}
+
+{
+  // calcScores: omit all I* subdims (INT dimension) entirely → treated as 1s.
+  const scoresMissingInt = uniformScores(5);
+  for (const code of ["I1", "I2", "I3", "I4", "I5"]) delete scoresMissingInt[code];
+  const scoresExplicitOne = uniformScores(5);
+  for (const code of ["I1", "I2", "I3", "I4", "I5"]) scoresExplicitOne[code] = 1;
+
+  const withMissing = calcScores(scoresMissingInt);
+  const withExplicitOne = calcScores(scoresExplicitOne);
+  assert(
+    "lenient calcScores: missing I1-I5 === explicit I1-I5=1 (final)",
+    withMissing.final,
+    withExplicitOne.final,
+  );
+  assertApprox(
+    "lenient calcScores: missing INT dim scores to 1.0 (defaulted)",
+    withMissing.dimScores.INT,
+    1.0,
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Strict-completeness primitives (Option B)
+// ---------------------------------------------------------------------------
+
+console.log("\nisComplete — never throws, correct for complete and incomplete input\n");
+
+{
+  const completeDims = { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 };
+  const check = isComplete(completeDims, "dimension");
+  assert("isComplete: complete dims → complete=true", check.complete, true);
+  assert("isComplete: complete dims → missing=[]", check.missing.length, 0);
+
+  const incompleteDims = { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3 }; // no INT
+  const check2 = isComplete(incompleteDims, "dimension");
+  assert("isComplete: missing INT → complete=false", check2.complete, false);
+  assert("isComplete: missing INT → missing=['INT']", JSON.stringify(check2.missing), JSON.stringify(["INT"]));
+
+  const completeSubdims = Object.fromEntries(ALL_SUBDIM_CODES.map((c) => [c, 3]));
+  const check3 = isComplete(completeSubdims, "subdimension");
+  assert("isComplete: complete subdims → complete=true", check3.complete, true);
+
+  const incompleteSubdims = Object.fromEntries(ALL_SUBDIM_CODES.map((c) => [c, 3]));
+  delete incompleteSubdims["A1"];
+  delete incompleteSubdims["B3"];
+  const check4 = isComplete(incompleteSubdims, "subdimension");
+  assert("isComplete: missing A1,B3 → complete=false", check4.complete, false);
+  assert(
+    "isComplete: missing A1,B3 → missing names both codes",
+    check4.missing.includes("A1") && check4.missing.includes("B3") && check4.missing.length === 2,
+    true,
+  );
+
+  // isComplete must never throw, even for badly incomplete input.
+  let threw = false;
+  try {
+    isComplete({}, "dimension");
+  } catch {
+    threw = true;
+  }
+  assert("isComplete: empty input does not throw", threw, false);
+}
+
+console.log("\nassertComplete — throws IncompleteScoreError naming missing codes\n");
+
+{
+  // Missing dimension.
+  const incompleteDims = { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3 }; // no INT
+  let caught = null;
+  try {
+    assertComplete(incompleteDims, "dimension");
+  } catch (e) {
+    caught = e;
+  }
+  assert("assertComplete: missing dimension throws", caught !== null, true);
+  assert("assertComplete: missing dimension error names INT", caught?.message.includes("INT"), true);
+  assert("assertComplete: missing dimension error is IncompleteScoreError", caught?.name, "IncompleteScoreError");
+  assert(
+    "assertComplete: missing dimension error.missing = ['INT']",
+    JSON.stringify(caught?.missing),
+    JSON.stringify(["INT"]),
+  );
+
+  // Complete dimension input does not throw.
+  let threwOnComplete = false;
+  try {
+    assertComplete({ AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 }, "dimension");
+  } catch {
+    threwOnComplete = true;
+  }
+  assert("assertComplete: complete dimension input does not throw", threwOnComplete, false);
+
+  // Missing subdimensions.
+  const incompleteSubdims = Object.fromEntries(ALL_SUBDIM_CODES.map((c) => [c, 3]));
+  delete incompleteSubdims["A1"];
+  delete incompleteSubdims["E3"];
+  let caughtSub = null;
+  try {
+    assertComplete(incompleteSubdims, "subdimension");
+  } catch (e) {
+    caughtSub = e;
+  }
+  assert("assertComplete: missing subdimensions throws", caughtSub !== null, true);
+  assert("assertComplete: missing subdimensions error names A1", caughtSub?.message.includes("A1"), true);
+  assert("assertComplete: missing subdimensions error names E3", caughtSub?.message.includes("E3"), true);
+  assert(
+    "assertComplete: missing subdimensions error.missing names both codes",
+    caughtSub?.missing.includes("A1") && caughtSub?.missing.includes("E3") && caughtSub?.missing.length === 2,
+    true,
+  );
+
+  // Complete subdimension input does not throw.
+  const completeSubdims = Object.fromEntries(ALL_SUBDIM_CODES.map((c) => [c, 3]));
+  let threwOnCompleteSub = false;
+  try {
+    assertComplete(completeSubdims, "subdimension");
+  } catch {
+    threwOnCompleteSub = true;
+  }
+  assert("assertComplete: complete subdimension input does not throw", threwOnCompleteSub, false);
+}
+
+console.log("\ncomputeCompositeFromDimensionsStrict — complete input matches lenient exactly\n");
+
+{
+  // For every golden dim input already exercised above, strict must be
+  // byte-identical to lenient when input is complete.
+  const goldenComplete = [
+    { AWR: 1, EMP: 1, ACT: 1, EQU: 1, BND: 1, ACC: 1, SYS: 1, INT: 1 },
+    { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 },
+    { AWR: 4, EMP: 4, ACT: 4, EQU: 4, BND: 4, ACC: 4, SYS: 4, INT: 4 },
+    { AWR: 5, EMP: 5, ACT: 5, EQU: 5, BND: 5, ACC: 5, SYS: 5, INT: 5 },
+    { AWR: 0, EMP: 5, ACT: 5, EQU: 5, BND: 5, ACC: 5, SYS: 5, INT: 5 },
+    { AWR: 3.5, EMP: 3.25, ACT: 3.25, EQU: 4.0, BND: 2.75, ACC: 3.75, SYS: 4.0, INT: 3.5 }, // Glasgow
+    { AWR: 4.5, EMP: 4.5, ACT: 4.3, EQU: 4.0, BND: 4.5, ACC: 4.5, SYS: 4.5, INT: 4.3 }, // Finland
+    { AWR: 1.8, EMP: 1.8, ACT: 1.6, EQU: 1.6, BND: 1.5, ACC: 1.9, SYS: 1.8, INT: 1.9 }, // Venezuela
+  ];
+
+  for (const [i, dims] of goldenComplete.entries()) {
+    const lenient = computeCompositeFromDimensions(dims);
+    const strict = computeCompositeFromDimensionsStrict(dims);
+    assert(
+      `strict[${i}]: byte-identical to lenient (JSON deep-equal)`,
+      JSON.stringify(strict),
+      JSON.stringify(lenient),
+    );
+  }
+}
+
+console.log("\ncomputeCompositeFromDimensionsStrict — missing dimension throws, names the code(s)\n");
+
+{
+  // Single missing dimension.
+  const missingOne = { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3 }; // no INT
+  let caught = null;
+  try {
+    computeCompositeFromDimensionsStrict(missingOne);
+  } catch (e) {
+    caught = e;
+  }
+  assert("strict: single missing dim throws", caught !== null, true);
+  assert("strict: single missing dim names INT", caught?.missing.includes("INT"), true);
+  assert("strict: single missing dim error is IncompleteScoreError", caught?.name, "IncompleteScoreError");
+
+  // Multiple missing dimensions.
+  const missingTwo = { AWR: 3, EMP: 3, ACT: 3, EQU: 3 }; // no BND, ACC, SYS, INT
+  let caught2 = null;
+  try {
+    computeCompositeFromDimensionsStrict(missingTwo);
+  } catch (e) {
+    caught2 = e;
+  }
+  assert("strict: multiple missing dims throws", caught2 !== null, true);
+  for (const code of ["BND", "ACC", "SYS", "INT"]) {
+    assert(`strict: multiple missing dims names ${code}`, caught2?.missing.includes(code), true);
+  }
+  assert("strict: multiple missing dims count = 4", caught2?.missing.length, 4);
+
+  // Empty input — throws naming all 8.
+  let caught3 = null;
+  try {
+    computeCompositeFromDimensionsStrict({});
+  } catch (e) {
+    caught3 = e;
+  }
+  assert("strict: empty input throws", caught3 !== null, true);
+  assert("strict: empty input names all 8 dims", caught3?.missing.length, 8);
 }
 
 // ---------------------------------------------------------------------------

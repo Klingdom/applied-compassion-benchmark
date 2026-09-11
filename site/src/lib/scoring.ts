@@ -68,8 +68,122 @@ function compositeCore(dimVals: number[]): CoreResult {
   };
 }
 
+// ─── Canonical code lists (shared by lenient + strict entry points) ──────────
+
+/** The 8 dimension codes, in canonical order. Same list used by calcScores'
+ * subdim→dim averaging and by computeCompositeFromDimensions. */
+export const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
+
+/** All 40 subdimension codes, in canonical order (5 per dimension × 8 dimensions). */
+export const SUBDIM_CODES = DIMENSIONS.flatMap((d) => d.subdims.map((s) => s.code));
+
+// ─── Strict-completeness primitives ───────────────────────────────────────────
+//
+// Background: both calcScores and computeCompositeFromDimensions are
+// deliberately lenient — a missing subdimension/dimension silently defaults
+// to 1 (Critical) via `?? 1`. That default is disclosed and relied upon by
+// two live callers (the self-assessment "finish anyway" flow, and the
+// bootstrap-uncertainty estimator), so the lenient functions themselves must
+// not change.
+//
+// These primitives add an explicit strict path for any *new* caller —
+// especially anything that would publish a composite score for a named
+// third party — where a silent 1-default would misrepresent an unmeasured
+// dimension as "found to be in active harm."
+//
+// Rule of thumb: use the *_STRICT / assertComplete path before persisting or
+// publishing a score attributed to a specific entity. Use the lenient path
+// only where the 1-default is disclosed to the person seeing the result
+// (self-assessment) or explicitly flagged to the consumer as insufficient
+// coverage (bootstrap uncertainty). Never use the lenient path to produce a
+// published third-party score.
+
+/** Which canonical code list a completeness check is validating against. */
+export type ScoreKind = "dimension" | "subdimension";
+
+/** Structured result of a non-throwing completeness check. */
+export interface CompletenessCheck {
+  complete: boolean;
+  /** Missing codes, in canonical order. Empty when complete. */
+  missing: string[];
+  kind: ScoreKind;
+}
+
+/**
+ * Typed error thrown by assertComplete / computeCompositeFromDimensionsStrict.
+ * Names every missing code so the caller can report exactly what is
+ * unmeasured, rather than guessing from a downstream NaN or an incorrect 1.
+ */
+export class IncompleteScoreError extends Error {
+  readonly kind: ScoreKind;
+  readonly missing: string[];
+
+  constructor(kind: ScoreKind, missing: string[]) {
+    super(
+      `Missing ${missing.length} ${kind} score${missing.length === 1 ? "" : "s"}: ${missing.join(", ")}`,
+    );
+    this.name = "IncompleteScoreError";
+    this.kind = kind;
+    this.missing = missing;
+  }
+}
+
+function codesFor(kind: ScoreKind): string[] {
+  return kind === "dimension" ? DIM_CODES : SUBDIM_CODES;
+}
+
+function findMissing(scores: Record<string, number>, kind: ScoreKind): string[] {
+  return codesFor(kind).filter((code) => {
+    const v = scores[code];
+    return v === undefined || v === null || Number.isNaN(v);
+  });
+}
+
+/**
+ * isComplete — non-throwing completeness check.
+ *
+ * Use this when you want to render an explicit "Not measured" / "Insufficient
+ * coverage" UI state instead of using exceptions for control flow. Checks
+ * `scores` against the 8 dimension codes by default, or the 40 subdimension
+ * codes when `kind: "subdimension"` is passed.
+ *
+ * Never defaults a missing value — it only reports what's missing.
+ */
+export function isComplete(
+  scores: Record<string, number>,
+  kind: ScoreKind = "dimension",
+): CompletenessCheck {
+  const missing = findMissing(scores, kind);
+  return { complete: missing.length === 0, missing, kind };
+}
+
+/**
+ * assertComplete — throws IncompleteScoreError naming every missing code if
+ * `scores` does not cover every dimension (default) or subdimension code.
+ *
+ * Use this to guard any strict entry point (e.g.
+ * computeCompositeFromDimensionsStrict) before the lenient `?? 1` default
+ * would otherwise silently kick in.
+ */
+export function assertComplete(
+  scores: Record<string, number>,
+  kind: ScoreKind = "dimension",
+): void {
+  const missing = findMissing(scores, kind);
+  if (missing.length > 0) {
+    throw new IncompleteScoreError(kind, missing);
+  }
+}
+
 // ─── Public entry point 1: subdimension scores → final composite ─────────────
 
+/**
+ * calcScores — LENIENT. Missing subdimension codes default to 1 (Critical)
+ * via `?? 1`. This is deliberate and disclosed: SelfAssessment.tsx warns
+ * "Missing scores will default to 1 (Absent). Continue?" before calling this.
+ * Do not use this to produce a published score for a named third party
+ * without first checking completeness (see isComplete / assertComplete).
+ */
 export function calcScores(scores: Record<string, number>) {
   // Step 1: average subdim scores up to dimension scores.
   const dimScores: Record<string, number> = {};
@@ -127,7 +241,6 @@ export interface CompositeBreakdown {
 export function computeCompositeFromDimensions(
   dimScores: Record<string, number>,
 ): CompositeBreakdown {
-  const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
   const dimVals = DIM_CODES.map((c) => dimScores[c] ?? 1);
 
   const core = compositeCore(dimVals);
@@ -143,6 +256,27 @@ export function computeCompositeFromDimensions(
     weakDims: core.weakDims,
     hasHarm: core.hasHarm,
   };
+}
+
+// ─── Strict entry point: dimension scores → composite + band ────────────────
+
+/**
+ * computeCompositeFromDimensionsStrict — STRICT variant of
+ * computeCompositeFromDimensions. Asserts that all 8 dimension codes are
+ * present (throwing IncompleteScoreError naming any that are missing), then
+ * delegates to the lenient function. For already-complete input the result
+ * is byte-identical to computeCompositeFromDimensions.
+ *
+ * Use this — not the lenient function — for any path that persists or
+ * publishes a composite score attributed to a specific, named entity. The
+ * lenient function's `?? 1` default would otherwise silently misrepresent an
+ * unmeasured dimension as "found to be in active harm" (band: Critical).
+ */
+export function computeCompositeFromDimensionsStrict(
+  dimScores: Record<string, number>,
+): CompositeBreakdown {
+  assertComplete(dimScores, "dimension");
+  return computeCompositeFromDimensions(dimScores);
 }
 
 export function getBand(score: number) {
