@@ -28,3 +28,15 @@ research/scripts/_tmp_*
 # The manifests and sidecars are the durable artefacts; these are throwaway.
 research/scripts/batch[0-9]*-*
 research/scripts/.gen-results-*.json
+
+# ── Secrets ────────────────────────────────────────────────────────────────
+# Only site/.gitignore covered .env, so worker/.env — holding live Cloudflare
+# KV credentials, UNSUBSCRIBE_HMAC_SECRET and INTERNAL_API_TOKEN — was
+# committable, as was any new top-level package (mcp-server/, harness/).
+# Identified as F-01 (HIGH) in docs/SECURITY_BYO_SCORING.md.
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
