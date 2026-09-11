@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "storeVersion": "v1",
+    "releaseCount": 0,
+    "createdDate": "2026-09-10",
+    "status": "empty",
+
+    "lastScanId": null,
+    "lastScanCompletedAt": null,
+    "coverageThrough": null,
+    "scanState": "never-scanned",
+    "staleAfterDays": 14,
+
+    "coverageClaim": "none",
+    "coverageClaimNote": "No release scan has ever run. This store's emptiness is evidence about Compassion Benchmark's monitoring, not about the AI industry.",
+
+    "sourceRegistryRef": "site/src/data/model-benchmark/release-sources-v1.json",
+    "scanRecordRoot": "research/model-index/release-watch/",
+    "validator": "site/scripts/lib/model-releases-validator.mjs",
+    "cliValidator": "site/scripts/validate-model-releases.mjs",
+    "note": "EMPTY — NO RELEASE SCAN HAS EVER RUN. 0 scans, 0 releases, 0 sources reached. This is not a store awaiting population by a step that already ran; it is a store whose first step is blocked (BLK-001 / INCIDENTS.md INC-008). Do NOT add a row from memory, training data, or a provider's marketing page. A row requires an existing scan record in scanRecordRoot and evidence meeting the registry's five-field bar."
+  },
+  "releases": []
+}

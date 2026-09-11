@@ -96,7 +96,16 @@ export const MUTABLE_FIELDS = ["status", "superseded_by"];
 export const APPEND_ONLY_GROWABLE_FIELDS = ["test_dates"];
 
 const REQUIRED_STRING_FIELDS = ["registry_id", "developer", "family", "exact_snapshot", "endpoint", "access_tier", "region", "first_seen"];
-const REQUIRED_EVIDENCE_STRING_FIELDS = ["source_url", "publisher", "published_at", "retrieved_at", "archive_or_hash"];
+
+// Exported so other stores that need the SAME evidence bar import this
+// constant rather than re-declaring it. `docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md`
+// C2: "A release carrying only a dated source_url cannot be promoted into a
+// registry entry without gathering fresh evidence... replace source_url with
+// evidence[] using the identical five-field schema, validated by importing
+// REQUIRED_EVIDENCE_STRING_FIELDS from the registry validator rather than
+// re-declaring it. One definition, two stores." Consumed by
+// scripts/lib/model-releases-validator.mjs.
+export const REQUIRED_EVIDENCE_STRING_FIELDS = ["source_url", "publisher", "published_at", "retrieved_at", "archive_or_hash"];
 
 // ── registry_id derivation ───────────────────────────────────────────────
 //
@@ -106,7 +115,11 @@ const REQUIRED_EVIDENCE_STRING_FIELDS = ["source_url", "publisher", "published_a
 // that must be rejected (a reused snapshot identifier cannot silently
 // become a second, different, row).
 
-function slugify(value) {
+// Exported so `release_id` (scripts/lib/model-releases-validator.mjs) uses
+// the SAME normalisation as `registry_id` rather than a second slug function
+// that could drift. `ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.2: "slugify is
+// imported, not re-implemented — same function, same normalisation."
+export function slugify(value) {
   return String(value ?? "")
     .trim()
     .toLowerCase()
