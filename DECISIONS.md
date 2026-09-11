@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-30 | 2026-09-11 | Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite | active |
 | D-29 | 2026-09-10 | Model Index lives at `/ai-models`; pre-result pages ship as pre-registration | active |
 | D-23 | 2026-09-07 | Build a mechanical product-separation guard for CB-MODEL's three-product rule | active |
 | D-22 | 2026-08-24 | `DECISIONS.md` supersedes `.claude/decisions.md` | active |
@@ -48,6 +49,56 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-30 — 2026-09-11 · Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite
+
+**Release watch is a section on `/ai-models`, not a third route.** D-29 caps the pre-result surface at
+two pages. `/ai-models/releases` would have been a third, and with zero tracked releases it would be
+an empty doorway page — the pattern both D-29 and the SEO spec already reject for per-model stubs.
+The data layer and validator ship now; the route is earned once there is content to justify it, at
+which point D-29 gets a real amendment rather than a pre-emptive one.
+
+**The tracker ships empty, and says which kind of empty.** `.benchmark-ops/RELEASE_WATCH.md` records
+**0 scans ever** — so the honest statement is *"we have not looked"*, not *"nothing shipped"*.
+`releases-v1.json` `meta` therefore carries `scanState` and `coverageThrough` as first-class fields:
+an aborted scan may still yield confirmed releases but must not advance coverage. Detection depends
+on WebSearch, which is hard-capped (INC-008/BLK-001), so **staleness is a warning, never a build
+failure** — a founder-owned blocker must not block every unrelated deploy, which is how guards get
+disabled permanently.
+
+**BYO scoring is a clipboard round-trip. There is no API key.** The user copies judge instructions
+into an assistant they already have and pastes a structured result back. Rejected: Worker-hosted
+(either party's key), and a browser extension. `MODEL_EVALUATION_HARNESS_DESIGN.md` §7.2 already
+forbids a hosted path — *"no code path by which user-submitted text enters a run… no hosted
+endpoint, no Worker route, no public runner"* — and the Worker is declared commercial-plane
+infrastructure with no research write path. The round-trip keeps import, labelling and export inside
+our code, which is what makes the integrity controls enforceable rather than advisory, while
+removing the credential surface entirely rather than securing it.
+
+**A judge estimate emits no 0–100 composite.** The chain of custody has two breaks that no
+attestation can repair: the subject is unverified (nothing binds pasted text to any model) and the
+judge is unverified (the user supplies it). **A BYO run cannot measure a model; it can only measure a
+text.** A composite is the most citable and most misusable artifact we could hand someone, and
+adding an AI judge makes the output *look* more rigorous while adding a second break. Withholding is
+existing, tested behaviour — `evaluateComposite` already returns `composite: null` with a "Composite
+unavailable" panel when a dimension is unscored. This does not weaken the one-formula invariant
+(CONFLICT-04): "never branch the scoring formula" is a code invariant; "display a composite" is a
+disclosure decision. Both hold.
+
+**Contamination is disclosed for the judge, not just the subject.** All 33 items are public with full
+rubrics, so the *judge* may have been trained on the answer key it is applying — a distinct risk from
+the subject-model contamination already disclosed on `/ai-models`, and undetectable from the output.
+It gets its own disclosure and its own export field. We never compute a contamination-adjusted
+rating. Note also that most users hold one API key, so the judge will often *be* the subject, which
+transmits the answer key to the system under test.
+
+**Structural separation, not disclaimers.** No judge artifact is read by any code under `site/`; the
+tool never imports `scoring.ts`; the estimate schema has no field able to hold a 0–100 number;
+`ratingMethod` is set by the importer and never read from the payload, so a relabelled file cannot
+launder itself; and disclosure is encoded in JSON *key names*, not only in `meta`, because headers
+get cropped.
 
 ---
 
