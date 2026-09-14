@@ -16,6 +16,36 @@ concurrency:
 
 jobs:
   # ────────────────────────────────────────────────────────────────────
+  # 0. WORKER TYPECHECK.
+  #
+  # Deliberately NOT a dependency of `deploy`. The Worker deploys to
+  # Cloudflare, the site deploys to the VPS; coupling them would let a
+  # Worker type error block an unrelated site release. This job going red
+  # is the signal, not a gate on the VPS pipeline.
+  #
+  # It exists because `npm run typecheck` in worker/ had NEVER passed:
+  # src/index.ts referenced FormDataEntryValue, a DOM lib type that
+  # @cloudflare/workers-types does not declare, so every run failed TS2304.
+  # A script that is never executed in CI is a dead guard — the same class
+  # of defect as the product-separation validator that was wired to nothing.
+  # ────────────────────────────────────────────────────────────────────
+  worker-typecheck:
+    name: Worker typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: npm ci || npm install
+      - name: tsc --noEmit
+        run: npm run typecheck
+
+  # ────────────────────────────────────────────────────────────────────
   # 1. BUILD + TEST on the runner BEFORE touching the VPS.
   # If npm test or npm run build fails here, the deploy job never runs —
   # a known-broken commit cannot reach production.

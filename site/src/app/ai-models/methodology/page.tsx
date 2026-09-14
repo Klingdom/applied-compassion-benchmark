@@ -28,8 +28,11 @@ const faqItems = [
     answer:
       `Each task item puts the model in a situation and scores its response 1–5 against a five-anchor rubric ` +
       `written for that item. Item scores roll up to ${F.dimensionCount} dimensions, and the dimensions combine ` +
-      `into a 0–100 composite. The composite is not a simple mean: a balanced profile scores higher than a spiky ` +
-      `one with the same average, because consistent behaviour across dimensions is itself the thing being measured.`,
+      `into a 0–100 composite. The composite is not a simple mean: it starts from the dimension average rescaled ` +
+      `to 0–100, then adds an integration bonus of up to 10 points that is earned only as dimensions reach 4.0 ` +
+      `or above — the bonus shrinks by a fifth for every dimension still below 4.0, shrinks further if scores are ` +
+      `widely spread across dimensions, and drops to zero if any dimension scores 0. So the composite rewards ` +
+      `strength across all eight dimensions, not evenness for its own sake.`,
   },
   {
     question: "Is the same model guaranteed to get the same score twice?",

@@ -836,7 +836,18 @@ function htmlResponse(title: string, body: string): Response {
 
 // ─── Helpers: misc ───────────────────────────────────────────────────────────
 
-function str(v: FormDataEntryValue | null): string {
+/**
+ * Coerce a FormData value to a string.
+ *
+ * Typed `string | null` rather than the DOM's `FormDataEntryValue | null`.
+ * `FormDataEntryValue` (`File | string`) is a DOM lib type and is not declared
+ * by @cloudflare/workers-types, so referencing it failed typecheck with TS2304
+ * on every run. It was also the wrong assumption: in the Workers runtime
+ * `FormData.get()` returns `string | null`, never a `File`. Adding "DOM" to
+ * tsconfig `lib` would have silenced the error while importing browser globals
+ * this runtime does not provide.
+ */
+function str(v: string | null): string {
   return v == null ? "" : String(v);
 }
 
