@@ -9704,3 +9704,113 @@ All three share the identical published vector with Regions Financial (filed abo
 **Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, not incremented from the prior digest's figure): 20** -- 16 carried forward from 2026-08-16/17/20/26 + 4 new tonight (Chile, Kenya, Starbucks, Regions Financial).
 
 No score was applied by this cycle. `site/src/data/indexes/*.json` and `research/rotation-state.json` were not modified.
+
+
+---
+
+## 2026-09-14 -- Catch-Up Cycle (13-Day Lookback) | 1 Score Change Proposed | 2 Band Crossings Withheld | 1 Corroboration | 15 Confirmations
+
+### Summary -- 2026-09-14
+
+Catch-up cycle covering the 2026-09-02 to 2026-09-14 window (INC-008 coverage gap; 2026-09-04 through 2026-09-14 had never been genuinely searched before this cycle). Roster held at 1,331 entities. One score-change proposal filed: Hong Kong (-5.9, no band change), a third documented escalation of a National Security Law pattern the 2026-07-31 assessment explicitly flagged for a within-four-months escalation. Two band crossings were measured but WITHHELD: France (-10.0, Established->Functional) and Slovenia (-3.8, Established->Functional), both members of the 14-country 62.5 placeholder cluster first flagged 2026-08-18, both failing the band-crossing evidence test (no tier-4+ source) with a large share of each movement attributable to placeholder de-seeding rather than new conduct. One measurement corroborated an existing pending proposal without duplicating it: Spain measured 51.2 tonight, within 0.6 points of the pending spain-2026-08-26 proposal (50.6); no second proposal filed. 15 confirmations, all within grid noise or below the filing threshold. Zero scores applied. Math hygiene: NONE FOUND, canonical composite reproduces every published value in this cohort within 0.5 points.
+
+Two scanner year errors surfaced and were caught in the same cycle: France's lead protest evidence ('Bloquons tout', ~200,000 protesters) is dated 10 September 2025, not 2026 (France 24, ABC Australia, Al Jazeera, Euronews all confirm the 2025 date); Indonesia's riot evidence (ojol driver killed, ~10 dead) is likewise August 2025, and a second Papua crackdown item surfaced as 2026 in search synthesis was also 2025. Both excluded before scoring.
+
+---
+
+### Score Change Proposed -- 2026-09-14
+
+#### Hong Kong (global-cities) -- 32.8 -> 26.9 (-5.9) -- no band change, Developing sustained
+- **Confidence:** medium
+- **Band change:** No -- 0.9 points above the magnitude filing trigger only
+- **Key evidence:**
+  - Three Tiananmen vigil organisers -- Chow Hang-tung (7y3m), Lee Cheuk-yan (7y), Albert Ho (5y2m) -- sentenced 11 September 2026 for inciting subversion under the National Security Law; HK$1.5M fine on the Hong Kong Alliance. The High Court itself said the case "did not involve violence or the threat of violence."
+  - OHCHR (tier 4, 11 September 2026): "today's imposition of lengthy jail terms on three activists and a heavy fine on the affiliated civil society organisation is another regrettable outcome of the deeply flawed National Security Law." High Commissioner Volker Turk called for the sentences to be quashed.
+  - HKSAR Government (tier 5, 12 September 2026): "The court reached its verdicts and sentences fairly and impartially on the basis of law and evidence, free from any interference or political consideration." Also: "Leadership by the Communist Party of China is the core of the fundamental system established by the Constitution; acts to overthrow or undermine that leadership fall within the scope of offences referenced in the Hong Kong National Security Law."
+  - Completes the escalation the 2026-07-31 assessment (29.4, watch flag) explicitly anticipated within a four-month window -- the third escalation after bookstore raids and the prosecution of a vigil organiser with an intellectual disability.
+  - ATTRIBUTION: prosecution, police characterisation, sentencing and the government's defence are all HKSAR institutions, scored against this global-cities entity.
+- **Recommendation:** downgrade. Confidence is medium, not high: the delta is only 0.9 above the trigger and the full sentencing reasons were not fetched.
+- **File:** [proposal](change-proposals/hong-kong-2026-09-14.json)
+
+---
+
+### Band Crossings Measured But Withheld -- 2026-09-14
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Reason Withheld |
+|---|---|---|---|---|---|---|
+| France | countries | 62.5 | 52.5 | -10.0 | Established -> Functional | YEAR ERROR: lead evidence (Bloquons tout protests, ~200,000 people, 500+ arrests) is dated September 2025, not 2026 (confirmed via France 24, ABC Australia, Al Jazeera, Euronews). Only one in-window item survives -- France's UN mission in Geneva "regrets" a 25 July post criticising the US over human rights (Reuters, tier 2, 13 September) -- worth about -1.25 composite points on its own. ~8.75 of the -10.0 is de-seeding of the 14-country 62.5 placeholder using pre-window evidence, not conduct. No tier-4+ source located. |
+| Slovenia | countries | 62.5 | 58.7 | -3.8 | Established -> Functional | The new government scrapped its predecessor's arms embargo and settlement-import ban on Israel wholesale and welcomed the opening of Israel's first embassy in Slovenia in-window (Al Jazeera, tier 2, 10 September): "all prior measures on Israel were scrapped wholesale on the change of government." Strongest sourcing tops out at tier 1 (EDRi) and tier 2 (Al Jazeera); EDRi's most severe items (parliamentary-committee bank/communications-data access without court order; anticipated intelligence-act surveillance expansion) are proposals or unconfirmed-enactment items, not verified enacted law. About half the movement is placeholder de-seeding. |
+
+Both entities are members of the identical never-individually-assessed 14-country 62.5 placeholder cluster first flagged 2026-08-18 (Andorra, Australia, Barbados, Cabo Verde, Cape Verde, Chile, Czech Republic, Latvia, Lithuania, San Marino, Slovenia, South Korea, United Kingdom, France). Chile (measured 2026-09-01, pending) and Latvia (measured 2026-08-18, approved, not yet applied) were already below this placeholder; France and Slovenia are the third and fourth members individually reviewed. 10 members remain unexamined (South Korea was separately confirmed tonight at its published value, see Confirmations).
+
+---
+
+### Measured, Not Filed (Corroboration) -- 2026-09-14
+
+| Entity | Index | Published | Measured | Delta | Notes |
+|---|---|---|---|---|---|
+| Spain | countries | 60.0 | 51.2 | -8.8 | Corroborates the PENDING spain-2026-08-26 proposal (50.6) within 0.6 points (grid noise). No duplicate filed; existing proposal untouched, still awaiting a decision. In-window: no summary deportation of unaccompanied minors, ~500-child mainland transfer credited upward (Access Design). Published composite (60.0) sits exactly on the Functional/Established boundary line, labeled functional in the live index. |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-14
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|---|---|---|---|---|---|
+| Bolivia | countries | 6.3 | 5.0 | -1.3 | US$35M central-bank intervention is an economic response, not rights conduct. Scan's "76% loss" figure is arithmetically inconsistent with its own cited 6.96-9.73 exchange rates (~28.5% actual). Delta is grid rounding. Calibration flag (vs. Burkina Faso) carried. |
+| Brazil | countries | 35.9 | 33.7 | -2.2 | Supreme Court crisis graft/surveillance claims are unproven allegations, not scored as findings. Scanner's cited Al Jazeera source did NOT contain the police-chief removal/reinstatement claim; confirmed via AFP instead. |
+| Syria | countries | 0.0 | 0.6 | +0.6 | FLOOR CONFIRM, zero downward room. Fuel prices rose up to 40% (diesel)/28% (petrol) overnight 12-13 September in a country where ~90% live below the poverty line; no relief announced. A search-synthesis live-ammunition claim is in NONE of four fetched sources; excluded. Scan corrections: announcement dated 12-13 Sept (not 14); Kobani and UNDP attribution not in source. |
+| Nepal | countries | 48.4 | 43.8 | -4.6 | Death toll 1,386 verified (NDRRMA via Akashvani, 13 Sept), up from 1,114 (2 Sept) and 1,356 (7 Sept) -- three upward revisions in under two weeks. SMS alerts arrived WITH the flood, Nepali-only. Post-2021-disaster forecast-to-action rule still unimplemented. SECOND consecutive cycle below published; watch escalated. |
+| Cabo Verde | countries | 62.5 | 61.2 | -1.3 | Prompt, investigation-led state response to the deadliest road crash in the country's history: national mourning, PM/President on Fogo the next day, 16-member medical unit, Council of Ministers inquiry team (10 Sept). Duplicate "Cape Verde" row NOT assessed this cycle (see Open Calibration Flags). |
+| Jamaica | countries | 37.5 | 36.9 | -0.6 | CURRENCY VERIFIED: J$1.05bn (US$6.6M) for 268 semi-permanent homes, beneficiaries verified by the Ministry of Labour and Social Security -- small against ~24,000 destroyed homes. Two up-moves offset grid rounding. |
+| Liechtenstein | countries | 83.0 | 82.4 | -0.6 | DATE ERROR corrected: beneficial-ownership register breach was 29/30 July, not 8 September as scanned; response (system offline, 4-day disclosure) credited. Exemplary label rests on a 5-country placeholder, flagged for cohort study. |
+| Uruguay | countries | 83.0 | 81.8 | -1.2 | In-window 10-year multi-party National Security Plan supports high anchors; Amnesty's 2025 prison findings move one Equity subdimension down. Exemplary placeholder shared by 5 countries flagged for cohort study. |
+| Portugal | countries | 60.6 | 61.2 | +0.6 | In-window EUR1.5bn EIB social-housing loan (EUR500M first tranche, vulnerable families) moves Proportionality up. Baseline (18 August face-covering ban) verified as already applied; not re-scored. |
+| Mozambique | countries | 23.4 | 21.3 | -2.1 | FIRST INDIVIDUAL ASSESSMENT. ISM Niassa attack (3 Sept) is non-state, not scored; HRW-documented impunity for ~400 post-election protest killings moves three subdimensions. Sits 1.3 points above the Critical floor. Abductions reconciled (police >=11, AP up to 20). |
+| Poland | countries | 42.2 | 42.5 | +0.3 | 1 September registry cliff edge verified (RFE/RL, UNHCR); a six-month grace-period amendment the scan omitted is credited as a correction. Public-opinion figures excluded as non-state. |
+| South Korea | countries | 62.5 | 61.9 | -0.6 | Seoul Metropolitan Council ordinances in-window (11 Sept, 69-37: restored disability public jobs, mobility as a right, low-floor buses) move Access Design up. A 2023 E-9 migrant-worker rule presented as current was rejected. Fourth member of the 14-country 62.5 cluster individually reviewed; confirmed near published value. |
+| Boeing | fortune-500 | 14.1 | 12.5 | -1.6 | The in-window fact is DISCLOSURE, not conduct: US$3.1M FAA fine paid January 2026 surfaced only when the FAA told Reuters on 2 September. July 2026 restoration of certification authority credited but not filable (pre-window, 3M precedent). |
+| Los Angeles | us-cities | 35.9 | 34.4 | -1.5 | Oversight subcommittee request (2-3 Sept) and HUD's June suspension are ALLEGATIONS, not findings. Scanner's RedState source rejected as partisan opinion; Bass's reported refusal to testify unverified from a neutral source. |
+| Indonesia | countries | 35.9 | 33.1 | -2.8 | YEAR ERROR: scanner's riot evidence (ojol driver killed 28 Aug, ~10 dead) is August 2025, not 2026; a second 2025 Papua crackdown surfaced as 2026 in search synthesis. Both excluded. Papua Q2 2026 impunity moves one subdimension. Foreign Policy source unverifiable (403). |
+
+---
+
+### Dropped Candidates Worth Recording -- 2026-09-14
+
+**Two clean year errors caught in the same cycle.** France's lead protest evidence ('Bloquons tout', ~200,000 protesters, 500+ arrests) and Indonesia's riot evidence (ojol driver killed, ~10 dead) were both scanner year errors -- each exactly one year stale (2025 material presented as 2026). Both excluded before scoring. This is the same failure class as the 2026-09-01 Chile finding (a 2023 source presented as 2026), now recurring twice in one cycle across two unrelated entities -- a pipeline-level pattern, not two coincidental one-offs.
+
+**Miami homeless-attack story (misdated).** A T2 batch search surfaced a "Miami homeless attack, two dead" story without a clear year. Dedicated verification confirmed the attack occurred in January 2025, not September 2026. Dropped from all entity flags.
+
+**Lesotho AGOA extension claim (wrong date AND wrong substance).** A batch search surfaced a claim that "AGOA extended to 31 Dec 2028, effective 2 September 2026" for Lesotho. Verification found this both misdated and substantively wrong: the actual reauthorization was signed 3 February 2026 and extends the programme only through 31 December 2026. Dropped entirely.
+
+---
+
+### Open Calibration Flags -- 2026-09-14
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| 14-country 62.5 placeholder cluster (Andorra, Australia, Barbados, Cabo Verde, Cape Verde, Chile, Czech Republic, Latvia, Lithuania, San Marino, Slovenia, South Korea, United Kingdom, France) | France and Slovenia individually reviewed tonight (both withheld); South Korea confirmed near published value; Chile and Latvia already measured below in prior cycles; 9 members remain unexamined | Open since 2026-08-18 |
+| Cabo Verde / Cape Verde duplicate published row (ranks 25/26, identical 62.5 composite) | New tonight -- data-integrity issue, requires founder decision on canonical row, not a scoring question | Open since 2026-09-14 |
+| Scanner year-error defect (France, Indonesia both surfaced on evidence exactly one year stale this cycle; Chile similarly on 2026-09-01) | New tonight -- recommend a scanner-side date-verification fix rather than continued per-entity assessor catches | Open since 2026-09-14 (pattern first noted 2026-09-01) |
+| DR Congo Ebola lead -- scanner incorrectly reported the "democratic-republic-of-c" slug as absent from the countries index this cycle; it is in fact present. The carried Ebola-outbreak lead from 2026-09-01 was NOT re-verified as a result. | New tonight -- carry forward the lead; flag the scanner defect for a fix | Open since 2026-09-01 (re-flagged 2026-09-14) |
+| Unverified regional-conflict signal (Baku/Beirut/Kuwait City/Riyadh batch sweep; an active, months-long conflict with reported strikes affecting several Gulf/Middle Eastern cities, date_verified:false on its only source) | New tonight -- NOT independently re-verified against any country-level record; recommend dedicated Tier-1-equivalent verification of affected Gulf-state and Iran country entities next cycle before any entity-level action | Open since 2026-09-14 |
+| Spain evidence-strength gap (no tier-4+ source on the Ceuta situation; pending proposal rests on HRW tier 3 + one tier 2) | Carried forward, corroborated tonight (51.2 vs. pending 50.6, within 0.6 points) | Open since 2026-08-26 |
+| Countries-index 20.3 seed cluster (8 members remain unexamined: Algeria, Cameroon, Gabon, Guinea, Honduras, Papua New Guinea, Republic of Congo, Uzbekistan) | Carried forward | Open since 2026-08-16 |
+| Fortune-500 60.9 seed cluster (Nationwide, Principal Financial, Raymond James Financial confirmed 2026-09-01 with zero adverse evidence; Regions Financial filed) | Carried forward | Open since 2026-08-16 |
+| 5-country Exemplary placeholder (Liechtenstein, Uruguay and 3 others sharing 83.0) | Reinforced tonight (both Liechtenstein and Uruguay confirmed against it) | Open since prior cycles, reinforced 2026-09-14 |
+| Bionik Laboratories corporate status -- needs Delaware/Ontario registry lookup, then a founder disposition decision | Carried forward | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~82 days |
+| Bolivia critical-band calibration | Carried forward, reinforced tonight | ~66 days |
+
+---
+
+### Operational Notes -- 2026-09-14
+
+- Scan: 1,331 entities scanned (roster unchanged); 276 searches performed against a derived ceiling of 274 (150 T1 individual + 9 verification + 102 T2 batched + 15 T3 sweeps; 2-search disclosed overage from running all sector-coherent T2 batches rather than force-merging to hit exactly 99); 13-day lookback (2026-09-02 to 2026-09-14) covering the twelve-day INC-008 coverage gap.
+- 9 dedicated verification searches: Nepal death-toll update, Boeing FAA-fine disclosure, LAHSA/Bass hearing status, Mozambique Niassa attack date, Ceuta/Spain crisis timeline, Cape Verde bus-crash date, a Miami homeless-attack story (DROPPED, dated January 2025), Bolivia currency-intervention date, and Jamaica housing-contract figure -- all resulted in a confirmed/updated finding or a dropped candidate.
+- Assessor runtime: assessment stage began after the scan gate passed (precise start not recorded) through 2026-09-14T16:18:43Z; 19 entities assessed (all priority); 48 assessor searches (session total 324 of a 2,000 cap, per-entity cap 50, max any single entity 5); 1 change proposal; 15 confirmations; 2 withheld; 1 measured-not-filed; 19 of 19 required subdimension sidecars written.
+- Math hygiene: NONE FOUND. `computeCompositeFromDimensions` reproduces every published composite in this cohort within 0.5 points.
+- Rotation-state drift: composite and band match the published index for all 19 entities (score-bearing integrity invariant holds; independently re-verified against `site/src/data/indexes/countries.json`, `global-cities.json`, `fortune-500.json` and `us-cities.json` for this digest). RANK disagrees for 9 of 19 (France, Slovenia, Bolivia, Cabo Verde, Hong Kong, Mozambique, South Korea, Boeing, Indonesia) -- rank is owned by score-updater per AUTONOMY.md section 4, not written by this stage.
+- Validation: validate-daily-briefings.mjs 79/79 PASS; lint-daily-briefings.mjs 81 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
+
+**Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, not incremented from the prior digest's figure): 21** -- 20 carried forward from 2026-08-16/17/20/26/2026-09-01 + 1 new tonight (Hong Kong).

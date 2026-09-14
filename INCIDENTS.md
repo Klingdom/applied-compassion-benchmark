@@ -269,7 +269,7 @@ minor observability gap (see `OBSERVABILITY.md`).
 | Field | Value |
 |---|---|
 | **Opened** | 2026-09-06 |
-| **Status** | Open — requires a fresh session or a raised cap |
+| **Status** | Coverage gap CLOSED 2026-09-14; underlying cap unchanged. A fresh session ran one catch-up cycle over 2026-09-02 → 09-14 (scan 276 new searches, `validate-scan` PASS; assessor 48; session total 324 of 2,000). The superseded 2026-09-09 artifact (zero new searches) was used for leads only. Keep one nightly cycle per session until the cap is raised. |
 | **Severity** | Medium. No published data affected; research coverage for 2026-09-02 → 09-06 is missing. |
 | **Detection** | The third scan agent reported `2000 of 2000 WebSearch calls` used at session start and refused to write output. |
 
