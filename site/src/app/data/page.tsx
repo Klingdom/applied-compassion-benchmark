@@ -378,8 +378,17 @@ export default function DataPage() {
                 For a specific entity page, use the full URL, e.g.
                 <br />
                 <span className="font-mono text-[0.82rem] text-accent">
-                  compassionbenchmark.com/fortune-500/microsoft
+                  compassionbenchmark.com/company/microsoft
                 </span>
+                <br />
+                The URL segment after the domain is the entity&apos;s type (e.g.{" "}
+                <span className="font-mono text-[0.82rem] text-accent">company</span>,{" "}
+                <span className="font-mono text-[0.82rem] text-accent">country</span>), not the index
+                name — see{" "}
+                <Link href="/cite#canonical-url" className="text-accent hover:underline">
+                  the full URL pattern table
+                </Link>
+                .
               </p>
             </Panel>
 

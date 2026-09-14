@@ -9,6 +9,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import CopyCiteButton from "@/components/charts/CopyCiteButton";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
+import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
 export const metadata: Metadata = {
   title: "How to Cite the Compassion Benchmark",
@@ -25,15 +26,15 @@ const GENERAL_CITE =
 const CITATION_FORMATS = [
   {
     style: "APA",
-    text: 'Compassion Benchmark. ([Year]). [Entity name]. Compassion Benchmark. compassionbenchmark.com/[index]/[slug]',
+    text: 'Compassion Benchmark. ([Year]). [Entity name]. Compassion Benchmark. compassionbenchmark.com/[entity-type]/[slug]',
   },
   {
     style: "MLA",
-    text: '"[Entity name]." Compassion Benchmark, [Year], compassionbenchmark.com/[index]/[slug]. Accessed [Day Month Year].',
+    text: '"[Entity name]." Compassion Benchmark, [Year], compassionbenchmark.com/[entity-type]/[slug]. Accessed [Day Month Year].',
   },
   {
     style: "Chicago",
-    text: 'Compassion Benchmark. "[Entity name]." Accessed [Month Day, Year]. compassionbenchmark.com/[index]/[slug].',
+    text: 'Compassion Benchmark. "[Entity name]." Accessed [Month Day, Year]. compassionbenchmark.com/[entity-type]/[slug].',
   },
   {
     style: "Plain text / journalism",
@@ -157,13 +158,17 @@ export default function CitePage() {
               <p className="text-muted text-[0.9rem] mb-3">
                 Entity URL pattern:{" "}
                 <code className="font-mono text-[0.85rem] text-accent">
-                  compassionbenchmark.com/[index]/[slug]
+                  compassionbenchmark.com/[entity-type]/[slug]
                 </code>
                 , for example{" "}
                 <code className="font-mono text-[0.85rem] text-accent">
-                  compassionbenchmark.com/fortune-500/microsoft
+                  compassionbenchmark.com/company/microsoft
                 </code>
-                .
+                . The <code className="font-mono text-[0.85rem] text-accent">[entity-type]</code> segment
+                is the entity&apos;s kind (e.g. <code className="font-mono text-[0.85rem] text-accent">company</code>,{" "}
+                <code className="font-mono text-[0.85rem] text-accent">country</code>,{" "}
+                <code className="font-mono text-[0.85rem] text-accent">ai-lab</code>), not the name of the
+                index it appears in — see the table below.
               </p>
               <p className="text-muted text-[0.9rem] mb-3">
                 Index URL pattern:{" "}
@@ -176,6 +181,26 @@ export default function CitePage() {
                 </code>
                 .
               </p>
+              <div className="overflow-x-auto border border-line rounded-[12px] mb-3">
+                <table className="w-full text-[0.85rem] border-collapse min-w-[480px]">
+                  <thead>
+                    <tr className="text-left text-muted-subtle">
+                      <th className="py-2 px-3 border-b border-line font-medium">Index</th>
+                      <th className="py-2 px-3 border-b border-line font-medium">Entity URL prefix</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted">
+                    {INDEX_REGISTRY.map((entry) => (
+                      <tr key={entry.kind}>
+                        <td className="py-2 px-3 border-b border-line/60">{entry.indexLabel}</td>
+                        <td className="py-2 px-3 border-b border-line/60 font-mono text-accent">
+                          compassionbenchmark.com/{entry.routePrefix}/[slug]
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <p className="text-muted text-[0.9rem]">
                 Because scores are updated through a nightly evidence-review pipeline, always include an{" "}
                 <strong className="text-text">access date</strong> (Month Year is sufficient) in any

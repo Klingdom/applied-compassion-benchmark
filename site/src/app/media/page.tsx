@@ -27,7 +27,7 @@ const CITE_EXAMPLES = [
   },
   {
     style: "Academic / APA-adjacent",
-    text: 'Compassion Benchmark. ([Year]). [Entity name]. compassionbenchmark.com/[index]/[slug]. Retrieved [Month Day, Year].',
+    text: 'Compassion Benchmark. ([Year]). [Entity name]. compassionbenchmark.com/[entity-type]/[slug]. Retrieved [Month Day, Year].',
   },
   {
     style: "Dataset reference",
@@ -209,8 +209,14 @@ export default function MediaPage() {
             Replace placeholders in brackets with the entity name, URL, and access date.
             For the entity URL pattern, see an example:{" "}
             <code className="font-mono text-[0.85rem] text-accent">
-              compassionbenchmark.com/fortune-500/microsoft
+              compassionbenchmark.com/company/microsoft
             </code>
+            . The URL segment after the domain is the entity&apos;s type (e.g.{" "}
+            <code className="font-mono text-[0.85rem] text-accent">company</code>,{" "}
+            <code className="font-mono text-[0.85rem] text-accent">country</code>), not the index name — see{" "}
+            <Link href="/cite#canonical-url" className="text-accent hover:underline">
+              the full URL pattern table
+            </Link>
             .
           </p>
         </Container>
