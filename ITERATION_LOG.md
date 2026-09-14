@@ -50,7 +50,10 @@ count: hard-coded and 65 stale → derived from data.
 - llms.txt "no model has been scored yet" is a literal — derive from model-index facts before D-29 flips.
 - CompassionBench (compassionbench.com) disambiguation in llms.txt/site — founder decision (names a third party).
 - `/404` returns HTTP 200 (soft 404) — part of PR/FAQ item T (nginx real 404s).
-- Founder: approve commit + deploy of Iterations 10–11.
+- ~~Founder: approve commit + deploy of Iterations 10–11.~~ **Done 2026-09-14** on founder approval:
+  commits beb94ae9 (It. 10), f940a80b (It. 11), 376b0f85 (artifacts); deploy run 34901047499 all four jobs
+  success; live production verified by curl for both iterations. Worker not deployed to Cloudflare
+  (typecheck-only change; host still NXDOMAIN, RISK-014).
 
 ## Iteration 10 — 2026-09-14 (remove a false composite-formula claim — RISK-019 / PR/FAQ G-1)
 

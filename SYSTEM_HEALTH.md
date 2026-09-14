@@ -7,7 +7,10 @@ Updated: 2026-09-14 | After: Iteration 11 (/cite dead URL pattern + llms.txt dri
 > table rendered from `INDEX_REGISTRY`. `llms.txt` entity count now derived from index data (1,325; was
 > hard-coded "1,260+") and lists `/cite` + `/ai-models` (pre-registration, no model scored). Gates: tsc
 > clean · all test suites pass · build exit 0 · 15/15 llms.txt URLs exist in export. **Iterations 10–11
-> uncommitted and undeployed — awaiting founder approval.**
+> committed (beb94ae9, f940a80b, 376b0f85) and deployed 2026-09-14 on founder approval** — run 34901047499:
+> build+test, worker-typecheck, deploy, post-deploy health all success; production verified by curl (old
+> formula claim absent, new FAQ text present; /cite, /media, /data free of `fortune-500/microsoft`;
+> `/company/microsoft` 200; live llms.txt states 1,325 entities).
 
 > 2026-09-14 (Iteration 10): Removed the false "balanced beats spiky at the same average" claim from the
 > `/ai-models/methodology` FAQ (verified false under `scoring.mjs`); copy now describes the formula as it
