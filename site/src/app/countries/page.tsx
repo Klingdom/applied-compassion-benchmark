@@ -17,7 +17,7 @@ import data from "@/data/indexes/countries.json";
 export const metadata: Metadata = {
   title: "Most & Least Compassionate Countries 2026 — Compassion Benchmark",
   description:
-    "See which countries rank most and least compassionate in 2026. The Compassion Benchmark scores 193 countries across 8 dimensions of institutional compassion, from awareness to integrity.",
+    `See which countries rank most and least compassionate in 2026. The Compassion Benchmark scores ${data.rankings.length} countries across 8 dimensions of institutional compassion, from awareness to integrity.`,
 };
 
 const columns: ColumnDef[] = [
@@ -71,7 +71,7 @@ export default function CountriesPage() {
     <>
       <DatasetJsonLd
         name="Compassion Benchmark World Countries Index 2026"
-        description="Comparative rankings of 193 countries across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity."
+        description={`Comparative rankings of ${data.rankings.length} countries across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity.`}
         url="/countries"
         indexSlug="countries"
         entityCount={data.rankings.length}
@@ -100,9 +100,9 @@ export default function CountriesPage() {
       <IndexHero
         eyebrow="World Countries Compassion Benchmark · 2026"
         title="Most & Least Compassionate Countries 2026"
-        description="Comparative benchmark of 207 countries and territories across the full institutional compassion framework. Scores are derived from public evidence across governance, policy, healthcare, social protection, rights, equity, and institutional accountability."
+        description={`Comparative benchmark of ${data.rankings.length} countries and territories across the full institutional compassion framework. Scores are derived from public evidence across governance, policy, healthcare, social protection, rights, equity, and institutional accountability.`}
         stats={[
-          { value: String(data.meta.entityCount || 207), label: "Countries ranked" },
+          { value: String(data.rankings.length), label: "Countries ranked" },
           { value: String(data.meta.meanScore || "—"), label: "Mean score" },
           { value: String(data.meta.medianScore || "—"), label: "Median score" },
           { value: "8", label: "Dimensions" },
@@ -142,7 +142,7 @@ export default function CountriesPage() {
             filterKey="region"
             filterLabel="All regions"
             ctaText="Purchase the Countries Index Report — $195, delivered as PDF"
-            ctaDescription="Complete rankings for 193 countries with methodology, regional analysis, dimension-level breakdowns, and key findings."
+            ctaDescription={`Complete rankings for ${data.rankings.length} countries with methodology, regional analysis, dimension-level breakdowns, and key findings.`}
             ctaLink={GUMROAD.countriesIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"

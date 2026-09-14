@@ -7,6 +7,7 @@ import Panel from "@/components/ui/Panel";
 import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import countriesData from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
   title: "Data Access",
@@ -25,7 +26,7 @@ const INDEXES = [
   {
     slug: "countries",
     label: "World Countries",
-    description: "193 sovereign and territorial entities — global coverage.",
+    description: `${countriesData.rankings.length} sovereign and territorial entities — global coverage.`,
     page: "/countries",
   },
   {

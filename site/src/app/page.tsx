@@ -21,6 +21,7 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import updatesRaw from "@/data/updates/latest.json";
 import { SCORED_ENTITY_COUNT, SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import countriesData from "@/data/indexes/countries.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
@@ -228,7 +229,7 @@ export default function Home() {
                 </thead>
                 <tbody className="text-muted">
                   {[
-                    { label: "World Countries",       coverage: "207 countries and territories",        href: "/countries" },
+                    { label: "World Countries",       coverage: `${countriesData.rankings.length} countries and territories`,        href: "/countries" },
                     { label: "U.S. States",           coverage: "50 states and the District of Columbia", href: "/us-states" },
                     { label: "Fortune 500",           coverage: "447 published company rankings",        href: "/fortune-500" },
                     { label: "AI Labs",               coverage: "50 leading AI labs",                    href: "/ai-labs" },
@@ -740,7 +741,7 @@ export default function Home() {
                 href: "/countries",
                 pills: ["2026", "Governments"],
                 title: "World Countries Index",
-                desc: "Comparative benchmark of 207 countries and territories across the full institutional compassion framework.",
+                desc: `Comparative benchmark of ${countriesData.rankings.length} countries and territories across the full institutional compassion framework.`,
               },
               {
                 href: "/us-states",

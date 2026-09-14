@@ -897,3 +897,91 @@ Out of scope, untouched per instruction: all other indexes; all `research/change
 **Held again (self-veto, still not applied):** abridge, adept-ai, ai21-labs, anybotics, apptronik, clone-robotics, cohere, databricks, ekso-bionics, engineered-arts, fourier-intelligence, groq, harvey-ai, hyatt-hotels, idexx-laboratories, inflection-ai, isomorphic-labs, kawada-robotics, kinova-robotics, labelbox, latvia, manpowergroup, metlife, moog-inc, omron-robotics, pal-robotics, recursion-pharma, richtech-robotics, sakana-ai, sambanova-systems, symbio-robotics, tempus-ai, typeface, ubtech-robotics, unitree-robotics, universal-robots, wandercraft.
 
 **No files written.** No index, proposal, rotation-state, or entity-record file was modified in this session. `research/PENDING_CHANGES.md` already documents this hold from 2026-08-20 and remains accurate; not re-touched. To clear: either the named remedy per proposal (targeted evidence pass / fresh proposal against the current baseline) or an explicit per-entity founder acknowledgment-and-override naming the entity and the self-veto text being overridden (D-16, R3).
+| Hong Kong | global-cities | 32.8 | 26.9 | -5.9 | 2026-09-14 | [proposal](change-proposals/hong-kong-2026-09-14.json) |
+
+## 2026-09-14 — STRUCTURAL DE-DUPLICATION AND NAME CORRECTION (NO SCORE CHANGE)
+
+**Provenance.** Founder-directed structural cleanup, not a score-updater proposal cycle. Authorized explicitly in the live 2026-09-14 session ("fix the cabo verde duplicate", "also fix the sao tome duplicate", "also fix the democratic republic of congo truncated name"). Disposition per AUTONOMY.md §3 step 3 (founder decides; coordinator executes): merge for both duplicates (D-08 — merged structurally, never averaged), rename-with-pinned-slug for DRC (precedent commit `42ee4e43`, xAI/Grok). No composite, band, dimension or subdimension value changed for any entity in this operation.
+
+### Operation 1 — Cabo Verde / Cape Verde duplicate (merge)
+
+Verified independently: "Cabo Verde" (rank 25) and "Cape Verde" (rank 26) carried identical composite (62.5), identical band (established), identical region (Africa) and byte-identical dimension vectors (AWR 3.5, EMP 3.5, ACT 3.5, EQU 3, BND 4, ACC 3.5, SYS 3.5, INT 3.5) — confirmed with a field-by-field diff excluding `name`/`rank` before acting. **Survivor: "Cabo Verde"** (official UN name; holds the only current assessment on file, `research/assessments/cabo-verde-2026-09-14.md`). Cabo Verde's own composite, band and rank were left unchanged pre-cascade (62.5, established, rank 25 stays 25 — no shift, since Cape Verde sat immediately below it).
+
+**Removed:** the "Cape Verde" row from `countries.json`; `site/src/data/entity-records/cape-verde.json`; `site/public/data/scores/cape-verde.json`; the `cape-verde` key from `research/rotation-state.json`; the `cape-verde` entry from `site/src/data/entity-identifiers.json` (identical Wikidata/Wikipedia identifiers to `cabo-verde`'s existing entry, Q1011 / Cape_Verde — nothing lost, no migration needed, both were already correct and identical). A pre-existing 301 redirect `/country/cape-verde` -> `/country/cabo-verde` already lives in `nginx.conf`/`nginx-ssl.conf` and was left untouched. Research history left untouched: `research/change-proposals/cape-verde-2026-05-03.json`, scanner outputs and digests were not modified.
+
+### Operation 2 — Sao Tome and Principe / Sao Tome e Principe duplicate (merge)
+
+Verified independently: "Sao Tome and Principe" (rank 59) and "Sao Tome e Principe" (accented form, rank 60) carried identical composite (48.4), identical band (functional), identical region (Africa) and byte-identical dimension vectors (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3, ACC 3, SYS 3, INT 3). Both names slugify to `sao-tome-and-principe`; only one canonical entity record, rotation-state key and score file existed under that slug, matching every existing assessment (`research/assessments/sao-tome-and-principe-2026-06-04.md`). **Survivor: "Sao Tome and Principe"** (unchanged composite, band and rank pre-cascade).
+
+**Removed:** the accented-name duplicate row from `countries.json`. **Additional finding beyond the base instruction:** a collision-suffixed, diacritic-stripped orphan slug (produced by an earlier build run's ASCII-fold of the accented name, base-slug rendered as characters-plus-hyphens with the diacritics dropped) was discovered live on disk in four places — the matching entity record and score file under that orphan slug, a matching `site/public/data/history/` file, and a matching key in `research/rotation-state.json` (rank 60, composite 48.4 — matching the removed duplicate row exactly). This orphan was invisible to a name-substring sweep and was only surfaced by `test-entity-records.mjs` failing on an unresolvable slug lookup against the countries index. All four were removed as part of this same structural operation — it is the record/score/rotation-state footprint of the identical duplicate row, not a separate entity.
+
+### Operation 3 — Democratic Republic of C -> Democratic Republic of the Congo (rename, pinned slug)
+
+Row name corrected from the 24-character-truncated "Democratic Republic of C" (rank 181, composite 2.3, critical) to "Democratic Republic of the Congo". Per precedent `42ee4e43` (xAI/Grok), the slug was **pinned explicitly** rather than renamed: added `"slug": "democratic-republic-of-c"` to the `countries.json` row so `/country/democratic-republic-of-c`, `/data/scores/democratic-republic-of-c.json`, the badge endpoint, and dated briefing links naming that slug all continue to resolve unchanged. `validate-indexes.mjs` confirmed an explicit row-level `slug` field on a countries row is accepted with no new error or warning (robotics-labs/universities/us-states already carry the same pattern). `name` updated to match in `site/src/data/entity-records/democratic-republic-of-c.json` and in `research/rotation-state.json`'s `democratic-republic-of-c` entry; the slug, filename, and all research artifacts were left untouched. `site/public/data/history/democratic-republic-of-congo.json` (an orphan from an older, different slug) was confirmed present but explicitly NOT touched, per instruction — logged here as a follow-up item.
+
+### Removed / renamed rows
+
+| Row | Index | Old Rank | Composite | Band | Disposition | Survivor |
+|---|---|---|---|---|---|---|
+| Cape Verde | countries | 26 | 62.5 | established | Removed - duplicate, structural merge, no score change | Cabo Verde (rank 25, unchanged) |
+| Sao Tome e Principe (accented duplicate) | countries | 60 | 48.4 | functional | Removed - duplicate, structural merge, no score change | Sao Tome and Principe (rank 59, unchanged) |
+| Democratic Republic of C | countries | 181 | 2.3 | critical | Renamed in place to "Democratic Republic of the Congo"; slug pinned as `democratic-republic-of-c` | Same row, same slug |
+
+### Re-rank and meta recomputation
+
+`countries.json`'s array was already strictly ordered by composite descending with sequential ranks 1-193 before this edit (verified programmatically), so removing the two duplicate rows and re-deriving sequential ranks from the existing order is equivalent to, and was cross-checked against, a full re-sort. Cabo Verde's rank did not move (25 -> 25); Sao Tome and Principe shifted up by exactly 1 (59 -> 58, from the Cape Verde removal above it); Democratic Republic of the Congo shifted up by exactly 2 (181 -> 179, both removed rows sit above it). `entityCount` 193 -> 191.
+
+- **meanScore:** 36.0 -> 35.8
+- **medianScore:** 35.9 -> 35.9 (unchanged)
+- **Band counts** (`meta.bands` and top-level `bands`, both recomputed and kept in sync): exemplary 14 -> 14 (7.3% -> 7.3%, unchanged), established 26 -> 25 (13.5% -> 13.1%, -1 = Cape Verde exit), functional 29 -> 28 (15.0% -> 14.7%, -1 = accented Sao Tome duplicate exit), developing 68 -> 68 (35.2% -> 35.6%, unchanged count, percentage shifted on the smaller 191-entity denominator), critical 56 -> 56 (29.0% -> 29.3%, unchanged count, same denominator effect). Total 193 -> 191.
+
+### Rank-cascade remediation
+
+Every countries entity below old rank 26 shifted up by 1, and every entity below old rank 60 shifted up by a further 1 (cumulative shift of 2 below rank 60) - a G1-invariant consequence, not a substantive score change, same mechanical effect as the 2026-08-17/2026-08-20 precedents. **165 entity-records** and **170 rotation-state entries** (index `countries`) had their `rank` field mechanically resynced to the corrected index position; every one was verified to have matching composite and band before its rank was touched (0 composite/band mismatches found in either cascade). The 5-entry gap between the two cascade counts reflects pre-existing rank drift already present in `rotation-state.json` before this operation (documented at session start: 23 pre-existing `validate-rotation-state.mjs` failures, none related to rank), now also corrected as a side effect of resyncing every countries entity to its live index rank. One country, **Singapore**, has no dedicated countries entity-record (`record.index_slug="global-cities"` instead) - a pre-existing condition unrelated to this operation, already flagged by `validate-indexes.mjs` as a warning before this edit; left untouched.
+
+### Identifiers, history and orphan-file check
+
+`site/src/data/entity-identifiers.json`: removed the `cape-verde` key (191 country keys remain, matching the new 191-entity index) and an orphan rank-suffixed key duplicating `sao-tome-and-principe`'s identifiers (identical Wikidata Q1039 / Wikipedia content, found while auditing the file - not referenced anywhere else on disk). `site/public/data/history/`: the surviving-slug history files for cabo-verde, sao-tome-and-principe and democratic-republic-of-c were confirmed present and correct; no cape-verde history file existed (nothing to remove there); a `democratic-republic-of-congo.json` history file (old, unrelated slug) was confirmed present and explicitly left untouched per instruction.
+
+### rotation-state.json
+
+`entity_count` 1331 -> 1329 (two entities removed: `cape-verde` and the diacritic-stripped orphan). `cabo-verde` (rank 25), `sao-tome-and-principe` (rank 58) and `democratic-republic-of-c` (rank 179, name updated to "Democratic Republic of the Congo") all had their composite and band left unchanged and only rank (and, for DRC, name) updated to match the now-published index. **`last_assessed` was not written for any of the three** (D-10: assessor-owned field) - `cabo-verde` keeps its genuine 2026-09-14 assessment date; `cape-verde`'s unbacked 2026-05-03 claim (with no report on disk, one of the 23 pre-existing `validate-rotation-state.mjs` failures) is gone entirely with the row, not merged into the survivor.
+
+### Validation (all four required validators run after the full operation)
+
+- `node site/scripts/validate-indexes.mjs`: **0 errors, 65 warnings** - matches the pre-operation baseline exactly (85,347 checks passed, no new warning classes).
+- `node research/scripts/validate-rotation-state.mjs`: **22 failures** (down from the pre-operation baseline of 23 - the `cape-verde` unbacked-`last_assessed` failure is gone with the row; no other failure changed).
+- `node site/scripts/validate-product-separation.mjs`: **PASS** (6 waived, 10 warnings - unchanged, pre-existing, unrelated to this operation).
+- `node site/scripts/test-entity-records.mjs`: **19,672 passed, 0 failed** (an intermediate run after the base index/entity-record edit but before the orphan cleanup surfaced 1 failure on the diacritic-stripped orphan slug, documented above; that failure was itself remediated in this same session before this final run).
+
+### Out of scope, untouched per instruction
+
+`global-cities.json` and all other indexes, `RISKS.md`, `DECISIONS.md`, `INCIDENTS.md`, `site/src/app/**`, `nginx*`, `site/src/data/updates/**`, special-briefings, `worker/`, `.github/`, `research/assessments/**` and `research/change-proposals/**`. No `npm run build` run. No git commit made.
+
+### Operation 4 — Phoenix cross-index slug collision (pinned slug)
+
+**Scope note.** Authorized separately in the same live session ("also fix the phoenix slug collision"), scoped to Phoenix ONLY. 15 other global-cities/us-cities collisions (Boston, Portland, Seattle, Minneapolis, New York City, San Jose, Washington DC, San Francisco, Houston, Philadelphia, Atlanta, Detroit, Chicago, Los Angeles) plus the Singapore (countries vs global-cities) and 1X Technologies/Figure AI (ai-labs vs robotics-labs, D-13) collisions are explicitly OUT OF SCOPE for this operation and were not touched.
+
+`global-cities.json` "Phoenix" (country USA, region NAm, rank 113, composite 32.8, developing) and `us-cities.json` "Phoenix" (state AZ, rank 119, composite 32.8, developing) both slugified to `phoenix`. Page routes are namespaced (`/city/phoenix` vs `/us-city/phoenix`) and both resolved correctly, but the flat, non-namespaced stores were not: `site/src/data/entity-records/phoenix.json` and `site/public/data/scores/phoenix.json` both belonged to the US-cities Phoenix; the global-cities Phoenix had no entity record and no score file, and its badge would resolve to the wrong entity (`export-public-data.mjs` only WARNs on this, "last written wins").
+
+Per precedent `70f81dc2` (explicit row-level `slug` honoured by both `buildEntities()` in `site/src/data/entities.ts` and `export-public-data.mjs`) and the existing `us-states.json` "Georgia" -> `georgia-us-states` convention, added `"slug": "phoenix-global-cities"` to the `global-cities.json` Phoenix row. Nothing else in that row changed - composite, band, rank and all eight dimension scores are byte-identical.
+
+**Entity record.** `site/src/data/entity-records/phoenix-global-cities.json` was created with `node site/scripts/build-entity-records.mjs --apply --only phoenix-global-cities --index global-cities` - scoped to this one entity only (report confirms "Entities processed: 1", "global-cities: 1 entities"; verified via `git status` that no other entity-record file was written or modified by this command). Record reproduces the index row verbatim: composite 32.8, band Developing, rank 113 (G1 pass); all 40 subdimensions reconstructed (no assessment exists yet for this slug) with each dimension's 5 subdims equal to the published dimension score (G2 pass, mean(subdims_k) == index.scores[k] exactly for all 8 dims); derived composite matches published composite (G3 pass, `composite_override: null`). `site/src/data/entity-records/phoenix.json` (the US-cities record) and `us-cities.json` were confirmed untouched (no diff).
+
+**Identifiers.** `site/src/data/entity-identifiers.json` was audited: it has no `city` or `us-city` bucket at all (only `company`, `ai-lab`, `robotics-lab`, `country`, `university`), and no `phoenix` key of any kind exists in the file. Nothing to move.
+
+**rotation-state.json.** The `phoenix-global-cities` key already existed (name Phoenix, index global-cities, composite 32.8, band developing) but carried a stale `rank: 115` against the index's actual rank 113 - a genuine pre-existing mismatch, corrected to 113. `last_assessed` (null) was left untouched per D-10 (assessor-owned field). The `phoenix` key (US-cities, rank 119) was confirmed untouched.
+
+**History.** `site/public/data/history/phoenix.json` does not currently exist on disk (the directory is gitignored/generated by `build-entity-history.mjs`, which was not run in this operation). `build-entity-history.mjs` keys its entity-info lookup by `${indexSlug}:${slug}` (from `public/data/index.json`, which is itself generated by `export-public-data.mjs` and was not regenerated here per scope limits), so once a future prebuild regenerates both `public/data/index.json` (which will then honour the new `slug` field, per `export-public-data.mjs` already reading `row.slug ?? slugify(row.name)`) and history, it will correctly produce a distinct `phoenix-global-cities.json` history file rather than continuing to collide with the US-cities Phoenix.
+
+**URL change.** `/city/phoenix` -> `/city/phoenix-global-cities` after the next build. A 301 redirect for this is being added to nginx by the coordinator; not part of this operation (`nginx*` and `site/src/app/**` are out of scope here per instruction).
+
+**Validation (all four required validators run after this operation):**
+- `node site/scripts/validate-indexes.mjs`: **0 errors, 64 warnings** (down from the pre-operation baseline of 65 - the Phoenix cross-index slug-collision warning is gone; no other warning changed; 85,401 checks passed).
+- `node site/scripts/test-entity-records.mjs`: **19,687 passed, 0 failed** (up from 19,672 by exactly 15 - the full set of per-record checks for the one new `phoenix-global-cities` record: 3 G1 + 2 structure + 8 G2 dimension-mean + 1 G3 composite + 1 determinism).
+- `node research/scripts/validate-rotation-state.mjs`: **22 failures**, unchanged from the pre-operation baseline (the rank correction does not affect this validator's `last_assessed`/report-matching checks).
+- `node site/scripts/validate-product-separation.mjs`: **PASS** (6 waived, 10 warnings), unchanged.
+
+### Out of scope, untouched per instruction (Operation 4)
+
+`nginx*`, `site/src/app/**`, `countries.json`, all other indexes' rows, the 15 other global-cities/us-cities collisions, Singapore, 1X Technologies/Figure AI, `special-briefings`, `research/scans/*`, `worker/`, `.github/`. No `npm run build` or `export-public-data.mjs` run. No git commit made.

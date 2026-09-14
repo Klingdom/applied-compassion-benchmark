@@ -39,7 +39,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-12 | 2026-08-20 | Floor entities are a scale problem, not a scoring problem | active |
 | D-11 | 2026-08-19 | The pending queue is the directory, not the log | active |
 | D-10 | 2026-08-19 | `last_assessed` is assessor-owned; repair never invents a date | active |
-| D-09 | 2026-08-19 | Deploy is manual; liveness ≠ currency | active |
+| D-09 | 2026-08-19 | Deploy is manual; liveness ≠ currency | active — "deploy is manual" superseded by evidence 2026-09-14 |
 | D-08 | 2026-08-17 | Duplicate records are merged structurally, never averaged | active |
 | D-07 | 2026-08-17 | Conflicting assessments are resolved by a fresh assessment | active |
 | D-06 | 2026-08-16 | Band-crossing filing clause — file at any delta | active |
@@ -565,6 +565,8 @@ distinct bugs queued behind each other.
 Root cause 2 (SSH key) remains open and requires founder action.
 
 **Status:** active. **Evidence:** `INCIDENTS.md` INC-001, INC-002; `OBSERVABILITY.md`.
+
+**Status update 2026-09-14.** The "deploy is manual" half is superseded by evidence: `Deploy to VPS` failed 53 runs (2026-07-14 → 09-08) and has succeeded 7 consecutive runs since 2026-09-09. The "liveness ≠ currency" half remains in force — the verify job asserts freshness only on the latest briefing date and prints, but does not assert, sample score values (RISK-004).
 
 ---
 

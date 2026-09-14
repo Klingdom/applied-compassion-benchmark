@@ -95,10 +95,10 @@
     }
   ],
   "recommendation": "downgrade",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-09-14",
+  "decision": "approved",
   "notes": "Filed under the magnitude trigger (-5.9). No band change: 26.9 stays in Developing. About -3.4 of the delta was already measured on 2026-07-31, and about -2.5 comes from four in-window integer moves (E4, AB1, S4, I1). Every movement rests on HKSAR conduct, not calibration. Confidence is medium, not high: the delta is only 0.9 above the trigger, and the full sentencing reasons were not fetched. The published 32.8 has never been changed. Proposed subdimensions cover all 8 dimensions because every dimension differs from the published vector (the published values are placeholder-granular, for example AWR 2.5 against a measured 2.2).",
   "anti_false_positive_screening": {
     "baseline_provenance": "32.8 has no APPLIED_CHANGES entry and is the original baseline; measured 32.5 (2026-07-23), 32.5 (2026-07-26) and 29.4 (2026-07-31, watch flag). Verified from the digests and research/assessments.",
@@ -541,5 +541,6 @@
       "assessed_date": "2026-09-14",
       "evidence": []
     }
-  ]
+  ],
+  "applied_date": "2026-09-14"
 }

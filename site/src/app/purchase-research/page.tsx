@@ -12,6 +12,7 @@ import ResearchConfigurator from "@/components/purchase/ResearchConfigurator";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { GUMROAD, US_CITIES_INDEX, US_STATES_INDEX } from "@/data/gumroad";
 import roboticsLabs from "@/data/indexes/robotics-labs.json";
+import countriesData from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
   title: "Purchase Research",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 /* ── Self-serve index reports ($195 each, direct Gumroad checkout) ─── */
 const indexReports = [
-  { title: "World Countries Index", desc: "193 countries scored across 8 dimensions of institutional compassion.", link: GUMROAD.countriesIndex },
+  { title: "World Countries Index", desc: `${countriesData.rankings.length} countries scored across 8 dimensions of institutional compassion.`, link: GUMROAD.countriesIndex },
   { title: "Fortune 500 Index", desc: "447 major U.S. corporations benchmarked on workforce, governance, and societal impact.", link: GUMROAD.fortune500Index },
   { title: "Top 50 AI Labs Index", desc: "50 frontier and applied AI labs scored on safety, equity, and accountability.", link: GUMROAD.aiLabsIndex },
   { title: "Humanoid Robotics Labs Index", desc: "50 global robotics developers measured on safety infrastructure and ethical deployment.", link: GUMROAD.roboticsIndex },

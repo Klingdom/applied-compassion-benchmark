@@ -17,6 +17,7 @@ import {
   BOOKING_URL,
 } from "@/data/gumroad";
 import { EVENTS } from "@/lib/analytics";
+import countriesData from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -260,7 +261,7 @@ export default function PricingPage() {
               [
                 {
                   title: "World Countries Index",
-                  desc: "193 countries across 8 dimensions.",
+                  desc: `${countriesData.rankings.length} countries across 8 dimensions.`,
                   link: { href: GUMROAD.countriesIndex, external: true },
                 },
                 {

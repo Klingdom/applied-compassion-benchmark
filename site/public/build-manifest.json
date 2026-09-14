@@ -1,8 +1,8 @@
 {
-  "buildDate": "2026-09-14T16:41:22.277Z",
-  "buildTimestamp": 1789404082277,
+  "buildDate": "2026-09-14T18:12:41.876Z",
+  "buildTimestamp": 1789409561876,
   "git": {
-    "sha": "1f058e12",
+    "sha": "cef937df",
     "branch": "nightly-research-2026-07-24-27",
     "dirty": true
   },
@@ -26,15 +26,15 @@
     },
     {
       "name": "countries",
-      "rankingsCount": 193,
-      "entityCount": 193,
-      "hash": "sha256:3631e441ce1a1d91a85611f4c37cf37d14bc6fe2eb572f31467f2a34c363afed",
-      "meanScore": 36,
+      "rankingsCount": 191,
+      "entityCount": 191,
+      "hash": "sha256:3146cd27ac32e1fa1251a4c8edbb4d53edaae5e420a777412039951f9c8ddda4",
+      "meanScore": 35.8,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
-        "Established": 26,
-        "Functional": 29,
+        "Established": 25,
+        "Functional": 28,
         "Developing": 68,
         "Critical": 56
       },
@@ -60,7 +60,7 @@
       "name": "global-cities",
       "rankingsCount": 250,
       "entityCount": 250,
-      "hash": "sha256:42d8b4a51064031fe0d6a98017c89009f355e378079d0c73e2b423ae2b53baff",
+      "hash": "sha256:fa2defe5fb497ddc73b2d8c1e7a0574836669b6ef6185b6a435972d237898b5a",
       "meanScore": 35.1,
       "medianScore": 31.3,
       "bands": {
@@ -137,9 +137,16 @@
       "floorDesignations": 0
     }
   ],
-  "totalEntities": 1327,
+  "totalEntities": 1325,
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
+    {
+      "slug": "hong-kong-2026-09-14",
+      "entity": "Hong Kong",
+      "index": "global-cities",
+      "decision": "approved",
+      "appliedDate": "2026-09-14"
+    },
     {
       "slug": "aethon",
       "entity": "Aethon (Teradyne)",
@@ -270,13 +277,6 @@
       "slug": "pika-labs",
       "entity": "Pika Labs",
       "index": "ai-labs",
-      "decision": "approved",
-      "appliedDate": "2026-08-20"
-    },
-    {
-      "slug": "republic-of-congo",
-      "entity": "Republic of Congo",
-      "index": "countries",
       "decision": "approved",
       "appliedDate": "2026-08-20"
     }

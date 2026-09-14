@@ -9,6 +9,7 @@ import Card from "@/components/ui/Card";
 import Callout from "@/components/ui/Callout";
 import { SCORE_WATCH } from "@/data/gumroad";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import countriesData from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
   title: "Score-Watch Alert — Get notified when an entity's compassion score changes",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 const indexes: Array<{ label: string; href: string; count: string }> = [
   { label: "Fortune 500", href: "/fortune-500", count: "447 companies" },
-  { label: "Countries", href: "/countries", count: "193 countries" },
+  { label: "Countries", href: "/countries", count: `${countriesData.rankings.length} countries` },
   { label: "U.S. States", href: "/us-states", count: "21 states" },
   { label: "AI Labs", href: "/ai-labs", count: "50 labs" },
   { label: "Robotics Labs", href: "/robotics-labs", count: "50 labs" },

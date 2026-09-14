@@ -446,3 +446,146 @@ Anthropic continues to bear material Pentagon-contract cost by maintaining auton
 
 
 ---
+
+## 2026-09-14 — Applied Hong Kong (global-cities), 1 entity
+
+**Applied by:** Score-updater agent (founder-approved 2026-09-14 in live session, recorded per AUTONOMY.md §5 R5: status approved, reviewed_by founder, reviewed_date 2026-09-14, decision approved)
+
+**Scope:** Single-file apply of research/change-proposals/hong-kong-2026-09-14.json. All other approved-but-held proposals (37 self-veto holds from 2026-08-20/2026-09-10, plus separately-tracked entity-record holds) left untouched — not re-evaluated, not re-logged.
+
+### global-cities index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Hong Kong | 32.8 | 26.9 | -5.9 | developing | developing | 105 | 141 | [hong-kong-2026-09-14.json](change-proposals/hong-kong-2026-09-14.json) |
+
+### Dimension scores (0-100 scale)
+
+**global-cities:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Hong Kong (new) | 30 | 30 | 60 | 35 | 5 | 5 | 45 | 5 |
+
+### Drift guard (Step 2b.5)
+
+- Hong Kong: proposal baseline (published_scores.composite) 32.8, index actual 32.8, drift 0.0pt — ACCEPT. No direction inversion.
+
+### Composite formula verification (v1.2)
+
+- Hong Kong: computeCompositeFromDimensions({AWR:2.2, EMP:2.2, ACT:3.4, EQU:2.4, BND:1.2, ACC:1.2, SYS:2.8, INT:1.2}) = 26.9, Developing (matches proposal exactly; G3 diff 0.0000).
+
+### Self-veto scan
+
+No self-veto phrasing found in notes/rationale/recommendation ('DO NOT APPLY', 'without review', 'referred for calibration', 'left at the PUBLISHED values' all absent). Recommendation is a plain 'downgrade'.
+
+### Re-rank impact
+
+- Hong Kong dropped from rank 105 (32.8) to rank 141 (26.9) — no band crossing (developing to developing, both within 21-40). 36 entities previously ranked 106-141 (Istanbul through Ulaanbaatar) each moved up exactly one rank (106-141 -> 105-140) — pure rank drift, zero composite/band change confirmed for all 36 via diff against the pre-apply index. Global-cities Phoenix (rank 114 -> 113) has no dedicated entity-record file (the only 'phoenix.json' record belongs to us-cities' Phoenix, AZ; left untouched after an initial cascade mis-write was caught and reverted). Two records use non-obvious slugs distinct from a naive ASCII-fold guess: São Paulo -> s-o-paulo.json, Belém -> bel-m.json, Goiânia -> goi-nia.json; all three located and cascaded correctly (validator caught the first miss on bel-m/goi-nia and both were fixed before this log entry was written).
+
+### Band counts unchanged (no crossing)
+
+- global-cities: exemplary 15 (6%), established 26 (10%), functional 35 (14%), developing 105 (42%), critical 69 (28%). Total 250 entities. Mean 35.1, median 31.3 (both unchanged at 1-decimal; raw mean moved 35.120 -> 35.096 over 250 entities).
+
+### Entity record and validation
+
+- Entity record written via apply-entity-record.mjs --from-proposal: site/src/data/entity-records/hong-kong.json. G1/G2/G3 invariance all PASS (composite/band/rank match index verbatim; subdim means match dimension scores; derived composite 26.9 matches published 26.9, diff 0.0000).
+- 35 adjacent entity records + rotation-state entries updated for rank-only drift (Istanbul, Jakarta, Johannesburg, Kumasi, Mumbai, Naples, Palmas, Panama City, Recife, Rosario, s-o-paulo, Surabaya, Tbilisi, Ankara, Bandung, Cali, Casablanca, Chennai, bel-m, Hyderabad, Kolkata, Lima, Nairobi, Pune, Quito, Santo Domingo, Chengdu, Ho Chi Minh City, Shanghai, Surat, Jaipur, Kuwait City, Shenzhen, Ulaanbaatar, goi-nia) plus Hong Kong itself.
+- rotation-state.json: hong-kong composite/band/rank set to 26.9/developing/141; last_change_proposal set to null; last_assessed left untouched at 2026-09-14 (already set by the assessor stage, not modified here per D-10/§3h).
+- validate-indexes.mjs: 0 errors, 65 warnings (matches pre-apply baseline; warnings are pre-existing and unrelated to this apply).
+
+### Out of scope, untouched per instruction
+
+countries.json and any cabo-verde/cape-verde record (structural merge runs separately); special-briefings; worker/; .github/; site/src/data/updates/daily; site/public/**. No npm run build run. No git commit made.
+
+## 2026-09-14 — Founder-directed STRUCTURAL operation on countries.json (2 duplicate merges + 1 name correction, NO SCORE CHANGE)
+
+**Applied by:** Score-updater agent, founder-directed structural operation (live session, 2026-09-14) per AUTONOMY.md §3 step 3 (disposition decided by founder: merge for both duplicates per D-08, rename-with-pinned-slug for DRC per precedent `42ee4e43`). This is NOT a change-proposal apply cycle — no composite, band, dimension or subdimension value changed for any entity.
+
+**Scope:** Three explicit founder instructions in one session: "fix the cabo verde duplicate", "also fix the sao tome duplicate", "also fix the democratic republic of congo truncated name". Nothing else in `countries.json` touched. `global-cities.json` (Hong Kong, applied minutes earlier by a prior run) not touched.
+
+### Verification before acting
+
+- Cabo Verde (rank 25) vs Cape Verde (rank 26): field-by-field diff excluding `name`/`rank` -> byte-identical (composite 62.5, band established, region Africa, AWR 3.5 EMP 3.5 ACT 3.5 EQU 3 BND 4 ACC 3.5 SYS 3.5 INT 3.5). Confirmed before removing either row.
+- Sao Tome and Principe (rank 59) vs the accented duplicate (rank 60): field-by-field diff excluding `name`/`rank` -> byte-identical (composite 48.4, band functional, region Africa, AWR 3 EMP 3 ACT 3 EQU 2.5 BND 3 ACC 3 SYS 3 INT 3). Both slugify to `sao-tome-and-principe`; confirmed only one canonical record/score/rotation-state footprint existed under that slug before acting.
+- Democratic Republic of C (rank 181, composite 2.3, critical): confirmed truncated at 24 characters; confirmed `validate-indexes.mjs` accepts an explicit row-level `slug` field on a countries row (no new error/warning) before adding one.
+
+### countries.json changes
+
+| Row | Old Rank | Composite | Band | Disposition | New Rank |
+|---|---|---|---|---|---|
+| Cape Verde | 26 | 62.5 | established | REMOVED (duplicate merge, survivor = Cabo Verde) | n/a |
+| Sao Tome e Principe (accented duplicate) | 60 | 48.4 | functional | REMOVED (duplicate merge, survivor = Sao Tome and Principe) | n/a |
+| Cabo Verde | 25 | 62.5 | established | unchanged, survivor | 25 |
+| Sao Tome and Principe | 59 | 48.4 | functional | unchanged, survivor | 58 |
+| Democratic Republic of C | 181 | 2.3 | critical | RENAMED -> "Democratic Republic of the Congo"; slug pinned `democratic-republic-of-c` | 179 |
+
+`entityCount` 193 -> 191. meanScore 36.0 -> 35.8. medianScore 35.9 -> 35.9 (unchanged). Band counts: established 26->25 (-1), functional 29->28 (-1), exemplary/developing/critical counts unchanged (percentages shifted only on the smaller 191-entity denominator). Both `meta.bands` and the top-level `bands` array recomputed and kept in sync.
+
+### Drift guard (Step 2b.5)
+
+Not applicable — this is a structural merge/rename operation, not a proposal apply. No published composite, band or dimension value was read as a "baseline" to drift-check against; D-08 requires the surviving row's published composite be kept verbatim, which was done for both Cabo Verde (62.5) and Sao Tome and Principe (48.4).
+
+### Self-veto scan
+
+Not applicable — no change-proposal file was involved in this operation.
+
+### Re-rank impact
+
+`countries.json`'s rankings array was already strictly ordered by composite descending with sequential ranks 1-193 before this edit (verified programmatically) — removing the two duplicate rows and re-deriving sequential ranks from the existing order is mathematically equivalent to a full re-sort, and was cross-checked as such. Cabo Verde: no rank change (25 -> 25). Sao Tome and Principe: -1 (59 -> 58). Democratic Republic of the Congo: -2 (181 -> 179, both removed rows sit above it in the ranking).
+
+### Rank-cascade remediation
+
+165 entity-records and 170 rotation-state entries (all `index: "countries"`) had `rank` mechanically resynced to the corrected index position; every one verified to have matching composite and band before its rank was touched (0 mismatches in either cascade). The 5-entry gap between the two counts is pre-existing rank drift in rotation-state that predates this operation (23 pre-existing `validate-rotation-state.mjs` failures at session start), corrected as a side effect of resyncing every countries entity to its live index rank. Singapore has no dedicated countries entity-record (a pre-existing, unrelated condition already flagged as a warning) — left untouched.
+
+### Orphan-file discovery (beyond the base instruction)
+
+A collision-suffixed, diacritic-stripped orphan slug for the accented Sao Tome duplicate was found live on disk in `site/src/data/entity-records/`, `site/public/data/scores/`, `site/public/data/history/`, and as a key in `research/rotation-state.json` (rank 60, composite 48.4 — the exact footprint of the removed duplicate row). It was invisible to a name-substring search and was only surfaced by `test-entity-records.mjs` failing on an unresolvable slug lookup. All four were removed in this same operation.
+
+### Entity record, identifiers and validation
+
+- Entity records touched: 165 rank resyncs (countries only, verified by `index_slug`) + `democratic-republic-of-c.json` name update + deletion of `cape-verde.json` and the orphan diacritic-stripped record.
+- `site/src/data/entity-identifiers.json`: removed `cape-verde` (identical Wikidata/Wikipedia data already present under `cabo-verde` — nothing lost) and an orphan rank-suffixed duplicate of `sao-tome-and-principe`'s identifiers. 191 country keys remain, matching the new index size.
+- `research/rotation-state.json`: `entity_count` 1331 -> 1329 (cape-verde + orphan removed). `cabo-verde`/`sao-tome-and-principe`/`democratic-republic-of-c` composite and band left unchanged; only rank (and, for DRC, name) updated. `last_assessed` NOT written for any of the three (D-10, assessor-owned field) — Cabo Verde keeps its genuine 2026-09-14 assessment date; Cape Verde's unbacked 2026-05-03 claim is gone with the row, not inherited by the survivor.
+- `node site/scripts/validate-indexes.mjs`: 0 errors, 65 warnings (matches pre-operation baseline).
+- `node research/scripts/validate-rotation-state.mjs`: 22 failures (down from 23 — cape-verde's unbacked-date failure removed with the row).
+- `node site/scripts/validate-product-separation.mjs`: PASS (6 waived, 10 warnings, unchanged).
+- `node site/scripts/test-entity-records.mjs`: 19,672 passed, 0 failed (after the orphan-slug cleanup above; an intermediate run had 1 failure on that orphan before it was found and removed).
+
+### Out of scope, untouched per instruction
+
+`global-cities.json` and all other indexes, `RISKS.md`, `DECISIONS.md`, `INCIDENTS.md`, `site/src/app/**`, `nginx*`, `site/src/data/updates/**`, special-briefings, `worker/`, `.github/`, `research/assessments/**` and `research/change-proposals/**`. No `npm run build` run. No git commit made.
+
+## 2026-09-14 — Founder-directed STRUCTURAL operation: Phoenix cross-index slug collision (NO SCORE CHANGE)
+
+**Applied by:** Score-updater agent, founder-directed structural operation (live session, 2026-09-14: "also fix the phoenix slug collision"). Not a change-proposal apply cycle — no composite, band, dimension or subdimension value changed for any entity.
+
+**Scope:** Phoenix ONLY. 15 other global-cities/us-cities collisions (Boston, Portland, Seattle, Minneapolis, New York City, San Jose, Washington DC, San Francisco, Houston, Philadelphia, Atlanta, Detroit, Chicago, Los Angeles), plus Singapore (countries vs global-cities) and 1X Technologies/Figure AI (ai-labs vs robotics-labs, D-13) explicitly out of scope, untouched.
+
+### Problem verified before acting
+
+`global-cities.json` "Phoenix" (rank 113, composite 32.8, developing) and `us-cities.json` "Phoenix" (rank 119, composite 32.8, developing) both slugify to `phoenix`. Page routes are namespaced and both resolve correctly, but the flat stores (`site/src/data/entity-records/phoenix.json`, `site/public/data/scores/phoenix.json`) both belonged to the US-cities Phoenix; the global-cities Phoenix had no record and no score file (badge would resolve to the wrong entity).
+
+### Fix
+
+Added `"slug": "phoenix-global-cities"` to the `global-cities.json` Phoenix row only (composite/band/rank/dimensions unchanged), per precedent `70f81dc2` and the `us-states.json` "Georgia" -> `georgia-us-states` convention. Wrote `site/src/data/entity-records/phoenix-global-cities.json` via `node site/scripts/build-entity-records.mjs --apply --only phoenix-global-cities --index global-cities` — scoped to this one entity, verified via `git status` that no other entity record was touched. Record reproduces the index row verbatim (composite 32.8, Developing, rank 113; G1/G2/G3 pass, fully reconstructed subdims, `composite_override: null`).
+
+### Drift guard / self-veto scan
+
+Not applicable — structural slug-pin operation, not a proposal apply; no composite/band/dimension value was changed for any entity.
+
+### Identifiers, rotation-state, history
+
+- `site/src/data/entity-identifiers.json`: no `city`/`us-city` bucket exists at all; no `phoenix` key of any kind found. Nothing to move.
+- `research/rotation-state.json`: `phoenix-global-cities` key already existed with a stale `rank: 115` against the index's actual 113 — corrected to 113. `last_assessed` (null) untouched per D-10. `phoenix` (US-cities) key confirmed untouched.
+- `site/public/data/history/phoenix.json` does not currently exist on disk (gitignored/generated). Not rewritten; reported that the next prebuild's `build-entity-history.mjs` run will correctly key `phoenix-global-cities` separately once `export-public-data.mjs` regenerates `public/data/index.json` honouring the new `slug` field.
+
+### Validation
+
+- `node site/scripts/validate-indexes.mjs`: 0 errors, 64 warnings (down from 65 — the Phoenix cross-index collision warning is gone).
+- `node site/scripts/test-entity-records.mjs`: 19,687 passed, 0 failed (up from 19,672 by 15 — exactly the new record's full check set).
+- `node research/scripts/validate-rotation-state.mjs`: 22 failures, unchanged.
+- `node site/scripts/validate-product-separation.mjs`: PASS (6 waived, 10 warnings), unchanged.
+
+### Out of scope, untouched per instruction
+
+`nginx*`, `site/src/app/**`, `countries.json`, all other index rows, the 15 other collisions, Singapore, 1X Technologies/Figure AI, special-briefings, `worker/`, `.github/`. No `npm run build` or `export-public-data.mjs` run. No git commit made.
