@@ -1,6 +1,25 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-07-12 | After: nonprofit simplification audit (4 lenses) + S1 registry consolidation
+Updated: 2026-09-14 | After: Iteration 11 (/cite dead URL pattern + llms.txt drift fixed)
+
+> 2026-09-14 (Iteration 11): `/cite`, `/media` and `/data` taught `compassionbenchmark.com/[index]/[slug]`
+> (example `/fortune-500/microsoft` → soft 404 on production); now `[entity-type]/[slug]` with a prefix
+> table rendered from `INDEX_REGISTRY`. `llms.txt` entity count now derived from index data (1,325; was
+> hard-coded "1,260+") and lists `/cite` + `/ai-models` (pre-registration, no model scored). Gates: tsc
+> clean · all test suites pass · build exit 0 · 15/15 llms.txt URLs exist in export. **Iterations 10–11
+> uncommitted and undeployed — awaiting founder approval.**
+
+> 2026-09-14 (Iteration 10): Removed the false "balanced beats spiky at the same average" claim from the
+> `/ai-models/methodology` FAQ (verified false under `scoring.mjs`); copy now describes the formula as it
+> is. No score change. Validated the prior-session Worker typecheck fix (`worker/` typecheck passes for the
+> first time). Gates: site tsc clean · `npm run test` all suites pass (scoring 125/125, model-releases 93/93)
+> · build 1,978 pages · validate-daily-briefings 79/79. **Uncommitted, undeployed — awaiting founder
+> approval.** Current catalogue per build manifest: 8 indexes, 1,325 entities, 8 floor-designated.
+> Deploy pipeline green 7 consecutive runs since 2026-09-09 (RISK-004 verification gap remains).
+> Open high risks: RISK-014 (Score-Watch host NXDOMAIN — urgent), RISK-015 (waiver expiry 2026-12-09),
+> RISK-016 (pipeline never unattended), RISK-017/018 (slug collisions), RISK-020 (briefing fact-check gap),
+> RISK-021 (approval provenance). The "Build Status" and "Artifact Coverage" tables below are stale
+> (2026-06); regenerating them is tracked as PR/FAQ item AA.
 
 > 2026-07-12: Ran a 4-lens **nonprofit simplification audit** (product, architecture, UX,
 > frontend) → consolidated 15-item backlog in `docs/NONPROFIT_SIMPLIFY_MASTER_2026-07-12.md`.

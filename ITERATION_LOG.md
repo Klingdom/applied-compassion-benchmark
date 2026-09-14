@@ -1,5 +1,108 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 11 — 2026-09-14 (fix the dead citation URL pattern + llms.txt drift — PR/FAQ S-1, C18)
+
+### Selected Item
+**S-1: `/cite` taught a citation URL pattern that does not resolve, and `llms.txt` hard-coded a stale
+entity count and omitted `/cite` and `/ai-models`.** Exactly one item.
+
+### Reason for Selection
+Next PR/FAQ "do now" item after G-1. Chosen over U (coverage dashboard, score 16) because S is a certain,
+live, externally-checkable defect with Effort 1 / Risk 1, while U publishes the 61.7% never-assessed share
+on the site — a disclosure that overlaps item E (Risk 3) and warrants founder sign-off first.
+**BEFORE (production, curl 2026-09-14):** `/fortune-500/microsoft` (the `/cite` example) → 2 redirects →
+`/404` served with HTTP 200 (soft 404); `/company/microsoft` → 200. Live `llms.txt`: "1,260+ entities",
+no `/cite`, no AI models section.
+
+### What Changed
+- `site/src/app/cite/page.tsx`: APA/MLA/Chicago strings and the canonical-URL section now use
+  `[entity-type]/[slug]`; example is `/company/microsoft`; new table of index → entity URL prefix rendered
+  from `INDEX_REGISTRY` (not hand-typed).
+- `site/src/app/media/page.tsx`, `site/src/app/data/page.tsx`: same dead example/pattern fixed; link to
+  `/cite#canonical-url`.
+- `site/scripts/build-llms.mjs` (+ generated `site/public/llms.txt`): entity count derived from
+  `rankings.length` across the 8 index JSONs (fails loud on a missing `rankings`); added `/cite` and an
+  "AI models" section describing `/ai-models` as a pre-registration with no model scored. No third-party
+  names added (CompassionBench disambiguation left for founder).
+
+### Agents Involved
+- coordinator — selection, production baseline, independent verification, artifacts
+- frontend-engineer — implementation + build verification
+
+### Validation Results
+- Agent: `npx tsc --noEmit` clean; `npm run test` all suites pass (scoring 125/125, lint 11/11, history
+  39/39, entity-href 40/40, product-separation 16/16, separation-waivers 17/17, task-bank 68/68,
+  evaluation-scorer 45/45, model-registry 38/38, evaluation-statistics 78/78, model-harness 58/58,
+  model-releases 93/93); `npm run build` exit 0.
+- Coordinator re-checks: diff reviewed (5 files, scope-clean); grep of `src/app` + `src/components` finds
+  no remaining `[index]/[slug]` or `/fortune-500/<slug>` citation URLs; exported pages exist for
+  company/country/us-state/ai-lab/robotics-lab/us-city/university/city prefixes; built `out/llms.txt`
+  states 1,325 entities (= 191+51+447+50+92+144+250+100 = build-manifest total) and **15/15 URLs exist**
+  in the export.
+- No commit, push or deploy (AUTONOMY §1b).
+
+### Outcome
+Citation examples on /cite, /media, /data: 1 dead pattern (soft 404) → 0 once deployed. llms.txt entity
+count: hard-coded and 65 stale → derived from data.
+
+### Follow-ups
+- `/media` "Data access" still hard-codes "1,156 entities" (canonical 1,325) — route through `entityCount.ts`.
+- llms.txt "no model has been scored yet" is a literal — derive from model-index facts before D-29 flips.
+- CompassionBench (compassionbench.com) disambiguation in llms.txt/site — founder decision (names a third party).
+- `/404` returns HTTP 200 (soft 404) — part of PR/FAQ item T (nginx real 404s).
+- Founder: approve commit + deploy of Iterations 10–11.
+
+## Iteration 10 — 2026-09-14 (remove a false composite-formula claim — RISK-019 / PR/FAQ G-1)
+
+> Numbering note: loops between 2026-06-20 and 2026-09-14 were recorded in commit messages, DECISIONS.md,
+> RISKS.md and the PR/FAQ rather than here. This entry resumes the log; it does not retro-edit them.
+
+### Selected Item
+**G-1: correct the `/ai-models/methodology` FAQ claim that "a balanced profile scores higher than a spiky
+one with the same average."** Exactly one item.
+
+### Reason for Selection
+The candidate set was the PR/FAQ's same-day reconciled table (12 specialist reviews; not regenerated to
+avoid duplicate work). G-1 was the only top-10 item that is a certain, currently-published factual error
+about the benchmark's own formula (RISK-019 "Certain / High"), reused verbatim in FAQPage JSON-LD that
+answer engines ingest, with Effort 1 / Risk 1 and no founder gate. Higher-scored U/D/I are larger builds
+queued next. Bias: correctness/determinism first.
+
+### What Changed
+- `site/src/app/ai-models/methodology/page.tsx` (FAQ answer 1, lines 29–35): false sentence replaced with
+  an accurate description — average rescaled to 0–100 + integration bonus up to 10, earned as dimensions
+  reach 4.0, −1/5 per dimension below 4.0, reduced further for wide spread, 0 if any dimension is 0.
+- No formula, data, score, or other page changed.
+
+### Agents Involved
+- coordinator — system review, selection, independent formula verification, validation, artifacts
+- frontend-engineer — implementation + verification script
+
+### Validation Results
+- Formula check (agent script + coordinator's independent re-run against `site/scripts/lib/scoring.mjs`):
+  [1,1,1,1,5,5,5,5] → 51.5 vs flat 3.0 → 50.0 (old claim false); all-4.0 → premium 10 (85.0); one dim 3.9
+  → premium 8; all 3.99 → premium 0 (74.8); any dim 0 → premium 0. Every claim in the new copy holds.
+- Grep: no test or script pinned the old string.
+- `npx tsc --noEmit` (site): clean. `npm run test` (site): all suites pass, incl. scoring 125/125,
+  model-releases 93/93.
+- `npm run build` (site): 1,978/1,978 static pages generated; validate-daily-briefings 79/79 PASS.
+- Also validated the uncommitted prior-session Worker fix: `npm run typecheck` in `worker/` passes.
+- No commit, push or deploy (AUTONOMY §1b).
+
+### Outcome
+Published-method accuracy: 1 known false formula claim → 0 on `/ai-models/methodology` once deployed.
+RISK-019 copy half closed; the 3.99→4.0 cliff and premium-change decision stay open (founder/Methods).
+
+### Follow-ups
+- Founder: approve commit + deploy of this change and the Worker typecheck fix.
+- G-3: verify related "balanced 70/70 vs spiky 90/40" wording (`methodology/page.tsx:1266`,
+  `ConsistencyStepChart.tsx`, `dimensions.ts:635`).
+- Next loop candidate: U — coverage/freshness dashboard (score 16).
+- Founder briefing drafted at `docs/founder-briefings/2026-09-14.md`; email delivery not possible from
+  this environment (no mail credentials; local Outlook 2016 has no configured account).
+- Meta-review trigger: this log shows no 3-loop cadence since Iteration 9 — run `meta-coordinator`
+  after Iteration 12 or sooner if validation fails twice.
+
 ## Iteration 9 — 2026-06-20 (methodology-page hardening — founder-authorized multi-item push)
 
 ### Selected Item

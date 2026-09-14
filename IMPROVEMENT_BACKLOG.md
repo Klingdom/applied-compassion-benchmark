@@ -1,10 +1,45 @@
 # IMPROVEMENT BACKLOG — Compassion Benchmark
 
-Generated: 2026-04-14 | Last updated: **Iteration 9 (2026-06-20)** — Methodology-page hardening
+Generated: 2026-04-14 | Last updated: **Iteration 10 (2026-09-14)** — RISK-019 false formula claim removed
 
 ## Scoring Model
 
 Priority Score = Impact + Strategic Alignment + Learning Value + Confidence − Effort − Risk
+
+---
+
+## Iteration 10 — 2026-09-14 (source: PR/FAQ 2026-09-14 ranked table, 12 specialist reviews)
+
+Candidate set is the PR/FAQ's deduplicated, reconciled table
+(`docs/PRFAQ_AI_MODEL_BENCHMARK_AND_CONTINUOUS_RESEARCH_2026-09-14.md` §6) — not regenerated, to avoid
+duplicate work on the same day. Top 10 by reconciled score, with this loop's selection:
+
+| # | ID | Item | Score | Status |
+|---|----|------|-------|--------|
+| 1 | U | Coverage/freshness dashboard from `rotation-state.json` | 16 | Queued — **next** (PR/FAQ do-now #1) |
+| 2 | D | Status ladder: measured vs published/applied/held | 15 | Queued (do-now #3) |
+| 3 | I | Defect-class registry, second occurrence → mechanical gate | 15 | Queued |
+| 4 | L | Cross-link `/ai-models` ↔ `/ai-evaluation-suite` ↔ `/ai-labs`; remove overclaiming | 15 | Queued |
+| 5 | N | Verifiable founder-approval provenance | 14 | **Founder decision** |
+| 6 | S | Fix `/cite` URL pattern; regenerate `llms.txt` | 14 | **S-1 ✅ COMPLETE Iteration 11** (dead pattern fixed on /cite, /media, /data; llms.txt count derived, /cite + /ai-models added). S-2 CompassionBench disambiguation → founder decision |
+| 7 | C | Test-retest reliability study + run manifests | 13 | Queued (30 days) |
+| 8 | E | Disclose placeholder/seed status publicly | 13 | Queued (30 days) |
+| 9 | F | One evidence-tier scale | 13 | Queued (30 days) |
+| 10 | G | Remove false "balanced beats spiky" claim; formula sensitivity note | 13 | **G-1 (claim removal) ✅ COMPLETE Iteration 10**; G-2 sensitivity note queued |
+
+**Why G-1 was selected over higher-scored U/D/I:** it is the only top-10 item that is a *certain*,
+currently-published factual error about the benchmark's own formula (RISK-019, "Certain / High"),
+with Effort 1 and Risk 1 for the copy-only half, and no founder gate. Bias order: correctness/determinism
+first. Effective score for the split sub-item G-1: I4 + S4 + L3 + C5 − E1 − R1 = **14**.
+
+Follow-ups spawned (not implemented):
+- (Iteration 11) `/media` hard-coded "1,156 entities" → `entityCount.ts`; llms.txt model-scored literal →
+  derive from model-index facts; `/404` soft-404 (HTTP 200) → item T.
+- **Next selection:** U (coverage dashboard) if the founder approves publishing the never-assessed share;
+  otherwise D (status ladder) or L (cross-links / overclaiming), both ungated.
+- G-3: verify related wording in `site/src/app/methodology/page.tsx:1266`, `ConsistencyStepChart.tsx`,
+  `dimensions.ts:635` ("balanced 70/70 can beat spiky 90/40" — different averages; likely true, unverified).
+- Commit + deploy of Iteration 10 changes (founder approval, AUTONOMY §1b).
 
 ---
 

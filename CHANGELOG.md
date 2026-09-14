@@ -5,6 +5,25 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-14 — Citation guide: fixed a dead entity-URL pattern; llms.txt count now derived (NO score changes; pending commit/deploy)
+
+- **No published scores changed.**
+- **What changed:** `/cite`, `/media` and `/data` told readers to cite entity pages as `compassionbenchmark.com/[index]/[slug]` (example `/fortune-500/microsoft`), a URL that lands on a 404 page. They now give the real pattern, `compassionbenchmark.com/[entity-type]/[slug]` (e.g. `/company/microsoft`), and `/cite` lists every index's entity URL prefix from the site's single index registry. `llms.txt` now computes its entity count from the index data (1,325; previously a stale "1,260+") and links the citation guide and the AI model benchmark, described as a published method with no model scored yet.
+- **Why:** citation instructions that produce dead links break the traceability of every score cited from them; the machine-readable summary read by answer engines must not drift from the data.
+
+---
+
+
+## 2026-09-14 — AI model methodology: removed a false composite-formula claim (NO score changes; pending commit/deploy)
+
+- **No published scores changed.** Copy correction only; `scoring.mjs`/`scoring.ts` and all index JSON untouched.
+- **What changed:** the first FAQ answer on `/ai-models/methodology` (also emitted as FAQPage JSON-LD) claimed "a balanced profile scores higher than a spiky one with the same average." That is false under the canonical formula — `[1,1,1,1,5,5,5,5]` scores 51.5 against 50.0 for a uniform 3.0 (RISK-019; PR/FAQ item G). It now describes the formula as it is: the dimension average rescaled to 0–100, plus an integration bonus of up to 10 points earned as dimensions reach 4.0, reduced by a fifth per dimension below 4.0, reduced further for wide spread, and zero if any dimension is 0.
+- **Why:** a benchmark's method page must describe its own formula accurately; the same formula will be reused to score AI models.
+- **Also validated (uncommitted, from a prior session):** Worker `str()` helper retyped `FormDataEntryValue | null` → `string | null` so `worker/` typecheck passes for the first time, plus a non-blocking `worker-typecheck` CI job.
+
+---
+
+
 ## 2026-06-20 — Methodology page: formula-accuracy & transparency update (NO score changes)
 
 - **No published scores changed.** This is a documentation/page-accuracy update to `/methodology` (Iteration 9). The scoring engine (`scoring.ts`/`scoring.mjs`) and all index JSON are untouched; every published composite is identical.
