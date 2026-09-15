@@ -1,5 +1,271 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Commit — 2026-09-15 — founder instruction: "commit and push for manual deployment by me"
+
+- **Target:** branch `release/2026-09-15` (created from `905a805d`), pushed to origin. **Not `main`** — pushes to `main`
+  trigger the `Deploy to VPS` workflow, and the founder asked to deploy manually.
+- **Pre-commit verification of the combined state** (It. 12 + It. 13 + research 2026-09-15 had never been built together):
+  `npx tsc --noEmit` 0 · `npm run test` 0 (incl. lint-briefings, no-stale-counts, model-releases 93/93) · `npm run build` 0
+  (1,989 static pages; Pagefind 1,967) · `validate-daily-briefings` 80/80 · `lint-daily-briefings` 0 unapplied-movement
+  violations · `validate-product-separation` PASS (6 waived).
+- **Commits (in order, scoped pathspecs):**
+  1. It. 12 — derived catalogue counts + `test-no-stale-counts` (23 paths incl. `site/package.json`).
+  2. It. 13 — `unapplied-score-movement` rule (5 paths).
+  3. Research cycle 2026-09-15 — scan + assessor summary, 29 assessment files, Wellington proposal, rotation-state,
+     digests, PENDING_CHANGES, public briefing (corrected), `latest.json`, updates manifest, feeds, OG image.
+  4. Grant documents — `docs/GRANT_REQUEST_2026-09-14.md` + dated correction note on the old proposal.
+  5. Governance and records — loop artifacts, agent specs, RISKS (RISK-023), defect registry, meta-review, RISK-023
+     remediation spec, founder briefing.
+- **Excluded (held or churn):** `research/special-briefings/america-at-250-2026-07-04.md` +
+  `site/src/data/special-briefings/america-at-250-2026-07-04.json` (unrecorded rewrite of a published briefing, §1c) ·
+  15 other special-briefing JSON + special-briefings manifest (build timestamps) · `site/public/build-manifest.json` ·
+  `research/entity-records-dryrun.json` (stale dry run) · `research/rotation-state.json.bak`,
+  `research/scans/2026-09-09.json.bak` · `.claude/settings.local.json`.
+- **Not approved by this instruction:** any score apply (Wellington stays pending), the RISK-023 rename/slug migration,
+  Score-Watch changes.
+
+## Research preflight and investigations — 2026-09-15 — not an iteration (S6 still binding)
+
+- **Research cycle 2026-09-15** (AUTONOMY §1a):
+  - **Scan (done, verified):** `research/scans/2026-09-15.json` — 1,329 entity reviews, 15 top entities, 5 rotation
+    backfill, 6 sector alerts; 286 searches vs derived ceiling 274 (T1 150 · verification 8 · T2 111 · T3 17; overage
+    disclosed). Coordinator re-ran `validate-scan.mjs 2026-09-15` → PASS (warnings only). Rotation-state diff vs HEAD:
+    exactly `last_scanned` and `last_evidence_touch` changed on all 1,329 entities plus top-level `last_updated`;
+    no keys added/removed; all `last_assessed` untouched.
+  - **Source spot-checks (coordinator fetch):** Netflix (news4jax, published 2026-09-09) ✓ · Sweden (Irish Times,
+    2026-09-12) ✓ · Warsaw (Notes From Poland, 2026-09-08) ✓ — but civic-group action, attribution flagged · Anthropic
+    (androidheadlines) HTTP 403 — independent corroboration required.
+  - **Correction to the 2026-09-14 cycle (append-only, DC-06):** 09-14 dropped a Lesotho AGOA finding as misdated and
+    wrong. Today's source (Sunday Times, datePublished 2026-09-04) confirms a 2 September 2026 signing of the Continuing
+    Appropriations and Extensions Act, 2027 extending AGOA to 2028, and separately confirms the February 2026 extension
+    to end-2026 — the 09-14 drop conflated the two. The 09-14 files are not edited; the assessor records the correction.
+  - **Assessment (done, verified):** 14 of 15 assessed (Oracle AI not assessable — no published row); 1 proposal
+    (Wellington −11.7, Exemplary → Established, pending), 10 confirmations, 2 band crossings withheld (Netflix,
+    Bridgetown — placeholder grid rounding), Abbott measured 50.0 reproducing its pending 08-26 proposal (not re-filed);
+    26 assessor searches. Coordinator checks: Wellington proposed 71.3 and published 83.0 both recompute exactly with
+    `computeCompositeFromDimensions`; drift vs index 0.00. Rotation-state changes beyond the scan: exactly 14
+    `last_assessed` (the assessed entities) + 1 `last_change_proposal` (Wellington); no index, entity-record or
+    `site/src/data/updates` changes. 15 reports + 14 sidecars on disk. `validate-rotation-state` still the same 22
+    (none new, none resolved). Wellington sources fetched: RNZ 2 Sept 2026 ✓, ODT datePublished 2026-09-02 ✓, Mirage
+    News republication carries the quoted Crown Review finding ✓.
+  - **Magnitude note (RISK-019):** Wellington's dimension average moves 4.00 → 3.85 (base 75.0 → 71.25, −3.75); the
+    integration premium falls 8.0 → 0 because five dimensions drop below 4.0 (−8.0). About two-thirds of the −11.7 is
+    the formula cliff. The proposal's recommendation is not edited (AUTONOMY §1c); disclosure goes in the digest,
+    briefing and founder packet.
+  - **Conflict of interest:** the assessor model is built by Anthropic; its Anthropic confirmation is disclosed and
+    recommended for human spot-check.
+  - **Digest (done, verified, corrected):** `research/digests/2026-09-15.{md,json}`, `research/PENDING_CHANGES.md`
+    (21 pending by directory count), public briefing `site/src/data/updates/daily/2026-09-15.json` + `latest.json` +
+    `manifest.json`. Headline: "Wellington faces a proposed downgrade after a government review found sewage-plant
+    oversight failures." `scoreChangesApplied: 0`. **First real briefing under the It. 13 rule: lint 0
+    unapplied-score-movement violations** — every movement is qualified ("proposed", "not yet applied").
+  - **Coordinator claim-to-source review (RISK-020) found 12 errors the gates passed; corrected before commit** in the
+    daily briefing, `latest.json` and `research/digests/2026-09-15.json` (exact-string script, each found once per file):
+    1–3. "Oracle confirmed at the bottom of the benchmark" — false (120 entities below 14.7; F500 rank 413/447) →
+    "confirmed in the benchmark's lowest band, Critical". 4–5. "Last Night's Briefing wrongly dropped … Lesotho" —
+    the public 09-14 briefing never mentioned Lesotho (0 matches); the drop was in the research scan → "Last Night's
+    Research". 6–9. Anthropic "checked for a conflict of interest … The check held … a past, unconflicted review" —
+    overstated; the conflicted assessor restricted itself, and prior reviews are not shown to be unconflicted →
+    disclosed-conflict wording. 10–11. Integration bonus "for scoring above a set line on every one of eight
+    categories … disappears immediately when even one drops" — false under `scoring.mjs` (−1/5 per category below
+    4.0; Wellington's published 8-point bonus already had one category, EQU 3.5, below) → formula-accurate wording.
+    12. Sweden override "applied in April 2026 after a review found the formula was overstating" — unsupported by the
+    Sweden report → "registered adjustment".
+    Verified correct and kept: Wellington never assessed before (`last_assessed` null at HEAD); failure 4 February
+    2026; Mayor Andrew Little's apology (The Spinoff fetch); Netflix "lacks merit" (NBC, report line 209); "did not
+    become law" quoted accurately from the 09-14 scan; Abbott allegations as allegations.
+    After correction: `validate-daily-briefings` 80/80 PASS; `lint-daily-briefings` PASS; daily == latest.
+- **Preflight finding 1 — rotation-state gate is miscalibrated (DC-09).** `validate-rotation-state.mjs` reports 22
+  blocking FAILs. Coordinator classification against disk: 0 true phantoms. 20 are evidenced by a same-date
+  `research/change-proposals/<slug>-<date>.json` plus a digest entry (2026-04-29 → 05-09 convention); Procter &
+  Gamble has `research/assessments/procter-gamble-2026-06-12.md` under a different slug than its key
+  `procter-amp-gamble`; Côte d'Ivoire (key `c-te-divoire`) has a 2026-06-24 digest entry. `validate-scan.mjs
+  2026-09-14` FAILs only on 1,331 vs 1,329 after the structural merge. Neither blocks today's cycle. Backlog RS-1 (v2 18).
+- **Preflight finding 2 — RISK-023 (new).** 20 Fortune 500 names are stored with HTML entities since `a60208d9`
+  (2026-04-14). Live: `/company/procter-andamp-gamble` title and H1 read "Procter &amp; Gamble"; `/fortune-500` shows
+  "AT&amp;T", "Johnson &amp; Johnson", "Macy&#x27;s"; 143 built pages affected; `/company/procter-gamble` → 301 `/404`.
+  Root cause: `slugify.ts` turns `&` into `and` on the encoded string; export/record scripts slug differently (RISK-018).
+  All 20 current/clean slugs computed with the site's slugify; no collisions. Spec:
+  `docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md`. Renames/slugs are founder-gated (§1b). Backlog RS-2a
+  (validator, v2 18) / RS-2b (rename, founder).
+- **Files written (docs/governance only):** `RISKS.md` (RISK-023), `docs/DEFECT_CLASS_REGISTRY.md` (DC-09; DC-05
+  occurrence), `IMPROVEMENT_BACKLOG.md` (RS-1, RS-2a/b), `SYSTEM_HEALTH.md`, the remediation spec, this entry.
+
+## Governance pass — 2026-09-15 — not an iteration (S6 WIP limit reached)
+
+- **Why:** It. 12 and It. 13 are validated and uncommitted; rule S6 forbids new implementation. Did the
+  meta-review §10 governance items instead (agent specs and root status files, AUTONOMY §1a).
+- **`SYSTEM_HEALTH.md`:** rewritten as a measured 2026-09-15 snapshot. Re-run today: `validate-indexes` 85,401
+  checks / 0 errors / 64 warnings (file said 12,750); `validate-daily-briefings` 79/79 (said 30/30);
+  `validate-product-separation` PASS with 6 waivers; `validate-model-releases` PASS (4 warnings); `npm test` = 17
+  steps (said "54 E2E, 0 unit"); deploy 9 consecutive successes 09-09 → 09-14 (said "auto-deploy broken"); artifact
+  coverage re-derived from `docs/` (said CHANGELOG missing); "US States 21 of 51" removed (51 published). Status
+  notes trimmed to 3; older notes archived verbatim in the same file.
+- **`.claude/agents/meta-coordinator.md`:** description rescoped from Ledgerium AI to this repo, with the added
+  triggers.
+- **`.claude/agents/coordinator.md`:** appended "Compassion Benchmark overlay": scoring model v2, rules S1–S7,
+  checklist V1–V7, artifact definition of done, extra meta-review triggers. The generic template text is unchanged.
+- **Not done (founder-owned):** `CLAUDE.md` data notes (packet item 9); every commit/deploy.
+- **Commit pathspec (governance):** `SYSTEM_HEALTH.md` `ITERATION_LOG.md` `IMPROVEMENT_BACKLOG.md`
+  `.claude/agents/coordinator.md` `.claude/agents/meta-coordinator.md` `docs/founder-briefings/2026-09-14.md`.
+
+## Iteration 13 — 2026-09-14 (briefings may not narrate an unapplied score change as published — D-1, RISK-020)
+
+### Selected Item
+**D-1: `unapplied-score-movement` lint rule.** Briefings dated ≥ 2026-09-15 fail the build if, with
+`pipeline.scoreChangesApplied` 0/absent, a headline/title/summary/topSignal title or whyItMatters states a score
+movement as fact ("falls 5.9 points") without qualifying language ("would", "proposed", "not yet applied").
+
+### Reason for Selection (first loop under scoring model v2)
+| Item | v1 | v2 | Lane |
+|---|---:|---:|---|
+| **D-1** (K+2 RISK-020 reduce · P+1 live · Rc+2 DC-03 ≥ 5 verified cycles) | 16 | **21** | eligible |
+| A-1 entity-records test + collision ratchet | 15 | 19 | eligible but edits `site/package.json` (It. 12 pending) |
+| U-1 coverage generator, report-only | 15 | 17 | eligible |
+No deviation: top eligible v2 item. Permitted with It. 12 uncommitted because file sets are disjoint (S6).
+
+### Verification checklist
+- **V1 production BEFORE (curl):** `/updates/2026-07-30` "Portugal's face-covering ban cuts its score 5 points" live;
+  `/updates/2026-09-14` "Hong Kong falls 5.9 points" + "Hong Kong's score falls 5.9 points" live, also on `/updates`
+  hub; `/updates/2026-07-31` "OpenAI's score would fall 5 points" (compliant). All with `scoreChangesApplied: 0`.
+- **V2 coordinator re-runs:** see attempts below.
+- **V3 negative controls (coordinator, real data forward-dated to 2026-09-15):** 09-14 → exactly 3 Hong Kong
+  violations (headline, summary, topSignals[0].title; Syria not flagged); 07-30 → Portugal headline only; 07-31 → 0;
+  09-14 with applied=1 → 0. Coordinator probes flagged: "Qatar rises to 64 of 100", "Tunis falls to 26.9", "Nepal
+  climbs from 41.2 to 47.0", "Brazil slips out of the Established band", "composite dropped by 4.1 pts"; passed:
+  "toll rose to 45", "protest deaths rose to 12", "fine from 50 to 20 million", "Deaths climbed 40 percent",
+  "rises to 71.2 once the proposal is applied".
+- **V4 built output:** N/A — no page output changes; the linter (part of the build chain) was run directly, exit 0.
+  `npm run build` deliberately not run (churns tracked manifests, DC-08).
+- **V5 dated content:** no published briefing edited; cutoff compares the JSON `date` string, never the clock;
+  pre-cutoff matches print as REPORT-ONLY and never affect the exit code (AUTONOMY §1c).
+- **V6 diff scope:** 5 files, all in scope, none shared with It. 12.
+- **V7 post-deploy AFTER:** pending founder approval.
+
+### Attempts (one item, two validation rounds failed, recorded honestly)
+1. **Attempt 1 — FAILED coordinator validation.** Sentence-level co-occurrence (movement verb + any score word).
+   Historical report: 63 matches, roughly half false positives ("death toll rose to 3,899", "fuel prices rose",
+   "raises a new question", "Neither … lost points"); even the compliant OpenAI briefing failed ("proposes" not a
+   qualifier). Forward-dated, it would have blocked legitimate nightly briefings.
+2. **Rework — binding patterns.** Verb must bind to the score: score-subject→verb, verb→N points, verb→score value,
+   verb→band, verb→its score; negation window; expanded qualifiers. 30 real-corpus fixtures (12 must-flag, 18
+   must-pass) all pass; historical matches 63 → 38. **Coordinator found a residual false-positive source**:
+   integer score values ("Jumps From 600 to 702 Deaths" in 07-14; probe "deaths rose to 12").
+3. **Narrow fix.** Score value must be one-decimal (`28.4`) or an integer followed by "of 100". 9 more fixtures.
+   Forward-dated total 32 → 31 (only the Ebola title removed).
+- **Root cause of the two rounds:** the first acceptance criteria had no labelled false-positive corpus; precision was
+  only testable once real sentences were fixtures. Standard for future gates: seed must-pass fixtures from real data.
+- **Coordinator correction:** the agent reported that the docs needed no update; `.claude/agents/overnight-digest.md`
+  still described the score-value pattern as "a bare number". Corrected by the coordinator.
+
+### Validation Results (coordinator re-run, final)
+- `npx tsc --noEmit` clean · `node scripts/test-lint-briefings.mjs` **99 passed, 0 failed** · `npm run test` exit 0 ·
+  `node scripts/lint-daily-briefings.mjs` exit 0.
+- Forward-dated exposure across all past briefings: **31 flags.** In the `scoreChangesApplied` era (07-20 → 09-14):
+  21 flags = 19 true unapplied-movement statements (Philadelphia ×2, Taipei, Portugal, Spain/Abbott ×4, Chile/
+  Regions/Kenya/Starbucks ×8, Hong Kong ×3) + 2 borderline (08-18, changes applied between cycles — compliant wording
+  "were applied on 16 August" passes). 10 flags are pre-07-20 briefings without the field (fail-closed by design).
+
+### Known limitations (documented, not hidden)
+- Aggregate only: a cycle with `scoreChangesApplied ≥ 1` does not check which entity was applied.
+- `scoreChangesApplied` is not required by `validate-daily-briefings.mjs`; absent is treated as 0 (fail-closed).
+- `topSignals[].description` is not scanned; sentence splitting is regex-based.
+
+### Outcome
+Unapplied-movement statements that can reach a future public briefing: ungated (≥ 5 cycles published) → blocked at
+build for briefings dated ≥ 2026-09-15. RISK-020 reduced (one error class of four), not closed.
+
+### Commit pathspec (It. 13)
+`site/scripts/lib/lint-rules.mjs` `site/scripts/lint-daily-briefings.mjs` `site/scripts/test-lint-briefings.mjs`
+`.claude/agents/overnight-digest.md` `docs/DAILY_BRIEFING_SCHEMA.md` + artifacts (`ITERATION_LOG.md`
+`IMPROVEMENT_BACKLOG.md` `SYSTEM_HEALTH.md` `CHANGELOG.md` `docs/DEFECT_CLASS_REGISTRY.md`).
+Excluded: build-churn JSON/manifests, America-at-250, `entity-records-dryrun.json`, `.bak`, settings, grant docs.
+
+### Follow-ups
+- Make `pipeline.scoreChangesApplied` required in `validate-daily-briefings.mjs` (small; removes the fail-closed ambiguity).
+- **S6 now binding:** It. 12 and It. 13 both validated and uncommitted → no further implementation until the founder
+  approves commits (decision packet item 1 + It. 13 pathspec above).
+- Deploy risk to note at approval: from 2026-09-15 the nightly digest must follow the new rule or the build fails
+  (intended); `.claude/agents/overnight-digest.md` carries the rule and examples.
+
+## Meta-review 1 (post Iterations 10–12) — 2026-09-14 — not an iteration
+
+- **Trigger:** 3 completed loops. **Agent:** meta-coordinator → `docs/META_REVIEW_2026-09-14_ITER10-12.md`.
+- **Verdict:** Amber — execution strong (3/3 first-pass validations; coordinator re-verification caught real
+  defects), selection biased (3/3 site-copy fixes, 0/3 research pipeline; ease double-counted; gated items
+  deferred whole; uncommitted pile-up).
+- **Coordinator verification of its claims:** dirty paths 55 ✓ · `build-special-briefings.mjs:474` stamps
+  `generatedAt: new Date()` into tracked JSON, 16 files timestamp-only ✓ · `test-entity-records.mjs` 19,687
+  passed / 0 failed, not wired ✓ · America-at-250 uncommitted rewrite of a published briefing ✓ **but dated
+  2026-09-03 (source `.md` mtime), not July** — corrected in the backlog.
+- **Adopted (trial, It. 13–15):** scoring model v2, selection rules S1–S7, verification checklist V1–V7 — recorded
+  in `IMPROVEMENT_BACKLOG.md`; `docs/DEFECT_CLASS_REGISTRY.md` created (governance artifact, §1a).
+  `SYSTEM_HEALTH.md` canonical facts corrected; CHANGELOG deploy status note appended.
+- **Not yet applied:** `.claude/agents/coordinator.md` / `meta-coordinator.md` spec edits; full SYSTEM_HEALTH
+  table snapshot; CLAUDE.md data notes (founder-owned, packet item 9).
+- **Next:** Iteration 13 = D-1 (v2 21), permitted with It. 12 pending because file sets are disjoint (S6).
+
+## Iteration 12 — 2026-09-14 (stale hard-coded catalogue counts → derived + regression guard)
+
+### Selected Item
+**Public pages hard-coded the catalogue size and per-index counts** ("1,156 entities", "7/seven indexes",
+"21 U.S. states", "50 robotics labs") instead of deriving them. Exactly one defect class.
+
+### Reason for Selection
+Found while verifying the grant request; scored I4 S5 L3 C5 − E1 − R1 = **15**, tied for top of queue, ungated,
+certain and live. Traceability: a benchmark whose own pages misstate its size by 169 entities undercuts
+every count it publishes. Chosen over U (16) because U needs founder sign-off on publishing the 61.7% share.
+**BEFORE (production curl, raw HTML occurrences; RSC payload roughly doubles each):** /data 1,156×10,
+7-indexes×2, 21-states×2, 50-robotics×2 · /media 1,156×8, 7-indexes×4 · /score-watch 7-indexes×4, 21-states×2
+· /pricing 21-states×2 · /api-access 7-indexes×4 · / 7-indexes×6 · /updates/special 1,156×8.
+Canonical: 1,325 entities, 8 indexes, 51 states, 92 robotics labs.
+
+### What Changed
+- `entityCount.ts`: new `getIndexEntityCount(indexSlug)` (fails loud); stale literals removed from its docs.
+- Derived from `SCORED_ENTITY_COUNT_FORMATTED` / `INDEX_COUNT` / `getIndexEntityCount`: `/data`, `/media`,
+  `/api-access`, `/pricing`, `/purchase-research`, `/score-watch`, `/updates/special` (+ `[slug]` live-chart
+  caption reworded to present tense), `/` (home), `/indexes`, 4 `nonprofit-alt` pages (already said 8 as a
+  literal), 4 component doc comments.
+- **Same-defect completions (agent-found, coordinator-accepted):** Universities was *missing* from the home
+  "indexes at a glance" grid, the home "Published indexes" cards, the `/data` endpoint list and the
+  `/score-watch` index list — the other face of "seven indexes". Added; home takeaway verified against
+  `universities.json` (3 established / 76 functional / 21 developing / 0 exemplary / 0 critical).
+  `/purchase-research` "21 of 51 states scored to date — full index in progress" → "All 51 states scored".
+- Daily briefing trust line: "across 7 indexes" → "across the benchmark's indexes" (header renders for every
+  past briefing; pre-06-19 briefings covered 7; briefing JSON carries no per-briefing index count). Pipeline
+  fallback literal "1,160" → canonical count (only used when pipeline data is absent).
+- **Deliberately unchanged:** `/media` sentence describing the dated inaugural 2026 report ("1,156
+  institutions … seven index families") — a publication's as-published figures (AUTONOMY §1c); dated
+  special-briefing JSON body copy.
+- **Guard:** `site/scripts/test-no-stale-counts.mjs`, wired into `npm run test`; one commented allowlist entry.
+
+### Agents Involved
+- coordinator — selection, production baseline, context review of dated copy, independent verification, artifacts
+- frontend-engineer — implementation, guard
+
+### Validation Results
+- Coordinator: `npx tsc --noEmit` clean; `npm run test` exit 0 (all suites incl. model-releases 93/93;
+  no-stale-counts 176 files, 0 findings).
+- Coordinator guard proof: planted probe with all four patterns → FAIL exit 1 (4 findings, file:line);
+  removed → ok exit 0.
+- Agent `npm run build` exit 0; coordinator grep of built output: home 1,325 entities / 8 indexes; /data
+  1,325 · 8 · 51 · 92; /score-watch 1,325 · 8; /pricing 51 · 92; /api-access 8 index families · 8 indexes;
+  /purchase-research 92; no `1,156` in any non-dated page; 2026-05-20 briefing keeps its historical 1,160
+  pipeline figure with neutral trust line.
+- Diff reviewed line by line (22 source files). Build-regenerated timestamps in special-briefing JSON /
+  manifests and the pre-existing America-at-250 edit are not part of this iteration.
+- No commit, push or deploy (AUTONOMY §1b).
+
+### Outcome
+Stale catalogue-count claims on current-state public pages: ~20 source literals across 11 routes → 0,
+with a CI guard preventing recurrence. Universities now present on all four index lists that omitted it.
+
+### Follow-ups
+- Founder: approve commit + deploy of Iteration 12.
+- Home "at a glance" takeaways are hand-written sentences — could drift as bands move; candidate to derive.
+- Guard covers `src/app` + `src/components` only; `scripts/` generators (e.g. feeds, OG images) not scanned.
+- Meta-review trigger: Iterations 10–12 complete = 3 loops → run `meta-coordinator` before Iteration 13.
+
 ## Iteration 11 — 2026-09-14 (fix the dead citation URL pattern + llms.txt drift — PR/FAQ S-1, C18)
 
 ### Selected Item

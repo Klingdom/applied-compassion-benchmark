@@ -595,3 +595,49 @@ Use its output to refine:
 - selection logic
 - agent invocation order
 - improvement categories to emphasize
+
+---
+
+# 🧭 COMPASSION BENCHMARK OVERLAY (adopted 2026-09-14, trial for Iterations 13–15)
+
+This spec was adapted from a Ledgerium AI template. In this repo, "Ledgerium alignment" means the benchmark's
+own determinism, traceability and evidence linkage. Where this overlay conflicts with the generic steps above,
+**this overlay wins.** Source: `docs/META_REVIEW_2026-09-14_ITER10-12.md` §5–§7. Authority boundaries:
+`AUTONOMY.md` (commit, deploy, index/score/methodology writes always need founder approval).
+
+## Step 2 override — candidate generation
+Do not re-run five-agent candidate generation while the PR/FAQ §6 table plus `IMPROVEMENT_BACKLOG.md` still holds
+≥ 5 eligible items scoring ≥ 13; reuse them.
+
+## Step 4 override — scoring model v2
+```
+Base     = Impact + Strategic + Learning + Confidence − Effort − Risk     (each 1–5)
+Adjusted = Base + K + P + Rc + Ag + Dl
+K  RISKS.md risk closed: High/High +3 · one High +2 · Medium/Medium +1; −1 if only reduced (cite RISK ID)
+P  +1 live defect on production, confirmed by a recorded BEFORE check;  K + P ≤ 4
+Rc +2 installs a gate for a class with ≥2 dated occurrences in docs/DEFECT_CLASS_REGISTRY.md; −1 instance fix without one
+Ag +1 per 14 days eligible and unstarted (Base ≥ 13), cap +3
+Dl deadline ≤30d +3 · ≤90d +2 · ≤180d +1
+Tie-break: Dl → K → forward exposure → Rc → lower Effort
+Lane (not a score): eligible | blocked-on-founder
+```
+Log v1 and v2 for the selected item and the top two alternatives.
+
+## Step 5 override — selection rules
+- **S1** Remove "low effort / low risk" from preferences (already in the formula). Any non-top selection records `Deviation: <reason not in the formula>`.
+- **S2** Split gated items: X-1 (agent-doable under AUTONOMY §1a) stays eligible; X-2 (gated write) goes to the founder decision packet with a default.
+- **S3** A mid-session discovery pre-empts only if logged and scored first, and it either scores ≥ the top eligible item or is a live score/formula/identity/money error; max 1 pre-emption per 3 loops.
+- **S4** A class with ≥ 2 registry occurrences requires a mechanical gate (with planted-probe proof) or a dated waiver with an owner.
+- **S5** Accept agent scope expansion only if: same class, same verification, no new authority class, no new hand-written factual claim (unless verified and logged), ≤ ~30% more files. Otherwise revert and add a backlog row.
+- **S6** WIP limit: ≤ 1 validated-uncommitted iteration when starting a new one, unless file sets are disjoint. With 2 pending, stop implementing and do governance/hygiene work. Every log entry names its commit pathspec; approval requests never say "commit all".
+- **S7** If RISK-015 reaches T-30 (2026-11-09) with no decision, R-1 (waiver expiry warning) is the forced next selection.
+
+## Step 7 override — verification checklist (record each in ITERATION_LOG)
+V1 production BEFORE (curl/grep, counts per route) · V2 coordinator re-runs every agent claim (reading the report is not verification) · V3 negative control for every new gate (planted probe fails, removal passes); seed must-pass fixtures from real data · V4 grep built output · V5 dated-content check (never retro-edit a published briefing, AUTONOMY §1c) · V6 diff scope review (in-scope / same-defect / excluded churn) · V7 post-deploy AFTER.
+After a second failed validation on the same item, do a root-cause pass (acceptance criteria, shared constraints) before re-briefing.
+
+## Step 8 override — definition of done for artifacts
+Correct every SYSTEM_HEALTH row the change makes false; keep ≤ 3 status notes at its top (archive older ones verbatim); on deploy, append the commit SHA to the CHANGELOG entry via a dated status note (never rewrite a dated entry); update `docs/DEFECT_CLASS_REGISTRY.md` when a class gains an occurrence or a gate.
+
+## Meta-review triggers (additions)
+Also call `meta-coordinator` when two consecutive loops deviate from the top eligible v2 item, or when a founder decision older than 14 days blocks an item scoring ≥ 16.

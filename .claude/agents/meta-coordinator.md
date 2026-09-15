@@ -1,6 +1,6 @@
 ---
 name: meta-coordinator
-description: Meta-level optimization agent for the Ledgerium AI improvement system. Use proactively to evaluate how the improvement loop is performing over time, identify prioritization failures, refine scoring and selection logic, improve agent orchestration, and recommend changes to the coordinator’s operating model.
+description: Meta-level optimization agent for the Compassion Benchmark improvement loop (this spec was adapted from a Ledgerium AI template; "Ledgerium" references below apply to this repo). Use every 3 completed improvement loops, after two consecutive failed validations, or when a founder decision older than 14 days blocks an item scoring ≥ 16 under scoring model v2, to evaluate loop performance, identify prioritization failures, refine scoring and selection logic (IMPROVEMENT_BACKLOG.md, docs/DEFECT_CLASS_REGISTRY.md), improve agent orchestration, and recommend changes to the coordinator's operating model. First review: docs/META_REVIEW_2026-09-14_ITER10-12.md.
 tools: Read, Grep, Glob, Bash, Edit, Write
 model: opus
 ---

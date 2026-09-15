@@ -8,6 +8,82 @@ Priority Score = Impact + Strategic Alignment + Learning Value + Confidence − 
 
 ---
 
+## Scoring model v2 — ADOPTED 2026-09-14 as a trial for Iterations 13–15
+
+Source: `docs/META_REVIEW_2026-09-14_ITER10-12.md` §5–§7 (coordinator-verified; one factual correction:
+the uncommitted America-at-250 edit dates from **2026-09-03** (source `.md` mtime), not July).
+v1 scores are kept for comparability; log **v1 and v2** for the selected item and top two alternatives.
+
+```
+Base     = I + S + L + C − E − R          (unchanged)
+Adjusted = Base + K + P + Rc + Ag + Dl
+K  risk closed (RISKS.md): High/High +3 · one High +2 · Medium/Medium +1; −1 if only reduced; cite RISK ID
+P  live exposure: +1 if on production now, confirmed by a recorded BEFORE check;  K + P ≤ 4
+Rc recurrence (docs/DEFECT_CLASS_REGISTRY.md): +2 installs a gate for a ≥2-occurrence class; −1 fixes an instance without one
+Ag aging: +1 per 14 days eligible and unstarted (Base ≥ 13), cap +3
+Dl deadline: ≤30d +3 · ≤90d +2 · ≤180d +1
+Tie-break: Dl → K → forward exposure → Rc → lower Effort
+Lane (not score): eligible | blocked-on-founder (never selected; appears in the decision packet)
+```
+
+**Selection rules:** S1 no double-counting ease (deviations must cite a non-formula reason) · S2 split gated
+items into agent-doable X-1 and gated X-2 · S3 mid-session discoveries pre-empt only if logged + scored first,
+≥ top eligible (or live score/formula/identity/money error), max 1 per 3 loops · S4 recurring class → gate or
+dated waiver · S5 scope expansion accepted only for same class + same verification + no new authority class +
+no new hand-written claim + ≤ ~30% files, logged · S6 ≤ 1 validated-uncommitted iteration unless file sets are
+disjoint; every log entry names its commit pathspec · S7 RISK-015 T-30 (**2026-11-09**) forces R-1.
+
+**Verification checklist per iteration:** V1 production BEFORE · V2 coordinator re-runs agent claims · V3
+negative-control proof for new guards · V4 grep built output · V5 dated-content check (AUTONOMY §1c) · V6
+diff scope review · V7 post-deploy AFTER.
+
+### v2 shortlist (Iterations 13–15)
+
+| Order | Item | v1 | v2 | Lane | Status |
+|---|---|---:|---:|---|---|
+| 13 | **D-1** `unapplied-score-movement` lint rule, forward-dated ≥ 2026-09-15 (RISK-020 reduce K+2 · P+1 · Rc+2, DC-03 = 2 verified occurrences) | 16 | **21** | eligible (file set disjoint from It. 12) | **✅ COMPLETE Iteration 13** (validated after 2 rework rounds; uncommitted pending founder). New follow-up: require `pipeline.scoreChangesApplied` in `validate-daily-briefings.mjs` |
+| 14 | **A-1** wire `test-entity-records.mjs` into `npm run test` + slug-collision ratchet (RISK-017/018 · Rc+2 DC-05) | 15 | 19 | eligible — **waits for It. 12 commit** (both edit `site/package.json`) | Queued |
+| 15 | **U-1** coverage/freshness generator, report-only (RISK-001/016). U-2 site publication = founder decision | 15 | 17 | eligible (U-2 blocked-on-founder) | Queued |
+| — | L cross-links / overclaiming | 15 | 16 | eligible, held back (no RISKS entry) | Queued |
+| — | R-1 waiver T-30 warning + PASS-with-waivers distinct (RISK-015 · Dl+2) | 12 | 16 | eligible; forced 2026-11-09 | Queued |
+
+### New backlog item (coordinator discovery, 2026-09-15 — logged and scored before any work, per S3)
+- **RS-1 — make `validate-rotation-state.mjs` fail only on real gaps.** Its 22 blocking FAILs are all false: 20 are
+  evidenced by same-date change-proposal JSON + digest (early convention), 1 by a report under a different slug
+  (`procter-gamble` vs key `procter-amp-gamble`, an HTML-entity leak in the stored name), 1 by a digest entry only
+  (`c-te-divoire`, accent slug, RISK-018). Fix: accept same-date proposal JSON as WARN evidence; resolve slug aliases;
+  keep FAIL for true zero-evidence; add fixtures for each class (V3). Does NOT write `last_assessed`.
+  v1: I4 S5 L4 C5 − E2 − R1 = **15** · v2: K+1 (RISK-008/016 observability, reduce) · P 0 · Rc +2 (DC-09, ≥ 2 dead-guard
+  occurrences) → **18**. Lane: eligible, but **S6 blocks implementation** until It. 12/13 are committed.
+- **RS-2 — 20 Fortune 500 names published with HTML entities (RISK-023)** — checked 2026-09-15: live and visible
+  ("Procter &amp; Gamble" in title/H1; /fortune-500 ranking; 143 built pages), three slugs per company, natural URL
+  → 301 `/404`. Split per S2:
+  - **RS-2a (X-1, agent-doable):** validator failing on HTML entities in any published entity name, with the 20 known
+    cases as a dated, shrinking waiver list; remediation spec (old/new name, page/score/record/rotation slugs, 301 map).
+    v1 I4 S5 L3 C5 − E2 − R1 = 14 · v2 K+1 (reduces RISK-023) · P+1 · Rc+2 (DC-05) → **18**. S6 blocks the code
+    half; the spec is docs.
+  - **RS-2b (X-2, founder-gated, AUTONOMY §1b renames/slugs):** decode the 20 names in `fortune-500.json` and entity
+    records, migrate to clean slugs with 301s from both old slugs, rekey rotation-state. Recommended default: approve.
+
+### New backlog items (from meta-review §8)
+- Deterministic `generatedAt` in `build-special-briefings.mjs` (DC-08) — v1 ≈ 13.
+- Extend `test-no-stale-counts` to `site/scripts/` generators (DC-01 coverage gap).
+- Method-page numeric-example test (DC-02; required by S4 before G-3 ships).
+
+### Meta-review §10 application status (2026-09-15)
+- ✅ 1–3 `.claude/agents/coordinator.md` overlay (v2, S1–S7, V1–V7, triggers) · ✅ 4 `docs/DEFECT_CLASS_REGISTRY.md`
+  · ✅ 5 v2 shortlist above · ✅ 6 `SYSTEM_HEALTH.md` measured snapshot · ✅ 7 ITERATION_LOG v1/v2 + V-checklist +
+  pathspec (from It. 13) · ⏳ 8 decision packet delivered in `docs/founder-briefings/2026-09-14.md`; no answers yet.
+- ✅ meta-coordinator spec rescoped (§7.2 item 6).
+- Not yet scored into the table: the full PR/FAQ top 20 with a v2 column. Deferred until after It. 15 per §5.4.
+
+### Blocked-on-founder (decision packet, `docs/META_REVIEW_2026-09-14_ITER10-12.md` §9)
+Commit It. 12 by pathspec · hold America-at-250 edit (dated 2026-09-03) · Score-Watch pause · publish never-assessed
+share (U-2) · waiver extension · cadence floor · branch protection · batched approvals · refresh CLAUDE.md data
+notes · `.bak` cleanup + branch naming.
+
+---
+
 ## Iteration 10 — 2026-09-14 (source: PR/FAQ 2026-09-14 ranked table, 12 specialist reviews)
 
 Candidate set is the PR/FAQ's deduplicated, reconciled table
@@ -35,6 +111,13 @@ first. Effective score for the split sub-item G-1: I4 + S4 + L3 + C5 − E1 − 
 Follow-ups spawned (not implemented):
 - (Iteration 11) `/media` hard-coded "1,156 entities" → `entityCount.ts`; llms.txt model-scored literal →
   derive from model-index facts; `/404` soft-404 (HTTP 200) → item T.
+- **✅ COMPLETE Iteration 12 (derived counts + `test-no-stale-counts` guard; also added missing Universities
+  rows on home/data/score-watch). Original entry:** NEW candidate (found during grant-request verification, 2026-09-14) — stale hard-coded entity counts on
+  public pages.** "1,156 entities" (canonical 1,325) in `site/src/app/data/page.tsx` (5 places incl. meta
+  description), `media/page.tsx` (4), `updates/special/page.tsx` (2 meta), `updates/special/[slug]/page.tsx`;
+  "seven indexes" (8); "21 U.S. states" (51) in `data/page.tsx:35` and `pricing/page.tsx:299`; "50 humanoid
+  robotics labs" (92) in `data/page.tsx:47`. Fix: route through `entityCount.ts`/`INDEX_REGISTRY` + add a
+  build guard against literal counts. Type: fix · I4 S5 L3 C5 E1 R1 = **15** — ties the top of the queue.
 - **Next selection:** U (coverage dashboard) if the founder approves publishing the never-assessed share;
   otherwise D (status ladder) or L (cross-links / overclaiming), both ungated.
 - G-3: verify related wording in `site/src/app/methodology/page.tsx:1266`, `ConsistencyStepChart.tsx`,

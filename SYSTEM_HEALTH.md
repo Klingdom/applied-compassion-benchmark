@@ -1,28 +1,100 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-09-14 | After: Iteration 11 (/cite dead URL pattern + llms.txt drift fixed)
+Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
+Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review 1 · History: `ITERATION_LOG.md`
 
-> 2026-09-14 (Iteration 11): `/cite`, `/media` and `/data` taught `compassionbenchmark.com/[index]/[slug]`
-> (example `/fortune-500/microsoft` → soft 404 on production); now `[entity-type]/[slug]` with a prefix
-> table rendered from `INDEX_REGISTRY`. `llms.txt` entity count now derived from index data (1,325; was
-> hard-coded "1,260+") and lists `/cite` + `/ai-models` (pre-registration, no model scored). Gates: tsc
-> clean · all test suites pass · build exit 0 · 15/15 llms.txt URLs exist in export. **Iterations 10–11
-> committed (beb94ae9, f940a80b, 376b0f85) and deployed 2026-09-14 on founder approval** — run 34901047499:
-> build+test, worker-typecheck, deploy, post-deploy health all success; production verified by curl (old
-> formula claim absent, new FAQ text present; /cite, /media, /data free of `fortune-500/microsoft`;
-> `/company/microsoft` 200; live llms.txt states 1,325 entities).
+## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
-> 2026-09-14 (Iteration 10): Removed the false "balanced beats spiky at the same average" claim from the
-> `/ai-models/methodology` FAQ (verified false under `scoring.mjs`); copy now describes the formula as it
-> is. No score change. Validated the prior-session Worker typecheck fix (`worker/` typecheck passes for the
-> first time). Gates: site tsc clean · `npm run test` all suites pass (scoring 125/125, model-releases 93/93)
-> · build 1,978 pages · validate-daily-briefings 79/79. **Uncommitted, undeployed — awaiting founder
-> approval.** Current catalogue per build manifest: 8 indexes, 1,325 entities, 8 floor-designated.
-> Deploy pipeline green 7 consecutive runs since 2026-09-09 (RISK-004 verification gap remains).
-> Open high risks: RISK-014 (Score-Watch host NXDOMAIN — urgent), RISK-015 (waiver expiry 2026-12-09),
-> RISK-016 (pipeline never unattended), RISK-017/018 (slug collisions), RISK-020 (briefing fact-check gap),
-> RISK-021 (approval provenance). The "Build Status" and "Artifact Coverage" tables below are stale
-> (2026-06); regenerating them is tracked as PR/FAQ item AA.
+> 2026-09-14 (Iteration 13, first loop under scoring model v2): new `unapplied-score-movement` rule in
+> `lint-daily-briefings` — from briefings dated 2026-09-15, a headline/summary may not state a score change as
+> published when `scoreChangesApplied` is 0 (verified live defect in ≥ 5 cycles). Validation failed twice on
+> precision before passing; final: lint tests 99/0, full suite exit 0, forward-dated exposure 31 flags (19 true +
+> 2 borderline in the field era). RISK-020 reduced. **Uncommitted — awaiting founder.**
+
+> 2026-09-14 (Iteration 12): ~20 hard-coded count literals across 11 public routes now derive from
+> `entityCount.ts` / `INDEX_COUNT` (1,325 · 8 · 51 · 92); Universities added to four index lists; new
+> `test:no-stale-counts` guard. **Uncommitted — awaiting founder.**
+
+> 2026-09-14 (Iterations 10–11): false "balanced beats spiky" formula claim removed from `/ai-models/methodology`;
+> dead `/cite` URL pattern fixed on `/cite`, `/media`, `/data`; `llms.txt` counts derived. **Committed
+> (`beb94ae9`, `f940a80b`, `376b0f85`) and deployed 2026-09-14, verified on production.**
+
+## Canonical facts
+- **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
+- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned 1,331 (2026-09-14).
+- **Never individually assessed: 820 of 1,329 (61.7%)**; assessed within 30 days: 135 (10.2%) — measured 2026-09-14.
+- **Methodology:** v1.2 (`site/scripts/lib/scoring.mjs`), 8 dimensions, 40 subdimensions, 5 bands.
+- **AI model benchmark (CB-MODEL):** pre-registration published at `/ai-models`; 0 models scored (D-29).
+
+## Build and gates (measured 2026-09-15 unless noted)
+| Gate | Result | Notes |
+|---|---|---|
+| `npm run build` | ✅ exit 0 (2026-09-14) | 1,978 static pages generated; 1,973 HTML files in `out/`; Pagefind 1,956 pages, **3.19 MB vs 2 MB target** (warning) |
+| `validate-indexes` | ✅ 85,401 checks, 0 errors, 64 warnings | |
+| `validate-daily-briefings` | ✅ 79 of 79 | |
+| `lint-daily-briefings` | ✅ PASS | + `unapplied-score-movement` rule (uncommitted, It. 13) |
+| `validate-product-separation` | ✅ PASS — **6 waived**, 10 warnings | All 6 waivers expire **2026-12-09** → every build fails from 12-10 (RISK-015) |
+| `validate-model-releases` | ✅ PASS, 4 warnings | release-watch `scanState` "never-scanned" |
+| `tsc --noEmit` (site) | ✅ clean | |
+| Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
+| Build churn | ⚠️ `build-special-briefings.mjs:474` rewrites 16 tracked JSON timestamps every build | DC-08 |
+
+## Tests (`npm run test`, 17 steps, all passing)
+test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (17) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
+- **Not wired:** `scripts/test-entity-records.mjs` — 19,687 passed / 0 failed when run manually 2026-09-14 (candidate A-1).
+- **Unverified in this snapshot:** browser E2E suite (earlier "54 E2E tests" figure dates from April).
+
+## Deployment
+- **Auto-deploy:** ✅ 9 consecutive successful `Deploy to VPS` runs, 2026-09-09 → 2026-09-14 (after 53 failures 07-14 → 09-08). Last deployed commit `376b0f85`.
+- **Gap:** post-deploy verify does not assert score values (RISK-004).
+- **Worker (Cloudflare):** not deployed; `api.compassionbenchmark.com` does not resolve (RISK-014).
+
+## Artifact coverage (scoped, not repo-wide)
+| Artifact | Status |
+|---|---|
+| PRD | Scoped only: `docs/PRD_{ARCHIVE,ENTITY_EVIDENCE_RETENTION,MODEL_BENCHMARK,MONETIZATION,RELEASE_WATCH_AND_BYO_SCORING,UNIVERSITY_INDEX}.md`; no repo-level PRD |
+| ARCHITECTURE | Scoped only: 7 `docs/ARCHITECTURE_*.md`; no repo-level architecture doc |
+| API_SPEC | ⬜ Static site; Worker endpoints documented in `worker/README.md` only |
+| DATA_MODEL | Partial: `docs/DATA_MODEL_SUBDIMENSIONS.md`, `docs/DAILY_BRIEFING_SCHEMA.md` |
+| UX_FLOWS | Scoped: `docs/UX_FLOWS_{ARCHIVE,ENTITY_EVIDENCE,MODEL_BENCHMARK}.md` |
+| TEST_PLAN | ❌ Missing (suite list above is the de facto plan) |
+| SECURITY_REVIEW | Partial: `docs/SECURITY_BYO_SCORING.md`, `docs/prfaq/2026-09-14/reviews/security-auditor.md` |
+| LAUNCH_PLAN | Scoped: `docs/SCORE_WATCH_LAUNCH.md`, `docs/GROWTH_UNIVERSITY_INDEX_LAUNCH.md` |
+| METRICS | Scoped: `docs/METRICS_{ARCHIVE,ENTITY_EVIDENCE,MONETIZATION}.md`; PR/FAQ §8 KPI baselines |
+| CHANGELOG | ✅ `CHANGELOG.md` |
+| Governance | ✅ `AUTONOMY.md`, `DECISIONS.md`, `RISKS.md`, `INCIDENTS.md`, `OBSERVABILITY.md`, `DISASTER-RECOVERY.md`, `AGENT-ROUTING.md`, `docs/DEFECT_CLASS_REGISTRY.md` |
+| Loop | ✅ `IMPROVEMENT_BACKLOG.md` (scoring model v2 trial), `ITERATION_LOG.md`, `docs/META_REVIEW_2026-09-14_ITER10-12.md` |
+
+## Risks (RISKS.md — 17 entries, all open)
+- **High / urgent:** RISK-014 Score-Watch sold, host NXDOMAIN · RISK-015 waiver cliff 2026-12-09 · RISK-016 research never run unattended · RISK-017/018 slug collisions (16) + accent mismatches (13) · RISK-020 briefing errors pass gates (reduced by It. 13, pending) · RISK-021 approval provenance unverifiable · RISK-001 majority placeholder scores.
+- **New 2026-09-15:** RISK-023 — 20 Fortune 500 names published with visible HTML entities ("Procter &amp; Gamble") and three disagreeing slugs each; fix spec `docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md` (founder-gated). Also: `validate-rotation-state.mjs` 22 FAILs are all false (evidence exists under older conventions) — backlog RS-1.
+- **Also open:** RISK-002 held proposals · RISK-003 entity-currency defects · RISK-004 deploy verification · RISK-005 two disclosure conventions · RISK-006 band-boundary ambiguity · RISK-007 reputational (mitigated) · RISK-008 rotation-state tracking · RISK-019 formula cliff at 4.0 (copy fixed) · RISK-022 public admin surface / missing HSTS/CSP.
+
+## Known data characteristics (non-blocking; re-verify before citing)
+- Band boundaries disagree at exact integers and at 60.9 (RISK-006).
+- Two "absence of disclosure" conventions live in ai-labs (RISK-005).
+- *Unverified since 2026-04:* legacy composite offset of up to ~5 points; Clearview AI composite/calculated gap.
+- *Corrected 2026-09-15:* "US States: 21 of 51 entries" is obsolete — all 51 states are published.
+
+## Working tree (not deployed)
+- **Committed 2026-09-15 on branch `release/2026-09-15`** (founder instruction; pushed for manual deployment, NOT `main`): It. 12 · It. 13 · research cycle 2026-09-15 (scan, 14 assessments, Wellington proposal, digest, corrected public briefing, feeds) · grant documents · governance docs. Combined state verified before commit: tsc clean · `npm run test` exit 0 · `npm run build` exit 0 (1,989 pages; Pagefind 1,967) · briefing validator 80/80 · lint 0 unapplied-movement violations.
+- **Held:** America-at-250 rewrite of a published briefing (made ~2026-09-03; AUTONOMY §1c) · `research/entity-records-dryrun.json` (stale dry run).
+- **Churn/local:** 16 special-briefing timestamp JSON + manifests · 2 `.bak` files · `.claude/settings.local.json`.
+- **WIP limit (S6):** reached — no new implementation until commits are approved.
+
+## Readiness
+| Area | Status |
+|---|---|
+| Site build and deploy | ✅ green |
+| Data validation | ✅ automated in build |
+| Research cadence | ⚠️ manual; 62.5% of days with a completed cycle (Apr 15 → Sep 14); never unattended |
+| Commerce | ❌ Score-Watch unfulfillable (RISK-014) |
+| Security posture | ⚠️ HSTS/CSP missing; public analytics login (RISK-022) |
+| AI model benchmark | ⏸ pre-registration, 0 models by design |
+
+---
+
+## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
 
 > 2026-07-12: Ran a 4-lens **nonprofit simplification audit** (product, architecture, UX,
 > frontend) → consolidated 15-item backlog in `docs/NONPROFIT_SIMPLIFY_MASTER_2026-07-12.md`.
@@ -63,54 +135,16 @@ Updated: 2026-09-14 | After: Iteration 11 (/cite dead URL pattern + llms.txt dri
 > with a pre-push validation gate. Scheduling docs aligned.
 
 > Note: This file lapsed between Iteration 3 (Apr) and Iteration 6 (Jun) while work
-> ran through the page-improvement and daily-research tracks. Build/validation rows
-> below are refreshed; a full coverage refresh remains a deferred follow-up.
+> ran through the page-improvement and daily-research tracks.
 
-## Canonical facts
-- **Scored entities: 1,156** — single source of truth `site/src/data/entityCount.ts` (sum of `rankings.length` across 7 indexes). Citable catalog size.
-- **Scanned nightly: 1,160** — `pipeline.entitiesScanned` (rotation-state coverage; includes unpublished entities). Distinct metric; use only with "scanned" wording.
+> 2026-09-14 (Iteration 10, full original note): Removed the false "balanced beats spiky at the same average"
+> claim from the `/ai-models/methodology` FAQ (verified false under `scoring.mjs`); copy now describes the formula
+> as it is. No score change. Validated the prior-session Worker typecheck fix. Gates: site tsc clean · `npm run
+> test` all suites pass (scoring 125/125, model-releases 93/93) · build 1,978 pages · validate-daily-briefings
+> 79/79. Deploy pipeline green 7 consecutive runs since 2026-09-09 (RISK-004 verification gap remains).
 
-## Build Status
-- **Build**: ✅ `npm run build` — 1,666 pages prerendered (static export)
-- **Gates**: ✅ validate-indexes (12,750 checks, 0 errors, 128 warnings) · validate-daily-briefings (30/30) · lint-daily-briefings (clean) · tsc --noEmit clean
-- **Search index**: ✅ Pagefind — 1,649 research pages indexed
-
-## Artifact Coverage
-| Artifact | Status |
-|----------|--------|
-| PRD.md | ❌ Missing |
-| ARCHITECTURE.md | ❌ Missing |
-| API_SPEC.md | ⬜ N/A (static site) |
-| DATA_MODEL.md | ❌ Missing |
-| UX_FLOWS.md | ❌ Missing |
-| TEST_PLAN.md | ❌ Missing |
-| SECURITY_REVIEW.md | ❌ Missing |
-| LAUNCH_PLAN.md | ❌ Missing |
-| METRICS.md | ❌ Missing |
-| CHANGELOG.md | ❌ Missing |
-| IMPROVEMENT_BACKLOG.md | ✅ Created |
-| ITERATION_LOG.md | ✅ Created |
-
-## Quality Scores
-- **Test coverage**: Moderate — 54 E2E tests, 0 unit tests
-- **Data integrity**: ✅ Validated — 7 JSON files, 1,155 entities, 12,686 checks pass
-- **Type safety**: Partial — data imports are untyped
-- **Code correctness**: No known critical issues
-
-## Known Data Characteristics (non-blocking)
-- Legacy composite formula differs from `((raw-1)/4)*100` by up to ~5 points (systematic offset)
-- Band boundary assignments inconsistent at decimal composites (e.g., 40.6 → developing vs functional)
-- US States: 21 of 51 entries (ranks 9-38 missing from source HTML), band counts reflect full 51
-- Clearview AI: composite=3.9 vs calculated=10.9 (7.0 diff, largest single outlier)
-
-## Known Blockers
-- ~~No analytics/tracking on the site~~ **CORRECTED 2026-06-22:** Umami IS live (self-hosted at `/u`, real `data-website-id` in layout `<head>`) with a typed `trackEvent`/`EVENTS` helper (`site/src/lib/analytics.ts`) and conversion events wired across Button/links. Do NOT add a second tracker. Follow-up: wire Umami events on the new `/pricing` CTAs (booking-click, report-click).
-- CI builds + tests run on push (`.github/workflows/deploy.yml`); the VPS auto-deploy step is broken (SSH key not authorized — manual deploy in use). Not "no CI."
-- 8 of 10 core documentation artifacts missing
-
-## Readiness
-- **Development**: ✅ Ready
-- **Testing**: ✅ Functional (needs unit tests)
-- **Data Validation**: ✅ Automated (`npm run validate`)
-- **Deployment**: ✅ Docker pipeline exists
-- **Launch**: ⚠️ Needs analytics, CI gate, core artifacts
+> 2026-09-14 (Iteration 11, full original note): `/cite`, `/media` and `/data` taught
+> `compassionbenchmark.com/[index]/[slug]` (example `/fortune-500/microsoft` → soft 404 on production); now
+> `[entity-type]/[slug]` with a prefix table rendered from `INDEX_REGISTRY`. `llms.txt` entity count derived from
+> index data (1,325; was "1,260+") and lists `/cite` + `/ai-models`. 15/15 llms.txt URLs exist in export. Deploy
+> run 34901047499: build+test, worker-typecheck, deploy, post-deploy health all success; production verified by curl.

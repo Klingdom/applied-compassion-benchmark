@@ -5,6 +5,29 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+> **Status note (2026-09-15, appended):** the three entries below that say "pending commit/deploy" — the briefing-wording rule, the derived catalogue counts, and (already deployed) the citation-guide and methodology fixes — are now committed on branch `release/2026-09-15` on the founder's instruction ("commit and push for manual deployment by me"). They are live only after the founder deploys that branch. The entries themselves are left as written.
+
+## 2026-09-14 — Research pipeline: briefings can no longer report an unapplied score change as published (NO score changes; pending commit/deploy)
+
+- **No published scores changed, and no published briefing was edited.**
+- **What changed:** the daily-briefing build check now rejects, for briefings dated 15 September 2026 onward, a headline or summary that states a score moved (e.g. "Hong Kong falls 5.9 points") when no score change was applied that cycle, unless the sentence says the change is proposed, pending, or would happen. It targets the score itself, so ordinary news language ("the death toll rose to 45") is unaffected.
+- **Why:** in at least five cycles (28 July to 14 September) briefings described proposed changes as if the published score had already moved; Portugal's was applied 18 days after its headline. A reader must be able to trust that "falls" means the published number fell.
+
+---
+
+
+> **Status note (2026-09-14, appended):** the two entries below dated 2026-09-14 that say "pending commit/deploy" — the AI model methodology correction and the citation-guide fix — were committed (`beb94ae9`, `f940a80b`) and deployed the same day (deploy run 34901047499), verified on production. The entries themselves are left as written.
+
+## 2026-09-14 — Site copy: catalogue counts now derived from data; Universities added to four index lists (NO score changes; pending commit/deploy)
+
+- **No published scores changed.**
+- **What changed:** several pages stated the benchmark's size from old hand-typed numbers — "1,156 entities", "seven indexes", "21 U.S. states", "50 robotics labs" — while the published data holds 1,325 entities in 8 indexes, including 51 states and 92 robotics labs. Those pages (`/`, `/data`, `/media`, `/api-access`, `/pricing`, `/purchase-research`, `/score-watch`, `/updates/special`, `/indexes`) now compute every count from the index data. The Universities Index, which four of those lists omitted, now appears on them. Daily briefings now say "entities reviewed across the benchmark's indexes" so past briefings are not restated with today's index count. A build-time test fails if a hand-typed catalogue count is reintroduced.
+- **Unchanged on purpose:** the description of the dated inaugural 2026 report keeps its as-published figures.
+- **Why:** a benchmark's statements about its own coverage must match its data, today and after every future addition.
+
+---
+
+
 ## 2026-09-14 — Citation guide: fixed a dead entity-URL pattern; llms.txt count now derived (NO score changes; pending commit/deploy)
 
 - **No published scores changed.**
