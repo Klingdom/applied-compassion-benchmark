@@ -18,6 +18,7 @@ import {
 } from "@/data/gumroad";
 import { EVENTS } from "@/lib/analytics";
 import countriesData from "@/data/indexes/countries.json";
+import { getIndexEntityCount } from "@/data/entityCount";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -276,7 +277,7 @@ export default function PricingPage() {
                 },
                 {
                   title: "Humanoid Robotics Index",
-                  desc: "50 global robotics developers.",
+                  desc: `${getIndexEntityCount("robotics-labs")} global robotics developers.`,
                   link: { href: GUMROAD.roboticsIndex, external: true },
                 },
                 {
@@ -296,7 +297,7 @@ export default function PricingPage() {
                 },
                 {
                   title: "U.S. States Index",
-                  desc: "21 U.S. states scored to date.",
+                  desc: `${getIndexEntityCount("us-states")} U.S. states scored to date.`,
                   link: resolveLink(
                     GUMROAD.usStatesIndex,
                     US_STATES_INDEX.useGumroad,

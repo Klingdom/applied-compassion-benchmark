@@ -102,9 +102,10 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
   if (pipelineWatches !== null)
     pipelineParts.push(`${pipelineWatches} forward watch${pipelineWatches !== 1 ? "es" : ""}`);
 
-  // Trust line entity count fallback
+  // Trust line entity count fallback — falls back to the canonical scored
+  // count (not a hand-typed literal) when pipeline data is missing.
   const entityCount: string =
-    pipeline.entitiesScanned?.toLocaleString() ?? "1,160";
+    pipeline.entitiesScanned?.toLocaleString() ?? SCORED_ENTITY_COUNT_FORMATTED;
 
   // Build the canonical page URL for citation (static: no runtime window needed)
   const pageUrl = dateStr
@@ -238,9 +239,12 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           </Link>
         </p>
 
-        {/* Trust line */}
+        {/* Trust line — reworded to avoid a hard-coded per-briefing index count
+            (older briefings genuinely covered fewer indexes before Universities
+            shipped 2026-06-19; the briefing JSON carries no per-briefing index
+            count to derive an accurate historical figure from). */}
         <p className="text-[0.75rem] text-muted mt-3">
-          {entityCount} entities reviewed across 7 indexes.{" "}
+          {entityCount} entities reviewed across the benchmark&apos;s indexes.{" "}
           <Link
             href="/methodology"
             className="hover:text-text transition-colors underline decoration-dotted underline-offset-2"

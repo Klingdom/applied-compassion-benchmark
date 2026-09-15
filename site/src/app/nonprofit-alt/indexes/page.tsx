@@ -10,7 +10,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import DonateCTA from "@/components/nonprofit/DonateCTA";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
-import { INDEX_REGISTRY } from "@/data/indexRegistry";
+import { INDEX_REGISTRY, INDEX_COUNT } from "@/data/indexRegistry";
 import type { EntityKind } from "@/data/entities";
 
 // ─── Real index data (read-only, build-time) — same source as the home page
@@ -78,11 +78,11 @@ export default function NonprofitAltIndexesPage() {
         </Container>
       </section>
 
-      {/* ── The eight indexes — real counts, real routes ─────────────────── */}
+      {/* ── The indexes — real counts, real routes ─────────────────── */}
       <section className="py-[30px]" id="indexes">
         <Container>
           <SectionHead
-            title="The eight indexes"
+            title={`The ${INDEX_COUNT} indexes`}
             description="Every index uses the same 8-dimension, 0–100 framework, so a score means the same thing whether it belongs to a country or a company. All entity scores are free and open."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

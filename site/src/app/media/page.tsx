@@ -8,6 +8,8 @@ import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import CopyCiteButton from "@/components/charts/CopyCiteButton";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 
 export const metadata: Metadata = {
   title: "For Press & Researchers",
@@ -227,7 +229,7 @@ export default function MediaPage() {
         <Container>
           <SectionHead
             title="Data access"
-            description="Machine-readable score data for all 1,156 entities — free to access, please cite with attribution."
+            description={`Machine-readable score data for all ${SCORED_ENTITY_COUNT_FORMATTED} entities — free to access, please cite with attribution.`}
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
@@ -243,19 +245,19 @@ export default function MediaPage() {
                   >
                     /data/index.json
                   </Link>{" "}
-                  — full entity catalog (1,156 entries)
+                  — full entity catalog ({SCORED_ENTITY_COUNT_FORMATTED} entries)
                 </li>
                 <li>
                   <span className="font-mono text-[0.85rem] text-accent">
                     /data/indexes/&#123;slug&#125;.json
                   </span>{" "}
-                  — per-index aggregate (7 indexes)
+                  — per-index aggregate ({INDEX_COUNT} indexes)
                 </li>
                 <li>
                   <span className="font-mono text-[0.85rem] text-accent">
                     /data/scores/&#123;slug&#125;.json
                   </span>{" "}
-                  — per-entity scores (~1,156 files)
+                  — per-entity scores (~{SCORED_ENTITY_COUNT_FORMATTED} files)
                 </li>
               </ul>
               <div className="mt-4">

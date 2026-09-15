@@ -8,7 +8,8 @@ import SectionHead from "@/components/ui/SectionHead";
 import Card from "@/components/ui/Card";
 import Callout from "@/components/ui/Callout";
 import { SCORE_WATCH } from "@/data/gumroad";
-import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import { SCORED_ENTITY_COUNT_FORMATTED, getIndexEntityCount } from "@/data/entityCount";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 import countriesData from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
@@ -20,11 +21,12 @@ export const metadata: Metadata = {
 const indexes: Array<{ label: string; href: string; count: string }> = [
   { label: "Fortune 500", href: "/fortune-500", count: "447 companies" },
   { label: "Countries", href: "/countries", count: `${countriesData.rankings.length} countries` },
-  { label: "U.S. States", href: "/us-states", count: "21 states" },
+  { label: "U.S. States", href: "/us-states", count: `${getIndexEntityCount("us-states")} states` },
   { label: "AI Labs", href: "/ai-labs", count: "50 labs" },
-  { label: "Robotics Labs", href: "/robotics-labs", count: "50 labs" },
+  { label: "Robotics Labs", href: "/robotics-labs", count: `${getIndexEntityCount("robotics-labs")} labs` },
   { label: "Global Cities", href: "/global-cities", count: "250 cities" },
   { label: "U.S. Cities", href: "/us-cities", count: "144 cities" },
+  { label: "Universities", href: "/universities", count: `${getIndexEntityCount("universities")} universities` },
 ];
 
 /**
@@ -139,7 +141,7 @@ export default function ScoreWatchPage() {
               </div>
               <h3 className="text-[1.08rem] font-bold mb-2">Pick an entity</h3>
               <p className="text-muted">
-                Browse any of the seven indexes below and find the entity you want to watch. Any
+                Browse any of the {INDEX_COUNT} indexes below and find the entity you want to watch. Any
                 assessed entity is eligible — companies, countries, labs, states, cities.
               </p>
             </Panel>
@@ -172,7 +174,7 @@ export default function ScoreWatchPage() {
         <Container>
           <SectionHead
             title="Eligible entities — every benchmark index"
-            description={`${SCORED_ENTITY_COUNT_FORMATTED} entities across seven indexes. Every assessed entity has a detail page and can be watched.`}
+            description={`${SCORED_ENTITY_COUNT_FORMATTED} entities across ${INDEX_COUNT} indexes. Every assessed entity has a detail page and can be watched.`}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {indexes.map((idx) => (

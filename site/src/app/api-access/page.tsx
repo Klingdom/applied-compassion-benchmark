@@ -9,6 +9,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import ApiAccessCta from "./ApiAccessCta";
 import { API_ACCESS } from "@/data/gumroad";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 
 export const metadata: Metadata = {
   title: "API Access — Compassion Benchmark",
@@ -58,7 +59,7 @@ export default function ApiAccessPage() {
                 — CORS-open, regenerated on each build. No API key required.
               </p>
               <ul className="list-disc pl-[18px] text-muted space-y-1.5 text-[0.95rem]">
-                <li>All 7 index families</li>
+                <li>All {INDEX_COUNT} index families</li>
                 <li>Rankings, composite scores, and band for each entity</li>
                 <li>Dimension-level scores</li>
                 <li>Regenerated nightly after research pipeline runs</li>
@@ -170,7 +171,7 @@ export default function ApiAccessPage() {
           <Card>
             <h3 className="text-[1.08rem] font-bold mb-2">Start with public data</h3>
             <p className="text-muted mb-4">
-              The public JSON covers all 7 indexes and updates nightly. For most analytical use
+              The public JSON covers all {INDEX_COUNT} indexes and updates nightly. For most analytical use
               cases it is sufficient. Files at{" "}
               <code className="text-[0.85em] bg-[rgba(255,255,255,0.06)] px-1.5 py-0.5 rounded">
                 /data/*.json

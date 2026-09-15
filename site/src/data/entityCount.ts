@@ -3,16 +3,19 @@
  *
  * Two distinct numbers exist and must not be conflated:
  *
- *   SCORED (1,256) = sum of rankings.length across the 8 published index JSON
- *     files. This is the citable "how many entities the benchmark scores, ranks,
- *     indexes, and monitors" number. Equals build-manifest.totalEntities.
+ *   SCORED = sum of rankings.length across the published index JSON files
+ *     (see INDEX_REGISTRY for the current count of indexes). This is the
+ *     citable "how many entities the benchmark scores, ranks, indexes, and
+ *     monitors" number. Equals build-manifest.totalEntities.
  *
- *   SCANNED (~1,260) = pipeline.entitiesScanned in the daily briefing JSON. The
+ *   SCANNED = pipeline.entitiesScanned in the daily briefing JSON. The
  *     nightly scanner has slightly broader coverage than the published catalog.
  *     Use the scanned value only where copy literally says "scanned" (pipeline semantics).
  *
- * Import SCORED_ENTITY_COUNT or SCORED_ENTITY_COUNT_FORMATTED wherever copy
- * refers to the scored/indexed/monitored/covered catalog.
+ * Both numbers change as the catalog grows — never hard-code either one in
+ * UI copy. Import SCORED_ENTITY_COUNT or SCORED_ENTITY_COUNT_FORMATTED
+ * wherever copy refers to the scored/indexed/monitored/covered catalog, and
+ * use getIndexEntityCount(indexSlug) for a single index's count.
  */
 
 import countriesData from "@/data/indexes/countries.json";
@@ -50,6 +53,19 @@ export const SCORED_ENTITY_COUNT: number = INDEX_REGISTRY.reduce((sum, entry) =>
   return sum + data.rankings.length;
 }, 0);
 
-/** "1,156" — use this string wherever the scored catalog count appears in UI copy. */
+/** Locale-formatted (e.g. "1,325") — use this string wherever the scored catalog count appears in UI copy. */
 export const SCORED_ENTITY_COUNT_FORMATTED: string =
   SCORED_ENTITY_COUNT.toLocaleString("en-US");
+
+/**
+ * Entity count for a single index, e.g. getIndexEntityCount("us-states") → 51.
+ * Fails loud (rather than silently returning 0/undefined) if the slug isn't
+ * registered, matching the fail-loud pattern SCORED_ENTITY_COUNT already uses.
+ */
+export function getIndexEntityCount(indexSlug: string): number {
+  const data = RANKINGS_BY_SLUG[indexSlug];
+  if (!data) {
+    throw new Error(`getIndexEntityCount: no ranking data registered for index "${indexSlug}"`);
+  }
+  return data.rankings.length;
+}

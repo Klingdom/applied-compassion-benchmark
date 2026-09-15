@@ -1,5 +1,5 @@
 /**
- * IndexHero — shared hero block for the 7 index pages.
+ * IndexHero — shared hero block for the index pages.
  *
  * S1.2 (Wave S1): replaced the HTML band-distribution table with the
  * shipped BandDistributionBar component. Pass `indexSlug` (e.g. "countries")

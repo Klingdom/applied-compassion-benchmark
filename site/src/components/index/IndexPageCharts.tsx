@@ -1,5 +1,5 @@
 /**
- * IndexPageCharts — S3.4 + S3.6 shared section for all 7 index pages.
+ * IndexPageCharts — S3.4 + S3.6 shared section for all index pages.
  *
  * Renders two chart sections inside a single server component:
  *
@@ -14,7 +14,7 @@
  *
  * Props:
  *   rankings    — the index rankings array (typed as generic to work across
- *                 all 7 indexes)
+ *                 all indexes)
  *   indexSlug   — e.g. "fortune-500", "countries" (for ChartFrame path)
  *   entityKind  — e.g. "company", "country" (for slug routing)
  *   groupKey    — the field to group by (e.g. "sector", "region", "category")

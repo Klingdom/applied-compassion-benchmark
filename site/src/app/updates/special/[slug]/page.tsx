@@ -11,6 +11,7 @@ import SpecialBriefingCompanionLinks from "@/components/updates/briefing/Special
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import manifest from "@/data/special-briefings/manifest.json";
 import type { SpecialBriefing } from "@/data/special-briefings/types";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 /* eslint-disable @typescript-eslint/no-require-imports */
 
@@ -271,7 +272,7 @@ export default async function SpecialBriefingPage({
               The field
             </h2>
             <p className="text-[0.82rem] text-muted mb-4">
-              1,156 entities across the five bands — the full distribution this briefing draws from.
+              {SCORED_ENTITY_COUNT_FORMATTED} entities currently published across the five bands — the live distribution behind this briefing.
             </p>
             {/* Graceful: BandDistributionBar returns null if data unavailable */}
             <BandDistributionBar index="all" />

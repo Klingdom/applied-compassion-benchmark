@@ -21,7 +21,9 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import updatesRaw from "@/data/updates/latest.json";
 import { SCORED_ENTITY_COUNT, SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 import countriesData from "@/data/indexes/countries.json";
+import universitiesData from "@/data/indexes/universities.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
@@ -198,14 +200,14 @@ export default function Home() {
                   href="/indexes"
                   className="text-muted text-[0.9rem] hover:text-text underline underline-offset-2 decoration-dotted"
                 >
-                  Browse the 7 indexes &rarr;
+                  Browse the {INDEX_COUNT} indexes &rarr;
                 </Link>
               </p>
 
               {/* Stats row — #15: use derived count consistently for the scored count */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
                 <Stat value={SCORED_ENTITY_COUNT_FORMATTED} label="Entities currently ranked and scored" />
-                <Stat value="7" label="Published index families" />
+                <Stat value={String(INDEX_COUNT)} label="Published index families" />
                 <Stat value="8" label="Core benchmark dimensions" />
                 <Stat value="40" label="Subdimensions in full standard" />
               </div>
@@ -670,13 +672,13 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Seven indexes at a glance (small-multiples — moved after primer per #18) */}
-      {/* #13 — One shared legend strip replaces 7 per-card legends.
+      {/* ── All indexes at a glance (small-multiples — moved after primer per #18) */}
+      {/* #13 — One shared legend strip replaces per-card legends.
                One-line "how to read" header + one-line takeaway per card. */}
       <section id="indexes-at-a-glance" className="py-[20px] scroll-mt-20">
         <Container>
           <SectionHead
-            title="Seven indexes at a glance"
+            title={`All ${INDEX_COUNT} indexes at a glance`}
             description="How to read: each bar shows the share of entities in each band — Critical (red) → Developing → Functional → Established → Exemplary (blue). Sorted by share in the top two bands."
           />
           {/* Shared legend — one instance, not repeated per card (#13) */}
@@ -708,6 +710,7 @@ export default function Home() {
               { slug: "countries",     label: "World Countries",         href: "/countries",       takeaway: "Most countries in Developing; Critical band is large." },
               { slug: "fortune-500",   label: "Fortune 500",             href: "/fortune-500",     takeaway: "Corporations cluster in Developing–Functional; top band rare." },
               { slug: "us-states",     label: "U.S. States",             href: "/us-states",       takeaway: "States span Developing through Established; no Exemplary." },
+              { slug: "universities",  label: "Universities",            href: "/universities",    takeaway: "Most universities sit in Functional; Established is rare and none reach Exemplary." },
             ].map((idx) => (
               <div key={idx.slug} className="bg-[rgba(255,255,255,0.02)] border border-line rounded-[14px] p-4">
                 <div className="flex items-center justify-between mb-1">
@@ -733,7 +736,7 @@ export default function Home() {
         <Container>
           <SectionHead
             title="Published indexes"
-            description="The benchmark currently publishes seven index families covering governments, public systems, corporations, cities, and frontier technology institutions."
+            description={`The benchmark currently publishes ${INDEX_COUNT} index families covering governments, public systems, corporations, cities, education, and frontier technology institutions.`}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -778,6 +781,12 @@ export default function Home() {
                 pills: ["2026", "Cities"],
                 title: "Global Cities Index",
                 desc: "250 cities worldwide benchmarked across governance, equity, healthcare, and institutional compassion.",
+              },
+              {
+                href: "/universities",
+                pills: ["2026", "Education"],
+                title: "Universities Index",
+                desc: `${universitiesData.rankings.length} universities benchmarked across welfare governance, equity access, and institutional accountability.`,
               },
               {
                 href: "/indexes",

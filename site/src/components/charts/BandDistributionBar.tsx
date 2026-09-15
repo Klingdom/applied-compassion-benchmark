@@ -6,7 +6,7 @@
  * Exemplary), with count + % labels and a legend.
  *
  * Props:
- *   index  — "all" (aggregate across all 7 indexes) | individual index slug |
+ *   index  — "all" (aggregate across all indexes) | individual index slug |
  *             undefined (defaults to "all").
  *   counts — explicit { Critical, Developing, Functional, Established, Exemplary }
  *             override; skips any file loading.

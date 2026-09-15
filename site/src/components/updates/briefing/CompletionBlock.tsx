@@ -26,6 +26,7 @@ import { entityHref } from "@/lib/entityHref";
 import { heroDateLabel, issueNumber, formatDateLabel } from "./utils";
 import ShareBriefing from "./ShareBriefing";
 import { trackEvent, EVENTS } from "@/lib/analytics";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 interface Props {
   updates: any;
@@ -64,9 +65,10 @@ export default function CompletionBlock({ updates, prevDate: prevDateProp, nextD
     currentAsOf = formatDateLabel(dateStr);
   }
 
-  // Entity count from pipeline
+  // Entity count from pipeline — falls back to the canonical scored count
+  // (not a hand-typed literal) when pipeline data is missing.
   const pipeline = updates.pipeline ?? {};
-  const entitiesScanned = pipeline.entitiesScanned?.toLocaleString() ?? "1,160";
+  const entitiesScanned = pipeline.entitiesScanned?.toLocaleString() ?? SCORED_ENTITY_COUNT_FORMATTED;
 
   // Phase 2: use passed-in prevDate/nextDate (computed in page.tsx from manifest)
   const prevDate: string | null = prevDateProp ?? null;

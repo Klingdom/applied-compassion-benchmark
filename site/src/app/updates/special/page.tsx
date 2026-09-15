@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import manifest from "@/data/special-briefings/manifest.json";
 import type { BriefingManifestEntry } from "@/data/special-briefings/types";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 export const metadata: Metadata = {
   title: "Special Briefings — Compassion Benchmark",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Special Briefings — Compassion Benchmark",
     description:
-      "Occasional thematic deep-dives: cross-index analysis, structural patterns, and interpretive findings across 1,156 entities.",
+      `Occasional thematic deep-dives: cross-index analysis, structural patterns, and interpretive findings across ${SCORED_ENTITY_COUNT_FORMATTED} entities.`,
     url: "https://compassionbenchmark.com/updates/special",
     type: "website",
   },
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Special Briefings — Compassion Benchmark",
     description:
-      "Occasional thematic deep-dives: cross-index analysis, structural patterns, and interpretive findings across 1,156 entities.",
+      `Occasional thematic deep-dives: cross-index analysis, structural patterns, and interpretive findings across ${SCORED_ENTITY_COUNT_FORMATTED} entities.`,
   },
 };
 

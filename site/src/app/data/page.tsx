@@ -8,14 +8,16 @@ import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import countriesData from "@/data/indexes/countries.json";
+import { SCORED_ENTITY_COUNT_FORMATTED, getIndexEntityCount } from "@/data/entityCount";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 
 export const metadata: Metadata = {
   title: "Data Access",
   description:
-    "Compassion Benchmark publishes machine-readable score data for all 1,156 entities across seven indexes. Access per-entity JSON, per-index aggregates, and the entity catalog — free to access, please cite with attribution.",
+    `Compassion Benchmark publishes machine-readable score data for all ${SCORED_ENTITY_COUNT_FORMATTED} entities across ${INDEX_COUNT} indexes. Access per-entity JSON, per-index aggregates, and the entity catalog — free to access, please cite with attribution.`,
 };
 
-// The seven published indexes and their public endpoint slugs.
+// The published indexes and their public endpoint slugs.
 const INDEXES = [
   {
     slug: "fortune-500",
@@ -32,7 +34,7 @@ const INDEXES = [
   {
     slug: "us-states",
     label: "U.S. States",
-    description: "21 U.S. states scored in the current publication cycle.",
+    description: `${getIndexEntityCount("us-states")} U.S. states scored in the current publication cycle.`,
     page: "/us-states",
   },
   {
@@ -44,7 +46,7 @@ const INDEXES = [
   {
     slug: "robotics-labs",
     label: "Robotics Labs",
-    description: "50 humanoid robotics labs with category and country.",
+    description: `${getIndexEntityCount("robotics-labs")} humanoid robotics labs with category and country.`,
     page: "/robotics-labs",
   },
   {
@@ -58,6 +60,12 @@ const INDEXES = [
     label: "Global Cities",
     description: "250 global cities with country and region.",
     page: "/global-cities",
+  },
+  {
+    slug: "universities",
+    label: "Universities",
+    description: `${getIndexEntityCount("universities")} universities with type and country.`,
+    page: "/universities",
   },
 ] as const;
 
@@ -74,7 +82,7 @@ export default function DataPage() {
                 Machine-readable benchmark data
               </h1>
               <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                Compassion Benchmark publishes score data for all 1,156 entities as
+                Compassion Benchmark publishes score data for all {SCORED_ENTITY_COUNT_FORMATTED} entities as
                 structured JSON files served directly from this domain. They are free
                 to access; if you use them in research or reporting, please cite the
                 source with attribution. See{" "}
@@ -106,7 +114,7 @@ export default function DataPage() {
                   >
                     /data/index.json
                   </Link>{" "}
-                  — entity catalog (1,156 entries)
+                  — entity catalog ({SCORED_ENTITY_COUNT_FORMATTED} entries)
                 </li>
                 <li>
                   <Link
@@ -221,7 +229,7 @@ export default function DataPage() {
         <Container>
           <SectionHead
             title="Per-entity score files"
-            description="A separate JSON file for each of the 1,156 scored entities, keyed by slug."
+            description={`A separate JSON file for each of the ${SCORED_ENTITY_COUNT_FORMATTED} scored entities, keyed by slug.`}
           />
 
           <div className="mb-5">
@@ -232,7 +240,7 @@ export default function DataPage() {
               </code>
             </p>
             <p className="text-muted text-[0.92rem] mt-2">
-              There are approximately 1,156 entity files. Slugs match the URL
+              There are approximately {SCORED_ENTITY_COUNT_FORMATTED} entity files. Slugs match the URL
               segment on each entity&apos;s benchmark page — for example, the slug for
               Microsoft is{" "}
               <code className="font-mono text-[0.85rem] text-accent">microsoft</code>{" "}

@@ -11,7 +11,7 @@ import Callout from "@/components/ui/Callout";
 import DonateCTA from "@/components/nonprofit/DonateCTA";
 import { FUNDER_CONTACT_NOTE, INDEPENDENCE_FIREWALL_LINE } from "@/components/nonprofit/constants";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
-import { INDEX_REGISTRY } from "@/data/indexRegistry";
+import { INDEX_REGISTRY, INDEX_COUNT } from "@/data/indexRegistry";
 import type { EntityKind } from "@/data/entities";
 
 // Real per-index entity counts — same read-only pattern as the home page
@@ -121,11 +121,11 @@ export default function NonprofitAltResearchPage() {
         </Container>
       </section>
 
-      {/* Eight free, public indexes */}
+      {/* Free, public indexes */}
       <section className="py-[30px]">
         <Container>
           <SectionHead
-            title="Eight indexes, one methodology"
+            title={`${INDEX_COUNT} indexes, one methodology`}
             description={`Every index applies the same 8-dimension, 0–100 framework, so a score means the same thing whether it belongs to a country or a company. All ${SCORED_ENTITY_COUNT_FORMATTED} entity scores are free to read, cite, and reuse in research.`}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

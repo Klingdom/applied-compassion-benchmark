@@ -17,7 +17,7 @@ import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJson
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import { GUMROAD } from "@/data/gumroad";
-import { INDEX_REGISTRY, getIndexEntry } from "@/data/indexRegistry";
+import { INDEX_REGISTRY, INDEX_COUNT, getIndexEntry } from "@/data/indexRegistry";
 import type { EntityKind } from "@/data/entities";
 
 // ─── Index data (build-time) ──────────────────────────────────────────────────
@@ -57,7 +57,7 @@ const INDEX_MEAN_ROWS = [
   { name: "Universities",    composite: universitiesData.meta.meanScore,  group: "Universities" },
 ];
 
-// Overall mean across all 8 indexes (unweighted) for the reference line
+// Overall mean across all indexes (unweighted) for the reference line
 const OVERALL_MEAN = Math.round(
   (INDEX_MEAN_ROWS.reduce((sum, r) => sum + r.composite, 0) / INDEX_MEAN_ROWS.length) * 10
 ) / 10;
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
   description: `Browse ${SCORED_ENTITY_COUNT_FORMATTED} institutions — countries, Fortune 500, AI labs, robotics labs, U.S. states, cities, and universities — all ranked on the same 8-dimension, 0–100 compassion ruler. Free, updated every weekday.`,
 };
 
-// ─── Index card definitions — all 8 real indexes (#1, #10, #11, #13) ─────────
+// ─── Index card definitions — all real indexes (#1, #10, #11, #13) ─────────
 // Each card includes: count (real from data), differentiator (honest finding),
 // and the same ruler note (#11: cross-type comparability). Never fabricated.
 
@@ -199,7 +199,7 @@ const indexesFaqItems = [
     answer: `Every index measures the same thing: how reliably an institution recognizes, responds to, and reduces the suffering of the people it affects. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, U.S. states, cities, and universities — are scored on the same 8-dimension, 0–100 ruler. A score of 50 means the same thing whether it appears in the Countries Index or the Fortune 500 Index.`,
   },
   {
-    question: "Are the 8 indexes directly comparable across sectors?",
+    question: `Are the ${INDEX_COUNT} indexes directly comparable across sectors?`,
     answer: `Yes. The benchmark uses an identical 8-dimension framework (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Thinking, Integrity) across all indexes. The scoring scale (0–100) and five bands (Critical 0–20 · Developing 20–40 · Functional 40–60 · Established 60–80 · Exemplary 80–100) are the same in every index. A country and a corporation with the same score have passed the same evidentiary tests on the same criteria.`,
   },
   {
@@ -221,7 +221,7 @@ const indexesFaqItems = [
 ];
 
 // ─── JSON-LD: CollectionPage + ItemList (#16) ─────────────────────────────────
-// Binds hub to all 8 index spokes. URLs use REAL routes, verified against the build.
+// Binds hub to all index spokes. URLs use REAL routes, verified against the build.
 
 const SITE = "https://compassionbenchmark.com";
 
@@ -246,7 +246,7 @@ const collectionJsonLd = {
   "@type": "CollectionPage",
   "@id": `${SITE}/indexes`,
   name: "Compassion Benchmark Indexes",
-  description: `All 8 published Compassion Benchmark indexes covering ${SCORED_ENTITY_COUNT_FORMATTED} entities — countries, Fortune 500, AI labs, robotics labs, U.S. states, U.S. cities, global cities, and universities — on one shared 8-dimension, 0–100 ruler.`,
+  description: `All ${INDEX_COUNT} published Compassion Benchmark indexes covering ${SCORED_ENTITY_COUNT_FORMATTED} entities — countries, Fortune 500, AI labs, robotics labs, U.S. states, U.S. cities, global cities, and universities — on one shared 8-dimension, 0–100 ruler.`,
   url: `${SITE}/indexes`,
   publisher: {
     "@type": "Organization",
@@ -313,7 +313,7 @@ export default function IndexesPage() {
               </p>
               {/* #11 — cross-type comparability */}
               <p className="text-muted text-[0.97rem] max-w-[860px] mb-3">
-                The benchmark uses identical criteria across all 8 indexes. A score of 50 means the same
+                The benchmark uses identical criteria across all {INDEX_COUNT} indexes. A score of 50 means the same
                 thing whether it appears in the Countries Index or the Fortune 500 Index — enabling direct
                 comparison across sectors for the first time.
               </p>
@@ -321,10 +321,10 @@ export default function IndexesPage() {
               <div className="flex gap-3 flex-wrap mt-1">
                 <Button href="/updates" variant="primary">Read today&apos;s briefing</Button>
                 <Button href="/methodology">How the benchmark works</Button>
-                <Button href="#pick-entity-to-watch">Browse the 8 indexes</Button>
+                <Button href="#pick-entity-to-watch">Browse the {INDEX_COUNT} indexes</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="8" label="Published index families" />
+                <Stat value={String(INDEX_COUNT)} label="Published index families" />
                 <Stat value={SCORED_ENTITY_COUNT_FORMATTED} label="Entities benchmarked" />
                 <Stat value="8" label="Core benchmark dimensions" />
                 <Stat value="Free" label="All public rankings, no paywall" />
@@ -495,7 +495,7 @@ export default function IndexesPage() {
             </p>
             {/* #7 — Decode framework jargon inline */}
             <p className="text-muted text-[0.88rem] leading-relaxed mb-3 max-w-[820px]">
-              All 8 indexes share one framework: 8{" "}
+              All {INDEX_COUNT} indexes share one framework: 8{" "}
               <strong className="text-text" title="The eight scored categories: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Thinking, Integrity">dimensions</strong>,
               {" "}40 subdimensions, scored 0–100,
               assigned to one of five{" "}
@@ -561,13 +561,13 @@ export default function IndexesPage() {
         </Container>
       </section>
 
-      {/* ── Current indexes — all 8 (#1, #9, #10, #11, #13) ─────────────── */}
+      {/* ── Current indexes — all published indexes (#1, #9, #10, #11, #13) ─────────────── */}
       <section className="py-[30px]" id="pick-entity-to-watch">
         <Container>
           <PickEntityCallout />
           <SectionHead
             title="Current indexes"
-            description={`Eight index families. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, cities, and universities — scored on the same 8-dimension, 0–100 ruler, making cross-sector comparison possible.`}
+            description={`${INDEX_COUNT} index families. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, cities, and universities — scored on the same 8-dimension, 0–100 ruler, making cross-sector comparison possible.`}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Countries — featured card */}

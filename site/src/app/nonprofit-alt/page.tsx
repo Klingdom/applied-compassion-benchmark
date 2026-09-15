@@ -11,7 +11,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import DonateCTA from "@/components/nonprofit/DonateCTA";
 import { INDEPENDENCE_FIREWALL_LINE } from "@/components/nonprofit/constants";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
-import { INDEX_REGISTRY } from "@/data/indexRegistry";
+import { INDEX_REGISTRY, INDEX_COUNT } from "@/data/indexRegistry";
 import type { EntityKind } from "@/data/entities";
 
 // ─── Real index data (read-only, build-time) — same source as the
@@ -134,7 +134,7 @@ export default function NonprofitAltHome() {
                 nothing paywalled to unlock. Support instead funds the nightly
                 research pipeline itself — the evidence review, the editorial
                 oversight, and the infrastructure that keeps the daily
-                briefing and all 8 indexes free and citable for everyone.
+                briefing and all {INDEX_COUNT} indexes free and citable for everyone.
               </p>
               <ul className="list-disc pl-[18px] text-muted space-y-2 mb-4">
                 <li>Independent evidence review, every weekday</li>

@@ -15,6 +15,7 @@ import {
   FUNDER_CONTACT_NOTE,
 } from "@/components/nonprofit/constants";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import { INDEX_COUNT } from "@/data/indexRegistry";
 
 // This page replaces the commercial /services page. There is no pricing
 // grid, no "book a call," and no tiered institutional sales ladder here —
@@ -45,7 +46,7 @@ export default function NonprofitAltSupportPage() {
                 and grants &mdash; never by the entities it scores. There is
                 nothing paywalled here to unlock. Your support funds the
                 nightly research pipeline itself, so the daily briefing and
-                all 8 indexes stay free and citable for every reader.
+                all {INDEX_COUNT} indexes stay free and citable for every reader.
               </p>
               <p className="text-muted text-[0.97rem] max-w-[820px] mb-[22px] border-l-2 border-accent pl-3">
                 {INDEPENDENCE_FIREWALL_LINE}

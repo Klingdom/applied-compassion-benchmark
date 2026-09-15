@@ -13,6 +13,7 @@ import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { GUMROAD, US_CITIES_INDEX, US_STATES_INDEX } from "@/data/gumroad";
 import roboticsLabs from "@/data/indexes/robotics-labs.json";
 import countriesData from "@/data/indexes/countries.json";
+import { getIndexEntityCount } from "@/data/entityCount";
 
 export const metadata: Metadata = {
   title: "Purchase Research",
@@ -25,7 +26,7 @@ const indexReports = [
   { title: "World Countries Index", desc: `${countriesData.rankings.length} countries scored across 8 dimensions of institutional compassion.`, link: GUMROAD.countriesIndex },
   { title: "Fortune 500 Index", desc: "447 major U.S. corporations benchmarked on workforce, governance, and societal impact.", link: GUMROAD.fortune500Index },
   { title: "Top 50 AI Labs Index", desc: "50 frontier and applied AI labs scored on safety, equity, and accountability.", link: GUMROAD.aiLabsIndex },
-  { title: "Humanoid Robotics Labs Index", desc: "50 global robotics developers measured on safety infrastructure and ethical deployment.", link: GUMROAD.roboticsIndex },
+  { title: "Humanoid Robotics Labs Index", desc: `${roboticsLabs.rankings.length} global robotics developers measured on safety infrastructure and ethical deployment.`, link: GUMROAD.roboticsIndex },
   { title: "Global Cities Index", desc: "250 cities worldwide scored on housing, services, equity, and crisis response.", link: GUMROAD.globalCitiesIndex },
 ];
 
@@ -218,7 +219,7 @@ export default function PurchaseResearchPage() {
               </div>
               <h3 className="text-[1.12rem] font-bold">U.S. States Index</h3>
               <p className="text-muted text-[0.95rem]">
-                21 of 51 states scored to date — full index in progress.
+                All {getIndexEntityCount("us-states")} states scored.
               </p>
               <div className="mt-auto">
                 {usStatesLink.external ? (
