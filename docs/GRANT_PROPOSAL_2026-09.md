@@ -433,3 +433,7 @@ identical-vector cluster detection across the published index files) at year end
 
 *End of draft. This document has not been submitted to any funder and contains no claim of
 eligibility, endorsement, or partnership with any organization.*
+
+---
+
+2026-09-14 correction: the '834 of 1,289 (~59%)' pairing is incorrect — see RISKS.md RISK-001; current figure 820 of 1,329 (61.7%) never individually assessed. Superseded in scope by docs/GRANT_REQUEST_2026-09-14.md.
