@@ -1,0 +1,569 @@
+{
+  "date": "2026-09-15",
+  "cycle": "2026-09-15 nightly, lookback 2026-09-01 to 2026-09-15",
+  "entities_assessed": 14,
+  "entities_screened_not_assessable": 1,
+  "assessment_start": "2026-09-15 (stage began after the coordinator's scan-gate pass; precise start not recorded)",
+  "assessment_end": "2026-09-15T22:09:56.356Z",
+  "scan_file": "research/scans/2026-09-15.json",
+  "scope": "top_entities only (15), per coordinator instruction; rotation_backfill not assessed",
+  "searches_used": {
+    "assessor_stage": 26,
+    "per_entity_cap": 50,
+    "max_searches_any_single_entity": 4,
+    "cap_or_budget_errors": 0,
+    "websearch_available_throughout": true,
+    "note": "WebFetch calls are not counted. Oracle Corporation and Oracle AI shared one search. No prior-cycle search was reused as new evidence.",
+    "per_entity_breakdown": {
+      "netflix": 1,
+      "oracle-ai": 0,
+      "sweden": 2,
+      "anthropic": 3,
+      "ljubljana": 2,
+      "melbourne": 2,
+      "guatemala": 2,
+      "lesotho": 3,
+      "abbott-laboratories": 1,
+      "oracle": 1,
+      "bridgetown": 1,
+      "kyiv": 2,
+      "lilongwe": 1,
+      "warsaw": 1,
+      "wellington": 4
+    }
+  },
+  "change_proposals_generated": 1,
+  "confirmations": 10,
+  "measured_not_filed": [
+    "abbott-laboratories"
+  ],
+  "withheld": [
+    "netflix",
+    "bridgetown"
+  ],
+  "not_assessable": [
+    "oracle-ai"
+  ],
+  "proposals": [
+    "research/change-proposals/wellington-2026-09-15.json"
+  ],
+  "results": [
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 60.9,
+      "published_band": "established",
+      "published_rank": 45,
+      "assessed_composite": 58.7,
+      "assessed_band": "functional",
+      "delta": -2.2,
+      "band_change": true,
+      "filing_trigger_met": true,
+      "outcome": "withheld",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 3,
+        "held_no_evidence": 37
+      },
+      "published_formula_reconstruction": 60.9,
+      "key_finding": "WITHHELD BAND CROSSING: measured 58.7 (Functional) vs published 60.9 (Established), -2.2. The entire gap is rounding of a never-assessed 3.5 placeholder. The Florida AG children's-data suit (9 Sept) is an allegation Netflix denies ('lacks merit'), so no subdimension moves. Flagged for calibration review with the 60.9 cohort.",
+      "assessment_file": "research/assessments/netflix-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "oracle-ai",
+      "name": "Oracle AI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": null,
+      "published_band": null,
+      "published_rank": null,
+      "assessed_composite": null,
+      "assessed_band": null,
+      "delta": null,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "not-assessable",
+      "change_proposal": false,
+      "confidence": null,
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": false,
+      "last_assessed_stamped": false,
+      "assessment_file": "research/assessments/oracle-ai-2026-09-15.md",
+      "key_finding": "NOT ASSESSABLE: ai-labs.json has no Oracle/Oracle AI row. Rotation-state still carries an unpublished composite 21.9/developing from the 2026-05-07 first-baseline file, which is marked applied but was never registered. That breaks the published-only integrity rule; reported, not written. The in-window evidence is parent-company layoffs, scored once on Oracle Corporation. Screening note only; last_assessed not stamped."
+    },
+    {
+      "slug": "sweden",
+      "name": "Sweden",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 81.3,
+      "published_band": "exemplary",
+      "published_rank": 14,
+      "assessed_composite": 86.1,
+      "assessed_band": "exemplary",
+      "delta": 4.8,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 3,
+        "held_with_evidence": 3,
+        "held_no_evidence": 34
+      },
+      "published_formula_reconstruction": 89.9,
+      "key_finding": "CONFIRM 81.3 (registered override). The 1 September 2026 deportation rules move three subdimensions down (A5, E3, EQ1): formula 86.1 vs published formula 89.9 (-3.8). The numeric +4.8 against the override is an artifact, not an upgrade. Calibration referral: carrying the -8.6 override offset would give about 77.5.",
+      "assessment_file": "research/assessments/sweden-2026-09-15.md",
+      "moves": [
+        "A5 4->3",
+        "E3 4->3",
+        "EQ1 4->3"
+      ]
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 59.1,
+      "published_band": "functional",
+      "published_rank": 12,
+      "assessed_composite": 57.5,
+      "assessed_band": "functional",
+      "delta": -1.6,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 1,
+        "held_with_evidence": 3,
+        "held_no_evidence": 36
+      },
+      "published_formula_reconstruction": 59.1,
+      "key_finding": "CONFIRM 59.1. Assessed by an Anthropic-built model, with the conflict disclosed. The Claude Max class action (filed 8 Sept, verified via Engadget after androidheadlines 403) is an allegation and moves nothing. The 1 Sept security follow-up (outbound blocked by default, ~150 engineers reassigned) meets the July watch trigger and raises AB4 only.",
+      "assessment_file": "research/assessments/anthropic-2026-09-15.md",
+      "moves": [
+        "AB4 3->4"
+      ]
+    },
+    {
+      "slug": "ljubljana",
+      "name": "Ljubljana",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 81.4,
+      "published_band": "exemplary",
+      "published_rank": 14,
+      "assessed_composite": 81.1,
+      "assessed_band": "exemplary",
+      "delta": -0.3,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 2,
+        "held_no_evidence": 38
+      },
+      "published_formula_reconstruction": 81.4,
+      "key_finding": "CONFIRM 81.4 (measured 81.1). The 9 Sept embassy protest targets national-government policy; the city is not mentioned, so no attribution. The Exemplary label is an untested placeholder, flagged for calibration.",
+      "assessment_file": "research/assessments/ljubljana-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "melbourne",
+      "name": "Melbourne",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 77.4,
+      "published_band": "established",
+      "published_rank": 17,
+      "assessed_composite": 75.9,
+      "assessed_band": "established",
+      "delta": -1.5,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 4,
+        "held_no_evidence": 36
+      },
+      "published_formula_reconstruction": 77.4,
+      "key_finding": "CONFIRM 77.4 (measured 75.9). The A$145M (4 Sept) is Commonwealth money for Victoria-wide projects with no City of Melbourne role, so it is not attributed. The city's own Strategy 2024-30 and 2026-27 outreach programme support existing values.",
+      "assessment_file": "research/assessments/melbourne-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "guatemala",
+      "name": "Guatemala",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 23.4,
+      "published_band": "developing",
+      "published_rank": 130,
+      "assessed_composite": 23.1,
+      "assessed_band": "developing",
+      "delta": -0.3,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 5,
+        "held_no_evidence": 35
+      },
+      "published_formula_reconstruction": 23.4,
+      "key_finding": "CONFIRM 23.4 (measured 23.1). State response is mixed: a flat fuel price cap; clearance of 34 blockades only under a 6-hour Constitutional Court order (11 Sept); preventive army-police deployments; and an unproven narco-financing allegation by the president. UPI counts are unverified (403). Protest-rights watch set.",
+      "assessment_file": "research/assessments/guatemala-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "lesotho",
+      "name": "Lesotho",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "published_band": "developing",
+      "published_rank": 87,
+      "assessed_composite": 33.7,
+      "assessed_band": "developing",
+      "delta": -2.2,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 6,
+        "held_no_evidence": 34
+      },
+      "published_formula_reconstruction": 35.9,
+      "key_finding": "CONFIRM 35.9 (measured 33.7, grid rounding). CORRECTION: the 2026-09-14 drop of the AGOA claim was wrong. It conflated the Feb 2026 extension (to end-2026) with the Continuing Appropriations and Extensions Act, 2027, signed Wed 2 Sept 2026 (AGOA to 2028; Sunday Times + Lesotho Times). HR 6500 is supported by Lesotho Times text and a Sunday Times hyperlink, but not verified against congress.gov. AGOA is US conduct and is not scored.",
+      "assessment_file": "research/assessments/lesotho-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "abbott-laboratories",
+      "name": "Abbott Laboratories",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 57.8,
+      "published_band": "functional",
+      "published_rank": 60,
+      "assessed_composite": 50,
+      "assessed_band": "functional",
+      "delta": -7.8,
+      "band_change": false,
+      "filing_trigger_met": true,
+      "outcome": "measured-not-filed",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 4,
+        "held_no_evidence": 36
+      },
+      "published_formula_reconstruction": 58.4,
+      "key_finding": "MEASURED-NOT-FILED: 50.0 (-7.8) reproduces the PENDING 2026-08-26 downgrade exactly, so no duplicate. The $384,999,040 Sturgis FCA/state settlement (14 Sept, DOJ tier 5) resolves allegations of testing avoidance and FDA non-disclosure with 'no determination of liability'. No new move; it corroborates the pending proposal.",
+      "assessment_file": "research/assessments/abbott-laboratories-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 14.7,
+      "published_band": "critical",
+      "published_rank": 413,
+      "assessed_composite": 14.4,
+      "assessed_band": "critical",
+      "delta": -0.3,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 1,
+        "held_with_evidence": 2,
+        "held_no_evidence": 37
+      },
+      "published_formula_reconstruction": 14.7,
+      "key_finding": "CONFIRM 14.7. The 14 Sept layoff round (same-day 'Today is your last working day' email, lockouts, Oracle declined comment) landed in a $4.76B net-income quarter, so I3 moves 2->1. The 08-18 watch trigger (coercive release-or-forfeit terms) is unverified for this round, and the watch is carried. Rotation-state drift: rank 415 vs 413; stale index_registration_gap fields.",
+      "assessment_file": "research/assessments/oracle-2026-09-15.md",
+      "moves": [
+        "I3 2->1"
+      ]
+    },
+    {
+      "slug": "bridgetown",
+      "name": "Bridgetown",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 60.9,
+      "published_band": "established",
+      "published_rank": 32,
+      "assessed_composite": 58.7,
+      "assessed_band": "functional",
+      "delta": -2.2,
+      "band_change": true,
+      "filing_trigger_met": true,
+      "outcome": "withheld",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "flag-for-review",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 4,
+        "held_no_evidence": 36
+      },
+      "published_formula_reconstruction": 60.9,
+      "key_finding": "WITHHELD BAND CROSSING: measured 58.7 (Functional) vs 60.9 (Established), -2.2, entirely placeholder rounding. In-window conduct is positive: families rehoused within hours of the 3 Sept Chapman Lane fire, and a rebuild assessment on 8 Sept (conditional on land titles, watch). Flagged with the 60.9 cohort.",
+      "assessment_file": "research/assessments/bridgetown-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "kyiv",
+      "name": "Kyiv",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 50,
+      "published_band": "functional",
+      "published_rank": 53,
+      "assessed_composite": 46.9,
+      "assessed_band": "functional",
+      "delta": -3.1,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 3,
+        "held_no_evidence": 37
+      },
+      "published_formula_reconstruction": 50,
+      "key_finding": "CONFIRM 50.0 (measured 46.9). The 7-8 Sept strike (5 killed) is Russian conduct and not scored. Pre-window Reuters reporting (30 July) adds that only ~500 of 4,358 Kyiv shelter facilities are proper bomb shelters, plus an ombudsman audit touching 125 Kyiv sites. It is not Kyiv-disaggregated, so the watch is carried.",
+      "assessment_file": "research/assessments/kyiv-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "lilongwe",
+      "name": "Lilongwe",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 21.9,
+      "published_band": "developing",
+      "published_rank": 170,
+      "assessed_composite": 21.3,
+      "assessed_band": "developing",
+      "delta": -0.6,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 3,
+        "held_no_evidence": 37
+      },
+      "published_formula_reconstruction": 21.9,
+      "key_finding": "CONFIRM 21.9 (measured 21.3, 1.3 above Critical). The up-to-four-day tap outages (13 Sept) are reported against the Lilongwe Water Board, not the council, so attribution is partial. The reactive response matches existing anchors (2). Near-floor watch set.",
+      "assessment_file": "research/assessments/lilongwe-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "warsaw",
+      "name": "Warsaw",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 59.4,
+      "published_band": "functional",
+      "published_rank": 42,
+      "assessed_composite": 58.1,
+      "assessed_band": "functional",
+      "delta": -1.3,
+      "band_change": false,
+      "filing_trigger_met": false,
+      "outcome": "confirmation",
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 0,
+        "held_with_evidence": 1,
+        "held_no_evidence": 39
+      },
+      "published_formula_reconstruction": 59.4,
+      "key_finding": "CONFIRM 59.4 (measured 58.1, grid rounding). The 7 Sept robot demonstration targeted the national digital ministry. It was launched by robot-rental firm Delta Robots, not a civic group as the scan said, and the city is not mentioned. No attribution to Warsaw.",
+      "assessment_file": "research/assessments/warsaw-2026-09-15.md",
+      "moves": []
+    },
+    {
+      "slug": "wellington",
+      "name": "Wellington",
+      "index": "global-cities",
+      "source": "priority",
+      "published_composite": 83,
+      "published_band": "exemplary",
+      "published_rank": 13,
+      "assessed_composite": 71.3,
+      "assessed_band": "established",
+      "delta": -11.7,
+      "band_change": true,
+      "filing_trigger_met": true,
+      "outcome": "proposal",
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "subdim_sidecar": true,
+      "evidence_density": {
+        "moved": 5,
+        "held_with_evidence": 4,
+        "held_no_evidence": 31
+      },
+      "published_formula_reconstruction": 83,
+      "key_finding": "PROPOSAL (downgrade 83.0 Exemplary to 71.3 Established, -11.7, band crossing). The statutory Crown Review (2 Sept, tier 5) found the Moa Point sewage failure came from longstanding governance, accountability and asset-management weaknesses, and that the city council, as owner, 'remained ultimately accountable'. The mayor's apology is credited. Any one of four moves (A5, AC4, S2, I4) alone crosses the band; AB4 alone does not.",
+      "assessment_file": "research/assessments/wellington-2026-09-15.md",
+      "moves": [
+        "A5 4->3",
+        "AC4 4->3",
+        "AB4 4->3",
+        "S2 4->3",
+        "I4 4->3"
+      ],
+      "proposal_file": "research/change-proposals/wellington-2026-09-15.json"
+    }
+  ],
+  "corrections_to_prior_cycles": [
+    {
+      "prior_file": "research/scans/2026-09-14.json and its digest. NOT edited; append-only correction.",
+      "entity": "lesotho",
+      "correction": "The 2026-09-14 scan dropped the Lesotho AGOA candidate as 'misdated and substantively wrong'. It reasoned that the reauthorisation was signed 3 February 2026, runs only to end-2026, and that the 2028 extension did not become law. The drop was wrong, because it conflated two laws. The Sunday Times (2026-09-04) confirms the February 2026 extension to end-2026. Separately, it reports that 'on Wednesday' (2 September 2026) the Continuing Appropriations and Extensions Act, 2027 was signed, extending AGOA to 2028. Lesotho Times (2026-09-10) states HR 6500 was signed on 2 September 2026, extending AGOA to 31 December 2028. The bill number is not in the Sunday Times text, which has only a congress.gov house-bill/6500 hyperlink; treat it as reported, not verified against congress.gov."
+    }
+  ],
+  "scan_claim_corrections": [
+    "netflix: the scan omits Netflix's denial ('lacks merit', NBC 2026-09-10).",
+    "sweden: the Irish Times source does not contain the 1 September rules; details verified via The Local. Civil Rights Defenders criticism not found.",
+    "anthropic: androidheadlines 403; filing verified via Engadget (2026-09-09). The '15% of weekly quota in one 5-hour sprint' example appears only in search summaries of the June complaint and was not used.",
+    "ljubljana: 'an estimated 2,000' is not in the Al Jazeera text, which says 'thousands'.",
+    "melbourne: the A$145M is Commonwealth funding for Victoria-wide projects; the City of Melbourne is not mentioned.",
+    "guatemala: UPI 403, so the 40-demonstration / 27-city counts are unverified; the riotimesonline source (date_verified false) was not used. The scan omits the Constitutional Court six-hour order (11 Sept) and the two police officers shot.",
+    "lesotho: '30,000-40,000 mostly-female workers' and 'buyers have not returned' are not in the cited Sunday Times article, which never mentions Lesotho.",
+    "abbott-laboratories: the usao-wdmi DOJ URL returned an empty page; the DOJ OPA release was used. Total $384,999,040; 'no determination of liability'.",
+    "oracle: '7,000-10,000 further cuts' and '13%' unverified.",
+    "bridgetown: the scan omits the rapid state rehousing response; the fire destroyed four houses, with no injuries.",
+    "kyiv: CNN 451; attack ran from the evening of 7 into 8 September, 5 killed and 35 injured (Kyiv Independent).",
+    "lilongwe: the source names the Lilongwe Water Board, not the city council.",
+    "warsaw: 'Democratism' was launched by robot-rental firm Delta Robots, not a civic group; the target was a national ministry, not the city.",
+    "wellington: the scanner's source (democracyproject, date_verified false) was not used; 'rising water bills' unverified. Findings re-verified via the government release (Mirage republication), NZ Gazette, RNZ, ODT, 1News and The Spinoff."
+  ],
+  "coordinator_notes_applied": {
+    "date_verified_false_sources": "Wellington (democracyproject) and Guatemala (riotimesonline) were not used as evidence. University of Texas at Austin, Guatemala City and Carnegie Mellon were not in top_entities and were not assessed.",
+    "san_antonio": "Not in top_entities; not assessed. The event-date discrepancy was not verified this cycle.",
+    "already_assessed_2026_09_14": "None of Spain, Nepal, Boeing, Yale, Hong Kong, France or Slovenia is in today's top_entities, and none was re-filed. Slovenia's embassy opening is not double-counted on Ljubljana.",
+    "abbott_pending": "Pending 2026-08-26 proposal: baseline drift 0.0 (published 57.8 unchanged). Measured 50.0 equals the pending value; no duplicate filed; pending file untouched.",
+    "seed_baseline_discipline": "Every report splits movement into grid rounding (de-seeding) and conduct. Netflix, Bridgetown, Lesotho, Warsaw, Melbourne, Ljubljana, Guatemala and Lilongwe move only by grid rounding. Wellington: -0.6 grid, -11.1 conduct."
+  },
+  "calibration_referrals": [
+    "60.9 placeholder cohort (Netflix, Bridgetown): grid rounding alone crosses Established to Functional (58.7). Study together with the 62.5 cohort from 2026-09-14 (France, Slovenia).",
+    "Registered ceiling overrides (Sweden): there is no documented rule for carrying the override offset (-8.6) when conduct moves subdimensions. Carrying it would give about 77.5.",
+    "Ljubljana 81.4 Exemplary: an untested placeholder whose Exemplary status depends on seven dimensions sitting exactly at 4.0."
+  ],
+  "rotation_state_drift_reported_not_written": {
+    "note": "Composite and band of all 14 assessed entities match the published index. Only last_assessed (14 entities) and last_change_proposal (wellington) were written; 15 lines changed. Rank and other fields are owned by score-updater and were not written.",
+    "score_drift_problems": [
+      {
+        "slug": "oracle-ai",
+        "rotation_composite": 21.9,
+        "rotation_band": "developing",
+        "published": "no ai-labs row",
+        "issue": "unpublished value held in rotation-state (breaks the integrity rule)"
+      },
+      {
+        "slug": "oracle",
+        "fields": {
+          "index_registration_gap": true,
+          "proposed_baseline": 28.4
+        },
+        "issue": "stale May-2026 fields on an entity that has a published fortune-500 row"
+      }
+    ],
+    "rank_drift": [
+      {
+        "slug": "netflix",
+        "rotation_rank": 52,
+        "published_rank": 45
+      },
+      {
+        "slug": "anthropic",
+        "rotation_rank": 13,
+        "published_rank": 12
+      },
+      {
+        "slug": "melbourne",
+        "rotation_rank": 18,
+        "published_rank": 17
+      },
+      {
+        "slug": "abbott-laboratories",
+        "rotation_rank": 70,
+        "published_rank": 60
+      },
+      {
+        "slug": "oracle",
+        "rotation_rank": 415,
+        "published_rank": 413
+      }
+    ]
+  },
+  "math_hygiene": "NONE FOUND. The canonical computeCompositeFromDimensions reproduces every published composite in this cohort within 0.5 points, except Sweden (+8.6) and Abbott Laboratories (+0.6). Both are in the registered ASSESSOR_OVERRIDE_NAMES set, and validate-indexes reports 0 errors.",
+  "conflict_of_interest": "Anthropic was assessed by an Anthropic-built model. The conflict is disclosed in the report; only one pre-committed upward move was made (AB4); outcome is a confirmation. Human spot-check recommended.",
+  "errors": [],
+  "other_stage_file_changes_observed": {
+    "note": "rotation-state last_scanned / last_evidence_touch changes are scanner-stage writes (per coordinator), not written by this stage."
+  }
+}

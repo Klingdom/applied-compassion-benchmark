@@ -9819,3 +9819,122 @@ Both entities are members of the identical never-individually-assessed 14-countr
 - Validation: validate-daily-briefings.mjs 79/79 PASS; lint-daily-briefings.mjs 81 files clean (0 forbidden phrases/status/pipeline keys). Published indexes untouched. No proposal applied. Nothing committed.
 
 **Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, not incremented from the prior digest's figure): 21** -- 20 carried forward from 2026-08-16/17/20/26/2026-09-01 + 1 new tonight (Hong Kong).
+
+
+---
+
+## 2026-09-15 -- Wellington Band Crossing Proposed (Sewage-Plant Review) | 2 Withheld Crossings (60.9 Cohort) | Lesotho Self-Correction | 10 Confirmations
+
+### Summary -- 2026-09-15
+
+Priority-only cycle (lookback 2026-09-01 -> 2026-09-15). Roster held at 1,329 entities. One score-change proposal filed: Wellington (global-cities), 83.0 Exemplary -> 71.3 Established (-11.7), band crossing, on a statutory Crown Review finding longstanding governance failure behind the 4 February 2026 Moa Point sewage-plant collapse. **NOT YET APPLIED.** Magnitude disclosure: roughly two-thirds of the -11.7 is the canonical scoring formula's integration-premium cliff (RISK-019) -- five dimensions crossing below the 4.0 threshold erases Wellington's 8-point bonus in one step -- and roughly one-third is direct dimension movement from the review's findings. The band crossing is robust to rejecting any single subdimension move except AB4 alone.
+
+Two band crossings were measured but WITHHELD: Netflix (fortune-500) and Bridgetown (global-cities), both -2.2, Established -> Functional, both members of the same never-individually-assessed 60.9 placeholder vector (seven dimensions at 3.5, EQU 3.0) studied since 2026-08-16. Netflix's in-window fact (a Florida AG children's-data lawsuit) is an unproven allegation Netflix disputes; Bridgetown's in-window fact (a house fire) produced an actively POSITIVE state response (rapid rehousing), so filing a downgrade there would have contradicted the evidence. Both referred to the same cohort-review track as 2026-09-14's France/Slovenia 62.5-placeholder pair.
+
+One measurement corroborated an existing pending proposal without duplicating it: Abbott Laboratories measured 50.0 tonight (a new $384,999,040 DOJ/state settlement over the Sturgis infant-formula plant), reproducing the pending abbott-laboratories-2026-08-26 proposal exactly; no second proposal filed.
+
+**Self-correction (append-only, per AUTONOMY.md section 1c; the 2026-09-14 scan and digest files are NOT edited):** the 2026-09-14 cycle wrongly dropped a Lesotho AGOA finding as "misdated and substantively wrong," conflating a February 2026 law (extending AGOA to end-2026) with a separate law -- the Continuing Appropriations and Extensions Act, 2027, signed 2 September 2026 -- that extends AGOA to 2028. AGOA is US government conduct and is not scored for Lesotho under the attribution rule; Lesotho confirms unchanged at 35.9.
+
+Sweden confirms with a numerically positive delta (+4.8, 81.3 -> 86.1 measured) that is a REGISTERED-OVERRIDE ARTIFACT, not an upgrade: Sweden's published 81.3 sits 8.6 points below its formula reconstruction by design (an April 2026 ceiling correction). Three subdimensions move DOWN tonight on 1 September 2026 deportation-rule evidence (A5, E3, EQ1, each 4->3), pulling the underlying formula value from 89.9 to 86.1 (-3.8, a real decline) -- the +4.8 appears only because it is measured against the capped published number, not the formula's own prior value. No documented rule exists for carrying the override offset forward against new downward evidence; calibration referral opened.
+
+Anthropic confirms (59.1 -> 57.5 measured, -1.6) under a disclosed CONFLICT OF INTEREST: this assessment was produced by an Anthropic-built model assessing Anthropic. Only one pre-committed upward move was made (AB4, on a 1 September security response satisfying the 2026-07-31 watch-flag trigger in writing); the Claude Max class action is an unproven allegation and moves nothing. Human spot-check of this specific assessment is recommended.
+
+Queue: 21 pending proposals total (20 carried forward + 1 new tonight, Wellington), counted directly from `research/change-proposals/*.json` with `"status": "pending"`. Total is unchanged from 2026-09-14's count of 21 because Hong Kong's 2026-09-14 proposal left the pending pool between cycles (founder-approved and applied in-session per `research/APPLIED_CHANGES.md` 2026-09-14) at the same time Wellington's entered it.
+
+---
+
+### Score Change Proposed -- 2026-09-15
+
+#### Wellington (global-cities) -- 83.0 -> 71.3 (-11.7) -- BAND CROSSING (Exemplary -> Established), NOT YET APPLIED
+- **Confidence:** medium
+- **Band change:** YES -- filed under both the magnitude trigger and the band-crossing trigger.
+- **Key evidence:**
+  - Statutory Crown Review, appointed under the Local Government Act 2002 ss 255(3)/258, released 2 September 2026 (tier 5, via verbatim NZ-government republication because the Beehive page itself could not be fetched): "not caused by a single decision or isolated failure, but by longstanding weaknesses in governance, accountability, asset management, risk management and infrastructure resilience."
+  - Wellington City Council, as plant owner and consent holder, "remained ultimately accountable" (Otago Daily Times, tier 2); "no single organisation acted as though it was in charge" (RNZ, tier 2).
+  - Mayor Andrew Little apologised ("I am very sorry that this has happened," The Spinoff, tier 2) and said under-performance "was seen as normal" (RNZ, tier 2) -- the apology is credited (AB1 held at 5, AB2 at 4), but the "seen as normal" admission itself drives the Systemic Learning downgrade (AB4 4->3).
+  - Five subdimensions move 4->3: A5 (Anticipatory Awareness), AC4 (Resource Mobilization), AB4 (Systemic Learning), S2 (Long-Term Impact), I4 (Values Alignment). Sensitivity check: any one of A5, AC4, S2 or I4 alone crosses the band (79.8 on the canonical function); AB4 alone does not (81.8).
+  - MAGNITUDE CAVEAT (mandatory disclosure): the five-dimension average falls 4.00 -> 3.85, moving the base score 75.0 -> 71.25 (-3.75 direct conduct). The remaining -8.0 is the integration premium disappearing because five dimensions now sit below the canonical 4.0 threshold (RISK-019: "all dimensions at 3.99 -> 74.8 (Established), at 4.0 -> 85.0 (Exemplary)"). Roughly two-thirds of the total movement is this formula cliff, not additional conduct.
+- **Recommendation:** downgrade. Confidence medium, not high: the base is a never-assessed placeholder, the tier-5 source is a verbatim republication, and the full review PDF was not read.
+- **File:** [proposal](change-proposals/wellington-2026-09-15.json)
+
+---
+
+### Band Crossings Measured But Withheld -- 2026-09-15
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Reason Withheld |
+|---|---|---|---|---|---|---|
+| Netflix | fortune-500 | 60.9 | 58.7 | -2.2 | Established -> Functional | Entire gap is integer-grid rounding of a never-assessed 3.5 placeholder. The only in-window fact is a Florida AG lawsuit (9 Sept) alleging children's-data violations; Netflix calls it meritless and will defend it. Unproven allegation, no subdimension moves. Same 60.9 seed cluster studied 2026-08-16/09-01. |
+| Bridgetown | global-cities | 60.9 | 58.7 | -2.2 | Established -> Functional | Same placeholder-rounding artifact. In-window conduct is actively POSITIVE (families rehoused within hours of the 3 Sept Chapman Lane fire; rebuild assessment 8 Sept). Filing a downgrade would contradict the evidence (screening rule 3). |
+
+Both referred to the same coordinator-level cohort de-seeding study as the 2026-09-14 France/Slovenia 62.5-placeholder pair and the 2026-09-01 Fortune-500 60.9 cluster (Nationwide, Principal Financial, Raymond James Financial, Regions Financial).
+
+---
+
+### Measured, Not Filed (Corroboration) -- 2026-09-15
+
+| Entity | Index | Published | Measured | Delta | Notes |
+|---|---|---|---|---|---|
+| Abbott Laboratories | fortune-500 | 57.8 | 50.0 | -7.8 | Reproduces the PENDING abbott-laboratories-2026-08-26 proposal (57.8 -> 50.0) exactly; baseline drift 0.0. In-window: a $384,999,040 DOJ FCA/state settlement (14 Sept, tier 5) over the Sturgis infant-formula plant, "no determination of liability." No new move; corroborates rather than duplicates. Existing proposal untouched. |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-15
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Sweden | countries | 81.3 | 86.1 | +4.8 | REGISTERED OVERRIDE ARTIFACT, NOT AN UPGRADE. Three subdimensions (A5, E3, EQ1) move down on 1 September 2026 deportation rules; formula value falls 89.9 -> 86.1 (-3.8, the real direction). Published 81.3 sits 8.6 below the formula by design (April 2026 ceiling correction), so the delta against the published number reads positive. Carrying the -8.6 offset forward would give roughly 77.5; no documented rule exists. Calibration referral opened. |
+| Anthropic | ai-labs | 59.1 | 57.5 | -1.6 | CONFLICT OF INTEREST DISCLOSED: assessed by an Anthropic-built model. Only one pre-committed upward move made (AB4 3->4, on a 1 September security response -- outbound traffic blocked by default, real-time sandbox-escape classifier, ~150 engineers moved to security -- satisfying the 2026-07-31 watch-flag trigger in writing). Claude Max class action (filed 8 Sept) is an unproven allegation, moves nothing. HUMAN SPOT-CHECK RECOMMENDED. |
+| Ljubljana | global-cities | 81.4 | 81.1 | -0.3 | The 9 September embassy-opening protest targets Slovenia's national government, not the city; no attribution. Exemplary label rests on an untested placeholder (seven dimensions exactly at 4.0), flagged for calibration. |
+| Melbourne | global-cities | 77.4 | 75.9 | -1.5 | The A$145M (4 Sept) is Commonwealth funding for Victoria-wide projects with no City of Melbourne role; not attributed. City's own Strategy 2024-30 and outreach programme support existing anchors. |
+| Guatemala | countries | 23.4 | 23.1 | -0.3 | Mixed state response: flat fuel-price cap; 34 blockades cleared only under a 6-hour Constitutional Court order (11 Sept); preventive army-police deployment; unproven presidential narco-financing allegation. Protest-rights watch set. |
+| Lesotho | countries | 35.9 | 33.7 | -2.2 | SELF-CORRECTION recorded above (2026-09-14 AGOA drop was wrong; two different US laws conflated). AGOA is US conduct, not scored. Lesotho's own conduct (27 labour inspectors for ~33,000 businesses; 4% textile minimum-wage rise vs. 4.5% elsewhere) already reflected in the placeholder; confirms unchanged. |
+| Oracle Corporation | fortune-500 | 14.7 | 14.4 | -0.3 | Third same-day layoff round in 2026 (14 Sept, "Today is your last working day" email, lockouts) lands in a $19.3B-revenue, $4.76B-net-income quarter; I3 Internal Consistency moves 2->1. Release-or-forfeit severance terms from the June round are UNVERIFIED for this round; watch carried. Rotation-state drift: rank 415 vs. published 413; stale `index_registration_gap`/`proposed_baseline` fields from a May baseline, flagged for coordinator cleanup. |
+| Kyiv | global-cities | 50.0 | 46.9 | -3.1 | The 7-8 Sept Russian strike (5 killed) is Russian conduct, not scored. Pre-window Reuters reporting adds that only ~500 of 4,358 Kyiv shelter facilities are proper bomb shelters; not Kyiv-disaggregated, watch carried. |
+| Lilongwe | global-cities | 21.9 | 21.3 | -0.6 | Up-to-four-day tap-water outages (13 Sept) attributed to the Lilongwe Water Board, not the city council directly -- partial attribution. Sits 1.3-1.9 points above the Critical floor; near-floor watch set. |
+| Warsaw | global-cities | 59.4 | 58.1 | -1.3 | The 7 Sept robot demonstration targeted the national digital ministry, launched by robot-rental firm Delta Robots (not a civic group, as the scan said); no attribution to Warsaw. |
+
+---
+
+### Dropped Candidates Worth Recording -- 2026-09-15
+
+**China "Ethnic Unity Law" misdated.** A search result described a draft law submitted to the NPC on 8 September 2026; China's own official gazette (moj.gov.cn, scio.gov.cn) shows the law actually passed 12 March 2026. Dropped as misdated.
+
+**Mogadishu "clashes" misdated.** A candidate describing "heavy clashes" was independently verified as dated 3 June 2026, not September 2026. Dropped as misdated.
+
+**Lesotho AGOA claim -- CORRECTED, not dropped.** See the self-correction above: this was wrongly dropped on 2026-09-14 and is restored (without scoring, per the US-attribution rule) tonight.
+
+---
+
+### Open Calibration Flags -- 2026-09-15
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Wellington integration-premium cliff (RISK-019): roughly two-thirds of the proposed -11.7 is the 8-point bonus disappearing at the 4.0 threshold, not additional conduct | New tonight, disclosed in the filed proposal; founder decision pending | Open since 2026-09-15 |
+| 60.9 placeholder cohort (Netflix, Bridgetown; also Nationwide, Principal Financial, Raymond James Financial, Regions Financial from 2026-09-01) | Netflix and Bridgetown individually reviewed tonight (both withheld) | Open since 2026-08-16, reinforced 2026-09-15 |
+| Sweden override-offset carry-forward rule (no documented rule for combining a registered ceiling override with new downward subdimension evidence) | New tonight; carrying the offset would give roughly 77.5 | Open since 2026-09-15 |
+| Anthropic conflict-of-interest self-assessment -- human spot-check recommended | New tonight | Open since 2026-09-15 |
+| Ljubljana 81.4 Exemplary placeholder (seven dimensions exactly at 4.0, untested) | Carried forward, reinforced tonight | Open since 2026-09-14 |
+| Oracle AI data-integrity gap: rotation-state carries an unpublished 21.9/developing composite marked "applied" with no corresponding ai-labs.json row | New tonight; reported, not written | Open since 2026-09-15 |
+| Oracle Corporation rotation-state drift: rank 415 vs. published 413; stale `index_registration_gap`/`proposed_baseline: 28.4` fields from a May baseline despite a live fortune-500 row | Carried forward, reinforced tonight | Open since 2026-08-18 |
+| Countries-index 20.3 seed cluster (8 members remain unexamined: Algeria, Cameroon, Gabon, Guinea, Honduras, Papua New Guinea, Republic of Congo, Uzbekistan) | Carried forward | Open since 2026-08-16 |
+| 14-country 62.5 placeholder cluster (10 members remain unexamined after France, Slovenia, South Korea, Chile, Latvia) | Carried forward | Open since 2026-08-18 |
+| Bionik Laboratories corporate status -- needs Delaware/Ontario registry lookup, then a founder disposition decision | Carried forward | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~83 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~67 days |
+
+---
+
+### Operational Notes -- 2026-09-15
+
+- Scan: 1,329 entities scanned (roster unchanged); 286 searches performed against a derived ceiling of 274 (150 T1 individual + 8 verification + 111 T2 batched + 17 T3 sweeps; 12-search disclosed overage from running all 111 sector-coherent T2 batches rather than force-merging to the 99 mathematical minimum, plus 2 T3 sweeps above the floor); 14-day lookback (2026-09-01 to 2026-09-15).
+- 8 dedicated verification searches: Lesotho AGOA signing date (confirmed via 3 independently dated sources), a China "Ethnic Unity Law" claim (DROPPED, actual passage 12 March 2026), Netflix Florida-lawsuit date (confirmed), Oracle 14 September layoff count (confirmed, no official total disclosed), Nepal flood-toll/appeal continuity (confirmed as continuation of the already-assessed 09-14 finding, not re-flagged), Meta's $17.1B settlement date (confirmed 2026-08-26, out of window, not flagged), a Mogadishu "clashes" claim (DROPPED, actual date 3 June 2026), and Kyiv missile/drone-attack date (confirmed).
+- Assessor runtime: assessment stage ended 2026-09-15T22:09:56.356Z (precise start not recorded); 26 assessor searches across 14 scored entities plus 1 screening note (Oracle AI, not assessable -- no published ai-labs row), max 4 searches on any single entity (Wellington); 1 change proposal; 10 confirmations; 2 withheld; 1 measured-not-filed; 14 of 14 required subdimension sidecars written for scored entities.
+- Math hygiene: NONE FOUND. `computeCompositeFromDimensions` reproduces every published composite in this cohort within 0.5 points, except Sweden (+8.6) and Abbott Laboratories (+0.6), both in the registered `ASSESSOR_OVERRIDE_NAMES` set -- `validate-indexes` reports 0 errors.
+- Rotation-state drift: composite and band match the published index for all 14 assessed entities (score-bearing integrity invariant holds; independently re-verified against `site/src/data/indexes/countries.json`, `global-cities.json`, `fortune-500.json` and `ai-labs.json` for this digest). Rank disagrees for 5 of 14 (Netflix, Anthropic, Melbourne, Abbott Laboratories, Oracle Corporation) -- rank is owned by score-updater per AUTONOMY.md section 4, not written by this stage.
+- Conflict of interest: Anthropic was assessed by an Anthropic-built model; disclosed in the assessment file and in this entry; human spot-check recommended.
+- Housekeeping (not this cycle's action, reported for continuity): the 2026-09-14 Hong Kong proposal now carries `"status": "applied"` and the live global-cities.json shows composite 26.9, per a founder-directed in-session approval recorded in `research/APPLIED_CHANGES.md` 2026-09-14. This is why tonight's pending-queue total (21) is unchanged even though Wellington is newly added -- Hong Kong left the pool at the same time.
+- Validation: `node site/scripts/validate-daily-briefings.mjs` and `node site/scripts/lint-daily-briefings.mjs` both run against tonight's public briefing (`site/src/data/updates/daily/2026-09-15.json`); results reported in the digest agent's final summary. Published indexes untouched. No proposal applied. Nothing committed.
+
+**Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, excluding the `history/` subdirectory, not incremented from the prior digest's figure): 21** -- 20 carried forward (unchanged set from 2026-08-16 through 2026-09-01, since Hong Kong's departure and Wellington's arrival net to zero) + Wellington new tonight. High priority (band change or delta >15): 15 (14 carried + Wellington). Standard (delta 5-15, no band change): 6 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks -- Hong Kong left this tier on application). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. `site/src/data/indexes/*.json` and `research/rotation-state.json` were not modified.
