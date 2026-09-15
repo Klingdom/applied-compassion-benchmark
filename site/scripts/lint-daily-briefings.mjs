@@ -29,7 +29,7 @@
 import { readFileSync, readdirSync, statSync } from "fs";
 import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
-import { scanForViolations } from "./lib/lint-rules.mjs";
+import { scanForViolations, scanUnappliedScoreMovement, UNAPPLIED_SCORE_MOVEMENT_CUTOFF } from "./lib/lint-rules.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DAILY_DIR = join(__dirname, "..", "src", "data", "updates", "daily");
@@ -75,9 +75,34 @@ function lintFile(filePath) {
         detail: e.message,
         snippet: "",
       }],
+      reportOnly: [],
     };
   }
-  return { file: filePath, violations: scanForViolations(data) };
+  const movement = scanUnappliedScoreMovement(data);
+  return {
+    file: filePath,
+    violations: [...scanForViolations(data), ...movement.violations],
+    reportOnly: movement.reportOnly,
+  };
+}
+
+function printReportOnly(allResults) {
+  const withMatches = allResults.filter((r) => r.reportOnly && r.reportOnly.length > 0);
+  if (withMatches.length === 0) return;
+
+  console.log(
+    `\n[lint-daily-briefings] REPORT-ONLY — unapplied-score-movement matches in briefings ` +
+    `dated before ${UNAPPLIED_SCORE_MOVEMENT_CUTOFF} (informational only, does NOT affect exit code; ` +
+    `AUTONOMY.md §1c forbids retro-editing published briefings):\n`
+  );
+  for (const result of withMatches) {
+    console.log(`  ${basename(result.file)}`);
+    for (const v of result.reportOnly) {
+      console.log(`    - ${v.path} :: ${v.rule}`);
+      console.log(`        "${(v.sentence || v.snippet || "").replace(/\n/g, " ")}"`);
+    }
+  }
+  console.log("");
 }
 
 function main() {
@@ -90,10 +115,13 @@ function main() {
   const allResults = files.map(lintFile);
   const failingResults = allResults.filter((r) => r.violations.length > 0);
 
+  printReportOnly(allResults);
+
   if (failingResults.length === 0) {
     console.log(
       `[lint-daily-briefings] PASS — ${files.length} daily JSON files clean ` +
-      `(0 forbidden phrases, 0 forbidden status values, 0 forbidden pipeline keys).`
+      `(0 forbidden phrases, 0 forbidden status values, 0 forbidden pipeline keys, ` +
+      `0 unapplied-score-movement violations on or after ${UNAPPLIED_SCORE_MOVEMENT_CUTOFF}).`
     );
     return;
   }

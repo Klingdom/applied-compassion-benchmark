@@ -252,6 +252,22 @@ The JSON digest at `research/digests/YYYY-MM-DD.json` AND the public daily brief
 - "Logged per boundary protocol with the new sub-anchor entering the v1.3 candidate set."
 - "Treat the published score as the lower-confidence reading and the documented evidence pattern as the higher-confidence record."
 
+**UNAPPLIED-SCORE-MOVEMENT RULE** (added Improvement Loop 13, item D-1, 2026-09-14 — closes RISK-020; redesigned in the item D-1 REWORK the same day after a coordinator validation failure on precision): Do not narrate an unapplied score proposal as if the published score already moved. When `pipeline.scoreChangesApplied` is `0` or absent, a sentence in `headline`, `title`, `summary`, or a `topSignals[]` item's `title`/`whyItMatters` is flagged only if the movement verb is directly BOUND to a score subject or a score-shaped object — bare co-occurrence in the same sentence is not enough (an earlier version flagged on co-occurrence alone and produced ~50% false positives against the real corpus, e.g. "Venezuela's ... death toll rose to 3,899" or "Bolivia's score holds steady, but its case raises a new question"). A sentence is flagged only if it matches one of these binding patterns (case-insensitive):
+  - (a) score subject → verb: `score`/`composite` followed within 0–2 words by falls/fell/drops/dropped/slips/slipped/sinks/sank/declines/declined/rises/rose/climbs/climbed/jumps/jumped (e.g. "Hong Kong's score falls 5.9 points", "the score rose slightly"). Deliberately excludes gains/gained/cut/cuts/lost/raises — "zero score gained confirmed evidence" and "a real score cut" must pass.
+  - (b) verb → point quantity: a movement verb immediately followed by (optionally "by") a number and "points"/"pts" (e.g. "falls 5.9 points", "Fell 8 Points").
+  - (c) verb → score value: a movement verb followed by "to"/"from" and a score-shaped value — either a one-decimal number (e.g. "falls to 28.4", "from 12.5 to 6.3") or an integer immediately followed by "of 100"/"out of 100" (e.g. "falls to 18 of 100"). Bare integers without a decimal or "of 100" do not match, so ordinary counts pass ("protest deaths rose to 12", "Jumps From 600 to 702 Deaths", "rose to 3,899"). *(Coordinator correction 2026-09-14: this line previously said "a bare number", which described an earlier version of the pattern.)*
+  - (d) verb → band: a movement verb followed by "into"/"out of"/"from"/"to"/"below"/"above" (optionally "the") and a band name (Critical/Developing/Functional/Established/Exemplary) or top/lower/higher (e.g. "climbs into the Functional band", "drops from Functional to Developing").
+  - (e) verb → its score: cuts/cut/lowers/lowered/raises/raised followed by "its"/"the"/"their" (optionally "published") "score" (e.g. "cuts its score 5 points").
+  A match is discarded if `not`/`never`/`no`/`neither`/`nor` appears within the 3 tokens immediately before the bound verb (e.g. "Neither Ukraine nor Kyiv lost points", "confirms, not lowers, the published ... score"). Even after a binding match, the whole sentence still passes if it also carries a qualifier: would, could, proposed, proposal, proposes, propose, filed, measured, recommended, recommends, pending, not yet, awaiting, if applied, assessment finds/found, already, previously, has/had/was/were (not) applied variants, etc. Also flag `topSignals[].status === "applied"` when `scoreChangesApplied` is 0/absent. Enforced by `unapplied-score-movement` (binding patterns exported as `BINDING_PATTERNS`/`findBindingMatches`/`evaluateMovementSentence`) in `site/scripts/lib/lint-rules.mjs` and `site/scripts/lint-daily-briefings.mjs`, for briefings dated `>= 2026-09-15` only (per AUTONOMY.md §1c, published briefings before that date are never retro-failed — they surface in a REPORT-ONLY list instead).
+
+**BAD (narrates unapplied movement as fact):**
+- "Hong Kong falls 5.9 points after a court jailed three Tiananmen vigil leaders for up to seven years." (with `scoreChangesApplied: 0`)
+- "Portugal's face-covering ban cuts its score 5 points, just short of a lower band." (with `scoreChangesApplied: 0`)
+
+**GOOD (same finding, correctly qualified):**
+- "OpenAI's score would fall five points after a UK cheating study; the change is proposed, not yet applied."
+- "A finding proposes a 5.9-point Hong Kong downgrade, pending confirmation; the published score is unchanged."
+
 **WHERE REVIEWER LANGUAGE IS ALLOWED** (internal artifacts only):
 - `research/digests/YYYY-MM-DD.md` (the markdown digest)
 - `research/PENDING_CHANGES.md`

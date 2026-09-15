@@ -16,18 +16,24 @@
  *  6. Cycle-type parenthetical → caught
  *  7. Multiple violations in one file → all caught
  *  8. Invalid JSON → caught as parse error
+ *  9. unapplied-score-movement rule (Improvement Loop 13, item D-1): movement
+ *     verb + score context without a qualifier, on/after the cutoff → caught;
+ *     qualified language → passes; applied=1 → passes; pre-cutoff dates →
+ *     report-only (no violations); topSignals status "applied" with
+ *     scoreChangesApplied 0 → caught.
  *
  * Exit code 0 = all tests pass, 1 = one or more failures.
  *
  * Added: Improvement Loop 5, 2026-05-21. Closes test-coverage red zone (2/10)
  * for the build-time validator added in Loop 3.
+ * Extended: Improvement Loop 13, item D-1, 2026-09-14 (unapplied-score-movement rule).
  */
 
-import { writeFileSync, rmSync, existsSync } from "fs";
+import { writeFileSync, rmSync, existsSync, readFileSync } from "fs";
 import { execSync } from "child_process";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { scanForViolations } from "./lib/lint-rules.mjs";
+import { scanForViolations, scanUnappliedScoreMovement, UNAPPLIED_SCORE_MOVEMENT_CUTOFF, evaluateMovementSentence } from "./lib/lint-rules.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const LINT_SCRIPT = join(__dirname, "lint-daily-briefings.mjs");
@@ -237,6 +243,205 @@ test("lint-script-on-disk produces zero exit when all real files are clean", () 
   if (exitCode !== 0) {
     throw new Error(`Expected lint to exit 0 on clean real files, got ${exitCode}`);
   }
+});
+
+// ──────────────────────────────────────────────────────────────────────────
+// unapplied-score-movement rule (Improvement Loop 13, item D-1)
+// ──────────────────────────────────────────────────────────────────────────
+
+function baseBriefing(overrides = {}) {
+  return {
+    date: "2026-09-15",
+    pipeline: { scoreChangesApplied: 0 },
+    headline: "Nothing moved tonight.",
+    title: "Compassion Benchmark Daily Briefing",
+    summary: "A quiet cycle with no findings.",
+    topSignals: [],
+    ...overrides,
+  };
+}
+
+test("unapplied-score-movement: unqualified 'falls ... points' on/after cutoff is a violation", () => {
+  const input = baseBriefing({
+    headline: "Hong Kong falls 5.9 points after a court ruling.",
+  });
+  const { violations, reportOnly } = scanUnappliedScoreMovement(input);
+  assertViolation(violations, (v) => v.rule === "unapplied-score-movement" && v.path === "headline",
+    "Should flag unqualified 'falls ... points' headline on/after cutoff");
+  assertViolationCount(reportOnly, 0);
+});
+
+test("unapplied-score-movement: 'would fall ... points' passes (qualified/infinitive form)", () => {
+  const input = baseBriefing({
+    headline: "Hong Kong's score would fall 5.9 points after a court ruling.",
+  });
+  const { violations } = scanUnappliedScoreMovement(input);
+  assertNoViolations(violations);
+});
+
+test("unapplied-score-movement: 'a downgrade of 5.9 points is proposed' passes", () => {
+  const input = baseBriefing({
+    headline: "A downgrade of 5.9 points is proposed for Hong Kong.",
+  });
+  const { violations } = scanUnappliedScoreMovement(input);
+  assertNoViolations(violations);
+});
+
+test("unapplied-score-movement: scoreChangesApplied=1 suppresses the rule entirely", () => {
+  const input = baseBriefing({
+    pipeline: { scoreChangesApplied: 1 },
+    headline: "Hong Kong falls 5.9 points after a court ruling.",
+  });
+  const { violations, reportOnly } = scanUnappliedScoreMovement(input);
+  assertNoViolations(violations);
+  assertViolationCount(reportOnly, 0);
+});
+
+test("unapplied-score-movement: dated before cutoff lands in reportOnly, not violations", () => {
+  const input = baseBriefing({
+    date: "2026-09-14",
+    headline: "Hong Kong falls 5.9 points after a court ruling.",
+  });
+  const { violations, reportOnly } = scanUnappliedScoreMovement(input);
+  assertNoViolations(violations);
+  assertViolation(reportOnly, (v) => v.rule === "unapplied-score-movement" && v.path === "headline",
+    "Pre-cutoff match should be reported, not failed");
+});
+
+test("unapplied-score-movement: 'the government fell' without score context passes", () => {
+  const input = baseBriefing({
+    summary: "Protests spread nationwide and the government fell within a week.",
+  });
+  const { violations, reportOnly } = scanUnappliedScoreMovement(input);
+  assertNoViolations(violations);
+  assertViolationCount(reportOnly, 0);
+});
+
+test("unapplied-score-movement: topSignals[].status === 'applied' with scoreChangesApplied 0 is a violation", () => {
+  const input = baseBriefing({
+    topSignals: [{ title: "Some signal", whyItMatters: "No movement claim here.", status: "applied" }],
+  });
+  const { violations } = scanUnappliedScoreMovement(input);
+  assertViolation(violations, (v) => v.rule === "unapplied-score-movement-status" && v.path === "topSignals[0].status",
+    "Should flag topSignals[].status === 'applied' when scoreChangesApplied is 0");
+});
+
+test("unapplied-score-movement: topSignals[].title with unqualified movement language is caught", () => {
+  const input = baseBriefing({
+    topSignals: [{ title: "Hong Kong Falls 5.9 Points as a Third Escalation", whyItMatters: "fine" }],
+  });
+  const { violations } = scanUnappliedScoreMovement(input);
+  assertViolation(violations, (v) => v.path === "topSignals[0].title", "Should flag topSignals[].title movement language");
+});
+
+test("unapplied-score-movement: real 2026-09-14.json fixture, re-dated to cutoff, produces the coordinator-flagged violations", () => {
+  const fixturePath = join(__dirname, "..", "src", "data", "updates", "daily", "2026-09-14.json");
+  const real = JSON.parse(readFileSync(fixturePath, "utf8"));
+  const rebased = { ...real, date: UNAPPLIED_SCORE_MOVEMENT_CUTOFF };
+  const { violations, reportOnly } = scanUnappliedScoreMovement(rebased);
+  assertViolationCount(reportOnly, 0);
+  assertViolation(violations, (v) => v.path === "headline", "Should flag the Hong Kong headline");
+  assertViolation(violations, (v) => v.path === "topSignals[0].title", "Should flag the Hong Kong topSignals title");
+});
+
+test("unapplied-score-movement: the real, unmodified 2026-09-14.json (pre-cutoff) is report-only", () => {
+  const fixturePath = join(__dirname, "..", "src", "data", "updates", "daily", "2026-09-14.json");
+  const real = JSON.parse(readFileSync(fixturePath, "utf8"));
+  const { violations, reportOnly } = scanUnappliedScoreMovement(real);
+  assertViolationCount(violations, 0);
+  if (reportOnly.length === 0) {
+    throw new Error("Expected the real pre-cutoff 2026-09-14.json to produce report-only matches");
+  }
+});
+
+// ──────────────────────────────────────────────────────────────────────────
+// unapplied-score-movement: binding-pattern acceptance fixtures
+// (Improvement Loop 13, item D-1 REWORK, 2026-09-14).
+//
+// Real sentences from the corpus. Each is evaluated two ways:
+//  1. Directly via evaluateMovementSentence() (the shared binding logic).
+//  2. As a field of a full briefing (date 2026-09-15, scoreChangesApplied:
+//     0) via scanUnappliedScoreMovement(), to prove the wiring end to end.
+// ──────────────────────────────────────────────────────────────────────────
+
+const MUST_FLAG = [
+  "Hong Kong falls 5.9 points after a court jailed three Tiananmen vigil leaders for up to seven years.",
+  "Hong Kong's score falls 5.9 points, from 32.8 to 26.9 of 100.",
+  "Hong Kong Falls 5.9 Points as a Third Escalation Lands on a Pattern Tracked Since July",
+  "Portugal's face-covering ban cuts its score 5 points, just short of a lower band.",
+  "Spain fell 9.4 points after Human Rights Watch documented a three-week humanitarian crisis in Ceuta larger than first reported.",
+  "Chile's score still falls 20 points, from 62.5 to 42.5 of 100, crossing from the Established band into the Functional band.",
+  "Regions Financial Falls 38 Points — Most of That Is a Placeholder Score Finally Reviewed, Not New Misconduct",
+  "Taipei's Score Fell 8 Points Over One Case, But Most of That Drop Is Arithmetic, Not New Harm",
+  "Philadelphia's score rose slightly after the city recorded its lowest homicide count since the 1960s.",
+  "Bolivia falls to 28.4 as President Paz enacts a military-deployment authority law and a fourth death is confirmed.",
+  "Humana drops from Functional to Developing (40.6 → 35.2, -5.4) — a band crossing on multi-channel pre-adjudication corroboration.",
+  "Vanuatu climbs into the Functional band as the UNGA climate resolution forward trigger fires.",
+  // verb-score-value precision fix (Improvement Loop 13, item D-1 second fix, 2026-09-14):
+  // the value must look like a score (one-decimal number, or integer + "of 100").
+  "Turkey falls to 10.3 as riot police storm CHP headquarters.",
+  "Hungary advances to 50.0 after the EU funds accord, and Burkina Faso's composite falls from 12.5 to 6.3.",
+  "Senegal falls to 18 of 100 after the crackdown.",
+  "Brazil slips out of the Established band.",
+  "Mexico's composite dropped by 4.1 pts overnight.",
+];
+
+const MUST_PASS = [
+  "Syria's score holds at zero, the lowest score on the benchmark, as fuel prices rose sharply and protests spread with no relief announced for the poorest households.",
+  "The finding proposes a real score cut, but it has not been applied to OpenAI's published score yet.",
+  "This is the second wrong-entity catch in as many nights, after Bangalore on July 29, and no score moved on the dropped claim.",
+  "Venezuela's earthquake death toll rose to 3,899 as of day 16; the disaster-response score has now held at the same reduced reading for three straight nights, just under the point threshold the benchmark requires before it changes a published score.",
+  "DRC 2.3 of 100: Ebola Climbs to 1,155 Cases and 304 Deaths — July Peak Now Days Away",
+  "Venezuela 18.0 of 100: Day 6 Earthquake Response — Toll Rises to 1,719 Dead, 46,600 Missing; US Doubles Commitment to 300 Million Dollars",
+  "Anthropic (59.1 out of 100, Functional band) confirmed again after the US government's export-control order on two of its AI models; a Congressional response deadline falls June 26.",
+  "Bolivia's score holds steady, but its case raises a new question: should an elected government under economic strain score this close to countries facing state collapse or mass atrocity?",
+  "Iran's score of 2.5 out of 100 sits so close to zero that even a move to the floor falls short of the five-point shift needed to change it.",
+  "A death toll that keeps rising from a natural disaster is not, by itself, evidence of government misconduct, so Venezuela's score stays the same even as the number climbs.",
+  "Nigeria's score also holds, after the World Food Programme said funding shortages forced it to cut nutrition support for more than 300,000 children in the northeast; that cut traces to a global donor-funding gap, not a new failure by Nigeria's government.",
+  "Afghanistan's zero score gained confirmed evidence for the first time in two cycles.",
+  "Neither Ukraine nor Kyiv lost points for being attacked -- both were scored only on their own emergency response, which was protective.",
+  "Reusing the prior scores instead of re-scoring from scratch stopped one event from silently becoming two or three separate score cuts.",
+  "The conduct pattern (same-day compliance, transparent disclosure, stated intent to restore access) is scored as mildly positive on the Accountability dimension and confirms, not lowers, the published 59.1 Functional score.",
+  "Arizona was flagged on a prison-healthcare order already priced into its score ten days earlier, and re-scoring it was correctly declined.",
+  "El Salvador holds at 15 of 100: a constitutional change letting the president serve indefinitely already lowered the score nine days ago, and tonight's evidence confirms that pattern.",
+  "OpenAI's score would fall five points after a UK cheating study; the change is proposed, not yet applied.",
+  // verb-score-value precision fix (Improvement Loop 13, item D-1 second fix, 2026-09-14):
+  // bare integers after to/from are counts (casualties, deaths), not scores.
+  "An Ebola Outbreak in the Democratic Republic of the Congo Jumps From 600 to 702 Deaths in Two Days",
+  "Kenya's score is unchanged even though protest deaths rose to 12.",
+  "Deaths climbed 40 percent while the score held at 33.1.",
+  "The court lowered the fine from 50 to 20 million.",
+];
+
+MUST_FLAG.forEach((sentence, i) => {
+  test(`binding-pattern MUST FLAG fixture ${i + 1}: evaluateMovementSentence direct`, () => {
+    const { flagged } = evaluateMovementSentence(sentence);
+    if (!flagged) {
+      throw new Error(`Expected this sentence to be flagged, but it passed:\n      "${sentence}"`);
+    }
+  });
+
+  test(`binding-pattern MUST FLAG fixture ${i + 1}: via scanUnappliedScoreMovement (headline field)`, () => {
+    const input = baseBriefing({ headline: sentence, summary: "unrelated" });
+    const { violations } = scanUnappliedScoreMovement(input);
+    assertViolation(violations, (v) => v.path === "headline",
+      `Expected headline to be flagged via scanUnappliedScoreMovement:\n      "${sentence}"`);
+  });
+});
+
+MUST_PASS.forEach((sentence, i) => {
+  test(`binding-pattern MUST PASS fixture ${i + 1}: evaluateMovementSentence direct`, () => {
+    const { flagged, matches } = evaluateMovementSentence(sentence);
+    if (flagged) {
+      throw new Error(`Expected this sentence to pass, but it was flagged (${JSON.stringify(matches)}):\n      "${sentence}"`);
+    }
+  });
+
+  test(`binding-pattern MUST PASS fixture ${i + 1}: via scanUnappliedScoreMovement (headline field)`, () => {
+    const input = baseBriefing({ headline: sentence, summary: "unrelated" });
+    const { violations } = scanUnappliedScoreMovement(input);
+    assertViolationCount(violations, 0);
+  });
 });
 
 // ──────────────────────────────────────────────────────────────────────────
