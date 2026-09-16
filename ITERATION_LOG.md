@@ -1,5 +1,121 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 16 — 2026-09-16 (claim-to-source gate for briefings — DC-04 / RISK-020)
+
+### Selected Item
+**CS-1: a gate that checks briefing prose against its own sources.** Forced selection under rule S10 (adopted the same
+day): DC-04 had ≥2 dated occurrences and neither a gate nor a waiver. v2 18.
+
+### V1 — the defect
+Briefings twice carried claims their own sources contradict, and **every error passed both existing validators**: the
+2026-09-14 cycle (4 errors) and 2026-09-15 (**12** errors caught only by coordinator review before publication) —
+"Oracle at the bottom of the benchmark" (it ranks 413 of 447), "Last Night's Briefing Wrongly Dropped … Lesotho" (the
+published 09-14 briefing never mentioned Lesotho — the drop was in the internal scan), a false integration-bonus rule,
+and an unsourced Sweden adjustment.
+
+### What Changed
+Four checks in `lint-rules.mjs`, wired into `lint-daily-briefings.mjs`, forward-dated to **2026-09-17** so no published
+briefing is retro-failed or edited (§1c):
+1. **Superlative/rank claims** — "bottom of the benchmark", "lowest score" etc. tied to a slugged entity, checked
+   against the published index. Extremity is tested as *composite tied with the index min/max*, not `rank === 1`,
+   because 12 countries tie at composite 0 and each is genuinely "lowest".
+2. **Numbers** — figures predicated of an entity checked against that briefing's own `recentAssessments` values or the
+   index composite.
+3. **Prior-briefing cross-references** — "last night's briefing said X" must be satisfiable from that date's file.
+4. **Formula statements** in `methodologyNotes[]` — recomputed against `scoring.mjs`.
+
+### Two defects found by coordinator verification, both fixed before commit
+- **Number misattribution (28 false positives → 0).** The check bound any score-shaped number to whichever entity the
+  sentence resolved to — co-occurrence, not attachment. Real examples: `60.0` (a band boundary) attributed to
+  Anthropic; `25.0`/`4.7` (other countries in a correction notice) attributed to the DRC; `75.0` (formula arithmetic)
+  to Taiwan. Fixed by binding each number to the entity it is actually predicated of, and excluding by *kind* — band
+  edges derived from `BAND_RANGES`, deltas, the "from" leg of a transition, formula components, dimension-scale (0–5)
+  values, and figures the prose itself marks as not-the-published-score. **No phrase suppressions; no residuals kept.**
+- **Silent degradation (the serious one).** `loadPublishedIndexLookup(dir)` returned an empty lookup if the directory
+  was wrong — every check then degraded to advisory and the run reported success. I hit this myself: called it with no
+  argument, got 0 entities, and watched the real Oracle defect *pass*. In CI a moved path would have disabled the gate
+  invisibly. It now throws, naming the directory tried, and the linter exits 2.
+
+### Validation (V2/V8, coordinator-run)
+- Still flagged (not weakened): Oracle superlative · Wellington's wrong 84.0 · a false 12-point bonus cap.
+- Now passing (the former false positives): band boundary 60.0 · formula arithmetic · trajectory prose · correct 83.0.
+- Corpus: claim-to-source flags **28 → 0**; lint exit 0; `test-claim-to-source` 36/36; full suite exit 0; tsc clean.
+- Fail-loud proven by me: bad path **and** no-argument both throw; linter exits 2.
+
+### Coordinator process note (the finding worth keeping)
+Six of my own verification probes today returned confident nonsense — a grep for `"79 / year"` when the string was
+`"$79/yr"`; `ls | head -4` truncating before the file sought; freshly-written files read as "stale"; guessed registry
+columns; a malformed lookup call; and a "congo" filter that could not match a slug truncated to `democratic-republic-of-c`,
+which led me to report a non-existent identity defect. Two of those happened *while investigating that very failure
+mode*. Every one would have been caught by V8 — prove the check can find a known-present instance before trusting a
+zero. The rule is now in `coordinator.md`, and it is the most valuable thing this loop produced.
+
+### Outcome
+The one surface that publishes new prose every cycle now has a mechanical claim check; DC-04 moves from ungated to
+gated, satisfying the S4 obligation that forced the selection.
+
+## Iteration 17 — 2026-09-16 (AI-model cycle: build the L1 detection path — founder directive)
+
+### Selected Item
+**The declared-source registry, its validator, and the L1 fetcher** — the missing first link in the model cycle
+(detect → evaluate → score → publish). Founder directive: "continue expanding and improving the AI model virtuous
+cycle of assessing new models." v1 14 · v2 **15**.
+
+### V1 — baseline (coordinator-verified before briefing)
+- **Detection had never run and could not run.** 0 scans, 0 releases, and `release-sources-v1.json` — the file
+  `releases-v1.json` names as its `sourceRegistryRef` — **did not exist on disk**; nor did the scan-record root.
+  No fetcher existed, only validators over empty stores.
+- **Scoring rests on thin ground:** per-dimension scorable items AWR 5 · EMP 5 · ACT 5 · EQU 3 · BND 3 · ACC 3 ·
+  **SYS 2 · INT 2**, and **0 of 33 items human-reviewed** (28 unvalidated, 5 unreviewed drafts).
+- **Live models are founder-blocked:** BLK-002 (no credentials, no approved spend) is Critical, and
+  `.benchmark-ops/NEXT_ACTIONS.json` marks the top three actions `agent_executable: false`.
+
+### Why L1 rather than a scanner
+`docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7: *"L1 is the architecturally important level, and it should be built
+before any scanner."* L1 enumerates a declared registry and fetches each URL directly — **0 search calls**, so
+BLK-001/INC-008 does not block it — and earns coverage claim `declared-sources`, the strongest *honest* claim. L0 open
+search costs ~270 calls and can still only claim `partial`.
+
+### What Changed
+- `site/src/data/model-benchmark/release-sources-v1.json` — **empty**, per the §2.7 schema.
+- `site/scripts/lib/model-sources-validator.mjs` + `validate-model-sources.mjs` — 11 checks (shape, enums, https-only
+  URLs, deterministic `source_id` derivation, uniqueness, count/quorum coherence, date sanity).
+- `research/scripts/release-watch-l1.mjs` — L1 fetcher. **Dry-run by default with no network I/O**; `--live` is the
+  only path that fetches. Writes a legal scan record even with zero sources, and never writes a release row
+  (promotion is human-gated, §2.5 T1/T3).
+- Tests: `test-model-sources.mjs` (41) and `test-release-watch-l1.mjs` (33), both no-network by construction.
+
+### The hard rule, and that it held
+**No source URL was authored.** The spec requires a source be *"added by a human from a verified URL, never
+inferred"*; the store forbids rows from memory, training data or marketing pages. Coordinator check: the registry
+contains **0 sources and no `http(s)://` string anywhere in the file**. Zero network calls were made.
+
+### Validation
+- **V2 coordinator re-runs:** `validate-model-sources` PASS on the empty registry · tests 41/41 and 33/33 ·
+  `validate-model-releases` still PASS.
+- **V8 positive controls, run by me** (so a clean result is not vacuous): bad `source_type` enum, non-https URL,
+  `sourceCount` mismatch, `quorumRequired` exceeding the primary count, and duplicate `source_id` each fail **by name**;
+  the well-formed and empty registries pass.
+- First scan record written: `status: "not-run"`, `calls_used: 0`, `candidates: []`, `promoted_release_ids: []`,
+  `blocked_by: "no-sources-registered…"` — an honest record of a real attempt, not a false `completed`.
+
+### Decisions taken (escalated by the agent rather than silently resolved — the right call)
+- **D-38:** `never-scanned` outranks `degraded`; the implemented precedence stands and §2.4's table is the imprecise
+  part. A single blocked attempt must not erase the "never scanned" admission.
+- **D-39:** the first `not-run` scan record is kept and committed — "we tried and were blocked" is evidence.
+
+### Outcome
+Detection goes from *impossible* (no registry, no fetcher, no record root) to *one founder action away*: add verified
+source URLs and L1 runs at zero search cost, every cycle.
+
+### Follow-ups
+- **Founder:** populate `release-sources-v1.json` with verified provider URLs (R6/R11). Nothing else unblocks detection.
+- **Founder:** BLK-002 — credentials and spend — if the evaluate stage is to move past fixtures.
+- **Next CB-MODEL increment:** the coverage floor and item review. SYS and INT carry 2 unreviewed items each; a
+  composite scored today would rest on them for a quarter of its dimensions.
+- npm wiring for `test:model-sources`, `validate:model-sources`, `test:release-watch-l1` deferred — `site/package.json`
+  is owned by Iteration 16, still in flight (S6 disjointness).
+
 ## Meta-review 2 (post Iterations 13–15) — 2026-09-16 — not an iteration
 
 - **Trigger:** 3 completed loops since Meta-review 1. The `meta-coordinator` agent type is no longer available, so the

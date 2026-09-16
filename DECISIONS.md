@@ -52,6 +52,49 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+## D-39 — 2026-09-16 · The first L1 scan record stays, because "we tried and were blocked" is evidence
+
+The L1 fetcher's first run wrote `research/model-index/release-watch/scan-2026-09-16-001.json` with status
+`not-run` and `blocked_by: no-sources-registered`. It is kept and committed rather than deleted before the
+"real" first run.
+
+**Why.** The release store's whole design premise is that an empty store is *evidence about Compassion
+Benchmark's monitoring, not about the AI industry*. A dated record saying we ran detection, reached zero
+sources, and recorded the blocker is the same kind of honesty one level down. Deleting it so the first
+committed record looks like a successful scan would be exactly the cosmetic tidying the architecture argues
+against. Alternative rejected: hold the record until a founder-supervised run — that produces a cleaner-looking
+history at the cost of hiding a real attempt.
+
+Status: active · Evidence: the scan record itself; `docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7
+
+---
+
+## D-38 — 2026-09-16 · `never-scanned` outranks `degraded`; the implemented precedence is correct
+
+**The ambiguity.** §2.4 lists the `scanState` derivations as parallel conditions with no stated priority:
+`never-scanned` when no scan ever completed, `degraded` when the newest record is `aborted` or `not-run`. After
+the first L1 run both conditions were true at once. `deriveScanState` in `model-releases-validator.mjs`
+short-circuits on `never-scanned`, so the state did **not** move to `degraded`.
+
+**Decision: keep the implemented precedence, and treat the doc as the thing that is imprecise.** "We have never
+completed a scan" is a strictly stronger and more useful admission than "our most recent scan degraded" — the
+latter implies a working cadence that occasionally fails, which would overstate the programme. Moving to
+`degraded` on the first blocked attempt would make the public release-watch section read as though monitoring
+exists and is merely unhealthy.
+
+Alternatives rejected: (a) edit K2 so any `not-run` record forces `degraded` — this would let a single blocked
+attempt erase the "never scanned" admission, the opposite of the honesty the store is built for; (b) leave it
+undocumented — the next reader hits the same ambiguity and may "fix" it.
+
+Consequence: `scanState` becomes `degraded` only after at least one completed scan exists and a later one fails.
+§2.4's table should be read as ordered, `never-scanned` first. Found by the implementing agent, which flagged it
+as a judgement call rather than silently changing the validator — the correct call.
+
+Status: active · Evidence: `site/scripts/lib/model-releases-validator.mjs` `deriveScanState` (+ its Test 6c);
+`docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.4
+
+---
+
 ## D-37 — 2026-09-16 · Product-separation waivers expire on staggered dates, not one cliff
 
 **All six waivers expired on 2026-12-09.** The validator runs inside `npm run build`, so from 12-10 every

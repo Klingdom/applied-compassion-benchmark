@@ -65,6 +65,29 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   at +2, but a gate that *freezes* live defects (an allowlist, a waiver) must file a backlog row for the remediation
   in the same loop, or the gate does not count as complete.
 
+### Iteration 17 — SELECTED 2026-09-16: CB-MODEL detection stage, level L1 (founder directive)
+- **Directive:** "continue expanding and improving the AI model virtuous cycle of assessing new models."
+- **Baseline (coordinator-verified 2026-09-16).** The cycle is detect → evaluate → score → publish.
+  - **Detect: never run.** 0 scans, 0 releases, and `release-sources-v1.json` — referenced by `releases-v1.json`
+    `meta.sourceRegistryRef` — **does not exist on disk**. No scan record root either
+    (`research/model-index/release-watch/` absent). No L1 fetcher exists; only validators and the stores.
+  - **Score: thin.** Task bank has 33 items, per-dimension scorable counts AWR 5 · EMP 5 · ACT 5 · EQU 3 · BND 3 ·
+    ACC 3 · **SYS 2 · INT 2**; validation status is 28 `unvalidated` + 5 `draft-authored-unreviewed`, i.e. **0
+    human-reviewed items**. A composite scored today would rest on two unreviewed items for a quarter of its dimensions.
+  - **Live models: founder-blocked.** BLK-002 (no credentials, no approved spend) is Critical; `.benchmark-ops/NEXT_ACTIONS.json`
+    lists the top three actions as founder-owned and explicitly `agent_executable: false`.
+- **Why L1 and not a scanner.** `docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7: *"L1 is the architecturally
+  important level, and it should be built before any scanner."* L1 = enumerate a declared source registry and fetch each
+  URL directly — **0 search calls**, so BLK-001/INC-008 does not block it — and it earns coverage claim
+  `declared-sources`, the strongest *honest* claim; L0 open search costs ~270 calls and can still only claim `partial`.
+- **What is deliberately NOT done:** no source URLs authored. The spec requires a source be *"added by a human from a
+  verified URL, never inferred"* and the store forbids rows from memory, training data or marketing pages. The registry
+  ships **empty** with schema + validator + fetcher; populating it is a short founder task. No release row is created:
+  promoting a scan observation to a release is human-gated (T1/T3 state machine, §2.5).
+- v1: I4 S5 L3 C5 − E2 − R1 = **14** · v2: K+1 (RISK-016 class — a monitoring claim with no monitoring) · P 0 (nothing
+  false is published; the store discloses its own emptiness honestly) · Rc 0 → **15**. File set disjoint from Iteration
+  16 (claim-to-source gate) except `site/package.json`, which the agent is instructed not to touch.
+
 ### New backlog item (2026-09-16, Meta-review 2 finding) — A-2: remediate the 16 frozen slug collisions
 - Iteration 14's ratchet froze 16 cross-index collisions in `site/scripts/known-collisions.json` and **no backlog row
   was ever created**, so the queue could not select the repair. Verified live 2026-09-16:

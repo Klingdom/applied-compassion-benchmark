@@ -29,11 +29,19 @@
 import { readFileSync, readdirSync, statSync } from "fs";
 import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
-import { scanForViolations, scanUnappliedScoreMovement, UNAPPLIED_SCORE_MOVEMENT_CUTOFF } from "./lib/lint-rules.mjs";
+import {
+  scanForViolations,
+  scanUnappliedScoreMovement,
+  UNAPPLIED_SCORE_MOVEMENT_CUTOFF,
+  scanClaimToSource,
+  loadPublishedIndexLookup,
+  CLAIM_TO_SOURCE_CUTOFF,
+} from "./lib/lint-rules.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DAILY_DIR = join(__dirname, "..", "src", "data", "updates", "daily");
 const LATEST_FILE = join(__dirname, "..", "src", "data", "updates", "latest.json");
+const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
 
 // ──────────────────────────────────────────────────────────────────────────
 // FILE DISCOVERY + REPORT
@@ -62,27 +70,67 @@ function getDailyFiles() {
   return files;
 }
 
-function lintFile(filePath) {
-  let data;
+function parseFile(filePath) {
   try {
-    data = JSON.parse(readFileSync(filePath, "utf8"));
+    return { file: filePath, data: JSON.parse(readFileSync(filePath, "utf8")), error: null };
   } catch (e) {
+    return { file: filePath, data: null, error: e };
+  }
+}
+
+// Builds prior-published-briefing lookups for the claim-to-source
+// prior-briefing-reference check, from the files actually present in
+// DAILY_DIR (not manifest.json — manifest.json retains far more dates than
+// DAILY_DIR keeps files for, per validate-daily-briefings.mjs's 30-day
+// rolling window, so a manifest-only date is not something a "last night's
+// briefing" claim could actually be checked against).
+function buildPriorBriefingLookup(parsedFiles) {
+  const dataByDate = new Map();
+  for (const { data, error } of parsedFiles) {
+    if (error || !data || typeof data.date !== "string") continue;
+    dataByDate.set(data.date, data);
+  }
+  const sortedDates = [...dataByDate.keys()].sort();
+
+  return {
+    dataFor: (date) => dataByDate.get(date) ?? null,
+    priorDateFor: (date) => {
+      let prior = null;
+      for (const d of sortedDates) {
+        if (d < date) prior = d;
+        else break;
+      }
+      return prior;
+    },
+  };
+}
+
+function lintFile(parsed, priorLookup, indexLookup) {
+  const { file, data, error } = parsed;
+  if (error) {
     return {
-      file: filePath,
+      file,
       violations: [{
         path: "<root>",
         rule: "invalid-json",
-        detail: e.message,
+        detail: error.message,
         snippet: "",
       }],
       reportOnly: [],
     };
   }
+
   const movement = scanUnappliedScoreMovement(data);
+
+  const date = typeof data.date === "string" ? data.date : null;
+  const priorDate = date ? priorLookup.priorDateFor(date) : null;
+  const priorBriefingRaw = priorDate ? priorLookup.dataFor(priorDate) : null;
+  const claimToSource = scanClaimToSource(data, { indexLookup, priorDate, priorBriefingRaw });
+
   return {
-    file: filePath,
-    violations: [...scanForViolations(data), ...movement.violations],
-    reportOnly: movement.reportOnly,
+    file,
+    violations: [...scanForViolations(data), ...movement.violations, ...claimToSource.violations],
+    reportOnly: [...movement.reportOnly, ...claimToSource.reportOnly],
   };
 }
 
@@ -91,8 +139,9 @@ function printReportOnly(allResults) {
   if (withMatches.length === 0) return;
 
   console.log(
-    `\n[lint-daily-briefings] REPORT-ONLY — unapplied-score-movement matches in briefings ` +
-    `dated before ${UNAPPLIED_SCORE_MOVEMENT_CUTOFF} (informational only, does NOT affect exit code; ` +
+    `\n[lint-daily-briefings] REPORT-ONLY — unapplied-score-movement matches (cutoff ` +
+    `${UNAPPLIED_SCORE_MOVEMENT_CUTOFF}) and claim-to-source matches (cutoff ${CLAIM_TO_SOURCE_CUTOFF}) in ` +
+    `briefings dated before their respective cutoffs (informational only, does NOT affect exit code; ` +
     `AUTONOMY.md §1c forbids retro-editing published briefings):\n`
   );
   for (const result of withMatches) {
@@ -112,7 +161,29 @@ function main() {
     return;
   }
 
-  const allResults = files.map(lintFile);
+  // loadPublishedIndexLookup throws when it can't build a usable lookup
+  // (zero index files loaded, or zero entities in the ones it did load) —
+  // deliberately NOT caught-and-downgraded here. A prior version of this
+  // code caught the error and fell back to `{ byKey: new Map() }`, which
+  // silently disabled the claim-to-source superlative/number checks (every
+  // entity became "unverifiable — skip") while the linter still printed
+  // PASS. Improvement Loop 16 CS-1 follow-up, 2026-09-16 (defect 2): a moved
+  // or misconfigured INDEXES_DIR must fail this script loudly, not pass a
+  // green build with the gate quietly doing nothing. A partial load (some
+  // index files missing, most present) still returns normally — it only
+  // warns — since most entities remain checkable.
+  let indexLookup;
+  try {
+    indexLookup = loadPublishedIndexLookup(INDEXES_DIR);
+  } catch (e) {
+    console.error(`[lint-daily-briefings] FATAL: ${e.message}`);
+    process.exit(2);
+  }
+
+  const parsedFiles = files.map(parseFile);
+  const priorLookup = buildPriorBriefingLookup(parsedFiles);
+
+  const allResults = parsedFiles.map((p) => lintFile(p, priorLookup, indexLookup));
   const failingResults = allResults.filter((r) => r.violations.length > 0);
 
   printReportOnly(allResults);
@@ -121,7 +192,8 @@ function main() {
     console.log(
       `[lint-daily-briefings] PASS — ${files.length} daily JSON files clean ` +
       `(0 forbidden phrases, 0 forbidden status values, 0 forbidden pipeline keys, ` +
-      `0 unapplied-score-movement violations on or after ${UNAPPLIED_SCORE_MOVEMENT_CUTOFF}).`
+      `0 unapplied-score-movement violations on or after ${UNAPPLIED_SCORE_MOVEMENT_CUTOFF}, ` +
+      `0 claim-to-source violations on or after ${CLAIM_TO_SOURCE_CUTOFF}).`
     );
     return;
   }
