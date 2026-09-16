@@ -55,6 +55,75 @@ const INDEXES_DIR = join(SITE_ROOT, "src", "data", "indexes");
 const OUTPUT_SCORES_DIR = join(SITE_ROOT, "public", "data", "scores");
 const OUTPUT_INDEXES_DIR = join(SITE_ROOT, "public", "data", "indexes");
 const OUTPUT_CATALOG_PATH = join(SITE_ROOT, "public", "data", "index.json");
+const KNOWN_COLLISIONS_PATH = join(__dirname, "known-collisions.json");
+
+// ─── Cross-index slug collision ratchet ───────────────────────────────────────
+//
+// Badge/catalog output keys files by slug alone; a slug that appears in more
+// than one index means /data/scores/<slug>.json silently serves whichever
+// index was written last (see RISK-017/018). known-collisions.json is a
+// committed, dated allowlist of the collisions we already know about. This
+// function is pure so it can be exercised with in-memory fixtures in
+// test-collision-ratchet.mjs without touching real index data.
+
+/**
+ * @param {Record<string, string[]>} recordsByIndex - indexSlug -> array of
+ *   final (post intra-index-disambiguation) slugs written for that index.
+ * @param {Array<{slug: string, indexes: [string, string], note?: string}>} knownCollisions
+ * @returns {{
+ *   unexpected: Array<{slug: string, indexes: [string, string]}>,
+ *   resolved: Array<{slug: string, indexes: [string, string], note?: string}>,
+ *   known: Array<{slug: string, indexes: [string, string], note?: string}>,
+ * }}
+ */
+export function detectCollisions(recordsByIndex, knownCollisions) {
+  const slugToIndexes = new Map();
+  for (const [indexSlug, slugs] of Object.entries(recordsByIndex)) {
+    for (const slug of slugs) {
+      if (!slugToIndexes.has(slug)) slugToIndexes.set(slug, new Set());
+      slugToIndexes.get(slug).add(indexSlug);
+    }
+  }
+
+  // All actual pairwise collisions found in the current data, keyed by
+  // slug + sorted index pair so they can be compared against the allowlist
+  // regardless of index-declaration order.
+  const actual = new Map();
+  for (const [slug, indexSet] of slugToIndexes) {
+    if (indexSet.size < 2) continue;
+    const indexes = [...indexSet].sort();
+    for (let i = 0; i < indexes.length; i++) {
+      for (let j = i + 1; j < indexes.length; j++) {
+        const key = `${slug}::${indexes[i]}::${indexes[j]}`;
+        actual.set(key, { slug, indexes: [indexes[i], indexes[j]] });
+      }
+    }
+  }
+
+  const knownByKey = new Map();
+  for (const entry of knownCollisions) {
+    const sortedIndexes = [...entry.indexes].sort();
+    const key = `${entry.slug}::${sortedIndexes[0]}::${sortedIndexes[1]}`;
+    knownByKey.set(key, entry);
+  }
+
+  const unexpected = [];
+  const known = [];
+  for (const [key, collision] of actual) {
+    if (knownByKey.has(key)) {
+      known.push(knownByKey.get(key));
+    } else {
+      unexpected.push(collision);
+    }
+  }
+
+  const resolved = [];
+  for (const [key, entry] of knownByKey) {
+    if (!actual.has(key)) resolved.push(entry);
+  }
+
+  return { unexpected, resolved, known };
+}
 
 // ─── Slug generation (mirrors entities.ts / lib/slugify) ─────────────────────
 
@@ -96,10 +165,6 @@ function main() {
 
   const catalog = []; // { slug, name, indexSlug, kind, rank }
   let totalEntities = 0;
-  let collisionCount = 0;
-
-  // Track all slug → indexSlug mappings across indexes to detect collisions
-  const slugsSeen = new Map(); // slug → indexSlug (first seen)
 
   for (const { file, indexSlug, kind } of INDEX_FILES) {
     const indexPath = join(INDEXES_DIR, file);
@@ -137,17 +202,6 @@ function main() {
         slugUsage.set(baseSlug, used + 1);
         slug = used === 0 ? baseSlug : `${baseSlug}-${row.rank}`;
       }
-
-      // Cross-index collision detection (warn but continue)
-      if (slugsSeen.has(slug) && slugsSeen.get(slug) !== indexSlug) {
-        console.warn(
-          `[export-public-data] WARN: slug collision — "${slug}" appears in both ` +
-          `${slugsSeen.get(slug)} and ${indexSlug}. Badge for this slug will serve ` +
-          `the LAST written file (${indexSlug}).`
-        );
-        collisionCount++;
-      }
-      slugsSeen.set(slug, indexSlug);
 
       const scoreRecord = {
         slug,
@@ -229,8 +283,66 @@ function main() {
   };
   writeFileSync(OUTPUT_CATALOG_PATH, JSON.stringify(catalogData, null, 2));
 
-  if (collisionCount > 0) {
-    console.warn(`[export-public-data] WARN: ${collisionCount} cross-index slug collision(s). Check output above.`);
+  // ── Cross-index slug collision ratchet ──────────────────────────────────
+  const recordsByIndex = {};
+  for (const entry of catalog) {
+    (recordsByIndex[entry.indexSlug] ??= []).push(entry.slug);
+  }
+
+  const knownCollisionsFile = JSON.parse(readFileSync(KNOWN_COLLISIONS_PATH, "utf-8"));
+  const { unexpected, resolved, known } = detectCollisions(
+    recordsByIndex,
+    knownCollisionsFile.collisions
+  );
+
+  console.log(
+    `[export-public-data] Cross-index slug collision ratchet: ${known.length} known, ` +
+    `${unexpected.length} unexpected, ${resolved.length} resolved.`
+  );
+
+  let ratchetFailed = false;
+
+  if (unexpected.length > 0) {
+    ratchetFailed = true;
+    console.error(
+      `[export-public-data] ERROR: ${unexpected.length} unexpected cross-index slug ` +
+      `collision(s) — not in scripts/known-collisions.json:`
+    );
+    for (const c of unexpected) {
+      console.error(
+        `  - "${c.slug}" appears in both ${c.indexes[0]} and ${c.indexes[1]}. ` +
+        `Badge/catalog output for this slug would silently serve the last-written index. ` +
+        `Fix the underlying slug collision, or if intentional and reviewed, add it to ` +
+        `scripts/known-collisions.json.`
+      );
+    }
+  }
+
+  if (resolved.length > 0) {
+    ratchetFailed = true;
+    console.error(
+      `[export-public-data] ERROR: ${resolved.length} known collision(s) in ` +
+      `scripts/known-collisions.json no longer occur:`
+    );
+    for (const c of resolved) {
+      console.error(
+        `  - "${c.slug}" (${c.indexes[0]} vs ${c.indexes[1]}) — resolved — remove it from the list`
+      );
+    }
+  }
+
+  if (ratchetFailed) {
+    process.exit(1);
+  }
+
+  if (known.length > 0) {
+    console.warn(
+      `[export-public-data] WARN: ${known.length} known cross-index slug collision(s) remain ` +
+      `(see scripts/known-collisions.json). Badge for each will serve the LAST written index's data.`
+    );
+    for (const c of known) {
+      console.warn(`  - "${c.slug}" — ${c.indexes[0]} vs ${c.indexes[1]}${c.note ? `: ${c.note}` : ""}`);
+    }
   }
 
   console.log(
@@ -240,4 +352,7 @@ function main() {
   );
 }
 
-main();
+// Only run when executed directly (not when imported for testing).
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  main();
+}

@@ -24,7 +24,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "fs";
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import {
   DIMENSION_CODES,
@@ -149,6 +149,30 @@ function round2(v) {
   return Math.round(v * 100) / 100;
 }
 
+// RS-2a (RISK-023 gate): a published entity `name` must never carry an
+// HTML-entity escape (e.g. "&amp;", "&#x27;"). React renders such a string
+// literally in <title>/<h1>, and an encoded name slugifies differently from
+// its decoded form, splitting page/record/rotation slugs three ways — see
+// docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md. Matches a bare `&`
+// followed by an entity name or numeric reference and a terminating `;`.
+const ENCODED_ENTITY_PATTERN = /&[a-zA-Z#0-9]+;/;
+
+/**
+ * Pure — scans a rankings array for entities whose `name` contains an
+ * HTML-entity-encoded sequence. Exported so it can be exercised with
+ * in-memory fixtures in test-encoded-names.mjs without touching real index
+ * data. Returns [] when clean.
+ */
+export function findEncodedEntityNames(rankings) {
+  const violations = [];
+  for (const entity of rankings ?? []) {
+    if (typeof entity?.name === "string" && ENCODED_ENTITY_PATTERN.test(entity.name)) {
+      violations.push({ name: entity.name, rank: entity.rank });
+    }
+  }
+  return violations;
+}
+
 /**
  * 40 subdimensions in canonical order — mirrors dimensions.ts and
  * build-entity-records.mjs.  Used for check 13 (subdim structure validation).
@@ -237,6 +261,12 @@ const INDEX_SPECIFIC_FIELDS = {
   "us-states.json": ["region"],
 };
 
+// Wrapped in main() (rather than executing at module top level) so this
+// module can be imported for its pure exports (e.g. findEncodedEntityNames)
+// without running the full validation pass or calling process.exit — see
+// test-encoded-names.mjs.
+function main() {
+
 let totalErrors = 0;
 let totalWarnings = 0;
 let totalChecks = 0;
@@ -318,6 +348,15 @@ for (const file of files) {
 
   const rankings = data.rankings;
   const requiredFields = [...COMMON_FIELDS, ...(INDEX_SPECIFIC_FIELDS[file] || [])];
+
+  // Check 17 — no HTML-entity-encoded names (RS-2a / RISK-023 gate).
+  for (const violation of findEncodedEntityNames(rankings)) {
+    error(
+      file,
+      `[17] "${violation.name}" (rank ${violation.rank}) has an HTML-entity-encoded name — ` +
+        `decode at the source (see docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md)`
+    );
+  }
 
   // Pre-scan: build intra-index slug disambiguation maps for checks 12–16.
   // Mirrors build-entity-records.mjs slug resolution exactly.
@@ -637,4 +676,12 @@ if (totalErrors > 0) {
 } else {
   console.log(`\n✅ All index files are valid\n`);
   process.exit(0);
+}
+
+} // end main()
+
+// Only run when executed directly (not when imported for its exports, e.g.
+// findEncodedEntityNames in test-encoded-names.mjs).
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+  main();
 }

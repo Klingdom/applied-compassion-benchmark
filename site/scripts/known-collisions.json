@@ -1,0 +1,22 @@
+{
+  "asOf": "2026-09-16",
+  "note": "Known cross-index slug collisions in export-public-data.mjs's badge/catalog output (Iteration 14, item A-1; reduces RISK-017/018). Each entry means /data/scores/<slug>.json silently serves the LAST written index's entity instead of a disambiguated one. This list is a ratchet: it may only shrink (an entry that stops colliding must be removed, and no new collision may be added without going through the founder-gated fix for the underlying slug scheme). Do not add entries here to silence a newly introduced collision.",
+  "collisions": [
+    { "slug": "boston", "indexes": ["global-cities", "us-cities"], "note": "Boston (global city) vs Boston, MA (US city)" },
+    { "slug": "portland", "indexes": ["global-cities", "us-cities"], "note": "Portland (global city) vs Portland, OR (US city)" },
+    { "slug": "new-york-city", "indexes": ["global-cities", "us-cities"], "note": "New York City (global city) vs New York City, NY (US city)" },
+    { "slug": "seattle", "indexes": ["global-cities", "us-cities"], "note": "Seattle (global city) vs Seattle, WA (US city)" },
+    { "slug": "minneapolis", "indexes": ["global-cities", "us-cities"], "note": "Minneapolis (global city) vs Minneapolis, MN (US city)" },
+    { "slug": "washington-dc", "indexes": ["global-cities", "us-cities"], "note": "Washington, DC (global city) vs Washington, DC (US city)" },
+    { "slug": "san-francisco", "indexes": ["global-cities", "us-cities"], "note": "San Francisco (global city) vs San Francisco, CA (US city)" },
+    { "slug": "philadelphia", "indexes": ["global-cities", "us-cities"], "note": "Philadelphia (global city) vs Philadelphia, PA (US city)" },
+    { "slug": "atlanta", "indexes": ["global-cities", "us-cities"], "note": "Atlanta (global city) vs Atlanta, GA (US city)" },
+    { "slug": "detroit", "indexes": ["global-cities", "us-cities"], "note": "Detroit (global city) vs Detroit, MI (US city)" },
+    { "slug": "chicago", "indexes": ["global-cities", "us-cities"], "note": "Chicago (global city) vs Chicago, IL (US city)" },
+    { "slug": "los-angeles", "indexes": ["global-cities", "us-cities"], "note": "Los Angeles (global city) vs Los Angeles, CA (US city)" },
+    { "slug": "houston", "indexes": ["global-cities", "us-cities"], "note": "Houston (global city) vs Houston, TX (US city)" },
+    { "slug": "singapore", "indexes": ["countries", "global-cities"], "note": "Singapore (country) vs Singapore (global city); RISK-017 — badge/catalog currently serve the city, not the country" },
+    { "slug": "1x-technologies", "indexes": ["ai-labs", "robotics-labs"], "note": "1X Technologies listed in both ai-labs and robotics-labs" },
+    { "slug": "figure-ai", "indexes": ["ai-labs", "robotics-labs"], "note": "Figure AI listed in both ai-labs and robotics-labs" }
+  ]
+}
