@@ -4,6 +4,14 @@ import { useState, useCallback } from "react";
 import { trackEvent } from "@/lib/analytics";
 import type { EntityKind } from "@/data/entities";
 
+/**
+ * RISK-014 (2026-09-16): `api.compassionbenchmark.com` does not resolve, so
+ * the badge image and every embed snippet this widget generates are dead.
+ * Hide the widget entirely until the badge host is deployed and verified.
+ * Flip back to `true` once that host resolves and serves real badge SVGs.
+ */
+const BADGE_EMBED_AVAILABLE = false;
+
 interface Props {
   slug: string;
   entityKind: EntityKind;
@@ -44,8 +52,14 @@ export default function BadgeEmbedWidget({ slug, entityKind, entityRoute }: Prop
     }
   }, [snippet, slug, entityKind]);
 
+  // Hooks above must run unconditionally on every render (Rules of Hooks);
+  // the early return below only affects what's rendered.
+  if (!BADGE_EMBED_AVAILABLE) {
+    return null;
+  }
+
   return (
-    <details className="group rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+    <details className="group mb-6 rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
       <summary className="flex items-center gap-2 px-5 py-3 cursor-pointer list-none select-none text-[0.88rem] text-muted hover:text-text transition-colors">
         {/* Arrow indicator */}
         <svg

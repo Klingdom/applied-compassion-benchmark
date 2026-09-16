@@ -5,7 +5,12 @@ export const GUMROAD = {
   roboticsIndex: "https://compassionbenchmark.gumroad.com/l/jxnqb",
   globalCitiesIndex: "https://compassionbenchmark.gumroad.com/l/mxhakr",
   /**
-   * Score-Watch Alert subscription ($79/yr) — LIVE product.
+   * Score-Watch Alert subscription ($79/yr) — PAUSED 2026-09-16 (RISK-014).
+   * `api.compassionbenchmark.com` (webhook receiver, badge renderer, alert
+   * fulfillment) does not resolve, so purchases cannot be fulfilled. Sales
+   * are paused via `SCORE_WATCH.useGumroad = false` below until the Worker
+   * is deployed to a resolving host, DNS is verified, and one end-to-end
+   * test purchase (checkout → webhook → badge → alert) has been confirmed.
    * One product serves every entity: the entity-scoped CTA (buildScoreWatchUrl)
    * appends `?entity=<slug>&index=<index>&name=<name>`, and the Cloudflare
    * Worker reads `url_params[entity]` from the Gumroad webhook to record a
@@ -60,9 +65,16 @@ export const SCORE_WATCH = {
    * parameters for manual fulfillment. When true, it routes to the Gumroad
    * product page above with `?entity={slug}&index={indexSlug}` appended.
    *
-   * LIVE since 2026-06-22 — product https://compassionbenchmark.gumroad.com/l/rbooj.
+   * Was LIVE 2026-06-22 through 2026-09-16 — product
+   * https://compassionbenchmark.gumroad.com/l/rbooj. PAUSED 2026-09-16
+   * (RISK-014): `api.compassionbenchmark.com` does not resolve, so the
+   * Gumroad webhook, subscriber alerts, and every badge embed point at a
+   * host that does not exist, and no alert delivery has ever been recorded.
+   * Do not flip this back to `true` until the Worker + DNS are deployed and
+   * one end-to-end test purchase (checkout → webhook → badge → alert) has
+   * been verified.
    */
-  useGumroad: true,
+  useGumroad: false,
   priceLabel: "$79 / year / entity",
   priceShort: "$79/yr",
   annualPriceUsd: 79,

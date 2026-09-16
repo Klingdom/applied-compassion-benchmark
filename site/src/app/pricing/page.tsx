@@ -243,9 +243,10 @@ export default function PricingPage() {
 
           {/* Self-serve availability note */}
           <p className="text-muted text-[0.84rem] mt-4">
-            Score-Watch self-serve checkout is live. Pro is currently fulfilled
-            via the sales team while its Gumroad product is being set up —
-            self-serve checkout activates without a page change once it goes live.
+            Score-Watch alerts are paused while a delivery-infrastructure issue is fixed —
+            requests route to the sales team and no new subscriptions are being taken. Pro is
+            currently fulfilled via the sales team while its Gumroad product is being set up.
+            Both self-serve checkouts activate without a page change once each goes live.
           </p>
         </Container>
       </section>

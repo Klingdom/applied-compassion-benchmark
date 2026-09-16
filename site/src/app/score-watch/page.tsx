@@ -7,6 +7,7 @@ import Panel from "@/components/ui/Panel";
 import SectionHead from "@/components/ui/SectionHead";
 import Card from "@/components/ui/Card";
 import Callout from "@/components/ui/Callout";
+import Pill from "@/components/ui/Pill";
 import { SCORE_WATCH } from "@/data/gumroad";
 import { SCORED_ENTITY_COUNT_FORMATTED, getIndexEntityCount } from "@/data/entityCount";
 import { INDEX_COUNT } from "@/data/indexRegistry";
@@ -40,6 +41,10 @@ const heroCta = SCORE_WATCH.useGumroad
   ? { href: "/indexes#pick-entity-to-watch", external: false }
   : { href: "/contact-sales?product=score-watch#inquiry", external: false };
 
+const heroCtaLabel = SCORE_WATCH.useGumroad
+  ? `Subscribe — ${SCORE_WATCH.priceShort}`
+  : "Get Score-Watch";
+
 export default function ScoreWatchPage() {
   return (
     <>
@@ -47,7 +52,10 @@ export default function ScoreWatchPage() {
       <section className="pt-[72px] pb-10 border-b border-line">
         <Container>
           <div className="max-w-4xl">
-            <Eyebrow>Subscription product</Eyebrow>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <Eyebrow>Subscription product</Eyebrow>
+              {!SCORE_WATCH.useGumroad && <Pill>Alerts paused</Pill>}
+            </div>
             <h1 className="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.03em] mb-4">
               Score-Watch Alert
             </h1>
@@ -56,12 +64,27 @@ export default function ScoreWatchPage() {
               band change, headline evidence, and a link to the full assessment — delivered the
               morning after overnight research flags the change.
             </p>
+            {!SCORE_WATCH.useGumroad && (
+              <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.03)] px-5 py-4 mb-6 max-w-[760px]">
+                <p className="text-[0.78rem] uppercase tracking-[0.1em] text-muted font-semibold mb-1.5">
+                  Operational note
+                </p>
+                <p className="text-muted text-[0.92rem]">
+                  Alert delivery is paused while we fix an issue with the delivery
+                  infrastructure. We are not accepting new subscriptions right now. If you
+                  already have an active Score-Watch subscription, we will contact you
+                  directly with details.
+                </p>
+              </div>
+            )}
             <div className="flex flex-wrap gap-3 items-center">
               <Button href={heroCta.href} variant="primary">
-                Subscribe — {SCORE_WATCH.priceShort} per entity
+                {heroCtaLabel}
               </Button>
               <span className="text-muted text-[0.95rem]">
-                One year. Cancel anytime. Covers every entity in every index.
+                {SCORE_WATCH.useGumroad
+                  ? "One year. Cancel anytime. Covers every entity in every index."
+                  : "Covers every entity in every index once alerts resume."}
               </span>
             </div>
           </div>
@@ -326,12 +349,13 @@ export default function ScoreWatchPage() {
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Start with one entity</h2>
             <p className="text-muted max-w-[760px] mb-5">
-              Most subscribers start with one entity and add more as the need becomes concrete. No
-              annual commitment beyond the one subscription. Cancel anytime.
+              {SCORE_WATCH.useGumroad
+                ? "Most subscribers start with one entity and add more as the need becomes concrete. No annual commitment beyond the one subscription. Cancel anytime."
+                : "Alerts are paused while we fix a delivery-infrastructure issue, so new subscriptions aren't being taken right now. Reach out and we'll follow up once Score-Watch is back."}
             </p>
             <div className="flex gap-3 flex-wrap">
               <Button href={heroCta.href} variant="primary">
-                Subscribe — {SCORE_WATCH.priceShort} per entity
+                {heroCtaLabel}
               </Button>
               <Button href="/indexes">Browse entities</Button>
             </div>

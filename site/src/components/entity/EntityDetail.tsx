@@ -1246,14 +1246,12 @@ export default function EntityDetail({
             </div>
           </div>
 
-          {/* Badge embed widget */}
-          <div className="mb-6">
-            <BadgeEmbedWidget
-              slug={entity.slug}
-              entityKind={entity.kind}
-              entityRoute={KIND_CONFIG[entity.kind].route}
-            />
-          </div>
+          {/* Badge embed widget — renders nothing while BADGE_EMBED_AVAILABLE is false (RISK-014) */}
+          <BadgeEmbedWidget
+            slug={entity.slug}
+            entityKind={entity.kind}
+            entityRoute={KIND_CONFIG[entity.kind].route}
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Purchase CTA */}
