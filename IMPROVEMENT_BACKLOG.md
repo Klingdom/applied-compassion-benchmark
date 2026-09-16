@@ -42,7 +42,7 @@ diff scope review · V7 post-deploy AFTER.
 | Order | Item | v1 | v2 | Lane | Status |
 |---|---|---:|---:|---|---|
 | 13 | **D-1** `unapplied-score-movement` lint rule, forward-dated ≥ 2026-09-15 (RISK-020 reduce K+2 · P+1 · Rc+2, DC-03 = 2 verified occurrences) | 16 | **21** | eligible (file set disjoint from It. 12) | **✅ COMPLETE Iteration 13** (validated after 2 rework rounds; uncommitted pending founder). New follow-up: require `pipeline.scoreChangesApplied` in `validate-daily-briefings.mjs` |
-| 14 | **A-1** wire `test-entity-records.mjs` into `npm run test` + slug-collision ratchet (RISK-017/018 · Rc+2 DC-05) | 15 | 19 | eligible — **waits for It. 12 commit** (both edit `site/package.json`) | Queued |
+| 14 | **A-1** wire `test-entity-records.mjs` into `npm run test` + slug-collision ratchet (RISK-017/018 · Rc+2 DC-05) | 15 | 19 | eligible | **✅ COMPLETE Iteration 14** (2026-09-16; ratchet proven by planted 17th collision; CI runs `npm test`) |
 | 15 | **U-1** coverage/freshness generator, report-only (RISK-001/016). U-2 site publication = founder decision | 15 | 17 | eligible (U-2 blocked-on-founder) | Queued |
 | — | L cross-links / overclaiming | 15 | 16 | eligible, held back (no RISKS entry) | Queued |
 | — | R-1 waiver T-30 warning + PASS-with-waivers distinct (RISK-015 · Dl+2) | 12 | 16 | eligible; forced 2026-11-09 | Queued |
@@ -64,6 +64,41 @@ diff scope review · V7 post-deploy AFTER.
     half; the spec is docs.
   - **RS-2b (X-2, founder-gated, AUTONOMY §1b renames/slugs):** decode the 20 names in `fortune-500.json` and entity
     records, migrate to clean slugs with 301s from both old slugs, rekey rotation-state. Recommended default: approve.
+
+### New backlog item (2026-09-16) — republish the held America-at-250 improvement as a dated correction
+- An unrecorded rewrite of the published 2026-07-04 America-at-250 special briefing (made ~2026-09-03: `publicSummary`
+  added, `scope`/`cohortSummary` rewritten, body restructured) is **held, not committed** (AUTONOMY §1c). The diff is
+  preserved at `research/held-changes/america-at-250-unrecorded-rewrite-2026-09-03.patch` (183 lines) so nothing is lost.
+  Correct path: publish the improved content as a dated correction/addendum to that briefing rather than a silent
+  rewrite, or discard it. v1: I2 S4 L2 C4 − E2 − R2 = 8. Lane: eligible, low priority.
+- Housekeeping deferred: `research/rotation-state.json.bak` (408 KB) and `research/scans/2026-09-09.json.bak` (874 KB)
+  remain on disk — deletion needs a permission the session does not have; they are untracked and never committed.
+
+### New backlog item (2026-09-16, found while verifying the rename) — export does not prune removed slugs
+- `export-public-data.mjs` writes `site/public/data/scores/<slug>.json` per entity but never deletes files for slugs
+  that no longer exist, so after the RISK-023 rename the 20 old-key files (`procter-amp-gamble.json`, …) remained in
+  `site/public/data/scores/` and `site/out/`. Harmless today: both directories are gitignored, the catalog
+  `index.json` lists only the 1,325 current slugs (0 old keys), and the VPS deploy rebuilds the Docker image from
+  source, so production serves a clean tree. It matters for any deploy path that copies an existing output directory,
+  and it hides the true state locally. Fix: prune orphaned score files during export (or write to a fresh directory),
+  with a test that a removed slug's file disappears. v1: I2 S3 L2 C5 − E1 − R1 = 10.
+
+### New backlog item (2026-09-16, found by the coverage generator) — RS-3: 4 tracked entities have no published row
+- `research/rotation-state.json` tracks **54** ai-labs entities while `site/src/data/indexes/ai-labs.json` publishes **50**.
+  The four tracked-but-unpublished: `reflection-ai` (Reflection AI), `nvidia-ai` (Nvidia AI), `spacex-ai` (SpaceX AI),
+  `oracle-ai` (Oracle AI). This is the entire 1,329-tracked vs 1,325-published gap (coordinator-verified 2026-09-16).
+  Consequence already observed: the 2026-09-15 assessor could not assess Oracle AI — it holds an unpublished 21.9 with
+  no index row, which breaks the published-only rule. Decide per entity: publish it (an index write, founder-gated) or
+  stop tracking it. Until then the coverage report flags the mismatch rather than hiding it.
+  v1: I3 S4 L3 C5 − E2 − R2 = 11 · v2 K+1 (RISK-001/016 observability) → 12. Lane: eligible for the audit half; the
+  publish-or-delist decision is founder-gated (AUTONOMY §1b).
+
+### New backlog item (2026-09-16, found during the Score-Watch pause) — sales-form copy contradicts the pause
+- `site/src/components/purchase/SalesInquiryForm.tsx` still prefills the `score-watch` inquiry as active subscription
+  onboarding ("confirm billing contact and start date"), which reads oddly beside the new `/score-watch` disclosure that
+  no new subscriptions are being taken. It is the shared fallback pattern every paused product uses, so it was left
+  alone rather than special-cased mid-task. Decide: reword the prefill for paused products, or close the manual
+  fulfilment channel entirely until Score-Watch is verified end to end. v1: I3 S4 L2 C5 − E1 − R1 = 12.
 
 ### New backlog items (from meta-review §8)
 - Deterministic `generatedAt` in `build-special-briefings.mjs` (DC-08) — v1 ≈ 13.

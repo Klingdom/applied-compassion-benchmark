@@ -1,5 +1,118 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Founder-approved remediation batch — 2026-09-16 ("approve all and fix all")
+
+Not an improvement loop: a batch of previously-gated items the founder approved in one instruction, plus Iteration 14
+(logged separately below). Each item was delegated to a specialist and verified by the coordinator.
+
+### Done and verified
+- **Wellington applied** (D-36): global-cities 83.0 exemplary → 71.3 established, rank 13 → 22; 9 neighbouring rows
+  shift by one rank; band counts exemplary 15 → 14, established 26 → 27. Coordinator checks: the written row recomputes
+  to exactly 71.3 under `computeCompositeFromDimensions`; entity record matches; `validate-rotation-state` shows the
+  same 22 pre-existing failures, none new; `APPLIED_CHANGES.md` and `CHANGELOG.md` carry the RISK-019 premium-cliff
+  disclosure (base −3.75, premium −8.0) and the provenance caveat. Published briefings that describe the change as
+  unapplied were **not** edited (§1c): `updates/daily/2026-09-15.json`, `latest.json`, `special-briefings/equity-tax-2026-06-16.json`.
+- **Coordinator defect, disclosed (DC-10):** the approval fields the coordinator wrote into the proposal were duplicate
+  keys, so they parsed as `null`; only `status: "approved"` survived. `score-updater` caught it, refused to take the
+  instruction's word for the file's contents, applied on the intact gate, disclosed it in both research logs and
+  repaired the keys. The file now parses with one consistent set.
+- **Score-Watch paused** (D-34, RISK-014): `SCORE_WATCH.useGumroad = false`, so every CTA routes to
+  `/contact-sales?product=score-watch`; coordinator verified both remaining Gumroad call sites are flag-gated, so no
+  purchase link is reachable. Badge-embed widget renders nothing (`BADGE_EMBED_AVAILABLE = false`), and its empty
+  wrapper was removed so no divider or heading is left behind. Pause disclosed on `/score-watch` and `/pricing`.
+  Still open for the founder: check Gumroad for any unfulfilled purchase.
+- **Coverage published** (D-33): `research/scripts/coverage-report.mjs` + tests (19/19), committed report
+  `research/coverage/2026-09-16.{md,json}`, generated `site/src/data/neverAssessedCoverage.ts`, and a new
+  `/methodology` section stating **811 of 1,329 (61.0%)** never individually assessed, with the definition and what a
+  never-assessed score is. Coordinator reproduced every figure independently from `rotation-state.json` and confirmed a
+  re-run is byte-identical. Wired `test:coverage-report` into `npm run test` plus a `coverage-report` command.
+  **New finding (RS-3):** tracked 1,329 vs published 1,325 is entirely 4 ai-labs entities with no published row —
+  Reflection AI, Nvidia AI, SpaceX AI, Oracle AI. The report flags the mismatch rather than hiding it.
+- **Waiver cliff staggered** (D-37, RISK-015): six waivers all expiring 2026-12-09 → 2026-11-16 / 11-30 / 12-14 /
+  2027-01-15 / 01-29 / 02-12, earliest for the clearest remediations. `test-separation-waivers` 17/17 and
+  `validate-product-separation` PASS on the new dates.
+- **`CLAUDE.md` data notes corrected:** "21 of 51 states" → 51, "Robotics Labs: 50" → 92, plus 8 indexes / 1,325
+  entities and an instruction to import counts rather than type them (the guard It. 12 added enforces it).
+- **Decisions recorded:** D-31 (batched approvals by pathspec, dated branches, never straight to `main`), D-32
+  (research cadence floor, isolated sessions), D-33, D-34, D-35 (decode names; `&` → `-and-` slug convention),
+  D-36, D-37.
+- **America-at-250:** the unrecorded rewrite of a published briefing stays uncommitted; the diff is preserved at
+  `research/held-changes/america-at-250-unrecorded-rewrite-2026-09-03.patch` and republishing it as a dated correction
+  is a backlog item.
+
+### Blocked (needs the founder)
+- **Branch protection on `main`** — the session lacks permission to change repository settings. The exact `gh api`
+  command is in `docs/founder-briefings/2026-09-14.md` addendum 8. RISK-021 stays open.
+- **Deleting the two `.bak` files** in `research/` — same permission class.
+
+### RISK-023 migration — done, pending build/deploy verification (D-35)
+- **Data:** the 20 Fortune 500 names decoded and an explicit `slug` pinned on each row (`procter-and-gamble`,
+  `johnson-and-johnson`, `at-and-t`, `macys`, …), honoured by both `entities.ts` (pages) and `export-public-data.mjs`
+  (score files). The 20 entity-record files renamed via `git mv` with only `slug`/`name` changed inside; the 20
+  rotation-state keys rekeyed and names decoded, all other fields untouched.
+- **No score moved:** a scripted diff of `composite`, `band`, `rank` and `scores` for all 20 rows against HEAD is
+  byte-identical; only `name` and the new `slug` differ.
+- **Redirects:** 60 rewrite lines in each of `nginx.conf` and `nginx-ssl.conf` (3 per entity: old encoded page slug,
+  natural-guess slug, and the old `/data/scores/<old-key>.json`), dated and commented, following the Cape Verde /
+  Phoenix precedent. No self-redirects; none of the 20 natural-guess slugs collides with a real entity slug.
+- **Gate (RS-2a):** `validate-indexes.mjs` check 17 fails on `&[a-zA-Z#0-9]+;` in any published `name`, with a pure
+  exported `findEncodedEntityNames()` and `site/scripts/test-encoded-names.mjs` (negative-control probe fails,
+  decoded probe passes). Wired into `npm run test` as `test:encoded-names` by the coordinator.
+- **Coordinator verification:** 0 encoded names across all 8 indexes (was 20); 20 rows carry pinned slugs; renamed
+  records present; `validate-indexes` 0 errors / 64 warnings (unchanged); `test-entity-records` 19,687/0;
+  `export-public-data` exit 0 with the ratchet still at 16 known / 0 unexpected / 0 resolved. The six remaining
+  record filenames matching "amp|x27" are false positives (Amphenol, Campo Grande, Kampala, New Hampshire, Tampa,
+  University of Illinois Urbana-Champaign).
+- **Side effect, being fixed rather than papered over:** `validate-rotation-state` went 22 → 25 failures. The three new
+  ones (`deere-and-company`, `at-and-t`, `w-and-t-offshore`) are reports still filed under the pre-decode encoded
+  slugs — the same false-failure shape as the other 22. Historical report files are NOT renamed; RS-1 teaches the
+  validator to recognise alias slugs, same-date change proposals and digest entries, so FAIL means a real gap.
+
+## Iteration 14 — 2026-09-16 (entity-identity guards: wire the records test, ratchet slug collisions — A-1)
+
+### Selected Item
+**A-1: put `test-entity-records.mjs` into `npm run test`, and turn the slug-collision WARN in
+`export-public-data.mjs` into a shrink-only ratchet.** Top eligible v2 item, unblocked the moment It. 12 was committed
+(both edit `site/package.json`). v1 15 · **v2 19** (K +2 reduces RISK-017/018 · P 0 — prevents new collisions, does not
+fix the 16 live ones · Rc +2 DC-05, the most-recurring class). Alternatives: RS-2a 18, RS-1 18.
+
+### V1 — production/baseline BEFORE (coordinator, 2026-09-16)
+- `test-entity-records.mjs`: passes 19,687/0 but appears in **neither** `package.json` nor CI — a dead guard.
+- `export-public-data.mjs`: prints 16 collisions and continues; last index written wins. The 16: 13 global-cities vs
+  us-cities (boston, portland, new-york-city, seattle, minneapolis, washington-dc, san-francisco, philadelphia, atlanta,
+  detroit, chicago, los-angeles, houston) · singapore (countries vs global-cities) · 1x-technologies and figure-ai
+  (ai-labs vs robotics-labs). Live effect: `/data/scores/singapore.json` serves the city, not the country.
+
+### What Changed
+- `site/package.json`: new `test:entity-records` and `test:collision-ratchet`, both appended to the `test` chain.
+- `site/scripts/export-public-data.mjs`: pure exported `detectCollisions(recordsByIndex, knownCollisions)`; the old
+  inline warn-only check removed; the script now exits non-zero on any **unexpected** collision or any **resolved**
+  entry still listed, and warns for known ones. Import guard so tests can load it without running `main()`.
+- `site/scripts/known-collisions.json` (new): dated allowlist (`asOf: 2026-09-16`) of exactly the 16, each with slug,
+  sorted index pair and a note; shrink-only policy documented in the file.
+- `site/scripts/test-collision-ratchet.mjs` (new): 19 assertions over in-memory fixtures + a real-data check.
+
+### Validation (V2–V7)
+- **V2 coordinator re-runs:** `node scripts/export-public-data.mjs` exit 0, "16 known, 0 unexpected, 0 resolved" ·
+  ratchet tests 19/19 · `npm run test` exit 0 (chain now includes entity-records 19,687/0 and the ratchet) ·
+  `npx tsc --noEmit` clean.
+- **V3 negative control (coordinator, against the real exported function):** injected a 17th collision → `unexpected: 1`
+  naming both indexes; removed a known collision from the data → `resolved: 1`; real index data → 16/0/0.
+- **V4 built output:** deferred to the end-of-session build (the script runs in `prebuild`, so the build exercises it).
+- **V5:** no dated or published content touched. **V6:** diff is `package.json`, `export-public-data.mjs` + 2 new files.
+- **CI check:** `.github/workflows/deploy.yml` test job runs `npm test` before the deploy job, so both guards now gate
+  production — the wiring is real, not local-only.
+- **V7:** after the founder deploys.
+
+### Outcome
+Cross-index slug collisions reaching production: unguarded → build fails on any new one; the 16 known are frozen in a
+list that can only shrink. Entity-record integrity (19,687 assertions) runs on every test and CI run.
+
+### Follow-ups
+- The 16 existing collisions still serve the wrong entity — remediation is a rename/redirect job (founder-approved
+  2026-09-16 alongside RISK-023; sequenced after the Fortune 500 name migration).
+- `known-collisions.json` should shrink to 0 as those land; the ratchet fails if an entry is stale.
+
 ## Commit — 2026-09-15 — founder instruction: "commit and push for manual deployment by me"
 
 - **Target:** branch `release/2026-09-15` (created from `905a805d`), pushed to origin. **Not `main`** — pushes to `main`

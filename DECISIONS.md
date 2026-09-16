@@ -52,6 +52,123 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+## D-37 — 2026-09-16 · Product-separation waivers expire on staggered dates, not one cliff
+
+**All six waivers expired on 2026-12-09.** The validator runs inside `npm run build`, so from 12-10 every
+build and deploy would have failed — nightly briefings and score applies included, none of which have anything
+to do with the six waived duplicate-publication cases (RISK-015).
+
+**New dates, ordered by how clear the remediation is:** figure 2026-11-16 · 1x-technologies 2026-11-30 ·
+boston-dynamics-spot-demo 2026-12-14 · amazon 2027-01-15 · meta 2027-01-29 · microsoft 2027-02-12. The two
+unambiguous duplicates come first; the misfiled SPOT-demo row next; the three division-vs-parent cases last,
+because they cannot resolve until D-13 is ratified.
+
+Alternatives rejected: extend all six to one later date (rebuilds the same cliff further out), or remove the
+waivers and let the build fail (turns adjudicated debt into an outage). Expiry stays the forcing function —
+each date now forces one decision instead of one date forcing all six.
+
+Status: active · Evidence: `site/scripts/product-separation-waivers.json`; RISKS.md RISK-015
+
+---
+
+## D-36 — 2026-09-16 · Wellington is applied, with the premium-cliff disclosure attached
+
+**Applied: Wellington 83.0 exemplary → 71.3 established (−11.7).** Evidence is a government-commissioned
+statutory review (2026-09-02, tier 5) finding "longstanding weaknesses in governance, accountability, asset
+management, risk management and infrastructure resilience"; drift against the live index was 0.00 and both
+composites reproduce exactly under `computeCompositeFromDimensions`.
+
+**The magnitude is disclosed, not smoothed.** The dimension average moves 4.00 → 3.85 (base 75.0 → 71.25,
+−3.75). The integration premium falls 8.0 → 0 because five dimensions cross below 4.0 (−8.0). About two-thirds
+of the movement is the RISK-019 cliff, not additional conduct. Alternatives rejected: hold the proposal until
+the cliff is resolved (leaves a published score the benchmark's own evidence contradicts), or edit the
+assessor's recommendation to soften it (forbidden, AUTONOMY §1c). The disclosure travels with the change in
+the briefing, `APPLIED_CHANGES.md` and the public changelog.
+
+**Provenance caveat.** Approval was the founder's explicit in-session instruction, recorded by the coordinator
+into the proposal JSON. Nothing in the repository can mechanically verify that (RISK-021, D-31 addresses it).
+
+Status: active · Evidence: `research/change-proposals/wellington-2026-09-15.json`, `research/assessments/wellington-2026-09-15.md`
+
+---
+
+## D-35 — 2026-09-16 · Encoded entity names are decoded, and every renamed entity gets one "-and-" slug
+
+**The 20 Fortune 500 names carrying HTML entities are decoded at the data source** and migrated to one slug
+each, with 301s from the old page and data slugs (RISK-023; spec in
+`docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md`). Scores do not change.
+
+**Slug convention: `&` becomes `-and-`, apostrophes drop.** So `procter-and-gamble`, `johnson-and-johnson`,
+`at-and-t`, `s-and-t-bancorp`, `w-and-t-offshore`, `macys`, `lowes`, `kohls`. The founder delegated the choice;
+the alternative was the site slugger's literal output (`atandt`, `sandt-bancorp`, `wandt-offshore`), rejected
+because it produces three unreadable exceptions to an otherwise uniform rule. Consequence: `slugify()` must not
+be applied to encoded strings again — the decode happens in the data, not in the renderer.
+
+Status: active · Evidence: RISKS.md RISK-023; coordinator slug/collision table, 2026-09-15
+
+---
+
+## D-34 — 2026-09-16 · Score-Watch sales are paused until fulfilment is verified end to end
+
+**Paused, not quietly left live.** `api.compassionbenchmark.com` does not resolve, so the Gumroad webhook,
+subscriber alerts and every badge embed point at a host that does not exist, and `research/alert-deliveries/`
+shows no alert has ever been delivered (RISK-014). Selling an alert product that cannot alert is the clearest
+integrity failure on the commercial plane.
+
+Alternatives rejected: keep selling while the Worker is deployed (continues taking money for undeliverable
+fulfilment), or remove the product entirely (destroys a live product over a fixable infrastructure gap).
+Re-enabling requires, in order: DNS record, Worker deployed, one real end-to-end test purchase verified.
+
+Status: active · Evidence: RISKS.md RISK-014; `site/src/data/gumroad.ts`; `worker/wrangler.toml`
+
+---
+
+## D-33 — 2026-09-16 · The never-assessed share is published, and generated rather than typed
+
+**`/methodology` states what proportion of published entities have never been individually assessed**, with the
+date and the exact definition (`last_assessed` is null in the research rotation state). As of 2026-09-14 that
+was 820 of 1,329 (61.7%). The number is imported from a generated module, never hand-typed — `test:no-stale-counts`
+fails the build otherwise.
+
+Alternatives rejected: disclose only on request (the figure is the single most-asked question of a benchmark
+whose core claim is measurement), or wait until the de-seeding programme improves it (hides the current state
+for an unbounded period). Consequence: the figure moves every cycle and must never be restated from memory.
+
+Status: active · Evidence: PR/FAQ 2026-09-14 §6 items U and E; `research/rotation-state.json`
+
+---
+
+## D-32 — 2026-09-16 · Research runs to a cadence floor, one isolated session per cycle
+
+**Floor: at least 5 validated research cycles per 7 days**, taking precedence over programme build work when
+the two compete. Each cycle runs in its own session with a search-budget preflight, because a full cycle costs
+~270–290 searches and INC-008 lost three scan attempts to an exhausted session cap.
+
+Context: cadence fell from daily (through 2026-07-31) to 7 catch-up cycles across August–September, and the
+pipeline has never run unattended (RISK-016). Alternatives rejected: unattended cron to `main` (briefing claims
+are not yet machine-checkable against sources — RISK-020, DC-04), or leaving allocation implicit (that is what
+produced the collapse). Scheduled runs commit to a dated branch, never straight to `main`.
+
+Status: active · Evidence: RISKS.md RISK-016; INCIDENTS.md INC-008; `docs/META_REVIEW_2026-09-14_ITER10-12.md` §9
+
+---
+
+## D-31 — 2026-09-16 · Commits are batched by named pathspec onto a release branch, never straight to main
+
+**Every approval names its files.** An approval request lists an exact pathspec; "commit all" is never used,
+because the working tree routinely holds build churn, held content and unrelated edits (54 dirty paths on
+2026-09-14, including an unrecorded rewrite of a published briefing). Work lands on a dated branch
+(`release/<date>`, `improve/<date>-<item>`); pushing to `main` is what triggers the deploy workflow, so the
+founder controls deployment by merging.
+
+Alternatives rejected: standing blanket approval for non-data commits (would change AUTONOMY §1b and is
+founder-only), and committing directly to `main` (removes the founder's deploy control). Branch protection on
+`main` for `site/src/data/indexes/**` and `research/change-proposals/**` remains the open half of RISK-021.
+
+Status: active · Evidence: AUTONOMY.md §1b; `docs/META_REVIEW_2026-09-14_ITER10-12.md` §6 rule S6
+
+---
+
 ## D-30 — 2026-09-11 · Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite
 
 **Release watch is a section on `/ai-models`, not a third route.** D-29 caps the pre-result surface at

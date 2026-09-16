@@ -98,10 +98,17 @@ Entities never pay for inclusion, score changes, or suppression of findings. Com
 
 ## Data notes
 
-- Fortune 500: 447 companies with full scores
-- Countries: 193 of 207 (14 not in source HTML)
-- US States: 21 of 51 (ranks 9-38 not in source HTML)
+**Never hard-code these counts.** Import `SCORED_ENTITY_COUNT` / `SCORED_ENTITY_COUNT_FORMATTED` / `getIndexEntityCount()` from `site/src/data/entityCount.ts` and `INDEX_COUNT` from `site/src/data/indexRegistry.ts`; `npm run test` fails on hand-typed catalogue counts (`test:no-stale-counts`). The figures below are a snapshot for orientation only — the data files and `site/public/build-manifest.json` are authoritative.
+
+As of 2026-09-16 — **8 indexes, 1,325 scored entities**:
+
+- Fortune 500: 447 companies
+- Countries: 191 (after the 2026-09-14 Cabo Verde / São Tomé duplicate merges)
+- US States: 51 (all states scored; the old "21 of 51" note was stale)
 - AI Labs: 50 labs with HQ and sector
-- Robotics Labs: 50 labs with category and country
+- Robotics Labs: 92 labs with category and country (the old "50" was stale)
 - US Cities: 144 cities with region
 - Global Cities: 250 cities with country and region
+- Universities: 100 institutions with country, region and type
+
+Research tracking (`research/rotation-state.json`) covers 1,329 entities — a distinct number from the published catalogue; use it only where copy literally says "scanned" or "tracked".

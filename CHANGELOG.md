@@ -5,6 +5,31 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-16 — Score update: Wellington (global-cities) downgraded 83.0 → 71.3, band crossing Exemplary → Established
+
+- **Wellington (global-cities):** 83.0 → 71.3 (−11.7). BAND CROSSING Exemplary → Established. Statutory Crown Review into the 4 February 2026 Moa Point wastewater plant failure, released 2 September 2026, found the collapse was not a single decision but "longstanding weaknesses in governance, accountability, asset management, risk management and infrastructure resilience"; Wellington City Council, as plant owner and consent holder, "remained ultimately accountable," and "no single organisation acted as though it was in charge." Mayor Andrew Little apologised and the council announced a new role to monitor Tiaki Wai — both credited (Harm Acknowledgment held at 5, Correction Willingness at 4). AWR, ACT, EQU, SYS, and INT dimensions reduced; EMP and BND held; ACC net reduced despite the two credited moves. FORMULA-CLIFF DISCLOSURE: of the −11.7 total, only −3.75 is direct dimension movement (the eight-dimension average falls 4.00 → 3.85); the remaining −8.0 is the scoring formula's integration premium collapsing from 8.0 to 0 because five dimensions crossed below the 4.0 threshold the premium requires — a step function, not five additional points of conduct. Rank 13 → 22 (−9). Band counts: Exemplary 15 → 14, Established 26 → 27. Confidence: medium (never-individually-assessed placeholder base; tier-5 source cited via verbatim republication, full review PDF not read).
+
+---
+
+
+## 2026-09-16 — Score-Watch sales paused until alert delivery is verified (NO score changes)
+
+- **What changed:** Score-Watch, the paid per-entity alert product, is no longer purchasable. Every buy link now routes to a sales contact instead, the badge-embed widget is hidden, and the pause is stated on the Score-Watch and pricing pages.
+- **Why:** the host that receives purchases and sends the alerts does not resolve, so no purchase could be fulfilled and no alert has ever been delivered. Selling an alert product that cannot alert is not a defensible state, so sales stop until the delivery path is deployed and one real end-to-end purchase has been verified.
+- Anyone with an existing subscription will be contacted directly.
+
+---
+
+
+## 2026-09-16 — Methodology now states how much of the catalogue has been individually assessed (NO score changes)
+
+- **What changed:** `/methodology` publishes the share of tracked entities that have never been through an individual assessment — **811 of 1,329 (61.0%)** as of 2026-09-16 — with the exact definition, what a never-assessed score is (an inherited starting value, not a measurement), and no claimed completion date.
+- **How it stays honest:** the figure is generated from the research tracking data by a committed script, imported into the page, and re-checked by a test. It cannot be typed by hand or quietly go stale.
+- **Also disclosed:** the benchmark tracks 1,329 entities but publishes 1,325. The difference is four AI-lab entities tracked for research that have no published row.
+
+---
+
+
 > **Status note (2026-09-15, appended):** the three entries below that say "pending commit/deploy" — the briefing-wording rule, the derived catalogue counts, and (already deployed) the citation-guide and methodology fixes — are now committed on branch `release/2026-09-15` on the founder's instruction ("commit and push for manual deployment by me"). They are live only after the founder deploys that branch. The entries themselves are left as written.
 
 ## 2026-09-14 — Research pipeline: briefings can no longer report an unapplied score change as published (NO score changes; pending commit/deploy)
