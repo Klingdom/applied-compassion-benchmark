@@ -14,9 +14,13 @@
  *
  * Output schema (stable):
  *   {
- *     "buildDate":           ISO timestamp,
- *     "buildTimestamp":      epoch ms,
- *     "git":                 { sha, branch, dirty },
+ *     "buildDate":           ISO timestamp — when this build ran,
+ *     "buildTimestamp":      epoch ms — when this build ran,
+ *     "git":                 { sha, branch, dirty, source } — see gitInfo()
+ *                             below; sha/branch/dirty are null (with a
+ *                             "gitUnavailableReason" alongside them) if
+ *                             neither an injected env var nor a local `.git`
+ *                             was usable,
  *     "methodologyVersion":  "v1.2" (from scripts/lib/scoring.mjs),
  *     "indexes": [
  *       {
@@ -40,6 +44,30 @@
  *
  * Run as part of `npm run build` (before `next build`) so the file is
  * picked up by the static export and served at /build-manifest.json.
+ *
+ * DC-08 / BM-1 (2026-09-16): this file used to be committed to git AND
+ * rewritten with a fresh `new Date()` on every build, so every build
+ * produced a one-line diff on a tracked file with nothing legitimate to
+ * review. It is now a build artifact, like `public/data/` — see
+ * `site/.gitignore`. buildDate/buildTimestamp are genuinely "when did this
+ * build run" facts; they belong in the artifact a build produces, not in
+ * git history (the source data they summarize — src/data/indexes/*.json —
+ * is already tracked and can be re-summarized for any past commit by
+ * checking it out and running `npm run manifest`). The trade-off: `git log`
+ * on this path no longer shows a history of past production build times;
+ * that history now lives only in whatever built the artifact (CI logs /
+ * the deployed file itself), not in this repo.
+ *
+ * Separately (BM-1): git.sha/git.branch/git.dirty must not silently become
+ * a plausible-looking "unknown". The Docker builder stage (see ../../Dockerfile)
+ * copies `site/` only — no `.git` — so shelling out to git inside it always
+ * failed and always returned the string "unknown", which looked like real
+ * data. gitInfo() now prefers GIT_SHA/GIT_BRANCH/GIT_DIRTY injected via
+ * --build-arg (deploy.sh computes these on the host, where `.git` exists,
+ * and passes them through docker-compose.yml's build.args), falls back to
+ * shelling out to git (works for local `npm run build` / `npm run manifest`
+ * outside Docker), and if both fail, emits sha/branch/dirty as `null` with
+ * an explicit `gitUnavailableReason` string rather than inventing a sha.
  */
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from "fs";
@@ -61,19 +89,72 @@ function sha256(content) {
   return "sha256:" + createHash("sha256").update(content).digest("hex");
 }
 
-function git(args, fallback = null) {
+// Returns the trimmed stdout, or null if the git command failed (not found,
+// not a repo, no matching ref, etc). null — never a fallback string like
+// "unknown" — so callers can tell "we don't know" apart from "we asked git
+// and it told us so".
+function git(args) {
   try {
-    return execSync(`git ${args}`, { cwd: SITE_ROOT, encoding: "utf8" }).trim();
+    // stdio: pipe stderr too, so a missing-.git failure doesn't spam build
+    // logs with git's own "fatal: not a git repository" — gitInfo() below
+    // already turns a failure here into an explicit, explained result.
+    return execSync(`git ${args}`, { cwd: SITE_ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
   } catch {
-    return fallback;
+    return null;
   }
 }
 
+/**
+ * Resolve the commit identity for this build. See the BM-1 note in the
+ * file header for why this can no longer return a bare "unknown".
+ *
+ * Preference order:
+ *   1. GIT_SHA / GIT_BRANCH / GIT_DIRTY env vars, injected at build time
+ *      (e.g. Docker --build-arg from deploy.sh, which runs on the host
+ *      where `.git` exists). This is the only reliable path inside the
+ *      Docker builder stage, which never receives `.git`.
+ *   2. Shelling out to `git` directly — works when `.git` is actually
+ *      present (local `npm run build` / `npm run manifest`, or a CI runner
+ *      that checks out full history).
+ *   3. An explicit "we don't know, and here's why" record. No invented sha.
+ */
 function gitInfo() {
-  const sha = git("rev-parse --short HEAD", "unknown");
-  const branch = git("rev-parse --abbrev-ref HEAD", "unknown");
-  const dirty = git("status --porcelain", "") !== "";
-  return { sha, branch, dirty };
+  const envSha = (process.env.GIT_SHA || "").trim();
+  if (envSha) {
+    const envBranch = (process.env.GIT_BRANCH || "").trim();
+    const envDirty = (process.env.GIT_DIRTY || "").trim().toLowerCase();
+    return {
+      sha: envSha,
+      branch: envBranch || null,
+      dirty: envDirty === "true" ? true : envDirty === "false" ? false : null,
+      source: "env",
+    };
+  }
+
+  const sha = git("rev-parse --short HEAD");
+  if (sha) {
+    const branch = git("rev-parse --abbrev-ref HEAD");
+    const status = git("status --porcelain");
+    return {
+      sha,
+      branch,
+      dirty: status === null ? null : status !== "",
+      source: "git",
+    };
+  }
+
+  return {
+    sha: null,
+    branch: null,
+    dirty: null,
+    source: "unavailable",
+    gitUnavailableReason:
+      "No GIT_SHA build-arg was injected and `git rev-parse` failed in this " +
+      "environment (expected inside the Docker builder stage, which does not " +
+      "receive .git — see Dockerfile). Pass --build-arg GIT_SHA=$(git rev-parse " +
+      "--short HEAD) [and GIT_BRANCH, GIT_DIRTY] at build time, or run this " +
+      "outside Docker where .git is present.",
+  };
 }
 
 function summarizeIndex(filename) {
@@ -181,5 +262,9 @@ writeFileSync(OUTPUT_PATH, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 
 console.log(`build-manifest.mjs — wrote ${OUTPUT_PATH}`);
 console.log(`  ${indexes.length} indexes · ${totalEntities} total entities · ${totalFloorDesignations} floor-designated`);
-console.log(`  git ${manifest.git.sha} (${manifest.git.branch})${manifest.git.dirty ? " [dirty]" : ""}`);
+if (manifest.git.sha) {
+  console.log(`  git ${manifest.git.sha} (${manifest.git.branch ?? "unknown branch"})${manifest.git.dirty ? " [dirty]" : ""} [source: ${manifest.git.source}]`);
+} else {
+  console.warn(`  git sha UNAVAILABLE — ${manifest.git.gitUnavailableReason}`);
+}
 console.log(`  methodology ${manifest.methodologyVersion} · ${manifest.recentAppliedProposals.length} recent proposals`);

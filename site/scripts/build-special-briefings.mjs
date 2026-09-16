@@ -16,11 +16,13 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { join, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const BRIEFINGS_SRC = join(__dirname, "..", "..", "research", "special-briefings");
+const REPO_ROOT = join(__dirname, "..", "..");
+const BRIEFINGS_SRC = join(REPO_ROOT, "research", "special-briefings");
 const OUT_DIR = join(__dirname, "..", "src", "data", "special-briefings");
 
 if (!existsSync(OUT_DIR)) {
@@ -34,6 +36,34 @@ if (!existsSync(OUT_DIR)) {
  */
 function fileToSlug(filename) {
   return basename(filename, ".md");
+}
+
+/**
+ * Derive a deterministic "last modified" timestamp for a briefing from its
+ * source, instead of stamping the wall clock on every build (DC-08).
+ *
+ * Preference order:
+ *   1. The source .md file's last commit date (git log), so the value only
+ *      changes when the briefing's actual content is edited and committed —
+ *      a genuine "content changed" signal, reused as `dateModified` in the
+ *      Article JSON-LD on /updates/special/[slug].
+ *   2. The briefing's own front-matter `**Date:**` (its publish date), if the
+ *      file is uncommitted or `git` is unavailable in this environment.
+ *   3. null (omitted from output) if neither is available.
+ */
+function deriveGeneratedAt(filepath, frontMatterDate) {
+  try {
+    const out = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", filepath],
+      { cwd: REPO_ROOT, encoding: "utf8" },
+    ).trim();
+    if (out) return out;
+  } catch {
+    // git unavailable, or filepath outside a git repo — fall through.
+  }
+  if (frontMatterDate) return `${frontMatterDate}T00:00:00.000Z`;
+  return null;
 }
 
 /**
@@ -471,7 +501,7 @@ function processBriefing(filepath) {
     cohortSummary: stripInternalLanguage(summary.cohortSummary),
     keyFindings,
     bodySections,
-    generatedAt: new Date().toISOString(),
+    generatedAt: deriveGeneratedAt(filepath, frontMatter.date),
   };
 
   // 7. Write output
@@ -514,6 +544,10 @@ for (const filepath of mdFiles) {
 results.sort((a, b) => b.date.localeCompare(a.date));
 
 // Write manifest
+// NOTE: no `updatedAt` field here — nothing in site/src reads it (grepped
+// 2026-09-16), and a wall-clock stamp on an otherwise-deterministic index
+// file was pure git churn (DC-08). Re-add only if a real consumer needs it,
+// derived from source data rather than `new Date()`.
 const manifest = {
   briefings: results.map(({ slug, title, dek, date, edition }) => ({
     slug,
@@ -522,7 +556,6 @@ const manifest = {
     date,
     edition,
   })),
-  updatedAt: new Date().toISOString(),
 };
 
 const manifestPath = join(OUT_DIR, "manifest.json");

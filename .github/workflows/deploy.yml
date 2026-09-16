@@ -125,6 +125,15 @@ jobs:
             git fetch origin main
             git pull --ff-only origin main
             echo "→ Rebuilding Docker image + restarting container"
+            # Commit identity for scripts/build-manifest.mjs (BM-1). The Docker
+            # build context contains no .git, so build-manifest.mjs cannot shell
+            # out for the sha — it must be injected here. deploy.sh does the same
+            # for manual deploys, but CI never invokes deploy.sh, so exporting it
+            # there alone would leave every CI deploy recording git as
+            # "unavailable". The VPS has .git (it just pulled), so this works.
+            export GIT_SHA="$(git rev-parse --short HEAD)"
+            export GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+            if [ -z "$(git status --porcelain)" ]; then export GIT_DIRTY=false; else export GIT_DIRTY=true; fi
             docker compose up -d --build
             echo "→ Pruning dangling images to reclaim disk"
             docker image prune -f

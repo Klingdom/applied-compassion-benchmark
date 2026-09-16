@@ -24,6 +24,15 @@ echo "==> Step 1: Building Next.js site and starting with HTTP-only config..."
 
 # Pull latest code from GitHub, then rebuild the Docker image
 git pull origin main
+
+# Inject commit identity for scripts/build-manifest.mjs (BM-1). The Docker
+# build context never contains .git, so this is the only reliable way for
+# the deployed /build-manifest.json to know its own commit.
+export GIT_SHA="$(git rev-parse --short HEAD)"
+export GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+if [ -z "$(git status --porcelain)" ]; then GIT_DIRTY=false; else GIT_DIRTY=true; fi
+export GIT_DIRTY
+
 docker compose build --no-cache web
 docker compose up -d web
 
@@ -54,6 +63,8 @@ echo "    https://$DOMAIN should now be live."
 echo ""
 echo "    SSL auto-renewal is handled by the certbot container."
 echo "    To redeploy after code changes:"
-echo "      git pull origin main && docker compose build --no-cache web && docker compose up -d web"
+echo "      git pull origin main"
+echo "      export GIT_SHA=\$(git rev-parse --short HEAD) GIT_BRANCH=\$(git rev-parse --abbrev-ref HEAD) GIT_DIRTY=false"
+echo "      docker compose build --no-cache web && docker compose up -d web"
 echo "      docker compose cp nginx-ssl.conf web:/etc/nginx/conf.d/default.conf"
 echo "      docker compose exec web nginx -s reload"

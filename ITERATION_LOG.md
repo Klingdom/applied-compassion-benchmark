@@ -1,5 +1,49 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 18 — 2026-09-16 (the build stops rewriting tracked files; production can name its own commit)
+
+### Selected Item
+**DC-08 build determinism, with BM-1 folded in** (same file, same root cause). Ranked next by Meta-review 2 (v2 15)
+and the direct cause of the one metric that review scored as failing: "dirty paths not attributable to a pending
+iteration".
+
+### V1 — baseline (coordinator-measured)
+- **19 tracked files rewritten per build**, each differing by one line: `"generatedAt": "2026-08-03T…"` →
+  `"2026-09-16T…"`. Sources: `build-special-briefings.mjs:474,525`, `build-updates-manifest.mjs:56`,
+  `build-manifest.mjs:164-166`. (`export-public-data.mjs:160` also stamps but writes to gitignored `public/data/`.)
+- I had hand-excluded these by pathspec ~8 times in one day. That is how a real change eventually ships unnoticed.
+- **BM-1:** live production served `git: {"sha":"unknown","branch":"unknown"}` — the deployed site could not identify
+  its own commit, and `gitInfo()`'s `catch` returned a plausible-looking `"unknown"` rather than an honest absence.
+
+### What Changed
+- **Readers checked before touching a field.** `generatedAt` per briefing *is* read (`updates/special/[slug]/page.tsx`
+  uses it as JSON-LD `dateModified`), so it was **derived** from the source `.md`'s git commit date rather than
+  deleted. The `updatedAt` fields in `special-briefings/manifest.json` and `updates/manifest.json` had **no readers
+  anywhere** and were deleted.
+- `build-manifest.json` untracked (it is a genuine build artifact; still generated and served). Trade-off accepted:
+  `git log` no longer shows past production build times — the data it summarises is tracked and reproducible per commit.
+- **BM-1:** `gitInfo()` now prefers injected `GIT_SHA`/`GIT_BRANCH`/`GIT_DIRTY`, falls back to shelling out, and when
+  both fail records `source: "unavailable"` with a reason — **never** a fake `"unknown"`.
+
+### Coordinator catch: the BM-1 fix would not have worked in CI
+The agent wired the sha exports into `deploy.sh` — but **CI never invokes `deploy.sh`** (0 references in
+`.github/workflows/deploy.yml`; its SSH step runs `git pull` then `docker compose up -d --build` directly). Every CI
+deploy would have recorded git as "unavailable": honest, but not the fix. I added the exports to the workflow's SSH
+script itself, computing `GIT_DIRTY` from `git status --porcelain` rather than hardcoding `false`.
+
+### Validation
+- **Determinism proven by me:** ran both generators twice back-to-back → **0 dirty paths** after each, and
+  `manifest.json` byte-identical across runs. Churn **19 → 0**.
+- **Held content contained:** only `america-at-250-2026-07-04.json` carries content changes (66 lines — it legitimately
+  rebuilds from the held `.md` rewrite). All other briefings are stamp-only; `manifest.json`'s sole content change is
+  the deleted unread field. Both America-at-250 files stay excluded from the commit, preserving the §1c hold.
+- `npm run test` exit 0 (27 steps), `tsc` clean. Full build not run locally (OOM); CI is the gate.
+- The agent stashed pre-existing stamp churn as `stash@{0}` — inspected: 19 files, all stamp-only, superseded by the
+  regenerated output. Nothing lost.
+
+### V7 — pending deploy verification
+Production `/build-manifest.json` must report a real short sha and `source: "env"` instead of `"unknown"`.
+
 ## Iteration 16 — 2026-09-16 (claim-to-source gate for briefings — DC-04 / RISK-020)
 
 ### Selected Item

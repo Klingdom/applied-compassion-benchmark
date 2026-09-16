@@ -21,7 +21,12 @@ export interface SpecialBriefing {
   /** Rendered key findings text (may contain **bold** markdown inline markers) */
   keyFindings: string[];
   bodySections: BriefingSection[];
-  generatedAt: string;
+  /**
+   * Deterministic "last modified" stamp: the source .md file's last commit
+   * date, or its front-matter publish date as a fallback. null only if
+   * neither could be determined (see build-special-briefings.mjs).
+   */
+  generatedAt: string | null;
 }
 
 export interface BriefingManifestEntry {
@@ -34,5 +39,4 @@ export interface BriefingManifestEntry {
 
 export interface BriefingManifest {
   briefings: BriefingManifestEntry[];
-  updatedAt: string;
 }

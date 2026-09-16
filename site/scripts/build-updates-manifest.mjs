@@ -6,8 +6,13 @@
  * The overnight-digest agent authors site/src/data/updates/daily/<date>.json
  * (rich schema, per docs/DAILY_BRIEFING_SCHEMA.md). This script derives:
  *   - site/src/data/updates/manifest.json
- *       { dates (ALL, newest-first), recent (≤RECENT_WINDOW), latest, updatedAt }
+ *       { dates (ALL, newest-first), recent (≤RECENT_WINDOW), latest }
  *   - site/src/data/updates/latest.json    (exact copy of the newest daily file)
+ *
+ * NOTE: this manifest intentionally has no updatedAt/generatedAt field.
+ * Nothing in site/src reads one (grepped 2026-09-16) -- a wall-clock stamp
+ * here was pure git churn on an otherwise fully-deterministic index (DC-08).
+ * `latest` + `dates[0]` already tell a reader which briefing is newest.
  *
  * RETENTION POLICY (fixed 2026-06-15):
  *   Daily briefing files are the SOURCE OF TRUTH and are NEVER deleted. Every
@@ -53,7 +58,6 @@ const manifest = {
   dates: allDates,   // full archive — drives pages, sitemap, archive listing
   recent,            // bounded window — drives feeds + OG cards
   latest: allDates[0],
-  updatedAt: new Date().toISOString(),
 };
 writeFileSync(MANIFEST_FILE, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 

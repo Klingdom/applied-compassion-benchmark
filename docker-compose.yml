@@ -1,6 +1,17 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      # Injects the commit identity into scripts/build-manifest.mjs, which
+      # otherwise cannot shell out to git inside this build context (no
+      # .git is copied in — see Dockerfile). deploy.sh exports these before
+      # calling `docker compose build`; compose interpolates them from the
+      # shell environment. Falls back to empty (build-manifest.mjs then
+      # records git as explicitly unavailable, never a fake "unknown").
+      args:
+        GIT_SHA: ${GIT_SHA:-}
+        GIT_BRANCH: ${GIT_BRANCH:-}
+        GIT_DIRTY: ${GIT_DIRTY:-}
     container_name: compassion-benchmark
     ports:
       - "8080:80"

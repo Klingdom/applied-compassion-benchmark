@@ -15,6 +15,20 @@ ARG NEXT_PUBLIC_BING_SITE_VERIFICATION
 ENV NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=$NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 ENV NEXT_PUBLIC_BING_SITE_VERIFICATION=$NEXT_PUBLIC_BING_SITE_VERIFICATION
 
+# This build context is `site/` only — there is no `.git` in here, so
+# scripts/build-manifest.mjs cannot shell out to git for the commit identity
+# (BM-1). deploy.sh computes these on the host (where `.git` exists) and
+# passes them through docker-compose.yml's build.args.
+#   --build-arg GIT_SHA=$(git rev-parse --short HEAD)
+#   --build-arg GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+#   --build-arg GIT_DIRTY=true|false
+ARG GIT_SHA
+ARG GIT_BRANCH
+ARG GIT_DIRTY
+ENV GIT_SHA=$GIT_SHA
+ENV GIT_BRANCH=$GIT_BRANCH
+ENV GIT_DIRTY=$GIT_DIRTY
+
 RUN npm run build
 
 # Stage 2: Serve with Nginx

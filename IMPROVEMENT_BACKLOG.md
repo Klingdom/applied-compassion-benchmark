@@ -88,6 +88,35 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   false is published; the store discloses its own emptiness honestly) · Rc 0 → **15**. File set disjoint from Iteration
   16 (claim-to-source gate) except `site/package.json`, which the agent is instructed not to touch.
 
+### Iteration 18 — SELECTED 2026-09-16: DC-08 build determinism (+ BM-1 folded in, same root cause)
+- **Why:** ranked next by Meta-review 2 (v2 15) and the direct cause of the one metric that review scored as failing —
+  "dirty paths not attributable to a pending iteration". Every build rewrites **19 tracked files** whose only change is
+  a wall-clock stamp (16 special-briefing JSONs + their manifest + `updates/manifest.json` + `build-manifest.json`);
+  a sampled diff is a single line, `"generatedAt"` old → new. I have hand-excluded these by pathspec ~8 times today,
+  which is exactly how a real change gets lost in noise.
+- **Verified causes (2026-09-16):** `new Date()` at `build-special-briefings.mjs:474,525`,
+  `build-updates-manifest.mjs:56`, `build-manifest.mjs:164-166`. `export-public-data.mjs:160` also stamps but writes to
+  gitignored `site/public/data/`, so it does not churn git.
+- **BM-1 folded in (same file, same root cause):** `git(args, fallback)` in `build-manifest.mjs:64-70` swallows every
+  failure and returns `"unknown"`, which is what production currently serves — a false-looking provenance value is
+  worse than an absent one. Fix: capture the commit from the environment (CI knows it) and record an explicit
+  unavailable reason when it genuinely cannot be determined.
+- **Not in scope:** gitignoring the special-briefing JSONs. They are source-of-truth data carrying a bad field; the fix
+  is the field, not the visibility.
+- v1: I3 S5 L2 C5 − E2 − R1 = 12 · v2: K+1 · P+2 (BM-1 is live on production now) → **15**.
+
+### New backlog item (2026-09-16, Meta-review 2 finding) — BM-1: production cannot identify its own commit
+- Live `https://compassionbenchmark.com/build-manifest.json` reports `git: {"sha":"unknown","branch":"unknown","dirty":false}`
+  (coordinator-verified 2026-09-16, after a deploy from a known commit). The deployed site therefore cannot say which
+  commit produced it, which defeats the traceability the manifest exists for: a reader, a data consumer or a future
+  incident review cannot tie published output back to a revision. Most likely cause — the Docker build stage has no git
+  metadata (no `.git`, or `git` absent), so the capture falls back to "unknown" **silently**.
+- Work: capture the commit at image-build time (build arg from CI, which knows the sha) rather than shelling out inside
+  the container; fail loud or record an explicit `"unavailable"` reason instead of a plausible-looking `"unknown"`, so a
+  missing sha is visible rather than mistakable for a real value. Verify on production after deploy, not locally.
+  v1: I3 S5 L2 C5 − E2 − R1 = **12** · v2: K+1 (RISK-004 verification gap — deploy verification already can't assert
+  what shipped) · P+2 (live: production is serving a false-looking provenance value now) → **15**.
+
 ### New backlog item (2026-09-16, Meta-review 2 finding) — A-2: remediate the 16 frozen slug collisions
 - Iteration 14's ratchet froze 16 cross-index collisions in `site/scripts/known-collisions.json` and **no backlog row
   was ever created**, so the queue could not select the repair. Verified live 2026-09-16:
