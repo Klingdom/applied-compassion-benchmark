@@ -40,6 +40,28 @@ Not an improvement loop: a batch of previously-gated items the founder approved 
   `research/held-changes/america-at-250-unrecorded-rewrite-2026-09-03.patch` and republishing it as a dated correction
   is a backlog item.
 
+### RS-1 — the rotation-state validator now fails only on real gaps
+- **Problem:** `validate-rotation-state.mjs` reported 22 blocking FAILs (25 after the rename), every one of which the
+  coordinator had already shown to be false — evidence existed under an older recording convention. A red gate nobody
+  can act on is a dead gate (DC-09).
+- **Fix:** when the literal slug has no exact/legacy report, the validator now escalates through three named evidence
+  classes and downgrades to a WARN that says which one matched: (1) a report under a **derived alias slug** — current
+  slugify, the older naive slugify, accent-folded, HTML-entity-encoded (`&`→amp, `'`→x27), and index-suffix-stripped;
+  (2) a **same-date ±1-day change proposal**; (3) a **digest mention** of the entity's name. FAIL is reserved for
+  entities with none of the three. The core was refactored into exported, dependency-injected pure functions so it can
+  be tested without touching disk; CLI output was confirmed byte-identical across that refactor.
+- **Result:** 25 FAIL → **0 FAIL**, 25 WARN (5 alias-report, 20 same-date proposal, 0 digest-only). Every one names its
+  evidence, e.g. `procter-and-gamble` → `research/assessments/procter-gamble-2026-06-12.md` via the older naive
+  slugify; `at-and-t` → `at-amp-t-2026-05-30.md` via the encoded form.
+- **Coordinator negative controls against the real exported API** (the point being that 0 FAIL must not mean the gate
+  went blind): no evidence → null · unrelated files → null · proposal 31 days off → null · alias report on the wrong
+  date → null · proposal 2 days off → null · digest that does not name the entity → null. Positive: alias report on
+  the right date, proposal at +1 and −1 day, and a digest naming the entity each match with the correct class. Alias
+  derivation is bounded — a plain name ("Belgium") yields no aliases; "AT&T" yields exactly `atandt`, `at-t`,
+  `at-amp-t`.
+- Its 28 tests pass, and `test:rotation-state` plus `validate:rotation-state` are wired into `npm run test` so this
+  guard cannot go stale unnoticed. Historical report files were **not** renamed.
+
 ### Blocked (needs the founder)
 - **Branch protection on `main`** — the session lacks permission to change repository settings. The exact `gh api`
   command is in `docs/founder-briefings/2026-09-14.md` addendum 8. RISK-021 stays open.
