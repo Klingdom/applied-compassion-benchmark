@@ -13,6 +13,11 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 > before deploy. Coordinator defect disclosed: duplicate JSON keys in the Wellington proposal nulled the approval
 > fields (DC-10), caught by `score-updater`. **In progress:** the 20 encoded Fortune 500 names (RISK-023).
 > **Blocked on founder permission:** branch protection on `main`, `.bak` cleanup.
+> **Deployed 2026-09-16 in three runs** (35112334235, 35114744386, 35118662309 — all jobs success; `main` at
+> `c43cc037`). Verified live: renamed companies render and redirect correctly, Wellington at 71.3 Established,
+> coverage figure on `/methodology`, Score-Watch paused with no reachable purchase path, and entity history restored
+> for renamed entities. Two defects were found *by* post-deploy verification and fixed in later runs: stale
+> "click Subscribe — $79/yr" instructions, and history orphaned by the rename (a coordinator regression, DC-05/RISK-018).
 
 > 2026-09-14 (Iteration 13, first loop under scoring model v2): new `unapplied-score-movement` rule in
 > `lint-daily-briefings` — from briefings dated 2026-09-15, a headline/summary may not state a score change as

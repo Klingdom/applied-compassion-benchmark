@@ -100,6 +100,20 @@ Not an improvement loop: a batch of previously-gated items the founder approved 
 - **Process note:** two earlier checks of mine gave false comfort here — an `ls | head -4` that cut off before
   `history.html`, and reading old-slug files as "stale" without checking their mtime. The mtime comparison is what
   settled it.
+- **FIXED AND VERIFIED LIVE (2026-09-16, commit `c43cc037`, deploy run 35118662309, all four jobs success).**
+  Briefing references now resolve to the current catalogue slug before events accumulate — exact slug, then an
+  unambiguous decoded-name match within the same index, then derived aliases mirroring `deriveAliasSlugs` from RS-1 —
+  with old and new events merged, deduped and date-ordered. Briefings were not edited.
+  Production: `/company/{johnson-and-johnson,at-and-t,deere-and-company,procter-and-gamble}/history` all return
+  **200** (each was 301 → `/404`); Johnson & Johnson's page carries both its events (2026-05-29 and 2026-07-28);
+  `/company/microsoft/history` still 200 as the control; the old encoded history URL 301s.
+  Beyond the regression: a pre-existing `xai-grok` / `xai` split was found and merged, dead history files are pruned
+  each run instead of persisting, and the 5 briefing references that resolve to no published entity are now reported
+  (UAE appears in 7 briefings) rather than rotting silently — logged as a backlog item, not widened into fuzzy name
+  matching, which would risk merging distinct entities.
+  Local full build could not be used as the gate (the machine ran out of memory twice); `prebuild` exit 0, the history
+  manifest listing the new slugs, `test:history` 46/46, the full suite and `tsc` clean, plus CI's own build before
+  deploy, were used instead.
 
 ### Blocked (needs the founder)
 - **Branch protection on `main`** — the session lacks permission to change repository settings. The exact `gh api`
