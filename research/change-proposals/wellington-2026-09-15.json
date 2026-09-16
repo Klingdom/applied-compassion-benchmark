@@ -95,10 +95,11 @@
     }
   ],
   "recommendation": "downgrade",
-  "status": "pending",
-  "reviewed_by": null,
-  "reviewed_date": null,
-  "decision": null,
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-09-16",
+  "decision": "approved",
+  "approval_note": "Founder approved in-session on 2026-09-16 (\"approve all and fix all\"), after the public briefing and the founder packet disclosed that about 8.0 of the 11.7 points is the integration-premium cliff (RISK-019) rather than additional conduct. Recorded by the coordinator on the founder's explicit written instruction; nothing in the repository can mechanically verify that provenance (RISK-021). The assessor's recommendation and notes are unchanged.",
   "notes": "Filed under BOTH triggers: magnitude (-11.7) and band crossing (Exemplary to Established). First individual assessment of a never-assessed placeholder, so about -0.6 is grid rounding and about -11.1 is five conduct moves. The large composite effect comes from the canonical integration premium: four dimensions fall from 4.0 to 3.8, which removes the 8-point bonus. Sensitivity check (canonical function): any one of A5, AC4, S2 or I4 alone yields 79.8 (Established); AB4 alone yields 81.8 (Exemplary). The band crossing survives rejection of any single move, and survives rejection of AB4 entirely. Confidence is medium: the placeholder base, a tier-5 release cited through verbatim republication (Beehive page unfetchable), and the full PDF not read. Proposed subdimensions cover every dimension whose raw value differs from the published vector (AWR, ACT, EQU, ACC, SYS, INT).",
   "anti_false_positive_screening": {
     "baseline_provenance": "No APPLIED_CHANGES entry, digest mention, prior assessment or proposal. 83.0 is the original placeholder; rotation-state last_assessed null.",
@@ -455,5 +456,6 @@
       "assessed_date": "2026-09-15",
       "evidence": []
     }
-  ]
+  ],
+  "applied_date": "2026-09-16"
 }
