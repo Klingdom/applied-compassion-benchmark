@@ -54,6 +54,13 @@ zero. The rule is now in `coordinator.md`, and it is the most valuable thing thi
 The one surface that publishes new prose every cycle now has a mechanical claim check; DC-04 moves from ungated to
 gated, satisfying the S4 obligation that forced the selection.
 
+### V7 — deployed and verified (both Iterations 16 and 17)
+Commit `81865fbf` on `main`; deploy run **35144049054**, all four jobs success (build+test, worker typecheck, deploy,
+post-deploy health). CI ran the full 27-step chain, so the five guards added today execute in CI, not only locally.
+Production healthy after the deploy: `/`, `/updates`, `/methodology` all 200. Neither iteration changes rendered pages
+— both are build-time gates plus the model-detection scaffolding — so this was a build-integrity check by design.
+Five green deploys today: 35112334235 · 35114744386 · 35118662309 · 35122189972 · 35144049054.
+
 ## Iteration 17 — 2026-09-16 (AI-model cycle: build the L1 detection path — founder directive)
 
 ### Selected Item
