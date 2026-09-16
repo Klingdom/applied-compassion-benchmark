@@ -82,6 +82,25 @@ Not an improvement loop: a batch of previously-gated items the founder approved 
 - **Cosmetic, logged not hot-fixed:** `/methodology` renders "811 of 1329" without a thousands separator (the
   generator formats the share but not the totals). Rides along with the next deploy.
 
+### Regression I introduced, found in post-deploy verification and being fixed — entity history orphaned by the rename
+- **What broke:** `build-entity-history.mjs` derives history slugs from the **dated daily briefings**, which correctly
+  still carry the pre-rename encoded names. After the RISK-023 migration the aggregator kept writing history under the
+  old slug, which matches no current entity, so renamed companies that had score history lost their history page.
+- **Evidence (coordinator, 2026-09-16):** `public/data/history/{johnson-amp-johnson,at-amp-t,deere-amp-company}.json`
+  carry mtime 09:18 from **today's build** — they are freshly written, not stale leftovers — while
+  `johnson-and-johnson.json`, `at-and-t.json` and `deere-and-company.json` do not exist and no
+  `/company/<new-slug>/history` page is built. Production returns 301 → `/404` for those history URLs. Control:
+  `microsoft.json` exists and `/company/microsoft/history` serves 200.
+- **Root cause is the two-slug-conventions class (RISK-018), widened by my change.** The fix belongs in the
+  aggregator — resolve every briefing reference to the current catalogue slug via decoded name and derived aliases
+  (mirroring `deriveAliasSlugs` from RS-1), merging old and new events without duplicates. **Briefings are not
+  edited.**
+- **Second-order finding:** the aggregator, like `export-public-data.mjs`, does not prune outputs, so dead history
+  files persist locally. Gitignored and rebuilt cleanly in Docker, but it hid this defect from a casual look.
+- **Process note:** two earlier checks of mine gave false comfort here — an `ls | head -4` that cut off before
+  `history.html`, and reading old-slug files as "stale" without checking their mtime. The mtime comparison is what
+  settled it.
+
 ### Blocked (needs the founder)
 - **Branch protection on `main`** — the session lacks permission to change repository settings. The exact `gh api`
   command is in `docs/founder-briefings/2026-09-14.md` addendum 8. RISK-021 stays open.

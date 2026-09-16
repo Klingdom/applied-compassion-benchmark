@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 /**
  * test-build-entity-history.mjs — Fixture tests for the PR 1 tier classifier,
- * citation-URL extractor, methodology-ruling resolver, and Tier-D compaction.
+ * citation-URL extractor, methodology-ruling resolver, Tier-D compaction, and
+ * (2026-09-16 regression fix) entity-identity resolution.
  *
- * Self-contained: imports only the pure functions extracted from
- * build-entity-history.mjs via site/scripts/lib/entity-history-helpers.mjs.
- * Does NOT read disk files or write any output.
+ * Self-contained: imports the pure functions extracted from
+ * build-entity-history.mjs via site/scripts/lib/entity-history-helpers.mjs,
+ * plus the resolution/accumulation functions exported directly from
+ * build-entity-history.mjs itself (importing that file does NOT run main() —
+ * see its isMainModule guard). Does NOT read disk files or write any output.
  *
  * Test cases:
  *  1. Slovakia-like input — Tier A classification, rulingRef population
@@ -16,6 +19,11 @@
  *  6. citationUrl skip rules — internal URL skipped → null
  *  7. Tier-A first-baseline — delta:null, status:"applied" → Tier A
  *  8. Methodology ruling slug resolution — isolation (non-topSignal entities don't get ruling)
+ *  9. Entity-identity resolution — HTML-encoded old slug resolves to current pinned slug
+ * 10. Entity-identity resolution — old-slug and new-slug events merge, dedupe, stay date-ordered
+ * 11. Entity-identity resolution — index-suffixed rename (georgia -> georgia-us-states) resolves
+ * 12. Entity-identity resolution — unresolvable reference is reported, does not crash, no dead entry
+ * 13. Entity-identity resolution — entity with no events produces no history file
  *
  * Exit code 0 = all tests pass, 1 = one or more failures.
  */
@@ -34,6 +42,14 @@ import {
   computeDaysSinceLastChange,
   computeTierCounts,
 } from "./lib/entity-history-helpers.mjs";
+
+import {
+  buildResolutionContext,
+  resolveEntityReference,
+  accumulateBriefingEvents,
+  buildHistoryFileForEntity,
+  deriveAliasSlugs,
+} from "./build-entity-history.mjs";
 
 // ─── Test runner ──────────────────────────────────────────────────────────────
 
@@ -543,6 +559,231 @@ test("computeDaysSinceLastChange: 1 day when lastChange is yesterday", () => {
   const lsc = makeEvent({ date: "2026-05-25" });
   const d = computeDaysSinceLastChange(lsc, "2026-05-26");
   assertEqual(d, 1, "1 day since yesterday");
+});
+
+// ─── Test 9-13: Entity-identity resolution (2026-09-16 regression fix) ────────
+//
+// Fixture catalog mirrors the shape of site/public/data/index.json's
+// `entities` array. All disk-free — loadDaily() below returns in-memory
+// fixtures instead of reading site/src/data/updates/daily/<date>.json.
+
+const fixtureCatalog = {
+  entities: [
+    {
+      slug: "johnson-and-johnson",
+      name: "Johnson & Johnson",
+      indexSlug: "fortune-500",
+      kind: "company",
+      rank: 313,
+      composite: 28.4,
+      band: "Developing",
+    },
+    {
+      slug: "georgia-us-states",
+      name: "Georgia",
+      indexSlug: "us-states",
+      kind: "us-state",
+      rank: 12,
+      composite: 55,
+      band: "Established",
+    },
+    {
+      slug: "acme-corp",
+      name: "Acme Corp",
+      indexSlug: "fortune-500",
+      kind: "company",
+      rank: 400,
+      composite: 40,
+      band: "Functional",
+    },
+  ],
+};
+
+const fixtureCtx = buildResolutionContext(fixtureCatalog);
+
+function makeHistoryFileCtx(overrides = {}) {
+  return {
+    entityMeta: new Map(),
+    entityInfo: new Map(fixtureCatalog.entities.flatMap((e) => [
+      [`${e.indexSlug}:${e.slug}`, e],
+      [e.slug, e],
+    ])),
+    entityRulings: new Map(),
+    eventRulingRefs: new Map(),
+    generatedAt: "2026-09-16T12:00:00.000Z",
+    generatedAtDate: "2026-09-16",
+    compactionCutoff: computeCompactionCutoff("2026-09-16T12:00:00.000Z"),
+    ...overrides,
+  };
+}
+
+test("Entity-identity: HTML-encoded old slug resolves to current pinned slug (johnson-amp-johnson -> johnson-and-johnson)", () => {
+  const resolved = resolveEntityReference("johnson-amp-johnson", "fortune-500", "Johnson and Johnson", fixtureCtx);
+  assertNotNull(resolved, "resolution result");
+  assertEqual(resolved.slug, "johnson-and-johnson", "resolved.slug");
+  assertEqual(resolved.method, "alias", "resolved.method");
+});
+
+test("Entity-identity: deriveAliasSlugs produces the HTML-encoded alias for Johnson & Johnson", () => {
+  const aliases = deriveAliasSlugs("johnson-and-johnson", "Johnson & Johnson", "fortune-500");
+  assert(aliases.includes("johnson-amp-johnson"), `expected johnson-amp-johnson among ${JSON.stringify(aliases)}`);
+});
+
+test("Entity-identity: old-slug and new-slug briefing events merge, dedupe, and stay date-ordered", () => {
+  const dates = ["2026-07-28", "2026-05-29"]; // newest-first, matching manifest.dates convention
+
+  function loadDaily(date) {
+    if (date === "2026-07-28") {
+      return {
+        recentAssessments: [
+          {
+            entity: "Johnson & Johnson",
+            slug: "johnson-and-johnson", // CURRENT slug used directly
+            index: "fortune-500",
+            date: "2026-07-28",
+            assessed: 29.4,
+            delta: 1,
+            status: "documented",
+            whyHeadline: "Talc settlement.",
+          },
+        ],
+      };
+    }
+    if (date === "2026-05-29") {
+      return {
+        recentAssessments: [
+          {
+            entity: "Johnson and Johnson",
+            slug: "johnson-amp-johnson", // OLD HTML-encoded slug
+            index: "fortune-500",
+            date: "2026-05-29",
+            assessed: 28.4,
+            delta: 0.9,
+            status: "applied",
+            whyHeadline: "Prior framing correction.",
+          },
+        ],
+      };
+    }
+    return null;
+  }
+
+  const result = accumulateBriefingEvents(dates, loadDaily, fixtureCtx);
+  const key = "fortune-500:johnson-and-johnson";
+
+  assert(result.entityEvents.has(key), "canonical key should have accumulated events");
+  const events = result.entityEvents.get(key);
+  assertEqual(events.length, 2, "both old-slug and new-slug events accumulated under the canonical key");
+  assertEqual(events[0].date, "2026-07-28", "newest event first");
+  assertEqual(events[1].date, "2026-05-29", "oldest event second");
+
+  // Merge detection: canonicalRawKeySources should show 2 distinct raw refs.
+  const raws = result.canonicalRawKeySources.get(key);
+  assertEqual(raws.size, 2, "two distinct raw slug references merged into one canonical key");
+  assert(raws.has("fortune-500:johnson-and-johnson"), "raw set includes the new-slug reference");
+  assert(raws.has("fortune-500:johnson-amp-johnson"), "raw set includes the old-slug reference");
+
+  // No unresolved references from this fixture.
+  assertEqual(result.unresolvedRefs.size, 0, "no unresolved refs");
+
+  // Build the final history file and confirm no duplicate events and correct ordering.
+  const historyFile = buildHistoryFileForEntity(key, events, makeHistoryFileCtx());
+  assertNotNull(historyFile, "historyFile");
+  assertEqual(historyFile.slug, "johnson-and-johnson", "historyFile.slug is the current catalogue slug");
+  assertEqual(historyFile.events.length, 2, "no duplicate events after dedupe");
+  assertEqual(historyFile.events[0].date, "2026-07-28", "events stay newest-first");
+  assertEqual(historyFile.firstEventDate, "2026-05-29", "firstEventDate");
+  assertEqual(historyFile.lastEventDate, "2026-07-28", "lastEventDate");
+});
+
+test("Entity-identity: same-date old-slug and new-slug references for one entity dedupe to a single event", () => {
+  // Simulates two sources referencing the same entity, same day, same event
+  // type, one under the old slug and one under the current slug — the
+  // resulting history must NOT contain a duplicate.
+  const dates = ["2026-08-01"];
+  function loadDaily(date) {
+    if (date !== "2026-08-01") return null;
+    return {
+      recentAssessments: [
+        {
+          entity: "Johnson & Johnson",
+          slug: "johnson-and-johnson",
+          index: "fortune-500",
+          date: "2026-08-01",
+          assessed: 29.9,
+          delta: 0.5,
+          status: "documented",
+        },
+        {
+          entity: "Johnson and Johnson",
+          slug: "johnson-amp-johnson",
+          index: "fortune-500",
+          date: "2026-08-01",
+          assessed: 29.9,
+          delta: 0.5,
+          status: "documented",
+        },
+      ],
+    };
+  }
+
+  const result = accumulateBriefingEvents(dates, loadDaily, fixtureCtx);
+  const key = "fortune-500:johnson-and-johnson";
+  const historyFile = buildHistoryFileForEntity(key, result.entityEvents.get(key), makeHistoryFileCtx());
+  assertEqual(historyFile.events.length, 1, "duplicate same-date same-type events collapse to one");
+});
+
+test("Entity-identity: index-suffixed rename resolves (georgia -> georgia-us-states)", () => {
+  // No rawName passed — isolates the alias-derivation path (indexSuffixStripped)
+  // from the decoded-name match path, which would also resolve this correctly
+  // but via a different method.
+  const resolved = resolveEntityReference("georgia", "us-states", null, fixtureCtx);
+  assertNotNull(resolved, "resolution result");
+  assertEqual(resolved.slug, "georgia-us-states", "resolved.slug");
+  assertEqual(resolved.method, "alias", "resolved.method (index-suffix-stripped alias)");
+});
+
+test("Entity-identity: unresolvable reference is reported and does not crash; no dead entityEvents entry", () => {
+  const dates = ["2026-08-02"];
+  function loadDaily(date) {
+    if (date !== "2026-08-02") return null;
+    return {
+      recentAssessments: [
+        {
+          entity: "Definitely Delisted Corp",
+          slug: "definitely-delisted-corp",
+          index: "fortune-500",
+          date: "2026-08-02",
+          assessed: 10,
+          delta: -1,
+          status: "documented",
+        },
+      ],
+    };
+  }
+
+  let result;
+  const attempt = () => {
+    result = accumulateBriefingEvents(dates, loadDaily, fixtureCtx);
+  };
+  assert((() => { try { attempt(); return true; } catch { return false; } })(), "must not throw on an unresolvable reference");
+
+  assertEqual(result.entityEvents.has("fortune-500:definitely-delisted-corp"), false, "no dead entry for unresolvable raw key");
+  assertEqual(result.unresolvedRefs.size, 1, "unresolvable reference is recorded");
+  const entry = result.unresolvedRefs.get("fortune-500:definitely-delisted-corp");
+  assertNotNull(entry, "unresolved entry");
+  assertEqual(entry.rawSlug, "definitely-delisted-corp", "unresolved entry rawSlug");
+  assertEqual(entry.index, "fortune-500", "unresolved entry index");
+  assertEqual(entry.name, "Definitely Delisted Corp", "unresolved entry name");
+  assertEqual(entry.count, 1, "unresolved entry seen once");
+});
+
+test("Entity-identity: an entity with no events produces no history file", () => {
+  const historyFile = buildHistoryFileForEntity("fortune-500:acme-corp", [], makeHistoryFileCtx());
+  assertNull(historyFile, "empty events array yields null (no file written)");
+
+  const historyFileUndefined = buildHistoryFileForEntity("fortune-500:acme-corp", undefined, makeHistoryFileCtx());
+  assertNull(historyFileUndefined, "undefined events yields null (no file written)");
 });
 
 // ─── Summary ──────────────────────────────────────────────────────────────────

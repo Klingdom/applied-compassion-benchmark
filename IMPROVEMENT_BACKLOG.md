@@ -74,6 +74,21 @@ diff scope review · V7 post-deploy AFTER.
 - Housekeeping deferred: `research/rotation-state.json.bak` (408 KB) and `research/scans/2026-09-09.json.bak` (874 KB)
   remain on disk — deletion needs a permission the session does not have; they are untracked and never committed.
 
+### New backlog item (2026-09-16, surfaced by the history fix) — 5 briefing references resolve to no published entity
+- With dead history files no longer silently persisting, `build-entity-history.mjs` now reports every briefing
+  reference it cannot map to a current entity. Five remain, all **pre-existing** and unrelated to today's rename:
+  `fortune-500:automatic-data-process` ("Automatic Data Process" — ADP is not among the 447), `fortune-500:oracle-corporation`
+  (catalogue carries "Oracle"), `countries:democratic-republic-of-congo` (catalogue slug is the truncated
+  `democratic-republic-of-c`, a known legacy quirk), `countries:united-arab-emirates` (**seen 7 times** — the most
+  frequent), and `countries:s-o-tom-and-pr-ncipe` (the merged accented duplicate).
+- Two look genuinely fixable by identity rather than by loosening matching: the DRC truncated slug, and the UAE, which
+  appears in 7 briefings yet has no published row. The other three are name-vs-catalogue mismatches where fuzzy
+  matching would risk merging distinct entities — the engineer deliberately refused to widen matching for that reason,
+  which is the right call.
+- Work: decide per reference — publish the entity, correct the catalogue slug, or accept and document the gap. Each
+  published briefing that names one of these has a reader-visible dead end (the entity link resolves to nothing).
+  v1: I3 S4 L3 C4 − E2 − R2 = 10 · relates to RISK-003 / RISK-018 / RS-3.
+
 ### New backlog item (2026-09-16, found in post-deploy verification) — unformatted total on /methodology
 - The live coverage sentence reads "**811 of 1329**" — no thousands separator, while the share beside it is
   pre-formatted ("61.0%"). `site/src/data/neverAssessedCoverage.ts` exposes `neverAssessedShareFormatted` but only a
