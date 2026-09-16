@@ -47,11 +47,25 @@ mechanical check rather than a fourth prose patch. v1 13 · **v2 17** (K+1 RISK-
 - `npx tsc --noEmit` clean; `npm run test` exit 0.
 - **V4:** full local build not used as the gate — this machine ran out of memory on two attempts; CI builds before
   deploying. **V5:** no dated or research content touched. **V6:** diff is 5 edited + 3 new files, plus records.
-- **V7:** after deploy.
+- **V7 — deployed and verified live (commit `fa01db72`, deploy run 35122189972, all four jobs success).** On
+  production `/methodology`: the σ ceiling is disclosed ("cannot exceed 2.5" ×7, "never occurs" ×4, "only the first two
+  steps ever occur" ×4); the false claim is gone (**0** occurrences of "out-earn a spiky 90/40"); the corrected wording
+  is live ("rewards dimensions at or above 4.0", "a spiky profile can still…"); and the impossible premium is gone —
+  the diagram renders the real "Half-and-half" profile at its verified 31.5.
 
 ### Outcome
 Published method claims that contradict the formula: 3 live → 0, and the class is gated for the first time since it
-began recurring in June.
+began recurring in June. Four deploys today (35112334235, 35114744386, 35118662309, 35122189972), all green; `main` at
+`fa01db72`.
+
+### Follow-ups
+- Queue, in v2 order: L cross-links + `/ai-evaluation-suite` overclaiming (16) · D-2 status-ladder renderer (15) ·
+  the 5 unresolvable briefing references, UAE in 7 (10) · export-public-data pruning (10) · "811 of 1329" formatting (9)
+  · SalesInquiryForm prefill copy (12).
+- **Meta-review trigger is due:** Iterations 13, 14 and 15 completed since Meta-review 1, so the next loop should be a
+  meta-review before Iteration 16.
+- Founder-owned and unchanged: branch protection on `main`, the two `.bak` files, the Gumroad fulfilment check, the
+  four tracked-but-unpublished ai-labs entities, and the held America-at-250 rewrite.
 
 ## Founder-approved remediation batch — 2026-09-16 ("approve all and fix all")
 
