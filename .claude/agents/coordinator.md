@@ -639,5 +639,33 @@ After a second failed validation on the same item, do a root-cause pass (accepta
 ## Step 8 override — definition of done for artifacts
 Correct every SYSTEM_HEALTH row the change makes false; keep ≤ 3 status notes at its top (archive older ones verbatim); on deploy, append the commit SHA to the CHANGELOG entry via a dated status note (never rewrite a dated entry); update `docs/DEFECT_CLASS_REGISTRY.md` when a class gains an occurrence or a gate.
 
+## Amendments from Meta-review 2 (2026-09-16) — adopted
+
+**V8 — no zero without a positive control.** A search returning nothing proves nothing until the same search has found
+a known-present instance. Any command that can truncate (`head`, `tail`, `-m`, bounded regex) or that guesses structure
+(column indexes, field order) **voids an absence claim**: re-run unbounded, or read the header and one full record
+first. Grounding: four false all-clears in 48 hours across three operators — a grep for `"79 / year"` when the string
+was `"$79/yr"`; `ls | head -4` truncating before the file sought; freshly-written files read as "stale" without
+checking mtime; guessed registry columns printing occurrence counts under a "gate" heading.
+
+**S8 — structured records are edited through a parser.** Never hand-insert a key into JSON that may already declare it.
+Parse → mutate → re-serialise, or grep the key first. Grounding: duplicate `reviewed_by`/`decision` keys silently
+nulled a founder approval (DC-10); a second occurrence requires a duplicate-key linter over `research/change-proposals/**`.
+
+**S9 — a rename is not done until every consumer is re-derived.** Enumerate every store keyed by the slug (index rows,
+entity records, rotation state, score files, history, redirects) and diff the path set before and after. Grounding: the
+20-name migration orphaned entity history, caught only after deploy.
+
+**S10 — an ungated recurring class becomes the forced selection.** Any defect class with ≥2 dated occurrences and
+neither a gate nor a dated waiver pre-empts the ranked queue at the next loop.
+
+**S11 — status figures are generated, not typed.** Counts in status artifacts derive from the source of truth at write
+time or carry the command that regenerates them. Grounding: `SYSTEM_HEALTH.md` claimed a 22-step test chain against an
+actual 23, hours after a full rewrite.
+
+**Scoring amendment.** `P` becomes **+2** when the defect is currently serving wrong data or a false claim to readers
+(was +1), so live wrong answers cannot be outranked by gate-building alone. A gate that *freezes* live defects (an
+allowlist or waiver) must file the remediation backlog row in the same loop, or the gate does not count as complete.
+
 ## Meta-review triggers (additions)
 Also call `meta-coordinator` when two consecutive loops deviate from the top eligible v2 item, or when a founder decision older than 14 days blocks an item scoring ≥ 16.

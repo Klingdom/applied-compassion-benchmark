@@ -1,5 +1,39 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Meta-review 2 (post Iterations 13–15) — 2026-09-16 — not an iteration
+
+- **Trigger:** 3 completed loops since Meta-review 1. The `meta-coordinator` agent type is no longer available, so the
+  review was delegated to an independent general-purpose agent rather than written by the coordinator grading itself.
+  Output: `docs/META_REVIEW_2026-09-16_ITER13-15.md`. **Verdict: Amber, clearly improving.**
+- **What it confirms:** v2 and S1–S7 changed behaviour rather than merely being written down. All three iterations were
+  the top eligible v2 item; each reduced a High risk; each gated a recurring class. S6 demonstrably *blocked* work
+  twice (the governance pass and the research preflight both declined implementation citing it), and S4 is what
+  selected It. 15 — without it a v2 17 item would have lost to L at 16.
+- **Four findings, every one re-verified by the coordinator before adoption:**
+  1. **DC-04 is ungated with no waiver** after 2 cycles — an active violation of the loop's own S4. It sits on the only
+     surface that publishes new text every cycle; the 2026-09-15 briefing needed 12 corrections and every error passed
+     both validators. → new rule **S10** makes it Iteration 16.
+  2. **The rubric rewarded freezing live defects.** It. 14 froze 16 slug collisions in an allowlist and filed **no
+     backlog row**, so the queue could not select the repair. Verified live: `/data/scores/singapore.json` serves the
+     global city (56.2), not the country. → **P raised to +2** for live wrong answers, and a freezing gate must file
+     the remediation row in the same loop. Backlog item **A-2** created.
+  3. **Two coordinator-caused defects, neither self-caught** (DC-10 caught by `score-updater`; history orphaning caught
+     post-deploy). The detection rate is the finding, not the error rate. → **S8** (structured records via parser) and
+     **S9** (a rename re-derives every consumer, diffing the path set).
+  4. **`SYSTEM_HEALTH.md` went stale within hours of a full rewrite** — it claimed a 22-step test chain against an
+     actual 23 (coordinator confirmed). → **S11**: status figures are generated or carry their regeneration command.
+     Fixed. Also found: production `build-manifest.json` reports `git.sha: "unknown"`, so the deployed site cannot
+     identify its own commit.
+- **The reviewer's own greps produced false readings too**, as did a coordinator column-index guess this same turn —
+  four instances across three operators in 48 hours. → **V8**: no zero or absence claim counts until a positive control
+  proves the check can find a known-present instance; truncating or structure-guessing commands void the claim.
+- **Metrics: 5 of 8 targets met.** Passing: top-eligible selection 3/3 · High-risk reduction 3/3 (target ≥2/3) ·
+  WIP ≤1 · unattributable dirty paths 0 (24 dirty, all known churn or held content) · pipeline-touching loops.
+  Failing: ungated recurring classes (DC-04, DC-08) · SYSTEM_HEALTH accuracy · founder decisions open 24–30 days
+  (D-14 30d, D-13 27d, D-20/D-21 24d) against a 14-day escalation threshold.
+- **Adopted into `IMPROVEMENT_BACKLOG.md`:** V8, S8, S9, S10, S11, the P amendment, and backlog item A-2.
+- **Next:** Iteration 16 is **CS-1, the claim-to-source gate for briefings** (v2 18) — forced by S10, not by rank.
+
 ## Iteration 15 — 2026-09-16 (published method claims vs the formula, and the gate that keeps them true — DC-02)
 
 ### Selected Item

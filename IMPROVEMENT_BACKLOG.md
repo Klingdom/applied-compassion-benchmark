@@ -35,7 +35,46 @@ disjoint; every log entry names its commit pathspec · S7 RISK-015 T-30 (**2026-
 
 **Verification checklist per iteration:** V1 production BEFORE · V2 coordinator re-runs agent claims · V3
 negative-control proof for new guards · V4 grep built output · V5 dated-content check (AUTONOMY §1c) · V6
-diff scope review · V7 post-deploy AFTER.
+diff scope review · V7 post-deploy AFTER · **V8 (added 2026-09-16, Meta-review 2) positive control before any
+absence claim.**
+
+**V8 — no zero without a positive control.** A search that returns nothing proves nothing until the same search has
+been shown to find a known-present instance. Any command that can truncate (`head`, `tail`, `-m`, a bounded regex) or
+that guesses structure (column indexes, field order) **voids an absence claim** — re-run unbounded, or read the header
+and one full record first. Evidence for the rule: four false all-clears in 48 hours across three operators — grepping
+`"79 / year"` when the string was `"$79/yr"`; `ls | head -4` truncating before `history.html`; treating freshly
+written files as stale without checking mtime; and guessing registry column positions so the "gate" column printed
+occurrence counts. Each produced a confident wrong answer that later verification overturned.
+
+**Rules added by Meta-review 2 (2026-09-16), adopted:**
+- **S8 — structured records are edited through a parser.** Never hand-insert keys into JSON that may already declare
+  them (DC-10: duplicate `reviewed_by`/`decision` keys nulled a founder approval). Parse → mutate → re-serialise, or
+  grep the key first. A second occurrence requires a duplicate-key linter over `research/change-proposals/**`.
+- **S9 — a rename is not done until every consumer is re-derived.** Renaming an entity means enumerating each store
+  keyed by its slug (index rows, entity records, rotation state, score files, history, redirects, briefings) and
+  diffing the path set before and after. Evidence: the 20-name migration orphaned entity history, caught only after
+  deploy.
+- **S10 — an ungated recurring class becomes the forced selection.** Any defect class with ≥ 2 dated occurrences and
+  neither a gate nor a dated waiver pre-empts the ranked queue at the next loop. DC-04 has been ungated for two
+  cycles; it is therefore Iteration 16, not a candidate.
+- **S11 — status figures are generated, not typed.** `SYSTEM_HEALTH.md` contradicted the repo within hours of a full
+  rewrite (it claimed a 22-step test chain against an actual 23). Counts in status artifacts must be derived at write
+  time from the source of truth, or carry the command that regenerates them.
+- **Scoring amendment:** `P` (live exposure) rises to **+2** when the defect is currently serving wrong data or a
+  false claim to readers, so live wrong answers can no longer be outranked by gate-building alone; `Rc` is unchanged
+  at +2, but a gate that *freezes* live defects (an allowlist, a waiver) must file a backlog row for the remediation
+  in the same loop, or the gate does not count as complete.
+
+### New backlog item (2026-09-16, Meta-review 2 finding) — A-2: remediate the 16 frozen slug collisions
+- Iteration 14's ratchet froze 16 cross-index collisions in `site/scripts/known-collisions.json` and **no backlog row
+  was ever created**, so the queue could not select the repair. Verified live 2026-09-16:
+  `/data/scores/singapore.json` serves the **global city** (composite 56.2), not the country — a data consumer asking
+  for Singapore-the-country gets the wrong entity, and the same holds for 13 US cities that are also global cities,
+  plus 1X Technologies and Figure AI across ai-labs/robotics-labs.
+- Work: pin index-suffixed slugs (the Phoenix/Georgia precedent), migrate score files, entity records and rotation
+  keys, add 301s, and shrink `known-collisions.json` toward zero — the ratchet already fails if an entry becomes stale.
+  Founder already approved this class of change on 2026-09-16 (D-35 covers renames/slugs).
+  v1: I4 S5 L2 C5 − E3 − R3 = 10 · v2: K+2 (RISK-017 High) · P+2 (live wrong entity served) → **14**.
 
 ### v2 shortlist (Iterations 13–15)
 
