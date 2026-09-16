@@ -25,6 +25,7 @@ import PipelineFlowDiagram from "@/components/charts/PipelineFlowDiagram";
 import ChartFrame from "@/components/charts/ChartFrame";
 import MethodologyTOC from "@/components/methodology/MethodologyTOC";
 import BackToTop from "@/components/methodology/BackToTop";
+import { NEVER_ASSESSED_COVERAGE } from "@/data/neverAssessedCoverage";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
@@ -73,6 +74,7 @@ const TOC_ITEMS = [
   { id: "continuous-pipeline", label: "7-session protocol" },
   { id: "nightly-pipeline", label: "Nightly pipeline" },
   { id: "approval-gate", label: "Human approval gate" },
+  { id: "assessment-coverage", label: "How much has been individually assessed" },
   { id: "near-floor-limitation", label: "Near-floor limitation" },
   { id: "floor-designation", label: "Floor designation" },
   { id: "review-flags", label: "Review flags" },
@@ -838,6 +840,32 @@ export default function MethodologyPage() {
           </Container>
         </section>
 
+        {/* U-2 (2026-09-16) — how much of the catalog has never been individually assessed */}
+        <section id="assessment-coverage" className="py-[30px] scroll-mt-24">
+          <Container>
+            <SectionHead
+              title="How much has been individually assessed"
+              description="A published score is not always a measurement. This section states plainly how many entities have never been through an individual human assessment."
+            />
+            <Panel>
+              <p className="text-muted mb-4 max-w-[920px]">
+                As of <strong className="text-text">{NEVER_ASSESSED_COVERAGE.reportDate}</strong>,{" "}
+                <strong className="text-text">{NEVER_ASSESSED_COVERAGE.neverAssessedCount} of {NEVER_ASSESSED_COVERAGE.totalTrackedEntities}</strong>{" "}
+                entities the benchmark tracks (<strong className="text-text">{NEVER_ASSESSED_COVERAGE.neverAssessedShareFormatted}</strong>) have never been through an individual human assessment.
+              </p>
+              <p className="text-muted mb-4 max-w-[920px]">
+                <strong className="text-text">Exact definition:</strong> an entity counts as never individually assessed when <span className="font-mono text-[0.92rem]">last_assessed</span> is <span className="font-mono text-[0.92rem]">null</span> in the benchmark&apos;s internal research rotation state — the record the assessment pipeline uses to track, per entity, when it was last scanned for new evidence and when it last went through the 7-session human assessment protocol described above.
+              </p>
+              <p className="text-muted mb-4 max-w-[920px]">
+                <strong className="text-text">What a never-assessed score is.</strong> Every entity is published with a composite score the day it enters an index. For an entity that has not yet been individually assessed, that score is an <strong className="text-text">inherited starting value</strong> carried over from the index&apos;s initial construction — not the output of the 7-session protocol, not backed by an entity-specific assessment file, and not a claim that the score is wrong. It is a placeholder awaiting individual review, and it is treated with the same evidentiary caution a reader should apply to it.
+              </p>
+              <p className="text-muted max-w-[920px]">
+                The benchmark is working through this backlog via the nightly research pipeline and founder-approved score changes described above. This page states what the data shows as of the date above; it does not claim a completion date or a rate of progress, because the pipeline&apos;s cadence has not been consistent enough to support one (see the <a href="#nightly-pipeline" className="text-[#7dd3fc] hover:underline">continuous research pipeline</a> section).
+              </p>
+            </Panel>
+          </Container>
+        </section>
+
         {/* A6 — Near-floor limitation: immediately before floor-designation */}
         <section id="near-floor-limitation" className="py-[30px] scroll-mt-24">
           <Container>
@@ -847,7 +875,7 @@ export default function MethodologyPage() {
             />
             <Panel>
               <p className="text-muted mb-4 max-w-[920px]">
-                An entity that is already scored at or very close to the bottom of the Critical band has almost no scorable distance left to fall short of a formal floor designation. When that is the case, additional adverse evidence that has <strong className="text-text">not yet been adjudicated</strong> (an ongoing probe, an investigatory finding, a single filed charge) is handled as an <strong className="text-text">evidence-tier upgrade recorded against the relevant dimensions — without moving the composite</strong>.
+                An entity that is already scored at or very close to the bottom of the Critical band has almost no scorable distance left to fall short of a formal floor designation. When that is the case, additional adverse evidence that has <strong className="text-text">not yet been adjudicated</strong> (an ongoing probe, an investigatory finding, a single filed charge) is handled as an <strong className="text-text">evidence-tier upgrade recorded against the relevant dimensions — without moving the composite</strong>. See also the <a href="#assessment-coverage" className="text-[#7dd3fc] hover:underline">assessment coverage</a> section above for how many published scores have not yet had an individual human assessment at all.
               </p>
               <p className="text-muted mb-4 max-w-[920px]">
                 This is an editorial/data-level practice, not a formula output. The formula does not &ldquo;know&rdquo; that an entity is near the floor; assessors recognize the condition and choose to log the strengthened evidence rather than manufacture a composite change there is no scorable room for. The change still passes through the same human-approval gate as any other assessment decision, and the dimensions remain reconstructible to the published composite (diff 0.0).
