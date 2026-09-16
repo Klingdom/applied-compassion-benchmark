@@ -632,5 +632,5 @@ export const INTEGRATION_PREMIUM = {
     "Consistency is rewarded: strong, even performance across all eight dimensions earns up to +10 points; any dimension at zero (active harm) cancels the bonus.",
   /** One-line expansion for the deepest <details> rung. */
   detail:
-    "The bonus is 10 × a consistency factor (lower variance across dimensions scores higher) × a balance factor (fewer weak dimensions scores higher), so a balanced 70/70 profile can beat a spiky 90/40 one; a single dimension at zero sets the bonus to 0.",
+    "The bonus is 10 × a consistency factor (lower variance across dimensions scores higher) × a balance factor (fewer weak dimensions scores higher), so it rewards dimensions at or above 4.0 rather than evenness alone — a spiky profile can still out-earn a balanced one; a single dimension at zero sets the bonus to 0.",
 } as const;

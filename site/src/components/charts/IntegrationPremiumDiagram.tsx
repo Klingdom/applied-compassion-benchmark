@@ -6,50 +6,27 @@
  *
  *   base composite (0–100) + integration premium (0–10) = composite (0–100)
  *
- * Shows three worked examples side-by-side:
- *   - Balanced/high (strong uniform profile → full premium)
- *   - Functional/typical (mid scores, some weak dims → reduced premium)
- *   - Spiky (one dimension strong, others weak → minimal premium)
+ * Shows three worked examples side-by-side, all recomputed from concrete
+ * 8-dimension profiles against computeCompositeFromDimensions
+ * (see integrationPremiumExamples.ts):
+ *   - Balanced high (all 8 dims at 4.0 → full premium)
+ *   - Typical (5 dims at 4.5, 3 dims at 0.5 → reduced premium)
+ *   - Half-and-half (4 dims at 4.0, 4 dims at 0.4 → minimal premium)
  *
- * Annotates the consistency tiers from INTEGRATION_PREMIUM.detail.
+ * The premium rewards dimensions clearing the 4.0 threshold, not evenness on
+ * its own — a spiky profile can out-earn a balanced one if it keeps more
+ * dimensions ≥4.0. These three examples do not claim otherwise; see
+ * ConsistencyStepChart and /methodology for the general claim and its limits.
+ *
+ * Annotates the consistency tiers from consistencyStepsData.ts.
  * Own-framework, own-data, CC-BY. No third-party imagery.
  *
  * Accessibility: role="img" + aria-label spelling out base, premium, composite.
  */
 
 import { CC_BY_CAPTION } from "./chartTokens";
-
-// ─── Worked examples ──────────────────────────────────────────────────────────
-
-const EXAMPLES = [
-  {
-    label: "Balanced high",
-    desc: "All 8 dims at 4+ → σ≤1.5",
-    base: 75,
-    premium: 10,
-    composite: 85,
-    premiumColor: "#7dd3fc",
-    note: "Full premium",
-  },
-  {
-    label: "Typical",
-    desc: "Mixed profile, some dims < 4 → σ≈2",
-    base: 50,
-    premium: 3,
-    composite: 53,
-    premiumColor: "#86efac",
-    note: "Reduced premium",
-  },
-  {
-    label: "Spiky",
-    desc: "One dim strong, others weak → σ>3",
-    base: 30,
-    premium: 0.5,
-    composite: 30.5,
-    premiumColor: "#fb923c",
-    note: "Minimal premium",
-  },
-] as const;
+import { EXAMPLES } from "./integrationPremiumExamples";
+import { STEPS, MAX_ACHIEVABLE_STD_DEV } from "./consistencyStepsData";
 
 // ─── SVG layout ───────────────────────────────────────────────────────────────
 
@@ -218,11 +195,16 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
       <div className="mt-3 text-[0.78rem] text-muted space-y-0.5 border-t border-line pt-2">
         <p className="font-semibold text-text text-[0.8rem] mb-1">Consistency factor (σ = std dev across 8 dimension scores):</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-0.5">
-          <span>σ ≤ 1.5 → 100%</span>
-          <span>σ 1.5–3.0 → 75%</span>
-          <span>σ 3.0–5.0 → 40%</span>
-          <span>σ &gt; 5.0 → 10%</span>
+          {STEPS.map((step) => (
+            <span key={step.label} className={step.reachable ? undefined : "opacity-50 line-through decoration-1"}>
+              {step.label} → {step.factor}%
+              {!step.reachable && <span className="not-italic"> †</span>}
+            </span>
+          ))}
         </div>
+        <p className="mt-1 text-[0.75rem]">
+          † Not reachable: with 8 dimensions bounded 0–5, σ cannot exceed {MAX_ACHIEVABLE_STD_DEV}, so this step never fires.
+        </p>
         <p className="mt-1 text-[0.75rem]">
           Weakness penalty: −20% per dimension below 4.0 · Harm override: any dimension at 0 sets premium to 0.
         </p>

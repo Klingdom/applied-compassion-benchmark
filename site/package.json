@@ -23,7 +23,7 @@
     "test:product-separation": "node scripts/test-product-separation.mjs",
     "test:task-bank": "node scripts/test-task-bank.mjs",
     "test:evaluation-scorer": "node scripts/test-evaluation-scorer.mjs",
-    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:separation-waivers && npm run validate:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run && npm run test:model-harness && npm run test:model-releases && npm run validate:model-releases && npm run test:no-stale-counts && npm run test:entity-records && npm run test:collision-ratchet && npm run test:coverage-report && npm run test:encoded-names && npm run test:rotation-state",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:product-separation && npm run test:separation-waivers && npm run validate:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run && npm run test:model-harness && npm run test:model-releases && npm run validate:model-releases && npm run test:no-stale-counts && npm run test:entity-records && npm run test:collision-ratchet && npm run test:coverage-report && npm run test:encoded-names && npm run test:method-claims && npm run test:rotation-state",
     "validate:model-registry": "node scripts/validate-model-registry.mjs",
     "test:model-registry": "node scripts/test-model-registry.mjs",
     "validate:model-releases": "node scripts/validate-model-releases.mjs",
@@ -37,6 +37,7 @@
     "test:collision-ratchet": "node scripts/test-collision-ratchet.mjs",
     "test:coverage-report": "node ../research/scripts/test-coverage-report.mjs",
     "test:encoded-names": "node scripts/test-encoded-names.mjs",
+    "test:method-claims": "node --no-warnings scripts/test-method-claims.mjs",
     "test:rotation-state": "node ../research/scripts/test-validate-rotation-state.mjs",
     "validate:rotation-state": "node ../research/scripts/validate-rotation-state.mjs",
     "coverage-report": "node ../research/scripts/coverage-report.mjs"

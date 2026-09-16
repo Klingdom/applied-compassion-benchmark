@@ -1,5 +1,58 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 15 — 2026-09-16 (published method claims vs the formula, and the gate that keeps them true — DC-02)
+
+### Selected Item
+**G-3 + the DC-02 gate.** Third occurrence of "published method copy contradicts the canonical formula" (It. 9
+"base /80"; It. 10 "balanced beats spiky" on `/ai-models`; now the main `/methodology` surfaces), so rule S4 forces a
+mechanical check rather than a fourth prose patch. v1 13 · **v2 17** (K+1 RISK-019 reduce · P+1 live · Rc+2 gate for a
+≥2-occurrence class). Alternatives: L cross-links/overclaiming 16, D-2 status-ladder renderer 15.
+
+### V1 — what was published (coordinator computed against `scoring.mjs` before briefing anyone)
+1. **Two of four consistency steps can never fire.** σ across 8 dimensions bounded 0–5 is capped at **2.500** (four 0s,
+   four 5s); 400k random profiles produced only the 1.0 and 0.75 buckets. Yet the chart, its aria description and
+   `/methodology` published "σ 3.0–5.0 → 0.4" and "σ > 5.0 → 0.1" as live rules.
+2. **"A balanced 70/70 profile beats a spiky 90/40 profile" is false in general** — balanced [3.8×8] = 70.0 loses to
+   spiky [5,5,5,5,2.6,2.6,2.6,2.6] = 72.0 — yet was asserted unconditionally in three places (chart annotation,
+   `/methodology`, `dimensions.ts` `detail`).
+3. **`IntegrationPremiumDiagram` published an impossible premium of 0.5.** The reachable set is exactly
+   {0, 1.5, 2, 3, 4, 4.5, 6, 8, 10}. (7.5 is excluded too: a full balance factor requires every dimension ≥ 4.0, which
+   caps σ at 0.50 and forces consistency 1.0 — so 10 × 0.75 × 1.0 cannot occur.)
+4. Verified correct, left alone: the Abridge worked example (σ 0.1654 ≈ "0.17", premium 0, composite 60.9) and the
+   `dimensions.ts` `short` string.
+
+### What Changed
+- Consistency steps: all four remain documented (a published rule is not silently deleted) but the two unreachable
+  ones are hatched, labelled "never occurs", and explained in the aria text — "with 8 dimensions each bounded 0 to 5,
+  standard deviation cannot exceed 2.5". `/methodology` prose matches.
+- Balanced-vs-spiky: replaced with what the formula does — the premium rewards dimensions at or above 4.0, not evenness
+  as such — illustrated with both directions ([4×8] = 85 beats [5,5,5,5,3,3,3,3] = 77; but [5,5,5,5,2.6×4] = 72 beats
+  [3.8×8] = 70). Corrected in all three places.
+- Premium diagram: the impossible 0.5 profile replaced with a real vector, [4,4,4,4,0.4,0.4,0.4,0.4] → base 30.0 +
+  premium 1.5 = 31.5; the "typical" row given a concrete vector too, [4.5×5, 0.5×3] → 50.0 + 3.0 = 53.
+- New shared data modules (`consistencyStepsData.ts` with a `reachable` flag and `MAX_ACHIEVABLE_STD_DEV`,
+  `integrationPremiumExamples.ts` with per-profile vectors) so the chart, the duplicated table beneath it and the test
+  all read the same constants and cannot drift.
+- **Gate:** `site/scripts/test-method-claims.mjs`, wired into `npm run test` as `test:method-claims` (chain now 23
+  steps). It computes against `scoring.mjs` — asserts the reachable premium set and the σ ceiling, fails on any
+  published step or premium value that cannot occur, and recomputes every worked example's σ, base, premium and
+  composite. It checks numbers, not prose, which is what let this class recur three times.
+
+### Validation (V1–V7)
+- **V2 coordinator re-runs:** gate 33/33; my own recomputation reproduces every published example exactly
+  (Half-and-half 30.0+1.5=31.5 · Typical 50.0+3.0=53 · Abridge 60.9+0=60.9, σ 0.1654) and the 7.5 exclusion.
+- **V3 planted probe, run by me:** flipping "σ 3.0–5.0" to `reachable: true` → named FAIL, exit 1
+  (`STEPS "σ 3.0–5.0" (lowerBound 3) has reachable=true, expected false given MAX_ACHIEVABLE_STD_DEV=2.5`); restored →
+  33/33, exit 0, file byte-identical.
+- `npx tsc --noEmit` clean; `npm run test` exit 0.
+- **V4:** full local build not used as the gate — this machine ran out of memory on two attempts; CI builds before
+  deploying. **V5:** no dated or research content touched. **V6:** diff is 5 edited + 3 new files, plus records.
+- **V7:** after deploy.
+
+### Outcome
+Published method claims that contradict the formula: 3 live → 0, and the class is gated for the first time since it
+began recurring in June.
+
 ## Founder-approved remediation batch — 2026-09-16 ("approve all and fix all")
 
 Not an improvement loop: a batch of previously-gated items the founder approved in one instruction, plus Iteration 14

@@ -74,6 +74,27 @@ diff scope review · V7 post-deploy AFTER.
 - Housekeeping deferred: `research/rotation-state.json.bak` (408 KB) and `research/scans/2026-09-09.json.bak` (874 KB)
   remain on disk — deletion needs a permission the session does not have; they are untracked and never committed.
 
+### Iteration 15 — SELECTED 2026-09-16: G-3 + the DC-02 gate (published method claims vs the formula)
+- **Why this one:** DC-02 reaches its **third** occurrence (It. 9 "base /80", It. 10 "balanced beats spiky" on
+  /ai-models, now the main `/methodology` surfaces). Rule S4 therefore requires a mechanical check, not another prose
+  patch. Ungated, and it goes to the benchmark's own method credibility.
+  v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: K+1 (RISK-019 reduce) · P+1 (live on production now) · Rc+2 (gate for a
+  ≥2-occurrence class) → **17**. Alternatives: L cross-links/overclaiming 16, D-2 status-ladder renderer 15.
+- **Coordinator-verified findings (computed against `scoring.mjs`, 2026-09-16):**
+  1. Two of the four published consistency steps are **unreachable**: σ across 8 dimensions bounded 0–5 cannot exceed
+     **2.500**, so "σ 3.0–5.0 → 0.4" and "σ > 5.0 → 0.1" can never fire (400k samples produced only the 1.0 and 0.75
+     buckets). Published in `ConsistencyStepChart.tsx` (`STEPS` + aria description) and `/methodology` ~line 1294.
+  2. "A balanced 70/70 profile beats a spiky 90/40 profile" is **not reliably true** — balanced [3.8×8] = 70.0 loses to
+     spiky [5,5,5,5,2.6,2.6,2.6,2.6] = 72.0. Asserted unconditionally in three places (chart annotation,
+     `/methodology`, `dimensions.ts` `detail`).
+  3. `IntegrationPremiumDiagram` shows an **impossible** premium of 0.5; the reachable set is exactly
+     {0, 1.5, 2, 3, 4, 4.5, 6, 8, 10}.
+  4. Verified correct and left alone: the Abridge worked example (σ = 0.1654 ≈ 0.17, premium 0, composite 60.9) and the
+     `dimensions.ts` `short` string.
+- **Gate being added:** `test:method-claims` — asserts the reachable premium set and the σ ceiling against
+  `scoring.mjs`, fails on any published step or premium value that cannot occur, and recomputes every worked example.
+  Components export their numeric data so the test imports the same constants the UI renders (no HTML scraping).
+
 ### New backlog item (2026-09-16, surfaced by the history fix) — 5 briefing references resolve to no published entity
 - With dead history files no longer silently persisting, `build-entity-history.mjs` now reports every briefing
   reference it cannot map to a current entity. Five remain, all **pre-existing** and unrelated to today's rename:
