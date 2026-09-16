@@ -74,6 +74,14 @@ diff scope review · V7 post-deploy AFTER.
 - Housekeeping deferred: `research/rotation-state.json.bak` (408 KB) and `research/scans/2026-09-09.json.bak` (874 KB)
   remain on disk — deletion needs a permission the session does not have; they are untracked and never committed.
 
+### New backlog item (2026-09-16, found in post-deploy verification) — unformatted total on /methodology
+- The live coverage sentence reads "**811 of 1329**" — no thousands separator, while the share beside it is
+  pre-formatted ("61.0%"). `site/src/data/neverAssessedCoverage.ts` exposes `neverAssessedShareFormatted` but only a
+  raw numeric `totalTrackedEntities` / `neverAssessedCount`, and the page prints those directly. Fix: have
+  `generate-methodology-coverage-data.mjs` also emit formatted strings (e.g. `1,329`) and use them in the page, so
+  formatting stays with the generator rather than being re-derived in JSX. Cosmetic only — no number is wrong — so it
+  rides along with the next deploy rather than triggering one. v1: I2 S3 L1 C5 − E1 − R1 = 9.
+
 ### New backlog item (2026-09-16, found while verifying the rename) — export does not prune removed slugs
 - `export-public-data.mjs` writes `site/public/data/scores/<slug>.json` per entity but never deletes files for slugs
   that no longer exist, so after the RISK-023 rename the 20 old-key files (`procter-amp-gamble.json`, …) remained in

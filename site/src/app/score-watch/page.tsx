@@ -172,10 +172,25 @@ export default function ScoreWatchPage() {
               <div className="text-[#7dd3fc] text-[0.82rem] font-bold uppercase tracking-wider mb-2">
                 Step 2
               </div>
-              <h3 className="text-[1.08rem] font-bold mb-2">Subscribe from the entity page</h3>
+              <h3 className="text-[1.08rem] font-bold mb-2">
+                {SCORE_WATCH.useGumroad
+                  ? "Subscribe from the entity page"
+                  : "Request access from the entity page"}
+              </h3>
               <p className="text-muted">
-                On the entity&rsquo;s detail page, click <em>Subscribe — {SCORE_WATCH.priceShort}</em>.
-                The subscription is scoped to that entity. Add more entities by subscribing again.
+                {SCORE_WATCH.useGumroad ? (
+                  <>
+                    On the entity&rsquo;s detail page, click{" "}
+                    <em>Subscribe — {SCORE_WATCH.priceShort}</em>. The subscription is scoped to
+                    that entity. Add more entities by subscribing again.
+                  </>
+                ) : (
+                  <>
+                    Self-serve subscriptions are paused. On the entity&rsquo;s detail page, click{" "}
+                    <em>Get Score-Watch</em> to reach a short contact-sales form pre-filled with
+                    that entity. We follow up manually once alert delivery is verified.
+                  </>
+                )}
               </p>
             </Panel>
             <Panel>

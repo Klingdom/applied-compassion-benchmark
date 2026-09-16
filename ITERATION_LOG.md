@@ -62,6 +62,26 @@ Not an improvement loop: a batch of previously-gated items the founder approved 
 - Its 28 tests pass, and `test:rotation-state` plus `validate:rotation-state` are wired into `npm run test` so this
   guard cannot go stale unnoticed. Historical report files were **not** renamed.
 
+### Deployed and verified on production — 2026-09-16 (V7)
+- Founder merged the work: `main` fast-forwarded `905a805d` → `48b0712f` (11 commits, both days' work). Deploy run
+  **35112334235**: build+test, worker-typecheck, deploy and post-deploy health all **success**.
+- **Live checks (coordinator, curl):**
+  - Renamed companies: `/company/procter-and-gamble` serves with `<title>Procter & Gamble …`, **0 double-escaped
+    strings**; `/fortune-500` shows the decoded names.
+  - Redirects: `/company/procter-andamp-gamble` → 301 → the new URL; `/company/procter-gamble` → 301 → the new URL
+    (it used to 301 into `/404`); `/data/scores/procter-amp-gamble.json` → 301 → the new key.
+  - Wellington: page title and `/data/scores/wellington.json` both read **71.3, Established, rank 22**.
+  - `/methodology`: the coverage section is live ("never been through an individual human assessment", 61.0%).
+  - `/score-watch` and `/pricing`: pause disclosed; **0 Gumroad links** on the page; the old "self-serve checkout is
+    live" line is gone. Entity pages carry **0** dead badge-embed URLs.
+  - `/updates`: the 2026-09-15 briefing is live, headline correctly qualified ("faces a proposed downgrade").
+- **Defect found in that verification, being fixed:** `/score-watch` still tells readers "On the entity's detail page,
+  click *Subscribe — $79/yr*" — a button that no longer renders while sales are paused. **Coordinator error worth
+  recording:** the first pass grepped for "79 / year" and reported 0, which was false comfort; the real string is
+  "$79/yr". The page copy is being made conditional on the pause flag, with a sweep for the same class elsewhere.
+- **Cosmetic, logged not hot-fixed:** `/methodology` renders "811 of 1329" without a thousands separator (the
+  generator formats the share but not the totals). Rides along with the next deploy.
+
 ### Blocked (needs the founder)
 - **Branch protection on `main`** — the session lacks permission to change repository settings. The exact `gh api`
   command is in `docs/founder-briefings/2026-09-14.md` addendum 8. RISK-021 stays open.

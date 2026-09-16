@@ -288,13 +288,18 @@ function ScoreWatchSidebar({
   entityName: string;
   slug: string;
 }) {
-  const scoreWatchHref = SCORE_WATCH.useGumroad
-    ? `/score-watch?entity=${encodeURIComponent(slug)}`
-    : `/score-watch?entity=${encodeURIComponent(slug)}`;
+  // While paused, route to the entity's own page rather than implying a
+  // direct checkout is available here — the entity page's own CTA handles
+  // the useGumroad branch (Gumroad checkout vs. contact-sales fallback).
+  const scoreWatchHref = `/score-watch?entity=${encodeURIComponent(slug)}`;
 
   return (
     <aside
-      aria-label={`Subscribe to Score-Watch alerts for ${entityName}`}
+      aria-label={
+        SCORE_WATCH.useGumroad
+          ? `Subscribe to Score-Watch alerts for ${entityName}`
+          : `Score-Watch alerts for ${entityName} (paused)`
+      }
       data-pagefind-ignore
       className="rounded-[18px] border border-line bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] p-6 space-y-4"
     >
@@ -315,7 +320,7 @@ function ScoreWatchSidebar({
         {SCORE_WATCH.priceLabel}
       </div>
       <Button href={scoreWatchHref} variant="primary" full>
-        Subscribe to Score-Watch
+        {SCORE_WATCH.useGumroad ? "Subscribe to Score-Watch" : "Get Score-Watch"}
       </Button>
     </aside>
   );
@@ -370,7 +375,7 @@ export default function HistoryTimeline({ history, entityHref }: Props) {
                   View current score for {name} →
                 </Button>
                 <Button href="/score-watch" variant="primary">
-                  Subscribe to Score-Watch →
+                  {SCORE_WATCH.useGumroad ? "Subscribe to Score-Watch →" : "Get Score-Watch →"}
                 </Button>
               </div>
             </Panel>

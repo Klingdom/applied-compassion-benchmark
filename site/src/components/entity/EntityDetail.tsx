@@ -1219,6 +1219,9 @@ export default function EntityDetail({
                   </Button>
                 ) : (
                   // Manual-fulfillment fallback while SCORE_WATCH.useGumroad is false.
+                  // Label must not say "Subscribe" — this routes to a contact-sales
+                  // form, not an immediate checkout, so it uses the same "Get
+                  // Score-Watch" label as the /score-watch page's own paused CTA.
                   // We still fire score_watch_click so the leading-indicator funnel
                   // works during the manual-fulfillment phase (otherwise we are
                   // blind to entity-page intent until a sales-form submit fires).
@@ -1233,7 +1236,7 @@ export default function EntityDetail({
                       fulfillment: "manual",
                     }}
                   >
-                    Subscribe — {SCORE_WATCH.priceShort}
+                    Get Score-Watch
                   </Button>
                 )}
                 <Link
