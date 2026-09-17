@@ -176,14 +176,40 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   `RankingTable.tsx:156` used `slugify(entry.name)`), so it isn't a regression.
 
 ### New backlog items (2026-09-17, from Meta-review 3; coordinator-verified where marked)
+- **CS-2 — extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).** The 2026-09-17
+  briefing was the first one live-enforced by the It. 16 gate. It passed with 0 violations while carrying 5 `sourceTier` values
+  that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
+  current. Readers see these as tier badges, so an inflated tier overstates evidence strength in public. Coordinator
+  checks prove the mechanical form: matching each briefing `{url, sourceTier}` against the `[T#](url)` / `tier N — url`
+  citations in the same-date assessments found 5 mismatches on 09-17 and 0 of 14 on 09-14 (positive control). **Caveat
+  (V8):** the 09-15 assessments use a citation format the matcher doesn't parse (0 URLs extracted), so that cycle is
+  unverified, not clean. Work: a lint rule (tier must equal the assessment's tier for the same URL; an unparseable
+  citation fails loudly, not silently) plus a planted-probe test. v1: I4 S5 L3 C5 − E2 − R1 = 14 · v2: K −1 (RISK-020
+  reduced) · Rc +2 (a gate for a 3-occurrence class) → **15**.
+- **ID-1 — "Jack Henry & Associate" is published with a truncated name (DC-05).** Found during the 2026-09-17
+  research cycle and verified live: `fortune-500.json` row `{"name":"Jack Henry & Associate","slug":"jack-henry-and-associate",
+  "rank":16}`, rendered on `/fortune-500` as "Jack Henry &amp; Associate". The rotation-state key is truncated the same
+  way, as is `democratic-republic-of-c` (DR Congo's published name was fixed on 2026-09-14 `7dfa27a3`, but its research key
+  wasn't). The company's legal name ends "Associates"; confirm against a primary source before renaming. Work:
+  (X-1, agent) a truncation sweep comparing published names and rotation keys against a reference list, reporting
+  suspects only; (X-2, founder-gated) a rename plus 301 plus S9 re-derivation of every slug-keyed store. v1: I3 S5 L2
+  C4 − E2 − R2 = 10 · v2: P +2 (live wrong name) · Rc −1 (instance fix without a gate) → **11**; the sweep as a gate
+  scores higher.
+
 - **LC-1 — one nginx config plus a post-deploy link check (DC-11).** The `Dockerfile` ships `nginx.conf`; most
   slug-override rewrites and HSTS live only in `nginx-ssl.conf`. **Verified live 2026-09-17:**
   `/company/atandt` and `/robotics-lab/intuitive-surgical-inc` 301 → `http://…/404` (an https→http downgrade
   as well). The component links are fixed by It. 20, but external/legacy inbound links to those old URLs still 404.
   Work: consolidate into `nginx.conf`, stop the `http://` redirect downgrade, retire `nginx-ssl.conf`, and add a
   post-deploy href-status sweep to CI (the 1,323-link check above is a 30-second job). Container config change →
-  commit and deploy need founder approval. v2 **17** (Meta-review 3 §7). Eligible after It. 19 is resolved (It. 19
-  edits both nginx files).
+  commit and deploy need founder approval. v2 **17** (Meta-review 3 §7).
+  **✅ LC-1a COMPLETE — Iteration 21 (2026-09-17), uncommitted.** 26 rewrites moved into `nginx.conf`;
+  `absolute_redirect off`; `test:nginx-redirect-parity` gate (chain 28 → 29, independent planted probe);
+  CI `nginx-config-syntax` job gating `deploy`; 29-URL legacy sweep + negative control in `verify`; dirty-file
+  disclosure in `deploy.sh` and the CI SSH script; DEPLOYMENT.md records that `nginx.conf` is the one live config.
+  **LC-1b, founder-gated and still open:** delete `nginx-ssl.conf`, remove `deploy.sh`'s `docker compose cp` line.
+  **New, not actioned:** `/404` answers HTTP 200 (soft 404 — search engines see a real page); the openresty proxy in
+  front of the container has no documented owner or config in this repo.
 - **D-13-1 — primary-product determinations for the 6 waivered entities.** ✅ **Drafted 2026-09-17**:
   `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md` (docs only, nothing ratified). Next is founder ratification. First
   decide-by is **2026-10-17** (Figure AI waiver expires 2026-11-16). Lane: blocked-on-founder.

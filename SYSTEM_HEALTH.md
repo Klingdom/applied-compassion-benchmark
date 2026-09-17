@@ -5,6 +5,18 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
+> 2026-09-17 (Iteration 21 — the config production actually runs): the image ships `nginx.conf`, but **26 rewrites
+> existed only in `nginx-ssl.conf`** (25 robotics-lab legal-name slugs + `/us-state/georgia`), so those legacy URLs
+> **301'd to `/404`** live — verified before the change (`/robotics-lab/intuitive-surgical-inc` → `/404`;
+> `/robotics-lab/intuitive-surgical` → 200). All 26 moved into `nginx.conf` (both files now parse to the same 106
+> rewrite pairs, 0 unique to either, verified in both directions); `absolute_redirect off` stops redirects downgrading
+> to `http://`; new `test:nginx-redirect-parity` gate (chain 28 → 29) proven by an independent planted probe; new CI
+> job `nginx-config-syntax` (`nginx -t`) gates `deploy`; the `verify` job now sweeps 29 legacy URLs with a negative
+> control; `deploy.sh` and the CI SSH script now print `git status --porcelain`, so `dirty: true` names its files. All
+> 69 entity-route redirect targets verified to be published slugs. `npm test` exit 0 (29 steps).
+> **Also found, not fixed:** TLS terminates at an **openresty** proxy in front of the container, and `/404` answers
+> **HTTP 200** (a soft 404). **Uncommitted — awaiting founder.**
+
 > 2026-09-17 (Iteration 20 — entity links stop depending on a redirect): four components re-derived entity slugs from
 > names instead of honouring the pinned slug, so **34 links** (77 in `IndexPageCharts`, which also carried its own
 > naive slugger) pointed at URLs that existed only because nginx rewrote them. Verified live first: `/global-cities`
@@ -34,34 +46,6 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 > deployment, then V7.** Remaining: 12 US-city twins, `washington-dc` (needs a both-sides pin), and the
 > 2 labs (blocked on D-13 ratification).
 
-> 2026-09-16 (founder-approved remediation batch + Iteration 14): Wellington applied (83.0 → 71.3, Exemplary →
-> Established, rank 13 → 22; premium-cliff disclosure attached) · Score-Watch sales paused, badge widget hidden
-> (RISK-014 mitigated, host still dead) · never-assessed share published on `/methodology` from generated data
-> (811 of 1,329, 61.0%) · waiver cliff staggered across six dates (RISK-015 mitigated) · `CLAUDE.md` data notes
-> corrected · entity-records test (19,687) and a slug-collision ratchet wired into `npm run test`, which CI runs
-> before deploy. Coordinator defect disclosed: duplicate JSON keys in the Wellington proposal nulled the approval
-> fields (DC-10), caught by `score-updater`. **In progress:** the 20 encoded Fortune 500 names (RISK-023).
-> **Blocked on founder permission:** branch protection on `main`, `.bak` cleanup.
-> **Deployed 2026-09-16 in three runs** (35112334235, 35114744386, 35118662309 — all jobs success; `main` at
-> `c43cc037`). Verified live: renamed companies render and redirect correctly, Wellington at 71.3 Established,
-> coverage figure on `/methodology`, Score-Watch paused with no reachable purchase path, and entity history restored
-> for renamed entities. Two defects were found *by* post-deploy verification and fixed in later runs: stale
-> "click Subscribe — $79/yr" instructions, and history orphaned by the rename (a coordinator regression, DC-05/RISK-018).
-
-> 2026-09-14 (Iteration 13, first loop under scoring model v2): new `unapplied-score-movement` rule in
-> `lint-daily-briefings` — from briefings dated 2026-09-15, a headline/summary may not state a score change as
-> published when `scoreChangesApplied` is 0 (verified live defect in ≥ 5 cycles). Validation failed twice on
-> precision before passing; final: lint tests 99/0, full suite exit 0, forward-dated exposure 31 flags (19 true +
-> 2 borderline in the field era). RISK-020 reduced. **Uncommitted — awaiting founder.**
-
-> 2026-09-14 (Iteration 12): ~20 hard-coded count literals across 11 public routes now derive from
-> `entityCount.ts` / `INDEX_COUNT` (1,325 · 8 · 51 · 92); Universities added to four index lists; new
-> `test:no-stale-counts` guard. **Uncommitted — awaiting founder.**
-
-> 2026-09-14 (Iterations 10–11): false "balanced beats spiky" formula claim removed from `/ai-models/methodology`;
-> dead `/cite` URL pattern fixed on `/cite`, `/media`, `/data`; `llms.txt` counts derived. **Committed
-> (`beb94ae9`, `f940a80b`, `376b0f85`) and deployed 2026-09-14, verified on production.**
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
 - **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned 1,331 (2026-09-14).
@@ -83,7 +67,7 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ⚠️ `build-special-briefings.mjs:474` rewrites 16 tracked JSON timestamps every build | DC-08 |
 
-## Tests (`npm run test`, **28 steps** at `119f1757`, generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
+## Tests (`npm run test`, **29 steps** with It. 21 uncommitted (28 at `119f1757`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (17) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -140,6 +124,36 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-17, text unchanged: the 4 notes below were displaced from the top three by Iterations 20–21._
+
+> 2026-09-16 (founder-approved remediation batch + Iteration 14): Wellington applied (83.0 → 71.3, Exemplary →
+> Established, rank 13 → 22; premium-cliff disclosure attached) · Score-Watch sales paused, badge widget hidden
+> (RISK-014 mitigated, host still dead) · never-assessed share published on `/methodology` from generated data
+> (811 of 1,329, 61.0%) · waiver cliff staggered across six dates (RISK-015 mitigated) · `CLAUDE.md` data notes
+> corrected · entity-records test (19,687) and a slug-collision ratchet wired into `npm run test`, which CI runs
+> before deploy. Coordinator defect disclosed: duplicate JSON keys in the Wellington proposal nulled the approval
+> fields (DC-10), caught by `score-updater`. **In progress:** the 20 encoded Fortune 500 names (RISK-023).
+> **Blocked on founder permission:** branch protection on `main`, `.bak` cleanup.
+> **Deployed 2026-09-16 in three runs** (35112334235, 35114744386, 35118662309 — all jobs success; `main` at
+> `c43cc037`). Verified live: renamed companies render and redirect correctly, Wellington at 71.3 Established,
+> coverage figure on `/methodology`, Score-Watch paused with no reachable purchase path, and entity history restored
+> for renamed entities. Two defects were found *by* post-deploy verification and fixed in later runs: stale
+> "click Subscribe — $79/yr" instructions, and history orphaned by the rename (a coordinator regression, DC-05/RISK-018).
+
+> 2026-09-14 (Iteration 13, first loop under scoring model v2): new `unapplied-score-movement` rule in
+> `lint-daily-briefings` — from briefings dated 2026-09-15, a headline/summary may not state a score change as
+> published when `scoreChangesApplied` is 0 (verified live defect in ≥ 5 cycles). Validation failed twice on
+> precision before passing; final: lint tests 99/0, full suite exit 0, forward-dated exposure 31 flags (19 true +
+> 2 borderline in the field era). RISK-020 reduced. **Uncommitted — awaiting founder.**
+
+> 2026-09-14 (Iteration 12): ~20 hard-coded count literals across 11 public routes now derive from
+> `entityCount.ts` / `INDEX_COUNT` (1,325 · 8 · 51 · 92); Universities added to four index lists; new
+> `test:no-stale-counts` guard. **Uncommitted — awaiting founder.**
+
+> 2026-09-14 (Iterations 10–11): false "balanced beats spiky" formula claim removed from `/ai-models/methodology`;
+> dead `/cite` URL pattern fixed on `/cite`, `/media`, `/data`; `llms.txt` counts derived. **Committed
+> (`beb94ae9`, `f940a80b`, `376b0f85`) and deployed 2026-09-14, verified on production.**
 
 > 2026-07-12: Ran a 4-lens **nonprofit simplification audit** (product, architecture, UX,
 > frontend) → consolidated 15-item backlog in `docs/NONPROFIT_SIMPLIFY_MASTER_2026-07-12.md`.

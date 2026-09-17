@@ -1,5 +1,57 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 21 — 2026-09-17 (LC-1a: production stops running a config nobody edits — DC-11)
+
+### Selected Item
+**LC-1 — one nginx config plus a post-deploy link check** (v2 **17**, top-ranked eligible item, Meta-review 3 §7).
+Split per S2: **LC-1a** (agent-doable) this loop; **LC-1b** (delete `nginx-ssl.conf`, drop `deploy.sh`'s runtime copy)
+stays founder-gated. Alternatives: CS-2 (v2 15) and RS-4 (v2 15). No deviation — this was the top item.
+Discovered mid-session while diagnosing why the founder's manual deploy didn't land (S3 logged: not a pre-emption,
+LC-1 was already ranked first).
+
+### V1 — baseline, measured on production before any edit
+- `/robotics-lab/intuitive-surgical-inc` → **301 → `http://…/404`**; `/robotics-lab/intuitive-surgical` → **200**
+  (positive control). `/company/atandt` → `/404` as well, but that one has **no** rewrite in either config — it was
+  purely It. 20's link bug, so no legacy inbound URL existed for it.
+- `nginx.conf` 81 rewrites vs `nginx-ssl.conf` 107: **exactly 26 ssl-only** (25 robotics-lab legal-name slugs +
+  `/us-state/georgia`), derived by diffing parsed pattern→target pairs.
+- `Dockerfile:40` copies **`nginx.conf`**; CI deploys with `docker compose up -d --build`. `deploy.sh:53` runtime-copies
+  `nginx-ssl.conf` over the container's config, which the next CI rebuild reverts. **Two configs, one shipped.**
+- Production `Server: openresty` and `http://` is upgraded before reaching us ⇒ **TLS terminates at a proxy in front
+  of the container**, which is why the container's `$scheme` is `http` and every redirect downgraded for one hop.
+- The deploy scripts compute `GIT_DIRTY` from `git status --porcelain` but never print it, which is why `dirty: true`
+  has been unexplained since It. 18.
+
+### What Changed (agent: devops-engineer)
+26 rewrites moved into `nginx.conf`; `absolute_redirect off` at server scope (single `server` block; `port_in_redirect`
+deliberately not set, with the reason inline); new `test:nginx-redirect-parity` (chain **28 → 29**); new CI job
+`nginx-config-syntax` running `nginx -t` on the shipped file, with `deploy` now `needs: [test, nginx-config-syntax]`;
+a 29-URL legacy sweep plus a negative control in `verify`; `git status --porcelain` echoed in both deploy paths;
+`DEPLOYMENT.md` records that `nginx.conf` is the live config.
+
+### Validation — coordinator re-ran every claim (V2)
+| Check | Result |
+|---|---|
+| Parity, my own parser, both directions | **106 pairs each, 0 unique to either** |
+| Independent planted probe (V3) — I removed a *different* rewrite (`skydio-inc`) than the agent's | Gate **failed naming `nginx-ssl.conf:99`**; restored **sha256-identical** (`2eca4844…3f7cb5` before and after); 4/4 after |
+| `npm test` | **exit 0, 29 steps** (chain length read from `package.json`, not counted by eye) |
+| Workflow YAML parsed (js-yaml) | jobs `worker-typecheck, test, nginx-config-syntax, deploy, verify`; `deploy.needs = [test, nginx-config-syntax]` |
+| **Extra check the agent didn't run:** every entity-route redirect target is a published slug | **69 targets, 0 unknown** (control: a fake target is detected). Had one been wrong, the new sweep would have failed every future deploy |
+| Diff scope (V6) | exactly 6 paths, all in scope |
+
+### Found, deliberately not fixed
+- **`/404` answers HTTP 200** — a soft 404: search engines see a real page. Backlog.
+- **The openresty proxy in front of the container has no owner or config in this repo.** Worth a founder answer: it,
+  not this repo, holds the real TLS and header configuration (RISK-022's mitigation was written into the unshipped file).
+
+### V7 — pending deploy
+After deploy: all 26 legacy URLs reach their targets with 200 and none redirect to `/404`; `Location` headers are
+relative (no `http://` downgrade); the deploy log names the VPS's dirty files. The `verify` job now checks the first
+of these automatically.
+
+**Uncommitted — awaiting founder.** Commit pathspec: `git add -- nginx.conf site/scripts/test-nginx-redirect-parity.mjs
+site/package.json .github/workflows/deploy.yml deploy.sh DEPLOYMENT.md`.
+
 ## Iteration 20 — 2026-09-17 (entity links stop depending on a redirect to land)
 
 ### Selected Item
@@ -203,6 +255,15 @@ paired with a positive control that fired.
   sha is the deployed head. **Check `/city/singapore` → 301 → `/city/singapore-global-cities` explicitly:** the rewrite is
   in `nginx.conf`, which the image ships, so it should fire. But LC-1/DC-11 showed other rewrites don't, so
   verify it rather than assume.
+- **V7 attempt 1, 2026-09-17 17:18Z: FAILED, deployment not live.** The founder reported "deployed". Production still
+  serves `/build-manifest.json` `sha 119f1757` with `Last-Modified 17:02:39 GMT` (the It. 20 CI deploy), and a
+  cache-busting query returns the same. `/data/scores/singapore.json` still shows the **global city** (56.2);
+  `/city/singapore-global-cities` → 301 → `/404`; `/global-cities` links `/city/singapore`. Controls: `/country/singapore`
+  200; a nonsense slug → `/404`. **No `workflow_dispatch` run exists** (`gh run list --workflow deploy.yml`: latest is
+  35249684018, push, `119f1757`), so the deploy wasn't run through Actions. **Unproven hypothesis:** if `deploy.sh` was
+  run, its `git pull origin main` under `set -e` would abort if the VPS checkout's local modifications (the
+  persistent `dirty: true`) include `nginx.conf` or `nginx-ssl.conf`, which `cad71c1a` is the first commit since
+  `dirty` was observed to touch. Check on the VPS: `git log -1 --oneline` and `git status --short`.
 
 ## Iteration 18 — 2026-09-16 (the build stops rewriting tracked files; production can name its own commit)
 
