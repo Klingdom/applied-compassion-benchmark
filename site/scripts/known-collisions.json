@@ -15,8 +15,7 @@
     { "slug": "chicago", "indexes": ["global-cities", "us-cities"], "note": "Chicago (global city) vs Chicago, IL (US city)" },
     { "slug": "los-angeles", "indexes": ["global-cities", "us-cities"], "note": "Los Angeles (global city) vs Los Angeles, CA (US city)" },
     { "slug": "houston", "indexes": ["global-cities", "us-cities"], "note": "Houston (global city) vs Houston, TX (US city)" },
-    { "slug": "singapore", "indexes": ["countries", "global-cities"], "note": "Singapore (country) vs Singapore (global city); RISK-017 — badge/catalog currently serve the city, not the country" },
-    { "slug": "1x-technologies", "indexes": ["ai-labs", "robotics-labs"], "note": "1X Technologies listed in both ai-labs and robotics-labs" },
-    { "slug": "figure-ai", "indexes": ["ai-labs", "robotics-labs"], "note": "Figure AI listed in both ai-labs and robotics-labs" }
+    { "slug": "1x-technologies", "indexes": ["ai-labs", "robotics-labs"], "note": "1X Technologies listed in both ai-labs and robotics-labs. NOT a naming fix: RISK-017 defers this to D-13 (proposed, unratified), whose hard constraint is that no entity may hold more than one published composite (50.0 vs 81.4 for the same company). Pinning a slug per composite would entrench the duplicate publication. Resolve by delisting one row, not by renaming." },
+    { "slug": "figure-ai", "indexes": ["ai-labs", "robotics-labs"], "note": "Figure AI listed in both ai-labs and robotics-labs. NOT a naming fix — same D-13 index-ownership question as 1x-technologies (31.3 vs 48.4 for the same company)." }
   ]
 }

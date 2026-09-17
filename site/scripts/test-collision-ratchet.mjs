@@ -193,7 +193,16 @@ console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolv
     knownCollisionsFile.collisions
   );
 
-  assert(known.length === 16, `expected exactly 16 known collisions in current repo data, got ${known.length}`);
+  // 15, not 16: tranche 1 of the A-2 repair pinned an explicit slug on the one
+  // row whose bare slug served the wrong entity AND had no open ownership
+  // question — global-cities Singapore, now singapore-global-cities, following
+  // the phoenix-global-cities / georgia-us-states precedent.
+  // Deliberately NOT fixed by renaming: 1x-technologies and figure-ai. RISK-017
+  // defers both to D-13 (proposed, unratified), whose hard constraint is that no
+  // entity may hold more than one published composite; pinning a slug per
+  // composite would entrench the duplicate publication rather than remove it.
+  // The ratchet may only shrink; lower this number as further collisions are fixed.
+  assert(known.length === 15, `expected exactly 15 known collisions in current repo data, got ${known.length}`);
   assert(unexpected.length === 0, `expected 0 unexpected collisions, got ${unexpected.length}: ${JSON.stringify(unexpected)}`);
   assert(resolved.length === 0, `expected 0 resolved collisions, got ${resolved.length}: ${JSON.stringify(resolved)}`);
 }
