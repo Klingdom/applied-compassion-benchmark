@@ -24,3 +24,28 @@ export function slugify(name: string): string {
     .replace(/^-+|-+$/g, "")
     .replace(/-+/g, "-");
 }
+
+/**
+ * The PUBLISHED slug for an index row.
+ *
+ * An index row may declare an explicit `slug`, which takes precedence over
+ * slugify(name). This is used where the legal name slugs badly ("Intuitive
+ * Surgical, Inc." -> intuitive-surgical) or where two indexes share a name
+ * (phoenix-global-cities, singapore-global-cities, georgia-us-states).
+ *
+ * This rule is what BUILDS the entity pages (see rowSlug in src/data/entities.ts,
+ * and the same logic in export-public-data.mjs / build-entity-records.mjs).
+ * Anything rendering a link to an entity MUST use this rather than re-deriving
+ * from the name — a derived slug points at a URL that does not exist, and
+ * survives only if nginx happens to carry a 301 for it.
+ *
+ * Many published rows carry a pinned slug that differs from slugify(name);
+ * `npm run test:pinned-slugs` reports the current count and fails if any
+ * component re-derives one. (The count is deliberately not written here — see
+ * the catalogue-count rule in CLAUDE.md and test:no-stale-counts.)
+ */
+export function rowSlug(row: { name: string; slug?: unknown }): string {
+  return typeof row.slug === "string" && row.slug.trim().length > 0
+    ? row.slug.trim()
+    : slugify(row.name);
+}

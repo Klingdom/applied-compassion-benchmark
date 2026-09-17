@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
-import { slugify } from "@/lib/slugify";
+import { rowSlug } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
 import { kindToIndexSlug, kindToRoutePrefix } from "@/lib/entityHref";
 import type { EntityKind as _EntityKind } from "@/data/entities";
@@ -153,7 +153,10 @@ export default function RankingTable({
 
     // Link the entity name to its detail page when entityKind is provided.
     if (col.key === "name" && entityKind) {
-      const slug = slugify(entry.name);
+      // rowSlug honours an explicit `slug` on the row — the same rule that
+      // BUILDS these pages. Re-deriving from the name produced a URL that only
+      // resolved via an nginx 301, and 404'd for any pinned entity without one.
+      const slug = rowSlug(entry);
       return (
         <Link
           href={`/${kindToRoutePrefix(entityKind as _EntityKind)}/${slug}`}

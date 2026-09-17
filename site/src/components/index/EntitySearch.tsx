@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
-import { slugify } from "@/lib/slugify";
+import { rowSlug } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
 import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
@@ -26,6 +26,13 @@ interface IndexData {
 
 interface SearchResult {
   name: string;
+  /**
+   * The entity's PUBLISHED slug — the row's explicit `slug` when it has one,
+   * else slugify(name). Resolved once at load time rather than re-derived at
+   * render, so a pinned slug (phoenix-global-cities, intuitive-surgical) links
+   * to the page that actually exists instead of relying on an nginx 301.
+   */
+  slug: string;
   rank: number;
   composite: number;
   band: string;
@@ -95,6 +102,7 @@ export default function EntitySearch() {
         data.rankings.forEach((entity) => {
           results.push({
             name: entity.name,
+            slug: rowSlug(entity),
             rank: entity.rank,
             composite: entity.composite,
             band: entity.band,
@@ -188,7 +196,7 @@ export default function EntitySearch() {
               {results.map((r, i) => {
                 // Resolve direct entity-detail href; fall back to the index
                 // page only if the index has no detail route registered.
-                const detailHref = entityHref(r.indexSlug, slugify(r.name));
+                const detailHref = entityHref(r.indexSlug, r.slug);
                 const targetHref = detailHref ?? `/${r.indexSlug}`;
                 const isDirectEntityLink = detailHref !== null;
                 return (

@@ -30,26 +30,21 @@ import GroupMeanBars from "@/components/charts/GroupMeanBars";
 import ChartFrame from "@/components/charts/ChartFrame";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
-import { INDEX_REGISTRY } from "@/data/indexRegistry";
+import { rowSlug } from "@/lib/slugify";
+import { entityHref } from "@/lib/entityHref";
 
-// ─── Slug helper (mirrors export-public-data.mjs) ────────────────────────────
+// ─── Entity href helper ───────────────────────────────────────────────────────
+//
+// This file used to carry its OWN slugify + entityHref pair, and both were
+// wrong in the same direction: the local slugger was the *naive* variant (no
+// accent folding, no "&" -> "and"), and neither honoured an explicit `slug` on
+// the row. 77 of the links rendered here pointed at a URL that only resolved
+// via an nginx 301, or 404'd where no rewrite existed. Both helpers are now
+// the canonical ones, and the pinned slug wins — mirroring rowSlug() in
+// src/data/entities.ts, which builds the pages these links target.
 
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-// ─── Entity route helper ──────────────────────────────────────────────────────
-
-const ENTITY_ROUTE_PREFIX: Record<string, string> = Object.fromEntries(
-  INDEX_REGISTRY.map((entry) => [entry.indexSlug, entry.routePrefix]),
-);
-
-function entityHref(indexSlug: string, name: string): string {
-  const prefix = ENTITY_ROUTE_PREFIX[indexSlug] ?? "entity";
-  return `/${prefix}/${slugify(name)}`;
+function rowHref(indexSlug: string, entry: RankingEntry): string {
+  return entityHref(indexSlug, rowSlug(entry)) ?? `/${indexSlug}`;
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -114,7 +109,7 @@ export default function IndexPageCharts({
                 </h3>
                 <div className="space-y-4">
                   {top5.map((entry) => {
-                    const href = entityHref(indexSlug, entry.name);
+                    const href = rowHref(indexSlug, entry);
                     return (
                       <div key={entry.name} className="flex items-start gap-3">
                         <div className="flex-1 min-w-0">
@@ -152,7 +147,7 @@ export default function IndexPageCharts({
                 </h3>
                 <div className="space-y-4">
                   {bottom5.map((entry) => {
-                    const href = entityHref(indexSlug, entry.name);
+                    const href = rowHref(indexSlug, entry);
                     return (
                       <div key={entry.name} className="flex items-start gap-3">
                         <div className="flex-1 min-w-0">
