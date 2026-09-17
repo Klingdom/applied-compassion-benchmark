@@ -9939,3 +9939,103 @@ Both referred to the same coordinator-level cohort de-seeding study as the 2026-
 **Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, excluding the `history/` subdirectory, not incremented from the prior digest's figure): 21** -- 20 carried forward (unchanged set from 2026-08-16 through 2026-09-01, since Hong Kong's departure and Wellington's arrival net to zero) + Wellington new tonight. High priority (band change or delta >15): 15 (14 carried + Wellington). Standard (delta 5-15, no band change): 6 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks -- Hong Kong left this tier on application). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
 
 No score was applied by this cycle. `site/src/data/indexes/*.json` and `research/rotation-state.json` were not modified.
+
+---
+
+## 2026-09-17 -- Zero Proposals | Chile Band-Crossing Measurement Corroborates a Pending Proposal | 1 Band Crossing Withheld (Diligent Robotics) | 0 New Proposals | 7 Confirmations
+
+### Summary -- 2026-09-17
+
+Priority + rotation-backfill cycle (lookback 2026-09-03 -> 2026-09-17). Roster held at 1,329 entities. No 2026-09-16 cycle ran (there is no scan, assessor, or digest file for that date); this cycle follows directly from 2026-09-15. Zero score-change proposals filed tonight.
+
+Chile's government held no official commemoration of the 1973-1990 dictatorship's victims on the 11 September coup anniversary, the first time since democracy returned in 1990 (EQ5 3->2). Measuring the full record produces 41.9 (-20.6), within grid noise of the PENDING chile-2026-09-01 proposal (62.5 -> 42.5); the pending proposal is corroborated, not duplicated, and remains open for a founder decision. Starbucks similarly corroborates its own pending 2026-09-01 proposal exactly (48.4 -> 43.1) on a mixed 5th Circuit ruling that upheld one illegal threat to a pregnant worker's maternity benefits.
+
+Diligent Robotics (robotics-labs, rotation backfill, never previously assessed) measured a genuine band crossing -- 83.0 Exemplary -> 79.8 Established (-3.2) -- after a Washington hospital system, MultiCare, ended its 14-robot Moxi contract over cost and low use (AC3 4->3). The crossing was WITHHELD: the only sources are a union newsletter (tier 1) and a regional newspaper (tier 2), short of the two-source/one-tier-4+ bar this benchmark requires for a band-change finding, and the crossing hinges on the 4.0 integration-premium cliff in a never-assessed placeholder (screening rule 5). Imbue (ai-labs, also rotation backfill) confirms on the identical 4.0-cliff pattern with zero independent evidence located, forming a three-entity calibration cohort with Ljubljana (2026-09-15).
+
+Five further entities confirm unchanged: Romania (37.5, farmers' protest over an EU-imposed export ban, not Romanian conduct), United States (17.5, UN count of 23 ICE custody deaths in 2026 continuing an already-priced pattern; shock-glove procurement is a plan, not scored), Democratic Republic of the Congo (2.3, floor-limited, protests against a proposed constitutional change), Jack Henry & Associate (77.9, an unconfirmed ShinyHunters data-theft claim, watched not scored), and Harmonic Bionics (62.5, an unresolved entity-identity question after a 2025 acquisition by Bioness Medical, 0.6 points above the Functional boundary).
+
+**Data-integrity note (caught and corrected here, source not edited).** research/scans/2026-09-17-assessor-summary.json's top-level "confirmations" field reads 6; enumerating the outcome field across all 11 results[] entries gives 7 (romania, united-states, democratic-republic-of-c, bolivia, imbue, jack-henry-and-associate, harmonic-bionics). This digest, and the public briefing, use the correct count of 7.
+
+**Housekeeping note (not this cycle's action).** Wellington's 2026-09-15 proposal (83.0 -> 71.3, Exemplary -> Established) now carries "status": "applied"; the live global-cities.json shows composite 71.3. Founder-approved in-session, recorded in research/APPLIED_CHANGES.md ## 2026-09-16, outside any scan/assessor/digest cycle. This is why tonight's pending-queue total (20) is one lower than 2026-09-15's (21), with no new filing tonight to offset it.
+
+Queue: 20 pending proposals total, counted directly from research/change-proposals/*.json with "status": "pending".
+
+---
+
+### No New Score Proposals -- 2026-09-17
+
+No scored proposals enter the pending queue. Queue holds at 20 (down from 21 solely on Wellington's departure between cycles; see housekeeping note above).
+
+---
+
+### Band Crossing Measured But Withheld -- 2026-09-17
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Reason Withheld |
+|---|---|---|---|---|---|---|
+| Diligent Robotics | robotics-labs | 83.0 | 79.8 | -3.2 | Exemplary -> Established | No tier-4-or-above source (union newsletter tier 1 + regional newspaper tier 2 only); crossing hinges on the 4.0 integration-premium cliff in a never-assessed placeholder (screening rule 5); referred to the same calibration cohort as Ljubljana (2026-09-15) and Imbue (tonight) |
+
+---
+
+### Measured, Not Filed (Corroboration) -- 2026-09-17
+
+| Entity | Index | Published | Measured | Delta | Notes |
+|---|---|---|---|---|---|
+| Chile | countries | 62.5 | 41.9 | -20.6 | Reproduces the PENDING chile-2026-09-01 proposal (62.5 -> 42.5) within grid noise; EQ5 3->2 on the missing coup-anniversary commemoration, the first since 1990; a downgrade proposal awaits founder review; published score unchanged |
+| Starbucks | fortune-500 | 48.4 | 43.1 | -5.3 | Reproduces the PENDING starbucks-2026-09-01 proposal (48.4 -> 43.1) exactly; the 5th Circuit (4 Sept) upheld one illegal threat to a pregnant worker's maternity benefits but rejected the hours/hiring-portal claims; a downgrade proposal awaits founder review; published score unchanged |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-17
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Romania | countries | 37.5 | 35.6 | -1.9 | ~2,000 livestock farmers protested a live-export ban in Bucharest (15 Sept); the ban is an EU Commission measure, not Romanian conduct. Tear gas followed a cordon breach; a drought-compensation payment was cut from EUR100/ha to EUR19/ha. |
+| United States | countries | 17.5 | 16.3 | -1.2 | UN High Commissioner Turk's 7 Sept count of 23 ICE custody deaths in 2026 continues the pattern priced by the June downgrade (tier-4 evidence of concern, not adjudication). Reported shock-glove procurement is a plan, not scored. |
+| Democratic Republic of the Congo | countries | 2.3 | 3.1 | +0.8 | Floor-limited: tear gas, warning shots and arrests at 15 Sept protests against Tshisekedi's proposed constitutional change land on subdimensions already at 1. |
+| Bolivia | countries | 6.3 | 5.0 | -1.3 | 90-day state-of-exception extension (decree 14 Sept; Assembly approved 17 Sept, 100 of 158 votes) continues an already-priced emergency regime. A state of siege was only contemplated, not declared. Critical-band calibration flag (open since 2026-07-11) carried. |
+| Imbue | ai-labs | 81.4 | 81.1 | -0.3 | No independent evidence located; Exemplary status rests on seven dimensions at exactly 4.0. Referred to the 4.0-cliff calibration cohort with Diligent Robotics and Ljubljana. |
+| Jack Henry & Associate | fortune-500 | 77.9 | 77.2 | -0.7 | A 30 Aug 2026 ShinyHunters extortion listing is a criminal claim with no company disclosure located; watched, not scored. |
+| Harmonic Bionics | robotics-labs | 62.5 | 60.6 | -1.9 | Entity identity referred: Bioness Medical acquired the assets and business 18 June 2025; the published row has not been updated. FDA MAUDE malfunction report (1 Feb 2024) supports the published transparency level. 0.6 points above the Functional boundary. |
+
+---
+
+### Screened, Not Assessed -- 2026-09-17
+
+| Entity | Index | Published | Reason |
+|---|---|---|---|
+| Boston Dynamics (SPOT demo) | robotics-labs | 20.3 | ICE's up-to-$2M Spot purchase is a procurement forecast, no RFP issued; not enacted conduct. Evidence attaches to the Boston Dynamics company row (65.6), not this row, and there is no conduct change on either row. Open founder decision D23 (product-separation waiver, expires 2026-12-14) not pre-empted. |
+| Halodi Robotics | robotics-labs | 62.5 | Not assessed. Covered by open waiver D13-1x-technologies (D-13 not ratified): three published composites for one entity (ai-labs 50, robotics-labs 81.4, Halodi 62.5). last_assessed not stamped. |
+
+---
+
+### Open Calibration Flags -- 2026-09-17
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Exemplary 4.0-integration-premium-cliff cohort (Ljubljana 2026-09-15, Diligent Robotics and Imbue tonight) | Three-entity pattern now established across global-cities, robotics-labs and ai-labs; recommend a dedicated coordinator-level study | Open since 2026-09-15, reinforced 2026-09-17 |
+| Diligent Robotics band-crossing sourcing gap (needs a tier-4+ source on Moxi outcomes) | New tonight; one source away from a filed crossing | Open since 2026-09-17 |
+| Chile pending 2026-09-01 proposal, corroborated a second time tonight | Carried forward, reinforced | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal, corroborated exactly tonight | Carried forward, reinforced | Open since 2026-09-01 |
+| Harmonic Bionics entity identity (Bioness Medical acquisition, 18 June 2025) -- needs a founder disposition decision on the published row | New tonight | Open since 2026-09-17 |
+| Halodi Robotics / 1X Technologies three-published-composite identity question (waiver D13-1x-technologies, D-13 not ratified) | Carried forward, not assessed again tonight | Open since 2026-08-17 (per prior digests) |
+| Boston Dynamics (SPOT demo) product-separation waiver D23 | Carried forward | Open since prior cycles; expires 2026-12-14 |
+| 14-country 62.5 placeholder cluster | Carried forward, not touched tonight | Open since 2026-08-18 |
+| Countries-index 20.3 seed cluster | Carried forward, not touched tonight | Open since 2026-08-16 |
+| Bionik Laboratories corporate status | Carried forward | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~85 days |
+| Bolivia critical-band calibration | Carried forward, reinforced tonight | ~68 days |
+
+---
+
+### Operational Notes -- 2026-09-17
+
+- Scan: 1,329 entities scanned (roster unchanged); 281 searches performed against a derived ceiling of 274 (150 T1 individual + 12 verification + 102 T2 batched + 17 T3 sweeps; 7-search disclosed overage); 14-day lookback (2026-09-03 to 2026-09-17).
+- 12 dedicated verification searches: ICE-Boston Dynamics procurement date, Silsbee TX employer attribution (dropped), Spain-Ceuta continuation check (x2), UN ICE-custody-deaths date, Romania farmers-protest date, Meta-layoffs date (dropped, misdated), Anthropic-Pentagon-lawsuit date (dropped, already resolved), xAI-Baltimore-lawsuit date (dropped, misdated), Maduro-capture date (dropped, misdated), Zambia-Kafwaya date (dropped, misdated), Bolivia-decree date.
+- Assessor runtime: assessment stage ended 2026-09-17T17:20:14.249Z (start not precisely recorded); 13 assessor searches across 10 scored entities plus 1 screening note, max 2 searches on any single entity (Diligent Robotics, Harmonic Bionics); 0 change proposals; 7 confirmations (assessor summary's own top-line field understates this as 6; corrected here, not edited at source); 1 withheld; 2 measured-not-filed; 10 of 10 required subdimension sidecars written.
+- Math hygiene: NONE FOUND. computeCompositeFromDimensions reproduces every published composite in this cohort exactly (diff 0.0); the coordinator independently recomputed all 10 scored composites from their .subdims.json sidecars and every one reproduces exactly.
+- Rotation-state drift: composite and band match the published index for all 12 reviewed entities. Only last_assessed was written (10 entities); no last_change_proposal written (no proposals). Rank drift reported only (Starbucks, Boston Dynamics SPOT demo, Boston Dynamics, Diligent Robotics, Halodi Robotics, Harmonic Bionics) -- rank is owned by score-updater, not written by this stage.
+- Validation: node site/scripts/validate-daily-briefings.mjs -- PASS, 81 of 81. node site/scripts/lint-daily-briefings.mjs -- PASS, 83 files clean (0 forbidden phrases/status/pipeline keys, 0 unapplied-score-movement violations, 0 claim-to-source violations -- today is the exact CLAIM_TO_SOURCE_CUTOFF, the first cycle live-enforced rather than report-only against that gate). One claim-to-source formula error was caught and fixed pre-publication: a first-draft methodology note claimed an 8-point integration-bonus cap; recomputing computeCompositeFromDimensions shows the true cap is 10 points. node site/scripts/test-claim-to-source.mjs fixture suite: 36 passed, 0 failed. Published indexes untouched. No proposal applied. Nothing committed.
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 20** -- one fewer than 2026-09-15's 21, solely because Wellington's proposal left the pool on a 2026-09-16 founder-approved apply (see housekeeping note above); zero new filings tonight. High priority (band change or delta >15): 14. Standard (delta 5-15, no band change): 6 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks -- all carried forward, unchanged). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
