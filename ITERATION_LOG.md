@@ -1,5 +1,209 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 20 — 2026-09-17 (entity links stop depending on a redirect to land)
+
+### Selected Item
+**Components re-derive entity slugs from names instead of honouring the pinned slug** (v1 11). Selected because
+Iteration 19 is uncommitted and S6 forbids a second uncommitted iteration on the same file set — this one is fully
+disjoint (components + `lib/slugify.ts` + a new test) — and because It. 19 *worsened* this defect by adding another
+entity whose links only work via an nginx 301.
+
+### V1 — baseline (measured on production, before any edit)
+- `/global-cities` links `href="/city/phoenix"` — the **unpinned** form for an entity pinned on 2026-09-14. Control:
+  non-pinned cities (tokyo, oslo, vienna) link correctly.
+- `/robotics-labs` links `intuitive-surgical-inc`, `cmr-surgical-ltd`, `myomo-inc`, `kuka-ag`, `skydio-inc`,
+  `symbotic-inc` — six naive-slug hrefs, each surviving only because nginx rewrites it.
+- Counted across all 8 indexes: **34 links wrong** in `RankingTable`/`EntitySearch`/`NavbarSearch`, and **77** in
+  `IndexPageCharts`, which also carried its **own naive `slugify`** (no accent folding, no `&`→`and`).
+- `nginx-ssl.conf:91-105` is a block of ~15 "Slug-override corrections (2026-09-01)" rewrites that exists *because of
+  this defect*. `src/data/entities.ts:246-250` records an earlier occurrence: **26 entities** with a record at the
+  declared slug and a page at `slugify(name)`. This is at least the fourth occurrence of the class.
+
+### What Changed
+- **One rule, one place.** `rowSlug(row)` is now exported from `src/lib/slugify.ts`; `RankingTable`, `IndexPageCharts`,
+  `EntitySearch` and `NavbarSearch` import it. Four inline copies of the same ternary collapsed to one import —
+  "copy, don't import" is what created this class.
+- `IndexPageCharts` lost its private `slugify` **and** its private `entityHref`, and now uses the canonical pair.
+- The two search components resolve the slug **once at load**, storing it on `SearchResult`, rather than re-deriving
+  it at render.
+- **A fourth defect site the inventory missed:** `NavbarSearch.tsx:194`. Fixing only the three named components
+  would have left site-wide nav search broken.
+
+### The gate (rule S4 — class has recurred ≥ 4 times)
+`site/scripts/test-pinned-slugs.mjs`, wired into `npm run test` (chain **27 → 28 steps**). Three parts: fixture
+non-vacuity (≥ 1 divergent row must exist — 34 at time of writing; see correction note — with `phoenix-global-cities` / `intuitive-surgical` as named anchors),
+`rowSlug` semantics, and a source scan of `src/app` + `src/components`. The scan is **absolute — no allowlist, no
+"is there a `.slug` nearby" heuristic**: suppressing a match by proximity would excuse a genuinely bare call that
+happened to sit near unrelated code, and a false negative in a guard is worse than the defect it was written to catch.
+The non-vacuity assertion exists because this suite already contains one self-declared "VACUOUS PASS".
+
+### Validation
+| Check | Result |
+|---|---|
+| `npm test` | **exit 0**, 28 steps (29 banners) |
+| `test:pinned-slugs` in-chain | **10 passed / 0 failed**, 34 divergent rows, 0 source findings |
+| V3 planted probe | bare `slugify(entry.name)` planted → guard **failed naming `RankingTable.tsx:160`**; restored → 10/0; **sha256 identical before/after** |
+| `tsc --noEmit` | **exit 0** |
+| `eslint` (5 changed files) | **exit 0** |
+
+**New capability worth recording: `npx tsc --noEmit -p tsconfig.json` completes locally.** I had been treating CI as
+the only typecheck because `npm run build` OOMs; it isn't.
+
+### Disclosed: an existing guard caught me
+My own doc comment read *"present on 169 rows across the 8 indexes"* — and `test:no-stale-counts` (DC-01) failed the
+chain on it, correctly, as a hard-coded catalogue count. I removed the numbers rather than allowlisting the line. I
+had written the same mistake into `lib/slugify.ts`, where it would have escaped **only because that guard scans
+`src/app` and `src/components` but not `src/lib`** — an escape I did not take.
+
+### Verification discipline
+Two more void probes, both caught by controls before any claim: a dangling-import check that flagged
+`EntitySearch`/`NavbarSearch` for using `slugify` without importing it (both hits were inside **JSDoc comments**;
+`tsc` exit 0 was the tell), and a `sed` range that extracted the **scoring** test's output while I believed I was
+reading the pinned-slugs step. Thirteen and fourteen for the session.
+
+### Follow-ups (new backlog rows)
+1. `src/data/entities.ts` still holds a **fifth private copy** of `rowSlug` — it should import the shared one. Outside
+   the scanned roots, so the new guard cannot see it.
+2. **D-35 vs code:** the decision states `&` becomes `-and-`, but `lib/slugify.ts` maps `&`→`and` (`AT&T` → `atandt`,
+   while the published pin is `at-and-t`). Decision record and implementation disagree.
+3. `EntitySearch`/`NavbarSearch` never apply the intra-index `-{rank}` disambiguation, so the **second Portland**
+   (us-cities rank 22) is unreachable from search — it resolves to Portland ME.
+4. `test:no-stale-counts` scans only `src/app` + `src/components`; `src/lib` and `src/data` escape it.
+
+**Uncommitted — awaiting founder.** File set disjoint from Iteration 19 per S6.
+
+### Correction note — 2026-09-17 (coordinator, after Meta-review 3; verified, not taken from the review)
+1. **The V1 premise was wrong, and the defect is worse than logged.** "Each surviving only because nginx rewrites it"
+   is false on production. Re-checked live 2026-09-17: `/fortune-500` links `/company/atandt` → **301 → `/404`**, and
+   `/robotics-labs` links `/robotics-lab/intuitive-surgical-inc` → **301 → `/404`**. The pinned URLs
+   `/company/at-and-t` and `/robotics-lab/intuitive-surgical` both return **200**. Positive control: `/city/phoenix`
+   → 301 → `/city/phoenix-global-cities` (200), so some rewrites do fire. Cause per Meta-review 3 (DC-11): the
+   `Dockerfile` ships `nginx.conf`, but most slug-override rewrites live only in `nginx-ssl.conf`. This iteration
+   therefore **removes live 404 links** (Meta-review 3 counts 32 of 34); it doesn't just remove redirect dependence.
+   Under the P amendment this is a live wrong-link defect (P +2).
+2. **The gate claim was overstated.** The test doesn't require "34 divergent rows". It asserts `divergent.length > 0`
+   plus two named anchors (`test-pinned-slugs.mjs:88-97`). It also tests a **private copy** of `rowSlug`
+   (`:67`), not the one exported from `src/lib/slugify.ts`, so a broken shipped `rowSlug` would still pass
+   (Meta-review 3 planted this and saw 10/0). Follow-up V9a: import the shipped function.
+3. Registry and backlog wording that repeats "34 must exist" should be read against this note.
+
+### Commit, deploy and V7 — 2026-09-17 (founder-approved: "approve iteration 20 commit and deploy")
+- **Pre-commit isolation check (V2):** a detached worktree at `633ed6ff` plus **only** the 7 It. 20 files (`git status`
+  showed exactly those 7): `npm test` **exit 0** (28 steps), `test:pinned-slugs` **10/0** (33 divergent rows; 34 in
+  the main tree because It. 19 adds Singapore's pin), `tsc --noEmit` **exit 0**.
+- **Commit pathspec (S6):** `git add -- site/src/lib/slugify.ts site/src/components/index/EntitySearch.tsx
+  site/src/components/index/IndexPageCharts.tsx site/src/components/index/RankingTable.tsx
+  site/src/components/layout/NavbarSearch.tsx site/package.json site/scripts/test-pinned-slugs.mjs`, giving commit
+  **`119f1757`** (7 files, 0 other staged paths). Pushed fast-forward `633ed6ff..119f1757` to `main`.
+- **Deploy:** run **35249684018**. Build + test, Worker typecheck, Deploy to VPS and Post-deploy health check all
+  **success**.
+- **V7 after-check (production):** `/build-manifest.json` shows `{"sha":"119f1757","branch":"main","dirty":true,
+  "source":"env"}`. Every entity href on the 8 ranking pages was extracted: **1,323 unique, 1,323 × 200, 0 redirects**.
+  Named cases: `/company/at-and-t`, `/robotics-lab/intuitive-surgical`, `/city/phoenix-global-cities` are now linked;
+  `atandt` / `intuitive-surgical-inc` / bare `/city/phoenix` appear **0** times. Controls: a nonsense slug still goes
+  301 → `/404`, so the sweep can fail. The first sweep pattern found 0 links on `/us-states` (its prefix is `/us-state/`); I
+  treated that as a failed positive control (V8), not a pass, and re-ran with the right prefix.
+- **`dirty: true` persists** after a second deploy. Per It. 18's open observation, that rules out the untracking
+  explanation: **the production checkout has real local modifications.** Cause not diagnosed (no SSH from here). Needs a
+  founder or `vps-docker-manager` check.
+- **Found by V7, not a regression:** 1,325 rows but 1,323 unique hrefs. Both Portlands and both Springfields in
+  `/us-cities` link the bare slug, so `portland-22` / `springfield-94` (both 200) aren't linked from the table. Same
+  before this commit (`633ed6ff` `RankingTable.tsx:156`). Added to the existing backlog row.
+- **Governance records (this file, backlog, SYSTEM_HEALTH, registry, CHANGELOG) aren't committed.** They share
+  hunks with the still-uncommitted It. 19 entries, and Meta-review 3 §8 item 2b says not to commit text describing
+  uncommitted work. Pathspec for the records commit once It. 19 is decided: `git add -- ITERATION_LOG.md
+  IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md docs/DEFECT_CLASS_REGISTRY.md CHANGELOG.md
+  docs/META_REVIEW_2026-09-17_ITER16-20.md docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md` (`[skip ci]`).
+
+## Iteration 19 — 2026-09-16 (A-2 tranche 1: the bare slug `singapore` now serves the country)
+
+### Selected Item
+**A-2 — remediate the 16 frozen cross-index slug collisions** (v2 14, top-ranked eligible item; founder-approved
+class under D-35). Delivered: **1 of 16**. Scope was deliberately narrowed twice during the loop — once by design,
+once to correct my own error.
+
+### V1 — baseline (coordinator-measured, before any edit)
+- `/data/scores/singapore.json` on production served the **global city** (composite 56.2, `indexSlug: global-cities`),
+  not the country. Confirmed live, plus two more wrong-entity cases (`figure-ai`, `1x-technologies`).
+- **1,325 published entities occupy only 1,309 unique slugs** — 16 entities have no score file, no entity record and
+  no history of their own. Independently reproduced three ways (live catalogue, my own path-set derivation, and the
+  1,309 files in `entity-records/`).
+- `validate-indexes`: 0 errors, **64 warnings**, of which **16** are the collision class. Each ends *"checks 13–16
+  skipped"* — so the defect also silently suppressed **64 validation checks**.
+- Precedence was **arbitrary**: `export-public-data.mjs` keys output by bare slug and the last index in `INDEX_FILES`
+  wins. Verified 3-for-3 against live production, plus a control.
+
+### What Changed
+Followed the Phoenix precedent (`7dfa27a3`) exactly rather than inventing a scheme: pin an explicit `slug` on the
+**non-canonical** row, matching the `<slug>-<indexSlug>` key **rotation-state already used**, and 301 the moved page.
+- `global-cities.json`: Singapore row pinned to `singapore-global-cities` (+1 line; parser-based edit after verifying
+  `parse → stringify` was byte-identical, per S8 — the DC-10 duplicate-key failure mode).
+- Entity records: `singapore.json` regenerated (now countries, 62.2); `singapore-global-cities.json` created (city, 56.2).
+- `nginx.conf` + `nginx-ssl.conf`: `/city/singapore` → `/city/singapore-global-cities`, byte-identical block in both.
+- `known-collisions.json` 16 → 15; `test-collision-ratchet.mjs` assert 16 → 15.
+
+### Coordinator scope error, caught in review and reverted
+I first pinned **three** rows, including robotics-labs Figure AI and 1X Technologies. All gates passed green. Then
+reading RISK-017 found: *"1X Technologies and Figure AI are a D-13 index-ownership question, not a naming fix."*
+D-13's hard constraint is that **no entity may hold more than one published composite** (these hold 31.3/48.4 and
+50/81.4 for the same company), and the drafted disposition is to **delist the ai-labs row**, not to rename. My pin
+would have entrenched the duplicate publication *and* left the surviving record needing a second rename later.
+D-13 is **"proposed… adopted by practice but never ratified"** — so a data migration would have quietly decided an
+open founder question. Reverted: `robotics-labs.json` byte-identical to HEAD, both records restored to HEAD bytes,
+both twin records deleted, both rewrites removed. **The green gates could not catch this** — no gate encodes an
+unratified ownership decision. I reached for `known-collisions.json` (which lists all 16 undifferentiated) instead of
+checking RISK-017/D-13 first.
+
+### Validation (every prediction registered before the run)
+| Check | Predicted | Actual |
+|---|---|---|
+| `validate-indexes` | 0 err / 63 warn | **0 err / 63 warn** (85,455 checks) |
+| collision warnings | 15 | **15**; `singapore` absent, `figure-ai` still flagged (positive control) |
+| ratchet | 15 known / 0 / 0 | **15 / 0 / 0** |
+| path set (S9) | 1,325 rows / 1,310 unique | **1,325 / 1,310**, diff = exactly `+ singapore-global-cities` |
+| `test-entity-records` | 19,702 | **19,702 / 0** (was 19,687) |
+| `npm test` | exit 0 | **exit 0**, 27 steps |
+| history orphaning | 0 pruned | **0 pruned**, 415 entities |
+
+Full `npm run build` not run locally (OOM); CI is the build gate. **Uncommitted — awaiting founder.**
+
+### Verification discipline
+Twelve of my own probes returned wrong or void results today and were caught by controls before any claim was made:
+a silently-empty file loop read as absence; `/tmp` resolving to `C:\tmp` for Windows node (twice); `grep | head`
+truncating the line I needed; MSYS `sed` stripping `\r` so a "byte-level" check lied about line endings; and a
+per-file `git status` loop reporting everything clean. **V8 earned its place again** — every absence claim here is
+paired with a positive control that fired.
+
+### Follow-ups (new backlog rows)
+1. `RankingTable.tsx:156`, `IndexPageCharts.tsx:37-52`, `EntitySearch.tsx:191` build hrefs from `slugify(entry.name)`
+   and **ignore the pinned slug** — the 301s are load-bearing for internal links. No test covers it.
+2. **rotation-state rank drift: 600 of 1,324** entries disagree with the index rank; composite drift is **0**.
+3. Intra-index duplicates use **rank-derived** slugs (`portland-22`, `springfield-94`) — the slug moves when the rank
+   moves. `us-cities` holds two Portlands (ME rank 8, OR rank 22) distinguishable only by `state`.
+4. `washington-dc` has **no bare rotation key** — both sides are already qualified, so it needs a both-sides pin.
+5. RISK-017 and `known-collisions.json` disagree about *which* 16 collisions exist.
+6. Worker KV (`watch:`, `index:entity:`) and the HMAC unsubscribe token are bare-slug with **no migration script**.
+
+### Commit — 2026-09-17 (founder-approved: "approve all and commit and push for manual deployment")
+- **Pre-commit isolation check (V2):** detached worktree at `119f1757` (It. 20 already on `main`) plus **only** the
+  7 It. 19 code/data files: `npm test` **exit 0** (28 steps), `test-entity-records` **19,702/0**, collision ratchet
+  **19/0**, `test:pinned-slugs` **10/0** (34 divergent rows, now including Singapore), `validate-indexes` **0 errors
+  / 63 warnings**, `tsc --noEmit` **exit 0**. The Singapore rewrite is textually identical in both nginx files.
+- **Commit pathspec (S6):** `git add -- site/src/data/indexes/global-cities.json
+  site/src/data/entity-records/singapore.json site/src/data/entity-records/singapore-global-cities.json
+  site/scripts/known-collisions.json site/scripts/test-collision-ratchet.mjs nginx.conf nginx-ssl.conf`, giving
+  **`cad71c1a`**. `CHANGELOG.md` and `RISKS.md` moved to the records commit because `CHANGELOG.md` now also
+  carries the It. 20 entry (a deviation from Meta-review 3 §8 item 1's pathspec, stated here).
+- **Not auto-deployed, by instruction.** The founder asked for manual deployment, so the head of the push is the
+  `[skip ci]` records commit, which suppresses the push-triggered `Deploy to VPS` run. Deploy by running the workflow
+  manually (Actions → Deploy to VPS → Run workflow) or `./deploy.sh` on the VPS; both build from `main`.
+- **V7 pending, to run after the manual deploy:** `/data/scores/singapore.json` shows `indexSlug: "countries"`
+  (composite 62.2); `/data/scores/singapore-global-cities.json` shows the city (56.2);
+  `/city/singapore-global-cities` returns 200; `/global-cities` links `/city/singapore-global-cities`; build manifest
+  sha is the deployed head. **Check `/city/singapore` → 301 → `/city/singapore-global-cities` explicitly:** the rewrite is
+  in `nginx.conf`, which the image ships, so it should fire. But LC-1/DC-11 showed other rewrites don't, so
+  verify it rather than assume.
+
 ## Iteration 18 — 2026-09-16 (the build stops rewriting tracked files; production can name its own commit)
 
 ### Selected Item
@@ -41,8 +245,18 @@ script itself, computing `GIT_DIRTY` from `git status --porcelain` rather than h
 - The agent stashed pre-existing stamp churn as `stash@{0}` — inspected: 19 files, all stamp-only, superseded by the
   regenerated output. Nothing lost.
 
-### V7 — pending deploy verification
-Production `/build-manifest.json` must report a real short sha and `source: "env"` instead of `"unknown"`.
+### V7 — deployed and verified (commit `633ed6ff`, deploy run 35161725312, all four jobs success)
+Production `/build-manifest.json` now reports `{"sha":"633ed6ff","branch":"main","dirty":true,"source":"env"}` —
+matching local HEAD exactly, where an hour earlier it served `{"sha":"unknown","branch":"unknown"}`. **The CI catch was
+load-bearing:** had the exports stayed only in `deploy.sh`, which CI never invokes, this would now read
+`source: "unavailable"` instead of the real commit.
+
+**Observed and not yet explained: `dirty: true`.** The VPS working tree reported uncommitted changes at build time.
+Two candidate causes — this specific commit untracks `site/public/build-manifest.json`, and the server still had the
+old tracked file on disk; or the server tree is genuinely dirty for an unrelated reason. I have not proven which (no
+SSH access from here) and am deliberately not asserting a cause: the next deploy distinguishes them — if it clears, it
+was the untracking; if `dirty: true` persists, the production checkout has real local modifications, which is worth
+knowing on its own. Recorded as an open observation rather than a diagnosis.
 
 ## Iteration 16 — 2026-09-16 (claim-to-source gate for briefings — DC-04 / RISK-020)
 

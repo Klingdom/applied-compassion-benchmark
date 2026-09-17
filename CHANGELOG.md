@@ -5,6 +5,27 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-17 — Ranking-page links to entities with a renamed web address no longer lead to "page not found" (NO score changes)
+
+- **What changed:** on the index ranking pages, charts and site search, links to entities whose web address differs from their name (for example AT&T at `/company/at-and-t`, Intuitive Surgical at `/robotics-lab/intuitive-surgical`, Phoenix at `/city/phoenix-global-cities`) now go directly to the entity page. Before, several of these links led to our "page not found" page.
+- **Why:** the ranking pages built each link from the entity's display name instead of its published address.
+- **No score, rank, band or entity page changed.** Only the links pointing at existing pages were corrected. Verified after deploy: every entity link on all 8 ranking pages opens its page.
+- Commit `119f1757`.
+
+---
+
+
+## 2026-09-16 — The data file for "singapore" now returns the country, not the city (NO score changes)
+
+- **What changed:** `https://compassionbenchmark.com/data/scores/singapore.json` previously returned **Singapore the global city** (composite 56.2). It now returns **Singapore the country** (composite 62.2). The global city keeps its own file at `/data/scores/singapore-global-cities.json`, and its page moves from `/city/singapore` to `/city/singapore-global-cities` with a permanent redirect from the old address.
+- **Why:** both entities are published, but the flat per-entity data files are keyed by name alone, so whichever index was written last silently won. A data consumer asking for "singapore" received the city without any indication it was not the country. The country is the entity the bare name refers to in our own research records, so it now owns the bare name and the city carries an explicit index-qualified name.
+- **No score, rank or band changed for either entity.** Both composites are exactly as published before (country 62.2, city 56.2); only which file serves which entity changed.
+- **If you consume this data:** a request for `singapore.json` now returns a different entity than it did yesterday. Every record includes an `indexSlug` field identifying which index it belongs to — check it rather than relying on the name alone. 15 name collisions remain (12 US cities also listed as global cities, Washington DC, and two robotics companies also listed as AI labs); those files still serve whichever index was written last, and each is listed in `site/scripts/known-collisions.json`.
+- Commit `cad71c1a` (2026-09-17). Takes effect at the next deployment.
+
+---
+
+
 ## 2026-09-16 — Score update: Wellington (global-cities) downgraded 83.0 → 71.3, band crossing Exemplary → Established
 
 - **Wellington (global-cities):** 83.0 → 71.3 (−11.7). BAND CROSSING Exemplary → Established. Statutory Crown Review into the 4 February 2026 Moa Point wastewater plant failure, released 2 September 2026, found the collapse was not a single decision but "longstanding weaknesses in governance, accountability, asset management, risk management and infrastructure resilience"; Wellington City Council, as plant owner and consent holder, "remained ultimately accountable," and "no single organisation acted as though it was in charge." Mayor Andrew Little apologised and the council announced a new role to monitor Tiaki Wai — both credited (Harm Acknowledgment held at 5, Correction Willingness at 4). AWR, ACT, EQU, SYS, and INT dimensions reduced; EMP and BND held; ACC net reduced despite the two credited moves. FORMULA-CLIFF DISCLOSURE: of the −11.7 total, only −3.75 is direct dimension movement (the eight-dimension average falls 4.00 → 3.85); the remaining −8.0 is the scoring formula's integration premium collapsing from 8.0 to 0 because five dimensions crossed below the 4.0 threshold the premium requires — a step function, not five additional points of conduct. Rank 13 → 22 (−9). Band counts: Exemplary 15 → 14, Established 26 → 27. Confidence: medium (never-individually-assessed placeholder base; tier-5 source cited via verbatim republication, full review PDF not read).

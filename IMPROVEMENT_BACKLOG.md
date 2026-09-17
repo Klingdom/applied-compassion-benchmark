@@ -127,6 +127,94 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   keys, add 301s, and shrink `known-collisions.json` toward zero — the ratchet already fails if an entry becomes stale.
   Founder already approved this class of change on 2026-09-16 (D-35 covers renames/slugs).
   v1: I4 S5 L2 C5 − E3 − R3 = 10 · v2: K+2 (RISK-017 High) · P+2 (live wrong entity served) → **14**.
+- **PARTIALLY COMPLETE — Iteration 19 (2026-09-16), 1 of 16.** Singapore pinned (`singapore-global-cities`); bare
+  `singapore` now serves the country 62.2. Collisions 16 → 15; warnings 64 → 63; unique slugs 1,309 → 1,310;
+  `npm test` exit 0. **Committed `cad71c1a` 2026-09-17 (founder-approved), awaiting manual deployment.** **Split into
+  three lanes for the remainder:**
+  - **A-2a — the 12 US-city twins** (`boston`, `portland`, `new-york-city`, `seattle`, `minneapolis`, `san-francisco`,
+    `philadelphia`, `atlanta`, `detroit`, `chicago`, `los-angeles`, `houston` + `portland`'s global row). Mechanical,
+    same recipe, each needs 1 index-row pin + 1 record + 1 rewrite pair. Note 8 of these publish **contradictory
+    composites** for the same name (e.g. Houston 43.8 vs 35.2) — a rename makes both publicly addressable, which
+    *exposes* the disagreement rather than resolving it. Decide disclosure before shipping. v2 ~12, eligible.
+  - **A-2b — `washington-dc`.** Different shape: rotation-state has **no bare key**, both sides already qualified
+    (`washington-dc-us-cities`, `washington-dc-global-cities`), so pinning only the global row leaves the us-cities
+    side mismatched. Needs a both-sides pin and two rewrite pairs. v2 ~11, eligible.
+  - **A-2c — `1x-technologies` and `figure-ai`. BLOCKED, not eligible.** RISK-017 defers both to **D-13**
+    (proposed, never ratified), whose hard constraint is that no entity may hold more than one published composite;
+    the drafted disposition (`INDEX_EXPANSION_SCOPE_2026-08-20.md:146`) is to **delist the ai-labs rows**. I pinned
+    these in Iteration 19 and reverted them — a rename would entrench the duplicate publication and force a second
+    rename later. **Lane: blocked-on-founder** (ratify or reject D-13).
+
+### New backlog items (2026-09-16, discovered during Iteration 19)
+- ~~**Three components ignore the pinned slug.**~~ **✅ COMPLETE — Iteration 20 (2026-09-17).** It was **four**
+  components, not three (`NavbarSearch.tsx:194` was missed by the inventory), and `IndexPageCharts` also carried its
+  own naive slugger. Measured live first: 34 wrong links (77 in `IndexPageCharts`). Fixed by exporting one
+  `rowSlug()` from `lib/slugify.ts` and importing it in all four; gated by `test:pinned-slugs` (chain 27 → 28),
+  proven with a planted probe. `npm test` / `tsc --noEmit` / eslint all exit 0. **Committed `119f1757` (founder-
+  approved 2026-09-17), deployed by run 35249684018 (all 4 jobs success), verified live:** all **1,323 of 1,323**
+  unique entity hrefs on the 8 ranking pages return 200 with 0 redirects (control: a nonsense slug → `/404`).
+  Correction: the live defect was 404 links, not redirect-dependence (see It. 20 correction note).
+
+### New backlog items (2026-09-17, discovered during Iteration 20)
+- **`entities.ts` holds a fifth private copy of `rowSlug`** (`src/data/entities.ts:251-254`). It is the canonical
+  original and is correct, but it should import the shared `rowSlug` from `@/lib/slugify` so there is exactly one
+  implementation. The new guard **cannot see it**: `test-pinned-slugs` scans `src/app` + `src/components` only.
+  Deferred from It. 20 deliberately — `entities.ts` is a core registry and the loop had no local build at the time.
+  v1: I2 S4 L2 C5 − E1 − R1 = **11**.
+- **D-35 contradicts `lib/slugify.ts` on the `&` convention.** D-35 states "`&` becomes `-and-`"; the code maps
+  `&`→`and`, so `AT&T` slugs to `atandt` while the published pin is `at-and-t`. Every affected row is pinned, so
+  nothing is broken today — but the decision record and the implementation disagree, and the next unpinned `&` name
+  will follow the code, not the decision. Work: correct one to match the other and state which is canonical.
+  v1: I2 S5 L3 C5 − E1 − R1 = **13**.
+- **Search cannot reach intra-index duplicates.** `EntitySearch`/`NavbarSearch` build slugs without the `-{rank}`
+  disambiguation that `entities.ts` applies, so the second Portland in us-cities (rank 22, `portland-22`) is
+  unreachable — searching "Portland" links to Portland ME for both rows. Same root as the `portland-22`/`springfield-94`
+  rank-derived-slug item. v1: I3 S4 L2 C4 − E2 − R2 = **9**.
+  **Widened 2026-09-17 (verified live after the It. 20 deploy):** the ranking table has the same gap. `/us-cities`
+  links `/us-city/portland` twice and `/us-city/springfield` twice. `/us-city/portland-22` and
+  `/us-city/springfield-94` return 200 but aren't linked from the table. This predates It. 20 (`633ed6ff`
+  `RankingTable.tsx:156` used `slugify(entry.name)`), so it isn't a regression.
+
+### New backlog items (2026-09-17, from Meta-review 3; coordinator-verified where marked)
+- **LC-1 — one nginx config plus a post-deploy link check (DC-11).** The `Dockerfile` ships `nginx.conf`; most
+  slug-override rewrites and HSTS live only in `nginx-ssl.conf`. **Verified live 2026-09-17:**
+  `/company/atandt` and `/robotics-lab/intuitive-surgical-inc` 301 → `http://…/404` (an https→http downgrade
+  as well). The component links are fixed by It. 20, but external/legacy inbound links to those old URLs still 404.
+  Work: consolidate into `nginx.conf`, stop the `http://` redirect downgrade, retire `nginx-ssl.conf`, and add a
+  post-deploy href-status sweep to CI (the 1,323-link check above is a 30-second job). Container config change →
+  commit and deploy need founder approval. v2 **17** (Meta-review 3 §7). Eligible after It. 19 is resolved (It. 19
+  edits both nginx files).
+- **D-13-1 — primary-product determinations for the 6 waivered entities.** ✅ **Drafted 2026-09-17**:
+  `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md` (docs only, nothing ratified). Next is founder ratification. First
+  decide-by is **2026-10-17** (Figure AI waiver expires 2026-11-16). Lane: blocked-on-founder.
+- **RS-4 — one slug implementation for scripts, plus the 13 accented-slug migrations (RISK-018, DC-05).** Per
+  Meta-review 3, nine private `slugify` copies in scripts keep RISK-018 live while tests pass (e.g. `sao-paulo.json`
+  → `/404`). v2 **15** = 10 + K 2 + P 1 + Rc 2. It touched `lib/slugify.ts`, which is now committed (`119f1757`), so it's
+  no longer blocked by It. 20. The migration half needs the D-35 approval-scope answer (Meta-review 3 §8 item 4).
+- **V9a — `test-pinned-slugs.mjs` tests a private copy of `rowSlug` (`:67`), not the shipped export.** Meta-review 3
+  broke the shipped function and the guard still passed 10/0. Work: import from `src/lib/slugify.ts` (a TS import
+  from a `.mjs` test needs the same loader approach `test-entity-href` uses). Fold into RS-4 or LC-1.
+  v1: I3 S5 L3 C5 − E1 − R1 = **14**.
+- **`test:no-stale-counts` has a coverage hole**: it scans `src/app` + `src/components` but not `src/lib` or
+  `src/data`. I hard-coded "8 indexes" into `lib/slugify.ts` during It. 20 and the guard would not have caught it
+  (I removed it anyway). Work: extend the scan roots, or document the exclusion with a reason.
+  v1: I2 S4 L2 C5 − E1 − R1 = **11**.
+- **A gate in the suite self-declares "VACUOUS PASS"** — the model-discriminator check reports it has "verified
+  nothing" because no index declares `meta.isModelIndex`. Honest, but a green step that checks nothing is a dead
+  guard in waiting (DC-09). Work: assert the vacuity condition explicitly so it fails if the premise changes
+  silently. v1: I2 S4 L3 C4 − E1 − R1 = **11**.
+- **rotation-state rank drift: 600 of 1,324 entries** disagree with the index rank (composite drift **0**), so the
+  research staleness baseline carries stale ranks for 45% of the catalogue. Coordinator-measured. v1: I3 S4 L3 C5 − E2 − R2 = **11**.
+- **Intra-index duplicate slugs are rank-derived** (`portland-22`, `springfield-94`): the slug changes whenever the
+  rank changes, so a score movement silently renames a public URL. `us-cities` holds two Portlands (ME rank 8, OR
+  rank 22) distinguished only by `state`. Work: pin state-qualified slugs. v1: I3 S4 L2 C4 − E2 − R2 = **9**.
+- **RISK-017 and `known-collisions.json` disagree about which 16 collisions exist** — RISK-017 says "15 US cities
+  plus Singapore" (excluding the labs), the ratchet lists 13 cities + Singapore + 2 labs. One register is wrong.
+  v1: I2 S4 L2 C5 − E1 − R1 = **11**.
+- **Worker KV keys and the HMAC unsubscribe token are bare-slug with no migration script** (`watch:<email>:<slug>`,
+  `index:entity:<slug>`; token is `HMAC(email:entity_slug)`). Any future rename silently breaks existing
+  subscriptions and their unsubscribe links. Score-Watch is paused, so exposure is likely zero *now* — which makes
+  this the cheapest possible moment to fix it. v1: I3 S4 L2 C4 − E2 − R2 = **9**.
 
 ### v2 shortlist (Iterations 13–15)
 
