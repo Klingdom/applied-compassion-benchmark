@@ -82,6 +82,32 @@ jobs:
         run: npm run build
 
   # ────────────────────────────────────────────────────────────────────
+  # 1b. NGINX CONFIG SYNTAX CHECK.
+  #
+  # nginx.conf is the file the Docker image actually bakes in and ships
+  # (Dockerfile: `COPY nginx.conf /etc/nginx/conf.d/default.conf`) — see
+  # DEPLOYMENT.md for the full explanation of why nginx-ssl.conf is NOT
+  # what production runs day to day. `npm test`'s parity gate
+  # (test-nginx-redirect-parity.mjs) only checks the `rewrite` directives
+  # textually; it cannot catch a config that is simply broken (typo,
+  # mismatched brace, bad regex). This runs the real nginx binary's own
+  # validator against the exact file the image ships, inside the same
+  # nginx:alpine base image the Dockerfile builds from — no docker daemon
+  # is needed locally to reproduce this, but GitHub Actions runners have
+  # one, so we use it here.
+  # ────────────────────────────────────────────────────────────────────
+  nginx-config-syntax:
+    name: nginx.conf syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "nginx -t against nginx.conf (nginx:alpine)"
+        run: |
+          docker run --rm \
+            -v "$PWD/nginx.conf:/etc/nginx/conf.d/default.conf:ro" \
+            nginx:alpine nginx -t
+
+  # ────────────────────────────────────────────────────────────────────
   # 2. DEPLOY to the VPS via SSH.
   # Pulls latest main + rebuilds the Docker image + restarts the container.
   # Uses --ff-only so a divergent VPS state fails loudly instead of being
@@ -89,7 +115,7 @@ jobs:
   # ────────────────────────────────────────────────────────────────────
   deploy:
     name: Deploy to VPS
-    needs: test
+    needs: [test, nginx-config-syntax]
     runs-on: ubuntu-latest
     steps:
       - name: Verify required secrets are configured
@@ -133,7 +159,10 @@ jobs:
             # "unavailable". The VPS has .git (it just pulled), so this works.
             export GIT_SHA="$(git rev-parse --short HEAD)"
             export GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+            echo "→ git status --porcelain (names any file GIT_DIRTY below is reacting to):"
+            git status --porcelain
             if [ -z "$(git status --porcelain)" ]; then export GIT_DIRTY=false; else export GIT_DIRTY=true; fi
+            echo "→ GIT_DIRTY=$GIT_DIRTY"
             docker compose up -d --build
             echo "→ Pruning dangling images to reclaim disk"
             docker image prune -f
@@ -224,3 +253,105 @@ jobs:
             exit 1
           fi
           echo "Freshness OK — live content matches this commit."
+
+      # ────────────────────────────────────────────────────────────────
+      # POST-DEPLOY REDIRECT SWEEP (LC-1a).
+      #
+      # nginx.conf is the file the Docker image ships (see DEPLOYMENT.md),
+      # and the parity gate in `npm test` only proves the two nginx config
+      # files agree with each other textually — it never asks the live,
+      # deployed container what it actually does. This step does: it hits
+      # every one of the 26 legacy `/robotics-lab/<legal-name>` and
+      # `/us-state/georgia` URLs (previously missing from nginx.conf and
+      # so 404ing in production even though nginx-ssl.conf carried the
+      # redirect), plus the phoenix/singapore cross-index-collision
+      # redirects and a sample of the older .html legacy paths, and
+      # confirms each one lands on 200 at its real target — never on
+      # /404. A NEGATIVE CONTROL (a slug that was never published) proves
+      # the sweep can actually detect a miss: it must land on /404, and if
+      # it doesn't, the sweep's own logic is broken and the step fails.
+      # ────────────────────────────────────────────────────────────────
+      - name: "Legacy URL redirect sweep (26 robotics-lab/georgia + phoenix/singapore + .html sample)"
+        run: |
+          set +e
+          BASE="https://compassionbenchmark.com"
+          checked=0
+          ok=0
+          hit_404=0
+
+          # path|expected-target-prefix. A bash array, not a heredoc: this
+          # script lives inside an indented YAML block scalar, and a heredoc
+          # terminator here would carry the block's leading whitespace and
+          # fail to match, silently swallowing the rest of the step.
+          urls=(
+            "/robotics-lab/intuitive-surgical-inc|/robotics-lab/intuitive-surgical"
+            "/robotics-lab/cmr-surgical-ltd|/robotics-lab/cmr-surgical"
+            "/robotics-lab/myomo-inc|/robotics-lab/myomo"
+            "/robotics-lab/yaskawa-electric-corporation|/robotics-lab/yaskawa-electric"
+            "/robotics-lab/kuka-ag|/robotics-lab/kuka"
+            "/robotics-lab/glidance-inc|/robotics-lab/glidance"
+            "/robotics-lab/procept-biorobotics-corporation|/robotics-lab/procept-biorobotics"
+            "/robotics-lab/relay-robotics-inc|/robotics-lab/relay-robotics"
+            "/robotics-lab/skydio-inc|/robotics-lab/skydio"
+            "/robotics-lab/symbotic-inc|/robotics-lab/symbotic"
+            "/robotics-lab/tyromotion-gmbh|/robotics-lab/tyromotion"
+            "/robotics-lab/german-bionic-systems-gmbh|/robotics-lab/german-bionic"
+            "/robotics-lab/scewo-ag|/robotics-lab/scewo"
+            "/robotics-lab/distalmotion-sa|/robotics-lab/distalmotion"
+            "/robotics-lab/ecovacs-robotics-co-ltd|/robotics-lab/ecovacs-robotics"
+            "/robotics-lab/whill-inc|/robotics-lab/whill"
+            "/robotics-lab/doosan-robotics-inc|/robotics-lab/doosan-robotics"
+            "/robotics-lab/beijing-roborock-technology-co-ltd|/robotics-lab/roborock"
+            "/robotics-lab/agibot-zhiyuan-robotics|/robotics-lab/agibot"
+            "/robotics-lab/beijing-geekplus-technology-co-ltd|/robotics-lab/geekplus"
+            "/robotics-lab/franka-robotics-gmbh|/robotics-lab/franka-robotics"
+            "/robotics-lab/mujin-inc|/robotics-lab/mujin"
+            "/robotics-lab/globus-medical-inc|/robotics-lab/globus-medical"
+            "/robotics-lab/rainbow-robotics-co-ltd|/robotics-lab/rainbow-robotics"
+            "/robotics-lab/avidbots-corp|/robotics-lab/avidbots"
+            "/us-state/georgia|/us-state/georgia-us-states"
+            "/city/phoenix|/city/phoenix-global-cities"
+            "/city/singapore|/city/singapore-global-cities"
+            "/countries-index.html|/countries"
+            "/home.html|/"
+            "/data-license.html|/data-licenses"
+            "/humanoid-robotics-labs.html|/robotics-labs"
+          )
+
+          fail=0
+          for entry in "${urls[@]}"; do
+            path="${entry%%|*}"
+            expected="${entry#*|}"
+            checked=$((checked+1))
+            effective=$(curl -sS -o /dev/null -L -w '%{url_effective}' "$BASE$path")
+            got_path="${effective#$BASE}"
+            [ -z "$got_path" ] && got_path="/"
+            if [ "$got_path" = "/404" ] || [ "$got_path" = "/404/" ]; then
+              hit_404=$((hit_404+1))
+              echo "::error::REDIRECT SWEEP: $path landed on 404 (expected $expected)"
+              fail=1
+            elif [ "${got_path#$expected}" != "$got_path" ]; then
+              ok=$((ok+1))
+            else
+              echo "::error::REDIRECT SWEEP: $path landed on '$got_path', expected prefix '$expected'"
+              fail=1
+            fi
+          done
+
+          echo "── Negative control: a slug that was never published must still end at /404 ──"
+          neg_effective=$(curl -sS -o /dev/null -L -w '%{url_effective}' "$BASE/robotics-lab/totally-nonexistent-slug-zzz99")
+          neg_path="${neg_effective#$BASE}"
+          checked=$((checked+1))
+          if [ "$neg_path" = "/404" ] || [ "$neg_path" = "/404/" ]; then
+            echo "Negative control OK: nonsense slug correctly landed on /404 (proves the sweep can detect a real miss)."
+          else
+            echo "::error::REDIRECT SWEEP NEGATIVE CONTROL FAILED: nonsense slug landed on '$neg_path', not /404 — the sweep cannot be trusted to detect a real 404."
+            fail=1
+          fi
+
+          echo ""
+          echo "Redirect sweep: $checked checked, $ok landed correctly, $hit_404 unexpectedly hit /404."
+
+          if [ "$fail" -ne 0 ]; then
+            exit 1
+          fi

@@ -156,6 +156,59 @@ Docker containers:
 
 No Node.js runtime in production. The site is fully static.
 
+## IMPORTANT: `nginx.conf` — not `nginx-ssl.conf` — is the config production actually runs (LC-1a, 2026-09-17)
+
+There are two nginx config files in this repo and they are **not interchangeable
+in practice**, even though both are meant to describe the same site:
+
+- **`nginx.conf`** is baked into the Docker image at build time:
+  `Dockerfile` does `COPY nginx.conf /etc/nginx/conf.d/default.conf`. Both the
+  automated CI deploy (`docker compose up -d --build`, `.github/workflows/deploy.yml`)
+  and any manual `docker compose up -d --build` rebuild the image from this file.
+  **This is the config production is actually running the vast majority of the time**,
+  and the only one CI's `nginx-config-syntax` job validates with `nginx -t`.
+- **`nginx-ssl.conf`** is only ever applied by `deploy.sh` (the one-time first-deploy
+  script), which does `docker compose cp nginx-ssl.conf web:/etc/nginx/conf.d/default.conf`
+  **at runtime, inside the already-running container** — it never touches the
+  image. That copy is real and takes effect immediately, but it does not
+  survive: the **next CI rebuild** (any push to `main`) runs `docker compose
+  up -d --build`, which rebuilds the image from `nginx.conf` and silently
+  reverts the container back to it. `deploy.sh`'s copy is a one-shot, not a
+  standing configuration.
+
+**Consequence:** the two files had drifted (25 `/robotics-lab/<legal-name>`
+redirects plus `/us-state/georgia` existed only in `nginx-ssl.conf`) and every
+one of those 26 legacy URLs 404'd in production, indefinitely, because the
+config CI actually ships never carried them — no matter how many times someone
+"fixed" `nginx-ssl.conf`. As of 2026-09-17 both files carry the same 106
+`rewrite` directives (verified by `site/scripts/test-nginx-redirect-parity.mjs`,
+run as part of `npm test`), and CI's `verify` job now sweeps the live site for
+all of them post-deploy — but nothing in the code prevents the same drift from
+recurring if someone edits `nginx-ssl.conf` alone in the future. Treat
+`nginx.conf` as the single source of truth; if you must edit `nginx-ssl.conf`
+too (e.g. because `deploy.sh` is about to be re-run), edit both.
+
+**Also note:** production's `Server:` response header is `openresty`, not this
+container's `nginx` — TLS is terminated by a reverse proxy in front of the VPS
+container (not by this repo's certbot/nginx-ssl setup for ordinary traffic),
+and `http://` requests are upgraded to `https://` before they ever reach this
+container. This container's own `listen 80` / SSL blocks and the certbot
+container exist and are wired up, but day-to-day production traffic is
+answered by nginx.conf's `listen 80` server behind the openresty proxy.
+Confirming exactly how/where that proxy is configured (and whether
+`nginx-ssl.conf`, certbot, and the `listen 443` blocks are still load-bearing
+for anything) is a **founder-level follow-up**, not resolved by this change.
+
+**Follow-ups deliberately NOT done in this pass (need founder sign-off):**
+- Delete `nginx-ssl.conf` or stop shipping it, now that `nginx.conf` is a
+  verified superset — LC-1b.
+- Remove the `docker compose cp nginx-ssl.conf ...` line from `deploy.sh` —
+  LC-1b. Until then, treat `deploy.sh`'s SSL switch as a temporary, CI-reversible
+  state, not a deploy step to rely on.
+- Fix `/404` returning HTTP 200 instead of 404 (soft 404) — noted, not fixed here.
+- Determine and document exactly what the front-of-VPS openresty proxy is and
+  who owns its config.
+
 ---
 
 ## Score-Watch Fulfillment Deployment

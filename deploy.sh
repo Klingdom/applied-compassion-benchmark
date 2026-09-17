@@ -30,8 +30,11 @@ git pull origin main
 # the deployed /build-manifest.json to know its own commit.
 export GIT_SHA="$(git rev-parse --short HEAD)"
 export GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+echo "==> git status --porcelain (names any file GIT_DIRTY below is reacting to):"
+git status --porcelain
 if [ -z "$(git status --porcelain)" ]; then GIT_DIRTY=false; else GIT_DIRTY=true; fi
 export GIT_DIRTY
+echo "==> GIT_DIRTY=$GIT_DIRTY"
 
 docker compose build --no-cache web
 docker compose up -d web
