@@ -81,6 +81,85 @@ function matches(failure, waiver) {
  *   expired  — waivers past their expiry that matched something (their failures block)
  *   stale    — live waivers that matched nothing (reported so the list stays honest)
  */
+// ── Advance expiry warning tiers ────────────────────────────────────────────
+//
+// A waived failure only stays non-blocking while its waiver is live. Before this,
+// there was no signal at all before a waiver lapsed — the first sign anyone got
+// was a broken build the day after expiry (RISK-015). These tiers give notice
+// while there is still time to remediate or consciously extend.
+
+export const WARNING_TIER_DAYS = 30;
+export const CRITICAL_TIER_DAYS = 7;
+
+/** Whole days from `fromISO` to `toISO` (both YYYY-MM-DD, UTC, date-only). */
+function daysBetween(fromISO, toISO) {
+  const from = Date.parse(`${fromISO}T00:00:00Z`);
+  const to = Date.parse(`${toISO}T00:00:00Z`);
+  return Math.round((to - from) / 86_400_000);
+}
+
+/** The calendar day after `dateISO` (YYYY-MM-DD, UTC, date-only). */
+export function addOneDayISO(dateISO) {
+  const d = new Date(`${dateISO}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
+/**
+ * Advance-expiry warnings for every LIVE waiver (expires >= todayISO — the same
+ * "still live" boundary applyWaivers uses, so a waiver expiring today is still
+ * live and falls in the "critical" tier, not treated as already gone).
+ *
+ * Tiers (nearer tier wins; they do not stack):
+ *   - daysRemaining <= CRITICAL_TIER_DAYS (7)  → "critical"
+ *   - daysRemaining <= WARNING_TIER_DAYS (30)  → "warning"
+ *   - otherwise                                → no warning (not returned)
+ *
+ * Already-expired waivers are not included here — that debt is real and blocks
+ * again, handled by applyWaivers' `expired`/`blocking` outputs, not an advance
+ * notice.
+ *
+ * @returns {Array<{waiver: object, daysRemaining: number, tier: "warning"|"critical"}>}
+ *   sorted soonest-expiry first.
+ */
+export function computeExpiryWarnings(waivers, todayISO) {
+  if (!ISO_DATE.test(String(todayISO ?? ""))) {
+    throw new Error(`separation-waivers: computeExpiryWarnings requires an ISO date, got ${todayISO}`);
+  }
+
+  const out = [];
+  for (const w of waivers) {
+    if (w.expires < todayISO) continue; // expired — not an advance warning, see applyWaivers
+    const daysRemaining = daysBetween(todayISO, w.expires);
+    let tier = null;
+    if (daysRemaining <= CRITICAL_TIER_DAYS) tier = "critical";
+    else if (daysRemaining <= WARNING_TIER_DAYS) tier = "warning";
+    if (tier) out.push({ waiver: w, daysRemaining, tier });
+  }
+  out.sort((a, b) => a.daysRemaining - b.daysRemaining);
+  return out;
+}
+
+/**
+ * Summarise the nearest expiry among a set of waivers currently suppressing a
+ * live failure (the `waived` output of applyWaivers), for the final RESULT
+ * line. Returns null if nothing is waived.
+ */
+export function summarizeNextExpiry(waivedEntries, todayISO) {
+  const byId = new Map();
+  for (const { waiver } of waivedEntries) {
+    if (!byId.has(waiver.id)) byId.set(waiver.id, waiver);
+  }
+  const list = [...byId.values()];
+  if (list.length === 0) return null;
+
+  let soonest = list[0];
+  for (const w of list) {
+    if (w.expires < soonest.expires) soonest = w;
+  }
+  return { waiver: soonest, nextExpiry: soonest.expires, daysRemaining: daysBetween(todayISO, soonest.expires) };
+}
+
 export function applyWaivers(failures, waivers, todayISO) {
   if (!ISO_DATE.test(String(todayISO ?? ""))) {
     throw new Error(`separation-waivers: applyWaivers requires an ISO date, got ${todayISO}`);

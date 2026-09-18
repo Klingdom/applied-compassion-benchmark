@@ -43,7 +43,7 @@ import {
   ORG_DUPLICATE_SCOPE_FILES,
 } from "./lib/product-separation.mjs";
 import { DEPLOYED_AI_AUDIT_SUBJECT_NAMES } from "./lib/deployed-ai-audit-subjects.mjs";
-import { loadWaivers, applyWaivers } from "./lib/separation-waivers.mjs";
+import { loadWaivers, applyWaivers, computeExpiryWarnings, summarizeNextExpiry, addOneDayISO } from "./lib/separation-waivers.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
@@ -235,6 +235,28 @@ if (waived.length > 0) {
   }
 }
 
+const DETERMINATIONS_DRAFT = "docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md";
+
+const expiryWarnings = computeExpiryWarnings(waivers, today);
+if (expiryWarnings.length > 0) {
+  console.log(`\n${sep}`);
+  console.log(`ADVANCE EXPIRY WARNINGS (non-blocking) — ${expiryWarnings.length}`);
+  console.log(sep);
+  for (const { waiver, daysRemaining, tier } of expiryWarnings) {
+    const label = tier === "critical" ? "CRITICAL" : "WARNING";
+    const consequenceDate = addOneDayISO(waiver.expires);
+    console.log(
+      `  [${label}] waiver ${waiver.id} — owner ${waiver.owner} — expires ${waiver.expires} — ` +
+        `${daysRemaining} day(s) remaining — decision ${waiver.decision ?? "no decision ref"}.`,
+    );
+    console.log(
+      `      Consequence: from ${consequenceDate}, \`npm run build\` and every deploy fail until this ` +
+        `is remediated or consciously extended.`,
+    );
+    console.log(`      Remediation path: ${DETERMINATIONS_DRAFT}`);
+  }
+}
+
 if (stale.length > 0) {
   console.log(`\n${sep}`);
   console.log(`STALE WAIVERS (matched nothing — remove them) — ${stale.length}`);
@@ -270,8 +292,14 @@ if (blocking.length > 0) {
   );
   console.log(sep + "\n");
   process.exit(1);
+} else if (waived.length > 0) {
+  const next = summarizeNextExpiry(waived, today);
+  const nextExpiryLabel = next ? ` — next expiry ${next.nextExpiry}, ${next.daysRemaining} days` : "";
+  console.log(`RESULT: PASS WITH WAIVERS (${waived.length} waived${nextExpiryLabel}, ${warnings.length} warning(s))`);
+  console.log(sep + "\n");
+  process.exit(0);
 } else {
-  console.log(`RESULT: PASS (${waived.length} waived, ${warnings.length} warning(s))`);
+  console.log(`RESULT: PASS (clean, ${warnings.length} warning(s))`);
   console.log(sep + "\n");
   process.exit(0);
 }
