@@ -1,5 +1,103 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 23 — 2026-09-17 (one slug rule for twelve scripts, and a ratchet on the accented divergence — RS-4a / RISK-018)
+
+### Selected Item
+**RS-4a — one slug implementation for the scripts** (v2 **15**). Tied with CS-2 (15); the tie-break went to RS-4 on
+**K** (RISK-018 is a High risk this touches, while CS-2's RISK-020 is already reduced). Split per S2: **RS-4a**
+behaviour-preserving refactor plus a gate here; **RS-4b** (the actual fold, with 301s and an S9 re-derivation of every
+slug-keyed store) is a rename, so founder-gated. File set disjoint from the uncommitted It. 22, as S6 requires.
+
+### V1 — the defect, measured live before any edit
+- `/city/sao-paulo` -> **200**, but `/data/scores/sao-paulo.json` -> **301 -> `/404`**; the real file is
+  `/data/scores/s-o-paulo.json` -> **200**. Pages fold accents; the data stores drop them. A consumer using our own
+  page slug to fetch our own data gets nothing.
+- The published files carry the mangling visibly: `bogot.json`, `medell-n.json`, `c-te-d-ivoire.json`, `s-o-lu-s.json`.
+- **16 published names are non-ASCII**; **14 genuinely diverge** (Universite Paris Cite is saved by an explicit pin;
+  Wisconsin-Madison's en dash folds the same either way).
+- **12 files each defined their own slug function.** `export-public-data.mjs:132` even claims its copy "must match the
+  slug convention in site/src/lib/slugify.ts" — it does not. That comment is the whole class in one line.
+
+### What Changed (agent: backend-engineer)
+`site/scripts/lib/slug.mjs` exports the conventions under honest names (`slugifyFolded` = pages, `slugifyUnfolded` =
+what the data stores are published under today) plus the historical alias helpers; all 12 files import instead of
+redefining, **each keeping its current behaviour**. New gate `test:slug-conventions` (chain **29 -> 30**): a source scan
+that fails on a 13th private copy, a golden table over the 16 non-ASCII names, and a dated shrink-only ratchet
+`site/scripts/known-slug-divergences.json` (14 entries). Two files needed delegating wrappers rather than aliases
+(`model-registry-validator.mjs` trims undefined-able fields; `lint-rules.mjs` wraps `String(name)`) — preserved, not
+normalised.
+
+### Validation — coordinator re-ran every claim (V2)
+| Check | Result |
+|---|---|
+| **The claim that matters: no output change.** I regenerated `site/public/data/**` with the new code, `git stash`ed only the 13 code files, regenerated with the old code, and compared sha256 over every file with timestamp keys stripped | **1,761 files each side · 0 only-in-new · 0 only-in-old · 0 content differences** |
+| Comparator positive control (V8) — a zero diff proves nothing unless the comparator can see a difference | Mutating one hash and deleting one path from the copy was **detected (1 differs, 1 missing)** |
+| Independent planted probe (V3), in a **different** file than the agent used (`research/scripts/reconcile-rotation-state.mjs`) | Gate **failed naming `reconcile-rotation-state.mjs:525`**; after restore the file was **sha256-identical** and the gate passed 81/0 |
+| `npm test` | **exit 0**, 30 steps (count read from `package.json`); `test-slug-conventions` 81/0; `test-collision-ratchet` 19/0 |
+| Golden table spot-check against the module itself | Sao Paulo -> `sao-paulo` / `s-o-paulo`; Cote d'Ivoire -> `cote-divoire` / `c-te-d-ivoire`; `AT&T` -> `atandt` / `at-t`, neither matching the published pin `at-and-t` (the D-35 contradiction already on the backlog) |
+
+### Accepted judgment calls (agent, disclosed)
+1. The gate's source scan exempts **two named paths** (`lib/slug.mjs` and `src/lib/slugify.ts`) rather than being
+   exception-free, since it cannot otherwise be satisfied. Accepted: they are named constants, not an extensible allowlist.
+2. `site/scripts/generate-newsletter-html.mjs` holds **two inline slug expressions in a third variant**
+   (`/^-|-$/` strips only one dash — coordinator-confirmed at line 288). Outside the 12-file scope; left alone and logged
+   rather than silently swept in (S5). It is **not** covered by the new gate.
+
+### Per the scoring amendment: the gate freezes a live defect, so the remediation row was filed in the same loop
+**RS-4b** is in `IMPROVEMENT_BACKLOG.md` — fold the data stores, add 301s, and re-derive score files, `index.json`,
+entity records, rotation-state keys, history and Worker KV/HMAC tokens (S9). Founder-gated.
+
+**Uncommitted — awaiting founder.** Commit pathspec: `git add -- site/scripts/lib/slug.mjs
+site/scripts/test-slug-conventions.mjs site/scripts/known-slug-divergences.json site/package.json
+site/scripts/apply-entity-record.mjs site/scripts/apply-us-states.mjs site/scripts/build-entity-history.mjs
+site/scripts/build-entity-records.mjs site/scripts/export-public-data.mjs site/scripts/lib/lint-rules.mjs
+site/scripts/lib/model-registry-validator.mjs site/scripts/test-collision-ratchet.mjs
+site/scripts/test-entity-records.mjs site/scripts/validate-indexes.mjs
+research/scripts/reconcile-rotation-state.mjs research/scripts/validate-rotation-state.mjs`
+
+## Iteration 22 — 2026-09-17 (a lapsing waiver warns before it stops every build — R-1 / RISK-015)
+
+### Selected Item
+**R-1 — waiver T-30 warning, and a waived PASS reported distinctly from a clean PASS** (v2 **16**, top-ranked
+eligible after LC-1a; Meta-review 3 §7 item 3). Alternatives: CS-2 (15) and RS-4 (15). No deviation. Rule S7 makes
+R-1 the forced selection on **2026-10-17**, so this pre-empts a forced loop. WIP was clear (It. 19–21 committed).
+
+### V1 — baseline
+- `validate-product-separation.mjs` printed `RESULT: PASS (6 waived, 10 warning(s))` — a waived-debt pass looked much
+  like a clean one, and there was **no advance notice whatsoever**. The first signal would have been a failed build.
+- The validator runs inside `npm run build` **and** `npm run test`, so the day after the first expiry
+  (`D13-figure`, **2026-11-16**) every build and deploy would fail. Dates were staggered on 2026-09-16 (D-37).
+
+### What Changed (agent: backend-engineer)
+Tier logic in `site/scripts/lib/separation-waivers.mjs` (`computeExpiryWarnings`, `summarizeNextExpiry`,
+`addOneDayISO`), called by the CLI, which still derives `today` exactly as before — one clock, injectable for tests.
+**Agent design deviation, accepted:** the brief said to put the logic in the CLI script; it runs on import and exports
+nothing, so fixture-date tests would have been impossible. Same class, same verification, no new authority — S5 met.
+Output: an `ADVANCE EXPIRY WARNINGS (non-blocking)` block at ≤ 30 days, escalating at ≤ 7, each line naming the
+waiver, owner, expiry, days left, decision ref, the consequence date (expiry + 1) and the determinations draft as the
+remediation path. `RESULT: PASS WITH WAIVERS (…next expiry …, N days…)` vs `PASS (clean…)`. Exit codes unchanged.
+
+### Validation — coordinator re-ran every claim (V2)
+| Check | Result |
+|---|---|
+| Validator alone | `RESULT: PASS WITH WAIVERS (6 waived — next expiry 2026-11-16, 60 days, 10 warning(s))`, **exit 0** |
+| `npm test` | **exit 0**, 29 steps; `test-separation-waivers` **41/41** (was 17) |
+| **Positive control (V8) — today's output shows 0 warnings, which proves nothing** | Simulated dates: 2026-10-18 → 1 warning (figure, 29d) · 2026-11-10 → critical figure 6d + warning 1x 20d · 2026-11-15 → 3 (figure critical 1d) · 2026-11-17 → figure gone from warnings |
+| End-to-end expiry behaviour, with a correctly shaped failure | waived on 2026-09-17 and on **2026-11-16** (expiry day, still live); **blocking + expired on 2026-11-17** — exactly the consequence date the warning prints |
+| Waiver file untouched | `product-separation-waivers.json` not in the diff; 3 files changed |
+
+**My own void probe, disclosed:** my first end-to-end probe passed a failure object without the quoted entity key that
+`separation-waivers.mjs:72` matches on, so it reported "blocking" at every date and proved nothing. I read the matcher
+and rebuilt the probe rather than reporting the false result.
+
+### Follow-up (new backlog row)
+The remediation path in the CLI is a literal string pointing at `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`. If that
+file is renamed or superseded on ratification, the warning will name a file that no longer says what it claims —
+the DC-01 failure mode in a different costume. Either derive it or add a path-existence assertion.
+
+**Uncommitted — awaiting founder.** Commit pathspec: `git add -- site/scripts/lib/separation-waivers.mjs
+site/scripts/validate-product-separation.mjs site/scripts/test-separation-waivers.mjs`.
+
 ## Iteration 21 — 2026-09-17 (LC-1a: production stops running a config nobody edits — DC-11)
 
 ### Selected Item
@@ -249,7 +347,24 @@ paired with a positive control that fired.
 - **Not auto-deployed, by instruction.** The founder asked for manual deployment, so the head of the push is the
   `[skip ci]` records commit, which suppresses the push-triggered `Deploy to VPS` run. Deploy by running the workflow
   manually (Actions → Deploy to VPS → Run workflow) or `./deploy.sh` on the VPS; both build from `main`.
-- **V7 pending, to run after the manual deploy:** `/data/scores/singapore.json` shows `indexSlug: "countries"`
+- **V7 DONE — 2026-09-18, deployed and verified.** The founder deployed manually at **2026-09-17T21:40Z**. Results:
+  · `/data/scores/singapore.json` now serves **Singapore the country, 62.2** (was the city, 56.2) ·
+  `/data/scores/singapore-global-cities.json` serves the city · `/city/singapore-global-cities` **200** ·
+  `/city/singapore` **301 → https://…/city/singapore-global-cities** (It. 19 complete) ·
+  **all 28 legacy URLs** (26 moved rewrites + phoenix + singapore) return **301 → 200, zero `/404`, all `https`**,
+  so It. 21's `absolute_redirect off` is live too · **1,323 of 1,323** ranking-page entity hrefs still **200**
+  (no regression from It. 19's pin) · the 2026-09-17 briefing is live at `/updates/2026-09-17` and in `feed.json`,
+  carrying the corrected text ("sister" **0** occurrences, control "Imbue" **3**; the MultiCare framing dated
+  "around early 2025") · negative control: a nonsense slug still **301 → /404**.
+- **REGRESSION found by this verification: `/build-manifest.json` no longer knows its commit.** It now reports
+  `sha: null, source: "unavailable"` with `buildDate 2026-09-17T21:40Z`, where the 16:59 CI deploy reported
+  `sha 119f1757, source "env"`. Cause: the image was built **without** the `GIT_SHA`/`GIT_BRANCH`/`GIT_DIRTY`
+  build args, which only `deploy.sh` and the CI SSH script export — i.e. a bare `docker compose build` on the VPS.
+  It. 18's capability is intact but bypassed. **Consequence:** the deployed artifact cannot say which commit it is,
+  and the CI freshness assertion has nothing to compare. **Remedy:** deploy via Actions or `./deploy.sh`, never a bare
+  `docker compose build`. Also means the `dirty: true` question is still unanswered — the new porcelain echo only
+  prints on the two supported paths. Backlog **BM-2**.
+- **Superseded V7 checklist (kept for the record):** `/data/scores/singapore.json` shows `indexSlug: "countries"`
   (composite 62.2); `/data/scores/singapore-global-cities.json` shows the city (56.2);
   `/city/singapore-global-cities` returns 200; `/global-cities` links `/city/singapore-global-cities`; build manifest
   sha is the deployed head. **Check `/city/singapore` → 301 → `/city/singapore-global-cities` explicitly:** the rewrite is

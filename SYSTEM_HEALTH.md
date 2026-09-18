@@ -5,46 +5,35 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
-> 2026-09-17 (Iteration 21 — the config production actually runs): the image ships `nginx.conf`, but **26 rewrites
-> existed only in `nginx-ssl.conf`** (25 robotics-lab legal-name slugs + `/us-state/georgia`), so those legacy URLs
-> **301'd to `/404`** live — verified before the change (`/robotics-lab/intuitive-surgical-inc` → `/404`;
-> `/robotics-lab/intuitive-surgical` → 200). All 26 moved into `nginx.conf` (both files now parse to the same 106
-> rewrite pairs, 0 unique to either, verified in both directions); `absolute_redirect off` stops redirects downgrading
-> to `http://`; new `test:nginx-redirect-parity` gate (chain 28 → 29) proven by an independent planted probe; new CI
-> job `nginx-config-syntax` (`nginx -t`) gates `deploy`; the `verify` job now sweeps 29 legacy URLs with a negative
-> control; `deploy.sh` and the CI SSH script now print `git status --porcelain`, so `dirty: true` names its files. All
-> 69 entity-route redirect targets verified to be published slugs. `npm test` exit 0 (29 steps).
-> **Also found, not fixed:** TLS terminates at an **openresty** proxy in front of the container, and `/404` answers
-> **HTTP 200** (a soft 404). **Uncommitted — awaiting founder.**
+> 2026-09-18 (deploy verification — Iterations 19 and 21 are live): the founder deployed manually at 2026-09-17T21:40Z.
+> Verified: `/data/scores/singapore.json` serves the **country (62.2)**; `/city/singapore` 301s to the city's new slug;
+> **all 28 legacy URLs → 301 → 200, 0 `/404`, all https**; **1,323 of 1,323** ranking links still 200; the 09-17
+> briefing is live with its corrected text (0 "sister", control "Imbue" 3). Negative control still 404s.
+> **Two defects found BY this verification, both live:** (1) `/build-manifest.json` reports `sha: null,
+> source: "unavailable"` because the image was built without the `GIT_SHA` build args that only `deploy.sh` and CI
+> inject — It. 18's capability bypassed, so production again cannot name its commit (backlog BM-2); (2) **the evidence
+> tier badges on every briefing page are inverted** — the UI maps tier 1 to "Gov/Court" and 5 to "Trade/Advocacy"
+> against a documented scale where 5 is strongest, so a Boston.com article renders as "Tier 2 · UN/IO"
+> (backlog EV-1, DC-12, v2 15 — the highest-scoring open item). Iterations 22 and 23 remain uncommitted.
 
-> 2026-09-17 (Iteration 20 — entity links stop depending on a redirect): four components re-derived entity slugs from
-> names instead of honouring the pinned slug, so **34 links** (77 in `IndexPageCharts`, which also carried its own
-> naive slugger) pointed at URLs that existed only because nginx rewrote them. Verified live first: `/global-cities`
-> linked `/city/phoenix`, three days after Phoenix was pinned. Now one `rowSlug()` exported from `lib/slugify.ts` and
-> imported by all four — five copies of the rule collapsed to one. New gate `test:pinned-slugs` (chain 27 → 28),
-> proven by a planted probe that failed by name and left the file sha256-identical. `npm test` exit 0, `tsc --noEmit`
-> exit 0, eslint exit 0. **Disclosed:** `test:no-stale-counts` failed the chain on my own hard-coded "8 indexes"
-> comment — I removed the count rather than allowlisting it. **Uncommitted — awaiting founder**; file set disjoint
-> from Iteration 19 per S6, which is the only reason two iterations may sit uncommitted at once.
-> **Correction 2026-09-17 (re-verified live):** the "only because nginx rewrote them" premise is false. Most of these
-> links currently **301 → `/404`** on production (e.g. `/company/atandt`, `/robotics-lab/intuitive-surgical-inc`),
-> because the image ships `nginx.conf` while most rewrites live only in `nginx-ssl.conf` (DC-11, Meta-review 3).
-> Deploying Iteration 20 removes these live broken links.
-> **Deployed 2026-09-17:** commit `119f1757` (founder-approved), run 35249684018, all 4 jobs success. V7: live
-> manifest `sha 119f1757`; **1,323 of 1,323** entity hrefs on the 8 ranking pages → 200, 0 redirects (a nonsense-slug
-> control still → `/404`). `dirty: true` persists on the production checkout after a second deploy (undiagnosed).
-> Iteration 19 committed `cad71c1a` 2026-09-17, awaiting manual deployment.
+> 2026-09-17 (Iteration 23 — one slug rule, and a ratchet on the accented divergence): pages fold accents and the data
+> stores do not, so `/city/sao-paulo` serves while `/data/scores/sao-paulo.json` **301s to `/404`** and the real file is
+> `s-o-paulo.json` (verified live). **14 of 16** non-ASCII published names diverge. **12 scripts each defined their own
+> slug function**, one claiming in a comment to match `src/lib/slugify.ts` while not folding accents. All 12 now import
+> `site/scripts/lib/slug.mjs`, each keeping its current behaviour; the new `test:slug-conventions` gate (chain 29 -> 30)
+> blocks a 13th copy, asserts a golden table, and ratchets `known-slug-divergences.json` (14, shrink-only).
+> **Proven behaviour-preserving:** `public/data/**` regenerated with new and old code — **1,761 files, 0 differences**
+> (timestamps excluded), with the comparator shown to detect a planted change. `npm test` exit 0 (30 steps).
+> **Not fixed (RS-4b, founder-gated):** the fold itself, its 301s and the S9 re-derivation of every slug-keyed store.
+> **Uncommitted — awaiting founder.**
 
-> 2026-09-16 (Iteration 19 — A-2 tranche 1): the bare slug `singapore` now resolves to the **country** (62.2), not
-> the global city; the city moves to `singapore-global-cities` (56.2) with a 301 from `/city/singapore` in both nginx
-> configs. Cross-index collisions **16 → 15**; unique slugs 1,309 → 1,310 of 1,325 entities; `validate-indexes`
-> 64 → 63 warnings (0 errors, 85,455 checks); `test-entity-records` 19,702/0; `npm test` exit 0; 0 history files
-> orphaned. **Coordinator scope error, disclosed:** I also pinned Figure AI and 1X Technologies, passed every gate,
-> then found RISK-017 defers both to **D-13** (proposed, unratified) as an index-*ownership* question — one company
-> must not hold two published composites — and reverted them to HEAD bytes. No gate encodes an unratified decision.
-> **Committed `cad71c1a` 2026-09-17 (founder-approved); pushed with auto-deploy suppressed — awaiting manual
-> deployment, then V7.** Remaining: 12 US-city twins, `washington-dc` (needs a both-sides pin), and the
-> 2 labs (blocked on D-13 ratification).
+> 2026-09-17 (Iteration 22 — RISK-015 gets advance notice): `validate-product-separation` now prints an
+> `ADVANCE EXPIRY WARNINGS` block from **30 days** before any waiver lapses, escalating at 7, naming the waiver, its
+> owner, the consequence date and the remediation draft; and it distinguishes `PASS WITH WAIVERS (6 waived — next
+> expiry 2026-11-16, 60 days…)` from `PASS (clean)`. Exit codes unchanged. Waiver tests **17 → 41**, all on injected
+> fixture dates. Verified by simulation, because today's clean output proves nothing (V8): 2026-10-18 → 1 warning,
+> 2026-11-15 → 3 (figure critical, 1 day), and a correctly shaped failure is **waived through 2026-11-16 and blocks on
+> 2026-11-17**. **Uncommitted — awaiting founder.**
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -61,14 +50,14 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 | `validate-indexes` | ✅ 85,401 checks, 0 errors, 64 warnings | |
 | `validate-daily-briefings` | ✅ 79 of 79 | |
 | `lint-daily-briefings` | ✅ PASS | + `unapplied-score-movement` rule (uncommitted, It. 13) |
-| `validate-product-separation` | ✅ PASS — **6 waived**, 10 warnings | All 6 waivers expire **2026-12-09** → every build fails from 12-10 (RISK-015) |
+| `validate-product-separation` | ✅ `PASS WITH WAIVERS` — **6 waived**, 10 warnings (It. 22) | **Corrected 2026-09-17:** the single 2026-12-09 cliff was staggered on 2026-09-16 (D-37). Expiries now 2026-11-16 · 11-30 · 12-14 · 2027-01-15 · 01-29 · 02-12. First build failure would be **2026-11-17** unless D-13 is decided; It. 22 warns from 30 days out (RISK-015) |
 | `validate-model-releases` | ✅ PASS, 4 warnings | release-watch `scanState` "never-scanned" |
 | `tsc --noEmit` (site) | ✅ clean | |
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ⚠️ `build-special-briefings.mjs:474` rewrites 16 tracked JSON timestamps every build | DC-08 |
 
-## Tests (`npm run test`, **29 steps** with It. 21 uncommitted (28 at `119f1757`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
-test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (17) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
+## Tests (`npm run test`, **30 steps** with It. 22-23 uncommitted (29 at `52c8c6b3`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
+test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
 - **Unverified in this snapshot:** browser E2E suite (earlier "54 E2E tests" figure dates from April).
@@ -124,6 +113,53 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-18, text unchanged: displaced from the top three by the deploy-verification note._
+
+> 2026-09-17 (Iteration 21 — the config production actually runs): the image ships `nginx.conf`, but **26 rewrites
+> existed only in `nginx-ssl.conf`** (25 robotics-lab legal-name slugs + `/us-state/georgia`), so those legacy URLs
+> **301'd to `/404`** live — verified before the change (`/robotics-lab/intuitive-surgical-inc` → `/404`;
+> `/robotics-lab/intuitive-surgical` → 200). All 26 moved into `nginx.conf` (both files now parse to the same 106
+> rewrite pairs, 0 unique to either, verified in both directions); `absolute_redirect off` stops redirects downgrading
+> to `http://`; new `test:nginx-redirect-parity` gate (chain 28 → 29) proven by an independent planted probe; new CI
+> job `nginx-config-syntax` (`nginx -t`) gates `deploy`; the `verify` job now sweeps 29 legacy URLs with a negative
+> control; `deploy.sh` and the CI SSH script now print `git status --porcelain`, so `dirty: true` names its files. All
+> 69 entity-route redirect targets verified to be published slugs. `npm test` exit 0 (29 steps).
+> **Also found, not fixed:** TLS terminates at an **openresty** proxy in front of the container, and `/404` answers
+> **HTTP 200** (a soft 404). **Uncommitted — awaiting founder.**
+
+_Moved 2026-09-17, text unchanged: displaced from the top three by Iteration 23._
+
+> 2026-09-17 (Iteration 20 — entity links stop depending on a redirect): four components re-derived entity slugs from
+> names instead of honouring the pinned slug, so **34 links** (77 in `IndexPageCharts`, which also carried its own
+> naive slugger) pointed at URLs that existed only because nginx rewrote them. Verified live first: `/global-cities`
+> linked `/city/phoenix`, three days after Phoenix was pinned. Now one `rowSlug()` exported from `lib/slugify.ts` and
+> imported by all four — five copies of the rule collapsed to one. New gate `test:pinned-slugs` (chain 27 → 28),
+> proven by a planted probe that failed by name and left the file sha256-identical. `npm test` exit 0, `tsc --noEmit`
+> exit 0, eslint exit 0. **Disclosed:** `test:no-stale-counts` failed the chain on my own hard-coded "8 indexes"
+> comment — I removed the count rather than allowlisting it. **Uncommitted — awaiting founder**; file set disjoint
+> from Iteration 19 per S6, which is the only reason two iterations may sit uncommitted at once.
+> **Correction 2026-09-17 (re-verified live):** the "only because nginx rewrote them" premise is false. Most of these
+> links currently **301 → `/404`** on production (e.g. `/company/atandt`, `/robotics-lab/intuitive-surgical-inc`),
+> because the image ships `nginx.conf` while most rewrites live only in `nginx-ssl.conf` (DC-11, Meta-review 3).
+> Deploying Iteration 20 removes these live broken links.
+> **Deployed 2026-09-17:** commit `119f1757` (founder-approved), run 35249684018, all 4 jobs success. V7: live
+> manifest `sha 119f1757`; **1,323 of 1,323** entity hrefs on the 8 ranking pages → 200, 0 redirects (a nonsense-slug
+> control still → `/404`). `dirty: true` persists on the production checkout after a second deploy (undiagnosed).
+> Iteration 19 committed `cad71c1a` 2026-09-17, awaiting manual deployment.
+
+_Moved 2026-09-17, text unchanged: displaced from the top three by Iteration 22._
+
+> 2026-09-16 (Iteration 19 — A-2 tranche 1): the bare slug `singapore` now resolves to the **country** (62.2), not
+> the global city; the city moves to `singapore-global-cities` (56.2) with a 301 from `/city/singapore` in both nginx
+> configs. Cross-index collisions **16 → 15**; unique slugs 1,309 → 1,310 of 1,325 entities; `validate-indexes`
+> 64 → 63 warnings (0 errors, 85,455 checks); `test-entity-records` 19,702/0; `npm test` exit 0; 0 history files
+> orphaned. **Coordinator scope error, disclosed:** I also pinned Figure AI and 1X Technologies, passed every gate,
+> then found RISK-017 defers both to **D-13** (proposed, unratified) as an index-*ownership* question — one company
+> must not hold two published composites — and reverted them to HEAD bytes. No gate encodes an unratified decision.
+> **Committed `cad71c1a` 2026-09-17 (founder-approved); pushed with auto-deploy suppressed — awaiting manual
+> deployment, then V7.** Remaining: 12 US-city twins, `washington-dc` (needs a both-sides pin), and the
+> 2 labs (blocked on D-13 ratification).
 
 _Moved 2026-09-17, text unchanged: the 4 notes below were displaced from the top three by Iterations 20–21._
 

@@ -176,6 +176,33 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   `RankingTable.tsx:156` used `slugify(entry.name)`), so it isn't a regression.
 
 ### New backlog items (2026-09-17, from Meta-review 3; coordinator-verified where marked)
+- **BM-2 — a bare `docker compose build` on the VPS strips the commit identity from `/build-manifest.json`.**
+  Verified 2026-09-18: after the manual 21:40Z deploy, production reports `sha: null, source: "unavailable"`, where the
+  earlier CI deploy reported `sha 119f1757, source: "env"`. `GIT_SHA`/`GIT_BRANCH`/`GIT_DIRTY` are exported only by
+  `deploy.sh` and the CI SSH script, and the Docker build context has no `.git`. Work: document the supported deploy
+  paths in the runbook (partly done by It. 21), and/or make `build-manifest.mjs` fail the build loudly when the args
+  are absent rather than emitting `null` — a deployed artifact that cannot name its commit defeats V7 and the CI
+  freshness assertion. v1: I3 S5 L2 C5 − E1 − R2 = **12**.
+- **EV-1 — the evidence-tier badges on every briefing page are INVERTED (live, reader-facing).** Found 2026-09-18
+  while verifying the 09-17 deploy. `site/src/components/updates/briefing/evidence/index.tsx:34-40` maps
+  `1: "Tier 1 · Gov/Court" … 4: "Tier 4 · Journalism", 5: "Tier 5 · Trade/Advocacy"`, and `TIER_SHORT_LABELS` calls
+  tier 1 "Primary source". The data convention is the **opposite**: `.claude/agents/overnight-assessor.md:206` —
+  "5 = government/court/treaty-body; 4 = international org / UN mission; 3 = watchdog NGO; 2 = top-tier journalism;
+  1 = trade press/advocacy" — and `overnight-digest.md:452` says "Tier 5 — strongest evidence". **Live proof:** on
+  `/updates/2026-09-17` a Boston.com newspaper article renders as "**Tier 2 · UN/IO**", i.e. a local paper is presented
+  to readers as a UN/international source, and the strength ordering is reversed on every badge on every briefing page.
+  **Ironic context:** the 09-17 correction pass fixed five `sourceTier` *values* against their assessments; the values
+  are now right and the *labels* were wrong all along. Neither the claim-to-source gate nor any test reads these labels.
+  **Do not simply flip the map before surveying the data (V8/S9):** older briefings may have been authored to the
+  inverted convention, in which case flipping the UI would mislabel them instead. Work: (1) survey `sourceTier` values
+  across all 83 daily briefing JSONs against the outlet type of each URL and report which convention each cycle used;
+  (2) correct the labels (and/or a one-off data migration for any cycle authored inverted); (3) a test asserting the UI
+  map matches the documented scale, so the two can never drift again. v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: P **+2**
+  (live false claim to readers) · Rc 0 (new class) → **15**.
+- **R-1b — the waiver warning names a remediation file by literal string.** It. 22 prints
+  `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`; on ratification that draft is likely renamed or superseded, and the
+  warning would then point at a stale or absent path while still looking authoritative (the DC-01 pattern). Work:
+  derive the path, or assert its existence in `test-separation-waivers.mjs`. v1: I2 S4 L2 C5 − E1 − R1 = **11**.
 - **CS-2 — extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).** The 2026-09-17
   briefing was the first one live-enforced by the It. 16 gate. It passed with 0 violations while carrying 5 `sourceTier` values
   that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
@@ -217,6 +244,31 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   Meta-review 3, nine private `slugify` copies in scripts keep RISK-018 live while tests pass (e.g. `sao-paulo.json`
   → `/404`). v2 **15** = 10 + K 2 + P 1 + Rc 2. It touched `lib/slugify.ts`, which is now committed (`119f1757`), so it's
   no longer blocked by It. 20. The migration half needs the D-35 approval-scope answer (Meta-review 3 §8 item 4).
+  **✅ RS-4a COMPLETE — Iteration 23 (2026-09-17), uncommitted, behaviour-preserving.** All 12 private slug-function
+  copies (the coordinator's baseline count, one more than Meta-review 3's nine — `apply-entity-record.mjs`,
+  `apply-us-states.mjs`, `build-entity-history.mjs`, `build-entity-records.mjs`, `export-public-data.mjs`,
+  `lib/lint-rules.mjs`, `lib/model-registry-validator.mjs`, `test-collision-ratchet.mjs`, `test-entity-records.mjs`,
+  `validate-indexes.mjs`, `research/scripts/reconcile-rotation-state.mjs`,
+  `research/scripts/validate-rotation-state.mjs`) now import `slugifyFolded`/`slugifyUnfolded` from the new
+  `site/scripts/lib/slug.mjs`, each keeping its own convention exactly (verified: 1,754 generated files re-hashed
+  before/after, 0 diffs once the 3 known timestamp fields — `generatedAt`/`generated_at`/`updatedAt` — are excluded).
+  New gate `test:slug-conventions` (chain 29 → 30) source-scans for a 13th copy, asserts both conventions against a
+  16-entry non-ASCII golden table, and ratchets the 14 known page/data-slug divergences
+  (`site/scripts/known-slug-divergences.json`) so the RISK-018 defect surface can only shrink. **Deliberately did NOT
+  touch:** `site/src/lib/slugify.ts` (the canonical original the new module mirrors — different module graph, out of
+  scope) or `site/scripts/generate-newsletter-html.mjs` (two inline, uncatalogued slug expressions found during the
+  source scan that use a third variant trailing-dash rule, `/^-|-$/` vs. the naive convention's `/^-+|-+$/`; not one
+  of the 12 files this iteration's scope named — logged here so it isn't lost). **RS-4b, still open and
+  founder-gated per AUTONOMY §1b (a rename):** fold the two conventions — pick `slugifyFolded` (the page convention)
+  as canonical, add 301s for every currently-served unfolded path, and re-derive every slug-keyed store per rule S9:
+  `site/public/data/scores/*.json`, `site/public/data/index.json`, entity records, `research/rotation-state.json`
+  keys, `site/public/data/history/*.json`, and the Worker's KV keys / HMAC unsubscribe token (bare-slug, no migration
+  script today). Scope: the 14-entry ratchet in `known-slug-divergences.json` is the exact set of entities affected;
+  diff the full path/key set before and after per S9. Also fold in `generate-newsletter-html.mjs`'s two inline copies
+  while touching this area, and decide the D-35 `&`-convention disagreement (`and` vs `-and-`) the same way. v1: I3
+  S5 L3 C5 − E2 − R2 = 12 · v2: K +2 (RISK-018 gate gets its remediation row filed in the same loop, per the scoring
+  amendment for gates that freeze live defects) · Rc +2 (installs the fix for a cross-cutting, multiply-occurring
+  convention split) → **16**.
 - **V9a — `test-pinned-slugs.mjs` tests a private copy of `rowSlug` (`:67`), not the shipped export.** Meta-review 3
   broke the shipped function and the guard still passed 10/0. Work: import from `src/lib/slugify.ts` (a TS import
   from a `.mjs` test needs the same loader approach `test-entity-href` uses). Fold into RS-4 or LC-1.
@@ -250,7 +302,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 | 14 | **A-1** wire `test-entity-records.mjs` into `npm run test` + slug-collision ratchet (RISK-017/018 · Rc+2 DC-05) | 15 | 19 | eligible | **✅ COMPLETE Iteration 14** (2026-09-16; ratchet proven by planted 17th collision; CI runs `npm test`) |
 | 15 | **U-1** coverage/freshness generator, report-only (RISK-001/016). U-2 site publication = founder decision | 15 | 17 | eligible (U-2 blocked-on-founder) | Queued |
 | — | L cross-links / overclaiming | 15 | 16 | eligible, held back (no RISKS entry) | Queued |
-| — | R-1 waiver T-30 warning + PASS-with-waivers distinct (RISK-015 · Dl+2) | 12 | 16 | eligible; forced 2026-11-09 | Queued |
+| — | R-1 waiver T-30 warning + PASS-with-waivers distinct (RISK-015 · Dl+2) | 12 | 16 | — | **✅ DONE — Iteration 22 (2026-09-17), uncommitted.** Warnings at ≤30d, critical at ≤7d, `PASS WITH WAIVERS` result line; tests 17 → 41 with injected fixture dates; verified by simulating 2026-10-18 / 11-10 / 11-15 / 11-17 |
 
 ### New backlog item (coordinator discovery, 2026-09-15 — logged and scored before any work, per S3)
 - **RS-1 — make `validate-rotation-state.mjs` fail only on real gaps.** Its 22 blocking FAILs are all false: 20 are
