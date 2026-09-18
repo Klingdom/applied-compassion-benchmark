@@ -48,6 +48,7 @@ import { resolve, join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import { computeCompositeFromDimensions } from "./lib/scoring.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = resolve(__dirname, "..");
@@ -263,19 +264,6 @@ const INDEX_FILES = [
 ];
 
 // ── Slug utilities ────────────────────────────────────────────────────────────
-
-/**
- * Convert a name to a URL-safe kebab-case slug.
- * Exact mirror of the slugify function in export-public-data.mjs.
- * HTML entities in names (e.g. "&amp;" "&#x27;") are handled correctly because
- * all non-alphanumeric characters collapse to a single hyphen.
- */
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Normalise band to Title Case.

@@ -18,6 +18,16 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import { computeCompositeFromDimensions, DIMENSION_CODES, BAND_RANGES } from "./scoring.mjs";
+import { slugifyUnfolded } from "./slug.mjs";
+
+// slugifySimple used to duplicate slugifyUnfolded's body here, plus a
+// `String(name)` coercion this file's original copy had (the other 8
+// unfolded-convention scripts assume `name` is already a string). Preserved
+// as a one-line wrapper — not a reimplementation — so behaviour on any
+// non-string input this file was ever passed is unchanged.
+function slugifySimple(name) {
+  return slugifyUnfolded(String(name));
+}
 
 // ──────────────────────────────────────────────────────────────────────────
 // Reviewer-facing phrases (case-insensitive substring match against any string).
@@ -509,13 +519,6 @@ export const CLAIM_INDEX_FILES = [
   { file: "us-cities.json", indexSlug: "us-cities" },
   { file: "universities.json", indexSlug: "universities" },
 ];
-
-function slugifySimple(name) {
-  return String(name)
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Build a slug/index lookup from parsed index JSON. Pure function so tests

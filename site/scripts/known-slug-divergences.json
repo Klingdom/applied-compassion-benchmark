@@ -1,0 +1,20 @@
+{
+  "asOf": "2026-09-17",
+  "note": "Known page-slug / data-slug divergences (RISK-018 / DC-05, Iteration 23 coordinator baseline). Each entry is a published non-ASCII entity name whose page slug (slugifyFolded, what /city/<slug> etc. actually serve) differs from its data-store slug (slugifyUnfolded, what /data/scores/<slug>.json is actually keyed by) because the row has no explicit pinned `slug` and the two conventions disagree on accent handling. This list is a ratchet: it may only shrink. A NEW name may only appear here as part of a deliberate, reviewed change (e.g. a newly published non-ASCII name) — never silently, and never as a side effect of `npm test` failing. Unifying the two conventions so this list goes to zero is the founder-gated migration RS-4b; do not resolve entries here by hand-patching slugs without going through that migration.",
+  "divergences": [
+    { "name": "Côte d'Ivoire", "index": "countries", "foldedSlug": "cote-divoire", "unfoldedSlug": "c-te-d-ivoire" },
+    { "name": "Bogotá", "index": "global-cities", "foldedSlug": "bogota", "unfoldedSlug": "bogot" },
+    { "name": "Medellín", "index": "global-cities", "foldedSlug": "medellin", "unfoldedSlug": "medell-n" },
+    { "name": "San José", "index": "global-cities", "foldedSlug": "san-jose", "unfoldedSlug": "san-jos" },
+    { "name": "Córdoba", "index": "global-cities", "foldedSlug": "cordoba", "unfoldedSlug": "c-rdoba" },
+    { "name": "Florianópolis", "index": "global-cities", "foldedSlug": "florianopolis", "unfoldedSlug": "florian-polis" },
+    { "name": "São Paulo", "index": "global-cities", "foldedSlug": "sao-paulo", "unfoldedSlug": "s-o-paulo" },
+    { "name": "Belém", "index": "global-cities", "foldedSlug": "belem", "unfoldedSlug": "bel-m" },
+    { "name": "Goiânia", "index": "global-cities", "foldedSlug": "goiania", "unfoldedSlug": "goi-nia" },
+    { "name": "João Pessoa", "index": "global-cities", "foldedSlug": "joao-pessoa", "unfoldedSlug": "jo-o-pessoa" },
+    { "name": "Asunción", "index": "global-cities", "foldedSlug": "asuncion", "unfoldedSlug": "asunci-n" },
+    { "name": "Macapá", "index": "global-cities", "foldedSlug": "macapa", "unfoldedSlug": "macap" },
+    { "name": "Maceió", "index": "global-cities", "foldedSlug": "maceio", "unfoldedSlug": "macei" },
+    { "name": "São Luís", "index": "global-cities", "foldedSlug": "sao-luis", "unfoldedSlug": "s-o-lu-s" }
+  ]
+}

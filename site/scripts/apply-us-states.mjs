@@ -40,6 +40,7 @@ import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { computeCompositeFromDimensions } from "./lib/scoring.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = resolve(__dirname, "..");
@@ -341,7 +342,6 @@ const regionDrift = existing.rankings
   .map((old) => old.name);
 // Cross-index slug collision guard. `washington-dc` was a three-way collision
 // (global-cities / us-cities / us-states); verify the rebuilt set is clean.
-const slugify = (n) => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const otherSlugs = new Set();
 for (const f of readdirSync(join(SITE_ROOT, "src", "data", "indexes"))) {
   if (!f.endsWith(".json") || f === "us-states.json") continue;

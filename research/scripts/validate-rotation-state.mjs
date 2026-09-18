@@ -119,6 +119,14 @@
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  foldAccents,
+  slugifyFolded,
+  slugifyUnfolded,
+  slugifyNaiveFolded,
+  slugifyHtmlEncoded,
+  indexSuffixStripped,
+} from "../../site/scripts/lib/slug.mjs";
 
 const REPO = path.resolve(import.meta.dirname, "..", "..");
 const ASSESSMENTS_DIR = path.join(REPO, "research", "assessments");
@@ -131,78 +139,16 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 // function here is a MECHANICAL transform of `name` (or `slug`) — there is no
 // hand-maintained per-entity list. A candidate is only ever treated as
 // evidence if a real file (or digest line) is found under it.
+//
+// The slugify*/foldAccents/indexSuffixStripped primitives now live in the
+// single shared module site/scripts/lib/slug.mjs (RS-4a) and are imported
+// above. slugifyCurrent/slugifyNaive are this file's own historical names
+// for slugifyFolded/slugifyUnfolded, re-exported unchanged below so nothing
+// downstream that names them changes.
 
-/** Strip combining diacritical marks after NFKD decomposition (Côte -> Cote). */
-export function foldAccents(str) {
-  return str.normalize("NFKD").replace(/[̀-ͯ]/g, "");
-}
-
-/**
- * The CURRENT slug convention (exact mirror of site/src/lib/slugify.ts):
- * accents folded, `&` spelled as "and", `'`/`.`/`,` dropped outright.
- */
-export function slugifyCurrent(name) {
-  return name
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/&/g, "and")
-    .replace(/'/g, "")
-    .replace(/\./g, "")
-    .replace(/,/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .replace(/-+/g, "-");
-}
-
-/**
- * The OLDER "naive" slug convention (exact mirror of the slugify() used in
- * validate-indexes.mjs / export-public-data.mjs / init-rotation-state.mjs):
- * no accent folding, no `&`/`'` special-casing — any run of non-alphanumeric
- * characters (including "&", "'", or accented letters once NFD/NFKD-composed
- * bytes fall outside [a-z0-9]) collapses to a single hyphen.
- */
-export function slugifyNaive(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-/**
- * Naive slugify with accents folded first but punctuation left for the naive
- * rule to collapse — this is what produces the "unfolded" apostrophe form
- * (an apostrophe becomes its OWN hyphen, not dropped), e.g.
- * "Côte d'Ivoire" -> "cote-d-ivoire" (vs. slugifyCurrent's "cote-divoire").
- */
-export function slugifyNaiveFolded(name) {
-  return slugifyNaive(foldAccents(name));
-}
-
-/**
- * The short-lived HTML-entity-encoded convention: `&` spelled out as the
- * word "amp", `'` spelled out as "x27" (e.g. deere-amp-company, at-amp-t,
- * bally-x27-s-corporation), each becoming its own hyphen-delimited token.
- */
-export function slugifyHtmlEncoded(name) {
-  const encoded = foldAccents(name).replace(/&/g, " amp ").replace(/'/g, " x27 ");
-  return slugifyNaive(encoded);
-}
-
-/**
- * Some rotation-state keys were disambiguated by appending "-<index>" to
- * avoid a cross-index slug collision (e.g. figure-ai-robotics-labs, so it
- * doesn't collide with an ai-labs entity slugging to the same root). Strip
- * that suffix to recover the bare alias a report might be filed under.
- */
-export function indexSuffixStripped(slug, index) {
-  if (!index) return null;
-  const suffix = `-${index}`;
-  if (slug.endsWith(suffix) && slug.length > suffix.length) {
-    return slug.slice(0, -suffix.length);
-  }
-  return null;
-}
+export { foldAccents, slugifyNaiveFolded, slugifyHtmlEncoded, indexSuffixStripped };
+export const slugifyCurrent = slugifyFolded;
+export const slugifyNaive = slugifyUnfolded;
 
 /** All distinct, non-empty alias candidates for (slug, name, index), each tagged with how it was derived. */
 export function deriveAliasSlugs(slug, name, index) {

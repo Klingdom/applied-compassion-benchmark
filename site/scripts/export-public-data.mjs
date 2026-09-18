@@ -29,6 +29,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 // site/scripts/ → site/
@@ -125,19 +126,16 @@ export function detectCollisions(recordsByIndex, knownCollisions) {
   return { unexpected, resolved, known };
 }
 
-// ─── Slug generation (mirrors entities.ts / lib/slugify) ─────────────────────
-
-/**
- * Convert a name to a URL-safe kebab-case slug.
- * Must match the slug convention in site/src/lib/slugify.ts and the
- * overnight pipeline so badge URLs align with entity detail page URLs.
- */
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+// ─── Slug generation ───────────────────────────────────────────────────────
+//
+// `slugify` here is `slugifyUnfolded` from site/scripts/lib/slug.mjs — the
+// convention this script has ALWAYS actually published badge/catalog files
+// under. NOTE (RS-4a, 2026-09-17): this does NOT match the convention in
+// site/src/lib/slugify.ts (`slugifyFolded`, which folds accents). The two
+// disagree for every non-ASCII entity name; that divergence is a live
+// defect (RISK-018 / DC-05), tracked and ratcheted by
+// site/scripts/test-slug-conventions.mjs, not silently fixed here. Unifying
+// them is the founder-gated migration RS-4b.
 
 /**
  * Normalize band to Title Case.

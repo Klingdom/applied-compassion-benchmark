@@ -38,6 +38,7 @@
  */
 
 import { canonicalizeEntityName } from "./product-separation.mjs";
+import { slugifyUnfolded } from "./slug.mjs";
 
 // ── Schema enums (site/.benchmark-ops/MODEL_REGISTRY.md) ────────────────────
 
@@ -120,11 +121,7 @@ export const REQUIRED_EVIDENCE_STRING_FIELDS = ["source_url", "publisher", "publ
 // that could drift. `ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.2: "slugify is
 // imported, not re-implemented — same function, same normalisation."
 export function slugify(value) {
-  return String(value ?? "")
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+  return slugifyUnfolded(String(value ?? "").trim());
 }
 
 /**

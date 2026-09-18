@@ -22,6 +22,7 @@ import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { detectCollisions } from "./export-public-data.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = join(__dirname, "..");
@@ -144,13 +145,6 @@ console.log("Case 4: no collisions at all → every listed entry resolved");
 
 console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolved");
 {
-  function slugify(name) {
-    return name
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  }
-
   const INDEX_FILES = [
     { file: "fortune-500.json", indexSlug: "fortune-500" },
     { file: "countries.json", indexSlug: "countries" },

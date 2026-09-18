@@ -113,6 +113,7 @@
 import { readFileSync, writeFileSync, copyFileSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { slugifyUnfolded as slugify } from "../../site/scripts/lib/slug.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 // research/scripts/ -> research/ -> repo root
@@ -157,15 +158,6 @@ const KEY_MIGRATIONS = [
 const FORCE_LAST_ASSESSED = {
   "us-states": "2026-07-19",
 };
-
-// ─── Slug generation (mirrors site/scripts/export-public-data.mjs) ──────────
-
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Build the canonical export-slug map for a published index's rankings,

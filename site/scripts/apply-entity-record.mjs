@@ -58,6 +58,7 @@ import { resolve, join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import { computeCompositeFromDimensions } from "./lib/scoring.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT  = resolve(__dirname, "..");
@@ -190,14 +191,6 @@ const INDEX_FILE_MAP = {
 };
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
-
-/** URL-safe kebab-case slug. Mirrors slugify in build-entity-records.mjs. */
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /** Normalize band to Title Case. Mirrors normalizeBand in build-entity-records.mjs. */
 function normalizeBand(raw) {

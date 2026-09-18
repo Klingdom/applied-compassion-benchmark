@@ -30,6 +30,7 @@ import {
   DIMENSION_CODES,
   computeCompositeFromDimensions as computeCompositeFromDimensionsCanonical,
 } from "./lib/scoring.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
@@ -129,17 +130,6 @@ const ASSESSOR_OVERRIDE_NAMES = new Set([
 ]);
 
 // ── Helpers for checks 12–16 ──────────────────────────────────────────────────
-
-/**
- * Convert a name to URL-safe kebab-case slug.
- * Exact mirror of slugify in build-entity-records.mjs and export-public-data.mjs.
- */
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Round to 2 decimal places — canonical subdim → dimension mean rounding

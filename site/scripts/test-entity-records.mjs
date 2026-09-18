@@ -49,6 +49,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { computeCompositeFromDimensions } from "./lib/scoring.mjs";
+import { slugifyUnfolded as slugify } from "./lib/slug.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const RECORDS_DIR = join(__dirname, "..", "src", "data", "entity-records");
@@ -203,17 +204,6 @@ function fail(group, slug, msg) {
 }
 
 // ── Slug utilities (exact mirrors of build-entity-records.mjs) ────────────────
-
-/**
- * Convert a name to URL-safe kebab-case slug.
- * Mirrors slugify() in build-entity-records.mjs and export-public-data.mjs.
- */
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 // ── Load index data ────────────────────────────────────────────────────────────
 // Build lookup: indexSlug → Map<slug, entityRow>
