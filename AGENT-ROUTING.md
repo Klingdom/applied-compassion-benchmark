@@ -37,6 +37,10 @@ assessments, manifests and syntheses. None of them writes an index. See §5.
 The chain **does not run end to end**. It stops at the digest. `score-updater` is
 "human-triggered only — never runs automatically" and "NEVER runs automatically" in its own spec.
 
+`release-watch-l1` (below, §1c) runs the same nights but is **not part of this chain** — it has no
+data dependency on it in either direction (`docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §8: "Two
+tracks with no dependency between them").
+
 | Stage | Reads | Writes | May NOT write | Gate before hand-off |
 |---|---|---|---|---|
 | **overnight-scanner** | `rotation-state.json`, web (≤14-day lookback) | `research/scans/YYYY-MM-DD.json`, evidence-review payload, `site/src/data/evidence-reviews/latest.json`, rotation-state `last_scanned` + `last_evidence_touch` | `last_assessed`, `last_change_proposal` (Step 8, absolute), any index | `validate-scan.mjs`; failures quarantined to `research/scans/superseded/*.failed-validation.json` (last fired 2026-08-03) |
@@ -69,6 +73,21 @@ write assessments, sidecars, proposals and a synthesis (`research/SEED_CLUSTER_*
 cost that leaves their entities with an understated `last_assessed` until reconciled. Any such study
 **must append its own entry to `PENDING_CHANGES.md`** (D-11, remediation item 2).
 
+### 1c. `release-watch-l1` — an independent daily step (CB-MODEL, not CB-INDEX)
+
+Documented in full in `docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7A/§2.7B (implemented
+2026-09-18). Summarised here because it is a daily-cadence step and belongs in this table, not
+because it joins the chain above — it must never be folded into it.
+
+| | |
+|---|---|
+| **Runs** | `node research/scripts/release-watch-l1.mjs --live`, once daily, same automation window as §1's chain, zero data dependency in either direction. |
+| **Reads** | `site/src/data/model-benchmark/release-sources-v1.json` (0 entries today — a human, not this step, populates it, §2.7 R6/R11); `site/src/data/model-benchmark/releases-v1.json`, read-only, to avoid re-offering an already-promoted candidate. |
+| **Writes** | `research/model-index/release-watch/<scan_id>.json` (scan records — raw candidates, dropped items with reasons, recognition-rule confidence, never a promoted release); `research/model-index/release-watch/state/source-state.json` (per-source dedupe state); `research/model-index/release-watch/fixture-runs/**` (proof runs only, never counted as coverage). |
+| **May NOT write** | `site/src/data/model-benchmark/releases-v1.json` (human-merge only — T4, `ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.5); `rotation-state.json`; `research/change-proposals/**`; `research/scans/**` (that tree is `overnight-scanner`'s — a distinct thing from `research/model-index/release-watch/`); any index. |
+| **Gate before hand-off** | `validate-model-releases.mjs` (wired into `npm test`/`npm run build`). Promotion of a candidate into a confirmed release still requires T3 (human, corroborating source) then T4 (**human merge only**) — unchanged, unextended, same `score-updater`-style gating this repo already applies to published data. |
+| **What the digest reports** | `overnight-digest` does not read this step's output today. Per `ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7B, it **should** — a digest that says nothing about release-watch reads as "no releases" rather than "not monitored." The required line while the registry is empty: *"Release watch: 0 sources registered — detection did not run today."* Implementing this in `overnight-digest`'s own spec is flagged as follow-up work; it is not done by this entry. |
+
 ---
 
 ## 2. Ownership map by artifact class
@@ -83,6 +102,7 @@ cost that leaves their entities with an understated `last_assessed` until reconc
 | `research/change-proposals/*.json` | the agent that filed it | `status`/`reviewed_*`/`decision` are the founder's |
 | `research/digests/**`, `research/PENDING_CHANGES.md` | `overnight-digest` (+ coordinator corrections) | |
 | `research/APPLIED_CHANGES.md` | whoever performed the apply or structural operation | Append-only; prior entries never retro-edited |
+| `research/model-index/release-watch/**` | `release-watch-l1.mjs` (script, §1c) | Distinct from `research/scans/**` — a different tree, a different product (CB-MODEL, not CB-INDEX). `state/` and `fixture-runs/` are subdirectories deliberately excluded from `validate-model-releases.mjs`'s scan-record sweep (`docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §2.7A) |
 | `site/src/data/updates/**`, `site/src/data/special-briefings/**` | `overnight-digest` (daily), `special-briefing` (thematic) | A published briefing is never edited to match a later score change |
 | Teleprompter / spoken scripts | `communications-expert` | "never changes scores, data, or methodology" |
 | Chart and graphic selection | `dataviz-architect` | Owns visualization grammar, not pixels |

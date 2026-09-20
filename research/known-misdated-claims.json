@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "purpose": "Ledger of specific news claims the nightly scanner has already verified as misdated (the underlying event is real, but its true date is a year or more away from the date implied by the aggregator/republication that surfaced it). Created for backlog item SC-1 / defect class DC-13, opened after the Meta '8,000 layoffs' claim and the China 'Ethnic Unity Law' claim each recurred and were re-verified from scratch across multiple nightly cycles, and after 8 of the 14 candidates dropped on the 2026-09-18 cycle turned out to be the same shape of error.",
+    "brief_addendum": "Before verifying a candidate's date from scratch, check research/known-misdated-claims.json for an active entry matching this entity. If one matches, you do not need to re-run verification searches -- cite the entry's true_date and source, drop the candidate as already-known, and append today's date to that entry's occurrences[] array (append-only; do not edit or remove prior entries). An entry means 'this specific claim is misdated', not 'this entity is banned' -- the same entity can and will produce genuine, correctly-dated news on a different topic, and that must still be flagged normally. validate-scan.mjs enforces this: it fails the scan if a top_entities candidate matches an active ledger entry's matcher, but a correctly-dropped candidate never triggers a failure.",
+    "schema_version": 1,
+    "how_entries_are_read": "See research/scripts/validate-scan.mjs, section 8 (checkKnownMisdatedClaims). Only entries with status 'active' are checked. A candidate is flagged when EVERY token-group in matcher[] has at least one substring hit (case-insensitive) against the concatenated slug+name+news_summary text of a research/scans/<date>.json top_entities item.",
+    "last_updated": "2026-09-20"
+  },
+  "claims": [
+    {
+      "id": "meta-8000-layoffs",
+      "entities": [
+        "meta-platforms"
+      ],
+      "description": "'Meta cuts/lays off 8,000 jobs' is a real event, but it happened 2026-05-20, not in September. An undated aggregator snippet keeps getting re-surfaced as if it were new.",
+      "true_date": "2026-05-20",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the 8,000-job cut is a fresh September 2026 announcement/execution.",
+      "matcher": [
+        [
+          "meta platforms",
+          "meta-platforms"
+        ],
+        [
+          "8,000",
+          "8000"
+        ],
+        [
+          "job",
+          "jobs",
+          "layoff",
+          "layoffs",
+          "laid off"
+        ]
+      ],
+      "matcher_scope": "Requires the Meta entity token AND the specific 8,000 headcount figure AND a job/layoff word, all three, regardless of phrasing order (e.g. 'cut 8,000 jobs' and '8,000 job cuts' both match). A genuine, differently-sized Meta layoff (e.g. 12,000 jobs) or a genuine Meta story with no layoff/job content will not match, because at least one required group is absent. The count group (8,000/8000) is the group doing the real specificity work here -- 'job'/'jobs' alone is broad, but combined with Meta AND the exact 8,000 figure it is not a realistic false-positive shape.",
+      "source": "research/scans/2026-09-17.json stats.dropped_candidates (meta-platforms (possible)); research/scans/2026-09-18.json stats.dropped_candidates (meta-platforms (possible)); research/digests/2026-09-18.md line 92 and 165 ('third consecutive cycle')",
+      "first_seen": "2026-09-17",
+      "occurrences": [
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "status": "active",
+      "notes": "The 2026-09-18 digest and scan record both describe this as the claim's 'third cycle' / 'third consecutive cycle', but only two prior scan files (2026-09-17, 2026-09-18) are committed in research/scans/ with an itemized dropped_candidates record. No research/scans/2026-09-16.json exists. occurrences[] records only the two documented cycles; it is not stretched to three to match the prose claim."
+    },
+    {
+      "id": "china-ethnic-unity-law",
+      "entities": [
+        "china"
+      ],
+      "description": "China's 'Ethnic Unity Law' actually passed 2026-03-12 per China's own official gazette. A recurring claim frames it as a September 2026 draft.",
+      "true_date": "2026-03-12",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the law is a September 2026 draft (specifically framed as an '8 September draft' in the 2026-09-15 cycle) rather than a law already passed in March.",
+      "matcher": [
+        [
+          "china"
+        ],
+        [
+          "ethnic unity law",
+          "ethnic unity"
+        ]
+      ],
+      "matcher_scope": "Requires the China entity token AND the distinctive 'Ethnic Unity Law' proper-noun phrase. Genuine, unrelated China news (trade policy, a different law, a different ethnic-policy story that does not use this specific name) will not match.",
+      "source": "research/scans/2026-09-15.json stats.dropped_candidates (china (possible)); research/scans/2026-09-17.json stats.dropped_candidates (china (possible)); research/digests/2026-09-17.md line 18",
+      "first_seen": "2026-09-15",
+      "occurrences": [
+        "2026-09-15",
+        "2026-09-17"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "paypal-dei-settlement",
+      "entities": [
+        "paypal"
+      ],
+      "description": "PayPal's DOJ ~$30M DEI-related settlement was actually announced 2026-05-12, not in September. An undated aggregator snippet implied it was current.",
+      "true_date": "2026-05-12",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the DOJ DEI settlement is a fresh September 2026 development.",
+      "matcher": [
+        [
+          "paypal"
+        ],
+        [
+          "dei",
+          "diversity, equity"
+        ],
+        [
+          "settlement"
+        ]
+      ],
+      "matcher_scope": "Requires the PayPal entity token AND a DEI/diversity-equity topic token AND a settlement token, all three. A genuine PayPal settlement unrelated to DEI (e.g. a security or fraud settlement) or a genuine PayPal DEI story with no settlement (e.g. a policy change) will not match.",
+      "source": "research/scans/2026-09-18.json stats.dropped_candidates (paypal (possible)); research/digests/2026-09-18.md line 14 and 165",
+      "first_seen": "2026-09-18",
+      "occurrences": [
+        "2026-09-18",
+        "2026-09-20"
+      ],
+      "status": "active",
+      "notes": "The forced-selection task brief that requested this ledger described this claim as recurring in a pattern parallel to Meta/China; the scan/digest records show only one documented occurrence so far (2026-09-18). occurrences[] reflects only what the committed records show."
+    },
+    {
+      "id": "qatar-doha-strike",
+      "entities": [
+        "qatar"
+      ],
+      "description": "The Doha strike on ceasefire negotiators actually occurred 2025-09-09 (per a HRW/World Report 2026 country chapter), a year stale relative to a September 2026 scan window.",
+      "true_date": "2025-09-09",
+      "true_date_reason": null,
+      "claimed_framing": "A 'Sept 9' mention inside a year-in-review-style source is read as September 2026 rather than the actual September 2025 event.",
+      "matcher": [
+        [
+          "qatar",
+          "doha"
+        ],
+        [
+          "strike",
+          "airstrike",
+          "air strike"
+        ],
+        [
+          "negotiator",
+          "mediator",
+          "ceasefire"
+        ]
+      ],
+      "matcher_scope": "Requires the Qatar/Doha entity token AND a strike-action token AND a negotiator/mediator/ceasefire target token. A genuine, unrelated Qatar strike story (e.g. a labor strike, an aviation incident) will not match because the negotiator/mediator/ceasefire token is absent.",
+      "source": "research/scans/2026-09-18.json stats.dropped_candidates (qatar (possible)); research/digests/2026-09-18.md line 14 and 165",
+      "first_seen": "2026-09-18",
+      "occurrences": [
+        "2026-09-18"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "freeport-mcmoran-grasberg",
+      "entities": [
+        "freeport-mcmoran"
+      ],
+      "description": "Freeport-McMoRan's Grasberg mine mud-rush fatality disclosure and related securities suit both date to September 2025 (press release dated 2025-09-24), a year stale relative to a September 2026 scan window.",
+      "true_date": "2025-09-24",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the Grasberg mud-rush fatality disclosure is a September 2026 event.",
+      "matcher": [
+        [
+          "freeport-mcmoran",
+          "freeport mcmoran",
+          "grasberg"
+        ],
+        [
+          "mud rush",
+          "mudrush",
+          "mud-rush",
+          "fatality",
+          "fatalities",
+          "killed"
+        ]
+      ],
+      "matcher_scope": "Requires the Freeport-McMoRan/Grasberg entity token AND a mud-rush/fatality token. A genuine, unrelated Freeport-McMoRan story (earnings, a different safety incident) without fatality/mud-rush language will not match.",
+      "source": "research/scans/2026-09-18.json stats.dropped_candidates (freeport-mcmoran (possible)); research/digests/2026-09-18.md line 14 and 165",
+      "first_seen": "2026-09-18",
+      "occurrences": [
+        "2026-09-18"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "cambridge-protest-injunction",
+      "entities": [
+        "university-of-cambridge"
+      ],
+      "description": "The University of Cambridge protest injunction was actually granted 2025-03-21 (following the ELSC/Liberty intervention), over a year stale relative to a September 2026 scan window.",
+      "true_date": "2025-03-21",
+      "true_date_reason": null,
+      "claimed_framing": "An undated recap is conflated with a current event, implying a September 2026 High Court escalation.",
+      "matcher": [
+        [
+          "university of cambridge"
+        ],
+        [
+          "injunction"
+        ],
+        [
+          "protest"
+        ]
+      ],
+      "matcher_scope": "Requires the exact 'university of cambridge' phrase (not just 'cambridge', which could also match a Cambridge, Massachusetts or Cambridge, UK city entity in the global-cities index) AND an injunction token AND a protest token. A genuine Cambridge (university or city) story without both an injunction and a protest will not match.",
+      "source": "research/scans/2026-09-18.json stats.dropped_candidates (university-of-cambridge (possible)); research/digests/2026-09-18.md line 14 and 165",
+      "first_seen": "2026-09-18",
+      "occurrences": [
+        "2026-09-18"
+      ],
+      "status": "active",
+      "notes": null
+    },
+    {
+      "id": "venezuela-maduro-captured",
+      "entities": [
+        "venezuela"
+      ],
+      "description": "Maduro's capture by US forces actually occurred 2026-01-03 through 2026-01-05 (source states a 3-5 January 2026 range); an undated search snippet read as current in September.",
+      "true_date": "2026-01-03",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the Maduro capture is a new September 2026 event.",
+      "matcher": [
+        [
+          "venezuela",
+          "maduro"
+        ],
+        [
+          "captured",
+          "capture",
+          "arrested",
+          "detained",
+          "seized"
+        ]
+      ],
+      "matcher_scope": "Requires the Venezuela/Maduro entity token AND a capture/arrest/detention token. A genuine, unrelated Venezuela or Maduro story (elections, sanctions, diplomacy) without a capture/arrest/detention framing will not match.",
+      "source": "research/scans/2026-09-17.json stats.dropped_candidates (venezuela (possible)); research/digests/2026-09-17.md lines 18 and 147",
+      "first_seen": "2026-09-17",
+      "occurrences": [
+        "2026-09-17"
+      ],
+      "status": "active",
+      "notes": "The forced-selection task brief that requested this ledger described this claim as 'first seen 2026-09-18'; the committed scan/digest records show it was actually first documented in the 2026-09-17 cycle's dropped_candidates, not 2026-09-18 (it does not reappear in the 2026-09-18 dropped_candidates list). first_seen/occurrences reflect the committed records, per the instruction not to invent a date. True date recorded as the range's earliest day (2026-01-03); the source states a 3-5 January 2026 range, not a single day."
+    },
+    {
+      "id": "zambia-opposition-killing",
+      "entities": [
+        "zambia"
+      ],
+      "description": "Opposition figure Mutotwe Kafwaya was killed in a security raid on 2026-08-14 (confirmed 2026-08-19); a September UN News republication of the same story read as new.",
+      "true_date": "2026-08-14",
+      "true_date_reason": null,
+      "claimed_framing": "A September republication of the same story is read as a new September 2026 killing.",
+      "matcher": [
+        [
+          "zambia"
+        ],
+        [
+          "kafwaya",
+          "opposition figure killed",
+          "opposition leader killed"
+        ]
+      ],
+      "matcher_scope": "Requires the Zambia entity token AND either the specific victim's name or a killed-opposition-figure phrase. A genuine, unrelated Zambia story (elections, economic policy) or even a different opposition-related Zambia story that does not describe a killing (e.g. an arrest) will not match.",
+      "source": "research/scans/2026-09-17.json stats.dropped_candidates (zambia (possible)); research/digests/2026-09-17.md lines 18 and 147",
+      "first_seen": "2026-09-17",
+      "occurrences": [
+        "2026-09-17"
+      ],
+      "status": "active",
+      "notes": "The forced-selection task brief described this claim as 'first seen 2026-09-18'; the committed scan/digest records show it was actually first documented in the 2026-09-17 cycle's dropped_candidates (it does not reappear in the 2026-09-18 dropped_candidates list). first_seen/occurrences reflect the committed records."
+    },
+    {
+      "id": "xai-baltimore-lawsuit",
+      "entities": [
+        "xai-grok"
+      ],
+      "description": "The Baltimore v. xAI Grok deepfake-image lawsuit was actually filed 2026-03-24, not in September; an undated search snippet implied it was current.",
+      "true_date": "2026-03-24",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the Baltimore lawsuit against xAI/Grok is a new September 2026 filing.",
+      "matcher": [
+        [
+          "xai",
+          "grok"
+        ],
+        [
+          "baltimore"
+        ],
+        [
+          "lawsuit",
+          "suit",
+          "sued"
+        ]
+      ],
+      "matcher_scope": "Requires an xAI/Grok entity token AND a Baltimore location token AND a lawsuit token, all three. A genuine xAI/Grok story about Baltimore with no lawsuit, or a genuine xAI/Grok lawsuit filed somewhere other than Baltimore, will not match.",
+      "source": "research/scans/2026-09-17.json stats.dropped_candidates (xai-grok (possible)); research/digests/2026-09-17.md lines 18 and 147",
+      "first_seen": "2026-09-17",
+      "occurrences": [
+        "2026-09-17"
+      ],
+      "status": "active",
+      "notes": "The forced-selection task brief described this claim as 'first seen 2026-09-18'; the committed scan/digest records show it was actually first documented in the 2026-09-17 cycle's dropped_candidates (it does not reappear in the 2026-09-18 dropped_candidates list). first_seen/occurrences reflect the committed records."
+    },
+    {
+      "id": "anthropic-pentagon-suit",
+      "entities": [
+        "anthropic"
+      ],
+      "description": "Anthropic's 'supply chain risk' lawsuit against the Department of Defense was filed March 2026 and was ruled unlawful by a federal judge 2026-08-27/2026-08-28 (source states a 27-28 August 2026 range) -- resolved before a September 2026 scan window.",
+      "true_date": "2026-08-27",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the Anthropic v. DoD lawsuit is a new, unresolved September 2026 finding rather than a March 2026 filing already resolved in late August.",
+      "matcher": [
+        [
+          "anthropic"
+        ],
+        [
+          "pentagon",
+          "dod",
+          "department of defense",
+          "supply chain risk"
+        ],
+        [
+          "lawsuit",
+          "suit",
+          "sued",
+          "ruled unlawful",
+          "ruling"
+        ]
+      ],
+      "matcher_scope": "Requires the Anthropic entity token AND a Pentagon/DoD topic token AND a lawsuit/ruling token, all three. A genuine Anthropic-Pentagon partnership or procurement story with no lawsuit content will not match.",
+      "source": "research/scans/2026-09-17.json stats.dropped_candidates (anthropic (possible)); research/digests/2026-09-17.md lines 18 and 147",
+      "first_seen": "2026-09-17",
+      "occurrences": [
+        "2026-09-17"
+      ],
+      "status": "active",
+      "notes": "The forced-selection task brief described this claim as 'first seen 2026-09-18'; the committed scan/digest records show it was actually first documented in the 2026-09-17 cycle's dropped_candidates (it does not reappear in the 2026-09-18 dropped_candidates list). first_seen/occurrences reflect the committed records. True date recorded as the range's earlier day (2026-08-27); the source states a 27-28 August 2026 range for the ruling, not a single day."
+    }
+  ]
+}

@@ -41,9 +41,11 @@
 
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(import.meta.dirname, "..", "..");
 const LOOKBACK_DAYS = 14;
+const LEDGER_PATH = path.join(REPO, "research", "known-misdated-claims.json");
 
 // Coverage floors, from .claude/agents/overnight-scanner.md.
 const MIN_T1_SEARCHES = 150;
@@ -235,33 +237,194 @@ function normalizeSource(src) {
   return { url: "", date_verified: undefined };
 }
 
-const args = process.argv.slice(2);
-const date = args.find((a) => /^\d{4}-\d{2}-\d{2}$/.test(a));
-const baselineIdx = args.indexOf("--baseline");
-const baselinePath = baselineIdx !== -1 ? args[baselineIdx + 1] : null;
+// ── 8. THE KNOWN-MISDATED-CLAIM RULE (added 2026-09-20, SC-1 / DC-13) ───────
+//
+// The scanner has no memory of claims it already disproved (Meta "8,000
+// layoffs" and China's "Ethnic Unity Law" each recurred and were
+// re-verified from scratch across multiple nightly cycles; 8 of the 14
+// candidates dropped on 2026-09-18 were the same shape of error). This
+// section checks a scan's candidate list against
+// research/known-misdated-claims.json and fails loudly when an ACTIVE
+// entry's claim resurfaces.
+//
+// WHICH LIST IS CHECKED, AND WHY: only `scan.top_entities` — the list that
+// is actually promoted onward to the assessor and, from there, into a
+// published index/briefing. That is the one place a misdated claim slipping
+// through causes real harm, matching this defect class's own framing ("one
+// that slips through reaches a public briefing"). Three other lists in the
+// scan schema are deliberately NOT checked here:
+//   - `stats.dropped_candidates` is the scanner correctly catching a known
+//     misdate — checking it would fail the very behavior we want. Per the
+//     spec: "Dropped candidates must not trigger a failure — correctly
+//     dropping a known-misdated claim is the system working."
+//   - `sector_alerts` mixes genuine contextual notes (no `slug`, not fed to
+//     the assessor as a scoring candidate) with "Dropped candidate: ..."
+//     disclosure entries that are themselves duplicates of
+//     dropped_candidates (see e.g. 2026-09-17.json sector_alerts, which
+//     restates the China/Venezuela/Zambia drops verbatim as context). Both
+//     halves would produce either false failures (on a correct drop,
+//     restated) or false negatives (no slug to bind a claim-specific
+//     token-group match to a real entity). Checking top_entities already
+//     covers the one place these matter if they were ever mis-promoted.
+//   - `rotation_backfill` carries no news content at all (it exists purely
+//     to fill unassessed-entity quota; see its `reason: "never assessed"`
+//     shape) and cannot carry a misdated news claim by construction.
+// If a future scan schema adds another promoted, news-bearing candidate
+// list, extend CANDIDATE_LIST_KEYS below rather than special-casing it here.
+const CANDIDATE_LIST_KEYS = ["top_entities"];
 
-if (!date) {
-  console.error("usage: validate-scan.mjs <YYYY-MM-DD> [--baseline <path>]");
-  process.exit(1);
+/** Lowercased, concatenated searchable text for one candidate record. */
+function textForCandidate(item) {
+  return [item?.slug, item?.name, item?.news_summary, item?.summary]
+    .filter((v) => typeof v === "string" && v.length > 0)
+    .join(" \n ")
+    .toLowerCase();
 }
 
-const scanPath = path.join(REPO, "research", "scans", `${date}.json`);
-if (!existsSync(scanPath)) {
-  console.error(`FAIL: scan file does not exist: ${scanPath}`);
-  process.exit(1);
+/** A matcher is an array of token-groups; every group must have at least one
+ * substring hit (case-insensitive, OR within a group) for the entry to
+ * match — an AND-of-ORs. This is what lets a matcher require both "which
+ * entity" and "which specific claim" tokens rather than firing on the
+ * entity name alone (see each ledger entry's `matcher_scope` for why its
+ * particular groups were chosen). */
+function matchesEntry(entry, text) {
+  if (!Array.isArray(entry?.matcher) || entry.matcher.length === 0) return false;
+  return entry.matcher.every(
+    (group) => Array.isArray(group) && group.length > 0 && group.some((token) => text.includes(String(token).toLowerCase())),
+  );
 }
 
-const scan = JSON.parse(readFileSync(scanPath, "utf8"));
-const rotation = JSON.parse(
-  readFileSync(path.join(REPO, "research", "rotation-state.json"), "utf8"),
-);
+/** Structural validation of the ledger file. Returns a list of error
+ * strings; an empty list means the ledger is well-formed. Deliberately
+ * strict: a malformed or empty ledger must fail loudly (see
+ * checkKnownMisdatedClaims below), never silently pass as "nothing to
+ * check." */
+export function validateLedgerSchema(ledger) {
+  const errors = [];
+  if (!ledger || typeof ledger !== "object") {
+    errors.push("ledger is not a JSON object");
+    return errors;
+  }
+  if (!Array.isArray(ledger.claims) || ledger.claims.length === 0) {
+    errors.push("ledger.claims must be a non-empty array");
+    return errors;
+  }
+  const seenIds = new Set();
+  ledger.claims.forEach((entry, i) => {
+    const where = `claims[${i}]${entry?.id ? ` (${entry.id})` : ""}`;
+    if (!entry || typeof entry !== "object") {
+      errors.push(`${where}: not an object`);
+      return;
+    }
+    if (typeof entry.id !== "string" || entry.id.length === 0) errors.push(`${where}: missing string id`);
+    else if (seenIds.has(entry.id)) errors.push(`${where}: duplicate id "${entry.id}"`);
+    else seenIds.add(entry.id);
+    if (!Array.isArray(entry.entities) || entry.entities.length === 0 || !entry.entities.every((e) => typeof e === "string"))
+      errors.push(`${where}: entities must be a non-empty array of strings`);
+    if (typeof entry.description !== "string" || entry.description.length === 0) errors.push(`${where}: missing description`);
+    if (entry.true_date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(entry.true_date ?? ""))
+      errors.push(`${where}: true_date must be an ISO date string or null`);
+    if (entry.true_date === null && (typeof entry.true_date_reason !== "string" || entry.true_date_reason.length === 0))
+      errors.push(`${where}: true_date is null but true_date_reason is not a non-empty string`);
+    if (typeof entry.claimed_framing !== "string" || entry.claimed_framing.length === 0) errors.push(`${where}: missing claimed_framing`);
+    if (
+      !Array.isArray(entry.matcher) ||
+      entry.matcher.length === 0 ||
+      !entry.matcher.every((g) => Array.isArray(g) && g.length > 0 && g.every((t) => typeof t === "string" && t.length > 0))
+    )
+      errors.push(`${where}: matcher must be a non-empty array of non-empty string arrays`);
+    if (typeof entry.matcher_scope !== "string" || entry.matcher_scope.length === 0) errors.push(`${where}: missing matcher_scope`);
+    if (typeof entry.source !== "string" || entry.source.length === 0) errors.push(`${where}: missing source`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.first_seen ?? "")) errors.push(`${where}: first_seen must be an ISO date string`);
+    if (!Array.isArray(entry.occurrences) || entry.occurrences.length === 0 || !entry.occurrences.every((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)))
+      errors.push(`${where}: occurrences must be a non-empty array of ISO date strings`);
+    if (entry.occurrences && entry.first_seen && !entry.occurrences.includes(entry.first_seen))
+      errors.push(`${where}: first_seen (${entry.first_seen}) is not present in occurrences[]`);
+    if (entry.status !== "active" && entry.status !== "retired") errors.push(`${where}: status must be "active" or "retired"`);
+    if (entry.status === "retired" && (typeof entry.retired_reason !== "string" || entry.retired_reason.length === 0))
+      errors.push(`${where}: status is "retired" but retired_reason is not a non-empty string`);
+  });
+  return errors;
+}
 
-const failures = [];
-const warnings = [];
-const fail = (m) => failures.push(m);
-const warn = (m) => warnings.push(m);
+/** Checks a scan's promoted candidate list(s) (see CANDIDATE_LIST_KEYS above)
+ * against every ACTIVE ledger entry. Returns { failures, checkedEntries,
+ * checkedCandidates }. A malformed/empty ledger produces a failure — never a
+ * silent pass — so a broken ledger file cannot accidentally disable this
+ * gate. */
+export function checkKnownMisdatedClaims(scan, ledger) {
+  const schemaErrors = validateLedgerSchema(ledger);
+  if (schemaErrors.length) {
+    return {
+      failures: [`known-misdated-claims ledger is malformed, refusing to vacuously pass: ${schemaErrors.join("; ")}`],
+      checkedEntries: 0,
+      checkedCandidates: 0,
+    };
+  }
 
-const reviews = scan.entity_reviews ?? [];
+  const candidates = CANDIDATE_LIST_KEYS.flatMap((key) => (Array.isArray(scan?.[key]) ? scan[key] : []));
+  const activeEntries = ledger.claims.filter((e) => e.status === "active");
+  const failures = [];
+
+  for (const entry of activeEntries) {
+    for (const item of candidates) {
+      const text = textForCandidate(item);
+      if (text && matchesEntry(entry, text)) {
+        failures.push(
+          `KNOWN MISDATED CLAIM resurfaced: ledger entry "${entry.id}" (true date: ${
+            entry.true_date ?? `unknown — ${entry.true_date_reason}`
+          }) matched top_entities candidate "${item.name ?? item.slug ?? "?"}". Already surfaced and dropped in cycle(s): ${entry.occurrences.join(
+            ", ",
+          )}. Re-verify only if this is genuinely NEW news about this entity, not a restatement of the known claim (see research/known-misdated-claims.json:${
+            entry.id
+          }).`,
+        );
+      }
+    }
+  }
+
+  return { failures, checkedEntries: activeEntries.length, checkedCandidates: candidates.length };
+}
+
+function loadLedger() {
+  if (!existsSync(LEDGER_PATH)) {
+    return { __loadError: `known-misdated-claims ledger not found at ${LEDGER_PATH}` };
+  }
+  try {
+    return JSON.parse(readFileSync(LEDGER_PATH, "utf8"));
+  } catch (err) {
+    return { __loadError: `known-misdated-claims ledger at ${LEDGER_PATH} is not valid JSON: ${err.message}` };
+  }
+}
+
+function main() {
+  const args = process.argv.slice(2);
+  const date = args.find((a) => /^\d{4}-\d{2}-\d{2}$/.test(a));
+  const baselineIdx = args.indexOf("--baseline");
+  const baselinePath = baselineIdx !== -1 ? args[baselineIdx + 1] : null;
+
+  if (!date) {
+    console.error("usage: validate-scan.mjs <YYYY-MM-DD> [--baseline <path>]");
+    process.exit(1);
+  }
+
+  const scanPath = path.join(REPO, "research", "scans", `${date}.json`);
+  if (!existsSync(scanPath)) {
+    console.error(`FAIL: scan file does not exist: ${scanPath}`);
+    process.exit(1);
+  }
+
+  const scan = JSON.parse(readFileSync(scanPath, "utf8"));
+  const rotation = JSON.parse(
+    readFileSync(path.join(REPO, "research", "rotation-state.json"), "utf8"),
+  );
+
+  const failures = [];
+  const warnings = [];
+  const fail = (m) => failures.push(m);
+  const warn = (m) => warnings.push(m);
+
+  const reviews = scan.entity_reviews ?? [];
 
 // ── 1. Coverage: every rotation entity reviewed exactly once ────────────────
 const rotationKeys = Object.keys(rotation.entities ?? {});
@@ -730,6 +893,18 @@ if (baselinePath) {
   }
 }
 
+// ── 8. THE KNOWN-MISDATED-CLAIM RULE (see checkKnownMisdatedClaims above) ──
+const ledger = loadLedger();
+if (ledger.__loadError) {
+  fail(ledger.__loadError);
+} else {
+  const { failures: ledgerFailures, checkedEntries, checkedCandidates } = checkKnownMisdatedClaims(scan, ledger);
+  ledgerFailures.forEach(fail);
+  if (!ledgerFailures.length) {
+    console.log(`  known-misdated-claims check: ${checkedEntries} active ledger entr${checkedEntries === 1 ? "y" : "ies"} vs ${checkedCandidates} top_entities candidate(s) — no match`);
+  }
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 const idxStats = {};
 for (const r of reviews) {
@@ -769,3 +944,11 @@ if (failures.length) {
 
 console.log("\nRESULT: PASS — scan is safe to hand to the assessor.\n");
 process.exit(0);
+}
+
+// Only run the CLI when this file is executed directly (not when imported by
+// tests) — matches the convention used by coverage-report.mjs and
+// release-watch-l1.mjs elsewhere in this directory.
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))) {
+  main();
+}

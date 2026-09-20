@@ -1,0 +1,166 @@
+{
+  "scan_id": "fixture-scan-2026-09-18-001",
+  "started_at": "2026-09-18T14:10:04.403Z",
+  "window": {
+    "from": "2026-09-18",
+    "to": "2026-09-18"
+  },
+  "method": "source_fetch",
+  "budget": {
+    "tool": "http-get",
+    "calls_allowed": null,
+    "calls_used": 0,
+    "exhausted": false
+  },
+  "sources_planned": [
+    "fixture-rss",
+    "fixture-atom",
+    "fixture-jsonfeed",
+    "fixture-html-dated",
+    "fixture-html-no-dates",
+    "fixture-malformed",
+    "fixture-empty"
+  ],
+  "sources_reached": [
+    "fixture-rss",
+    "fixture-atom",
+    "fixture-jsonfeed",
+    "fixture-html-dated",
+    "fixture-html-no-dates",
+    "fixture-malformed",
+    "fixture-empty"
+  ],
+  "sources_failed": [],
+  "quorum": {
+    "required": null,
+    "reached": 3,
+    "met": false
+  },
+  "candidates": [
+    {
+      "source_id": "fixture-rss",
+      "title": "Fixture Labs announces Fixture-4.2, a new frontier model",
+      "link": "https://fixturelabs.example/news/fixture-4-2-release",
+      "published_at": "2026-09-17T14:30:00.000Z",
+      "snippet": "Today we are announcing the release of Fixture-4.2, our latest model, now available to all users.",
+      "format": "rss",
+      "is_release_candidate": true,
+      "confidence": 0.85,
+      "matched_keywords": [
+        "announcing",
+        "release",
+        "now available"
+      ],
+      "matched_version_token": "Fixture-4.2",
+      "recognition_reasons": [
+        "matched 3 keyword(s) and a version-or-name token (\"Fixture-4.2\")"
+      ]
+    },
+    {
+      "source_id": "fixture-atom",
+      "title": "Introducing FixtureModel v3.0",
+      "link": "https://fixtureai.example/blog/fixturemodel-v3",
+      "published_at": "2026-09-17T12:00:00.000Z",
+      "snippet": "We are introducing FixtureModel v3.0, our newest release, generally available today.",
+      "format": "atom",
+      "is_release_candidate": true,
+      "confidence": 0.85,
+      "matched_keywords": [
+        "introducing",
+        "release",
+        "general availability"
+      ],
+      "matched_version_token": "v3.0",
+      "recognition_reasons": [
+        "matched 3 keyword(s) and a version-or-name token (\"v3.0\")"
+      ]
+    },
+    {
+      "source_id": "fixture-jsonfeed",
+      "title": "FixtureBot 2.1 now available",
+      "link": "https://fixturerobotics.example/changelog/fixturebot-2-1",
+      "published_at": "2026-09-16T08:00:00.000Z",
+      "snippet": "FixtureBot 2.1 launches today with improved manipulation accuracy.",
+      "format": "json-feed",
+      "is_release_candidate": true,
+      "confidence": 0.7,
+      "matched_keywords": [
+        "launch",
+        "now available"
+      ],
+      "matched_version_token": "FixtureBot 2.1",
+      "recognition_reasons": [
+        "matched 2 keyword(s) and a version-or-name token (\"FixtureBot 2.1\")"
+      ]
+    },
+    {
+      "source_id": "fixture-html-dated",
+      "title": "Fixture Provider launches Fixture X1",
+      "link": "https://fixtureprovider.example/press/fixture-x1-launch",
+      "published_at": "2026-09-15T00:00:00.000Z",
+      "snippet": "<li>2026-09-15 — <a href=\"https://fixtureprovider.example/press/fixture-x1-launch\">Fixture Provider launches Fixture X1</a></li>",
+      "format": "html",
+      "is_release_candidate": false,
+      "confidence": 0,
+      "matched_keywords": [
+        "launch"
+      ],
+      "matched_version_token": null,
+      "recognition_reasons": [
+        "no version-or-name token matched (VERSION_OR_NAME_TOKEN_RE)"
+      ]
+    },
+    {
+      "source_id": "fixture-html-dated",
+      "title": "Fixture Provider opens new office",
+      "link": "https://fixtureprovider.example/press/office-opening",
+      "published_at": "2026-09-10T00:00:00.000Z",
+      "snippet": "<li>2026-09-10 — <a href=\"https://fixtureprovider.example/press/office-opening\">Fixture Provider opens new office</a></li>",
+      "format": "html",
+      "is_release_candidate": false,
+      "confidence": 0,
+      "matched_keywords": [],
+      "matched_version_token": null,
+      "recognition_reasons": [
+        "no announcement/release keyword matched (documented list in ANNOUNCEMENT_KEYWORD_PATTERNS)",
+        "no version-or-name token matched (VERSION_OR_NAME_TOKEN_RE)"
+      ]
+    }
+  ],
+  "dropped_candidates": [
+    {
+      "source_id": "fixture-rss",
+      "reason": "no-date: no parseable published date was found for this item — fail closed, no candidate emitted (never guessed)",
+      "title": "Fixture Labs blog: a reflection on model safety culture",
+      "link": "https://fixturelabs.example/news/safety-culture-reflection",
+      "snippet": "No pubDate on this item, on purpose — the parser must drop it rather than guess a date."
+    },
+    {
+      "source_id": "fixture-rss",
+      "reason": "no-title: item has a date but no usable title — fail closed, no candidate emitted",
+      "title": null,
+      "link": "https://fixturelabs.example/news/untitled-item",
+      "snippet": "No title on this item, on purpose — the parser must drop it rather than invent one."
+    },
+    {
+      "source_id": "fixture-atom",
+      "reason": "no-date: no parseable published date was found for this item — fail closed, no candidate emitted (never guessed)",
+      "title": "Quarterly transparency report",
+      "link": "https://fixtureai.example/blog/transparency-q3",
+      "snippet": "No published/updated date on this entry, on purpose — the parser must drop it rather than guess a date."
+    },
+    {
+      "source_id": "fixture-jsonfeed",
+      "reason": "no-date: no parseable published date was found for this item — fail closed, no candidate emitted (never guessed)",
+      "title": "Scheduled maintenance window",
+      "link": "https://fixturerobotics.example/changelog/maintenance-note",
+      "snippet": "No date_published on this item, on purpose — the parser must drop it rather than guess a date."
+    }
+  ],
+  "promoted_release_ids": [],
+  "fixture_run": true,
+  "status": "completed",
+  "ended_at": "2026-09-18T14:10:04.412Z",
+  "abort_reason": null,
+  "blocked_by": null
+}

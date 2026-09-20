@@ -10,6 +10,7 @@ import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJson
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import SubjectLine from "@/components/model-benchmark/SubjectLine";
+import PipelineStages from "@/components/model-benchmark/PipelineStages";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
 import { RELEASE_WATCH_FACTS as R } from "@/lib/release-watch-facts";
 
@@ -69,6 +70,35 @@ const faqItems = [
       "or for the suppression of findings, and that applies to AI models exactly as it applies to governments and " +
       "corporations. Commercial services cover access and interpretation only.",
   },
+  {
+    question: "How does an AI model get added to the Model Index?",
+    answer:
+      "Not automatically, and not by request. A release first has to be detected by release watch, which tracks " +
+      `${R.confirmedReleaseCount} confirmed release${R.confirmedReleaseCount === 1 ? "" : "s"} today, each logged ` +
+      "only once a human registers a verified source and a dated, independently checkable record of the release " +
+      "exists. A tracked release still carries no score. It becomes eligible for evaluation only once Compassion " +
+      "Benchmark has provisioned API access and an approved spend budget for that provider, and even then " +
+      `evaluation is not automatic — see the pipeline above. ${F.evaluatedModelCount} models have completed that ` +
+      "path so far.",
+  },
+  {
+    question: "What happens when a new model ships?",
+    answer:
+      "Nothing on this page changes automatically. If release watch has run a scan since the ship date, and a " +
+      "dated, independently checkable primary source exists for it, the release is logged in the tracker as a " +
+      "confirmed release with no score. Evaluation — calling the model, scoring its responses, publishing a " +
+      "result — is a separate, later step that is not automatic and carries no service-level promise of when, " +
+      "or whether, it happens.",
+  },
+  {
+    question: "How does the Model Index relate to Compassion Benchmark's other indexes?",
+    answer:
+      "It reuses the same instrument: the same 8 dimensions, the same 0-100 composite formula, and the same " +
+      "five-band vocabulary used to score governments, corporations, universities and cities. What differs is " +
+      "the evidence and the subject. An institution index scores a public governance record; the Model Index " +
+      "scores what a frozen model snapshot did on a task bank. The two are never merged into one number, and a " +
+      "strong score on one says nothing about the other.",
+  },
 ];
 
 export default function AiModelsPage() {
@@ -126,6 +156,21 @@ export default function AiModelsPage() {
             These four numbers are read directly from the published data files at build time. Two of them are zero.
             That is the current, accurate state of the programme.
           </p>
+        </Container>
+      </section>
+
+      {/* The pipeline — what exists and what blocks each stage, in the order a
+          model result would actually move through. Every figure quoted below
+          comes from PipelineStages, which reads it from the data stores at
+          build time. See DECISIONS.md D-29: no stage description below may
+          imply "evaluation underway" — only what is true today. */}
+      <section className="py-[26px]">
+        <Container>
+          <SectionHead
+            title="The pipeline: detect → evaluate → score → publish"
+            description="A model result moves through four stages before it publishes. Each is labelled with what exists today and, where a stage has not started, exactly why."
+          />
+          <PipelineStages />
         </Container>
       </section>
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SYNTHETIC FIXTURE — authored for release-watch-l1.mjs / test-release-watch-parse.mjs.
+  Not a real feed. "Fixture Labs" and "Fixture-4.2" are not real entities or
+  products. Do not treat any content in this file as evidence of anything.
+-->
+<rss version="2.0">
+  <channel>
+    <title>Fixture Labs — Announcements (synthetic fixture)</title>
+    <link>https://fixturelabs.example/news</link>
+    <description>Synthetic RSS 2.0 fixture. Not a live feed.</description>
+    <item>
+      <title>Fixture Labs announces Fixture-4.2, a new frontier model</title>
+      <link>https://fixturelabs.example/news/fixture-4-2-release</link>
+      <guid>https://fixturelabs.example/news/fixture-4-2-release</guid>
+      <pubDate>Thu, 17 Sep 2026 14:30:00 GMT</pubDate>
+      <description>Today we are announcing the release of Fixture-4.2, our latest model, now available to all users.</description>
+    </item>
+    <item>
+      <title>Fixture Labs blog: a reflection on model safety culture</title>
+      <link>https://fixturelabs.example/news/safety-culture-reflection</link>
+      <guid>https://fixturelabs.example/news/safety-culture-reflection</guid>
+      <description>No pubDate on this item, on purpose — the parser must drop it rather than guess a date.</description>
+    </item>
+    <item>
+      <link>https://fixturelabs.example/news/untitled-item</link>
+      <guid>https://fixturelabs.example/news/untitled-item</guid>
+      <pubDate>Fri, 18 Sep 2026 09:00:00 GMT</pubDate>
+      <description>No title on this item, on purpose — the parser must drop it rather than invent one.</description>
+    </item>
+  </channel>
+</rss>

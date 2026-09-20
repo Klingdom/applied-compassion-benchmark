@@ -11,8 +11,29 @@ import FaqAccordion from "@/components/seo/FaqAccordion";
 import SubjectLine from "@/components/model-benchmark/SubjectLine";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
 import { DIMENSIONS, BANDS } from "@/data/dimensions";
+import tasks from "@/data/model-benchmark/tasks-v1.json";
 
 // No Dataset / ItemList JSON-LD while F.hasResults is false. See DECISIONS.md D-29.
+
+/**
+ * One real, illustrative item, read from the published task bank rather than
+ * retyped — if the bank changes, this quote changes with it instead of going
+ * stale. AWR-1-A carries exposureStatus "public-permanent": tasks-v1.json's
+ * own exposureNote says it has been published with its full rubric on this
+ * site since launch (originally at /ai-evaluation-suite), so quoting it here
+ * discloses nothing that is not already public. Only the model-facing
+ * `prompt` field is shown, per the bank's own fieldSeparationPolicy — never
+ * `sourceOnlyFields` such as the reviewer-only "what to observe" note.
+ */
+type TaskItem = {
+  id: string;
+  dimension: string;
+  construct: string;
+  prompt: string;
+  validationStatus?: string;
+  anchors: { level: number; label: string; description: string }[];
+};
+const exampleTask = (tasks as { items: TaskItem[] }).items.find((i) => i.id === "AWR-1-A") ?? null;
 
 export const metadata: Metadata = {
   title: "AI Model Compassion Benchmark — Method & Pre-registration",
@@ -133,6 +154,54 @@ export default function AiModelsMethodologyPage() {
         </Container>
       </section>
 
+      {/* A real, illustrative item — see the exampleTask derivation above for
+          why quoting it discloses nothing new. */}
+      {exampleTask && (
+        <section className="py-[30px]">
+          <Container>
+            <SectionHead
+              title="What a task looks like"
+              description="One real item from the published bank, shown in full — the prompt a model receives, and the rubric a human rater scores it against."
+            />
+            <Panel>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-[0.75rem] tracking-wide text-muted-subtle uppercase">
+                  {exampleTask.id} · {exampleTask.dimension} · {exampleTask.construct}
+                </span>
+                <span className="text-[0.72rem] px-2 py-0.5 rounded-full border border-line text-muted-subtle">
+                  {exampleTask.validationStatus ?? "unvalidated"}
+                </span>
+              </div>
+              <p className="text-[0.72rem] tracking-wide text-muted-subtle uppercase mb-1">
+                Prompt sent to the model
+              </p>
+              <p className="text-text text-[0.98rem] leading-relaxed mb-4 border-l-2 border-line pl-4">
+                &ldquo;{exampleTask.prompt}&rdquo;
+              </p>
+              <p className="text-[0.72rem] tracking-wide text-muted-subtle uppercase mb-2">
+                Five-anchor rubric a human rater applies to the response
+              </p>
+              <ul className="text-muted text-[0.88rem] leading-relaxed space-y-1.5">
+                {exampleTask.anchors.map((a) => (
+                  <li key={a.level}>
+                    <span className="text-text font-medium">{a.label}.</span> {a.description}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[0.82rem] text-muted-subtle mt-4 max-w-[900px]">
+                This item&rsquo;s validation status is <strong className="text-muted">
+                  {exampleTask.validationStatus ?? "unvalidated"}
+                </strong>{" "}
+                — no human has reviewed it yet, which is true of all {F.itemCount} published items ({F.reviewedItemCount}{" "}
+                have completed review so far). It is also published in full elsewhere on this site (the original
+                evaluation-suite page), which is why showing it here creates no new exposure — see &ldquo;the
+                public pool is burned&rdquo; on the Model Index page.
+              </p>
+            </Panel>
+          </Container>
+        </section>
+      )}
+
       <section className="py-[30px]">
         <Container>
           <SectionHead
@@ -170,6 +239,48 @@ export default function AiModelsMethodologyPage() {
             Counts are read from the published task bank at build time. {F.reviewedItemCount} of {F.itemCount} items
             have completed human validation.
           </p>
+        </Container>
+      </section>
+
+      {/* Honest translation layer: the 8x5 framework was built to score
+          institutions first, and its subdimension language shows that. This
+          section states what carries over to a model and what, checkably,
+          does not exist yet at the subdimension level. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Applying an institution framework to a model"
+            description="The 8 dimensions and their 40 subdimensions were written to score institutions. Some of that language does not describe a model at all — this section states plainly what carries over and what does not."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What the subdimensions were written for</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Each dimension&rsquo;s five subdimensions are scored, for an institution, against evidence like
+                policies, boards, budget cycles and multi-year programmes — for example Awareness&rsquo;s official
+                framing asks: &ldquo;{DIMENSIONS.find((d) => d.code === "AWR")?.desc}&rdquo; A single frozen model
+                snapshot has none of those institutional artifacts. It has only the responses it gives when tested.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What carries over</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                The question behind each dimension still applies: does it notice unstated distress, does it respond
+                to the person and not only the request, does it hold a boundary without abandoning someone. The
+                task bank tests that question through what a model does in a single scored response, not through
+                institutional evidence.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What does not exist yet</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Every published item is tagged to one of the {F.dimensionCount} dimensions above and nothing finer.
+                No item carries a subdimension field, so there is no model-level score at the 40-subdimension
+                resolution today — only at the {F.dimensionCount}-dimension one, and only once evaluation itself
+                has run (see the pipeline on the Model Index page).
+              </p>
+            </Panel>
+          </div>
         </Container>
       </section>
 
