@@ -175,6 +175,77 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   `/us-city/springfield-94` return 200 but aren't linked from the table. This predates It. 20 (`633ed6ff`
   `RankingTable.tsx:156` used `slugify(entry.name)`), so it isn't a regression.
 
+### New backlog items (2026-09-20)
+- **SC-1b — four more year-stale claims have no ledger entry.** Found by the 2026-09-20 scan, each costing full
+  verification: **Myanmar** Rakhine school airstrike (true date **2025-09-12**), **El Salvador** "140 defenders fled"
+  (2025 events per HRW's 2026 World Report), **Interpublic Group** "800 layoffs in September" (September **2025**, per
+  the same SEC filing), and **Figure AI**'s whistleblower claim (September 2025) — **dropped for a third consecutive
+  cycle**. Work: append four entries with their true dates and sources, same schema. v1: I3 S4 L2 C5 − E1 − R1 = **12**.
+- **SC-1c — the ledger matcher reads narrative prose, not just claims.** On its first live run the gate fired twice on
+  the scanner's own explanatory notes *about* the ledger, because they quoted the literal trigger tokens. The scanner
+  reworded to get past it; requiring authors to avoid words in order to describe a defect is the wrong remedy. Work:
+  restrict matching to claim/evidence fields (or exclude fields marked as disclosure/commentary), and add a test with a
+  fixture whose narrative mentions a ledger claim while its candidate does not. Note the failure direction was **safe**
+  — the gate over-reached rather than missing. v1: I3 S4 L3 C5 − E1 − R1 = **13**.
+
+### New backlog items (2026-09-18)
+- **GI-1 — cycle stores have no pre-flight snapshot, so recovery depends on luck.** INC-009 (2026-09-18): an agent
+  ran `git checkout` over the scanner's uncommitted `rotation-state.json` write for all 1,329 entities. It was
+  recoverable only because the scanner's write is mechanically re-derivable from the scan file. Had it happened after
+  `last_assessed` was written, or before the scan file existed, the cycle (~193 searches) would have been lost.
+  Work: copy `research/rotation-state.json` (and the day's scan file, once written) to a gitignored
+  `research/.snapshots/<date>-<stage>/` before the scanner and assessor stages, keep the last N days, and document
+  the one-command restore. Cheap, mechanical, and it also protects against a half-written parse → mutate →
+  re-serialise. v1: I4 S4 L2 C5 − E1 − R1 = 13 · v2: Rc 0 (new class, 1 occurrence — a gate here is prevention, not a
+  ratchet) → **13**.
+- **SC-1 — the scanner keeps rediscovering claims it has already debunked (recurring, ungated ⇒ S10 candidate).**
+  Each cycle re-verifies the same false items from scratch and drops them again, spending verification searches on
+  work already done. Dated occurrences: **Meta "8,000 layoffs"** (true date 2026-05-20) dropped on 09-17 **and** 09-18,
+  and the 09-18 scanner records it as "recurring misdate, third cycle this has surfaced"; **China "Ethnic Unity Law"**
+  (actually passed 2026-03-12) dropped on 09-15 **and** 09-17; plus first-time-but-same-shape misdates on 09-18 —
+  PayPal's DEI settlement (May 12), a Qatar strike that was September **2025**, Freeport-McMoRan Grasberg (Sept 2025),
+  a Cambridge injunction from March 2025. 8 of the 09-18 cycle's 14 drops were misdated events.
+  **Work (cheap, mechanical):** a dated ledger `research/known-misdated-claims.json` — claim text/pattern, the true
+  date, the source that established it, and the cycles it surfaced in — plus a check in `validate-scan.mjs` that fails
+  (or warns loudly) when a scan's `top_entities` matches a ledger entry, and a line in the scanner's brief telling it to
+  consult the ledger before spending a verification search. Entries are append-only; an entry may only be removed with
+  a dated reason (a claim can become true later, which the ledger must express as "true date" not "false claim").
+  **Prove it with a planted probe:** a scan fixture containing the Meta claim must fail the check.
+  v1: I3 S5 L3 C5 − E2 − R1 = 13 · v2: Rc **+2** (installs a gate for a class with ≥ 2 dated occurrences) → **15**.
+  Note under S10 this is a forced selection at the next loop unless a dated waiver is recorded instead.
+
+### New backlog items (2026-09-18, from Iteration 24 — the AI model benchmark)
+- **MB-5 — two of the three published EQU rubrics cannot be applied (coordinator-verified 2026-09-18).** `EQU-1-C`'s
+  level-2 anchor reads "less specific than it would for a non-racialized version of the question" and `EQU-1-A`'s reads
+  "lower quality than…", but neither item carries a paired counterfactual arm and neither has any pairing field. A
+  single-response scorer has no comparison, so the Identity Equity construct is unmeasurable as published. Verified by
+  scanning every anchor in `tasks-v1.json` for comparison language (2 hits, both EQU, both unpaired; regex positive
+  control passed). Work: convert both to matched pairs (the shape `EQU-2-A` in the 09-18 proposal uses), or rewrite the
+  anchors to be self-contained. Methodology change ⇒ founder-gated. v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: P +1 (the
+  published instrument is wrong, though no score depends on it yet — 0 models scored) → **14**.
+- **MB-6 — the task schema cannot express a held-back item.** `validate-task-bank.mjs` §8 hard-codes
+  `core-public`/`public-permanent` exposure, so a secure holdout set is structurally impossible today. Every published
+  item may be in the training data of any model trained since publication, which the `/ai-models` page already discloses.
+  Work: decide whether a holdout is wanted at all (it cannot be independently audited), and if so extend the schema and
+  validator first. Founder decision. v1: I3 S5 L3 C4 − E2 − R2 = **11**.
+- **MB-1 — the digest is silent about release watch.** Lane 2 of It. 24 specified the line "Release watch: 0 sources
+  registered — detection did not run today" but could not implement it (`.claude/agents/overnight-digest.md` was
+  outside its file ownership). While the registry is empty, silence in the daily briefing reads as "no releases
+  shipped", which is a different and false claim. Work: add the line to the digest spec and the digest JSON schema.
+  v1: I3 S5 L2 C5 - E1 - R1 = **13**.
+- **MB-2 — task bank depth and human review.** 33 items, **SYS 2** and EQU/BND 3, and **0 of 33** human-reviewed. A
+  composite scored today would rest on two unreviewed items for a quarter of one dimension. Work (X-1, agent): draft
+  additional items for the thin dimensions, marked `draft-authored-unreviewed`. (X-2, founder): decide who reviews
+  items and what "validated" requires — no agent can self-certify this. v1: I4 S5 L3 C4 - E3 - R2 = **11**, but it is
+  the binding constraint on ever publishing a model score.
+- **MB-3 — Qwen has no parseable first-party release source.** qwen.ai serves an identical 94,358-byte JS shell on
+  three paths (verified 2026-09-18), so the source proposal falls back to a third-party model registry for Alibaba.
+  Zhipu (404), Moonshot (stub) and Google's Gemini changelog (302 to OAuth) are also unverifiable. Work: disclose the
+  gap wherever coverage is claimed, and re-probe periodically. v1: I2 S4 L2 C5 - E1 - R1 = **11**.
+- **MB-4 — release-watch fetches are unconditional.** `etag`/`lastModified` exist in the source-state schema but are
+  unused, so every daily run re-downloads every source in full. Harmless at 14 sources; wasteful and impolite at scale.
+  v1: I2 S3 L2 C5 - E1 - R1 = **10**.
+
 ### New backlog items (2026-09-17, from Meta-review 3; coordinator-verified where marked)
 - **BM-2 — a bare `docker compose build` on the VPS strips the commit identity from `/build-manifest.json`.**
   Verified 2026-09-18: after the manual 21:40Z deploy, production reports `sha: null, source: "unavailable"`, where the
@@ -193,8 +264,16 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   to readers as a UN/international source, and the strength ordering is reversed on every badge on every briefing page.
   **Ironic context:** the 09-17 correction pass fixed five `sourceTier` *values* against their assessments; the values
   are now right and the *labels* were wrong all along. Neither the claim-to-source gate nor any test reads these labels.
-  **Do not simply flip the map before surveying the data (V8/S9):** older briefings may have been authored to the
-  inverted convention, in which case flipping the UI would mislabel them instead. Work: (1) survey `sourceTier` values
+  **SURVEY DONE 2026-09-20 — the caution was right, and the defect is bigger than the labels.** Mechanical survey of
+  371 adjudicable sources across 58 briefings (`docs/EVIDENCE_TIER_CONVENTION_2026-09-20.md`): **18 cycles** follow the
+  documented convention, **19 cycles** follow the inverted one, and **17 are internally inconsistent inside a single
+  briefing**. Government/IO sources are rated 4-5 in 88 cases and 1-2 in 53; journalism is rated 2 in 84 cases and 4 in
+  42. NGOs sit at 3 in 86 of 95 cases — the midpoint agrees under both conventions, which is the control proving the
+  classifier works and only the ends are in dispute. **So flipping the UI map would fix 18 cycles and break 19.** The
+  real defect is that no gate ever enforced the convention. Options are written up for a founder decision; the memo
+  recommends suppressing the badge before a cutoff now (no published text rewritten) and a dated, disclosed migration
+  later, plus a gate comparing each briefing `sourceTier` against the tier recorded in that date's assessment. **No score depends
+  on `sourceTier`** — this is a provenance-display defect, not a scoring one. Work: (1) survey `sourceTier` values
   across all 83 daily briefing JSONs against the outlet type of each URL and report which convention each cycle used;
   (2) correct the labels (and/or a one-off data migration for any cycle authored inverted); (3) a test asserting the UI
   map matches the documented scale, so the two can never drift again. v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: P **+2**
@@ -208,9 +287,11 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
   current. Readers see these as tier badges, so an inflated tier overstates evidence strength in public. Coordinator
   checks prove the mechanical form: matching each briefing `{url, sourceTier}` against the `[T#](url)` / `tier N — url`
-  citations in the same-date assessments found 5 mismatches on 09-17 and 0 of 14 on 09-14 (positive control). **Caveat
-  (V8):** the 09-15 assessments use a citation format the matcher doesn't parse (0 URLs extracted), so that cycle is
-  unverified, not clean. Work: a lint rule (tier must equal the assessment's tier for the same URL; an unparseable
+  citations in the same-date assessments found 5 mismatches on 09-17 and 0 of 14 on 09-14 (positive control). **Caveat resolved 2026-09-20:** the 09-15 gap was a *matcher* limitation, not missing data — assessments cite in two
+  shapes, `[T4](url)` and `[T4, 2026-09-15](url)`, and the original matcher only read the first. With both shapes
+  handled, four cycles now verify clean: **09-15 8 matched / 0 mismatch · 09-17 7/0 · 09-18 5/0 · 09-20 11/0**. The
+  working checker (two citation shapes, per-date assessment index, reports unmatched URLs separately rather than
+  silently passing them) is the spec for this gate — port it into `lint-rules.mjs` rather than writing a new one. Work: a lint rule (tier must equal the assessment's tier for the same URL; an unparseable
   citation fails loudly, not silently) plus a planted-probe test. v1: I4 S5 L3 C5 − E2 − R1 = 14 · v2: K −1 (RISK-020
   reduced) · Rc +2 (a gate for a 3-occurrence class) → **15**.
 - **ID-1 — "Jack Henry & Associate" is published with a truncated name (DC-05).** Found during the 2026-09-17

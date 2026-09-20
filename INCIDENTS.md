@@ -32,6 +32,51 @@ self-correcting condition (e.g., a single confirmed-at-published-value nightly c
 
 ## Log
 
+### INC-009 — An agent ran `git checkout` on a file holding another agent's uncommitted work (2026-09-18, high, recovered and independently verified)
+
+**Summary.** During the 2026-09-18 assessment stage, `overnight-assessor` read a 2,673-line diff on
+`research/rotation-state.json`, judged it a reformat, and ran `git checkout research/rotation-state.json`.
+That diff was the **scanner's uncommitted output from the same cycle** — `last_scanned` and
+`last_evidence_touch` for all 1,329 entities, written roughly an hour earlier and not yet committed.
+The destructive operation discarded it. The agent then reconstructed the fields deterministically from
+`research/scans/2026-09-18.json` `entity_reviews[].reviewed_at` and disclosed the whole episode in its
+summary and hand-back, unprompted.
+
+**Detection.** Self-reported by the agent. The coordinator did **not** take the repair on trust and
+re-derived the expected state independently: HEAD vs working tree shows **exactly four changed fields**
+— `last_scanned` 1,329, `last_evidence_touch` 1,329, `last_assessed` 11, `last_change_proposal` 1 — with
+**zero** changes to `composite`, `band`, `rank`, `name`, `index` or `slug`; all 1,329 entities carry
+`2026-09-18` for both scan fields; `meta.last_scan` is `2026-09-18`; and `validate-rotation-state.mjs`
+exits 0. The scanner's write is idempotent by construction (every roster entity gets the cycle date), so
+the reconstruction is verifiably equivalent rather than merely plausible.
+
+**Root cause.** Two things, both structural:
+1. **A destructive git operation was available to an agent whose brief never mentioned git.** Nothing in the
+   environment distinguishes "my edits" from "another agent's uncommitted edits"; `git checkout` treats both
+   identically. The brief said which files not to *write*; it never said "never run a destructive git command".
+2. **A large diff looks like noise.** `rotation-state.json` writes touch 1,329 entities at once, so a
+   legitimate cycle write and a formatting accident are visually indistinguishable at diff scale. The agent's
+   inference was wrong but not unreasonable given what it could see.
+
+**Why it was cheap this time.** The destroyed data was mechanically re-derivable from an artifact already on
+disk. Had the assessor done this **after** writing `last_assessed`, or had the scan file not existed, the
+cycle would have had to be re-run at ~193 searches.
+
+**Corrective actions.**
+- Every agent brief that touches a shared store now states: **never run `git checkout`, `git restore`,
+  `git stash`, `git reset` or `git clean`** — if a diff looks wrong, report it and stop. Added to the
+  coordinator's briefing checklist immediately.
+- Backlog **GI-1**: a pre-flight snapshot for cycle stores (copy `rotation-state.json` to a gitignored path
+  before the scanner and assessor stages) so recovery never depends on re-derivability.
+- Registry class **DC-14** opened.
+
+**Coordinator's own exposure, disclosed for symmetry.** Earlier the same day I used `git stash push -- <13
+named files>` and `git checkout -- research/entity-records-dryrun.json` during Iteration 23 verification.
+Both were scoped by explicit pathspec, both were restored and verified (`git stash pop`, and a 1,761-file
+hash comparison), but the same class of command was in play. The rule above binds the coordinator too:
+destructive git operations on a shared store need a snapshot first, not care alone.
+
+
 ### INC-007 — Updates manifest disagreed with its own freshness pointers (2026-08-20, low, closed on inspection)
 
 **Summary.** Three separate files each carry an independent "what is the latest briefing"

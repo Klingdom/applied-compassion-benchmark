@@ -5,6 +5,33 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
+> 2026-09-20 (research cycles 09-18 and 09-20, both verified, both uncommitted): two full cycles ran — 1,329 entities
+> scanned each, **24 entities assessed**, **2 proposals filed** (Dayton 35.9 → 30.0; Berkshire Hathaway 43.8 → 40.0),
+> **0 scores applied**, queue **22 pending**. Every composite was recomputed from its 40 subdimensions and reproduces
+> exactly. **Six first-ever baselines** were added on 09-20, reducing the never-assessed share. New gate
+> `test:known-misdated-claims` (It. 25, chain 31 → 32) ran live on its first day: it saved verification on PayPal and
+> over-fired on the scanner's own prose (SC-1c). **Tier fidelity now mechanically verified across four cycles**
+> (09-15 8/0 · 09-17 7/0 · 09-18 5/0 · 09-20 11/0) after fixing my own matcher, which had silently read 0 URLs on two
+> dates. **Two boundary-exact results in three cycles** — Nasdaq at exactly 60.0, Berkshire at exactly 40.0 — make
+> RISK-006 (band-boundary ambiguity) the most overdue founder decision. **INC-009:** an agent destroyed another
+> agent's uncommitted rotation-state write with `git checkout` and reconstructed it; independently verified equivalent.
+
+> 2026-09-18 (Iteration 24 — the AI model benchmark, founder-directed): the CB-MODEL cycle was stopped at step 1 in
+> three ways — **0 sources registered**, a detector whose own header said it **"does not parse retrieved bytes"**, and
+> **0 models scored** with **0 of 33** task items human-reviewed. Now: a **fetch-verified proposal of 14 sources**
+> (10 primary, 4 feeds, 17 candidates excluded rather than guessed; quorum 8-of-10 recommended) awaiting founder
+> ratification — **the live store is still empty and untouched**; the detector **parses RSS/Atom/JSON Feed** plus a
+> fail-closed HTML fallback, itemizes every dropped candidate with a reason, dedupes per source, and **never
+> auto-promotes** (new gate `test:release-watch-parse`, 70 assertions, chain 30 -> 31); release-watch is documented as
+> a **daily step** that is safe to schedule today because the zero-sources check fires first; and `/ai-models` +
+> `/ai-models/methodology` now show the four stages with their real blockers, every figure derived from the data.
+> **Lane 4 (09-18):** 9 draft task items (EQU/BND/SYS +3 each) proposed — merged 42-item bank passes the real
+> validator (408 checks, 0 failures, 0 warnings) and clears the standing SYS thinness warning; the live bank is
+> untouched. **Found in the published bank:** 2 of the 3 live EQU rubrics demand a comparison arm the items do not
+> carry, so Identity Equity is unmeasurable as specified (backlog MB-5, founder-gated).
+> Verified: `npm test` exit 0 (31 steps), `tsc` exit 0, fixture run 5 candidates / 4 dropped then 0 on repeat,
+> `validate-model-releases` PASS with 2 records. **Uncommitted — awaiting founder.**
+
 > 2026-09-18 (deploy verification — Iterations 19 and 21 are live): the founder deployed manually at 2026-09-17T21:40Z.
 > Verified: `/data/scores/singapore.json` serves the **country (62.2)**; `/city/singapore` 301s to the city's new slug;
 > **all 28 legacy URLs → 301 → 200, 0 `/404`, all https**; **1,323 of 1,323** ranking links still 200; the 09-17
@@ -16,28 +43,9 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 > against a documented scale where 5 is strongest, so a Boston.com article renders as "Tier 2 · UN/IO"
 > (backlog EV-1, DC-12, v2 15 — the highest-scoring open item). Iterations 22 and 23 remain uncommitted.
 
-> 2026-09-17 (Iteration 23 — one slug rule, and a ratchet on the accented divergence): pages fold accents and the data
-> stores do not, so `/city/sao-paulo` serves while `/data/scores/sao-paulo.json` **301s to `/404`** and the real file is
-> `s-o-paulo.json` (verified live). **14 of 16** non-ASCII published names diverge. **12 scripts each defined their own
-> slug function**, one claiming in a comment to match `src/lib/slugify.ts` while not folding accents. All 12 now import
-> `site/scripts/lib/slug.mjs`, each keeping its current behaviour; the new `test:slug-conventions` gate (chain 29 -> 30)
-> blocks a 13th copy, asserts a golden table, and ratchets `known-slug-divergences.json` (14, shrink-only).
-> **Proven behaviour-preserving:** `public/data/**` regenerated with new and old code — **1,761 files, 0 differences**
-> (timestamps excluded), with the comparator shown to detect a planted change. `npm test` exit 0 (30 steps).
-> **Not fixed (RS-4b, founder-gated):** the fold itself, its 301s and the S9 re-derivation of every slug-keyed store.
-> **Uncommitted — awaiting founder.**
-
-> 2026-09-17 (Iteration 22 — RISK-015 gets advance notice): `validate-product-separation` now prints an
-> `ADVANCE EXPIRY WARNINGS` block from **30 days** before any waiver lapses, escalating at 7, naming the waiver, its
-> owner, the consequence date and the remediation draft; and it distinguishes `PASS WITH WAIVERS (6 waived — next
-> expiry 2026-11-16, 60 days…)` from `PASS (clean)`. Exit codes unchanged. Waiver tests **17 → 41**, all on injected
-> fixture dates. Verified by simulation, because today's clean output proves nothing (V8): 2026-10-18 → 1 warning,
-> 2026-11-15 → 3 (figure critical, 1 day), and a correctly shaped failure is **waived through 2026-11-16 and blocks on
-> 2026-11-17**. **Uncommitted — awaiting founder.**
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
-- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned 1,331 (2026-09-14).
+- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-20)**.
 - **Never individually assessed: 811 of 1,329 (61.0%)** — measured 2026-09-16 and reproduced independently by the coordinator; assessed within 30/60/90 days: 146 / 361 / 397; median assessment age 53 days, oldest 149. Generated by `research/scripts/coverage-report.mjs` → `research/coverage/<date>.{md,json}`, and published on `/methodology` from the generated `site/src/data/neverAssessedCoverage.ts` (never hand-typed). Previous snapshot: 820 / 61.7% on 2026-09-14.
 - **Tracked 1,329 vs published 1,325:** the gap is 4 ai-labs entities tracked for research with no published index row — Reflection AI, Nvidia AI, SpaceX AI, Oracle AI (backlog RS-3; publish-or-delist is founder-gated).
 - **Methodology:** v1.2 (`site/scripts/lib/scoring.mjs`), 8 dimensions, 40 subdimensions, 5 bands.
@@ -56,7 +64,7 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ⚠️ `build-special-briefings.mjs:474` rewrites 16 tracked JSON timestamps every build | DC-08 |
 
-## Tests (`npm run test`, **30 steps** with It. 22-23 uncommitted (29 at `52c8c6b3`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
+## Tests (`npm run test`, **31 steps** with It. 24 uncommitted (30 at `dba86a76`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -113,6 +121,29 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-20, text unchanged: displaced from the top three._
+
+> 2026-09-17 (Iteration 23 — one slug rule, and a ratchet on the accented divergence): pages fold accents and the data
+> stores do not, so `/city/sao-paulo` serves while `/data/scores/sao-paulo.json` **301s to `/404`** and the real file is
+> `s-o-paulo.json` (verified live). **14 of 16** non-ASCII published names diverge. **12 scripts each defined their own
+> slug function**, one claiming in a comment to match `src/lib/slugify.ts` while not folding accents. All 12 now import
+> `site/scripts/lib/slug.mjs`, each keeping its current behaviour; the new `test:slug-conventions` gate (chain 29 -> 30)
+> blocks a 13th copy, asserts a golden table, and ratchets `known-slug-divergences.json` (14, shrink-only).
+> **Proven behaviour-preserving:** `public/data/**` regenerated with new and old code — **1,761 files, 0 differences**
+> (timestamps excluded), with the comparator shown to detect a planted change. `npm test` exit 0 (30 steps).
+> **Not fixed (RS-4b, founder-gated):** the fold itself, its 301s and the S9 re-derivation of every slug-keyed store.
+> **Uncommitted — awaiting founder.**
+
+_Moved 2026-09-18, text unchanged: displaced from the top three by Iteration 24._
+
+> 2026-09-17 (Iteration 22 — RISK-015 gets advance notice): `validate-product-separation` now prints an
+> `ADVANCE EXPIRY WARNINGS` block from **30 days** before any waiver lapses, escalating at 7, naming the waiver, its
+> owner, the consequence date and the remediation draft; and it distinguishes `PASS WITH WAIVERS (6 waived — next
+> expiry 2026-11-16, 60 days…)` from `PASS (clean)`. Exit codes unchanged. Waiver tests **17 → 41**, all on injected
+> fixture dates. Verified by simulation, because today's clean output proves nothing (V8): 2026-10-18 → 1 warning,
+> 2026-11-15 → 3 (figure critical, 1 day), and a correctly shaped failure is **waived through 2026-11-16 and blocks on
+> 2026-11-17**. **Uncommitted — awaiting founder.**
 
 _Moved 2026-09-18, text unchanged: displaced from the top three by the deploy-verification note._
 
