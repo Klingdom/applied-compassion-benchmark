@@ -1,0 +1,555 @@
+{
+  "date": "2026-09-18",
+  "generatedAt": "2026-09-19T09:00:00Z",
+  "title": "Compassion Benchmark Daily Briefing — September 18, 2026 (A Dayton Feeding Ban, and Two Findings Withheld as Formula Artefacts)",
+  "headline": "Dayton faces a proposed downgrade over a 26-year ban on feeding the homeless without a permit.",
+  "summary": "Fifteen organizations were reviewed overnight. Eleven received a full score check, two were checked only for screening, and two were flagged but deliberately left alone. One downgrade was proposed. Two other findings were set aside because they turned out to reflect quirks in the scoring formula, not real-world events.\n\nFor 26 years, Dayton, Ohio required a permit to hand out food, clothing or toiletries downtown. In 2024, a police officer handcuffed a volunteer for over 30 minutes for giving a homeless man a burrito. A federal judge struck the ordinance down this June as unconstitutional. Dayton appealed, then dropped the appeal and paid $56,365.62 to settle the case, covering only the volunteer group's legal costs. The city has not said the ordinance itself was repealed, and it declined to comment. A downgrade has been proposed, from a published 35.9 out of 100 to a measured 30.0. That change has not been applied; the published score stays at 35.9 pending review.\n\nTwo other measurements were set aside because they trace back to how the scoring formula works, not to real conduct. Denmark's record would jump nearly seven points, but that gap has nothing to do with news — it comes from an unresolved gap between the country's published score and what the formula actually computes from its own recorded categories. And Nasdaq's record would drop enough to cross into a lower tier, but on zero evidence in either direction: its starting placeholder rounds to exactly the number where two different parts of the benchmark's own scoring code disagree about which tier it belongs in.\n\nThree other findings turned on a single question: who actually did it? San Francisco was confirmed unchanged after federal immigration agents, not the city, held people past a limit at the airport — the city said plainly it has no authority over the federal government's own security area. Copenhagen was confirmed at the benchmark's top score after a police clash at a march, because the officers involved belong to Denmark's national police, not a city force. And Tenet Healthcare was confirmed unchanged because more than a thousand announced layoffs at a subsidiary do not take effect until November, and the decision to end the contract was another company's, not Tenet's.\n\nFive further checks confirmed published scores unchanged: Turkey (raids on LGBT and HIV-support groups, a finding limited by how little room the score has left to fall), Russia (already at the benchmark's absolute floor), Plains All American, and the Czech Republic. Two organizations were checked for screening only and produced no new score: Algeria's break in diplomatic relations with the UAE identified no one harmed, and a viral video of a Unitree robot \"kicking\" an engineer turned out to be a programmed test move. Release watch: 0 sources registered — detection did not run.",
+  "pipeline": {
+    "entitiesScanned": 1329,
+    "entitiesFlagged": 10,
+    "entitiesDropped": 14,
+    "entitiesAssessed": 15,
+    "entitiesScored": 11,
+    "entitiesWithheld": 2,
+    "changeProposalsCount": 1,
+    "scoreChangesApplied": 0,
+    "bandCrossingsApplied": 0,
+    "bandCrossingsFiled": 0,
+    "bandCrossingsMeasuredNotFiled": 1,
+    "upgrades": 0,
+    "downgrades": 1,
+    "confirmations": 8,
+    "nearFloorConfirmations": 1,
+    "firstIndividualMeasurements": 0,
+    "subdimSidecarsWritten": 11,
+    "skipped": 4,
+    "cycleType": "priority-rotation-single-proposal-cycle",
+    "assessmentStart": null,
+    "assessmentEnd": "2026-09-18T21:55:25.890Z",
+    "rosterNote": "The roster held at 1,329 entities this cycle. Coverage combined ten scanner-flagged organizations with five rotation-backfill organizations.",
+    "queueHandling": "Fifteen organizations were reviewed. Eleven were scored, and one produced a proposed downgrade. Eight scores were confirmed unchanged. Two measurements — one that would raise a score, one that would lower it across a tier boundary — were set aside because both traced to scoring-formula quirks rather than evidence. Two organizations were checked for screening only and produced no new score. Two organizations already carrying large open proposals were deliberately left alone rather than given a third figure. No published ranking changed."
+  },
+  "topSignals": [
+    {
+      "title": "Dayton Faces a Downgrade Over a 26-Year Ban on Feeding the Homeless",
+      "whyItMatters": "A federal court struck down the city's permit rule for charitable food handouts, but the settlement only covered legal fees. The city has not said sorry or repealed the rule.",
+      "description": "For 26 years, the City of Dayton, Ohio required a permit — a $50 fee, plus a $250 deposit for repeat violators — before anyone could hand out food, clothing or toiletries in public downtown. On 7 April 2024, a Dayton police officer handcuffed a volunteer with Nourish Our Neighbors for more than 30 minutes after he gave a homeless man a burrito. No charges were filed.\n\nIn June 2026, a federal judge in the Southern District of Ohio ruled the ordinance unconstitutional and barred the city from enforcing it. Dayton appealed that ruling, then dropped the appeal and had its city commission approve a $56,365.62 settlement in September 2026. The money covers the volunteer group's attorney fees and costs only — nothing reaches the volunteer who was handcuffed, and nothing reaches the homeless people who went unfed while the case was pending. The city declined to comment on the settlement. No source shows the ordinance itself has been repealed, only that a court has barred the city from enforcing it.\n\nMeasuring this record against Dayton's published score of 35.9 out of 100 produces 30.0, a proposed downgrade of 5.9 points. The city stays in the benchmark's Developing band either way. The proposal has been filed and awaits review; it has not been applied, and Dayton's published score remains 35.9.",
+      "index": "us-cities",
+      "slug": "dayton",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "quote": "The city of Dayton declined to comment on the settlement.",
+          "claim": "The City of Dayton made no acknowledgment of harm even after a federal court ruled against it.",
+          "source": "WYSO (NPR member station, Dayton)",
+          "url": "https://www.wyso.org/news/2026-09-15/dayton-pays-56-000-settlement-for-city-ordinance-lawsuit",
+          "publishedDate": "2026-09-15",
+          "sourceTier": 2
+        },
+        {
+          "quote": "$56,000 to settle the case, covering legal fees",
+          "claim": "The settlement covers legal fees only, with no repair reaching the arrested volunteer or the homeless people who went unfed.",
+          "source": "WYSO (NPR member station, Dayton)",
+          "url": "https://www.wyso.org/news/2026-09-15/dayton-pays-56-000-settlement-for-city-ordinance-lawsuit",
+          "publishedDate": "2026-09-15",
+          "sourceTier": 2
+        },
+        {
+          "quote": "was detain[ed] for more than 30 minutes—over what amounted to a misdemeanor",
+          "claim": "A volunteer was handcuffed and detained for over 30 minutes for handing a homeless man a burrito, with no charges brought.",
+          "source": "Pacific Legal Foundation (plaintiff's counsel; interested party)",
+          "url": "https://pacificlegal.org/case/dayton-charity-nourish-our-neighbors/",
+          "publishedDate": "2026-04-07",
+          "sourceTier": 1
+        }
+      ]
+    },
+    {
+      "title": "Denmark's Record Would Jump Seven Points — On a Scoring Gap, Not News",
+      "whyItMatters": "A quirk in how Denmark's score was originally set makes any fresh check of its record read as a big improvement. The only real news this cycle was a conditional pledge, not a completed action.",
+      "description": "Denmark's published score of 81.3 out of 100 has never matched what the benchmark's own scoring formula computes from Denmark's recorded category scores — the formula produces 90.2, a gap of 8.9 points that predates this cycle and has never been fully explained in the record. Measuring Denmark's record fresh this cycle reproduces that same gap, landing at 88.6 — a 7.3-point rise that would look like a major improvement.\n\nIt is not treated as one. The only new fact in Denmark's record this cycle is a joint statement signed by 12 foreign ministers on 8 September, in which they say they \"confirm their intention to introduce national and/or support European restrictions\" on trade linked to Israeli settlements. Danish officials have said Denmark will act only if the European Union itself decides to. A stated intention is not a completed action, so no score change was proposed. Denmark's published score remains 81.3.",
+      "index": "countries",
+      "slug": "denmark",
+      "severity": "low",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "Twelve foreign ministers said in a joint statement that they confirm their intention to introduce or support European restrictions on trade linked to Israeli settlements — a stated intention, not a completed policy.",
+          "source": "Government of Canada (joint statement of 12 foreign ministers)",
+          "url": "https://www.canada.ca/en/global-affairs/news/2026/09/joint-statement-of-the-foreign-ministers-of-canada-denmark-finland-france-iceland-ireland-norway-poland-portugal-spain-sweden-and-the-uk-on-the-two.html",
+          "publishedDate": "2026-09-08",
+          "sourceTier": 5
+        }
+      ]
+    },
+    {
+      "title": "Nasdaq's Record Would Cross a Tier Boundary — On Zero Evidence",
+      "whyItMatters": "Nasdaq's starting placeholder score rounds to the exact number where two parts of the benchmark's own scoring rules disagree about which tier it falls in. No news drove this finding.",
+      "description": "Nasdaq has never been individually checked before; its published score of 62.5 out of 100 is a starting placeholder set when the benchmark first built its catalogue. Rounding that placeholder using the benchmark's standard formula produces exactly 60.0 — a number low enough to drop Nasdaq out of the Established tier into Functional.\n\nNo evidence, positive or negative, was found about Nasdaq's actual conduct this cycle. The crossing exists only because 60.0 is a boundary value where the benchmark's own scoring code disagrees internally about which tier it belongs to. Publishing a tier change built entirely on that disagreement, with no underlying evidence, was ruled out. Nasdaq's published score remains 62.5. The benchmark is treating this as a methodology question to resolve before any other placeholder scores near this same value are recalculated.",
+      "index": "fortune-500",
+      "slug": "nasdaq",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "methodology-evolution",
+      "evidence": []
+    },
+    {
+      "title": "San Francisco Confirmed Unchanged: Federal Agents, Not the City, Held People at the Airport",
+      "whyItMatters": "Federal immigration agents held travelers past a 72-hour limit in a federal lounge at San Francisco's airport. The city says it has no authority over that space, and this benchmark scores conduct against whoever actually did it.",
+      "description": "San Francisco's airport includes a lounge run by US Customs and Border Protection, a federal agency, where reports say people were held past CBP's own 72-hour guideline. Both agencies involved — CBP and Immigration and Customs Enforcement — are federal, not city or airport staff. San Francisco's Airport Director, Mike Nakornkhet, said the city and its Airport Commission have no authority to regulate what the federal government does in that space.\n\nThe city's own actions were limited to a unanimous Board of Supervisors condemnation of the detentions and the mayor restating the city's sanctuary policy. The airport says it is considering adding signage — a plan, not a completed action, so it does not raise the score either. Measuring the full record produces 45.6 out of 100, within normal rounding of the published 46.9. San Francisco's published score is unchanged.",
+      "index": "us-cities",
+      "slug": "san-francisco",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "The Airport Director stated that the city and Airport Commission lack authority to regulate federal law-enforcement activity at the airport.",
+          "source": "KQED",
+          "url": "https://www.kqed.org/news/12082395/san-francisco-condemns-immigration-and-customs-enforcement-actions-at-sfo-airport",
+          "publishedDate": "2026-09-16",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "Copenhagen Confirmed at the Benchmark's Top Score: National Police, Not a City Force",
+      "whyItMatters": "Officers who clashed with protesters at a Copenhagen march work for Denmark's national police, not a city agency, so the incident is not scored against the city.",
+      "description": "A march and a counter-protest in Copenhagen ended in a police clash involving batons. The officers involved belong to Kobenhavns Politi, which is a district of Denmark's single national police service, reporting to national authorities in Copenhagen — not a City of Copenhagen agency. The march itself was organized by a private group, and the blockade was organized by counter-protesters, so no city decision or city employee is implicated anywhere in the incident.\n\nMeasuring the full record confirms Copenhagen's published score of 100 out of 100, the only score in the benchmark's entire catalogue at that exact ceiling. The city reaches that number only because the benchmark's formula caps a raw score of 106.25 at 100 — meaning Copenhagen's score has no room left to register either an improvement or a decline.",
+      "index": "global-cities",
+      "slug": "copenhagen",
+      "severity": "low",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": []
+    },
+    {
+      "title": "Tenet Healthcare Confirmed Unchanged: Layoffs Are Announced, Not Yet Effective",
+      "whyItMatters": "More than a thousand layoffs at a Tenet subsidiary do not take effect until November, and another company's decision, not Tenet's, triggered them.",
+      "description": "Conifer Health Solutions, a subsidiary of Tenet Healthcare, will lay off 1,037 employees, mostly working remotely, effective 2 November 2026. The trigger was CommonSpirit Health's own decision, made earlier this year, to end its services contract with Conifer and exit its ownership stake — not a decision Tenet made on its own initiative. A 61-day notice filed under the WARN Act is standard legal compliance and does not by itself indicate anything beyond what the law requires.\n\nBecause the layoffs have been announced but have not yet taken effect, they are not scored as a completed event. Tenet Healthcare's published score of 31.9 out of 100 is confirmed unchanged. The benchmark is watching for the 2 November effective date.",
+      "index": "fortune-500",
+      "slug": "tenet-healthcare",
+      "severity": "low",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": []
+    },
+    {
+      "title": "Turkey Confirmed Near Its Floor After Raids on LGBT and HIV-Support Groups",
+      "whyItMatters": "Turkish police raided seven LGBT rights groups and two HIV-support organizations and arrested over a hundred people. The score barely moves only because it has almost no room left to fall.",
+      "description": "Between 12 and 14 September 2026, Turkish police carried out coordinated raids across five cities on seven LGBT rights organizations and two HIV-support groups, under a state operation named \"My Family Is Safe.\" At least 112 people were arrested, and a court ordered 82 of them held. Human Rights Watch, a watchdog organization, published its account on 18 September.\n\nMeasuring this new conduct against Turkey's record produces 7.5 out of 100, a drop of 2.8 points from the published 10.3. The drop is small mainly because 22 of Turkey's 40 scored categories are already at the benchmark's lowest possible value — there is almost no room left for new harm to register. Turkey remains in the benchmark's lowest tier, Critical, where it has sat since May 2026.",
+      "index": "countries",
+      "slug": "turkey",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "Police detained the executive and supervisory board members of Kaos GL, a leading LGBT rights organization, and questioned them about foreign funding.",
+          "source": "Human Rights Watch",
+          "url": "https://www.hrw.org/news/2026/09/18/turkiye-lgbt-rights-crackdown-strikes-at-rule-of-law",
+          "publishedDate": "2026-09-18",
+          "sourceTier": 3
+        }
+      ]
+    }
+  ],
+  "boundaryWatch": [
+    {
+      "entity": "Nasdaq",
+      "slug": "nasdaq",
+      "index": "fortune-500",
+      "score": 62.5,
+      "fromBand": "Established",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 2.5,
+      "cycle": 1,
+      "trigger": "A resolution of the internal disagreement between the benchmark's own tier-boundary rules at exactly this value is the next step, ahead of any new evidence.",
+      "note": "Nasdaq's published score sits 2.5 points above the Functional boundary. Its unchecked starting value rounds to exactly the number where the benchmark's own scoring rules disagree about which tier applies; no conduct evidence was found this cycle."
+    },
+    {
+      "entity": "Denmark",
+      "slug": "denmark",
+      "index": "countries",
+      "score": 81.3,
+      "fromBand": "Exemplary",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 21.3,
+      "cycle": 1,
+      "trigger": "Reconciling the long-standing gap between Denmark's published score and its own formula-computed value is the next step before any further measurement is treated as a genuine improvement.",
+      "note": "Denmark's published score has stood 8.9 points below its own formula-computed value since it was first set. A fresh measurement this cycle reproduces that same gap rather than new conduct; the published score is unchanged."
+    },
+    {
+      "entity": "Harmonic Bionics",
+      "slug": "harmonic-bionics",
+      "index": "robotics-labs",
+      "score": 62.5,
+      "fromBand": "Established",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 2.5,
+      "cycle": 2,
+      "trigger": "A decision on how the published row should reflect the 2025 acquisition, or new evidence of conduct since, is the next test.",
+      "note": "Not reviewed this cycle; carried forward from 2026-09-17. Harmonic Bionics' published score sits 2.5 points above the Functional boundary, on a row that still describes a business acquired by another company in June 2025."
+    }
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Dayton",
+      "slug": "dayton",
+      "index": "us-cities",
+      "date": "2026-09-18",
+      "published": 35.9,
+      "assessed": 30,
+      "delta": -5.9,
+      "status": "documented",
+      "whyHeadline": "A 26-year permit ordinance criminalized charitable food distribution and led to an arrest.",
+      "dominantDimension": {
+        "code": "ACC",
+        "delta": -0.9
+      },
+      "primaryEvidenceUrl": "https://www.wyso.org/news/2026-09-15/dayton-pays-56-000-settlement-for-city-ordinance-lawsuit",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "Whether the city commission repeals the ordinance outright, rather than merely being barred from enforcing it, is the next test for this score."
+      },
+      "evidence": [
+        {
+          "quote": "The city of Dayton declined to comment on the settlement.",
+          "claim": "The City of Dayton made no acknowledgment of harm even after a federal court ruled against it.",
+          "source": "WYSO (NPR member station, Dayton)",
+          "url": "https://www.wyso.org/news/2026-09-15/dayton-pays-56-000-settlement-for-city-ordinance-lawsuit",
+          "publishedDate": "2026-09-15",
+          "sourceTier": 2
+        },
+        {
+          "quote": "was detain[ed] for more than 30 minutes—over what amounted to a misdemeanor",
+          "claim": "A volunteer was handcuffed and detained for over 30 minutes for handing a homeless man a burrito, with no charges brought.",
+          "source": "Pacific Legal Foundation (plaintiff's counsel; interested party)",
+          "url": "https://pacificlegal.org/case/dayton-charity-nourish-our-neighbors/",
+          "publishedDate": "2026-04-07",
+          "sourceTier": 1
+        }
+      ]
+    },
+    {
+      "entity": "Turkey",
+      "slug": "turkey",
+      "index": "countries",
+      "date": "2026-09-18",
+      "published": 10.3,
+      "assessed": 7.5,
+      "delta": -2.8,
+      "status": "floor-confirmed",
+      "whyHeadline": "Coordinated raids hit seven LGBT rights groups and two HIV-support organizations.",
+      "primaryEvidenceUrl": "https://www.hrw.org/news/2026/09/18/turkiye-lgbt-rights-crackdown-strikes-at-rule-of-law",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "A United Nations finding or a European Court of Human Rights measure on this operation is the next test."
+      },
+      "evidence": [
+        {
+          "claim": "Police detained the executive and supervisory board of Kaos GL, a leading LGBT rights organization, and questioned them about foreign funding.",
+          "source": "Human Rights Watch",
+          "url": "https://www.hrw.org/news/2026/09/18/turkiye-lgbt-rights-crackdown-strikes-at-rule-of-law",
+          "publishedDate": "2026-09-18",
+          "sourceTier": 3
+        }
+      ]
+    },
+    {
+      "entity": "Denmark",
+      "slug": "denmark",
+      "index": "countries",
+      "date": "2026-09-18",
+      "published": 81.3,
+      "assessed": 88.6,
+      "delta": 7.3,
+      "status": "documented",
+      "whyHeadline": "A measured rise traces to a long-standing scoring gap, not to new conduct.",
+      "primaryEvidenceUrl": "https://www.canada.ca/en/global-affairs/news/2026/09/joint-statement-of-the-foreign-ministers-of-canada-denmark-finland-france-iceland-ireland-norway-poland-portugal-spain-sweden-and-the-uk-on-the-two.html",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "A completed European Union restriction, rather than a stated intention, would be the next test for this score."
+      },
+      "evidence": [
+        {
+          "claim": "Twelve foreign ministers said in a joint statement that they confirm their intention to introduce or support European restrictions on trade linked to Israeli settlements.",
+          "source": "Government of Canada (joint statement of 12 foreign ministers)",
+          "url": "https://www.canada.ca/en/global-affairs/news/2026/09/joint-statement-of-the-foreign-ministers-of-canada-denmark-finland-france-iceland-ireland-norway-poland-portugal-spain-sweden-and-the-uk-on-the-two.html",
+          "publishedDate": "2026-09-08",
+          "sourceTier": 5
+        }
+      ]
+    },
+    {
+      "entity": "Nasdaq",
+      "slug": "nasdaq",
+      "index": "fortune-500",
+      "date": "2026-09-18",
+      "published": 62.5,
+      "assessed": 60,
+      "delta": -2.5,
+      "status": "methodology-evolution",
+      "whyHeadline": "A tier-boundary disagreement in the scoring rules produced a crossing with no underlying evidence.",
+      "distanceToBoundary": {
+        "band": "Functional",
+        "pointsAway": 2.5,
+        "direction": "above"
+      },
+      "nextForwardSignal": {
+        "date": null,
+        "label": "A methodology decision on the exact tier boundary is the next step before this or similar placeholder scores are recalculated."
+      }
+    },
+    {
+      "entity": "San Francisco",
+      "slug": "san-francisco",
+      "index": "us-cities",
+      "date": "2026-09-18",
+      "published": 46.9,
+      "assessed": 45.6,
+      "delta": -1.3,
+      "status": "documented",
+      "whyHeadline": "Federal agents, not city staff, held travelers past a limit at the airport.",
+      "primaryEvidenceUrl": "https://www.kqed.org/news/12082395/san-francisco-condemns-immigration-and-customs-enforcement-actions-at-sfo-airport",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "A contract or policy change giving the city authority over the federal detention space would be the next test."
+      },
+      "evidence": [
+        {
+          "claim": "The Airport Director stated that the city and Airport Commission lack authority to regulate federal law-enforcement activity at the airport.",
+          "source": "KQED",
+          "url": "https://www.kqed.org/news/12082395/san-francisco-condemns-immigration-and-customs-enforcement-actions-at-sfo-airport",
+          "publishedDate": "2026-09-16",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "entity": "Copenhagen",
+      "slug": "copenhagen",
+      "index": "global-cities",
+      "date": "2026-09-18",
+      "published": 100,
+      "assessed": 100,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "Officers at a march clash belong to Denmark's national police, not a city force.",
+      "distanceToBoundary": {
+        "band": "Exemplary",
+        "pointsAway": 0,
+        "direction": "above"
+      }
+    },
+    {
+      "entity": "Tenet Healthcare",
+      "slug": "tenet-healthcare",
+      "index": "fortune-500",
+      "date": "2026-09-18",
+      "published": 31.9,
+      "assessed": 31.9,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "Over a thousand layoffs are announced for November, not yet in effect.",
+      "nextForwardSignal": {
+        "date": "2026-11-02",
+        "label": "The announced Conifer Health Solutions layoffs take effect on this date."
+      }
+    },
+    {
+      "entity": "Russia",
+      "slug": "russia",
+      "index": "countries",
+      "date": "2026-09-18",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "A missile and drone barrage on Kyiv and Odesa killed five, at a score with no room left to fall.",
+      "primaryEvidenceUrl": "https://www.aljazeera.com/news/2026/9/8/russia-strikes-kyiv-as-three-day-pause-during-us-envoy-visits-ends"
+    },
+    {
+      "entity": "Plains All American",
+      "slug": "plains-all-american",
+      "index": "fortune-500",
+      "date": "2026-09-18",
+      "published": 18.8,
+      "assessed": 17.5,
+      "delta": -1.3,
+      "status": "documented"
+    },
+    {
+      "entity": "Czech Republic",
+      "slug": "czech-republic",
+      "index": "countries",
+      "date": "2026-09-18",
+      "published": 62.5,
+      "assessed": 60.6,
+      "delta": -1.9,
+      "status": "documented",
+      "whyHeadline": "Two undated Council of Europe findings on Roma housing access were recorded, not scored."
+    }
+  ],
+  "emergingRisks": [
+    {
+      "risk": "Nasdaq's unchecked starting score rounds to exactly the value where the benchmark's own tier-boundary rules disagree, and every other unchecked score sharing that same starting value will hit the same disagreement as it comes up for review.",
+      "priority": "high",
+      "entitiesAffected": [
+        "nasdaq"
+      ],
+      "detail": "A methodology decision resolving the tier-boundary disagreement, made before any further placeholder scores near this value are recalculated, would close this gap.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Denmark's published score has stood almost nine points below what the benchmark's own formula computes from its recorded categories since the score was first set, meaning any future check of Denmark's record will keep reading as a large, evidence-free improvement until the gap is reconciled.",
+      "priority": "medium",
+      "entitiesAffected": [
+        "denmark"
+      ],
+      "detail": "A documented reconciliation of how Denmark's original score was calculated would resolve whether future measurements should be compared against 81.3 or against the formula's own 90.2.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Dayton's ordinance has been blocked by a federal court but not repealed, and the settlement paid covers only legal costs rather than repair to the people harmed.",
+      "priority": "medium",
+      "entitiesAffected": [
+        "dayton"
+      ],
+      "detail": "A city commission vote to repeal the ordinance outright, rather than leaving it merely unenforceable, is the next test for whether this score can recover.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Tenet Healthcare's announced layoffs at a subsidiary take effect in early November, a date after which this benchmark would treat the layoffs as completed conduct rather than an announcement.",
+      "priority": "low",
+      "entitiesAffected": [
+        "tenet-healthcare"
+      ],
+      "detail": "The 2 November 2026 effective date for the Conifer Health Solutions layoffs is the next scheduled test for this score.",
+      "forwardDate": "2026-11-02"
+    },
+    {
+      "risk": "Two robotics organizations carry large, unresolved proposed score changes that have not been decided for over a month, while their published scores remain unchanged in the meantime.",
+      "priority": "medium",
+      "entitiesAffected": [
+        "rethink-robotics",
+        "sanctuary-ai"
+      ],
+      "detail": "A decision on each organization's proposed change — one involving a company that may no longer be operating, the other a 55-point proposed gap — is the next step for both rows.",
+      "forwardDate": "TBD"
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "US Cities — A Feeding-Ban Downgrade and a Federal-Agent Confirmation",
+      "headline": "Dayton faces a proposed downgrade over a permit rule that criminalized charitable food distribution, while San Francisco confirms unchanged after federal agents' conduct at its airport.",
+      "observations": [
+        "Dayton (35.9 published, 30.0 measured): a 26-year permit ordinance, a handcuffed volunteer, and a settlement covering legal costs only. Downgrade proposed, not yet applied.",
+        "San Francisco (46.9 confirmed): federal Customs and Border Protection agents, not city staff, held travelers past a 72-hour guideline at the airport. The city says it lacks authority over that federal space."
+      ]
+    },
+    {
+      "sector": "Countries — A Floor-Limited Crackdown, an Absolute Floor, and a Formula Artefact",
+      "headline": "Turkey's raids on LGBT and HIV-support groups barely move a score with almost no room left to fall, while Denmark's measured rise turns out to be a scoring quirk, not news.",
+      "observations": [
+        "Turkey (10.3 published, 7.5 measured): coordinated raids on 7 LGBT and 2 HIV-support groups, 112 arrested. 22 of 40 scored categories already at the benchmark's floor.",
+        "Russia (0.0 confirmed): a missile and drone barrage on Kyiv and Odesa killed 5. All 40 scored categories are at the absolute floor.",
+        "Denmark (81.3 confirmed): a measured 88.6 traces entirely to a long-standing gap between the published score and the benchmark's own formula, not to the cycle's actual news, a conditional 12-country diplomatic pledge.",
+        "Czech Republic (62.5 confirmed): two undated Council of Europe findings on Roma housing access were recorded, not scored, for lack of a confirmed date."
+      ]
+    },
+    {
+      "sector": "Fortune 500 — An Announced Layoff and a Formula Boundary",
+      "headline": "Tenet Healthcare confirms unchanged on a not-yet-effective layoff, while Nasdaq's placeholder score exposes an internal disagreement in the scoring rules.",
+      "observations": [
+        "Tenet Healthcare (31.9 confirmed): over 1,000 announced layoffs at a subsidiary take effect 2 November 2026, after this cycle's review window.",
+        "Nasdaq (62.5 confirmed): an unchecked placeholder score rounds to exactly the value where the benchmark's own tier-boundary rules disagree; no evidence found in either direction.",
+        "Plains All American (18.8 confirmed): no new evidence; historical settlement record continues to support the published score."
+      ]
+    },
+    {
+      "sector": "Global Cities and Robotics Labs — An Attribution Confirmation and Two Deliberate Non-Findings",
+      "headline": "Copenhagen confirms at the benchmark's top score on an attribution question, while two robotics organizations with large open proposals were deliberately left unmeasured.",
+      "observations": [
+        "Copenhagen (100 confirmed): officers involved in a march clash belong to Denmark's national police, not a city force. No municipal conduct found.",
+        "Algeria (11.2, screening note only): a break in diplomatic relations with the UAE identified no specific harmed person or population.",
+        "Unitree Robotics (35.9, screening note only): a viral video of a robot appearing to kick an engineer was a programmed test movement, not an incident."
+      ]
+    }
+  ],
+  "methodologyNotes": [
+    {
+      "name": "A Score Can Cross a Tier Boundary With No New Evidence At All",
+      "description": "Nasdaq's case shows what happens when an unchecked starting score sits exactly on a boundary value where two different parts of the benchmark's own scoring rules disagree about which tier applies. Rounding that placeholder using the standard formula alone — with zero evidence about the organization's actual conduct — produces a tier crossing. The benchmark does not publish a tier change built entirely on an internal rules disagreement; the crossing is set aside until the boundary itself is resolved.",
+      "version": "v1.3",
+      "status": "active"
+    },
+    {
+      "name": "This Benchmark Scores Whoever Actually Did It",
+      "description": "Three findings tonight turned on the same question: who committed the conduct? Federal immigration agents, not San Francisco, held people at the city's airport. Denmark's national police, not Copenhagen, clashed with marchers. Another company's decision, not Tenet Healthcare's own choice, triggered a subsidiary's layoffs. In each case, the benchmark traced the conduct to the entity that actually did it, rather than the entity nearest to where it happened.",
+      "version": "v1.3",
+      "status": "active"
+    }
+  ],
+  "forwardTriggers": [
+    {
+      "date": "TBD",
+      "entity": "Dayton",
+      "slug": "dayton",
+      "trigger": "Whether the city commission repeals the ordinance outright, rather than merely being barred from enforcing it, is the next test for this score.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD",
+      "entity": "Nasdaq",
+      "slug": "nasdaq",
+      "trigger": "A methodology decision resolving the internal tier-boundary disagreement is the next step before this score is recalculated.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Denmark",
+      "slug": "denmark",
+      "trigger": "A completed European Union restriction, rather than a stated intention, would be the next test for this score.",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-11-02",
+      "entity": "Tenet Healthcare",
+      "slug": "tenet-healthcare",
+      "trigger": "The announced Conifer Health Solutions layoffs take effect on this date.",
+      "priority": "low"
+    },
+    {
+      "date": "TBD",
+      "entity": "Turkey",
+      "slug": "turkey",
+      "trigger": "A United Nations finding or a European Court of Human Rights measure on the September raids is the next test.",
+      "priority": "high"
+    }
+  ],
+  "dailyOpeningQuestion": {
+    "text": "Dayton's feeding-ban settlement paid only legal fees, while Nasdaq's placeholder score sits on an unresolved tier-boundary disagreement in the scoring formula. Does a methodology fix at that boundary change Nasdaq's Established classification before further placeholder scores are recalculated?",
+    "themes": [
+      "band-boundary-methodology",
+      "reparative-action-threshold",
+      "placeholder-recalculation"
+    ],
+    "tensionFraming": "A conduct-based downgrade proceeds to review while a formula-only band crossing at the same tier line is held for a methodology decision.",
+    "tiedToEntities": [
+      "dayton",
+      "nasdaq"
+    ],
+    "forwardResolutionDate": null,
+    "eveningResolution": null
+  }
+}

@@ -10039,3 +10039,210 @@ No scored proposals enter the pending queue. Queue holds at 20 (down from 21 sol
 **Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 20** -- one fewer than 2026-09-15's 21, solely because Wellington's proposal left the pool on a 2026-09-16 founder-approved apply (see housekeeping note above); zero new filings tonight. High priority (band change or delta >15): 14. Standard (delta 5-15, no band change): 6 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks -- all carried forward, unchanged). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+
+---
+
+## 2026-09-18 -- Dayton Downgrade Proposed (Feeding-Ban Ordinance) | 2 Withheld (Denmark Upgrade, Nasdaq Band Crossing) | 1 Corroboration | 8 Confirmations | INC-009 Repaired
+
+### Summary -- 2026-09-18
+
+One score-change proposal filed: Dayton (us-cities, -5.9, no band change, Developing sustained), on a 26-year ordinance criminalizing charitable food distribution, a handcuffed volunteer, a federal court striking the ordinance down, and a $56,365.62 settlement covering attorney fees only. Two large measured deltas were WITHHELD, both tracing to scoring-formula artefacts rather than evidence: Denmark (+7.3 upgrade, entirely the registered ASSESSOR_OVERRIDE_NAMES gap between published 81.3 and formula 90.2, on a conditional diplomatic pledge, not enacted conduct) and Nasdaq (-2.5, a genuine band crossing, Established -> Functional, produced entirely by integer-grid rounding of a 3.5-seed placeholder landing on exactly 60.0, where getBand() and dimensions.ts BANDS disagree -- RISK-006, now BLOCKING). 8 confirmations, three of which turned on attribution (San Francisco: ICE/CBP are federal, not city, conduct; Copenhagen: Kobenhavns Politi is Denmark's national police, not municipal; Tenet Healthcare: the triggering decision was CommonSpirit Health's, not Tenet's). Two screening notes only (Algeria, Unitree Robotics), one corroboration not refiled (Abbott Laboratories), and two entities flagged but not re-baselined (Rethink Robotics, Sanctuary AI -- both carry large pending proposals from RISK-002/RISK-003 holds). Zero scores applied. Math hygiene: ONE KNOWN REGISTERED DIVERGENCE (Denmark, override gap, not a new defect); all other 14 entities reproduce exactly.
+
+**INC-009, repaired and independently verified (not this digest's error; reported for continuity).** During the assessment stage, an agent ran `git checkout` over the scanner's uncommitted rotation-state write for all 1,329 entities after misreading a large diff, then deterministically reconstructed it from the scan file. The coordinator independently verified the repair touched exactly 5 keys (last_scanned x1,329, last_evidence_touch x1,329, meta.last_scan x1, last_assessed x11, last_change_proposal x1) and zero score-bearing fields. See INCIDENTS.md.
+
+---
+
+### Score Change Proposed -- 2026-09-18
+
+#### Dayton (us-cities) -- 35.9 -> 30.0 (-5.9) -- no band change, Developing sustained
+- **Confidence:** medium
+- **Band change:** No -- both 35.9 and 30.0 fall in Developing (21-40)
+- **Key evidence:**
+  - For 26 years, Dayton required a permit ($50/event, $250 deposit for repeat violators) to distribute food, clothing or toiletries downtown.
+  - 7 April 2024: a Dayton police officer handcuffed and detained a Nourish Our Neighbors volunteer for over 30 minutes for handing a homeless man a burrito. No charges filed. (Pacific Legal Foundation, tier 1, interested party, corroborated by WYSO and the Dayton Daily News.)
+  - June 2026: a federal judge struck the ordinance down as unconstitutional and barred enforcement.
+  - Dayton appealed, then dropped the appeal and settled for $56,365.62 in September 2026 -- attorney fees and costs only, reaching neither the handcuffed volunteer nor the homeless people who went unfed during the case. The city declined to comment. (WYSO, tier 2.)
+  - No source shows the ordinance itself has been repealed, only that a court barred its enforcement.
+  - Clean attribution: the ordinance, arresting officer, appeal and settlement are all City of Dayton acts -- the deliberate positive contrast to San Francisco (federal conduct) and Copenhagen (national conduct) in the same cycle.
+- **Recommendation:** downgrade. 30.0 independently reproduces exactly from the proposal's 40 subdimensions.
+- **File:** [proposal](change-proposals/dayton-2026-09-18.json)
+
+---
+
+### Score Changes Withheld -- 2026-09-18
+
+| Entity | Index | Published | Measured | Delta | Band Crossing | Reason Withheld |
+|---|---|---|---|---|---|---|
+| Denmark | countries | 81.3 | 88.6 | +7.3 | No (Exemplary sustained) | Entire +7.3 is the registered ASSESSOR_OVERRIDE_NAMES gap (formula reconstructs to 90.2, not 81.3). The only in-window fact -- a 12-minister joint statement to "confirm their intention to introduce national and/or support European restrictions" -- is a conditional pledge, not enacted conduct. Screening rule 5. |
+| Nasdaq | fortune-500 | 62.5 | 60.0 | -2.5 | Yes -- Established -> Functional | Zero evidence located in either direction. The crossing is produced entirely by integer-grid rounding of a uniform 3.5-seed placeholder landing on exactly 60.0, the value where getBand() (Functional) and dimensions.ts BANDS (Established, min 60, declared source of truth) disagree. RISK-006, now BLOCKING -- flagged for a founder decision before further de-seeding of the 62.5/60.9 placeholder cohort. Screening rules 3 and 5. |
+
+---
+
+### Measured, Not Filed (Corroboration) -- 2026-09-18
+
+| Entity | Index | Published | Measured | Delta | Notes |
+|---|---|---|---|---|---|
+| Abbott Laboratories | fortune-500 | 57.8 | 50.0 | -7.8 | Not re-assessed tonight; corroborates the existing 2026-09-15 measurement, which already matches the PENDING abbott-laboratories-2026-08-26 proposal (57.8 -> 50.0) exactly. The $385M DOJ formula settlement is fully absorbed; no re-filing. |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-18
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Turkey | countries | 10.3 | 7.5 | -2.8 | HRW (tier 3) documents 12-14 Sept raids on 7 LGBT and 2 HIV-support groups under a state operation named "My Family Is Safe"; 112 arrested, 82 held. Floor-limited: 22 of 40 subdimensions already at anchor 1. |
+| Tenet Healthcare | fortune-500 | 31.9 | 31.9 | 0.0 | Conifer's 1,037 layoffs are ANNOUNCED, effective 2 Nov 2026, not yet executed. Triggering decision was CommonSpirit Health's contract exit, not Tenet conduct. |
+| Microsoft | fortune-500 | 65.3 | 65.0 | -0.3 | Netflix precedent applied. NYT/Daily News claims are pleaded allegations in undecided litigation; the "largest theft of labor" line is a quoted internal remark, not a finding. |
+| Copenhagen | global-cities | 100 | 100 | 0.0 | Kobenhavns Politi is a district of Denmark's national police, not a City of Copenhagen agency. No municipal conduct located. Sole entity in the catalogue at the 100.0 formula ceiling. |
+| San Francisco | us-cities | 46.9 | 45.6 | -1.3 | ICE and CBP are federal, stated explicitly; the city is the airport's owner and lacks authority to regulate federal activity there. No detention conduct attributed to the city. |
+| Plains All American | fortune-500 | 18.8 | 17.5 | -1.3 | No in-window evidence; historical record (2015 Line 901 rupture, $230M and $1.75M settlements) recorded, not re-scored, and supports the published Critical placement. |
+| Czech Republic | countries | 62.5 | 60.6 | -1.9 | No in-window evidence; two tier-4 Council of Europe Roma-rights findings are undated in available material, recorded not scored. Stays Established by 0.6 points. |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Absolute floor -- all 8 dimensions and 40 of 40 subdimensions at anchor 1. 32 cruise missiles and 166 drones hit Kyiv/Odesa 7-8 Sept, killing 5; the score cannot fall further. |
+
+---
+
+### Screened, Not Assessed -- 2026-09-18
+
+| Entity | Index | Published | Reason |
+|---|---|---|---|
+| Algeria | countries | 11.2 | Severing UAE relations (10 Sept) is a foreign-policy act; no source identifies any harmed person or population. No score measured, no sidecar, last_assessed not stamped. |
+| Unitree Robotics | robotics-labs | 35.9 | The 7 Sept "kick" was a programmed, engineer-triggered test motion; no injury, complaint or regulator. An approved-but-unapplied proposal already exists on this row (35.9 -> 24.4, RISK-002); a fresh number would create a third figure for one row. |
+
+---
+
+### Flagged, Not Re-Baselined -- 2026-09-18
+
+| Entity | Index | Published | Pending Proposal | Days Open | Issue |
+|---|---|---|---|---|---|
+| Rethink Robotics | robotics-labs | 60.9 (Established) | 60.9 -> 13.1, flag-for-review | Open since 2026-08-16 (oldest in queue) | RISK-003: defunct since 2025-09-16, still published in the second-highest band. Entity-currency question, not a nightly re-assessment question. |
+| Sanctuary AI | robotics-labs | 81.4 (Exemplary) | 81.4 -> 25.6, flag-for-review | Open since 2026-08-17 | RISK-002: 55.8-point pending gap on an Exemplary-band row; no new evidence located this cycle. |
+
+---
+
+### Open Calibration Flags -- 2026-09-18
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| RISK-006 band-boundary ambiguity at composite 60.0/60.9 | ESCALATED to BLOCKING tonight: Nasdaq's measured 60.0 lands exactly on the getBand()/dimensions.ts BANDS disagreement point. Founder decision needed before further de-seeding of the 62.5/60.9 placeholder cohort. | Open since 2026-07-30, escalated 2026-09-18 |
+| Denmark ASSESSOR_OVERRIDE_NAMES gap (published 81.3 vs. formula 90.2, 8.9 points) | New tonight -- the largest override gap found to date; any future mechanical re-measurement will read as a false-positive upgrade until reconciled. | Open since 2026-09-18 |
+| Dayton / Unitree Robotics shared 35.9 placeholder (identical composite and dimension vector across two indexes) | New tonight -- Dayton's proposal does not rely on this; the shared placeholder itself needs cohort study. | Open since 2026-09-18 |
+| Rethink Robotics entity-currency / RISK-003 | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Sanctuary AI RISK-002 hold (55.8-point gap) | Carried forward, no new evidence this cycle | Open since 2026-08-17 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight: 8 of 14 dropped candidates were misdated; Meta's "8,000 layoffs" claim dropped a third consecutive cycle | Open since 2026-08-16, reinforced 2026-09-17 and 2026-09-18 |
+| Chile pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Halodi Robotics / 1X Technologies three-published-composite identity question (waiver D13-1x-technologies) | Carried forward, not touched tonight | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~86 days |
+| Bolivia critical-band calibration | Carried forward | ~69 days |
+
+---
+
+### Operational Notes -- 2026-09-18
+
+- Scan: 1,329 entities scanned (roster unchanged); 287 searches performed against a derived ceiling of 274 (150 T1 individual + 14 verification + 102 T2 batched + 21 T3 sweeps; 13-search disclosed overage); 14-day lookback (2026-09-04 to 2026-09-18).
+- 14 dropped candidates: PayPal, Meta Platforms (third consecutive cycle), Figure AI, OpenAI, Qatar, Freeport-McMoran, University of Cambridge (all misdated by a year or more, 8 of 14); Ethiopia (internally-inconsistent future date); AECOM, Aurora, Seville, Trenton (window-boundary); Belarus, Toronto (non-machine-checkable date). Point at backlog SC-1 / defect class DC-13.
+- Assessor runtime: assessment stage ran 2026-09-18 through 2026-09-18T21:55:25.890Z; 14 assessor searches across 11 scored entities plus 2 screening notes, max 2 searches on any single entity (San Francisco, Dayton); 1 change proposal; 8 confirmations; 2 withheld; 11 of 11 required subdimension sidecars written.
+- Math hygiene: ONE KNOWN REGISTERED DIVERGENCE (Denmark, ASSESSOR_OVERRIDE_NAMES, not a new defect); computeCompositeFromDimensions reproduces the published composite exactly for the other 14 entities in scope.
+- Rotation-state drift: composite and band match the published index for all entities touched. Only last_assessed (11 entities) and last_change_proposal (1 entity, Dayton) were written by the assessor stage; last_scanned/last_evidence_touch/meta.last_scan were rewritten only as the INC-009 repair (see digest and INCIDENTS.md). Rank drift reported only (Nasdaq, Plains All American, Unitree Robotics, Rethink Robotics, Sanctuary AI).
+- Validation: node site/scripts/validate-daily-briefings.mjs and node site/scripts/lint-daily-briefings.mjs run against tonight's briefing; results recorded in the digest JSON and reported by the agent that ran this cycle.
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 21** -- 20 carried forward from 2026-09-17 + 1 new tonight (Dayton). High priority (band change or delta >15): 14. Standard (delta 5-15, no band change): 7 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks -- all carried forward, unchanged -- plus Dayton, new tonight). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+---
+
+## 2026-09-20 -- Berkshire Hathaway Band-Crossing Proposed (Exact-Boundary, Flag-For-Review) | AI Antitrust Suit Screened Zero Movement (3 Labs) | Netflix No-Double-Count | Big Lots Entity-Identity Referral | 12 Confirmations | RISK-006 Reinforced
+
+### Summary -- 2026-09-20
+
+Catch-up cycle (no 2026-09-19 run); 14-day lookback (2026-09-06 to 2026-09-20). One score-change proposal filed: Berkshire Hathaway (fortune-500, 43.8 -> 40.0, -3.8, BAND CROSSING Functional -> Developing, flag-for-review, low confidence, first-ever baseline), filed under the section 3f band-crossing trigger because the -3.8 delta alone does not meet the 5-point magnitude trigger but the assessed band differs from the published band. The measured composite lands exactly on 40.0, the Developing/Functional line -- **the second exact-boundary landing in three cycles**, after Nasdaq's exact 60.0 on 2026-09-18. RISK-006 is reinforced, not closed.
+
+Three AI labs (Anthropic, OpenAI, xAI) were screened against the 19 September N.D. Cal. antitrust suit alleging the labs illegally coordinated an AI-safety slowdown; **zero movement in either direction for any of the three**, on the reasoning that a filed complaint is procedural and the conduct challenged is itself a safety commitment, so scoring it in either direction would be indefensible. OpenAI moved separately and positively (22.5 -> 25.0, +2.5, confirmed) on a self-initiated disclosure of six misalignment incidents plus a reporting framework, below the filing line. xAI holds its floor at 0.0.
+
+Netflix's already-withheld Established/Functional crossing (first identified 2026-09-15) was **not re-filed**: the Florida AG suit was fully scored on 09-15 and no post-09-15 evidence exists; re-scoring would double-count one event. Jamaica (37.5 -> 35.0, -2.5) and Los Angeles (35.9 -> 34.4, -1.5) both confirmed on genuinely new evidence (INDECOM fatality data; LAHSA federal contractor charges) that stayed below the filing threshold, the latter after a clean attribution screen (joint city-county authority + nonprofit contractors + federal prosecutors, none of it City of Los Angeles conduct). Meta Platforms (7.8 -> 8.1, +0.3) confirmed near-floor on an Amnesty International Hungary finding that corroborates rather than moves the existing placement.
+
+Five first-ever individual baselines were completed: AECOM (48.4 -> 47.5, ransomware claim excluded entirely as an uncorroborated criminal claim), Bank of America (67.2 -> 64.4), Berkshire Hathaway (see above), Big Lots (23.4 -> 23.1, **entity-identity question referred to the coordinator** -- Big Lots Inc. liquidated in Chapter 11 in 2024 and stores now trading under the name are run by Variety Wholesalers, a different private owner), and Bath & Body Works (48.4 -> 49.4) and Belden (35.9 -> 36.2, both confirmed). **Methodological finding:** three Fortune 500 seed values exercised against real evidence tonight (48.4 x2, 35.9, 23.4) all held within +/-1.0 point -- evidence against treating placeholder-cohort deltas as automatic downgrades. Zero scores applied. Math hygiene: all 13 published composites reconstructed exactly with `computeCompositeFromDimensions`. Zero issues.
+
+---
+
+### Score Change Proposed -- 2026-09-20
+
+#### Berkshire Hathaway (fortune-500) -- 43.8 -> 40.0 (-3.8) -- BAND CROSSING Functional -> Developing (exact boundary)
+- **Confidence:** low
+- **Band change:** Yes -- 40.0 is Developing; 40.1 would be Functional. Treat the band label as low-confidence.
+- **Key evidence:**
+  - Berkshire's board declined a shareholder request to disclose its oversight framework for workforce and human-capital management across ~60 operating subsidiaries, stating those matters belong to the businesses' own discretion (SEC DEF 14A, FY2026, tier 5).
+  - A further shareholder proposal on subsidiary sustainability ROI reporting was omitted from proxy materials after a Rule 14a-8 no-action request (SEC, tier 5).
+  - Offsetting positive: the annual shareholder letter names specific management errors without legal compulsion (Berkshire annual report, tier 4). Offsetting positive: a qualitative 2050 net-zero ambition covering >=95% of Scope 1/2 emissions is recorded by Climate Action 100+ (tier 3), though disclosure to evidence it was declined.
+- **Recommendation:** flag-for-review (first-ever baseline, exact-boundary composite, and disclosure too thin to assess ~390,000 employees across subsidiaries with confidence). Independently reproduces exactly 40.0 from the proposal's 40 subdimensions.
+- **File:** [proposal](change-proposals/berkshire-hathaway-2026-09-20.json)
+
+---
+
+### Screened, Not Re-Scored / Not Re-Filed -- 2026-09-20
+
+| Entity | Index | Published | Reason |
+|---|---|---|---|
+| Netflix | fortune-500 | 60.9 | Same 9-Sept Florida AG suit already fully scored 2026-09-15; no post-09-15 evidence found. The already-withheld 60.9 -> 58.7 Established/Functional crossing (seed-value rounding artefact, no tier-4+ conduct source) stands from 09-15 and is not re-filed. |
+| Anthropic | ai-labs | 59.1 | AI antitrust suit (19 Sept, N.D. Cal.) is procedural; alleged conduct (a safety pledge) does not map to any harm anchor. Zero movement. 12 Sept Amodei pacing essay logged as a positive watch item on S4/A3, not banked (commitment without track record; sub-filing-threshold even if banked). |
+| OpenAI | ai-labs | 22.5 | Same antitrust suit screened with zero movement; OpenAI's separate +2.5 move (see Confirmations) is unrelated to the suit. |
+| xAI | ai-labs | 0.0 | Same antitrust suit screened; floor confirmed, no movement possible or warranted -- naming as a defendant is not positive conduct evidence. |
+| Algeria | countries | 11.2 | Carried context: severing UAE relations is a foreign-policy act with no identified harmed population (screening note from tonight's scan, not separately assessed). |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-20
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Jamaica | countries | 37.5 | 35.0 | -2.5 | INDECOM: 215 fatally shot by security forces YTD (above all of 2025), 67 killed in 26 multiple-fatality incidents, body cameras still absent. ACC held at 2.4 on INDECOM's own transparency (AB3 = 4/5). |
+| Meta Platforms | fortune-500 | 7.8 | 8.1 | +0.3 | Amnesty International (tier 3): anti-LGBTI hate speech left visible on Facebook in Hungary into March 2026. Corroborates, does not move, near-floor placement. |
+| OpenAI | ai-labs | 22.5 | 25.0 | +2.5 | Self-disclosed six model-misalignment incidents + reporting framework, 16 Sept, before any legal obligation. Integrity held at 1.4 (weakest dimension) -- incidents themselves are negative safety evidence. |
+| Los Angeles | us-cities | 35.9 | 34.4 | -1.5 | FBI/US Attorney charges against LAHSA-linked nonprofit contractors (not city employees); LAHSA is a joint city-county authority. No city dimension moves. 09-14 watch advanced, not satisfied. |
+| AECOM | fortune-500 | 48.4 | 47.5 | -0.9 | First baseline. Ransomware breach claim (tier 1, uncorroborated) excluded entirely. $11.8M DOJ FCA settlement (tier 5) vs. verified RoSPA safety record. |
+| Bank of America | fortune-500 | 67.2 | 64.4 | -2.8 | First baseline. $1bn+ CDFI commitment vs. repeat CFPB consumer-harm orders (2022 unemployment-benefits fine, 2023 junk-fees order); CFPB terminated the consent order 3 years early. |
+| Big Lots | fortune-500 | 23.4 | 23.1 | -0.3 | First baseline. Entity-identity referral (see Open Calibration Flags) -- score itself confirms. |
+| Bath & Body Works | fortune-500 | 48.4 | 49.4 | +1.0 | First baseline. ILO-based Supplier Code of Conduct; 4 years of annual ESG reporting, all self-reported with no independent audit located. |
+| Belden | fortune-500 | 35.9 | 36.2 | +0.3 | First baseline. 12 tracked sustainability goals; Great Place to Work certified in 20 countries; Equity weak (2.2) on unmeasured coverage. |
+| Netflix | fortune-500 | 60.9 | 58.7 (carried) | -2.2 | See Screened table -- no re-score, no re-file. |
+| Anthropic | ai-labs | 59.1 | 57.5 (carried) | -1.6 | See Screened table. |
+| xAI | ai-labs | 0.0 | 0.0 | 0.0 | Floor confirmed, see Screened table. |
+
+---
+
+### Open Calibration Flags -- 2026-09-20
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| RISK-006 band-boundary ambiguity | REINFORCED tonight: Berkshire's measured 40.0 lands exactly on the Developing/Functional line, the second exact-boundary result in three cycles after Nasdaq's exact 60.0 on 2026-09-18. Founder decision on the rounding rule still needed before further de-seeding of the 43.8/60.9/62.5/35.9/23.4/48.4 placeholder cohorts. | Open since 2026-07-30, escalated 2026-09-18, reinforced 2026-09-20 |
+| Big Lots entity-identity question | NEW tonight -- Big Lots Inc. liquidated in Chapter 11 (Oct 2024), announced full-store liquidation (Dec 2024), and 200-400 stores were sold to Variety Wholesalers, a private North Carolina retailer. The fortune-500 row may refer to a company that no longer operates in its scored form. Referred to the coordinator, not encoded as a score proposal. | Open since 2026-09-20 |
+| Netflix / seed-value calibration cohort (60.9) | Carried from 2026-09-15 and 09-20 -- Netflix's 60.9 has never been set by an individual assessment and sits 0.9 points above the Established line. | Open since 2026-09-15 |
+| Denmark ASSESSOR_OVERRIDE_NAMES gap (published 81.3 vs. formula 90.2) | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Dayton / Unitree Robotics shared 35.9 placeholder | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Rethink Robotics entity-currency / RISK-003 | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Sanctuary AI RISK-002 hold (55.8-point gap) | Carried forward, no new evidence this cycle | Open since 2026-08-17 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight: 4 of 11 dropped candidates were year-stale (Myanmar, El Salvador, Interpublic Group, Figure AI -- Figure AI dropped for a third consecutive cycle) | Open since 2026-08-16, reinforced 2026-09-20 |
+| Debunked-claims ledger over-firing on scanner's own explanatory prose (NEW, backlog SC-1c) | The ledger's first live run correctly saved verification work on PayPal's recurring claim, but also matched against the scanner's own generated explanation text in at least one place rather than the underlying source claim. Needs tightening before being trusted unsupervised. | Open since 2026-09-20 |
+| Chile pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Halodi Robotics / 1X Technologies identity question (waiver D13-1x-technologies) | Carried forward, not touched tonight | Open since 2026-08-17 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~88 days |
+| Bolivia critical-band calibration | Carried forward | ~71 days |
+
+---
+
+### Operational Notes -- 2026-09-20
+
+- Scan: 1,329 entities scanned (roster unchanged); 283 searches performed against a derived ceiling of 274 (150 T1 individual + 11 verification + 102 T2 batched + 20 T3 sweeps; 9-search disclosed overage). Catch-up cycle: no 2026-09-19 run occurred, so this cycle's lookback spans 14 days (2026-09-06 to 2026-09-20).
+- 11 dropped candidates: PayPal (ledger match, known-misdated-claims.json, true date 2026-05-12), Myanmar (Rakhine airstrike, true date 2025-09-12, year-stale, not yet a ledger entry), El Salvador (defender-exodus claim sourced to an HRW report describing May-Sept **2025**, not yet a ledger entry), United Kingdom (date/claim could not be jointly verified for September 2026), Delta Air Lines (a court calendar date is not new evidence), Somalia (conflated two distinct events, both stale or out-of-window), Romania (already fully assessed 09-17, correctly not re-flagged), Interpublic Group ("3,200 jobs cut" claim true date September **2025**, not yet a ledger entry; already carries an unaffected pending proposal), **Figure AI (dropped for a third consecutive cycle, backlog SC-1b)**, Weyerhaeuser (window-boundary + separate attribution mismatch on a different claim), Lesotho (one day outside the 14-day window). Point at backlog SC-1 / defect class DC-13.
+- The new debunked-claims ledger's first live run: correctly saved a repeat verification cycle on PayPal's recurring DOJ DEI-settlement claim (matched on sight). It also over-fired on the scanner's own explanatory prose in at least one place tonight -- a false-positive-in-the-tooling issue, not a scoring error, logged as backlog SC-1c.
+- Rank drift: 8 of 13 rotation-state ranks disagree with the published indexes (composites and bands all agree in every case): Netflix (rotation-state 52 vs. index 45), Meta Platforms (446 vs. 445), Anthropic (13 vs. 12), AECOM (90 vs. 82), Berkshire Hathaway (175 vs. 169), Big Lots (353 vs. 352), Bath & Body Works (100 vs. 92), Belden (198 vs. 193). Also `research/assessments/jamaica-2026-09-14.md` frontmatter records published_rank 73 where `countries.json` gives rank 71 -- assessment-artifact drift only. Reported, not corrected, per this stage's write authorization (last_assessed and last_change_proposal only).
+- RISK-006, reinforced: Berkshire lands exactly on 40.0 tonight; Nasdaq landed exactly on 60.0 two cycles ago (2026-09-18). Two boundary-exact results in three cycles is a pattern, not a coincidence. The band-boundary decision is overdue.
+- Assessor runtime: assessment stage ran 2026-09-20T02:40:00Z through 2026-09-20T05:05:00Z; 13 entities scored (8 priority + 5 rotation); 1 change proposal; 12 confirmations; 8 subdimension sidecars written (jamaica, openai, aecom, bank-of-america, berkshire-hathaway, big-lots, bath-and-body-works, belden). Zero math-hygiene issues -- all 13 published composites reconstructed exactly with `computeCompositeFromDimensions`.
+- Validation: `node site/scripts/validate-daily-briefings.mjs` (PASS, 83 of 83 briefings, exit 0) and `node site/scripts/lint-daily-briefings.mjs` (PASS, 85 files clean, exit 0) run against tonight's briefing.
+
+**Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, excluding the history/ subdirectory, via `grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l`, not incremented from the prior digest's figure): 22** -- 21 carried forward from 2026-09-18 + 1 new tonight (Berkshire Hathaway). High priority (band change or delta >15): 15 (14 carried forward + Berkshire Hathaway, new tonight, band change). Standard (delta 5-15, no band change): 7 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton -- all carried forward, unchanged). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.

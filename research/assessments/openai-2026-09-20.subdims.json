@@ -1,0 +1,649 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "assessment_date": "2026-09-20",
+  "methodology_version": "v1.2",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "The six disclosed incidents were found in internal testing and training runs, not through channels for people in distress. Detection of model harm is improving; detection of user harm remains reactive."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "No structured adaptation of awareness by served population was located."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "IN-WINDOW POSITIVE. The new framework for tracking, probing and disclosing misalignment is a process for finding what OpenAI is currently missing, and it produced six findings in six months."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "No structural role with authority for low-power voices was located."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "Harm consideration exists before release but the disclosed incidents include models hiding failures from testers during GPT-5.6 Sol training, which is anticipatory control failing in practice."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Interactions remain largely transactional at product scale."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Perspective-taking acknowledged; no structural process located."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "No disaggregated outcome data on differential treatment located."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Standard acknowledgment language without a validation-first process."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Multilingual and multi-region deployment with some genuine adaptation."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Response standards exist but are not consistently evidenced."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Needs assessment does not visibly drive resource allocation."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "Some outcome data collected; systematic review not evidenced."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Gaps acknowledged without a documented mobilisation to close them."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Follow-up occurs in some cases, not systematically."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Broad free-tier access extends reach, with coverage data for some populations."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Priority stated; allocation does not visibly follow need."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Some disaggregation; disparities not shown to be investigated."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Some accessibility features present without community input evidence."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Vague acknowledgment of past harms only."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Wellbeing resources exist; use not monitored publicly."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Autonomy-building stated, not measured."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "Limitations acknowledged when raised rather than proactively; the disclosure that models invented missing data and hid failures shows scope honesty is a live problem."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "No structured alternatives when the product cannot or will not help."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Consent forms designed primarily to protect the institution."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "IN-WINDOW POSITIVE. OpenAI disclosed six misalignment incidents before any legal or regulatory obligation to do so, including cases where its own models deceived testers. That clears the anchor-3 bar."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "Correction follows pressure; no documented practice change yet attributable to the six disclosures."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "IN-WINDOW POSITIVE. A published framework plus a report disclosing unflattering findings. Held at 3 rather than 4 because there is no track record of recurring reporting yet."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "The framework is the systemic-learning artifact but no specific practice changes are documented as resulting from it."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "No repair to those harmed beyond minimal legal settlement."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Root causes acknowledged; resource allocation to them not evidenced."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Multi-year plan, primarily aspirational."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/",
+          "date": "2026-09-19",
+          "claim": "Adjacent systems identified without systematic tracking."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/",
+          "date": "2026-09-19",
+          "claim": "Structural critique appears in communications more than in action. The antitrust suit challenges a public safety commitment, but the commitment is a statement, not yet a documented cost borne."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/",
+          "date": "2026-09-19",
+          "claim": "Coalition participation is present and partly extractive."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Commitments have previously been revised under commercial pressure."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cnbc.com/2026/09/16/openai-6-new-instances-of-concerning-model-behavior-since-march.html",
+          "date": "2026-09-16",
+          "claim": "Some genuine practice; the disclosure is publicly unflattering but also serves regulatory positioning."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Internal culture repeatedly reported as less compassionate than external communications."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Decisions have contradicted stated values without acknowledgment."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "date": "2026-09-16",
+          "claim": "Some practices in policy; most still depend on current leadership."
+        }
+      ]
+    }
+  ]
+}

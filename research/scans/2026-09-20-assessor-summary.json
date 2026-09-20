@@ -1,0 +1,379 @@
+{
+  "date": "2026-09-20",
+  "cycle": "catch-up (no 2026-09-19 run)",
+  "lookback_window_start": "2026-09-06",
+  "lookback_window_end": "2026-09-20",
+  "scan_file": "research/scans/2026-09-20.json",
+  "methodology_version": "v1.2",
+  "entities_assessed": 13,
+  "priority_assessed": 8,
+  "rotation_assessed": 5,
+  "assessment_start": "2026-09-20T02:40:00Z",
+  "assessment_end": "2026-09-20T05:05:00Z",
+  "results": [
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 60.9,
+      "published_band": "Established",
+      "assessed_composite": 58.7,
+      "assessed_band": "Functional",
+      "delta": -2.2,
+      "band_change": true,
+      "change_proposal": false,
+      "subdim_sidecar": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/netflix-2026-09-20.md",
+      "key_finding": "Same Florida Attorney General suit already fully scored on 2026-09-15; no evidence post-dating that assessment was found, so no dimension was re-scored and the previously withheld band crossing was not re-filed."
+    },
+    {
+      "slug": "jamaica",
+      "name": "Jamaica",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 37.5,
+      "published_band": "Developing",
+      "assessed_composite": 35,
+      "assessed_band": "Developing",
+      "delta": -2.5,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/jamaica-2026-09-20.md",
+      "key_finding": "INDECOM reported 215 people fatally shot by Jamaica's security forces in 2026 to date and 67 killed in 26 multiple-fatality incidents, already above all of 2025, with body-worn cameras still absent; measured 35.0 against a published 37.5, below the filing threshold."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 7.8,
+      "published_band": "Critical",
+      "assessed_composite": 8.1,
+      "assessed_band": "Critical",
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/meta-platforms-2026-09-20.md",
+      "key_finding": "Amnesty International (tier 3, 8 September 2026) found Meta left reported anti-LGBTI hate speech on Facebook in Hungary visible into March 2026; the finding corroborates the existing near-floor 7.8 rather than moving it."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 59.1,
+      "published_band": "Functional",
+      "assessed_composite": 57.5,
+      "assessed_band": "Functional",
+      "delta": -1.6,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/anthropic-2026-09-20.md",
+      "key_finding": "The 19 September antitrust filing is a procedural event whose alleged conduct is a safety commitment, so it scores nothing in either direction; the countervailing 12 September Amodei pacing essay is logged as a positive watch item, not banked."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 22.5,
+      "published_band": "Developing",
+      "assessed_composite": 25,
+      "assessed_band": "Developing",
+      "delta": 2.5,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/openai-2026-09-20.md",
+      "key_finding": "OpenAI self-disclosed six model-misalignment incidents and published a reporting framework on 16 September 2026, lifting Accountability from 1.6 to 2.2; measured 25.0 against a published 22.5, below the filing threshold and inside the same band."
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 0,
+      "published_band": "Critical",
+      "assessed_composite": 0,
+      "assessed_band": "Critical",
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/xai-grok-2026-09-20.md",
+      "key_finding": "Floor confirmed at 0.0; being named as an antitrust defendant is not positive conduct evidence and none of the four floor drivers (AWR, EMP, ACC, INT) has changed."
+    },
+    {
+      "slug": "los-angeles",
+      "name": "Los Angeles",
+      "index": "us-cities",
+      "source": "priority",
+      "published_composite": 35.9,
+      "published_band": "Developing",
+      "assessed_composite": 34.4,
+      "assessed_band": "Developing",
+      "delta": -1.5,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/los-angeles-2026-09-20.md",
+      "key_finding": "The 16 September federal charges are against nonprofit contractors, not City of Los Angeles personnel, and LAHSA is a joint city-county authority, so no city dimension moves; the existing LAHSA watch is advanced, not satisfied."
+    },
+    {
+      "slug": "aecom",
+      "name": "AECOM",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 48.4,
+      "published_band": "Functional",
+      "assessed_composite": 47.5,
+      "assessed_band": "Functional",
+      "delta": -0.9,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/aecom-2026-09-20.md",
+      "key_finding": "The ransomware breach claim that surfaced AECOM is unverified and scored nothing; the first-ever evidence baseline measures 47.5 against a published 48.4, held up by verified safety performance and pulled down by a $11.8M False Claims Act settlement over falsified FEMA claims."
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 67.2,
+      "published_band": "Established",
+      "assessed_composite": 64.4,
+      "assessed_band": "Established",
+      "delta": -2.8,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/bank-of-america-2026-09-20.md",
+      "key_finding": "First-ever baseline measures 64.4 against a published 67.2, holding the Established band: a $1bn-plus community development finance programme against repeat CFPB consumer-harm orders and 2026 artificial-intelligence-driven workforce reductions."
+    },
+    {
+      "slug": "berkshire-hathaway",
+      "name": "Berkshire Hathaway",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 43.8,
+      "published_band": "Functional",
+      "assessed_composite": 40,
+      "assessed_band": "Developing",
+      "delta": -3.8,
+      "band_change": true,
+      "change_proposal": true,
+      "subdim_sidecar": true,
+      "confidence": "low",
+      "recommendation": "flag-for-review",
+      "assessment_file": "research/assessments/berkshire-hathaway-2026-09-20.md",
+      "key_finding": "First-ever baseline measures 40.0 against a published 43.8, crossing Functional to Developing on the exact band line; Berkshire's board has declined to disclose any parent-level human-capital oversight framework across roughly 60 subsidiaries."
+    },
+    {
+      "slug": "big-lots",
+      "name": "Big Lots",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 23.4,
+      "published_band": "Developing",
+      "assessed_composite": 23.1,
+      "assessed_band": "Developing",
+      "delta": -0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/big-lots-2026-09-20.md",
+      "key_finding": "Big Lots Inc. liquidated in Chapter 11 and the stores now trading under the name are run by Variety Wholesalers; the score confirms at 23.1 against 23.4 but the fortune-500 row raises an entity-identity question referred to the coordinator."
+    },
+    {
+      "slug": "bath-and-body-works",
+      "name": "Bath & Body Works",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 48.4,
+      "published_band": "Functional",
+      "assessed_composite": 49.4,
+      "assessed_band": "Functional",
+      "delta": 1,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/bath-and-body-works-2026-09-20.md",
+      "key_finding": "First-ever baseline measures 49.4 against a published 48.4 in the same Functional band; an ILO-based Supplier Code of Conduct and four years of ESG reporting support Equity, but all evidence is self-reported with no independent audit located."
+    },
+    {
+      "slug": "belden",
+      "name": "Belden",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 35.9,
+      "published_band": "Developing",
+      "assessed_composite": 36.2,
+      "assessed_band": "Developing",
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "subdim_sidecar": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "assessment_file": "research/assessments/belden-2026-09-20.md",
+      "key_finding": "First-ever baseline measures 36.9 against a published 35.9 in the same Developing band; twelve tracked sustainability goals and Great Place to Work certification in 20 countries lift Boundaries, while Equity stays weak at 2.2."
+    }
+  ],
+  "change_proposals_generated": 1,
+  "confirmations": 12,
+  "band_crossings_filed": 1,
+  "band_crossings_withheld": [
+    {
+      "slug": "netflix",
+      "reason": "Measured 58.7 crosses Established to Functional, but the crossing is produced entirely by integer-grid rounding of a 60.9 seed profile and was already withheld and routed to coordinator calibration review by the 2026-09-15 assessment. Re-filing tonight would double-count a single event."
+    }
+  ],
+  "math_hygiene_issues": [],
+  "baseline_drift_found": [
+    {
+      "scope": "research/rotation-state.json rank field vs site/src/data/indexes/*.json rankings[].rank",
+      "note": "rotation-state rank values are stale for 8 of the 13 entities assessed tonight. composite and band agree with the published indexes in all 13 cases; only rank drifts. Reported, NOT corrected, because this stage is authorised to write only last_assessed and last_change_proposal.",
+      "entities": [
+        {
+          "slug": "netflix",
+          "rotation_state_rank": 52,
+          "index_rank": 45
+        },
+        {
+          "slug": "meta-platforms",
+          "rotation_state_rank": 446,
+          "index_rank": 445
+        },
+        {
+          "slug": "anthropic",
+          "rotation_state_rank": 13,
+          "index_rank": 12
+        },
+        {
+          "slug": "aecom",
+          "rotation_state_rank": 90,
+          "index_rank": 82
+        },
+        {
+          "slug": "berkshire-hathaway",
+          "rotation_state_rank": 175,
+          "index_rank": 169
+        },
+        {
+          "slug": "big-lots",
+          "rotation_state_rank": 353,
+          "index_rank": 352
+        },
+        {
+          "slug": "bath-and-body-works",
+          "rotation_state_rank": 100,
+          "index_rank": 92
+        },
+        {
+          "slug": "belden",
+          "rotation_state_rank": 198,
+          "index_rank": 193
+        }
+      ]
+    },
+    {
+      "scope": "research/assessments/jamaica-2026-09-14.md frontmatter",
+      "note": "The 2026-09-14 Jamaica assessment records published_rank: 73; countries.json rankings[] gives rank 71. Assessment-artifact drift only; no index or rotation-state value is affected."
+    }
+  ],
+  "coordinator_referrals": [
+    {
+      "slug": "big-lots",
+      "type": "entity-identity",
+      "note": "Big Lots Inc. filed Chapter 11 in October 2024, announced liquidation of all remaining stores in December 2024, and 200-400 stores were sold to Variety Wholesalers, a private North Carolina retailer. The fortune-500 row may refer to a company that no longer operates. This is an identity question, not a score question, and is referred rather than encoded as a score proposal. Score confirms at 23.1 vs a published 23.4."
+    },
+    {
+      "slug": "netflix",
+      "type": "seed-value-calibration",
+      "note": "Carried from 2026-09-15. Netflix 60.9 has never been set by an individual assessment and sits 0.9 points above the Established line. Belongs to the coordinator seed-value calibration cohort, not to a one-off proposal."
+    },
+    {
+      "type": "seed-value-calibration-cohort",
+      "note": "Three Fortune 500 seed values were exercised tonight against located evidence and all three held within +/-1.0 point: 48.4 (83 entities; AECOM measured 47.5, Bath & Body Works 49.4), 35.9 (115 entities; Belden measured 36.2), 23.4 (38 entities; Big Lots measured 23.1). This is corroborating evidence that the Fortune 500 seed grid is reasonably calibrated at the Functional and Developing levels, and an argument against treating individual seed-value deltas as downgrades."
+    }
+  ],
+  "screening_notes": [
+    {
+      "slugs": [
+        "anthropic",
+        "openai",
+        "xai-grok"
+      ],
+      "type": "ai-antitrust-suit-2026-09-19",
+      "disposition": "NO SCORE MOVEMENT FOR ANY OF THE THREE",
+      "reasoning": "The 19 September 2026 N.D. Cal. antitrust suit is a procedural event, not a conduct finding: nothing has been decided and no defendant has responded publicly. More importantly, the conduct the plaintiffs challenge is a public AI-safety commitment. The benchmark measures whether an institution recognises, responds to and reduces suffering; a claim that promising to slow down for safety reduced subscriber value does not map onto any of the 40 behavioural anchors as a harm. Scoring it negative would penalise a safety commitment. Scoring it positive would credit a lab on the strength of someone else complaining about it. Neither is defensible, so the correct output is a recorded screening note. Anthropic and OpenAI were confirmed on other evidence; xAI holds its floor. The countervailing 12 September Amodei pacing essay is logged as a positive watch item for Anthropic but is a commitment without a track record and is not banked as score."
+    },
+    {
+      "slugs": [
+        "aecom"
+      ],
+      "type": "unverified-criminal-claim",
+      "disposition": "EXCLUDED FROM SCORING ENTIRELY",
+      "reasoning": "A ransomware group posted a claim of a 1.22-terabyte AECOM breach on 17 September 2026 and plaintiffs' attorneys are investigating whether a class action can be filed. AECOM has neither confirmed nor denied it and no independent forensic source exists. A criminal group's self-serving claim is tier 1 and is not conduct evidence about the victim. It scored nothing in any dimension. AECOM was still given a first-ever evidence baseline from the public record, which confirmed at 47.5 vs 48.4."
+    },
+    {
+      "slugs": [
+        "los-angeles"
+      ],
+      "type": "attribution",
+      "disposition": "NO CITY DIMENSION MOVES",
+      "reasoning": "LAHSA is a joint powers authority created by the City and County of Los Angeles, not a city department. Everyone charged on 16 September 2026 is a nonprofit contractor or contractor employee, not a City of Los Angeles official. The enforcing parties are the FBI and the United States Attorney, whose conduct is federal. Contractor crime and federal prosecution are not the scored entity's conduct. The existing 2026-09-14 LAHSA watch is advanced and sharpened, not satisfied."
+    },
+    {
+      "slugs": [
+        "netflix"
+      ],
+      "type": "no-double-count",
+      "disposition": "NO RE-SCORE, NO NEW PROPOSAL",
+      "reasoning": "The Florida Attorney General suit of 9 September 2026 was fully scored across all 40 subdimensions on 2026-09-15, which placed B5 and AB1 at the lower anchor-3 value precisely because of it. The scanner's evidence_date (2026-09-09) pre-dates that assessment and no later development was found. Re-scoring would count one event twice."
+    },
+    {
+      "slugs": [
+        "jamaica"
+      ],
+      "type": "newly-measured-not-new-harm",
+      "disposition": "CONFIRMED, WATCH RAISED",
+      "reasoning": "The 2026-09-14 Jamaica assessment examined Hurricane Melissa housing recovery only and did not look at policing at all. Tonight's evidence is therefore newly measured rather than newly occurring, which is legitimate because it is the state's own conduct documented by its own statutory oversight commission within the lookback window. EMP falls from 2.4 to 2.0 and INT from 2.4 to 2.2 on that evidence, offset by holding ACC at 2.4 because INDECOM's independent publication of unflattering fatality data is genuine accountability infrastructure (AB3 scored 4/5). Net delta -2.5, below the filing threshold, band unchanged."
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Exactly one change proposal was filed: berkshire-hathaway-2026-09-20.json, under the section 3f BAND-CROSSING trigger at a sub-5-point delta (-3.8), routed as flag-for-review with low confidence because the measured composite lands on exactly 40.0, the Developing/Functional band line.",
+    "No index, entity-record, composite/band/rank, digest or site/src/data/updates write was performed. Only last_assessed and last_change_proposal were written to rotation-state.",
+    "All 13 published composites reconstructed exactly with computeCompositeFromDimensions. Zero math-hygiene issues.",
+    "Eight subdimension sidecars were written (jamaica, openai, aecom, bank-of-america, berkshire-hathaway, big-lots, bath-and-body-works, belden). Five entities received screening or confirmation notes with no re-score and correctly omit a sidecar (netflix, meta-platforms, anthropic, xai-grok, los-angeles).",
+    "Five rotation backfills are first-ever baselines with no in-window evidence; each assessment states explicitly that it rests on the public record rather than on news in the lookback window."
+  ]
+}

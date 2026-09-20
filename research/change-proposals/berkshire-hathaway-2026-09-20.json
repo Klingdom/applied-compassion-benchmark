@@ -1,0 +1,732 @@
+{
+  "entity": "Berkshire Hathaway",
+  "slug": "berkshire-hathaway",
+  "index": "fortune-500",
+  "assessment_date": "2026-09-20",
+  "assessment_file": "research/assessments/berkshire-hathaway-2026-09-20.md",
+  "subdim_sidecar_file": "research/assessments/berkshire-hathaway-2026-09-20.subdims.json",
+  "published_scores": {
+    "composite": 43.8,
+    "band": "functional",
+    "rank": 169,
+    "dimensions": {
+      "AWR": 2.5,
+      "EMP": 2.5,
+      "ACT": 3,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 2.5,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 40,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 2.2,
+      "EMP": 2.4,
+      "ACT": 3,
+      "EQU": 2.4,
+      "BND": 3,
+      "ACC": 2.6,
+      "SYS": 2.4,
+      "INT": 2.8
+    }
+  },
+  "score_delta": -3.8,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "Berkshire Hathaway has never been individually assessed; this is a first-ever evidence-based baseline built from the company's own SEC filings and annual report.",
+    "A shareholder proposal asked the board to disclose its oversight framework for workforce and human-capital management across operating subsidiaries; the board answered that these matters are appropriately placed within the businesses' own oversight and discretion.",
+    "Berkshire publishes no consolidated sustainability or human-capital report, and a further proposal on sustainability ROI reporting was omitted from proxy materials.",
+    "Offsetting positive: the annual shareholder letter acknowledges specific management errors without legal compulsion, which holds Accountability at 2.6 rather than lower.",
+    "Offsetting positive: a qualitative net-zero ambition for 2050 covering at least 95% of Scope 1 and 2 emissions is recorded by Climate Action 100+."
+  ],
+  "evidence": [
+    {
+      "claim": "Berkshire Hathaway's board declined a shareholder request to report its oversight framework for workforce and human-capital management across operating subsidiaries, stating those matters belong to the businesses' own oversight and discretion.",
+      "source": "U.S. Securities and Exchange Commission (Berkshire Hathaway Inc. Form DEF 14A, FY2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+      "publishedDate": "2026-04-10",
+      "sourceTier": 5
+    },
+    {
+      "claim": "A shareholder proposal asking Berkshire to report whether subsidiary sustainability commitments were justified by expected-value and ROI analysis was the subject of a no-action request and was omitted from proxy materials.",
+      "source": "U.S. Securities and Exchange Commission, Division of Corporation Finance (Rule 14a-8 no-action response)",
+      "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/ncpprberkshire123025.pdf",
+      "publishedDate": "2025-12-30",
+      "sourceTier": 5
+    },
+    {
+      "claim": "Berkshire Hathaway has a qualitative net-zero GHG emissions ambition for 2050 or sooner explicitly covering at least 95% of Scope 1 and 2 emissions, but is assessed as not meeting fuller disclosure criteria.",
+      "source": "Climate Action 100+ company assessment",
+      "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 3
+    },
+    {
+      "claim": "Shareholders have pressed Berkshire Hathaway to disclose greenhouse gas emissions from its investment and underwriting activities.",
+      "source": "As You Sow shareholder resolution",
+      "url": "https://www.asyousow.org/resolutions/2025/11/6-berkshire-hathaway-ghg-emissions-from-investments-and-underwriting-activities",
+      "publishedDate": "2025-11-06",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "notes": "Filed under the section 3f BAND-CROSSING trigger at a sub-5-point delta (-3.8). The magnitude trigger is NOT met. The assessed band (Developing) differs from the published band (Functional), which section 3f makes filable at any delta. Routed as flag-for-review rather than downgrade for three reasons: (1) the measured composite is exactly 40.0, sitting on the Developing/Functional band line, so a single subdimension moving one point flips the label; (2) this is a first-ever baseline with no in-window evidence, built entirely from the public record; (3) confidence is low because Berkshire publishes no consolidated human-capital or sustainability disclosure, so subsidiary conditions across roughly 390,000 employees could not be assessed at all. This is NOT a calibration reset: 43.8 is shared by only two Fortune 500 entries and no claim is made about that cohort. The movement rests on located structural evidence about Berkshire's own governance choices (AWR 2.5 to 2.2, ACC 3.0 to 2.6, SYS held, INT 3.0 to 2.8), not on absence of good news.",
+  "screening_notes": {
+    "baseline_provenance": "rotation-state last_assessed was null; the published 43.8 is a seed value never set by an individual assessment. Checked research/APPLIED_CHANGES.md: no prior Berkshire Hathaway entry exists.",
+    "stale_baseline_rationale_used": false,
+    "directionality": "Entity surfaced on staleness, not on negative news. Downward movement is backed by located structural evidence of the entity's own conduct, not by absence of positive evidence.",
+    "not_calibration": "This is not a calibration reset. No claim is made about the 43.8 cohort or about peer banding.",
+    "band_boundary_caution": "Measured composite lands on exactly 40.0, the Developing/Functional boundary. Treat the band label as low-confidence."
+  },
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Detection of workforce and community distress is delegated entirely to roughly 60 operating subsidiaries. No consolidated detection mechanism exists at the parent."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Adaptation happens at subsidiary level only, varying by geography and industry by explicit board design."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "A shareholder proposal asked the board to disclose its oversight framework for workforce and human-capital management across subsidiaries. The board answered that these matters belong to the businesses' own discretion. There is no parent-level process for finding what is missed."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "No structural channel by which subsidiary workers reach the parent."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+          "date": "2025-10-01",
+          "claim": "Insurance and energy underwriting involve formal forward risk assessment for major decisions."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "No parent-level expectation of affective practice; culture varies entirely by subsidiary."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Perspective-taking acknowledged without a structural process at the parent."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Non-discrimination policies exist across subsidiaries with some outcome data."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Harm reports are handled at subsidiary level with no parent validation process."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Operations span many countries and cultures with local management."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Subsidiaries meet response standards in most cases with genuine local escalation authority."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Need genuinely informs response at operating level in most cases."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Operating subsidiaries review outcome data annually; results are reported financially."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Capital is allocated to subsidiaries against documented need and return, including large infrastructure investment."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Berkshire's explicit long-hold model means engagement persists well past the presenting problem."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Universal access stated; coverage not measured at parent level."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Priority stated; allocation follows capital return rather than need."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Some disaggregation exists at subsidiary level; disparities not centrally investigated."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "No parent-level access barrier mapping located."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Specific historical harms have been formally acknowledged by named subsidiaries."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Turnover is tracked at subsidiary level, and the decentralised model gives operating managers real autonomy over working conditions."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "The parent deliberately builds subsidiary autonomy rather than dependence; managers run their own businesses."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Berkshire communicates its scope with unusual directness: the parent states plainly what it will and will not do for subsidiaries."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Acquisition and capital-allocation refusals are explained publicly with reasons."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Standard consent practice across regulated subsidiaries."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "The annual shareholder letter has repeatedly acknowledged specific management errors before any legal obligation to do so."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Documented course corrections following acknowledged errors, including writedowns."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/ncpprberkshire123025.pdf",
+          "date": "2025-12-30",
+          "claim": "The annual report discloses unflattering findings, but there is no consolidated sustainability or human-capital report, and requests for one have been declined."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Failures are addressed inside individual subsidiaries; no parent-level systemic review process exists."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526106253/d882687ddef14a.htm",
+          "date": "2026-04-10",
+          "claim": "Repair beyond legal settlement is subsidiary-specific and not systematically evidenced."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+          "date": "2025-10-01",
+          "claim": "Root causes are acknowledged in the energy subsidiaries but parent-level resource allocation to structural change is not evidenced."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Berkshire's planning horizon is explicitly multi-decade, with specific long-term capital goals."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+          "date": "2025-10-01",
+          "claim": "Adjacent-system effects are identified in utility regulation but not systematically tracked at the parent."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.asyousow.org/resolutions/2025/11/6-berkshire-hathaway-ghg-emissions-from-investments-and-underwriting-activities",
+          "date": "2025-11-06",
+          "claim": "Structural critique appears in shareholder communications and is largely disconnected from parent action; disclosure proposals were omitted from the proxy."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+          "date": "2025-10-01",
+          "claim": "Active participation in industry and regulatory bodies through subsidiaries, with documented contributions."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Berkshire has borne real cost to maintain stated commitments, notably in holding businesses through downturns."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Practices are maintained regardless of visibility; Berkshire is notably indifferent to reputational fashion."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Meaningful effort to apply the same principles to subsidiary managers as to shareholders."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.climateaction100.org/company-assessments/berkshire-hathaway-inc/",
+          "date": "2025-10-01",
+          "claim": "A net-zero ambition for 2050 covering at least 95% of Scope 1 and 2 emissions sits alongside a refusal to disclose the oversight framework that would evidence it."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+          "date": "2026-02-28",
+          "claim": "Core practices are set out in the Owner's Manual and have survived a chief-executive transition."
+        }
+      ]
+    }
+  ]
+}
