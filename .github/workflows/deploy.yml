@@ -116,6 +116,14 @@ jobs:
   deploy:
     name: Deploy to VPS
     needs: [test, nginx-config-syntax]
+    # MANUAL DEPLOY ONLY (2026-09-21). Previously this ran on every push to main,
+    # so the coordinator suppressed auto-deploy by putting [skip ci] on the push tip.
+    # That silenced the ENTIRE workflow: 12 commits went unbuilt and untested by CI
+    # between 2026-09-17 and 2026-09-21, and three committed briefings 404d in
+    # production because nothing shipped them. Gating the deploy job here means a
+    # push always runs build + test + nginx syntax, while shipping stays a deliberate
+    # human act (Actions -> Run workflow, or ./deploy.sh on the VPS).
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Verify required secrets are configured
@@ -178,6 +186,7 @@ jobs:
   verify:
     name: Post-deploy health check
     needs: deploy
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       # Needed by the freshness assertion below, which compares what this
