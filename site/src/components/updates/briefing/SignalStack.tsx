@@ -65,6 +65,10 @@ function matchesFilter(signal: any, filterId: FilterId): boolean {
 export default function SignalStack({ updates }: Props) {
   const [activeFilter, setActiveFilter] = useState<FilterId>("all");
 
+  // EV-1: briefing cycle's own date, gates SourceChip/SourcesDisclosure tier badges.
+  const briefingDate: string | undefined =
+    typeof updates.date === "string" ? updates.date : undefined;
+
   const topSignals: any[] = Array.isArray(updates.topSignals)
     ? updates.topSignals
     : [];
@@ -190,7 +194,7 @@ export default function SignalStack({ updates }: Props) {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {visibleSignals.map((signal: any, i: number) => (
-                <SignalCard key={`${signal.slug ?? i}-${i}`} signal={signal} />
+                <SignalCard key={`${signal.slug ?? i}-${i}`} signal={signal} briefingDate={briefingDate} />
               ))}
             </div>
             {/* ITEM 5: show-all toggle */}

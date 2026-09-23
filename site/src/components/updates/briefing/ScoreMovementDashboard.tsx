@@ -72,6 +72,10 @@ export default function ScoreMovementDashboard({ updates }: Props) {
 
   if (all.length === 0) return null;
 
+  // EV-1: briefing cycle's own date, gates SourceChip/SourcesDisclosure tier badges.
+  const briefingDate: string | undefined =
+    typeof updates.date === "string" ? updates.date : undefined;
+
   // Sort: score changes first, then boundary cases, then confirmations
   const sorted = [...all].sort((a, b) => {
     const aHasChange = Math.abs(a.delta ?? 0) > 0;
@@ -127,7 +131,7 @@ export default function ScoreMovementDashboard({ updates }: Props) {
                     className="rounded-[14px] border-l-[3px]"
                     style={{ borderLeftColor: borderColor }}
                   >
-                    <ScoreMovementCard assessment={assessment} />
+                    <ScoreMovementCard assessment={assessment} briefingDate={briefingDate} />
                   </div>
                 );
               })}
@@ -152,6 +156,7 @@ export default function ScoreMovementDashboard({ updates }: Props) {
                 <ScoreMovementCard
                   key={`confirmed-${assessment.slug ?? i}-${i}`}
                   assessment={assessment}
+                  briefingDate={briefingDate}
                 />
               ))}
             </div>

@@ -16,6 +16,11 @@ import BandPositionStrip from "@/components/charts/BandPositionStrip";
 
 interface SignalCardProps {
   signal: any;
+  /**
+   * The briefing cycle's own date (YYYY-MM-DD) — gates SourceChip/SourcesDisclosure
+   * tier badges via isTierReliable() (EV-1). Pass updates.date from the caller.
+   */
+  briefingDate?: string | null;
 }
 
 /**
@@ -50,7 +55,7 @@ function leadTakeaway(text: string, maxChars = 300): string {
  *   #9  — verbatim pull-quote for critical/high severity when evidence[0].quote present
  *   #11 — "Sources (N)" <details> disclosure for ≥2 evidence items
  */
-export default function SignalCard({ signal }: SignalCardProps) {
+export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
   const severity: string = signal.severity ?? "medium";
   const color = SEVERITY_COLORS[severity] ?? "#94a3b8";
   const href =
@@ -224,7 +229,7 @@ export default function SignalCard({ signal }: SignalCardProps) {
       {/* #9: verbatim pull-quote for high/critical signals with evidence */}
       {topQuote && (
         <div className="mt-1">
-          <EvidenceQuote item={topQuote} />
+          <EvidenceQuote item={topQuote} briefingDate={briefingDate} />
         </div>
       )}
 
@@ -235,12 +240,13 @@ export default function SignalCard({ signal }: SignalCardProps) {
           url={topEvidence.url}
           source={topEvidence.source}
           tier={topEvidence.sourceTier}
+          briefingDate={briefingDate}
           className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
         />
       )}
 
       {/* #11: Sources (N) disclosure for ≥2 items */}
-      <SourcesDisclosure evidence={evidence} withQuotes={false} />
+      <SourcesDisclosure evidence={evidence} withQuotes={false} briefingDate={briefingDate} />
 
       {/* Footer: entity profile link */}
       {href && (

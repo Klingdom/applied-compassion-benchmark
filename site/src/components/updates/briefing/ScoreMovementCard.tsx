@@ -13,6 +13,11 @@ import {
 
 interface Props {
   assessment: any;
+  /**
+   * The briefing cycle's own date (YYYY-MM-DD) — gates SourceChip/SourcesDisclosure
+   * tier badges via isTierReliable() (EV-1). Pass updates.date from the caller.
+   */
+  briefingDate?: string | null;
 }
 
 function directionArrow(delta: number): { arrow: string; color: string } {
@@ -50,7 +55,7 @@ function formatBoundaryLabel(obj: {
   return `${obj.pointsAway.toFixed(1)} ${obj.direction} ${obj.band}`;
 }
 
-export default function ScoreMovementCard({ assessment }: Props) {
+export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
   const entity: string = assessment.entity ?? assessment.slug ?? "";
   const slug: string = assessment.slug ?? "";
   const index: string = assessment.index ?? assessment.publishedIndex ?? "";
@@ -248,6 +253,7 @@ export default function ScoreMovementCard({ assessment }: Props) {
               url={sourceChipUrl}
               source={sourceChipSource}
               tier={sourceChipTier}
+              briefingDate={briefingDate}
               className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
             />
           )}
@@ -255,7 +261,7 @@ export default function ScoreMovementCard({ assessment }: Props) {
       </div>
 
       {/* #11 Sources (N) disclosure for ≥2 evidence items */}
-      <SourcesDisclosure evidence={evidence} />
+      <SourcesDisclosure evidence={evidence} briefingDate={briefingDate} />
 
       {/* P1: nextForwardSignal */}
       {nextForwardSignal && (

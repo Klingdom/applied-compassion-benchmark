@@ -87,6 +87,9 @@ function shouldShowPullQuote(lead: any): boolean {
 export default function LeadSignalCard({ updates }: Props) {
   const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
   const scoreChanges: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
+  // EV-1: briefing cycle's own date, gates SourceChip/EvidenceQuote tier badges.
+  const briefingDate: string | undefined =
+    typeof updates.date === "string" ? updates.date : undefined;
 
   const lead = pickLeadSignal(topSignals) ?? synthesizeLeadFromScoreChanges(scoreChanges);
 
@@ -299,9 +302,9 @@ export default function LeadSignalCard({ updates }: Props) {
                   <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                     What the evidence shows
                   </div>
-                  <EvidenceQuote item={topEvidence} />
+                  <EvidenceQuote item={topEvidence} briefingDate={briefingDate} />
                   {/* Sources (N) disclosure for ≥2 items (#11) */}
-                  <SourcesDisclosure evidence={evidence} withQuotes />
+                  <SourcesDisclosure evidence={evidence} withQuotes briefingDate={briefingDate} />
                 </div>
               )}
 
@@ -378,6 +381,7 @@ export default function LeadSignalCard({ updates }: Props) {
                 url={metaChipUrl}
                 source={metaChipSource}
                 tier={metaChipTier}
+                briefingDate={briefingDate}
                 className="inline-flex items-center gap-1 text-[0.75rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
               />
             )}

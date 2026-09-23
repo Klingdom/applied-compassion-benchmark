@@ -5,6 +5,8 @@ import {
   type EvidenceItem,
   TIER_LABELS,
   TIER_COLORS,
+  isTierReliable,
+  TIER_UNRELIABLE_NOTICE,
   ExternalLinkIcon,
   SourceChip,
   EvidenceQuote,
@@ -163,11 +165,14 @@ function extractLegacySources(updates: any): LegacySourceRow[] {
 
 interface EvidenceCardProps {
   item: RichEvidenceItem;
+  /** The briefing cycle's own date (YYYY-MM-DD) — gates the tier badge (EV-1). */
+  briefingDate?: string | null;
 }
 
-function EvidenceCard({ item }: EvidenceCardProps) {
-  const tierColor = item.sourceTier ? TIER_COLORS[item.sourceTier] : null;
-  const tierLabel = item.sourceTier ? TIER_LABELS[item.sourceTier] : null;
+function EvidenceCard({ item, briefingDate }: EvidenceCardProps) {
+  const tierReliable = isTierReliable(briefingDate);
+  const tierColor = item.sourceTier && tierReliable ? TIER_COLORS[item.sourceTier] : null;
+  const tierLabel = item.sourceTier && tierReliable ? TIER_LABELS[item.sourceTier] : null;
 
   return (
     <div className="py-3 px-4 border-b border-line last:border-b-0">
@@ -192,7 +197,7 @@ function EvidenceCard({ item }: EvidenceCardProps) {
       </div>
 
       {/* Verbatim quote + source chip — use shared EvidenceQuote */}
-      <EvidenceQuote item={item} />
+      <EvidenceQuote item={item} briefingDate={briefingDate} />
 
       {/* Claim this quote supports */}
       {typeof item.claim === "string" && item.claim.trim() && (
@@ -253,6 +258,9 @@ export default function EvidenceLedger({ updates }: Props) {
   if (!hasStructured && !hasLegacy) return null;
 
   const totalCount = hasStructured ? structuredItems.length : legacyRows.length;
+  const briefingDate: string | undefined =
+    typeof updates.date === "string" ? updates.date : undefined;
+  const tierReliable = isTierReliable(briefingDate);
 
   return (
     <section
@@ -267,13 +275,20 @@ export default function EvidenceLedger({ updates }: Props) {
             Primary sources reviewed in this briefing cycle.{" "}
             {totalCount} source{totalCount !== 1 ? "s" : ""} linked.
           </p>
+          {/* EV-1: single honest disclosure for pre-cutoff briefings — tier
+              badges are suppressed everywhere on this page, not just here. */}
+          {!tierReliable && (
+            <p className="text-[0.78rem] text-[#fcd34d] mt-2 leading-relaxed">
+              {TIER_UNRELIABLE_NOTICE}
+            </p>
+          )}
         </div>
 
         {/* Structured evidence cards */}
         {hasStructured && (
           <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
             {structuredItems.map((item, i) => (
-              <EvidenceCard key={`${item.url ?? item.source}-${i}`} item={item} />
+              <EvidenceCard key={`${item.url ?? item.source}-${i}`} item={item} briefingDate={briefingDate} />
             ))}
           </div>
         )}
