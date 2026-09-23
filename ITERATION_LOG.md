@@ -1,5 +1,121 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 27 — 2026-09-21 (the claims ledger grows to 16, and stops reading its own commentary — SC-1b + SC-1c)
+
+### Selected Item
+**SC-1b** (v1 12) + **SC-1c** (v1 13), both follow-ups to Iteration 25 in the same file area, so one loop. Justified
+by cost actually incurred: Interpublic's claim was re-verified from scratch on **two** consecutive cycles because it
+had no entry, and Harvard's double-misdate was discovered on 09-21 the same way.
+
+### What Changed (agent: backend-engineer)
+**SC-1b — ledger 10 → 16 claims.** Interpublic ("800 layoffs", quarter-precision only), **two** Harvard entries
+(funding-freeze ruling 2025-09-03; Heightened Cash Monitoring ~2025-09-19), Myanmar Rakhine airstrike (2025-09-12),
+El Salvador defenders (range only), Figure AI whistleblower (month precision). **Three of six carry
+`true_date: null` with a stated reason** rather than a fabricated day — the right call, and the discipline this
+ledger exists to enforce.
+
+**The Harvard one-entry-or-two call, accepted:** two entries, because the two facts have different true dates and the
+schema carries one `true_date` per entry — a combined entry could not honestly report a date for whichever half
+matched. That reasoning is better than the scan record's own suggested sketch.
+
+**SC-1c — the matcher no longer reads narrative.** `textForCandidate()` now reads `slug`, `name` and `news_summary`
+only, and the `item?.summary` fallback was removed (it is not a real `top_entities` field and was a latent hazard).
+Exclusions are documented in a comment block with reasons. Root cause confirmed in committed data: the 09-20 scan's
+own `sector_alerts` entry names three ledger claims and the ledger file in free prose, and two candidates' summaries
+explain why they are *not* the known claim — which is what tripped the gate on its own authorship.
+
+### Validation — coordinator re-ran every claim (V2)
+| Check | Result |
+|---|---|
+| Ledger integrity | **16 claims**, round-trip stable, schema tests **116 passed / 0 failed** |
+| `validate-scan` 09-17 / 09-18 / 09-20 / 09-21 | **exit 0** on all four |
+| `validate-scan` 09-15 | exit 1 — **pre-existing** (20 rotation entities unreviewed), confirmed independently against `git show HEAD`'s copy earlier this week |
+| **My own probe, on a different new entry than the agent used** | Myanmar claim injected into `top_entities` → **caught**, naming `myanmar-rakhine-airstrike` and its true date |
+| Over-matching counter-test | A genuine Myanmar item (cyclone shelters) → **0 failures** |
+| **SC-1c behaviour, directly** | A candidate with an innocuous summary while `sector_alerts` narrates the claim in full → **0 failures**. The fix works |
+| Probe fixture cleanup | `research/scans/2026-09-22.json` correctly **absent** |
+
+### I corrected the agent's evidence, and my own probe was void once
+1. **The agent's note in the ledger was factually wrong.** It stated that `2026-09-17.json` contains "no other mention
+   of 'figure-ai', 'Figure AI', 'whistleblower', or 'Gruendel'". **Those first two strings appear twice** — as routine
+   `entity_reviews[]` roster rows (the entity sits in both ai-labs and robotics-labs, the D-13 duplicate). Its
+   *conclusion* was right — 'whistleblower' occurs **0** times there, with a positive control confirming 1 occurrence
+   in 09-20 — but the stated search was overstated. I rewrote the note to say exactly what is true and labelled the
+   correction, rather than leaving a false parenthetical in a file whose purpose is date discipline.
+2. **My own void probe, disclosed:** my integrity check printed "entries still: 0" because I read `.entries` when the
+   array key is `.claims`. Nothing was wrong with the file; my check was. Re-run correctly: 16.
+
+### Found by my probing: a recall gap, recorded not hidden
+The Harvard ruling matcher requires the judge's surname (`burroughs`) as its distinctive token. Verified: *"Judge
+Burroughs ruled the funding freeze unlawful"* → **caught**; *"A federal judge ruled Harvard's funding freeze
+unlawful"* → **missed**. That is a deliberate precision-over-recall trade (the alternative would flag ordinary Harvard
+news), but it is a real limitation and belongs in writing, not in a maintainer's head. Backlog **SC-1d**.
+
+**Uncommitted — awaiting founder.** Commit pathspec: `git add -- research/known-misdated-claims.json
+research/scripts/validate-scan.mjs research/scripts/test-known-misdated-claims.mjs`.
+
+## Iteration 26 — 2026-09-21 (the evidence-tier badges stop lying to readers — EV-1 / DC-12)
+
+### Selected Item
+**EV-1** (v2 **15**) — the highest-scoring open item, and a **live reader-facing false claim** on every briefing page.
+Selected on score; no deviation. WIP was clear of uncommitted iterations.
+
+### V1 — the defect, measured live before any edit
+`briefing/evidence/index.tsx:34-40` mapped tier **1** to "Gov/Court" and tier **5** to "Trade/Advocacy", inverting the
+documented scale (`overnight-assessor.md:206`: 5 = government/court/treaty-body … 1 = trade press;
+`overnight-digest.md:452`: "Tier 5 — strongest evidence"). `TIER_SHORT_LABELS[1]` read "Primary source". Live proof:
+on `/updates/2026-09-17` a Boston.com article rendered as "**Tier 2 · UN/IO**" — a local newspaper presented to readers
+as a UN source, with the strength order reversed on every badge.
+
+### Why the one-line fix was wrong, and how I knew
+I surveyed every adjudicable source in the corpus first: **371 sources across 58 briefings**
+(`docs/EVIDENCE_TIER_CONVENTION_2026-09-20.md`). **18 cycles** follow the documented convention, **19** the inverted
+one, and **17 contradict themselves inside a single briefing**. Government/IO sources are rated 4–5 in 88 cases and
+1–2 in 53. NGOs sit at 3 in 86 of 95 — the midpoint, identical under both readings, which is the control proving the
+classifier worked and that only the ends were disputed. **Flipping the labels alone would have fixed 18 cycles and
+broken 19.**
+
+### What Changed (agent: frontend-engineer)
+- `TIER_LABELS`, `TIER_SHORT_LABELS` **and `TIER_COLORS`** corrected to the documented scale. The colour map carried
+  the identical inversion — left alone it would have kept telling the same lie in a different channel.
+- `TIER_RELIABILITY_CUTOFF_DATE = "2026-09-17"` (the first cycle whose tiers I had verified mechanically) with
+  `isTierReliable()` **failing closed** — no date means no badge. `briefingDate` threaded down through
+  `EvidenceLedger`, `LeadSignalCard`, `ScoreMovementCard`/`Dashboard` and `SignalCard`/`Stack`.
+- Pre-cutoff briefings render the source chip **without** a tier badge, plus one line in the Evidence Ledger header:
+  *"Source-tier badges are shown only from 2026-09-17 onward. Earlier briefings mixed two conflicting tier scales, so
+  their tier values are not shown rather than risk mislabeling a source's provenance."*
+- **No briefing data was touched.** Suppression is a rendering decision precisely because `AUTONOMY.md` §1c forbids
+  retro-editing the published record. Migrating the historical values remains option A, a founder decision needing a
+  dated disclosure.
+- New gate `test:evidence-tier-labels` (chain **32 → 33**), asserting the map both directions, the colour keys, the
+  cutoff constant, and that no second `Record<number, …>` tier map exists anywhere in `src/` to drift from it.
+
+### Validation — coordinator re-ran every claim (V2)
+| Check | Result |
+|---|---|
+| Corrected map read from the file | 5 Gov/Court · 4 UN/IO · 3 NGO · 2 Journalism · 1 Trade/Advocacy |
+| Gating is real, not just defined | `evidence/index.tsx:159-160` — **both** the colour and the label resolve to `null` unless `tierReliable` |
+| `isTierReliable` fails closed | `typeof briefingDate === "string" && briefingDate >= CUTOFF` |
+| **My own planted probe — a different target than the agent's** (I moved the cutoff to 2026-01-01; they swapped two labels) | Gate failed **one named assertion**, `TIER_RELIABILITY_CUTOFF_DATE is exactly "2026-09-17"` — specific, not noisy — then restored **sha256-identical** (`9178f041734128c3…`) |
+| `npm test` | **exit 0, 33 steps** (read from `package.json`) |
+| `tsc --noEmit` | **exit 0** |
+| Briefing data untouched | 0 changes under `site/src/data/updates/`; the only modified data file is the pre-existing held America-at-250 rewrite |
+| Diff scope (V6) | 8 component/package files + 1 new test — all in scope |
+
+### Accepted agent judgement
+It found a **second, unrelated** `TIER_LABELS` in `entity/EntityDetail.tsx` (string-keyed Tier-A/B/C/D provenance
+chips), proved it a distinct concept, and left it alone — while noting the grep *did* surface it, which is what makes
+the "no other consumer" claim a verified absence rather than an assumption (V8). It also declined to add a page-level
+banner because the caller sits outside its file ownership, and put the single disclosure line where "sources reviewed"
+is already framed.
+
+### V7 — pending deploy
+After deploy: `/updates/2026-09-17` shows the Boston.com source as "Tier 2 · Journalism"; a pre-cutoff briefing (e.g.
+`/updates/2026-06-13`, which mixes both conventions) shows **no** tier badges and the disclosure line.
+
+**Uncommitted — awaiting founder.** Commit pathspec: `git add -- site/src/components/updates/briefing
+site/scripts/test-evidence-tier-labels.mjs site/package.json`.
+
 ## Iteration 25 — 2026-09-20 (a ledger of already-debunked claims — SC-1 / DC-13, forced selection under S10)
 
 ### Selected Item

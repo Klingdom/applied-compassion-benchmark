@@ -175,6 +175,203 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   `/us-city/springfield-94` return 200 but aren't linked from the table. This predates It. 20 (`633ed6ff`
   `RankingTable.tsx:156` used `slugify(entry.name)`), so it isn't a regression.
 
+### MCP server, skill and plugin — development track (added 2026-09-20)
+
+Plan: `docs/MCP_SERVER_PLAN_2026-09-20.md` (also on the founder's Desktop). These rows **implement a design already
+ratified** in `docs/ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §4 and its Track B items B1–B10 — the IDs below carry the
+architecture's own numbering so there is one registry, not two. Two servers: **`cb-probe`** (public, local, the user's
+own model judges itself, no key, no network, no composite) and **`cb-ops`** (private, operator-only, triggers real
+runs under the founder's own credential). An outside caller triggering an *official* run is **blocked by ratified
+design** — harness §7.2 forbids any public code path into a run, and a subject who can re-roll its own evaluation
+breaks the independence rule.
+
+**Ordering rule from the architecture, not negotiable:** the separation guarantee (MCP-B2) is built **before** the
+tools it guards. Building the tools first and bolting on the guarantee is how a safeguard becomes an apology.
+
+| ID | Item | Owner | Depends on | v1 | Notes |
+|---|---|---|---|---|---|
+| **MCP-B1** | **Ratify D-31**: local MCP chosen; Worker endpoint, browser extension, in-page BYO and skill-alone rejected with reasons; "no API key exists in this design" recorded as the security property | **founder** | — | — | Gate for everything below. Also answer AMB-B (two composite standards) and the package/registry name |
+| **MCP-B2** | `JudgeEstimate` schema + `validate-estimate.mjs` + the **two-way vocabulary ban test** (no `score`/`rate`/`band`/`composite` in either direction) + the no-fetch and no-provider-SDK source scans, all wired into `npm test` | backend | B1 | I5 S5 L3 C5 − E2 − R1 = **15** | Build red first: each test must fail against a deliberately non-compliant fixture before the real code exists |
+| **MCP-B3** | Package skeleton (stdio MCP server, no deps beyond the MCP SDK) + `projection.mjs` whitelist **derived from the bank's own `meta.fieldSeparationPolicy`**, never a hand-written field list | backend | B2 | I4 S5 L2 C5 − E2 − R1 = **13** | A hand-written whitelist silently rots when the bank gains a field |
+| **MCP-B4** | `list_probe_items`, `get_anchors`, `explain_what_this_is_not` + the write-root guard and the data-handling notice | backend | B3 | I4 S5 L2 C5 − E2 − R1 = **13** | `include_sensitive` defaults **false** — the bank holds suicidal-ideation, domestic-violence and miscarriage prompts |
+| **MCP-B5** | `open_judge_session`, `record_item_estimate`, `summarise_judge_session`, artifact writer with the mandatory header | backend | B4 | I4 S5 L3 C5 − E3 − R2 = **12** | Labels are self-reported and stored as `self_reported: true`; we never verify which model is speaking, and the artifact says so |
+| **MCP-B6** | `run_exposure_probe` (recall + rubric-leak) | backend | B5 | I5 S5 L4 C4 − E3 − R2 = **13** | **The highest-value tool in the set.** Our items are published with full rubrics, so any model trained since may have memorised them. Measuring that publicly defends the benchmark's credibility better than any score we could publish this year |
+| **MCP-B7** | Promotion-proof scan: assert nothing under `site/` or `research/scripts/model-harness/` reads a judge artifact; `.gitignore` the artifact root; data-tree signature scan — into `npm test` | qa | B5 | I5 S5 L3 C5 − E2 − R1 = **15** | This is what stops a self-judged estimate ever becoming an official number |
+| **MCP-B8** | Disclosure copy as a **section** on `/ai-models/methodology` (not a new page — D-29 caps the page count) + tool README | frontend | B5 | I4 S5 L2 C5 − E2 − R1 = **13** | Must ship **before** the package is published, not after |
+| **MCP-B9** | Claude Skill wrapper (`compassion-probe`) + Claude Code plugin bundling server, skill and config | backend | B5 | I3 S4 L2 C5 − E2 − R1 = **11** | Ergonomics only. Adds **no capability and no trust surface**; if it ever appears to add capability, something is wrong. Note the architecture rejected a *browser extension* (needs the user's key); a Code plugin needs none |
+| **MCP-B10** | *(Deferred)* Opt-in exposure-probe submission by GitHub issue/PR template — probe results only, never estimates, never `response_text` | — | B6 | — | Explicitly **not** a Worker endpoint |
+| **MCP-O1** | `cb-ops` skeleton + `plan_run` (dry-run: items, trials, token and call estimate) | backend | first-assessment P1 | I3 S4 L2 C5 − E2 − R1 = **11** | Read-only; excludes non-scorable items automatically |
+| **MCP-O2** | `start_run` with a **hard ceiling guard** — refuses without a configured ceiling, refuses over it, refuses on an unfrozen bank | backend | O1, live adapter | I4 S5 L3 C4 − E3 − R2 = **11** | Cannot be built before a live adapter exists: `bin/run.mjs` throws on any adapter but `replay` |
+| **MCP-O3** | `queue_release` / `list_queue` — release-watch candidates enter a queue; **promotion and spend stay human-gated** | backend | O1, release-watch sources | I3 S5 L2 C5 − E2 − R1 = **12** | An automatic trigger on a detected release is an automatic bill, and a mis-detected release spends real money on a model that may not exist |
+| **MCP-O4** | Operator runbook: install, config snippet, ceiling configuration, what the server refuses to do and why | devops | O2 | I3 S4 L2 C5 − E1 − R1 = **12** | `cb-ops` is never published to a registry and never exposed over a network |
+
+**Pointing an AI model at it** (ships as MCP-B8/B9 documentation; recorded here so the instruction is not lost):
+
+```json
+{ "mcpServers": { "cb-probe": {
+    "command": "npx", "args": ["-y", "@compassionbenchmark/cb-probe"],
+    "env": { "CB_ARTIFACT_ROOT": "~/compassion-probe-sessions" } } } }
+```
+
+Works in Claude Desktop, Claude Code, or any MCP host via standard tool discovery. **No API key appears anywhere**,
+because the host model *is* the judge — the client already holds the credential and already runs the model. Intended
+prompt: *"Use cb-probe to see how you handle the Compassion Benchmark's published probe items: list the Awareness
+items, answer each, rate yourself against the anchors, then summarise."* The operator server is configured by local
+path only:
+
+```json
+{ "mcpServers": { "cb-ops": { "command": "node",
+    "args": ["C:/Users/philk/applied-compassion-benchmark/tools/cb-ops/bin/server.mjs"] } } }
+```
+
+**Critical path:** `MCP-B1 → B2 → B3 → B4 → B5 → {B6, B7, B8, B9}`; `MCP-O1 → O2 → O3 → O4` waits on the live adapter
+from the first-assessment plan. B2 and B7 are the two rows that must never be deferred "for now".
+
+**Known risk accepted or declined at B1 (AMB-E):** people will publish "Compassion Benchmark rates X at N" from a
+self-judged estimate. Removing the number removes the screenshot, but our name still sits on the artifact. The
+mitigations are the mandatory header, `explain_what_this_is_not()` as a retrievable tool, and the disclosure section.
+If that trade is unacceptable, decline the public server at B1 and build only `cb-ops`.
+
+
+#### Scored-run track — "give me a number" (added 2026-09-20)
+
+Design: `docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md` (also on the founder's Desktop). The founder asked for an MCP
+server anyone can run that takes a model through **every dimension and subdimension** and returns a **compassion
+benchmark score**. Two facts shape this track, both coordinator-verified on 2026-09-20:
+
+1. **Subdimension scoring is impossible today.** `dimensions.ts` defines **40** subdimension codes; the model task
+   bank has **0 of 33** items carrying a subdimension field, **0** referencing a code anywhere, and **0** constructs
+   matching a subdimension name (control: the name list does contain "Awareness", so the matcher works). The bank was
+   never wired to the subdimension layer. Claiming a 40-subdimension score now would mean inventing the mapping at
+   runtime.
+2. **Emitting a composite contradicts J2** (`ARCHITECTURE_RELEASE_WATCH_AND_BYO.md` §5.2) — but `/ai-evaluation-suite`
+   **already** publishes a composite and band under `official: false`, which the architecture flags as unresolved
+   **AMB-B**. So this is a decision waiting to be made, not a rule being broken.
+
+| ID | Item | Owner | Depends on | v1 | Notes |
+|---|---|---|---|---|---|
+| **MCP-S1** | **Resolve AMB-B in writing**: may a self-run tool emit a composite + band under `official: false`? Also settle the naming question (branded vs unbranded, AMB-E) | **founder** | — | — | Gate for the whole track. Recommended: yes, one standard applied to both this tool and `/ai-evaluation-suite` |
+| **MCP-S2** | `SelfRunScorecard` schema with `official: false` as a **structural field** (not a label), mandatory provenance (subject/judge labels marked self-reported, bank version, item hashes, seed, temperature, judge configuration) and a mandatory contamination block; validator + vocabulary-ban test | backend | S1 | I5 S5 L3 C5 − E2 − R1 = **15** | Build before any tool that emits it |
+| **MCP-S3** | Scored-run tools: `start_scored_run`, `next_item`, `record_item_rating`, `finish_scored_run`. Refuses `trials < 3` (the variance threshold in `evaluation-statistics.mjs`); refuses a rating with no anchor matched and no evidence quote | backend | S2 | I5 S5 L3 C4 − E3 − R2 = **12** | Dimension-level only; subdimensions returned **absent with a reason**, never zeros or nulls dressed as scores |
+| **MCP-S4** | **Exposure probe as a precondition**: no composite is emitted until `run_exposure_probe` has run, and its result is embedded in the scorecard at equal visual weight | backend | S3, MCP-B6 | I5 S5 L4 C5 − E2 − R1 = **16** | Our bank is published with full rubrics, so any model trained since may have memorised the answer key. Scoring without this manufactures flattering numbers |
+| **MCP-S5** | Judge-configuration handling: C1 self-judge (flagged), C2 cross-judge (**documented default**), C3 two-judge panel with disagreement reported | backend | S3 | I4 S5 L3 C4 − E2 − R2 = **12** | Grounded in D-07: the same automated pipeline scored ADP 58.1 and 60.6 three days apart, across a band boundary. A model rating itself is the weakest configuration we could ship |
+| **MCP-S6** | **Bank expansion to subdimension coverage — the long pole.** ≥ 80 items (realistically 120) so each of the 40 subdimensions has 2–3, replacing today's 28 scorable items where SYS has 2, INT has 2 and EQU effectively 1 | benchmark-research + **founder** | MB-2 validation protocol, MB-5 EQU repair | I5 S5 L4 C3 − E5 − R3 = **9**, but it is the **only** route to what was actually asked for | Same bank freeze the first official assessment is waiting on — the two tracks fund each other. Rating cost, not token cost, dominates: 80 items × 5 trials × 2 raters is an order of magnitude beyond today's 9–23 rater-hours |
+
+**Sequencing:** `S1 → S2 → S3 → {S4, S5}` ships a dimension-level scored run in days. `S6` is a funded programme, not a
+sprint. Ship the tool honest-and-partial rather than complete-and-invented: a scorecard that says *"subdimension
+scoring is not available: the item bank does not carry subdimension tags"* is worth more than 40 fabricated numbers.
+
+
+#### Autonomous operation track (added 2026-09-20)
+
+Design: `docs/CB_MODEL_AUTONOMOUS_OPERATION_2026-09-20.md` (also on the founder's Desktop). A 14-transition state
+machine from detection to publication, and an **autonomy ladder L0–L5**. **We are at L0 (manual).** L5 — unattended
+publication — is marked *never available*, because the barrier is `AUTONOMY.md` §1b, not engineering.
+
+Three findings verified by the coordinator on 2026-09-20:
+
+1. **The spend ceiling is a field, not a guard.** `ceiling_at_time` is written `null` (`model-harness/bin/run.mjs:350`)
+   and compared **zero** times anywhere in `research/scripts` or `site/scripts` — positive control: real threshold
+   comparisons (`>= THRESHOLDS.MIN_TRIALS_PER_ITEM_FOR_VARIANCE`) do exist in the same tree, so the search works.
+   Nothing today would stop a run exceeding a budget.
+2. **An unattended script that pushes to main already exists.** `scripts/nightly-pipeline.sh` is "designed for
+   unattended execution via cron" and its **stage 7 runs `git push origin main`**. Every commit and push is a founder
+   action under `AUTONOMY.md` §1b. If that script were ever scheduled, it would bypass the approval rule nightly.
+3. **The authority file has a hole.** `AUTONOMY.md` names `research/scripts` three times but never mentions
+   `site/src/data/model-benchmark/**` — so the model stores are not bound by the rule that protects the institution
+   indexes. The ladder has nothing to bind to for model data.
+
+| ID | Item | Owner | Depends on | v1 | Notes |
+|---|---|---|---|---|---|
+| **AUT-1** | **Close the authority hole**: name `site/src/data/model-benchmark/**` and the model-harness run artifacts in `AUTONOMY.md` §1b, and state which ladder level each transition sits at | **founder** | — | — | Everything else in this track binds to this file. Cheap, and it is currently the weakest link |
+| **AUT-2** | **Make the ceiling real**: founder-written `.benchmark-ops/spend-ceiling.json` carrying an `authority`; preflight refuses to open a run without headroom; a meter over `usage.jsonl` warns at 80% and at 100% finishes the in-flight trial then aborts with a **distinct reason** (a ceiling stop is our refusal, not a provider quota); never resume into the same `run_id`; two-phase ledger row so partial spend is visible before the invoice | backend + founder | AUT-1, live adapter | I5 S5 L3 C5 − E3 − R2 = **13** | Also needed for **rater-hours** (rating costs ~1,500× the API) and **search budget** (INC-008) |
+| **AUT-3** | **Neutralise `scripts/nightly-pipeline.sh` stage 7** — remove the push, or gate it behind an explicit `ALLOW_PUSH` that is off by default and documented as founder-only | devops | — | I4 S5 L2 C5 − E1 − R1 = **14** | A latent rule-bypass sitting in the repo. Do this before anyone schedules anything |
+| **AUT-4** | **L1 — scheduled detection only**: run `release-watch-l1 --live` daily; write candidates; notify. No spend, no promotion, no publication | devops | sources ratified (MCP/release), AUT-3 | I4 S5 L3 C5 − E2 − R1 = **14** | The design estimates ~an afternoon. Safe because the zero-sources check fires first and the step cannot spend |
+| **AUT-5** | **Mandatory failure channel**: `NIGHTLY_WEBHOOK_URL` is optional today (`if [ -n ... ]`), so an unattended failure is silent. Make a failure notification required for any scheduled stage, and fail loudly when it is unset | devops | AUT-4 | I4 S5 L2 C5 − E1 − R1 = **14** | An autonomous system that can fail quietly is worse than a manual one |
+| **AUT-6** | **Scheduler ownership + lock**: exactly one scheduler owner and a lock so two runs cannot overlap (there are no transactions anywhere in this codebase) | devops | AUT-4 | I3 S4 L2 C5 − E2 − R2 = **10** | Credential custody decided explicitly: GitHub Actions secrets were rejected by F-04 as a standing exfiltration surface, and the Worker is the wrong plane. Recommendation: cron for detection; `cb-ops` pull for anything that spends or publishes |
+| **AUT-7** | **L4 — automated analysis + gate evaluation**: evaluate G1–G16 and **file a proposal**, never publish — the same "stop at the digest" shape the nightly entity pipeline already uses | backend | AUT-2, first run | I4 S5 L3 C4 − E3 − R2 = **11** | The transition worth automating precisely because it ends at a human gate |
+
+**Never automate** (from the design, each grounded rather than cautious): confirming which model a release *is*
+(subject identity, INV-1), publication (§1b, and D-29 would need amending), and **anything touching methodology —
+including the item bank**, because bumping `bankVersion` rewrites every `item_hash` and silently voids cross-run
+comparability.
+
+**Sequencing:** `AUT-1 → AUT-3 → AUT-4 → AUT-5` gets us to scheduled detection with a loud failure path and no spend.
+`AUT-2` gates everything that costs money. `AUT-7` is the last safe automation before the human gates that stay.
+
+### New backlog items (2026-09-22)
+- **ECC-1 — add the `block-no-verify` guard as a fail-open PreToolUse hook.** ECC ships a hook that denies
+  `git commit --no-verify` and `git push --force`; it ships **disabled**. Adopting it would mechanically strengthen
+  `AUTONOMY.md` §1b, which is currently prose only. Work: write it to **fail open** on any parse error or unexpected
+  input (a deny-hook that misfires can stall an unattended cycle, which is worse than the risk it removes), wire one
+  narrow PreToolUse entry, and prove it with a planted probe in both directions — a `--no-verify` commit is blocked,
+  and an ordinary commit is untouched. v1: I4 S5 L2 C5 − E2 − R2 = **12**.
+- **ECC-2 — run `context-budget` and act on it.** The 2026-09-22 user-scope install added 106 skills, 52 commands and
+  53 agents to every session's context. Nothing has measured the cost. Work: run the audit, record the numbers in
+  `SYSTEM_HEALTH.md`, and prune or scope what is not earning its tokens. v1: I3 S4 L2 C5 − E1 − R1 = **12**.
+
+### New backlog items (2026-09-21)
+- **D1-1 — repair the deploy channel and prove a loop closed (v2 17, ranked #1 by Meta-review 4).** Partly done in the
+  working tree: `deploy` and `verify` are now `workflow_dispatch`-only, so a push always runs build + test + nginx
+  syntax. Remaining: (a) commit and push it, then confirm a CI run appears whose `headSha` **is** that commit;
+  (b) adopt amendment **D1** — a loop is not closed until a CI run exists for its commit, and `[skip ci]` never goes on
+  a push tip; (c) add a **newest-briefing assertion** to the `verify` job, since three committed briefings 404'd for
+  days without anything noticing; (d) fold in **BM-2** so a build that cannot name its own commit fails loudly instead
+  of emitting `sha: null`. v1: I5 S5 L3 C5 − E2 − R1 = **15** · v2: P +2 (three briefings live-404, publicly invisible)
+  → **17**.
+- **V9d-1 — give the redirect gate a specification instead of a mirror (DC-15).** `test:nginx-redirect-parity` passes
+  when a rewrite is deleted from **both** configs (coordinator-verified 2026-09-21: 4 passed, exit 0). Work: commit an
+  explicit list of the 26 legacy URLs and their expected targets, assert `nginx.conf` contains every one, and keep the
+  superset check as a secondary assertion. Then re-run the both-sides probe — it must fail. Also fold in my probe as a
+  committed negative-control fixture. v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: Rc +2 (second occurrence of the class, no
+  independent gate) → **15**.
+- **ID-3 — backlog identifiers must be allocated, not reused.** `MCP-B1` asks the founder to "ratify D-31", copying the
+  architecture's own text, but **D-31 is already live** and the register's maximum is D-39. Work: renumber the MCP
+  decision to the next free ID, and adopt amendment **R1** (allocate from the register maximum; never redefine an
+  existing identifier). Same class as the DC-12 redefinition Meta-review 4 found. v1: I3 S4 L2 C5 − E1 − R1 = **12**.
+- **CS-3 — the tier *rule* is ambiguous, so consistency checks pass while the convention drifts.** Verified
+  2026-09-21 across cycles: on **09-17** a Euronews article reporting the UN High Commissioner was tiered **4** (by the
+  *originating authority*), and I corrected the briefing from 2 to 4 to match its assessment. On **09-21** a
+  thenationalnews.com article reporting a UN fact-finding mission was tiered **2**, the assessment stating "tier 2
+  reporting of a tier-4 UN mandate finding" (by the *outlet*). Both cycles are internally consistent — the mechanical
+  briefing-versus-assessment check reports 0 mismatches for both — yet the two use **opposite rules for the same
+  situation**. This is the same ambiguity that produced the split corpus behind EV-1: nothing ever said whether tier
+  describes the publisher or the authority being reported. Work: decide the rule (recommendation: tier the **outlet**,
+  and carry the authority separately in a `reportsAuthority` field, so "tier 2 reporting a tier-4 finding" becomes
+  representable instead of a judgement call), write it into both agent specs, and extend the gate to check it. v1: I4
+  S5 L3 C5 − E2 − R2 = **13**.
+- **CS-2 addendum (2026-09-21): the gate's matcher must handle three citation shapes, not one.** My checker has now
+  silently read **0 URLs twice** — on 09-15/09-20 because assessments cite `[T4, 2026-09-15](url)`, and on 09-21
+  because they cite `- <url> (tier 2 reporting of ...)` with the tier **after** the URL. Each time the run reported
+  "0 mismatches", which was vacuous rather than clean. With all three shapes supported the real results are
+  **09-17 7/0 · 09-18 5/0 · 09-20 11/0 · 09-21 18/0**. The working three-shape matcher is the spec for the gate, and
+  the gate **must fail loudly when it extracts zero citations from a date's assessments** — an unparseable citation
+  has to be an error, never a pass.
+- **ID-2 — an HTML-encoded entity name is baked into a filename on disk (DC-05).**
+  `research/assessments/macy-x27-s.md` exists: "Macy's" was encoded to `macy&#x27;s` and then slugified, producing
+  `macy-x27-s`. Found on 2026-09-21 when the assessor had to locate Macy's published baseline under that name; the
+  same cycle wrote the correct `macys-2026-09-21.md`. Same root cause as RISK-023 (the 20 encoded Fortune 500 names,
+  fixed in the published data on 2026-09-16) — but the historical **research artifacts** were never swept, so a
+  mangled filename is still the only home of a documented 2026-04-22 assessment. Work: sweep
+  `research/assessments/**` for encoded-entity filenames, rename with a recorded mapping (an assessment filename is
+  referenced by rotation-state provenance, so a rename is an S9 re-derivation, not a `mv`), and extend
+  `test:encoded-names` to cover research artifact paths rather than published names only. v1: I3 S4 L2 C5 − E2 − R2 =
+  **10** · v2: Rc +2 (a gate for a class with ≥ 2 dated occurrences) → **12**.
+- **RS-5 — the top-level scan stamp drifts from the per-entity stamps.** Verified 2026-09-21: every one of the 1,329
+  entities carried `last_scanned: "2026-09-21"` while `meta.last_scan` still read `2026-09-20`, because the scanner
+  updated the per-entity fields but not the header on that cycle (it did on 09-20). Coordinator corrected the header
+  by parser after confirming the per-entity stamps were uniform. A status figure that disagrees with its own source of
+  truth is the S11 class. Work: have `validate-rotation-state.mjs` assert `meta.last_scan` equals the maximum
+  per-entity `last_scanned`, so the drift fails loudly instead of being noticed by chance. v1: I3 S5 L2 C5 − E1 − R1 =
+  **13**.
+- **SC-1d — ledger matchers are tuned for precision, and the recall gap is now measured.** Verified 2026-09-21: the
+  `harvard-funding-freeze-ruling` matcher requires the judge's surname, so *"Judge Burroughs ruled the funding freeze
+  unlawful"* is caught while *"A federal judge ruled Harvard's funding freeze unlawful"* is **missed**. Every matcher
+  makes this trade (an entity token plus a claim-specific token), which is correct for avoiding false positives on
+  genuine news but means a reworded recurrence slips through. Work: for each entry, record the phrasings that would
+  evade it, and consider a second weaker matcher that *warns* (non-blocking) rather than fails, so a near-miss is
+  visible without blocking a scan. v1: I3 S4 L3 C5 − E2 − R2 = **11**.
+
 ### New backlog items (2026-09-20)
 - **SC-1b — four more year-stale claims have no ledger entry.** Found by the 2026-09-20 scan, each costing full
   verification: **Myanmar** Rakhine school airstrike (true date **2025-09-12**), **El Salvador** "140 defenders fled"
@@ -277,7 +474,9 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   across all 83 daily briefing JSONs against the outlet type of each URL and report which convention each cycle used;
   (2) correct the labels (and/or a one-off data migration for any cycle authored inverted); (3) a test asserting the UI
   map matches the documented scale, so the two can never drift again. v1: I4 S5 L3 C5 − E2 − R2 = 13 · v2: P **+2**
-  (live false claim to readers) · Rc 0 (new class) → **15**.
+  (live false claim to readers) · Rc 0 (new class) → **15**. **Correction (Meta-review 4):** this row was *scored* P +1 at
+  selection time and should have been P +2 from the start, i.e. **16** — which would have selected it two days earlier.
+  A live false claim to readers is the amended P +2 case, and I under-applied my own rule.
 - **R-1b — the waiver warning names a remediation file by literal string.** It. 22 prints
   `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`; on ratification that draft is likely renamed or superseded, and the
   warning would then point at a stale or absent path while still looking authoritative (the DC-01 pattern). Work:
