@@ -29,6 +29,57 @@ assessments, manifests and syntheses. None of them writes an index. See §5.
 
 ---
 
+## 0a. ECC (everything-claude-code) usage policy — adopted 2026-09-22
+
+On **2026-09-22 07:52–08:06** the ECC toolkit was installed at **user scope** (`~/.claude`): **106 skills, 52 commands,
+53 agents**, plus a marketplace entry in `~/.claude/settings.json`. It was not installed by the coordinator, and it
+changed the coordinator's own available agent list **mid-session**. Backup: `~/.claude/backups/pre-ecc-20260922-075542`.
+Source: `Klingdom/everything-claude-code`, a fork of `affaan-m/ECC`, **MIT licensed**.
+
+**The executable surface is inert.** Verified 2026-09-22: no `~/.claude/hooks` and no `~/.claude/scripts` directory
+exist, and ECC's own `hooks/hooks.json` (28 `node -e` entries) was **not** installed. Everything live is prose, so it
+only acts when invoked — which is what makes a routing policy sufficient, rather than requiring uninstallation.
+
+**Nothing was copied wholesale.** These skills are already loadable from user scope, so vendoring a second copy into
+the repo would create two files that drift apart. A project copy is made **only** when the file needs editing.
+
+### Use freely (no conflict, fills a real gap)
+| Capability | Why it earns a place | Note |
+|---|---|---|
+| `context-budget` (skill) | Audits context consumption across agents, skills, MCP servers and rules. Directly useful *now*: the 07:52 install added 106 skills and 53 agents to every session | Use from user scope |
+| `mcp-server-patterns` (skill) | SDK patterns, stdio vs Streamable HTTP, validation. We hand-rolled JSON-RPC for `tools/cb-probe`; `cb-ops` and any future server should consult it first | Use from user scope |
+| `silent-failure-hunter` (agent) | Read-only (`Read, Grep, Glob, Bash`). Hunts swallowed errors and bad fallbacks — **this repo's entire defect history** is silent failure: vacuous gates, gates testing copies, absence claims from searches that read nothing | Use from user scope |
+| `agent-architecture-audit` (skill) | 12-layer diagnostic for agent stacks that hide failures behind wrapper layers, stale memory and retry loops | **Use the project copy**, `.claude/skills/agent-architecture-audit/SKILL.md` — see its header for the two edits |
+
+### Never invoke in this repo
+| Agent / file | Reason |
+|---|---|
+| `harness-optimizer` | Declares `Edit` and step 4 is *"Apply changes and run validation"* against "the local agent harness configuration" — an agent authorised to rewrite the governance it runs under. Self-modifying governance is not a capability, it is a hole |
+| `refactor-cleaner` | Line 53: *"Commit after each batch"*. Every commit in this repo is a founder act (`AUTONOMY.md` §1b). An agent that commits by default launders model agreement into history |
+| `knowledge-ops` | *"Commit and push"* — same reason |
+| `chief-of-staff` | Opus with `Bash`, `Edit`, `Write`, scoped to email/Slack/LINE/Messenger triage. Wrong product at high privilege — the D-5 defect class with more power |
+| `loop-operator` | Operates autonomous loops and treats passing gates as authority to continue. This project's rules are the opposite: a green gate is evidence, never permission (see the `[skip ci]` episode, RISK-025) |
+| `auto-update` | `git fetch --all` / `git pull --ff-only` then reinstall **over live config**. No unattended process may rewrite this system's instructions |
+| `safety-guard` | Promises to intercept `git push --force` and `--no-verify` and has **no implementation** — no hook, no command, no script (searched 2026-09-22). A guard that exists only as a claim is worse than none, because it invites reliance |
+| `commands/santa-loop.md`, `rules/common/agents.md`, `hooks/hooks.json`, upstream `.mcp.json` | Not installed and must stay that way: a loop that pushes on green, an "Immediate Agent Usage / No user prompt needed" rule that contradicts RT-1, 28 `node -e` hook entries with a hijackable plugin-root probe, and remote MCP servers that would sit beside `cb-probe` — whose published claim is "no network I/O of any kind" |
+
+### Considered and deliberately deferred
+- **`gateguard`** (PreToolUse hook that blocks `Edit`/`Write`/`Bash` until the model has investigated importers and
+  call sites). Its core claim is one this project learned the hard way — *"LLM self-evaluation doesn't work... asking
+  'list every file that imports this module' forces Grep and Read"* — and it is the same insight as rule **V8**. Not
+  adopted because it **blocks tool calls**, and this loop runs unattended across many subagents: a hook that stalls
+  waiting for an investigation it cannot verify would deadlock a cycle. Revisit only with a timeout and a fail-open path.
+- **`block-no-verify`** (hook denying `--no-verify` and `push --force`). Genuinely strengthens §1b and ECC ships it
+  **disabled**. Deferred to a loop of its own, because it edits a settings/permissions surface and a buggy deny-hook
+  could block legitimate work; it must be written fail-open and probe-tested first. Backlog **ECC-1**.
+- **`verification-loop`**, **`research-ops`**, **`daily-briefing`**, **`git-workflow`** — rejected as weaker
+  duplicates of machinery this repo already runs (V1–V9, the overnight pipeline, the digest chain, and the commit gates).
+
+**Full review:** `docs/ECC_ADOPTION_REVIEW_2026-09-22.md` (4 buckets: 3 adopt as-is, 5 adopt with edits, 14 named
+rejects plus a ~400-file bulk reject, 11 dangerous).
+
+---
+
 ## 1. The nightly pipeline — the spine
 
 `overnight-scanner` → `overnight-assessor` → `overnight-digest` → validation → **stop** →
