@@ -10246,3 +10246,221 @@ Five first-ever individual baselines were completed: AECOM (48.4 -> 47.5, ransom
 **Queue total (counted directly from `research/change-proposals/*.json` with `"status": "pending"`, excluding the history/ subdirectory, via `grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l`, not incremented from the prior digest's figure): 22** -- 21 carried forward from 2026-09-18 + 1 new tonight (Berkshire Hathaway). High priority (band change or delta >15): 15 (14 carried forward + Berkshire Hathaway, new tonight, band change). Standard (delta 5-15, no band change): 7 (Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton -- all carried forward, unchanged). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+
+## 2026-09-21 -- Zero Proposals | Bangladesh Two-Sided Ruling Nets to Unchanged Composite | Macy's Band Crossing Withheld (Re-Reading, Not Evidence) | Marsh & McLennan Seed-Vector Flag (Rank 42) | Key Energy Services Entity-Status Defect | 6 Confirmations
+
+### Summary -- 2026-09-21
+
+Ten organizations reviewed (6 priority + 4 rotation). Zero score-change proposals filed. Zero scores applied. Six confirmations, four flagged for review with no proposal, one measured band crossing (Macy's) checked and deliberately withheld.
+
+Bangladesh (countries, 39.8 -> 35.0 measured, -4.8, flag-for-review): the International Crimes Tribunal's 15 September ruling sentenced seven officials to death in absentia while ordering half of five convicted men's assets seized for victims' families in the same ruling. Four dimensions moved in opposite directions (ACC +0.2, EQU +0.2 up; EMP -0.2, BND -0.2 down) and cancelled at the composite level -- the third consecutive measurement at 35.0 against a published 39.8, now flagged for a coordinator-level calibration check on the baseline rather than filed as a one-off. No executions have occurred; 64 of 68 convicted remain outside the country.
+
+Ukraine (countries, 50.0 -> 49.4 carried, -0.6, confirmed high confidence): the 8 September Kyiv strike is Russian conduct and scores nothing against Ukraine. Attribution held. Ukraine's own alert-and-rescue chain functions; its public shelter supply (one certified shelter in Kyiv as of 3 September, privately funded) does not, but that finding sits outside this cycle's evidence window and is logged as a watch item, not scored. Iran (countries, 2.5 confirmed, 0.0 delta): a UN Human Rights Council fact-finding mission (tier 4) corroborated the near-floor placement with a crimes-against-humanity finding; a floor move to 0.0 was withheld under the two-independent-source rule (one source located this cycle).
+
+CenterPoint Energy (fortune-500, 35.9 -> 33.8, -2.1, confirmed, first baseline): the company's own 14 September Form 8-K (tier 5) confirms a customer data breach; an unverified 7.49M-record hacker claim on an undated source was not used. Alphabet/Google (fortune-500, 40.0 confirmed unchanged): mirrors the 2026-09-20 Anthropic/OpenAI/xAI antitrust-suit screening exactly, zero movement; a UK safety-pledge letter was caught as dated 2025, not 2026. Oakland (us-cities, 35.9 -> 35.6, -0.3, confirmed, first baseline): scanner correction applied before scoring -- one of three people named in a federal indictment is an FAA inspector, not a city employee; the remaining conduct is scored as two pilots' individual credential fraud, not departmental policy. Oakland's police department separately achieved first-ever full compliance with all 51 federal consent-decree tasks.
+
+**Macy's band crossing measured and WITHHELD** (fortune-500, 41.3 published -> 37.5 measured Developing, would cross Functional -> Developing): rotation-state wrongly recorded last_assessed: null; a full assessment exists on disk under the mangled filename macy-x27-s.md, dated 2026-04-22, which set the published 41.3 on Macy's own documented conduct. The scanner found zero in-window evidence this cycle. The entire measured gap is 0.15 raw points -- ordinary re-reading variance -- so under sec.3e-bis checks 2 and 4 the crossing is not filed. Confirmed with a band-proximity watch.
+
+**Marsh & McLennan NOT FILED** (fortune-500, published 60.9, rank 42 of 447, indicative first-pass reading 36.3, -24.6 not filed): the highest-placed suspected seed vector this cycle (7 of 8 dimensions flat at 3.5, never individually assessed). A four-search indicative pass is explicitly not a measurement and was not filed: independent ratings (MSCI AA, Sustainalytics 19.5) contradict it and the company's own ESG report was not read. Referred for a dedicated fortune-500 flat-vector de-seeding study.
+
+**Key Energy Services NOT SCOREABLE** (fortune-500, published 21.9, f500Rank 500): filed a Form 15 deregistering from SEC reporting on 14 December 2020 and has filed nothing since. No score was issued -- assessing a company with no current public record would measure its silence, not its conduct. This is an entity-record defect of the same class as the open Halodi Robotics / 1X Technologies duplicate (2026-08-17), a finding about the benchmark's own catalogue, not about the company. Referred for a catalogue-integrity decision and recommended for suppression from rotation backfill until resolved.
+
+Math hygiene: all ten published composites reconstructed exactly via computeCompositeFromDimensions. validate-indexes.mjs and validate-rotation-state.mjs both exit 0. Zero scores applied.
+
+---
+
+### Screened, Not Filed -- 2026-09-21
+
+| Entity | Index | Published | Reason |
+|---|---|---|---|
+| Macy's | fortune-500 | 41.3 | Measured band crossing (37.5, would cross Functional -> Developing) traces to 0.15 raw points of re-reading an existing 2026-04-22 baseline with zero new evidence; withheld under sec.3e-bis checks 2 and 4. Confirmed with band-proximity watch. |
+| Lightmatter | ai-labs | 37.5 | Measured -6.2 (31.3) driven entirely by private-company disclosure absence; ai-labs cohort calibration question under sec.3e-bis check 5, not a Lightmatter finding. Not filed. |
+| Marsh & McLennan | fortune-500 | 60.9 | Indicative first-pass reading (36.3, four searches) contradicted by MSCI AA and Sustainalytics 19.5 ratings; not a measurement, not filed. Referred for dedicated de-seeding study. |
+| Key Energy Services | fortune-500 | 21.9 | Deregistered from SEC reporting 14 December 2020; no current public record exists to score. Entity-status defect, referred for catalogue decision. |
+
+---
+
+### Confirmations (delta < 5 or below filing floor, no proposal generated) -- 2026-09-21
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| CenterPoint Energy | fortune-500 | 35.9 | 33.8 | -2.1 | First baseline. 8-K breach confirmed (tier 5); 7.49M-record hacker claim (undated source) not used. |
+| Ukraine | countries | 50.0 | 49.4 (carried) | -0.6 | Attribution held: 8 Sept Kyiv strike is Russian conduct. Shelter gap logged as watch, out of window. |
+| Alphabet/Google | fortune-500 | 40.0 | 40.0 | 0.0 | Mirrors 09-20 screening exactly. UK safety-pledge letter caught as 2025-dated. Exact 40.0/60.0-class boundary retained. |
+| Iran | countries | 2.5 | 2.5 | 0.0 | UN fact-finding mission (tier 4) corroborates near-floor placement. Floor move withheld, two-source rule not met. |
+| Oakland | us-cities | 35.9 | 35.6 | -0.3 | First baseline. FAA inspector correctly excluded from city attribution; 23-year consent-decree compliance achieved for the first time. |
+| Bangladesh | countries | 39.8 | 35.0 | -4.8 | Two-sided ruling (death sentences + victim-asset seizure) nets to unchanged composite; third consecutive matching read at 35.0, flagged for calibration. |
+
+---
+
+### Open Calibration Flags -- 2026-09-21
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| RISK-006 band-boundary ambiguity | Now open on four live fronts: Berkshire Hathaway (exact 40.0, filed 09-20), Nasdaq (exact 60.0, carried 09-18), Macy's (0.15-raw-point re-reading crossing, withheld tonight), Alphabet/Google (exact 40.0, confirmed unchanged tonight). Founder decision on the rounding rule still needed. | Open since 2026-07-30, reinforced 2026-09-20 and 2026-09-21 |
+| Bangladesh baseline calibration (39.8 vs. three consecutive 35.0 reads) | NEW tonight -- 2026-07-24, 2026-09-01 and 2026-09-21 have each independently measured 35.0 against a published 39.8, each time 0.2 points inside the filing threshold. Referred for coordinator-level review of the baseline, not encoded as a one-off proposal. | Open since 2026-09-21 |
+| Marsh & McLennan seed-vector defect (fortune-500 flat-3.5 cohort, rank 42) | NEW tonight -- highest-placed suspected never-assessed placeholder surfaced. Indicative reading -24.6 contradicted by MSCI/Sustainalytics; referred for a dedicated de-seeding study on the robotics-labs model (2026-08-17). | Open since 2026-09-21 |
+| Lightmatter / ai-labs flat-2.5 cohort disclosure-absence question | NEW tonight -- measured -6.2 driven entirely by private-company non-disclosure; referred as a cohort question, not filed. | Open since 2026-09-21 |
+| Key Energy Services entity-status defect | NEW tonight -- deregistered from SEC reporting 14 December 2020, still published in fortune-500 at f500Rank 500. Second entity-record defect of the Halodi Robotics/1X Technologies class. Referred for catalogue decision; recommended suppression from rotation backfill until resolved. | Open since 2026-09-21 |
+| Macy's mangled filename (macy-x27-s.md) / rotation-state last_assessed backfill | NEW tonight -- the HTML-entity-mangled filename is almost certainly why rotation-state never populated last_assessed for Macy's, causing it to resurface as a never-assessed candidate despite a full 2026-04-22 baseline on disk. Needs a filename rename and rotation-state backfill by the entity-record-hygiene workstream. | Open since 2026-09-21 |
+| Halodi Robotics / 1X Technologies identity question (waiver D13-1x-technologies) | Carried forward. rotation-state last_assessed corrected from null to 2026-08-17 (date of report already on disk) tonight; no new assessment written. | Open since 2026-08-17 |
+| Netflix / seed-value calibration cohort (60.9) | Carried forward, not touched tonight | Open since 2026-09-15 |
+| Denmark ASSESSOR_OVERRIDE_NAMES gap (published 81.3 vs. formula 90.2) | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Dayton / Unitree Robotics shared 35.9 placeholder | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Rethink Robotics entity-currency / RISK-003 | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Sanctuary AI RISK-002 hold (55.8-point gap) | Carried forward, no new evidence this cycle | Open since 2026-08-17 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight -- the Akron candidate was caught and dropped after a window-check re-verification found its true date was 2026-08-14, with the "September" date traceable to a magazine republication. | Open since 2026-08-16, reinforced 2026-09-21 |
+| Debunked-claims ledger (known-misdated-claims.json) | Interpublic Group and Harvard added by a parallel workstream tonight; ledger now 16 entries. | Open since 2026-08-16 |
+| Chile pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~89 days |
+| Bolivia critical-band calibration | Carried forward | ~72 days |
+
+---
+
+### Operational Notes -- 2026-09-21
+
+- Scan: 1,329 entities scanned (roster unchanged); 277 searches against a derived ceiling of 274 (disclosed overage of 3); 6 candidates flagged, 5 dropped.
+- **The Akron catch:** the scanner's window check forced a re-verification of an Akron candidate that found the true date was 2026-08-14, with the "September" date in circulation traceable to a magazine republication of the original story. Correctly dropped as stale. Point at SC-1 / DC-13.
+- **Debunked-claims ledger:** Interpublic Group and Harvard added by a parallel workstream this cycle (ledger now 16 entries).
+- Rank drift: 6 entities disagree with the published indexes on rank only (composites and bands all agree): CenterPoint Energy (rotation-state 204 vs. index 199), Alphabet/Google (179 vs. 177), Macy's (178 vs. 175), **Marsh & McLennan (49 vs. 42 -- a 7-place drift, the largest of tonight's set)**, Key Energy Services (390 vs. 389), Halodi Robotics (16 vs. 15). Reported, not corrected, per this stage's write authorization.
+- Halodi Robotics: surfaced as a never-assessed backfill candidate although a full 2026-08-17 assessment exists on disk; rotation-state last_assessed corrected from null to 2026-08-17 (the date of the report already on disk). No new assessment file was written tonight.
+- The mangled macy-x27-s.md filename (backlog ID-2): Macy's full 2026-04-22 baseline sits on disk under an HTML-entity-mangled slug, almost certainly why rotation-state never populated last_assessed for Macy's. Needs a rename and rotation-state backfill by the entity-record-hygiene workstream; not attempted here (write authorization limited to last_assessed/last_change_proposal).
+- Assessor runtime: 2026-09-21T02:10:00Z through 2026-09-21T05:35:00Z; 10 entities scored (6 priority + 4 rotation); 0 change proposals; 6 confirmations; 4 flags-for-review; 5 subdimension sidecars written (bangladesh, centerpoint-energy, lightmatter, macys, oakland). Zero math-hygiene issues -- all 10 published composites reconstructed exactly with computeCompositeFromDimensions.
+- Sources explicitly declined and not used for any score: cyberinsider.com (CenterPoint, undated, date_verified: false), kyivindependent.com (Ukraine, date_verified: false), two CNN URLs (Ukraine 8 Sept strike and the AI antitrust suit, both HTTP 451).
+- Validation: node site/scripts/validate-daily-briefings.mjs (PASS, 84 of 84 briefings, exit 0) and node site/scripts/lint-daily-briefings.mjs (PASS, 86 files clean, exit 0) run against tonight's briefing.
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 22** -- unchanged from 2026-09-20 (0 filed tonight, 0 applied, 0 withdrawn). High priority (band change or delta >15): 15 (unchanged). Standard (delta 5-15, no band change): 7 (unchanged -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+
+## 2026-09-22 -- Three First-Ever Baselines Proposed (Amsterdam, Seoul, Columbia University) | Fortune 500 Calibration Finding (5 Companies, 1 Question, 0 Proposals) | 4 Confirmations/Withheld-on-Attribution
+
+### Summary -- 2026-09-22
+
+Twelve organizations reviewed (7 priority + 5 rotation). Three change-proposals filed, all first-ever baselines against entities whose published scores had never been individually measured -- read these as placeholder corrections, not conduct declines. Zero scores applied. Four confirmations/attribution-withholds, five flagged for review and routed as a single Fortune 500 calibration question (no one-off proposals filed for any of the five).
+
+**Amsterdam** (global-cities, 94.4 -> 72.0 proposed, -22.4, BAND CROSSING Exemplary -> Established, first-ever baseline, medium confidence): scored two-sided as required. The scanner's flagging event -- the 19 September 2026 joint G4 mayoral letter asking the Dutch government for ~EUR100m/year against homelessness -- was scored UPWARD (A1 5, A4 4, S1 4, S3 4, S4 5). The downgrade comes from independent evidence the scan never raised: the Ombudsman Metropool Amsterdam's 2025 annual report (2,942 complaints/signals; vulnerable residents stuck in rules and waiting times) and the EUR4.2m "Smart Check" algorithm, found by outside investigators to still discriminate and self-suspended by the city in May 2025. An upward watch is attached: a funded EUR100m response would raise Action and Equity.
+
+**Columbia University** (universities, 44.5 -> 31.3 proposed, -13.2, BAND CROSSING Functional -> Developing, first-ever baseline, high confidence): three lawsuits (14 Sept Khalil/SIPA suit, an August 2026 suit, a private-investigator claim) are allegations and were NOT scored -- Netflix precedent applied. The measurement rests on the 2025-05-23 joint HHS/Department of Education Title VI deliberate-indifference finding, the published $221m federal resolution agreement, a $21m EEOC settlement in active payout, and the 2026-02-27 StandWithUs settlement. The band would be unchanged if both suits were dismissed. hhs.gov, ed.gov and axios.com returned HTTP 403 to automated retrieval; the federal finding is carried as a claim against the government's own URL with no quote attached.
+
+**Seoul** (global-cities, 60.9 -> 48.8 proposed, -12.1, BAND CROSSING Established -> Functional, first-ever baseline, medium confidence): scored two-sided. A Seoul division director used a contractor's card personally for about a year after signing a KRW1.04bn contract with that contractor -- Seoul's own failure. The detection, criminal referral and sanction recommendation all came from South Korea's NATIONAL Board of Audit and Inspection, not the city; Seoul is credited for A3 (subject to a working external audit) but not for AB1/AB2/AB4 (a correction it has not itself been shown to make).
+
+**Fortune 500 calibration finding, ZERO proposals filed**: Waste Management (77.9 -> 46.3 measured, -31.6), Zoetis (77.9 -> 43.8, -34.1), SEI Investments (60.9 -> 31.3, -29.6, LOW confidence -- ~12 of 40 subdimensions rest on absence of disclosure), The Hartford (60.9 -> 43.8, -17.1) and Travelers (60.9 -> 48.1, -12.8) were all measured well below published. All five sit in byte-identical placeholder cohorts (an 11-entity 77.9 vector, a 19-entity 60.9 vector). Per screening rule 5, routed as ONE cohort calibration question for coordinator-level Fortune 500 recalibration, not five one-off baseline-reset proposals. Full 40-subdimension measurements and sidecars are on disk for all five.
+
+**Withheld on attribution**: El Salvador (15.0, confirmed 0.0 delta) -- the US TPS-expiry decision is not charged to El Salvador; its own silence/absence of a reception plan was already priced into its near-floor 15.0 set 2026-07-05. Georgia/us-states (26.9, confirmed 0.0 delta) -- the Hyundai-plant ICE raid, detentions and 2026-09-15 claim are federal (ICE/DHS) conduct; the governor was not notified in advance; Georgia's own three documented acts are consistent with the existing EMP 1.8/EQU 1.6.
+
+**Screened**: Anthropic (59.1 -> 57.5 carried, -1.6, confirmed) -- a researcher's resignation and public warning is individual speech, not institutional conduct; no upward credit taken for absence of retaliation (screening rule 3). Thailand (32.8 -> 29.4, -3.4, confirmed) -- pre-adjudication discipline: THB320.86m in seizures and 5,000 answer-sheet mismatches are scored as facts, culpability is not; the Interior Ministry's review of all 480,000 papers offsets.
+
+Math hygiene: all three change-proposal composites (Amsterdam 72.0, Columbia University 31.3, Seoul 48.8) reconstructed exactly from their 40 subdimensions via `computeCompositeFromDimensions`, no duplicate keys, coordinator-verified. `validate-indexes.mjs` and `validate-rotation-state.mjs` both exit 0. Zero scores applied.
+
+---
+
+### Score Change Proposed -- 2026-09-22
+
+#### Amsterdam (global-cities) -- 94.4 -> 72.0 (-22.4) -- BAND CROSSING Exemplary -> Established
+- **Confidence:** medium
+- **Band change:** Yes -- Exemplary -> Established
+- **First-ever baseline** -- the published 94.4 had never been individually measured (`last_assessed: null`). This is a placeholder correction, not a decline.
+- **Key evidence:**
+  - Ombudsman Metropool Amsterdam, Jaarverslag 2025 -- 2,942 complaints/signals; vulnerable residents stuck in rules and waiting times (tier 5).
+  - MIT Technology Review (with Lighthouse Reports), 2025-06-11 -- Smart Check (EUR4.2m) discrimination finding, self-suspended May 2025 (tier 5).
+  - Housing Rights Watch, 2025-06-03 -- court ruling compelling the national minister to keep funding shelter for 28 people (tier 4).
+  - NL Times, 2026-09-19 -- the G4 mayoral letter, scored UPWARD, not charged to the downgrade (tier 2).
+- **Recommendation:** downgrade, with an UPWARD watch attached -- a funded EUR100m/year national response would raise Action and Equity.
+- **File:** [proposal](change-proposals/amsterdam-2026-09-22.json)
+
+#### Columbia University (universities) -- 44.5 -> 31.3 (-13.2) -- BAND CROSSING Functional -> Developing
+- **Confidence:** high
+- **Band change:** Yes -- Functional -> Developing
+- **First-ever baseline** -- the published 44.5 had never been individually measured. Placeholder correction, not a decline.
+- **Key evidence:**
+  - HHS/Department of Education joint Notice of Violation, 2025-05-23 -- deliberate-indifference finding over 19+ months (tier 5, NO QUOTE -- hhs.gov returned HTTP 403).
+  - Columbia University, published Federal Resolution Agreement, 2025-07-23 -- $221m combined settlement (tier 4).
+  - EEOC, 2025-07-23 -- $21m settlement, largest public EEOC settlement in ~20 years, in active payout (tier 5).
+  - PBS NewsHour, 2026-09-14 -- the Khalil/SIPA suit, explicitly an ALLEGATION, not scored (tier 2).
+- **Recommendation:** downgrade. The band would be unchanged if both pending suits (14 Sept Khalil/SIPA, August 2026) were dismissed -- neither is scored under the Netflix allegation-discipline precedent.
+- **File:** [proposal](change-proposals/columbia-university-2026-09-22.json)
+
+#### Seoul (global-cities) -- 60.9 -> 48.8 (-12.1) -- BAND CROSSING Established -> Functional
+- **Confidence:** medium
+- **Band change:** Yes -- Established -> Functional
+- **First-ever baseline** -- the published 60.9 had never been individually measured; sits in a 3-entity identical-vector cohort with Toronto and Vancouver (calibration flag, not the basis of this move). Placeholder correction, not a decline.
+- **Key evidence:**
+  - Seoul Economic Daily (reporting the Board of Audit and Inspection), 2026-09-21 -- division director used a contractor's card 51 times, KRW21.03m personal spend, after a KRW1.04bn contract; criminal complaint filed (tier 4).
+  - Board of Audit and Inspection of Korea -- confirms the detecting/referring institution is NATIONAL, not municipal (tier 5).
+  - Seoul Metropolitan Government -- KRW451.3bn "Seoul Without Loneliness" programme; KRW1.7685tn 2025 disability welfare investment, +8.1% YoY (tier 4).
+- **Recommendation:** downgrade. Seoul is credited for A3 (subject to a working external audit) but NOT for AB1/AB2/AB4 -- the correction is the national auditor's, not the city's own.
+- **File:** [proposal](change-proposals/seoul-2026-09-22.json)
+
+---
+
+### Flagged for Review, No Proposal Filed (Fortune 500 Calibration Question) -- 2026-09-22
+
+| Entity | Index | Published | Measured | Delta | Confidence | Cohort |
+|---|---|---|---|---|---|---|
+| Waste Management | fortune-500 | 77.9 | 46.3 | -31.6 | medium | 11-entity 77.9 identical-vector cohort |
+| Zoetis | fortune-500 | 77.9 | 43.8 | -34.1 | medium | 11-entity 77.9 identical-vector cohort |
+| SEI Investments | fortune-500 | 60.9 | 31.3 | -29.6 | low | 19-entity 60.9 identical-vector cohort |
+| The Hartford | fortune-500 | 60.9 | 43.8 | -17.1 | medium | 19-entity 60.9 identical-vector cohort |
+| Travelers | fortune-500 | 60.9 | 48.1 | -12.8 | medium | 19-entity 60.9 identical-vector cohort |
+
+Per screening rule 5, routed as ONE coordinator-level cohort calibration question, not five one-off baseline-reset proposals. 30 companies total share these two vectors; 5 have now been individually measured, 25 have not. Full 40-subdimension sidecars on disk for all five.
+
+---
+
+### Confirmations / Withheld on Attribution -- 2026-09-22
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| El Salvador | countries | 15.0 | 15.0 | 0.0 | US TPS-expiry decision not charged to El Salvador; own conduct already priced into near-floor score set 2026-07-05. |
+| Georgia (us-states) | us-states | 26.9 | 26.9 | 0.0 | Hyundai-plant ICE raid is federal conduct, governor not notified in advance; Georgia's own three documented acts consistent with existing score. |
+| Anthropic | ai-labs | 59.1 | 57.5 (carried) | -1.6 | Researcher's resignation/public warning is individual speech, not institutional conduct; no credit for absence of retaliation. |
+| Thailand | countries | 32.8 | 29.4 | -3.4 | Seizures (THB320.86m) and 5,000 answer-sheet mismatches scored as facts; culpability pre-adjudication, not scored. Interior Ministry review offsets. |
+
+---
+
+### Open Calibration Flags -- 2026-09-22
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Fortune 500 identical-dimension-vector cohorts (77.9 x11, 60.9 x19) | NEW tonight -- 5 of 30 companies sharing these two vectors individually measured (Waste Management, Zoetis, SEI Investments, The Hartford, Travelers), all 12-34 points below published. Routed as one cohort question per screening rule 5, not filed as one-off proposals. 25 companies remain unmeasured. | Open since 2026-09-22 |
+| Global-cities seed markers (Seoul/Toronto/Vancouver 60.9 cohort; Amsterdam's near-uniform 94.4 vector) | NEW tonight -- Amsterdam and Seoul's proposals rest on entity-specific evidence, NOT this observation. Coordinator may wish to review whether other never-assessed Established/Exemplary-band global cities carry the same overstatement. | Open since 2026-09-22 |
+| RISK-006 band-boundary ambiguity | Unchanged tonight -- still open on four live fronts (Berkshire Hathaway exact 40.0, Nasdaq exact 60.0, Macy's 0.15-raw-point re-reading, Alphabet/Google exact 40.0). Not touched tonight. | Open since 2026-07-30, last reinforced 2026-09-21 |
+| Bangladesh baseline calibration (39.8 vs. three consecutive 35.0 reads) | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Marsh & McLennan seed-vector defect (fortune-500 flat-3.5 cohort, rank 42) | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Lightmatter / ai-labs flat-2.5 cohort disclosure-absence question | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Key Energy Services entity-status defect | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Macy's mangled filename (macy-x27-s.md) / rotation-state last_assessed backfill | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Halodi Robotics / 1X Technologies identity question (waiver D13-1x-technologies) | Carried forward, not touched tonight | Open since 2026-08-17 |
+| Netflix / seed-value calibration cohort (60.9) | Carried forward, not touched tonight | Open since 2026-09-15 |
+| Denmark ASSESSOR_OVERRIDE_NAMES gap (published 81.3 vs. formula 90.2) | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Dayton / Unitree Robotics shared 35.9 placeholder | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Rethink Robotics entity-currency / RISK-003 | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Sanctuary AI RISK-002 hold (55.8-point gap) | Carried forward, no new evidence this cycle | Open since 2026-08-17 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight -- two newly discovered year-stale claims (Egypt, Israel/UN CoI), both traced to undated HRW World Report 2026 country-chapter prose. | Open since 2026-08-16, reinforced 2026-09-22 |
+| Ledger precision-over-recall gap (SC-1d, NEW) | The active qatar-doha-strike ledger entry resurfaced reworded ("attack" vs. the matcher's "strike"/"airstrike" tokens) and was missed by the automated matcher; a human caught it. Observed live, not theoretical. | Open since 2026-09-22 |
+| Debunked-claims ledger (known-misdated-claims.json) | Two new candidate entries recommended tonight (Egypt/al-Iskandrani true date 2025-09-24; UN Commission of Inquiry Israel/Gaza finding true date 2025-09-16), not added directly -- per precedent, additions are made by a parallel workstream. | Open since 2026-08-16 |
+| Chile pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~90 days |
+| Bolivia critical-band calibration | Carried forward | ~73 days |
+
+---
+
+### Operational Notes -- 2026-09-22
+
+- Scan: 1,329 entities scanned (roster unchanged); 276 searches against a derived ceiling of 274 (disclosed overage of 2); 7 candidates flagged, 8 dropped (egypt, qatar, israel, merck, cigna, madison, mcgill-university, mali).
+- Two newly discovered year-stale claims, recommended for the ledger (not added tonight, per precedent that new-entry additions are made by a parallel workstream): (1) Egypt -- journalist/researcher arrest (Ismail al-Iskandrani), surfaced from undated HRW World Report 2026 country-chapter prose; true date 2025-09-24 (MadaMasr, HRW, JURIST, RSF, PEN International all confirm), a full year stale. (2) Israel/UN Commission of Inquiry -- genocide finding, also from undated aggregator prose; true date 2025-09-16 (OHCHR, CNN, PBS, NPR, Time all confirm), also a full year stale.
+- The Qatar catch and the precision-over-recall gap observed live (SC-1d): the active qatar-doha-strike ledger entry (true_date 2025-09-09) resurfaced this cycle reworded as "Israel's attack on Doha" rather than the matcher's tokens ("strike"/"airstrike"). The automated matcher missed it; a human caught the resurfacing and appended today's date to the entry's occurrences[] rather than treating it as fresh. This is the ledger's own documented failure mode -- precision-tuned token matching under-catches reworded claims -- now observed live. Logged as backlog SC-1d.
+- Rank drift: 4 entities disagree with the published indexes on rank only (composites and bands agree): Columbia University (rotation-state 61 vs. universities.json 59), SEI Investments (56 vs. 49), The Hartford (58 vs. 50), Travelers (60 vs. 51). Reported, not corrected, per this stage's write authorization.
+- Math hygiene: all three change-proposal composites (Amsterdam 72.0, Columbia University 31.3, Seoul 48.8) reconstructed exactly from their 40 subdimensions via computeCompositeFromDimensions, no duplicate keys in any proposal file -- coordinator-verified. validate-indexes.mjs and validate-rotation-state.mjs both exit 0.
+- Assessor runtime: 2026-09-22T02:10:00Z through 2026-09-22T04:55:00Z; 12 entities scored (7 priority + 5 rotation); 3 change proposals; 4 confirmations; 5 flags-for-review (routed to one Fortune 500 calibration question); 8 subdimension sidecars written (amsterdam, columbia-university, seoul, waste-management, zoetis, sei-investments, the-hartford, travelers).
+- Every {url, sourceTier} pair in tonight's three proposals was checked against the tier cited in that date's assessment: clean, no mismatches (six cycles clean now). The site's display-label inversion (known defect, fix uncommitted) was not compensated for in the data, per instruction.
+- Validation: node site/scripts/validate-daily-briefings.mjs (PASS, 85 of 85 briefings, exit 0) and node site/scripts/lint-daily-briefings.mjs (PASS, 87 files clean, exit 0) run against tonight's public briefing.
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 25** -- 22 carried forward from 2026-09-21 + 3 new tonight (Amsterdam, Columbia University, Seoul). High priority (band change or delta >15): 18 (15 carried forward + 3 new tonight, all three band crossings). Standard (delta 5-15, no band change): 7 (unchanged -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.

@@ -1,0 +1,608 @@
+{
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-23T09:00:00Z",
+  "title": "Compassion Benchmark Daily Briefing — September 22, 2026 (Three Never-Assessed Placeholders Get Their First Measurement)",
+  "headline": "Amsterdam, Seoul and Columbia University's published scores were never individually measured — tonight's first baselines correct them.",
+  "summary": "Twelve organizations were checked overnight. Three first-ever baselines proposed corrections to published scores that had never been individually measured; the published scores are unchanged pending review. Four readings confirmed or were withheld on attribution grounds. Five Fortune 500 companies were measured well below their published scores and routed as a single calibration question rather than five separate proposals.\n\nAmsterdam's published 94.4 placed it 8th of 250 global cities in the benchmark's top tier. A first individual measurement reads 72.0. The city was scored upward on a September 19 joint letter from the mayors of Amsterdam, Rotterdam, Utrecht and The Hague asking the Dutch government for about 100 million euros a year against rising homelessness — naming a problem you cannot fix alone is compassion working, not failing. The downward move comes from different evidence: Amsterdam's own independent ombudsman found 2,942 complaints in 2025 from residents stuck in slow procedures, and a 4.2-million-euro fairness algorithm the city let outside researchers investigate was found to discriminate and was pulled.\n\nColumbia University's published 44.5 falls to a measured 31.3. Two pending lawsuits over the university's handling of harassment complaints are allegations and were excluded from scoring entirely. What was scored: a May 2025 joint federal finding that Columbia acted with deliberate indifference toward harassment of Jewish students for over 19 months, and a $221 million resolution agreement the university itself publishes. The band would not change if both pending suits were dismissed.\n\nSeoul's published 60.9 falls to a measured 48.8. A Seoul city official used a contractor's card personally for about a year before being caught — but the catch came from South Korea's national auditor, not the city, so Seoul's own accountability score does not get credit for a correction it has not yet made itself.\n\nSeparately, five Fortune 500 companies — Waste Management, Zoetis, SEI Investments, The Hartford and Travelers — measured 12 to 34 points below their published scores. All five share one of two placeholder score patterns that are identical, digit for digit, across 30 unrelated companies. No proposals were filed for any of the five; the finding is treated as one question about the benchmark's own unmeasured data, not five separate declines.\n\nRelease watch: 0 sources registered — detection did not run.",
+  "pipeline": {
+    "entitiesScanned": 1329,
+    "entitiesFlagged": 7,
+    "entitiesDropped": 8,
+    "entitiesAssessed": 12,
+    "entitiesScored": 12,
+    "entitiesWithheld": 0,
+    "entitiesUnscoreable": 0,
+    "changeProposalsCount": 3,
+    "scoreChangesApplied": 0,
+    "bandCrossingsApplied": 0,
+    "bandCrossingsFiled": 3,
+    "bandCrossingsMeasuredNotFiled": 5,
+    "upgrades": 0,
+    "downgrades": 10,
+    "confirmations": 4,
+    "flaggedForReview": 5,
+    "nearFloorConfirmations": 0,
+    "firstIndividualMeasurements": 8,
+    "subdimSidecarsWritten": 8,
+    "skipped": 0,
+    "cycleType": "placeholder-baseline-correction-cycle",
+    "assessmentStart": "2026-09-22T02:10:00Z",
+    "assessmentEnd": "2026-09-22T04:55:00Z",
+    "rosterNote": "The roster held at 1,329 entities this cycle. Coverage combined seven scanner-flagged organizations with five rotation-backfill organizations.",
+    "queueHandling": "Twelve organizations were reviewed. Three first-ever baselines documented corrections to published scores that had never been individually measured; the published scores are unchanged pending review. Five Fortune 500 organizations sharing identical placeholder score patterns were measured and routed as one calibration question rather than five separate proposals."
+  },
+  "topSignals": [
+    {
+      "title": "Amsterdam's Top-Tier Score Was Never Measured — And the Same Evidence Cuts Both Ways",
+      "whyItMatters": "A never-checked score placed Amsterdam among the world's best-performing cities. A first real measurement moved it down two tiers — while the same review credited the city for asking for help.",
+      "description": "Amsterdam's published score of 94.4 out of 100 placed it 8th of 250 cities the benchmark tracks, in its highest tier. No one had individually checked that number before this cycle — it was a placeholder.\n\nA first measurement produced 72.0, still a strong result but two tiers lower. The move is not a punishment for the city speaking up: on September 19, the mayors of Amsterdam, Rotterdam, Utrecht and The Hague jointly asked the Dutch national government for about 100 million euros a year to fight a \"dramatic\" rise in homelessness. That letter raised Amsterdam's score for detecting and naming the problem honestly.\n\nThe downward move comes from different evidence entirely. Amsterdam's own independent watchdog, the Ombudsman Metropool Amsterdam, logged 2,942 complaints in its 2025 annual report and found vulnerable residents get stuck in slow procedures and long waits for care, debt and housing help — the opposite of the \"consistently excellent\" standard the top tier requires. Separately, a 4.2-million-euro algorithm the city built to fairly detect welfare fraud was found, after the city gave outside researchers full access to investigate it, to still discriminate against residents with immigrant backgrounds and lower incomes. Amsterdam pulled the system itself in May 2025, before any court or regulator forced it to.\n\nIf the Dutch government funds any part of the 100-million-euro request, Amsterdam's score would be retested and could rise.",
+      "index": "global-cities",
+      "slug": "amsterdam",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "band-crossing-proposed",
+      "evidence": [
+        {
+          "claim": "The Ombudsman Metropool Amsterdam and children's ombudsman received 2,942 complaints, notifications and signals in 2025, and found vulnerable residents get stuck in complicated rules, neighbourhood-team problems and slow procedures.",
+          "source": "Ombudsman Metropool Amsterdam, Jaarverslag 2025",
+          "url": "https://www.ombudsmanmetropool.nl/nl/publicatie/jaarverslag-2025-klachtbehandeling-30",
+          "publishedDate": "2026-04-01",
+          "sourceTier": 5
+        },
+        {
+          "claim": "Amsterdam launched a 4.2-million-euro welfare-fraud algorithm (\"Smart Check\") intended to be among the fairest in the world; in May 2025 the city council suspended it after evidence showed it still discriminated against residents with migrant backgrounds and lower incomes.",
+          "source": "MIT Technology Review (with Lighthouse Reports)",
+          "url": "https://www.technologyreview.com/2025/06/11/1118233/amsterdam-fair-welfare-ai-discriminatory-algorithms-failure/",
+          "publishedDate": "2025-06-11",
+          "sourceTier": 5
+        },
+        {
+          "claim": "On 3 June 2025 a Dutch court ruled that 28 people must be permitted to remain in Amsterdam's emergency shelter, and that the national Minister for Asylum and Migration must continue to cover the cost.",
+          "source": "Housing Rights Watch",
+          "url": "https://www.housingrightswatch.org/news/legal-victory-amsterdam-continued-shelter-access-28-undocumented-migrants",
+          "publishedDate": "2025-06-03",
+          "sourceTier": 4
+        },
+        {
+          "quote": "confused, addicted, and visibly desperate",
+          "claim": "On 19 September 2026 the mayors of Amsterdam, Rotterdam, Utrecht and The Hague jointly asked the Dutch national government for roughly 100 million euros in extra annual funding against homelessness.",
+          "source": "NL Times",
+          "url": "https://nltimes.nl/2026/09/19/mayors-4-biggest-cities-ask-government-help-tackle-homelessness-problem",
+          "publishedDate": "2026-09-19",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "Columbia University's Score Rests on a Federal Finding and a $221 Million Settlement, Not on Two Pending Lawsuits",
+      "whyItMatters": "Two active lawsuits against Columbia were excluded from scoring entirely because they are allegations. The finding instead rests on a completed federal civil-rights finding and a settlement the university publishes itself.",
+      "description": "Columbia University's published score of 44.5 out of 100 had never been individually measured. A first measurement reads 31.3, a lower tier.\n\nA federal civil-rights lawsuit filed September 14 by Mahmoud Khalil and a student group, and a second lawsuit filed in August by other Palestinian students and faculty, both allege Columbia failed to protect them from harassment. Neither is scored as a finding of conduct — both are pending allegations, and Columbia has not been found liable in either.\n\nWhat is scored is already decided. On May 23, 2025, the U.S. Department of Health and Human Services and the Department of Education jointly found that Columbia acted with \"deliberate indifference\" toward harassment of Jewish students for more than 19 months starting in October 2023, including that the university had no effective way to report antisemitism until the summer of 2024. Columbia then agreed to pay 221 million dollars combined to the U.S. Treasury and the Equal Employment Opportunity Commission — the largest public EEOC settlement in almost 20 years, now being paid out — and accepted externally set rules on student discipline, in exchange for restoring federal funding. Columbia publishes the settlement agreement on its own website.\n\nColumbia's score would land in the same tier even if both pending lawsuits were dismissed tomorrow — the measurement does not depend on them. Three of the government sources behind the federal finding blocked automated access, so that finding is recorded as a claim against the government's own web address rather than as a word-for-word quote.",
+      "index": "universities",
+      "slug": "columbia-university",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "band-crossing-proposed",
+      "evidence": [
+        {
+          "claim": "On 23 May 2025 the HHS Office for Civil Rights and the U.S. Department of Education jointly found Columbia University violated Title VI of the Civil Rights Act by acting with deliberate indifference toward harassment of Jewish students from 7 October 2023, over more than 19 months, including failing to establish effective antisemitism reporting mechanisms until summer 2024.",
+          "source": "HHS Office for Civil Rights, joint Notice of Violation to Columbia University",
+          "url": "https://www.hhs.gov/civil-rights/for-providers/compliance-enforcement/examples/national-origin/ocr-joint-notice-of-violation-to-columbia/index.html",
+          "publishedDate": "2025-05-23",
+          "sourceTier": 5
+        },
+        {
+          "claim": "On 23 July 2025 Columbia's board of trustees formalized a settlement paying the federal government 221 million dollars and accepting terms including adopting the IHRA definition of antisemitism and reviewing Middle East studies programmes; Columbia publishes the agreement on its own website.",
+          "source": "Columbia University, Federal Resolution Agreement",
+          "url": "https://www.columbia.edu/content/federal-resolution-agreement",
+          "publishedDate": "2025-07-23",
+          "sourceTier": 4
+        },
+        {
+          "claim": "Columbia University agreed to pay 21 million dollars to resolve EEOC antisemitism charges, described by the EEOC as the largest public EEOC settlement in almost 20 years; the payout to affected individuals has begun.",
+          "source": "U.S. Equal Employment Opportunity Commission",
+          "url": "https://www.eeoc.gov/newsroom/largest-eeoc-public-settlement-almost-20-years-columbia-university-agrees-pay-21-million",
+          "publishedDate": "2025-07-23",
+          "sourceTier": 5
+        },
+        {
+          "claim": "A federal civil-rights lawsuit filed 14 September 2026 by Mahmoud Khalil and the SIPA Palestine Working Group alleges Columbia's deliberate indifference to harassment; this is an allegation and is not scored as a finding of conduct.",
+          "source": "PBS NewsHour",
+          "url": "https://www.pbs.org/newshour/nation/mahmoud-khalil-lawsuit-says-columbia-university-failed-to-protect-pro-palestinian-activists",
+          "publishedDate": "2026-09-14",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "Seoul's Card-Misuse Case Was Caught by a National Auditor, Not the City — and That Changes Who Gets the Credit",
+      "whyItMatters": "A Seoul official misused a contractor's card for a year before being caught. Because South Korea's national auditor made the catch, not Seoul itself, the city's own score does not get the credit for a fix it has not yet made.",
+      "description": "Seoul's published score of 60.9 out of 100 had never been individually measured. A first measurement reads 48.8, a lower tier.\n\nA Seoul Metropolitan Government division director used a contractor's corporate card 51 times over about a year to buy roughly 21 million won (about 15,000 dollars) of personal goods, including a laptop for his child, after signing a 1.04-billion-won contract with that same contractor. That is Seoul's own failure: its own employee, its own procurement decision, its own internal control that missed the misuse for a year.\n\nThe catch is not Seoul's. South Korea's national Board of Audit and Inspection, a constitutional body separate from the city, detected the misuse, filed a criminal complaint, and recommended sanctions. Seoul's own documented role so far is that it was notified after the fact; the official had already retired in June. The measurement credits Seoul for being subject to a working national audit system, but does not credit the city's own accountability score for a correction the city has not yet been shown to have made itself.\n\nSeoul's real strength is its welfare spending: 451.3 billion won committed over five years against loneliness and isolation deaths, and disability welfare spending raised 8.1% to 1.77 trillion won in 2025 — genuine, well-documented programs that keep the score from falling further.",
+      "index": "global-cities",
+      "slug": "seoul",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "band-crossing-proposed",
+      "evidence": [
+        {
+          "claim": "South Korea's Board of Audit and Inspection released findings on 21 September 2026 that a Seoul city division director used a contractor's corporate card 51 times to buy 21.03 million won of personal items after signing a 1.04 billion won procurement contract with the same company, and filed a criminal complaint for bribery.",
+          "source": "Seoul Economic Daily (reporting the Board of Audit and Inspection)",
+          "url": "https://en.sedaily.com/society/2026/09/21/seoul-official-used-contractors-corporate-card-for-personal",
+          "publishedDate": "2026-09-21",
+          "sourceTier": 4
+        },
+        {
+          "claim": "The Board of Audit and Inspection of Korea is the Republic of Korea's national constitutional audit body — the detecting and referring institution in this case is national, not municipal.",
+          "source": "Board of Audit and Inspection of Korea",
+          "url": "https://www.bai.go.kr/bai_eng/",
+          "publishedDate": "2026-09-21",
+          "sourceTier": 5
+        },
+        {
+          "claim": "Seoul committed 451.3 billion won over five years to the \"Seoul Without Loneliness\" programme and created the country's first Director General of Care and Loneliness.",
+          "source": "Seoul Metropolitan Government",
+          "url": "https://english.seoul.go.kr/seoul-policy-archive/seoul-without-loneliness/",
+          "publishedDate": "2026-05-01",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "Five Fortune 500 Companies Measure Far Below Their Published Scores — and It Is Treated as One Question, Not Five",
+      "whyItMatters": "Five companies with nothing in common but a shared, never-checked starting score all measured 12 to 34 points lower. That pattern points at the benchmark's own unmeasured data, not at five companies getting worse.",
+      "description": "Waste Management, Zoetis, SEI Investments, The Hartford and Travelers were checked this cycle as part of routine rotation coverage. All five measured well below their published scores — Zoetis fell the most, 34.1 points; Travelers the least, 12.8 points.\n\nThe reason is not five separate declines. All five companies' published scores were never individually checked; they came from one of two starting values assigned identically, digit for digit, to unrelated companies across unrelated industries. Waste Management and Zoetis share one starting score with nine other companies (11 total). SEI Investments, The Hartford and Travelers share a second starting score with 16 other companies (19 total). A score that is identical across 11 or 19 unrelated companies cannot reflect actual measurement of any one of them.\n\nBecause the pattern points at the benchmark's own unmeasured starting data rather than at any one company's conduct, no score change was proposed for any of the five tonight. Instead, the finding is being treated as a single question for whether and how the remaining 25 companies sharing these two starting scores should be checked. SEI Investments' reading carries the least confidence of the five: about 12 of its 40 measured behaviors rest on the absence of any public disclosure (its most recent sustainability report is from 2023) rather than on documented conduct either way.",
+      "index": "fortune-500",
+      "slug": "waste-management",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "methodology-evolution",
+      "evidence": [
+        {
+          "claim": "Waste Management and Zoetis publish a starting score of 77.9 that is byte-identical across 11 unrelated companies in unrelated sectors in the benchmark's Fortune 500 data, the signature of a never-individually-checked starting value.",
+          "source": "Compassion Benchmark internal calibration finding",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=waste+management",
+          "sourceTier": 5
+        },
+        {
+          "claim": "SEI Investments' most recent located corporate sustainability report is for calendar year 2023; no 2024, 2025 or 2026 report was located.",
+          "source": "SEI Investments corporate disclosure review",
+          "url": "https://www.seic.com/en-us/about-us/corporate-responsibility",
+          "sourceTier": 4
+        }
+      ]
+    }
+  ],
+  "boundaryWatch": [
+    {
+      "entity": "Berkshire Hathaway",
+      "slug": "berkshire-hathaway",
+      "index": "fortune-500",
+      "score": 43.8,
+      "fromBand": "Functional",
+      "toBand": "Developing",
+      "direction": "downward",
+      "status": "band-crossing-proposed",
+      "distance": 0,
+      "cycle": 3,
+      "trigger": "A methodology decision on how the benchmark treats a composite that lands exactly on a band line, and any consolidated workforce disclosure from Berkshire, are the next steps for this row.",
+      "note": "Carried from September 20. A researched measurement of Berkshire's record lands on exactly 40.0, the precise Developing/Functional line. The published score of 43.8 is unchanged; not reviewed again this cycle."
+    },
+    {
+      "entity": "Nasdaq",
+      "slug": "nasdaq",
+      "index": "fortune-500",
+      "score": 62.5,
+      "fromBand": "Established",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 2.5,
+      "cycle": 4,
+      "trigger": "A resolution of the benchmark's own internal disagreement about which tier applies exactly at this value is the next step, ahead of any new evidence.",
+      "note": "Carried from September 18. Nasdaq's published score sits 2.5 points above the Functional boundary on an unchecked placeholder value. Not reviewed again this cycle."
+    },
+    {
+      "entity": "Alphabet/Google",
+      "slug": "alphabet-google",
+      "index": "fortune-500",
+      "score": 40,
+      "fromBand": "Developing",
+      "toBand": "Functional",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 0,
+      "cycle": 2,
+      "trigger": "Whether Google DeepMind's newly launched AGI-debate institute publishes work unflattering to Google, and its funding and independence terms, are the next tests for this boundary position.",
+      "note": "Carried from September 21. Alphabet/Google's published 40.0 sits exactly on the Developing/Functional line, alongside Berkshire Hathaway and Nasdaq. Not reviewed again this cycle."
+    },
+    {
+      "entity": "Macy's",
+      "slug": "macys",
+      "index": "fortune-500",
+      "score": 41.3,
+      "fromBand": "Functional",
+      "toBand": "Developing",
+      "direction": "downward",
+      "status": "band-crossing-finding",
+      "distance": 1.3,
+      "cycle": 2,
+      "trigger": "A single confirmed, new tier-3-or-higher finding about Macy's labor or customer conduct would be the next test for this boundary position.",
+      "note": "Carried from September 21. A rotation re-check produced a reading 0.15 points different from a documented assessment on file, which would cross Macy's from Functional into Developing. No new conduct evidence found; the published 41.3 is unchanged. Not reviewed again this cycle."
+    }
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Amsterdam",
+      "slug": "amsterdam",
+      "index": "global-cities",
+      "date": "2026-09-22",
+      "published": 94.4,
+      "assessed": 72,
+      "delta": -22.4,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "A never-measured top-tier score is corrected by an independent ombudsman finding and a discriminatory algorithm, not by the city's own homelessness letter.",
+      "dominantDimension": { "code": "BND", "delta": -1.5 },
+      "primaryEvidenceUrl": "https://www.ombudsmanmetropool.nl/nl/publicatie/jaarverslag-2025-klachtbehandeling-30",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "Whether the Dutch national government funds any part of the G4 mayors' 100 million euro annual request would raise Amsterdam's Action and Equity readings if it happens."
+      },
+      "evidence": [
+        {
+          "claim": "The Ombudsman Metropool Amsterdam and children's ombudsman received 2,942 complaints, notifications and signals in 2025, and found vulnerable residents get stuck in complicated rules, neighbourhood-team problems and slow procedures.",
+          "source": "Ombudsman Metropool Amsterdam, Jaarverslag 2025",
+          "url": "https://www.ombudsmanmetropool.nl/nl/publicatie/jaarverslag-2025-klachtbehandeling-30",
+          "publishedDate": "2026-04-01",
+          "sourceTier": 5
+        },
+        {
+          "claim": "Amsterdam's 4.2-million-euro welfare-fraud algorithm was found to still discriminate against residents with migrant backgrounds and lower incomes and was suspended by the city council in May 2025.",
+          "source": "MIT Technology Review (with Lighthouse Reports)",
+          "url": "https://www.technologyreview.com/2025/06/11/1118233/amsterdam-fair-welfare-ai-discriminatory-algorithms-failure/",
+          "publishedDate": "2025-06-11",
+          "sourceTier": 5
+        },
+        {
+          "quote": "confused, addicted, and visibly desperate",
+          "claim": "The 19 September 2026 joint letter from the mayors of Amsterdam, Rotterdam, Utrecht and The Hague asked for roughly 100 million euros a year and raised, not lowered, Amsterdam's score.",
+          "source": "NL Times",
+          "url": "https://nltimes.nl/2026/09/19/mayors-4-biggest-cities-ask-government-help-tackle-homelessness-problem",
+          "publishedDate": "2026-09-19",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "entity": "Columbia University",
+      "slug": "columbia-university",
+      "index": "universities",
+      "date": "2026-09-22",
+      "published": 44.5,
+      "assessed": 31.3,
+      "delta": -13.2,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "A federal deliberate-indifference finding and a $221M settlement Columbia itself publishes drive the score; two pending lawsuits were excluded entirely.",
+      "dominantDimension": { "code": "AWR", "delta": -1.0 },
+      "primaryEvidenceUrl": "https://www.hhs.gov/civil-rights/for-providers/compliance-enforcement/examples/national-origin/ocr-joint-notice-of-violation-to-columbia/index.html",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "A ruling, dismissal or settlement in the pending Khalil/SIPA suit or the August 2026 Palestinian students and faculty suit would be the next test; the band would not change if both were dismissed."
+      },
+      "evidence": [
+        {
+          "claim": "On 23 May 2025 the HHS Office for Civil Rights and the U.S. Department of Education jointly found Columbia University violated Title VI of the Civil Rights Act by acting with deliberate indifference toward harassment of Jewish students from 7 October 2023, over more than 19 months.",
+          "source": "HHS Office for Civil Rights, joint Notice of Violation to Columbia University",
+          "url": "https://www.hhs.gov/civil-rights/for-providers/compliance-enforcement/examples/national-origin/ocr-joint-notice-of-violation-to-columbia/index.html",
+          "publishedDate": "2025-05-23",
+          "sourceTier": 5
+        },
+        {
+          "claim": "Columbia University agreed to pay 21 million dollars to resolve EEOC antisemitism charges, described by the EEOC as the largest public EEOC settlement in almost 20 years.",
+          "source": "U.S. Equal Employment Opportunity Commission",
+          "url": "https://www.eeoc.gov/newsroom/largest-eeoc-public-settlement-almost-20-years-columbia-university-agrees-pay-21-million",
+          "publishedDate": "2025-07-23",
+          "sourceTier": 5
+        }
+      ]
+    },
+    {
+      "entity": "Seoul",
+      "slug": "seoul",
+      "index": "global-cities",
+      "date": "2026-09-22",
+      "published": 60.9,
+      "assessed": 48.8,
+      "delta": -12.1,
+      "status": "band-crossing-proposed",
+      "whyHeadline": "A national auditor, not the city, caught a year of card misuse by a Seoul official — Seoul's own accountability score does not get the credit.",
+      "dominantDimension": { "code": "ACC", "delta": -1.3 },
+      "primaryEvidenceUrl": "https://www.bai.go.kr/bai_eng/",
+      "nextForwardSignal": {
+        "date": null,
+        "label": "Any Seoul Metropolitan Government disciplinary, procurement-control or systemic-reform response to the Board of Audit and Inspection finding would be the next test for this score."
+      },
+      "evidence": [
+        {
+          "claim": "South Korea's Board of Audit and Inspection released findings on 21 September 2026 that a Seoul city division director used a contractor's corporate card 51 times to buy 21.03 million won of personal items, and filed a criminal complaint for bribery.",
+          "source": "Seoul Economic Daily (reporting the Board of Audit and Inspection)",
+          "url": "https://en.sedaily.com/society/2026/09/21/seoul-official-used-contractors-corporate-card-for-personal",
+          "publishedDate": "2026-09-21",
+          "sourceTier": 4
+        },
+        {
+          "claim": "Seoul committed 451.3 billion won over five years to the \"Seoul Without Loneliness\" programme, the country's first such city-level commitment.",
+          "source": "Seoul Metropolitan Government",
+          "url": "https://english.seoul.go.kr/seoul-policy-archive/seoul-without-loneliness/",
+          "publishedDate": "2026-05-01",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "El Salvador",
+      "slug": "el-salvador",
+      "index": "countries",
+      "date": "2026-09-22",
+      "published": 15.0,
+      "assessed": 15.0,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "The expiry of protected status for about 200,000 Salvadorans is a United States decision and scores nothing against El Salvador.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Georgia",
+      "slug": "georgia-us-states",
+      "index": "us-states",
+      "date": "2026-09-22",
+      "published": 26.9,
+      "assessed": 26.9,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "A federal ICE raid at a Hyundai plant is federal conduct; Georgia was not notified in advance and its own score holds.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "date": "2026-09-22",
+      "published": 59.1,
+      "assessed": 57.5,
+      "delta": -1.6,
+      "status": "documented",
+      "whyHeadline": "A researcher's public resignation warning is individual speech, not institutional conduct; no credit or debit follows from it alone.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Thailand",
+      "slug": "thailand",
+      "index": "countries",
+      "date": "2026-09-22",
+      "published": 32.8,
+      "assessed": 29.4,
+      "delta": -3.4,
+      "status": "documented",
+      "whyHeadline": "320.86 million baht in seizures and 5,000 mismatched exam answer sheets are scored as facts; culpability is not yet decided.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Waste Management",
+      "slug": "waste-management",
+      "index": "fortune-500",
+      "date": "2026-09-22",
+      "published": 77.9,
+      "assessed": 46.3,
+      "delta": -31.6,
+      "status": "methodology-evolution",
+      "whyHeadline": "A never-checked starting score shared with ten other unrelated companies measured 31.6 points lower on first individual review.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Zoetis",
+      "slug": "zoetis",
+      "index": "fortune-500",
+      "date": "2026-09-22",
+      "published": 77.9,
+      "assessed": 43.8,
+      "delta": -34.1,
+      "status": "methodology-evolution",
+      "whyHeadline": "The largest of five gaps in the same shared-starting-score pattern found tonight across the Fortune 500 index.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "SEI Investments",
+      "slug": "sei-investments",
+      "index": "fortune-500",
+      "date": "2026-09-22",
+      "published": 60.9,
+      "assessed": 31.3,
+      "delta": -29.6,
+      "status": "methodology-evolution",
+      "whyHeadline": "The lowest-confidence of five shared-starting-score findings tonight; about a third of measured behaviors rest on absent disclosure, not documented conduct.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "The Hartford",
+      "slug": "the-hartford",
+      "index": "fortune-500",
+      "date": "2026-09-22",
+      "published": 60.9,
+      "assessed": 43.8,
+      "delta": -17.1,
+      "status": "methodology-evolution",
+      "whyHeadline": "Part of tonight's five-company shared-starting-score finding routed to a single calibration question rather than an individual score change.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    },
+    {
+      "entity": "Travelers",
+      "slug": "travelers",
+      "index": "fortune-500",
+      "date": "2026-09-22",
+      "published": 60.9,
+      "assessed": 48.1,
+      "delta": -12.8,
+      "status": "methodology-evolution",
+      "whyHeadline": "The smallest of tonight's five shared-starting-score gaps, still 12.8 points, part of a 30-company calibration question.",
+      "primaryEvidenceUrl": null,
+      "evidence": []
+    }
+  ],
+  "emergingRisks": [
+    {
+      "risk": "Amsterdam's 100-million-euro annual homelessness request to the Dutch national government remains undecided; a funded response would retest and likely raise the city's Action and Equity readings.",
+      "priority": "medium",
+      "entitiesAffected": ["amsterdam"],
+      "detail": "The next signal is a Dutch national government funding decision, not further city-level evidence.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Seoul's own accountability response to the national audit finding is untested; whether the city imposes discipline or tightens procurement controls is the next signal for its own Accountability reading.",
+      "priority": "medium",
+      "entitiesAffected": ["seoul"],
+      "detail": "A documented Seoul Metropolitan Government disciplinary or procurement-control response would be the next test, separate from the national auditor's own already-credited detection.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Two pending lawsuits against Columbia University remain undecided; their resolution is a forward test even though the current measurement does not depend on either.",
+      "priority": "low",
+      "entitiesAffected": ["columbia-university"],
+      "detail": "A ruling, dismissal or settlement in either the September 2026 or August 2026 suit would be the next test; the measured band would not change on a simple dismissal of both.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Five Fortune 500 companies sharing two identical never-measured starting scores were checked tonight and all five read well below their published values; 25 more companies share the same two starting scores and have not yet been individually measured.",
+      "priority": "high",
+      "entitiesAffected": ["waste-management", "zoetis", "sei-investments", "the-hartford", "travelers"],
+      "detail": "A cohort-wide calibration decision on how to treat the remaining companies sharing these two starting scores is the recommended next step, rather than further one-off measurement.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Whether other never-individually-measured top-tier global cities carry the same overstatement Amsterdam's did is now an open question, and Seoul's published score shares an identical starting pattern with two other cities not yet measured.",
+      "priority": "medium",
+      "entitiesAffected": ["amsterdam", "seoul"],
+      "detail": "A cohort-wide review of never-measured top-tier and Established-tier global cities would settle whether tonight's two findings generalize.",
+      "forwardDate": "TBD"
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "Global Cities — Two Top-Tier Placeholders Get Their First Measurement",
+      "headline": "Amsterdam and Seoul both fell two tiers on first individual measurement, for very different reasons.",
+      "observations": [
+        "Amsterdam (94.4 published, 72.0 measured): scored up on its own homelessness advocacy letter, scored down on an independent ombudsman finding and a discriminatory algorithm the city itself let outside researchers expose.",
+        "Seoul (60.9 published, 48.8 measured): a year of contractor-card misuse by a city official was caught by South Korea's national auditor, not the city, so Seoul's own accountability reading does not get the credit.",
+        "Both retain genuine strengths — Amsterdam's transparency and structural advocacy, Seoul's welfare spending — that keep both scores well above the benchmark's lower tiers."
+      ]
+    },
+    {
+      "sector": "Universities — A First Baseline That Excludes Two Pending Lawsuits Entirely",
+      "headline": "Columbia University's first measured score rests on a completed federal finding and a public settlement, not on active litigation.",
+      "observations": [
+        "Columbia University (44.5 published, 31.3 measured): a May 2025 federal deliberate-indifference finding and a $221 million resolution agreement Columbia itself publishes drive the score; two pending lawsuits are excluded as allegations."
+      ]
+    },
+    {
+      "sector": "Countries — Two Confirmations, Both Turning on Who Acted",
+      "headline": "El Salvador and Thailand both held their published scores tonight, for attribution and pre-adjudication reasons respectively.",
+      "observations": [
+        "El Salvador (15.0 published, confirmed): the expiry of U.S. protected status for about 200,000 Salvadorans is a United States decision and is not scored against the country.",
+        "Thailand (32.8 published, 29.4 measured): an exam-fraud scandal's seizures and irregularities are scored as facts; who is responsible has not yet been adjudicated."
+      ]
+    },
+    {
+      "sector": "US States — A Federal Raid Scores Nothing Against the State",
+      "headline": "Georgia's score held after a federal immigration raid at a private employer's plant that the state was not notified about in advance.",
+      "observations": [
+        "Georgia (26.9 published, confirmed): the ICE raid, detentions and related claim at a Hyundai plant are federal conduct; Georgia's own documented response is consistent with its existing score."
+      ]
+    },
+    {
+      "sector": "AI Labs — An Individual's Speech Is Not Institutional Conduct",
+      "headline": "Anthropic's score held despite a researcher's public resignation warning, because individual speech is screened out of institutional scoring.",
+      "observations": [
+        "Anthropic (59.1 published, 57.5 measured): a researcher's resignation and public warning is that person's own conduct, not the company's; no credit was given for the absence of retaliation against him."
+      ]
+    },
+    {
+      "sector": "Fortune 500 — One Calibration Question, Not Five Downgrades",
+      "headline": "Five companies sharing two never-checked starting scores all measured well below their published values; the finding was routed as a single question about the benchmark's own data.",
+      "observations": [
+        "Waste Management (77.9 published, 46.3 measured) and Zoetis (77.9 published, 43.8 measured) share one identical starting score with nine other unrelated companies.",
+        "SEI Investments (60.9 published, 31.3 measured, lowest confidence of the five), The Hartford (60.9 published, 43.8 measured) and Travelers (60.9 published, 48.1 measured) share a second identical starting score with sixteen other unrelated companies.",
+        "No score change was proposed for any of the five; the pattern points at the benchmark's own unmeasured starting data across 30 companies, not at five companies' conduct."
+      ]
+    }
+  ],
+  "methodologyNotes": [
+    {
+      "name": "A Never-Measured Score Correcting Downward Is Not a Decline",
+      "description": "Three organizations checked tonight — Amsterdam, Seoul and Columbia University — had never been individually measured before. Their published scores were starting placeholders, not prior research findings. A first measurement correcting a placeholder describes what the benchmark did not yet know, not what the organization did differently this week.",
+      "version": "v1.3",
+      "status": "active"
+    },
+    {
+      "name": "The Same Event Can Raise One Reading and a Different Finding Can Lower Another",
+      "description": "Amsterdam was scored up on its own advocacy letter naming a homelessness crisis and scored down on unrelated, independent evidence about service consistency. Reporting both effects honestly, on their own separate evidence, is the benchmark's standard practice rather than netting them into one unexplained number.",
+      "version": "v1.3",
+      "status": "active"
+    },
+    {
+      "name": "Allegations Are Excluded From Scoring Until Decided",
+      "description": "Pending lawsuits against Columbia University were excluded entirely from its measurement. Only completed government findings, published settlements and other decided facts move a score; an active, undecided legal claim does not, regardless of how serious the allegation.",
+      "version": "v1.3",
+      "status": "active"
+    },
+    {
+      "name": "A Shared, Never-Checked Starting Score Across Many Companies Is a Single Question, Not Many Separate Findings",
+      "description": "Five Fortune 500 companies measured well below their published scores tonight, and all five share one of two starting scores that are identical across 11 or 19 unrelated companies. Because the pattern traces to the benchmark's own unmeasured starting data rather than to any one company's documented conduct, it is treated as a single cohort-wide question rather than five individual score changes.",
+      "version": "v1.3",
+      "status": "active"
+    }
+  ],
+  "forwardTriggers": [
+    {
+      "date": "TBD",
+      "entity": "Amsterdam",
+      "slug": "amsterdam",
+      "trigger": "Whether the Dutch national government funds any part of the G4 mayors' 100 million euro annual homelessness request is the next test for this score.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD",
+      "entity": "Seoul",
+      "slug": "seoul",
+      "trigger": "Any Seoul Metropolitan Government disciplinary, procurement-control or systemic-reform response to the national audit finding is the next test for this score.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD",
+      "entity": "Columbia University",
+      "slug": "columbia-university",
+      "trigger": "A ruling, dismissal or settlement in either pending lawsuit is the next test, though the band would not change on a simple dismissal of both.",
+      "priority": "low"
+    },
+    {
+      "date": "TBD",
+      "entity": "Waste Management",
+      "slug": "waste-management",
+      "trigger": "A cohort-wide calibration decision on the remaining 25 Fortune 500 companies sharing tonight's two identical starting scores is the next step.",
+      "priority": "high"
+    }
+  ],
+  "dailyOpeningQuestion": {
+    "text": "Amsterdam, Seoul and Columbia's never-assessed placeholders were filed as three separate first-baseline proposals tonight, while Waste Management, Zoetis, SEI Investments, The Hartford and Travelers share byte-identical placeholder vectors and were routed as one calibration question under screening rule 5 — does the individual-vector test resolve symmetrically across indexes?",
+    "themes": ["placeholder-calibration", "screening-rule-consistency"],
+    "tensionFraming": "Three placeholder-baseline corrections were filed individually tonight, while five sharing a cohort-wide placeholder pattern were routed as one question instead.",
+    "tiedToEntities": ["amsterdam", "seoul", "columbia-university", "waste-management", "zoetis", "sei-investments", "the-hartford", "travelers"],
+    "forwardResolutionDate": null,
+    "eveningResolution": null
+  }
+}
