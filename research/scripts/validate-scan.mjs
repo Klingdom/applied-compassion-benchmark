@@ -273,9 +273,82 @@ function normalizeSource(src) {
 // list, extend CANDIDATE_LIST_KEYS below rather than special-casing it here.
 const CANDIDATE_LIST_KEYS = ["top_entities"];
 
-/** Lowercased, concatenated searchable text for one candidate record. */
+// ── 8c. FIELD SCOPE WITHIN A CANDIDATE (added 2026-09-21, SC-1c) ────────────
+//
+// CANDIDATE_LIST_KEYS above already restricts checking to top_entities — the
+// one promoted, news-bearing list — and the block above documents why
+// sector_alerts, dropped_candidates, previously_assessed_no_new_flag and
+// rotation_backfill are out of scope entirely. This section documents a
+// second, narrower scoping decision: which FIELDS of one top_entities item
+// are read, after a live run showed even a promoted candidate's own prose
+// can quote ledger vocabulary while correctly explaining why it is NOT a
+// match. Confirmed in the committed 2026-09-20.json top_entities list:
+//   - the meta-platforms candidate's news_summary reads "...a different
+//     topic than the prior recurring headcount-reduction claim already
+//     tracked for this entity, and is flagged normally as genuine new-topic
+//     news per the ledger's own guidance."
+//   - the xai-grok candidate's news_summary reads "...unconnected to any
+//     prior deepfake-image matter already tracked for this entity, and is
+//     flagged normally as genuine new-topic news per the ledger's own
+//     guidance."
+// Both are genuine, correctly-flagged, differently-shaped stories that an
+// author had to explicitly describe as NOT the known claim — and in doing
+// so used the ledger's own vocabulary. A scanner reworded around trigger
+// tokens to get past an earlier version of this gate; that is the wrong
+// remedy (an author must not have to avoid words to describe why something
+// is not a defect), so the fix here is a matching-scope decision, not a
+// request to keep dodging language.
+//
+// Fields read, checked against the real top_entities[] shape in every
+// committed scan (2026-09-15 through 2026-09-21 as of this writing):
+//   - `slug`, `name` — the entity-identity fields every matcher's first
+//     token-group depends on. Always in scope: short, structured strings,
+//     never free narrative.
+//   - `news_summary` — the one prose field every top_entities item carries,
+//     and where the actual claim lives. Kept in scope even though it is also
+//     where an author's own ledger-referencing aside can land (the two
+//     examples above). Per the safe-failure-direction rule the brief
+//     requires, an ambiguous prose field stays IN scope rather than being
+//     dropped: over-reach (occasionally re-flagging a candidate that was
+//     only discussing the ledger, for a human to wave through) is safer
+//     than a miss (a resurfaced known claim slipping through because its
+//     host field was excluded). Both real examples above still pass clean
+//     under the actual ledger matchers (meta-8000-layoffs requires the
+//     literal "8,000"/"8000" figure; xai-baltimore-lawsuit requires
+//     "baltimore"; neither string appears in either summary) — the risk
+//     this section guards is a FUTURE narrower miss, not a demonstrated one.
+//
+// Fields deliberately EXCLUDED, and why:
+//   - `summary` (previously read as a fallback) — not a field the real
+//     top_entities schema ever uses; that key belongs to dropped_candidates,
+//     sector_alerts and previously_assessed_no_new_flag entries, none of
+//     which this checker reads. Keeping it as a "just in case" fallback on a
+//     top_entities item was exactly the hazard this section exists to close:
+//     a merge or schema-drift accident could copy a sector_alerts-style
+//     narrative `summary` string onto a top_entities item, and an unscoped
+//     checker would read it as if it were the candidate's own claim. Removed.
+//   - `news_sources` — an array of `{url, date_verified}` citation objects,
+//     not prose describing the claim. A URL slug can coincidentally contain
+//     a matcher substring (e.g. an unrelated story's URL happening to
+//     contain "baltimore") with no bearing on what the candidate is actually
+//     claiming; citations are evidence-of-sourcing, not the claim's text.
+//     This is a confident exclusion, not an "unsure, so include" case — the
+//     field is structured data (URL + boolean), not narrative.
+//   - `index`, `tier`, `priority_score`, `news_score`, `staleness_score`,
+//     `volatility_score`, `importance_score`, `evidence_date`,
+//     `recommendation` — enums/numbers/dates with no free-text narrative
+//     content by construction; textForCandidate never selected these.
+//   - Every list outside `top_entities` (`sector_alerts`,
+//     `dropped_candidates`, `previously_assessed_no_new_flag`,
+//     `tier_breakdown.note`, `rotation_backfill`) — unchanged from
+//     CANDIDATE_LIST_KEYS above, and exactly where an author's
+//     meta-commentary ABOUT the ledger itself tends to live at full length
+//     (e.g. the 2026-09-20 sector_alerts entry titled "Recurring year-stale
+//     claims pattern continues (structural, SC-1/DC-13)", whose summary
+//     names three claims and the ledger file by name). Confirmed still out
+//     of scope; see test-known-misdated-claims.mjs's SC-1c regression test.
 function textForCandidate(item) {
-  return [item?.slug, item?.name, item?.news_summary, item?.summary]
+  return [item?.slug, item?.name, item?.news_summary]
     .filter((v) => typeof v === "string" && v.length > 0)
     .join(" \n ")
     .toLowerCase();

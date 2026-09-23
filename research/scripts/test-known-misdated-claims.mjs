@@ -18,9 +18,16 @@
  *      stats.dropped_candidates, not in top_entities) does not fail.
  *   5. A malformed or empty ledger fails loudly rather than vacuously
  *      passing.
- *   6. The real committed scans (2026-09-15, 2026-09-17, 2026-09-18) pass
- *      the checker, because each of them correctly dropped its known claim
- *      before it ever reached top_entities.
+ *   6. The real committed scans (2026-09-15, 2026-09-17, 2026-09-18,
+ *      2026-09-20, 2026-09-21) pass the checker, because each of them
+ *      correctly dropped its known claim before it ever reached
+ *      top_entities.
+ *   7. (SC-1c, 2026-09-21) A scan whose free narrative (sector_alerts) names
+ *      a ledger claim, while its top_entities candidate carries none of the
+ *      claim-specific tokens, still passes -- proving the checker reads only
+ *      the claim/evidence fields of a promoted candidate, not free prose
+ *      elsewhere in the scan, so an author never has to avoid a word to
+ *      describe why something is not a defect.
  *
  * NO NETWORK ACCESS. Reads only the checked-in ledger and the three named
  * committed scan fixtures under research/scans/ — no writes anywhere.
@@ -63,7 +70,7 @@ console.log("Test 1: research/known-misdated-claims.json validates against its o
 {
   const errors = validateLedgerSchema(ledger);
   assert(errors.length === 0, `expected zero schema errors, got: ${errors.join("; ")}`);
-  assert(Array.isArray(ledger.claims) && ledger.claims.length >= 10, "ledger should carry at least the 10 SC-1 claims");
+  assert(Array.isArray(ledger.claims) && ledger.claims.length >= 16, "ledger should carry at least the 10 SC-1 claims plus the 6 SC-1b claims");
   assert(typeof ledger.meta?.brief_addendum === "string" && ledger.meta.brief_addendum.length > 0, "ledger.meta.brief_addendum must exist for the coordinator to paste into the scanner brief");
 }
 
@@ -81,6 +88,12 @@ const KNOWN_ITEM_TEXT = {
   "zambia-opposition-killing": candidate({ slug: "zambia", name: "Zambia", news_summary: "Opposition figure Kafwaya was killed during a security services raid, rights groups reported." }),
   "xai-baltimore-lawsuit": candidate({ slug: "xai-grok", name: "xAI", index: "ai-labs", news_summary: "Baltimore filed a lawsuit against xAI over Grok-generated deepfake images, the city said." }),
   "anthropic-pentagon-suit": candidate({ slug: "anthropic", name: "Anthropic", index: "ai-labs", news_summary: "Anthropic's Pentagon supply-chain-risk lawsuit against the Department of Defense was ruled unlawful by a federal judge." }),
+  "interpublic-group-september-layoffs": candidate({ slug: "interpublic-group", name: "Interpublic Group", index: "fortune-500", news_summary: "Interpublic Group confirmed cutting 800 jobs in September as part of a broader restructuring, a securities filing showed." }),
+  "harvard-funding-freeze-ruling": candidate({ slug: "harvard-university", name: "Harvard University", index: "universities", news_summary: "A federal judge, Allison Burroughs, ruled the administration's funding freeze against Harvard was unlawful, court filings showed." }),
+  "harvard-heightened-cash-monitoring": candidate({ slug: "harvard-university", name: "Harvard University", index: "universities", news_summary: "The Department of Education placed Harvard on Heightened Cash Monitoring status, requiring a letter of credit before it can draw federal student aid funds." }),
+  "myanmar-rakhine-airstrike": candidate({ slug: "myanmar", name: "Myanmar", news_summary: "An airstrike hit a boarding school in Myanmar's Rakhine State, killing students, residents said." }),
+  "el-salvador-defenders-fled": candidate({ slug: "el-salvador", name: "El Salvador", news_summary: "Roughly 140 human rights defenders and journalists fled El Salvador amid a crackdown, a rights group said." }),
+  "figure-ai-whistleblower": candidate({ slug: "figure-ai", name: "Figure AI", index: "robotics-labs", news_summary: "A former Figure AI employee's whistleblower lawsuit alleging safety concerns was covered again this week, per court filings." }),
 };
 
 // Plausible GENUINE items about the same entity that do NOT carry the
@@ -97,13 +110,19 @@ const GENUINE_ITEM_TEXT = {
   "zambia-opposition-killing": candidate({ slug: "zambia", name: "Zambia", news_summary: "Zambia's electoral commission announced a new voter registration drive ahead of next year's election." }),
   "xai-baltimore-lawsuit": candidate({ slug: "xai-grok", name: "xAI", index: "ai-labs", news_summary: "xAI opened a new office in Austin and announced a hiring push for the Grok engineering team." }),
   "anthropic-pentagon-suit": candidate({ slug: "anthropic", name: "Anthropic", index: "ai-labs", news_summary: "Anthropic announced a new enterprise partnership with a hospital network to pilot Claude for clinical documentation." }),
+  "interpublic-group-september-layoffs": candidate({ slug: "interpublic-group", name: "Interpublic Group", index: "fortune-500", news_summary: "Omnicom CFO Phil Angelastro confirmed combined Omnicom/Interpublic Group headcount will fall from about 120,000 to about 105,000 by the end of 2026 (roughly 15,000 roles), reported widely across trade outlets." }),
+  "harvard-funding-freeze-ruling": candidate({ slug: "harvard-university", name: "Harvard University", index: "universities", news_summary: "Harvard University announced a $50 million gift to expand financial aid for first-generation students." }),
+  "harvard-heightened-cash-monitoring": candidate({ slug: "harvard-university", name: "Harvard University", index: "universities", news_summary: "Harvard University published its annual endowment report, showing a 6% investment return for the fiscal year." }),
+  "myanmar-rakhine-airstrike": candidate({ slug: "myanmar", name: "Myanmar", news_summary: "Myanmar's election commission published a revised voter roll ahead of the December general election, state media reported." }),
+  "el-salvador-defenders-fled": candidate({ slug: "el-salvador", name: "El Salvador", news_summary: "El Salvador's central bank reported a 3% rise in remittances for the month, according to official data." }),
+  "figure-ai-whistleblower": candidate({ slug: "figure-ai", name: "Figure AI", index: "robotics-labs", news_summary: "Figure AI unveiled its next-generation humanoid robot at a manufacturing trade show, the company said." }),
 };
 
 // ── Test 2: every ACTIVE entry is caught by a matching top_entities item (V8 positive control) ──
 console.log("\nTest 2: each active ledger entry is caught when its known claim resurfaces in top_entities");
 {
   const activeEntries = ledger.claims.filter((e) => e.status === "active");
-  assert(activeEntries.length === ledger.claims.length, "expected all 10 SC-1 entries to be status:active at this point");
+  assert(activeEntries.length === ledger.claims.length, "expected all SC-1/SC-1b entries to be status:active at this point");
   for (const entry of activeEntries) {
     const item = KNOWN_ITEM_TEXT[entry.id];
     assert(item !== undefined, `test fixture missing a KNOWN_ITEM_TEXT case for entry "${entry.id}"`);
@@ -189,9 +208,9 @@ console.log("\nTest 6: a retired entry (status: 'retired') no longer triggers a 
 }
 
 // ── Test 7: the real committed scans pass the checker (each correctly dropped its claim) ──
-console.log("\nTest 7: the real committed 09-15 / 09-17 / 09-18 scans pass the known-misdated-claims checker");
+console.log("\nTest 7: the real committed 09-15 / 09-17 / 09-18 / 09-20 / 09-21 scans pass the known-misdated-claims checker");
 {
-  for (const date of ["2026-09-15", "2026-09-17", "2026-09-18"]) {
+  for (const date of ["2026-09-15", "2026-09-17", "2026-09-18", "2026-09-20", "2026-09-21"]) {
     const scanPath = path.join(REPO, "research", "scans", `${date}.json`);
     const scan = JSON.parse(readFileSync(scanPath, "utf8"));
     const result = checkKnownMisdatedClaims(scan, ledger);
@@ -200,6 +219,56 @@ console.log("\nTest 7: the real committed 09-15 / 09-17 / 09-18 scans pass the k
       `real scan ${date}.json should pass the known-misdated-claims checker (it correctly dropped its claim(s) before top_entities); got: ${JSON.stringify(result.failures)}`,
     );
   }
+}
+
+// ── Test 8 (SC-1c, 2026-09-21): the checker reads only a candidate's claim/
+// evidence fields, not free narrative elsewhere in the scan ────────────────
+// Modeled directly on the real research/scans/2026-09-20.json shape: a
+// sector_alerts entry titled "Recurring year-stale claims pattern continues
+// (structural, SC-1/DC-13)" names three claims (Myanmar Rakhine airstrike, El
+// Salvador defender exodus, Interpublic Group September layoffs) and the
+// ledger file itself, in prose, while top_entities carries a genuine,
+// unrelated candidate for one of those same entities. The scan must pass:
+// sector_alerts is not a checked list (see CANDIDATE_LIST_KEYS), and the
+// top_entities candidate itself carries none of the claim-specific tokens.
+console.log("\nTest 8 (SC-1c): a scan whose free narrative names a ledger claim, while its top_entities candidate carries no claim-specific tokens, passes clean");
+{
+  const scan = {
+    scan_date: "2026-09-20",
+    top_entities: [GENUINE_ITEM_TEXT["myanmar-rakhine-airstrike"]],
+    sector_alerts: [
+      {
+        theme: "Recurring year-stale claims pattern continues (structural, SC-1/DC-13)",
+        summary:
+          "Three additional candidates this cycle (Myanmar Rakhine airstrike, El Salvador defender exodus, Interpublic Group September layoffs) were year-stale by the same mechanism already tracked in known-misdated-claims.json (undated aggregator/annual-report text read as current). None of the three yet has a ledger entry; recommended for addition at the next ledger-maintenance pass.",
+        sources: [],
+      },
+    ],
+    stats: { dropped_candidates: [] },
+  };
+  const result = checkKnownMisdatedClaims(scan, ledger);
+  assert(
+    result.failures.length === 0,
+    `sector_alerts prose naming a ledger claim must not be read by the checker (top_entities scope only, and only that candidate's own claim/evidence fields); got: ${JSON.stringify(result.failures)}`,
+  );
+
+  // Second half: a top_entities candidate's OWN news_summary containing an
+  // author's ledger-referencing aside (the real, committed 2026-09-20
+  // meta-platforms/xai-grok pattern — "...flagged normally as genuine
+  // new-topic news per the ledger's own guidance") must also not misfire,
+  // because it still lacks the claim-specific tokens.
+  const selfReferencing = candidate({
+    slug: "xai-grok",
+    name: "xAI",
+    index: "ai-labs",
+    news_summary:
+      "xAI is named in a federal antitrust suit alongside other AI labs. This is a distinct, new-topic filing unconnected to any prior deepfake-image matter already tracked for this entity, and is flagged normally as genuine new-topic news per the ledger's own guidance.",
+  });
+  const result2 = checkKnownMisdatedClaims(scanWith([selfReferencing]), ledger);
+  assert(
+    result2.failures.length === 0,
+    `a candidate's own ledger-referencing aside must not misfire absent the claim's own specific tokens (here, "baltimore" is absent); got: ${JSON.stringify(result2.failures)}`,
+  );
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);
