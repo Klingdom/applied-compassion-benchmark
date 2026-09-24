@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 35 — 2026-09-24 (the commit that explains a defect stops causing it — CI-1a / DC-17)
+
+### Selected Item
+**CI-1a**, the agent-doable half of **CI-1** (v2 17, the top-ranked eligible item, filed by It. 34 and split under
+**S2**). No candidate-generation round was run: the backlog still holds ≥ 5 eligible items scoring ≥ 13 (Step 2
+override).
+
+**CI-1b — whether `deploy.yml` should also run build + test on working branches — is founder-gated** (§1b: a CI
+trigger change) and goes to the decision packet, not into this loop.
+
+### V1 — production baseline, measured before selecting
+| Check | Result |
+|---|---|
+| `/build-manifest.json` | built **2026-09-22T14:07Z**, `sha: null`, `source: "unavailable"` — **BM-2 again**: another bare `docker compose build` on the VPS, so production still cannot name its commit |
+| `/updates/2026-09-17` · `09-18` · `09-20` | **200** — It. 27b's three invisible briefings are now live |
+| `/updates/2026-09-21` · `09-22` · `09-24` | **301 → /404** — three committed briefings readers cannot see |
+| `/updates` index | lists up to **09-20** and links only pages that exist |
+
+**So the site is stale but self-consistent: no broken link, no false claim to a reader — absent content, not wrong
+content.** That is why the live-defect term scored **P +1** here and not +2, and why the remedy (a deploy) went to
+the founder packet rather than pre-empting the queue.
+
+### What Changed
+1. **`research/scripts/test-commit-message-tokens.mjs`**, wired in as `test:commit-message-tokens` (chain 34 → 35).
+   All six tokens GitHub documents, matched case-insensitively, on every commit dated **on or after 2026-09-24**.
+   Forward-dated, so no dated commit is retro-failed (§1c; the same discipline as DC-03 and DC-04). The cutoff was
+   chosen **after** verifying that all four commits of 2026-09-24 carry zero tokens, so it needs no waiver.
+2. **Rule R12 in `AUTONOMY.md` §1b**, beside the bullet that makes every commit a founder act: a commit message must
+   never contain a suppression token, *not even in prose describing one*. The gate fires one commit late, so the rule
+   is the part that actually prevents the harm.
+3. **DC-17 registered** with both dated occurrences and the diagnosis method.
+
+### Why a test and not a git hook
+A `commit-msg` hook would catch this at exactly the right moment. It was rejected: a hook on the commit path is a
+governance surface, `AGENT-ROUTING.md` §0a bans agents that modify the harness, and **ECC-1** (a deny-hook for
+`--no-verify`) is deferred on that same reasoning and still unratified. Choosing the hook here would have quietly
+overruled a decision I had already made against myself. A test is weaker in timing, stronger in reviewability, and —
+unlike an untracked `.git/hooks` file — cannot vanish without a diff.
+
+### Validation
+| Check | Result |
+|---|---|
+| Gate, green | 4 commits scanned at/after the cutoff, 0 tokens; positive control `9ce57aa3` **flagged**; negative control `e38901cf` **not** flagged; 4 near-miss phrases not flagged; self-check clean |
+| **V3 probe 1 — a real commit, not a string** | On a scratch branch, a genuine commit whose message carried a genuine token → **flagged by SHA** with the count. Branch deleted; `HEAD` verified unchanged at `e38901cf`; probe file gone |
+| **V3 probe 2** | Matcher neutered to return `[]` → the **positive control failed by name** rather than the gate reporting green. Restored sha256-identical |
+| **V3 probe 3** | Cutoff moved to 2099 → **VACUOUS**, exit 1, not a pass. Restored sha256-identical |
+| Shallow-clone honesty | `actions/checkout` defaults to depth 1, so the gate detects a shallow clone, says so, and downgrades its real-data controls to **INDETERMINATE** instead of passing them |
+| `npm run test` | chain **34 → 35** steps, full chain **exit 0** |
+| Wiring (S8) | `package.json` edited through a parser that greps for the key first; 2-line diff |
+
+### Two defects of my own, in this loop, disclosed
+1. **I shipped a dead placeholder.** The first draft ended with `const selfHits = …; void selfHits;` — a variable
+   computed and thrown away, with a comment claiming a check that did not exist. Replaced with a real self-check that
+   reads the file and asserts it contains no whole token. A silent no-op inside a gate is the exact shape of DC-09.
+2. **The file ended up holding raw `0x1e`/`0x1f` bytes.** Three attempts to fix it through inline shell and Python
+   failed while *reporting* success — the escaping layers disagreed, and my verification (`grep`, a Python count)
+   disagreed with `od -c`. I stopped guessing, dumped the bytes, and rewrote the two lines through a **script file**
+   using `String.fromCharCode(30)`. Verified 0 remaining. This is the fourth time this month that editing through
+   inline shell has produced a false success; the rule I keep re-learning is in the entry for It. 27 and it applies
+   here again: **edits go through script files, and verification reads bytes, not a summary.**
+
+### Impact
+The class that cost four days of unverified pushes — and that hid the cause of a High/High risk for three — now fails
+a test. RISK-025's remaining half is a founder decision, not an unknown.
+
+### Follow-ups
+- **CI-1b (founder):** should a push to a working branch run build + test? Today it runs nothing, so the four commits
+  pushed on 2026-09-24 were verified locally only.
+- **BM-2 recurred:** production was rebuilt on 09-22 by a bare `docker compose build`, so `/build-manifest.json`
+  again reports `sha: null`. Deploy via Actions or `./deploy.sh`, never a bare build.
+- **Three briefings are invisible** (09-21, 09-22, 09-24). A deploy publishes them; nothing else will.
+
+---
+
 ## Iteration 34 — 2026-09-24 (six iterations shipped unlogged; DC-16, and a gate that fails on the gap)
 
 ### Selected Item

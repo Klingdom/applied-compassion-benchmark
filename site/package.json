@@ -26,7 +26,7 @@
     "test:task-bank": "node scripts/test-task-bank.mjs",
     "test:evaluation-scorer": "node scripts/test-evaluation-scorer.mjs",
     "test:evidence-tier-labels": "node scripts/test-evidence-tier-labels.mjs",
-    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:pinned-slugs && npm run test:product-separation && npm run test:separation-waivers && npm run validate:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run && npm run test:model-harness && npm run test:model-releases && npm run validate:model-releases && npm run test:no-stale-counts && npm run test:entity-records && npm run test:collision-ratchet && npm run test:coverage-report && npm run test:encoded-names && npm run test:method-claims && npm run test:claim-to-source && npm run test:rotation-state && npm run test:model-sources && npm run validate:model-sources && npm run test:release-watch-l1 && npm run test:release-watch-parse && npm run test:nginx-redirect-parity && npm run test:slug-conventions && npm run test:known-misdated-claims && npm run test:evidence-tier-labels && npm run test:iteration-log-coverage",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href && npm run test:pinned-slugs && npm run test:product-separation && npm run test:separation-waivers && npm run validate:product-separation && npm run test:task-bank && npm run validate:task-bank && npm run test:evaluation-scorer && npm run test:model-registry && npm run test:evaluation-statistics && npm run validate:evaluation-run && npm run test:model-harness && npm run test:model-releases && npm run validate:model-releases && npm run test:no-stale-counts && npm run test:entity-records && npm run test:collision-ratchet && npm run test:coverage-report && npm run test:encoded-names && npm run test:method-claims && npm run test:claim-to-source && npm run test:rotation-state && npm run test:model-sources && npm run validate:model-sources && npm run test:release-watch-l1 && npm run test:release-watch-parse && npm run test:nginx-redirect-parity && npm run test:slug-conventions && npm run test:known-misdated-claims && npm run test:evidence-tier-labels && npm run test:iteration-log-coverage && npm run test:commit-message-tokens",
     "validate:model-registry": "node scripts/validate-model-registry.mjs",
     "test:model-registry": "node scripts/test-model-registry.mjs",
     "validate:model-releases": "node scripts/validate-model-releases.mjs",
@@ -51,7 +51,8 @@
     "test:slug-conventions": "node scripts/test-slug-conventions.mjs",
     "validate:rotation-state": "node ../research/scripts/validate-rotation-state.mjs",
     "coverage-report": "node ../research/scripts/coverage-report.mjs",
-    "test:iteration-log-coverage": "node ../research/scripts/test-iteration-log-coverage.mjs"
+    "test:iteration-log-coverage": "node ../research/scripts/test-iteration-log-coverage.mjs",
+    "test:commit-message-tokens": "node ../research/scripts/test-commit-message-tokens.mjs"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",

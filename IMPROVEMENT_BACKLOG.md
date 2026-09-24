@@ -308,6 +308,19 @@ comparability.
   wired into `npm run test` (chain 33 → 34) with four negative controls. v1 for the record: I4 S5 L3 C5 − E2 − R1 =
   **14**; v2 adds Rc +2 (a class with 2 dated registry occurrences gaining a mechanical gate) = **16**.
 
+- **CI-1a — COMPLETED 2026-09-24 (It. 35).** Gate `test:commit-message-tokens` (chain 34 → 35) + rule **R12** in
+  `AUTONOMY.md` §1b + **DC-17** registered. Proven with a real planted commit, a neutered matcher and a future
+  cutoff. v2 was **17**; the delivered half is the gate and the rule.
+
+- **CI-1b — FOUNDER DECISION: should a push to a working branch run build + test?** `deploy.yml` triggers on
+  `push: branches: [main]`, so the current branch has had **no CI since 2026-09-17** and everything pushed on
+  2026-09-24 was verified locally only (full chain exit 0, four negative-control suites). Options: (a) add
+  `branches: ['**']` to the push trigger — `deploy` and `verify` are already `workflow_dispatch`-gated, so this
+  cannot ship anything, it only runs build + test + nginx syntax; (b) leave it, and accept that branch work is
+  verified by the coordinator alone; (c) require a PR to `main`, which runs CI on the merge commit.
+  **Recommendation: (a)** — it is two lines, cannot deploy, and closes the gap that hid four days of unverified
+  pushes. §1b: a CI trigger change is a founder act, so it is not applied here. v1: I4 S4 L2 C5 − E1 − R2 = **12**.
+
 - **CI-1 — RISK-025's second cause, now identified: never write the skip-ci marker literally.** GitHub
   substring-matches the token **anywhere** in the head commit message, including prose quoting it. `9d89d4df` — the
   commit that fixed the habit — contains it three times, the last reading "This commit deliberately carries no

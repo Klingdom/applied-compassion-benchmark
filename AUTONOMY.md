@@ -56,6 +56,12 @@ write.
 - Any deploy, build-and-ship, container rebuild, DNS, TLS or secret operation.
 - Any commit or push. Every structural operation on 2026-08-17, 2026-08-20, 2026-08-21 and
   2026-08-23 ended with "No commit performed" — that is the standing default.
+  - **Rule R12 (added 2026-09-24, DC-17): a commit message must never contain a CI-suppression token,
+    not even in prose describing one.** GitHub matches the token as a substring of the head commit
+    message and silences the **whole push** — build, test and the nginx syntax check included, not just
+    the deploy step. `9d89d4df` was skipped by the sentence *"This commit deliberately carries no …"*.
+    Write "the skip-ci marker" instead, or splice the characters. Gated forward from 2026-09-24 by
+    `test:commit-message-tokens`; the gate fires one commit late, so the rule matters.
 - Any change to methodology, band boundaries, the composite formula, or a scoring convention.
 - Publishing anything that names a real institution adversely.
 

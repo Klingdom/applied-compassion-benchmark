@@ -1,9 +1,23 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 34 (DC-16: iteration-log coverage gate) · History: `ITERATION_LOG.md` (35 entries, newest 34)
+Last change: Iteration 35 (DC-17: CI-suppression token gate) · History: `ITERATION_LOG.md` (35 entries, newest 34)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-24 (Iteration 35 — RISK-025's second cause is closed by a gate; production measured): the
+> **live baseline first** — production was built **2026-09-22T14:07Z** with `sha: null` (**BM-2 recurred**: another
+> bare `docker compose build`), `/updates/2026-09-17`, `09-18` and `09-20` now return **200**, and
+> `/updates/2026-09-21`, `09-22` and `09-24` still **301 → /404**. The `/updates` index lists only pages that exist,
+> so the site is **stale but self-consistent** — absent content, not wrong content. Three committed briefings are
+> invisible until a deploy. **DC-17 gated:** GitHub matches a CI-suppression token as a substring of the head commit
+> message, so `9d89d4df` — the commit that fixed the habit — silenced its own push with the sentence "this commit
+> deliberately carries no …". New gate `test:commit-message-tokens` (chain 34 → 35) plus rule **R12** in
+> `AUTONOMY.md` §1b, forward-dated to 2026-09-24 after verifying that day's four commits carry none. Probed with a
+> **real planted commit** on a scratch branch (flagged by SHA, `HEAD` verified unchanged), a neutered matcher (the
+> positive control failed instead of the gate passing) and a future cutoff (**VACUOUS**, not green). Registry now
+> **DC-01..DC-17 (17 rows)**. **Open half is now a decision, not an unknown:** `deploy.yml` triggers on
+> `push: branches: [main]`, so this branch has had no CI since 2026-09-17 — **CI-1b** for the founder.
 
 > 2026-09-24 (Iteration 34 — six iterations had shipped unlogged; DC-16 gated): `ITERATION_LOG.md` ended at
 > **27** while `tools/cb-probe/README.md` cited "Iteration 32" and its `CHANGELOG.md` cited "Iteration 33", both already
@@ -29,22 +43,6 @@ Last change: Iteration 34 (DC-16: iteration-log coverage gate) · History: `ITER
 > RISK-006 (band-boundary ambiguity) the most overdue founder decision. **INC-009:** an agent destroyed another
 > agent's uncommitted rotation-state write with `git checkout` and reconstructed it; independently verified equivalent.
 
-> 2026-09-18 (Iteration 24 — the AI model benchmark, founder-directed): the CB-MODEL cycle was stopped at step 1 in
-> three ways — **0 sources registered**, a detector whose own header said it **"does not parse retrieved bytes"**, and
-> **0 models scored** with **0 of 33** task items human-reviewed. Now: a **fetch-verified proposal of 14 sources**
-> (10 primary, 4 feeds, 17 candidates excluded rather than guessed; quorum 8-of-10 recommended) awaiting founder
-> ratification — **the live store is still empty and untouched**; the detector **parses RSS/Atom/JSON Feed** plus a
-> fail-closed HTML fallback, itemizes every dropped candidate with a reason, dedupes per source, and **never
-> auto-promotes** (new gate `test:release-watch-parse`, 70 assertions, chain 30 -> 31); release-watch is documented as
-> a **daily step** that is safe to schedule today because the zero-sources check fires first; and `/ai-models` +
-> `/ai-models/methodology` now show the four stages with their real blockers, every figure derived from the data.
-> **Lane 4 (09-18):** 9 draft task items (EQU/BND/SYS +3 each) proposed — merged 42-item bank passes the real
-> validator (408 checks, 0 failures, 0 warnings) and clears the standing SYS thinness warning; the live bank is
-> untouched. **Found in the published bank:** 2 of the 3 live EQU rubrics demand a comparison arm the items do not
-> carry, so Identity Equity is unmeasurable as specified (backlog MB-5, founder-gated).
-> Verified: `npm test` exit 0 (31 steps), `tsc` exit 0, fixture run 5 candidates / 4 dropped then 0 on repeat,
-> `validate-model-releases` PASS with 2 records. **Uncommitted — awaiting founder.**
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
 - **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-20)**.
@@ -66,7 +64,7 @@ Last change: Iteration 34 (DC-16: iteration-log coverage gate) · History: `ITER
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **34 steps**, generated 2026-09-24 by the command below; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
+## Tests (`npm run test`, **35 steps**, generated 2026-09-24 by the command below; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`).scripts.test.split('&&').length)"`)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -123,6 +121,24 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 35._
+
+> 2026-09-18 (Iteration 24 — the AI model benchmark, founder-directed): the CB-MODEL cycle was stopped at step 1 in
+> three ways — **0 sources registered**, a detector whose own header said it **"does not parse retrieved bytes"**, and
+> **0 models scored** with **0 of 33** task items human-reviewed. Now: a **fetch-verified proposal of 14 sources**
+> (10 primary, 4 feeds, 17 candidates excluded rather than guessed; quorum 8-of-10 recommended) awaiting founder
+> ratification — **the live store is still empty and untouched**; the detector **parses RSS/Atom/JSON Feed** plus a
+> fail-closed HTML fallback, itemizes every dropped candidate with a reason, dedupes per source, and **never
+> auto-promotes** (new gate `test:release-watch-parse`, 70 assertions, chain 30 -> 31); release-watch is documented as
+> a **daily step** that is safe to schedule today because the zero-sources check fires first; and `/ai-models` +
+> `/ai-models/methodology` now show the four stages with their real blockers, every figure derived from the data.
+> **Lane 4 (09-18):** 9 draft task items (EQU/BND/SYS +3 each) proposed — merged 42-item bank passes the real
+> validator (408 checks, 0 failures, 0 warnings) and clears the standing SYS thinness warning; the live bank is
+> untouched. **Found in the published bank:** 2 of the 3 live EQU rubrics demand a comparison arm the items do not
+> carry, so Identity Equity is unmeasurable as specified (backlog MB-5, founder-gated).
+> Verified: `npm test` exit 0 (31 steps), `tsc` exit 0, fixture run 5 candidates / 4 dropped then 0 on repeat,
+> `validate-model-releases` PASS with 2 records. **Uncommitted — awaiting founder.**
 
 _Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 34._
 
