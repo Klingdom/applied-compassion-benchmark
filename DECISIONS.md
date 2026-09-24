@@ -52,6 +52,57 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+## D-40 — 2026-09-24 · The self-run composite is gated on item coverage, not withheld outright
+
+**Decision (founder-directed 2026-09-24; coordinator-drafted, awaiting countersignature).**
+
+`cb-probe`'s scored run **may** emit a 0–100 composite and a band, but **only** when all 8 dimensions are measured
+**and every dimension has at least 3 rated items**. Below that floor it emits `composite: null`, `band: null` and a
+reason naming the dimensions that fall short. The gate is mechanical, so the number appears by itself when the bank
+deepens.
+
+**This supersedes part of D-30.** D-30 stated that a judge estimate emits no composite, never imports the scorer, and
+has no field able to hold a 0–100 number. That remains true of the `JudgeEstimate` artifact. It is **no longer** true
+of `SelfRunScorecard`, which imports `computeCompositeFromDimensions` unmodified so the arithmetic is identical to
+published institution scores. D-30's rows covering the scored run are superseded here; its rows covering
+`JudgeEstimate` stand.
+
+**Why a floor rather than a flat ban or a free composite.** Measured against the canonical scorer on 2026-09-24:
+
+| Check | Result |
+|---|---|
+| All 8 dimensions at 4.000 | composite **85.0 Exemplary** |
+| All 8 dimensions at 3.833 | composite **70.8 Established** |
+| 0.167 of rubric movement | **14.2 points and a band flip** |
+| One rating changed by 1 on a 2-item dimension | **2.5 points** |
+
+That 2.5 is the ADP swing (58.1 → 60.6) which **D-07** treats as disqualifying for machine-only scoring. With the five
+crisis items excluded by default, **ACT, SYS and INT carry 2 scorable items each**, so one keystroke can move the
+headline number as much as the event this institution cites as its own warning.
+
+**Corroborated by a real run, not only by arithmetic.** On 2026-09-24 the coordinator ran the tool on itself
+(`judgeConfiguration: "self"`, AWR only, 15 ratings). Awareness measured **4.27**, and one item returned variance
+**1.0** — the same model answering the same prompt earned 5, 3 and 4, two bands apart. The composite was withheld by
+the existing 8-dimension rule; the new floor would withhold it again on item counts.
+
+**What ships in place of the number:** per-dimension means with a bootstrap interval, per-item ratings each citing an
+exact anchor and a verbatim quote, per-item trial variance, and the contamination result. A partial run stays useful;
+it does not get a headline.
+
+**Consequence, accepted deliberately.** A user who wants one number does not get one today. The gate turns the tool
+into visible pressure on the two backlog items that would earn it — **MCP-S6** (bank expansion to ≥3 items per
+dimension, ideally 40-subdimension coverage) and **MB-2** (human validation, currently 0 of 33 items reviewed).
+
+**Alternative rejected.** Emitting the composite with the sensitivity disclosed beside it. Rejected because a number
+travels and a caveat does not: the screenshot keeps the figure and loses the footnote. Reversible by founder decision
+in one line if the trade is judged differently.
+
+**Evidence:** `docs/reviews/CB_PROBE_METHODOLOGY_2026-09-24.md` (all seven questions) ·
+`docs/DECISION_PROPOSAL_MCP_PRODUCT_2026-09-24.md` · `site/scripts/lib/scoring.mjs` ·
+`DECISIONS.md` D-07, D-29, D-30 · the 2026-09-24 self-run artifact.
+
+---
+
 ## D-39 — 2026-09-16 · The first L1 scan record stays, because "we tried and were blocked" is evidence
 
 The L1 fetcher's first run wrote `research/model-index/release-watch/scan-2026-09-16-001.json` with status

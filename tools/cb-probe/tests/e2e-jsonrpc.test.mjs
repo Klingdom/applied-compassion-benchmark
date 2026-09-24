@@ -48,6 +48,10 @@ function startServer(artifactRoot) {
     child.stdin.write(JSON.stringify(message) + "\n");
   }
 
+  function sendRawLine(text) {
+    child.stdin.write(text + "\n");
+  }
+
   async function waitForResponseCount(n, timeoutMs = 5000) {
     const start = Date.now();
     while (responses.length < n) {
@@ -66,7 +70,7 @@ function startServer(artifactRoot) {
     child.kill();
   }
 
-  return { send, waitForResponseCount, responses, stderrLines, stop };
+  return { send, sendRawLine, waitForResponseCount, responses, stderrLines, stop };
 }
 
 test("initialize -> tools/list -> tools/call round-trips over stdio JSON-RPC", async (t) => {
@@ -113,6 +117,7 @@ test("initialize -> tools/list -> tools/call round-trips over stdio JSON-RPC", a
     "record_item_estimate",
     "record_item_rating",
     "run_exposure_probe",
+    "run_status",
     "start_scored_run",
     "summarise_judge_session",
   ]);
@@ -204,4 +209,155 @@ test("tools/call with an unknown tool name returns a JSON-RPC error", async (t) 
 
   const responses = await server.waitForResponseCount(1);
   assert.ok(responses[0].error, "expected a JSON-RPC error for an unknown tool");
+});
+
+// ---------------------------------------------------------------------------
+// item 12a: malformed JSON-RPC input, over the real transport.
+// ---------------------------------------------------------------------------
+test("a syntactically invalid JSON line produces a -32700 Parse error", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-parse-error-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.sendRawLine("{not valid json at all");
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].error.code, -32700);
+});
+
+test("a request naming an unknown top-level JSON-RPC method returns -32601", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-unknown-method-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({ jsonrpc: "2.0", id: 1, method: "resources/list" });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].error.code, -32601);
+});
+
+test("a top-level JSON array (a batch request) returns -32600, not a silent drop", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-batch-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.sendRawLine(JSON.stringify([{ jsonrpc: "2.0", id: 1, method: "tools/list" }]));
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].error.code, -32600);
+});
+
+test("a malformed request (wrong jsonrpc version, no method) with an id present returns -32600", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-invalid-request-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({ jsonrpc: "1.0", id: 1, method: "tools/list" });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].error.code, -32600);
+});
+
+test("a request with id: 0 gets a real reply, not treated as a notification", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-id-zero-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({ jsonrpc: "2.0", id: 0, method: "tools/list" });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].id, 0);
+  assert.ok(responses[0].result);
+});
+
+test("a request with id: null gets a real reply (id is present, just null -- not the same as a notification)", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-id-null-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({ jsonrpc: "2.0", id: null, method: "tools/list" });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].id, null);
+  assert.ok(responses[0].result);
+});
+
+test("a notification (no id key) for an unknown method gets no reply at all", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-notification-unknown-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({ jsonrpc: "2.0", method: "nonexistent/notification" });
+  // Follow it with a real request so we have something to wait for; if the
+  // notification above had produced a reply, it would show up first.
+  server.send({ jsonrpc: "2.0", id: 1, method: "tools/list" });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses.length, 1, "the unknown-method notification must not have produced a reply");
+  assert.equal(responses[0].id, 1);
+});
+
+test("a notification-shaped tools/call still executes the tool -- only the reply is suppressed", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-notification-toolcall-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  // Open a session with a real request first, so we have a session_id.
+  server.send({
+    jsonrpc: "2.0",
+    id: 1,
+    method: "tools/call",
+    params: { name: "open_judge_session", arguments: { subject_label: "s", judge_model_label: "j" } },
+  });
+  const first = await server.waitForResponseCount(1);
+  const sessionId = JSON.parse(first[0].result.content[0].text).session_id;
+
+  // Record an estimate as a NOTIFICATION (no id) -- previously this
+  // returned null before the handler ever ran, so the side effect (writing
+  // estimates/AWR-1-A.json) silently never happened.
+  server.send({
+    jsonrpc: "2.0",
+    method: "tools/call",
+    params: {
+      name: "record_item_estimate",
+      arguments: {
+        session_id: sessionId,
+        item_id: "AWR-1-A",
+        response_text: "That sounds exhausting.",
+        rating_1_5: 3,
+        rationale: "Adequate.",
+      },
+    },
+  });
+
+  // Follow with a real summarise call; if the notification's side effect
+  // happened, item_count must be 1.
+  server.send({
+    jsonrpc: "2.0",
+    id: 2,
+    method: "tools/call",
+    params: { name: "summarise_judge_session", arguments: { session_id: sessionId } },
+  });
+  const all = await server.waitForResponseCount(2);
+  const summariseResponse = all.find((r) => r.id === 2);
+  const artifact = JSON.parse(summariseResponse.result.content[0].text);
+  assert.equal(artifact.item_count, 1, "the notification-shaped record_item_estimate must have actually run");
+});
+
+test("tools/call with invalid arguments against the tool's own inputSchema returns -32602 naming the offending field", async (t) => {
+  const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-schema-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const server = startServer(root);
+  t.after(() => server.stop());
+
+  server.send({
+    jsonrpc: "2.0",
+    id: 1,
+    method: "tools/call",
+    params: { name: "get_anchors", arguments: { item_id: 12345 } }, // wrong type: must be a string
+  });
+  const responses = await server.waitForResponseCount(1);
+  assert.equal(responses[0].error.code, -32602);
+  assert.match(responses[0].error.message, /item_id/);
 });

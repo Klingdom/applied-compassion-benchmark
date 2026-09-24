@@ -135,7 +135,12 @@ test("a real, freshly-built JudgeEstimate contains no composite and no band fiel
   const serialised = JSON.stringify(artifact);
   assert.ok(!/"composite"/.test(serialised), "serialised artifact must not contain a composite key");
   assert.ok(!/"band"/.test(serialised), "serialised artifact must not contain a band key");
-  assert.deepEqual(artifact.dimension_counts, { AWR: { n: 1 }, EMP: { n: 1 } });
+  // dimension_counts is intentionally Object.create(null), not a plain {}
+  // literal, so a dimension value of "__proto__" read from a user-editable
+  // estimate file can never trigger prototype pollution via bracket
+  // assignment (see lib/judge-estimate.mjs). Compare structurally (own
+  // enumerable content) rather than with a strict-prototype deepEqual.
+  assert.deepEqual(JSON.parse(JSON.stringify(artifact.dimension_counts)), { AWR: { n: 1 }, EMP: { n: 1 } });
   assert.equal(artifact.official, false);
 });
 

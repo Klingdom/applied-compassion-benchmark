@@ -10,9 +10,16 @@
 // judge-estimate.json), so there is exactly one place that knows how to
 // safely resolve and write an id-scoped directory.
 
-import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync, readFileSync, readdirSync, renameSync } from "node:fs";
 import path from "node:path";
-import { newSessionId, writeSessionFile, readSessionFile, sessionDir, ensureSessionDir } from "./session-store.mjs";
+import {
+  newSessionId,
+  writeSessionFile,
+  readSessionFile,
+  sessionDir,
+  ensureSessionDir,
+  safeJsonParse,
+} from "./session-store.mjs";
 
 export const newRunId = newSessionId;
 export const writeRunFile = writeSessionFile;
@@ -25,7 +32,9 @@ export function appendRunTrial(root, runId, itemId, trialIndex, trial) {
   mkdirSync(trialsDir, { recursive: true });
   const safeItemId = itemId.replace(/[^a-zA-Z0-9-]/g, "_");
   const filePath = path.join(trialsDir, `${safeItemId}__t${trialIndex}.json`);
-  writeFileSync(filePath, JSON.stringify(trial, null, 2) + "\n", "utf8");
+  const tmpPath = path.join(trialsDir, `.${safeItemId}__t${trialIndex}.${process.pid}.${Date.now()}.tmp`);
+  writeFileSync(tmpPath, JSON.stringify(trial, null, 2) + "\n", "utf8");
+  renameSync(tmpPath, filePath);
   return filePath;
 }
 
@@ -34,7 +43,7 @@ export function listRunTrials(root, runId) {
   const trialsDir = path.join(dir, "trials");
   if (!existsSync(trialsDir)) return [];
   return readdirSync(trialsDir)
-    .filter((f) => f.endsWith(".json"))
+    .filter((f) => f.endsWith(".json") && !f.startsWith("."))
     .sort()
-    .map((f) => JSON.parse(readFileSync(path.join(trialsDir, f), "utf8")));
+    .map((f) => safeJsonParse(readFileSync(path.join(trialsDir, f), "utf8")));
 }

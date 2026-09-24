@@ -1,0 +1,22 @@
+{
+  "name": "compassion-practice",
+  "version": "1.0.0",
+  "description": "Practice guide and read-only reviewer for responding to suffering and need with more skill, grounded in the Compassion Benchmark's 8 dimensions and 40 subdimensions. Bundles one skill and one review-only agent, and adds no capability beyond them. NOT benchmark preparation: a model shaped by this plugin cannot be honestly self-scored, and such a run is treated as contaminated.",
+  "author": {
+    "name": "Compassion Benchmark",
+    "url": "https://compassionbenchmark.com"
+  },
+  "homepage": "https://compassionbenchmark.com/methodology",
+  "keywords": [
+    "compassion",
+    "care",
+    "refusal-ethics",
+    "autonomy-preservation",
+    "crisis-handoff",
+    "review",
+    "read-only"
+  ],
+  "skills": [
+    "./skills/"
+  ]
+}

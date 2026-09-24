@@ -7,6 +7,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, rmSync } from "node:fs";
+import * as fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
@@ -72,4 +73,66 @@ test("sessionDir accepts a well-formed session id and stays inside the root", (t
 
   const dir = sessionDir(root, "abc123-def456");
   assert.ok(dir.startsWith(path.resolve(root)));
+});
+
+// ---------------------------------------------------------------------------
+// item 9, planted probe: a junction/symlink whose TARGET resolves inside
+// this repo must be refused, even though its own lexical path is outside
+// the repo. Verified before the realpathSync fix: assertSafeWriteRoot used
+// path.resolve() only, which does not follow symlinks/junctions, so a
+// junction pointing into tools/cb-probe/ was accepted and a file was
+// written into the repository working tree.
+// ---------------------------------------------------------------------------
+test("assertSafeWriteRoot refuses a junction/symlink whose target resolves inside the Compassion Benchmark repo", (t) => {
+  const junctionParent = mkdtempSync(path.join(os.tmpdir(), "cb-probe-junction-parent-"));
+  t.after(() => rmSync(junctionParent, { recursive: true, force: true }));
+  const junctionPath = path.join(junctionParent, "looks-like-a-normal-dir");
+
+  let symlinkSupported = true;
+  try {
+    // A directory junction on Windows does not require elevated privileges
+    // (unlike a symbolic link). On POSIX this creates an ordinary symlink.
+    fs.symlinkSync(REPO_ROOT, junctionPath, "junction");
+  } catch (error) {
+    symlinkSupported = false;
+    // Some sandboxed CI runners refuse even junctions -- skip rather than
+    // fail the whole suite over a platform/permissions limitation unrelated
+    // to the fix under test.
+    console.error(`[write-root-guard.test.mjs] symlink/junction creation unavailable, skipping: ${error.message}`);
+  }
+
+  if (symlinkSupported) {
+    assert.throws(
+      () => assertSafeWriteRoot(junctionPath, REPO_ROOT),
+      /repository working tree/,
+      "a junction pointing at REPO_ROOT must be refused by its real (resolved) location, not accepted by its lexical path"
+    );
+  }
+});
+
+test("assertSafeWriteRoot still refuses a junction pointing at an ordinary (non-repo) git working tree via the generic git-ancestor check", (t) => {
+  const fakeRepo = mkdtempSync(path.join(os.tmpdir(), "cb-probe-junction-fakerepo-"));
+  mkdirSync(path.join(fakeRepo, ".git"));
+  t.after(() => rmSync(fakeRepo, { recursive: true, force: true }));
+
+  const junctionParent = mkdtempSync(path.join(os.tmpdir(), "cb-probe-junction-parent2-"));
+  t.after(() => rmSync(junctionParent, { recursive: true, force: true }));
+  const junctionPath = path.join(junctionParent, "looks-like-a-normal-dir");
+
+  let symlinkSupported = true;
+  try {
+    fs.symlinkSync(fakeRepo, junctionPath, "junction");
+  } catch (error) {
+    symlinkSupported = false;
+    console.error(`[write-root-guard.test.mjs] symlink/junction creation unavailable, skipping: ${error.message}`);
+  }
+
+  if (symlinkSupported) {
+    const unrelatedRepoRoot = mkdtempSync(path.join(os.tmpdir(), "cb-probe-unrelated-repo-2-"));
+    try {
+      assert.throws(() => assertSafeWriteRoot(junctionPath, unrelatedRepoRoot), /git working tree/);
+    } finally {
+      rmSync(unrelatedRepoRoot, { recursive: true, force: true });
+    }
+  }
 });

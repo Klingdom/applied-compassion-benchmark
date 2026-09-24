@@ -25,6 +25,18 @@ import { isValidRating } from "./validate-estimate.mjs";
 import { DIMENSION_CODES, BAND_ORDER, getBand } from "../../../site/scripts/lib/scoring.mjs";
 import { HEADER_STATEMENT_TEXT } from "./scorecard-header.mjs";
 
+// The item-coverage floor a composite requires, ON TOP OF all 8 dimensions
+// being present: DECISIONS.md D-40 (2026-09-24, founder-directed), grounded
+// in docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md §2 ("one item per subdimension
+// is a single point of failure; two gives disagreement signal, three gives a
+// mean") and in the measured sensitivity docs/reviews/
+// CB_PROBE_METHODOLOGY_2026-09-24.md reports: a single rating changed by 1 on
+// a 2-item dimension moves the composite 2.5 points -- the same swing
+// DECISIONS.md D-07 treats as disqualifying for machine-only scoring. Lives
+// here (the schema-contract module), not in lib/self-run-scorecard.mjs, so
+// this file and that one can import it without a circular dependency.
+export const MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE = 3;
+
 const EXEMPT_FOR_SCORECARD = new Set(["composite", "band"]);
 
 export const SCORECARD_BANNED_KEYS = Object.freeze([
@@ -55,6 +67,8 @@ export const ALLOWED_TOP_LEVEL_KEYS = Object.freeze([
   "composite_withheld_reason",
   "integration_premium",
   "dimensions",
+  "dimension_item_counts",
+  "uncertainty",
   "coverage_note",
   "items",
   "subdimensions_status",
@@ -94,9 +108,12 @@ export const ALLOWED_PROVENANCE_KEYS = Object.freeze([
   "judge_label_self_reported",
   "judge_configuration",
   "bank_version",
+  "tool_version",
   "dimensions_requested",
   "trials_per_item",
   "item_hashes",
+  "include_sensitive",
+  "sensitive_items_excluded",
   "seed",
   "temperature",
   "opened_at",
@@ -191,6 +208,40 @@ export function validateSelfRunScorecard(artifact) {
     missingDimensionCodes = DIMENSION_CODES.filter((c) => artifact.dimensions[c] === null || artifact.dimensions[c] === undefined);
   }
 
+  // --- dimension_item_counts: how many rated items fed each dimension's
+  // mean -- the field a reader (or a test) can check the >=3 composite floor
+  // against without counting the items[] array by hand (DECISIONS.md D-40). ---
+  let shortfallDimensionCodes = null;
+  if (
+    !artifact.dimension_item_counts ||
+    typeof artifact.dimension_item_counts !== "object" ||
+    Array.isArray(artifact.dimension_item_counts)
+  ) {
+    errors.push("dimension_item_counts must be a plain object keyed by the 8 canonical dimension codes");
+  } else {
+    const countKeys = Object.keys(artifact.dimension_item_counts);
+    if (countKeys.length !== DIMENSION_CODES.length || !DIMENSION_CODES.every((c) => countKeys.includes(c))) {
+      errors.push(`dimension_item_counts must have exactly these keys: ${DIMENSION_CODES.join(", ")}`);
+    }
+    for (const [code, value] of Object.entries(artifact.dimension_item_counts)) {
+      if (typeof value !== "number" || !Number.isInteger(value) || value < 0) {
+        errors.push(`dimension_item_counts["${code}"] must be a non-negative integer`);
+        continue;
+      }
+      const dimValue = artifact.dimensions && artifact.dimensions[code];
+      if (value === 0 && dimValue !== null && dimValue !== undefined) {
+        errors.push(`dimension_item_counts["${code}"] is 0 but dimensions["${code}"] is measured -- these must agree`);
+      }
+      if (value > 0 && (dimValue === null || dimValue === undefined)) {
+        errors.push(`dimension_item_counts["${code}"] is ${value} but dimensions["${code}"] is null -- these must agree`);
+      }
+    }
+    shortfallDimensionCodes = DIMENSION_CODES.filter((c) => {
+      const n = artifact.dimension_item_counts[c];
+      return typeof n === "number" && n > 0 && n < MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE;
+    });
+  }
+
   // --- composite / band: null (withheld) for partial coverage, otherwise
   // the canonical scorer's own output shape. A number and an absence of a
   // number are BOTH valid states here, but each has its own required shape
@@ -228,6 +279,17 @@ export function validateSelfRunScorecard(artifact) {
           "non-null composite requires all 8 canonical dimensions to be measured"
       );
     }
+    // DECISIONS.md D-40: a non-null composite ALSO requires every dimension
+    // to rest on >= MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE rated items, not
+    // merely a non-null mean -- a mean of 1 or 2 items is not the floor the
+    // design doc calls "three gives a mean".
+    if (shortfallDimensionCodes !== null && shortfallDimensionCodes.length > 0) {
+      errors.push(
+        `composite is non-null but dimension_item_counts[${shortfallDimensionCodes.join(", ")}] are below the ` +
+          `${MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE}-item floor -- a non-null composite requires every dimension ` +
+          `to rest on at least ${MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE} rated items (DECISIONS.md D-40)`
+      );
+    }
     if (artifact.composite_withheld_reason !== null && artifact.composite_withheld_reason !== undefined) {
       errors.push("composite_withheld_reason must be null when composite is non-null");
     }
@@ -238,6 +300,106 @@ export function validateSelfRunScorecard(artifact) {
     // A null composite is valid only when a non-empty reason is given.
     if (typeof artifact.composite_withheld_reason !== "string" || artifact.composite_withheld_reason.trim().length === 0) {
       errors.push("composite_withheld_reason must be a non-empty string when composite is null");
+    }
+  }
+
+  // --- uncertainty: a bootstrap interval for every measured dimension mean,
+  // and for the composite when (and only when) the coverage floor is met
+  // (DECISIONS.md D-40; site/scripts/lib/evaluation-statistics.mjs
+  // bootstrapCompositeUncertainty). Not exhaustively shape-checked field by
+  // field -- the point here is the STRUCTURAL guarantee (an interval exists
+  // exactly where a mean exists; the composite interval exists exactly when
+  // the composite does), not re-deriving the bootstrap's own arithmetic. ---
+  if (!artifact.uncertainty || typeof artifact.uncertainty !== "object" || Array.isArray(artifact.uncertainty)) {
+    errors.push("uncertainty must be a plain object with 'dimensions' and 'composite_interval' keys");
+  } else {
+    const unexpectedUncertaintyKeys = Object.keys(artifact.uncertainty).filter(
+      (k) => k !== "dimensions" && k !== "composite_interval"
+    );
+    if (unexpectedUncertaintyKeys.length > 0) {
+      errors.push(`uncertainty has unexpected key(s): ${unexpectedUncertaintyKeys.join(", ")}`);
+    }
+    if (
+      !artifact.uncertainty.dimensions ||
+      typeof artifact.uncertainty.dimensions !== "object" ||
+      Array.isArray(artifact.uncertainty.dimensions)
+    ) {
+      errors.push("uncertainty.dimensions must be a plain object keyed by the 8 canonical dimension codes");
+    } else {
+      const udimKeys = Object.keys(artifact.uncertainty.dimensions);
+      if (udimKeys.length !== DIMENSION_CODES.length || !DIMENSION_CODES.every((c) => udimKeys.includes(c))) {
+        errors.push(`uncertainty.dimensions must have exactly these keys: ${DIMENSION_CODES.join(", ")}`);
+      }
+      for (const code of DIMENSION_CODES) {
+        const entry = artifact.uncertainty.dimensions[code];
+        const dimValue = artifact.dimensions && artifact.dimensions[code];
+        const dimensionIsMeasured = typeof dimValue === "number";
+        if (!dimensionIsMeasured) {
+          if (entry !== null) {
+            errors.push(`uncertainty.dimensions["${code}"] must be null -- dimensions["${code}"] was not measured`);
+          }
+          continue;
+        }
+        if (!entry || typeof entry !== "object") {
+          errors.push(`uncertainty.dimensions["${code}"] must be an object -- dimensions["${code}"] was measured`);
+          continue;
+        }
+        if (
+          typeof entry.ci !== "object" ||
+          !Array.isArray(entry.ci) ||
+          entry.ci.length !== 2 ||
+          typeof entry.ci[0] !== "number" ||
+          typeof entry.ci[1] !== "number" ||
+          entry.ci[0] > entry.ci[1] ||
+          entry.ci[0] < 1 - 1e-9 ||
+          entry.ci[1] > 5 + 1e-9
+        ) {
+          errors.push(`uncertainty.dimensions["${code}"].ci must be a [lo, hi] pair with lo <= hi, both in [1, 5]`);
+        }
+        if (typeof entry.point_estimate !== "number" || !Number.isFinite(entry.point_estimate)) {
+          errors.push(`uncertainty.dimensions["${code}"].point_estimate must be a finite number`);
+        }
+        if (typeof entry.method !== "string" || entry.method.length === 0) {
+          errors.push(`uncertainty.dimensions["${code}"].method must be a non-empty string naming which method produced this interval`);
+        }
+        if (typeof entry.sufficient !== "boolean") {
+          errors.push(`uncertainty.dimensions["${code}"].sufficient must be a boolean`);
+        }
+      }
+    }
+
+    // NOTE: this field is `composite_interval`, NOT `composite` --
+    // lib/outbound-guard.mjs treats ANY object anywhere in a tool result
+    // that carries a bare `composite` key as a candidate SelfRunScorecard
+    // needing its own independent validateSelfRunScorecard pass. A nested
+    // `uncertainty.composite` would trip that generic walk against an
+    // object that was never meant to BE a scorecard.
+    if (compositeIsNull) {
+      if (artifact.uncertainty.composite_interval !== null) {
+        errors.push("uncertainty.composite_interval must be null when composite is null");
+      }
+    } else {
+      const uc = artifact.uncertainty.composite_interval;
+      if (!uc || typeof uc !== "object") {
+        errors.push("uncertainty.composite_interval must be an object when composite is non-null");
+      } else {
+        if (
+          !Array.isArray(uc.ci) ||
+          uc.ci.length !== 2 ||
+          typeof uc.ci[0] !== "number" ||
+          typeof uc.ci[1] !== "number" ||
+          uc.ci[0] > uc.ci[1] ||
+          uc.ci[0] < -1e-9 ||
+          uc.ci[1] > 100 + 1e-9
+        ) {
+          errors.push("uncertainty.composite_interval.ci must be a [lo, hi] pair with lo <= hi, both in [0, 100]");
+        }
+        if (typeof uc.method !== "string" || uc.method.length === 0) {
+          errors.push(
+            "uncertainty.composite_interval.method must be a non-empty string naming which method produced this interval"
+          );
+        }
+      }
     }
   }
 
@@ -325,6 +487,9 @@ export function validateSelfRunScorecard(artifact) {
     }
     if (artifact.provenance.judge_label_self_reported !== true) {
       errors.push("provenance.judge_label_self_reported must be exactly true");
+    }
+    if (typeof artifact.provenance.tool_version !== "string" || artifact.provenance.tool_version.length === 0) {
+      errors.push("provenance.tool_version must be a non-empty string (this package's own version, for provenance)");
     }
     if (!JUDGE_CONFIGURATIONS.includes(artifact.provenance.judge_configuration)) {
       errors.push(`provenance.judge_configuration must be one of ${JUDGE_CONFIGURATIONS.join(", ")}`);

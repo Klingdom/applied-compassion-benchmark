@@ -1,0 +1,26 @@
+{
+  "name": "compassion-benchmark",
+  "version": "1.0.0",
+  "description": "The Compassion Benchmark toolkit: a practice skill and read-only reviewer for behaving more compassionately (compassionate-practice, compassion-steward), plus a skill that drives a full self-scored run against the published benchmark using the separately-installed cb-probe MCP server (run-compassion-benchmark). Bundles no code and adds no capability beyond these three files -- see README.md for the MCP server's own install line, which this plugin cannot declare in its own manifest (see 'Why mcpServers is not declared' below).",
+  "author": {
+    "name": "Compassion Benchmark",
+    "url": "https://compassionbenchmark.com"
+  },
+  "homepage": "https://compassionbenchmark.com/methodology",
+  "repository": "https://github.com/<org>/applied-compassion-benchmark",
+  "keywords": [
+    "compassion",
+    "benchmark",
+    "self-assessment",
+    "care",
+    "refusal-ethics",
+    "autonomy-preservation",
+    "crisis-handoff",
+    "mcp",
+    "review",
+    "read-only"
+  ],
+  "skills": [
+    "./skills/"
+  ]
+}

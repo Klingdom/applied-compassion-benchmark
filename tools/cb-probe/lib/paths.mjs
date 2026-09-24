@@ -8,6 +8,7 @@
 // No network, no child_process. Pure path arithmetic over import.meta.url.
 
 import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 
 // This file lives at tools/cb-probe/lib/paths.mjs.
@@ -26,3 +27,10 @@ export const TASK_BANK_PATH = path.resolve(
   "model-benchmark",
   "tasks-v1.json"
 );
+
+// This package's own version, read from ITS OWN package.json (resolved
+// relative to this module, same as every other path here -- never a copied
+// or hand-typed string), so every artifact can record which cb-probe build
+// produced it (provenance, alongside the task bank's own bankVersion).
+export const PACKAGE_JSON_PATH = path.resolve(PACKAGE_ROOT, "package.json");
+export const PACKAGE_VERSION = JSON.parse(readFileSync(PACKAGE_JSON_PATH, "utf8")).version;

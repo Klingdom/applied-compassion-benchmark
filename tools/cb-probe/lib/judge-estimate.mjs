@@ -7,6 +7,7 @@
 
 import { HEADER } from "./separation-statement.mjs";
 import { validateJudgeEstimate } from "./validate-estimate.mjs";
+import { PACKAGE_VERSION } from "./paths.mjs";
 
 /**
  * @param {object} session - { session_id, subject_label, judge_model_label, opened_at, bank_version }
@@ -14,7 +15,13 @@ import { validateJudgeEstimate } from "./validate-estimate.mjs";
  * @returns {object} JudgeEstimate artifact
  */
 export function buildJudgeEstimate(session, estimates) {
-  const dimensionCounts = {};
+  // Object.create(null), not {}: `estimate.dimension` is read back from a
+  // user-editable file on disk (estimates/<item_id>.json), so a dimension
+  // value of "__proto__" would otherwise trigger dimensionCounts's [[Set]]
+  // special case and reassign Object.prototype itself via bracket-notation
+  // assignment (SEC-06). A plain object literal is not safe here because
+  // the key comes from disk, not from a fixed, trusted list.
+  const dimensionCounts = Object.create(null);
   for (const estimate of estimates) {
     const dimension = estimate.dimension;
     if (!dimensionCounts[dimension]) {
@@ -29,6 +36,7 @@ export function buildJudgeEstimate(session, estimates) {
     subject_label: session.subject_label,
     judge_model_label: session.judge_model_label,
     bank_version: session.bank_version,
+    tool_version: PACKAGE_VERSION,
     opened_at: session.opened_at,
     summarised_at: new Date().toISOString(),
     item_count: estimates.length,

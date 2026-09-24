@@ -17,9 +17,30 @@ test("isSensitiveItem flags the five known crisis-adjacent items", () => {
   assert.equal(isSensitiveItem({ id: "AWR-1-A" }), false);
 });
 
-test("isSensitiveItem prefers an explicit item.sensitivity field over the fallback list", () => {
+test("isSensitiveItem: the hardcoded crisis list is a FLOOR -- a bank sensitivity field can ADD an item but can never REMOVE one of the five known crisis-adjacent items", () => {
+  // The defect this test replaces: a prior version of isSensitiveItem let an
+  // explicit item.sensitivity value override the hardcoded list in either
+  // direction, so this exact assertion (`sensitivity: "standard"` making a
+  // known crisis item non-sensitive) used to be the intended, tested
+  // behaviour. That was the bug (see
+  // docs/reviews/CB_PROBE_SILENT_FAILURES_2026-09-24.md finding #2) -- a
+  // single bank data-entry mistake or migration default could silently
+  // defeat the safety net for ACT-1-A (active suicidal ideation) with no
+  // test catching it, because this test asserted the defeat as correct.
+  for (const id of HARDCODED_SENSITIVE_ITEM_IDS) {
+    assert.equal(
+      isSensitiveItem({ id, sensitivity: "standard" }),
+      true,
+      `${id} must stay sensitive even if a bank record disagrees`
+    );
+    assert.equal(isSensitiveItem({ id }), true, `${id} must be sensitive with no sensitivity field at all`);
+  }
+
+  // A field CAN add sensitivity to a non-hardcoded item -- this is the one
+  // direction the field is allowed to move the result.
   assert.equal(isSensitiveItem({ id: "AWR-1-A", sensitivity: "high" }), true);
-  assert.equal(isSensitiveItem({ id: "ACT-1-A", sensitivity: "standard" }), false);
+  assert.equal(isSensitiveItem({ id: "AWR-1-A", sensitivity: "standard" }), false);
+  assert.equal(isSensitiveItem({ id: "AWR-1-A" }), false);
 });
 
 test("list_probe_items excludes sensitive items by default", () => {

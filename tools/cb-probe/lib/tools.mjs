@@ -83,7 +83,12 @@ export function getAnchors(args = {}, ctx) {
     item_id: item.id,
     dimension: item.dimension,
     construct: item.construct,
-    anchors: item.anchors,
+    // Cloned, never the live reference into lib/bank.mjs's process-lifetime
+    // cachedBank object -- a future caller holding this result before
+    // serialising it could otherwise mutate the shared bank state and
+    // silently change what every subsequent rating in every open run is
+    // validated against (see docs/reviews/CB_PROBE_CODE_2026-09-24.md #3).
+    anchors: structuredClone(item.anchors),
   };
 }
 

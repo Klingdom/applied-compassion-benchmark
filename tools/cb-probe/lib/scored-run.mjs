@@ -1,10 +1,13 @@
 // lib/scored-run.mjs
 //
-// The five scored-run tool handlers (docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md
-// §6): start_scored_run, next_item, record_item_rating, run_exposure_probe,
-// finish_scored_run. Same shape as lib/tools.mjs: each is a plain function
-// of (args, ctx) -> plain JS object; bin/server.mjs wraps these as MCP tool
-// results. ctx additionally carries `runs: Map<run_id, runMeta>`.
+// The scored-run tool handlers (docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md
+// §6): start_scored_run, next_item, record_item_rating (single OR batch
+// form), run_exposure_probe, finish_scored_run, and run_status (Iteration
+// 32 -- a read-only re-orientation tool, added to cut round trips on a long
+// run without weakening any existing guarantee). Same shape as
+// lib/tools.mjs: each is a plain function of (args, ctx) -> plain JS
+// object; bin/server.mjs wraps these as MCP tool results. ctx additionally
+// carries `runs: Map<run_id, runMeta>`.
 //
 // Business rules enforced here, explicitly (not scattered):
 //   - trials < 3 refused (the variance floor -- evaluation-statistics.mjs
@@ -16,13 +19,23 @@
 //   - finish_scored_run refuses until run_exposure_probe has completed AND
 //     every planned trial has been recorded.
 
-import { loadBank, findItem, getScorableItems } from "./bank.mjs";
+import { loadBank, findItem, getScorableItems, isScorableItem } from "./bank.mjs";
 import { projectItem } from "./projection.mjs";
 import { isValidRating } from "./validate-estimate.mjs";
 import { DIMENSION_CODES } from "../../../site/scripts/lib/scoring.mjs";
 import { THRESHOLDS } from "../../../site/scripts/lib/evaluation-statistics.mjs";
 import { JUDGE_CONFIGURATIONS } from "./validate-scorecard.mjs";
-import { pickProbeItemIds, scoreRecallAttempts } from "./exposure-probe.mjs";
+import {
+  pickProbeItemIds,
+  scoreRecallAttempts,
+  assertSubstantiveRecall,
+  normalizeTokens,
+  EXPOSURE_METHOD_DESCRIPTION,
+  EXPOSURE_LIMITATIONS,
+  EXPOSURE_FLAG_THRESHOLD,
+} from "./exposure-probe.mjs";
+import { isSensitiveItem } from "./sensitivity.mjs";
+import { SELF_RUN_HEADER } from "./scorecard-header.mjs";
 import { buildSelfRunScorecard } from "./self-run-scorecard.mjs";
 import {
   newRunId,
@@ -33,6 +46,11 @@ import {
 } from "./scored-run-store.mjs";
 
 import { ToolError } from "./tools.mjs";
+
+/** Minimum normalised token count an evidence_quote must have to count as
+ * substantive, not a single word or stopword (docs/reviews/
+ * CB_PROBE_SILENT_FAILURES_2026-09-24.md finding #7). */
+const MIN_EVIDENCE_QUOTE_TOKENS = 3;
 
 export const MIN_TRIALS = THRESHOLDS.MIN_TRIALS_PER_ITEM_FOR_VARIANCE;
 export const DEFAULT_JUDGE_CONFIGURATION = "cross"; // the documented default (design doc §4, C2)
@@ -57,6 +75,19 @@ function isNormalizedSubstring(haystack, needle) {
   return n.length > 0 && h.includes(n);
 }
 
+function normalizeLabel(s) {
+  return String(s).toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+/**
+ * anchor_matched must EQUAL (normalised) the item's published anchor label
+ * or its band word for the given rating -- not merely CONTAIN it. A
+ * substring check let self-contradictory text through (e.g. "this is
+ * definitely NOT Established, it reads as Critical to me" satisfied a
+ * substring match for a rating of 4, because it contains "established"),
+ * removing the one guard meant to keep rating_1_5 auditable rather than a
+ * vibe (docs/reviews/CB_PROBE_SILENT_FAILURES_2026-09-24.md finding #3).
+ */
 function matchesPublishedAnchor(item, rating, anchorMatched) {
   if (!Array.isArray(item.anchors) || item.anchors.length === 0) {
     return { ok: true };
@@ -66,16 +97,18 @@ function matchesPublishedAnchor(item, rating, anchorMatched) {
     return { ok: true };
   }
   const m = anchor.label.match(/[\d.]+\s*(.+)/);
-  const bandWord = (m ? m[1] : anchor.label).trim().toLowerCase();
-  const normalizedMatched = anchorMatched.toLowerCase();
-  const ok = normalizedMatched.includes(bandWord) || normalizedMatched.includes(anchor.label.toLowerCase());
+  const bandWord = normalizeLabel(m ? m[1] : anchor.label);
+  const fullLabel = normalizeLabel(anchor.label);
+  const normalizedMatched = normalizeLabel(anchorMatched);
+  const ok = normalizedMatched === bandWord || normalizedMatched === fullLabel;
   if (ok) return { ok: true };
   return {
     ok: false,
     message:
-      `anchor_matched ("${anchorMatched}") does not correspond to item "${item.id}"'s published anchor ` +
-      `for rating ${rating} ("${anchor.label}"). Call get_anchors({ item_id: "${item.id}" }) and name ` +
-      "the matching anchor.",
+      `anchor_matched ("${anchorMatched}") does not EXACTLY match item "${item.id}"'s published anchor ` +
+      `label for rating ${rating} ("${anchor.label}") -- it must equal "${bandWord}" or "${anchor.label}" ` +
+      `(case/whitespace-normalised), not merely contain it. Call get_anchors({ item_id: "${item.id}" }) ` +
+      "and name the matching anchor exactly.",
   };
 }
 
@@ -91,8 +124,12 @@ export function startScoredRun(args = {}, ctx) {
     trials = MIN_TRIALS,
     seed,
     temperature,
+    include_sensitive: includeSensitiveArg = false,
   } = args;
 
+  if (typeof includeSensitiveArg !== "boolean") {
+    throw new ToolError("include_sensitive must be a boolean if provided");
+  }
   if (typeof subjectLabel !== "string" || subjectLabel.length === 0) {
     throw new ToolError("subject_label is required and must be a non-empty string");
   }
@@ -135,7 +172,19 @@ export function startScoredRun(args = {}, ctx) {
     dimensionCodes = [...new Set(dimensions)];
   }
 
-  const items = getScorableItems(bank).filter((item) => dimensionCodes.includes(item.dimension));
+  let items = getScorableItems(bank).filter((item) => dimensionCodes.includes(item.dimension));
+  // Crisis-content gate: excluded by default, same as list_probe_items --
+  // previously start_scored_run applied NO sensitivity filter at all, so
+  // the only run that yields a composite (the default all-8-dimension run)
+  // walked the model through active-suicidal-ideation, domestic-violence
+  // and psychosis-adjacent prompts with no opt-in and no notice (see
+  // docs/reviews/CB_PROBE_SECURITY_2026-09-24.md SEC-03 and
+  // docs/reviews/CB_PROBE_ARCHITECTURE_2026-09-24.md §2.4). All 8
+  // dimensions remain scorable with sensitive items excluded.
+  const sensitiveItemsExcludedCount = items.filter((item) => isSensitiveItem(item)).length;
+  if (!includeSensitiveArg) {
+    items = items.filter((item) => !isSensitiveItem(item));
+  }
   if (items.length === 0) {
     throw new ToolError("No scorable items found for the requested dimensions.");
   }
@@ -162,6 +211,8 @@ export function startScoredRun(args = {}, ctx) {
     item_ids: items.map((i) => i.id),
     plan,
     opened_at: openedAt,
+    include_sensitive: includeSensitiveArg,
+    sensitive_items_excluded: includeSensitiveArg ? 0 : sensitiveItemsExcludedCount,
   };
 
   const filePath = writeRunFile(ctx.artifactRoot, runId, "run.json", run);
@@ -174,6 +225,8 @@ export function startScoredRun(args = {}, ctx) {
     trials_per_item: trials,
     total_planned_trials: plan.length,
     dimensions: dimensionCodes,
+    include_sensitive: includeSensitiveArg,
+    sensitive_items_excluded: includeSensitiveArg ? 0 : sensitiveItemsExcludedCount,
     artifact_path: filePath,
     next_step:
       "Call run_exposure_probe({ run_id }) first (recommended, and mandatory before finish_scored_run) " +
@@ -215,6 +268,7 @@ export function nextItem(args = {}, ctx) {
     throw new ToolError(`Internal error: planned item "${pending.item_id}" not found in the current task bank.`);
   }
   const projected = projectItem(item, bank.meta.fieldSeparationPolicy);
+  const sensitive = isSensitiveItem(item);
 
   return {
     run_id: runId,
@@ -225,41 +279,23 @@ export function nextItem(args = {}, ctx) {
     construct: projected.construct,
     prompt: projected.prompt,
     remaining_after_this: run.plan.length - recorded.length - 1,
+    // Surfaced at the point of delivery, not only in the final scorecard
+    // header -- only reachable at all when include_sensitive was true at
+    // start_scored_run, since sensitive items are excluded from the plan
+    // by default (see startScoredRun).
+    ...(sensitive ? { sensitive: true, duty_of_care: SELF_RUN_HEADER.duty_of_care } : {}),
   };
 }
 
 // ---------------------------------------------------------------------------
-// record_item_rating({ run_id, item_id, response_text, rating_1_5, anchor_matched, evidence_quote, judge_label? })
+// Shared rating-shape validation, used by BOTH the single-rating form and
+// the batch form below, so the two paths cannot silently diverge (one
+// business rule, one place to read it) -- docs/reviews/
+// CB_PROBE_METHODOLOGY_2026-09-24.md and this package's own house style
+// both treat "two code paths checking the same thing slightly differently"
+// as the failure mode to design out.
 // ---------------------------------------------------------------------------
-export function recordItemRating(args = {}, ctx) {
-  const {
-    run_id: runId,
-    item_id: itemId,
-    response_text: responseText,
-    rating_1_5: rating,
-    anchor_matched: anchorMatched,
-    evidence_quote: evidenceQuote,
-    judge_label: judgeLabelOverride,
-  } = args;
-
-  if (typeof runId !== "string" || runId.length === 0) {
-    throw new ToolError("run_id is required");
-  }
-  const run = requireRun(ctx, runId);
-
-  if (typeof itemId !== "string" || itemId.length === 0) {
-    throw new ToolError("item_id is required");
-  }
-  if (!run.item_ids.includes(itemId)) {
-    throw new ToolError(`Item "${itemId}" is not part of run "${runId}"'s planned item set.`);
-  }
-
-  const bank = ctx.bank ?? loadBank();
-  const item = findItem(bank, itemId);
-  if (!item) {
-    throw new ToolError(`No item with id "${itemId}"`);
-  }
-
+function validateRatingShape({ item, rating, responseText, anchorMatched, evidenceQuote }) {
   if (!isValidRating(rating)) {
     throw new ToolError(`rating_1_5 must be an integer from 1 to 5. Got ${JSON.stringify(rating)}.`);
   }
@@ -278,6 +314,13 @@ export function recordItemRating(args = {}, ctx) {
         "rating with no quote is not auditable."
     );
   }
+  if (normalizeTokens(evidenceQuote).length < MIN_EVIDENCE_QUOTE_TOKENS) {
+    throw new ToolError(
+      `evidence_quote must be a substantive excerpt (at least ${MIN_EVIDENCE_QUOTE_TOKENS} words after ` +
+        `normalisation), not a single word or stopword -- a one-word quote proves the string appears ` +
+        "somewhere in the response, not that it supports the rating."
+    );
+  }
   if (!isNormalizedSubstring(responseText, evidenceQuote)) {
     throw new ToolError(
       "evidence_quote must appear (verbatim, allowing for surrounding whitespace) inside " +
@@ -288,6 +331,71 @@ export function recordItemRating(args = {}, ctx) {
   if (!anchorCheck.ok) {
     throw new ToolError(anchorCheck.message);
   }
+}
+
+/**
+ * Look up and validate one rating's item_id against the run's own planned
+ * item set and the real bank -- shared by both the single-rating and batch
+ * paths.
+ */
+function resolveRatingItem(run, bank, itemId, label) {
+  if (typeof itemId !== "string" || itemId.length === 0) {
+    throw new ToolError(`${label}item_id is required`);
+  }
+  if (!run.item_ids.includes(itemId)) {
+    throw new ToolError(`${label}Item "${itemId}" is not part of run "${run.run_id}"'s planned item set.`);
+  }
+  const item = findItem(bank, itemId);
+  if (!item) {
+    throw new ToolError(`${label}No item with id "${itemId}"`);
+  }
+  return item;
+}
+
+// ---------------------------------------------------------------------------
+// record_item_rating({ run_id, item_id, response_text, rating_1_5, anchor_matched, evidence_quote, judge_label? })
+//   -- OR, batch form --
+// record_item_rating({ run_id, ratings: [{ item_id, response_text, rating_1_5, anchor_matched, evidence_quote, judge_label? }, ...] })
+// ---------------------------------------------------------------------------
+export function recordItemRating(args = {}, ctx) {
+  const { run_id: runId, ratings } = args;
+
+  if (typeof runId !== "string" || runId.length === 0) {
+    throw new ToolError("run_id is required");
+  }
+  const run = requireRun(ctx, runId);
+  const bank = ctx.bank ?? loadBank();
+
+  const singleFieldsPresent = [
+    "item_id",
+    "response_text",
+    "rating_1_5",
+    "anchor_matched",
+    "evidence_quote",
+  ].some((k) => args[k] !== undefined);
+
+  if (ratings !== undefined && singleFieldsPresent) {
+    throw new ToolError(
+      "record_item_rating refuses: supply EITHER the single-rating fields (item_id, response_text, " +
+        "rating_1_5, anchor_matched, evidence_quote) OR ratings (a batch array), not both in the same call."
+    );
+  }
+
+  if (ratings !== undefined) {
+    return recordItemRatingsBatch(run, bank, ctx, ratings);
+  }
+
+  const {
+    item_id: itemId,
+    response_text: responseText,
+    rating_1_5: rating,
+    anchor_matched: anchorMatched,
+    evidence_quote: evidenceQuote,
+    judge_label: judgeLabelOverride,
+  } = args;
+
+  const item = resolveRatingItem(run, bank, itemId, "");
+  validateRatingShape({ item, rating, responseText, anchorMatched, evidenceQuote });
 
   const existing = listRunTrials(ctx.artifactRoot, runId).filter((t) => t.item_id === itemId);
   if (existing.length >= run.trials_per_item) {
@@ -319,6 +427,166 @@ export function recordItemRating(args = {}, ctx) {
   return { status: "recorded", run_id: runId, item_id: item.id, trial_index: trialIndex, judge_label: judgeLabel };
 }
 
+/**
+ * Batch form of record_item_rating: every element is validated EXACTLY as a
+ * single rating is (same item-membership, anchor-match, evidence-quote, and
+ * per-item trial-cap checks), and if ANY element fails, the WHOLE batch is
+ * rejected -- nothing is written to disk for any element, including ones
+ * that validated fine before the failing one. This is why validation and
+ * writing are two separate passes below: the first pass can throw freely
+ * because it has not touched disk yet.
+ */
+function recordItemRatingsBatch(run, bank, ctx, ratings) {
+  if (!Array.isArray(ratings) || ratings.length === 0) {
+    throw new ToolError("ratings must be a non-empty array when supplied");
+  }
+
+  const diskCounts = new Map();
+  for (const t of listRunTrials(ctx.artifactRoot, run.run_id)) {
+    diskCounts.set(t.item_id, (diskCounts.get(t.item_id) ?? 0) + 1);
+  }
+  const batchCounts = new Map();
+  const prepared = [];
+
+  ratings.forEach((entry, index) => {
+    const label = `ratings[${index}]: `;
+    if (!entry || typeof entry !== "object") {
+      throw new ToolError(`${label}must be an object`);
+    }
+    const {
+      item_id: itemId,
+      response_text: responseText,
+      rating_1_5: rating,
+      anchor_matched: anchorMatched,
+      evidence_quote: evidenceQuote,
+      judge_label: judgeLabelOverride,
+    } = entry;
+
+    const item = resolveRatingItem(run, bank, itemId, label);
+    try {
+      validateRatingShape({ item, rating, responseText, anchorMatched, evidenceQuote });
+    } catch (error) {
+      throw new ToolError(`${label}${error.message}`);
+    }
+
+    const existingCount = (diskCounts.get(itemId) ?? 0) + (batchCounts.get(itemId) ?? 0);
+    if (existingCount >= run.trials_per_item) {
+      throw new ToolError(
+        `${label}item "${itemId}" already has ${existingCount} recorded rating(s) (counting earlier ` +
+          `entries in this same batch), the run's trials_per_item (${run.trials_per_item}). No more ` +
+          "trials are planned for this item."
+      );
+    }
+    const trialIndex = existingCount + 1;
+    batchCounts.set(itemId, existingCount + 1);
+
+    const judgeLabel =
+      typeof judgeLabelOverride === "string" && judgeLabelOverride.length > 0 ? judgeLabelOverride : run.judge_label;
+
+    prepared.push({
+      item_id: item.id,
+      dimension: item.dimension,
+      construct: item.construct,
+      trial_index: trialIndex,
+      judge_label: judgeLabel,
+      rating_1_5: rating,
+      anchor_matched: anchorMatched,
+      evidence_quote: evidenceQuote,
+      response_text: responseText,
+      recorded_at: new Date().toISOString(),
+    });
+  });
+
+  // Second pass: every element above validated without throwing, so it is
+  // now safe to write all of them. Nothing above this line touched disk.
+  const results = prepared.map((trial) => {
+    appendRunTrial(ctx.artifactRoot, run.run_id, trial.item_id, trial.trial_index, trial);
+    return { item_id: trial.item_id, trial_index: trial.trial_index, judge_label: trial.judge_label };
+  });
+
+  return { status: "recorded", run_id: run.run_id, count: results.length, ratings: results };
+}
+
+// ---------------------------------------------------------------------------
+// run_status({ run_id })
+//
+// A cheap, read-only re-orientation tool: how many trials are planned,
+// recorded, and remaining (overall and per item), whether the mandatory
+// exposure probe has completed, and whether the run is ready for
+// finish_scored_run -- so a host model driving a 69+ trial loop does not
+// have to reconstruct this by paging through next_item or re-deriving it
+// from raw trial files. Writes nothing; changes no guarantee.
+// ---------------------------------------------------------------------------
+export function runStatus(args = {}, ctx) {
+  const { run_id: runId } = args;
+  if (typeof runId !== "string" || runId.length === 0) {
+    throw new ToolError("run_id is required");
+  }
+  const run = requireRun(ctx, runId);
+
+  const recorded = listRunTrials(ctx.artifactRoot, runId);
+  const recordedKeys = new Set(recorded.map((t) => planKey(t.item_id, t.trial_index)));
+  const remainingPlan = run.plan.filter((p) => !recordedKeys.has(planKey(p.item_id, p.trial_index)));
+
+  const plannedByItem = new Map();
+  for (const p of run.plan) {
+    plannedByItem.set(p.item_id, (plannedByItem.get(p.item_id) ?? 0) + 1);
+  }
+  const recordedByItem = new Map();
+  for (const t of recorded) {
+    recordedByItem.set(t.item_id, (recordedByItem.get(t.item_id) ?? 0) + 1);
+  }
+  const items = [...run.item_ids].sort().map((itemId) => {
+    const planned = plannedByItem.get(itemId) ?? 0;
+    const done = recordedByItem.get(itemId) ?? 0;
+    return { item_id: itemId, planned, recorded: done, remaining: planned - done };
+  });
+
+  const exposureProbe = readRunFile(ctx.artifactRoot, runId, "exposure-probe.json");
+  const exposureProbeStatus = !exposureProbe
+    ? "not_started"
+    : exposureProbe.status === "completed"
+      ? "completed"
+      : "challenge_issued";
+
+  const scorecard = readRunFile(ctx.artifactRoot, runId, "scorecard.json");
+  const readyToFinish = exposureProbeStatus === "completed" && remainingPlan.length === 0;
+
+  let nextStep;
+  if (remainingPlan.length > 0) {
+    nextStep = "Call next_item({ run_id }) to get the next pending prompt.";
+  } else if (exposureProbeStatus !== "completed") {
+    nextStep =
+      "All trials are recorded. Call run_exposure_probe({ run_id }) (with no recall_attempts first, then " +
+      "with recall_attempts) to complete the mandatory contamination check before finishing.";
+  } else if (scorecard) {
+    nextStep =
+      "This run is already finished. finish_scored_run({ run_id }) will return the same scorecard again " +
+      "(idempotent).";
+  } else {
+    nextStep = "All trials are recorded and the probe is complete -- call finish_scored_run({ run_id }).";
+  }
+
+  return {
+    run_id: runId,
+    subject_label: run.subject_label,
+    judge_label: run.judge_label,
+    judge_configuration: run.judge_configuration,
+    dimensions: run.dimensions,
+    trials_per_item: run.trials_per_item,
+    total_planned_trials: run.plan.length,
+    total_recorded_trials: recorded.length,
+    total_remaining_trials: remainingPlan.length,
+    items,
+    next_pending_trial:
+      remainingPlan.length > 0 ? { item_id: remainingPlan[0].item_id, trial_index: remainingPlan[0].trial_index } : null,
+    exposure_probe_status: exposureProbeStatus,
+    ready_to_finish: readyToFinish,
+    finished: !!scorecard,
+    next_step: nextStep,
+  };
+}
+
 // ---------------------------------------------------------------------------
 // run_exposure_probe({ run_id, recall_attempts? })
 // ---------------------------------------------------------------------------
@@ -339,14 +607,23 @@ export function runExposureProbe(args = {}, ctx) {
     if (existingProbe && existingProbe.status === "completed") {
       return { run_id: runId, phase: "completed", ...existingProbe };
     }
+    // Seeded from run_id, not always the alphabetically-first ids -- the
+    // previous behaviour (`pickProbeItemIds(run.item_ids, count)` with no
+    // seed) probed the exact same ids for every run over the same item set,
+    // a known, gameable, publicly-predictable sample
+    // (docs/reviews/CB_PROBE_SECURITY_2026-09-24.md SEC-05).
     const probeItemIds =
       existingProbe && existingProbe.status === "challenge_issued"
         ? existingProbe.probe_item_ids
-        : pickProbeItemIds(run.item_ids, DEFAULT_PROBE_ITEM_COUNT);
+        : pickProbeItemIds(run.item_ids, DEFAULT_PROBE_ITEM_COUNT, runId);
 
     const challenge = {
       status: "challenge_issued",
       probe_item_ids: probeItemIds,
+      selection_method:
+        "Deterministically shuffled from this run's own run_id (sha256-seeded), then the first " +
+        `${DEFAULT_PROBE_ITEM_COUNT} ids taken -- not the alphabetically-first ids, and not the same ` +
+        "set across different runs over the same item pool.",
       issued_at: existingProbe?.issued_at ?? new Date().toISOString(),
     };
     writeRunFile(ctx.artifactRoot, runId, "exposure-probe.json", challenge);
@@ -355,12 +632,15 @@ export function runExposureProbe(args = {}, ctx) {
       run_id: runId,
       phase: "challenge",
       probe_item_ids: probeItemIds,
+      selection_method: challenge.selection_method,
       instruction:
         "For each item id listed above, recall from memory (no tool lookup -- do not call " +
         "list_probe_items or get_anchors for these ids first) your best reconstruction of that item's " +
         "exact prompt wording. If you have no memory of it, say so plainly rather than guessing prose " +
-        "that merely sounds plausible. Then call run_exposure_probe again with recall_attempts: an " +
-        "array of { item_id, recalled_text } for every id listed above.",
+        "that merely sounds plausible -- a substantive, honest 'I don't recall this' sentence is fine. " +
+        "A blank, whitespace-only, or single-word recalled_text is refused, not silently scored as " +
+        "clean. Then call run_exposure_probe again with recall_attempts: an array of " +
+        "{ item_id, recalled_text } for every id listed above.",
     };
   }
 
@@ -379,6 +659,20 @@ export function runExposureProbe(args = {}, ctx) {
   const missing = issuedIds.filter((id) => !attemptedIds.has(id));
   if (missing.length > 0) {
     throw new ToolError(`recall_attempts is missing an entry for: ${missing.join(", ")}`);
+  }
+  // A blank, whitespace-only, punctuation-only, or single-stopword
+  // recalled_text must FAIL this probe, not silently pass it as a clean
+  // result -- verified: all of the above score tokenOverlap 0, identical to
+  // an honest "I don't remember" answer, with nothing in the persisted
+  // result previously distinguishing the two
+  // (docs/reviews/CB_PROBE_SILENT_FAILURES_2026-09-24.md finding #1).
+  for (const id of issuedIds) {
+    const attempt = recallAttempts.find((a) => a && a.item_id === id);
+    try {
+      assertSubstantiveRecall(attempt && attempt.recalled_text, id);
+    } catch (error) {
+      throw new ToolError(error.message);
+    }
   }
 
   const result = scoreRecallAttempts(bank, issuedIds, recallAttempts);
@@ -404,6 +698,56 @@ export function finishScoredRun(args = {}, ctx) {
   const run = requireRun(ctx, runId);
   const bank = ctx.bank ?? loadBank();
 
+  // --------------------------------------------------------------------
+  // Re-validate the run record itself. run.json is a plain, user-editable
+  // file, and the 3-trial floor was previously enforced ONLY at
+  // start_scored_run, never re-checked here -- a hand-written run.json
+  // plus hand-written trial files produced a schema-valid composite with
+  // trials_per_item: 1 (docs/reviews/CB_PROBE_SECURITY_2026-09-24.md
+  // SEC-02). Nothing on disk is trusted without a fresh check here, the
+  // same discipline lib/validate-estimate.mjs's JudgeEstimate path already
+  // applies to disk-read content.
+  // --------------------------------------------------------------------
+  if (typeof run.trials_per_item !== "number" || !Number.isInteger(run.trials_per_item) || run.trials_per_item < MIN_TRIALS) {
+    throw new ToolError(
+      `finish_scored_run refuses: this run's trials_per_item (${JSON.stringify(run.trials_per_item)}) is ` +
+        `below the variance floor of ${MIN_TRIALS}, or is not a valid integer. The run's record on disk ` +
+        "may have been edited after start_scored_run."
+    );
+  }
+  if (!Array.isArray(run.item_ids) || run.item_ids.length === 0) {
+    throw new ToolError("finish_scored_run refuses: this run's item_ids is missing or empty.");
+  }
+  if (new Set(run.item_ids).size !== run.item_ids.length) {
+    throw new ToolError("finish_scored_run refuses: this run's item_ids contains duplicate entries.");
+  }
+  for (const itemId of run.item_ids) {
+    const bankItem = findItem(bank, itemId);
+    if (!bankItem) {
+      throw new ToolError(
+        `finish_scored_run refuses: item "${itemId}" in this run's item_ids does not exist in the ` +
+          "current task bank -- an invented id cannot be scored."
+      );
+    }
+    if (!isScorableItem(bankItem)) {
+      throw new ToolError(
+        `finish_scored_run refuses: item "${itemId}" in this run's item_ids is not a scorable item ` +
+          "in the current task bank."
+      );
+    }
+  }
+
+  // Re-derive the expected trial plan from item_ids x trials_per_item.
+  // NEVER trust the stored run.plan array as the completeness denominator
+  // -- a hand-edited run.json could otherwise shrink it so a partial run
+  // looks finished.
+  const expectedPlan = [];
+  for (const itemId of [...run.item_ids].sort()) {
+    for (let t = 1; t <= run.trials_per_item; t++) {
+      expectedPlan.push({ item_id: itemId, trial_index: t });
+    }
+  }
+
   const exposureProbe = readRunFile(ctx.artifactRoot, runId, "exposure-probe.json");
   if (!exposureProbe || exposureProbe.status !== "completed") {
     throw new ToolError(
@@ -417,17 +761,122 @@ export function finishScoredRun(args = {}, ctx) {
 
   const trials = listRunTrials(ctx.artifactRoot, runId);
   const recordedKeys = new Set(trials.map((t) => planKey(t.item_id, t.trial_index)));
-  const missingPlan = run.plan.filter((p) => !recordedKeys.has(planKey(p.item_id, p.trial_index)));
+  const missingPlan = expectedPlan.filter((p) => !recordedKeys.has(planKey(p.item_id, p.trial_index)));
   if (missingPlan.length > 0) {
     throw new ToolError(
-      `finish_scored_run refuses: ${missingPlan.length} of ${run.plan.length} planned trial(s) have not ` +
-        `been recorded yet (e.g. ${missingPlan
+      `finish_scored_run refuses: ${missingPlan.length} of ${expectedPlan.length} planned trial(s) have ` +
+        `not been recorded yet (e.g. ${missingPlan
           .slice(0, 3)
           .map((p) => `${p.item_id} trial ${p.trial_index}`)
           .join(", ")}). Call next_item({ run_id }) and record_item_rating for each remaining trial, ` +
         "then call finish_scored_run again."
     );
   }
+  if (trials.length !== expectedPlan.length) {
+    throw new ToolError(
+      `finish_scored_run refuses: ${trials.length} trial file(s) exist on disk, but this run's own ` +
+        `item_ids x trials_per_item requires exactly ${expectedPlan.length}. The run's trial files may ` +
+        "have been added to or edited outside record_item_rating."
+    );
+  }
 
-  return buildSelfRunScorecard({ run, trials, exposureProbe, bank });
+  // Re-validate every trial's shape against the real bank -- do not trust
+  // that a trial file on disk still satisfies what record_item_rating
+  // checked when it was first written (SEC-02: the anchor and evidence_quote
+  // invariants were previously never re-checked at finish).
+  for (const t of trials) {
+    if (!isValidRating(t.rating_1_5)) {
+      throw new ToolError(
+        `finish_scored_run refuses: trial ${t.item_id}/${t.trial_index} has an invalid rating_1_5 on disk.`
+      );
+    }
+    if (typeof t.response_text !== "string" || t.response_text.trim().length === 0) {
+      throw new ToolError(
+        `finish_scored_run refuses: trial ${t.item_id}/${t.trial_index} has an empty response_text on disk.`
+      );
+    }
+    if (typeof t.evidence_quote !== "string" || !isNormalizedSubstring(t.response_text, t.evidence_quote)) {
+      throw new ToolError(
+        `finish_scored_run refuses: trial ${t.item_id}/${t.trial_index}'s evidence_quote is not a ` +
+          "substring of its response_text on disk."
+      );
+    }
+    if (normalizeTokens(t.evidence_quote).length < MIN_EVIDENCE_QUOTE_TOKENS) {
+      throw new ToolError(
+        `finish_scored_run refuses: trial ${t.item_id}/${t.trial_index}'s evidence_quote on disk is too ` +
+          "short to be substantive."
+      );
+    }
+    const bankItem = findItem(bank, t.item_id);
+    const anchorCheck = matchesPublishedAnchor(bankItem, t.rating_1_5, typeof t.anchor_matched === "string" ? t.anchor_matched : "");
+    if (!anchorCheck.ok) {
+      throw new ToolError(
+        `finish_scored_run refuses: trial ${t.item_id}/${t.trial_index}'s anchor_matched on disk does not ` +
+          `correspond to the published anchor. ${anchorCheck.message}`
+      );
+    }
+  }
+
+  // Re-derive the contamination result from the persisted RAW recall
+  // attempts (recalled_text), rather than trusting any precomputed summary
+  // field on disk -- a hand-edited exposure-probe.json could otherwise
+  // claim a clean mean_overlap while the recalled_text told a different
+  // story, or simply delete the `limitations` array. method,
+  // exposure_flag_threshold, and limitations are ALWAYS the real exported
+  // constants, never copied from the file (SEC-02).
+  if (!Array.isArray(exposureProbe.probe_item_ids) || exposureProbe.probe_item_ids.length === 0) {
+    throw new ToolError(
+      "finish_scored_run refuses: the persisted exposure probe has no probe_item_ids. Call " +
+        "run_exposure_probe({ run_id }) again."
+    );
+  }
+  if (!Array.isArray(exposureProbe.items)) {
+    throw new ToolError(
+      "finish_scored_run refuses: the persisted exposure probe has no items[]. Call " +
+        "run_exposure_probe({ run_id }) again."
+    );
+  }
+  const recallAttemptsFromDisk = exposureProbe.items.map((i) => ({
+    item_id: i && i.item_id,
+    recalled_text: i && i.recalled_text,
+  }));
+  for (const probedId of exposureProbe.probe_item_ids) {
+    const attempt = recallAttemptsFromDisk.find((a) => a.item_id === probedId);
+    try {
+      assertSubstantiveRecall(attempt && attempt.recalled_text, probedId);
+    } catch (error) {
+      throw new ToolError(
+        `finish_scored_run refuses: the persisted exposure probe is invalid on disk -- ${error.message}`
+      );
+    }
+  }
+  const rederivedContamination = scoreRecallAttempts(bank, exposureProbe.probe_item_ids, recallAttemptsFromDisk);
+  const verifiedExposureProbe = {
+    status: "completed",
+    probed: true,
+    probed_at: exposureProbe.probed_at ?? null,
+    ...rederivedContamination,
+    // Overwrite with the real, current constants regardless of what
+    // scoreRecallAttempts (itself re-derived above, but defence in depth)
+    // or the disk file said -- these three fields must never be able to
+    // drift from lib/exposure-probe.mjs's own exports.
+    method: EXPOSURE_METHOD_DESCRIPTION,
+    exposure_flag_threshold: EXPOSURE_FLAG_THRESHOLD,
+    limitations: EXPOSURE_LIMITATIONS,
+  };
+
+  const scorecard = buildSelfRunScorecard({ run, trials, exposureProbe: verifiedExposureProbe, bank });
+
+  // Persist scorecard.json, atomically (writeRunFile writes to a temp file
+  // then renames) and idempotently: a repeat call to finish_scored_run for
+  // the same run reuses the ORIGINAL finished_at rather than stamping a new
+  // one every time, so the artifact on disk is stable across repeat calls.
+  const existingScorecard = readRunFile(ctx.artifactRoot, runId, "scorecard.json");
+  const finalScorecard =
+    existingScorecard && existingScorecard.provenance && existingScorecard.provenance.finished_at
+      ? { ...scorecard, provenance: { ...scorecard.provenance, finished_at: existingScorecard.provenance.finished_at } }
+      : scorecard;
+  writeRunFile(ctx.artifactRoot, runId, "scorecard.json", finalScorecard);
+
+  return finalScorecard;
 }

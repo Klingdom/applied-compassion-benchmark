@@ -78,6 +78,7 @@ export const ALLOWED_TOP_LEVEL_KEYS = Object.freeze([
   "subject_label",
   "judge_model_label",
   "bank_version",
+  "tool_version",
   "opened_at",
   "summarised_at",
   "item_count",
@@ -196,6 +197,9 @@ export function validateJudgeEstimate(artifact) {
   // --- Session identity ---
   if (typeof artifact.session_id !== "string" || artifact.session_id.length === 0) {
     errors.push("session_id must be a non-empty string");
+  }
+  if (typeof artifact.tool_version !== "string" || artifact.tool_version.length === 0) {
+    errors.push("tool_version must be a non-empty string (this package's own version, for provenance)");
   }
 
   // --- item_estimates shape, if present ---

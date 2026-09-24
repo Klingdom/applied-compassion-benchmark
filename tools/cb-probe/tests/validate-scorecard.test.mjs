@@ -16,6 +16,42 @@ import {
 import { BANNED_KEYS } from "../lib/validate-estimate.mjs";
 import { HEADER_STATEMENT_TEXT } from "../lib/scorecard-header.mjs";
 
+const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
+
+function fullDimensionInterval(overrides = {}) {
+  return {
+    point_estimate: 3,
+    ci: [2.5, 3.5],
+    median: 3,
+    iterations: 2000,
+    seed: 1,
+    ci_level: 0.95,
+    items_used: 3,
+    n_trials: 9,
+    sufficient: true,
+    method: "test method",
+    ...overrides,
+  };
+}
+
+function fullCompositeInterval(overrides = {}) {
+  return {
+    point_estimate: 60,
+    ci: [55, 65],
+    median: 60,
+    iterations: 2000,
+    seed: 1,
+    ci_level: 0.95,
+    n_trials: 72,
+    items_used: 24,
+    min_trials_across_items: 3,
+    sufficient: true,
+    method: "test method",
+    assumptions: ["x"],
+    ...overrides,
+  };
+}
+
 function validFixture(overrides = {}) {
   const base = {
     artifact_kind: "self-run-scorecard",
@@ -33,6 +69,11 @@ function validFixture(overrides = {}) {
     composite_withheld_reason: null,
     integration_premium: 5,
     dimensions: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 },
+    dimension_item_counts: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 },
+    uncertainty: {
+      dimensions: Object.fromEntries(DIM_CODES.map((c) => [c, fullDimensionInterval()])),
+      composite_interval: fullCompositeInterval(),
+    },
     coverage_note: "All 8 dimensions were included in this run.",
     items: [
       {
@@ -62,6 +103,7 @@ function validFixture(overrides = {}) {
       judge_label_self_reported: true,
       judge_configuration: "cross",
       bank_version: "v1.1",
+      tool_version: "0.1.0",
       dimensions_requested: ["AWR"],
       trials_per_item: 3,
       item_hashes: { "AWR-1-A": "abc123" },
@@ -191,6 +233,10 @@ test("a null composite requires a non-empty composite_withheld_reason; a non-nul
     composite: null,
     band: null,
     composite_withheld_reason: "This run measured 1 of 8 canonical dimensions (missing: EMP, ACT, EQU, BND, ACC, SYS, INT).",
+    uncertainty: {
+      dimensions: Object.fromEntries(DIM_CODES.map((c) => [c, fullDimensionInterval()])),
+      composite_interval: null,
+    },
   });
   const r2 = validateSelfRunScorecard(nullWithReason);
   assert.equal(r2.valid, true, `expected valid, got: ${r2.errors.join("; ")}`);
@@ -208,6 +254,57 @@ test("a null composite requires a non-empty composite_withheld_reason; a non-nul
   const r4 = validateSelfRunScorecard(nonNullWithReason);
   assert.equal(r4.valid, false);
   assert.ok(r4.errors.some((e) => e.includes("composite_withheld_reason must be null when composite is non-null")));
+});
+
+// ---------------------------------------------------------------------------
+// DECISIONS.md D-40: a non-null composite also requires every dimension to
+// rest on >= 3 rated items, not merely a non-null mean.
+// ---------------------------------------------------------------------------
+test("a non-null composite with a dimension resting on only 2 items fails validation (the item-count floor)", () => {
+  const fixture = validFixture({ dimension_item_counts: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 2, INT: 3 } });
+  const { valid, errors } = validateSelfRunScorecard(fixture);
+  assert.equal(valid, false);
+  assert.ok(errors.some((e) => e.includes("dimension_item_counts[SYS]") && e.includes("below the 3-item floor")));
+});
+
+test("dimension_item_counts must agree with dimensions: a positive count with a null mean fails, and vice versa", () => {
+  const zeroCountMeasuredDim = validFixture({
+    dimension_item_counts: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 0 },
+  });
+  assert.equal(validateSelfRunScorecard(zeroCountMeasuredDim).valid, false);
+
+  const positiveCountNullDim = validFixture({
+    dimensions: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: null },
+    dimension_item_counts: { AWR: 3, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 },
+    composite: null,
+    band: null,
+    composite_withheld_reason: "withheld for this fixture",
+    uncertainty: {
+      dimensions: Object.fromEntries(DIM_CODES.map((c) => [c, fullDimensionInterval()])),
+      composite_interval: null,
+    },
+  });
+  const { valid, errors } = validateSelfRunScorecard(positiveCountNullDim);
+  assert.equal(valid, false);
+  assert.ok(errors.some((e) => e.includes('dimension_item_counts["INT"] is 3 but dimensions["INT"] is null')));
+});
+
+test("uncertainty.composite_interval must be null exactly when composite is null", () => {
+  const nonNullCompositeNullInterval = validFixture({
+    uncertainty: {
+      dimensions: Object.fromEntries(DIM_CODES.map((c) => [c, fullDimensionInterval()])),
+      composite_interval: null,
+    },
+  });
+  assert.equal(validateSelfRunScorecard(nonNullCompositeNullInterval).valid, false);
+});
+
+test("uncertainty.dimensions must have an interval for every measured dimension and null for every unmeasured one", () => {
+  const missingIntervalForMeasuredDim = validFixture();
+  missingIntervalForMeasuredDim.uncertainty.dimensions.AWR = null;
+  const { valid, errors } = validateSelfRunScorecard(missingIntervalForMeasuredDim);
+  assert.equal(valid, false);
+  assert.ok(errors.some((e) => e.includes('uncertainty.dimensions["AWR"] must be an object')));
 });
 
 test("a rating without an anchor_matched or evidence_quote inside items[].trials[] fails validation", () => {

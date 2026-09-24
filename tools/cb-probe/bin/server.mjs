@@ -20,6 +20,33 @@ function logStderr(...args) {
   process.stderr.write(`[cb-probe] ${args.join(" ")}\n`);
 }
 
+// A closed stdout (host process exited, pipe closed, host restarted) would
+// otherwise surface as an uncaught EPIPE the moment this process next wrote
+// to it -- including immediately after computing a real SelfRunScorecard,
+// losing it with no trace beyond whatever the OS shows on the closed pipe
+// (docs/reviews/CB_PROBE_CODE_2026-09-24.md #1). With this listener
+// attached, Node no longer throws for a stdout write error; it is handled
+// here and the process exits cleanly instead of crashing.
+process.stdout.on("error", (error) => {
+  if (error && error.code === "EPIPE") {
+    logStderr("stdout closed (EPIPE) -- the host process appears to have disconnected. Exiting.");
+    process.exit(0);
+  }
+  logStderr("FATAL stdout write error:", error && error.message ? error.message : String(error));
+  process.exit(1);
+});
+
+// Last-resort handler so an unexpected error anywhere in this process
+// (including one that could otherwise happen between computing a result and
+// writing it) is logged to stderr and exits deliberately, rather than
+// Node's default: printing to stderr in a way indistinguishable at a glance
+// from this server's own logging, then exiting with an unhandled-exception
+// code with no explanation of what cb-probe was doing.
+process.on("uncaughtException", (error) => {
+  logStderr("FATAL uncaught exception:", error && error.stack ? error.stack : String(error));
+  process.exit(1);
+});
+
 function main() {
   let bank;
   try {

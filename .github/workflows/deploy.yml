@@ -82,6 +82,34 @@ jobs:
         run: npm run build
 
   # ────────────────────────────────────────────────────────────────────
+  # 1a2. CB-PROBE TEST SUITE.
+  #
+  # tools/cb-probe is a separate zero-runtime-dependency package (its own
+  # package.json, its own `node --test` suite) that is NOT part of site/'s
+  # `npm test` chain, so none of its guarantees -- the vocabulary ban, the
+  # write-root guard, the honest-labelling validators, the outbound
+  # boundary check -- ran anywhere except a human's own machine before this
+  # job existed. A separate job (not folded into `test` above) so a failure
+  # here names itself as "cb-probe", not one line buried inside site's ~40
+  # aggregate test scripts. No `npm ci`/`npm install` step: cb-probe
+  # declares zero dependencies and devDependencies by design (enforced by
+  # its own tests/no-network-scan.test.mjs), so there is nothing to install.
+  # ────────────────────────────────────────────────────────────────────
+  cb-probe-test:
+    name: cb-probe test suite
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/cb-probe
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run cb-probe's test suite (zero dependencies -- no install step needed)
+        run: npm test
+
+  # ────────────────────────────────────────────────────────────────────
   # 1b. NGINX CONFIG SYNTAX CHECK.
   #
   # nginx.conf is the file the Docker image actually bakes in and ships
@@ -115,7 +143,7 @@ jobs:
   # ────────────────────────────────────────────────────────────────────
   deploy:
     name: Deploy to VPS
-    needs: [test, nginx-config-syntax]
+    needs: [test, cb-probe-test, nginx-config-syntax]
     # MANUAL DEPLOY ONLY (2026-09-21). Previously this ran on every push to main,
     # so the coordinator suppressed auto-deploy by putting [skip ci] on the push tip.
     # That silenced the ENTIRE workflow: 12 commits went unbuilt and untested by CI
