@@ -19,15 +19,19 @@
  *   5. A malformed or empty ledger fails loudly rather than vacuously
  *      passing.
  *   6. The real committed scans (2026-09-15, 2026-09-17, 2026-09-18,
- *      2026-09-20, 2026-09-21) pass the checker, because each of them
- *      correctly dropped its known claim before it ever reached
- *      top_entities.
+ *      2026-09-20, 2026-09-21, 2026-09-22, 2026-09-24) pass the checker,
+ *      because each of them correctly dropped its known claim before it
+ *      ever reached top_entities.
  *   7. (SC-1c, 2026-09-21) A scan whose free narrative (sector_alerts) names
  *      a ledger claim, while its top_entities candidate carries none of the
  *      claim-specific tokens, still passes -- proving the checker reads only
  *      the claim/evidence fields of a promoted candidate, not free prose
  *      elsewhere in the scan, so an author never has to avoid a word to
  *      describe why something is not a defect.
+ *   9. (SC-1b round 2, 2026-09-24) The two Egypt entries added this round
+ *      (egypt-alaa-abdel-fattah-pardon, egypt-ismail-al-iskandrani-arrest)
+ *      do not match each other's claim text -- two entries about one country
+ *      is exactly where an over-broad matcher would collide.
  *
  * NO NETWORK ACCESS. Reads only the checked-in ledger and the three named
  * committed scan fixtures under research/scans/ — no writes anywhere.
@@ -70,7 +74,7 @@ console.log("Test 1: research/known-misdated-claims.json validates against its o
 {
   const errors = validateLedgerSchema(ledger);
   assert(errors.length === 0, `expected zero schema errors, got: ${errors.join("; ")}`);
-  assert(Array.isArray(ledger.claims) && ledger.claims.length >= 16, "ledger should carry at least the 10 SC-1 claims plus the 6 SC-1b claims");
+  assert(Array.isArray(ledger.claims) && ledger.claims.length >= 20, "ledger should carry at least the 10 SC-1 claims plus the 6 SC-1b round-1 claims plus the 4 SC-1b round-2 claims");
   assert(typeof ledger.meta?.brief_addendum === "string" && ledger.meta.brief_addendum.length > 0, "ledger.meta.brief_addendum must exist for the coordinator to paste into the scanner brief");
 }
 
@@ -94,6 +98,10 @@ const KNOWN_ITEM_TEXT = {
   "myanmar-rakhine-airstrike": candidate({ slug: "myanmar", name: "Myanmar", news_summary: "An airstrike hit a boarding school in Myanmar's Rakhine State, killing students, residents said." }),
   "el-salvador-defenders-fled": candidate({ slug: "el-salvador", name: "El Salvador", news_summary: "Roughly 140 human rights defenders and journalists fled El Salvador amid a crackdown, a rights group said." }),
   "figure-ai-whistleblower": candidate({ slug: "figure-ai", name: "Figure AI", index: "robotics-labs", news_summary: "A former Figure AI employee's whistleblower lawsuit alleging safety concerns was covered again this week, per court filings." }),
+  "becton-dickinson-alaris-recall": candidate({ slug: "becton-dickinson", name: "Becton Dickinson", index: "fortune-500", news_summary: "Becton Dickinson issued a Class I correction after BD Alaris pump modules were dropped or jarred in shipping, causing two serious injuries, the FDA said." }),
+  "egypt-alaa-abdel-fattah-pardon": candidate({ slug: "egypt", name: "Egypt", news_summary: "President Sisi pardoned activist Alaa Abdel Fattah, rights groups confirmed, ending years of imprisonment." }),
+  "egypt-ismail-al-iskandrani-arrest": candidate({ slug: "egypt", name: "Egypt", news_summary: "Police arrested journalist and researcher Ismail al-Iskandrani at a checkpoint in Marsa Matruh governorate, rights groups said." }),
+  "israel-gaza-coi-genocide-report": candidate({ slug: "israel", name: "Israel", news_summary: "A UN Independent International Commission of Inquiry report found Israel committed genocide in Gaza, killing more than 69,000 Palestinians, the panel said." }),
 };
 
 // Plausible GENUINE items about the same entity that do NOT carry the
@@ -116,6 +124,19 @@ const GENUINE_ITEM_TEXT = {
   "myanmar-rakhine-airstrike": candidate({ slug: "myanmar", name: "Myanmar", news_summary: "Myanmar's election commission published a revised voter roll ahead of the December general election, state media reported." }),
   "el-salvador-defenders-fled": candidate({ slug: "el-salvador", name: "El Salvador", news_summary: "El Salvador's central bank reported a 3% rise in remittances for the month, according to official data." }),
   "figure-ai-whistleblower": candidate({ slug: "figure-ai", name: "Figure AI", index: "robotics-labs", news_summary: "Figure AI unveiled its next-generation humanoid robot at a manufacturing trade show, the company said." }),
+  "becton-dickinson-alaris-recall": candidate({ slug: "becton-dickinson", name: "Becton Dickinson", index: "fortune-500", news_summary: "Becton Dickinson reported quarterly earnings above analyst expectations, citing strong demand for its diagnostics division." }),
+  "egypt-alaa-abdel-fattah-pardon": candidate({ slug: "egypt", name: "Egypt", news_summary: "Egypt announced a new investment agreement with a Gulf sovereign wealth fund to expand the Suez Canal Economic Zone." }),
+  "egypt-ismail-al-iskandrani-arrest": candidate({ slug: "egypt", name: "Egypt", news_summary: "Egypt's central bank held interest rates steady, citing easing inflation, the bank said in a statement." }),
+  "israel-gaza-coi-genocide-report": candidate({ slug: "israel", name: "Israel", news_summary: "Israel and Hamas agreed to a new ceasefire extension covering Gaza, mediators said, as aid convoys resumed crossing." }),
+};
+
+// The two Egypt entries added in SC-1b round 2 (2026-09-24): a plausible
+// genuine item carrying the OTHER Egypt entry's claim-specific tokens, to
+// prove the two entries do not match each other's claim text (two entries
+// about one country is exactly where an over-broad matcher would collide).
+const EGYPT_CROSS_ITEM_TEXT = {
+  "egypt-alaa-abdel-fattah-pardon": candidate({ slug: "egypt", name: "Egypt", news_summary: "Police arrested journalist and researcher Ismail al-Iskandrani at a checkpoint in Marsa Matruh governorate, rights groups said." }),
+  "egypt-ismail-al-iskandrani-arrest": candidate({ slug: "egypt", name: "Egypt", news_summary: "President Sisi pardoned activist Alaa Abdel Fattah, rights groups confirmed, ending years of imprisonment." }),
 };
 
 // ── Test 2: every ACTIVE entry is caught by a matching top_entities item (V8 positive control) ──
@@ -208,9 +229,9 @@ console.log("\nTest 6: a retired entry (status: 'retired') no longer triggers a 
 }
 
 // ── Test 7: the real committed scans pass the checker (each correctly dropped its claim) ──
-console.log("\nTest 7: the real committed 09-15 / 09-17 / 09-18 / 09-20 / 09-21 scans pass the known-misdated-claims checker");
+console.log("\nTest 7: the real committed 09-15 / 09-17 / 09-18 / 09-20 / 09-21 / 09-22 / 09-24 scans pass the known-misdated-claims checker");
 {
-  for (const date of ["2026-09-15", "2026-09-17", "2026-09-18", "2026-09-20", "2026-09-21"]) {
+  for (const date of ["2026-09-15", "2026-09-17", "2026-09-18", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-24"]) {
     const scanPath = path.join(REPO, "research", "scans", `${date}.json`);
     const scan = JSON.parse(readFileSync(scanPath, "utf8"));
     const result = checkKnownMisdatedClaims(scan, ledger);
@@ -268,6 +289,43 @@ console.log("\nTest 8 (SC-1c): a scan whose free narrative names a ledger claim,
   assert(
     result2.failures.length === 0,
     `a candidate's own ledger-referencing aside must not misfire absent the claim's own specific tokens (here, "baltimore" is absent); got: ${JSON.stringify(result2.failures)}`,
+  );
+}
+
+// ── Test 9 (SC-1b round 2, 2026-09-24): the two Egypt entries do not match
+// each other's claim text ───────────────────────────────────────────────────
+// egypt-alaa-abdel-fattah-pardon and egypt-ismail-al-iskandrani-arrest are
+// two distinct entries about the same entity (Egypt) -- exactly the shape
+// where an over-broad matcher (e.g. one keyed on "egypt" alone, or on a
+// shared bare surname) would collide. Prove each entry's matcher does NOT
+// fire against a genuine item carrying the OTHER entry's own known claim
+// text, in both directions.
+console.log("\nTest 9 (two-Egypt-entries collision check): egypt-alaa-abdel-fattah-pardon and egypt-ismail-al-iskandrani-arrest do not match each other's claim text");
+{
+  for (const [checkAgainstId, otherClaimItem] of Object.entries(EGYPT_CROSS_ITEM_TEXT)) {
+    const entry = ledger.claims.find((e) => e.id === checkAgainstId);
+    assert(entry !== undefined, `ledger is missing expected entry "${checkAgainstId}"`);
+    if (!entry) continue;
+    const result = checkKnownMisdatedClaims(scanWith([otherClaimItem]), ledger);
+    const collided = result.failures.some((f) => f.includes(`"${checkAgainstId}"`));
+    assert(
+      !collided,
+      `entry "${checkAgainstId}" incorrectly matched the OTHER Egypt entry's known claim text -- two-Egypt-entries collision; got: ${JSON.stringify(result.failures)}`,
+    );
+  }
+
+  // Also confirm each entry's own text still correctly fires (sanity check
+  // that this test isn't vacuously passing because neither matcher ever
+  // fires on anything).
+  const alaaResult = checkKnownMisdatedClaims(scanWith([KNOWN_ITEM_TEXT["egypt-alaa-abdel-fattah-pardon"]]), ledger);
+  assert(
+    alaaResult.failures.some((f) => f.includes('"egypt-alaa-abdel-fattah-pardon"')),
+    "sanity check failed: egypt-alaa-abdel-fattah-pardon's own known text should still match its own entry",
+  );
+  const iskandraniResult = checkKnownMisdatedClaims(scanWith([KNOWN_ITEM_TEXT["egypt-ismail-al-iskandrani-arrest"]]), ledger);
+  assert(
+    iskandraniResult.failures.some((f) => f.includes('"egypt-ismail-al-iskandrani-arrest"')),
+    "sanity check failed: egypt-ismail-al-iskandrani-arrest's own known text should still match its own entry",
   );
 }
 

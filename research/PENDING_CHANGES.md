@@ -10464,3 +10464,141 @@ Per screening rule 5, routed as ONE coordinator-level cohort calibration questio
 **Queue total (counted directly from research/change-proposals/*.json with "status": "pending", excluding the history/ subdirectory, via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l, not incremented from the prior digest's figure): 25** -- 22 carried forward from 2026-09-21 + 3 new tonight (Amsterdam, Columbia University, Seoul). High priority (band change or delta >15): 18 (15 carried forward + 3 new tonight, all three band crossings). Standard (delta 5-15, no band change): 7 (unchanged -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+
+## 2026-09-24 -- Catch-Up Cycle Closes the 09-23 Gap | Three First-Ever Measurements + One Real Re-Check | Wage Court Moves a Score Up | 4 Proposals, 1 Withheld, 3 Confirmed
+
+### Summary -- 2026-09-24
+
+Catch-up cycle, window 2026-09-10 -> 2026-09-24 (15 days, one wider than usual, specifically to cover 2026-09-23 -- the one September day no earlier cycle's window ever reached). **No compassion-relevant event dated solely to 2026-09-23 was found.** `docs/SEPTEMBER_2026_COVERAGE_MAP.md` recorded 09-23 and 09-24 as the only two September days never inside a lookback window; this cycle closes that gap.
+
+Twenty-one organizations reviewed (16 scanner-flagged + 5 rotation-backfill). Four change proposals filed, three of them first-ever measurements against placeholder scores that had never been individually checked (Progressive, Unum Group, Abu Dhabi) -- read those as placeholder corrections, not conduct declines (Abu Dhabi's is an improvement). Australia is the one genuine re-measurement against a real prior baseline. One finding (Tronox, +13.7) was measured but withheld on a cohort-calibration question. Three confirmations. Zero scores applied.
+
+Release watch: 0 sources registered -- detection did not run.
+
+---
+
+### Score Changes Proposed -- 2026-09-24
+
+#### Progressive (fortune-500) -- 76.3 -> 36.9 (-39.4) -- BAND CROSSING Established -> Developing
+- **Confidence:** medium
+- **Band change:** Yes -- Established -> Developing
+- **First-ever measurement** -- published 76.3 was an unassessed placeholder (six of eight dimensions at exactly 4.0, `last_assessed: null`), reconstructing as a 70.3 base plus a 6.0 integration premium.
+- **Key evidence:**
+  - 2026-09-11 federal jury (N.D. Okla.) found Progressive breached its duty of good faith over a denied underinsured-motorist claim, awarding $20m compensatory + $20m punitive damages -- a tier-5 adjudicated verdict, not an allegation.
+  - Trial evidence: adjusters "lacked a basic understanding of how to handle Oklahoma underinsured motorist claims" and were incentivized via a company-wide profit-share program to cut claim payouts.
+  - Not final -- Progressive is seeking post-verdict relief in Tulsa federal court; Reparative Action held at the floor pending appeal outcome.
+  - Countervailing: #19 Fortune 100 Best Companies to Work For 2026 (9th consecutive year), #1 Forbes Best Employers for Company Culture 2026 (217,000 responses) -- holds Self-Sustainability and Internal Consistency at 4/5.
+- **Recommendation:** downgrade
+- **File:** [proposal](change-proposals/progressive-2026-09-24.json)
+
+#### Unum Group (fortune-500) -- 60.9 -> 39.4 (-21.5) -- BAND CROSSING Established -> Developing
+- **Confidence:** medium
+- **Band change:** Yes -- Established -> Developing
+- **First-ever measurement** -- published 60.9 sits on a vector byte-identical to The Hartford, Travelers and MetLife.
+- **Key evidence:**
+  - 2025-04-17 E.D. Tenn. final approval of a $14.8m court-approved wage-and-hour class settlement: ~910 Unum disability benefits specialists (the staff who decide whether disabled people get paid) alleged exempt misclassification and unpaid overtime.
+  - Genuine strength preserved: return-to-work/vocational rehabilitation scores Autonomy Preservation at 4/5, the highest single subdimension.
+  - Historical 2004 multistate settlement (48 states, $15m fine, 200,000 claims reassessed) recorded as compelled reform, not current conduct.
+- **Distance to boundary:** proposed 39.4 sits 0.6 points below the Developing/Functional line.
+- **Recommendation:** downgrade
+- **File:** [proposal](change-proposals/unum-group-2026-09-24.json)
+
+#### Australia (countries) -- 62.5 -> 48.8 (-13.7) -- BAND CROSSING Established -> Functional
+- **Confidence:** medium
+- **Band change:** Yes -- Established -> Functional
+- **The one genuine re-measurement tonight** -- roughly half the movement is de-seeding (published 62.5 had six of eight dimensions at exactly 3.5), roughly half rests on in-window conduct.
+- **Key evidence:**
+  - Human Rights Watch, "25 Years of Abusive Offshore Detention" (2026-09-10): 5,000+ transferred to Nauru/Manus Island since 2001, 14+ deaths since 2012, ~A$2.5bn (US$1.8bn) paid to Nauru to permanently accept people Australia rejects and expels.
+  - Al Jazeera (2026-09-18): 100 extra compliance officers + 250 new detention beds announced; ~77,000 people without valid visas face detention or forced departure.
+  - Countervailing: government's own Productivity Commission Closing the Gap report (2026-07-29) discloses 4 of 19 Indigenous-outcome targets worsening -- credited upward at Transparency (4/5).
+  - The scan's "~350 deportations to Nauru" figure was not corroborated and was excluded from scoring.
+- **Recommendation:** downgrade
+- **File:** [proposal](change-proposals/australia-2026-09-24.json)
+
+#### Abu Dhabi (global-cities) -- 21.9 -> 28.1 (+6.2) -- no band change (Developing -> Developing)
+- **Confidence:** low
+- **Recommendation:** flag-for-review, not upgrade -- the finding is real and positive, but every supporting figure is UAE government or UAE-owned sourcing with no independent audit located.
+- **Key evidence:**
+  - 2026-09-21: the Abu Dhabi Labour Court (emirate-level, inside the Abu Dhabi Judicial Department) recovered AED 7.8m (~$2.1m) in unpaid wages for 948 workers across three resolved collective disputes -- full payment for 457, structured installment plans for 491.
+  - Countervailing: HRW World Report 2026 UAE chapter -- kafala system control, false absconding charges, banned trade unions, no non-discriminatory minimum wage. Equity, Boundaries and Integrity stay low.
+- **File:** [proposal](change-proposals/abu-dhabi-2026-09-24.json)
+
+### Withheld, Not Proposed -- 2026-09-24
+
+#### Tronox (fortune-500) -- 18.8 -> 32.5 measured (+13.7) -- BAND CROSSING Critical -> Developing (NOT filed)
+
+Both filing triggers met (magnitude, band crossing). **Withheld under Section 3e-bis rule 5**, applying the 2026-07-21 Freeport-McMoRan calibration-note precedent. Tronox's published 18.8 vector is byte-identical to Penn Virginia and Rex Energy -- both confirmed this same cycle to be defunct companies (Penn Virginia merged into a Baytex Energy subsidiary in 2023; Rex Energy dissolved in 2018). The measured delta (+13.7) exactly matches Freeport-McMoRan's applied 2026-07-21 move from the identical 18.8 starting value. Referred for a band-wide review of never-assessed Critical-band Fortune 500 rows, not an isolated upgrade. Distance to boundary: published 18.8 sits 1.2 points below the Critical/Developing line.
+
+### Confirmations -- 2026-09-24
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| West Virginia | us-states | 35.6 | 36.9 | +1.3 | State self-published FFY2025 child-fatality report with named corrective actions; Transparency and Systemic Learning credited upward. |
+| China | countries | 19.5 | 18.4 | -1.1 | Decree No. 841 (effective 2026-09-15) allows exit bans up to three years; single tier-3 source nine days old, not enough to move a recent founder-approved baseline. Sits 0.5 points above the Critical/Developing line. |
+| Djibouti | countries | 17.5 | 17.5 | 0.0 | Kept border open to ~3,000 Yemeni arrivals in a week; refugee-inclusion law already scored. Reception 15%-funded, run by UNHCR/IOM -- no Djiboutian conduct clears an anchor threshold. Sits 2.5 points above the Critical/Developing line. |
+
+---
+
+### Boundary Watch -- 2026-09-24
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Berkshire Hathaway exact 40.0 boundary | Carried forward, not reviewed this cycle | Open since 2026-07-30 |
+| Nasdaq exact 60.0-adjacent boundary | Carried forward, not reviewed this cycle | Open since 2026-07-30 |
+| Alphabet/Google exact 40.0 boundary | Carried forward, not reviewed this cycle | Open since 2026-09-21 |
+| Macy's 0.15-point re-reading (band-crossing-adjacent) | Carried forward, not reviewed this cycle | Open since 2026-09-21 |
+| Unum Group -- proposed 39.4 sits 0.6 points below the Developing/Functional line | NEW tonight | Open since 2026-09-24 |
+| Tronox -- published 18.8 sits 1.2 points below the Critical/Developing line, measured well above it but withheld | NEW tonight | Open since 2026-09-24 |
+| China -- published 19.5 sits 0.5 points above the Critical floor | NEW tonight | Open since 2026-09-24 |
+| Djibouti -- published 17.5 sits 2.5 points above the Critical floor | NEW tonight | Open since 2026-09-24 |
+
+---
+
+### Calibration Flags -- 2026-09-24
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Fortune-500 Critical-band seed cluster (Penn Virginia, Rex Energy, Tronox at 18.8; Sanchez Energy at 17.2) | NEW tonight -- two of four confirmed defunct, live-company match to a July precedent delta. Requires band-wide review. | Open since 2026-09-24 |
+| Fortune-500 insurance seed plateau (Allstate 48.4, Hartford/Travelers/MetLife 60.9, Aflac 92.4) | Progressive and Unum moved off this cluster tonight on their own evidence; five insurers remain untouched. | Open since 2026-09-22, reinforced 2026-09-24 |
+| Global-cities federated-policing attribution (Kingston, Kinshasa, Rio de Janeiro, Bucharest) | Carried forward, not touched tonight | Open since 2026-09-22 |
+| Uniform seed plateaus among never-assessed global-cities rows (Bucharest 39.1, Valencia 60.9, Lithuania 62.5, Buenos Aires 46.9) | Carried forward, not touched tonight | Open since 2026-09-22 |
+| Fortune 500 identical-dimension-vector cohorts (77.9 x11, 60.9 x19) | Carried forward, not touched tonight | Open since 2026-09-22 |
+| RISK-006 band-boundary ambiguity | Carried forward, not touched tonight | Open since 2026-07-30 |
+| Bangladesh baseline calibration | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Marsh & McLennan seed-vector defect | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Lightmatter / ai-labs flat-2.5 cohort disclosure-absence question | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Key Energy Services entity-status defect | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Macy's mangled filename / rotation-state last_assessed backfill | Carried forward, not touched tonight | Open since 2026-09-21 |
+| Halodi Robotics / 1X Technologies identity question | Carried forward, not touched tonight | Open since 2026-08-17 |
+| Netflix / seed-value calibration cohort (60.9) | Carried forward, not touched tonight | Open since 2026-09-15 |
+| Denmark ASSESSOR_OVERRIDE_NAMES gap | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Dayton / Unitree Robotics shared 35.9 placeholder | Carried forward, not touched tonight | Open since 2026-09-18 |
+| Rethink Robotics entity-currency / RISK-003 | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Sanctuary AI RISK-002 hold | Carried forward, no new evidence | Open since 2026-08-17 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight -- 4 known-ledger matches caught (PayPal, Interpublic Group, Myanmar, Figure AI), 2 new misdates identified (Becton Dickinson, Egypt) | Open since 2026-08-16, reinforced 2026-09-24 |
+| Ledger precision-over-recall gap (SC-1d) | Reinforced tonight -- third documented occurrence: the Myanmar Rakhine-airstrike claim resurfaced reworded and the automated matcher's "strike"/"airstrike" tokens did not cleanly catch it; a human caught the match. | Open since 2026-09-22, reinforced 2026-09-24 |
+| Debunked-claims ledger (known-misdated-claims.json) | Four new candidate entries recommended tonight (waymo-ghost-gun-police-call, drc-ffm-war-crimes-report, drc-81000-rapes-jan-sep, plus Becton Dickinson and Egypt already appended as occurrences), not added directly -- per precedent, additions are made by a parallel workstream. | Open since 2026-08-16 |
+| Chile pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Starbucks pending 2026-09-01 proposal | Carried forward, not touched tonight | Open since 2026-09-01 |
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~91 days |
+| Bolivia critical-band calibration | Carried forward | ~74 days |
+
+---
+
+### Operational Notes -- 2026-09-24
+
+- Scan: 1,329 entities scanned (roster unchanged); **280 searches against a derived ceiling of 274 (disclosed overage of 6)**; 16 candidates flagged, 13 dropped.
+- **Dropped candidates (13):** 4 known-ledger matches -- PayPal (DOJ DEI settlement, true date 2026-05-12), Interpublic Group (800-jobs figure is Q3 2025), Myanmar (Rakhine airstrike, true date 2025-09-12, resurfaced reworded -- see SC-1d below), Figure AI (whistleblower termination Sept 2025, suit filed 2025-11-21). 2 newly identified misdates recommended for the ledger -- Becton Dickinson (Alaris Pump Class I correction; article published 2025-12-02 describing a 2025-10-17 letter, read as September 2026) and Egypt (Sisi's pardon of Alaa Abdel Fattah, true date 2025-09-22 -- exactly one year stale to the day). 7 further out-of-window or stale items: Taiwan (CBP forced-labor WRO, true date 2025-09), San Salvador (Foreign Agents Law, true date 2025-05-30), Minneapolis (DHS suit, filed 2026-01-12), Recursion Pharmaceuticals (layoff, true date 2025-06), Weyerhaeuser (article 2026-09-04, six days before window; underlying landslide Dec 2025), Tashkent (2026-09-02, eight days before window), Maseru (2026-09-05, five days before window).
+- **The Myanmar catch (SC-1d, third occurrence):** the ledger's automated matcher missed this cycle's resurfacing of the Rakhine boarding-school airstrike claim because it was reworded -- the matcher's tokens are "strike"/"airstrike" and the resurfaced framing did not trip a clean match; a human caught it against ledger entry `myanmar-rakhine-airstrike` (true date 2025-09-12) and it was correctly dropped. This is the ledger's third documented instance of this precision-over-recall failure mode (see 2026-09-22's Qatar catch, SC-1d origin).
+- **Two date catches:** (1) The Waymo ghost-gun/police-call incident is dated 2026-09-03, seven days before this cycle's window opened -- the scan carried an aggregator's 2026-09-17/18 republication date. Separately, the assessor found the instrument cannot score the incident either way because authorities never disclosed how Waymo detected the firearm. (2) The "new" UN Fact-Finding Mission war-crimes report that justified re-flagging DR Congo is year-stale: OHCHR/JURIST source paths carry 2025/09, the report is A/HRC/60/80 submitted September 2025, and the cited 81,000-rapes figure is a January-September 2025 count. Four ledger additions recommended (waymo-ghost-gun-police-call, drc-ffm-war-crimes-report, drc-81000-rapes-jan-sep), not yet entered per standing precedent.
+- **Rank drift, reported not corrected (six entities):** Boston Dynamics (SPOT demo) (rotation-state rank 48 vs. published 90), Unum Group (61 vs. 52), Penn Virginia (404 vs. 402), Rex Energy (406 vs. 404), Tronox (407 vs. 405), Sanchez Energy (410 vs. 408). All six agree on composite and band; only rank disagrees. This stage's write authorization is limited to `last_assessed`/`last_change_proposal`.
+- **Djibouti's `last_assessed` was stale by five weeks** before this cycle overwrote it with 2026-09-24: a full assessment exists at `research/assessments/djibouti-2026-08-16.md`, applied 2026-08-20, but a prior stage never stamped `last_assessed` after that assessment.
+- Assessor runtime: 2026-09-24T02:10:00Z through 2026-09-24T05:05:00Z; 8 entities scored (4 proposal-filed + 3 confirmed + 1 withheld); 13 screening notes; 7 subdimension sidecars written (abu-dhabi, australia, china [AWR/BND only], progressive, tronox, unum-group, west-virginia [ACC only]).
+- Math hygiene: all eight published composites for assessed entities reconstruct exactly under computeCompositeFromDimensions (diff 0.0 in every case). No duplicate keys in any of the four proposal files. Every {url, sourceTier} pair in tonight's four proposals and three confirmations checked against the tier cited in that entity's assessment file: clean, no mismatches (seven cycles clean now).
+- Three municipal double-count checks came back clean: Kingston (killing was national Jamaica Constabulary Force conduct, already scored on Jamaica 2026-09-20; a separate 2026-09-16 killing referred forward), Bucharest (national Jandarmeria Romana, already scored on Romania 2026-09-17), Kinshasa (national Police Nationale Congolaise, nothing differs from DR Congo 2026-09-17).
+- Validation: node site/scripts/validate-daily-briefings.mjs (PASS, 86 of 86 briefings, exit 0) and node site/scripts/lint-daily-briefings.mjs (PASS, 88 files clean, exit 0) run against tonight's public briefing.
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 29** -- 25 carried forward from 2026-09-22 + 4 new tonight (Progressive, Unum Group, Australia, Abu Dhabi). 0 applied, 0 withdrawn. High priority (band change or delta >15): 21 (18 carried forward + 3 new tonight, all band crossings). Standard (delta 5-15, no band change): 8 (7 carried forward -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton -- + Abu Dhabi tonight). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.

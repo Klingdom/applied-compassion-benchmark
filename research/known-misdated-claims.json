@@ -4,7 +4,7 @@
     "brief_addendum": "Before verifying a candidate's date from scratch, check research/known-misdated-claims.json for an active entry matching this entity. If one matches, you do not need to re-run verification searches -- cite the entry's true_date and source, drop the candidate as already-known, and append today's date to that entry's occurrences[] array (append-only; do not edit or remove prior entries). An entry means 'this specific claim is misdated', not 'this entity is banned' -- the same entity can and will produce genuine, correctly-dated news on a different topic, and that must still be flagged normally. validate-scan.mjs enforces this: it fails the scan if a top_entities candidate matches an active ledger entry's matcher, but a correctly-dropped candidate never triggers a failure.",
     "schema_version": 1,
     "how_entries_are_read": "See research/scripts/validate-scan.mjs, section 8 (checkKnownMisdatedClaims). Only entries with status 'active' are checked. A candidate is flagged when EVERY token-group in matcher[] has at least one substring hit (case-insensitive) against the concatenated slug+name+news_summary text of a research/scans/<date>.json top_entities item (see section 8c in validate-scan.mjs for exactly which fields of a candidate are read and why -- narrowed 2026-09-21, SC-1c, after a live run showed a candidate's own news_summary can quote ledger vocabulary while correctly explaining it is NOT a match).",
-    "last_updated": "2026-09-21"
+    "last_updated": "2026-09-24"
   },
   "claims": [
     {
@@ -97,7 +97,8 @@
       "first_seen": "2026-09-18",
       "occurrences": [
         "2026-09-18",
-        "2026-09-20"
+        "2026-09-20",
+        "2026-09-24"
       ],
       "status": "active",
       "notes": "The forced-selection task brief that requested this ledger described this claim as recurring in a pattern parallel to Meta/China; the scan/digest records show only one documented occurrence so far (2026-09-18). occurrences[] reflects only what the committed records show."
@@ -358,7 +359,8 @@
       "first_seen": "2026-09-20",
       "occurrences": [
         "2026-09-20",
-        "2026-09-21"
+        "2026-09-21",
+        "2026-09-24"
       ],
       "status": "active",
       "notes": "The 2026-09-21 scan record explicitly flags this claim as unledgered for 'a second consecutive cycle' after 2026-09-20, and separately reports a genuine, differently-sized 15,000-role Omnicom/Interpublic Group headcount story (already noted above) that must not be confused with this claim. No committed record documents this specific 800-in-September claim recurring before 2026-09-20; occurrences[] reflects only the two documented cycles."
@@ -451,7 +453,8 @@
       "source": "research/scans/2026-09-20.json stats.dropped_candidates (myanmar (possible))",
       "first_seen": "2026-09-20",
       "occurrences": [
-        "2026-09-20"
+        "2026-09-20",
+        "2026-09-24"
       ],
       "status": "active",
       "notes": "The committed record documents exactly one drop cycle (2026-09-20). It did not recur on 2026-09-21 (research/scans/2026-09-21.json stats.four_flagged_claims_from_brief.myanmar-rakhine-airstrike: 'Not encountered in any batch/sweep touched this cycle'); occurrences[] reflects only the one documented drop, per the same 'trust the record' discipline already applied to venezuela-maduro-captured and zambia-opposition-killing above."
@@ -517,10 +520,141 @@
       "first_seen": "2026-09-18",
       "occurrences": [
         "2026-09-18",
-        "2026-09-20"
+        "2026-09-20",
+        "2026-09-24"
       ],
       "status": "active",
       "notes": "The 2026-09-20 scan record describes this as the claim's 'third' cycle, citing drops on '2026-09-17 and 2026-09-18'; the committed research/scans/2026-09-17.json record contains no dropped_candidates entry (and no occurrence of 'whistleblower' or 'Gruendel' anywhere in it). Coordinator correction 2026-09-21: the strings 'figure-ai' and 'Figure AI' DO appear twice in that scan, but only as routine entity_reviews[] roster rows (the entity sits in both ai-labs and robotics-labs -- the D-13 duplicate), not as a claim; the original note overstated its own search. The conclusion is unchanged and independently re-verified: 'whistleblower' occurs 0 times in 2026-09-17.json, with a positive control confirming the same search finds 1 occurrence in 2026-09-20.json for this claim -- grep-verified against the file. That count is therefore not substantiated by the committed record. occurrences[] reflects only the two documented cycles (2026-09-18, 2026-09-20), the same 'trust the record over the narrative' discipline already applied above (e.g. venezuela-maduro-captured, zambia-opposition-killing, xai-baltimore-lawsuit, anthropic-pentagon-suit). The claim did not resurface on 2026-09-21 (research/scans/2026-09-21.json stats.four_flagged_claims_from_brief.figure-ai-whistleblower: 'Did NOT resurface... Fourth consecutive cycle without reappearance' -- itself counting from a first-seen of 2026-09-17 that the committed record does not support). This entry is added while the claim is inactive so that a further cycle does not cost a fresh full verification search."
+    },
+    {
+      "id": "becton-dickinson-alaris-recall",
+      "entities": [
+        "becton-dickinson"
+      ],
+      "description": "An FDA Class I correction for BD Alaris Pump Modules (pumps dropped/jarred in shipping, causing 2 serious injuries) read as September 2026 news. The 2026-09-24 scan record verifies the customer letter BD sent is dated 2025-10-17 and the reporting MedTech Dive article is dated 2025-12-02 (the FDA record's '09/17/2026' timestamp is a page-metadata update, not new content) -- a year-stale claim relative to a September 2026 scan window.",
+      "true_date": "2025-10-17",
+      "true_date_reason": null,
+      "claimed_framing": "Implies the BD Alaris pump Class I correction (dropped/jarred pumps, 2 serious injuries) is a fresh September 2026 FDA action, rather than a correction whose customer letter dates to 2025-10-17 (reported by MedTech Dive on 2025-12-02).",
+      "matcher": [
+        [
+          "becton dickinson",
+          "becton-dickinson",
+          "bd alaris"
+        ],
+        [
+          "dropped",
+          "jarred"
+        ],
+        [
+          "recall",
+          "correction",
+          "class i correction"
+        ]
+      ],
+      "matcher_scope": "Requires the Becton Dickinson/BD Alaris entity token AND a dropped/jarred defect-description token AND a recall/correction token, all three. A genuine, unrelated Becton Dickinson story (earnings, a different product line's recall with no drop/jarring mechanism, an unrelated Alaris feature update) will not match, because at least one required group is absent. Evasion routes documented rather than fixed (SC-1d is backlog, not implemented here): (1) a rewording that describes the defect only as 'impact damage' or 'shipping damage' -- dropping both 'dropped' and 'jarred' -- would evade the second group; (2) a rewording that calls the action a 'field safety notice' or 'urgent medical device letter' without 'recall'/'correction'/'Class I correction' would evade the third group; (3) a rewording that names only the ticker 'BDX' or 'the company' without 'Becton Dickinson' or 'BD Alaris' would evade the first group.",
+      "source": "research/scans/2026-09-24.json stats.dropped_candidates (becton-dickinson); research/scans/2026-09-24.json entity_reviews (becton-dickinson, tier T1, evidence_found: false); research/scans/2026-09-24.json stats.ledger_additions_recommended_not_yet_entered (id: becton-dickinson-alaris-recall, true_date 2025-10-17)",
+      "first_seen": "2026-09-24",
+      "occurrences": [
+        "2026-09-24"
+      ],
+      "status": "active",
+      "notes": "The 2026-09-24 scan record states two dates consistently in three places (stats.dropped_candidates, the becton-dickinson entity_reviews summary, and stats.ledger_additions_recommended_not_yet_entered): the customer letter is dated 2025-10-17 and the reporting MedTech Dive article is dated 2025-12-02; there is no discrepancy between sources on the article date. The task brief that requested this entry raised '2025-12-02 or 12-05' as a possible article date; no committed record anywhere states 2025-12-05, so that alternate is not used -- 2025-12-02 is the only article date the record supports. true_date is recorded as the letter date (2025-10-17), the actual regulatory-action anchor and the date the scan record's own recommendation cites, rather than the later article-publish date (2025-12-02), consistent with how this ledger already resolves a multi-date claim to its earliest substantive anchor (see venezuela-maduro-captured, anthropic-pentagon-suit, harvard-heightened-cash-monitoring)."
+    },
+    {
+      "id": "egypt-alaa-abdel-fattah-pardon",
+      "entities": [
+        "egypt"
+      ],
+      "description": "A claim that 'President Sisi pardoned activist Alaa Abdel Fattah on September 22' read as 2026-09-22. The 2026-09-24 scan record verifies via HRW, Al Jazeera and Middle East Eye that the pardon occurred 2025-09-22 -- exactly one year before this scan date -- a year-stale claim relative to a September 2026 scan window.",
+      "true_date": "2025-09-22",
+      "true_date_reason": null,
+      "claimed_framing": "An undated or year-dropped 'September 22' pardon mention is read as a September 2026 pardon rather than the actual 2025-09-22 pardon.",
+      "matcher": [
+        [
+          "egypt"
+        ],
+        [
+          "alaa abdel fattah",
+          "alaa abd el-fattah",
+          "alaa abd el fattah"
+        ],
+        [
+          "pardon",
+          "pardoned"
+        ]
+      ],
+      "matcher_scope": "Requires the Egypt entity token AND the activist's specific three-word name 'Alaa Abdel Fattah' (or a spelling variant) -- deliberately NOT the bare surname 'Abdel Fattah', which is also part of President Sisi's own name (Abdel Fattah el-Sisi) and would produce a realistic false-positive shape on ordinary Sisi coverage -- AND a pardon token. A genuine, unrelated Egypt story (a Sisi policy announcement, a different Egypt human-rights story with no pardon) will not match. Evasion routes documented rather than fixed: (1) a rewording that refers to him only as 'the British-Egyptian blogger' or 'Alaa' without the 'Abdel Fattah' surname would evade the second group; (2) a rewording that says he was 'released' or 'freed' rather than 'pardoned' would evade the third group. Proven not to collide with egypt-ismail-al-iskandrani-arrest below: this entry's matcher requires 'alaa abdel fattah' + pardon language, neither of which appears in a genuine al-Iskandrani arrest item, and that entry's matcher requires 'iskandrani' + arrest/detention language, neither of which appears in a genuine Alaa Abdel Fattah pardon item -- see test-known-misdated-claims.mjs's two-Egypt-entries collision test.",
+      "source": "research/scans/2026-09-24.json stats.dropped_candidates (egypt); research/scans/2026-09-24.json entity_reviews (egypt, summary); research/scans/2026-09-24.json stats.ledger_additions_recommended_not_yet_entered (id: egypt-alaa-abdel-fattah-pardon, true_date 2025-09-22)",
+      "first_seen": "2026-09-24",
+      "occurrences": [
+        "2026-09-24"
+      ],
+      "status": "active",
+      "notes": "Distinct from egypt-ismail-al-iskandrani-arrest below: different person (Alaa Abdel Fattah vs. Ismail al-Iskandrani), different event (a pardon vs. an arrest), different true date (2025-09-22 vs. 2025-09-24) -- two entries, not one combined entry, for the same reason the ledger already carries two separate Harvard entries (harvard-funding-freeze-ruling, harvard-heightened-cash-monitoring): this schema carries one true_date per entry, and each fact can resurface independently of the other."
+    },
+    {
+      "id": "egypt-ismail-al-iskandrani-arrest",
+      "entities": [
+        "egypt"
+      ],
+      "description": "A claim that 'On 17 September, police arrested journalist and researcher Ismail al-Iskandrani at a checkpoint in Marsa Matruh governorate' -- traced to the HRW World Report 2026 Egypt country chapter, an annual-report recap of calendar-year-2025 conduct with no year stated in the snippet itself -- is read as a current-year September event. The 2026-09-22 scan record verifies via MadaMasr, HRW, JURIST, RSF and PEN International that the arrest occurred 2025-09-24, a year-stale claim relative to a September 2026 scan window.",
+      "true_date": "2025-09-24",
+      "true_date_reason": null,
+      "claimed_framing": "An undated 'On 17 September' arrest mention, sourced from an annual-report recap with no year stated, is read as a current-year (September 2026) arrest rather than the actual 2025-09-24 arrest.",
+      "matcher": [
+        [
+          "egypt"
+        ],
+        [
+          "iskandrani",
+          "al-iskandrani",
+          "al iskandrani"
+        ],
+        [
+          "arrest",
+          "arrested",
+          "detained"
+        ]
+      ],
+      "matcher_scope": "Requires the Egypt entity token AND the journalist's distinctive surname 'Iskandrani' (a spelling-variant group) AND an arrest/detention token. A genuine, unrelated Egypt story (a Sisi announcement, a different Egypt arrest unconnected to Iskandrani) will not match. This entry documents a particular danger: the source snippet itself says only 'On 17 September' with no year at all, so an undated 'September' mention of this specific claim is unusually likely to be misread as the current scan year -- and the true date (2025-09-24) is exactly one year before the 2026-09-24 cycle that went on to catch the adjacent, distinct Alaa Abdel Fattah pardon claim, making a future '17 September'-dated recap of this same claim (e.g. around 2027-09-17, or an undated recap surfacing in any future September) a live recurrence risk. Evasion routes documented rather than fixed: (1) a rewording that identifies him only as 'a journalist and researcher' or 'a Mada Masr contributor' without the 'Iskandrani' surname would evade the second group; (2) a rewording that says he was 'held' or 'taken into custody' rather than 'arrested'/'detained' would evade the third group. Proven not to collide with egypt-alaa-abdel-fattah-pardon above -- see that entry's notes and test-known-misdated-claims.mjs's two-Egypt-entries collision test.",
+      "source": "research/scans/2026-09-22.json stats.dropped_candidates (egypt (newly discovered misdated claim, not yet in the ledger)); research/digests/2026-09-22.md Operational Notes line 185",
+      "first_seen": "2026-09-22",
+      "occurrences": [
+        "2026-09-22"
+      ],
+      "status": "active",
+      "notes": "Not encountered as a separate resurfacing candidate on 2026-09-24 (research/scans/2026-09-24.json stats.dropped_candidates[0].summary distinguishes this claim from the Alaa Abdel Fattah case as 'watched for and not encountered as separate resurfacing candidates this cycle'); occurrences[] reflects only the one documented drop cycle (2026-09-22), the same 'trust the record' discipline already applied elsewhere in this ledger (e.g. myanmar-rakhine-airstrike, el-salvador-defenders-fled)."
+    },
+    {
+      "id": "israel-gaza-coi-genocide-report",
+      "entities": [
+        "israel"
+      ],
+      "description": "A claim that 'a report issued in September... Israel committed genocide in Gaza, killing more than 69,000 Palestinians, including more than 19,000 children' is read as current. The 2026-09-22 scan record verifies via OHCHR, CNN, PBS, NPR and Time that this is the UN Independent International Commission of Inquiry report published 2025-09-16, a year-stale claim relative to a September 2026 scan window, drawn from an undated aggregator summary.",
+      "true_date": "2025-09-16",
+      "true_date_reason": null,
+      "claimed_framing": "An undated 'issued in September' aggregator summary of the UN Commission of Inquiry's genocide finding is read as a September 2026 report rather than the actual 2025-09-16 publication.",
+      "matcher": [
+        [
+          "israel",
+          "gaza"
+        ],
+        [
+          "commission of inquiry",
+          "independent international commission of inquiry"
+        ],
+        [
+          "genocide"
+        ]
+      ],
+      "matcher_scope": "Requires an Israel/Gaza entity token AND the distinctive 'Commission of Inquiry' UN-body phrase AND the word 'genocide', all three. A genuine, unrelated Israel/Gaza story (a ceasefire development, a diplomatic story, or even a genuine current story that uses the word 'genocide' without the Commission-of-Inquiry framing -- plausible given Israel's own index entry already documents an ICJ 'plausible genocide' finding as ongoing context) will not match, because the distinctive 'Commission of Inquiry' phrase is absent. Evasion routes documented rather than fixed: (1) a rewording that calls the body 'the UN inquiry panel' or 'UN investigators' without the exact 'Commission of Inquiry' phrase would evade the second group; (2) a rewording that uses 'crimes against humanity' or 'war crimes' instead of 'genocide' would evade the third group; (3) conversely, because the same Commission of Inquiry issues periodic reports on other dates, a genuinely NEW Commission of Inquiry report that also uses the word 'genocide' would still match this entry and require a human to check whether it restates the 2025-09-16 report or is a distinct later one -- flagged as a known over-match risk, not resolved here.",
+      "source": "research/scans/2026-09-22.json stats.dropped_candidates (israel (newly discovered misdated claim, not yet in the ledger)); research/digests/2026-09-22.md Operational Notes line 185",
+      "first_seen": "2026-09-22",
+      "occurrences": [
+        "2026-09-22"
+      ],
+      "status": "active",
+      "notes": "The scan record's own suggested matcher candidate was 'israel'/'gaza' + 'commission of inquiry'/'genocide' + '69,000' or '65,000' (a casualty-figure group). This entry does not require the casualty-figure group because the reported death toll is a running count that could plausibly reach a similar figure in genuinely new September 2026 reporting, which would make a casualty-figure requirement either a false-negative risk (if the true figure is later revised) or, if loosened into a range, exactly the warn-level matching this brief prohibits implementing here. Proposed, not implemented: a second, deliberately looser pattern keyed on 'commission of inquiry' + 'genocide' + the exact substring 'more than 69,000' (rather than the bare number, which is more collision-prone) could tighten precision further if this claim resurfaces reworded; left as a follow-up per the brief's instruction not to implement warn-level matching in this pass."
     }
   ]
 }

@@ -1,0 +1,789 @@
+{
+  "entity": "Australia",
+  "slug": "australia",
+  "index": "countries",
+  "assessment_date": "2026-09-24",
+  "assessment_file": "research/assessments/australia-2026-09-24.md",
+  "subdim_sidecar_file": "research/assessments/australia-2026-09-24.subdims.json",
+  "published_scores": {
+    "composite": 62.5,
+    "band": "Established",
+    "rank": 23,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 4,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 48.8,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 2.8,
+      "ACT": 3,
+      "EQU": 2.8,
+      "BND": 2.8,
+      "ACC": 3,
+      "SYS": 3.2,
+      "INT": 2.6
+    }
+  },
+  "score_delta": -13.7,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Human Rights Watch, \"25 Years of Abusive Offshore Detention\" (2026-09-10): over 5,000 people transferred to Nauru and Manus Island since 2001, at least 14 deaths since 2012, and Nauru paid an estimated A$2.5 billion (US$1.8 billion) to accept people Australia rejects and expels, permanently.",
+    "HRW: the annual cost per person detained on Nauru reached A$9 million (US$6.5 million) in 2025, against roughly 110 current detainees.",
+    "Al Jazeera (2026-09-18): Home Affairs Minister Tony Burke announced 100 extra compliance officers and 250 new detention beds; approximately 77,000 people in Australia without a valid visa face detention or forced departure; the Human Rights Law Centre warned the measures could deter exploited undocumented workers from reporting abuse.",
+    "Countervailing: the Productivity Commission’s sixth Closing the Gap Annual Data Compilation Report (2026-07-29) publishes that 4 of 19 targets are worsening - genuine government transparency, scored upward at AB3 (4/5).",
+    "The published 62.5 is an unassessed placeholder: six of eight dimensions sit at exactly 3.5, the 62.5 uniform-seed pattern, and APPLIED_CHANGES.md contains no Australia entry.",
+    "The scan’s \"~350 deportations to Nauru\" figure is not corroborated by either fetched source and was excluded from scoring."
+  ],
+  "evidence": [
+    {
+      "quote": "to accept people whom Australia rejects and expels",
+      "claim": "Nauru was paid an estimated A$2.5 billion to become a permanent endpoint for people Australia refuses, which is an anchor-2 answer on B4 Refusal Ethics.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+      "publishedDate": "2026-09-10",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time",
+      "claim": "A refugee describes the cumulative harm of offshore detention and rolling short-term visas, supporting E4 Validation at 2/5 and AC5 Follow-Through at 2/5.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+      "publishedDate": "2026-09-10",
+      "sourceTier": 3
+    },
+    {
+      "quote": "third country reception arrangements",
+      "claim": "Australia amended its Migration Act in 2024 to enable third-country reception, contradicting its stated human-rights commitments without acknowledgment (I4 at 2/5).",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+      "publishedDate": "2026-09-10",
+      "sourceTier": 3
+    },
+    {
+      "quote": "when people had overstayed a visa, we would bring people into detention centres",
+      "claim": "On 2026-09-18 the Home Affairs Minister described reactivating detention for visa overstayers, with roughly 77,000 people exposed (EQ1 at 2/5).",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/9/18/australia-to-detain-tourists-who-overstay-visas-amid-immigration-crackdown",
+      "publishedDate": "2026-09-18",
+      "sourceTier": 2
+    },
+    {
+      "claim": "Of 19 Closing the Gap targets, 1 is met, 3 are on track, 5 are improving but off track and 4 are worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track) - published by the government’s own agency, supporting AB3 at 4/5.",
+      "source": "Australian Government Productivity Commission",
+      "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+      "publishedDate": "2026-07-29",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "1.2",
+  "integration_premium": 0,
+  "published_composite_reconstruction": 62.5,
+  "math_hygiene_reconstruction_diff": 0,
+  "filing_trigger": "magnitude (-13.7) and band crossing (Established -> Functional)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "notes": "First evidence-based baseline for a never-individually-assessed row. Classified as SEED-BASELINE-RECALIBRATION plus in-window conduct evidence, the same category as the Cerebras Systems and Marriott International changes applied 2026-08-20. Roughly half the movement is replacement of an unassessed placeholder (notably BND 4.0, which asserted anchor-4 refusal ethics with no evidence base) and roughly half rests on the in-window HRW report and the 17-18 September enforcement announcement. Screening rule 3 satisfied: surfaced on negative in-window evidence, proposal is a downgrade. Calibration flag recorded separately: the 62.5 uniform-seed plateau (Lithuania carries an identical vector) warrants band-wide review and is NOT used as a reason to move Australia.",
+  "scan_file": "research/scans/2026-09-24.json",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "third country reception arrangements"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "to accept people whom Australia rejects and expels"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/9/18/australia-to-detain-tourists-who-overstay-visas-amid-immigration-crackdown",
+          "date": "2026-09-18",
+          "quote": "when people had overstayed a visa, we would bring people into detention centres"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "to accept people whom Australia rejects and expels"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "to accept people whom Australia rejects and expels"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/9/18/australia-to-detain-tourists-who-overstay-visas-amid-immigration-crackdown",
+          "date": "2026-09-18",
+          "quote": "This is not the sort of operation that some people have seen on TV happening in other countries"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "to accept people whom Australia rejects and expels"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "third country reception arrangements"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        },
+        {
+          "tier": 2,
+          "url": "https://nit.com.au/29-07-2026/25613/governments-urged-to-redouble-efforts-on-closing-the-gap-halfway-through-agreement",
+          "date": "2026-07-29",
+          "claim": "Governments urged to redouble Closing the Gap efforts at the halfway point of the agreement."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://nit.com.au/29-07-2026/25613/governments-urged-to-redouble-efforts-on-closing-the-gap-halfway-through-agreement",
+          "date": "2026-07-29",
+          "claim": "Governments urged to redouble Closing the Gap efforts at the halfway point of the agreement."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "to accept people whom Australia rejects and expels"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.aljazeera.com/news/2026/9/18/australia-to-detain-tourists-who-overstay-visas-amid-immigration-crackdown",
+          "date": "2026-09-18",
+          "quote": "when people had overstayed a visa, we would bring people into detention centres"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.pc.gov.au/closing-the-gap-data/annual-data-report/2025/",
+          "date": "2026-07-29",
+          "claim": "Of 19 Closing the Gap targets, 1 is met, 3 on track, 5 improving but off track, and 4 worsening (suicide, adult imprisonment, children in out-of-home care, children developmentally on track)."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "third country reception arrangements"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-09-24",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/09/10/australia-25-years-of-abusive-offshore-detention-0",
+          "date": "2026-09-10",
+          "quote": "Mentally, I lost everything, I lost my golden age, I lost my health, lost my time"
+        }
+      ]
+    }
+  ]
+}
