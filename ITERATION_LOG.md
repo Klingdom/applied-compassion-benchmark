@@ -1,5 +1,342 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 34 — 2026-09-24 (six iterations shipped unlogged; DC-16, and a gate that fails on the gap)
+
+### Selected Item
+**Forced by S10** (an ungated class with ≥ 2 dated occurrences pre-empts the ranked queue), and found while doing
+the founder's "GitHub and Desktop" step rather than by any gate.
+
+`ITERATION_LOG.md` stopped at **Iteration 27** while `tools/cb-probe/README.md` said "Added in Iteration 32" and
+`tools/cb-probe/CHANGELOG.md` said "Iteration 33" — both already committed and pushed. **Six iterations (27b, 28,
+29, 30, 31, 32, 33) had shipped with no entry.** Under the overlay's own Step 8 that is an incomplete loop, six
+times over, and the traceability this institution sells is the first thing it cost.
+
+### DC-16 — the class, with its two dated occurrences
+**"Work ships carrying an iteration number that has no entry in ITERATION_LOG.md, so the loop's record silently
+falls behind the code and docs that cite it."**
+
+1. **2026-09-23** — commit `9ce57aa3`'s message says *"Record Iterations 26-29"*. Its diff adds **26 and 27 only**
+   (`git show 9ce57aa3 -- ITERATION_LOG.md` → two `+## Iteration` lines). Nothing anywhere held 28 or 29. This is
+   also the shape amendment **S11** names: a status figure asserted rather than generated.
+2. **2026-09-24** — the two shipped cb-probe references above, against a log that ended at 27.
+
+Two occurrences, no gate → **S4** requires a mechanical gate or a dated waiver. Gate chosen.
+
+### What Changed
+1. **The six missing entries written** (27b, 28–33), each reconstructed from committed evidence — commit messages,
+   diffs and test output — not from memory. Where a number's meaning was already fixed by a shipped artifact I
+   honoured it rather than renumbering: `97d100c2`'s own message says "Iterations 28-29", so the cb-probe build
+   is 28 + 29. The 2026-09-21 CI fix had **no** number in any committed record and the next two were already taken,
+   so it is logged as **27b** with the reason stated in the entry. A published reference is not renumbered to make
+   the bookkeeping tidier.
+2. **`research/scripts/test-iteration-log-coverage.mjs`**, wired into `npm run test` as
+   `test:iteration-log-coverage`. Three checks:
+   - **A** every `Iteration N` / `It. N` reference in a tracked text file resolves to a `## Iteration N` heading;
+   - **B** the logged sequence has no hole below its own maximum (the footprint this class actually leaves — an
+     unlogged iteration is usually a gap, not a dangling citation, and check B is what a false
+     "Record Iterations 26-29" would have failed on);
+   - **C** the scan is not vacuous: floors on headings parsed, references found and files scanned, plus three
+     named positive controls, two long-form and one abbreviated. If the pattern breaks, the gate exits non-zero
+     with `VACUOUS` — it cannot report green on a search that found nothing (**V8**).
+3. **Deliberately not asserted: commit messages.** Occurrence 1 lived in a commit message, which is not a tracked
+   file and cannot be linted after the fact. Check B is the substitute, and the limitation is written into the
+   script's header rather than left implied.
+
+### The gate found a defect in itself on first run, and I fixed it rather than allowlisting
+First run: **10 dangling references**, at numbers 40, 60, 81, 2017, 2018, 2022, 2023, 2025 and 2026.
+All ten were the ordinary word **"Its"**: *"Its 40 subdimension scores…"*, *"Its 60.9 comes from a placeholder…"*,
+*"Its 2017 Refugee Law…"*. My abbreviation branch allowed `It` + optional `s` + optional `.`. Fixed by requiring the
+period (`It\.`), and a positive control on the `It. N` form was added in the same edit so tightening the regex
+cannot silently drop support for it. **A gate that cries wolf is a gate that gets ignored** — an allowlist of ten
+research files would have been the wrong repair.
+
+### Validation
+| Check | Result |
+|---|---|
+| Baseline, before the entries | FAIL — named `Iteration 32` (`tools/cb-probe/README.md:372`) and `Iteration 33` (`tools/cb-probe/CHANGELOG.md:12`) as dangling, and the 27→33 hole |
+| After the entries | **PASS** — 650 references across 28 tracked files, 35 headings, 1..34 with no hole |
+| Non-vacuity floors | 35 headings (floor 20), 650 references (floor 20), 28 files (floor 3) |
+| Positive controls | 3 of 3 hit, including the abbreviated `It. 26` form |
+| **V3 negative control 1** | Renamed the `## Iteration 25` heading → check B failed naming the hole at 25; restored **sha256-identical**, PASS |
+| **V3 negative control 2** | Planted a reference to a non-existent iteration (number 97) in `docs/DEFECT_CLASS_REGISTRY.md` → check A failed naming the number **and** the file:line; removed, sha256-identical, PASS |
+| **V3 negative control 3** | Broke the reference regex → exited non-zero reporting **VACUOUS**, not green; restored, PASS |
+| **V3 negative control 4** | Broke the heading parse → exited non-zero reporting **VACUOUS**; restored, PASS. Both halves of the gate, not just one |
+| Probe integrity | Probes 3 and 4 throw *"probe void"* if the line they mean to break is not found, so a no-op edit cannot masquerade as a passing control |
+| `npm run test` (full chain) | **exit 0**, chain **33 → 34 steps**. The four `FAIL`-matching lines in the output are `Failures (blocking): 0` summaries, checked individually |
+| Wiring (S8) | `package.json` edited through a parser that first greps for the key, after DC-10; diff is **2 lines**, formatting unchanged |
+
+### Impact
+Traceability: every iteration number that appears anywhere in the repo now resolves to a record of what was
+selected, what changed, how it was verified, and what it cost. The next bookkeeping lapse fails a test instead of
+surviving a day in shipped documentation.
+
+### Follow-ups
+- The class's first occurrence was a **commit message that claimed more than its diff**. No gate covers that. Rather
+  than pretend otherwise, the practice change is stated in the DC-16 registry row: a commit message asserting a
+  record must name the file the record is in, and that file must be in the same pathspec. Backlog **GOV-1** if it
+  recurs.
+- `IMPROVEMENT_BACKLOG.md` still holds the ≥ 5 eligible items the overlay requires, so no candidate-generation
+  round was run (Step 2 override).
+
+---
+
+## Iteration 33 — 2026-09-24 (the production pass: D-40 gates the composite, and the toolkit becomes installable by a stranger)
+
+### Selected Item
+**Founder directive**, not a ranked selection: "I want the mcp server, agent, skill, tool, plugin concept to be a
+primary product/tool for compassion benchmark. Build out a production ready version that can be used by anyone."
+Sequenced by the founder as "composite decision, then packaging, GitHub, and Desktop".
+
+### The decision first, because it defines the product (D-40)
+Six reviews had run (It. 31). The methodology review's central question was whether a self-run may publish a 0–100
+composite at all, given that **D-30 — an active decision — states the tool emits no composite, never imports the
+scorer, and has no field able to hold a 0–100 number.** The scored run does all three, on a verbal instruction, with
+no decision entry. That is the RISK-021 shape exactly.
+
+I did not accept either the review's recommendation or the original instruction. I measured, against
+`site/scripts/lib/scoring.mjs`:
+
+| Check | Result |
+|---|---|
+| All 8 dimensions at 4.000 | composite **85.0 Exemplary** |
+| All 8 dimensions at 3.833 | composite **70.8 Established** |
+| 0.167 of rubric movement | **14.2 points and a band flip** |
+| One rating changed by 1 on a 2-item dimension | **2.5 points** |
+
+2.5 is the ADP swing (58.1 → 60.6) that **D-07** calls disqualifying for machine-only scoring. Corroborated by a real
+run, not only arithmetic: I ran the tool on myself (`judgeConfiguration: "self"`, AWR only, 15 ratings) and measured
+**4.27** with variance **1.0** on `AWR-1-A` — the same model answering the same prompt rated itself 5, 3 and 4.
+
+**D-40 (drafted, awaiting countersignature):** the composite and band emit only when all 8 dimensions are measured
+**and each has ≥ 3 rated items**; otherwise `composite: null` with a reason naming the shortfall. Mechanical, so the
+number appears by itself when the bank deepens. Allocated as max+1 from the register (39), per amendment **ID-3** —
+`MCP-B1` had previously reused a live id.
+
+**Consequence, accepted and stated in every deliverable:** *every run over today's bank returns `composite: null`*,
+because SYS and INT carry exactly 2 non-sensitive scorable items. The gate is visible pressure on **MCP-S6** (bank
+expansion) and **MB-2** (0 of 33 items human-reviewed).
+
+### What Changed (packaging)
+Portable install (module-relative bank resolution, no machine-specific path), version 0.1.0 with `tool_version` and
+`bank_version` in every artifact's provenance, `tools/cb-probe/CHANGELOG.md`, `tools/cb-probe/LICENSING.md`,
+`docs/CB_PROBE_USER_GUIDE.md` (301 lines, written for a first-time reader: every refusal explained, the crisis items
+disclosed, and what may and may not be claimed from a result), a `plugins/compassion-benchmark` bundle superseding
+`compassion-practice`, and a `cb-probe-test` CI job.
+
+**LICENSING.md records that terms are unset rather than choosing one.** This repo has no `LICENSE` file, so a licence
+would be an invented founder decision. Nothing was invented.
+
+### Validation (V2, V4 equivalent, V6)
+| Check | Result |
+|---|---|
+| `npm test` in `tools/cb-probe` | **150 passed / 0 failed** |
+| Runs from a foreign cwd | `ran from C:\Users\philk\AppData\Local -> SYS items: 2` — proves module-relative resolution **and** the 2-item shortfall |
+| Deliverables present | CHANGELOG 119 lines · LICENSING 42 · user guide 301 · `plugin.json` 26 |
+| Gate wired, not merely defined | `MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE` imported at `lib/self-run-scorecard.mjs:33`, used at 73 and 78 |
+| **No hard-coded path in product files (V8: with a positive control)** | Control `docs/MCP_SERVER_PLAN_2026-09-20.md` → **1 hit**; the three product files → **0 / 0 / 0**. The absence is proven, not assumed |
+| Live install | `claude mcp list` → `cb-probe … ✔ Connected` (project scope, per founder: "keep it project-local") |
+
+### Impact
+The toolkit is installable by someone who has never seen this repo, and the number it refuses to print is refused for
+a measured reason rather than an editorial one.
+
+### Commit pathspec (S6) and follow-ups
+Committed as **`a545a4d9`** with It. 31 and It. 32 (one product surface, one test suite, one review cycle — S5:
+same class, same verification). Pathspec: `git add -- tools/ plugins/ .claude/skills .claude/agents
+docs/CB_PROBE_USER_GUIDE.md docs/reviews docs/DECISION_PROPOSAL_MCP_PRODUCT_2026-09-24.md
+docs/COMPASSION_ARTIFACT_ROADMAP_2026-09-24.md docs/SEPTEMBER_2026_COVERAGE_MAP.md
+docs/ECC_ADOPTION_REVIEW_2026-09-22.md research/scripts/coverage-map.mjs DECISIONS.md
+.github/workflows/deploy.yml AGENT-ROUTING.md`. Pushed 2026-09-24. **Not deployed** — a local tool, no site change.
+
+**Open:** countersign D-40 · the licence · MCP-S6 · MB-2 · MB-5 (two of three published EQU rubrics cannot be
+applied). Deferred methodology findings, deliberately out of scope: the self-default judge config, excluding the
+broken EQU items from runs, exposure-probe sampling depth, anchor-description matching, and the non-comparability
+sentence's wording.
+
+---
+
+## Iteration 32 — 2026-09-24 (one sentence drives a 69-trial run: the skill, `run_status`, and batch ratings)
+
+### Selected Item
+**Founder directive:** "I want to be able to ask a model like claude code to run compassion benchmark and it
+generates responses and scores." The gap was real — the tool surface was correct but required a host model to
+orchestrate 69 sequential calls and reconstruct its own progress from repeated `next_item` calls.
+
+### What Changed
+- **`.claude/skills/run-compassion-benchmark/SKILL.md`** (+ an identical copy shipped inside `tools/cb-probe/skills/`
+  so an installer gets it): drives the whole run from one sentence, including the order that cannot be skipped
+  (separation statement → start → exposure probe → rate → finish).
+- **`run_status`** — read-only re-orientation: planned/recorded/remaining trials overall and per item, the exposure
+  probe's phase, `ready_to_finish`, `finished`. Writes nothing.
+- **Batch form of `record_item_rating`** — `ratings: [...]` records several trials in one call, each element
+  validated exactly as a single rating is. **If any element fails the whole batch is rejected and nothing is
+  written**; no partial writes.
+
+### Validation
+`tests/run-status-and-batch.test.mjs` (359 lines) covers the no-partial-write guarantee directly. I then used the
+batch form myself for all 15 ratings of my own self-run, which is how the skill's own instructions were checked
+against the tool's actual behaviour rather than against their author's intent.
+
+Committed with It. 31 and It. 33 as `a545a4d9`.
+
+---
+
+## Iteration 31 — 2026-09-24 (six reviews, eight ways to get a flattering number, all closed)
+
+### Selected Item
+**Founder directive:** "Engage all agents to review current compassion benchmark mcp server and update/improve it."
+Six independent reviews were commissioned — security, QA, silent-failure, architecture, code, methodology — and all
+six reports are committed under `docs/reviews/`. I then re-ran every blocking claim myself (**V2**): reading a report
+is not verification.
+
+### What Changed — each fix paired with the attack that proved it
+| Defect | Proof it was real | Fix |
+|---|---|---|
+| **Forged scorecard** | A hand-written `run.json` with `trials_per_item: 1` and the contamination caveats deleted produced a schema-valid **composite 100 Exemplary** | `finish_scored_run` re-validates everything from disk (`lib/validate-scorecard.mjs`) and refuses by name |
+| **Contamination bypass** | A blank, whitespace-only, punctuation-only or single-stopword recall satisfied the mandatory probe and read as "clean" | `assertSubstantiveRecall` (≥ 3 tokens); honest non-recall still accepted; recalled text persisted; probe items seeded from the run id instead of always the alphabetically-first three |
+| **Crisis items served silently** | All five (suicidal ideation, domestic violence, psychosis-adjacent, miscarriage, anhedonia) were in **every** default scored run with no opt-in, while `list_probe_items` hid them | Excluded by default, with a duty-of-care notice at the point of delivery. The bank cannot override the list — it is a floor |
+| **Substring anchors** | `"definitely NOT Established, reads as Critical"` passed as the anchor for a rating of 4 | Exact normalised equality; evidence quotes require ≥ 3 tokens |
+| **Unenforced `inputSchema`** | A 60MB `item_id` was echoed 60MB back into model context | `lib/validate-args.mjs` at `tools/call`, bounded |
+| **Write escape** | A junction pointing into the repo was accepted and a file written inside `tools/cb-probe` | Artifact root resolves through `realpath`, re-checked on every write |
+| **Honesty rules in the wrong layer** | Rules lived in the artifact builders, so a twelfth tool could return `official: true` verbatim | `lib/outbound-guard.mjs` at the response boundary + a test pinning the tool list |
+| **A test asserting the unsafe behaviour** | A test asserted a bank value *could* override the crisis-item list | Test rewritten to assert the safe behaviour |
+
+### Validation
+Tests **81 → 132** at review close (150 after It. 33). Every fix above was re-probed by me with an attack of my own
+construction, not the reviewer's, and each refusal was observed directly over stdio.
+
+### My own void probes, disclosed
+Two of my probes proved nothing until re-run: one guessed a `runs/` artifact path that does not exist (so the forgery
+"succeeded" against an empty directory), and one guessed the response key `item_ids`. Both re-run correctly against
+the real layout, which is when the forged-scorecard defect actually surfaced. **V8 in action: a probe that cannot
+fail is not evidence.**
+
+Committed with It. 32 and It. 33 as `a545a4d9`.
+
+---
+
+## Iteration 30 — 2026-09-23 (governance and hygiene, because the WIP limit said stop building)
+
+### Selected Item
+**S6, applied to myself.** With two validated-uncommitted iterations pending, the rule is: stop implementing and do
+governance/hygiene work. Three pieces, all bookkeeping, no product surface.
+
+### What Changed
+1. **The `.bak` class made impossible** (`e029a8b4`). **Second occurrence of my own logged mistake**: on 2026-09-20 a
+   pathspec naming `research/scans` swept in `2026-09-09.json.bak`; I untracked it and recorded the lesson "name
+   files, not directories". On 09-23 I used the same directory pathspec and did the same thing. Two manual fixes for
+   one class is where a rule stops being enough → `*.bak` in `.gitignore`. The founder-held backups stay on disk and
+   out of history; the file was untracked, not deleted.
+2. **A usage policy for the ECC toolkit** (`80711f07`). On 2026-09-22 07:52–08:06 the toolkit was installed at user
+   scope — 106 skills, 52 commands, 53 agents — **not by this session**, and it changed my own available agent list
+   mid-conversation. I verified the executable surface is inert (no `~/.claude/hooks`, no `~/.claude/scripts`, ECC's
+   28-entry `hooks.json` not installed), so a routing policy suffices and uninstalling is not required. Agents banned
+   with reasons in `AGENT-ROUTING.md` §0a — `harness-optimizer` (self-modifying governance), `refactor-cleaner` and
+   `knowledge-ops` (both commit autonomously; every commit here is a founder act), `loop-operator` (treats passing
+   gates as authority to continue — the exact inversion behind RISK-025), `chief-of-staff`, `auto-update`,
+   `safety-guard` (promises to block `--force` with **no implementation** — a guard that exists only as a claim
+   invites reliance). Nothing was bulk-copied: only `agent-architecture-audit` is vendored, because it needed two
+   edits, both recorded in its header (write tools removed; "MANDATORY" downgraded to advisory — no imported file
+   outranks the coordinator's own selection rules).
+3. **The ledger catch-up** (`9ce57aa3`): Iterations 26–27, Meta-review 4, the MCP plans and the ECC adoption review.
+
+### The defect this iteration introduced, found in It. 34
+`9ce57aa3`'s commit message says **"Record Iterations 26-29"**. Its diff adds **26 and 27 only**. That false claim is
+now **DC-16**, and Iterations 28–33 went unlogged as a direct result. Recorded here rather than quietly fixed,
+because the entry for a bookkeeping iteration is the wrong place to hide a bookkeeping failure.
+
+---
+
+## Iteration 29 — 2026-09-23 (the scored run refuses to mislead: partial runs return no number)
+
+### Selected Item
+Second half of the cb-probe build, committed with It. 28 as `97d100c2` (that commit's own message says
+"Iterations 28-29", which is what fixes these two numbers).
+
+### What Changed
+The scored run — `start_scored_run`, `next_item`, `record_item_rating`, `run_exposure_probe`,
+`finish_scored_run` — with guarantees that are structural rather than editorial:
+- `official: false` is a field that **cannot** be set true.
+- The composite comes from `computeCompositeFromDimensions`, **imported unmodified**, so the arithmetic is the
+  institution's own — comparable in method while unmistakably unofficial.
+- A rating is rejected without an anchor **and** an evidence quote that is a real substring of the response.
+- `finish_scored_run` **refuses** until the exposure probe has completed. The whole bank is published with full
+  rubrics, so any model trained since may have memorised the items and the answer key; scoring without testing for
+  that manufactures flattering numbers.
+- Cross-judging is the documented default (**D-07**: the same pipeline scored ADP 58.1 and 60.6 three days apart,
+  across a band boundary). `trials < 3` refused, from the imported variance threshold.
+- `subdimensions` is a **structurally banned key with a live-computed reason**: `dimensions.ts` defines 40 codes and
+  0 of 33 bank items carry one.
+
+### The defect I found by driving the server over real stdio, then fixed
+A partial run emitted **composite 9.4 "Critical"**, because the canonical formula defaults an absent dimension to 1.
+A note explained it — but a number travels and a note does not. Partial runs now return `composite`/`band` null with
+a reason naming the missing dimensions, keeping the measured means, variance and contamination. This is the direct
+ancestor of **D-40** (It. 33): the same failure mode, one floor deeper.
+
+### Validation (V2 — over stdio, not from a report)
+81/81 tests · partial run → null composite naming 7 missing dimensions · full 8-dimension run, 84 ratings →
+composite 85 Exemplary, integration premium 10, **matching the canonical scorer** · finish refused before the probe ·
+ratings refused without anchor or quote. **Planted probes (V3):** breaking the canonical import and making `official`
+settable each failed by name, and both files were sha256-identical after restoration.
+
+---
+
+## Iteration 28 — 2026-09-23 (an MCP server with no API key in its design)
+
+### Selected Item
+**Founder directive**, after a plan was reviewed on the Desktop: build the server that lets any human trigger a
+Compassion Benchmark run from a model.
+
+### What Changed
+`tools/cb-probe` — a local stdio MCP server installable in Claude Code. **The host model is the judge, so there is no
+API key anywhere in the design**: the client already holds the credential and already runs the model. That is the
+security property, not a limitation. Zero runtime dependencies — the JSON-RPC layer is hand-rolled, so there is no
+install step. No network, no provider SDK; writes only under `CB_ARTIFACT_ROOT`.
+
+The judge-estimate surface: `list_probe_items` (prompt only, projected through a whitelist derived from the bank's
+own `fieldSeparationPolicy`), `get_anchors`, `open_judge_session`, `record_item_estimate`,
+`summarise_judge_session`, `explain_what_this_is_not`. Sensitive items excluded unless explicitly requested — 28 of
+33 served by default.
+
+Committed with It. 29 as `97d100c2`; founder-approved 2026-09-23.
+
+---
+
+## Iteration 27b — 2026-09-21 (deploy becomes manual-only, so a push can never silence CI again)
+
+### Why "27b" and not 28
+This work has no number in any committed record, and 28–29 are already fixed by `97d100c2`'s commit message and 33 by
+`tools/cb-probe/CHANGELOG.md`. Renumbering would break references that are already published, so it takes a suffix.
+Logged retroactively in It. 34.
+
+### Selected Item
+Found by **Meta-review 4**; recorded as **RISK-025**. To honour "manual deployment" I had put `[skip ci]` on the
+newest commit of four pushes to `main`. **GitHub applies that to the whole push**, not just the deploy step, so
+build, test and the nginx syntax check never ran either.
+
+### V1 — baseline, measured 2026-09-21
+- Newest CI run was `119f1757` (2026-09-17T16:56Z) with **12 commits pushed since, none built or tested**.
+- Iterations 19 and 21–25 plus three research cycles were **never CI-verified**.
+- `/updates/2026-09-18`, `/updates/2026-09-20` and `/updates/2026-09-21` each **301 → /404**: three committed
+  briefings readers could not see.
+- Production was last built 2026-09-18 by a bare `docker compose build` reporting `git.sha: null`, so the drift was
+  invisible.
+- It. 21's own post-deploy redirect sweep had therefore never run.
+
+### What Changed
+The `deploy` and `verify` jobs are gated `if: github.event_name == 'workflow_dispatch'`. A push now **always** runs
+worker-typecheck, build + test and the nginx syntax check, while shipping stays a deliberate human act. `[skip ci]` is
+no longer needed for that purpose and must not go on a push tip again.
+
+### Validation — and it failed
+The commit deliberately carried no `[skip ci]`: **the push was the test of the fix**, and should have produced a run
+whose `headSha` was that commit with deploy skipped. **It produced no run at all.** So the `[skip ci]` habit was *a*
+cause and not *the* cause; a second cause is unidentified and **RISK-025 stays open**, now needing the Actions tab or
+`gh api` from an authenticated session. Recorded as a failed validation rather than a closed item.
+
+---
+
 ## Iteration 27 — 2026-09-21 (the claims ledger grows to 16, and stops reading its own commentary — SC-1b + SC-1c)
 
 ### Selected Item

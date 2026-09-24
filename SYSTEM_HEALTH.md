@@ -1,9 +1,22 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review 1 · History: `ITERATION_LOG.md`
+Last change: Iteration 34 (DC-16: iteration-log coverage gate) · History: `ITERATION_LOG.md` (35 entries, newest 34)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-24 (Iteration 34 — six iterations had shipped unlogged; DC-16 gated): `ITERATION_LOG.md` ended at
+> **27** while `tools/cb-probe/README.md` cited "Iteration 32" and its `CHANGELOG.md` cited "Iteration 33", both already
+> committed and pushed. **27b and 28–33 are now written**, each reconstructed from committed evidence (commit messages,
+> diffs, test output) rather than memory; where a shipped artifact had already fixed a number I honoured it instead of
+> renumbering, which is why the 2026-09-21 CI fix is **27b**. New gate `test:iteration-log-coverage`
+> (chain 33 → 34) requires every `Iteration N`/`It. N` reference in a tracked file to resolve to a heading, and
+> the logged sequence to have no hole below its maximum. **It found a defect in itself on first run** — the abbreviated
+> branch matched the ordinary word "Its" ("Its 2017 Refugee Law"), 10 false positives, repaired by requiring the period
+> rather than allowlisting ten research files. Four negative controls, all restored sha256-identical; breaking either the
+> reference regex or the heading parse exits **VACUOUS**, not green. Registry now **DC-01..DC-16 (16 rows)**.
+> **Hole stated, not hidden:** occurrence 1 was a *commit message* claiming a record its diff did not contain, and a
+> commit message is not a tracked file — check B (no holes) is the substitute.
 
 > 2026-09-20 (research cycles 09-18 and 09-20, both verified, both uncommitted): two full cycles ran — 1,329 entities
 > scanned each, **24 entities assessed**, **2 proposals filed** (Dayton 35.9 → 30.0; Berkshire Hathaway 43.8 → 40.0),
@@ -32,17 +45,6 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 > Verified: `npm test` exit 0 (31 steps), `tsc` exit 0, fixture run 5 candidates / 4 dropped then 0 on repeat,
 > `validate-model-releases` PASS with 2 records. **Uncommitted — awaiting founder.**
 
-> 2026-09-18 (deploy verification — Iterations 19 and 21 are live): the founder deployed manually at 2026-09-17T21:40Z.
-> Verified: `/data/scores/singapore.json` serves the **country (62.2)**; `/city/singapore` 301s to the city's new slug;
-> **all 28 legacy URLs → 301 → 200, 0 `/404`, all https**; **1,323 of 1,323** ranking links still 200; the 09-17
-> briefing is live with its corrected text (0 "sister", control "Imbue" 3). Negative control still 404s.
-> **Two defects found BY this verification, both live:** (1) `/build-manifest.json` reports `sha: null,
-> source: "unavailable"` because the image was built without the `GIT_SHA` build args that only `deploy.sh` and CI
-> inject — It. 18's capability bypassed, so production again cannot name its commit (backlog BM-2); (2) **the evidence
-> tier badges on every briefing page are inverted** — the UI maps tier 1 to "Gov/Court" and 5 to "Trade/Advocacy"
-> against a documented scale where 5 is strongest, so a Boston.com article renders as "Tier 2 · UN/IO"
-> (backlog EV-1, DC-12, v2 15 — the highest-scoring open item). Iterations 22 and 23 remain uncommitted.
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
 - **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-20)**.
@@ -62,9 +64,9 @@ Last change: Iteration 13 (unapplied-score-movement briefing gate) + Meta-review
 | `validate-model-releases` | ✅ PASS, 4 warnings | release-watch `scanState` "never-scanned" |
 | `tsc --noEmit` (site) | ✅ clean | |
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
-| Build churn | ⚠️ `build-special-briefings.mjs:474` rewrites 16 tracked JSON timestamps every build | DC-08 |
+| Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **31 steps** with It. 24 uncommitted (30 at `dba86a76`), generated 2026-09-17 by the command below; all passing — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
+## Tests (`npm run test`, **34 steps**, generated 2026-09-24 by the command below; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -91,7 +93,7 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 | Governance | ✅ `AUTONOMY.md`, `DECISIONS.md`, `RISKS.md`, `INCIDENTS.md`, `OBSERVABILITY.md`, `DISASTER-RECOVERY.md`, `AGENT-ROUTING.md`, `docs/DEFECT_CLASS_REGISTRY.md` |
 | Loop | ✅ `IMPROVEMENT_BACKLOG.md` (scoring model v2 trial), `ITERATION_LOG.md`, `docs/META_REVIEW_2026-09-14_ITER10-12.md` |
 
-## Risks (RISKS.md — 17 entries, all open)
+## Risks (RISKS.md — **20 rows**, highest id RISK-025, 8 marked resolved/closed; generated 2026-09-24 with `grep -cE "^\| RISK-[0-9]+ \|" RISKS.md`)
 - **High / urgent:** RISK-014 Score-Watch sold, host NXDOMAIN · RISK-015 waiver cliff 2026-12-09 · RISK-016 research never run unattended · RISK-017/018 slug collisions (16) + accent mismatches (13) · RISK-020 briefing errors pass gates (reduced by It. 13, pending) · RISK-021 approval provenance unverifiable · RISK-001 majority placeholder scores.
 - **New 2026-09-15:** RISK-023 — 20 Fortune 500 names published with visible HTML entities ("Procter &amp; Gamble") and three disagreeing slugs each; fix spec `docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md` (founder-gated). Also: `validate-rotation-state.mjs` 22 FAILs are all false (evidence exists under older conventions) — backlog RS-1.
 - **Also open:** RISK-002 held proposals · RISK-003 entity-currency defects · RISK-004 deploy verification · RISK-005 two disclosure conventions · RISK-006 band-boundary ambiguity · RISK-007 reputational (mitigated) · RISK-008 rotation-state tracking · RISK-019 formula cliff at 4.0 (copy fixed) · RISK-022 public admin surface / missing HSTS/CSP.
@@ -105,8 +107,8 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ## Working tree (not deployed)
 - **Committed 2026-09-15 on branch `release/2026-09-15`** (founder instruction; pushed for manual deployment, NOT `main`): It. 12 · It. 13 · research cycle 2026-09-15 (scan, 14 assessments, Wellington proposal, digest, corrected public briefing, feeds) · grant documents · governance docs. Combined state verified before commit: tsc clean · `npm run test` exit 0 · `npm run build` exit 0 (1,989 pages; Pagefind 1,967) · briefing validator 80/80 · lint 0 unapplied-movement violations.
 - **Held:** America-at-250 rewrite of a published briefing (made ~2026-09-03; AUTONOMY §1c) · `research/entity-records-dryrun.json` (stale dry run).
-- **Churn/local:** 16 special-briefing timestamp JSON + manifests · 2 `.bak` files · `.claude/settings.local.json`.
-- **WIP limit (S6):** reached — no new implementation until commits are approved.
+- **Churn/local:** `.claude/settings.local.json` only. The 16 special-briefing timestamps stopped churning in It. 18 (DC-08) and `*.bak` is gitignored since It. 30, after the same pathspec mistake twice.
+- **WIP limit (S6):** clear as of 2026-09-24 — It. 28–33 and the 09-21/09-22/09-24 research cycles are committed and pushed; only It. 34 is uncommitted while this note is written.
 
 ## Readiness
 | Area | Status |
@@ -121,6 +123,19 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 34._
+
+> 2026-09-18 (deploy verification — Iterations 19 and 21 are live): the founder deployed manually at 2026-09-17T21:40Z.
+> Verified: `/data/scores/singapore.json` serves the **country (62.2)**; `/city/singapore` 301s to the city's new slug;
+> **all 28 legacy URLs → 301 → 200, 0 `/404`, all https**; **1,323 of 1,323** ranking links still 200; the 09-17
+> briefing is live with its corrected text (0 "sister", control "Imbue" 3). Negative control still 404s.
+> **Two defects found BY this verification, both live:** (1) `/build-manifest.json` reports `sha: null,
+> source: "unavailable"` because the image was built without the `GIT_SHA` build args that only `deploy.sh` and CI
+> inject — It. 18's capability bypassed, so production again cannot name its commit (backlog BM-2); (2) **the evidence
+> tier badges on every briefing page are inverted** — the UI maps tier 1 to "Gov/Court" and 5 to "Trade/Advocacy"
+> against a documented scale where 5 is strongest, so a Boston.com article renders as "Tier 2 · UN/IO"
+> (backlog EV-1, DC-12, v2 15 — the highest-scoring open item). Iterations 22 and 23 remain uncommitted.
 
 _Moved 2026-09-20, text unchanged: displaced from the top three._
 

@@ -299,6 +299,34 @@ comparability.
 **Sequencing:** `AUT-1 → AUT-3 → AUT-4 → AUT-5` gets us to scheduled detection with a loud failure path and no spend.
 `AUT-2` gates everything that costs money. `AUT-7` is the last safe automation before the human gates that stay.
 
+### New backlog items (2026-09-24, from Iteration 34)
+
+- **COMPLETED 2026-09-24 — DC-16 gate (`test:iteration-log-coverage`).** Not a pre-existing backlog row: **forced by
+  S10** (a class with ≥ 2 dated occurrences and no gate pre-empts the ranked queue), discovered while carrying out the
+  founder's "GitHub and Desktop" step. Six iterations (27b, 28–33) had shipped with no `ITERATION_LOG.md` entry while
+  two committed cb-probe files cited "Iteration 32" and "Iteration 33". Entries written from committed evidence; gate
+  wired into `npm run test` (chain 33 → 34) with four negative controls. v1 for the record: I4 S5 L3 C5 − E2 − R1 =
+  **14**; v2 adds Rc +2 (a class with 2 dated registry occurrences gaining a mechanical gate) = **16**.
+
+- **GOV-1 — a commit message must not claim a record its own diff does not contain.** DC-16's **first** occurrence was
+  exactly that: `9ce57aa3`'s message says "Record Iterations 26-29" while its diff adds 26 and 27. A commit message is
+  not a tracked file, so `test:iteration-log-coverage` cannot see it; check B (no holes in the logged sequence) is an
+  indirect substitute that would have caught this instance but will not catch the general case. Work, if it recurs: a
+  `commit-msg`/`pre-push` hook that extracts `Iteration N` / `D-N` / `RISK-N` claims from the message and requires
+  the matching artifact to be in the same commit's file list. Deliberately **not** built now — a hook on the commit
+  path is a governance surface (ECC-1 shape), one occurrence does not meet S4, and the practice rule is already
+  written into the DC-16 registry row. **Filed so the second occurrence is a forced selection, not a surprise.**
+  v1: I3 S4 L3 C4 − E2 − R3 = **9**.
+
+- **GOV-2 — SYSTEM_HEALTH carried four false rows for up to nine days.** Corrected in It. 34 while satisfying the
+  Step 8 "correct every row the change makes false" rule: the test chain read **31 steps** against an actual 34; the
+  risk register read **"17 entries, all open"** against 20 rows with 8 resolved and a highest id of RISK-025; the
+  build-churn row still showed DC-08 as an open ⚠️ nine days after It. 18 closed it with 0 dirty paths; and the
+  working-tree row still listed `.bak` churn that It. 30 gitignored. Every figure is now derived at write time with
+  the generating command recorded beside it (**S11**). Remaining work: the header still says *Snapshot 2026-09-15*,
+  and the whole "Build and gates (measured 2026-09-15)" section is nine days stale — it needs a re-measure, not a
+  re-type. v1: I3 S4 L2 C4 − E2 − R1 = **10**.
+
 ### New backlog items (2026-09-22)
 - **ECC-1 — add the `block-no-verify` guard as a fail-open PreToolUse hook.** ECC ships a hook that denies
   `git commit --no-verify` and `git push --force`; it ships **disabled**. Adopting it would mechanically strengthen
