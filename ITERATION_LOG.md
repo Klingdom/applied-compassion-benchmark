@@ -78,6 +78,26 @@ surviving a day in shipped documentation.
 - `IMPROVEMENT_BACKLOG.md` still holds the ≥ 5 eligible items the overlay requires, so no candidate-generation
   round was run (Step 2 override).
 
+### Found after validation, recorded not actioned (RISK-025's second cause)
+Checking whether this loop's own push produced a CI run answered a question open since 2026-09-21. **GitHub
+substring-matches the skip-ci marker anywhere in the head commit message, including prose that merely quotes it.**
+`9d89d4df` — the commit that fixed the habit — contains the literal token three times, the last reading *"This commit
+deliberately carries no [skip ci]"*. GitHub read that as carrying it, which is why the push that was designed to be
+the test of the fix produced nothing. Cross-referencing every `main` commit since 2026-09-14 against the 171 distinct
+run `headSha`s shows every push tip after `119f1757` carries the token, with no residue left to explain.
+
+**My first correlation was void and is disclosed:** `gh run list --commit <sha>` returned 0 for *every* commit,
+including `119f1757`, which has run 35249684018. A broken filter is not an absence (**V8**); the re-run carries
+`119f1757` as its positive control.
+
+**Second fact from the same check:** this branch has **no CI at all**, because the workflow triggers on
+`push: branches: [main]`. Today's three pushes were verified locally (full chain exit 0), not by CI, and that is
+stated rather than glossed.
+
+**Not fixed in this loop, deliberately.** Step 9 stops after one item, and changing a CI trigger is an `AUTONOMY.md`
+§1b act. Filed as **CI-1** (v2 17, the highest-scoring open item) and appended to RISK-025, whose earlier text is
+left intact as a dated record of what was believed on 2026-09-21.
+
 ---
 
 ## Iteration 33 — 2026-09-24 (the production pass: D-40 gates the composite, and the toolkit becomes installable by a stranger)

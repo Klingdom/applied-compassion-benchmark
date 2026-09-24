@@ -308,6 +308,18 @@ comparability.
   wired into `npm run test` (chain 33 → 34) with four negative controls. v1 for the record: I4 S5 L3 C5 − E2 − R1 =
   **14**; v2 adds Rc +2 (a class with 2 dated registry occurrences gaining a mechanical gate) = **16**.
 
+- **CI-1 — RISK-025's second cause, now identified: never write the skip-ci marker literally.** GitHub
+  substring-matches the token **anywhere** in the head commit message, including prose quoting it. `9d89d4df` — the
+  commit that fixed the habit — contains it three times, the last reading "This commit deliberately carries no
+  [skip ci]", so GitHub skipped the very push that was meant to prove the fix. Cross-referencing every `main` commit
+  since 2026-09-14 against the 171 distinct run `headSha`s shows **every push tip after `119f1757` carries the
+  token**, with no residue left to explain. Work: (a) a practice rule — refer to it as "the skip-ci marker" in prose,
+  never the literal string; (b) a founder decision on whether `deploy.yml` should also run build + test on pushes to
+  working branches, since `push: branches: [main]` means the current branch has had **no CI since 2026-09-17** and
+  everything pushed today was verified locally only; (c) optionally a `commit-msg` check. **§1b:** changing a CI
+  trigger is founder-gated, and Step 9 forbids acting in the loop that found this. v1: I5 S4 L4 C5 − E1 − R2 =
+  **15**; v2 adds K +2 (closes the open half of a High/High risk) = **17**.
+
 - **GOV-1 — a commit message must not claim a record its own diff does not contain.** DC-16's **first** occurrence was
   exactly that: `9ce57aa3`'s message says "Record Iterations 26-29" while its diff adds 26 and 27. A commit message is
   not a tracked file, so `test:iteration-log-coverage` cannot see it; check B (no holes in the logged sequence) is an

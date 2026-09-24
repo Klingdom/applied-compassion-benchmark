@@ -27,9 +27,10 @@
  * WRITING ABOUT A NUMBER YOU DO NOT MEAN TO CITE
  *   The pattern is case-sensitive, so a hypothetical is written in lower case ("a planted
  *   reference to iteration 99") and is ignored. Capitalised means cited, and a citation must
- *   resolve. This gate caught its own author doing it: the It. 34 entry originally quoted
- *   "Iteration 99" and "Iteration 40" while describing them, and the entry was reworded rather
- *   than the check loosened.
+ *   resolve. This gate caught its own author doing it twice: the It. 34 entry quoted two numbers
+ *   it was merely describing, and then this very comment did the same once the file became
+ *   tracked (the scan reads `git ls-files`, so an untracked script is invisible to it). Both
+ *   times the prose was reworded rather than the check loosened.
  *
  * WHAT THIS DELIBERATELY DOES NOT ASSERT
  *   Commit messages. Occurrence 1 lived in a commit message, which is not a tracked file and
