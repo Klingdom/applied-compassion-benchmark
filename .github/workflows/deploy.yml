@@ -139,7 +139,30 @@ jobs:
       - uses: actions/checkout@v4
       - name: "nginx -t against nginx.conf (nginx:alpine)"
         run: |
-          docker run --rm \
+          # `nginx -t` resolves proxy_pass upstreams at parse time, and this
+          # config proxies to a Docker Compose service name that exists only on
+          # the VPS network. Without a stub the check dies on
+          # "host not found in upstream" before validating any syntax -- which
+          # is exactly what happened the first time this job ever ran, on
+          # 2026-09-25. It was added 2026-09-17 and never executed once until
+          # then: every push since either carried a skip-ci marker or went to a
+          # branch this workflow did not watch. DC-11's registry row recorded it
+          # as gated from 2026-09-17; it was not gated until today.
+          #
+          # Each upstream hostname is stubbed so resolution succeeds and nginx
+          # checks what this job exists to check: the syntax and directive
+          # validity of the file the image actually ships. The list is derived
+          # from the config rather than hardcoded, so a newly added upstream
+          # cannot silently reintroduce the failure.
+          UPSTREAMS=$(grep -oE "proxy_pass[[:space:]]+https?://[A-Za-z0-9._-]+" nginx.conf | sed -E "s#.*//##" | sort -u)
+          echo "upstream hosts found in nginx.conf: ${UPSTREAMS:-<none>}"
+          HOSTARGS=""
+          for h in $UPSTREAMS; do
+            case "$h" in localhost|127.0.0.1) continue ;; esac
+            HOSTARGS="$HOSTARGS --add-host $h:127.0.0.1"
+          done
+          # shellcheck disable=SC2086
+          docker run --rm $HOSTARGS \
             -v "$PWD/nginx.conf:/etc/nginx/conf.d/default.conf:ro" \
             nginx:alpine nginx -t
 
