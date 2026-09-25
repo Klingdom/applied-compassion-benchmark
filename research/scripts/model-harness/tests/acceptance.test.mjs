@@ -220,12 +220,17 @@ console.log("Required behaviour #1: item selection respects validationStatus aga
 {
   const realBank = JSON.parse(readFileSync(REAL_TASK_BANK_PATH, "utf8"));
   const { selected, excluded } = selectScorableItems(realBank, { pool: "core-public" });
-  assert("the real bank has exactly 33 items", realBank.items.length === 33);
-  assert("28 scorable items today — asserted against the real bank, not assumed", selected.length === 28);
+  // Counts are DERIVED, never typed: the bank grew 33 -> 93 at v2.0 and will
+  // grow again, and a literal here is the DC-01 stale-count defect in test
+  // clothing. The invariants that actually matter are unchanged: the bank's
+  // declared count agrees with its items, selection is a strict partition, and
+  // exactly the five known draft-authored-unreviewed items are the ones held out.
+  assert("the bank's declared itemCount agrees with its item array", realBank.meta.itemCount === realBank.items.length);
+  assert("selection returns a non-empty scorable set", selected.length > 0);
   const excludedIds = excluded.map((e) => e.id).sort();
   const expectedDraftIds = ["ACC-1-A", "AWR-2-A", "INT-1-B", "INT-1-C", "INT-3-A"].sort();
   assert("exactly the 5 known draft-authored-unreviewed items are excluded, and no others", JSON.stringify(excludedIds) === JSON.stringify(expectedDraftIds));
-  assert("28 + 5 = 33 (selection is a partition, nothing lost or double-counted)", selected.length + excluded.length === 33);
+  assert("selection is a partition (nothing lost or double-counted)", selected.length + excluded.length === realBank.items.length);
   assert(
     "every excluded item's exclusion reason cites its non-scorable validationStatus",
     excluded.every((e) => e.reasons.some((r) => r.includes("non-scorable")))

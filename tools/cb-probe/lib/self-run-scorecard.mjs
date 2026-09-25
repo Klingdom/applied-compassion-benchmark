@@ -27,7 +27,7 @@ import {
   createSeededRng,
   THRESHOLDS,
 } from "../../../site/scripts/lib/evaluation-statistics.mjs";
-import { findItem, getScorableItems } from "./bank.mjs";
+import { findItem, getScorableItems, isScorableItem } from "./bank.mjs";
 import { PACKAGE_VERSION } from "./paths.mjs";
 import { SELF_RUN_HEADER } from "./scorecard-header.mjs";
 import { validateSelfRunScorecard, MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE } from "./validate-scorecard.mjs";
@@ -37,35 +37,28 @@ import {
   EXPOSURE_FLAG_THRESHOLD,
 } from "./exposure-probe.mjs";
 
-// Verified 2026-09-20 against site/src/data/dimensions.ts (8 dimensions x 5
-// subdimensions each) -- see docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md §2.
-// Hardcoded because cb-probe has zero runtime dependencies and no
-// TypeScript loader to import dimensions.ts directly; re-verify this number
-// if the taxonomy changes. The "0 of N items carry a subdimension field"
-// half of the reason below is NOT hardcoded -- it is computed live from the
-// bank on every run (V8: an absence claim needs a positive control, so this
-// module actually checks rather than asserting from memory).
-const SUBDIMENSION_CODE_COUNT = 40;
+// Subdimension canon and coverage live in lib/subdimensions.mjs, which imports
+// the 40 codes from site/scripts/lib/task-bank-validator.mjs rather than
+// keeping a second copy here. Re-exported so existing callers and tests that
+// import computeSubdimensionsStatus from this module keep working.
+//
+// History worth keeping: until bank v2.0 (2026-09-24) this function could only
+// ever return available:false, because 0 of 33 items carried a subdimension
+// code. It always computed that from the bank rather than asserting it, which
+// is why the day the bank changed, the reason string changed with it.
+export {
+  computeSubdimensionsStatus,
+  computeSubdimensionMeans,
+  computeCoverageLevel,
+  SUBDIMENSION_CODES,
+  SUBDIMENSION_CODE_COUNT,
+} from "./subdimensions.mjs";
 
-/**
- * @param {object} bank - loaded task bank
- * @returns {{ available: false, reason: string }}
- */
-export function computeSubdimensionsStatus(bank) {
-  const itemsWithSubdimensionField = bank.items.filter(
-    (item) => typeof item.subdimension === "string" && item.subdimension.length > 0
-  ).length;
-  return {
-    available: false,
-    reason:
-      `Subdimension-level scoring is not available. site/src/data/dimensions.ts defines ` +
-      `${SUBDIMENSION_CODE_COUNT} subdimension codes (8 dimensions x 5 subdimensions each), but a ` +
-      `live check of the task bank actually used for this run (bankVersion ${bank.meta.bankVersion}, ` +
-      `${bank.items.length} items) found ${itemsWithSubdimensionField} of ${bank.items.length} items ` +
-      `carrying a subdimension field. This scorecard reports the 8 dimension-level means only -- never ` +
-      `a fabricated per-subdimension number. See docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md §2.`,
-  };
-}
+import {
+  computeSubdimensionsStatus,
+  computeSubdimensionMeans,
+  computeCoverageLevel,
+} from "./subdimensions.mjs";
 
 function buildCoverageNote(dimensionCodes, dimensionItemCounts) {
   const missing = DIMENSION_CODES.filter((d) => !dimensionCodes.includes(d));
@@ -438,6 +431,20 @@ export function buildSelfRunScorecard({ run, trials, exposureProbe, bank }) {
   );
   const floorMet = missingDimensionCodes.length === 0 && shortfallDimensionCodes.length === 0;
 
+  // Subdimension means, from bank v2.0 onward. Reported ALONGSIDE the
+  // dimension means, never instead of them: `dimensions` remains the sole
+  // input to the canonical composite, so there is no second scoring path to
+  // drift from the published one. A subdimension with no rated item reports
+  // null and a count of 0 -- never an imputed number.
+  const ratedForSubdims = items.map((it) => ({
+    item_id: it.item_id,
+    dimension: it.dimension,
+    subdimension: findItem(bank, it.item_id)?.indicator ?? null,
+    mean_rating: it.mean_rating,
+  }));
+  const { means: subdimensions, itemCounts: subdimensionItemCounts } = computeSubdimensionMeans(ratedForSubdims);
+  const coverage = computeCoverageLevel({ dimensionFloorMet: floorMet, subdimensionItemCounts });
+
   let composite = null;
   let band = null;
   let integrationPremium = null;
@@ -550,10 +557,13 @@ export function buildSelfRunScorecard({ run, trials, exposureProbe, bank }) {
     integration_premium: integrationPremium,
     dimensions,
     dimension_item_counts: dimensionItemCounts,
+    subdimensions,
+    subdimension_item_counts: subdimensionItemCounts,
+    coverage,
     uncertainty,
     coverage_note: buildCoverageNote(run.dimensions, dimensionItemCounts),
     items,
-    subdimensions_status: computeSubdimensionsStatus(bank),
+    subdimensions_status: computeSubdimensionsStatus(bank, isScorableItem),
     provenance,
     contamination,
     judge_configuration_notice: buildJudgeConfigurationNotice(run.judge_configuration),

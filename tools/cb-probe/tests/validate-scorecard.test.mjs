@@ -142,13 +142,60 @@ test("deny-list: rank, benchmark(bare), run_id, cohort etc. still fail validatio
   assert.ok(errors.some((e) => e.includes("run_id")));
 });
 
-test("deny-list: a nested 'subdimensions' key anywhere in the tree fails validation", () => {
-  const fixture = validFixture({ dimensions: { ...validFixture().dimensions, subdimensions: {} } });
-  const banned = findScorecardBannedKeys(fixture);
-  assert.ok(banned.includes("subdimensions"));
+// Bank v2.0 made subdimension scoring real, so the old blanket ban on a key
+// named `subdimensions` was replaced by a stronger check. These three tests
+// pin what actually matters: a per-subdimension number must be BACKED.
+test("a subdimension mean with zero rated items fails validation (the fabricated-number guard)", () => {
+  const fixture = validFixture({
+    subdimensions: { A1: 4.2 },
+    subdimension_item_counts: { A1: 0 },
+  });
   const { valid, errors } = validateSelfRunScorecard(fixture);
   assert.equal(valid, false);
-  assert.ok(errors.some((e) => e.includes("subdimensions")));
+  assert.ok(
+    errors.some((e) => e.includes("A1") && e.includes("0 items")),
+    `expected an unbacked-mean error naming A1, got: ${errors.join(" | ")}`
+  );
+});
+
+test("a rated subdimension that reports null instead of its mean fails validation", () => {
+  const fixture = validFixture({
+    subdimensions: { A1: null },
+    subdimension_item_counts: { A1: 3 },
+  });
+  const { valid, errors } = validateSelfRunScorecard(fixture);
+  assert.equal(valid, false);
+  assert.ok(errors.some((e) => e.includes("A1") && e.includes("must report its mean")));
+});
+
+test("subdimensions without accompanying item counts fails validation", () => {
+  const fixture = validFixture({ subdimensions: { A1: 4.2 } });
+  const { valid, errors } = validateSelfRunScorecard(fixture);
+  assert.equal(valid, false);
+  assert.ok(errors.some((e) => e.includes("subdimension_item_counts")));
+});
+
+test("an out-of-range subdimension mean fails validation", () => {
+  const fixture = validFixture({
+    subdimensions: { A1: 7 },
+    subdimension_item_counts: { A1: 2 },
+  });
+  const { valid } = validateSelfRunScorecard(fixture);
+  assert.equal(valid, false);
+});
+
+test('coverage.level "complete" is checked against the counts, not trusted', () => {
+  const fixture = validFixture({
+    subdimensions: { A1: 4.0, A2: null },
+    subdimension_item_counts: { A1: 2, A2: 0 },
+    coverage: { level: "complete", note: "claims complete", unratedSubdimensions: [] },
+  });
+  const { valid, errors } = validateSelfRunScorecard(fixture);
+  assert.equal(valid, false);
+  assert.ok(
+    errors.some((e) => e.includes('coverage.level "complete" is false')),
+    `expected the complete-claim to be contradicted, got: ${errors.join(" | ")}`
+  );
 });
 
 test("allow-list: an unexpected top-level key fails validation", () => {
@@ -198,11 +245,19 @@ test("contamination.probed must be true -- a scorecard without a completed probe
   assert.ok(errors.some((e) => e.includes("contamination.probed")));
 });
 
-test("subdimensions_status.available can never be true", () => {
-  const fixture = validFixture({ subdimensions_status: { available: true, reason: "x" } });
-  const { valid, errors } = validateSelfRunScorecard(fixture);
+test("subdimensions_status.available must be a boolean and always carry a reason", () => {
+  // true is now legitimate (bank v2.0 covers all 40 codes) -- but a non-boolean
+  // or a missing reason is not.
+  const ok = validFixture({ subdimensions_status: { available: true, reason: "all 40 covered" } });
+  assert.equal(validateSelfRunScorecard(ok).valid, true);
+
+  const notBoolean = validFixture({ subdimensions_status: { available: "yes", reason: "x" } });
+  assert.equal(validateSelfRunScorecard(notBoolean).valid, false);
+
+  const noReason = validFixture({ subdimensions_status: { available: true, reason: "" } });
+  const { valid, errors } = validateSelfRunScorecard(noReason);
   assert.equal(valid, false);
-  assert.ok(errors.some((e) => e.includes("subdimensions_status.available")));
+  assert.ok(errors.some((e) => e.includes("subdimensions_status.reason")));
 });
 
 test("judge_panel must be an object when judge_configuration is panel, and null otherwise", () => {

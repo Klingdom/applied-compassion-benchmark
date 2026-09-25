@@ -9,12 +9,17 @@
 //   - `composite` and `band` are permitted top-level keys ONLY here. They
 //     remain banned everywhere in JudgeEstimate (validate-estimate.mjs is
 //     untouched in that respect -- see tests/vocabulary-ban.test.mjs).
-//   - `subdimensions` is additionally banned, anywhere in the tree, because
-//     this artifact must never carry a field by that name: subdimension
-//     scoring is not available (see computeSubdimensionsStatus in
-//     lib/self-run-scorecard.mjs), and the one thing worse than "absent" is
-//     a key named `subdimensions` holding zeros or nulls pretending to be
-//     scores.
+//   - `subdimensions` WAS banned anywhere in the tree, because subdimension
+//     scoring did not exist and the one thing worse than "absent" is a key
+//     named `subdimensions` holding zeros or nulls pretending to be scores.
+//     Bank v2.0 (2026-09-24) changed the underlying fact: all 40 subdimension
+//     codes are now carried by real items, so real per-subdimension means can
+//     be reported. The ban is therefore REPLACED, not deleted, by a stronger
+//     check (validateSubdimensions below): the key is permitted at the top
+//     level only, every value must be null or a rating in [1,5], and a
+//     non-null mean must be backed by a non-zero item count in
+//     `subdimension_item_counts`. A fabricated or unbacked number now fails
+//     by name, which is more than absence ever proved.
 //
 // Two independent mechanisms, exactly as validate-estimate.mjs: a deny-list
 // (SCORECARD_BANNED_KEYS, anywhere in the tree) and an allow-list (only
@@ -39,10 +44,7 @@ export const MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE = 3;
 
 const EXEMPT_FOR_SCORECARD = new Set(["composite", "band"]);
 
-export const SCORECARD_BANNED_KEYS = Object.freeze([
-  ...BANNED_KEYS.filter((key) => !EXEMPT_FOR_SCORECARD.has(key)),
-  "subdimensions",
-]);
+export const SCORECARD_BANNED_KEYS = Object.freeze([...BANNED_KEYS.filter((key) => !EXEMPT_FOR_SCORECARD.has(key))]);
 
 const SCORECARD_BANNED_KEY_SET = new Set(SCORECARD_BANNED_KEYS);
 
@@ -68,6 +70,9 @@ export const ALLOWED_TOP_LEVEL_KEYS = Object.freeze([
   "integration_premium",
   "dimensions",
   "dimension_item_counts",
+  "subdimensions",
+  "subdimension_item_counts",
+  "coverage",
   "uncertainty",
   "coverage_note",
   "items",
@@ -454,7 +459,7 @@ export function validateSelfRunScorecard(artifact) {
     });
   }
 
-  // --- subdimensions_status: the "absent, with a reason" guarantee ---
+  // --- subdimensions_status: a reason is required whether or not it is available ---
   if (
     !artifact.subdimensions_status ||
     typeof artifact.subdimensions_status !== "object" ||
@@ -462,14 +467,93 @@ export function validateSelfRunScorecard(artifact) {
   ) {
     errors.push("subdimensions_status must be a plain object");
   } else {
-    if (artifact.subdimensions_status.available !== false) {
-      errors.push("subdimensions_status.available must be exactly false -- subdimension scoring is not available today");
+    if (typeof artifact.subdimensions_status.available !== "boolean") {
+      errors.push("subdimensions_status.available must be a boolean");
     }
     if (
       typeof artifact.subdimensions_status.reason !== "string" ||
       artifact.subdimensions_status.reason.length === 0
     ) {
-      errors.push("subdimensions_status.reason must be a non-empty string explaining why");
+      errors.push("subdimensions_status.reason must be a non-empty string explaining the coverage position");
+    }
+  }
+
+  // --- subdimensions: every reported mean must be real and backed ---
+  //
+  // This replaces the old blanket ban on a key named `subdimensions`. The ban
+  // existed because no item carried a subdimension code, so any such key would
+  // have been fabricated. Bank v2.0 changed that fact. What must never happen
+  // is unchanged: a per-subdimension number that is not backed by rated items.
+  if (artifact.subdimensions !== undefined) {
+    const subs = artifact.subdimensions;
+    const counts = artifact.subdimension_item_counts;
+    if (!subs || typeof subs !== "object" || Array.isArray(subs)) {
+      errors.push("subdimensions must be a plain object keyed by subdimension code");
+    } else if (!counts || typeof counts !== "object" || Array.isArray(counts)) {
+      errors.push("subdimension_item_counts must accompany subdimensions -- a mean with no item count is unbacked");
+    } else {
+      for (const [code, value] of Object.entries(subs)) {
+        const n = counts[code];
+        if (typeof n !== "number" || !Number.isInteger(n) || n < 0) {
+          errors.push(`subdimension_item_counts["${code}"] must be a non-negative integer`);
+          continue;
+        }
+        if (value === null) {
+          if (n !== 0) {
+            errors.push(
+              `subdimensions["${code}"] is null but subdimension_item_counts says ${n} item(s) were rated -- ` +
+                `a rated subdimension must report its mean`
+            );
+          }
+          continue;
+        }
+        if (typeof value !== "number" || !Number.isFinite(value) || value < 1 || value > 5) {
+          errors.push(`subdimensions["${code}"] must be null or a number in [1,5], got ${JSON.stringify(value)}`);
+          continue;
+        }
+        if (n === 0) {
+          errors.push(
+            `subdimensions["${code}"] reports a mean of ${value} but subdimension_item_counts says 0 items were ` +
+              `rated -- this is exactly the fabricated number the schema exists to prevent`
+          );
+        }
+      }
+    }
+  }
+
+  // --- coverage: the honest three-state level ---
+  if (artifact.coverage !== undefined) {
+    const cov = artifact.coverage;
+    if (!cov || typeof cov !== "object" || Array.isArray(cov)) {
+      errors.push("coverage must be a plain object");
+    } else {
+      const LEVELS = ["complete", "dimension-only", "insufficient"];
+      if (!LEVELS.includes(cov.level)) {
+        errors.push(`coverage.level must be one of ${LEVELS.join(", ")}, got ${JSON.stringify(cov.level)}`);
+      }
+      if (typeof cov.note !== "string" || cov.note.length === 0) {
+        errors.push("coverage.note must be a non-empty string");
+      }
+      // "complete" is a claim about the whole taxonomy, so it is checked, not trusted.
+      if (cov.level === "complete") {
+        if (artifact.composite === null || artifact.composite === undefined) {
+          errors.push('coverage.level "complete" requires a composite -- it asserts the D-40 floor was met');
+        }
+        if (Array.isArray(cov.unratedSubdimensions) && cov.unratedSubdimensions.length > 0) {
+          errors.push(
+            `coverage.level "complete" contradicts unratedSubdimensions (${cov.unratedSubdimensions.length} unrated)`
+          );
+        }
+        if (artifact.subdimension_item_counts) {
+          const unrated = Object.entries(artifact.subdimension_item_counts).filter(([, n]) => !n);
+          if (unrated.length > 0) {
+            errors.push(
+              `coverage.level "complete" is false: ${unrated.length} subdimension(s) have 0 rated items ` +
+                `(${unrated.slice(0, 5).map(([c]) => c).join(", ")}${unrated.length > 5 ? ", ..." : ""})`
+            );
+          }
+        }
+      }
     }
   }
 

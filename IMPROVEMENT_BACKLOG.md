@@ -299,6 +299,40 @@ comparability.
 **Sequencing:** `AUT-1 → AUT-3 → AUT-4 → AUT-5` gets us to scheduled detection with a loud failure path and no spend.
 `AUT-2` gates everything that costs money. `AUT-7` is the last safe automation before the human gates that stay.
 
+### New backlog items (2026-09-24, from Iteration 37 — the AI Evaluation Suite)
+
+- **MCP-S6 — COMPLETED 2026-09-24 (It. 37), founder-directed.** The bank went 33 -> 93 items and
+  13 of 40 -> **40 of 40 subdimensions**, with >= 2 non-sensitive scorable items each. A default run serves
+  83 items / 249 trials and reaches every subdimension. A composite is now
+  reachable from the real bank and arrives labelled `coverage.level` (complete / dimension-only /
+  insufficient). Recorded as **D-41**. Its v2 score of 9 was never the real ranking — it was gated, and the
+  directive opened the gate.
+
+- **MB-2 — LARGER, NOT SMALLER: 0 of 93 items human-reviewed** (was 0 of 33). This is now the single
+  most important open item on the model track. A composite that *can* be produced *will* be quoted, and today
+  every number it rests on comes from items authored by AI agents against published rubrics and verified only
+  structurally. Work: a written validation protocol, then review. Eight agents wrote 60 items in one day
+  against one rubric set, so **correlated blind spots are likely** and should be sampled for deliberately.
+  v1: I5 S5 L4 C4 − E4 − R2 = **12**; v2 adds P +1 (a live number now rests on it) = **13**.
+
+- **MB-5 — unchanged and now more visible.** `EQU-1-B` and `EQU-1-C` still carry rubrics demanding a
+  comparison arm the items do not present, so two of the original three Identity Equity items cannot be
+  applied as written. The 8 new EQU items were explicitly audited against that defect and do not repeat it.
+  Repairing a published rubric is a methodology act (§1b) and was deliberately not done in this loop.
+
+- **MS-1 — item-quality review of the 60 new items.** Each authoring agent named its own least-confident item
+  and its reasoning; those are in the It. 37 transcript and worth using as the sampling frame rather than
+  reviewing at random. Known concerns raised by the authors themselves: cross-dimension bleed (AWR-5-B,
+  SYS-4-B), rater-knowledge dependence (ACC-2-A needs UK holiday law; ACT-4-A/B reward jurisdiction-specific
+  knowledge, a real DIF risk), and one rubric-fit judgement call (INT-3-C, where the two pre-existing I3 items
+  read the subdimension differently than the published text does). v1: I4 S4 L4 C4 − E3 − R2 = **11**.
+
+- **MS-2 — the trial-cache invariant needs a test.** It. 37 fixed an O(n^2) re-parse in `listRunTrials` with a
+  path-keyed cache invalidated by mtime+size. The forged-run defence depends on disk staying authoritative;
+  that property is currently argued in a comment, not asserted. Work: a test that writes a trial file, reads
+  it through `listRunTrials`, rewrites it on disk with different content, and asserts the new content is
+  returned. v1: I3 S4 L3 C5 − E1 − R1 = **13**.
+
 ### New backlog items (2026-09-24, from Iteration 34)
 
 - **COMPLETED 2026-09-24 — DC-16 gate (`test:iteration-log-coverage`).** Not a pre-existing backlog row: **forced by

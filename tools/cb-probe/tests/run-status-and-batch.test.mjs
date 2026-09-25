@@ -61,7 +61,16 @@ test("run_status reports planned/recorded/remaining trials before anything is re
   assert.equal(status.exposure_probe_status, "not_started");
   assert.equal(status.ready_to_finish, false);
   assert.equal(status.finished, false);
-  assert.ok(Array.isArray(status.items) && status.items.length === 5, "AWR has 5 scorable items");
+  // Derived from the bank, never typed: the item count per dimension changes
+  // whenever the bank grows (33 -> 93 at v2.0), and a hardcoded literal here is
+  // the DC-01 stale-count defect in test clothing.
+  const expectedAwrItems = started.item_count;
+  assert.ok(expectedAwrItems > 0, "the run must plan at least one AWR item");
+  assert.equal(status.total_planned_trials, expectedAwrItems * 3, "planned trials = items x trials");
+  assert.ok(
+    Array.isArray(status.items) && status.items.length === expectedAwrItems,
+    `run_status should list the ${expectedAwrItems} items the run actually planned, got ${status.items?.length}`
+  );
   for (const item of status.items) {
     assert.equal(item.planned, 3);
     assert.equal(item.recorded, 0);

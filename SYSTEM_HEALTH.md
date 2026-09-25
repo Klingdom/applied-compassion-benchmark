@@ -1,9 +1,23 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 36 (D1-1c: publication-drift check) · History: `ITERATION_LOG.md` (35 entries, newest 34)
+Last change: Iteration 37 (D-41: the AI Evaluation Suite — bank v2.0, 40/40 subdimensions) · History: `ITERATION_LOG.md` (35 entries, newest 34)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-24 (Iteration 37 — the Compassion Benchmark AI Evaluation Suite; founder-directed, **D-41**):
+> the model task bank goes **33 -> 93 items** and **13 of 40 -> 40 of 40 subdimensions**, with at least 2
+> non-sensitive scorable items in every one. A default run is **83 items / 249 trials** and reaches all 40
+> subdimensions, so a composite is **reachable from the real bank** for the first time — verified end to end and
+> over real stdio: **composite 85, band Exemplary, coverage `complete`, 40/40 rated**. The scorecard now carries
+> `subdimensions`, `subdimension_item_counts` and a three-state `coverage.level`; `complete` is **recomputed by
+> the validator**, not trusted. The old blanket ban on a `subdimensions` key was replaced by a stronger rule: a
+> non-null mean must be backed by a non-zero item count. **Fixed on the way:** an O(n²) re-parse in
+> `listRunTrials` that cost **33s** on a 249-trial run (now 4.4s), a spec error of mine that would have broken
+> the site build, and a coverage plan of mine that missed the `draft-authored-unreviewed` exclusions.
+> **Unchanged and now louder: 0 of 93 items have been reviewed by a human** (MB-2), the items were
+> authored by AI agents and only *structurally* verified, and MB-5’s two broken EQU rubrics still stand.
+> cb-probe 154/154; bank validator 93 items / 0 failures; site chain 35 steps.
 
 > 2026-09-24 (Iteration 36 — three briefings have been invisible for four days, and now something watches):
 > measured live — production built **2026-09-22T14:07Z** with `sha: null`, and `/updates/2026-09-21`, `09-22` and
@@ -29,19 +43,6 @@ Last change: Iteration 36 (D1-1c: publication-drift check) · History: `ITERATIO
 > positive control failed instead of the gate passing) and a future cutoff (**VACUOUS**, not green). Registry now
 > **DC-01..DC-17 (17 rows)**. **Open half is now a decision, not an unknown:** `deploy.yml` triggers on
 > `push: branches: [main]`, so this branch has had no CI since 2026-09-17 — **CI-1b** for the founder.
-
-> 2026-09-24 (Iteration 34 — six iterations had shipped unlogged; DC-16 gated): `ITERATION_LOG.md` ended at
-> **27** while `tools/cb-probe/README.md` cited "Iteration 32" and its `CHANGELOG.md` cited "Iteration 33", both already
-> committed and pushed. **27b and 28–33 are now written**, each reconstructed from committed evidence (commit messages,
-> diffs, test output) rather than memory; where a shipped artifact had already fixed a number I honoured it instead of
-> renumbering, which is why the 2026-09-21 CI fix is **27b**. New gate `test:iteration-log-coverage`
-> (chain 33 → 34) requires every `Iteration N`/`It. N` reference in a tracked file to resolve to a heading, and
-> the logged sequence to have no hole below its maximum. **It found a defect in itself on first run** — the abbreviated
-> branch matched the ordinary word "Its" ("Its 2017 Refugee Law"), 10 false positives, repaired by requiring the period
-> rather than allowlisting ten research files. Four negative controls, all restored sha256-identical; breaking either the
-> reference regex or the heading parse exits **VACUOUS**, not green. Registry now **DC-01..DC-16 (16 rows)**.
-> **Hole stated, not hidden:** occurrence 1 was a *commit message* claiming a record its diff did not contain, and a
-> commit message is not a tracked file — check B (no holes) is the substitute.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -121,6 +122,21 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 37._
+
+> 2026-09-24 (Iteration 34 — six iterations had shipped unlogged; DC-16 gated): `ITERATION_LOG.md` ended at
+> **27** while `tools/cb-probe/README.md` cited "Iteration 32" and its `CHANGELOG.md` cited "Iteration 33", both already
+> committed and pushed. **27b and 28–33 are now written**, each reconstructed from committed evidence (commit messages,
+> diffs, test output) rather than memory; where a shipped artifact had already fixed a number I honoured it instead of
+> renumbering, which is why the 2026-09-21 CI fix is **27b**. New gate `test:iteration-log-coverage`
+> (chain 33 → 34) requires every `Iteration N`/`It. N` reference in a tracked file to resolve to a heading, and
+> the logged sequence to have no hole below its maximum. **It found a defect in itself on first run** — the abbreviated
+> branch matched the ordinary word "Its" ("Its 2017 Refugee Law"), 10 false positives, repaired by requiring the period
+> rather than allowlisting ten research files. Four negative controls, all restored sha256-identical; breaking either the
+> reference regex or the heading parse exits **VACUOUS**, not green. Registry now **DC-01..DC-16 (16 rows)**.
+> **Hole stated, not hidden:** occurrence 1 was a *commit message* claiming a record its diff did not contain, and a
+> commit message is not a tracked file — check B (no holes) is the substitute.
 
 _Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 36._
 

@@ -4,6 +4,62 @@ All notable changes to the `cb-probe` MCP server. Dates are the day the change s
 release-tag date (this package is pre-1.0 and has no separate release process from the monorepo it
 lives in — `version` in `package.json` is the provenance signal; see "Versioning" in `README.md`).
 
+## 0.2.0 — 2026-09-24 — the Compassion Benchmark AI Evaluation Suite
+
+Founder-directed: "implement a complete composite test for AI models based on all dimensions sub
+dimensions", then "finish a production ready complete implementation ... called the Compassion
+Benchmark AI Evaluation Suite". Recorded as `DECISIONS.md` **D-41**.
+
+### The bank went from partial to complete
+
+| | v1.1 | v2.0 |
+|---|---:|---:|
+| Items | 33 | **93** |
+| Subdimensions covered | 13 of 40 | **40 of 40** |
+| Minimum items per subdimension | 0 | **2** |
+| Items in a default run | 28 | **83** |
+| Trials in a complete run | — | **249** |
+
+60 items were authored against the published subdimension rubrics by eight dimension-scoped agents
+plus a top-up pass, then structurally verified by the coordinator: id set against the plan, anchor
+count/level/label, the 17 mandated-null fields, prompt length, placeholder scan, meta-language scan,
+crisis-vocabulary scan, and a duplicate-prompt scan across the whole bank. Every pre-existing item
+gained an explicit `indicator` (subdimension code) backfilled from the index already encoded in its
+id; no pre-existing item was otherwise altered.
+
+### A composite is now reachable, and says how complete it is
+
+- `subdimensions` and `subdimension_item_counts` are emitted: a mean per subdimension, `null` where
+  nothing was rated, never imputed.
+- `coverage.level` is one of **`complete`** (D-40 floor met AND all 40 subdimensions rated),
+  **`dimension-only`** (floor met, some subdimensions unrated — valid at the dimension level, must
+  not be called subdimension-complete), or **`insufficient`** (no composite).
+- `complete` is **recomputed by the validator** from the item counts and fails the artifact if any
+  subdimension has zero. A run cannot simply assert it.
+
+### The `subdimensions` ban was replaced, not deleted
+
+The schema previously banned a key named `subdimensions` anywhere in the tree, because 0 of 33 items
+carried a subdimension code and any such key would have been fabricated. That fact changed. The ban
+is now a stronger check: a mean must be `null` or in [1,5], and **a non-null mean must be backed by
+a non-zero item count**. An unbacked number fails by name — more than absence ever proved.
+
+### Fixed: a quadratic in the run path
+
+`listRunTrials` re-read and re-parsed every trial file on every `next_item`, `record_item_rating`
+and `run_status` call, so an n-trial run performed O(n²) file reads. Measured on the real bank after
+it grew: a complete 249-trial run spent **33s** inside that function, rising quadratically (50
+trials 1.4s → 200 trials 21.3s). Now cached by file path and invalidated by the file's own mtime and
+size, so disk stays the single source of truth and `finish_scored_run`'s refusal to trust in-memory
+state is unaffected. Same run: **4.4s**, near-linear.
+
+### Tests
+
+Several tests asserted the *old limitation* as a fact — "SYS and INT stay below the 3-item floor",
+"the scorecard never has a `subdimensions` key", "`available` can never be true", and four hardcoded
+item counts. Each was rewritten to assert the new guarantee and to **derive** counts from the bank
+rather than restate them, which is the DC-01 stale-count defect in test clothing.
+
 ## 0.1.0 — 2026-09-24
 
 First day this package was treated as a product, not a prototype. Everything below shipped the same

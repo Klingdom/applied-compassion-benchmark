@@ -52,6 +52,71 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+## D-41 — 2026-09-24 · The Compassion Benchmark AI Evaluation Suite: complete subdimension coverage, and a three-state coverage level
+
+**Decision (founder-directed 2026-09-24: "implement a complete composite test for AI models based on all
+dimensions sub dimensions", then "finish a production ready complete implementation … called the Compassion
+Benchmark AI Evaluation Suite"). Coordinator-drafted, awaiting countersignature.**
+
+### What changed
+
+The model task bank goes from **33 items covering 13 of 40 subdimensions** to **93 items covering 40 of 40**,
+with **at least 2 non-sensitive scorable items in every subdimension**. A default run (sensitive and
+`draft-authored-unreviewed` items excluded) now serves **83 items / 249 trials** and reaches every
+subdimension.
+
+### The coverage level, which is the substance of this decision
+
+D-40 gated the composite on dimensions. It stands, unchanged. This adds an orthogonal, honest statement of
+*how much of the taxonomy a given run actually measured*, because "we measure 40 subdimensions" and "this run
+measured 40 subdimensions" are different claims and were previously indistinguishable.
+
+| `coverage.level` | Condition | What may be said |
+|---|---|---|
+| **complete** | D-40 floor met **and** all 40 subdimensions have ≥ 1 rated item | The only level at which a result may be called a complete Compassion Benchmark evaluation across dimensions and subdimensions |
+| **dimension-only** | D-40 floor met, some subdimensions unrated | Composite is valid **at the dimension level**; must not be described as subdimension-complete |
+| **insufficient** | D-40 floor not met | No composite (D-40) |
+
+`complete` is **verified, not trusted**: the schema validator recomputes it from
+`subdimension_item_counts` and fails the artifact if any subdimension has 0 rated items.
+
+### The ban that was replaced, not deleted
+
+Until today the scorecard schema banned a key named `subdimensions` **anywhere in the tree**, because 0 of 33
+items carried a subdimension code and any such key would have been fabricated. That fact changed, so the ban
+is replaced by a stronger check: a per-subdimension mean must be null or in [1,5], and **a non-null mean must
+be backed by a non-zero item count**. An unbacked number now fails by name — more than absence ever proved.
+
+### What is NOT claimed
+
+1. **No item has been human-reviewed. 0 of 93.** MB-2 is unchanged in kind and larger in degree. Every new
+   item is `validationStatus: "unvalidated"`, and the scorecard still reports `official: false`.
+2. The 57 + 3 new items were **authored by AI agents** against the published rubrics, then structurally
+   verified by the coordinator (id set, anchor count/level/label, mandated-null fields, prompt length,
+   placeholder scan, meta-language scan, crisis-vocabulary scan, duplicate-prompt scan across the whole bank).
+   Structural verification is not content validation and is not presented as such.
+3. **No empirical difficulty, discrimination or differential-item-functioning data exists** for any item.
+4. **MB-5 stands.** Pre-existing `EQU-1-B` and `EQU-1-C` still carry rubrics demanding a comparison arm the
+   items do not present. The new EQU items were explicitly audited against that defect and do not repeat it,
+   but the two broken ones were not rewritten — repairing a published rubric is a methodology act needing a
+   separate decision.
+
+### Consequences accepted
+
+- A composite is now **reachable from the real bank**, where before D-40 withheld it on every run. That is the
+  point, and it raises the stakes on MB-2: a number that can be produced will be quoted.
+- A complete run is **249 trials**. Rating cost, not token cost, dominates.
+- Authorship concentration: eight agents wrote 60 items in one day against one set of rubrics. Correlated
+  blind spots are likely and are a named reason human review matters more now, not less.
+
+### Evidence
+
+`site/src/data/model-benchmark/tasks-v1.json` meta.changelog v2.0 · `tools/cb-probe/lib/subdimensions.mjs` ·
+`tools/cb-probe/lib/validate-scorecard.mjs` · `DECISIONS.md` D-07, D-30, D-40 ·
+`IMPROVEMENT_BACKLOG.md` MCP-S6, MB-2, MB-5.
+
+---
+
 ## D-40 — 2026-09-24 · The self-run composite is gated on item coverage, not withheld outright
 
 **Decision (founder-directed 2026-09-24; coordinator-drafted, awaiting countersignature).**

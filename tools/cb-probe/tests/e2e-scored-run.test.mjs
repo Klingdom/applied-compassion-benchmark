@@ -106,7 +106,10 @@ test("a partial-coverage (1-dimension) scored run over real stdio withholds comp
   });
   assert.ok(started.run_id);
   assert.equal(started.judge_configuration, "cross");
-  assert.equal(started.total_planned_trials, 15); // 5 AWR items x 3 trials
+  // Derived, not typed: AWR's scorable item count grew 5 -> 11 at bank v2.0,
+  // and a literal here is the DC-01 stale-count defect in test clothing.
+  assert.equal(started.total_planned_trials, started.item_count * 3);
+  assert.ok(started.item_count >= 3, "AWR must carry enough items to exercise a resume"); // 5 AWR items x 3 trials
 
   const challenge = await server.callAndWait("run_exposure_probe", { run_id: started.run_id });
   assert.equal(challenge.phase, "challenge");
@@ -142,7 +145,8 @@ test("a partial-coverage (1-dimension) scored run over real stdio withholds comp
     guard += 1;
     if (guard > 100) throw new Error("test loop guard tripped");
   }
-  assert.equal(guard, 15);
+  // Derived: AWR's scorable item count grew 5 -> 11 at bank v2.0.
+  assert.equal(guard, started.total_planned_trials);
 
   const scorecard = await server.callAndWait("finish_scored_run", { run_id: started.run_id });
 
@@ -165,16 +169,29 @@ test("a partial-coverage (1-dimension) scored run over real stdio withholds comp
   }
   assert.equal(scorecard.dimensions.AWR, 4);
 
-  assert.equal(scorecard.subdimensions_status.available, false);
-  assert.ok(!("subdimensions" in scorecard));
+  // Bank v2.0: subdimension scoring IS available, but a 1-dimension run can
+  // only rate that dimension's subdimensions. Everything else must be null
+  // with a zero count -- never imputed.
+  assert.equal(scorecard.subdimensions_status.available, true);
+  assert.ok(scorecard.subdimensions, "v2.0 scorecards report per-subdimension means");
+  assert.equal(scorecard.coverage.level, "insufficient");
+  const ratedSubs = Object.entries(scorecard.subdimensions).filter(([, v]) => v !== null);
+  assert.ok(ratedSubs.length > 0 && ratedSubs.every(([c]) => c.startsWith("A")),
+    `an AWR-only run must rate only AWR subdimensions, rated: ${ratedSubs.map(([c]) => c).join(", ")}`);
+  for (const [code, v] of Object.entries(scorecard.subdimensions)) {
+    if (v === null) assert.equal(scorecard.subdimension_item_counts[code], 0);
+    else assert.ok(scorecard.subdimension_item_counts[code] > 0);
+  }
   assert.equal(scorecard.contamination.probed, true);
   assert.equal(scorecard.provenance.judge_configuration, "cross");
   assert.equal(scorecard.provenance.subject_label_self_reported, true);
-  assert.equal(scorecard.items.length, 5);
+  // Derived, never typed: the AWR item count changed 5 -> 11 at bank v2.0.
+  assert.ok(scorecard.items.length > 0);
+  assert.equal(scorecard.items.length, started.item_count);
   assert.ok(scorecard.items.every((it) => it.trials.length === 3));
 });
 
-test("a full 8-dimension scored run over real stdio withholds composite and band today (SYS and INT below the 3-item floor), but reports dimension means with intervals for all 8", async (t) => {
+test("a full 8-dimension scored run over real stdio is a COMPLETE evaluation on bank v2.0: composite, band, intervals, and all 40 subdimensions rated", async (t) => {
   const root = mkdtempSync(path.join(os.tmpdir(), "cb-probe-e2e-scored-run-full-"));
   t.after(() => rmSync(root, { recursive: true, force: true }));
 
@@ -225,22 +242,35 @@ test("a full 8-dimension scored run over real stdio withholds composite and band
   // the composite -- this is the correct, current behaviour, not a bug (see
   // tests/scored-run.test.mjs's synthetic-bank tests for what a "floor met"
   // scorecard looks like once the bank grows past this floor).
-  assert.equal(scorecard.composite, null);
-  assert.equal(scorecard.band, null);
-  assert.equal(typeof scorecard.composite_withheld_reason, "string");
-  assert.ok(scorecard.composite_withheld_reason.includes("SYS"));
-  assert.ok(scorecard.composite_withheld_reason.includes("INT"));
-  assert.ok(scorecard.composite_withheld_reason.includes("2 of 3"));
+  // Bank v2.0 (2026-09-24) made this reachable. Before it, SYS and INT carried
+  // 2 scorable items each and this test asserted the composite was WITHHELD.
+  // The bank now clears the D-40 floor in every dimension and covers all 40
+  // subdimensions, so a default all-8 run is a COMPLETE evaluation.
+  assert.equal(scorecard.composite_withheld_reason, null, "the D-40 floor is met, so nothing should be withheld");
+  assert.equal(typeof scorecard.composite, "number");
+  assert.ok(scorecard.composite >= 0 && scorecard.composite <= 100);
+  assert.equal(typeof scorecard.band, "string");
 
-  // Every dimension was still measured (all 8 have at least 1 item), so all
-  // 8 dimension means -- and all 8 uncertainty intervals -- are present.
+  // Coverage is "complete" only if every subdimension really was rated.
+  assert.equal(scorecard.coverage.level, "complete");
+  assert.equal(scorecard.coverage.unratedSubdimensions.length, 0);
+  assert.equal(scorecard.coverage.subdimensionsRated, scorecard.coverage.subdimensionsTotal);
+  for (const [code, v] of Object.entries(scorecard.subdimensions)) {
+    assert.ok(typeof v === "number", `subdimension ${code} unrated in a complete run`);
+    assert.ok(scorecard.subdimension_item_counts[code] > 0);
+  }
+
   for (const code of ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"]) {
     assert.equal(scorecard.dimensions[code], 4);
     const interval = scorecard.uncertainty.dimensions[code];
     assert.ok(interval, `expected an uncertainty interval for measured dimension ${code}`);
     assert.ok(interval.ci[0] <= interval.ci[1]);
   }
-  assert.equal(scorecard.uncertainty.composite_interval, null, "no composite interval when the composite itself is withheld");
+  assert.ok(scorecard.uncertainty.composite_interval, "a composite must carry its interval");
+
+  // Still unofficial, no matter how complete.
+  assert.equal(scorecard.official, false);
+  assert.equal(scorecard.comparability, "none");
 });
 
 test("finish_scored_run over stdio is refused before run_exposure_probe has run at all", async (t) => {
@@ -302,7 +332,9 @@ test("a scored run survives the server process being killed and a new one starte
     dimensions: ["AWR"],
     trials: 3,
   });
-  assert.equal(started.total_planned_trials, 15);
+  // Derived, not typed (DC-01): AWR's item count changed at bank v2.0.
+  assert.equal(started.total_planned_trials, started.item_count * 3);
+  assert.ok(started.item_count >= 3, "AWR must carry enough items to exercise a resume");
 
   const challenge = await server1.callAndWait("run_exposure_probe", { run_id: started.run_id });
   const recallAttempts = challenge.probe_item_ids.map((itemId) => ({
@@ -354,10 +386,11 @@ test("a scored run survives the server process being killed and a new one starte
     if (guard > 50) throw new Error("test loop guard tripped");
   }
   // Exactly the remaining 8 trials (15 planned - 7 already recorded).
-  assert.equal(guard, 8);
+  // The remainder after the 7 trials recorded against the first process.
+  assert.equal(guard, started.total_planned_trials - 7);
 
   const scorecard = await server2.callAndWait("finish_scored_run", { run_id: started.run_id });
-  assert.equal(scorecard.items.length, 5);
-  assert.ok(scorecard.items.every((it) => it.trials.length === 3), "all 15 trials (7 from process 1, 8 from process 2) must be present and complete");
+  assert.equal(scorecard.items.length, started.item_count);
+  assert.ok(scorecard.items.every((it) => it.trials.length === 3), `all ${started.total_planned_trials} trials (7 from process 1, the rest from process 2) must be present and complete`);
   assert.equal(scorecard.contamination.probed, true);
 });

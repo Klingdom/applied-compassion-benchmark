@@ -33,7 +33,7 @@
  *    page.tsx item->prompt mapping exposes both arms, an item without
  *    `variants` is unaffected, the item still contributes exactly one score
  *    to aggregation (one-per-item-per-trial, never one-per-arm), the real
- *    task bank's scorable count is unchanged at 28, and no evaluator-facing
+ *    task bank's declared count agrees with its items, and no evaluator-facing
  *    field (variantId/label aside, which are explicitly-allowed UI
  *    scaffolding — see sourceOnlyFields specifically) leaks into the mapped
  *    prompt/variant text.
@@ -394,7 +394,8 @@ console.log("\nTest 6: variants mapping — both arms exposed, non-variant items
 }
 
 // ---------------------------------------------------------------------------
-// Test 7: the real task bank's scorable count is unchanged at 28, and
+// Test 7: the real task bank's declared count agrees with its items, the 5
+// draft-authored-unreviewed items stay non-scorable, and
 // INT-1-B specifically is a 2-arm variants item that remains non-scorable.
 // ---------------------------------------------------------------------------
 
@@ -408,9 +409,15 @@ console.log("\nTest 7: real task bank — scorable count still 28/5, INT-1-B has
   const scorableCount = mapped.filter((p) => !p.draft).length;
   const nonScorableCount = mapped.length - scorableCount;
 
-  assert("total item count is 33", mapped.length, 33);
-  assert("scorable count is unchanged at 28", scorableCount, 28);
-  assert("non-scorable count is unchanged at 5", nonScorableCount, 5);
+  // Derived, not typed. The bank grew 33 -> 93 at v2.0 and will grow again;
+  // a literal here is the DC-01 stale-count defect in test clothing. What IS
+  // invariant is that the bank's own declared itemCount agrees with its items
+  // (a real cross-check, since meta and items can drift apart), and that the
+  // five draft-authored-unreviewed items stay out of the scorable denominator.
+  assert("meta.itemCount agrees with the actual item array", bank.meta.itemCount, mapped.length);
+  assert("scorable + non-scorable accounts for every item", scorableCount + nonScorableCount, mapped.length);
+  assert("the 5 draft-authored-unreviewed items remain non-scorable", nonScorableCount, 5);
+  if (!(scorableCount > 0)) throw new Error("scorable count must be non-zero");
 
   const intOneB = mapped.find((p) => p.id === "INT-1-B");
   assert("INT-1-B exists in the bank", typeof intOneB, "object");

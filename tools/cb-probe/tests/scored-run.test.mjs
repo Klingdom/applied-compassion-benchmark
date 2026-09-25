@@ -23,7 +23,8 @@ import {
   MIN_TRIALS,
 } from "../lib/scored-run.mjs";
 import { ToolError } from "../lib/tools.mjs";
-import { validateSelfRunScorecard } from "../lib/validate-scorecard.mjs";
+import { validateSelfRunScorecard, MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE } from "../lib/validate-scorecard.mjs";
+import { SUBDIMENSION_CODE_COUNT } from "../lib/subdimensions.mjs";
 import { validateJudgeEstimate } from "../lib/validate-estimate.mjs";
 import { buildJudgeEstimate } from "../lib/judge-estimate.mjs";
 import { computeCompositeFromDimensions, getBand } from "../../../site/scripts/lib/scoring.mjs";
@@ -39,14 +40,17 @@ function freshCtx(t) {
 // ---------------------------------------------------------------------------
 // A synthetic bank with a configurable item count per dimension, used ONLY
 // to test the DECISIONS.md D-40 item-count floor (>= 3 rated items per
-// dimension for a composite). The REAL bank (tasks-v1.json) can never
-// exercise the "floor met" branch today: SYS and INT structurally carry only
-// 2 scorable items each (see tests/scored-run.test.mjs's coverage test
-// below), so a "floor met" scorecard is untestable against the real bank
-// until the item bank grows (IMPROVEMENT_BACKLOG.md MCP-S6). This fixture
-// stands in for that future bank shape -- same item schema cb-probe actually
-// reads (id, dimension, construct, prompt, anchors[], validationStatus), just
-// synthetic content.
+// dimension for a composite), and specifically the BELOW-floor branch.
+//
+// History: until bank v2.0 (2026-09-24) the real bank could not exercise the
+// "floor met" branch at all -- SYS and INT carried 2 scorable items each, so a
+// composite was unreachable and this fixture stood in for a future bank. The
+// bank now carries 93 items covering all 40 subdimensions with >= 2 items
+// each, so "floor met" IS reachable from the real bank. The fixture is kept
+// because the below-floor branch still needs a bank that fails the floor, and
+// constructing one synthetically is cleaner than mutilating the real one --
+// same item schema cb-probe actually reads (id, dimension, construct, prompt,
+// anchors[], validationStatus), just synthetic content.
 // ---------------------------------------------------------------------------
 const ANCHOR_LABELS = ["1.0 Critical", "2.0 Developing", "3.0 Functional", "4.0 Established", "5.0 Exemplary"];
 
@@ -592,13 +596,28 @@ test("the scorecard never has a 'subdimensions' key, and subdimensions_status ex
   completeAllTrials(started.run_id, ctx);
   const scorecard = finishScoredRun({ run_id: started.run_id }, ctx);
 
-  assert.ok(!("subdimensions" in scorecard), "must never have a bare 'subdimensions' key");
-  assert.equal(scorecard.subdimensions_status.available, false);
-  assert.ok(scorecard.subdimensions_status.reason.includes("40 subdimension codes"));
-  assert.ok(scorecard.subdimensions_status.reason.includes("0 of 33 items"));
+  // An AWR-only run rates at most the AWR subdimensions. Every other
+  // subdimension must report null with a count of 0 -- never an imputed number.
+  assert.ok(scorecard.subdimensions, "bank v2.0 reports per-subdimension means");
+  assert.ok(scorecard.subdimension_item_counts, "means must be accompanied by their item counts");
 
-  const serialised = JSON.stringify(scorecard);
-  assert.ok(!/"subdimensions":/.test(serialised));
+  const rated = Object.entries(scorecard.subdimensions).filter(([, v]) => v !== null);
+  assert.ok(rated.length > 0, "an AWR run must rate at least one subdimension");
+  for (const [code, value] of rated) {
+    assert.ok(code.startsWith("A"), `an AWR-only run rated ${code}, which is not an AWR subdimension`);
+    assert.ok(value >= 1 && value <= 5, `${code} mean out of range: ${value}`);
+    assert.ok(scorecard.subdimension_item_counts[code] > 0, `${code} has a mean but no items`);
+  }
+  for (const [code, value] of Object.entries(scorecard.subdimensions)) {
+    if (value === null) {
+      assert.equal(scorecard.subdimension_item_counts[code], 0, `${code} is null but claims rated items`);
+    }
+  }
+
+  // A partial run must never call itself complete.
+  assert.equal(scorecard.coverage.level, "insufficient");
+  assert.ok(scorecard.coverage.unratedSubdimensions.length > 0);
+  assert.ok(scorecard.coverage.note.includes("insufficient"));
 });
 
 // ---------------------------------------------------------------------------
@@ -799,27 +818,53 @@ test("start_scored_run include_sensitive: true includes sensitive items, and nex
   assert.ok(sawSensitive, "expected at least one sensitive ACT item to be served when include_sensitive: true");
 });
 
-test("per-dimension scorable counts remain non-zero in every dimension once the five sensitive items are excluded, but SYS and INT stay below the 3-item composite floor on the real bank today", () => {
+// Bank v2.0 (2026-09-24) replaced what this test used to assert. Until then it
+// pinned a LIMITATION as a fact -- "SYS and INT have exactly 2 non-sensitive
+// scorable items, so a composite is unreachable from the real bank". The bank
+// grew from 33 items to 93 and that stopped being true. The test now pins the
+// property the Evaluation Suite actually depends on, and derives every number
+// from the bank rather than restating one (DC-01).
+test("the real bank supports a complete run: every dimension clears the D-40 floor and all 40 subdimensions carry >= 2 items, with the five sensitive items excluded", () => {
   const bank = loadBank();
   const scorable = bank.items.filter((item) => item.validationStatus !== "draft-authored-unreviewed");
   const nonSensitive = scorable.filter((item) => !HARDCODED_SENSITIVE_ITEM_IDS.includes(item.id));
+
   const byDim = {};
   for (const item of nonSensitive) byDim[item.dimension] = (byDim[item.dimension] || 0) + 1;
   for (const code of ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"]) {
-    assert.ok((byDim[code] || 0) >= 1, `dimension ${code} must retain at least 1 scorable item after excluding sensitive items`);
+    assert.ok(
+      (byDim[code] || 0) >= MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE,
+      `dimension ${code} has ${byDim[code] || 0} non-sensitive scorable items, below the ` +
+        `${MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE}-item floor D-40 requires for a composite`
+    );
   }
-  // DECISIONS.md D-40: a composite additionally requires >= 3 items in
-  // EVERY dimension. On today's published bank, SYS and INT never clear
-  // that floor -- even with include_sensitive: true, since neither carries a
-  // sensitive item to add back (HARDCODED_SENSITIVE_ITEM_IDS has none in
-  // either dimension). So a composite is not reachable from the real bank
-  // today, by design -- see the synthetic-bank tests above for the "floor
-  // met" and "floor unmet by one item" behaviour this gate is tested against.
-  assert.equal(byDim.SYS, 2, "SYS has exactly 2 non-sensitive scorable items today -- below the 3-item floor");
-  assert.equal(byDim.INT, 2, "INT has exactly 2 non-sensitive scorable items today -- below the 3-item floor");
+
+  // The suite's headline claim: a default run can reach every subdimension.
+  const bySub = {};
+  for (const item of nonSensitive) {
+    assert.ok(
+      typeof item.indicator === "string" && item.indicator.length > 0,
+      `${item.id} carries no subdimension code -- subdimension scoring reads item.indicator`
+    );
+    bySub[item.indicator] = (bySub[item.indicator] || 0) + 1;
+  }
+  assert.equal(
+    Object.keys(bySub).length,
+    SUBDIMENSION_CODE_COUNT,
+    `a default run must reach all ${SUBDIMENSION_CODE_COUNT} subdimensions, reached ${Object.keys(bySub).length}`
+  );
+  const thin = Object.entries(bySub).filter(([, n]) => n < 2);
+  assert.equal(thin.length, 0, `subdimensions resting on a single item: ${thin.map(([c, n]) => `${c}=${n}`).join(", ")}`);
+
+  // Still true and still load-bearing: excluding the five crisis items must
+  // never empty a dimension, and none of them is the only way to reach one.
   for (const sensitiveId of HARDCODED_SENSITIVE_ITEM_IDS) {
     const item = scorable.find((i) => i.id === sensitiveId);
-    assert.ok(!["SYS", "INT"].includes(item?.dimension), "no hardcoded sensitive item sits in SYS or INT, so include_sensitive: true cannot lift either dimension to the floor");
+    assert.ok(item, `${sensitiveId} should still exist in the bank`);
+    assert.ok(
+      (byDim[item.dimension] || 0) >= MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE,
+      `${item.dimension} must clear the floor without its sensitive item ${sensitiveId}`
+    );
   }
 });
 

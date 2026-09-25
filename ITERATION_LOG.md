@@ -1,5 +1,103 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 37 — 2026-09-24 (the Compassion Benchmark AI Evaluation Suite: 13 of 40 subdimensions becomes 40 of 40 — MCP-S6 / D-41)
+
+### Selected Item
+**Founder directive**, twice: "implement a complete composite test for AI models based on all dimensions sub
+dimensions", then "finish a production ready complete implementation with instructions and store to github and
+desktop. This should be called the Compassion Benchmark AI Evaluation Suite."
+
+This is **MCP-S6**, the item the backlog called "the long pole" and scored at only 9 — because effort 5 and the
+founder gate made it unreachable. The directive is the gate opening. It is also what D-40 was built to make
+visible: the composite was withheld on every run precisely because this work had not been done.
+
+### V1 — baseline, computed not recalled
+| Check | Result |
+|---|---|
+| Bank | 33 items, bankVersion v1.1 |
+| Subdimensions covered | **13 of 40** |
+| Items carrying a subdimension code | **0 of 33** (the id encoded an index; no field held it) |
+| Empty subdimensions | 27 |
+| AC5 Follow-Through | 2 items, **both crisis** → 0 usable in a default run |
+| Composite on the real bank | **unreachable** — SYS and INT at 2 scorable items, below the D-40 floor |
+
+### What Changed
+**Bank v1.1 → v2.0: 33 items → 93, 13 of 40 subdimensions → 40 of 40, minimum 2 non-sensitive scorable items
+per subdimension.** A default run now serves **83 items / 249 trials** and reaches every subdimension.
+
+**Authoring.** Eight dimension-scoped agents wrote 57 items against the published subdimension rubrics, from a
+spec that required each item to discriminate on its own subdimension rather than on general warmth, to keep
+level 5 achievable and level 1 a real failure, and to carry no crisis content. A ninth pass added the three
+items a later check showed were still needed. Every agent reported its least-confident item; those reports are
+in the transcript and the items are marked unvalidated like all the rest.
+
+**The subdimension lives in `indicator`** — the field the schema and `validateTaskBank` already used. The
+agents emitted a `subdimension` key; it was mapped in and dropped. Two fields holding one truth is how they
+drift apart (DC-15).
+
+**Scoring.** New `tools/cb-probe/lib/subdimensions.mjs` imports the 40 codes from the existing canon rather
+than keeping a second copy. The scorecard now carries `subdimensions`, `subdimension_item_counts` and
+`coverage`, with three honest states: **complete** (D-40 floor met *and* all 40 rated), **dimension-only**
+(composite valid at the dimension level, must not be called subdimension-complete), **insufficient**.
+
+**The ban was replaced, not deleted.** The schema used to forbid a key named `subdimensions` anywhere, because
+0 of 33 items carried a code and any such key would have been fabricated. That fact changed. Now: a mean must
+be null or in [1,5], and **a non-null mean must be backed by a non-zero item count**. `complete` is recomputed
+by the validator and fails if any subdimension has zero. An unbacked number fails by name, which is more than
+absence ever proved.
+
+### Three defects found on the way, none of them in the plan
+1. **The spec I wrote would have broken the site build.** It told authors to set `sourceOnlyFields: null`;
+   `ai-evaluation-suite/page.tsx` reads `item.sourceOnlyFields.title` and `.whatToObserve` **unconditionally**.
+   Caught by reading the consumer before merging, not by a test. A second pass added the field to all 57 items;
+   I then diffed every other field and confirmed **zero drift**, 57 distinct titles, 57 distinct observations.
+2. **My own coverage plan was wrong.** It counted the 5 crisis exclusions but not the 5
+   `draft-authored-unreviewed` exclusions, which would have left AB1, I1 and I3 on a single scorable item.
+   Found by recomputing from the merged bank instead of trusting the plan. Three top-up items closed it.
+3. **A quadratic in the product's headline path.** `listRunTrials` re-parsed every trial file on every
+   `next_item` / `record_item_rating` / `run_status` call — O(n²). A complete 249-trial run spent **33s** there
+   (50 trials 1.4s → 200 trials 21.3s). Invisible at 33 items; disqualifying at 93. Now cached by path,
+   invalidated by mtime+size, so disk stays authoritative and the forged-run defence is untouched. Same run:
+   **4.4s**, near-linear.
+
+### Validation
+| Check | Result |
+|---|---|
+| Draft structure, all 60 items | id set matches the plan exactly; anchors 5/levels/labels; 17 mandated-null fields; no placeholder spans; **no crisis vocabulary**; no meta/benchmark language; **no duplicate prompt** against the other 92 items — 0 failures, 0 warnings |
+| Enrichment isolation | every field except `sourceOnlyFields` byte-identical across 57 items — **0 drift** |
+| `validate:task-bank` | **93 items, 947 checks, 0 failures, 0 warnings** |
+| **A real complete run, end to end** | 83 items, 249 trials → **composite 85, band Exemplary, coverage `complete`, 40/40 subdimensions rated** |
+| Complete run over **real stdio** | passes, including `coverage.level === "complete"` and an interval on the composite |
+| Partial run | still `insufficient`, composite `null`, only AWR subdimensions rated, everything else null with count 0 |
+| Performance | 33s → **4.4s** for 249 trials |
+| `tsc --noEmit` | exit 0 |
+
+### Tests that encoded the old limitation as a fact
+Six assertions had to change, and each is worth naming because each was *true when written*: "SYS and INT stay
+below the 3-item floor", "the scorecard never has a `subdimensions` key", "`subdimensions_status.available` can
+never be true", and four hardcoded item counts (`5`, `15`, `8`, `15`). A test that pins today's shortfall as an
+invariant blocks the fix for it. All were rewritten to assert the guarantee and to **derive** counts from the
+bank — a literal there is the DC-01 stale-count defect in test clothing. One stale comment claiming the real
+bank "can never exercise the floor-met branch" was corrected rather than left to mislead the next reader.
+
+### What is NOT claimed, and is written into every artifact
+- **0 of 93 items have been reviewed by a human.** MB-2 is unchanged in kind and larger in degree.
+- The items were **authored by AI agents** and *structurally* verified. Structural verification is not content
+  validation and is not presented as one.
+- **No empirical difficulty, discrimination or DIF data** exists for any item.
+- **MB-5 stands.** `EQU-1-B` and `EQU-1-C` still carry rubrics demanding a comparison arm the items do not
+  present. The new EQU items were explicitly audited against that defect and do not repeat it; the two broken
+  ones were not rewritten, because repairing a published rubric is a methodology act needing its own decision.
+- Eight agents wrote 60 items in one day against one set of rubrics. **Correlated blind spots are likely.**
+  That is an argument for human review, not against the work.
+
+### Impact
+The number the founder asked for now exists and is reachable — and it arrives labelled with how much of the
+taxonomy it actually measured. The honest cost: a composite that can be produced will be quoted, which raises
+the stakes on MB-2 rather than lowering them.
+
+---
+
 ## Iteration 36 — 2026-09-24 (publishing into a directory nobody serves — D1-1c)
 
 ### Selected Item

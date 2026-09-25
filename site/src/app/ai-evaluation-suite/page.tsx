@@ -13,7 +13,7 @@ import taskBank from "@/data/model-benchmark/tasks-v1.json";
 import EvaluationScorer from "@/components/model-benchmark/EvaluationScorer";
 import { isNonScorableValidationStatus } from "@/lib/evaluation-scorer";
 
-export const metadata: Metadata = { title: "CB AI Evaluation Platform", description: "Evaluate AI systems across 8 compassion dimensions and 40 subdimensions using the Compassion Benchmark AI prompt-based assessment suite." };
+export const metadata: Metadata = { title: "Compassion Benchmark AI Evaluation Suite", description: "Evaluate AI systems across 8 compassion dimensions and all 40 subdimensions using the Compassion Benchmark AI Evaluation Suite." };
 
 const DIMS = [
   { code: "AWR", name: "Awareness", desc: "Does the AI accurately perceive suffering, distress, and harm — including signals that are implicit, indirect, or nested inside functional requests?", subdims: ["Harm Detection", "Stakeholder Listening", "Predictive Risk", "Impact Transparency", "Cultural Awareness"] },
@@ -93,12 +93,12 @@ export default function AIEvaluationSuitePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] gap-[18px] items-start">
             <div>
-              <Eyebrow>AI evaluation platform &middot; v1.0 &middot; 33 prompts &middot; 8 dimensions</Eyebrow>
+              <Eyebrow>AI Evaluation Suite &middot; v1.0 &middot; {PROMPTS.length} prompts &middot; 8 dimensions &middot; 40 subdimensions</Eyebrow>
               <h1 className="text-[clamp(2.25rem,5vw,4rem)] leading-[1.03] tracking-[-0.03em] mb-3.5">
-                Compassion Benchmark AI Evaluation Platform
+                Compassion Benchmark AI Evaluation Suite
               </h1>
               <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                Score any AI model or chatbot across 8 dimensions of compassionate behavior using 33 standardized test prompts. Track progress, compare models, and export structured results.
+                Score any AI model or chatbot across 8 dimensions and all 40 subdimensions of compassionate behavior using {PROMPTS.length} standardized test prompts. Track progress, compare models, and export structured results.
               </p>
 
               <div className="flex gap-3 flex-wrap mt-2">
@@ -108,7 +108,7 @@ export default function AIEvaluationSuitePage() {
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="33 prompts" label={`${SCORABLE_COUNT} scorable, ${NON_SCORABLE_COUNT} pending review`} />
+                <Stat value={`${PROMPTS.length} prompts`} label={`${SCORABLE_COUNT} scorable, ${NON_SCORABLE_COUNT} pending review`} />
                 <Stat value="8 dimensions" label="Behavioral coverage" />
                 <Stat value="1–5 scoring" label="Anchored behavioral rubrics" />
                 <Stat value="0–100 composite" label="Canonical CB scoring formula" />
@@ -172,7 +172,7 @@ export default function AIEvaluationSuitePage() {
             <Card>
               <h3 className="text-[1rem] font-bold mb-2">Isn&apos;t the judge just another rater?</h3>
               <p className="text-muted text-sm">
-                No. All 33 items are public with full five-anchor rubrics, so the model you use to judge a response
+                No. All {PROMPTS.length} items are public with full five-anchor rubrics, so the model you use to judge a response
                 may have been trained on the exact answer key it is applying — a risk distinct from, and in addition
                 to, the subject-model contamination already disclosed above. This tool cannot detect or correct for
                 it; every AI-judged item is stamped with that disclosure, unconditionally.
@@ -253,7 +253,7 @@ export default function AIEvaluationSuitePage() {
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Evaluate AI compassion with structured rigor</h2>
             <p className="text-muted max-w-[920px] mb-[18px]">
-              Use the Compassion Benchmark AI Evaluation Platform to score any AI model across 33 standardized prompts and 8 behavioral dimensions. Export structured results, compare models, and track progress over time.
+              Use the Compassion Benchmark AI Evaluation Suite to score any AI model across {PROMPTS.length} standardized prompts, 8 behavioral dimensions and all 40 subdimensions. Export structured results, compare models, and track progress over time.
             </p>
             <div className="flex gap-3 flex-wrap">
               <Button href="/contact-sales" variant="primary">License the Platform</Button>
