@@ -3,8 +3,16 @@ name: Deploy to VPS
 # Triggers on every push to main. Also exposes a manual trigger in the GitHub
 # Actions UI ("Run workflow") so deploys can be re-run without a new commit.
 on:
+  # CI-1b, founder-approved 2026-09-25. Previously [main] only, which meant work
+  # on a branch ran no CI at all -- this branch had none between 2026-09-17 and
+  # 2026-09-25 while 11 commits landed on it. Every push now runs worker
+  # typecheck, build + test, the nginx syntax check and the cb-probe suite.
+  #
+  # This CANNOT ship anything: the deploy and verify jobs are separately gated
+  # on github.event_name == 'workflow_dispatch', so a push still deploys
+  # nothing on any branch, including main.
   push:
-    branches: [main]
+    branches: ['**']
   workflow_dispatch:
 
 # Serialize deploys: if two pushes arrive close together, the second waits for

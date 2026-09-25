@@ -54,9 +54,12 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ## D-41 — 2026-09-24 · The Compassion Benchmark AI Evaluation Suite: complete subdimension coverage, and a three-state coverage level
 
-**Decision (founder-directed 2026-09-24: "implement a complete composite test for AI models based on all
-dimensions sub dimensions", then "finish a production ready complete implementation … called the Compassion
-Benchmark AI Evaluation Suite"). Coordinator-drafted, awaiting countersignature.**
+**Decision — RATIFIED by the founder 2026-09-25** ("approve all"). Founder-directed 2026-09-24: "implement a
+complete composite test for AI models based on all dimensions sub dimensions", then "finish a production ready
+complete implementation … called the Compassion Benchmark AI Evaluation Suite". Coordinator-drafted, now
+countersigned. **This ratification covers the coverage gate and the three-state coverage level only. It does
+not ratify a licence (§9 of the Suite doc, still open), does not change the composite formula (see MS-5), and
+does not authorise publishing any model score.**
 
 ### What changed
 
@@ -119,7 +122,8 @@ be backed by a non-zero item count**. An unbacked number now fails by name — m
 
 ## D-40 — 2026-09-24 · The self-run composite is gated on item coverage, not withheld outright
 
-**Decision (founder-directed 2026-09-24; coordinator-drafted, awaiting countersignature).**
+**Decision — RATIFIED by the founder 2026-09-25** ("approve all"). Founder-directed 2026-09-24;
+coordinator-drafted, now countersigned. The composite/band gate below is in force.
 
 `cb-probe`'s scored run **may** emit a 0–100 composite and a band, but **only** when all 8 dimensions are measured
 **and every dimension has at least 3 rated items**. Below that floor it emits `composite: null`, `band: null` and a
