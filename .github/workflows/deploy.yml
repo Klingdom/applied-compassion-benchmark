@@ -292,6 +292,27 @@ jobs:
           echo "Freshness OK — live content matches this commit."
 
       # ────────────────────────────────────────────────────────────────
+      # PUBLICATION DRIFT (D1-1c).
+      #
+      # The freshness assertion above compares manifest.latest with
+      # feed.json — two published artifacts, checked against each other.
+      # A feed can list a briefing whose route 404s; that is DC-05's
+      # link-integrity variant and It. 20 found exactly it on the ranking
+      # pages. This step asks the ROUTES instead, for every briefing
+      # committed in the last 21 days, and fails if any is not served.
+      #
+      # It carries its own control: if /updates is not live the run exits
+      # 2 INDETERMINATE rather than reporting that everything is missing,
+      # because a network failure is not evidence about what is published.
+      # ────────────────────────────────────────────────────────────────
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: "Every recent briefing is actually served (publication drift)"
+        run: node research/scripts/check-publication-drift.mjs --fail-on-drift
+
+      # ────────────────────────────────────────────────────────────────
       # POST-DEPLOY REDIRECT SWEEP (LC-1a).
       #
       # nginx.conf is the file the Docker image ships (see DEPLOYMENT.md),

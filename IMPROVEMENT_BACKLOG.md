@@ -364,6 +364,30 @@ comparability.
   `SYSTEM_HEALTH.md`, and prune or scope what is not earning its tokens. v1: I3 S4 L2 C5 − E1 − R1 = **12**.
 
 ### New backlog items (2026-09-21)
+- **D1-1c — COMPLETED 2026-09-24 (It. 36).** `research/scripts/check-publication-drift.mjs` asks the routes (not
+  two published artifacts against each other) for every briefing committed in the last 21 days, carries its own
+  liveness control so an unreachable host exits **2 INDETERMINATE** instead of reporting everything missing, and has
+  three callers: the `verify` job with `--fail-on-drift`, a **mandatory** step in the overnight-digest brief (the
+  only thing that runs daily, and the only caller that can catch *no deploy at all*), and
+  `npm run check:publication-drift`. Six controls, including two that had passed for the wrong reason until the
+  probe harness itself was fixed. **Deliberately not in `npm run test`** — it needs the network.
+
+- **D1-1a / D1-1b — BLOCKED on CI-1b.** (a) "confirm a CI run appears whose `headSha` is that commit" is impossible
+  while `deploy.yml` triggers on `push: branches: [main]` and the work lives on a branch. (b) amendment D1, "a loop
+  is not closed until a CI run exists for its commit", is **not adopted**: a rule that cannot currently be satisfied
+  would be decoration. Its second half — the marker never goes on a push tip — is live as **R12** (It. 35).
+
+- **CI-1c — FOUNDER: should a `schedule:` trigger run the drift check daily?** Two lines, read-only, no deploy
+  path; it would catch invisible content without waiting for a nightly research cycle or a deploy. Not installed
+  unilaterally: a scheduled workflow is a **new autonomous execution surface**, and it overlaps the CI-1b decision.
+  v1: I3 S4 L2 C5 − E1 − R2 = **11**.
+
+- **BM-2 (D1-1d) — a build that cannot name its own commit should fail loudly.** Recurred **2026-09-22**: production
+  serves `sha: null, source: "unavailable"` because it was rebuilt with a bare `docker compose build` instead of
+  Actions or `./deploy.sh`. The drift check now surfaces it on every run, which is detection, not a fix. Work: make
+  the build fail when `GIT_SHA` is absent, or record the sha from a file the image can read. v1: I3 S4 L3 C4 − E2 −
+  R2 = **10**.
+
 - **D1-1 — repair the deploy channel and prove a loop closed (v2 17, ranked #1 by Meta-review 4).** Partly done in the
   working tree: `deploy` and `verify` are now `workflow_dispatch`-only, so a push always runs build + test + nginx
   syntax. Remaining: (a) commit and push it, then confirm a CI run appears whose `headSha` **is** that commit;

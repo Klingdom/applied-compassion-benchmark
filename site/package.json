@@ -52,7 +52,8 @@
     "validate:rotation-state": "node ../research/scripts/validate-rotation-state.mjs",
     "coverage-report": "node ../research/scripts/coverage-report.mjs",
     "test:iteration-log-coverage": "node ../research/scripts/test-iteration-log-coverage.mjs",
-    "test:commit-message-tokens": "node ../research/scripts/test-commit-message-tokens.mjs"
+    "test:commit-message-tokens": "node ../research/scripts/test-commit-message-tokens.mjs",
+    "check:publication-drift": "node ../research/scripts/check-publication-drift.mjs"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",

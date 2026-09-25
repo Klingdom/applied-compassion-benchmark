@@ -1,9 +1,20 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 35 (DC-17: CI-suppression token gate) · History: `ITERATION_LOG.md` (35 entries, newest 34)
+Last change: Iteration 36 (D1-1c: publication-drift check) · History: `ITERATION_LOG.md` (35 entries, newest 34)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-24 (Iteration 36 — three briefings have been invisible for four days, and now something watches):
+> measured live — production built **2026-09-22T14:07Z** with `sha: null`, and `/updates/2026-09-21`, `09-22` and
+> `09-24` all **301 → /404**. The existing deploy-time freshness assertion could not catch this: it runs only when a
+> deploy runs, and the failure was *no deploy at all*. New `research/scripts/check-publication-drift.mjs` asks the
+> **routes** for every briefing committed in the last 21 days, with three callers — the `verify` job
+> (`--fail-on-drift`), a **mandatory** step in the overnight-digest brief (the only daily caller), and
+> `npm run check:publication-drift`. **Not in the test chain**, which stays at 35 steps, because it needs the
+> network. It carries its own liveness control: an unreachable host exits **2 INDETERMINATE**, never "everything is
+> missing". Six controls passed — and two of them had passed for the *wrong reason* until I found my probe harness
+> was blocking its own test server. **Still true and needing a deploy: three briefings are not visible to readers.**
 
 > 2026-09-24 (Iteration 35 — RISK-025's second cause is closed by a gate; production measured): the
 > **live baseline first** — production was built **2026-09-22T14:07Z** with `sha: null` (**BM-2 recurred**: another
@@ -31,17 +42,6 @@ Last change: Iteration 35 (DC-17: CI-suppression token gate) · History: `ITERAT
 > reference regex or the heading parse exits **VACUOUS**, not green. Registry now **DC-01..DC-16 (16 rows)**.
 > **Hole stated, not hidden:** occurrence 1 was a *commit message* claiming a record its diff did not contain, and a
 > commit message is not a tracked file — check B (no holes) is the substitute.
-
-> 2026-09-20 (research cycles 09-18 and 09-20, both verified, both uncommitted): two full cycles ran — 1,329 entities
-> scanned each, **24 entities assessed**, **2 proposals filed** (Dayton 35.9 → 30.0; Berkshire Hathaway 43.8 → 40.0),
-> **0 scores applied**, queue **22 pending**. Every composite was recomputed from its 40 subdimensions and reproduces
-> exactly. **Six first-ever baselines** were added on 09-20, reducing the never-assessed share. New gate
-> `test:known-misdated-claims` (It. 25, chain 31 → 32) ran live on its first day: it saved verification on PayPal and
-> over-fired on the scanner's own prose (SC-1c). **Tier fidelity now mechanically verified across four cycles**
-> (09-15 8/0 · 09-17 7/0 · 09-18 5/0 · 09-20 11/0) after fixing my own matcher, which had silently read 0 URLs on two
-> dates. **Two boundary-exact results in three cycles** — Nasdaq at exactly 60.0, Berkshire at exactly 40.0 — make
-> RISK-006 (band-boundary ambiguity) the most overdue founder decision. **INC-009:** an agent destroyed another
-> agent's uncommitted rotation-state write with `git checkout` and reconstructed it; independently verified equivalent.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -121,6 +121,19 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 36._
+
+> 2026-09-20 (research cycles 09-18 and 09-20, both verified, both uncommitted): two full cycles ran — 1,329 entities
+> scanned each, **24 entities assessed**, **2 proposals filed** (Dayton 35.9 → 30.0; Berkshire Hathaway 43.8 → 40.0),
+> **0 scores applied**, queue **22 pending**. Every composite was recomputed from its 40 subdimensions and reproduces
+> exactly. **Six first-ever baselines** were added on 09-20, reducing the never-assessed share. New gate
+> `test:known-misdated-claims` (It. 25, chain 31 → 32) ran live on its first day: it saved verification on PayPal and
+> over-fired on the scanner's own prose (SC-1c). **Tier fidelity now mechanically verified across four cycles**
+> (09-15 8/0 · 09-17 7/0 · 09-18 5/0 · 09-20 11/0) after fixing my own matcher, which had silently read 0 URLs on two
+> dates. **Two boundary-exact results in three cycles** — Nasdaq at exactly 60.0, Berkshire at exactly 40.0 — make
+> RISK-006 (band-boundary ambiguity) the most overdue founder decision. **INC-009:** an agent destroyed another
+> agent's uncommitted rotation-state write with `git checkout` and reconstructed it; independently verified equivalent.
 
 _Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 35._
 

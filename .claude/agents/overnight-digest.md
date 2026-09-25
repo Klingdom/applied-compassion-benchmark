@@ -146,6 +146,26 @@ Write the digest to `research/digests/YYYY-MM-DD.md`:
 - [Search quality observations — were results relevant?]
 ```
 
+## Step 2b: Check that yesterday's work is actually visible (MANDATORY)
+
+Run:
+
+```bash
+node research/scripts/check-publication-drift.mjs
+```
+
+Copy its **Verdict** line into the digest's `## Operational Notes`, verbatim. If it reports
+**DRIFT**, also say so in one sentence at the top of the digest, naming the dates and how many days
+the oldest has been invisible.
+
+Why this is mandatory: twice — on 2026-09-21 and 2026-09-24 — committed daily briefings were
+returning 301 → /404 for several days and nothing noticed. Both were found by a human looking. This
+pipeline is the only thing that runs every day, so it is where the check belongs.
+
+**Do not attempt to fix drift.** A deploy is a founder act (`AUTONOMY.md` §1b). Report it.
+If the script exits **2 INDETERMINATE**, say that too — it means the host was unreachable, which is
+not evidence that anything is missing.
+
 ## Step 3: Update PENDING_CHANGES.md
 
 Read the current `research/PENDING_CHANGES.md` and append any new change proposals from tonight. Maintain the three-tier structure:

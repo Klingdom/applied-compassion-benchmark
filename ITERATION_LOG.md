@@ -1,5 +1,91 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 36 — 2026-09-24 (publishing into a directory nobody serves — D1-1c)
+
+### Selected Item
+**D1-1**, ranked #1 by Meta-review 4 at **v2 17** and still the top eligible row. Taken as its sub-item **(c)**: a
+newest-briefing assertion, "since three committed briefings 404'd for days without anything noticing". No
+candidate-generation round (Step 2 override — the backlog holds ≥ 5 eligible items ≥ 13).
+
+**Deliberately not taken in this loop, with reasons rather than silence:**
+- **(a)** "confirm a CI run appears whose `headSha` is that commit" — impossible on this branch until **CI-1b** is
+  decided. The workflow triggers on `push: branches: [main]`.
+- **(b)** adopt amendment D1, "a loop is not closed until a CI run exists for its commit" — **I refuse to adopt a
+  rule I cannot satisfy.** Deferred until CI-1b. Its second half is already live as **R12** (It. 35).
+- **(d)** BM-2, make a build that cannot name its commit fail loudly — different file, different class. Filed.
+
+### V1 — baseline
+Measured at the top of It. 35 and unchanged: production built **2026-09-22T14:07Z**, `sha: null`; `/updates/2026-09-21`,
+`09-22` and `09-24` all **301 → /404**. Four days invisible, found by hand.
+
+### The gap, stated precisely
+`.github/workflows/deploy.yml` already carries a freshness assertion, and it is a good one — it compares
+`manifest.latest` against `feed.json`'s newest item and would correctly report `expected 2026-09-24 / live
+2026-09-20` today. It did not help, for two structural reasons:
+
+1. **It only runs when a deploy runs** (`workflow_dispatch`). The failure mode here is *no deploy at all*, which it
+   cannot see by construction.
+2. **It compares two published artifacts to each other** — the DC-15 shape. A feed can list a briefing whose route
+   404s; that is DC-05's link-integrity variant and It. 20 found exactly it on the ranking pages.
+
+### What Changed
+**`research/scripts/check-publication-drift.mjs`** — asks the *routes*, for every briefing committed in the last 21
+days, and reports which are not served, how many days the oldest has been invisible, and what to do about it. It also
+reads `/build-manifest.json` and flags **BM-2** when the live build cannot name its own commit.
+
+**The control that makes a zero mean something (V8).** A network check that reports "nothing is live" when the host
+is unreachable is worse than no check. Before concluding anything it fetches `/updates`; if that is not 2xx the run
+exits **2 INDETERMINATE**, never 0 and never "drift". The same applies mid-run: if a dated route dies transiently
+after the control passed, that is reported as INDETERMINATE rather than counted as a missing briefing.
+
+**Three callers, because a tool with no caller is DC-09:**
+| Caller | Mode | Catches |
+|---|---|---|
+| `verify` job in `deploy.yml` | `--fail-on-drift` | a deploy that ran but shipped stale content |
+| `.claude/agents/overnight-digest.md` Step 2b (**mandatory**) | reporting | *no deploy at all* — the actual failure mode. The nightly cycle is the only thing that runs every day, so it is where this belongs |
+| `npm run check:publication-drift` | reporting | ad-hoc, and my own post-deploy V7 checklist |
+
+The digest brief says to copy the Verdict line verbatim into Operational Notes, to surface DRIFT at the top of the
+digest naming the dates, and — explicitly — **not to attempt a fix**, because a deploy is a founder act (§1b).
+
+**Not added to `npm run test`.** It needs the network; putting it in the chain would make CI flaky and break offline
+builds. The chain stays at 35 steps, verified.
+
+### Validation — six controls against a local server
+| Control | Result |
+|---|---|
+| A — all routes live | exit **0**, "NO DRIFT" |
+| B — routes 301 → /404, reporting | exit **0**, reports DRIFT with the dates |
+| B — same, `--fail-on-drift` | exit **1**, names the dates |
+| C — control returns 503 | exit **2 INDETERMINATE**, claims drift: **false** |
+| C2 — one route dies mid-run after the control passed | exit **2 INDETERMINATE**, claims drift: **false** |
+| D — host unreachable | exit **2 INDETERMINATE**, claims drift: **false** |
+| E — soft-404 returning 200 | reports NO DRIFT — **known limitation, stated not hidden**: status codes are checked, not page content |
+| Real data | Against production it reproduces the hand-found defect exactly: 3 missing, oldest 4 days |
+| YAML | `deploy.yml` parses; 6 jobs; verify 9 → 10 steps; **triggers unchanged** (that is CI-1b's decision, not mine) |
+| `npm run test` | 35 steps, exit 0 — unchanged, as intended |
+
+### My probe harness was void on the first run, and two controls passed for the wrong reason
+The first version used `execFileSync`, which blocks the parent's event loop — so the in-process test server could
+never accept a connection and **every case timed out**. Cases A, B and E reported UNEXPECTED, which is what made me
+look. The dangerous part: **C and D reported "ok"**, because a 503 control and an unreachable host both expect
+exit 2, and a timeout produces exit 2 as well. Two green controls proving nothing. Rewritten with async `spawn`; all
+six then behaved as specified. This is the second time in two loops that my verification, not the thing verified, was
+the broken part.
+
+### Impact
+The window between "published" and "anyone notices it isn't" drops from days-until-a-human-looks to one nightly
+cycle. Three briefings are still invisible — that needs a deploy, which is yours.
+
+### Follow-ups
+- **CI-1c (new, founder):** a `schedule:` trigger would run this daily without a deploy and without the nightly
+  pipeline. Not installed unilaterally — a scheduled workflow is a new autonomous execution surface, and it overlaps
+  the CI-1b conversation.
+- **BM-2 (D1-1d):** a build that cannot name its commit should fail, not emit `sha: null`. Recurred 2026-09-22.
+- **Limitation:** soft-404s (a 200 page reading "not found") are invisible to this check.
+
+---
+
 ## Iteration 35 — 2026-09-24 (the commit that explains a defect stops causing it — CI-1a / DC-17)
 
 ### Selected Item
