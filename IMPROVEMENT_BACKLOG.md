@@ -299,6 +299,22 @@ comparability.
 **Sequencing:** `AUT-1 → AUT-3 → AUT-4 → AUT-5` gets us to scheduled detection with a loud failure path and no spend.
 `AUT-2` gates everything that costs money. `AUT-7` is the last safe automation before the human gates that stay.
 
+### New backlog items (2026-09-24, from INC-010)
+
+- **GI-2 — ban destructive git verbs in committed scripts, mechanically (DC-14, 2 occurrences).** INC-010:
+  my own It. 35 probe harness ran `git checkout --force` and destroyed three uncommitted files, including the
+  held America-at-250 rewrite. The prohibition already existed in prose, aimed at subagents; I did not apply it
+  to myself. Prose aimed at someone else is not a control. Work: a test that greps committed `.mjs`/`.sh`
+  under `research/scripts`, `site/scripts` and `tools/` for `checkout --force`, `reset --hard`,
+  `clean -fd`, `stash`, and `restore`, failing on any hit not carrying a dated inline waiver. Seed it with a
+  planted probe. **Note the second occurrence means S4 already requires a gate or a dated waiver.**
+  v1: I4 S4 L3 C5 − E2 − R1 = **13**; v2 adds Rc +2 (a class with 2 dated registry occurrences) = **15**.
+
+- **GI-1 (restated, still open) — pre-flight snapshot of uncommitted work before any branch operation.** The
+  reason INC-010 was survivable is that a *previous* iteration had committed the held rewrite as a patch under
+  `research/held-changes/`. That was foresight, not a system. A snapshot to a gitignored path before any
+  script touches branches would make recovery independent of anyone having been thoughtful earlier.
+
 ### New backlog items (2026-09-24, from Iteration 37 — the AI Evaluation Suite)
 
 - **MCP-S6 — COMPLETED 2026-09-24 (It. 37), founder-directed.** The bank went 33 -> 93 items and
