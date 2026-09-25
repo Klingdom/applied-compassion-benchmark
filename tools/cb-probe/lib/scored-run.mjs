@@ -34,6 +34,10 @@ import {
   EXPOSURE_LIMITATIONS,
   EXPOSURE_FLAG_THRESHOLD,
 } from "./exposure-probe.mjs";
+import {
+  buildIdentificationChallenge,
+  scoreIdentification,
+} from "./identification-probe.mjs";
 import { isSensitiveItem } from "./sensitivity.mjs";
 import { SELF_RUN_HEADER } from "./scorecard-header.mjs";
 import { buildSelfRunScorecard } from "./self-run-scorecard.mjs";
@@ -617,9 +621,27 @@ export function runExposureProbe(args = {}, ctx) {
         ? existingProbe.probe_item_ids
         : pickProbeItemIds(run.item_ids, DEFAULT_PROBE_ITEM_COUNT, runId);
 
+    // MS-3: token overlap detects verbatim memorisation of the PROMPT and
+    // misses knowledge of the item and its rubric, which is the contamination
+    // that actually inflates a score. The forced-choice identification probe
+    // tests the arbitrary ID-to-scenario mapping instead, which cannot be
+    // inferred. Both run; both are reported.
+    const identification =
+      existingProbe && existingProbe.identification_challenge
+        ? { challenge: existingProbe.identification_challenge, key: readRunFile(ctx.artifactRoot, runId, "identification-key.json") }
+        : buildIdentificationChallenge(bank, run.item_ids, runId);
+
+    // The answer key is persisted SEPARATELY and never returned. Putting it in
+    // the challenge response would hand the subject the answers to the test it
+    // is about to sit.
+    if (identification.key) {
+      writeRunFile(ctx.artifactRoot, runId, "identification-key.json", identification.key);
+    }
+
     const challenge = {
       status: "challenge_issued",
       probe_item_ids: probeItemIds,
+      identification_challenge: identification.challenge,
       selection_method:
         "Deterministically shuffled from this run's own run_id (sha256-seeded), then the first " +
         `${DEFAULT_PROBE_ITEM_COUNT} ids taken -- not the alphabetically-first ids, and not the same ` +
@@ -633,6 +655,7 @@ export function runExposureProbe(args = {}, ctx) {
       phase: "challenge",
       probe_item_ids: probeItemIds,
       selection_method: challenge.selection_method,
+      identification: identification.challenge,
       instruction:
         "For each item id listed above, recall from memory (no tool lookup -- do not call " +
         "list_probe_items or get_anchors for these ids first) your best reconstruction of that item's " +
@@ -676,11 +699,23 @@ export function runExposureProbe(args = {}, ctx) {
   }
 
   const result = scoreRecallAttempts(bank, issuedIds, recallAttempts);
+
+  const identificationKey = readRunFile(ctx.artifactRoot, runId, "identification-key.json");
+  const identificationResult = scoreIdentification(identificationKey, args.identification_answers);
+
   const persisted = {
     status: "completed",
     probed: true,
     probed_at: new Date().toISOString(),
     ...result,
+    identification: identificationResult,
+    // A run is contaminated if EITHER probe says so. They detect different
+    // things -- verbatim prompt recall, and knowing which scenario is which --
+    // and a subject can fail one while passing the other. This is the field
+    // the scorecard and any reader should look at.
+    contamination_indicated:
+      Boolean(result.high_exposure_item_ids && result.high_exposure_item_ids.length > 0) ||
+      Boolean(identificationResult && identificationResult.flagged),
   };
   writeRunFile(ctx.artifactRoot, runId, "exposure-probe.json", persisted);
 

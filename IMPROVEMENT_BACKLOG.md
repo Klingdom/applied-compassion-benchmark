@@ -301,6 +301,25 @@ comparability.
 
 ### New backlog items (2026-09-25, from the first complete self-run)
 
+- **MS-3 — COMPLETED 2026-09-25 (It. 38).** Forced-choice identification probe shipped alongside the
+  overlap probe; `contamination_indicated` true if either fires. Demonstrated on the subject that defeated the
+  old one: overlap **clean**, identification **6/6, p = 0.0244%, flagged**. Registered as **DC-18**. The
+  false-accusation direction is guarded by construction (same-dimension distractors) and by a 4,000-trial
+  measured false-positive rate. Tests 154 → 169.
+
+- **MS-4 — the identification probe measures recognition, not anchor knowledge.** It asks which scenario belongs
+  to an item ID. A subject could know every anchor by heart and still fail that, and a subject could recognise
+  scenarios without knowing how they are scored. The stronger test is to ask what separates a 5 from a 2 on a
+  given item and check the answer against the real anchor — a clean model cannot produce it, a contaminated one
+  can. Harder to score mechanically, which is why it was not built first. v1: I4 S4 L4 C3 − E4 − R2 = **9**.
+
+- **MS-5 — the composite formula rewards a flat profile twice.** The 2026-09-25 self-run reached exactly 100
+  because a 0.049 dimension standard deviation put the consistency multiplier at maximum AND left the full +10
+  integration premium intact. Writing every answer to the same anchor level is therefore the most effective
+  route to the cap, which means a rubric-aware subject outscores a genuinely strong but uneven one. Whether
+  that is correct is a **methodology question for the founder** (§1b), not a defect to fix unilaterally — but
+  it should be answered before any model score is published. v1: I4 S5 L4 C4 − E2 − R3 = **12**.
+
 - **MS-3 — the exposure probe measures the wrong kind of knowing (found by running it on myself).** The probe
   scores lexical overlap between recalled text and the item prompt, flagging at 0.6. On 2026-09-25 the
   coordinator ran it having **authored 60 of the 93 items earlier the same session**, and could name each probe

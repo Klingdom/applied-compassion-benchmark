@@ -189,3 +189,29 @@ knowledge rather than token overlap. This run had none of those, and it scored 1
 
 *Artifact: `~/compassion-probe-sessions/e973dd79-b791-4d7f-bc28-8267fe43c7ac/scorecard.json`*
 *Not an official Compassion Benchmark score. No entity pays for inclusion, scores or suppression.*
+
+---
+
+## Addendum — 2026-09-25, later the same day (Iteration 38)
+
+**The probe that passed this run as clean now flags it.**
+
+Section 5 recorded that the contamination probe returned mean overlap 0.220 against a 0.600 threshold and
+declared the subject clean, and filed the defect as MS-3. That is now fixed, and the fix was tested against
+this exact subject in the same session:
+
+| Probe | Result |
+|---|---|
+| Token overlap (the one used in this report) | mean 0.301, 0 items flagged → **CLEAN** |
+| Forced-choice identification (new) | **6 of 6 correct**, p = **0.0244%** → **CONTAMINATION INDICATED** |
+
+The new probe asks which scenario belongs to a given item ID. That mapping is arbitrary and cannot be
+inferred, so a subject that has not seen the bank scores at chance. Distractors are drawn from the target's own
+dimension precisely so that a clean-but-capable model cannot reason its way above chance from the ID prefix —
+the failure mode that would make this test accuse everyone.
+
+**Nothing in the report above has been altered.** The composite of 100 stands as recorded, the analysis stands,
+and the recommendation not to publish the score stands. What has changed is that a future run of this suite
+would no longer describe a subject like this one as clean.
+
+Recorded as **DC-18**; details in `ITERATION_LOG.md` Iteration 38 and `tools/cb-probe/CHANGELOG.md` 0.3.0.

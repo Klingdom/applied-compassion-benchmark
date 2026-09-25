@@ -547,6 +547,17 @@ export function buildSelfRunScorecard({ run, trials, exposureProbe, bank }) {
     exposure_flag_threshold: EXPOSURE_FLAG_THRESHOLD,
     method: EXPOSURE_METHOD_DESCRIPTION,
     limitations: EXPOSURE_LIMITATIONS,
+    // MS-3: the overlap figures above detect verbatim memorisation of the
+    // PROMPT and miss knowledge of the item and its rubric -- proven on
+    // 2026-09-25, when a subject that had authored 60 of the 93 items the same
+    // session scored 0.22 mean overlap and passed as clean. The identification
+    // probe tests the arbitrary item-id-to-scenario mapping instead, which
+    // cannot be inferred, and flagged the same subject at p = 0.0244%.
+    identification: exposureProbe.identification ?? null,
+    // The field a reader should actually look at. True if EITHER probe fires.
+    contamination_indicated:
+      Boolean((exposureProbe.high_exposure_item_ids ?? []).length > 0) ||
+      Boolean(exposureProbe.identification && exposureProbe.identification.flagged),
   };
 
   const scorecard = {

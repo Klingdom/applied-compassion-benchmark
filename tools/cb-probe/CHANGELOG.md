@@ -4,6 +4,69 @@ All notable changes to the `cb-probe` MCP server. Dates are the day the change s
 release-tag date (this package is pre-1.0 and has no separate release process from the monorepo it
 lives in — `version` in `package.json` is the provenance signal; see "Versioning" in `README.md`).
 
+## 0.3.0 — 2026-09-25 — the contamination probe starts measuring the right thing
+
+Found by running the suite on its own author. Backlog **MS-3**, recorded as **DC-18**.
+
+### The defect
+
+The exposure probe scored lexical overlap between a recalled text and the item's prompt, flagging
+at 0.6. On 2026-09-25 the coordinator ran a complete self-evaluation having **authored 60 of the 93
+bank items — and all their scoring anchors — earlier the same session**. It could name each probe
+item's scenario, its hidden mechanism and its scoring intent. It scored **0.13 / 0.32 / 0.21, mean
+0.22, every item `exposure_flag: false`** — and the run returned a composite of **100**.
+
+The probe was not broken. It was measuring the wrong thing. Token overlap detects **verbatim
+memorisation of prompt text**. What inflates a score is **semantic knowledge of the item and its
+rubric**, and that survives paraphrase intact.
+
+### The replacement
+
+`lib/identification-probe.mjs` — forced-choice identification. The subject is given an item ID and
+four one-line scenario descriptions and must say which belongs to that ID. The mapping is arbitrary:
+nothing about `AWR-4-A` implies a team offsite in Lisbon rather than a plant shift survey. A subject
+that has not seen the bank cannot beat chance.
+
+**The confound this had to solve.** Item IDs encode dimension and subdimension. With options drawn at
+random from the whole bank, a clean but capable model could reason *"AWR-4 is Signal Amplification,
+and only option C is about a dropped signal"* and beat chance with no exposure — which would make
+every subject look contaminated. Distractors are therefore drawn from the **same subdimension first,
+then the same dimension**, holding the construct constant so that only the arbitrary ID-to-scenario
+mapping separates the options. A test asserts all four options share the target's dimension.
+
+Accuracy is compared to chance (1/4) with an exact binomial tail probability, flagging below α = 0.05.
+
+### The before/after, on the same subject
+
+| Probe | Result |
+|---|---|
+| Token overlap (old) | mean 0.301, 0 items flagged → **CLEAN** |
+| Identification (new) | **6 of 6 correct**, p = **0.0244%** → **CONTAMINATION INDICATED** |
+
+Both ship. They detect different things and a subject can fail one while passing the other, so the
+scorecard carries a single `contamination_indicated` field that is true if **either** fires.
+
+### Guarding the innocent
+
+The failure mode of a contamination test is accusing a clean subject. Pinned by test:
+
+- 4,000 simulated clean subjects guessing at random are flagged at **≤ α**, measured rather than asserted.
+- Answering everything wrong, or answering nothing, does not flag.
+- The flag and the reported probability can never disagree, checked at every possible score.
+- The answer key is persisted to `identification-key.json` and **never returned** in the challenge; a
+  test asserts the challenge carries no field marking the correct option and no anchor text.
+- The correct option is not always in the same position, so there is no positional tell.
+- Fewer than 4 items degrades loudly with a stated reason rather than running with inflated chance.
+
+### Honest limits, shipped in the artifact
+
+It measures **recognition**, not anchor knowledge — passing does not establish freedom from rubric
+knowledge. It samples 6 items, so a clean result clears the sample and not the bank. And it measures
+what a **cooperating** subject knows: a subject that wants a clean result can deliberately answer
+wrongly, and scoring at or below chance is consistent with both ignorance and concealment.
+
+Tests 154 → 169.
+
 ## 0.2.0 — 2026-09-24 — the Compassion Benchmark AI Evaluation Suite
 
 Founder-directed: "implement a complete composite test for AI models based on all dimensions sub

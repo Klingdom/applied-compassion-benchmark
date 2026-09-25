@@ -1,9 +1,24 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 37 (D-41: the AI Evaluation Suite — bank v2.0, 40/40 subdimensions) · History: `ITERATION_LOG.md` (35 entries, newest 34)
+Last change: Iteration 38 (DC-18: the contamination probe measures the right thing)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-25 (Iteration 38 — the contamination probe starts measuring the right thing; **DC-18**):
+> the first complete Evaluation Suite run scored its own author **100/100**, and the contamination probe
+> passed that author as **clean** (mean overlap 0.22 against a 0.6 threshold) while they could name every
+> probe item's scenario, mechanism and scoring intent. Token overlap detects verbatim memorisation of the
+> prompt; what inflates a score is knowledge of the item and its rubric, which survives paraphrase. New
+> forced-choice identification probe tests the arbitrary item-id-to-scenario mapping: **same subject, same
+> session — old probe clean, new probe 6/6 at p = 0.0244%, flagged.** The opposite failure mattered more and
+> is guarded: distractors come from the target’s own dimension so a clean model cannot reason from the ID
+> prefix, and **4,000 simulated random-guessing subjects are flagged at or below α**, measured rather than
+> asserted. Limits shipped in the artifact: it measures recognition rather than anchor knowledge, samples 6
+> items, and only measures what a cooperating subject knows. cb-probe **169/169** (was 154). **Filed, not
+> fixed: MS-5** — the composite rewards a flat profile twice (consistency multiplier and integration premium
+> both key off low variance), which is how the self-run reached exactly 100. That is a methodology question
+> for the founder, and it should be answered before any model score is published.
 
 > 2026-09-24 (Iteration 37 — the Compassion Benchmark AI Evaluation Suite; founder-directed, **D-41**):
 > the model task bank goes **33 -> 93 items** and **13 of 40 -> 40 of 40 subdimensions**, with at least 2
@@ -29,20 +44,6 @@ Last change: Iteration 37 (D-41: the AI Evaluation Suite — bank v2.0, 40/40 su
 > network. It carries its own liveness control: an unreachable host exits **2 INDETERMINATE**, never "everything is
 > missing". Six controls passed — and two of them had passed for the *wrong reason* until I found my probe harness
 > was blocking its own test server. **Still true and needing a deploy: three briefings are not visible to readers.**
-
-> 2026-09-24 (Iteration 35 — RISK-025's second cause is closed by a gate; production measured): the
-> **live baseline first** — production was built **2026-09-22T14:07Z** with `sha: null` (**BM-2 recurred**: another
-> bare `docker compose build`), `/updates/2026-09-17`, `09-18` and `09-20` now return **200**, and
-> `/updates/2026-09-21`, `09-22` and `09-24` still **301 → /404**. The `/updates` index lists only pages that exist,
-> so the site is **stale but self-consistent** — absent content, not wrong content. Three committed briefings are
-> invisible until a deploy. **DC-17 gated:** GitHub matches a CI-suppression token as a substring of the head commit
-> message, so `9d89d4df` — the commit that fixed the habit — silenced its own push with the sentence "this commit
-> deliberately carries no …". New gate `test:commit-message-tokens` (chain 34 → 35) plus rule **R12** in
-> `AUTONOMY.md` §1b, forward-dated to 2026-09-24 after verifying that day's four commits carry none. Probed with a
-> **real planted commit** on a scratch branch (flagged by SHA, `HEAD` verified unchanged), a neutered matcher (the
-> positive control failed instead of the gate passing) and a future cutoff (**VACUOUS**, not green). Registry now
-> **DC-01..DC-17 (17 rows)**. **Open half is now a decision, not an unknown:** `deploy.yml` triggers on
-> `push: branches: [main]`, so this branch has had no CI since 2026-09-17 — **CI-1b** for the founder.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -122,6 +123,22 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-25, text unchanged: displaced from the top three by Iteration 38._
+
+> 2026-09-24 (Iteration 35 — RISK-025's second cause is closed by a gate; production measured): the
+> **live baseline first** — production was built **2026-09-22T14:07Z** with `sha: null` (**BM-2 recurred**: another
+> bare `docker compose build`), `/updates/2026-09-17`, `09-18` and `09-20` now return **200**, and
+> `/updates/2026-09-21`, `09-22` and `09-24` still **301 → /404**. The `/updates` index lists only pages that exist,
+> so the site is **stale but self-consistent** — absent content, not wrong content. Three committed briefings are
+> invisible until a deploy. **DC-17 gated:** GitHub matches a CI-suppression token as a substring of the head commit
+> message, so `9d89d4df` — the commit that fixed the habit — silenced its own push with the sentence "this commit
+> deliberately carries no …". New gate `test:commit-message-tokens` (chain 34 → 35) plus rule **R12** in
+> `AUTONOMY.md` §1b, forward-dated to 2026-09-24 after verifying that day's four commits carry none. Probed with a
+> **real planted commit** on a scratch branch (flagged by SHA, `HEAD` verified unchanged), a neutered matcher (the
+> positive control failed instead of the gate passing) and a future cutoff (**VACUOUS**, not green). Registry now
+> **DC-01..DC-17 (17 rows)**. **Open half is now a decision, not an unknown:** `deploy.yml` triggers on
+> `push: branches: [main]`, so this branch has had no CI since 2026-09-17 — **CI-1b** for the founder.
 
 _Moved 2026-09-24, text unchanged: displaced from the top three by Iteration 37._
 

@@ -1,5 +1,84 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 38 — 2026-09-25 (the contamination probe starts measuring the right thing — MS-3 / DC-18)
+
+### Selected Item
+**MS-3**, v2 **17** — the top-ranked eligible item, and the only one carrying a **live BEFORE check recorded by
+me the previous night**. Filed during the complete self-run (It. 37) the moment the probe passed me as clean
+while I could recite the answer key.
+
+### V1 — baseline, measured before any code changed
+| Check | Result |
+|---|---|
+| Subject | the coordinator, having **authored 60 of the 93 bank items and all their anchors** earlier the same session |
+| Probe recall | correctly named each probe item's scenario, hidden mechanism and scoring intent |
+| Overlap scores | **0.13 / 0.32 / 0.21**, mean **0.22**, threshold 0.6 |
+| Verdict returned | **`exposure_flag: false` on every item — CLEAN** |
+| Composite that run | **100 / 100** |
+
+The probe was not broken. It was measuring the wrong thing: token overlap detects **verbatim memorisation of
+prompt text**, and what inflates a score is **semantic knowledge of the item and its rubric**, which survives
+paraphrase intact. A contaminated model naturally paraphrases.
+
+### What Changed
+`tools/cb-probe/lib/identification-probe.mjs` — forced-choice identification. The subject is shown an item ID
+and four one-line scenario descriptions and must say which belongs to that ID. The mapping is **arbitrary**:
+nothing about `AWR-4-A` implies a Lisbon offsite rather than a plant shift survey. A subject that has not seen
+the bank cannot beat chance. Accuracy is compared to 1/4 with an exact binomial tail, flagging below α = 0.05.
+
+Both probes ship. They detect different things, so the scorecard carries one `contamination_indicated` field
+that is true if **either** fires.
+
+### The confound that nearly made it useless
+Item IDs encode dimension and subdimension. With options drawn at random from the whole bank, a clean but
+capable model could reason *"AWR-4 is Signal Amplification, and only option C is about a dropped signal"* and
+beat chance with no exposure whatsoever — **making every subject look contaminated**. That is the failure mode
+that matters, because a contamination test that accuses the innocent is worse than no test.
+
+Fixed by construction: distractors are drawn from the **same subdimension first, then the same dimension**, so
+every option is a plausible instance of the same construct and only the arbitrary ID-to-scenario mapping
+separates them. A test asserts all four options share the target's dimension and fails by name if they don't.
+
+### Validation
+| Check | Result |
+|---|---|
+| **The demonstration, same subject, same session** | overlap probe: mean 0.301, 0 flagged → **CLEAN**. Identification probe: **6 of 6**, p = **0.0244%** → **CONTAMINATION INDICATED** |
+| **False-positive rate, measured not asserted** | 4,000 simulated clean subjects guessing uniformly → flagged at **≤ α**, asserted in test |
+| All-wrong / no-answer subjects | not flagged; `unanswered` reported |
+| Flag vs probability | checked at **every possible score** — they can never disagree |
+| Monotonicity | more correct answers can never lower the suspicion, checked across the whole range |
+| Distractor dimension control | all 4 options share the target's dimension, every question |
+| Exactly one correct option | asserted per question against the key |
+| **No answer-key leak** | key persisted to `identification-key.json`, never returned; challenge carries no field marking the answer and no anchor text |
+| No positional tell | the correct option is not always in the same slot across seeds |
+| Determinism | same run id reproduces the challenge exactly; different ids differ |
+| Degradation | fewer than 4 items refuses with a stated reason rather than running at inflated chance |
+| Binomial maths | pinned against known values (6/6 at p=0.25 → 0.000244; 4/6 → ~0.0376) |
+| Suites | cb-probe **169 / 169** (was 154); site chain 35 steps |
+
+### Honest limits, shipped in the artifact rather than in a commit message
+1. It measures **recognition**, not anchor knowledge. A subject could know every anchor and still miss which
+   scenario carries which ID. **MS-4** files the stronger test: ask what separates a 5 from a 2 and check it
+   against the real anchor.
+2. It samples **6 items**. A pass clears the sample, not the bank.
+3. It measures what a **cooperating** subject knows. Deliberate under-performance is indistinguishable from
+   genuine ignorance, and scoring *below* chance is itself worth noticing.
+
+### Found while doing this, filed not fixed
+**MS-5 — the composite formula rewards a flat profile twice.** The self-run hit exactly 100 because a 0.049
+dimension standard deviation put the consistency multiplier at maximum *and* left the full +10 integration
+premium intact. So writing every answer to the same anchor level is the most effective route to the cap, and a
+rubric-aware subject outscores a genuinely strong but uneven one. That is a **methodology question for the
+founder** (§1b), not something to change unilaterally — but it should be answered before any model score is
+published.
+
+### Impact
+The instrument can now detect the contamination that actually inflates scores, and it proved it against the
+hardest available case: the model that wrote the test. The self-run report of 2026-09-25 carries a dated
+addendum recording that the probe which passed it now flags it — the original text is left intact.
+
+---
+
 ## INC-010 — 2026-09-24 (I destroyed uncommitted work with `git checkout --force`, and found it five iterations late)
 
 ### What happened
