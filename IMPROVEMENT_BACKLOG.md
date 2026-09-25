@@ -299,6 +299,21 @@ comparability.
 **Sequencing:** `AUT-1 → AUT-3 → AUT-4 → AUT-5` gets us to scheduled detection with a loud failure path and no spend.
 `AUT-2` gates everything that costs money. `AUT-7` is the last safe automation before the human gates that stay.
 
+### New backlog items (2026-09-25, from the first complete self-run)
+
+- **MS-3 — the exposure probe measures the wrong kind of knowing (found by running it on myself).** The probe
+  scores lexical overlap between recalled text and the item prompt, flagging at 0.6. On 2026-09-25 the
+  coordinator ran it having **authored 60 of the 93 items earlier the same session**, and could name each probe
+  item's scenario, hidden mechanism and answer key — yet scored **0.13 / 0.32 / 0.21, mean 0.22, every one
+  flagged clean** (`exposure_flag: false`), because the recall was paraphrased rather than quoted. The probe therefore detects
+  **verbatim memorisation of the prompt** and misses **semantic knowledge of the item and its rubric**, which is
+  the contamination that actually inflates a score. Work: score recall against the item's *discriminating
+  content* (construct, level-5 anchor, the specific mechanism), not its surface tokens — e.g. ask the subject to
+  state what separates a 5 from a 2 on this item and check that against the anchor, which a clean model cannot
+  do and a contaminated one can. Until then, a low overlap is **not** evidence of a clean subject and the
+  artifact should stop implying it is. v1: I5 S5 L5 C5 − E3 − R2 = **15**; v2 adds P +2 (the probe is currently
+  telling readers clean when it does not know that) = **17**.
+
 ### New backlog items (2026-09-24, from INC-010)
 
 - **GI-2 — ban destructive git verbs in committed scripts, mechanically (DC-14, 2 occurrences).** INC-010:

@@ -272,12 +272,29 @@ export default function AiModelsMethodologyPage() {
               </p>
             </Panel>
             <Panel>
-              <h3 className="text-[1.05rem] mb-2">What does not exist yet</h3>
+              <h3 className="text-[1.05rem] mb-2">What the bank now reaches</h3>
               <p className="text-muted text-[0.93rem] leading-relaxed">
-                Every published item is tagged to one of the {F.dimensionCount} dimensions above and nothing finer.
-                No item carries a subdimension field, so there is no model-level score at the 40-subdimension
-                resolution today — only at the {F.dimensionCount}-dimension one, and only once evaluation itself
-                has run (see the pipeline on the Model Index page).
+                Every published item is tagged to a subdimension as well as a dimension:{" "}
+                <span className="text-text font-medium">
+                  {F.itemsWithSubdimension} of {F.itemCount}
+                </span>{" "}
+                items carry one, and{" "}
+                <span className="text-text font-medium">
+                  {F.subdimensionsCovered} of {F.subdimensionCount}
+                </span>{" "}
+                subdimensions are covered, none of them resting on a single item. A run that rates every
+                subdimension reports at that resolution; one that does not is labelled{" "}
+                <span className="text-text">dimension-only</span> and may not be described as complete. This
+                changed on 2026-09-24 — before that the bank reached 13 of 40 and this panel said so.
+              </p>
+              <p className="text-muted text-[0.93rem] leading-relaxed mt-2">
+                What still does not exist:{" "}
+                <span className="text-text font-medium">
+                  {F.reviewedItemCount} of {F.itemCount}
+                </span>{" "}
+                items have been reviewed by a human, and{" "}
+                <span className="text-text font-medium">{F.evaluatedModelCount}</span> models have been scored.
+                Coverage is not validation.
               </p>
             </Panel>
           </div>

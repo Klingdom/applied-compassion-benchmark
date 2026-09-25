@@ -22,6 +22,8 @@ import { DIMENSIONS } from "@/data/dimensions";
 type TaskItem = {
   id: string;
   dimension: string;
+  /** Subdimension code (e.g. "A3"). The bank's designed carrier — see bank v2.0. */
+  indicator?: string | null;
   validationStatus?: string;
   exposureStatus?: string;
   pool?: string;
@@ -48,6 +50,8 @@ function countBy<T>(xs: T[], key: (x: T) => string): Record<string, number> {
 }
 
 const DIM_CODES = DIMENSIONS.map((d) => d.code);
+/** All 40 subdimension codes, in canonical order, from the same source of truth. */
+const SUBDIM_CODES = DIMENSIONS.flatMap((d) => d.subdims.map((s) => s.code));
 
 /** Per-dimension item counts across the whole bank. */
 export const itemsByDimension: Record<string, number> = Object.fromEntries(
@@ -102,6 +106,25 @@ export const MODEL_INDEX_FACTS = {
   allItemsPublic: items.length > 0 && items.every((i) => i.exposureStatus === "public-permanent"),
 
   dimensionCount: DIM_CODES.length,
+
+  /**
+   * Subdimension coverage, derived from each item's `indicator` field — never
+   * typed. Until bank v2.0 (2026-09-24) this was 0 of 40 and the methodology
+   * page said so; the bank now carries all 40, so the page must say that
+   * instead. Deriving it here is what keeps the two from disagreeing again.
+   */
+  subdimensionCount: SUBDIM_CODES.length,
+  subdimensionsCovered: SUBDIM_CODES.filter((c) => items.some((i) => i.indicator === c)).length,
+  itemsWithSubdimension: items.filter((i) => typeof i.indicator === "string" && i.indicator.length > 0).length,
+
+  /**
+   * Subdimensions resting on a single item. A subdimension mean built on one
+   * item is a single point of failure, so this is worth showing rather than
+   * averaging away.
+   */
+  singleItemSubdimensions: SUBDIM_CODES.filter(
+    (c) => items.filter((i) => i.indicator === c && !isDraft(i)).length === 1,
+  ).length,
 } as const;
 
 export type ModelIndexFacts = typeof MODEL_INDEX_FACTS;

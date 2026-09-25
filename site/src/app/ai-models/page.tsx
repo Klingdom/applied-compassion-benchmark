@@ -281,6 +281,55 @@ export default function AiModelsPage() {
         </Container>
       </section>
 
+      {/* The Suite: the instrument is installable and runnable by anyone, which
+          is a separate fact from whether WE have scored anything. Both are
+          stated here so neither can be mistaken for the other. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Run it yourself — the AI Evaluation Suite"
+            description="The same task bank, the same anchors and the same scoring arithmetic this benchmark applies to institutions, packaged as a local tool. No API key, no network call, no data sent to us."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What it measures</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                All {F.dimensionCount} dimensions and all {F.subdimensionCount} subdimensions, from{" "}
+                {F.itemCount} published items. A complete run rates every subdimension and reports a 0–100
+                composite computed by the <em>same</em> function that scores countries and companies here — so
+                the arithmetic is identical even though the subject and the instrument are not.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What it refuses to do</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                A result is marked unofficial in a field that cannot be set otherwise. Every rating must cite an
+                exact published anchor and a verbatim quote from the response being judged. Scoring is blocked
+                until a contamination probe has run. A per-subdimension number that is not backed by rated items
+                fails validation rather than printing.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">What it cannot tell you</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Nothing about how one model compares to another. Every item is published with its full answer
+                key, so any model trained since may have memorised it, and{" "}
+                <span className="text-text font-medium">
+                  {F.reviewedItemCount} of {F.itemCount}
+                </span>{" "}
+                items have been reviewed by a human. A self-run is an upper bound, not a measurement.
+              </p>
+            </Panel>
+          </div>
+          <div className="flex gap-3 flex-wrap mt-4">
+            <Button href="/ai-evaluation-suite">Open the AI Evaluation Suite</Button>
+            <Button href="/ai-models/methodology" variant="default">
+              How scoring works
+            </Button>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-[30px]">
         <Container>
           <Callout>
