@@ -350,6 +350,11 @@ comparability.
 
 ### New backlog items (2026-09-24, from INC-010)
 
+- **GI-2 — COMPLETED 2026-09-26 (It. 39), forced selection under S10.** `test:no-destructive-git` in
+  `npm run test` (chain 35 → 36), scanning 205 tracked executable files for seven destructive
+  verbs, with a dated-and-reasoned waiver as the only escape. Nine negative controls, all restored
+  sha256-identical. DC-14 moves from "None yet" to gated. v2 was **15**.
+
 - **GI-2 — ban destructive git verbs in committed scripts, mechanically (DC-14, 2 occurrences).** INC-010:
   my own It. 35 probe harness ran `git checkout --force` and destroyed three uncommitted files, including the
   held America-at-250 rewrite. The prohibition already existed in prose, aimed at subagents; I did not apply it

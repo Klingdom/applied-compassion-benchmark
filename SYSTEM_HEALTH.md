@@ -1,9 +1,20 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 38 (DC-18: the contamination probe measures the right thing)
+Last change: Iteration 39 (DC-14 gated: no destructive git in committed scripts)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-26 (Iteration 39 — DC-14 gated, forced selection under S10): the class that destroyed a cycle’s
+> rotation state on 09-18 (INC-009) and three uncommitted files on 09-24 (INC-010, mine) now fails a test.
+> `test:no-destructive-git` (chain 35 → 36) scans **205 tracked executable files** for seven ways to lose
+> uncommitted work; the only escape is a waiver carrying **both a date and a reason**. Baseline measured first:
+> **0 occurrences in 161 files, and the zero was only believed after a positive control found 6 of 6 seeded
+> instances** (V8) — so this is a ratchet, not a cleanup. Nine probes: four destructive forms each fail by
+> file:line, both waiver forms pass, an undated and a reasonless waiver both still fail, and a broken extension
+> filter reports **VACUOUS** rather than green. All restorations sha256-identical. The probe harness uses no
+> destructive git command itself. **Still open, GI-1:** INC-010 was survivable only because an earlier iteration
+> had committed the held rewrite as a patch — foresight, not a system.
 
 > 2026-09-25 (Iteration 38 — the contamination probe starts measuring the right thing; **DC-18**):
 > the first complete Evaluation Suite run scored its own author **100/100**, and the contamination probe
@@ -33,17 +44,6 @@ Last change: Iteration 38 (DC-18: the contamination probe measures the right thi
 > **Unchanged and now louder: 0 of 93 items have been reviewed by a human** (MB-2), the items were
 > authored by AI agents and only *structurally* verified, and MB-5’s two broken EQU rubrics still stand.
 > cb-probe 154/154; bank validator 93 items / 0 failures; site chain 35 steps.
-
-> 2026-09-24 (Iteration 36 — three briefings have been invisible for four days, and now something watches):
-> measured live — production built **2026-09-22T14:07Z** with `sha: null`, and `/updates/2026-09-21`, `09-22` and
-> `09-24` all **301 → /404**. The existing deploy-time freshness assertion could not catch this: it runs only when a
-> deploy runs, and the failure was *no deploy at all*. New `research/scripts/check-publication-drift.mjs` asks the
-> **routes** for every briefing committed in the last 21 days, with three callers — the `verify` job
-> (`--fail-on-drift`), a **mandatory** step in the overnight-digest brief (the only daily caller), and
-> `npm run check:publication-drift`. **Not in the test chain**, which stays at 35 steps, because it needs the
-> network. It carries its own liveness control: an unreachable host exits **2 INDETERMINATE**, never "everything is
-> missing". Six controls passed — and two of them had passed for the *wrong reason* until I found my probe harness
-> was blocking its own test server. **Still true and needing a deploy: three briefings are not visible to readers.**
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -123,6 +123,19 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-26, text unchanged: displaced from the top three by Iteration 39._
+
+> 2026-09-24 (Iteration 36 — three briefings have been invisible for four days, and now something watches):
+> measured live — production built **2026-09-22T14:07Z** with `sha: null`, and `/updates/2026-09-21`, `09-22` and
+> `09-24` all **301 → /404**. The existing deploy-time freshness assertion could not catch this: it runs only when a
+> deploy runs, and the failure was *no deploy at all*. New `research/scripts/check-publication-drift.mjs` asks the
+> **routes** for every briefing committed in the last 21 days, with three callers — the `verify` job
+> (`--fail-on-drift`), a **mandatory** step in the overnight-digest brief (the only daily caller), and
+> `npm run check:publication-drift`. **Not in the test chain**, which stays at 35 steps, because it needs the
+> network. It carries its own liveness control: an unreachable host exits **2 INDETERMINATE**, never "everything is
+> missing". Six controls passed — and two of them had passed for the *wrong reason* until I found my probe harness
+> was blocking its own test server. **Still true and needing a deploy: three briefings are not visible to readers.**
 
 _Moved 2026-09-25, text unchanged: displaced from the top three by Iteration 38._
 

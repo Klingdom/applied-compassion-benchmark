@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 39 — 2026-09-26 (the rule I wrote and then broke becomes a gate — GI-2 / DC-14)
+
+### Selected Item
+**Forced by S10**, not chosen from the ranked queue. DC-14 carries **two dated occurrences** and had no general
+gate: INC-009 (2026-09-18, `overnight-assessor` ran `git checkout` over the scanner's uncommitted 2,673-line
+rotation-state write) and **INC-010 (2026-09-24, my own probe harness ran `git checkout -q --force` and
+destroyed three uncommitted files, including the held America-at-250 rewrite)**.
+
+After INC-009 the prohibition went into agent briefs as prose. After INC-010 it was clear why that wasn't
+enough: **I wrote that rule and then broke it**, because I wasn't thinking of my own probe harness as an agent.
+Prose aimed at someone else is not a control.
+
+### V1 — baseline, and the zero I refused to trust
+| Check | Result |
+|---|---|
+| Destructive verbs in tracked scripts | **0** across 161 files |
+| **Positive control before believing that zero** | seeded 6 known-destructive lines → **6/6 detected** |
+| `deploy.sh` git usage | `git pull`, `git status` only — no false positive |
+
+A search returning nothing proves nothing until the same search has found a known-present instance (V8). The
+zero is real, so the gate is a **ratchet** preserving a clean state rather than a cleanup.
+
+### What Changed
+`research/scripts/test-no-destructive-git.mjs`, wired in as `test:no-destructive-git` (chain 35 → 36). It scans
+every tracked executable file — 205 today — for seven ways to lose uncommitted work: `checkout --force`,
+`checkout -f`, `checkout -- <path>`, `reset --hard`, `clean -f*`, `stash`, `restore`. Failures name file:line
+and the verb.
+
+**The waiver is dated and reasoned or it is not a waiver.** `GIT-DESTRUCTIVE-OK YYYY-MM-DD <reason>` on the
+line or the line above. An undated marker fails. A dated marker with no reason fails. If a script genuinely
+needs to reset a throwaway clone, that is a sentence someone can write and a later reader can date.
+
+**Markdown is out of scope, with the reason stated in the file.** Agent briefs quote these commands *in order
+to forbid them*; scanning prose would flag the prohibition itself, and a gate that flags its own rulebook is
+how permanent allowlists get born.
+
+The verb patterns are assembled from parts so the gate does not trip on itself — the same discipline the
+skip-ci marker gate (DC-17) uses.
+
+### Validation — nine probes
+| Probe | Result |
+|---|---|
+| `reset --hard` planted in a real tracked file | **fails**, names `file:line` |
+| `checkout --force` inside a JS `execFileSync` call | **fails**, names the verb |
+| `clean -fd` | **fails** |
+| `stash` | **fails** |
+| Valid dated waiver **above** the line | passes |
+| Valid dated waiver **on** the line | passes |
+| Waiver with **no date** | **still fails** |
+| Dated waiver with **no reason** | **still fails** |
+| Extension filter broken | exits **VACUOUS**, not green |
+
+Every planted file restored **sha256-identical**; the working tree was verified clean afterwards. Matcher
+self-test: 8 destructive fixtures all flagged, 10 safe ones (`git pull`, `git add`, `git checkout -b`, prose
+containing the word "restore", a URL containing "stash") all correctly ignored.
+
+**The probe harness itself uses no destructive git command.** Writing one to test a gate against destructive
+git commands would have been INC-010 a second time, which is the joke this iteration exists to stop being.
+
+### Impact
+The class that cost a cycle's rotation state in September, and three uncommitted files a week later, now fails
+a test in the chain CI runs on every push. What protected it before was my memory of a rule I had already
+broken once.
+
+### Follow-ups
+- **GI-1 still open.** The only reason INC-010 was survivable is that an earlier iteration had committed the
+  held rewrite as a patch under `research/held-changes/`. That was foresight, not a system. A pre-flight
+  snapshot of uncommitted work before any branch operation would make recovery independent of anyone having
+  been careful earlier.
+- The gate reads static text. A destructive command assembled at runtime from variables would pass it. Stated
+  rather than implied; the realistic failure mode here is a literal, and that is now covered.
+
+---
+
 ## Iteration 38 — 2026-09-25 (the contamination probe starts measuring the right thing — MS-3 / DC-18)
 
 ### Selected Item
