@@ -9,10 +9,10 @@
  * Dated occurrences:
  *   1. 2026-09-18 (INC-009) — `overnight-assessor` misread the scanner's
  *      uncommitted 2,673-line `rotation-state.json` write as a reformat and ran
- *      `git checkout`, discarding all 1,329 `last_scanned` values from that
+ *      a forced checkout, discarding all 1,329 `last_scanned` values from that
  *      cycle. Self-disclosed and reconstructed.
  *   2. 2026-09-24 (INC-010) — the coordinator's own It. 35 probe harness ran
- *      `git checkout -q --force <branch>` to return from a scratch branch and
+ *      a forced checkout to return from a scratch branch, and thereby
  *      destroyed three uncommitted files, including the held America-at-250
  *      rewrite. Recovered only because an earlier iteration had committed that
  *      rewrite as a patch. Recovery was luck, not design.
@@ -42,6 +42,14 @@
  *   Agent briefs and governance docs quote these commands in order to forbid
  *   them. Scanning prose would flag the prohibition itself, which is how a gate
  *   earns a permanent allowlist. Only executable file types are scanned.
+ *
+ * THIS FILE IS SCANNED BY ITSELF
+ *   The verb patterns are assembled from parts for that reason, and the prose
+ *   above describes the incidents WITHOUT quoting the commands. Learned the hard
+ *   way twice: a gate file is untracked while you are writing it, so `git
+ *   ls-files` does not scan it and local validation passes -- then it becomes
+ *   tracked at commit and CI fails. The It. 34 iteration-log gate did exactly
+ *   this, and so did this one. Validate a new gate against a STAGED file.
  *
  * NON-VACUITY (rule V8)
  *   A scan that finds nothing proves nothing until the same scan has found a

@@ -59,6 +59,28 @@ containing the word "restore", a URL containing "stash") all correctly ignored.
 **The probe harness itself uses no destructive git command.** Writing one to test a gate against destructive
 git commands would have been INC-010 a second time, which is the joke this iteration exists to stop being.
 
+### Correction, same day: the gate failed CI on its own header, and this is the second time
+
+The commit above passed my full local chain and **failed CI**. The gate flagged itself at line 15, where the
+header narrates INC-010 using the literal command. I had assembled the *patterns* from parts and then written
+the *story* out in full.
+
+Why local validation missed it: `git ls-files` returns tracked files, and while I was writing the gate its own
+file was **untracked**. It scanned 205 files and not itself. The moment it was committed it became the 206th
+and failed.
+
+**This is the second occurrence of the same blind spot.** The It. 34 iteration-log gate did exactly this — it
+became tracked after commit and then flagged its own explanatory comment. I recorded that at the time as a
+quirk of that gate and did not generalise it. It is not a quirk; it is a property of every gate that scans
+tracked files, and my validation method had the hole both times.
+
+Fixed two ways: the narrative no longer quotes the commands, and the rule is now written into the gate’s own
+header — **validate a new gate against a STAGED file**, because an untracked one is invisible to the very
+scan being tested. Re-run with the file staged: 206 files, 0 findings, green.
+
+Worth noting what worked: CI caught this within a minute of the push, on a branch that had no CI at all
+until yesterday. The fix for CI-1b paid for itself twice in two days.
+
 ### Impact
 The class that cost a cycle's rotation state in September, and three uncommitted files a week later, now fails
 a test in the chain CI runs on every push. What protected it before was my memory of a rule I had already
