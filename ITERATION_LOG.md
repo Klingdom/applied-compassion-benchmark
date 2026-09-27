@@ -1,5 +1,53 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 46 — 2026-09-27 (a gate that can see silence, because the one I had could only see broken references)
+
+**Selected:** CAL-2 — **forced selection under S4/S10**, not a choice. DC-16 reached three dated occurrences, and
+the third happened *with its gate already in the chain*. A class whose gate cannot detect the failure mode that
+recurred is not gated.
+
+**The diagnosis.** `test-iteration-log-coverage.mjs` (It. 34) checks that every `Iteration N` **reference**
+resolves, and that the logged sequence has no hole below its maximum. Both are reference-driven. Iterations 43
+and 44 shipped changing no log file and citing no iteration number, so there was no dangling reference and no
+hole below 42. The gate passed, correctly, on a log that was two iterations behind. **A gate that detects broken
+references cannot detect silence.**
+
+**The link the silent commits left behind.** Both named their work item in the subject — `(MB-2a)`, `(SUB-1)` —
+and neither ID appeared anywhere in `ITERATION_LOG.md`. So the rule is: **if a commit subject names a work-item
+ID, that ID must appear in the log.** Deliberately conditional — plenty of commits legitimately carry no ID, and
+demanding one on every commit is a different and more annoying rule that this class does not justify. The
+conditional form is satisfiable today and catches both misses.
+
+**Added:** `research/scripts/test-iteration-log-silence.mjs`, wired as `test:iteration-log-silence`
+(chain 40 → 41). Forward-dated to 2026-09-24 so no earlier commit is retro-failed (§1c). Registry prefixes
+(`DC`, `RISK`, `INC`, `D`, …) are excluded — a commit may cite the defect class it addresses without the log
+being keyed on it — and **task-bank item IDs are excluded by loading the bank**, not by a hand-written list, so
+a commit about `EQU-1-B` is not mistaken for work.
+
+**Validation — the negative control is real data, not a plant.** Restoring `ITERATION_LOG.md` to its state at
+`df3b3ba2` and re-running the gate fails naming **SUB-1 and MB-2a**: it catches the actual historical defect,
+not a synthetic one. Log restored sha256-identical. Plus: 11/11 extractor cases (lettered suffixes, registry
+citations dropped, bank IDs excluded, decisions excluded, version noise ignored); a neutered ID pattern reports
+**VACUOUS**, not green; a future cutoff reports **VACUOUS**. Both file restorations byte-identical.
+
+**A flaw I found only by running it, not by reasoning about it.** Against a **real depth-1 clone**, the gate
+printed `PASS — no work shipped silently` because its single reachable commit happened to carry a work-item ID.
+One commit cannot evidence the absence of silence across history — that is a green meaning nothing, the exact
+failure my own comment warned about two lines above the bug. A shallow clone now reports **INDETERMINATE**
+regardless of how many commits are reachable.
+
+**And the reason that mattered:** `actions/checkout` defaults to depth 1, and the workflow set no `fetch-depth`.
+So in CI this gate would have checked nothing — **and so has `test:commit-message-tokens` (DC-17) since the day
+it was added**, degrading to INDETERMINATE on every run. The test job now checks out with `fetch-depth: 0`,
+which makes both gates effective in CI for the first time. Only the test job changed; YAML re-parsed to confirm.
+
+**Impact:** DC-16 moves from "gated with a hole" to gated for the mode that actually recurred. DC-17's gate
+starts working in CI rather than only locally.
+
+**Still open:** commit messages remain unlintable before the fact (a `commit-msg` hook is a governance surface,
+same reasoning as ECC-1), and a commit carrying **no** work-item ID is still invisible to this gate. That is the
+stated boundary, not an oversight.
+
 ## Iteration 45 — 2026-09-27 (I tested the contamination probe on clean models for the first time, and found a bug the test found for me)
 
 **Selected:** CAL-1 — calibrate the forced-choice identification probe against genuinely clean subjects.

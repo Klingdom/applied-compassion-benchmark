@@ -65,7 +65,14 @@ jobs:
       run:
         working-directory: site
     steps:
+      # fetch-depth: 0, not the default 1. Two gates in `npm test` read real git
+      # history -- test:commit-message-tokens (DC-17) and test:iteration-log-silence
+      # (DC-16) -- and on a depth-1 clone both degrade to INDETERMINATE and check
+      # nothing. They were written to say so rather than report a clean history,
+      # but a gate that is honest about checking nothing is still checking nothing.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Node 24, not 20. site/scripts/test-entity-href.mjs imports
       # src/lib/entityHref.ts directly and relies on Node's native TypeScript

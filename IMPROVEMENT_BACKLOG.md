@@ -316,7 +316,7 @@ comparability.
 
 ### New backlog items (2026-09-27, from Iteration 45 — probe calibration)
 
-- **CAL-2 — the iteration-coverage gate has a blind spot: it cannot see work that never mentions itself.**
+- **CAL-2 — DONE (Iteration 46, 2026-09-27).** ~~the iteration-coverage gate has a blind spot: it cannot see work that never mentions itself.~~ Gated by `test:iteration-log-silence`; negative control is the real occurrence-3 history. Side effect: CI gained `fetch-depth: 0`, making DC-17's gate effective in CI for the first time.
   The gate checks that every `Iteration N` *reference* resolves to a heading, and that the logged sequence has no
   hole below its maximum. Both passed on 2026-09-27 while Iterations 43 and 44 were entirely unlogged — because
   neither commit referenced an iteration number, there was nothing to dangle. That is a **second DC-16 occurrence

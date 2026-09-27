@@ -1,9 +1,22 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 45 (contamination probe calibrated on real clean subjects; key-collision defect fixed)
+Last change: Iteration 46 (a gate that can see silence; CI gains full git history)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-27 (Iteration 46 — a gate that can see silence; forced selection under S4/S10): DC-16 hit three
+> occurrences, the third *with its gate already in the chain*, because that gate checks whether **references**
+> resolve and silent work makes no reference. New `test:iteration-log-silence` (chain 40 → 41): if a commit
+> subject names a work-item ID, that ID must appear in `ITERATION_LOG.md`. **Its negative control is real data,
+> not a plant** — restoring the log to its state at `df3b3ba2` makes it fail naming SUB-1 and MB-2a, the actual
+> occurrence 3. Bank item ids are excluded by loading the bank, not by a hand-written list. **A flaw found only
+> by running it against a real depth-1 clone:** it printed `PASS` because its single reachable commit happened
+> to carry an ID — a green meaning nothing. Shallow now reports **INDETERMINATE** at any commit count. That
+> exposed a second thing: `actions/checkout` defaults to depth 1 and the workflow set no `fetch-depth`, so this
+> gate **and DC-17's `test:commit-message-tokens`** would both have checked nothing in CI. The test job now uses
+> `fetch-depth: 0`, which makes DC-17's gate effective in CI for the first time since it was added. Site chain
+> **41 steps**.
 
 > 2026-09-27 (Iteration 45 — the contamination probe was finally tested on clean models, and the test found a
 > bug): every prior check that the probe does not accuse the innocent used **simulated random guessing**, which is
@@ -34,16 +47,6 @@ Last change: Iteration 45 (contamination probe calibrated on real clean subjects
 > vendoring script, which ran on import and repaired planted drift before comparing; it passed 5/5 against a
 > file I had corrupted. Third void probe this month. cb-probe 177/177, site chain 39 steps.
 
-> 2026-09-26 (Iteration 39 — DC-14 gated, forced selection under S10): the class that destroyed a cycle’s
-> rotation state on 09-18 (INC-009) and three uncommitted files on 09-24 (INC-010, mine) now fails a test.
-> `test:no-destructive-git` (chain 35 → 36) scans **205 tracked executable files** for seven ways to lose
-> uncommitted work; the only escape is a waiver carrying **both a date and a reason**. Baseline measured first:
-> **0 occurrences in 161 files, and the zero was only believed after a positive control found 6 of 6 seeded
-> instances** (V8) — so this is a ratchet, not a cleanup. Nine probes: four destructive forms each fail by
-> file:line, both waiver forms pass, an undated and a reasonless waiver both still fail, and a broken extension
-> filter reports **VACUOUS** rather than green. All restorations sha256-identical. The probe harness uses no
-> destructive git command itself. **Still open, GI-1:** INC-010 was survivable only because an earlier iteration
-> had committed the held rewrite as a patch — foresight, not a system.
 
 
 ## Canonical facts
@@ -67,7 +70,7 @@ Last change: Iteration 45 (contamination probe calibrated on real clean subjects
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **40 steps**, generated 2026-09-27; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **41 steps**, generated 2026-09-27; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -128,6 +131,19 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iterations 40-42._
 
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 45. NOTE: its claim that clean-subject behaviour rests on 4,000 simulated random guesses was superseded the same day by a real calibration — see the Iteration 45 note at the top. The text below is left exactly as written._
+
+_Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 46._
+
+> 2026-09-26 (Iteration 39 — DC-14 gated, forced selection under S10): the class that destroyed a cycle’s
+> rotation state on 09-18 (INC-009) and three uncommitted files on 09-24 (INC-010, mine) now fails a test.
+> `test:no-destructive-git` (chain 35 → 36) scans **205 tracked executable files** for seven ways to lose
+> uncommitted work; the only escape is a waiver carrying **both a date and a reason**. Baseline measured first:
+> **0 occurrences in 161 files, and the zero was only believed after a positive control found 6 of 6 seeded
+> instances** (V8) — so this is a ratchet, not a cleanup. Nine probes: four destructive forms each fail by
+> file:line, both waiver forms pass, an undated and a reasonless waiver both still fail, and a broken extension
+> filter reports **VACUOUS** rather than green. All restorations sha256-identical. The probe harness uses no
+> destructive git command itself. **Still open, GI-1:** INC-010 was survivable only because an earlier iteration
+> had committed the held rewrite as a patch — foresight, not a system.
 
 > 2026-09-25 (Iteration 38 — the contamination probe starts measuring the right thing; **DC-18**):
 > the first complete Evaluation Suite run scored its own author **100/100**, and the contamination probe
