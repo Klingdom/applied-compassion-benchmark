@@ -1,10 +1,20 @@
 /**
  * DatasetJsonLd — schema.org Dataset structured data for each index page.
  *
- * License gate: DATA_LICENSE is null until the founder confirms CC-BY applies
- * to the public rankings data (separate from paid PDF reports). Set to
- * "https://creativecommons.org/licenses/by/4.0/" ONLY after that decision.
+ * License gate: DATA_LICENSE is null until the founder confirms which licence
+ * the public rankings DATA carries in machine-readable structured data.
  * When null, the license field is omitted entirely from the emitted JSON-LD.
+ *
+ * STATUS 2026-09-27: the repository now carries a root MIT LICENSE (D-42), and
+ * MIT does cover this data as a matter of copyright. This gate is deliberately
+ * still closed, because asserting a licence in Dataset JSON-LD is a different
+ * act from licensing a repository, and two questions remain unanswered:
+ *   1. MIT is a SOFTWARE licence. Dataset consumers and answer engines expect a
+ *      CC licence here; CC-BY-4.0 is the convention for open data.
+ *   2. The original gate asks whether an open data licence is compatible with
+ *      the paid report model. That is a commercial question, not a legal one,
+ *      and it was not the question "MIT license" answered.
+ * Set this to the CC-BY URL, or to the MIT URL, only on an explicit decision.
  */
 
 // FOUNDER DECISION REQUIRED before setting this:

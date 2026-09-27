@@ -52,6 +52,51 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+## D-42 — 2026-09-27 · The repository is MIT licensed
+
+**Decision (founder, 2026-09-27: "MIT license"). In force.**
+
+A root `LICENSE` file now carries unmodified MIT text, copyright **Compassion Benchmark** — the holder the
+site footer has always named (`© {year} Compassion Benchmark`), rather than a personal name invented for the
+occasion. `license: "MIT"` is set in all three package manifests, in the machine-readable descriptor at
+`/.well-known/compassion-benchmark.json`, and in the Suite documentation.
+
+### What this unblocks
+
+Three things were gated on it and are now open: a public MCP registry listing, an npm package (still needs the
+canonical scorer re-exported from one place first — MCP-B), and external contribution of any kind.
+
+### Scope, stated because it is broader than the question that prompted it
+
+The licence question arose about the **toolkit**. A root `LICENSE` covers the **whole repository**: the site,
+the Worker, `cb-probe`, the scoring implementation, the research scripts, **the task bank**, and **the
+published index data**. Anyone may fork the scores, alter them, and redistribute commercially.
+
+That is judged acceptable and arguably correct for a transparency-first benchmark — the instrument is already
+published with its full answer key, and an auditable benchmark that forbids copying is a contradiction. But it
+is effectively **irreversible for every version published under it**, so it is recorded here explicitly rather
+than left implicit in a file drop. If the founder intended code-only, say so and the fix is a scoped LICENSE
+plus a separate data licence — but only future versions would be affected.
+
+### What MIT does not grant, recorded in `NOTICE.md`
+
+**Trademark.** MIT covers copyright. It grants no right to use the name "Compassion Benchmark" to describe a
+fork, a derived dataset, or a score someone produced themselves. This matters more here than in most projects:
+the entire value of a score is that a specific documented process produced it, and a forked bank with altered
+items can produce a number that is not ours.
+
+`NOTICE.md` also restates two **product rules that are not licence terms** — independence (entities never pay
+for inclusion, scores or suppression) and citation (free to cite with attribution, no permission needed) —
+and the standing warning that a score from the public bank mixes behaviour with memorisation.
+
+`LICENSE` itself is left as pure MIT text so automated licence detection reads it correctly; all commentary
+lives in `NOTICE.md`.
+
+**Supersedes** the "terms pending" position in `tools/cb-probe/LICENSING.md`, whose prior text is retained in
+that file rather than deleted.
+
+---
+
 ## D-41 — 2026-09-24 · The Compassion Benchmark AI Evaluation Suite: complete subdimension coverage, and a three-state coverage level
 
 **Decision — RATIFIED by the founder 2026-09-25** ("approve all"). Founder-directed 2026-09-24: "implement a

@@ -9,7 +9,7 @@
   "documentation": "https://compassionbenchmark.com/ai-evaluation-suite",
   "methodology": "https://compassionbenchmark.com/ai-models/methodology",
   "repository": "https://github.com/Klingdom/applied-compassion-benchmark",
-  "license": "UNRESOLVED — see tools/cb-probe/LICENSING.md. Distribution terms are a pending decision.",
+  "license": "MIT",
   "mcp": {
     "transport": "stdio",
     "command": "node",
@@ -56,5 +56,7 @@
     "accepted": false,
     "reason": "Compassion Benchmark does not accept scores over HTTP and has no endpoint that writes them. A self-reported number is unverifiable and accepting it would let anyone mint a perfect score under this institution's name. See docs/AGENT_DISCOVERY_AND_SUBMISSION_2026-09-27.md for the reviewed-submission design."
   },
-  "generatedAt": "2026-09-27"
+  "generatedAt": "2026-09-27",
+  "licenseUrl": "https://github.com/Klingdom/applied-compassion-benchmark/blob/main/LICENSE",
+  "trademarkNotice": "MIT covers copyright, not trade marks. It grants no right to use the name \"Compassion Benchmark\" to describe a fork, a derived dataset, or a score you produced yourself. See /NOTICE.md."
 }

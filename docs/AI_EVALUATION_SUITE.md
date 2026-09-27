@@ -158,8 +158,15 @@ marked as such), the contamination result, and per-item trial variance. Artifact
 
 ## 8. Licence
 
-**Unresolved.** This repository carries no `LICENSE` file, so distribution terms are a founder decision. See
-`tools/cb-probe/LICENSING.md`. Nothing was assumed on anyone's behalf.
+**MIT** (decided 2026-09-27, `DECISIONS.md` D-42). Use it, fork it, ship it commercially — no permission
+required, keep the copyright notice.
+
+Two limits worth knowing, neither of them a licence restriction:
+
+- MIT covers copyright, **not trade marks**. It grants no right to call your output a Compassion Benchmark
+  result.
+- It does not change what a score from the public bank means. Every item ships with its answer key, so a
+  score there mixes behaviour with memorisation. See `/NOTICE.md`.
 
 ## 9. Where things are
 

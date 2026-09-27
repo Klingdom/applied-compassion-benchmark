@@ -1,42 +1,29 @@
 # Licensing — cb-probe
 
-**Status: pending. This repository has no `LICENSE` file, and no licence for distributing this
-toolkit has been chosen.** This document does not invent one, assume one, or imply one by default
-(e.g. "all rights reserved" vs. an open-source licence vs. a dual licence for the MCP server and
-the published item bank are all still open questions).
+**RESOLVED 2026-09-27: MIT.** Founder decision, recorded in `DECISIONS.md` as **D-42**.
 
-## What this means in practice, today
+This package is covered by the repository's `LICENSE` (MIT). Use it, fork it, ship it commercially, no
+permission required. Keep the copyright notice.
 
-- **Do not distribute `tools/cb-probe/` outside this repository** (as a standalone npm package, a
-  public GitHub mirror, a Claude plugin marketplace listing, or any other public channel) until the
-  founder has made this decision and a `LICENSE` file exists — either at the repo root (covering
-  everything) or a package-local one here (covering only `tools/cb-probe/`), whichever the founder
-  chooses.
-- Internal use (running this MCP server from your own checkout of `applied-compassion-benchmark`,
-  for your own testing) is not blocked by this — the absence of a licence restricts *redistribution
-  and public reuse*, not the founder's or a collaborator's own use of code they already have access
-  to.
-- The **published task bank** this tool reads (`site/src/data/model-benchmark/tasks-v1.json`) has
-  its own status: every item is already public (`exposureStatus: public-permanent`, served on the
-  live site's `/ai-evaluation-suite` page) — that is a *publication* fact, not a *licensing* fact,
-  and does not by itself license reuse of the file, the rubrics, or this MCP server's code.
+Two things MIT does not do, both covered in `/NOTICE.md`:
 
-## What the founder needs to decide before public distribution
+- It grants **no trademark rights** in the name "Compassion Benchmark". Run the tool freely; do not present
+  output you generated as a Compassion Benchmark result.
+- It does not change what a score from the **public** task bank means. Every item ships with its answer key,
+  so a model trained since publication may have memorised the questions and the target behaviours. The tool
+  marks this structurally — `official: false` cannot be set true, and scoring is blocked until the
+  contamination probe has run.
 
-1. **A licence for the code** in `tools/cb-probe/` (MIT, Apache-2.0, a source-available licence, or
-   "not open source" are all live options — no recommendation is made here).
-2. **Whether the licence for the code should differ from the terms for the task bank data** it
-   reads — a permissive code licence with a more restrictive data licence (or vice versa) is a
-   common and reasonable split for a tool like this.
-3. **Whether a `LICENSE` file belongs at the monorepo root** (covering the whole
-   `applied-compassion-benchmark` repository) **or scoped to this package** — the repository
-   currently has neither.
+---
 
-## Where this is noted elsewhere
+## What this file said before, kept for the record
 
-`README.md`'s Install section links here. `plugins/compassion-benchmark/.claude-plugin/plugin.json`
-does not declare a `license` field for the same reason this file exists: nothing has been decided
-yet, and a plugin manifest field is not the place to make that decision by default.
+This file previously stated that distribution terms were unresolved and that the coordinator would not choose
+them. That was correct at the time and is preserved here rather than deleted, because the reasoning still
+applies to future licensing questions:
 
-This file will be replaced (not merely appended to) once the founder decides — check `git log` on
-this file for whether that has happened since you last read it.
+> This repository carries no `LICENSE` file, so the distribution terms for this package are undefined. A
+> licence is a founder decision with legal consequence. Nothing was assumed, and no terms were invented on
+> anyone's behalf.
+
+The decision has now been made. The reasoning for not inventing it stands.
