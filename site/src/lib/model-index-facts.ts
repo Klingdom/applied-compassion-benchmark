@@ -17,6 +17,7 @@
 
 import tasks from "@/data/model-benchmark/tasks-v1.json";
 import registry from "@/data/model-benchmark/registry-v1.json";
+import scoreHistory from "@/data/model-benchmark/score-history-v1.json";
 import { DIMENSIONS } from "@/data/dimensions";
 
 type TaskItem = {
@@ -31,6 +32,7 @@ type TaskItem = {
 
 const items = ((tasks as { items?: TaskItem[] }).items ?? []) as TaskItem[];
 const registryEntries = ((registry as { entries?: unknown[] }).entries ?? []) as unknown[];
+const scoreRecords = ((scoreHistory as { records?: { registry_id?: string }[] }).records ?? []) as { registry_id?: string }[];
 
 /**
  * An item counts as SCORABLE only once a human has reviewed it. Items still at
@@ -106,6 +108,15 @@ export const MODEL_INDEX_FACTS = {
   allItemsPublic: items.length > 0 && items.every((i) => i.exposureStatus === "public-permanent"),
 
   dimensionCount: DIM_CODES.length,
+
+  /**
+   * Score history, derived from the append-only record file. Both are 0 until a
+   * model is validly evaluated, and the page says so rather than hiding an
+   * empty state. modelsWithScoreHistory counts distinct snapshots, not names:
+   * a provider reusing a product name produces a separate timeline.
+   */
+  scoreRecordCount: scoreRecords.length,
+  modelsWithScoreHistory: new Set(scoreRecords.map((r) => r.registry_id)).size,
 
   /**
    * Subdimension coverage, derived from each item's `indicator` field — never

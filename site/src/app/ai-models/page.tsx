@@ -245,6 +245,99 @@ export default function AiModelsPage() {
       {/* Disclosed limits — headline content, not footnotes. */}
       <section className="py-[30px]">
         <Container>
+      {/* Initial findings from the first complete run (2026-09-25). Published
+          because they are about the INSTRUMENT, not about a model. No model
+          score appears here and none exists: F.evaluatedModelCount is 0. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="First complete run — what it found"
+            description="On 2026-09-25 the Evaluation Suite ran end to end for the first time: 83 prompts, 249 rated responses, all 8 dimensions and all 40 subdimensions. These are findings about the instrument. No model was validly evaluated and no model score is published."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">A self-run reached the maximum score</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                The subject was the model that had written most of the task bank earlier the same session. It
+                read each scoring rubric immediately before answering, judged its own responses, and scored{" "}
+                <span className="text-text font-medium">100 out of 100</span>. That is not a measurement of
+                anything — it is what the instrument does when pointed at a subject it cannot validly assess,
+                and it is the clearest available argument for why a self-run is never a comparable score.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">The contamination probe was measuring the wrong thing</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                It scored word overlap against the prompt and passed that subject as clean — 0.22 against a 0.6
+                threshold — while the subject could name each probe item&rsquo;s scenario, hidden mechanism and
+                scoring intent. It detected memorisation of <em>wording</em> and missed knowledge of the{" "}
+                <em>answer key</em>, which is what actually inflates a score. Replaced the following day with a
+                forced-choice test; the same subject now flags at{" "}
+                <span className="text-text font-medium">p = 0.02%</span>.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">The formula rewards a flat profile twice</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                A dimension spread of 0.121 points put the consistency multiplier at maximum <em>and</em> left
+                the full integration premium intact. Answering every prompt at the same level is therefore the
+                most efficient route to the cap — so a rubric-aware subject outscores a genuinely strong but
+                uneven one. That is now an open methodology question, recorded rather than quietly adjusted.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Where even a compromised run dipped</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                In a contaminated self-assessment the high scores carry no information; the low points do.
+                Awareness was the weakest dimension, and four of the eight weakest items were Awareness items —
+                every one of them from the portion of the bank the subject had <em>not</em> authored. Weak
+                evidence inside an invalid run, but it points the same way the contamination analysis does.
+              </p>
+            </Panel>
+          </div>
+          <div className="flex gap-3 flex-wrap mt-4">
+            <Button href="/ai-evaluation-suite">Run it yourself</Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* Score history: built before the first score, so the first ones cannot
+          be lost. Renders the real derived counts, never a typed literal. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Every score a model has ever had"
+            description="Model scores are recorded append-only. A score is never edited and never deleted; a correction is a new dated record and the original stays. Built before the first evaluation, because a history that starts after the scores do has already lost some."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Records held</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                <span className="text-text font-medium">{F.scoreRecordCount}</span> score records across{" "}
+                <span className="text-text font-medium">{F.modelsWithScoreHistory}</span> model snapshots. No
+                model has been scored, so both are zero, and this section will say so until that changes.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">A renamed model does not inherit a score</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Scores attach to an exact model snapshot, not to a product name. When a provider ships a new
+                checkpoint under the same name it becomes a separate entry with its own timeline, so a later
+                version can never quietly inherit or overwrite an earlier version&rsquo;s result.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">There is no &ldquo;current score&rdquo; field</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                A model&rsquo;s current score is derived as its most recent record rather than stored beside the
+                history. Keeping a current value next to a history is how the two come to disagree, and this
+                benchmark has fixed that class of defect too often to design it in deliberately.
+              </p>
+            </Panel>
+          </div>
+        </Container>
+      </section>
+
           <SectionHead
             title="What is wrong with this instrument today"
             description="Published before any result, so it cannot be read as excuse-making after an unflattering one."
