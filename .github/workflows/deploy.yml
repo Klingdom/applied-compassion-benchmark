@@ -167,6 +167,42 @@ jobs:
             nginx:alpine nginx -t
 
   # ────────────────────────────────────────────────────────────────────
+  # 1d. SUBMITTED RUN VALIDATION.
+  #
+  # Externally-submitted benchmark artifacts land in research/submissions/.
+  # Every one is re-scored from its raw trials with our own scorer, its item
+  # hashes recomputed from our copy of the bank, and its anchors and quotes
+  # checked. A submitter does not choose their own arithmetic.
+  #
+  # Runs on every push so a submission PR gets an automatic verdict, and so a
+  # later change to the bank or the scorer that would invalidate an accepted
+  # submission is caught rather than discovered.
+  # ────────────────────────────────────────────────────────────────────
+  submitted-runs:
+    name: Validate submitted runs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate every submitted artifact
+        run: |
+          shopt -s nullglob
+          files=(research/submissions/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No submitted artifacts. Nothing to validate."
+            exit 0
+          fi
+          fail=0
+          for f in "${files[@]}"; do
+            echo "::group::"
+            node research/scripts/validate-submission.mjs "" || fail=1
+            echo "::endgroup::"
+          done
+          exit 
+
+  # ────────────────────────────────────────────────────────────────────
   # 2. DEPLOY to the VPS via SSH.
   # Pulls latest main + rebuilds the Docker image + restarts the container.
   # Uses --ff-only so a divergent VPS state fails loudly instead of being
