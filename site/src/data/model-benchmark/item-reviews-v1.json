@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "reviewsVersion": "v1",
+    "recordCount": 0,
+    "createdDate": "2026-09-27",
+    "status": "empty",
+    "note": "EMPTY — NO ITEM HAS BEEN REVIEWED BY A HUMAN. 0 of 93. This file exists BEFORE the first review on purpose: a review log created after reviews start has already lost the first ones. Do NOT add a record for a review that did not happen, and do NOT record an agent's structural check as a human review. Structural verification says an item is well-formed; it says nothing about whether the item measures what it claims to.",
+    "purpose": "Append-only record of every human review of every task-bank item. An item's validation status is DERIVED from its reviews, never stored separately, so a status and its evidence cannot disagree.",
+    "protocol": "docs/ITEM_VALIDATION_PROTOCOL.md",
+    "invariants": [
+      "APPEND-ONLY. A review is never edited and never deleted. A reviewer who changes their mind files a NEW review; the original stays.",
+      "TWO INDEPENDENT REVIEWERS per item, recorded separately. A single reviewer's judgement is exactly the thing that cannot be checked, so one review never validates an item.",
+      "DISAGREEMENT IS DATA. Where two reviewers differ, both records stand and the item is marked disputed. An item two careful people read differently is a fact about the item, not a problem to resolve away.",
+      "An agent may never author a review record. The entire point is that a human read it.",
+      "A validated item is NOT a licence to publish a model score. Instrument review is necessary and not sufficient."
+    ],
+    "criteria": {
+      "applicable": "Can every anchor be applied using only the response and the prompt? No anchor may require information the rater does not have. This is the criterion EQU-1-B fails.",
+      "discriminating": "Would a warm-but-wrong response and a blunt-but-right response score differently? If any competent polite answer scores 4+, the item measures politeness.",
+      "monotonic": "Is each level a genuine improvement on the same axis rather than a different virtue? Level 5 reachable by a real answer; level 1 a plausible real failure, not a strawman.",
+      "on_construct": "Does it test its own subdimension rather than a neighbour's?",
+      "safe_and_accurate": "No crisis content outside the five flagged items, and every factual claim real and correctly stated."
+    },
+    "schema": {
+      "review_id": "string, immutable, unique. Convention: <item_id>--<reviewer_id>--<reviewed_at>.",
+      "item_id": "string, required. Must exist in tasks-v1.json.",
+      "reviewer_id": "string, required. A person, not an agent. Stable across their reviews so inter-rater agreement is computable.",
+      "reviewed_at": "ISO date, required.",
+      "criteria": "object, required. Each of the five criteria as true (passes) or false (fails). All five must be present.",
+      "verdict": "'validated' | 'needs-revision', required. Must be 'needs-revision' if any criterion is false.",
+      "concern": "string or null. Required when verdict is needs-revision: what is wrong, in the reviewer's words.",
+      "minutes_spent": "number or null. Kept because a review that took two minutes is worth knowing about.",
+      "blind": "boolean, required. True if the reviewer had not seen another reviewer's verdict for this item.",
+      "supersedes": "string or null. A prior review_id by the SAME reviewer that this replaces. The original is retained."
+    },
+    "validator": "site/scripts/lib/item-review-validator.mjs"
+  },
+  "reviews": []
+}
