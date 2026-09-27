@@ -1,9 +1,26 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 42 (cb-probe installable from npm; submission pipeline; score history)
+Last change: Iteration 45 (contamination probe calibrated on real clean subjects; key-collision defect fixed)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-27 (Iteration 45 — the contamination probe was finally tested on clean models, and the test found a
+> bug): every prior check that the probe does not accuse the innocent used **simulated random guessing**, which is
+> not a model. Three judges with no repository access scored 2/6, 2/6, 0/6 — **4 of 18, 22.2% against a 25.0%
+> chance baseline, p = 0.69**, none near the 4/6 threshold. All three reasoned hard from the dimension prefix and
+> reported it bought them nothing: the confound control works. Two shortcuts they found unprompted are now pinned
+> (trailing-letter-as-answer-key — 25.49% over 18,000 questions, z = 1.53, no leak) or recorded and declined
+> (cross-question elimination, **CAL-3**). **The calibration exposed a latent defect:** the answer key was matched
+> by rendered description text, so two items sharing a title would key a distractor and mark a *correct* answer
+> wrong — contamination manufactured by a string collision. 88 probe items, 88 distinct titles, so latent not live.
+> Counterfactual measured rather than asserted: the old logic with one planted duplicate produced **68 ambiguous
+> and 19 silently mis-keyed** questions per 1,800; both now 0. Fixed by keying on item identity and refusing any
+> question whose options are not all distinct — 64/300 planted seeds refuse to build, real bank 300/300 clean.
+> **DC-16 recurred a third time, with its gate already in the chain:** Iterations 43 and 44 shipped entirely
+> unlogged, and the gate could not see them because it checks that *references* resolve, and silent work makes no
+> reference. Second hole documented; **CAL-2** filed (v2 16); under S4 the class is **not adequately gated**.
+> cb-probe **182/182** (was 177), site chain **40 steps**. Record: `docs/PROBE_CALIBRATION_2026-09-27.md`.
 
 > 2026-09-27 (Iterations 40-42 — the agent loop closes end to end): **score history** is append-only and
 > built before the first score exists, with no "current score" field anywhere (current is derived), 35 tests;
@@ -28,20 +45,6 @@ Last change: Iteration 42 (cb-probe installable from npm; submission pipeline; s
 > destructive git command itself. **Still open, GI-1:** INC-010 was survivable only because an earlier iteration
 > had committed the held rewrite as a patch — foresight, not a system.
 
-> 2026-09-25 (Iteration 38 — the contamination probe starts measuring the right thing; **DC-18**):
-> the first complete Evaluation Suite run scored its own author **100/100**, and the contamination probe
-> passed that author as **clean** (mean overlap 0.22 against a 0.6 threshold) while they could name every
-> probe item's scenario, mechanism and scoring intent. Token overlap detects verbatim memorisation of the
-> prompt; what inflates a score is knowledge of the item and its rubric, which survives paraphrase. New
-> forced-choice identification probe tests the arbitrary item-id-to-scenario mapping: **same subject, same
-> session — old probe clean, new probe 6/6 at p = 0.0244%, flagged.** The opposite failure mattered more and
-> is guarded: distractors come from the target’s own dimension so a clean model cannot reason from the ID
-> prefix, and **4,000 simulated random-guessing subjects are flagged at or below α**, measured rather than
-> asserted. Limits shipped in the artifact: it measures recognition rather than anchor knowledge, samples 6
-> items, and only measures what a cooperating subject knows. cb-probe **169/169** (was 154). **Filed, not
-> fixed: MS-5** — the composite rewards a flat profile twice (consistency multiplier and integration premium
-> both key off low variance), which is how the self-run reached exactly 100. That is a methodology question
-> for the founder, and it should be answered before any model score is published.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -64,7 +67,7 @@ Last change: Iteration 42 (cb-probe installable from npm; submission pipeline; s
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **35 steps**, generated 2026-09-24 by the command below; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`).scripts.test.split('&&').length)"`)
+## Tests (`npm run test`, **40 steps**, generated 2026-09-27; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -123,6 +126,23 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
 
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iterations 40-42._
+
+_Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 45. NOTE: its claim that clean-subject behaviour rests on 4,000 simulated random guesses was superseded the same day by a real calibration — see the Iteration 45 note at the top. The text below is left exactly as written._
+
+> 2026-09-25 (Iteration 38 — the contamination probe starts measuring the right thing; **DC-18**):
+> the first complete Evaluation Suite run scored its own author **100/100**, and the contamination probe
+> passed that author as **clean** (mean overlap 0.22 against a 0.6 threshold) while they could name every
+> probe item's scenario, mechanism and scoring intent. Token overlap detects verbatim memorisation of the
+> prompt; what inflates a score is knowledge of the item and its rubric, which survives paraphrase. New
+> forced-choice identification probe tests the arbitrary item-id-to-scenario mapping: **same subject, same
+> session — old probe clean, new probe 6/6 at p = 0.0244%, flagged.** The opposite failure mattered more and
+> is guarded: distractors come from the target’s own dimension so a clean model cannot reason from the ID
+> prefix, and **4,000 simulated random-guessing subjects are flagged at or below α**, measured rather than
+> asserted. Limits shipped in the artifact: it measures recognition rather than anchor knowledge, samples 6
+> items, and only measures what a cooperating subject knows. cb-probe **169/169** (was 154). **Filed, not
+> fixed: MS-5** — the composite rewards a flat profile twice (consistency multiplier and integration premium
+> both key off low variance), which is how the self-run reached exactly 100. That is a methodology question
+> for the founder, and it should be answered before any model score is published.
 
 > 2026-09-24 (Iteration 37 — the Compassion Benchmark AI Evaluation Suite; founder-directed, **D-41**):
 > the model task bank goes **33 -> 93 items** and **13 of 40 -> 40 of 40 subdimensions**, with at least 2

@@ -1,5 +1,106 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 45 — 2026-09-27 (I tested the contamination probe on clean models for the first time, and found a bug the test found for me)
+
+**Selected:** CAL-1 — calibrate the forced-choice identification probe against genuinely clean subjects.
+**Why:** every existing test of the probe's false-positive behaviour used *simulated random guessing*. That is a
+different claim from the one published. A real model does not guess randomly — it reads `ACC-1-C` as an
+accountability item and reasons toward the most accountability-shaped option. If that reasoning beats chance, the
+probe accuses models that have never seen the bank, and `/ai-models` currently tells readers it does not.
+
+**Method.** Three judges with no access to this repository, six questions each, instructed to guess genuinely
+rather than randomise or throw the test. Answer keys held back; scored by the coordinator, not self-reported.
+
+**Result: 2/6, 2/6, 0/6 — 4 of 18, 22.2%, against a 25.0% chance baseline (p = 0.69).** None reached the 4/6
+flagging threshold. The published claim holds, and now rests on evidence rather than on a simulation of a subject
+that does not exist.
+
+The qualitative half is worth more than the number. All three reasoned hard from the dimension prefix and the
+option wording — and all three reported it bought them nothing. That is the confound control doing its job:
+holding the subdimension constant across the options leaves the arbitrary ID-to-scenario mapping as the only
+discriminator, which is exactly what the probe intends to measure.
+
+**Two shortcuts the judges found that the design had never considered.**
+
+1. One judge noticed that reading the trailing letter of `ACC-1-C` as an answer key would have given a
+   collision-free assignment, and deliberately declined to use it. Measured over 18,000 questions: 25.49%,
+   z = 1.53. No leak — but it held by luck, not by construction, so it is now pinned by a test.
+2. Two judges independently exploited *cross-question option reuse*: titles recurring across questions let them
+   eliminate. Measured at ~2.16 of 22 titles per challenge. Real, small, and it bought them nothing (both scored
+   2/6). Recorded, not fixed.
+
+**The bug this turned up.** Chasing the second shortcut meant reading the option-construction code, where the
+answer key was derived by matching the *rendered description string*:
+`options.find(o => o.description === describeItem(target))`. With two items sharing a title that returns the
+first match — so the key names a distractor, and a subject answering **correctly** is scored **wrong**.
+Contamination manufactured by a string collision.
+
+Quantified against the counterfactual rather than asserted: planting a single duplicate title and re-running the
+*old* logic over 300 seeds produced **68 ambiguous questions and 19 silently mis-keyed** ones out of 1,800. Both
+are now zero. Two layers, and the planted probe shows each earns its place: of 300 seeds on the planted bank, 64
+refused to build (the pair collided inside one question) and 236 built clean with 0 mis-keyed (identity keying
+handled the rest). Positive control: the real bank built 300/300 without throwing.
+
+**Changed:** `tools/cb-probe/lib/identification-probe.mjs` — key derived from item identity (`__itemId`, stripped
+before emission), plus a refusal to build a question whose options are not all distinct.
+`tools/cb-probe/tests/identification-probe.test.mjs` — five tests: position uniformity, the trailing-letter
+non-leak, the collision guard with its negative *and* positive control, per-question distinctness with the key
+naming the target, and a check that the internal identity tag never reaches the subject.
+
+**Validation:** 20/20 in the probe suite; full site chain green. V3 satisfied with a planted probe that fires
+(64/300) and a positive control that does not (300/300). V8 satisfied — the uniformity and trailing-letter
+"no effect" findings each carry a positive control showing the measurement can detect an effect.
+
+**Not done, deliberately:** cross-question option reuse is measured and left alone. Removing it means either
+fewer questions or a larger option pool, both of which cost more statistical power than the exploit appears to
+be worth. Revisit if a judge ever scores above chance while reporting elimination as their method.
+
+**Follow-up filed:** the iteration-coverage gate has a blind spot — it catches *dangling references* but not work
+that never references itself, which is how Iterations 43 and 44 below shipped unlogged. See CAL-2 in the backlog.
+
+## Iteration 44 — 2026-09-27 (the two-tier display, built before the first submission arrives)
+
+*Logged retroactively on 2026-09-27 during Iteration 45. This entry was missed at the time — a second occurrence
+of DC-16 in the same week, after the gate meant to prevent it was built. See CAL-2.*
+
+**Selected:** SUB-1 — publish the tier distinction before there is anything to put in it.
+**Why:** the moment a self-reported result and an official one appear in one table, the distinction dies with the
+first screenshot. Building the separation after the first submission arrives means arguing for it against a
+concrete case; building it now costs nothing and settles it.
+
+**Changed:** `site/src/app/ai-models/page.tsx` gained "Two tiers, never one table" (Tier 1 official / Tier 2
+self-reported / why there is no submission API) and "Who has checked the instrument" (human review progress, why
+structure is not enough, disagreement is kept). `site/src/lib/model-index-facts.ts` gained `reviewRecordCount`,
+`itemsWithAnyReview`, `itemsWithTwoReviews`, all derived from the append-only review log so no count can be typed.
+
+**Validation:** all four headings verified present in built HTML; counts render 0; **zero** Dataset/ItemList
+JSON-LD emitted, so nothing here becomes a machine-readable ranking claim. Committed `df3b3ba2`; CI green on five
+jobs, both deploy jobs correctly skipped.
+
+**Impact:** the page now states the tier rule and a bare, accurate `0 of 93 items reviewed` — both of which stop
+being true automatically, with no page edit, the moment the underlying files change.
+
+## Iteration 43 — 2026-09-27 (the human-review log, built before the first human review)
+
+*Logged retroactively on 2026-09-27 during Iteration 45. Missed at the time; see CAL-2.*
+
+**Selected:** MB-2a — the review-record schema and validator, before any item has been reviewed.
+**Why:** same reasoning as the score history in Iteration 40. A log that starts after the thing it logs has
+already lost the first records. 0 of 93 items reviewed is precisely the right moment.
+
+**Changed:** `site/src/data/model-benchmark/item-reviews-v1.json` (empty, and explicit in its own metadata about
+being empty), `site/scripts/lib/item-review-validator.mjs`, `site/scripts/test-item-reviews.mjs` (35 tests), wired
+into the chain.
+
+**The load-bearing decisions.** An item's validation status is **derived** from its reviews and never stored
+beside them, so a status and its evidence cannot disagree. One reviewer never validates an item. Disagreement is
+**kept** — two reviewers differing marks the item `disputed` rather than averaging to a conclusion, because an
+item two careful people read differently is a fact about the item and the clearest evidence an anchor is
+ambiguous. A verdict cannot contradict its own criteria. An agent may never author a review record.
+
+**Validation:** 35/35, including append-only enforcement, supersedes constrained to the same reviewer and item,
+every criterion required, and inter-rater agreement computed rather than asserted. Committed `82435143`.
+
 ## Iteration 42 — 2026-09-27 (cb-probe becomes installable, and my drift gate turned out to be void)
 
 ### Selected Item

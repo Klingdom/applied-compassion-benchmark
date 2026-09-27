@@ -314,6 +314,33 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-27, from Iteration 45 — probe calibration)
+
+- **CAL-2 — the iteration-coverage gate has a blind spot: it cannot see work that never mentions itself.**
+  The gate checks that every `Iteration N` *reference* resolves to a heading, and that the logged sequence has no
+  hole below its maximum. Both passed on 2026-09-27 while Iterations 43 and 44 were entirely unlogged — because
+  neither commit referenced an iteration number, there was nothing to dangle. That is a **second DC-16 occurrence
+  in the same week, after the gate built to prevent DC-16 was already in the chain**, which under S4 means the
+  gate is not yet adequate for the class. Proposed fix: compare commits since the newest log entry's date against
+  the entries written, and fail when substantive commits (excluding docs-only and revert commits) exceed the
+  logged iterations — i.e. detect *absence* of a log entry rather than a *broken reference* to one. Needs a
+  planted probe: a commit made with no entry must fail the gate, and the real history must pass.
+  `I5 S4 L4 C4 − E2 − R1 = 14`, `Rc +2` (≥2 dated DC-16 occurrences, no adequate gate) → **16**.
+
+- **CAL-3 — cross-question option reuse in the identification probe (measured, deliberately not fixed).**
+  Within one 6-question challenge, ~2.16 of 22 distinct titles appear in more than one question, which lets a
+  subject eliminate by constraint propagation. Two of the three clean judges found and used this unprompted.
+  Both still scored 2/6, so the exploit is real and appears worthless. Removing it costs either questions or a
+  larger option pool, both of which cost more statistical power than the exploit seems to be worth.
+  **Revisit only if a judge scores above chance while reporting elimination as their method.**
+  `I2 S3 L3 C4 − E3 − R2 = 7`. Low priority by design; recorded so it is a decision rather than an oversight.
+
+- **CAL-4 — the calibration used three judges of one model family.** 4/18 at 22.2% rules out a *large* false-
+  positive effect, not a small one, and says nothing about models from other families that may reason
+  differently from the item codes. The honest scope of the published claim is "does not flag clean subjects of
+  the family tested". Widening it needs judges from other families, which needs founder API credentials.
+  `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**
+
 ### New backlog items (2026-09-27, from Iterations 40-42)
 
 - **MB-2 — PROTOCOL READY, review not started.** `docs/ITEM_VALIDATION_PROTOCOL.md` defines what

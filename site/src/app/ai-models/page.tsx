@@ -275,6 +275,13 @@ export default function AiModelsPage() {
                 forced-choice test; the same subject now flags at{" "}
                 <span className="text-text font-medium">p = 0.02%</span>.
               </p>
+              <p className="text-muted text-[0.93rem] leading-relaxed mt-3">
+                Catching the guilty is the easy half. Three judges with no access to the task bank scored{" "}
+                <span className="text-text font-medium">4 of 18</span> — 22.2% against a 25% chance baseline — so
+                it clears subjects it should clear, tested on models rather than on a random number generator.
+                That check found a latent defect: the answer key was matched by description text, so two items
+                sharing a title would have marked a <em>correct</em> answer wrong and invented contamination.
+              </p>
             </Panel>
             <Panel>
               <h3 className="text-[1.05rem] mb-2">The formula rewards a flat profile twice</h3>

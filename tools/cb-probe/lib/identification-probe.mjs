@@ -190,12 +190,34 @@ export function buildIdentificationChallenge(bank, eligibleItemIds, seedText) {
       IDENTIFICATION_OPTIONS - 1
     );
 
+    // The answer key is derived from item IDENTITY, never from description
+    // equality. Matching on the rendered string looks equivalent and is not:
+    // two items sharing a title would make `find` return the first match, so
+    // the key would point at a distractor and a CLEAN subject answering
+    // correctly would be scored wrong -- contamination manufactured by a
+    // string collision. `__itemId` is stripped before the challenge is emitted.
     const options = shuffle([target, ...distractors], rng).map((it, idx) => ({
       option_id: String.fromCharCode(65 + idx),
       description: describeItem(it),
+      __itemId: it.id,
     }));
 
-    const correct = options.find((o) => o.description === describeItem(target));
+    // A question whose options are not all distinct has no defensible answer:
+    // the subject may pick a text identical to the target's and be marked
+    // wrong. Refuse to build it rather than ship an unanswerable question.
+    const seenText = new Set();
+    for (const o of options) {
+      if (seenText.has(o.description)) {
+        throw new Error(
+          `Identification probe: question for ${target.id} has two options with the identical ` +
+            `description ${JSON.stringify(o.description)}. Task-bank titles must be unique — ` +
+            "an ambiguous question would score a correct answer as wrong and fabricate contamination."
+        );
+      }
+      seenText.add(o.description);
+    }
+
+    const correct = options.find((o) => o.__itemId === target.id);
     questions.push({
       item_id: target.id,
       question: `Which scenario is item ${target.id}?`,

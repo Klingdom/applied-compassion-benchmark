@@ -249,3 +249,111 @@ test("limitations ship with the result and name what it cannot do", () => {
   assert.match(text, /RECOGNITION/, "must state it measures recognition, not anchor knowledge");
   assert.match(text, /COOPERATING/, "must state a subject can deliberately under-perform");
 });
+
+// ---------------------------------------------------------------------------
+// Iteration 45. Empirical calibration against three CLEAN judges, plus the two
+// shortcuts those judges discovered unprompted.
+//
+// Everything above this line tested the probe against SIMULATED random
+// guessing. That is not the same claim. A real model does not guess randomly:
+// it reads "ACC-1-C" as an accountability item and reasons toward the most
+// accountability-shaped option. If that reasoning beats chance, the probe
+// accuses models that have never seen the bank.
+//
+// So it was run for real. Three judges with no access to this repository, each
+// given six questions, each instructed to guess genuinely rather than
+// randomise. They scored 2/6, 2/6 and 0/6 -- 4 of 18, 22.2%, against a 25.0%
+// chance baseline (p = 0.69). All three reasoned hard from the dimension
+// prefix and the option wording, and all three reported it bought them
+// nothing. That is the confound control working: holding the subdimension
+// constant across the options leaves the arbitrary ID-to-scenario mapping as
+// the only discriminator, which is exactly what the probe intends to measure.
+//
+// Two of them also found shortcuts the design had never considered. Both are
+// pinned below, because a property that holds by luck is not a property.
+// ---------------------------------------------------------------------------
+
+test("CALIBRATION: answer positions are uniform, so no constant-letter strategy beats chance", () => {
+  const pos = { A: 0, B: 0, C: 0, D: 0 };
+  let n = 0;
+  for (let s = 0; s < 400; s += 1) {
+    const { key } = buildIdentificationChallenge(bank, allIds, `uniformity-${s}`);
+    for (const v of Object.values(key)) {
+      pos[v] += 1;
+      n += 1;
+    }
+  }
+  const expected = n / 4;
+  const chi = Object.values(pos).reduce((a, o) => a + (o - expected) ** 2 / expected, 0);
+  // 3 df, p < .001 critical value. A real skew would let a subject score above
+  // chance by always answering one letter, which reads as contamination.
+  assert.ok(chi < 16.27, `answer position is not uniform: chi-square ${chi.toFixed(2)}, counts ${JSON.stringify(pos)}`);
+});
+
+test("CALIBRATION: the item's trailing letter does not predict the answer position", () => {
+  // Judge A noticed that reading the trailing letter of "ACC-1-C" as an answer
+  // key would have produced a collision-free assignment, and declined to use
+  // it. If that shortcut worked, a subject applying it would be flagged as
+  // contaminated while knowing nothing whatsoever about the items.
+  let match = 0;
+  let n = 0;
+  for (let s = 0; s < 400; s += 1) {
+    const { key } = buildIdentificationChallenge(bank, allIds, `trailing-${s}`);
+    for (const [itemId, ansPos] of Object.entries(key)) {
+      n += 1;
+      if (itemId.slice(-1) === ansPos) match += 1;
+    }
+  }
+  const z = (match / n - 0.25) / Math.sqrt((0.25 * 0.75) / n);
+  assert.ok(Math.abs(z) < 3.0, `trailing letter predicts the answer: ${((match / n) * 100).toFixed(2)}%, z=${z.toFixed(2)}`);
+});
+
+test("the answer key survives a title collision instead of pointing at a distractor", () => {
+  // The key used to be found with `options.find(o => o.description === describeItem(target))`.
+  // With two items sharing a title that returns the FIRST match, so the key can
+  // name a distractor -- and a clean subject answering correctly is scored
+  // wrong. Contamination manufactured by a string collision.
+  const twin = bank.items.map((i) => ({ ...i, sourceOnlyFields: { ...(i.sourceOnlyFields ?? {}), title: "Identical Title" } }));
+  const collided = { ...bank, items: twin };
+
+  // NEGATIVE CONTROL: with every title identical, the build must refuse
+  // outright rather than emit a question with four indistinguishable options.
+  assert.throws(
+    () => buildIdentificationChallenge(collided, twin.map((i) => i.id), "collision-run"),
+    /identical description/i,
+    "a bank whose titles collide must be rejected, not silently mis-keyed"
+  );
+
+  // POSITIVE CONTROL (V8): the same call shape on the real bank succeeds, so
+  // the assertion above proves the guard fires rather than proving the call
+  // was broken for some unrelated reason.
+  const ok = buildIdentificationChallenge(bank, allIds, "collision-run");
+  assert.equal(ok.challenge.available, true);
+  assert.ok(Object.keys(ok.key).length > 0);
+});
+
+test("every option text in a question is distinct, and the key names the target", () => {
+  for (let s = 0; s < 200; s += 1) {
+    const { challenge, key } = buildIdentificationChallenge(bank, allIds, `distinct-${s}`);
+    for (const q of challenge.questions) {
+      const texts = q.options.map((o) => o.description);
+      assert.equal(new Set(texts).size, texts.length, `duplicate option text in ${q.item_id}`);
+      // The keyed option must be the one whose text describes the target item.
+      const keyed = q.options.find((o) => o.option_id === key[q.item_id]);
+      const target = bank.items.find((i) => i.id === q.item_id);
+      assert.equal(keyed.description, describeItem(target), `key for ${q.item_id} names the wrong option`);
+    }
+  }
+});
+
+test("the challenge handed to the subject never leaks the internal item id", () => {
+  const { challenge } = buildIdentificationChallenge(bank, allIds, "leak-check");
+  const serialised = JSON.stringify(challenge.questions.map((q) => q.options));
+  assert.ok(!serialised.includes("__itemId"), "internal identity tag reached the subject");
+  // And the option bodies carry nothing but the two intended fields.
+  for (const q of challenge.questions) {
+    for (const o of q.options) {
+      assert.deepEqual(Object.keys(o).sort(), ["description", "option_id"]);
+    }
+  }
+});

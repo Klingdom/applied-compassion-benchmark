@@ -5,6 +5,27 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-27 — The contamination probe was tested on models that had never seen the benchmark (NO score changes)
+
+- **What changed:** `/ai-models` now states how the AI-model contamination probe performs on *clean* subjects, and
+  a full record is published at `docs/PROBE_CALIBRATION_2026-09-27.md`. Three judges with no access to the task
+  bank scored **4 of 18 — 22.2% against a 25% chance baseline**, none approaching the threshold at which the probe
+  reports contamination.
+- **Why:** the page already said the probe catches a subject that knows the bank. It had never said whether it
+  wrongly accuses one that does not — and internally that had only ever been checked against a simulated random
+  number generator, which is not the same thing as a model. A real model reasons from the item code, and if that
+  reasoning worked the probe would accuse the innocent.
+- **A defect was found and fixed while checking:** the probe's answer key was matched by the displayed scenario
+  text rather than by item identity, so two items sharing a title would have marked a **correct** answer wrong and
+  reported contamination that did not exist. The benchmark's 88 probe items all have distinct titles, so no
+  published result was affected — it was one duplicate title away from being live. The key now uses item identity,
+  and a question whose options are not all distinct is refused rather than asked.
+- **No score, rank, band or entity page changed.** No AI model has a published Compassion Benchmark score, and
+  this does not create one.
+- Commit SHA appended on deploy.
+
+---
+
 ## 2026-09-17 — Ranking-page links to entities with a renamed web address no longer lead to "page not found" (NO score changes)
 
 - **What changed:** on the index ranking pages, charts and site search, links to entities whose web address differs from their name (for example AT&T at `/company/at-and-t`, Intuitive Surgical at `/robotics-lab/intuitive-surgical`, Phoenix at `/city/phoenix-global-cities`) now go directly to the entity page. Before, several of these links led to our "page not found" page.
