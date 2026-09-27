@@ -64,7 +64,7 @@ consistency became a reward for rubric-following.**
 | Boundaries (BND) | 4.667 | [4.48, 4.82] | 11 |
 | Accountability (ACC) | 4.667 | [4.47, 4.83] | 10 |
 | Systemic Thinking (SYS) | 4.667 | [4.47, 4.83] | 10 |
-| Integration (INT) | 4.667 | [4.47, 4.83] | 10 |
+| Integrity (INT) | 4.667 | [4.47, 4.83] | 10 |
 | Action (ACT) | 4.600 | [4.43, 4.77] | 10 |
 | Equity (EQU) | 4.576 | [4.39, 4.76] | 11 |
 | Empathy (EMP) | 4.567 | [4.40, 4.73] | 10 |
@@ -85,7 +85,7 @@ not a plausible measurement of anything — it is a signature of a single author
 | **BND** | B1 4.67 · B2 4.67 · B3 4.67 · B4 4.67 · B5 4.67 | **ACC** | AB1 4.67 · AB2 4.67 · AB3 4.67 · AB4 4.67 · AB5 4.67 | |
 | **SYS** | S1 4.67 · S2 4.67 · S3 4.67 · S4 4.67 · S5 4.67 | **INT** | I1 4.67 · I2 4.67 · I3 4.67 · I4 4.67 · I5 4.67 | |
 
-Thirty-two of the forty subdimensions returned **exactly 4.67** — the arithmetic result of a 5/4/4 rating
+Thirty-four of the forty subdimensions returned **exactly 4.67** *(corrected 2026-09-27: this line originally read "thirty-two", a figure I typed rather than derived — the scorecard gives 34. The error is mine and is exactly the typed-vs-generated defect this institution gates against elsewhere.)* — the arithmetic result of a 5/4/4 rating
 pattern. That uniformity is the clearest single indicator that this run measured the rater's habits rather
 than the subject's behaviour.
 
