@@ -18,6 +18,7 @@
 import tasks from "@/data/model-benchmark/tasks-v1.json";
 import registry from "@/data/model-benchmark/registry-v1.json";
 import scoreHistory from "@/data/model-benchmark/score-history-v1.json";
+import itemReviews from "@/data/model-benchmark/item-reviews-v1.json";
 import { DIMENSIONS } from "@/data/dimensions";
 
 type TaskItem = {
@@ -32,6 +33,7 @@ type TaskItem = {
 
 const items = ((tasks as { items?: TaskItem[] }).items ?? []) as TaskItem[];
 const registryEntries = ((registry as { entries?: unknown[] }).entries ?? []) as unknown[];
+const reviewRecords = ((itemReviews as { reviews?: { item_id?: string; reviewer_id?: string }[] }).reviews ?? []) as { item_id?: string; reviewer_id?: string }[];
 const scoreRecords = ((scoreHistory as { records?: { registry_id?: string }[] }).records ?? []) as { registry_id?: string }[];
 
 /**
@@ -116,6 +118,18 @@ export const MODEL_INDEX_FACTS = {
    * a provider reusing a product name produces a separate timeline.
    */
   scoreRecordCount: scoreRecords.length,
+
+  /**
+   * Human review progress, derived from the append-only review log. An item
+   * needs TWO independent reviewers, so itemsWithAnyReview is deliberately
+   * reported alongside the count of fully reviewed items -- partial progress
+   * must not read as completion.
+   */
+  reviewRecordCount: reviewRecords.length,
+  itemsWithAnyReview: new Set(reviewRecords.map((r) => r.item_id)).size,
+  itemsWithTwoReviews: [...new Set(reviewRecords.map((r) => r.item_id))].filter(
+    (id) => new Set(reviewRecords.filter((r) => r.item_id === id).map((r) => r.reviewer_id)).size >= 2,
+  ).length,
   modelsWithScoreHistory: new Set(scoreRecords.map((r) => r.registry_id)).size,
 
   /**

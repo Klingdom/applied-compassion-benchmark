@@ -301,6 +301,92 @@ export default function AiModelsPage() {
         </Container>
       </section>
 
+      {/* SUB-1: the two-tier rule, rendered before the first submission exists.
+          Official and self-reported results must never share a table — once
+          they are in one list the distinction dies with the first screenshot.
+          Both counts derive from real files, so neither can overstate. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Two tiers, never one table"
+            description="Anyone can run this benchmark and submit the result. Those results are kept strictly apart from scores this institution produced, and they are labelled, structured and stored differently — not merely footnoted."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">
+                Tier 1 — Official · <span className="text-text font-medium">{F.evaluatedModelCount}</span>
+              </h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Produced by an authorised Compassion Benchmark evaluation: an unpublished item pool,
+                cross-model judging, human-validated items. Only these are eligible for an index or a ranking.
+                There are none, and there will be none until those three conditions hold.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">
+                Tier 2 — Self-reported · <span className="text-text font-medium">{F.scoreRecordCount}</span>
+              </h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Submitted from outside and re-checked here: we recompute the composite from the raw trials with
+                our own scorer, recompute item hashes from our own copy of the bank, and verify every anchor and
+                quote. Passing that means <em>worth a reviewer&rsquo;s time</em>, not <em>accepted</em>. Never
+                ranked, never merged into an index, never called a Compassion Benchmark score.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Why there is no submission API</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                If this site accepted a score over HTTP, anyone could mint a perfect result in one request.
+                Everything that makes the tool trustworthy is enforced where the scoring happens and none of it
+                survives being put in a JSON body. Submissions arrive as pull requests carrying the whole
+                artifact — every trial, every rating — because evidence is auditable and a number is not.
+              </p>
+            </Panel>
+          </div>
+        </Container>
+      </section>
+
+      {/* Instrument review progress. Derived from the append-only review log,
+          with partial progress reported separately so it cannot read as done. */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Who has checked the instrument"
+            description="The task bank was written by AI agents against published rubrics and verified structurally. Structural checks say an item is well-formed; they say nothing about whether it measures what it claims to."
+          />
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Human review</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                <span className="text-text font-medium">{F.itemsWithTwoReviews}</span> of{" "}
+                <span className="text-text font-medium">{F.itemCount}</span> items have the two independent
+                reviews that validation requires;{" "}
+                <span className="text-text font-medium">{F.itemsWithAnyReview}</span> have at least one. One
+                reviewer never validates an item, because a single judgement is the thing that cannot be
+                checked.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Why structure is not enough</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Two Identity Equity items in this bank are perfectly well-formed and{" "}
+                <em>cannot be scored as written</em> — their anchors demand a comparison the items never
+                present. That survived every automated check until a person read them. It is the reason this
+                row exists.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.05rem] mb-2">Disagreement is kept</h3>
+              <p className="text-muted text-[0.93rem] leading-relaxed">
+                Where two reviewers reach different verdicts, both are recorded and the item is marked
+                disputed rather than averaged to a conclusion. An item two careful people read differently is
+                a fact about the item, and it is the clearest evidence an anchor is ambiguous.
+              </p>
+            </Panel>
+          </div>
+        </Container>
+      </section>
+
       {/* Score history: built before the first score, so the first ones cannot
           be lost. Renders the real derived counts, never a typed literal. */}
       <section className="py-[30px]">
