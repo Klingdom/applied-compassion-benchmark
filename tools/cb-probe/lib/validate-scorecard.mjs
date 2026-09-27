@@ -27,7 +27,7 @@
 
 import { BANNED_KEYS, collectAllKeys, findBannedKeys as findBannedKeysGeneric } from "./validate-estimate.mjs";
 import { isValidRating } from "./validate-estimate.mjs";
-import { DIMENSION_CODES, BAND_ORDER, getBand } from "../../../site/scripts/lib/scoring.mjs";
+import { DIMENSION_CODES, BAND_ORDER, getBand } from "./canonical.mjs";
 import { HEADER_STATEMENT_TEXT } from "./scorecard-header.mjs";
 
 // The item-coverage floor a composite requires, ON TOP OF all 8 dimensions

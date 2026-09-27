@@ -22,8 +22,8 @@
 import { loadBank, findItem, getScorableItems, isScorableItem } from "./bank.mjs";
 import { projectItem } from "./projection.mjs";
 import { isValidRating } from "./validate-estimate.mjs";
-import { DIMENSION_CODES } from "../../../site/scripts/lib/scoring.mjs";
-import { THRESHOLDS } from "../../../site/scripts/lib/evaluation-statistics.mjs";
+import { DIMENSION_CODES } from "./canonical.mjs";
+import { THRESHOLDS } from "./canonical.mjs";
 import { JUDGE_CONFIGURATIONS } from "./validate-scorecard.mjs";
 import {
   pickProbeItemIds,

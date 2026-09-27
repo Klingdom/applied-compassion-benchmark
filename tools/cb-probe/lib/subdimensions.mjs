@@ -17,7 +17,7 @@
 // items. This module reads `indicator` only. It deliberately does NOT also read
 // a parallel `subdimension` key: one truth, one field.
 
-import { DIMENSIONS_MAP } from "../../../site/scripts/lib/task-bank-validator.mjs";
+import { DIMENSIONS_MAP } from "./canonical.mjs";
 
 /** All 40 subdimension codes, in canonical dimension order. */
 export const SUBDIMENSION_CODES = Object.freeze(DIMENSIONS_MAP.flatMap((d) => d.subdims));

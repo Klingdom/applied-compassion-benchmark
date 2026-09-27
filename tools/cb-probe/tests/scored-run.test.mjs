@@ -27,7 +27,7 @@ import { validateSelfRunScorecard, MIN_ITEMS_PER_DIMENSION_FOR_COMPOSITE } from 
 import { SUBDIMENSION_CODE_COUNT } from "../lib/subdimensions.mjs";
 import { validateJudgeEstimate } from "../lib/validate-estimate.mjs";
 import { buildJudgeEstimate } from "../lib/judge-estimate.mjs";
-import { computeCompositeFromDimensions, getBand } from "../../../site/scripts/lib/scoring.mjs";
+import { computeCompositeFromDimensions, getBand } from "../lib/canonical.mjs";
 import { HARDCODED_SENSITIVE_ITEM_IDS } from "../lib/sensitivity.mjs";
 
 function freshCtx(t) {

@@ -1,19 +1,48 @@
 {
   "name": "cb-probe",
   "version": "0.3.0",
-  "private": true,
   "type": "module",
-  "description": "Local stdio MCP server for self-judging AI models against Compassion Benchmark's published probe items, unscored (JudgeEstimate) or as a scored run ending in a composite and band computed with Compassion Benchmark's own canonical formula (SelfRunScorecard). No network I/O, no provider SDK, no API key. official is always false in both artifacts -- never an official Compassion Benchmark result.",
+  "description": "Run the Compassion Benchmark AI Evaluation Suite locally: a stdio MCP server that evaluates an AI model across 8 compassion dimensions and all 40 subdimensions using a published task bank with five-level behavioural anchors. No network, no API key, no telemetry — the host model you already run does the judging. Results are never an official Compassion Benchmark score.",
   "bin": {
     "cb-probe": "./bin/server.mjs"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "vendor": "node scripts/vendor-canonical.mjs",
+    "vendor:check": "node scripts/vendor-canonical.mjs --check",
+    "prepack": "node scripts/vendor-canonical.mjs && node -e \"const f=require('fs');f.copyFileSync('lib/canonical.mjs','canonical.repo.bak');f.copyFileSync('lib/canonical.published.mjs','lib/canonical.mjs')\"",
+    "postpack": "node -e \"const f=require('fs');if(f.existsSync('canonical.repo.bak')){f.copyFileSync('canonical.repo.bak','lib/canonical.mjs');f.unlinkSync('canonical.repo.bak')}\""
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {},
   "devDependencies": {},
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klingdom/applied-compassion-benchmark.git",
+    "directory": "tools/cb-probe"
+  },
+  "homepage": "https://compassionbenchmark.com/ai-evaluation-suite",
+  "bugs": {
+    "url": "https://github.com/Klingdom/applied-compassion-benchmark/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-evaluation",
+    "benchmark",
+    "compassion",
+    "llm-evaluation",
+    "ai-safety"
+  ],
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSING.md"
+  ]
 }

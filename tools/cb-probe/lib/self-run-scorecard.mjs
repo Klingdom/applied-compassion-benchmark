@@ -19,14 +19,14 @@ import { createHash } from "node:crypto";
 import {
   computeCompositeFromDimensions,
   DIMENSION_CODES,
-} from "../../../site/scripts/lib/scoring.mjs";
+} from "./canonical.mjs";
 import {
   computeItemTrialVariance,
   mean,
   bootstrapCompositeUncertainty,
   createSeededRng,
   THRESHOLDS,
-} from "../../../site/scripts/lib/evaluation-statistics.mjs";
+} from "./canonical.mjs";
 import { findItem, getScorableItems, isScorableItem } from "./bank.mjs";
 import { PACKAGE_VERSION } from "./paths.mjs";
 import { SELF_RUN_HEADER } from "./scorecard-header.mjs";
