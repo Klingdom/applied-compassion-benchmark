@@ -1,5 +1,141 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 42 — 2026-09-27 (cb-probe becomes installable, and my drift gate turned out to be void)
+
+### Selected Item
+**MCP-B distribution**, unblocked by D-42 (MIT). The package could not be installed: four modules reached
+across the package boundary with `../../../site/scripts/lib/…`, which is correct in the repository and fatal
+for `npm pack`, whose tarball resolves those imports to nothing.
+
+### The tension this had to resolve
+cb-probe's central claim is that its composite comes from **the same function** that scores every published
+country and company — imported, never reimplemented. Shipping a copy is what this design has refused for
+weeks, because a copy drifts and a drifted copy silently falsifies that claim. But a package nobody can
+install helps nobody.
+
+Resolution: exactly one file knows the path (`lib/canonical.mjs`), the canonical modules **and the task bank**
+are vendored at pack time, and drift is a failing test rather than a silent lie. In the repository nothing
+changes — `canonical.mjs` imports the real modules, `paths.mjs` reads the live bank, and a test asserts the
+repo **never** uses the fallback.
+
+### My own gate was void, and the probe is what caught it
+The first drift test passed **5/5 against a file I had deliberately corrupted**.
+
+Cause: the test imports `VENDORED_MODULES` and `splitVendored` from the vendoring script, and that script ran
+its write loop **on import**. So the act of testing re-vendored the file, repairing the planted drift
+microseconds before the comparison ran. A gate quietly fixing the very thing it existed to detect.
+
+Fixed by guarding the CLI behind a direct-invocation check. Re-run with drift planted: **1 of 6 fails, naming
+the file**; restored, 6 pass; `--check` agrees.
+
+This is the third time this month a probe of mine proved nothing until re-run. The pattern is consistent
+enough to name: **a probe that shares code with the thing it tests can repair, cache or mask the defect.**
+
+### The bank had to be vendored too
+The first clean tarball packed, loaded, and the server still would not start: *"could not find the Compassion
+Benchmark task bank"*. The bank **is** the instrument, and `files: [lib/, bin/, skills/]` did not include it.
+Now vendored, with `paths.mjs` preferring the repo copy and falling back only when it is absent.
+
+### Validation
+| Check | Result |
+|---|---|
+| **Standalone boot, no repo in the path** | `initialize` OK · `tools/list` 12 tools · `start_scored_run` **83 items / 249 trials, bank v2.0** — the whole instrument running out of a tarball |
+| Drift probe (modules) | planted → **fails naming the file**; restored → passes |
+| Two scorers agree | the repo and published surfaces compute identical composites on 4 dimension shapes, including an uneven one and one that trips the weakness factor |
+| No second boundary-crosser | a test scans `lib/ bin/ tests/ scripts/` and fails if any file but `canonical.mjs` reaches across |
+| Repo never uses the copy | asserted: `USING_VENDORED_BANK === false` in the repository |
+| Suites | cb-probe **169 → 177**; site chain **38 → 39** with `vendor:check` wired in |
+
+### Two packaging defects caught by checking rather than assuming
+1. The prepack backup landed **inside the tarball**, because the `files` allowlist includes `lib/`. Moved to
+   the package root, which the allowlist excludes.
+2. A failed `postpack` could leave `canonical.mjs` pointing at the vendored copies — and **every other test
+   would still pass**, because the copies are byte-identical. A test now asserts `canonical.mjs` imports the
+   real path and that no stray backup remains.
+
+Publishing needs npm credentials, which are the founder's. Everything up to `npm publish` is done.
+
+---
+
+## Iteration 41 — 2026-09-27 (a result can finally get back, without anyone being able to mint one)
+
+### Selected Item
+The founder asked how agents find the server and whether **"the site could score"**. Discovery had shipped in
+It. 40; the return path had not. An agent could run a complete evaluation and the artifact had nowhere to go.
+
+### The half that is dangerous
+If the site accepted a score over HTTP, **anyone with `curl` could mint a perfect Compassion Benchmark score
+for any model.** Every guarantee that makes `cb-probe` trustworthy is enforced *in the process doing the
+scoring* and none survives serialisation: the contamination probe runs on the submitter's machine, and
+`official: false` becomes just a key in a JSON body. The security review already proved a hand-forged artifact
+yields a schema-valid composite of 100.
+
+So the unit of submission is **the artifact, not the number**.
+
+### What Changed
+`research/scripts/validate-submission.mjs` re-derives rather than trusts: the composite is **recomputed from
+the raw per-trial ratings with our own scorer**; item hashes are recomputed from **our** copy of the bank;
+every `anchor_matched` must be a real published label **and must match the rating it accompanies**; every
+quote must be a substantive substring of the response it justifies; coverage is recomputed from item counts.
+
+Intake is `research/submissions/` with a README, a PR template asking for the **exact snapshot** rather than a
+product name, and a CI job validating every submitted artifact on every push.
+
+### Validation — 29 tests, every one an attack
+A fabricated composite of 100 on 2-rated trials → rejected naming both numbers. A tampered item hash → caught.
+An invented anchor label → caught. An anchor contradicting its rating → caught. A quote absent from the
+response → caught. A one-word quote, a single-trial item, an unknown item, `official: true`, a claimed
+`cross-model` comparability, an unprobed run, coverage overclaimed on 12 items → all rejected.
+
+**The positive control is a real artifact** — the 249-trial self-run — so passing means the checks work on real
+data. Our scorer independently reproduced its composite of 100 from the raw trials, and the validator warned
+that it predates the identification probe rather than reading its clean overlap as clean.
+
+### What it cannot do, written into the script rather than left to be discovered
+It cannot verify the responses came from the model named. Nothing can, from an artifact alone. Someone willing
+to write hundreds of plausible responses and rate them honestly will pass every check — **and will have done
+most of the work of actually running the benchmark.** That is the intended cost curve, and it is why a passing
+submission is recorded `official: false`, `comparability: "none"`, never eligible for a ranking.
+
+---
+
+## Iteration 40 — 2026-09-27 (score history before the first score, and a top-50 I refused to fabricate)
+
+### Selected Item
+Founder: publish initial findings, update `/ai-models`, and **create an index of the top 50 AI models that
+always keeps previous scores.**
+
+### What I refused, and why
+A ranked index of 50 models needs 50 valid scores. **There are 0.** The registry file carries the rule
+already: never invent a model version, score, citation or test result. The deeper blocker is structural — the
+public bank ships every item with its answer key, so it is permanently unusable for blinded cross-model
+comparison. A ranked index needs an unpublished pool, human-validated items (0 of 93), cross-model judging and
+authorised API access. The index renders **0 entities** rather than a fabricated ordering.
+
+### What I built instead, which is the part that mattered
+"Always keep track of previous model scores" had to exist **before** the first score, or the first ones are
+already lost.
+
+The registry already solved model *identity*: `exact_snapshot` frozen, a changed snapshot creates a new row,
+`predecessor` carries lineage. The score layer was missing. `score-history-v1.json` is append-only and empty,
+with its invariants in the file.
+
+**The load-bearing decision: there is no "current score" field anywhere.** Current is *derived* as the newest
+non-superseded record, because storing a current value beside a history is how the two drift apart.
+
+35 tests: deleting fails, editing fails, appending is allowed, a correction is a new record whose `supersedes`
+names the original **and the original stays**. Two snapshots of one family keep separate timelines. A
+self-judged run can never be official. A contaminated run can never be official.
+
+### Also shipped
+Discovery: an agent-facing section in `llms.txt` and `/.well-known/compassion-benchmark.json` carrying the
+honesty constraints as **fields** rather than prose. First-run findings published on `/ai-models`, including
+the self-run that scored 100 — publishing it is the clearest argument against self-runs, and withholding it
+while publishing the method would have been selective. Both score-history counts are derived, so the page
+cannot claim a history it does not have.
+
+---
+
 ## Iteration 39 — 2026-09-26 (the rule I wrote and then broke becomes a gate — GI-2 / DC-14)
 
 ### Selected Item

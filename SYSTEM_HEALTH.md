@@ -1,9 +1,21 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 39 (DC-14 gated: no destructive git in committed scripts)
+Last change: Iteration 42 (cb-probe installable from npm; submission pipeline; score history)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-27 (Iterations 40-42 — the agent loop closes end to end): **score history** is append-only and
+> built before the first score exists, with no "current score" field anywhere (current is derived), 35 tests;
+> **discovery** via an agent-facing llms.txt section and /.well-known/compassion-benchmark.json carrying the
+> honesty constraints as fields; **submission** by reviewed PR, where the composite is recomputed from raw
+> trials with our own scorer and item hashes from our own bank — 29 tests, every one an attack, positive
+> control a real 249-trial artifact; **distribution** — cb-probe now packs, installs and boots standalone
+> (83 items, 249 trials, bank v2.0 out of a tarball) with the scorer and bank vendored and drift a failing
+> test. **A top-50 model index was refused**: it needs 50 valid scores and there are 0, so the index renders
+> 0 entities rather than a fabricated ordering. **My own drift gate was void** — the test imported the
+> vendoring script, which ran on import and repaired planted drift before comparing; it passed 5/5 against a
+> file I had corrupted. Third void probe this month. cb-probe 177/177, site chain 39 steps.
 
 > 2026-09-26 (Iteration 39 — DC-14 gated, forced selection under S10): the class that destroyed a cycle’s
 > rotation state on 09-18 (INC-009) and three uncommitted files on 09-24 (INC-010, mine) now fails a test.
@@ -30,20 +42,6 @@ Last change: Iteration 39 (DC-14 gated: no destructive git in committed scripts)
 > fixed: MS-5** — the composite rewards a flat profile twice (consistency multiplier and integration premium
 > both key off low variance), which is how the self-run reached exactly 100. That is a methodology question
 > for the founder, and it should be answered before any model score is published.
-
-> 2026-09-24 (Iteration 37 — the Compassion Benchmark AI Evaluation Suite; founder-directed, **D-41**):
-> the model task bank goes **33 -> 93 items** and **13 of 40 -> 40 of 40 subdimensions**, with at least 2
-> non-sensitive scorable items in every one. A default run is **83 items / 249 trials** and reaches all 40
-> subdimensions, so a composite is **reachable from the real bank** for the first time — verified end to end and
-> over real stdio: **composite 85, band Exemplary, coverage `complete`, 40/40 rated**. The scorecard now carries
-> `subdimensions`, `subdimension_item_counts` and a three-state `coverage.level`; `complete` is **recomputed by
-> the validator**, not trusted. The old blanket ban on a `subdimensions` key was replaced by a stronger rule: a
-> non-null mean must be backed by a non-zero item count. **Fixed on the way:** an O(n²) re-parse in
-> `listRunTrials` that cost **33s** on a 249-trial run (now 4.4s), a spec error of mine that would have broken
-> the site build, and a coverage plan of mine that missed the `draft-authored-unreviewed` exclusions.
-> **Unchanged and now louder: 0 of 93 items have been reviewed by a human** (MB-2), the items were
-> authored by AI agents and only *structurally* verified, and MB-5’s two broken EQU rubrics still stand.
-> cb-probe 154/154; bank validator 93 items / 0 failures; site chain 35 steps.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -123,6 +121,22 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+_Moved 2026-09-27, text unchanged: displaced from the top three by Iterations 40-42._
+
+> 2026-09-24 (Iteration 37 — the Compassion Benchmark AI Evaluation Suite; founder-directed, **D-41**):
+> the model task bank goes **33 -> 93 items** and **13 of 40 -> 40 of 40 subdimensions**, with at least 2
+> non-sensitive scorable items in every one. A default run is **83 items / 249 trials** and reaches all 40
+> subdimensions, so a composite is **reachable from the real bank** for the first time — verified end to end and
+> over real stdio: **composite 85, band Exemplary, coverage `complete`, 40/40 rated**. The scorecard now carries
+> `subdimensions`, `subdimension_item_counts` and a three-state `coverage.level`; `complete` is **recomputed by
+> the validator**, not trusted. The old blanket ban on a `subdimensions` key was replaced by a stronger rule: a
+> non-null mean must be backed by a non-zero item count. **Fixed on the way:** an O(n²) re-parse in
+> `listRunTrials` that cost **33s** on a 249-trial run (now 4.4s), a spec error of mine that would have broken
+> the site build, and a coverage plan of mine that missed the `draft-authored-unreviewed` exclusions.
+> **Unchanged and now louder: 0 of 93 items have been reviewed by a human** (MB-2), the items were
+> authored by AI agents and only *structurally* verified, and MB-5’s two broken EQU rubrics still stand.
+> cb-probe 154/154; bank validator 93 items / 0 failures; site chain 35 steps.
 
 _Moved 2026-09-26, text unchanged: displaced from the top three by Iteration 39._
 

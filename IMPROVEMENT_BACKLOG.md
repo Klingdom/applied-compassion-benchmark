@@ -314,6 +314,33 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-27, from Iterations 40-42)
+
+- **MB-2 — PROTOCOL READY, review not started.** `docs/ITEM_VALIDATION_PROTOCOL.md` defines what
+  "validated" means (five criteria, all of which the well-formed-but-unscorable EQU-1-B defect would have
+  failed), requires two independent reviewers per item with disagreements recorded rather than resolved away,
+  and sequences review into five tranches so stopping early still leaves the bank better: crisis items first,
+  then the 8 items the authoring agents flagged themselves, then the known-broken pair, then thin
+  subdimensions, then the rest. Estimated **30-45 reviewer-hours**. This is the one item on the model track
+  an agent cannot do, because the point is that a human read it. v1: I5 S5 L4 C4 − E4 − R2 = **12**.
+
+- **MB-2a — build the review-record schema BEFORE the first review.** Same reasoning as the score history:
+  a review log that starts after the reviews do has already lost some. Needs reviewer identity, date, the
+  five criteria individually, free-text concern, and the second reviewer’s independent verdict, append-only.
+  Agent-doable. v1: I4 S4 L3 C5 − E2 − R1 = **13**.
+
+- **MCP-B-npm — COMPLETED 2026-09-27 (It. 42)** up to `npm publish`, which needs founder credentials. The
+  package packs, installs and boots standalone: 83 items, 249 trials, bank v2.0 out of a tarball with no repo
+  in the path. Scorer and bank vendored; drift is a failing test wired into the chain.
+
+- **MCP-registry — FOUNDER: list cb-probe in a public MCP registry.** Unblocked by D-42 (MIT). Needs a
+  published package or a repo URL and a listing act. The `/.well-known/compassion-benchmark.json` descriptor
+  is already machine-readable and carries the honesty constraints as fields. v1: I4 S4 L2 C5 − E1 − R2 = **12**.
+
+- **SUB-1 — two-tier display before the first submission is accepted.** The validator and intake exist; what
+  does not yet exist is the surface that shows a self-reported result without it ever sharing a table with an
+  official score. Build it before the first submission lands, not after. v1: I4 S5 L3 C4 − E2 − R2 = **12**.
+
 ### New backlog items (2026-09-25, from the first complete self-run)
 
 - **MS-3 — COMPLETED 2026-09-25 (It. 38).** Forced-choice identification probe shipped alongside the
