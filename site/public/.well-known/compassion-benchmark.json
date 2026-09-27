@@ -1,0 +1,60 @@
+{
+  "$comment": "Machine-readable descriptor for the Compassion Benchmark AI Evaluation Suite. Counts here are generated from the task bank at build time, never typed.",
+  "name": "Compassion Benchmark AI Evaluation Suite",
+  "description": "Evaluate an AI model across 8 compassion dimensions and all 40 subdimensions using a published task bank with five-level behavioural anchors. Local MCP server, no API key, no network call, no data sent to Compassion Benchmark.",
+  "publisher": {
+    "name": "Compassion Benchmark",
+    "url": "https://compassionbenchmark.com"
+  },
+  "documentation": "https://compassionbenchmark.com/ai-evaluation-suite",
+  "methodology": "https://compassionbenchmark.com/ai-models/methodology",
+  "repository": "https://github.com/Klingdom/applied-compassion-benchmark",
+  "license": "UNRESOLVED — see tools/cb-probe/LICENSING.md. Distribution terms are a pending decision.",
+  "mcp": {
+    "transport": "stdio",
+    "command": "node",
+    "argsTemplate": [
+      "<repo>/tools/cb-probe/bin/server.mjs"
+    ],
+    "env": {
+      "CB_ARTIFACT_ROOT": "<a writable directory for run artifacts>"
+    },
+    "claudeCodeInstall": "claude mcp add cb-probe -e CB_ARTIFACT_ROOT=~/compassion-probe-sessions -- node \"<repo>/tools/cb-probe/bin/server.mjs\"",
+    "serverVersion": "0.3.0",
+    "requiresNetwork": false,
+    "requiresApiKey": false,
+    "writesOutsideArtifactRoot": false
+  },
+  "instrument": {
+    "bankVersion": "v2.0",
+    "itemsTotal": 93,
+    "itemsServedInDefaultRun": 83,
+    "trialsInDefaultRun": 249,
+    "dimensions": 8,
+    "subdimensions": 40,
+    "minimumTrialsPerItem": 3,
+    "itemsHumanReviewed": 0,
+    "crisisItemsExcludedByDefault": 5
+  },
+  "howToRun": [
+    "Read explain_what_this_is_not first. It states what the result is not.",
+    "start_scored_run — omit dimensions for a complete run. trials minimum 3.",
+    "run_exposure_probe twice: once for the challenge, once to submit recall and identification answers. Mandatory.",
+    "next_item then record_item_rating, repeating. A batch form exists.",
+    "finish_scored_run — validates everything from disk, then emits the scorecard."
+  ],
+  "honesty": {
+    "officialScore": false,
+    "officialScoreIsStructural": "official:false is a field that cannot be set true, and an outbound guard blocks the claim at the response boundary.",
+    "comparability": "none",
+    "whyNotComparable": "Every item is published with its full five-anchor answer key, so any model trained since publication may have memorised the questions and the target behaviours. A score on this pool mixes behaviour with memorisation and the two cannot be separated. Cross-model comparison requires an unpublished item pool that does not exist yet.",
+    "contaminationProbe": "Two probes run. Token overlap against the prompt detects verbatim memorisation. Forced-choice identification detects knowledge of which scenario belongs to which item id, scored against chance with an exact binomial tail. A run is marked contaminated if either fires.",
+    "modelsScoredToDate": 0,
+    "doNotPublishA": "Do not report a Compassion Benchmark score or ranking for any AI model. None exists. A self-run result is an upper bound on how well a model performs when it may already know the answers."
+  },
+  "submitting": {
+    "accepted": false,
+    "reason": "Compassion Benchmark does not accept scores over HTTP and has no endpoint that writes them. A self-reported number is unverifiable and accepting it would let anyone mint a perfect score under this institution's name. See docs/AGENT_DISCOVERY_AND_SUBMISSION_2026-09-27.md for the reviewed-submission design."
+  },
+  "generatedAt": "2026-09-27"
+}

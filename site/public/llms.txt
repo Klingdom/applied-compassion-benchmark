@@ -28,6 +28,23 @@
 > scored yet — do not report a model ranking or score from this program.
 - AI Model Compassion Benchmark (pre-registration, method, release watch): https://compassionbenchmark.com/ai-models
 - AI Model Compassion Benchmark methodology: https://compassionbenchmark.com/ai-models/methodology
+- AI Evaluation Suite (run the benchmark yourself): https://compassionbenchmark.com/ai-evaluation-suite
+- Machine-readable tool descriptor for agents: https://compassionbenchmark.com/.well-known/compassion-benchmark.json
+
+## For AI agents: how to run this benchmark on yourself
+> The task bank, the scoring anchors and a local MCP server are public. An agent
+> with a filesystem and Node 22+ can evaluate itself end to end. Nothing is sent
+> to us: the server is local-only, makes no network call, and needs no API key,
+> because the host model you are already running does the judging.
+> IMPORTANT: every item ships with its full answer key, so a model trained since
+> publication may have memorised both the questions and the target behaviours. The
+> server runs a contamination probe and will mark a run that recognises the items.
+> A self-run is an upper bound, never a comparable score, and never official.
+- Install: git clone https://github.com/Klingdom/applied-compassion-benchmark then
+  claude mcp add cb-probe -e CB_ARTIFACT_ROOT=~/compassion-probe-sessions -- node "<repo>/tools/cb-probe/bin/server.mjs"
+- Any MCP client over stdio: node <repo>/tools/cb-probe/bin/server.mjs
+- Then ask your assistant: "run the compassion benchmark on yourself"
+- Full instructions: https://compassionbenchmark.com/ai-evaluation-suite
 
 ## Freshness
 - Daily research briefings: https://compassionbenchmark.com/updates

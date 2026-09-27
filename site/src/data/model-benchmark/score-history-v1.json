@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "historyVersion": "v1",
+    "recordCount": 0,
+    "createdDate": "2026-09-27",
+    "status": "empty",
+    "note": "EMPTY — NO MODEL HAS EVER BEEN SCORED. 0 records. This file exists BEFORE the first evaluation on purpose: a score history that is created after scores start arriving has already lost the first ones. Do NOT add a record from memory, from a provider's published benchmark numbers, or from a self-run. A record may only be written by an authorised evaluation that produced a run artifact, and it must carry that artifact's identifier.",
+    "purpose": "Append-only record of every score ever produced for every exact model snapshot. This is the only place model scores live. There is no separate 'current score' field anywhere: the current score for a model is DERIVED as its most recent record, so a current value and a history can never disagree.",
+    "invariants": [
+      "APPEND-ONLY. A record is never edited and never deleted. A correction is a NEW record whose `supersedes` names the one it replaces, and the superseded record stays in the file.",
+      "A record is bound to an exact snapshot via `registry_id`, not to a model name. A provider reusing a name produces a new registry entry and therefore a separate score timeline (see .benchmark-ops/MODEL_REGISTRY.md invariant 1).",
+      "Every record carries the bank version and tool version that produced it. A score from bank v2.0 is not comparable to one from a later bank, and the file must make that checkable rather than leaving it to memory.",
+      "Every record carries its contamination verdict. A score produced by a subject that recognised the items is retained, not discarded, but it is marked and must never be presented as comparable.",
+      "`official` is false unless an authorised, human-validated, cross-judged evaluation produced it. No self-run is ever official."
+    ],
+    "schema": {
+      "record_id": "string, immutable, unique. Convention: <registry_id>--<evaluated_at>--<short artifact hash>.",
+      "registry_id": "string, required. Foreign key to an entry in registry-v1.json. A record whose registry_id has no entry is invalid.",
+      "evaluated_at": "ISO date, required. The date the evaluation ran, not the date it was written up.",
+      "bank_version": "string, required. e.g. 'v2.0'.",
+      "tool_version": "string, required. e.g. '0.3.0'.",
+      "judge_configuration": "'cross' | 'panel' | 'self', required.",
+      "judge_labels": "string[], required. Who or what judged, self-reported and marked as such.",
+      "coverage_level": "'complete' | 'dimension-only' | 'insufficient', required.",
+      "composite": "number 0-100 or null. Null whenever the coverage gate withheld it (DECISIONS.md D-40).",
+      "band": "string or null. Must be null exactly when composite is null.",
+      "dimensions": "object, 8 canonical codes to mean 1-5 or null.",
+      "subdimensions": "object, 40 canonical codes to mean 1-5 or null.",
+      "dimension_item_counts": "object, 8 codes to integer.",
+      "subdimension_item_counts": "object, 40 codes to integer.",
+      "trials_per_item": "integer >= 3.",
+      "contamination_indicated": "boolean, required. True if ANY contamination probe fired.",
+      "contamination_detail": "object, required. The probe results as recorded, including the identification probe's accuracy and p-value.",
+      "official": "boolean, required. False for every record until an authorised pipeline exists.",
+      "comparability": "'none' | 'within-bank' | 'cross-model', required. 'cross-model' requires an unpublished item pool and is unreachable on the public bank.",
+      "artifact_ref": "string, required. The run identifier the record was derived from, so any number here can be traced to the artifact that produced it.",
+      "supersedes": "string or null. A prior record_id this one corrects. The superseded record is never removed.",
+      "notes": "string or null."
+    },
+    "whyNoTopFiftyYet": "An index ranking 50 models requires 50 valid scores. There are 0. The public task bank ships every item with its full answer key, so it is permanently unusable for blinded cross-model comparison — a score on it measures some mixture of behaviour and memorisation with no way to separate them. A ranked index therefore needs: an unpublished item pool, human-validated items (currently 0 of 93), cross-model judging, and authorised API access with a spend budget. Until those exist, this file stays empty and the index renders 0 entities rather than a fabricated ordering.",
+    "validator": "site/scripts/lib/model-score-history-validator.mjs"
+  },
+  "records": []
+}
