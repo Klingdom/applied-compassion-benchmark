@@ -1,9 +1,27 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 46 (a gate that can see silence; CI gains full git history)
+Last change: Iteration 47 (the criterion-1 exemplar named the wrong item; bank-claim gate added)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-28 (Iteration 47 — the exemplar that justified the review programme named the wrong item; **DC-02
+> occurrence 4**): every published surface said `EQU-1-B` and `EQU-1-C` "cannot be scored as written" because
+> their anchors demand a comparison arm. Derived from the anchors with a controlled scan, the affected items are
+> **`EQU-1-A` and `EQU-1-C`, at level 2 only** — EQU-1-B's anchors reference "the stated literacy context" which
+> its prompt states, and it was **scored 4.00 on trials 5, 4, 3** in the 2026-09-25 self-run, which an unscorable
+> item could not have been. Wrong item, and severity overstated fourfold: 1 anchor of 5, so both items score
+> everywhere except the 1-to-2 boundary. This defined **review criterion 1** and was wrong on `/ai-models`, in the
+> protocol, in the suite doc, in the review log's own criterion definition and in the bank's `knownIssues`.
+> Corrected everywhere; the dated v2.0 bank entry left **unchanged** (§1c) with a new `v2.0.1` correction entry,
+> and the instrument proven untouched by a fingerprint over id/prompt/indicator/dimension/anchors across all 93
+> items. New `test:bank-claims` (chain 41 → 42) **derives** the affected set from the anchors and constrains five
+> prose surfaces in both directions. **Three faults in my own gate, each found by probing not reasoning:** it
+> falsely passed the protocol because an exoneration heuristic matched the word "not"; it stopped constraining the
+> suite doc the moment I reworded it; and a waiver for a historical mention also satisfied "names the affected
+> item". **INC-011 — DC-14 third occurrence, mine:** `git checkout --` destroyed an uncommitted correction while
+> reverting a probe. Recovered, and the new gate caught the regression in seconds. It. 39's gate lints committed
+> scripts and cannot see a typed command — second demonstrated hole. **GI-3** filed. Site chain **42 steps**.
 
 > 2026-09-27 (Iteration 46 — a gate that can see silence; forced selection under S4/S10): DC-16 hit three
 > occurrences, the third *with its gate already in the chain*, because that gate checks whether **references**
@@ -35,20 +53,6 @@ Last change: Iteration 46 (a gate that can see silence; CI gains full git histor
 > reference. Second hole documented; **CAL-2** filed (v2 16); under S4 the class is **not adequately gated**.
 > cb-probe **182/182** (was 177), site chain **40 steps**. Record: `docs/PROBE_CALIBRATION_2026-09-27.md`.
 
-> 2026-09-27 (Iterations 40-42 — the agent loop closes end to end): **score history** is append-only and
-> built before the first score exists, with no "current score" field anywhere (current is derived), 35 tests;
-> **discovery** via an agent-facing llms.txt section and /.well-known/compassion-benchmark.json carrying the
-> honesty constraints as fields; **submission** by reviewed PR, where the composite is recomputed from raw
-> trials with our own scorer and item hashes from our own bank — 29 tests, every one an attack, positive
-> control a real 249-trial artifact; **distribution** — cb-probe now packs, installs and boots standalone
-> (83 items, 249 trials, bank v2.0 out of a tarball) with the scorer and bank vendored and drift a failing
-> test. **A top-50 model index was refused**: it needs 50 valid scores and there are 0, so the index renders
-> 0 entities rather than a fabricated ordering. **My own drift gate was void** — the test imported the
-> vendoring script, which ran on import and repaired planted drift before comparing; it passed 5/5 against a
-> file I had corrupted. Third void probe this month. cb-probe 177/177, site chain 39 steps.
-
-
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
 - **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-20)**.
@@ -70,7 +74,7 @@ Last change: Iteration 46 (a gate that can see silence; CI gains full git histor
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **41 steps**, generated 2026-09-27; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **42 steps**, generated 2026-09-28; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -133,6 +137,20 @@ _Moved 2026-09-27, text unchanged: displaced from the top three by Iterations 40
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 45. NOTE: its claim that clean-subject behaviour rests on 4,000 simulated random guesses was superseded the same day by a real calibration — see the Iteration 45 note at the top. The text below is left exactly as written._
 
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 46._
+
+_Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 47. NOTE: its "site chain 39 steps" and "cb-probe 177/177" figures were correct on its date and are now 42 and 182._
+
+> 2026-09-27 (Iterations 40-42 — the agent loop closes end to end): **score history** is append-only and
+> built before the first score exists, with no "current score" field anywhere (current is derived), 35 tests;
+> **discovery** via an agent-facing llms.txt section and /.well-known/compassion-benchmark.json carrying the
+> honesty constraints as fields; **submission** by reviewed PR, where the composite is recomputed from raw
+> trials with our own scorer and item hashes from our own bank — 29 tests, every one an attack, positive
+> control a real 249-trial artifact; **distribution** — cb-probe now packs, installs and boots standalone
+> (83 items, 249 trials, bank v2.0 out of a tarball) with the scorer and bank vendored and drift a failing
+> test. **A top-50 model index was refused**: it needs 50 valid scores and there are 0, so the index renders
+> 0 entities rather than a fabricated ordering. **My own drift gate was void** — the test imported the
+> vendoring script, which ran on import and repaired planted drift before comparing; it passed 5/5 against a
+> file I had corrupted. Third void probe this month. cb-probe 177/177, site chain 39 steps.
 
 > 2026-09-26 (Iteration 39 — DC-14 gated, forced selection under S10): the class that destroyed a cycle’s
 > rotation state on 09-18 (INC-009) and three uncommitted files on 09-24 (INC-010, mine) now fails a test.

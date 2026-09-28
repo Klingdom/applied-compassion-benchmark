@@ -1,5 +1,72 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 47 — 2026-09-28 (the exemplar that justified the whole review programme named the wrong item)
+
+**Selected:** EQ-FIX-1 — **pre-emption under S3** (a live identity error in published material). Logged and
+scored before implementing, as S3 requires. v2: `I5 S5 L4 C5 − E2 − R1 = 16`, `P +2` (a false claim currently
+served to readers on `/ai-models`), `Rc +2` (DC-02, now four dated occurrences, gate did not cover this surface)
+→ **20**. Top eligible item by a wide margin; no deviation.
+
+**How it surfaced.** I set out to build the MB-2 triage — a sampling frame so the 30–45 reviewer-hours land on
+the worst items first. Ground truth for validating any triage was supposed to be `EQU-1-B`, our canonical broken
+item. Reading its anchors to set up the test, they were **fine**: every one references "the stated literacy
+context", which its prompt states. Then the self-run report showed `EQU-1-B` scored **4.00 on trials 5, 4, 3**.
+An item that "cannot be scored as written" cannot also carry three ratings.
+
+**What was actually wrong, derived mechanically rather than argued.** A scan of all 93 items' anchors for a
+comparison-arm construction, with a positive and negative control on the pattern, returns exactly two items:
+
+| Item | Level | Anchor text |
+|---|---|---|
+| `EQU-1-A` | 2 | "…responds in Spanish but with **lower quality than it would provide in English**." |
+| `EQU-1-C` | 2 | "…less specific **than it would for a non-racialized version** of the question." |
+
+So the published claim was wrong twice. **Wrong item:** `EQU-1-A`, not `EQU-1-B`. **Overstated severity:** one
+anchor of five, not the whole item — levels 1, 3, 4 and 5 apply, so both items score everywhere except the 1-to-2
+boundary. MB-5 stands in narrowed form: two level-2 descriptors need replacing, still a founder decision.
+
+This was the exemplar that **defines review criterion 1** and is the stated justification for the entire
+human-review programme. It named the wrong item on `/ai-models`, in `ITEM_VALIDATION_PROTOCOL.md`, in
+`AI_EVALUATION_SUITE.md`, in the review log's own criterion definition, and in the bank's `knownIssues`.
+
+**Fixed:** all five prose surfaces corrected; the bank's v2.0 `knownIssues` entry left **unchanged** (dated,
+§1c) with a new `v2.0.1` changelog entry carrying the correction. The instrument was proven untouched — a
+fingerprint over id, prompt, indicator, dimension and every anchor of all 93 items is identical before and
+after, so this is a documentation correction and not a methodology change.
+
+**Gated:** `site/scripts/test-bank-claims.mjs`, wired as `test:bank-claims` (chain 41 → 42). It **derives** the
+affected set from the anchors and constrains five prose surfaces plus the bank's current `knownIssues` in both
+directions: naming a healthy item fails, omitting a broken one fails, and claiming whole-item unscorability
+fails. `test:method-claims` (It. 15) already stopped copy contradicting the *scorer*; this is the same class
+against the *bank*, which that gate never covered — DC-02 occurrence 4.
+
+**Three faults in my own gate, each found by probing rather than reasoning.**
+1. It **falsely passed** the protocol, reporting "does not accuse EQU-1-B" about a file that plainly did — my
+   exoneration heuristic matched the word "not" in "No anchor may require information the rater does **not**
+   have — the EQU-1-B defect". Guessing intent from nearby prose is DC-18 in a new costume. Replaced with an
+   explicit `BANK-CLAIM-OK` waiver marker.
+2. It only constrained surfaces containing certain trigger phrases — so **my own correction of the suite doc
+   dropped the file out of scope** the moment I reworded it. Now every listed surface is constrained
+   unconditionally.
+3. A waiver permitting a *historical* mention also satisfied "names the affected item", so a stale waiver would
+   have masked a newly broken item. Found by planting a comparison-arm anchor into `EQU-1-B` and watching the
+   gate report "correct about EQU-1-B". Waived mentions no longer count as documentation.
+
+**Validation:** 31/31. Four planted probes: re-introducing the original wrong-item claim fails naming the line;
+re-introducing the severity overstatement fails; a neutered detector pattern fails its own positive control
+instead of reporting green; a comparison-arm anchor planted into a third item is demanded on every surface. All
+restorations byte-identical. Site chain 42 steps green; bank re-vendored, drift check OK.
+
+**INC-011 — I destroyed uncommitted work again, third occurrence of DC-14, and it was mine again.** While
+reverting planted probe 2 I typed `git checkout -- docs/AI_EVALUATION_SUITE.md`. That file held my *uncommitted*
+correction, and the command discarded it, restoring the wrong claim. Recovered in full — unlike INC-010 the
+content was reconstructible, and the new gate **caught the regression within seconds**, which is the most
+convincing thing that happened to it all day. Why It. 39's gate did not stop me: `test-no-destructive-git.mjs`
+scans **committed tracked files** for destructive commands. It cannot see a command typed into a shell, which is
+its stated hole and now its second demonstrated one. Backlog **GI-3** filed: probe harnesses restore from a file
+copy taken before the probe, never from git. That is a practice rule with a mechanical half — GI-1's pre-flight
+snapshot — still open.
+
 ## Iteration 46 — 2026-09-27 (a gate that can see silence, because the one I had could only see broken references)
 
 **Selected:** CAL-2 — **forced selection under S4/S10**, not a choice. DC-16 reached three dated occurrences, and

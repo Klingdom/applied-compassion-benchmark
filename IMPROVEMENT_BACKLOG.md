@@ -314,6 +314,35 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-28, from Iteration 47)
+
+- **GI-3 — a probe harness must restore from a file copy, never from git.** INC-011: reverting a planted probe
+  with `git checkout -- <path>` destroyed an uncommitted correction in that same file. Third DC-14 occurrence,
+  mine, and after the gate for the class shipped — because `test-no-destructive-git.mjs` scans *committed
+  tracked files* and cannot see a command an agent types into a shell. The practice rule is simple: `cp` the
+  file before planting, `cp` it back, `cmp` to prove identity. The mechanical half is **GI-1** (pre-flight
+  snapshot of anything a cycle may touch), still open. Needs a planted probe: a harness that reverts via git
+  must be rejected in review.
+  `I4 S4 L4 C4 − E2 − R1 = 13`, `Rc +2` (≥2 dated occurrences of DC-14 with no gate reaching the failure
+  point) → **15**.
+
+- **MB-5 (narrowed, supersedes the earlier framing) — two level-2 descriptors, not two broken items.**
+  `EQU-1-A` and `EQU-1-C` each need one replacement level-2 anchor that a rater can apply without a second run.
+  Levels 1, 3, 4 and 5 are applicable today, so both items are scorable except at the 1-to-2 boundary — the
+  repair is far smaller than the old "two items cannot be scored" framing implied. **Still a methodology act
+  and still a founder decision.** Suggested shape, not adopted: replace the counterfactual with an observable
+  ("omits rights information that the level-3 descriptor requires"), which keeps the construct and drops the
+  comparison. **Lane: blocked-on-founder.** `I4 S5 L3 C4 − E2 − R3 = 11`.
+
+- **MB-2-TRIAGE — an agent pre-screen for the 93 items, explicitly not a review.** The work that surfaced
+  EQ-FIX-1 in the first place. Agents apply the five criteria to every item and produce a *ranked suspicion
+  list* with reasons, so reviewer hours land on the worst items first — the sampling frame the protocol already
+  asks for in Tranche 2. **Must be structurally incapable of becoming a review:** separate file, different
+  schema, no `verdict` field, and a test asserting a triage record can never satisfy `validateItemReviews`.
+  Ground truth for validating it now exists and is derived rather than remembered: any triage that fails to
+  flag `EQU-1-A` and `EQU-1-C` at level 2 has no signal and should be discarded.
+  `I4 S4 L5 C4 − E3 − R2 = 12`.
+
 ### New backlog items (2026-09-27, from Iteration 45 — probe calibration)
 
 - **CAL-2 — DONE (Iteration 46, 2026-09-27).** ~~the iteration-coverage gate has a blind spot: it cannot see work that never mentions itself.~~ Gated by `test:iteration-log-silence`; negative control is the real occurrence-3 history. Side effect: CI gained `fetch-depth: 0`, making DC-17's gate effective in CI for the first time.

@@ -5,6 +5,30 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-28 — Correction: we named the wrong item as broken, and overstated how broken it was (NO score changes)
+
+- **What was wrong:** the AI-model task bank has two Identity Equity items whose second scoring level cannot be
+  applied, because it asks a rater to judge the answer against a response the model was never asked for. Our
+  published material named the wrong item as one of the two, and said both items **"cannot be scored as
+  written"**.
+- **The correction:** the affected items are **EQU-1-A** and **EQU-1-C**, not EQU-1-B, and only **one of five**
+  scoring levels is affected in each. Both items score normally everywhere except the boundary between levels 1
+  and 2. The item we had wrongly accused, EQU-1-B, had in fact been scored three times in our own published
+  2026-09-25 run — which is what exposed the error.
+- **Why it mattered more than a typo:** this was the worked example we used to explain what human review of the
+  instrument is *for*. It appeared on `/ai-models`, in the item-validation protocol, in the evaluation-suite
+  documentation, in the review log's own definition of the criterion, and in the task bank's own notes.
+- **What stops it recurring:** the affected set is now **derived from the scoring anchors themselves** by a test
+  that runs before every deploy, and it fails in both directions — naming an item that is fine, or omitting one
+  that is not. Prose can no longer disagree with the bank.
+- **The instrument did not change.** No item, prompt, scoring anchor or scoring field was altered; verified by
+  comparing a fingerprint of all 93 items before and after. The dated v2.0 bank entry was left exactly as
+  written, with the correction recorded as a new dated entry.
+- **No score, rank, band or entity page changed.** No AI model has a published Compassion Benchmark score.
+- Commit SHA appended on deploy.
+
+---
+
 ## 2026-09-27 — The contamination probe was tested on models that had never seen the benchmark (NO score changes)
 
 - **What changed:** `/ai-models` now states how the AI-model contamination probe performs on *clean* subjects, and

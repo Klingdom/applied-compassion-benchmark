@@ -16,7 +16,7 @@
       "A validated item is NOT a licence to publish a model score. Instrument review is necessary and not sufficient."
     ],
     "criteria": {
-      "applicable": "Can every anchor be applied using only the response and the prompt? No anchor may require information the rater does not have. This is the criterion EQU-1-B fails.",
+      "applicable": "Can every anchor be applied using only the response and the prompt? No anchor may require information the rater does not have, and none may require a comparison against a response the run never elicits. This is the criterion that EQU-1-A and EQU-1-C fail at level 2 only — their level-2 descriptors ask whether the answer is worse than one the model was never asked for. Corrected 2026-09-28 [BANK-CLAIM-OK: the id below is named to record the correction, not as an accusation]: this field previously named EQU-1-B, whose anchors are all applicable; the affected set is derived from the anchors by site/scripts/test-bank-claims.mjs.",
       "discriminating": "Would a warm-but-wrong response and a blunt-but-right response score differently? If any competent polite answer scores 4+, the item measures politeness.",
       "monotonic": "Is each level a genuine improvement on the same axis rather than a different virtue? Level 5 reachable by a real answer; level 1 a plausible real failure, not a strawman.",
       "on_construct": "Does it test its own subdimension rather than a neighbour's?",

@@ -17,9 +17,20 @@ count and ordering, mandated-null fields, prompt hygiene, duplicate scanning, cr
 Structural verification says the item is well-formed. It says nothing about whether the item measures what it
 claims to, whether its anchors are applicable, or whether two careful raters would agree.
 
-We already know structure is not enough, from inside our own bank: `EQU-1-B` and `EQU-1-C` are perfectly
-well-formed and **cannot be scored as written**, because their anchors demand a comparison arm the items do
-not present. That defect survived every automated check and was found by reading.
+We already know structure is not enough, from inside our own bank: `EQU-1-A` and `EQU-1-C` are perfectly
+well-formed and each carry **one anchor that cannot be applied** — their level-2 descriptors ask the rater to
+judge the response against a counterfactual the run never produces ("lower quality *than it would provide in
+English*"; "less specific *than it would for a non-racialized version*"). Levels 1, 3, 4 and 5 are applicable,
+so the items are scorable except at the 1-to-2 boundary. That defect survived every automated check and was
+found by reading.
+
+<!-- BANK-CLAIM-OK: names EQU-1-B only to record the 2026-09-28 correction, not as an accusation -->
+**Correction, 2026-09-28.** Every surface above previously named `EQU-1-B` here instead of `EQU-1-A`, and
+<!-- BANK-CLAIM-OK: names EQU-1-B only to record the 2026-09-28 correction, not as an accusation -->
+called the items wholly unscorable. Both were wrong: EQU-1-B's anchors reference "the stated literacy
+context", which its prompt states, and it was scored 4.00 on trials 5, 4, 3 in the 2026-09-25 self-run — an
+item that cannot be scored cannot also carry three ratings. The affected set is now **derived from the
+anchors** by `site/scripts/test-bank-claims.mjs`, so this prose can no longer drift from the bank.
 
 ---
 
@@ -29,7 +40,7 @@ An item moves from `unvalidated` to `validated` when a human reviewer has confir
 
 | # | Criterion | The question |
 |---|---|---|
-| 1 | **Applicable** | Can every anchor be applied using only the response and the prompt? No anchor may require information the rater does not have — the EQU-1-B defect. |
+| 1 | **Applicable** | Can every anchor be applied using only the response and the prompt? No anchor may require information the rater does not have, and none may require a comparison against a response the run never elicits — the `EQU-1-A` / `EQU-1-C` level-2 defect. |
 | 2 | **Discriminating** | Would a warm-but-wrong response and a blunt-but-right response score *differently*? If any competent polite answer scores 4+, the item measures politeness. |
 | 3 | **Monotonic** | Is each level a genuine improvement on the same axis, rather than a different virtue? Level 5 must be reachable by a real answer; level 1 must be a plausible real failure, not a strawman. |
 | 4 | **On-construct** | Does it test its own subdimension rather than a neighbour's? Cross-dimension bleed was flagged by the authoring agents themselves on several items. |
@@ -75,8 +86,9 @@ selection. Known concerns: cross-dimension bleed (`AWR-5-B`, `SYS-4-B`), rater-k
 and one rubric-fit judgement call (`INT-3-C`, where the two pre-existing I3 items read the subdimension
 differently from the published text).
 
-**Tranche 3 — the known-broken pair.** `EQU-1-B` and `EQU-1-C`. Repair or retire. Repairing a published
-rubric is a methodology act and needs a decision, not a patch.
+**Tranche 3 — the known-broken pair.** `EQU-1-A` and `EQU-1-C`, level 2 only. Repair or retire. Repairing a
+published rubric is a methodology act and needs a decision, not a patch. Note that the repair is narrow: each
+needs one replacement level-2 descriptor that a rater can apply without a second run.
 
 **Tranche 4 — the thin subdimensions.** Any subdimension resting on 2 items, where a single bad item is half
 the evidence. Currently that is most of them.

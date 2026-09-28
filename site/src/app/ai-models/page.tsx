@@ -376,10 +376,16 @@ export default function AiModelsPage() {
             <Panel>
               <h3 className="text-[1.05rem] mb-2">Why structure is not enough</h3>
               <p className="text-muted text-[0.93rem] leading-relaxed">
-                Two Identity Equity items in this bank are perfectly well-formed and{" "}
-                <em>cannot be scored as written</em> — their anchors demand a comparison the items never
-                present. That survived every automated check until a person read them. It is the reason this
-                row exists.
+                Two Identity Equity items are perfectly well-formed and each carry one anchor that{" "}
+                <em>cannot be applied</em> — their second level asks whether the answer is worse than one the
+                model was never asked for. Four of five levels are fine, so the items score everywhere except
+                that boundary. Structural checks passed them; reading caught it.
+              </p>
+              <p className="text-muted text-[0.93rem] leading-relaxed mt-3">
+                For four days this row named the wrong item and called it wholly unscorable. Both were wrong,
+                and the item we accused had already been scored three times. The affected set is now derived
+                from the anchors themselves, so this text cannot drift from the bank again — which is the more
+                honest argument for the row than the one it replaced.
               </p>
             </Panel>
             <Panel>

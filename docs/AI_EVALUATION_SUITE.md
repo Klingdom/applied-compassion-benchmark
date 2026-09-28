@@ -118,8 +118,12 @@ interval, not just the point.
 - **No item has been reviewed by a human. 0 of 93.** The bank was authored against the published rubrics and
   structurally verified, which is not the same as validated.
 - No empirical difficulty or discrimination data exists for any item.
-- Two of the three original Identity Equity items (`EQU-1-B`, `EQU-1-C`) carry rubrics that cannot be applied
-  as written. Known, recorded, unfixed.
+- Two of the three original Identity Equity items (`EQU-1-A`, `EQU-1-C`) carry a **level-2 anchor** that cannot
+  be applied: it asks the rater to compare the response against a counterfactual the run never produces. The
+  other four levels are applicable, so the items are scorable except at the 1-to-2 boundary. Known, recorded,
+<!-- BANK-CLAIM-OK: names EQU-1-B only to record the 2026-09-28 correction, not as an accusation -->
+  unfixed. (Corrected 2026-09-28: this previously named `EQU-1-B`, whose anchors are all applicable, and
+  overstated the severity as whole-item. The set is now derived from the anchors by a test.)
 
 ---
 
