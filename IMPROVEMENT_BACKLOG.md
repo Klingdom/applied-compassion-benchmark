@@ -334,7 +334,7 @@ comparability.
   ("omits rights information that the level-3 descriptor requires"), which keeps the construct and drops the
   comparison. **Lane: blocked-on-founder.** `I4 S5 L3 C4 − E2 − R3 = 11`.
 
-- **MB-2-TRIAGE — an agent pre-screen for the 93 items, explicitly not a review.** The work that surfaced
+- **MB-2-TRIAGE — PILOT COMPLETE (Iteration 48, 2026-09-28); full 93-item pass NOT run.** Store, validator and 57 tests shipped; separation from review asserted in both directions. Blind pilot on 10 items: **recall 2 of 2** on hidden ground truth by both agents, agreement 5 of 10, and it surfaced **AC-001 / D-43** (a published EEOC deadline that was wrong in the rights-forfeiting direction). Remaining: run all 93 with ≥2 agents and hand reviewers the derived queue. Record: `docs/TRIAGE_PILOT_2026-09-28.md`. ~~an agent pre-screen for the 93 items, explicitly not a review.~~ The work that surfaced
   EQ-FIX-1 in the first place. Agents apply the five criteria to every item and produce a *ranked suspicion
   list* with reasons, so reviewer hours land on the worst items first — the sampling frame the protocol already
   asks for in Tranche 2. **Must be structurally incapable of becoming a review:** separate file, different

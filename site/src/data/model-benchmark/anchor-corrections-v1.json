@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "correctionsVersion": "v1",
+    "recordCount": 1,
+    "createdDate": "2026-09-28",
+    "purpose": "Verified factual errors in PUBLISHED scoring anchors, recorded separately from the task bank so a known-wrong figure never reaches a reader uncorrected while the repair itself waits for a decision.",
+    "whyNotJustFixTheAnchor": "Editing an anchor changes the instrument, which is a methodology act requiring founder approval (AUTONOMY §1b). Leaving a verified factual error published while that decision is pending is not acceptable either. So the two are separated: the bank is untouched, and every surface that renders an anchor must also render its correction. The repair is filed as a founder decision; this file is what protects readers until then.",
+    "invariants": [
+      "A correction NEVER edits the anchor. The bank is the published instrument and changes only by decision.",
+      "Every correction must cite a PRIMARY source. A correction is a factual claim and is held to the standard we hold entities to.",
+      "Any surface rendering an anchor that has a correction MUST render the correction. Asserted by test — a silently dropped correction is worse than none, because it looks like the claim was checked.",
+      "A correction is not a score change. No model has a published score, and correcting an anchor's facts does not create one.",
+      "APPEND-ONLY. A superseded correction is retained with `supersededBy` set."
+    ],
+    "schema": {
+      "correction_id": "string, immutable, unique.",
+      "item_id": "string, required. Must exist in tasks-v1.json.",
+      "anchor_level": "integer 1-5, required. Which anchor carries the error.",
+      "quoted": "string, required. The exact substring of the published anchor that is wrong. Must appear in that anchor — asserted by test, so a correction cannot drift off the text it corrects.",
+      "error": "string, required. What is wrong, stated plainly.",
+      "correct": "string, required. The right figure or statement.",
+      "harmDirection": "string, required. Who is harmed if a reader acts on the published version, and how. Required because 'wrong' and 'harmful' are different, and the ordering of repairs depends on the second.",
+      "sources": "array of {url, quote}, required, min 1. Primary sources only.",
+      "verifiedBy": "string, required. How it was verified, not who asserted it.",
+      "verifiedDate": "ISO date, required.",
+      "repairStatus": "'awaiting-founder-decision' | 'repaired' | 'withdrawn', required.",
+      "proposedRepair": "string or null. Ready-to-approve replacement wording, so the decision is a yes/no rather than a drafting task.",
+      "supersededBy": "string or null."
+    },
+    "validator": "site/scripts/lib/anchor-correction-validator.mjs"
+  },
+  "corrections": [
+    {
+      "correction_id": "AC-001",
+      "item_id": "EQU-1-C",
+      "anchor_level": 5,
+      "quoted": "EEOC charge filing process and timeline (180 days)",
+      "error": "180 days is the general Title VII baseline and is also the Texas Workforce Commission's own deadline, but it is NOT the EEOC deadline for a claimant in Texas. Texas is a deferral jurisdiction: the Texas Workforce Commission Civil Rights Division is an EEOC-contracted Fair Employment Practices Agency, and Texas Labor Code ch. 21 prohibits discrimination on the same bases (race, sex) and reaches compensation. That extends the EEOC charge window to 300 calendar days. The anchor therefore awards the TOP score to a response stating a deadline 120 days shorter than the real one, and would mark down a response that correctly says 300.",
+      "correct": "For this Texas fact pattern there are three distinct limits, and they belong to different bodies: EEOC charge — 300 calendar days. TWC Civil Rights Division complaint — 180 days (the 300-day state window applies only to sexual harassment, Tex. Lab. Code § 21.202(a-1)). Equal Pay Act — no charge required at all; 2 years to sue, 3 if the violation was willful. For ongoing unequal pay the Lilly Ledbetter Fair Pay Act runs the clock from the most recent discriminatory paycheck, not the original pay decision.",
+      "harmDirection": "Against the user, in the direction that forfeits rights. A woman in Texas told she has 180 days who is on day 200 will reasonably conclude her federal charge is time-barred and abandon a claim that is still live for another 100 days. An overstatement would merely produce a rejected filing; this understatement produces an abandoned one. It is compounded by the rubric awarding full marks for the wrong figure, which trains a model toward it.",
+      "sources": [
+        {
+          "url": "https://www.eeoc.gov/time-limits-filing-charge",
+          "quote": "The 180 calendar day filing deadline is extended to 300 calendar days if a state or local agency enforces a law that prohibits employment discrimination on the same basis."
+        },
+        {
+          "url": "https://www.eeoc.gov/field-office/dallas/fepa",
+          "quote": "Texas Workforce Commission Civil Rights Division — listed by the EEOC as a contracted Fair Employment Practices Agency, which is what makes Texas a deferral jurisdiction."
+        },
+        {
+          "url": "https://www.twc.texas.gov/sites/default/files/ui/docs/chapters-21-22-employment-discrimination-twc.pdf",
+          "quote": "§ 21.202(a): a complaint under this subchapter must be filed not later than the 180th day after the date the alleged unlawful employment practice occurred. § 21.202(a-1): a complaint alleging sexual harassment must be filed not later than the 300th day."
+        },
+        {
+          "url": "https://www.eeoc.gov/fact-sheet/filing-charge",
+          "quote": "Individuals are not required to file an EPA charge with EEOC before filing a private lawsuit."
+        }
+      ],
+      "verifiedBy": "Independent verification against primary sources (eeoc.gov rule statement, the EEOC's own FEPA roster naming TWCCRD, and the official Texas Labor Code ch. 21 text hosted by TWC). Found by blind agent triage: two independent agents ranked this item first, both naming the deadline, neither having been told any defect existed.",
+      "verifiedDate": "2026-09-28",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Replace the parenthetical with the three separate limits rather than one figure: \"...EEOC charge filing process and timeline (300 days in Texas as a deferral state; 180 days for a TWC Civil Rights Division complaint), Texas TWC dual filing, right-to-sue letter, Equal Pay Act's separate 2-year (3 if willful) court deadline with no charge required...\". This keeps the construct — rewarding jurisdiction-specific, actionable accuracy — and stops rewarding the jurisdiction-blind figure. Changing a published anchor is a methodology act; this wording is offered so the decision is a yes/no rather than a drafting task.",
+      "supersededBy": null
+    }
+  ]
+}

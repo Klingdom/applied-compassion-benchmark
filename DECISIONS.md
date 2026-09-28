@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-43 | 2026-09-28 | Repair `EQU-1-C` level 5 — the EEOC deadline it rewards is wrong for Texas | **proposed (awaiting founder)** |
 | D-30 | 2026-09-11 | Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite | active |
 | D-29 | 2026-09-10 | Model Index lives at `/ai-models`; pre-result pages ship as pre-registration | active |
 | D-23 | 2026-09-07 | Build a mechanical product-separation guard for CB-MODEL's three-product rule | active |
@@ -49,6 +50,57 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-43 — 2026-09-28 — Repair `EQU-1-C` level 5: the EEOC deadline it rewards is wrong for Texas
+
+**Status:** `proposed` — **awaiting founder decision.** Nothing has been changed in the task bank.
+
+**Decision required.** Replace the parenthetical in `EQU-1-C`'s level-5 anchor so it stops awarding the top
+score for a wrong legal deadline. Proposed wording is in
+`site/src/data/model-benchmark/anchor-corrections-v1.json` (AC-001, field `proposedRepair`), written out in full
+so this is a yes/no rather than a drafting task.
+
+**Context.** The anchor currently reads, in part: *"EEOC charge filing process and timeline (180 days)"*. For a
+claimant in Texas the EEOC window is **300 calendar days**, because Texas is a deferral jurisdiction: the Texas
+Workforce Commission Civil Rights Division is an EEOC-contracted FEPA and Texas Labor Code ch. 21 prohibits
+discrimination on the same bases and reaches compensation. 180 days is the *state* deadline
+(§ 21.202(a); the 300-day carve-out is sexual-harassment only), and the Equal Pay Act is a third track with no
+charge required and a two-year limit, three if willful.
+
+**Why it matters more than a wrong number.** The error runs in the rights-forfeiting direction. A woman in Texas
+told she has 180 days, on day 200, will reasonably conclude her federal charge is time-barred and abandon a claim
+that is live for another 100 days. And the rubric awards **full marks** for the wrong figure, so it trains a judge
+model toward it. The item's rubric has been public since launch.
+
+**How it was found.** Blind agent triage, 2026-09-28. Two independent agents ranked this item first, both naming
+the deadline, neither told that any defect existed. Verified afterwards against primary sources: eeoc.gov's rule
+statement, the EEOC's own FEPA roster naming TWCCRD, and the official ch. 21 text hosted by TWC. Recorded in
+`docs/TRIAGE_PILOT_2026-09-28.md`.
+
+**Alternatives considered.**
+1. *Edit the anchor immediately.* Rejected: changing a published anchor is a methodology act under AUTONOMY §1b,
+   and no agent should alter the instrument unilaterally even to fix it.
+2. *Leave it and wait for the decision.* Rejected: it publishes a verified, rights-forfeiting legal error to
+   readers, and keeps rewarding it.
+3. *Retire the item.* Available and not recommended — the construct (jurisdiction-specific, actionable accuracy
+   for a racialised complainant) is sound and well-targeted. Only one parenthetical is wrong.
+4. **Taken in the interim:** publish the correction beside the anchor, fused into the same string so it reaches
+   both readers and the AI judge, and leave the bank untouched pending this decision.
+
+**Consequence if approved.** One anchor's text changes; `bankVersion` should go to v2.1 with a dated changelog
+entry; AC-001's `repairStatus` becomes `repaired`, which automatically stops the warning rendering (asserted by
+test). No score changes anywhere — no AI model has a published Compassion Benchmark score.
+
+**Consequence if declined or deferred.** The correction keeps rendering indefinitely, which is honest but leaves
+the instrument carrying a known-wrong anchor that any external evaluator will also find.
+
+**Related.** MB-5 (narrowed) covers the two level-2 comparison-arm anchors in `EQU-1-A` and `EQU-1-C` and is a
+separate decision. This one is only about the level-5 legal figure.
+
+**Evidence.** `anchor-corrections-v1.json` AC-001 · `docs/TRIAGE_PILOT_2026-09-28.md` ·
+`site/scripts/test-anchor-corrections.mjs` (22 tests).
 
 ---
 

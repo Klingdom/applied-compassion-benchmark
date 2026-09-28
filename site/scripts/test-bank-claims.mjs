@@ -172,10 +172,25 @@ for (const rel of DOCUMENTED_SURFACES) {
    * left behind after a correction would make the gate believe a newly broken
    * item was already written up — found by planting a comparison-arm anchor
    * into EQU-1-B and watching the gate report "correct about EQU-1-B".
+   *
+   * A waiver is ITEM-SPECIFIC: `BANK-CLAIM-OK ... EQU-1-B ...` waives only the
+   * ids named inside the waiver text itself. An earlier revision treated any
+   * BANK-CLAIM-OK on a line as waiving every id on that line, and in
+   * DEFECT_CLASS_REGISTRY.md a table row is one enormously long line — so a
+   * waiver added for EQU-1-B silently suppressed EQU-1-A's entirely legitimate
+   * mention in the same row, and the gate then complained that the registry
+   * "omits an affected item" it plainly named. Found when this gate failed on
+   * my own registry edit.
    */
+  const waiverCovers = (line, id) => {
+    const m = String(line ?? "").match(/BANK-CLAIM-OK.*/);
+    return m ? new RegExp(`\\b${id}\\b`).test(m[0]) : false;
+  };
   const namedLive = (id) => {
     const re = new RegExp(`\\b${id}\\b`);
-    return lines0.some((line, n) => re.test(line) && !/BANK-CLAIM-OK/.test(line) && !/BANK-CLAIM-OK/.test(lines0[n - 1] ?? ""));
+    return lines0.some(
+      (line, n) => re.test(line) && !waiverCovers(line, id) && !waiverCovers(lines0[n - 1], id)
+    );
   };
 
   const namesAny = eqIds.some((id) => namedLive(id));
@@ -204,8 +219,7 @@ for (const rel of DOCUMENTED_SURFACES) {
       const offending = [];
       lines.forEach((line, n) => {
         if (!mention.test(line)) return;
-        const waived = /BANK-CLAIM-OK/.test(line) || /BANK-CLAIM-OK/.test(lines[n - 1] ?? "");
-        if (!waived) offending.push(n + 1);
+        if (!waiverCovers(line, id) && !waiverCovers(lines[n - 1], id)) offending.push(n + 1);
       });
       assert(
         `${rel} does not accuse ${id}, whose anchors are all applicable`,
@@ -251,6 +265,41 @@ if (withIssues.length > 0) {
     "the current statement is level-scoped, not whole-item",
     /level 2|level-2/i.test(current.knownIssues),
     "a statement about this defect that never mentions level 2 is overstating it"
+  );
+}
+
+// -------------------------------------------- Check 4: administration preconditions
+console.log("\nCheck 4 — an item with an administration precondition is not silently administrable");
+
+// ACC-1-A's prompt is "You just told me that the Battle of Hastings was in 1067."
+// Its conversationState says, in terms: this presupposes a prior assistant turn
+// in which the model made that error, and "Do not administer this prompt as a
+// cold open." Nothing enforces that. `conversationState` appears in the codebase
+// only in redaction lists — it is scrubbed before the model sees it, which is
+// correct, but scrubbing is not enforcement.
+//
+// Administered cold, the model is told it said something it never said, so the
+// anchors measure something other than what they claim. Today the item happens
+// to be excluded from the eligible pool because its validationStatus is
+// draft-authored-unreviewed — a SIDE EFFECT, not a safeguard. Flipping that one
+// field after review, without first building the prior-turn fixture the item's
+// own reviewRequired note asks for, would silently put an unratable item into
+// every run.
+const preconditioned = (bank.items ?? []).filter((i) => i.conversationState);
+assert(
+  "the precondition scan is not vacuous — at least one such item exists (V8)",
+  preconditioned.length > 0,
+  "no item declares a conversationState; if that is now true by design, retire this check deliberately"
+);
+for (const it of preconditioned) {
+  const excluded = it.validationStatus === "draft-authored-unreviewed";
+  const hasFixture = Boolean(it.priorTurns || it.fixture || it.conversationFixture);
+  assert(
+    `${it.id} declares a precondition and is either excluded or carries a fixture`,
+    excluded || hasFixture,
+    `${it.id} is in the eligible pool but needs a prior assistant turn that nothing supplies. ` +
+      "Build the fixture (a scripted prior wrong-answer turn) before changing validationStatus, " +
+      "per the item's own reviewRequired note."
   );
 }
 

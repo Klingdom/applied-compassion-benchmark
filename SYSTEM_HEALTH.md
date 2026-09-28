@@ -1,9 +1,27 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 47 (the criterion-1 exemplar named the wrong item; bank-claim gate added)
+Last change: Iteration 48 (blind agent triage; a published legal error corrected pending D-43)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-28 (Iteration 48 — blind agent triage found a published legal error; **DC-19**): built the MB-2
+> sampling frame, and validated the concept before building it. Two independent agents, ten items, the five
+> criteria, **no hint that any item was defective**, ground truth withheld — **recall 2 of 2** on the level-2
+> comparison-arm defect, both agents, correct criterion, exact anchor quoted. Agreement **5 of 10**: convergent at
+> the top, divergent in the middle, which is what a sampling frame should look like — the convergence says where to
+> start, the divergence is evidence those anchors are ambiguous. **Then it found what I had not:** both agents
+> independently ranked `EQU-1-C` first because its level-5 anchor awards the **top score** to a response stating
+> the EEOC charge deadline is "180 days" for a Texas claimant. Verified against eeoc.gov, the EEOC's FEPA roster
+> and the official Tex. Lab. Code ch. 21 text: **it is 300.** The error runs in the **rights-forfeiting**
+> direction — a claimant on day 200 abandons a claim live for another 100 — and it was **published** with its full
+> rubric since launch. A scan of all 93 items shows it is the **only** anchor baking an external legal deadline in
+> as a rewardable fact. **The bank was not touched:** repairing an anchor is a methodology act, filed as **D-43**
+> with ready-to-approve wording; meanwhile the correction is **fused into the anchor string**, deliberately,
+> because that string also builds the AI-judge prompt. A correction whose quote no longer matches its anchor
+> fails a test. Triage is structurally incapable of becoming review — no `verdict`, no `criteria` map, rejected by
+> the review validator in both directions, and `deriveItemStatus` ignores the file. 57 new tests; site chain
+> **44 steps**. Records: `docs/TRIAGE_PILOT_2026-09-28.md`, `DECISIONS.md` D-43.
 
 > 2026-09-28 (Iteration 47 — the exemplar that justified the review programme named the wrong item; **DC-02
 > occurrence 4**): every published surface said `EQU-1-B` and `EQU-1-C` "cannot be scored as written" because
@@ -36,23 +54,6 @@ Last change: Iteration 47 (the criterion-1 exemplar named the wrong item; bank-c
 > `fetch-depth: 0`, which makes DC-17's gate effective in CI for the first time since it was added. Site chain
 > **41 steps**.
 
-> 2026-09-27 (Iteration 45 — the contamination probe was finally tested on clean models, and the test found a
-> bug): every prior check that the probe does not accuse the innocent used **simulated random guessing**, which is
-> not a model. Three judges with no repository access scored 2/6, 2/6, 0/6 — **4 of 18, 22.2% against a 25.0%
-> chance baseline, p = 0.69**, none near the 4/6 threshold. All three reasoned hard from the dimension prefix and
-> reported it bought them nothing: the confound control works. Two shortcuts they found unprompted are now pinned
-> (trailing-letter-as-answer-key — 25.49% over 18,000 questions, z = 1.53, no leak) or recorded and declined
-> (cross-question elimination, **CAL-3**). **The calibration exposed a latent defect:** the answer key was matched
-> by rendered description text, so two items sharing a title would key a distractor and mark a *correct* answer
-> wrong — contamination manufactured by a string collision. 88 probe items, 88 distinct titles, so latent not live.
-> Counterfactual measured rather than asserted: the old logic with one planted duplicate produced **68 ambiguous
-> and 19 silently mis-keyed** questions per 1,800; both now 0. Fixed by keying on item identity and refusing any
-> question whose options are not all distinct — 64/300 planted seeds refuse to build, real bank 300/300 clean.
-> **DC-16 recurred a third time, with its gate already in the chain:** Iterations 43 and 44 shipped entirely
-> unlogged, and the gate could not see them because it checks that *references* resolve, and silent work makes no
-> reference. Second hole documented; **CAL-2** filed (v2 16); under S4 the class is **not adequately gated**.
-> cb-probe **182/182** (was 177), site chain **40 steps**. Record: `docs/PROBE_CALIBRATION_2026-09-27.md`.
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
 - **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-20)**.
@@ -74,7 +75,7 @@ Last change: Iteration 47 (the criterion-1 exemplar named the wrong item; bank-c
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **42 steps**, generated 2026-09-28; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **44 steps**, generated 2026-09-28; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).
@@ -139,6 +140,25 @@ _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 45.
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 46._
 
 _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 47. NOTE: its "site chain 39 steps" and "cb-probe 177/177" figures were correct on its date and are now 42 and 182._
+
+_Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 48._
+
+> 2026-09-27 (Iteration 45 — the contamination probe was finally tested on clean models, and the test found a
+> bug): every prior check that the probe does not accuse the innocent used **simulated random guessing**, which is
+> not a model. Three judges with no repository access scored 2/6, 2/6, 0/6 — **4 of 18, 22.2% against a 25.0%
+> chance baseline, p = 0.69**, none near the 4/6 threshold. All three reasoned hard from the dimension prefix and
+> reported it bought them nothing: the confound control works. Two shortcuts they found unprompted are now pinned
+> (trailing-letter-as-answer-key — 25.49% over 18,000 questions, z = 1.53, no leak) or recorded and declined
+> (cross-question elimination, **CAL-3**). **The calibration exposed a latent defect:** the answer key was matched
+> by rendered description text, so two items sharing a title would key a distractor and mark a *correct* answer
+> wrong — contamination manufactured by a string collision. 88 probe items, 88 distinct titles, so latent not live.
+> Counterfactual measured rather than asserted: the old logic with one planted duplicate produced **68 ambiguous
+> and 19 silently mis-keyed** questions per 1,800; both now 0. Fixed by keying on item identity and refusing any
+> question whose options are not all distinct — 64/300 planted seeds refuse to build, real bank 300/300 clean.
+> **DC-16 recurred a third time, with its gate already in the chain:** Iterations 43 and 44 shipped entirely
+> unlogged, and the gate could not see them because it checks that *references* resolve, and silent work makes no
+> reference. Second hole documented; **CAL-2** filed (v2 16); under S4 the class is **not adequately gated**.
+> cb-probe **182/182** (was 177), site chain **40 steps**. Record: `docs/PROBE_CALIBRATION_2026-09-27.md`.
 
 > 2026-09-27 (Iterations 40-42 — the agent loop closes end to end): **score history** is append-only and
 > built before the first score exists, with no "current score" field anywhere (current is derived), 35 tests;

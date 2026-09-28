@@ -5,6 +5,33 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-28 — Correction: a scoring rubric gave the wrong legal deadline, in the direction that loses a claim (NO score changes)
+
+- **What was wrong:** one scoring level in the public AI Evaluation Suite told raters to award the **top mark** to
+  an answer stating that a worker in Texas has **180 days** to file a pay-discrimination charge with the EEOC.
+- **The correct figure is 300 days.** Texas is a "deferral" state — it has its own enforcement agency, the Texas
+  Workforce Commission Civil Rights Division, which extends the federal deadline from 180 to 300 days. The
+  180-day figure is the deadline for the *state* complaint, not the federal one, and the Equal Pay Act is a
+  separate route again: no charge required and two years to sue, three if the underpayment was willful.
+- **Why we are treating this as serious rather than a typo:** the error runs in the direction that costs someone
+  their case. A woman told she has 180 days, who comes to us on day 200, would reasonably conclude she is out of
+  time and give up a claim that is still live for another hundred days. And because the rubric awarded full marks
+  for the wrong figure, any AI model scored against it was being rewarded for repeating it.
+- **What we have done now:** the correction is published **inside** the scoring text itself, with its sources, so
+  it cannot be read without it — and the same text is what the suite's AI-judge mode uses, so the judge stops
+  rewarding the wrong figure too. Changing the scoring rubric itself needs a documented decision rather than a
+  quiet edit, so that is filed and pending, and the correction stands in the meantime.
+- **How it was found:** AI agents pre-screening our own task bank, working blind — they were not told anything was
+  wrong. Two of them independently picked this item out first. We then checked it against the EEOC's own guidance,
+  the EEOC's published list of state partner agencies, and the official text of the Texas Labor Code.
+- **We checked whether there were others.** All 93 items were scanned: this is the only scoring level in the bank
+  that builds an outside legal deadline into what it rewards. Every other figure is either a detail from the
+  scenario itself or correct.
+- **No score, rank, band or entity page changed.** No AI model has a published Compassion Benchmark score.
+- Commit SHA appended on deploy.
+
+---
+
 ## 2026-09-28 — Correction: we named the wrong item as broken, and overstated how broken it was (NO score changes)
 
 - **What was wrong:** the AI-model task bank has two Identity Equity items whose second scoring level cannot be

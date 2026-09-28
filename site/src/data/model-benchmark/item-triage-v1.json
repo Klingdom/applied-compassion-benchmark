@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "triageVersion": "v1",
+    "recordCount": 0,
+    "createdDate": "2026-09-28",
+    "status": "pilot-complete-full-run-not-started",
+    "note": "AGENT TRIAGE. NOT REVIEW. Every record here was written by an AI agent and NONE of it validates an item. Triage exists for one purpose: to rank 93 unreviewed items so that scarce human reviewer hours land on the worst ones first. An item with ten triage records and no human review is still `unvalidated`, and this file is structurally incapable of saying otherwise — see `invariants`.",
+    "purpose": "Ranked suspicion list over the task bank, produced by AI agents applying the five review criteria, so MB-2's 30-45 reviewer-hours are spent in the right order. This is the sampling frame that docs/ITEM_VALIDATION_PROTOCOL.md Tranche 2 already asks for, generalised from the authoring agents' self-flags to every item.",
+    "protocol": "docs/ITEM_VALIDATION_PROTOCOL.md",
+    "pilotRecord": "docs/TRIAGE_PILOT_2026-09-28.md",
+    "invariants": [
+      "A TRIAGE RECORD IS NOT A REVIEW. It carries no `verdict` field and no `criteria` booleans, so it cannot satisfy the item-review validator even if copied into that file. Asserted by test, in both directions.",
+      "AN ITEM'S VALIDATION STATUS IGNORES THIS FILE ENTIRELY. `deriveItemStatus` reads item-reviews-v1.json and nothing else. Triage cannot move an item off `unvalidated`.",
+      "SUSPICION IS NOT A DEFECT. A flag means 'a human should look here first', never 'this item is broken'. Only a human reviewer, or a mechanical gate with a positive control, establishes that an item is defective.",
+      "APPEND-ONLY, like the review log. A triage pass is never edited; a later pass is a new record.",
+      "DISAGREEMENT BETWEEN AGENTS IS THE MOST VALUABLE FIELD HERE. Two agents splitting on an item is evidence its anchors are ambiguous, which is the thing human review is for. It is recorded, never averaged away.",
+      "TRIAGE MAY NOT BE CITED AS EVIDENCE OF BANK QUALITY. 'Our agents triaged all 93 items' is not a quality claim and must never appear on a public surface as one."
+    ],
+    "criteria": {
+      "1_applicable": "Can every anchor be applied using only the response and the prompt? No anchor may require information the rater lacks, or a comparison against a response that was never produced.",
+      "2_discriminating": "Would a warm-but-wrong response and a blunt-but-right response score differently?",
+      "3_monotonic": "Is each level a genuine improvement on the same axis rather than a different virtue?",
+      "4_on_construct": "Does it test its own subdimension rather than a neighbour's?",
+      "5_safe_and_accurate": "Is every factual claim real and correctly stated? Is crisis content handled responsibly?"
+    },
+    "schema": {
+      "triage_id": "string, immutable, unique. Convention: <pass_id>--<item_id>--<agent_id>.",
+      "pass_id": "string, required. Groups every record from one triage pass, so agreement is computable within a pass.",
+      "item_id": "string, required. Must exist in tasks-v1.json.",
+      "agent_id": "string, required. The agent that produced it. NEVER a person's name — a triage record must not be attributable to a human, because that is how it would be mistaken for a review.",
+      "triaged_at": "ISO date, required.",
+      "suspected": "array of integers 1-5, required (may be empty). Which criteria the agent suspects. Deliberately named `suspected`, not `failed`.",
+      "reason": "string, required when `suspected` is non-empty. Must quote the exact anchor text at issue.",
+      "rank": "integer or null. Position in the agent's ranked suspicion list for its batch; 1 is most suspect.",
+      "blind": "boolean, required. True if the agent was not told of any known defect in the batch. A non-blind pass cannot be used to measure recall.",
+      "NOTE_NO_VERDICT_FIELD": "There is deliberately no verdict, no pass/fail, and no criteria-boolean map. Adding one would make this file shaped like a review, and shape is what gets copied by mistake."
+    },
+    "validator": "site/scripts/lib/item-triage-validator.mjs",
+    "pilot": {
+      "date": "2026-09-28",
+      "items": 10,
+      "agents": 2,
+      "blind": true,
+      "groundTruthHidden": ["EQU-1-A", "EQU-1-C"],
+      "recall": "2 of 2, by both agents independently, on criterion 1",
+      "falsePositivesOnCriterion1": 1,
+      "rawAgreement": "5 of 10",
+      "result": "Triage has signal. Both agents independently identified the two items carrying the level-2 comparison-arm defect without being told any defect existed, and both independently ranked the same item first for a reason the coordinator had not known about.",
+      "note": "Records from the pilot are NOT stored here. The pilot was run to decide whether the mechanism works at all, before a schema existed to store it in; re-running it under this schema is the first full pass. Storing hand-transcribed pilot output would make the file's first records the least trustworthy ones."
+    }
+  },
+  "triage": []
+}

@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 48 — 2026-09-28 (blind agent triage found a published legal error that would cost someone a live discrimination claim)
+
+**Selected:** MB-2-TRIAGE — build the sampling frame so MB-2's 30–45 reviewer-hours land on the worst items
+first. v2: `I4 S4 L5 C4 − E3 − R2 = 12`. Chosen because MB-2 is the largest blocker on the model track and this
+is the only part of it an agent may touch: an agent must never author a review, but nothing stops it saying
+*where to look first*, which is the sampling frame `ITEM_VALIDATION_PROTOCOL.md` Tranche 2 already asks for.
+
+**Concept validated before anything was built.** The obvious objection is that agents will pass their own work.
+So: two independent agents, different types, no shared context, ten items, the five criteria, and **no hint that
+any item was defective**. Ground truth withheld — `EQU-1-A` and `EQU-1-C`'s level-2 comparison-arm defect, derived
+mechanically in It. 47.
+
+**Recall: 2 of 2, both agents, correct criterion, exact anchor quoted.** One arguable false positive
+(`AWR-5-B`, one agent — level 4 never says the deliverable must still be produced, which is a real gap, just not
+an unratable one). Agreement across the batch: **5 of 10** — 4 flagged by both, 1 clean by both, 5 split. That
+profile is the result worth having: convergent at the top, divergent in the middle. The convergence says where to
+start; the divergence is itself evidence those anchors are ambiguous, which is what the protocol says reviewer
+disagreement means.
+
+**Then it found something I did not know.** Both agents independently ranked `EQU-1-C` **first**, both for the
+same reason: its level-5 anchor awards the **top score** to a response stating the EEOC charge deadline is
+**"180 days"** for a claimant in Texas.
+
+Verified against primary sources — eeoc.gov's rule statement, the EEOC's own FEPA roster naming the Texas
+Workforce Commission Civil Rights Division, and the official Texas Labor Code ch. 21 text hosted by TWC:
+**it is 300 days.** Texas is a deferral jurisdiction. 180 is the *state* deadline (§ 21.202(a); the 300-day
+carve-out is sexual-harassment only), and the Equal Pay Act is a third track — no charge, two years, three if
+willful.
+
+**The error runs in the rights-forfeiting direction**, which is what makes it serious rather than untidy. A woman
+in Texas told she has 180 days, on day 200, concludes her federal charge is time-barred and abandons a claim
+that is live for another 100 days. An overstatement produces a rejected filing; this produces an abandoned one.
+And full marks were awarded for it, so a judge model is trained toward the harmful figure. **It was published** —
+the item's own `exposureNote` says its full rubric has been public since launch, and the string was in the built
+`/ai-evaluation-suite`.
+
+A scan of all 93 items found this is the **only** anchor that bakes an external legal deadline in as a fact to be
+rewarded. Every other hard number is a narrative detail from its own prompt or a correctly-stated figure. Narrow
+exposure, and now handled.
+
+**What was done, and the line I did not cross.** Repairing an anchor changes the instrument and needs a founder
+decision (§1b). Leaving a verified rights-forfeiting error in front of readers while that waits is not acceptable
+either. So they were separated:
+
+- The bank is **untouched** — no anchor, prompt or scoring field changed.
+- `anchor-corrections-v1.json` records the error with primary sources, correct figures, harm direction, and
+  ready-to-approve replacement wording, so **D-43** is a yes/no rather than a drafting task.
+- The suite page **fuses** each correction into the anchor string rather than placing it nearby — because that
+  same string builds the AI-judge prompt, so the judge stops rewarding the wrong figure too.
+- A correction whose quoted text no longer appears in its anchor **fails a test**. A warning about text that is no
+  longer there is worse than no warning, because it looks like someone checked.
+
+**Triage is structurally incapable of becoming review**, which was the main design risk. A triage record has no
+`verdict` and no `criteria` map, so it is *rejected* by the review validator rather than silently accepted —
+asserted in both directions. The field is `suspected`, not `failed`. An `agent_id` that reads like a person's name
+is rejected, because attribution to a human is how triage becomes review. `deriveItemStatus` ignores the file
+entirely, so no amount of triage moves an item off `unvalidated`.
+
+**Added:** `item-triage-v1.json` + validator + `test:item-triage` (35 tests); `anchor-corrections-v1.json` +
+validator + `test:anchor-corrections` (22 tests); `docs/TRIAGE_PILOT_2026-09-28.md`; **D-43** filed as `proposed`.
+Chain 42 → 44.
+
+**Validation:** 57 new tests, all green; chain 44 steps green; typecheck clean. The correction verified in the
+**built** page with a positive control. The triage queue logic is exercised on the real pilot data rather than a
+toy: it independently ranks both known-defective items in the top 2 and puts the item neither agent flagged last.
+
+**Not done:** the full 93-item pass. The pilot establishes the mechanism finds real defects it was not told
+about; it does not establish a defect rate, and 2-of-2 on a sample of two is weak evidence about recall in
+general. Every other flag — `SYS-1-B`'s non-monotonic ladder, `BND-1-A` drifting off over-refusal into clinical
+knowledge, `AWR-1-A` rewarding a clarifying question over answering, the Attendance Allowance six-month
+qualifying period in `ACT-4-A` — is recorded as a **suspicion for a human**, not a finding. The Attendance
+Allowance point was independently verified as correct (gov.uk, SSCBA 1992 ss. 65–66) and is filed, because that
+anchor is incomplete rather than wrong.
+
 ## Iteration 47 — 2026-09-28 (the exemplar that justified the whole review programme named the wrong item)
 
 **Selected:** EQ-FIX-1 — **pre-emption under S3** (a live identity error in published material). Logged and
