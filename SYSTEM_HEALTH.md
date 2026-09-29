@@ -1,9 +1,25 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 52 (corrected my own overstated factual-defect rate)
+Last change: Iteration 53 (DC-21 — raw control bytes in source; chain 45 steps)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-29 (Iteration 53 — **DC-21**, a regex that could never match): building a drift check between
+> `quote-item.mjs` and Check 6 — they had already diverged, 20 items against 22, which would have handed a
+> verifier a short brief and produced a silent all-clear on items nobody showed them. The assertion then reported
+> the tool returning **zero** while the same regex typed by hand returned 22. Four explanations were tried and
+> discarded, including a **real** `assert(false, msg)` argument-order bug that registered a thrown error as a
+> **pass**. The actual cause was visible only under `od -c`: a heredoc had collapsed `\b` into a literal **0x08**
+> inside the pattern. **Third occurrence of a class never recorded here.** The baseline scan found two more — a
+> raw 0x1f git separator, and a raw **NUL** defining the item hash in the **submission protocol**, where an editor
+> eating that byte would change every hash and reject valid submissions invisibly. Both repaired as explicit
+> escapes, proved behaviour-preserving against an independent re-implementation with a negative control; 29/29
+> submission tests still pass. New `test:no-control-bytes` (chain 44 → 45), baseline 2 of 5,828 measured before
+> building so it ratchets from zero. **Near-miss recorded:** reverting the planted probe I typed `git checkout --`,
+> the DC-14 command that **GI-3 — my own rule from two days ago — forbids**. Nothing lost, but by luck rather than
+> method, and the third such reach this session. GI-3 is a practice rule with no enforcement, and one I break
+> every other day is not a control.
 
 > 2026-09-29 (Iteration 52 — **correcting my own headline number**): Iteration 51 published "20 of 93 items make
 > an external factual claim, and 4 of those 20 were wrong — one in five." **Overstated.** The detector was keyed
@@ -19,23 +35,6 @@ Last change: Iteration 52 (corrected my own overstated factual-defect rate)
 > finds what you have thought of; they say nothing about what you have not. Unchanged: the four verified
 > defects, the 8-of-8 clearance result, and the reviewer queue — none depend on the denominator. Chain **44
 > steps**, 48 assertions in `test:bank-claims`, 11 controls.
-
-> 2026-09-29 (Iteration 51 — the triage's clearances hold; **DC-20**, my harness manufactured two defects):
-> tested whether "cleared" means anything, since a wrong clearance is harder to notice than a wrong flag. Eight
-> vouched-for facts sent to an independent checker with web access. It returned **6 of 8 correct, 2 wrongly
-> cleared** — and **both were my fault**. I sent a hand-written *summary* of the rubric claims instead of the
-> rubric text: I wrote "pink or orange **mould**" where it says "fuzzy or coloured mould, pink or orange
-> **streaks**" as separate signals, and grouped the acetone smell with the discard cues where the rubric says it
-> means "a hungry, long-unfed starter, **not death**"; and I wrote that one item cites "a court compensation
-> range" when it states none. **Corrected result: 8 of 8 clearances right, zero false negatives.** The other six
-> caveats also fail against real text — `EQU-5-A` says "once it became the standard treatment" rather than a bare
-> penicillin year, `AWR-2-C` mandates no interval, `ACT-4-A` never says "UK", and nothing references the
-> terminated 988 Press 3 service. **DC-20 now has two dated occurrences in two days** (the It. 49 dropped
-> matched-pair arm, and today's paraphrase) and both produced findings indistinguishable from real ones. Gated by
-> `quote-item.mjs`, which emits verbatim item text for any verification brief. Also established the denominator
-> that makes the factual finding legible: **20 of 93 items assert an external fact, and 4 of those 20 were wrong
-> — one in five**; my first detector failed its own positive control and was fixed before the number was
-> believed. New **Check 6** ratchets the fact-bearing set shrink-only. Chain **44 steps**, green.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -133,6 +132,25 @@ _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 50.
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 51._
 
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 52._
+
+_Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 53._
+
+> 2026-09-29 (Iteration 51 — the triage's clearances hold; **DC-20**, my harness manufactured two defects):
+> tested whether "cleared" means anything, since a wrong clearance is harder to notice than a wrong flag. Eight
+> vouched-for facts sent to an independent checker with web access. It returned **6 of 8 correct, 2 wrongly
+> cleared** — and **both were my fault**. I sent a hand-written *summary* of the rubric claims instead of the
+> rubric text: I wrote "pink or orange **mould**" where it says "fuzzy or coloured mould, pink or orange
+> **streaks**" as separate signals, and grouped the acetone smell with the discard cues where the rubric says it
+> means "a hungry, long-unfed starter, **not death**"; and I wrote that one item cites "a court compensation
+> range" when it states none. **Corrected result: 8 of 8 clearances right, zero false negatives.** The other six
+> caveats also fail against real text — `EQU-5-A` says "once it became the standard treatment" rather than a bare
+> penicillin year, `AWR-2-C` mandates no interval, `ACT-4-A` never says "UK", and nothing references the
+> terminated 988 Press 3 service. **DC-20 now has two dated occurrences in two days** (the It. 49 dropped
+> matched-pair arm, and today's paraphrase) and both produced findings indistinguishable from real ones. Gated by
+> `quote-item.mjs`, which emits verbatim item text for any verification brief. Also established the denominator
+> that makes the factual finding legible: **20 of 93 items assert an external fact, and 4 of those 20 were wrong
+> — one in five**; my first detector failed its own positive control and was fixed before the number was
+> believed. New **Check 6** ratchets the fact-bearing set shrink-only. Chain **44 steps**, green.
 
 > 2026-09-29 (Iteration 50 — **MS-5 is false**): the claim that the composite "rewards a flat profile twice"
 > has blocked model scoring since Iteration 38 and was never checked. It is wrong twice over. `consistencyMult`

@@ -60,6 +60,11 @@ const REGISTRY_PREFIXES = new Set(["DC", "RISK", "INC", "D", "AMB", "WQ", "CI", 
 /** Looks like SUB-1, MB-2a, CAL-2, GI-1, MCP-B3, MS-5. */
 const ID_PATTERN = /\b([A-Z][A-Z0-9]{0,5})-([A-Z]?\d+[a-z]?)\b/g;
 
+// Unit separator, written as an explicit escape. It sat in this file as a
+// raw 0x1f byte until 2026-09-29 — invisible in a diff and easy for an
+// editor to eat, which would make every commit parse as one field.
+const US = String.fromCharCode(31);
+
 function git(args) {
   return execFileSync("git", args, { cwd: REPO, encoding: "utf8", maxBuffer: 32 * 1024 * 1024 });
 }
@@ -100,13 +105,13 @@ function main() {
   const logText = readFileSync(LOG, "utf8");
   const excluded = bankItemIds();
 
-  const raw = git(["log", `--since=${CUTOFF}`, "--no-merges", "--pretty=%h%ad%s", "--date=short"]);
+  const raw = git(["log", `--since=${CUTOFF}`, "--no-merges", `--pretty=%h${US}%ad${US}%s`, "--date=short"]);
   const commits = raw
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean)
     .map((l) => {
-      const [sha, date, subject] = l.split("");
+      const [sha, date, subject] = l.split(US);
       return { sha, date, subject };
     })
     .filter((c) => c.date >= CUTOFF);

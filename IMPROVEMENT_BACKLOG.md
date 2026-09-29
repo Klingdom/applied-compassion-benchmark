@@ -314,6 +314,18 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-29, from Iteration 53 — DC-21)
+
+- **GI-3 UPGRADE — the practice rule is not working.** Filed 2026-09-27 saying probe harnesses restore from a
+  file copy and never from git. I broke it on 2026-09-29, two days later, reverting a planted probe with
+  `git checkout --`. Nothing was lost, but only because the file had no other uncommitted change. That is the
+  third reach for a destructive git command in one session, and it is the second rule of mine that turned out to
+  be prose rather than a control. Nothing mechanical can lint a command an agent types into a shell, so the
+  realistic options are: (a) **GI-1's pre-flight snapshot**, so any such command is recoverable by construction;
+  or (b) a standard probe helper that does backup/restore/compare, making the safe path shorter than the unsafe
+  one. **(b) is cheap and should be done first.** `I4 S4 L4 C4 − E2 − R1 = 13`, `Rc +2` (DC-14 has ≥2 dated
+  occurrences and no gate that reaches the failure point) → **15**.
+
 ### New backlog items (2026-09-29, from Iteration 51 — the clearance test)
 
 - **TRI-5 — verify the 16 remaining fact-bearing items.** 20 items assert an external fact; 4 are corrected and

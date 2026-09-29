@@ -1,5 +1,59 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 53 — 2026-09-29 (a regex that could never match, because of a byte nobody can see)
+
+**Selected:** **TRI-5** preparation, which turned into DC-21. I set out to verify the remaining fact-bearing
+items using the verbatim tool built in Iteration 51, and the first thing the tool did was disagree with the gate.
+
+**The drift.** `quote-item.mjs --fact-bearing` reported **20** items; Check 6 reported **22**. They held separate
+copies of the detector and had drifted within one iteration — the widening for `ACT-2-A` and `BND-3-A` was
+applied in only one place. A verifier handed the short brief would have reported "all clear" on items nobody
+showed them: a silent false negative, the hardest kind to notice. Aligned, and now asserted — `test:bank-claims`
+runs the tool and fails if the two sets differ.
+
+**Writing that assertion is where it got interesting.** It reported the tool returning **zero** items. The same
+regex, typed by hand into `node -e`, returned 22. Four explanations were tried and discarded: a wrong path, the
+child's line terminators, `execFileSync` throwing, and an `assert` argument-order bug — that last one was **real**
+and also fixed (`assert(false, msg)` put the truthy message in the `cond` slot, so a thrown error registered as a
+**pass** and the exception was swallowed entirely).
+
+The actual cause was visible only under `od -c`: a heredoc had collapsed the two characters `\b` into a literal
+**0x08 backspace byte** inside the regex. The pattern could never match anything. Invisible in the file, in the
+diff, and in every review.
+
+**That is the third occurrence of a class this repo had never recorded** — raw 0x1e/0x1f bytes landed the same
+way earlier in 2026, and three separate "fixes" reported success while `od -c` disagreed.
+
+**The baseline scan found two more, one of them load-bearing.** `test-iteration-log-silence.mjs` carried a raw
+0x1f as its git field separator, and `validate-submission.mjs` carried a raw **NUL** as the item-hash separator.
+Both worked. But the second **defines a hash in the submission protocol**: an editor silently eating that byte
+would change every item hash and reject valid submissions with no visible cause. Both are now explicit escapes,
+and the repair is proved behaviour-preserving — the validator's hash matches an independent re-implementation
+using `String.fromCharCode(0)`, with a negative control (a pipe separator) producing a different hash, and 29/29
+submission-validator tests still pass.
+
+**Gated:** `test-no-control-bytes.mjs` (chain 44 → 45) scans every tracked text file and fails naming file and
+byte offset. Baseline measured **before** building it — 2 of 5,828 files, both repaired first — so it ratchets
+from zero rather than carrying an allowlist. Non-vacuity in both directions: a planted 0x08 must be detected and
+tab/LF/CR must not be, and fewer than 500 files scanned reports VACUOUS. Planted probe fires correctly.
+
+**A near-miss I am recording rather than passing over.** Reverting that planted probe, I typed
+`git checkout -- <path>` — the DC-14 command, and precisely what **GI-3** forbids, an item I filed myself two
+days ago saying probe harnesses restore from a file copy and never from git. Nothing was lost: the file had no
+other uncommitted change, all Iteration 51 edits survived, tests pass. But that was luck rather than method, the
+`cp` pattern was available, and this is the third time this session I have reached for a destructive git command
+in a probe. **GI-3 is a practice rule with no mechanical enforcement, and a practice rule I personally break
+every other day is not a control.**
+
+**One thing worth noting about the harness:** when I tried to run a shell command containing a control character,
+the tooling refused it outright — a guard that existed upstream while this repo had none.
+
+**Validation:** chain green at 45 steps; 50 assertions in `test:bank-claims`; control-byte scan clean across
+5,862 files with working positive and negative controls.
+
+**Not done: TRI-5 itself.** The brief is now correct and complete — 22 items, verbatim, via
+`quote-item.mjs --fact-bearing` — but the verification has not been run. That is the next item.
+
 ## Iteration 52 — 2026-09-29 (I overstated my own headline number within hours of building the controls meant to stop that)
 
 **Selected:** **TRI-6**, brought forward as a self-correction and pre-empting TRI-5. TRI-6 was filed in

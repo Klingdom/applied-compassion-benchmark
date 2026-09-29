@@ -44,6 +44,13 @@ const BANK = join(__dirname, "..", "..", "site", "src", "data", "model-benchmark
 const FACT_NAMED =
   /\b(EEOC|FINRA|SEC\b|HUD|DFEH|NHS|IDEA\b|Section 504|Title VI|Title VII|Equal Pay Act|Care Act|Equality Act|GDPR|FTC|CFPB|TWC|Texas Labor Code|Attendance Allowance|Universal Credit|Citizens Advice|ACAS|Ofsted|CQC|Medicare|Medicaid|Tuskegee|988|NICS|Brady|statutory|gov\.uk|BrokerCheck|U\.S\.C\.|penicillin|metformin|B12|fentanyl|naloxone|federal)/i;
 const FACT_STAT = /\b\d+(?:\.\d+)? ?%|\b\d+ ?per ?cent\b/i;
+// Kept identical to site/scripts/test-bank-claims.mjs Check 6. The two lived
+// as separate copies for one iteration and immediately drifted — the gate said
+// 22 fact-bearing items and this tool said 20, because the widening for
+// ACT-2-A and BND-3-A was only applied in one place. test-bank-claims asserts
+// the two produce the same set, so the next drift fails rather than quietly
+// giving a verifier a short brief.
+const FACT_EXTRA = /\b(deposit protection|protection schemes?|approved schemes?|the courts? can award|tenancy deposit|pink or orange|fuzzy or coloured mou?ld|food safety)\b/i;
 
 const bank = JSON.parse(readFileSync(BANK, "utf8"));
 
@@ -77,7 +84,7 @@ function render(item) {
 const args = process.argv.slice(2);
 let ids;
 if (args.includes("--fact-bearing")) {
-  ids = bank.items.filter((i) => FACT_NAMED.test(allText(i)) || FACT_STAT.test(allText(i))).map((i) => i.id);
+  ids = bank.items.filter((i) => FACT_NAMED.test(allText(i)) || FACT_STAT.test(allText(i)) || FACT_EXTRA.test(allText(i))).map((i) => i.id);
   console.log(`# ${ids.length} fact-bearing item(s), quoted verbatim for verification\n`);
 } else {
   ids = args.filter((a) => !a.startsWith("--"));

@@ -40,6 +40,7 @@
  */
 
 import { readFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -443,6 +444,48 @@ const correctedItems = new Set(
     .corrections.map((c) => c.item_id)
 );
 const pendingFacts = bearing.filter((id) => !correctedItems.has(id));
+// The verification tool must agree with this gate. They lived as separate
+// copies of the detector for exactly one iteration and immediately drifted:
+// the gate said 22 and `quote-item.mjs --fact-bearing` said 20, because the
+// widening for ACT-2-A and BND-3-A was applied in only one place. A verifier
+// handed the short brief would have reported "all clear" on items nobody
+// showed them — a silent false negative, which is the hardest kind to notice.
+{
+  let toolIds = [];
+  try {
+    const out = execFileSync(process.execPath, [join(REPO, "research", "scripts", "quote-item.mjs"), "--fact-bearing"], {
+      encoding: "utf8",
+      maxBuffer: 16 * 1024 * 1024,
+    });
+    // Parse line by line rather than with a /m multiline regex. Two separate
+    // problems produced a confident zero here, and both are worth the comment:
+    //   1. A heredoc collapsed the two characters \\b into a literal backspace
+    //      byte (0x08) inside the regex, so it could never match. Invisible in
+    //      a diff, visible in `od -c`. Same class as the 0x1e/0x1f incident.
+    //   2. `^` under /m depends on the child process's exact line terminators,
+    //      which on Windows is a good way to get zero from a full stream.
+    // Splitting on /\\r?\\n/ and matching per line avoids both.
+    toolIds = out
+      .split(/\r?\n/)
+      .map((line) => line.match(/^### ([A-Z]+-\d+-[A-Z])/))
+      .filter(Boolean)
+      .map((m) => m[1]);
+  } catch (e) {
+    // NOTE the argument order: assert(label, cond, detail). An earlier revision
+    // called assert(false, msg) here, which put the truthy message in `cond` and
+    // registered a thrown error as a PASS, swallowing it entirely.
+    assert("quote-item.mjs runs", false, `could not run it — ${e.message}`);
+  }
+  assert("quote-item.mjs returned a non-empty set (V8)", toolIds.length > 0);
+  const a = [...bearing].sort().join(",");
+  const b = [...toolIds].sort().join(",");
+  assert(
+    "quote-item.mjs and Check 6 agree on the fact-bearing set",
+    a === b,
+    `gate has ${bearing.length}, tool has ${toolIds.length}. Only in gate: ${bearing.filter((x) => !toolIds.includes(x)).join(", ") || "-"}. Only in tool: ${toolIds.filter((x) => !bearing.includes(x)).join(", ") || "-"}`
+  );
+}
+
 console.log(
   `  ${bearing.length} fact-bearing item(s); ${bearing.length - pendingFacts.length} carry a verified correction, ${pendingFacts.length} unverified`
 );
