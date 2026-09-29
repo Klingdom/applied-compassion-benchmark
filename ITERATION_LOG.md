@@ -1,5 +1,44 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 54 — 2026-09-29 (making the safe path shorter than the unsafe one)
+
+**Selected:** **GI-3**, upgraded from a practice rule to a tool. I filed GI-3 on 2026-09-27 — "probe harnesses
+restore from a file copy, never from git" — and broke it myself on 2026-09-29, two days later, reverting a
+planted probe with `git checkout -- <path>`. Nothing was lost, but only because that file happened to have no
+other uncommitted change. Third reach for a destructive git command in one session.
+
+**Why another prohibition would not have helped.** `test-no-destructive-git.mjs` (It. 39) lints *committed
+scripts*; it cannot see a command an agent types into a shell. The rule already existed, in writing, authored by
+me, and I broke it anyway. The remaining lever is not resolve — it is making the safe path **shorter to type**
+than the unsafe one. `git checkout -- x` is four words; `await withPlanted(file, mutate, body)` is one call that
+also does verification the git version never did.
+
+**Added:** `research/scripts/lib/probe.mjs`, with two functions and no `child_process` import at all.
+
+- `withPlanted(file, mutate, body)` takes the backup **before** mutating, restores in a `finally` so a failing
+  assertion cannot leave the defect behind, and verifies the restore by **sha256**, throwing if it differs. A
+  silent partial restore is how a probe corrupts a repo.
+- `assertGateCatches({file, mutate, run})` enforces **both halves of V3** in one call: the gate must pass on the
+  clean file, fail with the defect planted, and pass again after restore. Any one of those alone is meaningless,
+  which is exactly the mistake that produced three void probes earlier this month.
+- It refuses a no-op mutation. A probe that changes nothing will "pass" against an unmodified file and appear to
+  prove a gate works when the gate was never exercised.
+
+**Validation:** `test:probe-helper`, 14 assertions (chain 45 → 46). The load-bearing one is Test 2: a throw
+inside the probe body still restores the file byte-for-byte. Also tested: a no-op mutation is refused, a missing
+file is refused, a gate that always passes is **rejected** rather than congratulated, and a gate that fails even
+on the clean file is rejected too.
+
+**One correction inside the test itself.** My first "probe.mjs never invokes git" assertion was a prose scan, and
+it **failed on probe.mjs's own explanation** — the file discusses `git checkout` precisely to tell the next
+person not to add one. Replaced with a structural check: it must not import `child_process` and must call no
+exec or spawn function. A textual ban on the word would have forced me to delete the sentence that carries the
+reason.
+
+**What this does not fix.** Nothing mechanically stops the next interactively-typed git command, and the entry
+for DC-14 says so rather than claiming the class is closed. **GI-1** — a pre-flight snapshot making any such
+command recoverable by construction — remains the real fix and remains open.
+
 ## Iteration 53 — 2026-09-29 (a regex that could never match, because of a byte nobody can see)
 
 **Selected:** **TRI-5** preparation, which turned into DC-21. I set out to verify the remaining fact-bearing

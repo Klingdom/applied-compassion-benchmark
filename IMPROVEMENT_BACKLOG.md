@@ -316,7 +316,7 @@ comparability.
 
 ### New backlog items (2026-09-29, from Iteration 53 — DC-21)
 
-- **GI-3 UPGRADE — the practice rule is not working.** Filed 2026-09-27 saying probe harnesses restore from a
+- **GI-3 — DONE as option (b) (Iteration 54, 2026-09-29).** `research/scripts/lib/probe.mjs` provides `withPlanted` and `assertGateCatches`: backup before mutation, restore in a `finally`, sha256-verified, no-op mutations refused, no `child_process` import, 14 tests. The safe path is now shorter to type than the unsafe one, which is the only lever left once a written prohibition has failed. **GI-1 (pre-flight snapshot) remains the real fix and remains open** — nothing mechanical stops an interactively-typed git command. ~~UPGRADE — the practice rule is not working.~~ Filed 2026-09-27 saying probe harnesses restore from a
   file copy and never from git. I broke it on 2026-09-29, two days later, reverting a planted probe with
   `git checkout --`. Nothing was lost, but only because the file had no other uncommitted change. That is the
   third reach for a destructive git command in one session, and it is the second rule of mine that turned out to
