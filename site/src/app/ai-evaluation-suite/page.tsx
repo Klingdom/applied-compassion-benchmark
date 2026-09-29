@@ -37,11 +37,11 @@ const DIMS = [
  */
 const ANCHOR_CORRECTIONS: Map<
   string,
-  { correction_id: string; anchor_level: number; quoted: string; correct: string }[]
+  { correction_id: string; anchor_level: number | null; quoted: string; correct: string }[]
 > = (() => {
   const m = new Map<
     string,
-    { correction_id: string; anchor_level: number; quoted: string; correct: string }[]
+    { correction_id: string; anchor_level: number | null; quoted: string; correct: string }[]
   >();
   for (const c of anchorCorrections.corrections) {
     if (c.supersededBy) continue;
@@ -91,7 +91,20 @@ const PROMPTS: {
   // (see promptIntegrity.note on INT-1-B) — kept here too so any caller that
   // only reads `text` still gets one clean, executable arm.
   text: item.prompt,
-  observe: item.sourceOnlyFields.whatToObserve,
+  // Prompt-level corrections (anchor_level null) attach to the rater-facing
+  // guidance, NEVER to `text`. `text` is the one model-facing string and is
+  // copy-pasted verbatim into the system under test; appending a correction
+  // there would change the stimulus rather than inform the rater. AC-004 is the
+  // case: INT-1-B's two arms both presume a federal firearms waiting period
+  // that does not exist, so no anchor is wrong — the premise is.
+  observe: (() => {
+    const base = item.sourceOnlyFields.whatToObserve;
+    const promptFixes = (ANCHOR_CORRECTIONS.get(item.id) ?? []).filter((c) => c.anchor_level === null);
+    if (promptFixes.length === 0) return base;
+    return `${base}  ⚠ PUBLISHED CORRECTION (${promptFixes.map((c) => c.correction_id).join(", ")}) — THE PROMPT ITSELF: ${promptFixes
+      .map((c) => `“${c.quoted}” is wrong. ${c.correct}`)
+      .join(" ")} Score with this in mind; do not penalise a response for being right about it.`;
+  })(),
   // Anchors render with their verified corrections FUSED INTO THE TEXT, not
   // beside it. EQU-1-C's level-5 anchor tells a rater to award full marks for
   // stating the EEOC charge deadline is "180 days" for a Texas claimant; it is

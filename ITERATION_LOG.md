@@ -1,5 +1,70 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 49 — 2026-09-29 (the full triage pass: four verified factual errors in published rubrics, and a bug in my own harness)
+
+**Selected:** MB-2-TRIAGE, full pass. The pilot established the mechanism finds real defects it was not told
+about; this ran it over all 93 items so reviewers get an order rather than a list.
+
+**Run:** 8 batches, **two independent agents each**, different agent types, no shared context, blind — no agent
+told that any item was defective or what kind of defect to look for. Strict JSON output, parsed by
+`ingest-triage.mjs`, which refuses an incomplete batch, an unknown item id, or a suspicion with no reason.
+**186 records, 93 of 93 items, 2 agents each.**
+
+**Result: 12 items flagged by both agents, 35 by one, 46 by neither. Agreement 58/93 (62%).** That agreement
+number is the most useful output, not a disappointing one: two careful readers differing on a third of the bank
+identifies exactly the anchors whose wording is ambiguous, which is what human review is for.
+
+**Four factual defects, all found blind and all independently verified against primary sources afterwards:**
+
+| | Item | Error | Verified against |
+|---|---|---|---|
+| **AC-001** | `EQU-1-C` L5 | EEOC deadline is **300** days in Texas, not 180 | eeoc.gov, FEPA roster, Tex. Lab. Code ch. 21 |
+| **AC-002** | `ACT-1-C` L5 | DFEH became the **California Civil Rights Department** on 2022-07-01 (SB 189) | calcivilrights.ca.gov, leginfo, live 301 |
+| **AC-003** | `SYS-1-A` L4 | "30% vs 12%" mixes three denominators; real pairing ~34% US vs ~17% Canada | Himmelstein/Woolhandler, OECD/KFF |
+| **AC-004** | `INT-1-B` **prompt** | **No federal firearms waiting period exists** — Brady's interim 5-day wait sunset 1998-11-30 | ATF final rule 63 FR 58272, 18 U.S.C. 922(s) |
+
+AC-004 is the first **prompt-level** defect: no anchor is wrong, the scenario's premise is. It needed a schema
+extension (`anchor_level: null`) and a second render path, and prompt-level corrections attach to the
+**rater-facing guidance**, never to the model-facing prompt string — appending there would change the stimulus
+instead of informing the rater. Filed as **D-44**.
+
+AC-003 carries a new `primarySourceLimitation` field saying plainly that NEJM, Annals and Health Affairs all
+refuse automated fetches, so its figures come from a reprint and an indexed abstract. The verdict rests on the
+denominators being incompatible rather than on any one of them, but it is the weakest-sourced of the four and now
+says so in its own record and in the test output.
+
+**The bug in my own harness — the part worth remembering.** The first pass rendered only `item.prompt`.
+`INT-1-B` is the bank's only matched-pair item: two arms are administered and the anchors apply *across* the two
+responses. Shown one arm, both agents correctly reported that the anchors demand a response that was never
+produced — **and both were describing my extraction, not the item.** That is the most dangerous false positive
+available here, because in the output it is indistinguishable from the genuine comparison-arm defect in
+`EQU-1-A`/`EQU-1-C`. Uncaught, the queue would have sent a reviewer to repair a sound item on manufactured
+evidence. Fixed three ways: the generator is now a committed script that **refuses to write** a batch dropping an
+arm; a corrective re-run with both arms had both agents drop the flag and raise the firearms premise instead
+(becoming AC-004); and both records are retained, with the originals saying `ARTIFACT OF EXTRACTION` in their own
+text, because the store is append-only and the mistake should stay visible.
+
+**A gate the triage earned (Check 5).** Both batch-8 agents flagged `ACC-1-C` for referencing a summary nobody
+has, while its top anchors forbid asking for it. It. 47's Check 4 misses it because that reads the
+`conversationState` field and `ACC-1-C` declares none. Deriving from prompt text instead finds six items — but a
+gate condemning all six would be **wrong**, because `ACC-2-A` narrates the disputed prior claim inside its own
+prompt and is scorable, as independent agents confirmed. *Narrated* versus *referenced-but-absent* is a judgement
+call and mechanising it would be the gate inventing a finding. So Check 5 is a **shrink-only ratchet**: the six
+are recorded and it fails only when the class grows.
+
+**Added:** `research/scripts/build-triage-batches.mjs` (with the dropped-arm refusal),
+`research/scripts/ingest-triage.mjs` (coverage guard + explicit `--only` for targeted re-runs),
+`docs/TRIAGE_FULL_PASS_2026-09-29.md`, AC-002/003/004, **D-44**. Test chain unchanged at 44 steps; the new tests
+live inside `test:item-triage` (36), `test:anchor-corrections` (38) and `test:bank-claims` (36).
+
+**Validation:** chain green; all four corrections verified present in the **built** page with a positive control;
+typecheck clean. The ingest refused a single-item corrective file until `--only` was passed explicitly, which is
+the coverage guard working — a partial pass must never be silently indistinguishable from a complete one.
+
+**Not done:** the 46 items neither agent faulted are **unexamined, not sound**. Every flag other than the four
+verified facts is a suspicion for a human. And both agents come from one model family, so their agreement is
+weaker evidence than cross-family agreement would be.
+
 ## Iteration 48 — 2026-09-28 (blind agent triage found a published legal error that would cost someone a live discrimination claim)
 
 **Selected:** MB-2-TRIAGE — build the sampling frame so MB-2's 30–45 reviewer-hours land on the worst items

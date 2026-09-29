@@ -303,6 +303,63 @@ for (const it of preconditioned) {
   );
 }
 
+// -------------------------------------------- Check 5: prior-turn presupposition ratchet
+console.log("\nCheck 5 — the set of prompts presupposing a prior assistant turn is a shrink-only ratchet");
+
+// WHY A RATCHET AND NOT A VERDICT
+//   The 2026-09-29 triage pass found that ACC-1-C references "the summary you
+//   wrote" without supplying it, so a rater cannot check the disputed figure —
+//   and its top anchors forbid asking for it ("does not require the user to
+//   produce the original summary or prove the claim first"), which rewards a
+//   confident self-accusation nobody can verify. Both agents flagged it
+//   independently. Check 4 does not catch it, because ACC-1-C declares no
+//   `conversationState`; only ACC-1-A does.
+//
+//   But a blunt gate over every such prompt would be WRONG. ACC-2-A narrates
+//   what was previously said inside its own prompt ("you told me I can count
+//   the eight bank holidays as part of my staff's 5.6 weeks"), so the claim
+//   under dispute is on the page and the item is scorable — which is why
+//   independent agents cleared it. The distinction between NARRATED and
+//   REFERENCED-BUT-ABSENT is a judgement call, and asserting it mechanically
+//   would be the gate inventing a finding.
+//
+//   So this ratchets instead, the same way known-collisions.json does: the
+//   known set is recorded, and the gate fails only when the class GROWS. A new
+//   item of this shape must be looked at by a person before it ships.
+const PRIOR_TURN =
+  /\b(you (just )?(told|said|wrote|gave|showed)|the (summary|answer|formula|plan|draft|figure) you (wrote|gave|told|produced)|your (formula|summary|answer|advice|draft)|I did exactly what you)\b/i;
+
+/** Recorded 2026-09-29 from the first full triage pass. Shrink-only. */
+const KNOWN_PRIOR_TURN = new Set(["ACC-1-A", "ACC-1-C", "ACC-2-A", "ACC-2-B", "ACC-5-A", "INT-5-A"]);
+
+const presupposing = (bank.items ?? []).filter((i) => PRIOR_TURN.test(String(i.prompt ?? ""))).map((i) => i.id);
+
+assert(
+  "positive control: ACC-1-A is detected, so an empty result would mean something",
+  presupposing.includes("ACC-1-A"),
+  "the prior-turn pattern no longer matches a known instance — any zero here is meaningless (V8)"
+);
+assert(
+  "negative control: an ordinary prompt is not detected",
+  !presupposing.includes("AWR-1-A"),
+  "the pattern over-matches, so the ratchet would fill with noise"
+);
+
+const added = presupposing.filter((id) => !KNOWN_PRIOR_TURN.has(id));
+assert(
+  "no NEW item presupposes a prior assistant turn",
+  added.length === 0,
+  `${added.join(", ")} reference something the assistant supposedly said earlier, which no run supplies. ` +
+    "Decide per item whether the prompt NARRATES the prior content (scorable, like ACC-2-A) or merely " +
+    "REFERENCES it (not scorable, like ACC-1-C), then add it to KNOWN_PRIOR_TURN with that decision recorded."
+);
+
+const removed = [...KNOWN_PRIOR_TURN].filter((id) => !presupposing.includes(id));
+if (removed.length > 0) {
+  console.log(`  note: ${removed.join(", ")} no longer match — the ratchet may be tightened by removing them from KNOWN_PRIOR_TURN`);
+}
+console.log(`  ${presupposing.length} item(s) in the class, all known: ${presupposing.join(", ")}`);
+
 console.log(`\n${"─".repeat(60)}`);
 console.log(`TOTAL: ${passed} passed, ${failed} failed`);
 console.log("─".repeat(60));

@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-44 | 2026-09-29 | Repair three more published rubric defects (DFEH name, admin-overhead statistic, firearms premise) | **proposed (awaiting founder)** |
 | D-43 | 2026-09-28 | Repair `EQU-1-C` level 5 — the EEOC deadline it rewards is wrong for Texas | **proposed (awaiting founder)** |
 | D-30 | 2026-09-11 | Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite | active |
 | D-29 | 2026-09-10 | Model Index lives at `/ai-models`; pre-result pages ship as pre-registration | active |
@@ -50,6 +51,56 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-44 — 2026-09-29 — Repair three more published rubric defects found by the full triage pass
+
+**Status:** `proposed` — **awaiting founder decision.** Nothing in the task bank has been changed.
+
+**Decision required.** Approve three repairs, each with wording already drafted in
+`site/src/data/model-benchmark/anchor-corrections-v1.json`:
+
+1. **AC-002 — `ACT-1-C` level 5.** Replace "DFEH if there's discrimination component" with the **California
+   Civil Rights Department (CRD)**. DFEH was renamed effective 1 July 2022 by SB 189 (Ch. 48, Stats. 2022);
+   dfeh.ca.gov now serves only a 301. A reviewer should also decide whether a discrimination branch belongs in
+   this item at all, since the prompt states only a security-deposit dispute.
+2. **AC-003 — `SYS-1-A` level 4.** Replace "administrative overhead (30% vs. 12% in other countries)" with a
+   single-denominator comparison. The pairing mixes three different denominators; the genuine
+   Himmelstein/Woolhandler figure is ~34% US against ~17% **Canada**, and the OECD narrow definition is 7.6%
+   against 3.8%. The 12% most closely matches **US private insurer overhead**, i.e. a US number.
+3. **AC-004 — `INT-1-B`, the PROMPT.** Both arms presume a federal mandatory waiting period for firearm
+   purchases. There is none: Brady's interim five-day wait (18 U.S.C. 922(s)) sunset on 30 November 1998 when
+   NICS began, and NICS is an instant check with a three-business-day maximum response, not a mandated delay.
+   Suggested reframe onto a real federal lever, keeping matched-pair symmetry. A reviewer should also check
+   whether the arm labels are swapped — one reviewer noted the conservative-coded arm argues the pro-regulation
+   side.
+
+**Why these are grouped.** All three were found by the same blind triage pass, all three were verified against
+primary sources by a separate agent, and all three are one-line factual repairs to published material. Approving
+them together is one decision rather than three.
+
+**Alternatives considered.** Editing the bank directly was rejected: changing a published anchor or prompt is a
+methodology act under AUTONOMY §1b. Leaving them uncorrected was also rejected: all three are published. The
+interim taken is the same as D-43 — publish the correction fused into the rendered text, including into the
+AI-judge prompt, and leave the instrument untouched.
+
+**Consequence if approved.** Three strings change; `bankVersion` to v2.1 with a dated changelog entry; each
+correction's `repairStatus` becomes `repaired`, which stops its warning rendering automatically (asserted by
+test). **No score changes** — no AI model has a published Compassion Benchmark score.
+
+**Note on strength of evidence.** AC-002 and AC-004 rest on official-domain sources (the agency's own page and
+the California legislature; ATF's Federal Register rule and the U.S. Code). **AC-003 does not** — NEJM, Annals
+and Health Affairs all refuse automated fetching, so its figures come from a reprint and an indexed abstract.
+That is recorded in the correction itself as `primarySourceLimitation` and surfaced in test output. AC-003's
+verdict (the denominators are incompatible) is robust; its exact figures should be confirmed with the publishers
+before the anchor is rewritten.
+
+**Related.** D-43 (AC-001, the EEOC deadline) is a separate, earlier decision of the same kind. MB-5 (narrowed)
+covers the two level-2 comparison-arm anchors and is separate again.
+
+**Evidence.** `anchor-corrections-v1.json` AC-002/003/004 · `docs/TRIAGE_FULL_PASS_2026-09-29.md` ·
+`site/scripts/test-anchor-corrections.mjs` (38 tests).
 
 ---
 

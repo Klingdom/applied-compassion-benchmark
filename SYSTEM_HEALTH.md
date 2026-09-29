@@ -1,9 +1,25 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 48 (blind agent triage; a published legal error corrected pending D-43)
+Last change: Iteration 49 (full 93-item triage pass; four verified rubric defects pending D-43/D-44)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-29 (Iteration 49 — the full triage pass; **DC-19 reaches 4 occurrences**): 93 items, 8 batches, **two
+> independent blind agents each**, 186 records, 93/93 covered. **12 items flagged by both agents, 35 by one, 46 by
+> neither; agreement 58/93 (62%)** — and the disagreement is the useful half, because it identifies the anchors two
+> careful readers read differently. **Four factual defects, found blind and then verified against primary sources:**
+> AC-001 the EEOC deadline (300 not 180 in Texas); **AC-002** `ACT-1-C` rewards "DFEH", renamed the California
+> Civil Rights Department in 2022; **AC-003** `SYS-1-A` rewards "30% vs 12%" admin overhead, which mixes three
+> denominators; **AC-004** `INT-1-B` — the first **prompt-level** defect — both arms presume a federal firearms
+> waiting period that has not existed since Brady's interim provision sunset in 1998. Repairs drafted and filed as
+> **D-44**; the bank is untouched. **A bug in my own harness nearly poisoned the queue:** the batch generator
+> rendered only one arm of the bank's single matched-pair item, so both agents reported an applicability defect
+> that was *my extraction*, indistinguishable in their output from the real comparison-arm defect. Fixed by a
+> committed generator that **refuses** to drop an arm, a corrective re-run that produced AC-004 instead, and
+> retaining both records so the mistake stays visible. New **Check 5** ratchets the prior-turn presupposition class
+> (6 items) shrink-only, rather than condemning all six — `ACC-2-A` narrates its prior claim and is scorable, which
+> agents confirmed. Chain **44 steps**, green. Record: `docs/TRIAGE_FULL_PASS_2026-09-29.md`.
 
 > 2026-09-28 (Iteration 48 — blind agent triage found a published legal error; **DC-19**): built the MB-2
 > sampling frame, and validated the concept before building it. Two independent agents, ten items, the five
@@ -40,19 +56,6 @@ Last change: Iteration 48 (blind agent triage; a published legal error corrected
 > item". **INC-011 — DC-14 third occurrence, mine:** `git checkout --` destroyed an uncommitted correction while
 > reverting a probe. Recovered, and the new gate caught the regression in seconds. It. 39's gate lints committed
 > scripts and cannot see a typed command — second demonstrated hole. **GI-3** filed. Site chain **42 steps**.
-
-> 2026-09-27 (Iteration 46 — a gate that can see silence; forced selection under S4/S10): DC-16 hit three
-> occurrences, the third *with its gate already in the chain*, because that gate checks whether **references**
-> resolve and silent work makes no reference. New `test:iteration-log-silence` (chain 40 → 41): if a commit
-> subject names a work-item ID, that ID must appear in `ITERATION_LOG.md`. **Its negative control is real data,
-> not a plant** — restoring the log to its state at `df3b3ba2` makes it fail naming SUB-1 and MB-2a, the actual
-> occurrence 3. Bank item ids are excluded by loading the bank, not by a hand-written list. **A flaw found only
-> by running it against a real depth-1 clone:** it printed `PASS` because its single reachable commit happened
-> to carry an ID — a green meaning nothing. Shallow now reports **INDETERMINATE** at any commit count. That
-> exposed a second thing: `actions/checkout` defaults to depth 1 and the workflow set no `fetch-depth`, so this
-> gate **and DC-17's `test:commit-message-tokens`** would both have checked nothing in CI. The test job now uses
-> `fetch-depth: 0`, which makes DC-17's gate effective in CI for the first time since it was added. Site chain
-> **41 steps**.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -142,6 +145,21 @@ _Moved 2026-09-27, text unchanged: displaced from the top three by Iteration 46.
 _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 47. NOTE: its "site chain 39 steps" and "cb-probe 177/177" figures were correct on its date and are now 42 and 182._
 
 _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 48._
+
+_Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 49._
+
+> 2026-09-27 (Iteration 46 — a gate that can see silence; forced selection under S4/S10): DC-16 hit three
+> occurrences, the third *with its gate already in the chain*, because that gate checks whether **references**
+> resolve and silent work makes no reference. New `test:iteration-log-silence` (chain 40 → 41): if a commit
+> subject names a work-item ID, that ID must appear in `ITERATION_LOG.md`. **Its negative control is real data,
+> not a plant** — restoring the log to its state at `df3b3ba2` makes it fail naming SUB-1 and MB-2a, the actual
+> occurrence 3. Bank item ids are excluded by loading the bank, not by a hand-written list. **A flaw found only
+> by running it against a real depth-1 clone:** it printed `PASS` because its single reachable commit happened
+> to carry an ID — a green meaning nothing. Shallow now reports **INDETERMINATE** at any commit count. That
+> exposed a second thing: `actions/checkout` defaults to depth 1 and the workflow set no `fetch-depth`, so this
+> gate **and DC-17's `test:commit-message-tokens`** would both have checked nothing in CI. The test job now uses
+> `fetch-depth: 0`, which makes DC-17's gate effective in CI for the first time since it was added. Site chain
+> **41 steps**.
 
 > 2026-09-27 (Iteration 45 — the contamination probe was finally tested on clean models, and the test found a
 > bug): every prior check that the probe does not accuse the innocent used **simulated random guessing**, which is

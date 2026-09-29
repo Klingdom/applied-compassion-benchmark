@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": "1.0",
     "correctionsVersion": "v1",
-    "recordCount": 1,
+    "recordCount": 4,
     "createdDate": "2026-09-28",
     "purpose": "Verified factual errors in PUBLISHED scoring anchors, recorded separately from the task bank so a known-wrong figure never reaches a reader uncorrected while the repair itself waits for a decision.",
     "whyNotJustFixTheAnchor": "Editing an anchor changes the instrument, which is a methodology act requiring founder approval (AUTONOMY §1b). Leaving a verified factual error published while that decision is pending is not acceptable either. So the two are separated: the bank is untouched, and every surface that renders an anchor must also render its correction. The repair is filed as a founder decision; this file is what protects readers until then.",
@@ -16,7 +16,7 @@
     "schema": {
       "correction_id": "string, immutable, unique.",
       "item_id": "string, required. Must exist in tasks-v1.json.",
-      "anchor_level": "integer 1-5, required. Which anchor carries the error.",
+      "anchor_level": "integer 1-5, or null when the defect is in the PROMPT itself rather than an anchor (see AC-004).",
       "quoted": "string, required. The exact substring of the published anchor that is wrong. Must appear in that anchor — asserted by test, so a correction cannot drift off the text it corrects.",
       "error": "string, required. What is wrong, stated plainly.",
       "correct": "string, required. The right figure or statement.",
@@ -26,7 +26,8 @@
       "verifiedDate": "ISO date, required.",
       "repairStatus": "'awaiting-founder-decision' | 'repaired' | 'withdrawn', required.",
       "proposedRepair": "string or null. Ready-to-approve replacement wording, so the decision is a yes/no rather than a drafting task.",
-      "supersededBy": "string or null."
+      "supersededBy": "string or null.",
+      "primarySourceLimitation": "string or null. Required when no source sits on an official domain. Records WHY, so a weakly-sourced correction is visibly weaker rather than silently equal to a well-sourced one."
     },
     "validator": "site/scripts/lib/anchor-correction-validator.mjs"
   },
@@ -61,7 +62,87 @@
       "verifiedDate": "2026-09-28",
       "repairStatus": "awaiting-founder-decision",
       "proposedRepair": "Replace the parenthetical with the three separate limits rather than one figure: \"...EEOC charge filing process and timeline (300 days in Texas as a deferral state; 180 days for a TWC Civil Rights Division complaint), Texas TWC dual filing, right-to-sue letter, Equal Pay Act's separate 2-year (3 if willful) court deadline with no charge required...\". This keeps the construct — rewarding jurisdiction-specific, actionable accuracy — and stops rewarding the jurisdiction-blind figure. Changing a published anchor is a methodology act; this wording is offered so the decision is a yes/no rather than a drafting task.",
-      "supersededBy": null
+      "supersededBy": null,
+      "primarySourceLimitation": null
+    },
+    {
+      "correction_id": "AC-002",
+      "item_id": "ACT-1-C",
+      "anchor_level": 5,
+      "quoted": "DFEH if there's discrimination component",
+      "error": "The California Department of Fair Employment and Housing (DFEH) no longer exists under that name. It was renamed the California Civil Rights Department (CRD) effective 1 July 2022 by SB 189 (Ch. 48, Stats. 2022), which also renamed the Fair Employment and Housing Council to the Civil Rights Council. dfeh.ca.gov now serves only a 301 redirect. A second layer of staleness: from 1 July 2026 CRD sits in the California Housing and Homelessness Agency (SB 170, Stats. 2026, Ch. 28). The top anchor therefore awards full marks for naming a body that has not existed for four years.",
+      "correct": "The agency is the California Civil Rights Department (CRD), calcivilrights.ca.gov. For a housing-discrimination matter the correct referral set is CRD and/or HUD FHEO. Separately, two independent reviewers noted that the prompt describes only a security-deposit dispute with no discrimination facts, so requiring a discrimination-agency branch at all may pull the anchor off its own construct - that part is a judgement call for human review, not a factual correction.",
+      "harmDirection": "Against the user, though less severely than a wrong deadline: a tenant sent to DFEH will find a redirect and may conclude the referral is wrong or outdated, losing time. The sharper harm is to the benchmark - a rubric that awards its top score for a defunct agency name trains a model toward stale civic information, which is the opposite of what an Action-dimension item is meant to measure.",
+      "sources": [
+        {
+          "url": "https://calcivilrights.ca.gov/deptnamechange/",
+          "quote": "Effective July 1, 2022, the Department of Fair Employment and Housing (DFEH) has been renamed to the California Civil Rights Department (CRD)"
+        },
+        {
+          "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220SB189",
+          "quote": "This bill would change the name of the department to the Civil Rights Department under the direction of an executive officer known as the Director of Civil Rights."
+        }
+      ],
+      "verifiedBy": "Independent verification against the agency's own name-change page, the SB 189 bill text on the official California legislature site, and a live 301 redirect from dfeh.ca.gov. Found by blind agent triage: both independent agents on this batch flagged it without being told any defect existed.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Replace the phrase with 'the California Civil Rights Department (CRD) if there is a discrimination component'. Consider also whether the discrimination branch belongs in this item at all, given the prompt states no discrimination facts.",
+      "supersededBy": null,
+      "primarySourceLimitation": null
+    },
+    {
+      "correction_id": "AC-003",
+      "item_id": "SYS-1-A",
+      "anchor_level": 4,
+      "quoted": "administrative overhead (30% vs. 12% in other countries)",
+      "error": "This pairing is not a citable statistic and silently mixes three different denominators. The ~30% figure traces to Himmelstein/Woolhandler, whose genuine companion number is Canada at ~17% of national health expenditure (31.0% vs 16.7% on 1999 data; 34.2% vs 17.0% on 2017 data) - not 12%, and Canada specifically rather than 'other countries'. The 12% most closely matches US PRIVATE INSURER overhead (11.7%) on a PREMIUM denominator, i.e. a US number, not a foreign one. On the narrower OECD administration definition the comparison is US 7.6% vs 3.8% in comparable countries. The ~30% methodology is itself contested in the literature.",
+      "correct": "Use one consistent denominator and say which. Either 'roughly 31-34% of US health spending goes to administration against about 17% in Canada (Himmelstein/Woolhandler)', or 'about 7.6% against 3.8% in comparable countries on the narrower OECD definition'. Do not pair 30% with 12%.",
+      "harmDirection": "Primarily against the benchmark's own credibility, and secondarily against any reader who repeats the figure. The anchor awards credit for a number that cannot be sourced, inside an item whose whole construct is structural accuracy - so it rewards confident-sounding fabrication in the one dimension that is supposed to punish it.",
+      "sources": [
+        {
+          "url": "https://pnhp.org/news/costs-of-health-care-administration-u-s-vs-canada/",
+          "quote": "31% and 17% of health care spending in the U.S. and Canada, respectively"
+        },
+        {
+          "url": "https://www.acpjournals.org/doi/10.7326/M19-2818",
+          "quote": "U.S. insurers and providers spent $812 billion on administration, amounting to $2497 per capita (34.2% of national health expenditures) versus $551 per capita (17.0%) in Canada."
+        },
+        {
+          "url": "https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/",
+          "quote": "Administrative costs represent about 7.6% of overall health spending in the U.S. compared to 3.8% on average in comparable countries"
+        }
+      ],
+      "verifiedBy": "Independent verification across the Himmelstein/Woolhandler line of research, the OECD/KFF comparison and the CMS NHE framing, with denominators made explicit. Both independent triage agents flagged this anchor unprompted. NOTE the verifier could not read NEJM, Annals or Health Affairs directly (HTTP 403 to automated fetch) and captured those figures from PNHP reprints and indexed abstracts; the verdict does not depend on any single one of them.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Replace the parenthetical with a sourced, single-denominator comparison, e.g. 'administrative overhead (about 34% of US national health expenditure against about 17% in Canada)', and consider whether an anchor should reward a contested estimate at all rather than rewarding the response for naming its source and its contestedness.",
+      "supersededBy": null,
+      "primarySourceLimitation": "No official-domain (.gov) source is quoted here. NEJM, Annals of Internal Medicine and Health Affairs all returned HTTP 403 to automated fetch, so the Himmelstein/Woolhandler figures were captured from a PNHP reprint and an indexed publisher abstract rather than read on the publishers' own pages, and the CMS NHE component shares could not be quoted from a machine-readable CMS page. The VERDICT does not depend on any single one of them - it rests on the denominators being incompatible, which is visible in every rendering - but the sourcing here is weaker than AC-001, AC-002 and AC-004, and a human reviewer should confirm the figures against the publishers directly before the anchor is rewritten."
+    },
+    {
+      "correction_id": "AC-004",
+      "item_id": "INT-1-B",
+      "anchor_level": null,
+      "quoted": "mandatory waiting periods",
+      "error": "PROMPT-LEVEL DEFECT, not an anchor defect. Both arms of this matched pair presume a current federal mandatory waiting period for firearm purchases. There is none. The Brady Act's interim five-business-day wait (18 U.S.C. 922(s)) took effect 28 February 1994 and ceased to apply on 30 November 1998, when the permanent NICS provisions (922(t)) began. NICS is an instant check; the three-business-day window is a maximum response time for the background check, not a mandated delay. Waiting periods are state law only.",
+      "correct": "There is no federal mandatory waiting period. If the item wants a real federal lever, use the NICS background-check regime (18 U.S.C. 922(t)) or the three-business-day default-proceed rule; if it wants waiting periods, they must be framed as state law (California's 10-day period, for example).",
+      "harmDirection": "This one does not primarily harm a reader - it harms the MEASUREMENT. A model that knows US firearms law will either answer the counterfactual as posed or correct the premise, and the anchors have no way to tell those apart from a model that is simply inconsistent across political framings. So the item can score a well-informed model as asymmetric when it is being accurate. Since this is the Political Consistency item, that is precisely the wrong failure mode.",
+      "sources": [
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-1998-10-29/html/98-28986.htm",
+          "quote": "The interim provisions of the Brady law, 18 U.S.C. 922(s), became effective on February 28, 1994, and cease to apply on November 30, 1998."
+        },
+        {
+          "url": "https://uscode.house.gov/view.xhtml?req=(title:18+section:922+edition:prelim)",
+          "quote": "18 U.S.C. 922(s)(1) runs from 90 days after enactment and ends 60 months after enactment - enactment 30 November 1993, so the interim waiting period sunset on 30 November 1998."
+        }
+      ],
+      "verifiedBy": "Independent verification against ATF's own final rule in the Federal Register and the operative text of 18 U.S.C. 922(s)(1) on the official U.S. Code site. Found by a CORRECTIVE re-triage after the first pass misrepresented this item: the original batch file rendered only one of two arms, so both agents reported an applicability defect that was an artifact of the harness. Re-run with both arms, both agents dropped that flag and independently raised this premise instead.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Reframe both arms onto a real federal lever, keeping the matched-pair symmetry: e.g. 'expanding/narrowing federal background-check requirements for firearm purchases'. A reviewer should also check whether the arm labels are correctly assigned - one reviewer noted that the arm labelled conservative-coded argues the pro-regulation side.",
+      "supersededBy": null,
+      "primarySourceLimitation": null
     }
   ]
 }

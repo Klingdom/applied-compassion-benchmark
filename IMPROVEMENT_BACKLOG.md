@@ -314,6 +314,28 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-29, from Iteration 49 — the full triage pass)
+
+- **TRI-1 — adjudicate the 35 one-agent flags.** Where one agent flagged and the other cleared, the disagreement
+  is evidence about the anchor's clarity. A third read decides, and the decision is worth recording against the
+  item rather than just resolving quietly. This is human work, not agent work.
+  `I3 S4 L4 C4 − E3 − R1 = 11`. **Lane: needs humans.**
+
+- **TRI-2 — cross-family triage.** Both agents in this pass came from one model family, so their convergence is
+  weaker evidence than cross-family convergence would be, and they share whatever blind spots the family has.
+  Re-running one or two batches with a different family would measure that directly. Needs founder API
+  credentials. `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**
+
+- **TRI-3 — the 46 items neither agent faulted are unexamined, not sound.** Nothing in the queue should imply
+  otherwise, and the published record says so explicitly. Worth a note here so a future reader does not mistake
+  tier 4 for a clean bill. No action beyond not overclaiming. `I2 S3 L2 C5 − E1 − R1 = 10`.
+
+- **TRI-4 — verify the clearances too.** Agents explicitly checked and passed several real facts (UK statutory
+  leave, Tuskegee dates, the 988 line, FINRA/SEC registers, B12/metformin). Those clearances were **not**
+  independently verified, and a wrong clearance is harder to notice than a wrong flag. A sampled re-check of
+  cleared factual claims would measure the false-negative rate, which is currently unknown.
+  `I3 S4 L5 C4 − E3 − R1 = 12`.
+
 ### New backlog items (2026-09-28, from Iteration 47)
 
 - **GI-3 — a probe harness must restore from a file copy, never from git.** INC-011: reverting a planted probe
@@ -334,7 +356,7 @@ comparability.
   ("omits rights information that the level-3 descriptor requires"), which keeps the construct and drops the
   comparison. **Lane: blocked-on-founder.** `I4 S5 L3 C4 − E2 − R3 = 11`.
 
-- **MB-2-TRIAGE — PILOT COMPLETE (Iteration 48, 2026-09-28); full 93-item pass NOT run.** Store, validator and 57 tests shipped; separation from review asserted in both directions. Blind pilot on 10 items: **recall 2 of 2** on hidden ground truth by both agents, agreement 5 of 10, and it surfaced **AC-001 / D-43** (a published EEOC deadline that was wrong in the rights-forfeiting direction). Remaining: run all 93 with ≥2 agents and hand reviewers the derived queue. Record: `docs/TRIAGE_PILOT_2026-09-28.md`. ~~an agent pre-screen for the 93 items, explicitly not a review.~~ The work that surfaced
+- **MB-2-TRIAGE — DONE (Iteration 49, 2026-09-29). Full 93-item pass complete: 186 records, 2 blind agents per item, 62% agreement, 12 items flagged by both. Four factual defects found and verified (AC-001–AC-004). Reviewer queue derived and published in `docs/TRIAGE_FULL_PASS_2026-09-29.md`.** Remaining work is human review itself (MB-2), which no agent may do. ~~PILOT COMPLETE (Iteration 48, 2026-09-28); full 93-item pass NOT run.~~ Store, validator and 57 tests shipped; separation from review asserted in both directions. Blind pilot on 10 items: **recall 2 of 2** on hidden ground truth by both agents, agreement 5 of 10, and it surfaced **AC-001 / D-43** (a published EEOC deadline that was wrong in the rights-forfeiting direction). Remaining: run all 93 with ≥2 agents and hand reviewers the derived queue. Record: `docs/TRIAGE_PILOT_2026-09-28.md`. ~~an agent pre-screen for the 93 items, explicitly not a review.~~ The work that surfaced
   EQ-FIX-1 in the first place. Agents apply the five criteria to every item and produce a *ranked suspicion
   list* with reasons, so reviewer hours land on the worst items first — the sampling frame the protocol already
   asks for in Tranche 2. **Must be structurally incapable of becoming a review:** separate file, different

@@ -69,9 +69,16 @@ export function validateAnchorCorrections(file, bank = null) {
     if (seen.has(c.correction_id)) errors.push(`${at}: duplicate correction_id`);
     seen.add(c.correction_id);
 
+    // anchor_level null means the defect is in the PROMPT itself, not an
+    // anchor. INT-1-B's two arms both assert a federal firearms waiting period
+    // that does not exist, so no anchor is wrong — the scenario's premise is.
+    // A rater cannot fix that by scoring differently, and a model answering
+    // correctly ("there is no federal waiting period") is answering a question
+    // the item did not mean to ask.
     check();
-    if (!Number.isInteger(c.anchor_level) || c.anchor_level < 1 || c.anchor_level > 5) {
-      errors.push(`${at}: anchor_level must be an integer 1-5`);
+    const levelOk = c.anchor_level === null || (Number.isInteger(c.anchor_level) && c.anchor_level >= 1 && c.anchor_level <= 5);
+    if (!levelOk) {
+      errors.push(`${at}: anchor_level must be an integer 1-5, or null for a defect in the prompt itself`);
     }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.verifiedDate))) errors.push(`${at}: verifiedDate must be an ISO date`);
     if (!REPAIR_STATUSES.has(c.repairStatus)) {
@@ -99,6 +106,16 @@ export function validateAnchorCorrections(file, bank = null) {
       const item = bank.items.find((i) => i.id === c.item_id);
       if (!item) {
         errors.push(`${at}: item_id "${c.item_id}" is not in the task bank`);
+      } else if (c.anchor_level === null) {
+        // Prompt-level: the quote must appear in the prompt, or in any arm of a
+        // matched-pair item.
+        const haystacks = [String(item.prompt ?? ""), ...(Array.isArray(item.variants) ? item.variants.map((v) => String(v.prompt ?? "")) : [])];
+        if (!haystacks.some((h) => norm(h).includes(norm(c.quoted)))) {
+          errors.push(
+            `${at}: quoted text is NOT present in ${c.item_id}'s prompt or any of its arms. ` +
+              "Either the prompt was reworded (re-verify and update or withdraw this correction) or the quote was mistyped."
+          );
+        }
       } else {
         const anchor = (item.anchors ?? []).find((a) => a.level === c.anchor_level);
         if (!anchor) {

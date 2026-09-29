@@ -54,11 +54,25 @@ function rec(o = {}) {
 }
 const wrap = (triage) => ({ meta: { recordCount: triage.length, invariants: real.meta.invariants }, triage });
 
-console.log("\nTest 1: the real triage file is valid and honest that it is empty");
+console.log("\nTest 1: the real triage file is valid, and complete for every bank item");
 {
   const r = validateItemTriage(real, bank);
   assert("real triage file validates", r.valid, r.errors.join(" | "));
-  assert("it is empty — no full pass has been stored", real.triage.length === 0);
+
+  // The full pass landed on 2026-09-29. Coverage is asserted against the BANK,
+  // not against a typed number, so adding an item to the bank without triaging
+  // it fails here rather than leaving a silent hole in the reviewer queue.
+  const covered = new Set(real.triage.map((t) => t.item_id));
+  const missing = bank.items.map((i) => i.id).filter((id) => !covered.has(id));
+  assert(`every bank item has at least one triage record (${covered.size}/${bank.items.length})`, missing.length === 0, missing.slice(0, 8).join(", "));
+
+  const byItem = new Map();
+  for (const t of real.triage) {
+    if (!byItem.has(t.item_id)) byItem.set(t.item_id, new Set());
+    byItem.get(t.item_id).add(t.agent_id);
+  }
+  const singly = [...byItem.entries()].filter(([, a]) => a.size < 2).map(([id]) => id);
+  assert("every item was seen by at least two independent agents", singly.length === 0, singly.slice(0, 8).join(", "));
   assert("its note says triage is NOT review", /NOT REVIEW/i.test(JSON.stringify(real.meta)));
   assert("it forbids citing triage as a quality claim", /never appear on a public surface/i.test(JSON.stringify(real.meta.invariants)));
   assert("it records the pilot's measured recall rather than a vibe", /2 of 2/.test(JSON.stringify(real.meta.pilot)));

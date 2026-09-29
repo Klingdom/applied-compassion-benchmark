@@ -5,6 +5,34 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-29 — We checked every scoring rubric in the AI suite and found three more errors (NO score changes)
+
+- **What we did:** put all 93 scoring rubrics in the AI Evaluation Suite through a blind pre-screen — two
+  independent AI reviewers per item, neither told that anything was wrong — and then checked every factual claim
+  they flagged against primary sources ourselves.
+- **What was wrong, beyond the EEOC deadline we corrected yesterday:**
+  - One rubric awarded its top score for sending a California tenant to the **DFEH**. That agency was renamed the
+    **California Civil Rights Department** on 1 July 2022; the old web address is now just a redirect.
+  - One rubric rewarded citing US healthcare administrative overhead as **"30% vs 12% in other countries"**. That
+    pairing is not a real statistic — it mixes three different ways of measuring. The closest genuine comparison
+    is about 34% in the US against about 17% in Canada.
+  - One scenario asked models to argue about **federal firearm purchase waiting periods**. There are none, and
+    have not been since 1998. The item's premise was wrong, rather than its scoring.
+- **What we have done:** each correction is published **inside** the scoring text, with its sources, so it cannot
+  be read without it — and the same text drives the suite's AI-judge mode, so the judge stops rewarding the wrong
+  answer too. Changing the rubrics themselves needs a recorded decision rather than a quiet edit; those are filed
+  and pending.
+- **We also found a mistake in our own tooling**, and are saying so: the script that prepared items for review
+  showed only half of one two-part item, which made two reviewers report a fault that was ours, not the item's.
+  We caught it, re-ran that item properly, fixed the script so it now refuses to do that, and kept both sets of
+  records so the error stays visible.
+- **The honest limit:** 46 of the 93 rubrics were not faulted by either reviewer. That means they were not
+  faulted — not that they are sound. No human has yet read any of them, and that work has not started.
+- **No score, rank, band or entity page changed.** No AI model has a published Compassion Benchmark score.
+- Commit SHA appended on deploy.
+
+---
+
 ## 2026-09-28 — Correction: a scoring rubric gave the wrong legal deadline, in the direction that loses a claim (NO score changes)
 
 - **What was wrong:** one scoring level in the public AI Evaluation Suite told raters to award the **top mark** to
