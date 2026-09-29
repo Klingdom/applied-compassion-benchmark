@@ -19,6 +19,10 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
+**Four decisions are pending as of 2026-09-29** (D-43, D-44, D-45, D-46), covering seven rubric repairs and
+three formula questions. They are collected with defaults and costs-of-delay in
+`docs/FOUNDER_DECISION_PACKET_2026-09-29.md` so they can be answered in one sitting.
+
 ## Index
 
 | ID | Date | Decision | Status |
