@@ -1,9 +1,24 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 51 (triage clearances verified 8/8; DC-20 — my harness manufactured two defects)
+Last change: Iteration 52 (corrected my own overstated factual-defect rate)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-29 (Iteration 52 — **correcting my own headline number**): Iteration 51 published "20 of 93 items make
+> an external factual claim, and 4 of those 20 were wrong — one in five." **Overstated.** The detector was keyed
+> on named bodies, statutes and statistics, and misses items that plainly assert external facts — `ACT-2-A`
+> (sourdough discard signals) and `BND-3-A` (deposit protection and what a court may award) name no agency and
+> cite no percentage. **Corrected: at least 22 of 93 assert a checkable external fact, 4 were wrong — roughly one
+> in six, denominator a lower bound;** a broader reading gives 44 and one in eleven. The widening then needed
+> correcting **twice**, and Check 6 caught both: "notice period" matched `AWR-4-B` where it is an ordinary
+> narrative option, so the pattern was tightened rather than the false positive allowlisted; and I guessed the
+> wrong item id updating the allowlist by hand. **The lesson worth keeping:** I built positive and negative
+> controls for that detector in the same iteration and they passed — because I had only tested it against
+> defects I already knew about, all of which named an agency or cited a statistic. Controls confirm a detector
+> finds what you have thought of; they say nothing about what you have not. Unchanged: the four verified
+> defects, the 8-of-8 clearance result, and the reviewer queue — none depend on the denominator. Chain **44
+> steps**, 48 assertions in `test:bank-claims`, 11 controls.
 
 > 2026-09-29 (Iteration 51 — the triage's clearances hold; **DC-20**, my harness manufactured two defects):
 > tested whether "cleared" means anything, since a wrong clearance is harder to notice than a wrong flag. Eight
@@ -21,20 +36,6 @@ Last change: Iteration 51 (triage clearances verified 8/8; DC-20 — my harness 
 > that makes the factual finding legible: **20 of 93 items assert an external fact, and 4 of those 20 were wrong
 > — one in five**; my first detector failed its own positive control and was fixed before the number was
 > believed. New **Check 6** ratchets the fact-bearing set shrink-only. Chain **44 steps**, green.
-
-> 2026-09-29 (Iteration 50 — **MS-5 is false**): the claim that the composite "rewards a flat profile twice"
-> has blocked model scoring since Iteration 38 and was never checked. It is wrong twice over. `consistencyMult`
-> appears in exactly one place — inside the premium — so there is one variance-sensitive term, not two; and
-> `[4.5 × 8]` (σ 0) and `[5,5,5,5,4,4,4,4]` (σ 0.5) score **identically at 97.5**, so spread does not enter the
-> composite once every dimension clears 4.0. Measured across all **1,325** published entities rather than argued:
-> max σ **0.768** against a first step-down at 1.5, so the consistency factor has **never left 1.0**; only 78
-> entities (5.9%) earn any premium at all, mean premium 0.44 of 10; removing the premium entirely would move **15
-> ranks of 1,325** and change 28 bands. The self-run's 100 came from a mean of 4.626 with no weak dimension —
-> the premium mattered, the flatness did not. The `/ai-models` panel published the false version and now says so.
-> Pinned by two assertions in `test:method-claims` including a corpus scan that fails if σ crosses 1.5; both
-> probed, restorations byte-identical. Residual questions filed as **D-45**; the 100 cap (Q3) will compress model
-> scores even though it barely touches institutions today. Chain **44 steps**, green.
-> Record: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -130,6 +131,22 @@ _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 49.
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 50._
 
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 51._
+
+_Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 52._
+
+> 2026-09-29 (Iteration 50 — **MS-5 is false**): the claim that the composite "rewards a flat profile twice"
+> has blocked model scoring since Iteration 38 and was never checked. It is wrong twice over. `consistencyMult`
+> appears in exactly one place — inside the premium — so there is one variance-sensitive term, not two; and
+> `[4.5 × 8]` (σ 0) and `[5,5,5,5,4,4,4,4]` (σ 0.5) score **identically at 97.5**, so spread does not enter the
+> composite once every dimension clears 4.0. Measured across all **1,325** published entities rather than argued:
+> max σ **0.768** against a first step-down at 1.5, so the consistency factor has **never left 1.0**; only 78
+> entities (5.9%) earn any premium at all, mean premium 0.44 of 10; removing the premium entirely would move **15
+> ranks of 1,325** and change 28 bands. The self-run's 100 came from a mean of 4.626 with no weak dimension —
+> the premium mattered, the flatness did not. The `/ai-models` panel published the false version and now says so.
+> Pinned by two assertions in `test:method-claims` including a corpus scan that fails if σ crosses 1.5; both
+> probed, restorations byte-identical. Residual questions filed as **D-45**; the 100 cap (Q3) will compress model
+> scores even though it barely touches institutions today. Chain **44 steps**, green.
+> Record: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`.
 
 > 2026-09-29 (Iteration 49 — the full triage pass; **DC-19 reaches 4 occurrences**): 93 items, 8 batches, **two
 > independent blind agents each**, 186 records, 93/93 covered. **12 items flagged by both agents, 35 by one, 46 by

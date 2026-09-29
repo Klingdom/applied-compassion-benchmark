@@ -321,7 +321,7 @@ comparability.
   primary source by anyone. Use `research/scripts/quote-item.mjs --fact-bearing` so the brief quotes the source
   rather than a summary — that is the whole point of DC-20. `I4 S4 L3 C4 − E3 − R1 = 11`.
 
-- **TRI-6 — the one-in-five rate deserves a published number once the remaining 16 are checked.** "4 of 20
+- **TRI-6 — CORRECTED before publication (Iteration 52). The rate is NOT one in five.** At least 22 of 93 items assert a checkable external fact and 4 were wrong, so roughly **one in six with the denominator a lower bound**; a broader reading gives one in eleven. Do not publish a point estimate externally — publish the absolute (four verified defects) and the range, or wait until TRI-5 closes and a human has drawn the line. ~~the one-in-five rate deserves a published number once the remaining 16 are checked.~~ "4 of 20
   fact-bearing items were wrong" is a strong and honest statement about why instrument review matters, but it
   rests on a partially-verified denominator. Do not publish the rate until TRI-5 closes. `I3 S4 L3 C4 − E2 − R2 = 10`.
 
@@ -361,7 +361,7 @@ comparability.
   otherwise, and the published record says so explicitly. Worth a note here so a future reader does not mistake
   tier 4 for a clean bill. No action beyond not overclaiming. `I2 S3 L2 C5 − E1 − R1 = 10`.
 
-- **TRI-4 — DONE (Iteration 51, 2026-09-29). 8 of 8 clearances verified correct; zero false negatives.** Two apparent failures were artifacts of my own paraphrase in the verification brief, not defects in the bank — recorded as **DC-20** and gated by `quote-item.mjs`. Also established the denominator: **20 of 93 items make an external factual claim, and 4 of those 20 were wrong — one in five.** 16 fact-bearing items remain unverified. ~~verify the clearances too.~~ Agents explicitly checked and passed several real facts (UK statutory
+- **TRI-4 — DONE (Iteration 51, 2026-09-29). 8 of 8 clearances verified correct; zero false negatives.** Two apparent failures were artifacts of my own paraphrase in the verification brief, not defects in the bank — recorded as **DC-20** and gated by `quote-item.mjs`. Also established the denominator: **20 of 93 items make an external factual claim, and 4 of those 20 were wrong — one in five.** 18 fact-bearing items remain unverified (of 22). ~~verify the clearances too.~~ Agents explicitly checked and passed several real facts (UK statutory
   leave, Tuskegee dates, the 988 line, FINRA/SEC registers, B12/metformin). Those clearances were **not**
   independently verified, and a wrong clearance is harder to notice than a wrong flag. A sampled re-check of
   cleared factual claims would measure the false-negative rate, which is currently unknown.

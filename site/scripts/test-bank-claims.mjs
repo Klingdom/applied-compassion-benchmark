@@ -380,20 +380,34 @@ console.log("\nCheck 6 — the set of items asserting an external fact is a shri
 const FACT_NAMED =
   /\b(EEOC|FINRA|SEC\b|HUD|DFEH|NHS|IDEA\b|Section 504|Title VI|Title VII|Equal Pay Act|Care Act|Equality Act|GDPR|FTC|CFPB|TWC|Texas Labor Code|Attendance Allowance|Universal Credit|Citizens Advice|ACAS|Ofsted|CQC|Medicare|Medicaid|Tuskegee|988|NICS|Brady|statutory|gov\.uk|BrokerCheck|U\.S\.C\.|penicillin|metformin|B12|fentanyl|naloxone|federal)/i;
 const FACT_STAT = /\b\d+(?:\.\d+)? ?%|\b\d+ ?per ?cent\b/i;
+// Minimal widening after the first detector MISSED two items that plainly
+// assert external facts: ACT-2-A (which sourdough signals mean discard) and
+// BND-3-A (deposit protection and what a court may award). Neither names an
+// agency nor cites a percentage, so neither matched — and the published rate
+// built on that denominator was overstated as a result.
+//
+// Deliberately specific phrases rather than bare topic words: a broad topical
+// reading pulls in 44 items and over-includes, e.g. EMP-1-C matches
+// "diagnosis" while its anchors are about NOT rushing to one.
+//
+// 23 is a LOWER BOUND, not a measurement. Deciding exactly which items assert
+// a checkable external fact is a judgement call — human review's job, not a
+// regular expression's.
+const FACT_EXTRA = /\b(deposit protection|protection schemes?|approved schemes?|the courts? can award|tenancy deposit|pink or orange|fuzzy or coloured mou?ld|food safety)\b/i;
 
 function factBearing(item) {
   const anchorText = (item.anchors ?? []).map((a) => a.description ?? "").join(" ");
   // Prompts and matched-pair arms count too: AC-004's defect is in the prompt.
   const promptText = [String(item.prompt ?? ""), ...(item.variants ?? []).map((v) => String(v.prompt ?? ""))].join(" ");
   const all = `${anchorText} ${promptText}`;
-  return FACT_NAMED.test(all) || FACT_STAT.test(all);
+  return FACT_NAMED.test(all) || FACT_STAT.test(all) || FACT_EXTRA.test(all);
 }
 
 /** Recorded 2026-09-29 from the first full triage pass. Shrink-only. */
 const KNOWN_FACT_BEARING = new Set([
   "AWR-2-C", "ACT-1-A", "ACT-1-C", "EQU-1-A", "EQU-1-C", "INT-3-A", "EMP-4-A", "ACT-4-A",
   "ACT-4-B", "ACT-5-C", "EQU-5-A", "BND-4-B", "ACC-2-A", "INT-4-B", "SYS-1-A", "INT-1-B",
-  "BND-1-A", "ACT-2-B", "EQU-3-A", "ACC-5-A",
+  "BND-1-A", "ACT-2-B", "EQU-3-A", "ACC-5-A", "ACT-2-A", "BND-3-A",
 ]);
 
 const bearing = (bank.items ?? []).filter(factBearing).map((i) => i.id);
@@ -401,14 +415,14 @@ const bearing = (bank.items ?? []).filter(factBearing).map((i) => i.id);
 // The detector's FIRST version failed these controls — it missed SYS-1-A (a
 // bare statistic with no named body) and INT-1-B (defect in the prompt, not the
 // anchors), which would have produced a wrong denominator. Keep them.
-for (const known of ["EQU-1-C", "ACT-1-C", "SYS-1-A", "INT-1-B"]) {
+for (const known of ["EQU-1-C", "ACT-1-C", "SYS-1-A", "INT-1-B", "ACT-2-A", "BND-3-A"]) {
   assert(
     `positive control: ${known} is detected as fact-bearing`,
     bearing.includes(known),
     "a known factual defect is not in the fact-bearing set, so the denominator is wrong"
   );
 }
-for (const relational of ["EMP-2-A", "INT-3-C", "BND-2-B"]) {
+for (const relational of ["EMP-2-A", "INT-3-C", "BND-2-B", "EMP-1-C", "AWR-2-A"]) {
   assert(
     `negative control: ${relational} is not fact-bearing`,
     !bearing.includes(relational),

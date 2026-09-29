@@ -80,33 +80,45 @@ Health Affairs all refuse automated fetches, so its figures came from a reprint 
 verdict does not depend on any single one of them — it rests on the denominators being incompatible — but a
 human should confirm the numbers with the publishers before the anchor is rewritten.
 
-## 4a. The denominator that makes the factual finding legible
+## 4a. The denominator — and a correction to it
 
-"Four factual errors in 93 items" understates this badly, because **most items make no external factual claim at
-all.** They test how a model handles a relational or emotional situation, and there is nothing in them to be
-factually wrong about.
+**Correction, same day.** This section first said "20 of 93 items make an external factual claim, and 4 of those
+20 were wrong — one in five." That was a point estimate resting on a denominator I had not validated, and it is
+**overstated**. The correction is recorded here rather than quietly edited, because publishing a headline rate on
+an unchecked denominator is the same error this whole pass exists to catch.
 
-Counting items whose anchors *or prompts* assert something checkable outside the scenario — a named agency, a
-statute, a register, a deadline, a clinical fact, or a bare statistic:
+The reasoning that still holds: "four factual errors in 93 items" understates the finding, because most items
+make no external factual claim at all. They test a relational situation and there is nothing in them to be
+factually wrong about. The right denominator is the items where the question even arises.
 
-| | |
-|---|---|
-| Items making an external factual claim | **20 of 93** |
-| Of those, carrying a **verified** factual defect | **4** |
-| **Factual defect rate among fact-bearing items** | **20%** |
+The reasoning that did not hold: my first detector keyed on named bodies, statutes and statistics, and
+**demonstrably missed items that plainly assert external facts** — `ACT-2-A` (sourdough spoilage: which signals
+mean discard) and `BND-3-A` (tenancy deposit protection and what a court may award). Neither names an agency or
+cites a percentage, so neither matched.
 
-**One in five items that asserted an outside fact got it wrong.** Against the whole bank that reads as 4.3% and
-sounds tolerable; against the items where the question even arises, it is one in five.
+| Reading | Fact-bearing items | Implied rate |
+|---|---|---|
+| Narrow patterns only (first attempt, **wrong**) | 20 | 20% |
+| Widened for the two known misses, then tightened for a false positive | **22** | **18%** |
+| Broad topical reading (over-includes) | 44 | 9% |
 
-The detector was built with controls, and the first version **failed them**: it missed `SYS-1-A` (a bare
-statistic with no named body) and `INT-1-B` (whose defect is in the prompt, not the anchors), which would have
-given a denominator of 14 and an inflated 28.6%. Both were fixed before the number above was believed. A
-negative control confirms purely relational items (`EMP-2-A`, `INT-3-C`, `BND-2-B`) are excluded.
+**The honest statement: at least 22 of 93 items assert a checkable external fact, and 4 of those were verified
+wrong — roughly one in six, with the denominator a lower bound.** A broader reading puts it nearer one in
+eleven. The 22-item detector passes six positive controls (all four known defects plus the two known misses) and
+five negative controls (`EMP-2-A`, `INT-3-C`, `BND-2-B`, `EMP-1-C`, `AWR-2-A` all stay out). The broad reading
+over-includes: `EMP-1-C` matches on "diagnosis" while its anchors are about *not* rushing to one.
 
-**16 fact-bearing items remain unverified:** `AWR-2-C`, `ACT-1-A`, `EQU-1-A`, `BND-1-A`, `INT-3-A`, `EMP-4-A`,
-`ACT-2-B`, `ACT-4-A`, `ACT-4-B`, `ACT-5-C`, `EQU-3-A`, `EQU-5-A`, `BND-4-B`, `ACC-2-A`, `ACC-5-A`, `INT-4-B`.
-Some were explicitly *cleared* by triage agents — and those clearances are themselves unverified, which is the
-subject of TRI-4.
+
+**The widening itself needed correcting twice, which is the point.** My first widened pattern included “notice period”, which matched `AWR-4-B` — where the phrase is an ordinary narrative option (“a long notice period” as a mitigation), not a legal claim. The gate caught it, and the fix was to tighten the pattern rather than allowlist the false positive, because allowlisting would have hidden the over-match instead of removing it. I also guessed the wrong item id when updating the allowlist by hand, and the gate caught that too.
+
+**Deciding exactly which items assert a checkable fact is a judgement call — which is human review's job, not a
+regular expression's.** The number that is not in doubt: **four verified factual defects**, all in the minority
+of items that assert external facts, and none found by any automated check before a human-directed one went
+looking.
+
+**Still unverified:** the fact-bearing items that carry no correction. Use
+`research/scripts/quote-item.mjs --fact-bearing` to build the brief, so it quotes the source rather than a
+summary of it — see DC-20 for why that distinction is not pedantry.
 
 ## 5. The bug in my own harness, and why it matters more than it looks
 

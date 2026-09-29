@@ -1,5 +1,51 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 52 — 2026-09-29 (I overstated my own headline number within hours of building the controls meant to stop that)
+
+**Selected:** self-correction, pre-empting TRI-5. Not a queue item — a live wrong claim in material I had
+committed and pushed an hour earlier.
+
+**The claim:** Iteration 51 published *"20 of 93 items make an external factual claim, and 4 of those 20 were
+wrong — one in five."* It went into the triage record, the iteration log, SYSTEM_HEALTH and a commit message.
+
+**It is overstated.** The denominator was produced by a pattern keyed on named bodies, statutes and statistics,
+and it **demonstrably misses items that plainly assert external facts**: `ACT-2-A` (which sourdough signals mean
+discard) and `BND-3-A` (deposit protection and what a court may award). Neither names an agency or cites a
+percentage, so neither matched. A smaller denominator inflates the rate.
+
+| Reading | Fact-bearing | Implied rate |
+|---|---|---|
+| First attempt (**published, wrong**) | 20 | 20% |
+| Widened for the two known misses, then tightened | **22** | **18%** |
+| Broad topical reading (over-includes) | 44 | 9% |
+
+**Corrected statement: at least 22 of 93 items assert a checkable external fact, and 4 of those were verified
+wrong — roughly one in six, with the denominator a lower bound.** A broader reading puts it nearer one in
+eleven. Deciding exactly which items qualify is a judgement call, which is human review's job rather than a
+regular expression's. The number not in doubt is **four verified factual defects**.
+
+**The widening needed correcting twice, and the gate caught both.** My first widened pattern included "notice
+period", which matched `AWR-4-B` where the phrase is an ordinary narrative option ("a long notice period" as a
+mitigation), not a legal claim — so I tightened the pattern rather than allowlisting the false positive, because
+allowlisting would have hidden the over-match instead of removing it. I also guessed the wrong item id when
+updating the allowlist by hand, and Check 6 failed naming the real one.
+
+**Why this is worth its own entry.** I built positive and negative controls for that detector *in the same
+iteration*, ran them, and they passed — because I had only tested the detector against defects I already knew
+about. Controls confirm a detector finds what you have thought of. They say nothing about what you have not.
+The four known defects were all in items naming an agency or citing a statistic, so a pattern keyed on exactly
+those passed every control while missing a whole shape of claim.
+
+**Changed:** `Check 6` widened then tightened, now 11 controls (six positive including the two known misses,
+five negative including `EMP-1-C` and `AWR-2-A` which a broad reading wrongly pulls in). The triage record's §4a
+is rewritten as a visible correction rather than a silent edit, because publishing a headline rate on an
+unvalidated denominator is precisely the error this pass exists to catch.
+
+**Not changed:** the four verified defects, the 8-of-8 clearance result, and the reviewer queue. None of them
+depend on the denominator.
+
+**Validation:** chain green, 48 assertions in `test:bank-claims`, all 11 controls passing.
+
 ## Iteration 51 — 2026-09-29 (I tested whether the triage's clearances could be trusted, and caught my own harness lying twice)
 
 **Selected:** TRI-4 — verify the facts the triage pass *cleared*. I filed this myself in Iteration 49 on the
