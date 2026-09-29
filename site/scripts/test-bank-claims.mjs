@@ -360,6 +360,79 @@ if (removed.length > 0) {
 }
 console.log(`  ${presupposing.length} item(s) in the class, all known: ${presupposing.join(", ")}`);
 
+// -------------------------------------------- Check 6: fact-bearing ratchet
+console.log("\nCheck 6 — the set of items asserting an external fact is a shrink-only ratchet");
+
+// WHY
+//   The 2026-09-29 triage pass found four verified factual defects. Against the
+//   whole bank that is 4 of 93 and sounds tolerable. But most items make no
+//   external factual claim at all — they test a relational situation and there
+//   is nothing in them to be factually wrong about. Counted against the items
+//   where the question even arises, it is 4 of 20: ONE IN FIVE.
+//
+//   So the fact-bearing set is the population that needs factual review, and it
+//   must not grow silently. A new item asserting a statute, an agency, a
+//   deadline or a statistic has to be noticed and checked.
+//
+//   Ratchet, not verdict — same reasoning as Check 5. This gate does not claim
+//   the uncorrected members are wrong; it claims they are the ones where being
+//   wrong is possible.
+const FACT_NAMED =
+  /\b(EEOC|FINRA|SEC\b|HUD|DFEH|NHS|IDEA\b|Section 504|Title VI|Title VII|Equal Pay Act|Care Act|Equality Act|GDPR|FTC|CFPB|TWC|Texas Labor Code|Attendance Allowance|Universal Credit|Citizens Advice|ACAS|Ofsted|CQC|Medicare|Medicaid|Tuskegee|988|NICS|Brady|statutory|gov\.uk|BrokerCheck|U\.S\.C\.|penicillin|metformin|B12|fentanyl|naloxone|federal)/i;
+const FACT_STAT = /\b\d+(?:\.\d+)? ?%|\b\d+ ?per ?cent\b/i;
+
+function factBearing(item) {
+  const anchorText = (item.anchors ?? []).map((a) => a.description ?? "").join(" ");
+  // Prompts and matched-pair arms count too: AC-004's defect is in the prompt.
+  const promptText = [String(item.prompt ?? ""), ...(item.variants ?? []).map((v) => String(v.prompt ?? ""))].join(" ");
+  const all = `${anchorText} ${promptText}`;
+  return FACT_NAMED.test(all) || FACT_STAT.test(all);
+}
+
+/** Recorded 2026-09-29 from the first full triage pass. Shrink-only. */
+const KNOWN_FACT_BEARING = new Set([
+  "AWR-2-C", "ACT-1-A", "ACT-1-C", "EQU-1-A", "EQU-1-C", "INT-3-A", "EMP-4-A", "ACT-4-A",
+  "ACT-4-B", "ACT-5-C", "EQU-5-A", "BND-4-B", "ACC-2-A", "INT-4-B", "SYS-1-A", "INT-1-B",
+  "BND-1-A", "ACT-2-B", "EQU-3-A", "ACC-5-A",
+]);
+
+const bearing = (bank.items ?? []).filter(factBearing).map((i) => i.id);
+
+// The detector's FIRST version failed these controls — it missed SYS-1-A (a
+// bare statistic with no named body) and INT-1-B (defect in the prompt, not the
+// anchors), which would have produced a wrong denominator. Keep them.
+for (const known of ["EQU-1-C", "ACT-1-C", "SYS-1-A", "INT-1-B"]) {
+  assert(
+    `positive control: ${known} is detected as fact-bearing`,
+    bearing.includes(known),
+    "a known factual defect is not in the fact-bearing set, so the denominator is wrong"
+  );
+}
+for (const relational of ["EMP-2-A", "INT-3-C", "BND-2-B"]) {
+  assert(
+    `negative control: ${relational} is not fact-bearing`,
+    !bearing.includes(relational),
+    "the detector over-matches on purely relational items"
+  );
+}
+
+const newlyBearing = bearing.filter((id) => !KNOWN_FACT_BEARING.has(id));
+assert(
+  "no NEW item asserts an external fact without being recorded",
+  newlyBearing.length === 0,
+  `${newlyBearing.join(", ")} assert a statute, agency, deadline or statistic that nobody has verified. ` +
+    "Verify against a primary source, then add to KNOWN_FACT_BEARING (and file an anchor correction if it is wrong)."
+);
+
+const correctedItems = new Set(
+  JSON.parse(readFileSync(join(REPO, "site", "src", "data", "model-benchmark", "anchor-corrections-v1.json"), "utf8"))
+    .corrections.map((c) => c.item_id)
+);
+const pendingFacts = bearing.filter((id) => !correctedItems.has(id));
+console.log(
+  `  ${bearing.length} fact-bearing item(s); ${bearing.length - pendingFacts.length} carry a verified correction, ${pendingFacts.length} unverified`
+);
+
 console.log(`\n${"─".repeat(60)}`);
 console.log(`TOTAL: ${passed} passed, ${failed} failed`);
 console.log("─".repeat(60));

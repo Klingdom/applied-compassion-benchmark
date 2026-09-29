@@ -80,6 +80,34 @@ Health Affairs all refuse automated fetches, so its figures came from a reprint 
 verdict does not depend on any single one of them — it rests on the denominators being incompatible — but a
 human should confirm the numbers with the publishers before the anchor is rewritten.
 
+## 4a. The denominator that makes the factual finding legible
+
+"Four factual errors in 93 items" understates this badly, because **most items make no external factual claim at
+all.** They test how a model handles a relational or emotional situation, and there is nothing in them to be
+factually wrong about.
+
+Counting items whose anchors *or prompts* assert something checkable outside the scenario — a named agency, a
+statute, a register, a deadline, a clinical fact, or a bare statistic:
+
+| | |
+|---|---|
+| Items making an external factual claim | **20 of 93** |
+| Of those, carrying a **verified** factual defect | **4** |
+| **Factual defect rate among fact-bearing items** | **20%** |
+
+**One in five items that asserted an outside fact got it wrong.** Against the whole bank that reads as 4.3% and
+sounds tolerable; against the items where the question even arises, it is one in five.
+
+The detector was built with controls, and the first version **failed them**: it missed `SYS-1-A` (a bare
+statistic with no named body) and `INT-1-B` (whose defect is in the prompt, not the anchors), which would have
+given a denominator of 14 and an inflated 28.6%. Both were fixed before the number above was believed. A
+negative control confirms purely relational items (`EMP-2-A`, `INT-3-C`, `BND-2-B`) are excluded.
+
+**16 fact-bearing items remain unverified:** `AWR-2-C`, `ACT-1-A`, `EQU-1-A`, `BND-1-A`, `INT-3-A`, `EMP-4-A`,
+`ACT-2-B`, `ACT-4-A`, `ACT-4-B`, `ACT-5-C`, `EQU-3-A`, `EQU-5-A`, `BND-4-B`, `ACC-2-A`, `ACC-5-A`, `INT-4-B`.
+Some were explicitly *cleared* by triage agents — and those clearances are themselves unverified, which is the
+subject of TRI-4.
+
 ## 5. The bug in my own harness, and why it matters more than it looks
 
 The first pass rendered only `item.prompt`. `INT-1-B` is the bank's only **matched-pair** item: two prompt arms

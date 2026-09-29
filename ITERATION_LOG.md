@@ -1,5 +1,61 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 51 — 2026-09-29 (I tested whether the triage's clearances could be trusted, and caught my own harness lying twice)
+
+**Selected:** TRI-4 — verify the facts the triage pass *cleared*. I filed this myself in Iteration 49 on the
+grounds that a wrong clearance is harder to notice than a wrong flag, and nobody had checked a single one.
+
+**First, the denominator.** "Four factual errors in 93 items" understates the finding badly, because most items
+make no external factual claim at all — they test a relational situation and there is nothing in them to be
+wrong about. Counting items whose anchors *or prompts* assert something checkable outside the scenario:
+
+**20 of 93 items make an external factual claim, and 4 of those 20 were wrong. One in five.**
+
+My first detector **failed its own positive control**: it missed `SYS-1-A` (a bare statistic with no named body)
+and `INT-1-B` (defect in the prompt, not the anchors), which would have given a denominator of 14 and an
+inflated 28.6%. Fixed before the number was believed. Now gated as **Check 6**, a shrink-only ratchet, so a new
+item asserting a statute or statistic cannot enter unnoticed. Probed: planting an external fact into a purely
+relational item fires it; bank restored byte-identical.
+
+**Then the clearance test.** Eight facts the triage agents explicitly vouched for — UK statutory leave, tenancy
+deposit schemes, FINRA/SEC registers, Tuskegee, 988, metformin/B12, Care Act entitlements, sourdough spoilage —
+sent to an independent checker with web access and instructions to be sceptical.
+
+It came back: **6 of 8 correct, 2 wrongly cleared.** I checked both against the bank before believing either.
+
+**Both were wrong — and the fault was mine.**
+
+| | I wrote in the brief | What the rubric actually says |
+|---|---|---|
+| `ACT-2-A` | "pink or orange **mould**", acetone smell grouped with the discard signals | "fuzzy or coloured mould, pink or orange **streaks**" — two separate signals, correctly distinguished — and the solvent smell means "a hungry, long-unfed starter, **not death**" |
+| `BND-3-A` | "a court compensation **range**" | "the compensation the courts can award" — **no range at all**; grep confirms no multiple, no "3 times", no "up to" |
+
+The checker did its job faithfully on my summary. Both verdicts were defects in my brief, not the bank.
+
+**Corrected result: 8 of 8 clearances were right. Zero false negatives found.** The other six caveats also fail
+against real text: `EQU-5-A` says "once it became the standard treatment" rather than asserting a bare
+penicillin year — the careful formulation the checker recommended; `AWR-2-C` mandates no monitoring interval;
+`ACT-4-A` never says "UK" nor cites the Care Act, so the England-only caveat does not apply; and no item anywhere
+references the terminated 988 "Press 3" subnetwork.
+
+**DC-20, two occurrences in two days.** In Iteration 49 the batch generator dropped both arms of the only
+matched-pair item and two agents reported an applicability defect that was my extraction. Today a hand-written
+paraphrase produced two confident "wrongly cleared" verdicts that were my brief. **Both times the manufactured
+finding was indistinguishable, in the report, from a real one**, and both times it would have sent a reviewer to
+repair a sound item.
+
+**Gated:** `research/scripts/quote-item.mjs` emits verbatim item text for a verification brief — all arms
+included, with a header telling the reader not to paraphrase it — alongside the It. 49 generator that refuses to
+drop an arm. Exit codes checked (0 / 1 / 2). **Practice rule: a verification brief quotes the source and never
+summarises it.** This makes the right thing easy rather than the wrong thing impossible, which is stated in the
+registry rather than overclaimed.
+
+**What this means for the triage.** Its clearances held up 8 for 8 under independent primary-source checking.
+That is genuinely reassuring about tier 4 — but it is eight claims, not forty-six items, and the 46 items
+neither agent faulted remain **unexamined, not sound**. Nothing here licenses skipping human review.
+
+**Validation:** chain green at 44 steps, 44 assertions in `test:bank-claims`. Every probe restored byte-identical.
+
 ## Iteration 50 — 2026-09-29 (MS-5 disproved: the formula never rewarded flatness)
 
 **Selected:** MS-5 — open since Iteration 38, cited on `/ai-models` as an open methodology question, and named

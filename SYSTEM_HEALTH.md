@@ -1,9 +1,26 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 50 (MS-5 disproved; the composite never rewarded flatness)
+Last change: Iteration 51 (triage clearances verified 8/8; DC-20 — my harness manufactured two defects)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-29 (Iteration 51 — the triage's clearances hold; **DC-20**, my harness manufactured two defects):
+> tested whether "cleared" means anything, since a wrong clearance is harder to notice than a wrong flag. Eight
+> vouched-for facts sent to an independent checker with web access. It returned **6 of 8 correct, 2 wrongly
+> cleared** — and **both were my fault**. I sent a hand-written *summary* of the rubric claims instead of the
+> rubric text: I wrote "pink or orange **mould**" where it says "fuzzy or coloured mould, pink or orange
+> **streaks**" as separate signals, and grouped the acetone smell with the discard cues where the rubric says it
+> means "a hungry, long-unfed starter, **not death**"; and I wrote that one item cites "a court compensation
+> range" when it states none. **Corrected result: 8 of 8 clearances right, zero false negatives.** The other six
+> caveats also fail against real text — `EQU-5-A` says "once it became the standard treatment" rather than a bare
+> penicillin year, `AWR-2-C` mandates no interval, `ACT-4-A` never says "UK", and nothing references the
+> terminated 988 Press 3 service. **DC-20 now has two dated occurrences in two days** (the It. 49 dropped
+> matched-pair arm, and today's paraphrase) and both produced findings indistinguishable from real ones. Gated by
+> `quote-item.mjs`, which emits verbatim item text for any verification brief. Also established the denominator
+> that makes the factual finding legible: **20 of 93 items assert an external fact, and 4 of those 20 were wrong
+> — one in five**; my first detector failed its own positive control and was fixed before the number was
+> believed. New **Check 6** ratchets the fact-bearing set shrink-only. Chain **44 steps**, green.
 
 > 2026-09-29 (Iteration 50 — **MS-5 is false**): the claim that the composite "rewards a flat profile twice"
 > has blocked model scoring since Iteration 38 and was never checked. It is wrong twice over. `consistencyMult`
@@ -18,40 +35,6 @@ Last change: Iteration 50 (MS-5 disproved; the composite never rewarded flatness
 > probed, restorations byte-identical. Residual questions filed as **D-45**; the 100 cap (Q3) will compress model
 > scores even though it barely touches institutions today. Chain **44 steps**, green.
 > Record: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`.
-
-> 2026-09-29 (Iteration 49 — the full triage pass; **DC-19 reaches 4 occurrences**): 93 items, 8 batches, **two
-> independent blind agents each**, 186 records, 93/93 covered. **12 items flagged by both agents, 35 by one, 46 by
-> neither; agreement 58/93 (62%)** — and the disagreement is the useful half, because it identifies the anchors two
-> careful readers read differently. **Four factual defects, found blind and then verified against primary sources:**
-> AC-001 the EEOC deadline (300 not 180 in Texas); **AC-002** `ACT-1-C` rewards "DFEH", renamed the California
-> Civil Rights Department in 2022; **AC-003** `SYS-1-A` rewards "30% vs 12%" admin overhead, which mixes three
-> denominators; **AC-004** `INT-1-B` — the first **prompt-level** defect — both arms presume a federal firearms
-> waiting period that has not existed since Brady's interim provision sunset in 1998. Repairs drafted and filed as
-> **D-44**; the bank is untouched. **A bug in my own harness nearly poisoned the queue:** the batch generator
-> rendered only one arm of the bank's single matched-pair item, so both agents reported an applicability defect
-> that was *my extraction*, indistinguishable in their output from the real comparison-arm defect. Fixed by a
-> committed generator that **refuses** to drop an arm, a corrective re-run that produced AC-004 instead, and
-> retaining both records so the mistake stays visible. New **Check 5** ratchets the prior-turn presupposition class
-> (6 items) shrink-only, rather than condemning all six — `ACC-2-A` narrates its prior claim and is scorable, which
-> agents confirmed. Chain **44 steps**, green. Record: `docs/TRIAGE_FULL_PASS_2026-09-29.md`.
-
-> 2026-09-28 (Iteration 48 — blind agent triage found a published legal error; **DC-19**): built the MB-2
-> sampling frame, and validated the concept before building it. Two independent agents, ten items, the five
-> criteria, **no hint that any item was defective**, ground truth withheld — **recall 2 of 2** on the level-2
-> comparison-arm defect, both agents, correct criterion, exact anchor quoted. Agreement **5 of 10**: convergent at
-> the top, divergent in the middle, which is what a sampling frame should look like — the convergence says where to
-> start, the divergence is evidence those anchors are ambiguous. **Then it found what I had not:** both agents
-> independently ranked `EQU-1-C` first because its level-5 anchor awards the **top score** to a response stating
-> the EEOC charge deadline is "180 days" for a Texas claimant. Verified against eeoc.gov, the EEOC's FEPA roster
-> and the official Tex. Lab. Code ch. 21 text: **it is 300.** The error runs in the **rights-forfeiting**
-> direction — a claimant on day 200 abandons a claim live for another 100 — and it was **published** with its full
-> rubric since launch. A scan of all 93 items shows it is the **only** anchor baking an external legal deadline in
-> as a rewardable fact. **The bank was not touched:** repairing an anchor is a methodology act, filed as **D-43**
-> with ready-to-approve wording; meanwhile the correction is **fused into the anchor string**, deliberately,
-> because that string also builds the AI-judge prompt. A correction whose quote no longer matches its anchor
-> fails a test. Triage is structurally incapable of becoming review — no `verdict`, no `criteria` map, rejected by
-> the review validator in both directions, and `deriveItemStatus` ignores the file. 57 new tests; site chain
-> **44 steps**. Records: `docs/TRIAGE_PILOT_2026-09-28.md`, `DECISIONS.md` D-43.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -145,6 +128,42 @@ _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 48.
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 49._
 
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 50._
+
+_Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 51._
+
+> 2026-09-29 (Iteration 49 — the full triage pass; **DC-19 reaches 4 occurrences**): 93 items, 8 batches, **two
+> independent blind agents each**, 186 records, 93/93 covered. **12 items flagged by both agents, 35 by one, 46 by
+> neither; agreement 58/93 (62%)** — and the disagreement is the useful half, because it identifies the anchors two
+> careful readers read differently. **Four factual defects, found blind and then verified against primary sources:**
+> AC-001 the EEOC deadline (300 not 180 in Texas); **AC-002** `ACT-1-C` rewards "DFEH", renamed the California
+> Civil Rights Department in 2022; **AC-003** `SYS-1-A` rewards "30% vs 12%" admin overhead, which mixes three
+> denominators; **AC-004** `INT-1-B` — the first **prompt-level** defect — both arms presume a federal firearms
+> waiting period that has not existed since Brady's interim provision sunset in 1998. Repairs drafted and filed as
+> **D-44**; the bank is untouched. **A bug in my own harness nearly poisoned the queue:** the batch generator
+> rendered only one arm of the bank's single matched-pair item, so both agents reported an applicability defect
+> that was *my extraction*, indistinguishable in their output from the real comparison-arm defect. Fixed by a
+> committed generator that **refuses** to drop an arm, a corrective re-run that produced AC-004 instead, and
+> retaining both records so the mistake stays visible. New **Check 5** ratchets the prior-turn presupposition class
+> (6 items) shrink-only, rather than condemning all six — `ACC-2-A` narrates its prior claim and is scorable, which
+> agents confirmed. Chain **44 steps**, green. Record: `docs/TRIAGE_FULL_PASS_2026-09-29.md`.
+
+> 2026-09-28 (Iteration 48 — blind agent triage found a published legal error; **DC-19**): built the MB-2
+> sampling frame, and validated the concept before building it. Two independent agents, ten items, the five
+> criteria, **no hint that any item was defective**, ground truth withheld — **recall 2 of 2** on the level-2
+> comparison-arm defect, both agents, correct criterion, exact anchor quoted. Agreement **5 of 10**: convergent at
+> the top, divergent in the middle, which is what a sampling frame should look like — the convergence says where to
+> start, the divergence is evidence those anchors are ambiguous. **Then it found what I had not:** both agents
+> independently ranked `EQU-1-C` first because its level-5 anchor awards the **top score** to a response stating
+> the EEOC charge deadline is "180 days" for a Texas claimant. Verified against eeoc.gov, the EEOC's FEPA roster
+> and the official Tex. Lab. Code ch. 21 text: **it is 300.** The error runs in the **rights-forfeiting**
+> direction — a claimant on day 200 abandons a claim live for another 100 — and it was **published** with its full
+> rubric since launch. A scan of all 93 items shows it is the **only** anchor baking an external legal deadline in
+> as a rewardable fact. **The bank was not touched:** repairing an anchor is a methodology act, filed as **D-43**
+> with ready-to-approve wording; meanwhile the correction is **fused into the anchor string**, deliberately,
+> because that string also builds the AI-judge prompt. A correction whose quote no longer matches its anchor
+> fails a test. Triage is structurally incapable of becoming review — no `verdict`, no `criteria` map, rejected by
+> the review validator in both directions, and `deriveItemStatus` ignores the file. 57 new tests; site chain
+> **44 steps**. Records: `docs/TRIAGE_PILOT_2026-09-28.md`, `DECISIONS.md` D-43.
 
 > 2026-09-28 (Iteration 47 — the exemplar that justified the review programme named the wrong item; **DC-02
 > occurrence 4**): every published surface said `EQU-1-B` and `EQU-1-C` "cannot be scored as written" because
