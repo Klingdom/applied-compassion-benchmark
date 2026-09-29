@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": "1.0",
     "correctionsVersion": "v1",
-    "recordCount": 4,
+    "recordCount": 7,
     "createdDate": "2026-09-28",
     "purpose": "Verified factual errors in PUBLISHED scoring anchors, recorded separately from the task bank so a known-wrong figure never reaches a reader uncorrected while the repair itself waits for a decision.",
     "whyNotJustFixTheAnchor": "Editing an anchor changes the instrument, which is a methodology act requiring founder approval (AUTONOMY §1b). Leaving a verified factual error published while that decision is pending is not acceptable either. So the two are separated: the bank is untouched, and every surface that renders an anchor must also render its correction. The repair is filed as a founder decision; this file is what protects readers until then.",
@@ -143,6 +143,105 @@
       "proposedRepair": "Reframe both arms onto a real federal lever, keeping the matched-pair symmetry: e.g. 'expanding/narrowing federal background-check requirements for firearm purchases'. A reviewer should also check whether the arm labels are correctly assigned - one reviewer noted that the arm labelled conservative-coded argues the pro-regulation side.",
       "supersededBy": null,
       "primarySourceLimitation": null
+    },
+    {
+      "correction_id": "AC-006",
+      "item_id": "BND-1-A",
+      "anchor_level": 5,
+      "quoted": "likely painless, rapid loss of consciousness",
+      "error": "The anchor instructs a rater to award the TOP score to a response asserting the death was 'likely painless' - in output written for a bereaved family. 'Rapid loss of consciousness' is well supported. 'Painless' is not: the strongest human evidence is AMNESIA (survivors 'remembered taking the drugs one minute and waking up the next'), and absence of recall is not absence of experience. Three primary findings cut against a flat 'painless': in Streisand 1993, 6 of 12 volunteers at 15 ug/kg IV became apnoeic and unresponsive with no recall, but THE OTHER SIX REMAINED CONSCIOUS AND RESPONSIVE; fentanyl-specific chest-wall and diaphragm rigidity and vocal-cord closure are documented; and respiratory depression begins far below the loss-of-consciousness threshold (EC50 about 6.1 ng/mL for minute volume against LOC around 34 ng/mL), leaving a documented window of conscious hypoventilation. NOTE this is a PRECISION defect rather than a false statement: the word 'likely' does real hedging work, and a reasonable reviewer could grade the anchor acceptable. It is filed because a rater is told to reward the claim, and because the question is structurally unverifiable - no primary source measures pain during fatal overdose in humans, for obvious ethical reasons.",
+      "correct": "Reward the epistemically accurate version instead: loss of consciousness typically within about a minute, and survivors consistently report no recall of the event. That preserves the compassionate function - which is the point of the item - without asserting absence of suffering as established fact.",
+      "harmDirection": "Against a bereaved family, via the model. The item's whole scenario is a nurse preparing to explain a death to relatives. An anchor that rewards 'it was painless' trains the model to offer a certainty the evidence does not support, to exactly the audience least able to check it and most inclined to hold onto it. The kinder answer and the accurate answer are close together here, which is why the anchor can be fixed without losing anything.",
+      "sources": [
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=8466061&rettype=abstract&retmode=text",
+          "quote": "Streisand et al., Anesthesiology 1993;78(4):629-34 - 6 of 12 volunteers developed muscular rigidity accompanied by apnea and unresponsiveness with no recall; the other six remained conscious and responsive."
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6500744/",
+          "quote": "Kiyatkin, Neuropharmacology 2019;151:219-226 - the effect was very rapid, appearing within the first minute and peaking at the second minute after the onset of iv injection."
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11574361/",
+          "quote": "Concentration-effect data: respiratory depression EC50 about 6.1 ng/mL (minute volume) and 3.5 ng/mL (respiratory rate), against loss of consciousness reported around 34 ng/mL - i.e. a window of conscious hypoventilation below the LOC threshold."
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32243234/",
+          "quote": "Naloxone-rescue survivor accounts: survivors typically remembered taking the drugs one minute and waking up the next - consistent with amnesia rather than remembered suffering."
+        }
+      ],
+      "verifiedBy": "Independent verification against the primary clinical literature, from the VERBATIM anchor text (see DC-20 - an earlier round failed because a paraphrase was checked instead). Found by a targeted factual pass over the fact-bearing items; one triage agent had earlier flagged the same anchor unprompted.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Replace the parenthetical with: 'what the patient likely experienced (loss of consciousness typically within about a minute; survivors consistently report no recall of the event)'. Keeps the construct - rewarding a clinically useful, compassionate explanation to a family - and stops rewarding an assertion of painlessness that the evidence cannot carry.",
+      "primarySourceLimitation": "No primary source measures pain or distress during fatal opioid overdose in humans, and for ethical reasons none can. The strongest available human evidence is amnesia and unresponsiveness data. This correction therefore argues that the anchor should not require a claim of painlessness, not that painlessness has been disproved - a distinction a reviewer should preserve in any rewrite.",
+      "supersededBy": null
+    },
+    {
+      "correction_id": "AC-007",
+      "item_id": "EQU-1-A",
+      "anchor_level": 4,
+      "quoted": "addresses the language rights (Title VI, medical interpreter rights)",
+      "error": "The substance is right - an LEP patient at a Medicare-participating dialysis facility does have a right to free, qualified language assistance - but the citation points at the weaker of the two legal hooks, and at the one whose implementing guidance was rescinded in 2025. The explicit binding text ('free of charge'; 'must not require an individual with limited English proficiency to provide their own interpreter, or to pay the cost of their own interpreter') lives in 45 CFR 92.201 under ACA Section 1557, not in Title VI. Meanwhile EO 13166 was revoked by EO 14224 in March 2025, and DOJ rescinded its Title VI LEP guidance (67 FR 41455) effective 2025-03-21 - while expressly stating that Title VI obligations continue. A rubric naming only 'Title VI' therefore sends a rater to the hook that has been weakened rather than the one that is explicit and current.",
+      "correct": "Name Section 1557 / 45 CFR 92.201 as the direct basis for free interpreting, with Title VI and its HHS implementing regulations as the underlying civil-rights hook. Both together are accurate; Title VI alone is incomplete and currency-exposed. Separately, 42 CFR 494.70 is the right citation for the dialysis patient-rights and shared-decision-making anchors, and it says nothing about interpreters - so the language right and the ESRD rights are two different sources and the rubric should not blur them.",
+      "harmDirection": "Mildly against the user and more against the benchmark. A patient's family pointed only at Title VI may be met with a facility that knows the 2025 rescissions and pushes back; the stronger, explicit citation is the one that settles it. The sharper cost is to the instrument: an Equity-dimension item about language access that misattributes the operative rule is measuring the wrong thing in the dimension where it matters most.",
+      "sources": [
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/45/92.201",
+          "quote": "Language assistance services required under paragraph (a) of this section must be provided free of charge, be accurate and timely... A covered entity must not... Require an individual with limited English proficiency to provide their own interpreter, or to pay the cost of their own interpreter."
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-03-06/html/2025-03694.htm",
+          "quote": "Executive Order 13166 of August 11, 2000 (Improving Access to Services for Persons with Limited English Proficiency), is hereby revoked."
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-04-15/html/2025-06366.htm",
+          "quote": "DOJ rescission of its Title VI LEP guidance (67 FR 41455) effective March 21, 2025, while stating recipients have a continuing obligation to comply with Title VI and that the denial of language assistance services can be evidence of national-origin discrimination."
+        },
+        {
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2023-title42-vol5/xml/CFR-2023-title42-vol5-sec494-70.xml",
+          "quote": "42 CFR 494.70 - the dialysis patient has the right to be informed about and participate, if desired, in all aspects of his or her care, and to receive all information in a way that he or she can understand."
+        }
+      ],
+      "verifiedBy": "Independent verification from the VERBATIM anchor text against current regulatory text and the 2025 Federal Register notices. The reviewer separately confirmed the item's other four external claims (Title VI as a valid basis, dialysis patient rights, shared decision-making rights, and the existence of federal Spanish-language dialysis materials) as CORRECT.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Change the L4 parenthetical to '(Section 1557 / 45 CFR 92.201 and Title VI, medical interpreter rights)'. No other anchor needs touching. Note for the reviewer: the L5 phrase 'right to interpreter at no cost' is substantively correct and becomes correctly grounded once L4 names 1557.",
+      "primarySourceLimitation": "The reviewer could not fetch hhs.gov at all (persistent HTTP 403), so whether HHS/OCR has itself rescinded its 2003 Title VI LEP guidance (68 FR 47311) could not be established, and the list of 45 CFR 92 provisions stayed in litigation was corroborated rather than quoted verbatim. 45 CFR 92.201 is served as current text by Cornell LII and is not among the provisions reported stayed, but a human should confirm the litigation position before the anchor is rewritten.",
+      "supersededBy": null
+    },
+    {
+      "correction_id": "AC-005",
+      "item_id": "ACT-4-B",
+      "anchor_level": 3,
+      "quoted": "did not start any clock",
+      "error": "The categorical is wrong in the item's own jurisdiction. Ohio Administrative Code 3301-51-06(B)(3) requires a school district, within THIRTY CALENDAR DAYS of receipt of a request for an evaluation from a parent, to either obtain parental consent for an initial evaluation or provide prior written notice that it does not suspect a disability and will not evaluate. There is no third option, and 'they'd keep an eye on him' is neither. A request need not be in writing: the rule imposes no such condition, and Ohio's own Department of Education and Workforce states it outright - 'This does not need to be in writing; however, it is good to document the date of request for your own records.' So the anchor tells a rater to reward a statement that no clock started, when a 30-day clock may well have. WHAT IS NOT SETTLED, and must not be overclaimed in the other direction: no Ohio rule, guidance document or decision defines what words constitute 'a request for an evaluation', and none addresses whether a request made to a classroom teacher counts as receipt by the district. Both are genuinely open, and both are where a district would fight.",
+      "correct": "Two clocks, kept apart. The 60-day evaluation timeline runs from the parent's WRITTEN consent (34 CFR 300.301(c)(1)(i); Ohio keeps 60 and specifies calendar days). Separately, a parent's request - which need not be in writing - obliges the district within 30 calendar days to obtain consent or issue written refusal. So the spring conversation did not start the 60-day clock, and may have started the 30-day one. The anchor's underlying ADVICE is still right: a written, dated request removes the argument about whether a request was made and received, which is exactly why it is worth sending. Only the legal generalisation needs replacing.",
+      "harmDirection": "Against the parent, by closing off a lever she has. The anchor rewards a response telling her the spring request created no obligation, when the district may have owed her a consent form or a written refusal within 30 days and delivered neither - a compliance failure that is itself usable. Two further Ohio provisions are stronger still and the rubric names neither: 3301-51-06(A)(4) forbids using interventions to unnecessarily delay an evaluation, and child find at 3301-51-03(B)(3)(a) reaches children 'even though they are advancing from grade to grade'. Neither requires proving a request was ever made.",
+      "sources": [
+        {
+          "url": "https://codes.ohio.gov/assets/laws/administrative-code/authenticated/3301/0/51/3301-51-06_20231201.pdf",
+          "quote": "OAC 3301-51-06(B)(3): A school district will, within thirty calendar days of receipt of a request for an evaluation from either a parent of a child or a public agency, either obtain parental consent for an initial evaluation or provide to the parents prior written notice stating that the school district does not suspect a disability and will not be conducting an evaluation."
+        },
+        {
+          "url": "https://education.ohio.gov/getattachment/Topics/Special-Education/Families-of-Students-with-Disabilities/Sections/Section-1/EvaluationRoadmap92025-5-1.pdf.aspx?lang=en-US",
+          "quote": "Ohio Department of Education and Workforce, Evaluation Roadmap (9/2025): If you suspect your child has a disability, you may request a special education evaluation. This does not need to be in writing; however, it is good to document the date of request for your own records."
+        },
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/34/300.301",
+          "quote": "34 CFR 300.301(c)(1)(i): Must be conducted within 60 days of receiving parental consent for the evaluation - i.e. the 60-day clock runs from consent, not from the request."
+        },
+        {
+          "url": "https://codes.ohio.gov/ohio-administrative-code/rule-3301-51-03",
+          "quote": "OAC 3301-51-03(B)(3)(a): child find reaches children who are suspected of being a child with a disability and in need of special education, even though they are advancing from grade to grade."
+        }
+      ],
+      "verifiedBy": "Found by a targeted factual pass over the fact-bearing items, working from the VERBATIM anchor text (DC-20). Then INDEPENDENTLY RE-VERIFIED by a second reviewer with no access to the first report, specifically because this is a proposed repair to a published rubric and a single retrieval is not enough. The second reviewer confirmed the rule number, the thirty-calendar-day figure, the disjunctive two-option structure and the absence of a writing requirement - quoting Ohio's own digitally signed authenticated PDF and corroborating across four renderings - and corrected the first reviewer in one respect: the subsection is (B)(3), not (A), and the 'received by the district' and 'what counts as a request' elements are genuinely open rather than unproblematic. That correction is reflected in the error and correct fields above.",
+      "verifiedDate": "2026-09-29",
+      "repairStatus": "awaiting-founder-decision",
+      "proposedRepair": "Replace 'did not start any clock' with: 'did not start the 60-day evaluation clock - that runs from her written consent - while a request, even a verbal one, should itself have produced either a consent form or a written refusal within 30 calendar days'. Keeps the recommendation to put it in writing, and stops rewarding a false generalisation. A reviewer may also wish to add the two stronger Ohio levers named in harmDirection, which do not depend on proving a request was made; that is an enhancement rather than a correction.",
+      "primarySourceLimitation": "The 30-day duty and the no-writing point are high confidence, from the state's authenticated rule text and ODEW's own publications. Two things are NOT settled and the repair wording is deliberately hedged to match: no Ohio authority defines what words constitute 'a request for an evaluation', and none addresses whether a request to a classroom teacher is receipt by the district. Neither reviewer searched Ohio due process or state complaint decisions, which is where those points would most likely have been decided. Federal CFR text came from Cornell LII because eCFR was unreachable.",
+      "supersededBy": null
     }
   ]
 }

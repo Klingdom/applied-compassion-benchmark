@@ -3,7 +3,7 @@
  * test-probe-helper.mjs — GI-3.
  *
  * The probe helper exists so that restoring a planted file is shorter to type
- * than `git checkout -- <path>`. That only holds if it is trustworthy, so its
+ * than a forced checkout over the path. That only holds if it is trustworthy, so its
  * own guarantees are tested here — above all that a restore is byte-exact and
  * that a failure inside the probe body cannot leave the defect behind.
  */
@@ -131,7 +131,7 @@ console.log("\nTest 5: assertGateCatches enforces BOTH halves of V3");
 console.log("\nTest 6: this helper contains no git command");
 {
   const src = readFileSync(new URL("./lib/probe.mjs", import.meta.url), "utf8");
-  // Structural, not textual. The file DISCUSSES `git checkout` in its own
+  // Structural, not textual. The file DISCUSSES the destructive checkout in its own
   // explanation, so a prose scan false-positives on the very comment that tells
   // the next person not to add one. What matters is that it cannot run a
   // subprocess at all.

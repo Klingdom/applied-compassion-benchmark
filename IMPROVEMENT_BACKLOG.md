@@ -328,12 +328,12 @@ comparability.
 
 ### New backlog items (2026-09-29, from Iteration 51 — the clearance test)
 
-- **TRI-5 — verify the 16 remaining fact-bearing items.** 20 items assert an external fact; 4 are corrected and
+- **TRI-5 — DONE (Iteration 55, 2026-09-29).** All remaining fact-bearing items verified against primary sources from VERBATIM briefs. **Three more defects found (AC-005, AC-006, AC-007), taking the bank to seven verified.** AC-005 independently double-verified. Six of the ten items carried **no external claim at all**, so the detector over-includes as well as under-includes — see TRI-6. ~~verify the 16 remaining fact-bearing items.~~ 20 items assert an external fact; 4 are corrected and
   8 claims across some of the rest have now been checked. The remainder have never been verified against a
   primary source by anyone. Use `research/scripts/quote-item.mjs --fact-bearing` so the brief quotes the source
   rather than a summary — that is the whole point of DC-20. `I4 S4 L3 C4 − E3 − R1 = 11`.
 
-- **TRI-6 — CORRECTED before publication (Iteration 52). The rate is NOT one in five.** At least 22 of 93 items assert a checkable external fact and 4 were wrong, so roughly **one in six with the denominator a lower bound**; a broader reading gives one in eleven. Do not publish a point estimate externally — publish the absolute (four verified defects) and the range, or wait until TRI-5 closes and a human has drawn the line. ~~the one-in-five rate deserves a published number once the remaining 16 are checked.~~ "4 of 20
+- **TRI-6 — RESOLVED: publish no rate at all (Iteration 55).** The denominator is wrong in **both** directions. It under-includes (Iteration 52 found `ACT-2-A` and `BND-3-A` missing) and over-includes (of ten items verified in Iteration 55, **six carried no external factual claim**, confirmed item by item by two independent reviewers). Any rate built on it is unsound. **Publish the absolute instead: seven verified factual defects, each with sources, harm direction, a drafted repair and its own stated limits.** ~~CORRECTED before publication (Iteration 52). The rate is NOT one in five.~~ At least 22 of 93 items assert a checkable external fact and 4 were wrong, so roughly **one in six with the denominator a lower bound**; a broader reading gives one in eleven. Do not publish a point estimate externally — publish the absolute (four verified defects) and the range, or wait until TRI-5 closes and a human has drawn the line. ~~the one-in-five rate deserves a published number once the remaining 16 are checked.~~ "4 of 20
   fact-bearing items were wrong" is a strong and honest statement about why instrument review matters, but it
   rests on a partially-verified denominator. Do not publish the rate until TRI-5 closes. `I3 S4 L3 C4 − E2 − R2 = 10`.
 

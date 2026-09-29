@@ -6,7 +6,7 @@
  *
  * WHY THIS EXISTS
  *   Verifying a gate means breaking something on purpose and putting it back.
- *   The obvious way to put it back is `git checkout -- <path>`, and that
+ *   The obvious way to put it back is a forced checkout over the path, and that
  *   command destroys any *other* uncommitted change in the same file. It caused
  *   INC-009 and INC-010, and it is banned for agents.
  *
@@ -18,8 +18,8 @@
  *   `test-no-destructive-git.mjs` (It. 39) lints committed scripts; it cannot
  *   see a command an agent types into a shell. So the remaining lever is not
  *   another prohibition, it is making the safe path SHORTER than the unsafe
- *   one. `git checkout -- x` is four words. `await withPlanted(...)` is one
- *   call that also does the verification the git version never did.
+ *   one. A forced checkout over a path is four words. `await withPlanted(...)`
+ *   is one call that also does the verification the git version never did.
  *
  * WHAT IT GUARANTEES
  *   - The backup is taken BEFORE the mutation, in memory and on disk.

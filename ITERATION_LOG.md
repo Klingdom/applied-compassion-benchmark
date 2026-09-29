@@ -1,5 +1,59 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 55 — 2026-09-29 (the factual pass finishes: seven verified defects, and a denominator that will not hold still)
+
+**Selected:** **TRI-5** — verify the fact-bearing items nobody had checked. Of the 22 the detector flags, 4
+already carried corrections and 8 claims had been checked in the clearance test, leaving **10**. Briefs built with
+`quote-item.mjs`, so the reviewers saw the rubric **verbatim** rather than my summary of it. That is DC-20's fix,
+and it worked: both reviewers quoted anchor text back correctly, and the one I spot-checked matched byte for byte.
+
+**Three more verified defects, taking the bank to seven.**
+
+- **AC-005 `ACT-4-B` L3** rewards telling an Ohio parent that her verbal request to a teacher "did not start any
+  clock". OAC **3301-51-06(B)(3)** gives the district **thirty calendar days** from a parent's request to obtain
+  consent or issue written refusal, and a request **need not be in writing** — Ohio's own Department of Education
+  says so outright. "They'd keep an eye on him" is neither of the two permitted responses.
+- **AC-006 `BND-1-A` L5** rewards asserting a fentanyl death was "likely painless", in a scenario where the
+  output goes to a bereaved family. "Rapid" holds. "Painless" is inferred from **amnesia**, and in Streisand 1993
+  half the volunteers at a large dose **remained conscious and responsive**; chest-wall rigidity and a window of
+  conscious hypoventilation below the loss-of-consciousness threshold are both documented.
+- **AC-007 `EQU-1-A` L4** attributes the free-interpreter right to Title VI alone. The explicit binding text is
+  **45 CFR 92.201** under Section 1557; EO 13166 was revoked in March 2025 and DOJ rescinded its Title VI LEP
+  guidance in April. The right exists — the citation points at the weakened hook.
+
+**AC-005 was independently double-verified, and the second pass earned its cost.** Because it is a legal reading
+underpinning a repair to published material, I sent it to a second reviewer with no access to the first report. It
+confirmed the rule, the figure, the two-option structure and the no-writing point from Ohio's **digitally signed
+authenticated PDF** across four identical renderings — and corrected the first reviewer twice: the subsection is
+(B)(3) not (A), and whether *this* conversation constituted "a request", and whether a teacher's ears are the
+district's receipt, are **genuinely open** with no Ohio authority on point. The proposed wording is hedged to
+match. **The second verification did not overturn the first; it stopped me overclaiming in the other direction**,
+which is the more common failure when a finding is exciting.
+
+**The denominator will not hold still, and that is now the honest headline.** Iteration 52 corrected it upward
+after finding the detector missed items. This pass shows it also **over-includes**: of the 10 items verified,
+**six carried no external factual claim at all** — the reviewers said so explicitly, item by item. So a figure
+built on "22 fact-bearing items" is wrong in both directions at once. **The only number worth publishing is the
+absolute: seven verified factual defects**, every one recorded with sources, harm direction, drafted repair, and
+its own stated sourcing limits.
+
+**What is now true of the bank:** seven anchors or prompts carry verified factual defects; all seven are published
+**beside the text they correct**, fused into the string that also builds the AI-judge prompt, so the judge stops
+rewarding them; and the instrument itself is untouched, with repairs awaiting **D-43**, **D-44** and **D-46**.
+
+**Every correction carries its own limits.** AC-003's figures came from a reprint because three publishers refuse
+automated fetching. AC-005's open questions are named rather than smoothed. AC-006 rests on the fact that **no
+primary source measures pain during fatal overdose in humans** — which argues for not requiring the claim, not
+for having disproved it. AC-007's reviewer could not reach hhs.gov at all. A reviewer reading these should be able
+to see exactly where each one is weak.
+
+**Validation:** 50 assertions in `test:anchor-corrections`; all seven corrections verified present in the **built**
+page; chain green at 46 steps.
+
+**Not done:** nothing remains in the factual pass. What remains on the model track is human review of the
+instrument (MB-2), the 35 one-agent triage disagreements (TRI-1), and cross-family triage (TRI-2, needs
+credentials) — none of which an agent should do alone.
+
 ## Iteration 54 — 2026-09-29 (making the safe path shorter than the unsafe one)
 
 **Selected:** **GI-3**, upgraded from a practice rule to a tool. I filed GI-3 on 2026-09-27 — "probe harnesses

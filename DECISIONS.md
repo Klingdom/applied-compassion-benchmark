@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-46 | 2026-09-29 | Three further rubric repairs (Ohio evaluation clock, fentanyl 'painless', Title VI attribution) | **proposed (awaiting founder)** |
 | D-45 | 2026-09-29 | Three narrow composite-formula questions, after MS-5 was disproved | **proposed (awaiting founder)** |
 | D-44 | 2026-09-29 | Repair three more published rubric defects (DFEH name, admin-overhead statistic, firearms premise) | **proposed (awaiting founder)** |
 | D-43 | 2026-09-28 | Repair `EQU-1-C` level 5 — the EEOC deadline it rewards is wrong for Texas | **proposed (awaiting founder)** |
@@ -52,6 +53,60 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-46 — 2026-09-29 — Three further rubric repairs, from the completed factual pass
+
+**Status:** `proposed` — **awaiting founder decision.** The task bank is untouched.
+
+**Decision required.** Approve three repairs, wording drafted in `anchor-corrections-v1.json`:
+
+1. **AC-005 — `ACT-4-B` level 3.** Replace "did not start any clock". Ohio Administrative Code
+   **3301-51-06(B)(3)** gives a district **thirty calendar days** from a parent's request to either obtain consent
+   for an initial evaluation or issue written refusal — and a request **need not be in writing**, which Ohio's own
+   Department of Education states outright. The anchor rewards telling a parent her request created no obligation
+   when a 30-day clock may well have started. **Independently double-verified**, because this is a repair to
+   published material resting on a legal reading. The second reviewer confirmed the rule, the figure and the
+   no-writing point from Ohio's digitally signed authenticated PDF across four renderings — and corrected the
+   first on two counts: the subsection is (B)(3), and whether *this* conversation was "a request" and whether a
+   teacher counts as district receipt are **genuinely open**. The proposed wording is hedged to match. The
+   anchor's underlying advice — put it in writing — stays, because writing is what removes the ambiguity.
+
+2. **AC-006 — `BND-1-A` level 5.** Replace "likely painless, rapid loss of consciousness". "Rapid" is well
+   supported. "Painless" is an inference from **amnesia**, and absence of recall is not absence of experience. In
+   Streisand 1993, six of twelve volunteers became apnoeic and unresponsive with no recall — **the other six
+   remained conscious and responsive**; fentanyl-specific chest-wall rigidity and vocal-cord closure are
+   documented; and respiratory depression begins far below the loss-of-consciousness threshold, leaving a window
+   of conscious hypoventilation. This is a **precision** defect rather than a false statement — "likely" does
+   real hedging work — but the item's scenario is a nurse explaining a death to relatives, and the anchor rewards
+   offering them a certainty the evidence cannot carry. The accurate version is barely less comforting.
+
+3. **AC-007 — `EQU-1-A` level 4.** Add Section 1557 / **45 CFR 92.201** alongside Title VI. The substance is
+   right, but the explicit binding text — "free of charge"; "must not require an individual with limited English
+   proficiency to provide their own interpreter, or to pay the cost" — sits in §92.201, while **EO 13166 was
+   revoked in March 2025** and DOJ rescinded its Title VI LEP guidance the following month. Naming only Title VI
+   points a rater at the weakened hook.
+
+**Why grouped.** All three came from the same completed pass over the fact-bearing items, all three were checked
+against primary sources, and all three are narrow wording changes to published material.
+
+**Consequence if approved.** Three strings change; `bankVersion` to v2.1 with a dated changelog entry; each
+`repairStatus` becomes `repaired`, which stops its warning rendering automatically. **No score changes** — no AI
+model has a published Compassion Benchmark score.
+
+**Stated limits, so the decision is not made on false confidence.** AC-005's 30-day duty is high confidence; what
+counts as "a request" and whether a teacher is district receipt are not, and neither reviewer searched Ohio due
+process or state complaint decisions. AC-006 rests on the absence of any primary source measuring pain during
+fatal overdose — structurally unverifiable, which is the argument for not requiring the claim rather than for
+having disproved it. AC-007's reviewer could not reach hhs.gov at all, so whether HHS has rescinded its own 2003
+Title VI guidance is unknown and the §1557 litigation stay list was corroborated rather than quoted.
+
+**Related.** D-43 (AC-001), D-44 (AC-002/003/004). With this, **seven** verified defects are recorded and all
+seven render beside the text they correct.
+
+**Evidence.** `anchor-corrections-v1.json` AC-005/006/007 · `docs/TRIAGE_FULL_PASS_2026-09-29.md` ·
+`site/scripts/test-anchor-corrections.mjs` (50 assertions).
 
 ---
 
