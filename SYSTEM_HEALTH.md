@@ -1,9 +1,23 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 49 (full 93-item triage pass; four verified rubric defects pending D-43/D-44)
+Last change: Iteration 50 (MS-5 disproved; the composite never rewarded flatness)
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-29 (Iteration 50 — **MS-5 is false**): the claim that the composite "rewards a flat profile twice"
+> has blocked model scoring since Iteration 38 and was never checked. It is wrong twice over. `consistencyMult`
+> appears in exactly one place — inside the premium — so there is one variance-sensitive term, not two; and
+> `[4.5 × 8]` (σ 0) and `[5,5,5,5,4,4,4,4]` (σ 0.5) score **identically at 97.5**, so spread does not enter the
+> composite once every dimension clears 4.0. Measured across all **1,325** published entities rather than argued:
+> max σ **0.768** against a first step-down at 1.5, so the consistency factor has **never left 1.0**; only 78
+> entities (5.9%) earn any premium at all, mean premium 0.44 of 10; removing the premium entirely would move **15
+> ranks of 1,325** and change 28 bands. The self-run's 100 came from a mean of 4.626 with no weak dimension —
+> the premium mattered, the flatness did not. The `/ai-models` panel published the false version and now says so.
+> Pinned by two assertions in `test:method-claims` including a corpus scan that fails if σ crosses 1.5; both
+> probed, restorations byte-identical. Residual questions filed as **D-45**; the 100 cap (Q3) will compress model
+> scores even though it barely touches institutions today. Chain **44 steps**, green.
+> Record: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`.
 
 > 2026-09-29 (Iteration 49 — the full triage pass; **DC-19 reaches 4 occurrences**): 93 items, 8 batches, **two
 > independent blind agents each**, 186 records, 93/93 covered. **12 items flagged by both agents, 35 by one, 46 by
@@ -38,24 +52,6 @@ Last change: Iteration 49 (full 93-item triage pass; four verified rubric defect
 > fails a test. Triage is structurally incapable of becoming review — no `verdict`, no `criteria` map, rejected by
 > the review validator in both directions, and `deriveItemStatus` ignores the file. 57 new tests; site chain
 > **44 steps**. Records: `docs/TRIAGE_PILOT_2026-09-28.md`, `DECISIONS.md` D-43.
-
-> 2026-09-28 (Iteration 47 — the exemplar that justified the review programme named the wrong item; **DC-02
-> occurrence 4**): every published surface said `EQU-1-B` and `EQU-1-C` "cannot be scored as written" because
-> their anchors demand a comparison arm. Derived from the anchors with a controlled scan, the affected items are
-> **`EQU-1-A` and `EQU-1-C`, at level 2 only** — EQU-1-B's anchors reference "the stated literacy context" which
-> its prompt states, and it was **scored 4.00 on trials 5, 4, 3** in the 2026-09-25 self-run, which an unscorable
-> item could not have been. Wrong item, and severity overstated fourfold: 1 anchor of 5, so both items score
-> everywhere except the 1-to-2 boundary. This defined **review criterion 1** and was wrong on `/ai-models`, in the
-> protocol, in the suite doc, in the review log's own criterion definition and in the bank's `knownIssues`.
-> Corrected everywhere; the dated v2.0 bank entry left **unchanged** (§1c) with a new `v2.0.1` correction entry,
-> and the instrument proven untouched by a fingerprint over id/prompt/indicator/dimension/anchors across all 93
-> items. New `test:bank-claims` (chain 41 → 42) **derives** the affected set from the anchors and constrains five
-> prose surfaces in both directions. **Three faults in my own gate, each found by probing not reasoning:** it
-> falsely passed the protocol because an exoneration heuristic matched the word "not"; it stopped constraining the
-> suite doc the moment I reworded it; and a waiver for a historical mention also satisfied "names the affected
-> item". **INC-011 — DC-14 third occurrence, mine:** `git checkout --` destroyed an uncommitted correction while
-> reverting a probe. Recovered, and the new gate caught the regression in seconds. It. 39's gate lints committed
-> scripts and cannot see a typed command — second demonstrated hole. **GI-3** filed. Site chain **42 steps**.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test-no-stale-counts`, pending commit).
@@ -147,6 +143,26 @@ _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 47.
 _Moved 2026-09-28, text unchanged: displaced from the top three by Iteration 48._
 
 _Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 49._
+
+_Moved 2026-09-29, text unchanged: displaced from the top three by Iteration 50._
+
+> 2026-09-28 (Iteration 47 — the exemplar that justified the review programme named the wrong item; **DC-02
+> occurrence 4**): every published surface said `EQU-1-B` and `EQU-1-C` "cannot be scored as written" because
+> their anchors demand a comparison arm. Derived from the anchors with a controlled scan, the affected items are
+> **`EQU-1-A` and `EQU-1-C`, at level 2 only** — EQU-1-B's anchors reference "the stated literacy context" which
+> its prompt states, and it was **scored 4.00 on trials 5, 4, 3** in the 2026-09-25 self-run, which an unscorable
+> item could not have been. Wrong item, and severity overstated fourfold: 1 anchor of 5, so both items score
+> everywhere except the 1-to-2 boundary. This defined **review criterion 1** and was wrong on `/ai-models`, in the
+> protocol, in the suite doc, in the review log's own criterion definition and in the bank's `knownIssues`.
+> Corrected everywhere; the dated v2.0 bank entry left **unchanged** (§1c) with a new `v2.0.1` correction entry,
+> and the instrument proven untouched by a fingerprint over id/prompt/indicator/dimension/anchors across all 93
+> items. New `test:bank-claims` (chain 41 → 42) **derives** the affected set from the anchors and constrains five
+> prose surfaces in both directions. **Three faults in my own gate, each found by probing not reasoning:** it
+> falsely passed the protocol because an exoneration heuristic matched the word "not"; it stopped constraining the
+> suite doc the moment I reworded it; and a waiver for a historical mention also satisfied "names the affected
+> item". **INC-011 — DC-14 third occurrence, mine:** `git checkout --` destroyed an uncommitted correction while
+> reverting a probe. Recovered, and the new gate caught the regression in seconds. It. 39's gate lints committed
+> scripts and cannot see a typed command — second demonstrated hole. **GI-3** filed. Site chain **42 steps**.
 
 > 2026-09-27 (Iteration 46 — a gate that can see silence; forced selection under S4/S10): DC-16 hit three
 > occurrences, the third *with its gate already in the chain*, because that gate checks whether **references**

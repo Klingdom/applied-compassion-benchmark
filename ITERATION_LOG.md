@@ -1,5 +1,63 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 50 — 2026-09-29 (MS-5 disproved: the formula never rewarded flatness)
+
+**Selected:** MS-5 — open since Iteration 38, cited on `/ai-models` as an open methodology question, and named
+in every status report since as something that "should be answered before any model score is published". The
+decision is the founder's; the analysis was not, and nobody had done it.
+
+**The claim:** *"The composite rewards a flat profile twice (consistency multiplier and integration premium both
+key off low variance), which is how the self-run reached exactly 100."*
+
+**It is false, in two separate ways.**
+
+1. **There is no "twice".** `consistencyMult` appears in exactly one place in both the `.mjs` and `.ts`
+   implementations — inside `integrationPremium`. It is not a multiplier on the composite. One
+   variance-sensitive term, not two.
+2. **Spread does not affect the score at all** once every dimension clears 4.0. `[4.5 × 8]` (σ = 0) and
+   `[5,5,5,5,4,4,4,4]` (σ = 0.5) both score **97.5**. Identical. What the formula rewards is clearing the 4.0
+   threshold on *every* dimension — a claim about **level**, not evenness, which is exactly what
+   `/methodology` has said all along. The published methodology was right; MS-5 was wrong about it.
+
+**Measured across all 1,325 published entities, not argued:**
+
+| | |
+|---|---|
+| Max σ observed | **0.768** (first step-down is at 1.5; theoretical max 2.5) |
+| Entities with consistency factor < 1.0 | **0 of 1,325** |
+| Entities earning any premium | 78 (5.9%) |
+| Mean premium | **0.44** of a possible 10 |
+| Removing the premium entirely | **15 rank moves of 1,325**, largest 4 places; **28 band changes** |
+
+So the consistency factor is not merely "only the first two steps occur" as the methodology page says — on real
+data only the **first** occurs, by a factor of two.
+
+**What actually produced the self-run's 100:** dimension mean **4.626** → base **90.65**, premium 10, raw 100.65,
+clamped. The premium mattered; the flatness did not. Any profile with that mean and no dimension below 4.0
+reaches 100, including a maximally split one. **MS-5 attributed a real anomaly to the wrong cause.**
+
+**Corrected:** the `/ai-models` panel published the false version. It now states the true behaviour and says
+plainly that we got it wrong, with the worked comparison. Correcting a published false claim is in scope; the
+formula was not touched.
+
+**Gated:** two assertions in `test-method-claims.mjs` pin the result — that the flat and split profiles score
+identically (with a positive control proving they really do differ in spread), and a scan of the whole corpus
+that **fails** if σ ever crosses 1.5, naming the analysis document to re-run. Probed both ways: tightening the
+bound to 0.5 fails naming the real max 0.768, and breaking the corpus path fails with a readable sentence plus a
+vacuity failure rather than a stack trace. Restorations byte-identical.
+
+**Filed as D-45**, three narrow questions that *are* real: whether dormant machinery should stay documented (Q1,
+recommendation: remove and say spread does not matter); whether the 0.2-per-weak-dimension cliff is the intended
+shape (Q2); and whether the 100 cap compresses the top — which does not matter for institutions today (5 clamped)
+but will the moment a model score is published (Q3).
+
+**Incidental, verified, harmless:** `10 × 1.0 × 0.2` is `1.9999999999999996` in binary float. Checked against
+exact arithmetic across all 1,325 entities — **0 composites differ, 0 bands differ.** Recorded so the next person
+who sees it in a debug output does not re-investigate it.
+
+**Impact:** MS-5 should stop blocking model scoring. The genuine barriers are unchanged and elsewhere — no
+human-validated items, no unpublished pool, no cross-model judging, and four rubric defects awaiting D-43/D-44.
+
 ## Iteration 49 — 2026-09-29 (the full triage pass: four verified factual errors in published rubrics, and a bug in my own harness)
 
 **Selected:** MB-2-TRIAGE, full pass. The pilot established the mechanism finds real defects it was not told

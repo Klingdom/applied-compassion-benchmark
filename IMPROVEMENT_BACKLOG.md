@@ -314,6 +314,26 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-29, from Iteration 50 — MS-5 disproved)
+
+- **MS-5 — CLOSED, FALSE PREMISE (Iteration 50, 2026-09-29).** The composite does not reward a flat profile, let
+  alone twice. `consistencyMult` lives only inside the premium, and two profiles with the same mean and different
+  spread score identically once every dimension clears 4.0. Max σ across all 1,325 published entities is 0.768
+  against a first step-down at 1.5, so the consistency factor has never left 1.0. **It should no longer be cited
+  as a barrier to model scoring.** Analysis: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`. Residual
+  questions filed as **D-45**.
+
+- **MS-6 — the 100 cap will compress model scores even though it barely touches institutions.** 5 of 1,325
+  entities clamp today. Any model averaging ≥ 4.6 with no weak dimension scores exactly 100, so the first two
+  strong models published would be indistinguishable. Q3 of D-45. Decide **before** the first model score, not
+  after. `I4 S4 L3 C4 − E2 − R2 = 11`. **Lane: blocked-on-founder.**
+
+- **MS-7 — dormant machinery in the published methodology.** The consistency factor is documented as a four-step
+  function of which two steps are unreachable and the third has never fired. Whatever the founder decides in
+  D-45 Q1, the methodology page's phrase "only the first two steps ever occur in practice" understates it: on
+  real data only the first occurs. That sentence is true, so it was not unilaterally changed — but it should be
+  sharpened when D-45 is answered. `I2 S3 L3 C5 − E1 − R1 = 11`.
+
 ### New backlog items (2026-09-29, from Iteration 49 — the full triage pass)
 
 - **TRI-1 — adjudicate the 35 one-agent flags.** Where one agent flagged and the other cleared, the disagreement

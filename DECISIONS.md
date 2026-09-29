@@ -23,6 +23,7 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-45 | 2026-09-29 | Three narrow composite-formula questions, after MS-5 was disproved | **proposed (awaiting founder)** |
 | D-44 | 2026-09-29 | Repair three more published rubric defects (DFEH name, admin-overhead statistic, firearms premise) | **proposed (awaiting founder)** |
 | D-43 | 2026-09-28 | Repair `EQU-1-C` level 5 — the EEOC deadline it rewards is wrong for Texas | **proposed (awaiting founder)** |
 | D-30 | 2026-09-11 | Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite | active |
@@ -51,6 +52,47 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-45 — 2026-09-29 — Three narrow composite-formula questions, now that MS-5 is disproved
+
+**Status:** `proposed` — **awaiting founder decision.** No formula change has been made.
+
+**Context.** MS-5 claimed the composite "rewards a flat profile twice (consistency multiplier and integration
+premium both key off low variance)" and has blocked publishing any model score since Iteration 38. It is
+**false**. `consistencyMult` appears in exactly one place — inside the premium — so there is one
+variance-sensitive term, not two. And two profiles with the same mean, one flat and one split 5/4, score
+**identically** (97.5 each): spread does not enter the composite once every dimension clears 4.0. Full analysis
+and the corpus numbers: `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`.
+
+**Q1 — should `consistencyMult` stay?** It is documented as a four-step function. Two steps are mathematically
+unreachable (σ across 8 dimensions in [0,5] cannot exceed 2.5) and the third has **never fired**: max σ observed
+across all 1,325 published entities is **0.768**, against a first step-down at 1.5. It is, in practice, the
+constant 1.0. Options: (a) keep and document as dormant; (b) collapse to two steps; (c) remove it and state
+plainly that spread does not affect the composite. **Recommendation: (c)**, because machinery a reader must
+study in order to discover it does nothing is a cost with no benefit — but this is a methodology change and
+therefore yours.
+
+**Q2 — is the 0.2-per-weak-dimension step the right shape?** One dimension slipping 4.0 → 3.9 costs **2.3
+composite points** (1.3 base, 2.0 premium), and five weak dimensions zero the premium outright. That is a
+defensible statement — "excellence must be universal" — but it should be a chosen cliff rather than an emergent
+one. No change recommended; recorded so it is a decision.
+
+**Q3 — does the 100 cap compress the top?** Only 5 of 1,325 entities clamp today, so this is not urgent for the
+institution indexes. It becomes urgent the moment model scores are published, because any model averaging ≥ 4.6
+with no weak dimension is indistinguishable from any other such model. **Worth deciding before the first model
+score, not after.**
+
+**What is NOT blocked any more.** MS-5 should be closed as founded on a false premise and should stop being
+cited as a barrier to model scoring. The real barriers are unchanged: no human-validated items, no unpublished
+item pool, no cross-model judging, and four rubric defects awaiting D-43 / D-44.
+
+**Consequence of doing nothing.** Q1's dormant machinery stays documented; the published `/ai-models` row is
+already corrected to state the true behaviour, so no reader is misinformed while this waits.
+
+**Evidence.** `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md` · `site/scripts/test-method-claims.mjs`
+(37 assertions, including the two that pin this result and a corpus scan that fails if σ ever crosses 1.5).
 
 ---
 

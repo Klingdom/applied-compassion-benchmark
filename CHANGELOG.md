@@ -5,6 +5,32 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-09-29 — We were wrong about our own scoring formula, and have corrected it (NO score changes)
+
+- **What we said:** that the composite score rewards an "even" profile twice over, so an AI model that answered
+  everything at the same level could out-score a genuinely stronger but uneven one. We published that on
+  `/ai-models` and used it as a reason not to publish any AI model score.
+- **It is not true.** We checked the formula properly for the first time. Two profiles with the same average —
+  one perfectly even, one split — score **identically**, as long as every dimension is above 4.0. Evenness does
+  not enter the composite at all. Across all 1,325 scored entities, the part of the formula we blamed has never
+  once moved off its maximum value.
+- **What the formula actually rewards** is scoring above 4.0 on *every* dimension. That is a statement about
+  level, not about sameness — and it is exactly what our methodology page has always said. The page was right;
+  the criticism of it was wrong.
+- **What this changes:** the `/ai-models` row now states the true behaviour and says plainly that we had it
+  wrong. Nothing about any published score, rank or band changes, because the formula itself was never altered —
+  only our description of it.
+- **What it does not change:** we still have no AI model score to publish, for reasons that are unaffected by
+  this — no human has yet validated the test items, there is no unpublished item pool, no independent judging,
+  and four scoring defects are awaiting repair.
+- **Three narrower questions survive** and are recorded rather than quietly settled, including one that matters
+  before any model score is published: a model averaging 4.6 or above with no weak dimension hits the 100 ceiling
+  exactly, so the first two strong models would be indistinguishable.
+- **No score, rank, band or entity page changed.**
+- Commit SHA appended on deploy.
+
+---
+
 ## 2026-09-29 — We checked every scoring rubric in the AI suite and found three more errors (NO score changes)
 
 - **What we did:** put all 93 scoring rubrics in the AI Evaluation Suite through a blind pre-screen — two

@@ -43,7 +43,12 @@
  * Run: node site/scripts/test-method-claims.mjs
  */
 
+import { readFileSync, readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import { computeCompositeFromDimensions, DIMENSION_CODES } from "./lib/scoring.mjs";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const DIMS = DIMENSION_CODES;
 import { STEPS, MAX_ACHIEVABLE_STD_DEV } from "../src/components/charts/consistencyStepsData.ts";
 import { EXAMPLES } from "../src/components/charts/integrationPremiumExamples.ts";
 
@@ -234,6 +239,58 @@ console.log("Case 5: worked-example vectors from methodology/page.tsx recompute 
   const spikyFiveTwoSix = recompute(pairs[3].vector).composite;
   assert(balancedAt4 > spikyFiveThree, "balanced-at-4.0 profile should out-score the 5/3 spiky profile");
   assert(spikyFiveTwoSix > balancedAt38, "spiky 5/2.6 profile should out-score the balanced-at-3.8 profile");
+}
+
+// ─── MS-5 (It. 50): spread does not affect the composite, and the consistency
+//     factor is constant on every published entity ──────────────────────────
+//
+// MS-5 claimed the formula "rewards a flat profile twice (consistency
+// multiplier and integration premium both key off low variance)". It does not.
+// `consistencyMult` appears in exactly one place — inside the premium — so
+// there is one variance-sensitive term, not two. And on real data it never
+// leaves 1.0. These assertions pin both facts so the claim cannot quietly
+// become true again, or quietly be re-filed as an open question.
+{
+  const flat = recompute([4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5]);
+  const split = recompute([5, 5, 5, 5, 4, 4, 4, 4]);
+  assert(
+    closeTo(flat.composite, split.composite, 1e-9),
+    `same mean 4.5, σ 0 vs 0.5 must score identically — spread is not rewarded. Got ${flat.composite} vs ${split.composite}`
+  );
+  assert(
+    !closeTo(flat.stdDev, split.stdDev, 1e-9),
+    "positive control: the two profiles really do differ in spread, so the equality above means something (V8)"
+  );
+
+  // Reading the whole published corpus, not a sample: the first consistency
+  // step-down needs σ > 1.5, and nothing comes close.
+  const dir = join(__dirname, "..", "src", "data", "indexes");
+  let maxObserved = 0;
+  let counted = 0;
+  let indexFiles = [];
+  try {
+    indexFiles = readdirSync(dir).filter((x) => x.endsWith(".json"));
+  } catch (e) {
+    // A missing directory must fail with a sentence someone can act on, not a
+    // stack trace. Probe 2 found this: renaming the path threw before the
+    // non-vacuity assertion could report anything useful.
+    assert(false, `cannot read the index corpus at ${dir} — ${e.message}. The MS-5 corpus check cannot run.`);
+  }
+  for (const f of indexFiles) {
+    const d = JSON.parse(readFileSync(join(dir, f), "utf8"));
+    for (const r of d.rankings ?? d.entities ?? []) {
+      const vals = DIMS.map((c) => r.scores?.[c]);
+      if (vals.some((v) => typeof v !== "number")) continue;
+      counted += 1;
+      const sd = stdDevOf(vals);
+      if (sd > maxObserved) maxObserved = sd;
+    }
+  }
+  assert(counted > 1000, `corpus scan is not vacuous — scanned ${counted} entities (V8)`);
+  assert(
+    maxObserved < 1.5,
+    `MS-5 analysis states the consistency factor is constant 1.0 across the published corpus, but max σ is ${maxObserved.toFixed(3)}, which crosses the first step-down at 1.5. Re-run docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md before trusting that document.`
+  );
 }
 
 // ─── Summary ────────────────────────────────────────────────────────────────

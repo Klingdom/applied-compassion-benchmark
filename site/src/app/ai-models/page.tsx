@@ -284,12 +284,21 @@ export default function AiModelsPage() {
               </p>
             </Panel>
             <Panel>
-              <h3 className="text-[1.05rem] mb-2">The formula rewards a flat profile twice</h3>
+              <h3 className="text-[1.05rem] mb-2">We thought the formula rewarded flatness. It does not.</h3>
               <p className="text-muted text-[0.93rem] leading-relaxed">
-                A dimension spread of 0.121 points put the consistency multiplier at maximum <em>and</em> left
-                the full integration premium intact. Answering every prompt at the same level is therefore the
-                most efficient route to the cap — so a rubric-aware subject outscores a genuinely strong but
-                uneven one. That is now an open methodology question, recorded rather than quietly adjusted.
+                For a year this row said the composite rewards an even profile twice over, and that a
+                rubric-aware model could therefore beat a genuinely stronger but uneven one. We checked it
+                properly. Two profiles with the same average — one perfectly flat, one split 5/4 — score{" "}
+                <em>identically</em>. Spread does not enter the composite at all once every dimension clears 4.0.
+                Across all <span className="text-text font-medium">1,325</span> scored entities the consistency
+                factor has never once left its maximum.
+              </p>
+              <p className="text-muted text-[0.93rem] leading-relaxed mt-3">
+                What the formula actually rewards is being above 4.0 on <em>every</em> dimension, which is a
+                claim about level rather than evenness — and is what the methodology page always said. The
+                self-run reached 100 because it averaged 4.63 with no weak dimension, not because it was flat.
+                Three narrower questions survive and are recorded; the one that blocked publishing a model score
+                does not.
               </p>
             </Panel>
             <Panel>
