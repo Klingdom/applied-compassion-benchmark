@@ -2,8 +2,10 @@
 
 ## Iteration 52 — 2026-09-29 (I overstated my own headline number within hours of building the controls meant to stop that)
 
-**Selected:** self-correction, pre-empting TRI-5. Not a queue item — a live wrong claim in material I had
-committed and pushed an hour earlier.
+**Selected:** **TRI-6**, brought forward as a self-correction and pre-empting TRI-5. TRI-6 was filed in
+Iteration 51 saying “do not publish the rate until TRI-5 closes” — good instinct, except I had already
+published it internally in the same breath. This entry is that correction: a live wrong claim in material I
+had committed and pushed an hour earlier.
 
 **The claim:** Iteration 51 published *"20 of 93 items make an external factual claim, and 4 of those 20 were
 wrong — one in five."* It went into the triage record, the iteration log, SYSTEM_HEALTH and a commit message.
