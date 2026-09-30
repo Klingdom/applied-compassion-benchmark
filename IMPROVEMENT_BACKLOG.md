@@ -426,7 +426,7 @@ comparability.
   the environment that actually runs the gate. Needs a CI-environment variant of `assertGateCatches`, or at
   minimum a one-off CI run with the probe planted, recorded per gate. `I3 S4 L3 C4 - E3 - R2 = 9`.
 
-- **SAFE-1 — a write that truncates before it computes its content is a loaded gun.** Iteration 65 destroyed
+- **SAFE-1 — DONE (Iteration 78, 2026-09-30).** Both halves. **(i)** `research/scripts/lib/safe-write.mjs`: refuses non-string, empty, and below-half-size content **before opening the file**, then writes via a temp file and atomic rename so a crash cannot truncate; `safeRewrite` runs the transform first, so a throw touches nothing; `{ allowShrink: true }` makes a deliberate deletion visible. **(ii)** `test:artifact-shrink` (chain 56 → 57) asserts nine append-mostly governance artifacts are not empty and have not halved against `HEAD`. Controls both ways: emptying the log fails, cutting the backlog to 40% fails, and every library refusal leaves the original bytes intact. ~~a write that truncates before it computes its content is a loaded gun.~~ Iteration 65 destroyed
   `ITERATION_LOG.md` — 330 KB of governance record reduced to **0 bytes** — with
   `io.open(path, "w").write(expr)`. Python evaluates `io.open` first, so the file was truncated and *then* the
   expression raised on a stray per-cent sign. Recovered byte-identical via `git show HEAD:ITERATION_LOG.md`
@@ -981,7 +981,7 @@ comparability.
   the one-command restore. Cheap, mechanical, and it also protects against a half-written parse → mutate →
   re-serialise. v1: I4 S4 L2 C5 − E1 − R1 = 13 · v2: Rc 0 (new class, 1 occurrence — a gate here is prevention, not a
   ratchet) → **13**.
-- **SC-1 — the scanner keeps rediscovering claims it has already debunked (recurring, ungated ⇒ S10 candidate).**
+- **SC-1 — DONE, row was stale (verified Iteration 78, 2026-09-30).** The ledger exists at `research/known-misdated-claims.json` (46 KB), `validate-scan.mjs` references it in nine places, and `test:known-misdated-claims` passes **148** assertions. Flagged in this row as an S10 candidate with several dated occurrences — and already gated. **Twelfth already-finished row** of the 23 this session began with. ~~the scanner keeps rediscovering claims it has already debunked (recurring, ungated ⇒ S10 candidate).~~
   Each cycle re-verifies the same false items from scratch and drops them again, spending verification searches on
   work already done. Dated occurrences: **Meta "8,000 layoffs"** (true date 2026-05-20) dropped on 09-17 **and** 09-18,
   and the 09-18 scanner records it as "recurring misdate, third cycle this has surfaced"; **China "Ethnic Unity Law"**

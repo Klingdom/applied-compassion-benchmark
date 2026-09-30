@@ -1,5 +1,49 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 78 — 2026-09-30 (SAFE-1: writing a file should not be able to destroy it)
+
+**Selected:** **SAFE-1** at 14, the top genuinely-open row after verification, and the only one whose failure I
+**demonstrated today**. Iteration 65 reduced `ITERATION_LOG.md` from 330 KB to **0 bytes** in a single call
+(INC-012), and recovered it only because it happened to have been committed minutes earlier. The same tree held an
+uncommitted briefing rewrite that would have been unrecoverable.
+
+**The cause was argument-evaluation order, not carelessness.**
+`io.open(path, "w").write(computeContent())` opens the file **first**. The open truncated; then the expression
+raised on a stray per-cent sign; the write never ran. Nothing reported a problem — the traceback named the format
+string, not the file.
+
+**Both halves built.**
+
+**(i) `research/scripts/lib/safe-write.mjs`.** `safeWrite(file, content)` refuses a non-string, refuses empty
+content, and refuses a shrink below half the existing size — **all before the file is opened**. Then it writes to
+a temporary file and `renameSync`s over the target, so a crash mid-write leaves the original intact rather than a
+truncated stump. `safeRewrite(file, mutate)` is the shape the incident wanted: the transform runs first, and if it
+throws, nothing has been touched. A deliberate large deletion passes `{ allowShrink: true }`, which makes the
+intent visible in the diff instead of indistinguishable from an accident.
+
+**(ii) `test:artifact-shrink`** (chain 56 → 57), because a library only protects files written through it. It
+asserts that nine append-mostly governance artifacts — the iteration log, backlog, health file, decisions, risks,
+incidents, changelog, defect registry and applied-changes — are **not empty** and have **not lost more than half
+their bytes against `HEAD`**. These files grow; a halving is a bug, never an edit. A deliberate deletion is still
+possible: commit it, and the next run compares against the new `HEAD`. The gate constrains the working tree, which
+is where the accident happens.
+
+**Controls, in both directions.** For the gate: emptying `ITERATION_LOG.md` fails it, and cutting
+`IMPROVEMENT_BACKLOG.md` to 40% fails it too — not-empty is not the same as not-collapsed. For the library: empty,
+non-string and shrinking writes are each refused **with the original file's bytes intact afterwards**, a valid
+larger write succeeds, `allowShrink` permits the deliberate case, and a transform that throws leaves the file
+unchanged. Positive controls run first: the nine guarded files total **1,078,212 characters** in `HEAD`, so the
+comparison is measuring something.
+
+**Stated in the gate, because it is the limit that matters:** this catches the **result**, not the cause. Nothing
+stops the next script from opening a file badly. What changes is that the damage fails a build in the same session
+instead of being found by someone checking a file size on a hunch.
+
+**Also marked done: SC-1**, verified rather than assumed. The debunked-claims ledger exists
+(`research/known-misdated-claims.json`, 46 KB), `validate-scan.mjs` references it in nine places, and
+`test:known-misdated-claims` passes **148** assertions. It was an S10 candidate with several dated occurrences and
+it had already been gated. **Twelfth already-finished row** of the 23 this session started with.
+
 ## Iteration 77 — 2026-09-30 (V9d-1: a gate that compared two files to each other and called it a check)
 
 **Selected with visibility weighted by hand** (*Deviation: as in 75 and 76 — the formula has no reader-visibility

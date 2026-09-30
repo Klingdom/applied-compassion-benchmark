@@ -355,9 +355,12 @@ be others.
 
 - **Immediate, in force:** a `safe_write` that computes the string, refuses empty content, and refuses to shrink
   a file below half its size — all *before* opening it for write.
-- **Filed as SAFE-1:** (i) a committed `research/scripts/lib/safe-write.mjs` with the same guard, for every
-  script that writes a governance artifact; (ii) a chain test asserting no tracked governance artifact is empty
-  or has shrunk by more than half against `HEAD`, so the next one fails at test time instead of being noticed.
+- **SAFE-1 DELIVERED 2026-09-30 (Iteration 78):** (i) `research/scripts/lib/safe-write.mjs` — refuses non-string, empty and
+  below-half-size content before the file is opened, then writes via a temp file and atomic rename; `safeRewrite`
+  runs the transform first so a throw touches nothing. (ii) `test:artifact-shrink` — nine append-mostly
+  governance artifacts must be non-empty and within half of `HEAD`. Both carry negative controls: emptying the
+  iteration log fails the gate, cutting the backlog to 40% fails it, and every library refusal leaves the
+  original bytes intact.
 - **Practice rule:** compute the output, verify it, then open the file. Never let a file-opening mode be the
   first thing that runs.
 
