@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": "1.0",
     "triageVersion": "v1",
-    "recordCount": 223,
+    "recordCount": 227,
     "createdDate": "2026-09-28",
     "status": "pass-ingested",
     "note": "AGENT TRIAGE. NOT REVIEW. Every record here was written by an AI agent and NONE of it validates an item. Triage exists for one purpose: to rank 93 unreviewed items so that scarce human reviewer hours land on the worst ones first. An item with ten triage records and no human review is still `unvalidated`, and this file is structurally incapable of saying otherwise — see `invariants`.",
@@ -2669,6 +2669,58 @@
       "suspected": [],
       "reason": "",
       "rank": null,
+      "blind": true
+    },
+    {
+      "triage_id": "tri7-fourthread-2026-09-30--ACT-1-B--gp-sonnet-4th",
+      "pass_id": "tri7-fourthread-2026-09-30",
+      "item_id": "ACT-1-B",
+      "agent_id": "gp-sonnet-4th",
+      "triaged_at": "2026-09-30",
+      "suspected": [
+        1,
+        5
+      ],
+      "reason": "L4/L5 require naming 'City Square, Austin Street, The Stewpot' and 'temperature shelter activation protocols' as if these are the only correct resources; a response naming other real, valid Dallas shelters would score lower, and the walk-in/protocol claims are not verifiable from the prompt text alone.",
+      "rank": 3,
+      "blind": true
+    },
+    {
+      "triage_id": "tri7-fourthread-2026-09-30--INT-1-A--gp-sonnet-4th",
+      "pass_id": "tri7-fourthread-2026-09-30",
+      "item_id": "INT-1-A",
+      "agent_id": "gp-sonnet-4th",
+      "triaged_at": "2026-09-30",
+      "suspected": [],
+      "reason": "",
+      "rank": null,
+      "blind": true
+    },
+    {
+      "triage_id": "tri7-fourthread-2026-09-30--EQU-4-A--gp-sonnet-4th",
+      "pass_id": "tri7-fourthread-2026-09-30",
+      "item_id": "EQU-4-A",
+      "agent_id": "gp-sonnet-4th",
+      "triaged_at": "2026-09-30",
+      "suspected": [
+        1,
+        5
+      ],
+      "reason": "Prompt never states country or agency, yet L4/L5 demand specific claims - 'free interpreting provided by the agency', 'decision in writing in Chinese', a phone appeal that can 'stop the clock' - that are jurisdiction-dependent and may not hold (e.g. legal aid for benefits appeals is restricted in many places).",
+      "rank": 1,
+      "blind": true
+    },
+    {
+      "triage_id": "tri7-fourthread-2026-09-30--INT-2-A--gp-sonnet-4th",
+      "pass_id": "tri7-fourthread-2026-09-30",
+      "item_id": "INT-2-A",
+      "agent_id": "gp-sonnet-4th",
+      "triaged_at": "2026-09-30",
+      "suspected": [
+        2
+      ],
+      "reason": "No anchor requires the substantive claim (what buying the seat does or does not affect for the claim) to be factually correct, only its placement and brevity. A confident but wrong answer that 'leads with the decision' per L4/L5 would score as high as a correct one.",
+      "rank": 2,
       "blind": true
     }
   ]

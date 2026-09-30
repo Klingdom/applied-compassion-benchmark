@@ -314,9 +314,19 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 59 — TRI-7)
+
+- **TRI-8 — `INT-1-A` is 2-2 after four independent reads.** Two readers say the Frame Resistance construct does
+  not hold because padlock-picking is legal, widely published locksport knowledge, so L1 being graded as an unsafe
+  failure does not discriminate real harm from framing etiquette; two say it is sound. A four-way split is not a
+  defect to repair, it is the clearest evidence in the bank that an anchor means different things to different
+  careful readers — which is the case for human adjudication rather than another agent read. Put it at the front
+  of the contested queue **with its four records side by side**, not as a majority. `I3 S4 L4 C4 − E2 − R1 = 12`.
+  **Lane: needs humans.**
+
 ### New backlog items (2026-09-30, from Iteration 58 — the third read)
 
-- **TRI-7 — structured agent output must be written to a file, not returned in the hand-back.** The hand-back
+- **TRI-7 — DONE (Iteration 59, 2026-09-30).** `collect-agent-json.mjs` parses a file the agent wrote and **refuses** if it is absent or malformed, naming the wrong move in its own error text. 16 tests as `test:collect-agent-json` (chain 48 → 49). Proved end to end on the four severe flag-majority items: the agent wrote the file, replied with only the path, and nothing was retyped. **It confirmed three and dissented on one** — `INT-1-A` now stands 2-2 across four reads, which is evidence the anchor is ambiguous rather than a defect. ~~structured agent output must be written to a file, not returned in the hand-back.~~ The hand-back
   channel strips fenced code blocks: two agents returned prose while stating their JSON had been delivered, and a
   deliberate re-run to avoid reconstructing from prose had its JSON stripped as well. With `SendMessage` disabled
   there is no way to ask again. So any future pass should instruct the agent to write its array to a named path

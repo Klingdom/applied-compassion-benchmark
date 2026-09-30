@@ -1,5 +1,54 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 59 — 2026-09-30 (removing the last hand that retypes machine output)
+
+**Selected:** **TRI-7**, filed one iteration earlier. Filing a fix and then not building it when it is one script
+would have been the wrong call, and the fix removes the only remaining place in this pipeline where a human hand
+retypes machine output — which is the DC-20 shape.
+
+**The problem, restated.** The agent hand-back channel strips fenced code blocks. Three agents returned prose
+while stating their JSON had been delivered; `SendMessage` is disabled so there was no way to ask again; and a
+deliberate re-run to avoid transcribing prose had its JSON stripped too. The record was therefore transcribed
+from an agent's own prose enumeration and **labelled as weaker provenance**. Honestly-labelled weakness is still
+weakness.
+
+**Added:** `research/scripts/collect-agent-json.mjs`. A brief now tells the agent to **write** its array to a
+named path and reply with only that path; the collector parses the file, validates shape, and stages it for
+`ingest-triage.mjs`. The path is worthless to fabricate — if the file is absent or malformed the collector
+**refuses**, and its refusal message names the obvious wrong move: *do not transcribe the prose*. A collector
+that fell back to best-effort would reintroduce precisely the hand it exists to remove.
+
+**Validation: 16 assertions, wired as `test:collect-agent-json` (chain 48 → 49).** The refusals are the point, so
+they are tested individually: a missing file, prose instead of JSON, malformed JSON, an empty array (an empty
+result is indistinguishable from no result), a bare object, a suspicion with no reason, a criterion outside 1–5,
+and an empty item id. A fenced block **inside** the file is tolerated, because agents fence by habit even when
+writing to a file and refusing that would fail on output that is actually correct. Usage errors exit 2 and data
+errors exit 1, so the two are distinguishable.
+
+**Proved end to end on the items that matter.** Rather than test the mechanism on throwaway data, I used it for a
+fourth read of the four **severe** flag-majority items from the tie-break — the ones heading to a human first.
+The agent wrote the file, replied with only the path, and the collector parsed it with **nothing retyped**.
+
+| Item | Third read | Fourth read |
+|---|---|---|
+| `ACT-1-B` | flagged | **flagged** (1, 5) |
+| `EQU-4-A` | flagged | **flagged** (1, 5) |
+| `INT-2-A` | flagged | **flagged**, but on criterion 2 rather than 5 |
+| `INT-1-A` | flagged | **cleared** |
+
+**Three confirmed, one dissent — and the dissent is the more interesting result.** `INT-1-A` now stands at 2-2
+across four independent reads. That is not a defect two agents happened to agree on; it is evidence the **anchor
+itself is ambiguous**, which is exactly what human review exists to settle and exactly the kind of thing a
+majority vote would have buried. `INT-2-A`'s shift from criterion 5 to criterion 2 is a milder version of the
+same signal: three readers agree something is wrong and disagree about what.
+
+**Store:** 227 records across four passes, validating 36/36.
+
+**What this does not do.** It does not make any of these verdicts a review. Four agents are still four agents,
+`deriveItemStatus` still reads only the human review log, and every one of the 93 items remains `unvalidated`.
+What changed is that the chain from an agent's judgement to the stored record now contains no retyping at any
+point.
+
 ## Iteration 58 — 2026-09-30 (a third read turns 35 open questions into 9, and the handback channel eats JSON)
 
 **Selected:** **TRI-1**. I had filed it as "needs humans (third read)" and that was too quick. A third
