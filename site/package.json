@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "lint:briefings": "node scripts/lint-daily-briefings.mjs",
-    "validate:briefings": "node scripts/validate-daily-briefings.mjs",
+    "validate:briefings": "node scripts/validate-daily-briefings.mjs --self-test && node scripts/validate-daily-briefings.mjs",
     "extract": "node scripts/extract-rankings.mjs",
     "validate": "node scripts/validate-indexes.mjs",
     "validate:product-separation": "node scripts/validate-product-separation.mjs",

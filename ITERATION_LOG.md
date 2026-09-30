@@ -1,5 +1,50 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 75 — 2026-09-30 (CS-2d: the spec said the field was optional, so it was omitted)
+
+**Selected against the formula, deliberately, and recorded as a deviation.** Meta-review 6 found that the v2
+score is indifferent to whether a reader would notice, and that Iterations 65-73 produced four gates against one
+reader-visible commit. So I weighted visibility by hand this time rather than take the top-ranked item, and chose
+**CS-2d** — the upstream half of the undated-evidence defect in published briefings. *Deviation: the formula does
+not yet contain the term that would have ranked this first; S13 is filed to fix that and is founder's to
+ratify.*
+
+**The cause was in the specification, not the producer.** `docs/DAILY_BRIEFING_SCHEMA.md` listed
+`publishedDate` as **Optional**, and the digest agent's own brief described the evidence shape as
+`{ ..., publishedDate?, sourceTier? }`. The briefing writer was told the field did not matter, so it stopped
+supplying it — and the omission grew to **72 of 1,244 items, 65 of them in the most recent third of the
+corpus**. Iteration 73 ratcheted the output; this fixes what produces it.
+
+**Three changes, all upstream of the data:**
+
+1. **`validate-daily-briefings.mjs` now requires it**, from `PUBLISHED_DATE_REQUIRED_FROM = "2026-10-01"`,
+   following the existing `RICH_REQUIRED_FROM` cutoff pattern rather than inventing a new one. `YYYY-MM-DD`, or
+   `YYYY-MM` where a source genuinely publishes only a month; **a bare year is rejected**, because 365 days of
+   uncertainty cannot support a claim about whether something was current. **And no briefing may cite a date
+   after its own** — an ERROR post-cutoff, a WARNING before it, which is how the existing `2026-06-06` case
+   surfaces without failing a build over history.
+2. **The schema doc** now says *Required from 2026-10-01*, with the grandfathering and the reason.
+3. **The producer's brief** now says `publishedDate (REQUIRED)` and explains what the omission cost, so the next
+   briefing is written correctly rather than caught afterwards.
+
+**Cutoff rather than blanket rule, for the same §1c reason as before.** 86 briefings are published and cannot be
+retro-edited; demanding zero retroactively would either block every run or invite a silent rewrite of history.
+Everything before 2026-10-01 is grandfathered and held by the shrink-only ceiling from Iteration 73, so the
+backlog cannot grow while this stops new ones appearing.
+
+**Eight negative controls, and no new chain step.** Meta-review 6 criticised this loop for adding gates faster
+than it fixes what readers see, so the controls run behind `--self-test` on the validator itself and
+`validate:briefings` invokes both — the chain stays at **55 steps**. Each case asserts both directions:
+post-cutoff missing → ERROR, valid → pass, month precision → accepted, bare year → ERROR, future date → ERROR;
+pre-cutoff missing → **not** an error, future date → WARNING; malformed present → WARNING at any date.
+
+**Verified against the real corpus**: 86 of 86 briefings still validate, with the one bare-`"2026"` value
+surfacing as a warning exactly as designed and nothing newly failing.
+
+**What is still not fixed.** The 72 existing undated items remain undated, and the three future-dated citations
+in `2026-06-06` remain published. Both need a founder decision (CS-2b) because the honest remedy is a dated
+correction, not an edit. This iteration only guarantees the next briefing is better than the last.
+
 ## Iteration 74 — 2026-09-30 (Meta-review 6, forced mid-session by the gate built nine iterations earlier)
 
 **Not selected — compelled.** `test:meta-review-cadence`, built in Iteration 65, reached 9 unreviewed

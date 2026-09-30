@@ -334,7 +334,7 @@ comparability.
 
 ### New backlog items (2026-09-30, from Iteration 73 — CS-2c)
 
-- **CS-2d — whatever writes a briefing does not require `publishedDate`, which is why the omission grows.**
+- **CS-2d — DONE (Iteration 75, 2026-09-30), and the cause was the specification.** `docs/DAILY_BRIEFING_SCHEMA.md` listed `publishedDate` as **Optional** and the digest agent's brief described it as `publishedDate?`, so the producer stopped supplying it. Fixed in all three places: the validator requires it from `PUBLISHED_DATE_REQUIRED_FROM = "2026-10-01"` (day or month precision, bare year rejected, and no briefing may cite a date after its own — ERROR post-cutoff, WARNING before), the schema doc says Required, and the brief says REQUIRED with the reason. **8 negative controls behind `--self-test`, run by `validate:briefings`, so the chain did not grow.** 86 of 86 briefings still validate. ~~whatever writes a briefing does not require `publishedDate`, which is why the omission grows.~~
   Iteration 73's ceiling stops the count rising but treats the symptom: 65 of the 72 undated items are in the
   most recent third of the corpus, so the generator is still producing them. Work: find where evidence objects
   are assembled (briefing builder / digest pipeline), require a usable `publishedDate` at write time, and make

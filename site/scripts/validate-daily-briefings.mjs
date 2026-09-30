@@ -43,6 +43,39 @@ const DAILY_DIR = join(__dirname, "..", "src", "data", "updates", "daily");
 // ─────────────────────────────────────────────────────────────────────────────
 const RICH_REQUIRED_FROM = "2026-05-26";
 
+/**
+ * From this date, every evidence item must carry a usable `publishedDate`, and
+ * none may be dated after the briefing citing it. CS-2d.
+ *
+ * WHY A CUTOFF AND NOT A BLANKET RULE. 86 briefings are already published and
+ * AUTONOMY §1c forbids retro-editing them, so a blanket requirement would
+ * either block every run or invite a silent rewrite of history. Everything
+ * before this date is grandfathered; `research/known-tier-mismatches.json`
+ * holds a shrink-only ceiling over the existing 72 so the backlog cannot grow
+ * while this stops new ones appearing.
+ *
+ * WHY IT IS NEEDED AT ALL. Iteration 73 measured the undated evidence and found
+ * it is NOT a legacy artifact: split into thirds of the corpus the counts are
+ * early 0, middle 6, late 65, and the newest briefing is affected. The producer
+ * is still omitting the field, so ratcheting the output only records the damage
+ * one commit after it lands. This is the upstream half.
+ *
+ * WHY FUTURE-DATING IS AN ERROR RATHER THAN A WARNING. The 2026-06-06 briefing
+ * (`generatedAt` 05:45Z) cites three articles dated 06-07 and 06-08, and their
+ * source URLs carry those dates too. A briefing cannot cite its own future:
+ * either its date is wrong or the evidence was appended later without moving
+ * it, and both mislead a reader about when the benchmark knew something.
+ */
+const PUBLISHED_DATE_REQUIRED_FROM = "2026-10-01";
+
+/** A usable publication date (day or month precision), or null. */
+function usablePublishedDate(raw) {
+  const s = String(raw ?? "").trim();
+  if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s.slice(0, 10);
+  if (/^\d{4}-\d{2}$/.test(s)) return `${s}-01`;
+  return null;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // APPROVED STATUS VALUES for recentAssessments[].status
 // ─────────────────────────────────────────────────────────────────────────────
@@ -491,7 +524,7 @@ function wordCount(str) {
  * @param {string} basePath  — e.g. "topSignals[0].evidence[1]"
  * @returns {{ errors: object[], warnings: object[] }}
  */
-function checkEvidenceItem(item, basePath) {
+function checkEvidenceItem(item, basePath, opts = {}) {
   const errors = [];
   const warnings = [];
 
@@ -526,6 +559,49 @@ function checkEvidenceItem(item, basePath) {
     warnings.push(violation("WARNING", `${basePath}.quote`, `exceeds ~50-word ceiling (${wordCount(item.quote)} words) — paraphrase-creep guard; shorten to verbatim extract`));
   }
 
+  // publishedDate — CS-2d. Required from PUBLISHED_DATE_REQUIRED_FROM; format
+  // checked on every date, so a malformed value in an older briefing surfaces
+  // as a warning rather than passing silently.
+  {
+    const raw = item.publishedDate;
+    const usable = usablePublishedDate(raw);
+    const present = raw !== undefined && raw !== null && String(raw).trim() !== "";
+
+    if (present && !usable) {
+      warnings.push(
+        violation(
+          "WARNING",
+          `${basePath}.publishedDate`,
+          `unusable date (got: ${JSON.stringify(raw)}) — needs YYYY-MM-DD, or YYYY-MM where the source gives ` +
+            "only a month. A bare year cannot support a claim about whether the source was current."
+        )
+      );
+    }
+
+    if (opts.requirePublishedDate && !usable) {
+      errors.push(
+        violation(
+          "ERROR",
+          `${basePath}.publishedDate`,
+          present
+            ? `REQUIRED and unusable (got: ${JSON.stringify(raw)}) — needs YYYY-MM-DD or YYYY-MM`
+            : "REQUIRED on every EvidenceItem — without it neither the recency check nor a reader can tell " +
+              "whether the source was current when cited (CS-2d)"
+        )
+      );
+    }
+
+    // A briefing may not cite its own future. Checked whenever both dates are
+    // known, and only escalated to an error for post-cutoff briefings.
+    if (usable && opts.briefingDate && usable > opts.briefingDate) {
+      const detail =
+        `published ${usable}, AFTER the briefing dated ${opts.briefingDate} — a briefing cannot cite its own ` +
+        "future. Either the briefing's date is wrong or this evidence was appended later without moving it.";
+      if (opts.requirePublishedDate) errors.push(violation("ERROR", `${basePath}.publishedDate`, detail));
+      else warnings.push(violation("WARNING", `${basePath}.publishedDate`, detail));
+    }
+  }
+
   // sourceTier must be 1–5 if present
   if (item.sourceTier !== undefined && item.sourceTier !== null) {
     const tier = item.sourceTier;
@@ -550,6 +626,13 @@ function checkEvidence(data, date) {
   const errors = [];
   const warnings = [];
 
+  // CS-2d: post-cutoff briefings must carry a usable publishedDate on every
+  // evidence item and may not cite anything dated after themselves.
+  const evidenceOpts = {
+    requirePublishedDate: typeof date === "string" && date >= PUBLISHED_DATE_REQUIRED_FROM,
+    briefingDate: typeof date === "string" ? date : null,
+  };
+
   const topSignals = Array.isArray(data.topSignals) ? data.topSignals : [];
   const recentAssessments = Array.isArray(data.recentAssessments) ? data.recentAssessments : [];
 
@@ -560,7 +643,8 @@ function checkEvidence(data, date) {
     for (let j = 0; j < signal.evidence.length; j++) {
       const { errors: e, warnings: w } = checkEvidenceItem(
         signal.evidence[j],
-        `topSignals[${i}].evidence[${j}]`
+        `topSignals[${i}].evidence[${j}]`,
+        evidenceOpts
       );
       errors.push(...e);
       warnings.push(...w);
@@ -574,7 +658,8 @@ function checkEvidence(data, date) {
     for (let j = 0; j < assessment.evidence.length; j++) {
       const { errors: e, warnings: w } = checkEvidenceItem(
         assessment.evidence[j],
-        `recentAssessments[${i}].evidence[${j}]`
+        `recentAssessments[${i}].evidence[${j}]`,
+        evidenceOpts
       );
       errors.push(...e);
       warnings.push(...w);
@@ -791,4 +876,87 @@ function main() {
   );
 }
 
-main();
+// ─────────────────────────────────────────────────────────────────────────────
+// SELF-TEST (CS-2d) — negative controls for the publishedDate rules.
+//
+// These live here rather than in a new chain step for two reasons: the rules
+// are only reachable through this file's private helpers, and Meta-review 6
+// found this loop adding gates faster than it fixes anything a reader sees.
+// `validate:briefings` runs it, so the controls execute on every chain run
+// without lengthening the chain.
+//
+// Each case asserts BOTH directions. A rule that only ever sees valid input has
+// not been shown to reject anything.
+// ─────────────────────────────────────────────────────────────────────────────
+function selfTest() {
+  let passed = 0;
+  const failed = [];
+
+  const check = (label, fn) => {
+    try {
+      fn();
+      passed += 1;
+      console.log(`  ok  ${label}`);
+    } catch (e) {
+      failed.push(label);
+      console.log(`  FAIL ${label}: ${e.message}`);
+    }
+  };
+  const assert = (cond, msg) => {
+    if (!cond) throw new Error(msg);
+  };
+
+  const POST = { requirePublishedDate: true, briefingDate: "2026-10-05" };
+  const PRE = { requirePublishedDate: false, briefingDate: "2026-06-06" };
+  const base = { source: "X", url: "https://example.com/a", sourceTier: 2 };
+  const run = (item, opts) => checkEvidenceItem(item, "probe", opts);
+
+  console.log("\n[validate-daily-briefings] self-test — publishedDate rules (CS-2d)\n");
+
+  check("post-cutoff: a missing publishedDate is an ERROR", () => {
+    const { errors } = run({ ...base }, POST);
+    assert(errors.some((e) => e.path.endsWith("publishedDate")), "no error raised");
+  });
+
+  check("post-cutoff: a valid publishedDate passes", () => {
+    const { errors } = run({ ...base, publishedDate: "2026-10-01" }, POST);
+    assert(!errors.some((e) => e.path.endsWith("publishedDate")), `unexpected: ${JSON.stringify(errors)}`);
+  });
+
+  check("post-cutoff: month precision is accepted, not rejected", () => {
+    const { errors } = run({ ...base, publishedDate: "2026-09" }, POST);
+    assert(!errors.some((e) => e.path.endsWith("publishedDate")), `month precision rejected: ${JSON.stringify(errors)}`);
+  });
+
+  check("post-cutoff: a bare year is an ERROR (too coarse to support a claim)", () => {
+    const { errors } = run({ ...base, publishedDate: "2026" }, POST);
+    assert(errors.some((e) => e.path.endsWith("publishedDate")), "a bare year was accepted");
+  });
+
+  check("post-cutoff: citing the briefing's own future is an ERROR", () => {
+    const { errors } = run({ ...base, publishedDate: "2026-10-06" }, POST);
+    assert(errors.some((e) => /AFTER the briefing/.test(e.detail)), "future date not caught");
+  });
+
+  check("pre-cutoff: a missing publishedDate is NOT an error (grandfathered)", () => {
+    const { errors } = run({ ...base }, PRE);
+    assert(!errors.some((e) => e.path.endsWith("publishedDate")), `grandfathering broken: ${JSON.stringify(errors)}`);
+  });
+
+  check("pre-cutoff: a future date still WARNS", () => {
+    const { errors, warnings } = run({ ...base, publishedDate: "2026-06-08" }, PRE);
+    assert(!errors.some((e) => e.path.endsWith("publishedDate")), "pre-cutoff future date must not be an error");
+    assert(warnings.some((w) => /AFTER the briefing/.test(w.detail)), "pre-cutoff future date raised no warning");
+  });
+
+  check("any date: a malformed value present WARNS", () => {
+    const { warnings } = run({ ...base, publishedDate: "last Tuesday" }, PRE);
+    assert(warnings.some((w) => /unusable date/.test(w.detail)), "malformed value passed silently");
+  });
+
+  console.log(`\n[validate-daily-briefings] self-test: ${passed} passed, ${failed.length} failed`);
+  if (failed.length > 0) process.exit(1);
+}
+
+if (process.argv.includes("--self-test")) selfTest();
+else main();

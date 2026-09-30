@@ -85,7 +85,7 @@ An `evidence[]` array may appear on any `topSignals[]` item or any `recentAssess
 | `claim` | `string` | Optional | The factual claim the quote supports; observer voice. |
 | `source` | `string` | YES (when item present) | Publisher or author name ("OCHA", "Human Rights Watch", "Reuters"). |
 | `url` | `string` | **REQUIRED when `quote` is non-empty** | Full http(s) URL to the source page. Omitting this when a quote is present is a build ERROR. |
-| `publishedDate` | `string` | Optional | ISO date string (YYYY-MM-DD). |
+| `publishedDate` | `string` | **Required from 2026-10-01** | `YYYY-MM-DD`, or `YYYY-MM` where the source gives only a month. A bare year is rejected. **Must not be later than the briefing's own date.** Grandfathered before 2026-10-01: 86 published briefings carry 72 evidence items without one and §1c forbids retro-editing them. Enforced by `validate-daily-briefings.mjs` (CS-2d). |
 | `sourceTier` | `1\|2\|3\|4\|5` | Optional | Source authority tier: 1 = gov/court/treaty, 2 = IO/UN body, 3 = watchdog NGO, 4 = top-tier journalism, 5 = trade/advocacy. |
 | `archivedUrl` | `string` | Optional | Wayback Machine or equivalent snapshot URL for link-rot resistance. |
 
