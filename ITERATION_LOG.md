@@ -39,8 +39,17 @@ The agent wrote the file, replied with only the path, and the collector parsed i
 **Three confirmed, one dissent — and the dissent is the more interesting result.** `INT-1-A` now stands at 2-2
 across four independent reads. That is not a defect two agents happened to agree on; it is evidence the **anchor
 itself is ambiguous**, which is exactly what human review exists to settle and exactly the kind of thing a
-majority vote would have buried. `INT-2-A`'s shift from criterion 5 to criterion 2 is a milder version of the
-same signal: three readers agree something is wrong and disagree about what.
+majority vote would have buried. Filed as **TRI-8**, with an explicit instruction to put it at the front of the
+contested queue **with its four records side by side rather than as a majority** — the split *is* the finding,
+and collapsing it to 2-2-therefore-inconclusive would throw away the only thing it tells us. `INT-2-A`'s shift
+from criterion 5 to criterion 2 is a milder version of the same signal: three readers agree something is wrong
+and disagree about what.
+
+**A note on my own pattern, since this is the third time.** The commit for this work named **TRI-8** in its
+subject while this entry mentioned it only in the backlog, so `test:iteration-log-silence` failed in CI —
+exactly as it did for CAL-2 and for GI-4/GI-5. The failure mode is consistent: I file the backlog row and forget
+the log sentence. The gate has now caught its author three times out of three, which is the clearest evidence
+available that it was worth building, and also that a habit is not a control.
 
 **Store:** 227 records across four passes, validating 36/36.
 
