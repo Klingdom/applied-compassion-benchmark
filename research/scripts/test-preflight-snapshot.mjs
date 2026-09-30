@@ -15,7 +15,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { verifySnapshot } from "./preflight-snapshot.mjs";
+import { verifySnapshot, pruneSnapshots } from "./preflight-snapshot.mjs";
 
 const SCRIPT = fileURLToPath(new URL("./preflight-snapshot.mjs", import.meta.url));
 
@@ -115,7 +115,35 @@ console.log("\nTest 4: verification FAILS if a recorded file is missing entirely
   assert("positive control: passes again once replaced", verifySnapshot(snap).ok);
 }
 
-console.log("\nTest 5: the tool runs no git command that writes");
+console.log("\nTest 5: retention keeps the most recent and deletes the rest (GI-5)");
+{
+  const root = join(repo, ".retention");
+  mkdirSync(root, { recursive: true });
+  // Directory names are ISO timestamps, so lexical order is chronological.
+  for (let i = 1; i <= 14; i += 1) {
+    const d = join(root, `2026-09-${String(i).padStart(2, "0")}T00-00-00-000Z`);
+    mkdirSync(d, { recursive: true });
+    writeFileSync(join(d, "manifest.json"), JSON.stringify({ files: [], copied: 0, head: "x" }));
+  }
+
+  const r = pruneSnapshots(root, 10);
+  assert("14 snapshots pruned to 10", r.kept.length === 10 && r.removed.length === 4, JSON.stringify(r));
+  assert("the OLDEST were removed", r.removed[0].endsWith("09-01T00-00-00-000Z"), r.removed.join(","));
+  assert("the NEWEST was kept", r.kept[r.kept.length - 1].endsWith("09-14T00-00-00-000Z"), r.kept.join(","));
+  assert("removed directories are gone from disk", r.removed.every((d) => !existsSync(join(root, d))));
+  assert("kept directories still exist", r.kept.every((d) => existsSync(join(root, d))));
+
+  // Pruning an already-short list must be a no-op, not a deletion.
+  const again = pruneSnapshots(root, 10);
+  assert("pruning again removes nothing", again.removed.length === 0 && again.kept.length === 10);
+
+  // A missing root must not throw — a recovery tool that crashes on a clean
+  // machine is worse than one that does nothing.
+  const none = pruneSnapshots(join(repo, "does-not-exist"), 10);
+  assert("pruning a missing directory is safe", none.removed.length === 0);
+}
+
+console.log("\nTest 6: the tool runs no git command that writes");
 {
   const src = readFileSync(SCRIPT, "utf8");
   // Structural only. My first version also scanned for the words "stash" and

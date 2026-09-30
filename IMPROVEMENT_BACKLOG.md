@@ -316,14 +316,14 @@ comparability.
 
 ### New backlog items (2026-09-30, from Iteration 57 — GI-1)
 
-- **GI-4 — nothing calls `preflight-snapshot` automatically.** The tool exists and is tested, but taking a
+- **GI-4 — PARTIAL (Iteration 57): `npm run preflight` and `npm run preflight:list` exist, so invoking it is one word. NOT automatic.** The nightly cycle is driven by agents rather than a single npm script, so the only real hooks are agent briefs or a SessionStart hook — both operational changes to how the autonomous cycle runs, and not ones an agent should make unilaterally while five founder decisions are already pending. **Recommendation for the founder:** add a snapshot line to the `overnight-scanner` brief before it writes rotation state, which is exactly what INC-009 destroyed. ~~nothing calls `preflight-snapshot` automatically.~~ The tool exists and is tested, but taking a
   snapshot is still a thing someone has to remember, which is the same failure mode as the prohibition it
   replaces. The obvious hook is the nightly research pipeline (snapshot before the scanner writes rotation state,
   which is what INC-009 destroyed) and the start of any agent session touching shared stores. A `SessionStart`
   hook is a governance surface — same reasoning that defers ECC-1 — so the pipeline is the cheaper first step.
   `I4 S4 L3 C4 − E2 − R1 = 12`.
 
-- **GI-5 — snapshots accumulate and nothing prunes them.** Each holds full copies of uncommitted work. Harmless
+- **GI-5 — DONE (Iteration 57).** `pruneSnapshots` keeps the 10 most recent and runs automatically after every snapshot; `--prune` is also available. Deliberately count-based rather than time-based: a snapshot's value is that it is the last one before something went wrong, which has nothing to do with its age. 7 tests, including that pruning a short list is a no-op and pruning a missing directory is safe. Became concrete rather than theoretical when my own testing produced 11 snapshots. ~~snapshots accumulate and nothing prunes them.~~ Each holds full copies of uncommitted work. Harmless
   today (one snapshot, three files) and unbounded in principle. A retention rule — keep N most recent, or prune
   beyond X days — should exist before the directory is large enough that someone deletes it wholesale to reclaim
   space, which is how a recovery mechanism gets removed. `I2 S3 L2 C5 − E1 − R1 = 10`.

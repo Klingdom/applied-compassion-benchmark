@@ -36,10 +36,11 @@
  *   node research/scripts/preflight-snapshot.mjs --list           # what exists
  *   node research/scripts/preflight-snapshot.mjs --verify <dir>   # prove a snapshot matches
  *   node research/scripts/preflight-snapshot.mjs --repo <dir>     # operate on another repo (testing)
+ *   node research/scripts/preflight-snapshot.mjs --prune          # keep the 10 most recent
  */
 
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, rmSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, relative } from "node:path";
 import { createHash } from "node:crypto";
@@ -56,6 +57,8 @@ function resolveRepo(argv) {
 }
 const REPO = resolveRepo(process.argv.slice(2));
 const ROOT = join(REPO, ".preflight");
+/** How many snapshots to keep. Ten covers a long working session. */
+const KEEP = 10;
 
 const sha = (buf) => createHash("sha256").update(buf).digest("hex");
 
@@ -126,6 +129,8 @@ function takeSnapshot() {
 
   console.log(`Snapshot ${relative(REPO, dir)}`);
   console.log(`  HEAD ${head.slice(0, 8)} · ${copied} file(s) copied of ${manifest.length} recorded`);
+  const pruned = pruneSnapshots();
+  if (pruned.removed.length > 0) console.log(`  pruned ${pruned.removed.length} older snapshot(s), keeping ${KEEP}`);
   for (const f of manifest.slice(0, 12)) {
     console.log(`  [${f.status || "?"}] ${f.path}${f.sha256 ? "" : ` — ${f.note}`}`);
   }
@@ -154,6 +159,28 @@ export function verifySnapshot(dir) {
   return { ok: errors.length === 0, errors, checked };
 }
 
+/**
+ * Keep the most recent N snapshots and delete the rest. GI-5.
+ *
+ * Each snapshot holds full copies of uncommitted work, so the directory grows
+ * without bound. The risk is not disk space, it is that someone eventually
+ * deletes the whole directory to reclaim it — which is how a recovery mechanism
+ * gets removed. Pruning automatically means that never becomes tempting.
+ *
+ * Deliberately NOT time-based: a snapshot's value is that it is the last one
+ * before something went wrong, and that has nothing to do with its age.
+ */
+export function pruneSnapshots(root = ROOT, keep = KEEP) {
+  if (!existsSync(root)) return { removed: [], kept: [] };
+  const dirs = readdirSync(root)
+    .filter((d) => statSync(join(root, d)).isDirectory())
+    .sort();
+  const kept = dirs.slice(-keep);
+  const removed = dirs.slice(0, Math.max(0, dirs.length - keep));
+  for (const d of removed) rmSync(join(root, d), { recursive: true, force: true });
+  return { removed, kept };
+}
+
 function listSnapshots() {
   if (!existsSync(ROOT)) {
     console.log("No snapshots yet.");
@@ -173,7 +200,10 @@ function listSnapshots() {
 }
 
 const args = process.argv.slice(2);
-if (args.includes("--list")) {
+if (args.includes("--prune")) {
+  const r = pruneSnapshots();
+  console.log(`Pruned ${r.removed.length}, kept ${r.kept.length}.`);
+} else if (args.includes("--list")) {
   listSnapshots();
 } else if (args.includes("--verify")) {
   const dir = args[args.indexOf("--verify") + 1];

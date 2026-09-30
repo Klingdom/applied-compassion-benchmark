@@ -63,6 +63,8 @@
     "test:probe-helper": "node ../research/scripts/test-probe-helper.mjs",
     "test:feed-freshness": "node ../research/scripts/test-feed-freshness.mjs",
     "test:preflight-snapshot": "node ../research/scripts/test-preflight-snapshot.mjs",
+    "preflight": "node ../research/scripts/preflight-snapshot.mjs",
+    "preflight:list": "node ../research/scripts/preflight-snapshot.mjs --list",
     "test:model-score-history": "node scripts/test-model-score-history.mjs",
     "test:submission-validator": "node ../research/scripts/test-validate-submission.mjs",
     "test:canonical-vendor": "node ../tools/cb-probe/scripts/vendor-canonical.mjs --check",
