@@ -71,6 +71,21 @@ apparent defect: the dropped matched-pair arm, the paraphrased verification brie
 does not fit an item class. Consistent enough to state as a rule — **a tool that finds something should be
 suspected before the thing it found is believed.**
 
+**Filed:** **TRI-10**, to extend this test to the remaining 38 instrumental tier-4 items — it is the only
+technique so far that produces *positive* evidence rather than absence of objection, and it can deprioritise
+items on evidence instead of on silence. **TRI-11**, to run it with a cross-family writer: a more persuasive
+hollow answer, or a more warmth-forgiving grader, is currently untested, so the seven passes are real but bounded
+by writer and scorer sharing a family. TRI-11 needs founder credentials.
+
+**A fourth silence-gate failure, and the thing I finally did about it.** This commit named TRI-10 and TRI-11 in
+its subject while this entry mentioned neither, so `test:iteration-log-silence` failed in CI — after CAL-2,
+GI-4/GI-5 and TRI-8. Four for four, identical failure mode every time: I write the backlog row and forget the log
+sentence. The gate cannot fire earlier by design, because a commit cannot reference its own SHA. So rather than
+repair it a fourth time and resolve to remember, I added `research/scripts/check-commit-subject.mjs`, which takes
+a proposed subject and answers the same question **before** anything is committed, using the gate's own extractor
+and exclusions. It reproduces this exact failure on the subject that caused it. Intending to remember was not a
+control; a command I can run is.
+
 ## Iteration 59 — 2026-09-30 (removing the last hand that retypes machine output)
 
 **Selected:** **TRI-7**, filed one iteration earlier. Filing a fix and then not building it when it is one script
