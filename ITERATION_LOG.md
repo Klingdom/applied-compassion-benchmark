@@ -1,5 +1,47 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 71 — 2026-09-30 (CS-2: nothing checked that a published tier badge told the truth)
+
+**Selected by S12**, and this time the top pre-existing row was genuinely open. **CS-2 at 14**: every published
+briefing shows an evidence-tier badge per source, readers use it to judge how strong the evidence is, and the
+same source carries its own tier in the same-date assessment. **Nothing compared the two.**
+`test-claim-to-source.mjs` contains **zero** references to `sourceTier` — it checks that a claim *has* a source,
+never that the source is described accurately.
+
+The cost was already on record: the 2026-09-17 briefing was the first live-enforced by the Iteration 16 gate and
+**passed with 0 violations while carrying five contradicted tiers** — four inflated from 2 to 4, one deflated
+from 4 to 2. An inflated tier overstates evidence strength **in public**, which is the one thing a benchmark
+selling independence cannot do casually.
+
+**Built `test:source-tiers`** (chain 54 → 55): for every `{url, sourceTier}` an evidence object declares, find
+the tier the same-date assessment cites for that URL and require them to agree.
+
+**My first answer was a confident zero, and it was void.** With only the inline `[T2](url)` citation form, 56
+pairs matched across 86 briefings and the gate reported **0 mismatches**. The backlog row had warned me in
+writing — *"the 09-15 gap was a matcher limitation, not missing data — assessments cite in two [forms]"* — and I
+built one form and believed the result. The second form is a list line: `- source — date — tier 2 — url`. Adding
+it took the comparison from 56 pairs to **72**, and `2026-09-17` from 12 to **14**, which is every tier badge in
+that briefing. **Ninth instance of the pattern this session, and the first where the backlog had already told me
+the answer.**
+
+**The current count is genuinely 0, and that is not the gate being vacuous.** The five 09-17 mismatches were
+corrected in the briefing before this gate existed — the CS-3 row records the Euronews UN High Commissioner
+article being moved from 2 to 4 to match its assessment. **CS-2's missing half was the gate, not the data.**
+Proven by flipping a real tier in the real `2026-09-17` briefing: the gate fails, and passes again after a
+sha-verified restore.
+
+**Why it ratchets rather than demanding zero.** Any future mismatch found in an *already published* briefing
+cannot simply be edited away: AUTONOMY §1c forbids retro-editing a dated briefing, because a reader who saw
+tier 4 on that date was misled and rewriting the file to say 2 conceals that rather than correcting it. So
+`research/known-tier-mismatches.json` records such cases **with their dates**, beside a published correction, and
+may only shrink. **It ships empty**, with a note saying a pre-publication mismatch must be fixed in the briefing
+and never added to the list.
+
+**Three positive controls run before the verdict**, because a zero from an extractor that matches nothing is not
+a result: the briefing extractor must find more than 20 pairs, the assessment extractor must read both citation
+forms and canonicalise `https://Example.com/a/` and `http://www.example.com/a` to one key, and a fixture
+contradiction must be detected as one.
+
 ## Iteration 70 — 2026-09-30 (V9a: a guard that was checking its own copy of the code)
 
 **Selected by S12 from a queue that was finally honest.** Iteration 69's reconciliation dropped the eligible

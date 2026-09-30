@@ -1021,7 +1021,7 @@ comparability.
   `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`; on ratification that draft is likely renamed or superseded, and the
   warning would then point at a stale or absent path while still looking authoritative (the DC-01 pattern). Work:
   derive the path, or assert its existence in `test-separation-waivers.mjs`. v1: I2 S4 L2 C5 − E1 − R1 = **11**.
-- **CS-2 — extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).** The 2026-09-17
+- **CS-2 — TIER HALF DONE (Iteration 71, 2026-09-30); event recency still open.** New `test:source-tiers` (chain 54 → 55) compares every briefing `{url, sourceTier}` against the tier the same-date assessment cites, across 86 briefings and **72** url/tier pairs, currently **0** mismatches — the five from 09-17 were corrected in the briefing before the gate existed, so the missing half was the gate. Proven by flipping a real tier in the real 09-17 briefing. Ratchets via `research/known-tier-mismatches.json`, which ships **empty**, because a mismatch in an already-published briefing needs a dated correction rather than a silent edit (§1c). **Still open: the "2025 event framed as current" half** — nothing yet checks event recency against the briefing date. ~~extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).~~ The 2026-09-17
   briefing was the first one live-enforced by the It. 16 gate. It passed with 0 violations while carrying 5 `sourceTier` values
   that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
   current. Readers see these as tier badges, so an inflated tier overstates evidence strength in public. Coordinator
