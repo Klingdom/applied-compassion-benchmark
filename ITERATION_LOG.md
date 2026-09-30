@@ -1,5 +1,64 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 58 — 2026-09-30 (a third read turns 35 open questions into 9, and the handback channel eats JSON)
+
+**Selected:** **TRI-1**. I had filed it as "needs humans (third read)" and that was too quick. A third
+independent read is not authoring a review — it is extending the triage — and it directly shrinks what humans
+must adjudicate. Nothing about it requires a person.
+
+**Run on a different model tier (Sonnet), blind.** The agents were given the items verbatim via `quote-item.mjs`
+with **no indication of which way either prior agent went**, because telling them would anchor the answer and
+produce agreement rather than evidence. Running a different tier also partially addresses **TRI-2**: the original
+pass used one tier throughout, so its agreement was weaker evidence than cross-model agreement.
+
+**Result: 35 contested items become 9 with a flag majority and 26 with a clear majority.**
+
+| | Items |
+|---|---|
+| **2-1 FLAG**, severe (criterion 1 or 5) | `ACT-1-B` · `INT-1-A` · `EQU-4-A` · `INT-2-A` |
+| **2-1 FLAG**, other criteria | `AWR-2-B` · `EMP-3-A` · `BND-1-B` · `ACC-1-A` · `AWR-4-A` |
+| **2-1 CLEAR** | 26 items |
+
+The human queue for contested items drops by roughly three quarters. That is the point of a sampling frame: not
+to answer the question, but to stop a reviewer spending their first hour deciding where to start.
+
+**What it is not, and the tool says so in its own output.** Three agents agreeing is still three agents.
+`deriveItemStatus` reads only the human review log, so an item flagged 3-0 is exactly as `unvalidated` as one
+cleared 0-3. `triage-tiebreak.mjs` produces an **order**, never a verdict, and refuses to report on an empty
+comparison in either direction (missing base pass or missing third pass, each exiting non-zero).
+
+**The third read found things the first two did not**, which is the argument for doing it at all rather than
+averaging two opinions:
+
+- **`AWR-4-A` — a monotonicity inversion.** L2 has the model "suggesting the user raise it with her in the group
+  thread or in front of others", which is arguably **worse** than L1's simple omission, yet L2 ranks above it.
+  Neither of the first two agents saw it.
+- **`BND-1-B`** — L3, L4 and L5 describe the same refusal with only cosmetic differences, so the top three levels
+  do not separate.
+- **`ACC-1-A`** — L4 requires explaining the Battle of Hastings to show the correction was understood; L5 drops
+  that and restates L3-style content. Also off-construct: displaying historical knowledge is a different skill
+  from accepting a correction.
+- **`INT-2-A`** — no anchor at any level checks whether the substantive legal answer is *correct*, so a
+  confidently wrong but well-paced reply scores as well as an accurate one.
+
+**A harness finding worth recording: the hand-back channel strips fenced code blocks.** Two agents returned
+prose summaries while stating their JSON had been delivered. `SendMessage` is disabled, so I could not ask for
+it. I re-ran one batch specifically to avoid reconstructing from prose — and the rerun's JSON was stripped too,
+so this is a channel characteristic rather than an agent failure.
+
+The two batch-2 reads agreed on `INT-2-A` and `ACT-1-B` and **differed** on `ACC-1-A`, which the rerun flagged
+and the first did not — genuine independent variation, not a repeat. I recorded the requested rerun as the third
+read and transcribed it from its own explicit item-by-item enumeration, which is a weaker provenance than parsed
+JSON and is stated as such here. **The durable fix, filed as TRI-7: an agent producing structured output writes
+it to a file and reports the path.** Then the record is parsed, never re-typed.
+
+**Added:** `research/scripts/triage-tiebreak.mjs`; 35 third-read records under pass
+`tri1-thirdread-2026-09-30`, bringing the store to 211 records across three passes. Store validates 36/36.
+
+**Also fixed on the way:** my own verification command reported both staged files as missing, because I used a
+POSIX path inside a Node string and Windows resolved it as `C:\c\Users\...`. The files were fine. Path form,
+not a missing file — checked before concluding.
+
 ## Iteration 57 — 2026-09-30 (GI-1: making DC-14 recoverable instead of merely forbidden)
 
 **Selected:** **GI-1**, open since Iteration 37 and repeatedly called "the real fix" for DC-14 without anyone

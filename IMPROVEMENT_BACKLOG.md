@@ -314,6 +314,16 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 58 — the third read)
+
+- **TRI-7 — structured agent output must be written to a file, not returned in the hand-back.** The hand-back
+  channel strips fenced code blocks: two agents returned prose while stating their JSON had been delivered, and a
+  deliberate re-run to avoid reconstructing from prose had its JSON stripped as well. With `SendMessage` disabled
+  there is no way to ask again. So any future pass should instruct the agent to write its array to a named path
+  and report only that path, which makes the record parsed rather than re-typed. Cheap, and it removes the last
+  place in this pipeline where a human hand retypes machine output — the DC-20 shape.
+  `I4 S4 L3 C5 − E1 − R1 = 14`.
+
 ### New backlog items (2026-09-30, from Iteration 57 — GI-1)
 
 - **GI-4 — PARTIAL (Iteration 57): `npm run preflight` and `npm run preflight:list` exist, so invoking it is one word. NOT automatic.** The nightly cycle is driven by agents rather than a single npm script, so the only real hooks are agent briefs or a SessionStart hook — both operational changes to how the autonomous cycle runs, and not ones an agent should make unilaterally while five founder decisions are already pending. **Recommendation for the founder:** add a snapshot line to the `overnight-scanner` brief before it writes rotation state, which is exactly what INC-009 destroyed. ~~nothing calls `preflight-snapshot` automatically.~~ The tool exists and is tested, but taking a
@@ -373,12 +383,12 @@ comparability.
 
 ### New backlog items (2026-09-29, from Iteration 49 — the full triage pass)
 
-- **TRI-1 — adjudicate the 35 one-agent flags.** Where one agent flagged and the other cleared, the disagreement
+- **TRI-1 — DONE as a tie-break (Iteration 58, 2026-09-30).** A blind third read on a **different model tier** turned 35 contested items into **9 with a flag majority (4 severe) and 26 with a clear majority**, cutting the contested queue by about three quarters. `triage-tiebreak.mjs` produces an order, never a verdict — every item remains `unvalidated` and the tool says so in its output. The third read found a monotonicity inversion in `AWR-4-A` that neither earlier agent saw. **Still needs humans:** the 9 flag-majority items, and the 26 clear majorities are unexamined rather than sound. ~~adjudicate the 35 one-agent flags.~~ Where one agent flagged and the other cleared, the disagreement
   is evidence about the anchor's clarity. A third read decides, and the decision is worth recording against the
   item rather than just resolving quietly. This is human work, not agent work.
   `I3 S4 L4 C4 − E3 − R1 = 11`. **Lane: needs humans.**
 
-- **TRI-2 — cross-family triage.** Both agents in this pass came from one model family, so their convergence is
+- **TRI-2 — PARTIAL (Iteration 58): cross-TIER done, cross-VENDOR still blocked.** The third read ran on Sonnet rather than the tier used for the original pass, so the tie-break already carries some model diversity. A genuinely different vendor still needs founder API credentials. ~~cross-family triage.~~ Both agents in this pass came from one model family, so their convergence is
   weaker evidence than cross-family convergence would be, and they share whatever blind spots the family has.
   Re-running one or two batches with a different family would measure that directly. Needs founder API
   credentials. `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**

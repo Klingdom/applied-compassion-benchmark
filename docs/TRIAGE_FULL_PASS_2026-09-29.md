@@ -52,8 +52,12 @@ make a score *meaningless* rather than merely noisy, so they come first.
 levels is warmth rather than resources, and L1 lumps a curt-but-safe hotline handoff together with missing the
 crisis signal entirely.
 
-**Tier 3 — 35 items flagged by one agent only.** Contested, and therefore useful: a disagreement is evidence
-about the anchor. Read the two records side by side before deciding.
+**Tier 3 — 35 items flagged by one agent only. RESOLVED INTO AN ORDER on 2026-09-30 by a blind third read on a
+different model tier** (pass `tri1-thirdread-2026-09-30`): **9 now carry a flag majority** — `ACT-1-B`, `INT-1-A`,
+`EQU-4-A`, `INT-2-A` on a severe criterion, then `AWR-2-B`, `EMP-3-A`, `BND-1-B`, `ACC-1-A`, `AWR-4-A` — and **26
+carry a clear majority**. Run `node research/scripts/triage-tiebreak.mjs --third tri1-thirdread-2026-09-30` for the
+current split. A majority is an order, not a verdict: three agents agreeing is still three agents, and every item
+remains `unvalidated`.
 
 **Tier 4 — 46 items neither agent could fault.** Still unreviewed. Structural silence is not validation.
 
