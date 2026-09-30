@@ -1,5 +1,58 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 69 — 2026-09-30 (ID-3: the queue was listing finished work, which is why the ranking was wrong)
+
+**Selected by S12 again**, and it refused my first two candidates. The highest-scoring *pre-existing* eligible
+row was **RS-1 at v2 18** — *"make `validate-rotation-state.mjs` fail only on real gaps"*. I went to implement
+it and found it **already implemented**: the validator now reports `REAL GAPS (FAIL) : 0`, with legacy-format and
+broader-evidence cases as WARN, which is exactly what the row asks for.
+
+**Third already-finished item found in two iterations** — after OBS-1 and D1-1(d). At that point the pattern
+stopped being a coincidence and became the subject.
+
+**Measured: 8 identifiers were duplicated, and 5 had a row describing finished work as open.** D1-1, GI-3, MS-5,
+MS-3 and GI-2 each carried a "COMPLETED" row *and* a separate "here is the problem" row, because completing work
+had been recorded by **adding** a row rather than marking the original. Two more (MB-2, MB-5) were restatement
+clusters, and one — **RS-5** — was a collision I had created that same day.
+
+**This is a mechanism behind Meta-review 5's central finding.** The loop spent 37 iterations ranking its own
+follow-ups above the product backlog, and one reason is that the product backlog's top entries were **fiction**:
+the highest-scoring open pre-existing row was work already done. A queue that lists finished work cannot be
+ranked honestly, and S12 ranks from this file.
+
+**My own measurement was wrong first, and the tool got suspected before its finding was believed.** The first
+count said **10** duplicates. Two were artefacts: the id pattern backtracked on `BM-1 folded in ...`, capturing
+`BM` and reading the `-1` as the separator, so `BM-1` and `BM-2` collapsed into one phantom id. Corrected the
+pattern to require an em/en dash or `" - "`, added that exact string as a positive control in the gate, and the
+real count is **8**.
+
+**Reconciled all 9 affected rows, keeping the history.** Nothing deleted: a superseded row stays readable beside
+the row that replaced it, marked and struck through. Two deserve naming:
+
+- **MS-5's stale row asserted a claim now known to be false** — that the composite rewards a flat profile twice.
+  It is kept rather than deleted precisely because **it was published on `/ai-models` for a year and used as the
+  reason not to score any model**. Deleting it would erase the error rather than the belief.
+- **MB-5's older row is marked as superseded but explicitly not closed**: the published anchor corrections now
+  sit beside those rubrics, and whether that resolves it is a founder call on D-43/D-44/D-46, not mine.
+
+**`RS-5` renumbered to `RS-6`** — my row was the newer one, so my row moved. **Third identifier I reused in one
+session**, after CI-1 and OBS-1. ID-3 already existed for exactly this class and recommends allocating from the
+register maximum; I hit it three times while not reading the file I was appending to, which is the same failure
+Meta-review 5 described, in miniature.
+
+**Gated: `test:backlog-ids`** (chain 53 → 54). The invariant is deliberately **not** "every id appears once" —
+history is worth keeping. It is **at most one row per identifier lacking a resolution marker**. Four checks with
+positive controls first, because a parser that matches nothing reports a clean file and a resolution regex that
+matches everything reports no live rows at all: both are required to demonstrate they discriminate, and the
+`BM-1` sub-bullet is a committed fixture. Plus a fixture collision, a fixture done-plus-live pair that must
+**not** be flagged, and an end-to-end planted duplicate in the real file — because proving the detector works and
+proving the gate fails are different claims.
+
+**Stated in the gate, because it is the part that matters:** it **cannot tell that a unique row is stale.** RS-1
+was a single open row describing finished work and this gate would pass it in silence. It stops the mechanism
+that produced eight duplicates; it does not replace reading the row against the system, which is what this
+iteration did by hand.
+
 ## Iteration 68 — 2026-09-30 (D1-1: the work was already done, and a briefing had been invisible for a week)
 
 **Selected by applying S12 for the first time**, which is the rule Meta-review 5 proposed and the packet said I

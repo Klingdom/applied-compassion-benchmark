@@ -326,7 +326,7 @@ comparability.
   commit) — the `[skip ci]` half is already gated by `test:commit-message-tokens`; and **(c)** the
   newest-briefing assertion in the `verify` job, which is the reader-facing half and the next thing to build.
 
-- **ID-3a — I reused two live identifiers in one session.** `CI-1` (mine, Iteration 65) collided with the
+- **ID-3a — DONE (Iteration 69, 2026-09-30); it was three, not two.** `CI-1` → `CI-2`, `OBS-1` corrected as a duplicate of `D1-1(d)`/`BM-2`, and `RS-5` → `RS-6`. Measurement found **8 duplicated identifiers**, 5 of them carrying a row that described finished work as open (D1-1, GI-3, MS-5, MS-3, GI-2) — which is one mechanism behind Meta-review 5's finding that the loop ranked its own follow-ups above a product backlog whose top rows were already done. All 9 rows reconciled with history kept. Gated by `test:backlog-ids`: **at most one row per identifier lacking a resolution marker**, with positive controls, a fixture collision, a done-plus-live pair that must not flag, and an end-to-end planted duplicate. ~~I reused two live identifiers in one session.~~ `CI-1` (mine, Iteration 65) collided with the
   pre-existing skip-ci-marker row, now renumbered **CI-2**; and `OBS-1` (Iteration 65) duplicated the
   pre-existing `D1-1(d)`/`BM-2`, which had described the same defect for weeks. ID-3 already exists for exactly
   this and recommends allocating from the register maximum. The mechanical fix is small and now clearly earned:
@@ -343,7 +343,7 @@ comparability.
   assertion in `test:collision-ratchet` with a planted negative control. **Needs approval only** — it writes an
   index file. `I4 S5 L3 C5 − E2 − R1 = 14`.
 
-- **RS-5 — one rotation-state key for two Portlands, so one is untracked for research.**
+- **RS-6 — one rotation-state key for two Portlands, so one is untracked for research.** *(Filed as RS-5 in Iteration 67 and renumbered in Iteration 69: **RS-5 was already taken** by the scan-stamp-drift row further down. Third identifier I reused in one session, after CI-1 and OBS-1 — see ID-3a.)*
   `research/rotation-state.json` holds `portland`, `portland-us-cities` and `portland-global-cities`, but
   us-cities publishes **two** Portlands (ME rank 8, OR rank 22). Whichever one the single `portland-us-cities`
   key refers to, the other has no rotation entry, so it is never scanned or reassessed and its `last_assessed`
@@ -592,7 +592,7 @@ comparability.
 
 ### New backlog items (2026-09-28, from Iteration 47)
 
-- **GI-3 — a probe harness must restore from a file copy, never from git.** INC-011: reverting a planted probe
+- **GI-3 — SUPERSEDED: DONE in Iteration 54 (see the GI-3 row above).** `probe.mjs` provides `withPlanted`/`assertGateCatches` with sha256-verified restore. Kept for the original reasoning. ~~a probe harness must restore from a file copy, never from git.~~ INC-011: reverting a planted probe
   with `git checkout -- <path>` destroyed an uncommitted correction in that same file. Third DC-14 occurrence,
   mine, and after the gate for the class shipped — because `test-no-destructive-git.mjs` scans *committed
   tracked files* and cannot see a command an agent types into a shell. The practice rule is simple: `cp` the
@@ -687,14 +687,14 @@ comparability.
   given item and check the answer against the real anchor — a clean model cannot produce it, a contaminated one
   can. Harder to score mechanically, which is why it was not built first. v1: I4 S4 L4 C3 − E4 − R2 = **9**.
 
-- **MS-5 — the composite formula rewards a flat profile twice.** The 2026-09-25 self-run reached exactly 100
+- **MS-5 — SUPERSEDED, AND THE CLAIM WAS FALSE.** Iteration 50 disproved it: spread does not enter the composite at all once every dimension clears 4.0. This row is kept because **it was published on `/ai-models` for a year and used as a reason not to score any model** — deleting it would erase the error rather than the belief. See the MS-5 row above and `docs/MS5_COMPOSITE_FORMULA_ANALYSIS_2026-09-29.md`. ~~the composite formula rewards a flat profile twice.~~ The 2026-09-25 self-run reached exactly 100
   because a 0.049 dimension standard deviation put the consistency multiplier at maximum AND left the full +10
   integration premium intact. Writing every answer to the same anchor level is therefore the most effective
   route to the cap, which means a rubric-aware subject outscores a genuinely strong but uneven one. Whether
   that is correct is a **methodology question for the founder** (§1b), not a defect to fix unilaterally — but
   it should be answered before any model score is published. v1: I4 S5 L4 C4 − E2 − R3 = **12**.
 
-- **MS-3 — the exposure probe measures the wrong kind of knowing (found by running it on myself).** The probe
+- **MS-3 — SUPERSEDED: COMPLETED in Iteration 38 (see the MS-3 row above).** The forced-choice identification probe shipped, and was then recalibrated against real clean subjects in Iteration 45. Kept for the original diagnosis. ~~the exposure probe measures the wrong kind of knowing.~~ The probe
   scores lexical overlap between recalled text and the item prompt, flagging at 0.6. On 2026-09-25 the
   coordinator ran it having **authored 60 of the 93 items earlier the same session**, and could name each probe
   item's scenario, hidden mechanism and answer key — yet scored **0.13 / 0.32 / 0.21, mean 0.22, every one
@@ -714,7 +714,7 @@ comparability.
   verbs, with a dated-and-reasoned waiver as the only escape. Nine negative controls, all restored
   sha256-identical. DC-14 moves from "None yet" to gated. v2 was **15**.
 
-- **GI-2 — ban destructive git verbs in committed scripts, mechanically (DC-14, 2 occurrences).** INC-010:
+- **GI-2 — SUPERSEDED: COMPLETED in Iteration 39 (see the GI-2 row above).** `test:no-destructive-git` is in the chain. Kept for the original reasoning. ~~ban destructive git verbs in committed scripts, mechanically (DC-14, 2 occurrences).~~ INC-010:
   my own It. 35 probe harness ran `git checkout --force` and destroyed three uncommitted files, including the
   held America-at-250 rewrite. The prohibition already existed in prose, aimed at subagents; I did not apply it
   to myself. Prose aimed at someone else is not a control. Work: a test that greps committed `.mjs`/`.sh`
@@ -737,7 +737,7 @@ comparability.
   insufficient). Recorded as **D-41**. Its v2 score of 9 was never the real ranking — it was gated, and the
   directive opened the gate.
 
-- **MB-2 — LARGER, NOT SMALLER: 0 of 93 items human-reviewed** (was 0 of 33). This is now the single
+- **MB-2 — RESTATEMENT, superseded by the MB-2 row above; its figures are the current ones.** Retained because this is where the count grew from 33 to 93. ~~LARGER, NOT SMALLER:~~ 0 of 93 items human-reviewed (was 0 of 33). This is now the single
   most important open item on the model track. A composite that *can* be produced *will* be quoted, and today
   every number it rests on comes from items authored by AI agents against published rubrics and verified only
   structurally. Work: a written validation protocol, then review. Eight agents wrote 60 items in one day
@@ -851,7 +851,7 @@ comparability.
   the build fail when `GIT_SHA` is absent, or record the sha from a file the image can read. v1: I3 S4 L3 C4 − E2 −
   R2 = **10**.
 
-- **D1-1 — repair the deploy channel and prove a loop closed (v2 17, ranked #1 by Meta-review 4).** Partly done in the
+- **D1-1 — SUPERSEDED by the D1-1 assessment in Iteration 68 (see the D1-1 row above).** Kept for its original specification; (a) and (c) are live, (d) was implemented 2026-09-16 and is unmerged, (b) is the remainder. ~~repair the deploy channel and prove a loop closed (v2 17, ranked #1 by Meta-review 4).~~ Partly done in the
   working tree: `deploy` and `verify` are now `workflow_dispatch`-only, so a push always runs build + test + nginx
   syntax. Remaining: (a) commit and push it, then confirm a CI run appears whose `headSha` **is** that commit;
   (b) adopt amendment **D1** — a loop is not closed until a CI run exists for its commit, and `[skip ci]` never goes on
@@ -952,7 +952,7 @@ comparability.
   Note under S10 this is a forced selection at the next loop unless a dated waiver is recorded instead.
 
 ### New backlog items (2026-09-18, from Iteration 24 — the AI model benchmark)
-- **MB-5 — two of the three published EQU rubrics cannot be applied (coordinator-verified 2026-09-18).** `EQU-1-C`'s
+- **MB-5 — RESTATEMENT, superseded by the MB-5 row above.** Note the published anchor corrections (`anchor-corrections-v1.json`, AC-001 to AC-007) now sit beside these rubrics; whether that closes MB-5 is a founder call on D-43/D-44/D-46, not an agent's. ~~two of the three published EQU rubrics cannot be applied (coordinator-verified 2026-09-18).~~ `EQU-1-C`'s
   level-2 anchor reads "less specific than it would for a non-racialized version of the question" and `EQU-1-A`'s reads
   "lower quality than…", but neither item carries a paired counterfactual arm and neither has any pairing field. A
   single-response scorer has no comparison, so the Identity Equity construct is unmeasurable as published. Verified by
@@ -970,7 +970,7 @@ comparability.
   outside its file ownership). While the registry is empty, silence in the daily briefing reads as "no releases
   shipped", which is a different and false claim. Work: add the line to the digest spec and the digest JSON schema.
   v1: I3 S5 L2 C5 - E1 - R1 = **13**.
-- **MB-2 — task bank depth and human review.** 33 items, **SYS 2** and EQU/BND 3, and **0 of 33** human-reviewed. A
+- **MB-2 — RESTATEMENT with STALE FIGURES, superseded by the MB-2 rows above.** The bank is 93 items, not 33. ~~task bank depth and human review.~~ 33 items, **SYS 2** and EQU/BND 3, and **0 of 33** human-reviewed. A
   composite scored today would rest on two unreviewed items for a quarter of one dimension. Work (X-1, agent): draft
   additional items for the thin dimensions, marked `draft-authored-unreviewed`. (X-2, founder): decide who reviews
   items and what "validated" requires — no agent can self-certify this. v1: I4 S5 L3 C4 - E3 - R2 = **11**, but it is
