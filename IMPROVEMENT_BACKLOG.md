@@ -314,6 +314,25 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 68 — D1-1)
+
+- **D1-1 — PARTLY DONE (Iteration 68, 2026-09-30); (c) is the remaining agent-doable half.** Selected by
+  applying **S12** for the first time: the top three *pre-existing* eligible rows were re-scored before anything
+  this session filed, and D1-1 at **v2 17** outranked every self-generated candidate (SAFE-1 14, TRI-16 12,
+  RS-5 11). **(a) is live** — deploy/verify are `workflow_dispatch`-only and every push runs build + test, on
+  `main` as well as the branch. **(d) turned out to be already implemented and unmerged**, which produced the
+  measurement in Addendum 2 of the decision packet: **14 of 15 known fixes exist on the branch and are absent
+  from `main`**. Remaining: **(b)** adopt amendment D1 (a loop is not closed until a CI run exists for its
+  commit) — the `[skip ci]` half is already gated by `test:commit-message-tokens`; and **(c)** the
+  newest-briefing assertion in the `verify` job, which is the reader-facing half and the next thing to build.
+
+- **ID-3a — I reused two live identifiers in one session.** `CI-1` (mine, Iteration 65) collided with the
+  pre-existing skip-ci-marker row, now renumbered **CI-2**; and `OBS-1` (Iteration 65) duplicated the
+  pre-existing `D1-1(d)`/`BM-2`, which had described the same defect for weeks. ID-3 already exists for exactly
+  this and recommends allocating from the register maximum. The mechanical fix is small and now clearly earned:
+  a gate asserting every `- **ID —` heading in this file is unique, with the duplicate-detection proven on a
+  planted collision. `I3 S4 L3 C5 − E1 − R1 = 13`.
+
 ### New backlog items (2026-09-30, from Iteration 67 — D-49a)
 
 - **D-49a — PREPARED, awaiting approval (Iteration 67, 2026-09-30).** Branch
@@ -355,7 +374,7 @@ comparability.
   40. **Adopting a selection rule is a methodology change and the founder's to ratify.**
   `I5 S5 L4 C4 - E1 - R2 = 15`. **Lane: blocked-on-founder.**
 
-- **CI-1 — a registry row may not say "Gated" on the strength of a local probe.** Meta-review 5's third
+- **CI-2 — a registry row may not say "Gated" on the strength of a local probe.** *(Filed as CI-1 in Iteration 65 and renumbered here: **CI-1 was already taken** by the pre-existing skip-ci-marker row further down this file. Reusing a live identifier is the ID-3 class, and I did it twice in one session — see the OBS-1 correction above.)* Meta-review 5's third
   recommendation. DC-16 and DC-17 were silently neutered in CI by a shallow clone while their rows read "gated",
   and DC-11's nginx job claimed protection it did not have for 8 days. A local planted probe proves nothing about
   the environment that actually runs the gate. Needs a CI-environment variant of `assertGateCatches`, or at
@@ -396,7 +415,7 @@ comparability.
 
 ### New backlog items (2026-09-30, from Iteration 62 — HEALTH-1)
 
-- **OBS-1 — the deployed commit is not recorded anywhere, so "what is live?" has no answer.** Production's
+- **OBS-1 — CORRECTED (Iteration 68): the fix exists and is unmerged, so this was never work to do.** The commit identity is injected end to end on the working branch — `ARG`/`ENV GIT_SHA` in the `Dockerfile`, `build.args` in `docker-compose.yml`, an export in `deploy.sh`, an export in the CI deploy job, and `build-manifest.mjs` reading it — committed **2026-09-16**, nine days before the production build that reports `git.sha: null`. **`main` has none of it.** Production cannot name its commit because the fix was never merged. Folded into **D-47**; nothing to implement. Duplicate of **D1-1(d)/BM-2**, which is the pre-existing row for the same defect — I filed OBS-1 without checking, which is the ID-3 class. ~~the deployed commit is not recorded anywhere, so "what is live?" has no answer.~~ Production's
   `build-manifest.json` carries `git.sha: null`, and says why: no `GIT_SHA` build-arg is injected, and
   `git rev-parse` cannot work inside the Docker builder stage, which receives no `.git`. The consequence is
   concrete — SYSTEM_HEALTH named a last-deployed commit for two weeks that **could not have been verified even

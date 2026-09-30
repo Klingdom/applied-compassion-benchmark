@@ -249,3 +249,45 @@ score disagreements publicly addressable rather than resolving them.
 
 **A new item, found on the way:** `research/rotation-state.json` holds one `portland-us-cities` key for two
 us-cities Portlands, so one of them is not tracked for research at all.
+
+---
+
+## Addendum 2 (2026-09-30) — D-47 is not a merge of 150 commits of tooling. It is 14 of 15 known fixes.
+
+I set out to implement **OBS-1** — "the build cannot name its own commit" — and found it **already implemented,
+on 2026-09-16, nine days before the production build that reports `git.sha: null`.** It was never merged.
+`main` has no `GIT_SHA` in `docker-compose.yml` and none in `deploy.sh`; the working branch has both, plus the
+`ARG`/`ENV` pair in the `Dockerfile` and the export in the CI deploy job.
+
+So production cannot name its commit **because the fix is sitting on an unmerged branch**, not because the work
+is outstanding.
+
+That prompted measuring the general case. `research/scripts/measure-unmerged-fixes.mjs` takes 15 known fixes,
+names a marker for each, and evaluates it on **both** `HEAD` and `main`:
+
+**14 of 15 exist on the branch and are absent from `main`.** Only one — the deploy job being
+`workflow_dispatch`-only — is already live.
+
+| | |
+|---|---|
+| known fixes unmerged | **14 of 15** |
+| files differing `main..HEAD` | **2,280** |
+| **reader-visible files differing** | **106** |
+| insertions | 1,054,566 |
+
+The unmerged set includes the MS-5 disproof, the AI Evaluation Suite in its entirety, the seven published anchor
+corrections, the full item-triage record, the MIT licence (D-42), and the gates for encoded names, feed freshness,
+rotation state, entity-record invariance, model score history and submission validation.
+
+**This changes what D-47 is asking.** The packet above framed it as a hygiene decision about a long-lived branch.
+It is not. It is the difference between a site that carries fourteen known-correct fixes and one that does not,
+including **three corrections to errors readers can currently see** and a licence file the repository claims to
+have.
+
+**One probe reported itself void on the first run** and is recorded because it is the method working: I had
+chosen the marker `singapore-global-cities`, which had been *removed* from `known-collisions.json` when Singapore
+was pinned. It appeared on neither side, so the script reported INDETERMINATE and excluded it rather than
+counting a finding. Corrected marker, 15 of 15 probes now meaningful.
+
+**Recommendation unchanged, urgency raised.** Merge to `main`, then dispatch the deploy. Nothing in the branch is
+unreviewed: the 53-step chain is green and CI has been green on every push.

@@ -1,5 +1,70 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 68 — 2026-09-30 (D1-1: the work was already done, and a briefing had been invisible for a week)
+
+**Selected by applying S12 for the first time**, which is the rule Meta-review 5 proposed and the packet said I
+would follow unilaterally. Before touching anything this session filed, I re-scored the top *pre-existing*
+eligible rows: **D1-1 at v2 17** — *"repair the deploy channel and prove a loop closed"*, ranked #1 by
+**Meta-review 4** and still open — outranked every self-generated candidate (SAFE-1 14, TRI-16 12, RS-5 11).
+The rule worked on its first application: left to the old habit I would have built SAFE-1.
+
+**Then D1-1 turned out to be mostly finished, which is its own finding.**
+
+- **(a) is live.** Deploy and verify are `workflow_dispatch`-only and every push runs build + test — on `main`
+  as well as the branch.
+- **(c) is live.** A publication-drift step already runs `check-publication-drift.mjs --fail-on-drift` in the
+  verify job, with an INDETERMINATE control for an unreachable host.
+- **(d) was implemented on 2026-09-16 and never merged.** Commit identity is injected end to end on the branch —
+  `ARG`/`ENV GIT_SHA` in the `Dockerfile`, `build.args` in `docker-compose.yml`, exports in `deploy.sh` and in
+  the CI deploy job, and `build-manifest.mjs` reading it. **`main` has none of it.** Production reports
+  `git.sha: null` **because the fix sits on an unmerged branch**, nine days older than the build that reports it.
+
+**So I measured the general case, and it is the most decision-relevant number I have produced.**
+`research/scripts/measure-unmerged-fixes.mjs` names a marker for each of 15 known fixes and evaluates it on
+**both** `HEAD` and `main`. **14 of 15 exist on the branch and are absent from `main`** — the MS-5 disproof, the
+entire AI Evaluation Suite, the seven anchor corrections, the full triage record, the MIT licence, and the gates
+for encoded names, feed freshness, rotation state, entity-record invariance, model score history and submission
+validation. 2,280 files differ; **106 of them reader-visible**. Recorded as Addendum 2 to the decision packet,
+because it changes what D-47 is asking: not branch hygiene, but whether the site carries fourteen known-correct
+fixes.
+
+**One probe reported itself void and that is the method working.** I had chosen the marker
+`singapore-global-cities`, which was *removed* from `known-collisions.json` when Singapore was pinned. It matched
+on neither side, so the script printed INDETERMINATE and excluded it rather than counting a finding. Marker
+corrected; 15 of 15 probes now meaningful.
+
+**And then the live defect, found by running the tool instead of reading it.** Pointing
+`check-publication-drift.mjs` at production:
+
+> **DRIFT — 1 committed briefing is not served: 2026-09-24. Oldest invisible briefing is 7 days ago.**
+
+The briefing was committed at **2026-09-24T19:47Z** and is absent from a build made at **2026-09-25T03:01Z**,
+seven hours later. So the build did not pick up committed content — a cached Docker layer, exactly the failure
+mode the freshness assertion exists for. Readers have been missing a briefing for a week.
+
+**The gap that allowed it: `deploy.sh` verified nothing.** It printed *"should now be live"* and exited 0. The CI
+workflow has freshness, publication-drift and redirect sweeps — but its deploy job only runs on
+`workflow_dispatch`, so **the manual path, which is the one actually used, had no verification at all.**
+
+**Fixed.** `deploy.sh` now ends with a post-deploy freshness check comparing `manifest.latest` against the live
+feed's newest item. Written in **pure shell**, because the script's own prerequisites are Docker and Docker
+Compose only and adding a Node dependency to the VPS path would be a regression. It distinguishes **three**
+outcomes, not two: a fetch that fails is **INDETERMINATE**, never "fresh", because a network error is not
+evidence about what is published. Verified against production, where it correctly reports
+**STALE (expected 2026-09-24, live 2026-09-22)**, and both indeterminate branches exercised — unreachable host,
+and an empty `expected` that must not be allowed to match an empty `live`.
+
+**Also corrected in the same file:** its redeploy instructions told the operator to `git pull origin main`.
+`main` is ~150 commits behind and lacks 14 of 15 known fixes, so following the documented procedure would deploy
+a site without them. It now names the actual checked-out ref and says why.
+
+**Two identifiers I had reused, found by S12 and fixed.** `CI-1` (mine, Iteration 65) collided with a live
+pre-existing row about the skip-ci marker — renumbered **CI-2**. `OBS-1` (Iteration 65) duplicated the
+pre-existing `D1-1(d)`/`BM-2`, which had described the same defect for weeks; corrected in place to say the fix
+exists and is unmerged. **ID-3 already existed for exactly this class** and I hit it twice in one session, which
+is what happens when a loop stops reading its own backlog — the precise failure Meta-review 5 described. Filed
+as **ID-3a** with the mechanical fix: assert every backlog identifier is unique, proven on a planted collision.
+
 ## Iteration 67 — 2026-09-30 (D-49a: two URLs that moved when the score moved)
 
 **Selected:** the default the packet set for itself — *prepare the D-49 disambiguation so it is ready to
