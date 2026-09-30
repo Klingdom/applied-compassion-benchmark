@@ -1,5 +1,43 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 70 — 2026-09-30 (V9a: a guard that was checking its own copy of the code)
+
+**Selected by S12 from a queue that was finally honest.** Iteration 69's reconciliation dropped the eligible
+high-scoring rows from 23 to 16, so I verified the remainder against the system rather than reading the
+descriptions. **Three more were already finished** — RS-1 (validator reports `REAL GAPS (FAIL) : 0`), RS-2
+(`test:encoded-names` 9/9, zero encoded sequences in `fortune-500.json`) and GI-1 (`preflight-snapshot.mjs`
+exists and is in the chain). All three were *single* open rows, exactly the case Iteration 69's gate says it
+cannot catch. Marked.
+
+**That left V9a at 14 as the highest genuinely-open row, and it was real.**
+`site/scripts/test-pinned-slugs.mjs` defined its **own copy** of `rowSlug` at line 66, commented *"mirrored from
+`src/data/entities.ts` rowSlug()"*. The shipped function lives at `src/lib/slugify.ts:47`. So the guard was
+comparing its own copy against itself.
+
+**This had already cost something.** Meta-review 3 broke the shipped `rowSlug` and this guard still reported
+**10 passed, 0 failed**. A mirror is not a test.
+
+**The fix was one line, and the reason it went unfixed is worth more than the fix.** `slugify` was *already*
+imported from the shipped module on line 41 — the TS-from-`.mjs` import worked the whole time. The copy existed
+for no reason but habit, and the backlog row had carried the remedy ("import from `src/lib/slugify.ts`") since
+Meta-review 3.
+
+**Proven non-vacuous by reproducing the exact failure that exposed it:** planted Meta-review 3's break into the
+**shipped** `rowSlug` — ignore the explicit pin, always derive from the name — and the guard now **fails**, where
+before it passed 10/0. `slugify.ts` restored and sha-verified by `withPlanted`.
+
+**Eighth instance of the governing pattern, and it nearly produced three wrong verdicts.** My row-verification
+harness called `npm` through `execFileSync` without a shell, which does not work on this platform, so it
+reported RS-1 as INDETERMINATE and RS-2 as *"test:encoded-names fails"*. Both were my harness, not the system:
+run directly, the validator prints `REAL GAPS (FAIL) : 0` and the gate passes 9/0. Had I trusted the harness I
+would have left two finished items in the queue and opened an investigation into a passing test. **A tool that
+finds something should be suspected before the thing it found is believed** — and the corollary earned here is
+that this applies to a tool reporting *nothing* just as much.
+
+**Queue state after two iterations of repair:** 23 high-scoring "open" rows became 16 by reconciliation and then
+13 by verification — **10 of the original 23 described work that was already done**. That is the instrument the
+loop had been ranking from.
+
 ## Iteration 69 — 2026-09-30 (ID-3: the queue was listing finished work, which is why the ranking was wrong)
 
 **Selected by S12 again**, and it refused my first two candidates. The highest-scoring *pre-existing* eligible

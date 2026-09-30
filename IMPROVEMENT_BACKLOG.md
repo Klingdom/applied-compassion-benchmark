@@ -926,7 +926,7 @@ comparability.
   — the gate over-reached rather than missing. v1: I3 S4 L3 C5 − E1 − R1 = **13**.
 
 ### New backlog items (2026-09-18)
-- **GI-1 — cycle stores have no pre-flight snapshot, so recovery depends on luck.** INC-009 (2026-09-18): an agent
+- **GI-1 — DONE, row was stale (verified Iteration 70, 2026-09-30).** `research/scripts/preflight-snapshot.mjs` exists and `test:preflight-snapshot` is in the chain. ~~cycle stores have no pre-flight snapshot, so recovery depends on luck.~~ INC-009 (2026-09-18): an agent
   ran `git checkout` over the scanner's uncommitted `rotation-state.json` write for all 1,329 entities. It was
   recoverable only because the scanner's write is mechanically re-derivable from the scan file. Had it happened after
   `last_assessed` was written, or before the scan file existed, the cycle (~193 searches) would have been lost.
@@ -1089,7 +1089,7 @@ comparability.
   S5 L3 C5 − E2 − R2 = 12 · v2: K +2 (RISK-018 gate gets its remediation row filed in the same loop, per the scoring
   amendment for gates that freeze live defects) · Rc +2 (installs the fix for a cross-cutting, multiply-occurring
   convention split) → **16**.
-- **V9a — `test-pinned-slugs.mjs` tests a private copy of `rowSlug` (`:67`), not the shipped export.** Meta-review 3
+- **V9a — DONE (Iteration 70, 2026-09-30).** The test now imports `rowSlug` from `src/lib/slugify.ts` alongside `slugify`, which it had been importing from there all along. Proven non-vacuous by planting Meta-review 3's exact break into the **shipped** function: the guard now fails, where before it passed 10/0. ~~tests a private copy of `rowSlug` (`:67`), not the shipped export.~~ Meta-review 3
   broke the shipped function and the guard still passed 10/0. Work: import from `src/lib/slugify.ts` (a TS import
   from a `.mjs` test needs the same loader approach `test-entity-href` uses). Fold into RS-4 or LC-1.
   v1: I3 S5 L3 C5 − E1 − R1 = **14**.
@@ -1125,14 +1125,14 @@ comparability.
 | — | R-1 waiver T-30 warning + PASS-with-waivers distinct (RISK-015 · Dl+2) | 12 | 16 | — | **✅ DONE — Iteration 22 (2026-09-17), uncommitted.** Warnings at ≤30d, critical at ≤7d, `PASS WITH WAIVERS` result line; tests 17 → 41 with injected fixture dates; verified by simulating 2026-10-18 / 11-10 / 11-15 / 11-17 |
 
 ### New backlog item (coordinator discovery, 2026-09-15 — logged and scored before any work, per S3)
-- **RS-1 — make `validate-rotation-state.mjs` fail only on real gaps.** Its 22 blocking FAILs are all false: 20 are
+- **RS-1 — DONE, row was stale (verified Iteration 70, 2026-09-30).** The validator reports `REAL GAPS (FAIL) : 0`, with 32 legacy-format and 24 broader-evidence cases as WARN — which is what this row asks for. It was the highest-scoring open pre-existing row at v2 18 and had already been implemented; S12 sent me to it and it was the third such discovery in two iterations. ~~make `validate-rotation-state.mjs` fail only on real gaps.~~ Its 22 blocking FAILs are all false: 20 are
   evidenced by same-date change-proposal JSON + digest (early convention), 1 by a report under a different slug
   (`procter-gamble` vs key `procter-amp-gamble`, an HTML-entity leak in the stored name), 1 by a digest entry only
   (`c-te-divoire`, accent slug, RISK-018). Fix: accept same-date proposal JSON as WARN evidence; resolve slug aliases;
   keep FAIL for true zero-evidence; add fixtures for each class (V3). Does NOT write `last_assessed`.
   v1: I4 S5 L4 C5 − E2 − R1 = **15** · v2: K+1 (RISK-008/016 observability, reduce) · P 0 · Rc +2 (DC-09, ≥ 2 dead-guard
   occurrences) → **18**. Lane: eligible, but **S6 blocks implementation** until It. 12/13 are committed.
-- **RS-2 — 20 Fortune 500 names published with HTML entities (RISK-023)** — checked 2026-09-15: live and visible
+- **RS-2 — DONE, row was stale (verified Iteration 70, 2026-09-30).** Zero encoded sequences remain in `fortune-500.json` and `test:encoded-names` passes 9/0; RISK-023 was remediated 2026-09-16 (D-35). ~~20 Fortune 500 names published with HTML entities (RISK-023)~~ — checked 2026-09-15: live and visible
   ("Procter &amp; Gamble" in title/H1; /fortune-500 ranking; 143 built pages), three slugs per company, natural URL
   → 301 `/404`. Split per S2:
   - **RS-2a (X-1, agent-doable):** validator failing on HTML entities in any published entity name, with the 20 known

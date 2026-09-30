@@ -38,7 +38,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { slugify } from "../src/lib/slugify.ts";
+import { slugify, rowSlug } from "../src/lib/slugify.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = join(__dirname, "..");
@@ -61,13 +61,19 @@ function bad(label, detail) {
 }
 function assert(label, cond, detail) { cond ? ok(label) : bad(label, detail); }
 
-// ─── The canonical rule, mirrored from src/data/entities.ts rowSlug() ─────────
-
-export function rowSlug(row) {
-  return typeof row.slug === "string" && row.slug.trim().length > 0
-    ? row.slug.trim()
-    : slugify(row.name);
-}
+// ─── The canonical rule: IMPORTED, not mirrored (V9a) ────────────────────────
+//
+// Until 2026-09-30 this file defined its own copy of rowSlug here, commented
+// "mirrored from src/data/entities.ts rowSlug()". A mirror is not a test of the
+// shipped code: Meta-review 3 broke the real function and this guard still
+// reported 10 passed, 0 failed, because it was checking its own copy against
+// itself.
+//
+// `slugify` was already imported from the shipped module on line 41, so the TS
+// import worked all along — the copy existed for no reason beyond habit.
+//
+// The negative control for this change is the scenario that exposed it: break
+// the shipped rowSlug and this file must now FAIL. It does.
 
 // ─── 1. Fixture non-vacuity ──────────────────────────────────────────────────
 
