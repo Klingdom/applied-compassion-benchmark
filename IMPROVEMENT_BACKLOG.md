@@ -702,7 +702,7 @@ comparability.
   subdimensions, then the rest. Estimated **30-45 reviewer-hours**. This is the one item on the model track
   an agent cannot do, because the point is that a human read it. v1: I5 S5 L4 C4 − E4 − R2 = **12**.
 
-- **MB-2a — build the review-record schema BEFORE the first review.** Same reasoning as the score history:
+- **MB-2a — DONE, row was stale (verified Iteration 77, 2026-09-30).** `site/scripts/test-item-reviews.mjs` runs in the chain and passes, and `site/src/data/model-benchmark/item-reviews-v1.json` exists with its `meta`/`reviews` shape. The schema was built before the first review, as this row asked. **Fourth already-finished row found since S12 started sending me to pre-existing items.** ~~build the review-record schema BEFORE the first review.~~ Same reasoning as the score history:
   a review log that starts after the reviews do has already lost some. Needs reviewer identity, date, the
   five criteria individually, free-text concern, and the second reviewer’s independent verdict, append-only.
   Agent-doable. v1: I4 S4 L3 C5 − E2 − R1 = **13**.
@@ -905,7 +905,7 @@ comparability.
   days without anything noticing; (d) fold in **BM-2** so a build that cannot name its own commit fails loudly instead
   of emitting `sha: null`. v1: I5 S5 L3 C5 − E2 − R1 = **15** · v2: P +2 (three briefings live-404, publicly invisible)
   → **17**.
-- **V9d-1 — give the redirect gate a specification instead of a mirror (DC-15).** `test:nginx-redirect-parity` passes
+- **V9d-1 — DONE (Iteration 77, 2026-09-30).** `site/scripts/expected-redirects.json` (**106** redirects, **generated** from `nginx.conf`, never transcribed) is now the specification, and Case 3 of `test:nginx-redirect-parity` asserts every entry still exists in the file the image ships. Proven with the documented scenario: deleting a rewrite from **both** configs used to pass 4/4 and now **fails**, with both files sha-verified back. Two anti-rot guards: an empty list fails as vacuous, and the file's own `count` must match its entries. ~~give the redirect gate a specification instead of a mirror (DC-15).~~ `test:nginx-redirect-parity` passes
   when a rewrite is deleted from **both** configs (coordinator-verified 2026-09-21: 4 passed, exit 0). Work: commit an
   explicit list of the 26 legacy URLs and their expected targets, assert `nginx.conf` contains every one, and keep the
   superset check as a secondary assertion. Then re-run the both-sides probe — it must fail. Also fold in my probe as a

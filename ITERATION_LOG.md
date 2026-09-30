@@ -1,5 +1,49 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 77 — 2026-09-30 (V9d-1: a gate that compared two files to each other and called it a check)
+
+**Selected with visibility weighted by hand** (*Deviation: as in 75 and 76 — the formula has no reader-visibility
+term; S13 filed*). Of the genuinely-open rows this was the one whose failure mode ends in a **404 for a reader
+following an existing link**.
+
+**The hole, confirmed before touching anything.** `test:nginx-redirect-parity` had three assertions: both files
+parse, the parsed count is non-zero, and `nginx.conf` is a superset of `nginx-ssl.conf`. Every one of those
+compares the two configs **to each other**. Delete a rewrite from **both** and they remain perfectly consistent —
+the superset check passes, the count stays non-zero, the build goes green, and a legacy URL starts returning 404.
+The backlog recorded this as coordinator-verified on 2026-09-21: that exact deletion passed **4 of 4, exit 0**.
+
+**A mirror is not a specification.** Now there is one: `site/scripts/expected-redirects.json`, **106 redirects**,
+the list of URLs that must continue to resolve. Case 3 asserts every entry still exists in `nginx.conf` — the file
+the Docker image actually ships.
+
+**Generated, not transcribed.** 106 pattern/target pairs typed by hand is the DC-20 shape, and a single typo would
+either fail forever or quietly excuse a missing redirect. The spec was produced by parsing `nginx.conf` with the
+same rewrite grammar the gate uses, and the generator refuses to write an empty file. It also confirmed the two
+configs are currently identical at 106 rewrites each.
+
+**Proven with the documented scenario, not a substitute for it.** Nested planting deleted
+`^/city/phoenix/?$ -> /city/phoenix-global-cities` from **both** files at once and re-ran the gate:
+
+| | |
+|---|---|
+| clean | passes |
+| deleted from both configs | **fails** |
+| after restore | passes |
+
+Both files sha-verified back to their original bytes. The case that used to pass 4/4 now fails, which is the
+whole point.
+
+**Two guards against the spec itself rotting.** An empty `redirects` array fails as a vacuous pass, and the file's
+own `count` must equal the number of entries it lists — a file that disagrees with itself cannot be trusted in
+either direction. The list may **grow** freely when a redirect is added; **removing** an entry is a deliberate act
+that asserts a URL no longer needs to resolve, and that belongs in the file with a reason rather than in a silent
+diff.
+
+**Also marked: MB-2a was already done.** Verified rather than assumed — `site/scripts/test-item-reviews.mjs` runs
+in the chain, `site/src/data/model-benchmark/item-reviews-v1.json` exists with its `meta`/`reviews` shape, and the
+suite passes. Fourth already-finished row found since S12 started sending me to pre-existing items, and the count
+of those now stands at **11 of the 23** high-scoring rows this session began with.
+
 ## Iteration 76 — 2026-09-30 (RS-6: sixteen published entities cannot say when they were last looked at)
 
 **Selected with visibility weighted by hand again** (*Deviation: same reason as Iteration 75 — the v2 formula has

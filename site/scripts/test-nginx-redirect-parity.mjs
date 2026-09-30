@@ -191,6 +191,53 @@ console.log(
   );
 }
 
+// ─── Case 3: specification — every expected redirect must still EXIST ──────
+//
+// V9d-1 / DC-15. Cases 1 and 2 compare the two nginx configs to each other, so
+// they are a MIRROR, not a specification: delete a rewrite from BOTH files and
+// they stay perfectly consistent, the superset check passes, and a legacy URL
+// starts returning 404 to readers with the build green. Coordinator-verified
+// 2026-09-21: that exact deletion passed 4/4, exit 0.
+//
+// `expected-redirects.json` is the thing that must exist. It was GENERATED from
+// nginx.conf rather than transcribed — 106 pattern/target pairs typed by hand is
+// the DC-20 shape, and one typo would either fail forever or quietly excuse a
+// missing redirect.
+//
+// The list may GROW freely when a redirect is added. Removing an entry is a
+// deliberate act: it means asserting that a URL no longer needs to resolve, and
+// that belongs in the file with a reason, not in a silent diff.
+
+console.log("Case 3: every redirect in expected-redirects.json still exists in nginx.conf");
+{
+  const SPEC_PATH = join(REPO_ROOT, "site", "scripts", "expected-redirects.json");
+  const spec = JSON.parse(readFileSync(SPEC_PATH, "utf-8"));
+  const expected = spec.redirects ?? [];
+
+  assert(
+    expected.length > 0,
+    `expected-redirects.json lists 0 redirects — an empty specification asserts nothing (VACUOUS PASS risk)`
+  );
+
+  assert(
+    expected.length === spec.count,
+    `expected-redirects.json says count=${spec.count} but lists ${expected.length} redirects — ` +
+      `the file disagrees with itself, so neither number can be trusted`
+  );
+
+  const shippedPairs = new Set(shippedRewrites.map(pairKey));
+  const gone = expected.filter((r) => !shippedPairs.has(`${r.pattern} -> ${r.target}`));
+
+  assert(
+    gone.length === 0,
+    `${gone.length} redirect(s) in the specification are MISSING from nginx.conf. These URLs worked before and ` +
+      `will now 404 for anyone following an existing link or citation:\n` +
+      gone.map((r) => `    ${r.pattern} -> ${r.target}`).join("\n") +
+      `\n    Restore them, or if a URL genuinely should stop resolving, remove it from ` +
+      `site/scripts/expected-redirects.json in the same change and say why.`
+  );
+}
+
 // ─── Summary ─────────────────────────────────────────────────────────────
 
 console.log(`\ntest-nginx-redirect-parity: ${passed} passed, ${failed} failed\n`);

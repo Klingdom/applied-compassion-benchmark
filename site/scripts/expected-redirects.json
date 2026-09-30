@@ -1,0 +1,537 @@
+{
+  "asOf": "2026-09-30",
+  "note": "EXPECTED REDIRECTS — the specification `test:nginx-redirect-parity` checks nginx.conf against (V9d-1 / DC-15). Until 2026-09-30 that gate only compared the two nginx configs to each other, so deleting a rewrite from BOTH files left them consistent and the gate passed — a legacy URL could start returning 404 to readers with the build green. This list is what must EXIST. It may grow when a new redirect is added; an entry may only be removed deliberately, with a note saying why that URL no longer needs to resolve. Generated from nginx.conf by research/scripts/, never hand-transcribed.",
+  "count": 106,
+  "redirects": [
+    {
+      "pattern": "^/(.+)\\.html$",
+      "target": "/$1",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/ai-labs\\.html?$",
+      "target": "/ai-labs",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/cities-index\\.html?$",
+      "target": "/global-cities",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/city/phoenix/?$",
+      "target": "/city/phoenix-global-cities",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/city/singapore/?$",
+      "target": "/city/singapore-global-cities",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/at-t/?$",
+      "target": "/company/at-and-t",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/atandamp-t/?$",
+      "target": "/company/at-and-t",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/bally-s-corporation/?$",
+      "target": "/company/ballys-corporation",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/ballyand-x27-s-corporation/?$",
+      "target": "/company/ballys-corporation",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/bath-andamp-body-works/?$",
+      "target": "/company/bath-and-body-works",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/bath-body-works/?$",
+      "target": "/company/bath-and-body-works",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/bed-bath-andamp-beyond/?$",
+      "target": "/company/bed-bath-and-beyond",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/bed-bath-beyond/?$",
+      "target": "/company/bed-bath-and-beyond",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/casey-s-general-stores/?$",
+      "target": "/company/caseys-general-stores",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/caseyand-x27-s-general-stores/?$",
+      "target": "/company/caseys-general-stores",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/deere-andamp-company/?$",
+      "target": "/company/deere-and-company",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/deere-company/?$",
+      "target": "/company/deere-and-company",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/dun-andamp-bradstreet/?$",
+      "target": "/company/dun-and-bradstreet",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/dun-bradstreet/?$",
+      "target": "/company/dun-and-bradstreet",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/helmerich-andamp-payne/?$",
+      "target": "/company/helmerich-and-payne",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/helmerich-payne/?$",
+      "target": "/company/helmerich-and-payne",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/jack-henry-andamp-associate/?$",
+      "target": "/company/jack-henry-and-associate",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/jack-henry-associate/?$",
+      "target": "/company/jack-henry-and-associate",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/johnson-andamp-johnson/?$",
+      "target": "/company/johnson-and-johnson",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/johnson-johnson/?$",
+      "target": "/company/johnson-and-johnson",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/kohl-s/?$",
+      "target": "/company/kohls",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/kohland-x27-s/?$",
+      "target": "/company/kohls",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/leggett-andamp-platt/?$",
+      "target": "/company/leggett-and-platt",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/leggett-platt/?$",
+      "target": "/company/leggett-and-platt",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/lowe-s/?$",
+      "target": "/company/lowes",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/loweand-x27-s/?$",
+      "target": "/company/lowes",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/macy-s/?$",
+      "target": "/company/macys",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/macyand-x27-s/?$",
+      "target": "/company/macys",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/marsh-andamp-mclennan/?$",
+      "target": "/company/marsh-and-mclennan",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/marsh-mclennan/?$",
+      "target": "/company/marsh-and-mclennan",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/owens-andamp-minor/?$",
+      "target": "/company/owens-and-minor",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/owens-minor/?$",
+      "target": "/company/owens-and-minor",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/park-hotels-andamp-resorts/?$",
+      "target": "/company/park-hotels-and-resorts",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/park-hotels-resorts/?$",
+      "target": "/company/park-hotels-and-resorts",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/procter-andamp-gamble/?$",
+      "target": "/company/procter-and-gamble",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/procter-gamble/?$",
+      "target": "/company/procter-and-gamble",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/s-t-bancorp/?$",
+      "target": "/company/s-and-t-bancorp",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/sandamp-t-bancorp/?$",
+      "target": "/company/s-and-t-bancorp",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/w-t-offshore/?$",
+      "target": "/company/w-and-t-offshore",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/company/wandamp-t-offshore/?$",
+      "target": "/company/w-and-t-offshore",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/countries-index\\.html?$",
+      "target": "/countries",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/countries-index$",
+      "target": "/countries",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/country/cape-verde/?$",
+      "target": "/country/cabo-verde",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data-license\\.html?$",
+      "target": "/data-licenses",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data-license$",
+      "target": "/data-licenses",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/at-amp-t\\.json$",
+      "target": "/data/scores/at-and-t.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/bally-x27-s-corporation\\.json$",
+      "target": "/data/scores/ballys-corporation.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/bath-amp-body-works\\.json$",
+      "target": "/data/scores/bath-and-body-works.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/bed-bath-amp-beyond\\.json$",
+      "target": "/data/scores/bed-bath-and-beyond.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/casey-x27-s-general-stores\\.json$",
+      "target": "/data/scores/caseys-general-stores.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/deere-amp-company\\.json$",
+      "target": "/data/scores/deere-and-company.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/dun-amp-bradstreet\\.json$",
+      "target": "/data/scores/dun-and-bradstreet.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/helmerich-amp-payne\\.json$",
+      "target": "/data/scores/helmerich-and-payne.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/jack-henry-amp-associate\\.json$",
+      "target": "/data/scores/jack-henry-and-associate.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/johnson-amp-johnson\\.json$",
+      "target": "/data/scores/johnson-and-johnson.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/kohl-x27-s\\.json$",
+      "target": "/data/scores/kohls.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/leggett-amp-platt\\.json$",
+      "target": "/data/scores/leggett-and-platt.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/lowe-x27-s\\.json$",
+      "target": "/data/scores/lowes.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/macy-x27-s\\.json$",
+      "target": "/data/scores/macys.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/marsh-amp-mclennan\\.json$",
+      "target": "/data/scores/marsh-and-mclennan.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/owens-amp-minor\\.json$",
+      "target": "/data/scores/owens-and-minor.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/park-hotels-amp-resorts\\.json$",
+      "target": "/data/scores/park-hotels-and-resorts.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/procter-amp-gamble\\.json$",
+      "target": "/data/scores/procter-and-gamble.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/s-amp-t-bancorp\\.json$",
+      "target": "/data/scores/s-and-t-bancorp.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/data/scores/w-amp-t-offshore\\.json$",
+      "target": "/data/scores/w-and-t-offshore.json",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/home\\.html?$",
+      "target": "/",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/home$",
+      "target": "/",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/humanoid-robotics-labs\\.html?$",
+      "target": "/robotics-labs",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/humanoid-robotics-labs$",
+      "target": "/robotics-labs",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/agibot-zhiyuan-robotics$",
+      "target": "/robotics-lab/agibot",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/avidbots-corp$",
+      "target": "/robotics-lab/avidbots",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/beijing-geekplus-technology-co-ltd$",
+      "target": "/robotics-lab/geekplus",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/beijing-roborock-technology-co-ltd$",
+      "target": "/robotics-lab/roborock",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/cmr-surgical-ltd$",
+      "target": "/robotics-lab/cmr-surgical",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/distalmotion-sa$",
+      "target": "/robotics-lab/distalmotion",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/doosan-robotics-inc$",
+      "target": "/robotics-lab/doosan-robotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/ecovacs-robotics-co-ltd$",
+      "target": "/robotics-lab/ecovacs-robotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/franka-robotics-gmbh$",
+      "target": "/robotics-lab/franka-robotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/german-bionic-systems-gmbh$",
+      "target": "/robotics-lab/german-bionic",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/glidance-inc$",
+      "target": "/robotics-lab/glidance",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/globus-medical-inc$",
+      "target": "/robotics-lab/globus-medical",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/intuitive-surgical-inc$",
+      "target": "/robotics-lab/intuitive-surgical",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/kuka-ag$",
+      "target": "/robotics-lab/kuka",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/mujin-inc$",
+      "target": "/robotics-lab/mujin",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/myomo-inc$",
+      "target": "/robotics-lab/myomo",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/procept-biorobotics-corporation$",
+      "target": "/robotics-lab/procept-biorobotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/rainbow-robotics-co-ltd$",
+      "target": "/robotics-lab/rainbow-robotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/relay-robotics-inc$",
+      "target": "/robotics-lab/relay-robotics",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/scewo-ag$",
+      "target": "/robotics-lab/scewo",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/skydio-inc$",
+      "target": "/robotics-lab/skydio",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/symbotic-inc$",
+      "target": "/robotics-lab/symbotic",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/tyromotion-gmbh$",
+      "target": "/robotics-lab/tyromotion",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/whill-inc$",
+      "target": "/robotics-lab/whill",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/robotics-lab/yaskawa-electric-corporation$",
+      "target": "/robotics-lab/yaskawa-electric",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/top-150-us-cities\\.html?$",
+      "target": "/us-cities",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/top-250-global-cities\\.html?$",
+      "target": "/global-cities",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/top-50-ai-labs\\.html?$",
+      "target": "/ai-labs",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/top-50-robotics-companies\\.html?$",
+      "target": "/robotics-labs",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/us-state/georgia$",
+      "target": "/us-state/georgia-us-states",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/us-states-index\\.html?$",
+      "target": "/us-states",
+      "flag": "permanent"
+    },
+    {
+      "pattern": "^/us-states-index$",
+      "target": "/us-states",
+      "flag": "permanent"
+    }
+  ]
+}
