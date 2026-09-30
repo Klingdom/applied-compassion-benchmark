@@ -1,6 +1,32 @@
 {
   "asOf": "2026-09-30",
-  "note": "Published briefing `sourceTier` values that contradict the tier the same-date assessment cites for the same URL. Enforced by `research/scripts/test-source-tier-consistency.mjs` (CS-2 / DC-04). THIS LIST IS EMPTY AND SHOULD STAY EMPTY. It exists because the mismatches it would hold live in dated, published briefings, and AUTONOMY §1c forbids retro-editing those: a reader who saw tier 4 on a given date was misled, and silently rewriting the file to say 2 conceals that rather than correcting it. So a mismatch that has already reached readers is recorded here WITH ITS DATE alongside a published correction, and the list may only shrink. A mismatch found BEFORE publication must be fixed in the briefing, not added here. Do not add an entry to silence a gate failure.",
-  "history": "CS-2 was filed after the 2026-09-17 briefing passed the Iteration 16 claim-to-source gate while carrying five contradicted tiers — four inflated from 2 to 4, one deflated from 4 to 2. Those five were corrected in the briefing before this gate existed (see the CS-3 row: the Euronews UN High Commissioner article was moved from 2 to 4 to match its assessment). The gate was the missing half, not the data. Measured at introduction: 86 briefings, 72 url/tier pairs compared, 0 mismatches.",
-  "mismatches": []
+  "note": "Evidence-integrity exceptions in published daily briefings, enforced by `research/scripts/test-source-tier-consistency.mjs` (CS-2 / DC-04). Both lists may ONLY SHRINK. They exist because the defects they hold live in dated, published briefings, and AUTONOMY §1c forbids retro-editing those: a reader who saw a wrong tier or a wrong date on a given day was misled, and silently rewriting the file conceals that rather than correcting it. An entry is removed only when a dated, published correction replaces it. A defect found BEFORE publication must be fixed in the briefing, never added here.",
+
+  "mismatches": [],
+  "mismatches_note": "Briefing `sourceTier` values contradicting the tier the same-date assessment cites for the same URL. EMPTY, and should stay empty. CS-2 was filed after the 2026-09-17 briefing passed the Iteration 16 claim-to-source gate while carrying five contradicted tiers (four inflated 2→4, one deflated 4→2). Those five were corrected in the briefing before this gate existed — see the CS-3 row, where the Euronews UN High Commissioner article moved from 2 to 4 to match its assessment. The gate was the missing half, not the data. Measured at introduction: 86 briefings, 72 url/tier pairs compared, 0 mismatches.",
+
+  "futureDated": [
+    {
+      "date": "2026-06-06",
+      "url": "aljazeera.com/news/2026/6/7/bolivias-legislature-passes-law-allowing-use-of-troops-against-protesters",
+      "publishedDate": "2026-06-07",
+      "source": "Al Jazeera",
+      "found": "2026-09-30 (Iteration 72)"
+    },
+    {
+      "date": "2026-06-06",
+      "url": "abcnews.com/international/wirestory/protesters-police-clash-bolivia-after-president-signs-law-133698869",
+      "publishedDate": "2026-06-08",
+      "source": "ABC News",
+      "found": "2026-09-30 (Iteration 72)"
+    },
+    {
+      "date": "2026-06-06",
+      "url": "jurist.org/news/2026/06/bolivia-legislature-clears-way-for-increased-crackdown-on-anti-government-protests-as-country-enters-fifth-week-of-nationwide-tensions",
+      "publishedDate": "2026-06-08",
+      "source": "JURIST",
+      "found": "2026-09-30 (Iteration 72)"
+    }
+  ],
+  "futureDated_note": "Evidence published AFTER the briefing that cites it. The 2026-06-06 briefing carries `generatedAt: 2026-06-06T05:45:00Z` and cites three Bolivia articles dated 2026-06-07 and 2026-06-08 — the source URLs carry those dates too, so the publishedDate fields are not typos. Either the briefing's date is wrong or the evidence was appended later without moving it; both mislead a reader about when the benchmark knew something. Remediation is a FOUNDER decision (backlog CS-2b), because the honest options are a dated correction note on a published briefing or a re-dating of it, and both are published-content writes. Measured at introduction: 1,164 dated evidence items across 86 briefings, 3 future-dated, 80 with no parseable publishedDate (reported by the gate, deliberately not gated — absence is a different defect from contradiction)."
 }

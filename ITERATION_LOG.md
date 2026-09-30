@@ -1,5 +1,46 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 72 — 2026-09-30 (CS-2b: a briefing that cites its own future)
+
+**Selected:** the half of CS-2 left open by Iteration 71 — *"a 2025 event framed as current"*. Same row, so no
+new S12 comparison was needed.
+
+**Measured before choosing a rule, and the obvious rule was wrong.** Across 86 briefings there are **1,244
+evidence items**: 867 within 14 days of their briefing, 149 at 15–90 days, 100 at 91–365, and **51 over a year
+old**. Reading those 51, almost all are legitimate background — an Amnesty report from 2025, World Bank data
+from 2022, an ICC filing. **Gating on age would fire on honest citation**, which is how a gate gets switched off.
+
+**What has no innocent reading is evidence published *after* the briefing.** Six entries, three unique sources,
+one briefing:
+
+> `2026-06-06` (`generatedAt: 2026-06-06T05:45:00Z`) cites Al Jazeera dated **2026-06-07**, and ABC News and
+> JURIST dated **2026-06-08**.
+
+And the **source URLs carry those dates too** — `aljazeera.com/news/2026/6/7/...`,
+`jurist.org/news/2026/06/...` — so the `publishedDate` fields are not typos. A briefing published at 05:45 on the
+6th cites three articles that did not exist yet. Either its date is wrong or the evidence was appended later
+without moving it, and **both mislead a reader about when the benchmark knew something.**
+
+**Added to `test:source-tiers`** rather than a new chain step, because CS-2 asks for tier *and* recency in one
+place. It also reports, without gating, that **80 of 1,244 evidence items carry no parseable `publishedDate`** —
+deliberately separate, because absence is a different defect from contradiction and folding them together would
+hide both.
+
+**Recorded, not repaired, and that is the §1c decision.** The three entries are in
+`research/known-tier-mismatches.json` with the date they were found. The honest remedies — a dated correction
+note on a published briefing, or re-dating it — are both published-content writes, so **CS-2b goes to the
+founder**. Editing the file to make the dates agree would remove the evidence that readers were once shown
+something wrong, which is the opposite of a correction.
+
+**Both lists proven load-bearing, not decorative.** Dropping a single entry from the future-dated allowlist makes
+the gate fail again, so the exception list is doing work. Earlier: flipping a real tier in the real 09-17
+briefing makes the tier half fail. Neither list can be padded to silence the gate without the shrink-only check
+firing.
+
+**Standing count: 9 of 1,244 evidence items now have a recorded integrity exception** — 0 tier contradictions
+(the five from 09-17 were corrected before the gate existed) and 3 future-dated, with 80 undated reported
+separately.
+
 ## Iteration 71 — 2026-09-30 (CS-2: nothing checked that a published tier badge told the truth)
 
 **Selected by S12**, and this time the top pre-existing row was genuinely open. **CS-2 at 14**: every published

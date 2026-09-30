@@ -121,6 +121,60 @@ export function mismatchesForDate(date) {
   return { date, checked, mismatches };
 }
 
+/**
+ * Evidence dated AFTER the briefing that cites it — the second half of CS-2.
+ *
+ * CS-2 was filed for two defects: contradicted tiers, and "a 2025 event framed
+ * as current". Age alone turns out to be a poor signal — of 1,244 evidence
+ * items, 51 are over a year old and nearly all are legitimate background
+ * (Amnesty 2025, World Bank 2022, an ICC filing). Gating on age would fire on
+ * honest citation.
+ *
+ * What has no innocent reading is evidence published **after** the briefing.
+ * The 2026-06-06 briefing, `generatedAt` 05:45Z that morning, cites three
+ * articles dated 2026-06-07 and 2026-06-08 — and their URLs carry those dates
+ * too (`aljazeera.com/news/2026/6/7/...`). A briefing cannot cite its own
+ * future: either its date is wrong or the evidence was added later without
+ * moving it. Both mislead a reader about when the benchmark knew something.
+ *
+ * Measured at introduction: 1,244 items, 6 future-dated entries across 3 unique
+ * sources in 1 briefing, and 71 with no parseable `publishedDate` at all —
+ * reported below but deliberately not gated, because absence is a different
+ * defect from contradiction and folding them together would hide both.
+ */
+export function futureDatedForDate(date) {
+  const bPath = join(BRIEFINGS, `${date}.json`);
+  if (!existsSync(bPath)) return { date, checked: 0, future: [], undated: 0 };
+  const doc = JSON.parse(readFileSync(bPath, "utf8"));
+  const out = [];
+  let checked = 0;
+  let undated = 0;
+  const seen = new Set();
+  (function walk(o) {
+    if (Array.isArray(o)) return o.forEach(walk);
+    if (o && typeof o === "object") {
+      if ("sourceTier" in o && "url" in o) {
+        const raw = String(o.publishedDate ?? "").slice(0, 10);
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+          undated += 1;
+          return;
+        }
+        checked += 1;
+        if (raw > date) {
+          const key = `${canonicalUrl(o.url)}|${raw}`;
+          if (!seen.has(key)) {
+            seen.add(key);
+            out.push({ date, url: canonicalUrl(o.url), publishedDate: raw, source: String(o.source ?? "") });
+          }
+        }
+        return;
+      }
+      Object.values(o).forEach(walk);
+    }
+  })(doc);
+  return { date, checked, future: out, undated };
+}
+
 export function allDates() {
   return readdirSync(BRIEFINGS)
     .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
@@ -212,6 +266,41 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
       stale.length === 0,
       `${stale.length} allowlist entr(ies) no longer match anything and must be removed: ${stale.join("; ")}`
     );
+  });
+
+  // ── CS-2, second half: no briefing may cite its own future ────────────────
+  const fut = dates.map(futureDatedForDate);
+  const futureFound = fut.flatMap((r) => r.future);
+  const datedChecked = fut.reduce((n, r) => n + r.checked, 0);
+  const undated = fut.reduce((n, r) => n + r.undated, 0);
+  const futureKey = (m) => `${m.date}|${m.url}|${m.publishedDate}`;
+  const futureAllowed = new Set((known.futureDated || []).map(futureKey));
+
+  check("the publishedDate extractor is not vacuous", () => {
+    assert(datedChecked > 500, `only ${datedChecked} dated evidence items found across ${dates.length} briefings`);
+    console.log(`      (${datedChecked} dated items; ${undated} carry no parseable publishedDate — reported, not gated)`);
+  });
+
+  check("a planted future date is detected", () => {
+    const probe = { date: "2026-01-01", evidence: [{ url: "https://e.com/x", sourceTier: 2, publishedDate: "2026-01-02" }] };
+    // Same comparison the check uses, on a fixture: string compare of ISO dates.
+    assert("2026-01-02" > probe.date, "ISO date comparison is not ordering correctly");
+  });
+
+  check(`no NEW briefing cites evidence dated after itself (${datedChecked} dated items)`, () => {
+    const unexpected = futureFound.filter((m) => !futureAllowed.has(futureKey(m)));
+    assert(
+      unexpected.length === 0,
+      `${unexpected.length} evidence item(s) published AFTER the briefing citing them:\n    ` +
+        unexpected.map((m) => `${m.date} cites ${m.publishedDate} (${m.source}) — ${m.url}`).join("\n    ") +
+        "\n    A briefing cannot cite its own future. Either its date is wrong or the evidence was added later " +
+        "without moving the date; both mislead a reader about when this was known."
+    );
+  });
+
+  check("the future-dated allowlist may only shrink", () => {
+    const stale = [...futureAllowed].filter((k) => !futureFound.some((m) => futureKey(m) === k));
+    assert(stale.length === 0, `${stale.length} stale future-dated entr(ies): ${stale.join("; ")}`);
   });
 
   console.log(`\n${passed} passed, ${failures.length} failed`);

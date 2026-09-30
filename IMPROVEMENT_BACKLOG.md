@@ -314,6 +314,24 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 72 — CS-2b)
+
+- **CS-2b — FOUNDER: three published briefing citations are dated after the briefing itself.** The
+  `2026-06-06` briefing (`generatedAt: 2026-06-06T05:45:00Z`) cites Al Jazeera dated 2026-06-07 and ABC News and
+  JURIST dated 2026-06-08, and the source URLs carry those dates too, so the fields are not typos. Either the
+  briefing's date is wrong or the evidence was appended later without moving it. **Both honest remedies are
+  published-content writes** — a dated correction note appended to the briefing, or re-dating it — so this is
+  yours, not mine. Detected and held by `test:source-tiers` via `research/known-tier-mismatches.json`; the
+  allowlist is shrink-only, so removing the entries requires the correction to exist.
+  `I3 S4 L2 C5 − E1 − R1 = 12`. **Lane: blocked-on-founder.**
+
+- **CS-2c — 80 of 1,244 evidence items carry no parseable `publishedDate`.** Reported by `test:source-tiers` and
+  deliberately **not** gated in Iteration 72: absence is a different defect from contradiction, and gating both
+  in one assertion would hide whichever fired second. Without a date, neither the recency check nor any future
+  reader can tell whether an item was current when cited. Work: measure whether the 80 cluster by date, source or
+  generator version — an early-convention artifact needs a different answer from an ongoing omission —
+  then gate the ongoing case shrink-only. `I3 S4 L3 C4 − E2 − R1 = 11`.
+
 ### New backlog items (2026-09-30, from Iteration 68 — D1-1)
 
 - **D1-1 — PARTLY DONE (Iteration 68, 2026-09-30); (c) is the remaining agent-doable half.** Selected by
@@ -1021,7 +1039,7 @@ comparability.
   `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`; on ratification that draft is likely renamed or superseded, and the
   warning would then point at a stale or absent path while still looking authoritative (the DC-01 pattern). Work:
   derive the path, or assert its existence in `test-separation-waivers.mjs`. v1: I2 S4 L2 C5 − E1 − R1 = **11**.
-- **CS-2 — TIER HALF DONE (Iteration 71, 2026-09-30); event recency still open.** New `test:source-tiers` (chain 54 → 55) compares every briefing `{url, sourceTier}` against the tier the same-date assessment cites, across 86 briefings and **72** url/tier pairs, currently **0** mismatches — the five from 09-17 were corrected in the briefing before the gate existed, so the missing half was the gate. Proven by flipping a real tier in the real 09-17 briefing. Ratchets via `research/known-tier-mismatches.json`, which ships **empty**, because a mismatch in an already-published briefing needs a dated correction rather than a silent edit (§1c). **Still open: the "2025 event framed as current" half** — nothing yet checks event recency against the briefing date. ~~extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).~~ The 2026-09-17
+- **CS-2 — DONE (Iterations 71-72, 2026-09-30).** Both halves gated by `test:source-tiers`. **Tier:** every briefing `{url, sourceTier}` checked against the tier the same-date assessment cites — 72 pairs, 0 mismatches. **Recency:** age alone proved a poor signal (51 of 1,244 items are over a year old and almost all are legitimate background), so the gate fires on the case with no innocent reading — evidence published **after** the briefing citing it. Found **3**, all in `2026-06-06`, referred to the founder as **CS-2b** because the remedy is a published-content write. **CS-2c** filed for the 80 items with no parseable date. ~~TIER HALF DONE (Iteration 71, 2026-09-30); event recency still open.~~ New `test:source-tiers` (chain 54 → 55) compares every briefing `{url, sourceTier}` against the tier the same-date assessment cites, across 86 briefings and **72** url/tier pairs, currently **0** mismatches — the five from 09-17 were corrected in the briefing before the gate existed, so the missing half was the gate. Proven by flipping a real tier in the real 09-17 briefing. Ratchets via `research/known-tier-mismatches.json`, which ships **empty**, because a mismatch in an already-published briefing needs a dated correction rather than a silent edit (§1c). **Still open: the "2025 event framed as current" half** — nothing yet checks event recency against the briefing date. ~~extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).~~ The 2026-09-17
   briefing was the first one live-enforced by the It. 16 gate. It passed with 0 violations while carrying 5 `sourceTier` values
   that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
   current. Readers see these as tier badges, so an inflated tier overstates evidence strength in public. Coordinator
