@@ -301,7 +301,7 @@ comparability.
 
 ### New backlog items (2026-09-25, found while committing)
 
-- **PUB-1 — tracked build artifacts rot because the pipeline that changes their inputs never regenerates them.**
+- **PUB-1 — GATED (Iteration 56, 2026-09-29).** `research/scripts/test-feed-freshness.mjs` as `test:feed-freshness` (chain 46 → 47) asserts head freshness (the manifest's newest date is the newest in both `feed.json` and `feed.xml`), no phantom feed entries, and OG coverage for every special briefing and every date the feed advertises. Not total coverage — the feed is capped at its most recent items and older dates dropping off is correct, which my first version got wrong. Both negative controls written with the GI-3 probe helper; restoration verified by sha256 and by a clean `git status`. Verified not currently rotten before gating, so it ratchets from a clean state. ~~tracked build artifacts rot because the pipeline that changes their inputs never regenerates them.~~
   Found 2026-09-25 while staging: the committed `site/public/updates/feed.json` and `feed.xml` topped out at
   **2026-09-15**, while six briefings had been added since (09-17, 09-18, 09-20, 09-21, 09-22, 09-24). Six OG
   preview images for those briefings were missing from the repo entirely. Both are tracked artifacts (103 OG

@@ -1,5 +1,61 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 56 — 2026-09-29 (the deadline I left out of my own decision packet, and the feed gate PUB-1 never got)
+
+Two carried items, both outside the model track, both found by re-reading the backlog rather than by anything
+prompting me.
+
+### D-13: I omitted the only decision with a date
+
+An hour after writing a "founder decision packet" I noticed it listed four decisions and **omitted D-13**, which
+is the one that stops every build. Corrected: it is now Part 0, answered first.
+
+**Verified rather than inferred.** I ran the real validator end-to-end against a pinned system date: exit 0 and
+PASS on 2026-09-29 and on 2026-11-15; **exit 1 and FAIL on 2026-11-17** with `EXPIRED WAIVERS (now blocking
+again) — 1`, rising to two by December. `validate-product-separation` runs inside `npm run build`, so from that
+date every build and every deploy fails. The advance-warning machinery works too, checked across the boundary:
+silent at T-31, `warning` from **T-30 = 2026-10-17**, escalating to `critical` at T-1.
+
+**And "waiver expiry" undersells what D-13 is about.** Six entities hold more than one published composite, and
+two are visible to any reader who looks the same name up twice: **1X Technologies reads as exemplary at 81.4 on
+the robotics index and functional at 50 on the AI labs index** — 31 points across two bands — and Figure AI reads
+48.4 against 31.3. `robotics-labs` also carries both "Boston Dynamics" at 65.6 and "Boston Dynamics (SPOT demo)"
+at 20.3, a 45-point spread on one page. The other three pair a company against its AI division, which is the
+genuinely arguable case.
+
+The packet now recommends splitting the urgent from the hard: ratify and remediate the same-name and same-index
+cases, where a reader can see the problem and the answer is not contested; consciously extend with an explicit
+date for Amazon, Meta and Microsoft, because whether an AI division is a separate entity should not be decided by
+a build deadline. Those two things are only stuck together because they share a waiver file.
+
+### PUB-1: gated at last
+
+PUB-1 was found on 2026-09-25 — the committed `feed.json` and `feed.xml` topped out at 2026-09-15 while six newer
+briefings existed, and six OG preview images were missing entirely. **Subscribers would not have seen four recent
+briefings even after a deploy, and their social previews would 404.** It was fixed by committing the regenerated
+artifacts and explicitly **not gated**.
+
+Checked first: **not currently rotten** — feed head 2026-09-24, manifest head 2026-09-24, and all 16 special
+briefings plus all 30 feed dates have their committed OG image. So this is a ratchet from a clean state.
+
+**What the gate asserts, and one thing I got wrong on the way.** My first instinct was "every manifest date must
+appear in the feed", which fails on 56 dates — because the feed is deliberately capped at its most recent items
+and older dates dropping off is correct behaviour. The real invariant is **head freshness**: the manifest's newest
+date must be the feed's newest, in both `feed.json` and `feed.xml`. Plus no phantom entries (a feed date the
+manifest does not have, which catches a hand-edited or half-regenerated feed), and OG coverage for everything the
+feed advertises.
+
+**Why the existing drift checker missed this class:** `check-publication-drift.mjs` (It. 36) asks the *routes*
+whether a briefing is served. The routes were fine. The feed was not. A check aimed at one artifact says nothing
+about a sibling generated from the same inputs.
+
+**The probe helper earned its place on first real use.** Both negative controls are written with `assertGateCatches`
+from `probe.mjs` (built one iteration earlier): a newer manifest date with a stale feed fails, and a feed date
+absent from the manifest fails. Restoration was verified twice over — by the helper's own sha256 check and by
+`git status` showing the manifest byte-identical afterwards. No git command anywhere in the probe.
+
+**Validation:** chain 46 → 47 steps, green. 9 checks in the new gate, all with non-vacuity floors on the inputs.
+
 ## Iteration 55 — 2026-09-29 (the factual pass finishes: seven verified defects, and a denominator that will not hold still)
 
 **Selected:** **TRI-5** — verify the fact-bearing items nobody had checked. Of the 22 the detector flags, 4
