@@ -314,6 +314,48 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 65 — META-1, the meta-review)
+
+- **PKT-1 — the founder decision packet, and it is the forced next selection.** Meta-review 5's first
+  recommendation, and it forbids another internal gate. Every remaining item of real product value is gated on
+  approval and **none has ever been presented in one place**. Contents, each with evidence already gathered:
+  (a) **merge `improve/2026-09-16-entity-identity` to `main` and deploy** — 149 commits, 0 behind, deploy job is
+  `workflow_dispatch`-only, 12 reader-visible commits unshipped including three corrections to published errors;
+  (b) **Rethink Robotics** — rank 22, composite 60.9, band `established`, defunct since 2025-09-16, proposal on
+  disk; (c) **A-2a slug pins** plus the disclosure question, since 8 of 12 expose contradictory composites
+  (Houston 35.2 vs 43.8); (d) the **728 change proposals** with nothing applied since 2026-09-16; (e) **D-13**,
+  deadline 2026-11-17. Agent-doable in full — a packet is a document, not an index write.
+  `I5 S5 L3 C5 - E2 - R1 = 15`.
+
+- **S12 — PROPOSED, founder to ratify: a gated item is unasked, not ineligible.** `Deviation:` appears zero times
+  in 37 iterations of log, because every selection really was the top of the eligible queue — a queue the
+  previous iteration wrote. Founder-gated rows are never eligible, so the formula steered the loop into work it
+  could finish alone, which was work about itself. Two parts: (i) before selecting an item the *previous*
+  iteration filed, re-score the top three **pre-existing** rows and record in one line why the self-generated
+  item outranks them; (ii) apply **S2** to the product backlog — split every gated row into an agent-doable half
+  and an approval half, so the preparable half becomes eligible. This would have surfaced A-2a around Iteration
+  40. **Adopting a selection rule is a methodology change and the founder's to ratify.**
+  `I5 S5 L4 C4 - E1 - R2 = 15`. **Lane: blocked-on-founder.**
+
+- **CI-1 — a registry row may not say "Gated" on the strength of a local probe.** Meta-review 5's third
+  recommendation. DC-16 and DC-17 were silently neutered in CI by a shallow clone while their rows read "gated",
+  and DC-11's nginx job claimed protection it did not have for 8 days. A local planted probe proves nothing about
+  the environment that actually runs the gate. Needs a CI-environment variant of `assertGateCatches`, or at
+  minimum a one-off CI run with the probe planted, recorded per gate. `I3 S4 L3 C4 - E3 - R2 = 9`.
+
+- **SAFE-1 — a write that truncates before it computes its content is a loaded gun.** Iteration 65 destroyed
+  `ITERATION_LOG.md` — 330 KB of governance record reduced to **0 bytes** — with
+  `io.open(path, "w").write(expr)`. Python evaluates `io.open` first, so the file was truncated and *then* the
+  expression raised on a stray per-cent sign. Recovered byte-identical via `git show HEAD:ITERATION_LOG.md`
+  **only because it happened to be committed**; the uncommitted America-at-250 rewrite sitting in the same tree
+  would have been unrecoverable. Second destructive-write near-miss in three days after INC-011, and a different
+  mechanism — not a git command, an ordinary file write. The rule is not "be careful": **compute the output,
+  verify it is non-empty and has not collapsed, then open the file.** Two parts: (i) a committed
+  `research/scripts/lib/safe-write.mjs` with a shrink guard, used by every script that writes a governance
+  artifact; (ii) a test asserting no tracked governance artifact is empty or has shrunk by more than half against
+  `HEAD`, which would have caught this at chain time rather than by my noticing.
+  `I4 S4 L4 C5 - E2 - R1 = 14`.
+
 ### New backlog items (2026-09-30, from Iteration 63 — TRI-12)
 
 - **TRI-16 — every item's gap needs an error bar, which means replicate administrations rather than more items.**

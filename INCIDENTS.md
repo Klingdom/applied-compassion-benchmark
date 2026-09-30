@@ -309,6 +309,58 @@ minor observability gap (see `OBSERVABILITY.md`).
 
 ---
 
+## INC-012 — ITERATION_LOG.md truncated to zero bytes by a coordinator script
+
+| Field | Value |
+|---|---|
+| **Opened** | 2026-09-30 |
+| **Status** | CLOSED same session. Recovered byte-identical from `git show HEAD:ITERATION_LOG.md`; `git diff` against HEAD showed zero lines. No content lost — the Iteration 65 entry being written had not yet reached disk. Systemic fix filed as **SAFE-1**; a local `safe_write` guard is in use for the remainder of the session. |
+| **Severity** | High as a class, zero as an outcome. 330 KB / 66 iterations of governance record were destroyed in one call and survived only because the file happened to be committed. |
+| **Detection** | The script raised `ValueError: unsupported format character` and I checked the file's size immediately, on the suspicion that Python's argument-evaluation order had already truncated it. It had. |
+
+### What happened
+
+A coordinator script appended an iteration entry with:
+
+```python
+io.open(path, "w", encoding="utf-8", newline="").write(s[:i] + (entry % (STEPS - 1, STEPS)) + s[i:])
+```
+
+Python evaluates `io.open(path, "w")` **before** the argument expression. The open truncated
+`ITERATION_LOG.md` to zero bytes; then `entry % (...)` raised, because the entry prose contained literal
+per-cent signs (`74 per cent` had been written as `74%`) that `%`-formatting tried to interpret as format
+specifiers. The write never executed. One call, one destroyed artifact, and a traceback that said nothing about
+the file.
+
+### Why it was recoverable, and the part that was luck
+
+`ITERATION_LOG.md` was committed at `ce52bec0` minutes earlier, so `git show HEAD:ITERATION_LOG.md` restored it
+exactly. **That was fortune, not method.** The same working tree holds the deliberately uncommitted
+America-at-250 rewrite; had the script been pointed there, the content would have been unrecoverable. The WIP
+limit (S6) that keeps validated-uncommitted work to a minimum is what bounded the damage, and it was not chosen
+for this reason.
+
+### Relationship to INC-011
+
+Second destructive-write near-miss in three days, and a **different mechanism**. INC-011 was `git checkout --`
+discarding an uncommitted correction, which GI-3 now makes harder and GI-1's snapshot makes recoverable. Both of
+those guard *git commands*. This was an ordinary file write in a throwaway script, so neither guard applied, and
+neither would have.
+
+That is the lesson worth keeping: the class is not "dangerous git commands". It is **any operation that destroys
+the old state before the new state exists**. `git checkout` and a truncating `open` are two instances; there will
+be others.
+
+### Corrective actions
+
+- **Immediate, in force:** a `safe_write` that computes the string, refuses empty content, and refuses to shrink
+  a file below half its size — all *before* opening it for write.
+- **Filed as SAFE-1:** (i) a committed `research/scripts/lib/safe-write.mjs` with the same guard, for every
+  script that writes a governance artifact; (ii) a chain test asserting no tracked governance artifact is empty
+  or has shrunk by more than half against `HEAD`, so the next one fails at test time instead of being noticed.
+- **Practice rule:** compute the output, verify it, then open the file. Never let a file-opening mode be the
+  first thing that runs.
+
 ## INC-008 — Session WebSearch budget exhausted; three scan attempts lost
 
 | Field | Value |
