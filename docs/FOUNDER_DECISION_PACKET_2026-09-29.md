@@ -1,13 +1,70 @@
 # Founder decision packet — 2026-09-29
 
-Four decisions are pending (**D-43 · D-44 · D-45 · D-46**) across seven rubric repairs and three formula
-questions. They are written up separately in `DECISIONS.md`; this collects them so they can be answered in one
-sitting rather than found one at a time.
+**Five** decisions are pending — **D-13 · D-43 · D-44 · D-45 · D-46** — across one hard deadline, seven rubric
+repairs and three formula questions. They are written up separately in `DECISIONS.md`; this collects them so they
+can be answered in one sitting rather than found one at a time.
 
-**Nothing here is blocking the site.** Every defect is already published beside the text it corrects, fused into
+> **Correction, same day.** The first version of this packet listed four and omitted **D-13** — the only one with a
+> date attached, and the one that stops every build. It is now Part 0, and it should be answered first.
+
+**Nothing in Parts 1 and 2 is blocking the site.** Every defect is already published beside the text it corrects, fused into
 the string that also builds the AI-judge prompt. So a reader cannot see a wrong figure without its correction,
 and the judge stops rewarding it. What is blocked is the *instrument* itself — the bank is untouched, because
 editing a published anchor is a methodology act.
+
+---
+
+## Part 0 — D-13, and the date every build stops (answer this one first)
+
+**What happens if nothing is decided:** on **2026-11-17** `npm run build` starts failing, and keeps failing. It is
+not a warning — `validate-product-separation.mjs` runs inside the build, and an expired waiver blocks again.
+
+**Verified rather than inferred.** I ran the real validator end-to-end against a pinned system date:
+
+| date | exit | verdict | |
+|---|---|---|---|
+| 2026-09-29 (today) | 0 | PASS | |
+| 2026-11-15 | 0 | PASS | critical warning showing |
+| **2026-11-17** | **1** | **FAIL** | `EXPIRED WAIVERS (now blocking again) — 1` |
+| 2026-12-01 | 1 | FAIL | 2 expired |
+
+The advance-warning machinery also works, checked across the boundary: silent at T-31, `warning` from **T-30 =
+2026-10-17** (18 days away), escalating to `critical` at T-1. So you will be told — but the first telling is a
+build log, which is a poor place to learn about a deadline.
+
+**The six waivers, staggered by D-37:** `figure` 2026-11-16 · `1x-technologies` 11-30 · `boston-dynamics-spot-demo`
+12-14 · `amazon` 2027-01-15 · `meta` 01-29 · `microsoft` 02-12. Each date forces its own decision, so this recurs
+five more times unless D-13 is settled.
+
+**What D-13 is actually about, and why it is not merely housekeeping.** Six entities hold more than one published
+composite. Two of them are visible to any reader who looks the entity up twice, under the *same name*:
+
+| Entity | One page says | The other says |
+|---|---|---|
+| **1X Technologies** | `robotics-labs` **81.4 — exemplary** (rank 9) | `ai-labs` **50 — functional** (rank 14) |
+| **Figure AI** | `robotics-labs` **48.4 — functional** (rank 27) | `ai-labs` **31.3 — developing** (rank 35) |
+
+1X spans 31 points and two bands. There is also a **same-index** duplicate — `robotics-labs` carries both "Boston
+Dynamics" at 65.6 and "Boston Dynamics (SPOT demo)" at 20.3, a 45-point spread on one page. The remaining three
+(Amazon, Meta, Microsoft) pair a company against its AI division, which is the genuinely arguable case and the
+thing D-13 is for: is "Microsoft AI" a distinct entity from "Microsoft"?
+
+**Your work here is review, not drafting.** `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md` already holds a
+disposition for all six, with the scores, ranks and reasoning laid out per entity.
+
+**Three options, with what each costs:**
+
+1. **Ratify D-13 and remediate the six.** Settles it permanently and removes a reader-visible inconsistency.
+   Requires index writes, which are yours.
+2. **Consciously extend the waivers with a recorded decision.** Cheap, legitimate, and the gate is built to accept
+   it — but it buys time rather than resolving anything, and the 1X "exemplary vs functional" split stays live.
+3. **Do nothing.** Builds fail from 2026-11-17. This is the only option with no upside.
+
+**My recommendation:** option 1 for the two same-name cases (1X, Figure) and the same-index case (Boston
+Dynamics), because those are the ones a reader can see and the answer is not contested; option 2 with an explicit
+date for Amazon/Meta/Microsoft, because "is the AI division a separate entity?" is a real taxonomy question that
+should not be rushed by a build deadline. That splits a hard problem from an urgent one, which is the only reason
+they are currently stuck together.
 
 ---
 
@@ -88,6 +145,7 @@ decision:
 - **TRI-2** — cross-family triage. Both agents in the pass came from one model family, so their agreement is
   weaker evidence than cross-family agreement would be. Needs API credentials.
 - **Deploy** — none of this is live. **`npm publish`** and the MCP registry listing need your credentials.
+- **Remediating the six D-13 cases** needs index writes, which are yours — but the determinations are drafted.
 - **Dataset licence wording** — the `DatasetJsonLd` gate is deliberately still closed.
 
 ---

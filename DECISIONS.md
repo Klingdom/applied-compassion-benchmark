@@ -19,8 +19,10 @@ resolution — recorded honestly rather than invented) · `proposed` (written do
 
 ---
 
-**Four decisions are pending as of 2026-09-29** (D-43, D-44, D-45, D-46), covering seven rubric repairs and
-three formula questions. They are collected with defaults and costs-of-delay in
+**Five decisions are pending as of 2026-09-29** (D-13, D-43, D-44, D-45, D-46), covering one hard deadline,
+seven rubric repairs and three formula questions. **D-13 is the urgent one: every build fails from
+2026-11-17** unless it is ratified or the waivers consciously extended — verified end-to-end against a
+pinned system date, not inferred. They are collected with defaults and costs-of-delay in
 `docs/FOUNDER_DECISION_PACKET_2026-09-29.md` so they can be answered in one sitting.
 
 ## Index
