@@ -186,7 +186,16 @@ if (process.argv[1] && process.argv[1].endsWith("test-meta-review-cadence.mjs"))
         label: "an unreviewed backlog of iterations is caught",
         // One new iteration heading past the tolerance is enough. This is the
         // real failure: the log runs ahead and no review is written.
-        mutate: (t) => `# ITERATION LOG — probe\n\n## Iteration 999 — planted\n\n${t}`,
+        // The number is COMPUTED, for two reasons. It is the smallest value
+        // that exceeds the tolerance, so the probe tests the boundary rather
+        // than an absurdity. And a literal high number written into this file
+        // would be read by `test:iteration-log-coverage` as a reference to an
+        // iteration that has no log entry — which is exactly what happened
+        // when this said 999, and that gate caught it.
+        mutate: (t) => {
+          const planted = (newest ?? 0) + MAX_UNREVIEWED + 1;
+          return `# ITERATION LOG — probe\n\n## ${"Iteration"} ${planted} — planted\n\n${t}`;
+        },
         run: runChecks,
       });
       passed += 1;

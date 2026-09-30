@@ -316,7 +316,7 @@ comparability.
 
 ### New backlog items (2026-09-30, from Iteration 65 — META-1, the meta-review)
 
-- **PKT-1 — the founder decision packet, and it is the forced next selection.** Meta-review 5's first
+- **PKT-1 — DONE (Iteration 66, 2026-09-30).** `docs/FOUNDER_DECISION_PACKET_2026-09-30.md`: six decisions (D-47 merge/deploy, D-48 Rethink Robotics, D-49 the nine double-scored names, D-50 the application queue, D-13 the waiver cliff, D-51 the S12 rule), each with evidence, a recommendation, the cost of delay and **a default if nothing comes back**. **44 figures re-derived by `research/scripts/verify-decision-packet-2026-09-30.mjs`**, which caught two of mine before the founder saw them. ~~the founder decision packet, and it is the forced next selection.~~ Meta-review 5's first
   recommendation, and it forbids another internal gate. Every remaining item of real product value is gated on
   approval and **none has ever been presented in one place**. Contents, each with evidence already gathered:
   (a) **merge `improve/2026-09-16-entity-identity` to `main` and deploy** — 149 commits, 0 behind, deploy job is
