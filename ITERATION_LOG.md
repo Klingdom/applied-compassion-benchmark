@@ -1,5 +1,49 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 76 — 2026-09-30 (RS-6: sixteen published entities cannot say when they were last looked at)
+
+**Selected with visibility weighted by hand again** (*Deviation: same reason as Iteration 75 — the v2 formula has
+no term for whether a reader is affected; S13 is filed*). RS-6 was filed as a narrow Portland curiosity. It is
+not narrow.
+
+**A rotation key carries one `last_assessed` stamp.** When several published rows resolve to the same key, that
+one stamp stands in for all of them — so assessing one entity silently refreshes the freshness claim for the
+others, and the benchmark cannot say when it last looked at them. Measured:
+
+> **15 rotation keys stand in for 31 published rows, leaving 16 published entities with no independent freshness
+> record.** `portland` alone covers three: the global city, Portland ME and Portland OR.
+
+**Also in the chain now: the validator itself.** `validate:rotation-state` existed and was **not in `npm test`** —
+a validator nobody runs is decoration. Added (chain 55 → 56), which is why this iteration adds a step while
+Meta-review 6 was telling me to stop adding gates: the check was already written, it simply never ran.
+
+**Three of my own errors in one iteration, each caught by something other than me.**
+
+1. **The coverage measurement was wrong first.** My initial scan reported 15 published entities with *no*
+   rotation key at all — every one an accented name: Côte d'Ivoire, Bogotá, São Paulo, Maceió. They are tracked,
+   under **unfolded** keys (`bogot`, `s-o-paulo`, `macei`). My hand-rolled slug function folded accents; the
+   published one does not. **Tenth instance of the pattern this session.**
+2. **`test:slug-conventions` caught the cause within minutes** — it forbids any reimplementation of a slug
+   function outside `site/scripts/lib/slug.mjs`, which is exactly what I had written. Importing the shipped
+   `slugifyUnfolded` fixed both the violation and the false finding, and the number moved: **16 keys / 33 rows /
+   17 entities became 15 / 31 / 16**, because San José and San Jose are not one key once accents are respected.
+   The function **was already imported in that file**, so the copy was doubly pointless.
+3. **My first ceiling counted the wrong thing, and its negative control caught it.** Gating on the number of
+   shared *keys* let a new defect through: renaming a university to "Boston" added a third claimant to the
+   already-shared `boston` key, leaving the key count at 16 — so the gate **passed with the defect planted**. The
+   ceiling now counts **rows**, which catches a new shared key and a new claimant on an existing one. Re-run, the
+   same control fails the gate as it should.
+
+**Shrink-only at 31 rows rather than a hard zero, because the fix is not mine.** Thirteen of the fifteen keys are
+the cross-index city collisions of RISK-017/018, and giving them separate rotation keys is part of the **same
+disclosure question as D-49** — pinning them makes nine published score disagreements addressable rather than
+resolving them. Two more (1X Technologies, Figure AI) are deferred to D-13. The ceiling stops the number growing.
+It does not pretend to fix it.
+
+**What a reader gets from this.** Nothing today. What they get is that the freshness claim behind sixteen
+published scores is now *stated* rather than silently assumed, and that the next entity to join the shared set
+will fail a build instead of arriving unnoticed.
+
 ## Iteration 75 — 2026-09-30 (CS-2d: the spec said the field was optional, so it was omitted)
 
 **Selected against the formula, deliberately, and recorded as a deviation.** Meta-review 6 found that the v2

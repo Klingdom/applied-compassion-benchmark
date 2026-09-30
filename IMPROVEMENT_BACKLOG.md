@@ -389,7 +389,7 @@ comparability.
   assertion in `test:collision-ratchet` with a planted negative control. **Needs approval only** — it writes an
   index file. `I4 S5 L3 C5 − E2 − R1 = 14`.
 
-- **RS-6 — one rotation-state key for two Portlands, so one is untracked for research.** *(Filed as RS-5 in Iteration 67 and renumbered in Iteration 69: **RS-5 was already taken** by the scan-stamp-drift row further down. Third identifier I reused in one session, after CI-1 and OBS-1 — see ID-3a.)*
+- **RS-6 — MEASURED AND GATED (Iteration 76, 2026-09-30); the fix belongs to D-49.** Far wider than this row assumed: **15 rotation keys stand in for 31 published rows, so 16 published entities have no independent freshness record** — `portland` alone covers three. A key carries one `last_assessed`, so assessing one entity refreshes the claim for the others. `validate:rotation-state` now measures it and holds a **shrink-only ceiling of 31 rows**, and the validator was **added to the chain**, having existed without ever running. 13 of the 15 are the RISK-017/018 cross-index collisions, so separating them is part of the **D-49 disclosure decision**; 2 more wait on D-13. ~~one rotation-state key for two Portlands, so one is untracked for research.~~ *(Filed as RS-5 in Iteration 67 and renumbered in Iteration 69: **RS-5 was already taken** by the scan-stamp-drift row further down. Third identifier I reused in one session, after CI-1 and OBS-1 — see ID-3a.)*
   `research/rotation-state.json` holds `portland`, `portland-us-cities` and `portland-global-cities`, but
   us-cities publishes **two** Portlands (ME rank 8, OR rank 22). Whichever one the single `portland-us-cities`
   key refers to, the other has no rotation entry, so it is never scanned or reassessed and its `last_assessed`

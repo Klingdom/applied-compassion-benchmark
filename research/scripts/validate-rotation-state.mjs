@@ -119,6 +119,13 @@
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+// The shared slug rules. `slugifyUnfolded` below is the one the published slugs
+// use, and the RS-6 check imports it rather than carrying a copy:
+// test:slug-conventions forbids a reimplementation and caught one here within
+// minutes of my writing it. It also mattered — my copy folded accents while
+// published slugs do not, which made 15 accented entities look like coverage
+// gaps when they are in fact tracked under keys like `bogot` and `s-o-paulo`.
+// The function was already imported here, so the copy was doubly pointless.
 import {
   foldAccents,
   slugifyFolded,
@@ -133,6 +140,19 @@ const ASSESSMENTS_DIR = path.join(REPO, "research", "assessments");
 const PROPOSALS_DIR = path.join(REPO, "research", "change-proposals");
 const DIGESTS_DIR = path.join(REPO, "research", "digests");
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** RS-6 ceiling, shrink-only. See checkSharedRotationKeys below. */
+/**
+ * RS-6 ceiling, shrink-only: PUBLISHED ROWS that share a rotation key with
+ * another row.
+ *
+ * Counted as ROWS, not keys. The first version counted keys and its negative
+ * control caught it: renaming a university to "Boston" added a third claimant
+ * to the already-shared `boston` key, so the key count stayed at 16 and the
+ * gate passed with the defect planted. Rows catch both a new shared key and a
+ * new claimant on an existing one.
+ */
+const SHARED_ROW_CEILING = 31;
 
 // ── Slug alias derivation ───────────────────────────────────────────────────
 // See the module comment above ("Matching rule") for why these exist. Every
@@ -580,6 +600,77 @@ if (isMainModule) {
     process.exit(1);
   }
 
+  const sharedOk = checkSharedRotationKeys(entities);
+  if (!sharedOk) {
+    console.log("\nRESULT: FAIL — a published row shares a rotation key, so its freshness claim is not its own.\n");
+    process.exit(1);
+  }
+
   console.log("\nRESULT: PASS — every last_assessed claim in scope is backed by a report on disk.\n");
   process.exit(0);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SHARED ROTATION KEYS (RS-6)
+//
+// A rotation key carries one `last_assessed` stamp. When two or more PUBLISHED
+// rows resolve to the same key, that single stamp stands in for all of them —
+// so assessing one entity silently refreshes the freshness claim for the
+// others, and the benchmark cannot say when it last looked at them.
+//
+// Measured 2026-09-30: 15 keys stand in for 31 published rows, leaving 16
+// published entities with no independent freshness record. (A first pass said
+// 16/33/17 because it used a hand-rolled slug function that folded accents;
+// the shipped `slugifyUnfolded` does not, and San José / San Jose is not
+// actually one key.) `portland` alone
+// covers three: the global city, Portland ME and Portland OR.
+//
+// It is a SHRINK-ONLY CEILING rather than a hard zero because the fix is
+// entangled with a founder decision. Fourteen of the sixteen are the
+// cross-index city collisions of RISK-017/018, and giving them separate
+// rotation keys is part of the same disclosure question as D-49 — pinning them
+// makes nine published score disagreements addressable rather than resolving
+// them. Two more (1X Technologies, Figure AI) are deferred to D-13.
+//
+// This stops the number growing. It does not pretend to fix it.
+// ─────────────────────────────────────────────────────────────────────────────
+
+
+function checkSharedRotationKeys(entities) {
+  const INDEX_DIR = path.join(REPO, "site", "src", "data", "indexes");
+  const keys = new Set(Object.keys(entities));
+
+  const claimedBy = new Map();
+  for (const file of readdirSync(INDEX_DIR).filter((f) => f.endsWith(".json"))) {
+    const indexSlug = file.replace(/\.json$/, "");
+    const rows = JSON.parse(readFileSync(path.join(INDEX_DIR, file), "utf8")).rankings ?? [];
+    for (const row of rows) {
+      const base = row.slug ?? slugifyUnfolded(row.name);
+      const key = [base, `${base}-${indexSlug}`].find((k) => keys.has(k));
+      if (!key) continue;
+      if (!claimedBy.has(key)) claimedBy.set(key, []);
+      claimedBy.get(key).push(`${row.name} (${indexSlug}, rank ${row.rank})`);
+    }
+  }
+
+  const shared = [...claimedBy.entries()].filter(([, rows]) => rows.length > 1);
+  const rowsCovered = shared.reduce((n, [, rows]) => n + rows.length, 0);
+
+  console.log(`\n  SHARED ROTATION KEYS: ${shared.length} key(s) stand in for ${rowsCovered} published row(s)`);
+  console.log(`    (${rowsCovered - shared.length} published entities have no independent freshness record)`);
+  for (const [key, rows] of shared) console.log(`    ~ ${key}: ${rows.join("  |  ")}`);
+
+  if (rowsCovered > SHARED_ROW_CEILING) {
+    console.log(
+      `\n  x SHARED-ROW CEILING EXCEEDED: ${rowsCovered} > ${SHARED_ROW_CEILING}. A published row now shares a ` +
+        "rotation key with another, so one assessment refreshes both freshness claims and neither entity can say " +
+        "when it was last looked at. Give it its own key, or if it is a cross-index collision, it belongs to the " +
+        "D-49 disclosure decision.",
+    );
+    return false;
+  }
+  if (rowsCovered < SHARED_ROW_CEILING) {
+    console.log(`    (below the ceiling of ${SHARED_ROW_CEILING} rows — lower SHARED_ROW_CEILING to ${rowsCovered})`);
+  }
+  return true;
 }
