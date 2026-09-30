@@ -143,7 +143,10 @@ console.log("Case 4: no collisions at all → every listed entry resolved");
 
 // ─── Case 5: real run against current repo data ────────────────────────────
 
-console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolved");
+// The label said 16 until 2026-09-30, while the assertion below required 15 —
+// stale since tranche 1 pinned singapore-global-cities. A test whose own output
+// contradicts its own assertion teaches a reader to distrust both.
+console.log("Case 5: real repo data → exactly 15 known, 0 unexpected, 0 resolved, 0 rank-derived");
 {
   const INDEX_FILES = [
     { file: "fortune-500.json", indexSlug: "fortune-500" },
@@ -157,6 +160,10 @@ console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolv
   ];
 
   const recordsByIndex = {};
+
+  // D-49: slugs that encode a RANK, collected while the loop already derives them.
+
+  const rankDerived = [];
   for (const { file, indexSlug } of INDEX_FILES) {
     const indexData = JSON.parse(readFileSync(join(INDEXES_DIR, file), "utf-8"));
     const rankings = indexData.rankings ?? [];
@@ -175,6 +182,7 @@ console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolv
         const used = slugUsage.get(baseSlug) ?? 0;
         slugUsage.set(baseSlug, used + 1);
         slug = used === 0 ? baseSlug : `${baseSlug}-${row.rank}`;
+        if (used > 0) rankDerived.push({ indexSlug, name: row.name, rank: row.rank, slug });
       }
       slugs.push(slug);
     }
@@ -199,6 +207,29 @@ console.log("Case 5: real repo data → exactly 16 known, 0 unexpected, 0 resolv
   assert(known.length === 15, `expected exactly 15 known collisions in current repo data, got ${known.length}`);
   assert(unexpected.length === 0, `expected 0 unexpected collisions, got ${unexpected.length}: ${JSON.stringify(unexpected)}`);
   assert(resolved.length === 0, `expected 0 resolved collisions, got ${resolved.length}: ${JSON.stringify(resolved)}`);
+
+  // ── D-49: no published slug may encode a rank ──────────────────────────────
+  //
+  // When two rows in one index share a base slug, the second and later ones get
+  // `${baseSlug}-${row.rank}`. That address changes when the ranking changes,
+  // and for a benchmark that asks to be cited, a URL that moves when the score
+  // moves is a defect by itself. Two existed until 2026-09-30 — Portland, OR at
+  // `portland-22` and Springfield, MO at `springfield-94` — and both now carry
+  // an explicit pinned slug.
+  //
+  // Pinning also removes the rank-dependence of the OTHER row: once one of a
+  // pair is pinned, the remaining name has a single unpinned row and always
+  // takes the bare slug regardless of rank order.
+  //
+  // This is a hard zero, not a ratchet. A newly duplicated name must be given a
+  // pinned slug in the same change that introduces it; there is no acceptable
+  // count above zero, because every instance is a URL that will move.
+  assert(
+    rankDerived.length === 0,
+    `${rankDerived.length} published slug(s) encode a rank and will change when the ranking does: ` +
+      rankDerived.map((r) => `${r.slug} (${r.name}, ${r.indexSlug}, rank ${r.rank})`).join("; ") +
+      ". Give the row an explicit `slug` in its index file, as portland-or and springfield-mo do."
+  );
 }
 
 // ─── Summary ────────────────────────────────────────────────────────────────
