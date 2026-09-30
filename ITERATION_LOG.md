@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 62 — 2026-09-30 (HEALTH-1: the file that says whether the system is healthy was wrong 18 times)
+
+**Selected:** **HEALTH-1**, as a forced selection. Iteration 61 noticed that `SYSTEM_HEALTH.md` had skipped
+Iterations 54-60 and claimed a 45-step test chain against an actual 50. That is the DC-16 shape — an artifact
+whose update depends on an author remembering — and **remembering had failed seven consecutive times**. Under S10
+an ungated class with two or more dated occurrences pre-empts the ranked queue; this had seven, so it outranked
+TRI-12 regardless of score.
+
+**A gate, and then an audit that justified it.** New `test:health-freshness` (chain 50 → 51), five checks:
+the last-change line must name the newest iteration in `ITERATION_LOG.md`; the step count in the Tests heading
+must equal the real chain length; the Risks heading's row count and highest id must match `RISKS.md`; and nothing
+may be described as uncommitted that git now tracks. **Seven negative controls**, one per check plus two that
+plant the *cause* rather than the symptom — adding a chain step, and appending a RISKS row — each required to
+fail the gate and to pass again after a sha-verified restore.
+
+It caught its own installation: adding `test:health-freshness` to the chain made the chain 51 steps against a
+heading that said 50, and the gate failed on the next run. That is the behaviour, demonstrated live rather than
+asserted.
+
+**Then the audit: 65 claims checked, 18 false.** Every one re-verified by me before being touched (V2) — a report
+is not verification. The damaging ones were not the stale counts:
+
+- **"9 consecutive successful `Deploy to VPS` runs" with a named last-deployed commit.** The *workflow* called
+  "Deploy to VPS" does succeed. Its **deploy job is skipped** — on all 10 of the most recent runs, checked
+  individually with `gh run view <id> --json jobs`, because deployment is founder-operated. **A green workflow
+  name was being read as a deployment.** And production cannot settle it either: the live
+  `build-manifest.json` reports `buildDate` 2026-09-25 with `git.sha: null`, and explains that no `GIT_SHA`
+  build-arg is injected and `git rev-parse` cannot work inside a Docker builder stage that receives no `.git`.
+  So `Last deployed commit 376b0f85` was **not merely stale, it was unverifiable when written**. Filed as OBS-1.
+- **RISK-023 was headed "New 2026-09-15"** — remediated 2026-09-16 (D-35), all 20 encoded names decoded, held at
+  zero by `test:encoded-names`. A reader would have gone to chase a defect that had been closed for two weeks.
+  That is the worst direction for a health file to be wrong in.
+- **RISK-015 was listed as "waiver cliff 2026-12-09"**, contradicting `RISKS.md` *and* the Build-and-gates row
+  two sections above it, which already recorded the staggering into six dates (D-37).
+- **Rotation-state "25 entities carry a WARN (5 alias, 20 same-date)"** — actually **62** WARN lines: 5 alias,
+  **19** same-date, and **38** in older recording conventions the 25 never covered. Wrong in both directions at
+  once, which is what an un-regenerated count does.
+- Every build figure in the gates table was wrong: **2,024** static pages not 1,978, **2,019** HTML files not
+  1,973, **2,002** Pagefind pages not 1,956, **3.33 MB** not 3.19. Four for four, from a single re-run.
+- Also corrected: `validate-indexes` 85,455/63 (was 85,401/64), briefings **86 of 86** (was 79), model-releases
+  **2** warnings (was 4), `test:history` **46** (was 39), `test:entity-records` **19,702** (was 19,687),
+  `known-collisions.json` **15** (was 16 — and since that list is shrink-only, a stale high figure hides a
+  ratchet that has already tightened), last cycle scanned **2026-09-24** (was 09-20).
+
+**All 18 addressed: 17 corrected outright, 1 partially.** RISK-017/018's slug-collision count was corrected to
+15, but its **accent-mismatch figure is left at its 2026-09-15 value and explicitly marked not re-measured**,
+because I did not derive it — and typing a number I have not measured is precisely the defect being repaired.
+
+**A figure was removed rather than corrected.** The Risks heading claimed "8 marked resolved/closed". The first
+version of my own gate reported 6 and I nearly "fixed" a true claim on the strength of it. The `Status` cells are
+free text — *"Mitigated (delivery) — Open (verification gap)"*, *"Open, deliberately unresolved pending a
+decision"*, *"Open — one face closed"*, *"Open, actively mitigated"*. Literal `resolved|closed` gives 5; adding
+`mitigated|remediated|fixed` gives 10; the published number was 8. **Three defensible rules, three answers, so
+the quantity does not exist.** It is no longer published, check 3b prevents its return, and the near-miss is in
+the gate's header because **a gate that "finds" a defect in a true claim is the most expensive kind of false
+positive.**
+
+**The fourth prose-scanning collision, and a general fix this time.** Two of my checks failed on the prose that
+explains them: correcting the file to say *the "pending commit" note here was stale* made check 4 fire on the
+correction, and saying the heading no longer publishes "8 marked resolved/closed" made check 3b fire on that
+sentence. Same shape as the `probe.mjs` git check, the destructive-git gate and the preflight read-only check.
+Rather than special-casing again, the checks now run `stripCitations()` first — **a quoted phrase is a citation,
+not an assertion**, and the quotation marks are the only mechanical signal available.
+
+**Also fixed: a check whose output was mostly noise.** The first committedness check scanned whole lines, and the
+Tests section is one very long line naming every script that happens to contain "uncommitted" twice — so it
+reported all twelve as stale claims, ten of them unrelated. It now takes the nearest preceding script reference
+within a short window, in both the `test:name` and `test-name` spellings, because matching only one would have
+silently missed half the cases.
+
+**DC-22 added.** A status artifact drifting from the system it describes, silently, with 18 dated instances in one
+file. Its residual risk is stated plainly: the gate holds four specific figures, and the other 47 claims in that
+file are still only as true as the last person to read them.
+
 ## Iteration 61 — 2026-09-30 (TRI-10: the other 36 cleared items take the test, and six of seven flags turn out to be mine)
 
 **Selected:** **TRI-10**, filed at the end of Iteration 60 and the in-line continuation of it. Eight tier-4 items

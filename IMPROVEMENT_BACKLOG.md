@@ -314,9 +314,27 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 62 — HEALTH-1)
+
+- **OBS-1 — the deployed commit is not recorded anywhere, so "what is live?" has no answer.** Production's
+  `build-manifest.json` carries `git.sha: null`, and says why: no `GIT_SHA` build-arg is injected, and
+  `git rev-parse` cannot work inside the Docker builder stage, which receives no `.git`. The consequence is
+  concrete — SYSTEM_HEALTH named a last-deployed commit for two weeks that **could not have been verified even
+  when it was written**, and no post-deploy check can assert that the deployed build contains a given fix. Fix is
+  small: pass `--build-arg GIT_SHA=$(git rev-parse HEAD)` in `deploy.sh` and the CI build, and have the manifest
+  fail loudly rather than writing `null`. Touches `Dockerfile` and `deploy.sh`, so the **deploy path is
+  founder-operated** — agent can prepare and test the change, founder runs it. `I4 S4 L3 C4 − E2 − R2 = 11`.
+
+- **HEALTH-2 — the other 47 claims in SYSTEM_HEALTH.md are unguarded.** Iteration 62 made four figures
+  self-checking and re-measured sixteen more by hand. The rest are still only as true as the last person to read
+  them, and the audit's hit rate was **18 of 65** — so assume roughly a quarter of what is not gated is wrong.
+  Two candidate approaches: (a) require every numeric claim to carry the command that regenerates it and add a
+  gate that runs those commands, which is the S11 rule applied mechanically; or (b) move the measured figures out
+  of prose into a generated block. (a) is more honest, (b) is less work. `I3 S4 L3 C3 − E3 − R2 = 8`.
+
 ### New backlog items (2026-09-30, from Iteration 61 — TRI-10)
 
-- **HEALTH-1 — SYSTEM_HEALTH.md skipped seven iterations.** Its top notes jump from Iteration 53 to 61 and its
+- **HEALTH-1 — DONE (Iteration 62, 2026-09-30).** Gated by `test:health-freshness` (5 checks, 7 negative controls, chain 50 → 51), which caught its own installation. Part (a) was done differently than filed: rather than backfilling seven prose notes — history that `ITERATION_LOG.md` already holds — the file's **factual claims** were audited, which is what the file is for. **65 checked, 18 false**, all re-verified independently before being touched; **17 corrected outright and 1 partially** (RISK-018's accent figure marked not-re-measured rather than guessed). Separately, a 19th figure — the Risks heading's "8 marked resolved/closed" — was **removed** rather than corrected, because three defensible rules compute it three ways. New class **DC-22**. Follow-ups: OBS-1, HEALTH-2. ~~SYSTEM_HEALTH.md skipped seven iterations.~~ Its top notes jump from Iteration 53 to 61 and its
   last-change line claimed a 45-step test chain against an actual 50, so for seven iterations the file that is
   supposed to say whether the system is healthy was describing a system several changes old. Iterations 54-60 are
   in ITERATION_LOG.md, so nothing is lost, but the health file is the one a reader checks first. Two parts: (a)
