@@ -324,7 +324,7 @@ comparability.
   2-3 times with independently written pairs and publish a mean with a range. Cost scales with replicates, so
   start with the eleven small-gap items rather than all 35. `I4 S4 L4 C4 − E3 − R1 = 12`.
 
-- **DC-23-GATE — the shell-quoting content loss needs a control, not a resolution.** Three occurrences in one
+- **DC-23-GATE — DONE (Iteration 64, 2026-09-30).** New `test:content-loss` (chain 51 → 52), three signatures each measured at **zero** across 2,220 files and 333,280 prose lines before building, so all three ratchet from zero with no allowlist. Four further candidates were **rejected on measured counts** (107 / 93 / 7 / 3 legitimate uses) and the counts recorded, because a gate that fires on real text gets switched off. Positive controls run first and require each pattern to fire on the **actual corrupted text** from the real occurrences; three negative controls plant each signature and require failure then restore. Caveat in the file: it sees the wound, not the weapon. ~~the shell-quoting content loss needs a control, not a resolution.~~ Three occurrences in one
   session, all silent: a backslash eaten out of a probe needle, a debug command that mangled the same escape
   differently and produced a confident wrong diagnosis, and two cases of backticks executing inside a
   double-quoted string and **deleting content** from a file that was then written (a backlog score, a deviation

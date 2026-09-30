@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 64 — 2026-09-30 (DC-23 gated: catching the wound when the weapon is out of reach)
+
+**Selected:** **DC-23-GATE**, forced under S10. DC-23 was registered in Iteration 63 with three occurrences and
+no gate. It reached **five** during this iteration — while I was building the gate for it, a shell string ate the
+escapes out of a measurement regex and produced a `SyntaxError`. That one announced itself. The other three did
+not, which is the whole problem.
+
+**The class:** a backtick or backslash inside a quoted shell command silently executes or vanishes, and the file
+that gets written is **quietly wrong** — no error, exit code zero. Every other class in the registry announces
+itself somewhere; this one produces a successfully written file with content missing.
+
+**The cause is outside the repository.** It is how a tool call is composed, which leaves no trace a committed
+check can read. So the gate targets the **shape of the wound**: structure left standing with its content removed.
+
+**Baselines measured before building, and two thirds of the candidates rejected on the numbers.** Across **2,220
+tracked markdown files and 333,280 prose lines** (fenced and indented code excluded, because a shell snippet in a
+document legitimately contains all of these shapes):
+
+| candidate signature | count | verdict |
+|---|---|---|
+| `**Label:**` then whitespace then punctuation | **0** | adopted — ratchets from zero |
+| a dash joining a clause to nothing | **0** | adopted — ratchets from zero |
+| a priority score that starts and never finishes | **0** | adopted — ratchets from zero |
+| unbalanced inline backticks | 107 | rejected — real line-wrapped code spans |
+| doubled interior spaces | 93 | rejected — deliberate alignment |
+| empty inline-code pairs | 7 | rejected — nested ``` fences in prose |
+| `=` followed by punctuation | 3 | rejected — all inside code spans |
+
+A gate that fires on legitimate text gets switched off, so three of seven candidates were kept and the rejections
+are recorded with their counts rather than quietly dropped.
+
+**The score check nearly shipped with five false positives.** My first version measured per line and reported 5
+of 118 scores truncated. All five were **line wraps** — the score continues on the next line. Worse, an earlier
+attempt reported **72 of 118** because my regex demanded a bare `= 12` and the file writes `= **12**`. Two
+successive wrong answers from my own detector before the data was read correctly, which is the same lesson as
+every other instrument failure this week: **the tool that finds something is the first thing to suspect.** The
+check now works on joined paragraphs.
+
+**Positive controls come first in the output, deliberately.** Each pattern is required to fire on the **actual
+corrupted text** from the real occurrences — `**Discarded:**  (unread) - **Used:** .` and
+`...failed seven times in a row. .` — and required *not* to fire on ordinary labelled prose. A zero from a search
+that has never found anything is not evidence (V8), so the gate proves it can see before it reports not seeing.
+
+**Three negative controls** plant each signature into `IMPROVEMENT_BACKLOG.md` and require the gate to fail, then
+pass again after a sha256-verified restore. New `test:content-loss` (chain 51 → 52). 10 assertions, all green.
+
+**Then the gate failed on its own documentation, twice, and both fixes are in it.**
+
+**Fifth prose-scanning collision.** The moment this entry was written the gate reported a live defect — at
+`ITERATION_LOG.md:42`, the line where I quote the real corrupted text as evidence the pattern works. Fifth
+instance of the same shape after the `probe.mjs` git check, the destructive-git gate, the preflight read-only
+check and both SYSTEM_HEALTH prose checks. **A defect registry that cannot quote its own defects is useless**, so
+the quotation wins and the check gets narrower: inline code spans are stripped before the two structural checks,
+because text inside backticks is a **specimen, not prose**. Deliberately *not* stripped for the score check,
+since priority scores live inside backticks and stripping there would report a confident zero over nothing.
+
+**And the narrowing manufactured 132 new false positives.** Replacing each code span with a *space* collapsed
+`**Basis:** <code>.` into `**Basis:**  .` — the fix created the exact signature it was removing, across ordinary
+labelled prose in 132 places. The placeholder is now a word. A structural check has to **preserve structure while
+removing content**, and a positive control now asserts both halves: a backticked specimen is spared, a bare
+corrupted line is still caught, and the score check still sees scores.
+
+**DC-23 reached five occurrences before the iteration ended.** The heredoc I used to apply the word-placeholder
+fix ate the escapes out of the pattern and the assertion reported the target missing. Applied with the `Edit`
+tool instead, which does not pass through a shell at all — and that is the real lesson of this gate: the
+*prevention* is to stop routing prose through shells, and the gate only makes the failures findable afterwards.
+
+**What it cannot do, stated in the file.** It sees the wound, not the weapon. Nothing stops the next mangled
+command; it only makes the residue findable, and only for three shapes of residue. A loss that leaves no dangling
+structure — a deleted clause mid-sentence, a number changed rather than removed — stays invisible. The practice
+rule stands and is honestly labelled as a habit: **prose containing quotes, backslashes or backticks goes into a
+file and is then run — never into a shell string — and a write is not done until its result has been read back.**
+That rule is what caught occurrences 3, 4 and 5; it is not what prevented them.
+
 ## Iteration 63 — 2026-09-30 (TRI-12: testing my own correction, and finding the ruler is blunter than the marks on it)
 
 **Selected:** **TRI-12**, filed in Iteration 61 against my own published figure. Iteration 61 re-ran two *failing*
