@@ -46,6 +46,31 @@ over committed scripts (cannot see typed commands), a probe helper that makes th
 when used), and now a snapshot that makes the damage recoverable (does not prevent anything). None of them stops
 the next careless command. Together they mean it costs a file copy rather than a cycle's work.
 
+**GI-5 — retention, done in the same iteration because my own testing made it concrete.** Eleven snapshots
+accumulated in an afternoon, each holding full copies of uncommitted work. `pruneSnapshots` keeps the ten most
+recent and runs automatically after every snapshot; `--prune` is available too. The risk was never disk space — it
+is that someone eventually deletes the whole directory to reclaim it, which is how a recovery mechanism gets
+removed. Deliberately **count-based rather than time-based**: a snapshot's value is that it is the last one before
+something went wrong, and that has nothing to do with its age. Seven further tests, including that pruning an
+already-short list is a no-op rather than a deletion, and that pruning a missing directory is safe — a recovery
+tool that crashes on a clean machine is worse than one that does nothing. 21 assertions total.
+
+**GI-4 — deliberately only partial.** `npm run preflight` and `npm run preflight:list` now exist, so invoking it
+is one word. It is still **not automatic**, and I stopped short on purpose: the nightly cycle is driven by agents
+rather than a single npm script, so the only real hooks are agent briefs or a `SessionStart` hook. Both are
+operational changes to how the autonomous cycle runs, and not ones an agent should make unilaterally while five
+founder decisions are already pending. The recommendation is recorded in the backlog instead — add a snapshot line
+to the `overnight-scanner` brief before it writes rotation state, which is exactly what INC-009 destroyed.
+
+**Nearly believed my own tool was broken.** `npm run preflight` appeared to print nothing, because I had piped it
+through `head` and truncated the output above the result. Checked rather than concluded — the same reflex that
+caught the void grep and the misread CI run earlier in the week.
+
+**And the silence gate caught me again.** This commit named GI-4 and GI-5 in its subject while this entry
+mentioned neither, so `test:iteration-log-silence` failed in CI — the second time it has fired on real work, both
+times on its author. The local chain was green beforehand because the gate reads commits and the commit did not
+exist yet: the one-commit-late hole documented when it was built, behaving exactly as described.
+
 ## Iteration 56 — 2026-09-29 (the deadline I left out of my own decision packet, and the feed gate PUB-1 never got)
 
 Two carried items, both outside the model track, both found by re-reading the backlog rather than by anything
