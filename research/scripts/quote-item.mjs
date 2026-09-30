@@ -81,6 +81,72 @@ function render(item) {
   return out.join("\n");
 }
 
+/**
+ * --prompts-only: the brief for someone who must ANSWER an item, not judge it.
+ *
+ * The discrimination test (TRI-9/TRI-10) turns on one condition: the writer of
+ * the candidate answers must not be able to see what it is being marked
+ * against. An answer-writer that can read the anchors is aiming at them, and
+ * the resulting score measures the aim, not the rubric.
+ *
+ * In Iteration 60 I satisfied that by building the brief by hand and then
+ * grepping it for anchor fragments. That worked, and it is not a control: the
+ * next brief is only as clean as the person remembering to grep it. So the
+ * emitter refuses to emit anchors, and then CHECKS ITS OWN OUTPUT for them
+ * before printing — if a future edit to render() starts including anchor text,
+ * this exits non-zero rather than quietly handing a writer the answer key.
+ *
+ * `construct` and `indicator` are withheld for the same reason and are not a
+ * lesser leak: "Avoiding Hollow Language" tells a writer the entire game.
+ */
+function renderPromptOnly(item) {
+  const out = [`### ${item.id}`, ""];
+  if (Array.isArray(item.variants) && item.variants.length > 0) {
+    out.push(`This item has ${item.variants.length} arms. Both are administered; answer each separately.`);
+    for (const v of item.variants) {
+      out.push(`  ARM ${v.variantId}:`);
+      out.push(`    ${String(v.prompt).replace(/\s+/g, " ")}`);
+    }
+  } else {
+    out.push(String(item.prompt).replace(/\s+/g, " "));
+  }
+  return out.join("\n");
+}
+
+/** Six-word shingles: long enough not to fire on ordinary shared vocabulary. */
+function shingles(text, n = 6) {
+  const w = String(text).toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+  const out = [];
+  for (let i = 0; i + n <= w.length; i += 1) out.push(w.slice(i, i + n).join(" "));
+  return out;
+}
+
+function assertNoRubricLeak(text, items) {
+  const hay = text.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ");
+  const leaks = [];
+  for (const item of items) {
+    for (const a of item.anchors ?? []) {
+      for (const s of shingles(a.description)) {
+        if (hay.includes(s)) {
+          leaks.push(`${item.id} L${a.level}: "...${s}..."`);
+          break;
+        }
+      }
+    }
+    const construct = String(item.construct ?? "").trim();
+    if (construct.length > 3 && hay.includes(construct.toLowerCase())) {
+      leaks.push(`${item.id}: construct name "${construct}" is in the brief`);
+    }
+  }
+  if (leaks.length > 0) {
+    console.error(`REFUSED: the prompts-only brief leaks rubric text — ${leaks.length} leak(s):`);
+    for (const l of leaks) console.error(`  ${l}`);
+    console.error("");
+    console.error("A writer that can see the anchors is aiming at them, and the score then measures the aim.");
+    process.exit(1);
+  }
+}
+
 const args = process.argv.slice(2);
 let ids;
 if (args.includes("--fact-bearing")) {
@@ -101,11 +167,25 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
+const chosen = ids.map((id) => bank.items.find((i) => i.id === id));
+
+if (args.includes("--prompts-only")) {
+  const body = [
+    "# USER PROMPTS, VERBATIM. Nothing else about these items is included, deliberately:",
+    "# no scoring anchors, no construct names, no indicator. Answer them as the user asked.",
+    "",
+    ...chosen.map((it) => `${renderPromptOnly(it)}\n`),
+  ].join("\n");
+  assertNoRubricLeak(body, chosen);
+  console.log(body);
+  process.exit(0);
+}
+
 console.log(
   "# VERBATIM SOURCE. Do not paraphrase any of this when asking someone to check it —\n" +
     "# a summary of a claim is not the claim, and a checker cannot tell the difference.\n"
 );
-for (const id of ids) {
-  console.log(render(bank.items.find((i) => i.id === id)));
+for (const it of chosen) {
+  console.log(render(it));
   console.log("");
 }

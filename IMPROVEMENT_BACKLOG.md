@@ -314,6 +314,45 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 61 — TRI-10)
+
+- **HEALTH-1 — SYSTEM_HEALTH.md skipped seven iterations.** Its top notes jump from Iteration 53 to 61 and its
+  last-change line claimed a 45-step test chain against an actual 50, so for seven iterations the file that is
+  supposed to say whether the system is healthy was describing a system several changes old. Iterations 54-60 are
+  in ITERATION_LOG.md, so nothing is lost, but the health file is the one a reader checks first. Two parts: (a)
+  backfill notes for 54-60 from the iteration log, and (b) the real fix — a gate that fails when the last-change
+  line names an iteration older than the newest entry in ITERATION_LOG.md, since this is the same class as DC-16
+  and intending to remember has now failed seven times in a row. `I3 S4 L3 C5 − E2 − R1 = 12`.
+
+- **TRI-12 — the re-run bias has to be removed before 33/35 can be quoted as a rate.** Iteration 61 re-ran the
+  two failures with a stronger cold arm and nothing else, which can only move results toward clearing items. A
+  fair version re-runs a random sample of the passes with the same strengthened brief: if a pass also improves,
+  the strengthening is a general effect rather than a repair, and the comparison is invalid. Cheap — ~6 items,
+  existing tooling. Until then the pre-registered figure (33/35) is the only one to publish.
+  `I3 S4 L4 C4 − E2 − R1 = 12`.
+
+- **TRI-13 — `EMP-2-A` needs a human, and the question is specific.** It scored 1/2 across two independent strong
+  cold answers. Its L3 requires the reply to *supply* a reconstruction of the departing cook's position; both
+  attempts recommended asking him instead, and filled the space with turnover rates and employment law. Either
+  the item under-rewards an accurate useful reply, or it is correctly catching an answer that never entered the
+  other person's position. Both attempts and both rater justifications are in
+  `research/discrimination/2026-09-30-tier4/rerun/`. **Human-only: an agent may not author a review record.**
+  `I3 S4 L3 C4 − E1 − R1 = 12`. **Lane: blocked-on-founder.**
+
+- **TRI-14 — the scope list is a floor, not a set, and cannot be completed by this method.**
+  `research/discrimination/test-scope-v1.json` contains only items that happened to be tested and happened to
+  fail. An item meeting condition A or B that scored well by luck is not on it and cannot be found by running
+  more pairs. Completing it means reading all 93 constructs against the two conditions — cheap for an agent to
+  *propose*, but it is a classification of items and therefore founder-reviewable before it is relied on.
+  `I3 S4 L3 C3 − E2 − R1 = 10`.
+
+- **TRI-15 — whether the discrimination test applies to the Empathy dimension at all.** Five of eight EMP items
+  in the run could not instantiate the test's conditions, against two of the other 32. That is not a scatter of
+  exceptions, it is the method failing on one dimension. Either EMP needs a different pair of conditions — perhaps
+  *attuned-but-presumptuous* against *accurate-but-spare* — or the method is declared instrumental-only and EMP
+  items are reviewed by hand. Designing the replacement conditions is real methodology work.
+  `I4 S4 L4 C3 − E3 − R2 = 10`.
+
 ### New backlog items (2026-09-30, from Iteration 60 — the discrimination test)
 
 - **TRI-9 — DONE for a sample of 8 (Iteration 60, 2026-09-30).** A functional test of criterion 2: write a
@@ -323,7 +362,7 @@ comparability.
   for IS acknowledgement, "warm but hollow" is not a coherent condition. Scope guard added. Record:
   `docs/DISCRIMINATION_TEST_2026-09-30.md`.
 
-- **TRI-10 — extend the discrimination test to the remaining instrumental tier-4 items.** 38 of the 46
+- **TRI-10 — DONE (Iteration 61, 2026-09-30).** 40 items administered (36 new + 4 replicates); **33 of 35 in scope discriminate**, mean gap +2.80, hollow reply never above 3. Five items proved outside the method's reach, `SYS-5-A` cleared on re-run, `EMP-2-A` referred to a human. Follow-ups: TRI-12, TRI-13, TRI-14, TRI-15. Record: `docs/DISCRIMINATION_TEST_TIER4_2026-09-30.md`. ~~extend the discrimination test to the remaining instrumental tier-4 items.~~ 38 of the 46
   never-flagged items are untested by this method, and it is the only technique so far that produces *positive*
   evidence rather than absence of objection. Mechanically ready: `quote-item.mjs` for prompts,
   `build-discrimination-brief.mjs` for the blind brief, `score-discrimination.mjs` for the decode, and the scope
@@ -424,7 +463,7 @@ comparability.
   Re-running one or two batches with a different family would measure that directly. Needs founder API
   credentials. `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**
 
-- **TRI-3 — PARTLY ANSWERED (Iteration 60).** 8 of the 46 have now been examined functionally rather than asserted sound: 7 discriminate with a mean gap of +2.63 and the 8th was out of scope for the method. The other 38 remain unexamined, and a pass on this test is still weak evidence — one pair of replies does not exhaust the space of answers. See TRI-10. ~~the 46 items neither agent faulted are unexamined, not sound.~~ Nothing in the queue should imply
+- **TRI-3 — ANSWERED as far as this method can (Iteration 61).** 44 of the 46 never-flagged items have now been examined functionally rather than asserted sound: 33 in-scope items discriminate with a mean gap of +2.80, 5 are outside what the test can measure, 1 (`EMP-2-A`) is referred to human review, and 2 (`ACT-5-B`, `ACC-3-B`) were never administered. A pass remains weak evidence — one pair of replies does not exhaust the space of answers, and the re-run bias is open as TRI-12. ~~PARTLY ANSWERED (Iteration 60).~~ 8 of the 46 have now been examined functionally rather than asserted sound: 7 discriminate with a mean gap of +2.63 and the 8th was out of scope for the method. The other 38 remain unexamined, and a pass on this test is still weak evidence — one pair of replies does not exhaust the space of answers. See TRI-10. ~~the 46 items neither agent faulted are unexamined, not sound.~~ Nothing in the queue should imply
   otherwise, and the published record says so explicitly. Worth a note here so a future reader does not mistake
   tier 4 for a clean bill. No action beyond not overclaiming. `I2 S3 L2 C5 − E1 − R1 = 10`.
 

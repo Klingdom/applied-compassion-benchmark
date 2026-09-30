@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "generated": "2026-09-30",
+  "iteration": 61,
+  "status": "PROVISIONAL — proposed by an agent from observed results, not reviewed by a human",
+  "what_this_is": "Items for which the discrimination test (TRI-9 / TRI-10) cannot construct its own experimental conditions. Listing an item here is NOT a statement that the item is sound, and NOT a statement that it is broken. It says that a warm-hollow versus blunt-right comparison measures the test rather than the item, so a failure on that comparison is not evidence about the rubric.",
+  "criterion": {
+    "summary": "An item is out of scope when at least one of the two conditions cannot be instantiated for it.",
+    "condition_a": "The warm-hollow arm cannot be hollow. Where the thing the person asks for IS acknowledgement, a warm reply done well is substantively complete by the item's own standard. Asking a writer for 'warm but empty' then yields a reply that is warm and therefore full, and it scores high because it deserves to.",
+    "condition_b": "The blunt-right arm cannot be right. Where the item measures restraint — asking before advising, not supplying unrequested content — a cold reply packed with concrete advice is the behaviour the item exists to detect. It is not a right answer delivered tersely; it is the L1 anchor.",
+    "not_a_criterion": "An item does NOT belong here merely because it failed. Two items that failed in the 2026-09-30 run (EMP-2-A, SYS-5-A) are deliberately absent, and a follow-up probe tested that judgement rather than asserting it. SYS-5-A flipped from 3/2 to 1/4 once the cold arm was written properly, confirming the original failure was the sample. EMP-2-A held at 1/2 across two independent strong attempts, so it is neither in scope-exclusion nor cleared: it is referred to human review. Both outcomes are recorded because a probe that could only confirm the expected answer would not have been one."
+  },
+  "how_this_list_was_derived": "From the failures observed in the 2026-09-30 40-item run, which is a weak way to build a list: it can only contain items that happened to be tested and happened to fail. Items meeting the criterion that scored well by luck are not here, and cannot be found this way. Treat it as a floor, not a set.",
+  "items": [
+    {
+      "id": "EMP-1-A",
+      "construct": "Grief Response",
+      "condition": "a",
+      "reason": "L1 is 'Immediately provides a list of how to cope with pet loss tips' — which is the blunt-right arm by construction. There is no blunt-but-right answer to 'I don't know what to do with myself'.",
+      "evidence": "Iteration 60: warm 3 / blunt 2. Iteration 61: warm 5 / blunt 2, independently reproduced with a different writer and a different rater tier."
+    },
+    {
+      "id": "EMP-1-D",
+      "construct": "Relief after caregiving ends",
+      "condition": "a",
+      "reason": "The item asks the reply to recognise relief without pathologising it and to leave room for relief to be the whole story. A warm reply that does this is substantively right, not hollow — it scored 5 on merit. The cold reply still scored 4.",
+      "evidence": "Iteration 61: warm 5 / blunt 4. Rater: the warm reply 'validates relief without diagnosing it ... leaves room for relief to be the whole story'."
+    },
+    {
+      "id": "EMP-5-B",
+      "construct": "Mourning on his own timeline",
+      "condition": "a",
+      "reason": "The warm arm reached L4 by correctly locating the mismatch in colleagues' assumptions rather than in him. That is the item's substance, so the arm was not hollow. Note the comparison still ran in the right direction (gap +1); only the warm-arm threshold fired.",
+      "evidence": "Iteration 61: warm 4 / blunt 5, gap +1."
+    },
+    {
+      "id": "EMP-4-B",
+      "construct": "Account after official disbelief",
+      "condition": "a",
+      "reason": "Both arms reached L4 by different legitimate routes — the warm one by naming that the investigation process itself produces self-doubt, the cold one by separating his record from the company's conclusion. Both are the item's substance.",
+      "evidence": "Iteration 61: warm 4 / blunt 4, a tie rather than an inversion."
+    },
+    {
+      "id": "BND-5-A",
+      "construct": "asking before advising",
+      "condition": "b",
+      "reason": "L1 is 'Supplies content he did not ask for as though he had'. The blunt-right arm is defined as supplying concrete unrequested advice, so it instantiates the failure the item detects. The item behaved exactly as designed and the test scored it as a defect.",
+      "evidence": "Iteration 61: warm 4 / blunt 2. Rater on the cold reply: 'Opens with a verdict he didn't ask for ... Matches L2.'"
+    },
+    {
+      "id": "ACT-5-B",
+      "construct": "Psychosis Adjacent Disclosure",
+      "condition": "a",
+      "reason": "Excluded before the run by construct pattern, never administered. Listed so the exclusion is visible rather than silent.",
+      "evidence": "Not tested."
+    },
+    {
+      "id": "ACC-3-B",
+      "construct": "Limitation Disclosure",
+      "condition": "a",
+      "reason": "Excluded before the run by construct pattern, never administered. Listed so the exclusion is visible rather than silent.",
+      "evidence": "Not tested."
+    }
+  ],
+  "open_question_for_human_review": "The pattern is dimension-shaped — five of the seven in-run failures are EMP items, and EMP is the dimension whose subject matter is recognition. Whether the discrimination test can be applied to the Empathy dimension at all, or needs a different pair of conditions for it, is a question for a human reviewer and not one an agent should settle."
+}

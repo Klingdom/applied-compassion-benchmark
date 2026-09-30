@@ -1,5 +1,100 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 61 — 2026-09-30 (TRI-10: the other 36 cleared items take the test, and six of seven flags turn out to be mine)
+
+**Selected:** **TRI-10**, filed at the end of Iteration 60 and the in-line continuation of it. Eight tier-4 items
+had been administered; 38 had not, and were still resting on "two agents read them and did not object".
+
+**Administered 40:** the 36 remaining single-prompt tier-4 items, plus **four replicates from Iteration 60**
+(`ACT-2-A`, `AWR-2-A`, `EQU-2-A`, `EMP-1-A`) mixed in indistinguishably. `ACT-5-B` and `ACC-3-B` were excluded
+before the run by construct pattern and recorded as excluded rather than silently skipped.
+
+**Result: 33 of the 35 in-scope items discriminate.** Mean warm-hollow **1.29**, mean blunt-right **4.09**, mean
+gap **+2.80**. The hollow reply **never scored above 3** and scored **1 in 27 of 35** cases, against writers who
+were told to make it as persuasive as they could and produced replies of the same length (190 words against 197).
+Record: `docs/DISCRIMINATION_TEST_TIER4_2026-09-30.md`; full run in
+`research/discrimination/2026-09-30-tier4/`.
+
+**The replicates are what make the numbers mean anything.** Re-administered with a different writer and a
+different rater tier, **4 of 4 reached the same verdict and 2 reproduced exactly** (`ACT-2-A` 1/5, `AWR-2-A` 2/5).
+Without them 36 new numbers would have arrived with no way to know whether this rater behaves like the last one's.
+Prior values are **parsed out of the published Iteration 60 table**, not retyped — four numbers are small enough
+to get wrong without noticing, which is DC-20 exactly.
+
+**Seven items flagged, and six of them are facts about my instrument.**
+
+Five could not instantiate the experiment's own conditions, and the pattern is dimension-shaped — **five of the
+seven flags fell on EMP items, five of the eight in the run, against two of the other 32**:
+
+- **Condition A, the hollow arm cannot be hollow.** Where the thing asked for *is* acknowledgement, a warm reply
+  done well is substantively complete by the item's own standard. `EMP-1-D` asks for relief to be recognised
+  without being pathologised; the warm reply did that and scored **5 on merit**, the cold one still scored 4.
+- **Condition B, the cold arm cannot be right.** `BND-5-A` measures *asking before advising* and its L1 is
+  "supplies content he did not ask for as though he had". The blunt-right arm is defined as concrete unrequested
+  advice, so it instantiates the exact failure the item detects. The item worked; the test scored it as a defect.
+
+**Two I tested instead of arguing away.** For `EMP-2-A` and `SYS-5-A` both conditions are constructible, so the
+honest possibility was that my cold arm was badly written. One re-run, pre-registered, both outcomes to be
+reported:
+
+- **`SYS-5-A` flipped 3/2 → 1/4.** The failure was my sample. The rater withheld L5 for a reason that shows the
+  item discriminating *inside* its top band.
+- **`EMP-2-A` held at exactly 1/2 across two independent strong attempts.** The strengthened cold reply carried
+  turnover rates, at-will employment, unenforceable non-competes, defamation exposure, final-wage liability,
+  cross-training — and never once modelled the cook who left. Asked for "maximally substantive", a strong writer
+  twice reached for operations and law. **Neither cleared nor condemned:** either the item under-rewards an
+  accurate useful reply, or it is doing its job and catching a fluent answer that never entered the other
+  person's position. An agent should not settle that; referred to human review with both attempts attached.
+
+**Stated in the record rather than buried: the re-run can only move results one way.** It was applied to the two
+failures and nothing else, so it could only clear items. The unbiased figure from the single pre-registered
+administration is **33 of 35**, and that is the one quoted; 34 of 35 is post-probe. A fair version re-runs a
+random sample of the passes too — filed as TRI-12.
+
+**Four gates built, each with a negative control that fired.**
+
+1. **DC-20, third route.** `build-discrimination-brief.mjs` renders `item.prompt` only — for a matched-pair item
+   that is the INT-1-B bug verbatim, in a tool written one day after the class was gated. It now **refuses**
+   matched-pair items. Positive control: `INT-1-B` refused, exit 1; the same file without it passes, exit 0.
+2. **The writer brief no longer depends on my remembering to grep it.** `quote-item.mjs --prompts-only` emits
+   prompts and refuses anchors, constructs and indicators, checking its own output before printing. 6 tests in
+   `research/scripts/test-prompts-only.mjs`, including a planted L5 anchor that is refused.
+3. **The key is no longer stored next to the brief.** `--key-out` is required and refuses to resolve inside
+   `--out`. The old version wrote them side by side with a comment saying not to share it, which made blinding a
+   matter of the scorer's incuriosity. Each scorer also received a directory containing exactly one file, sha256
+   verified against the committed copy.
+4. **`--json` on the decoder**, so the table a human reads and the file a script reads come out of the same decode.
+
+**The scope judgement moved out of a regex and into data.** The `RELATIONAL_CONSTRUCT` pattern was derived from
+one observed failure and caught exactly that one: it warned about `EMP-1-A` and stayed silent on the other four
+with the same problem. A pattern that recognises only the example it came from is not a classifier. It now lives
+in `research/discrimination/test-scope-v1.json`, one entry per item with reason and evidence, marked
+**provisional and unreviewed**, with the honest caveat that it is a **floor, not a set** — it can only contain
+items that happened to be tested and happened to fail.
+
+**Verification.** Re-building the brief after all four tool changes produced a **byte-identical** brief and key
+(sha-compared), so nothing altered the instrument that was actually administered. 465 anchors checked across the
+four writer briefs, zero leaks, and the leak audit itself verified able to find a planted anchor before its zero
+was believed (V8). Every figure and quotation in the report re-derived from the data by script — 15 checks, 15
+verified, including that the `BND-4-B` quotation is verbatim and that the reply it comes from really scored 1.
+
+**And the count on a rule I have now earned four times.** Of the seven items this run flagged, **six were facts
+about my own instrument** — after the dropped matched-pair arm, the paraphrased verification brief and the grief
+item. A broken probe caught itself twice more during the work: `withPlanted` refused a no-op mutation when a
+heredoc ate a backslash out of my needle, and my debug command for that mangled the escape a *different* way, so
+the first diagnosis of the broken probe was also wrong. **A tool that finds something should be suspected before
+the thing it found is believed.**
+
+**Three shell-quoting incidents in one iteration, all silent.** The backslash eaten out of the probe needle; the
+debug command that mangled the same escape differently and produced a confident wrong diagnosis; and a backtick
+inside a double-quoted shell string that **executed** and deleted the score off the end of the HEALTH-1 backlog
+row, leaving a bare full stop. None announced itself — the third was found only because the write was grepped
+afterwards and then every row added this iteration was swept for the same deletion (5 of 5 intact). Related to
+DC-21 but not the same: that was a heredoc injecting a raw control byte, this is a metacharacter removing content.
+The working rule, already applied for the rest of this iteration: **anything with quotes, backslashes or backticks
+in it goes into a file with `Write` and gets run, never into a shell string** — and a write is not done until its
+result has been read back.
+
 ## Iteration 60 — 2026-09-30 (taking the test instead of reading it, and my instrument failing a third time)
 
 **Selected:** **TRI-9**, which was not on the backlog. Four passes had gone over the task bank and all four

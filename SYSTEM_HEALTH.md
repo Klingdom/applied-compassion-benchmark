@@ -1,9 +1,37 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 53 (DC-21 — raw control bytes in source; chain 45 steps)
+Last change: Iteration 61 (TRI-10 — the remaining cleared items take the test; chain 50 steps)
+**Note 2026-09-30: this file skipped Iterations 54-60.** The top notes jump from 53 to 61 and the chain count above was 45 against an actual 50. Those iterations are recorded in `ITERATION_LOG.md`; the gap here is real and filed as HEALTH-1.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-09-30 (Iteration 61 — **TRI-10**, the other 36 cleared items take the test): 40 items administered —
+> the 36 remaining single-prompt tier-4 items plus **4 replicates from Iteration 60** mixed in indistinguishably.
+> **33 of the 35 in scope discriminate**, mean warm-hollow **1.29** against blunt-right **4.09**, gap **+2.80**;
+> the hollow reply **never scored above 3** and scored 1 in **27 of 35**, against writers told to make it as
+> persuasive as possible and producing equal-length replies (190 words to 197). The **replicates are what make it
+> comparable**: different writer, different rater tier, **4 of 4 same verdict, 2 exact**, with the prior values
+> parsed from the published Iteration 60 table rather than retyped. **Seven items flagged and six are facts about
+> my instrument** — five cannot instantiate the test's conditions at all (`EMP-1-D`'s warm arm scored 5 *on
+> merit*; `BND-5-A`'s L1 *is* the blunt-right arm, since it measures asking before advising), and the pattern is
+> dimension-shaped: **5 of 8 EMP items against 2 of the other 32**. Two were tested rather than argued away:
+> `SYS-5-A` flipped 3/2 → 1/4 once the cold arm was written properly, and **`EMP-2-A` held at 1/2 across two
+> independent strong attempts** — referred to human review, neither cleared nor condemned. Stated plainly in the
+> record: **the re-run could only move results toward clearing items**, so the quotable figure is the
+> pre-registered 33/35, not 34/35 (TRI-12). **DC-20 reaches three occurrences** — `build-discrimination-brief.mjs`
+> could drop a matched-pair arm, in a tool written one day after the class was gated; now refuses, positive
+> control `INT-1-B` exit 1. Two further routes closed: `quote-item.mjs --prompts-only` checks its own output for
+> anchor, construct and indicator leaks before printing (new `test:prompts-only`, chain 49 → 50, planted-anchor
+> control), and `--key-out` now refuses to resolve inside `--out`, because a key stored beside the brief made
+> blinding depend on the scorer's incuriosity. The scope judgement moved out of a regex — which caught only the
+> one case it was derived from — into `research/discrimination/test-scope-v1.json`, **provisional, unreviewed, and
+> a floor rather than a set**. Rebuilding the brief after all four tool changes produced a **byte-identical**
+> brief and key, so nothing altered the administered instrument; 465 anchors checked for leaks with the audit
+> itself proved able to find a planted one; 15 of 15 report figures re-derived by script. **No published claim
+> changed** — `deriveItemStatus` still reads only the human review log and all 93 items remain `unvalidated` —
+> so there is no CHANGELOG entry. Record: `docs/DISCRIMINATION_TEST_TIER4_2026-09-30.md`. Chain **50 steps**,
+> green.
 
 > 2026-09-29 (Iteration 53 — **DC-21**, a regex that could never match): building a drift check between
 > `quote-item.mjs` and Check 6 — they had already diverged, 20 items against 22, which would have handed a
@@ -57,7 +85,7 @@ Last change: Iteration 53 (DC-21 — raw control bytes in source; chain 45 steps
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **49 steps**, generated 2026-09-30; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **50 steps**, generated 2026-09-30; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **182 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (39) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts (It. 12, uncommitted).
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (19,687/0), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (16 known, shrink-only), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** 0 real gaps. 25 entities carry a WARN naming the evidence class that backs their `last_assessed` (5 alias-slug report, 20 same-date change proposal) — previously 25 blocking FAILs, all false (RS-1).

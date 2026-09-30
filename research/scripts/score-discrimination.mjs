@@ -28,10 +28,10 @@
  *   exhaust the space of answers.
  *
  * Usage:
- *   node research/scripts/score-discrimination.mjs --scores <file> --key <file>
+ *   node research/scripts/score-discrimination.mjs --scores <file> --key <file> [--json <file>]
  */
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, writeFileSync } from "node:fs";
 
 function arg(name) {
   const i = process.argv.indexOf(`--${name}`);
@@ -131,3 +131,32 @@ console.log("");
 console.log("One rater, one pair of replies per item. A failure is a strong reason for a human to");
 console.log("look; a pass is weak evidence of soundness, because one pair does not exhaust the");
 console.log("space of possible answers. Nothing here validates or invalidates an item.");
+
+/**
+ * --json: the same decoded result, machine-readable.
+ *
+ * Anything downstream — a replicate comparison, a summary table in a document —
+ * needs these numbers as data. The alternative is reading them off the console
+ * and typing them somewhere, which is the DC-20 move that has already put two
+ * false findings into a report in this project. The table a human reads and the
+ * file a script reads come out of the same decode or the two can disagree.
+ */
+const JSON_OUT = arg("json");
+if (JSON_OUT) {
+  writeFileSync(
+    JSON_OUT,
+    `${JSON.stringify(
+      rows.map((r) => ({
+        item_id: r.itemId,
+        warm_hollow: r.warm,
+        blunt_right: r.blunt,
+        gap: r.gap,
+        failures: r.failures,
+        verdict: r.failures.length === 0 ? "discriminates" : r.failures.join(" + "),
+      })),
+      null,
+      2
+    )}\n`
+  );
+  console.log(`\nWrote ${JSON_OUT} (${rows.length} rows).`);
+}
