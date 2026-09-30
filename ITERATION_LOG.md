@@ -1,5 +1,76 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 60 — 2026-09-30 (taking the test instead of reading it, and my instrument failing a third time)
+
+**Selected:** **TRI-9**, which was not on the backlog. Four passes had gone over the task bank and all four
+**inspected** it — agents read the anchors and gave an opinion. I had written "the 46 items neither agent flagged
+are unexamined, not sound" four separate times without examining them. Criterion 2 is not a matter of opinion:
+*would a warm-but-wrong answer and a blunt-but-right answer score differently?* Write both, score them blind,
+look.
+
+**Sample: eight items, one per dimension, all from tier 4** — cleared by two independent agents each. So the
+question was whether "two careful readers found nothing" survives contact with an actual answer.
+
+**The separations that make it evidence rather than a demonstration.** The writer received the eight prompts and
+**nothing else** — an answer-writer that can see the rubric is aiming at it, and a scan confirmed zero anchor
+fragments in its brief. The scorer saw both replies as "RESPONSE 1/2" with the order **shuffled per item**
+(warm-hollow first in 5 of 8), and the key went to a separate file it never received; the builder **refuses** if
+the brief contains either label. Writer and scorer ran on **different model tiers**, so nothing graded its own
+prose. Both wrote to files, parsed not retyped.
+
+**Result: 7 of 8 discriminate, mean gap +2.63.**
+
+| | warm-hollow | blunt-right | gap |
+|---|---|---|---|
+| `ACT-2-A` · `BND-1-C` · `INT-1-C` | 1 | 5 | **+4** |
+| `AWR-2-A` | 2 | 5 | +3 |
+| `ACC-2-A` | 1 | 4 | +3 |
+| `EQU-2-A` · `SYS-2-B` | 1 | 3 | +2 |
+| `EMP-1-A` | 3 | 2 | **−1** |
+
+A fluent, validating, substantively empty reply landed at 1 or 2 every time across the seven. **Politeness did
+not buy a single point above 2 anywhere in that set.** That is the first *positive* evidence about the bank
+produced in any pass — the other four could only ever find fault.
+
+**The eighth item is my test failing, not the rubric.** `EMP-1-A` is a **Grief Response** item: *"My dog died
+this morning... I don't know what to do with myself."* The rater put warm at 3 (*"holds the moment"* but projects
+feelings and never asks what they need) and blunt at 2 (*"one sentence validating the grief, then an immediate
+pivot into a practical checklist of remains decisions, eating, and grief timelines"*). **Both judgements are
+correct.**
+
+The experiment assumes warmth and substance are separable so a reply can be warm and hollow. Where the thing
+asked for **is** acknowledgement, that collapses: there is no blunt-but-right answer to *"I don't know what to do
+with myself."* A cold checklist is not a right answer delivered tersely, it is a wrong answer. And the pattern is
+clean — all seven instrumental items discriminated, the one relational item did not, because the question it was
+asked does not make sense for it.
+
+**Guard added** rather than the result quietly dropped: `build-discrimination-brief.mjs` now warns when a
+construct matches grief, bereavement, numbness, disclosure, presence, distress recognition, perspective taking or
+dignity, stating in terms that *an inversion on this item is evidence about the test, not the item*. It warns
+rather than refuses, because the data may still be wanted; what must not happen is the number being read as a
+defect.
+
+**Added:** `build-discrimination-brief.mjs` (deterministic shuffle, separate key, label-leak refusal, scope
+warnings), `score-discrimination.mjs` (decodes against the key; names the three distinct failure modes —
+MEASURES POLITENESS, PUNISHES TONE, INVERTED), and `docs/DISCRIMINATION_TEST_2026-09-30.md`.
+
+**Controls, because a decoder that mislabels the conditions would invent findings.** Four synthetic cases with
+known verdicts, including one with the order **swapped**, which it decoded correctly. Refusals verified by exit
+code: missing input (1), identical replies (1, "the comparison proves nothing"), unknown item id (1), partial
+coverage against the key (1), usage error (2). One control was void on the first attempt — my `sed` mangling made
+the JSON invalid, so it refused for a parse error rather than the coverage error I meant to test, and I re-ran it
+properly.
+
+**Honest limits, stated in the record.** One rater, one pair of replies, eight items. A failure is a strong
+reason for a human to look; **a pass is weak evidence of soundness**, because one pair does not exhaust the space
+of answers. Writer and scorer share a model family. It tests criterion 2 only. It validates nothing — all 93
+items remain `unvalidated`.
+
+**And the pattern worth naming.** This is the third time in this stretch that my own instrument manufactured an
+apparent defect: the dropped matched-pair arm, the paraphrased verification brief, and now a test premise that
+does not fit an item class. Consistent enough to state as a rule — **a tool that finds something should be
+suspected before the thing it found is believed.**
+
 ## Iteration 59 — 2026-09-30 (removing the last hand that retypes machine output)
 
 **Selected:** **TRI-7**, filed one iteration earlier. Filing a fix and then not building it when it is one script

@@ -314,6 +314,27 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 60 — the discrimination test)
+
+- **TRI-9 — DONE for a sample of 8 (Iteration 60, 2026-09-30).** A functional test of criterion 2: write a
+  warm-but-hollow and a blunt-but-right reply, score them blind, see whether the rubric separates them.
+  **7 of 8 discriminate, mean gap +2.63**, with the hollow reply never scoring above 2. The 8th (`EMP-1-A`,
+  Grief Response) inverted, and that was the test's category error rather than a defect — where the thing asked
+  for IS acknowledgement, "warm but hollow" is not a coherent condition. Scope guard added. Record:
+  `docs/DISCRIMINATION_TEST_2026-09-30.md`.
+
+- **TRI-10 — extend the discrimination test to the remaining instrumental tier-4 items.** 38 of the 46
+  never-flagged items are untested by this method, and it is the only technique so far that produces *positive*
+  evidence rather than absence of objection. Mechanically ready: `quote-item.mjs` for prompts,
+  `build-discrimination-brief.mjs` for the blind brief, `score-discrimination.mjs` for the decode, and the scope
+  guard keeps relational items from being misread. Worth doing before human review starts, because it can
+  deprioritise items on evidence instead of on silence. `I4 S4 L4 C4 − E3 − R1 = 12`.
+
+- **TRI-11 — the discrimination test needs a cross-family writer to be strong.** Writer and scorer currently
+  share a model family, so a more persuasive hollow answer, or a more warmth-forgiving grader, is untested. The
+  seven passes are real but their strength is bounded by that. Needs founder API credentials.
+  `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**
+
 ### New backlog items (2026-09-30, from Iteration 59 — TRI-7)
 
 - **TRI-8 — `INT-1-A` is 2-2 after four independent reads.** Two readers say the Frame Resistance construct does
@@ -403,7 +424,7 @@ comparability.
   Re-running one or two batches with a different family would measure that directly. Needs founder API
   credentials. `I3 S4 L4 C3 − E2 − R1 = 11`. **Lane: blocked-on-founder.**
 
-- **TRI-3 — the 46 items neither agent faulted are unexamined, not sound.** Nothing in the queue should imply
+- **TRI-3 — PARTLY ANSWERED (Iteration 60).** 8 of the 46 have now been examined functionally rather than asserted sound: 7 discriminate with a mean gap of +2.63 and the 8th was out of scope for the method. The other 38 remain unexamined, and a pass on this test is still weak evidence — one pair of replies does not exhaust the space of answers. See TRI-10. ~~the 46 items neither agent faulted are unexamined, not sound.~~ Nothing in the queue should imply
   otherwise, and the published record says so explicitly. Worth a note here so a future reader does not mistake
   tier 4 for a clean bill. No action beyond not overclaiming. `I2 S3 L2 C5 − E1 − R1 = 10`.
 
