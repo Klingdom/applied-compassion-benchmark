@@ -218,3 +218,34 @@ published artifact, and the alternative is repeating the last 37 iterations.
 **What I will do next without a decision:** apply S12 to my own selection, prepare the D-49 disambiguation work
 so it is ready to approve, and stop producing internal gates. What I will not do is merge, deploy, or write an
 index, score or methodology file.
+
+---
+
+## Addendum 2026-09-30 — D-49's decision-free half is prepared and pushed
+
+Branch **`prepare/D-49-rank-derived-slugs`**, CI green on all five jobs including the site build. It is not
+merged. Approving it is a one-word answer; that was the point of preparing it.
+
+**It fixes a defect the packet above understated.** Two published entities were addressed **by their rank** —
+Portland, OR at `/us-city/portland-22` and Springfield, MO at `/us-city/springfield-94` — because
+`export-public-data.mjs` disambiguates a repeated name inside one index with `${baseSlug}-${row.rank}`. A URL
+that encodes a rank moves when the score moves. For a benchmark that asks to be cited, that is a defect on its
+own, separate from any collision, and the packet above did not name it because I had not yet measured it.
+
+Both rows now carry an explicit pinned slug (`portland-or`, `springfield-mo`), following the
+`phoenix-global-cities` / `georgia-us-states` / `singapore-global-cities` precedent. **No score, rank, band or
+name changes** — the applying script asserted every field except `slug` was byte-identical before writing.
+Rank-derived slugs: **2 to 0**, and now a hard zero in `test:collision-ratchet` with a planted negative control.
+
+**Every store keyed by the slug was re-derived (S9), and the test caught two I had missed:** entity records
+regenerated at the new slugs and verified field-for-field identical, orphans removed; 301s added to **both**
+nginx configs, because the Docker image bakes `nginx.conf` and a CI rebuild silently reverts a runtime-copied
+`nginx-ssl.conf`; a clean export proved to produce no stale score file.
+
+**Why this is only half of D-49, and the half that needs no decision.** I measured rather than assumed: pinning
+Portland OR did **not** free the bare `portland` slug, because Portland ME still claims it. The 15 cross-index
+collisions are untouched, and they still need the disclosure decision above — pinning them makes nine published
+score disagreements publicly addressable rather than resolving them.
+
+**A new item, found on the way:** `research/rotation-state.json` holds one `portland-us-cities` key for two
+us-cities Portlands, so one of them is not tracked for research at all.

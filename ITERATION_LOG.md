@@ -1,5 +1,56 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 67 — 2026-09-30 (D-49a: two URLs that moved when the score moved)
+
+**Selected:** the default the packet set for itself — *prepare the D-49 disambiguation so it is ready to
+approve*. First iteration in 39 whose subject is a published artifact rather than the machinery.
+
+**Found by looking, not by being told.** The packet described D-49 as cross-index collisions. Reading the
+generated catalogue turned up something it had missed: `export-public-data.mjs` disambiguates a repeated name
+inside one index with `${baseSlug}-${row.rank}`, so **two published entities were addressed by their rank** —
+Portland, OR at `/us-city/portland-22` and Springfield, MO at `/us-city/springfield-94`. **A URL that encodes a
+rank changes when the ranking changes.** For a benchmark that asks to be cited, that is a defect on its own,
+independent of any collision, and nobody had named it.
+
+**Prepared on `prepare/D-49-rank-derived-slugs`, CI green on all five jobs including the site build.** Both rows
+now declare an explicit `slug`, following the `phoenix-global-cities` / `georgia-us-states` /
+`singapore-global-cities` precedent. The applying script **refused to write unless every field except `slug` was
+byte-identical**, so no score, rank, band or name moved. Rank-derived slugs **2 to 0**.
+
+Pinning one of a pair also removes the rank-dependence of the *other*: each name now has exactly one unpinned row
+in us-cities, so it always takes the bare slug regardless of rank order. That is why two pins fix four URLs.
+
+**S9 in practice, and it caught me twice.** A rename is not done until every store keyed by the slug is
+re-derived, and `test:entity-records` failed with exactly the two records I had not migrated. Enumerated and
+handled: **entity records** regenerated at the new slugs through the generator (not hand-renamed) and verified
+identical field-for-field apart from slug/generated_at/generator, orphans removed, 19,702 tests green again;
+**generated score files** proved clean by deleting the orphans and re-exporting; **both nginx configs** given
+301s, because the image bakes `nginx.conf` and a CI rebuild reverts a runtime-copied `nginx-ssl.conf`; the
+**dry-run report** re-run in full (1,325 entities, acceptance PASS — the committed one was stale at 1,256);
+**rotation-state** checked and needing no migration.
+
+**A hard zero, not a ratchet.** `test:collision-ratchet` now asserts no published slug encodes a rank, with a
+negative control: removing the `portland-or` pin makes it fail, restoring it makes it pass. Zero rather than a
+shrinking count, because every instance is a URL that will move. Also fixed there: its Case 5 label announced
+"16 known" while the assertion required 15 — stale since tranche 1. **A test whose own output contradicts its own
+assertion teaches a reader to distrust both.**
+
+**Seventh instance of the governing pattern, and the most expensive if I had believed it.** The local Next build
+began crashing at ~1012 of 2024 pages with a Windows resource fault, three times, immediately after my change —
+having succeeded earlier the same session. I was one step from reporting that the pins broke the build.
+**Reverting the pins and rebuilding produced the identical crash**, so it is the environment, and CI built the
+site green on the branch. *A tool that finds something should be suspected before the thing it found is
+believed* — including when the tool is the build.
+
+**What is deliberately not fixed.** The 15 cross-index collisions. Measured rather than assumed: pinning Portland
+OR did **not** free the bare `portland` slug, because Portland ME still claims it — my earlier reasoning that it
+would was wrong, and the measurement is why the packet now says so. Those need the disclosure decision, because
+pinning them makes nine published score disagreements publicly addressable rather than resolving them.
+
+**Not merged, and that is the design.** The change writes an index file, which needs founder approval. It sits on
+its own branch with CI green so approval is a one-word answer instead of a specification exercise — the S2 split
+the loop should have been applying to the product backlog for the last 39 iterations.
+
 ## Iteration 66 — 2026-09-30 (PKT-1: asking, for the first time in 38 iterations)
 
 **Selected:** **PKT-1**, the forced selection from Meta-review 5, whose first recommendation explicitly forbids

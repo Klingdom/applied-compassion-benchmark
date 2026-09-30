@@ -314,6 +314,24 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 67 — D-49a)
+
+- **D-49a — PREPARED, awaiting approval (Iteration 67, 2026-09-30).** Branch
+  `prepare/D-49-rank-derived-slugs`, CI green on all five jobs including the site build. Pins the two
+  rank-derived published slugs (`portland-22` to `portland-or`, `springfield-94` to `springfield-mo`), so no
+  published URL encodes a rank. Every slug-keyed store re-derived (S9): entity records regenerated and verified
+  identical, orphans removed, 301s in both nginx configs, clean export proven, full dry-run re-run. New hard-zero
+  assertion in `test:collision-ratchet` with a planted negative control. **Needs approval only** — it writes an
+  index file. `I4 S5 L3 C5 − E2 − R1 = 14`.
+
+- **RS-5 — one rotation-state key for two Portlands, so one is untracked for research.**
+  `research/rotation-state.json` holds `portland`, `portland-us-cities` and `portland-global-cities`, but
+  us-cities publishes **two** Portlands (ME rank 8, OR rank 22). Whichever one the single `portland-us-cities`
+  key refers to, the other has no rotation entry, so it is never scanned or reassessed and its `last_assessed`
+  can never be claimed. Found while enumerating slug-keyed stores for D-49a. Likely a small family — check every
+  intra-index duplicate name (Springfield IL/MO too) for the same gap before fixing one.
+  `I3 S4 L3 C4 − E2 − R1 = 11`.
+
 ### New backlog items (2026-09-30, from Iteration 65 — META-1, the meta-review)
 
 - **PKT-1 — DONE (Iteration 66, 2026-09-30).** `docs/FOUNDER_DECISION_PACKET_2026-09-30.md`: six decisions (D-47 merge/deploy, D-48 Rethink Robotics, D-49 the nine double-scored names, D-50 the application queue, D-13 the waiver cliff, D-51 the S12 rule), each with evidence, a recommendation, the cost of delay and **a default if nothing comes back**. **44 figures re-derived by `research/scripts/verify-decision-packet-2026-09-30.mjs`**, which caught two of mine before the founder saw them. ~~the founder decision packet, and it is the forced next selection.~~ Meta-review 5's first
