@@ -1,5 +1,65 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 63 — 2026-09-30 (TRI-12: testing my own correction, and finding the ruler is blunter than the marks on it)
+
+**Selected:** **TRI-12**, filed in Iteration 61 against my own published figure. Iteration 61 re-ran two *failing*
+items with a brief demanding the most substantively complete cold answer, `SYS-5-A` improved from 3/2 to 1/4, and
+I recorded it as a repair. That procedure was applied only to failures, so it could only move results toward
+clearing items. I said so in the record — but **stating a bias is not measuring it**.
+
+**Pre-registered before anything was generated:** sample, seed, thresholds and the consequence of each outcome,
+in `research/discrimination/2026-09-30-tier4/rerun-bias-preregistration.md`. 8 items already passing, stratified
+by headroom — all four whose cold arm scored 3 (the closest analogue to `SYS-5-A` at 2) and four of the eighteen
+at 4, drawn by seeded shuffle. **The eleven already at 5 were excluded deliberately**, because with no headroom
+they would have dragged the mean to zero by arithmetic and let me announce a null I had built in advance. The
+decision rule is applied by `tri12-compare.mjs`, which **refuses to run** if its thresholds stop matching the
+registered ones.
+
+**Registered verdict: INCONCLUSIVE.** Mean cold-arm lift **+0.88**, between the +0.5 and +1.0 thresholds. Ties
+break against my earlier result, so **`SYS-5-A` is flagged again** and the quotable figure stays the
+pre-registered **33 of 35**.
+
+**Post hoc, and labelled as such: the lift tracks headroom.** Items with two points of room rose **+1.50**; items
+with one rose +0.25. `SYS-5-A` had three points of room and rose 2 — comfortably inside that pattern. If forced to
+guess I would guess artefact, and a guess is precisely what the registered rule stops me publishing as a result.
+
+**The finding I was not looking for, which matters more than the answer.** The probe regenerated the warm arm from
+a **word-for-word identical** brief, only to keep the pairs comparable. Those scores moved anyway: **+0.38** on
+average, up to 2 points on a single item. That is not an effect, it is **the noise floor of running this test
+twice** — and it means the cold-specific effect, after subtraction, is about **+0.50**, sitting exactly on the
+NULL threshold. The most genuinely undecided a result can be.
+
+So **a single administration resolves about a point, not less.** The Iteration 61 headline (mean gap +2.80) is far
+above that and stands. But **eleven of the 35 in-scope items sit at a gap of +2 or less** and should be read as
+*probably* discriminating rather than discriminating. Remedy is replicate administrations per item, not more
+items — TRI-16. A dated status note now says this on the Iteration 61 report; the tables there are **appended to,
+never rewritten** (§1c), and the diff shows **zero deletions**.
+
+**A deviation recorded because it would otherwise have been invisible.** The first scorer prompt I dispatched
+carried a rule the Iteration 61 rater never got: *do not reward length or volume of content for its own sake.*
+Defensible in isolation, and wrong here — the measurement is a difference between two administrations, so any
+wording that differs lands in the delta and cannot be told from the effect. Worse, that rule points **straight at
+the hypothesis**, since the artefact explanation *is* "more content scores higher": suppressing the predicted
+effect and then reporting a null would have been a rigged null. Caught before any score was read; that run's
+output was **discarded unopened** and the scoring re-dispatched with the original wording verbatim. Both the
+discard and the fact that nobody looked first are in the pre-registration, because a reader needs them to trust
+the delta.
+
+**Consequence for the method, not just the item.** Rewriting an arm and re-scoring, with no matched control in the
+same run, is **not a way to clear an item** — it may only be a way to raise a score. It should not be used that
+way again. `EMP-2-A` is untouched and still with a human (TRI-13); if anything the noise floor strengthens it,
+since its 1/2 held across two independent administrations, which the items that moved cannot claim.
+
+**DC-23 added, three occurrences, all today, all mine.** A backtick or backslash inside a double-quoted shell
+string silently executes or vanishes, and the written file is quietly wrong: a backslash eaten out of a probe
+needle (caught only because `withPlanted` refuses a no-op mutation); a debug command that mangled the same escape
+a *different* way and produced a confident wrong diagnosis; and twice, backticks that executed and **deleted the
+score off a backlog row** and **the filenames out of a deviation record**, leaving a bare full stop. Nothing
+announced itself. Working rule already in force for the rest of this session and recorded with the class:
+**prose containing quotes, backslashes or backticks goes into a file via `Write` and gets run — never into a
+shell string — and a write is not done until its result has been read back.** No mechanical gate yet; it is an
+operator-habit class and the honest state is "named, not gated", so under S10 it is the forced next selection.
+
 ## Iteration 62 — 2026-09-30 (HEALTH-1: the file that says whether the system is healthy was wrong 18 times)
 
 **Selected:** **HEALTH-1**, as a forced selection. Iteration 61 noticed that `SYSTEM_HEALTH.md` had skipped

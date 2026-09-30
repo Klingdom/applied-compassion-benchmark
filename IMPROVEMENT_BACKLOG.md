@@ -314,6 +314,26 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 63 — TRI-12)
+
+- **TRI-16 — every item's gap needs an error bar, which means replicate administrations rather than more items.**
+  TRI-12 measured the method's noise floor by accident: regenerating the warm arm from a **word-for-word
+  identical** brief moved scores by **+0.38** on average and up to 2 points on one item. So a single
+  administration resolves about a point, and **eleven of the 35 in-scope items sit at a gap of +2 or less** —
+  currently published as verdicts, honestly readable only as *probably discriminates*. Fix: administer each item
+  2-3 times with independently written pairs and publish a mean with a range. Cost scales with replicates, so
+  start with the eleven small-gap items rather than all 35. `I4 S4 L4 C4 − E3 − R1 = 12`.
+
+- **DC-23-GATE — the shell-quoting content loss needs a control, not a resolution.** Three occurrences in one
+  session, all silent: a backslash eaten out of a probe needle, a debug command that mangled the same escape
+  differently and produced a confident wrong diagnosis, and two cases of backticks executing inside a
+  double-quoted string and **deleting content** from a file that was then written (a backlog score, a deviation
+  record's filenames). The working rule — prose with quotes, backslashes or backticks goes through a written file,
+  never a shell string — is a practice rule, and a practice rule broken three times in one day is not a control.
+  Candidate gate: a markdown lint for the corruption signature (a `**Label:**` followed by whitespace then
+  terminal punctuation; doubled interior spaces outside code fences), which catches the *result* mechanically even
+  though the *cause* sits outside the repo. **Forced next selection under S10.** `I3 S4 L4 C4 − E2 − R1 = 12`.
+
 ### New backlog items (2026-09-30, from Iteration 62 — HEALTH-1)
 
 - **OBS-1 — the deployed commit is not recorded anywhere, so "what is live?" has no answer.** Production's
@@ -342,7 +362,7 @@ comparability.
   line names an iteration older than the newest entry in ITERATION_LOG.md, since this is the same class as DC-16
   and intending to remember has now failed seven times in a row. `I3 S4 L3 C5 − E2 − R1 = 12`.
 
-- **TRI-12 — the re-run bias has to be removed before 33/35 can be quoted as a rate.** Iteration 61 re-ran the
+- **TRI-12 — DONE (Iteration 63, 2026-09-30).** Pre-registered, 8 already-passing items stratified by headroom, thresholds fixed before any score existed and applied by a script that refuses to run if they drift from the registration. **Verdict INCONCLUSIVE** (mean cold-arm lift +0.88): `SYS-5-A` is **re-flagged** and the quotable figure stays the pre-registered **33 of 35**. Post hoc, the lift tracks headroom (+1.50 with two points of room against +0.25 with one), which points toward artefact. Bigger finding: the warm arm moved **+0.38 on an unchanged brief**, so the method has a noise floor of about a point per administration — see TRI-16. Record: `docs/RERUN_BIAS_PROBE_2026-09-30.md`. ~~the re-run bias has to be removed before 33/35 can be quoted as a rate.~~ Iteration 61 re-ran the
   two failures with a stronger cold arm and nothing else, which can only move results toward clearing items. A
   fair version re-runs a random sample of the passes with the same strengthened brief: if a pass also improves,
   the strengthening is a general effect rather than a repair, and the comparison is invalid. Cheap — ~6 items,

@@ -201,3 +201,40 @@ node research/discrimination/2026-09-30-tier4/compare-replicates.mjs
 
 Full run record, including every brief, every reply, both keys and all raw scores:
 `research/discrimination/2026-09-30-tier4/`.
+
+---
+
+## Status note — 2026-09-30 (Iteration 63, TRI-12): SYS-5-A is flagged again, and the gaps have error bars
+
+Appended rather than edited in. The tables above are the record of what was administered on 2026-09-30 and stay
+as they are; this is what testing the method afterwards revealed.
+
+**1. `SYS-5-A` returns to FLAGGED.** Section 5 above recorded it flipping 3/2 to 1/4 once the cold arm was
+rewritten, and treated that as a repair. TRI-12 put the same strengthened brief to eight items that had **already
+passed**, under a decision rule fixed before any score existed. Mean cold-arm lift **+0.88** — between the
+registered thresholds, so the verdict is **inconclusive**, and the registered rule breaks ties against the
+earlier result. The pre-registered **33 of 35** was already the figure quoted here; it remains the only one.
+
+Post hoc, the lift tracked headroom: items with two points of room rose **+1.50**, items with one rose +0.25.
+`SYS-5-A` had three points of room and rose 2. That pattern points toward artefact rather than repair, which is
+why it is flagged and not cleared.
+
+**2. A noise floor nobody had measured.** The probe regenerated the warm arm from a **word-for-word identical**
+brief, purely to keep the pairs comparable. Those scores moved anyway — **+0.38** on average, and up to 2 points
+on a single item. That is the cost of running this test twice, not an effect.
+
+So a single administration resolves differences of about a point, not less. The headline mean gap of **+2.80** is
+far above that. But **eleven of the 35 in-scope items sit at a gap of +2 or less** and should be read as
+*probably* discriminating: `EMP-2-A` (+1), `EMP-3-B`, `ACT-2-B`, `EQU-2-B`, `BND-5-B`, `INT-4-A`, `AWR-5-B`,
+`ACC-2-B`, `BND-2-B`, `ACC-5-B` (+2), and `SYS-5-A` (−1). The remedy is replicate administrations per item
+rather than more items — filed as TRI-16.
+
+**3. The technique should not be reused to resolve a failure.** Rewriting an arm and re-scoring, with no matched
+control in the same run, is not a way to clear an item. It may simply be a way to raise a score.
+
+**4. `EMP-2-A` is unaffected** and still referred to human review (TRI-13). If anything the noise floor
+strengthens it as a finding: its 1/2 held across two independent administrations, which is more than the items
+that moved can claim.
+
+Full record: `docs/RERUN_BIAS_PROBE_2026-09-30.md`, pre-registration and raw data under
+`research/discrimination/2026-09-30-tier4/`.
