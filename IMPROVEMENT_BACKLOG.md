@@ -314,6 +314,34 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 74 — Meta-review 6)
+
+- **S13 — PROPOSED, founder to ratify: the scoring formula is indifferent to whether a reader would notice.**
+  S12 fixed *which* queue is ranked; it did not fix *what* the ranking rewards. The v2 formula weighs Impact,
+  Strategic alignment, Learning value, Confidence, Effort and Risk, and **none of them asks whether the change
+  alters what a reader of compassionbenchmark.com sees or can verify.** A gate that prevents a future defect and
+  a fix that removes a live one score identically when their other terms match — and the gate is always cheaper
+  and more certain, so it wins. Measured consequence: Iterations 65-73 produced four gates and **1 of 13
+  commits** touching a reader-visible surface, while a defunct company sits in the second-highest published
+  band. Proposal: `+2` when the change alters what a reader sees or can verify, `0` otherwise. Deliberately
+  crude — the point is that the formula should stop being indifferent, not that the weight is exactly right.
+  `I5 S5 L4 C4 − E1 − R2 = 15`. **Lane: blocked-on-founder.**
+
+- **META-2 — DONE (Iteration 74): cadence tolerance lowered 8 → 5** on the gate's own evidence. It fired at 9
+  unreviewed and the review it forced found Meta-review 5's first recommendation unfollowed for all 9. Five is
+  still not the spec's 3 because the spec is a target and this is a backstop, but 5 would have caught the drift
+  while it could still have changed the window.
+
+### New backlog items (2026-09-30, from Iteration 73 — CS-2c)
+
+- **CS-2d — whatever writes a briefing does not require `publishedDate`, which is why the omission grows.**
+  Iteration 73's ceiling stops the count rising but treats the symptom: 65 of the 72 undated items are in the
+  most recent third of the corpus, so the generator is still producing them. Work: find where evidence objects
+  are assembled (briefing builder / digest pipeline), require a usable `publishedDate` at write time, and make
+  the absence refuse rather than warn — the same shape as `build-triage-batches.mjs` refusing to drop a
+  matched-pair arm. Then lower `undatedCeiling` as old briefings are superseded rather than edited.
+  `I4 S4 L3 C4 − E2 − R1 = 12`.
+
 ### New backlog items (2026-09-30, from Iteration 72 — CS-2b)
 
 - **CS-2b — FOUNDER: three published briefing citations are dated after the briefing itself.** The
@@ -325,7 +353,7 @@ comparability.
   allowlist is shrink-only, so removing the entries requires the correction to exist.
   `I3 S4 L2 C5 − E1 − R1 = 12`. **Lane: blocked-on-founder.**
 
-- **CS-2c — 80 of 1,244 evidence items carry no parseable `publishedDate`.** Reported by `test:source-tiers` and
+- **CS-2c — DONE (Iteration 73, 2026-09-30), and the hypothesis in this row was wrong.** Not an early-convention artifact: by thirds of the corpus the counts are early **0**, middle 6, late **65**, and the newest briefing is affected — the omission is **growing**. `2026-07-21` has no date on any of its 26 items. Also found: **8 of the 80 were month-precision dates** (`"2026-05"`) that the checker had been silently dropping; `normalisePublished` now accepts `YYYY-MM` at the first of the month, taking dated items from 1,164 to 1,172 and the undated count to **72**. Gated by a shrink-only `undatedCeiling: 72` with two negative controls — adding an undated item fails, and a ceiling one below reality fails. Follow-up **CS-2d**: the upstream cause. ~~80 of 1,244 evidence items carry no parseable `publishedDate`.~~ Reported by `test:source-tiers` and
   deliberately **not** gated in Iteration 72: absence is a different defect from contradiction, and gating both
   in one assertion would hide whichever fired second. Without a date, neither the recency check nor any future
   reader can tell whether an item was current when cited. Work: measure whether the 80 cluster by date, source or

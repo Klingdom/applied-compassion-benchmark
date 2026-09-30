@@ -1,5 +1,90 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 74 — 2026-09-30 (Meta-review 6, forced mid-session by the gate built nine iterations earlier)
+
+**Not selected — compelled.** `test:meta-review-cadence`, built in Iteration 65, reached 9 unreviewed
+iterations against its own tolerance of 8 and **blocked the chain** while I was finishing Iteration 73. A gate
+firing on a real case within nine iterations of installation is the clearest success in this window, and it
+caught its author.
+
+**Record:** `docs/META_REVIEW_2026-09-30_ITER65-73.md`.
+
+**The finding I least wanted.** Meta-review 5's first recommendation was, in its own words, *"the next loop must
+not produce another internal gate."* Iterations 65-73 produced **four** — content-loss, meta-cadence,
+backlog-ids, source-tiers — taking the chain from 51 to 55 steps. Classified by whether a commit touches a
+reader-visible surface or the deploy path: **1 of 13**. That one is D1-1's post-deploy freshness check.
+
+Two of the four were the correct selection under S12, and one guards data readers actually see. **Ranking a gate
+correctly does not make it the right thing to have spent a window on**, and I am not going to argue it away.
+
+**What did improve is real and worth keeping.** S12 redirected selection away from self-generated follow-ups
+four times running, and each pre-existing row it surfaced beat what I would have chosen. It also exposed that
+the queue was **fiction**: RS-1, the top-scoring pre-existing row at v2 18, was already implemented; **10 of 23
+high-scoring "open" rows described work already done.** The queue is now reconciled and gated. Three defects
+nobody had named were found: **14 of 15 known fixes unmerged**, a briefing **invisible to readers for seven
+days**, and a briefing **citing three articles dated after itself**. And the packet exists.
+
+**The actual defect in the scoring model, which S12 did not touch.** S12 fixed *which queue* is ranked. It did
+not fix *what the ranking rewards*. The v2 formula weighs Impact, Strategic alignment, Learning value,
+Confidence, Effort and Risk — and **nothing in it asks whether a reader would notice.** A gate preventing a
+future defect and a fix removing a live one score identically when their other terms match, and the gate is
+always cheaper and more certain, so the gate wins. That is why this window produced four gates while a defunct
+company sits in the second-highest published band. Filed as **S13**: add a crude `+2` Visibility term. Founder's
+to ratify; the point is not precision but that the formula should stop being indifferent to the question.
+
+**Acted on my own recommendation immediately, where it was mine to act — filed as META-2.** `MAX_UNREVIEWED`
+lowered **8 → 5**.
+Eight was chosen so the gate would not block work mid-stride; it fired at nine, and the review it forced found a
+recommendation unfollowed for all nine. A tolerance permitting nine iterations of drift permits a whole window to
+go the wrong way before anything says so. Five is still not the spec's three — the spec is a target, this is
+a backstop — but five would have caught it while it could still have changed the window.
+
+**Stated for the record:** everything this loop has built remains unmerged. `main..HEAD` is now **2,284 files**,
+**106 reader-visible**, and production still serves the 2026-09-22 briefing with `git.sha: null`. Nine more
+iterations, nine more commits on a branch nobody has merged.
+
+## Iteration 73 — 2026-09-30 (CS-2c: the undated evidence is not legacy, it is growing)
+
+**Selected:** CS-2c, filed one iteration earlier, and it came with an explicit instruction from its own row:
+*measure whether the 80 cluster by date, source or generator version — an early-convention artifact needs a
+different answer from an ongoing omission.* So I measured before building, and **my hypothesis was wrong in the
+most useful direction.**
+
+**It is not legacy.** Splitting the 86 briefings into thirds by date:
+
+| era | undated items |
+|---|---|
+| early | **0** |
+| middle | 6 |
+| late | **65** |
+
+The newest briefing, `2026-09-24`, is affected. **The omission is growing**, not being left behind. One briefing,
+`2026-07-21`, carries no publication date on **any** of its 26 evidence items.
+
+**And 8 of the items were not undated at all — I had been dropping them.** The malformed values split into 64
+with the field entirely absent, 8 unusable (a bare `"2026"`), and **8 carrying real month precision**
+(`"2026-05"`, `"2026-07"`). Some sources publish a month and nothing finer; that is a real date. The first
+version silently discarded them, so they escaped the recency check while being counted as merely missing.
+
+`normalisePublished` now accepts `YYYY-MM`, **normalised to the first of the month** — deliberately the reading
+least likely to make an item look future-dated, so an exception has to earn itself. A bare year is still
+rejected: 365 days of uncertainty cannot support a claim about whether something was current. That moved 1,164
+dated items to **1,172**, and the undated count from 80 to **72**.
+
+**Gated with a shrink-only ceiling rather than a hard zero.** 86 briefings are already published and §1c forbids
+retro-editing them, so demanding zero would either block everything or invite a silent rewrite. `undatedCeiling:
+72` may only be lowered. Any new briefing that omits a date pushes the count past it and fails.
+
+**Two negative controls, because a ceiling is exactly the kind of number that rots into decoration:**
+(a) appending an evidence item with no `publishedDate` to the real `2026-09-24` briefing fails the gate;
+(b) setting the ceiling one *below* reality fails it too — so the number is measured, not asserted. Both files
+restored and sha-verified.
+
+**What this does not fix, stated plainly.** The ceiling stops the omission growing; it does not fill in the 72,
+and it does not touch the upstream cause. Whatever writes a briefing is not requiring `publishedDate`, and until
+that changes this gate will keep catching the symptom one commit after it appears. That is the follow-up, and it
+is a change to the briefing generator rather than to its output.
+
 ## Iteration 72 — 2026-09-30 (CS-2b: a briefing that cites its own future)
 
 **Selected:** the half of CS-2 left open by Iteration 71 — *"a 2025 event framed as current"*. Same row, so no

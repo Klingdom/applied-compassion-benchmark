@@ -142,6 +142,25 @@ export function mismatchesForDate(date) {
  * reported below but deliberately not gated, because absence is a different
  * defect from contradiction and folding them together would hide both.
  */
+/**
+ * A usable publication date, or null.
+ *
+ * Month-precision dates are real: some sources publish "May 2026" and nothing
+ * finer. Dropping them silently is what the first version did, and it meant 9
+ * items escaped the recency check while being counted as merely "undated". A
+ * month is normalised to its FIRST day, which is the reading least likely to
+ * make an item look future-dated — an exception should have to earn itself.
+ *
+ * A bare year is rejected: 365 days of uncertainty cannot support a claim about
+ * whether something was current.
+ */
+export function normalisePublished(raw) {
+  const s = String(raw ?? "").trim();
+  if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s.slice(0, 10);
+  if (/^\d{4}-\d{2}$/.test(s)) return `${s}-01`;
+  return null;
+}
+
 export function futureDatedForDate(date) {
   const bPath = join(BRIEFINGS, `${date}.json`);
   if (!existsSync(bPath)) return { date, checked: 0, future: [], undated: 0 };
@@ -154,8 +173,8 @@ export function futureDatedForDate(date) {
     if (Array.isArray(o)) return o.forEach(walk);
     if (o && typeof o === "object") {
       if ("sourceTier" in o && "url" in o) {
-        const raw = String(o.publishedDate ?? "").slice(0, 10);
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+        const raw = normalisePublished(o.publishedDate);
+        if (!raw) {
           undated += 1;
           return;
         }
@@ -278,7 +297,38 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
 
   check("the publishedDate extractor is not vacuous", () => {
     assert(datedChecked > 500, `only ${datedChecked} dated evidence items found across ${dates.length} briefings`);
-    console.log(`      (${datedChecked} dated items; ${undated} carry no parseable publishedDate — reported, not gated)`);
+    console.log(`      (${datedChecked} dated items across ${dates.length} briefings)`);
+  });
+
+  check("month-precision dates are used, not silently dropped", () => {
+    assert(normalisePublished("2026-05") === "2026-05-01", "a YYYY-MM date is not being normalised");
+    assert(normalisePublished("2026-05-09") === "2026-05-09", "a full date is not passing through");
+    assert(normalisePublished("2026") === null, "a bare year must be rejected — too coarse to support a claim");
+    assert(normalisePublished(undefined) === null, "an absent field must be rejected");
+  });
+
+  // CS-2c: the count of evidence with no usable date may only SHRINK.
+  //
+  // Measured 2026-09-30: 71 of 1,244. It is NOT an early-convention artifact —
+  // splitting the corpus in thirds gives early 0, middle 6, late 65, and the
+  // newest briefing (2026-09-24) is affected. The omission is GROWING, so the
+  // ratchet exists to stop it growing further while the 86 already-published
+  // briefings cannot be retro-edited (§1c). One briefing, 2026-07-21, has no
+  // date on any of its 26 evidence items.
+  check(`evidence with no usable publication date has not increased (ceiling ${known.undatedCeiling ?? "unset"})`, () => {
+    const ceiling = known.undatedCeiling;
+    assert(typeof ceiling === "number", "known-tier-mismatches.json must declare a numeric undatedCeiling");
+    assert(
+      undated <= ceiling,
+      `${undated} evidence items carry no usable publication date, above the ceiling of ${ceiling}. ` +
+        "A new briefing must set publishedDate on every evidence item; without it neither the recency check " +
+        "nor any future reader can tell whether the source was current when cited."
+    );
+    if (undated < ceiling) {
+      console.log(`      (${undated} undated, below the ceiling of ${ceiling} — lower undatedCeiling to ${undated})`);
+    } else {
+      console.log(`      (${undated} undated, exactly at the ceiling)`);
+    }
   });
 
   check("a planted future date is detected", () => {

@@ -41,8 +41,21 @@ const REPO = join(__dirname, "..", "..");
 const DOCS = join(REPO, "docs");
 const LOG = join(REPO, "ITERATION_LOG.md");
 
-/** How many iterations may pass unreviewed before this fails. */
-export const MAX_UNREVIEWED = 8;
+/**
+ * How many iterations may pass unreviewed before this fails.
+ *
+ * Lowered from 8 to 5 in Iteration 74, on this gate's own evidence. Eight was
+ * chosen so the gate would not block work mid-stride. It fired at nine — and
+ * Meta-Review 6, which it forced, found that Meta-Review 5's first
+ * recommendation had gone unfollowed for all nine of them. A tolerance that
+ * permits nine iterations of drift permits a whole window to go the wrong way
+ * before anything says so.
+ *
+ * Five is still not the spec's three, deliberately: the spec's cadence is a
+ * target and this is a backstop. But five would have caught the drift while it
+ * could still have changed the window.
+ */
+export const MAX_UNREVIEWED = 5;
 
 /** `META_REVIEW_<date>_ITER<from>-<to>.md` */
 export function reviewedThrough(filenames) {
