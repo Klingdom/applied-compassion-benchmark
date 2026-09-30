@@ -314,9 +314,23 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 57 — GI-1)
+
+- **GI-4 — nothing calls `preflight-snapshot` automatically.** The tool exists and is tested, but taking a
+  snapshot is still a thing someone has to remember, which is the same failure mode as the prohibition it
+  replaces. The obvious hook is the nightly research pipeline (snapshot before the scanner writes rotation state,
+  which is what INC-009 destroyed) and the start of any agent session touching shared stores. A `SessionStart`
+  hook is a governance surface — same reasoning that defers ECC-1 — so the pipeline is the cheaper first step.
+  `I4 S4 L3 C4 − E2 − R1 = 12`.
+
+- **GI-5 — snapshots accumulate and nothing prunes them.** Each holds full copies of uncommitted work. Harmless
+  today (one snapshot, three files) and unbounded in principle. A retention rule — keep N most recent, or prune
+  beyond X days — should exist before the directory is large enough that someone deletes it wholesale to reclaim
+  space, which is how a recovery mechanism gets removed. `I2 S3 L2 C5 − E1 − R1 = 10`.
+
 ### New backlog items (2026-09-29, from Iteration 53 — DC-21)
 
-- **GI-3 — DONE as option (b) (Iteration 54, 2026-09-29).** `research/scripts/lib/probe.mjs` provides `withPlanted` and `assertGateCatches`: backup before mutation, restore in a `finally`, sha256-verified, no-op mutations refused, no `child_process` import, 14 tests. The safe path is now shorter to type than the unsafe one, which is the only lever left once a written prohibition has failed. **GI-1 (pre-flight snapshot) remains the real fix and remains open** — nothing mechanical stops an interactively-typed git command. ~~UPGRADE — the practice rule is not working.~~ Filed 2026-09-27 saying probe harnesses restore from a
+- **GI-3 — DONE as option (b) (Iteration 54, 2026-09-29).** `research/scripts/lib/probe.mjs` provides `withPlanted` and `assertGateCatches`: backup before mutation, restore in a `finally`, sha256-verified, no-op mutations refused, no `child_process` import, 14 tests. The safe path is now shorter to type than the unsafe one, which is the only lever left once a written prohibition has failed. **GI-1 (pre-flight snapshot) BUILT in Iteration 57** — `preflight-snapshot.mjs`, 14 tests, recovery proven byte-identical; the class is now three layers deep and none of them prevents the command, they just make it survivable — nothing mechanical stops an interactively-typed git command. ~~UPGRADE — the practice rule is not working.~~ Filed 2026-09-27 saying probe harnesses restore from a
   file copy and never from git. I broke it on 2026-09-29, two days later, reverting a planted probe with
   `git checkout --`. Nothing was lost, but only because the file had no other uncommitted change. That is the
   third reach for a destructive git command in one session, and it is the second rule of mine that turned out to

@@ -44,3 +44,9 @@ research/scripts/.gen-results-*.json
 # Founder-held backups: never tracked. Swept in twice by directory pathspecs
 # (2026-09-20 and 2026-09-23) before this rule existed.
 *.bak
+
+# GI-1 pre-flight snapshots. Plain copies of UNCOMMITTED work, taken before an
+# agent starts, so a destructive command is recoverable by construction. Never
+# committed: they duplicate work that is deliberately not in git yet, and one of
+# them currently holds the held America-at-250 rewrite.
+.preflight/

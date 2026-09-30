@@ -1,5 +1,51 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 57 — 2026-09-30 (GI-1: making DC-14 recoverable instead of merely forbidden)
+
+**Selected:** **GI-1**, open since Iteration 37 and repeatedly called "the real fix" for DC-14 without anyone
+building it. Everything built so far reduces the CHANCE of an agent destroying uncommitted work:
+`test-no-destructive-git.mjs` lints committed scripts and cannot see a typed command; `probe.mjs` makes the safe
+path shorter and only helps someone who uses it; a written prohibition existed and **its author broke it two days
+later**. This changes the CONSEQUENCE, which is the only thing that does not depend on an agent remembering
+something at the moment it matters.
+
+**Added:** `research/scripts/preflight-snapshot.mjs`. Copies every uncommitted change — modified tracked files and
+untracked files — into `.preflight/<timestamp>/files/`, with a manifest recording HEAD, per-file sha256 and byte
+counts. `--list` shows what exists; `--verify <dir>` proves a snapshot still matches what it claims.
+
+**It mutates nothing.** Only `git status --porcelain -z` and `git rev-parse HEAD` — asserted structurally, by
+extracting every git verb from the source and requiring each to be read-only. The snapshot is a plain directory of
+plain files, readable without git, which is the point: **a recovery mechanism that needs the tool which caused the
+damage is not a recovery mechanism.**
+
+**Proven, not asserted.** The first run captured the real working tree — including the **held America-at-250
+rewrite**, the exact file INC-010 destroyed. Then the full loop end to end: created a file, snapshotted, deleted
+it, restored from the snapshot, **byte-identical by sha256**. `.preflight/` is gitignored, because it duplicates
+work deliberately not yet in git.
+
+**Validation:** `test:preflight-snapshot`, 14 assertions (chain 47 → 48), in a throwaway git repo so nothing can
+touch the real tree. Beyond the happy path: an empty working tree yields **no snapshot at all** and says why — an
+empty snapshot is worse than none because it looks like cover; verification **fails** if a copy drifts, and fails
+if a recorded file is missing, each with a positive control proving it passes again once repaired; and the
+read-only-verbs check is shown to catch a planted `stash`.
+
+**One design flaw found by testing.** The tool anchored to the repo it lives in and ignored the `cwd` I passed, so
+it could only ever be exercised against the live working tree — untestable in isolation, which for a recovery
+mechanism means untested. Added an explicit `--repo` override: the default still cannot be aimed at the wrong
+tree, and the test now isolates properly.
+
+**And a pattern in my own work worth naming.** My first version of that check also scanned for the words "stash"
+and "reset", and failed — on the tool's own doc comment, which says *"no stash, no checkout, no reset"* in order
+to explain that it uses none of them. **That is the third time in two days** I have written a prose scan that
+flags the prose explaining the rule: the probe helper's git check, the destructive-git gate firing on `probe.mjs`,
+and now this. The general lesson is recorded in the test: assert on what the code **does**, never on what the file
+**says**, because a file documenting a prohibition necessarily contains the prohibited string.
+
+**What DC-14 now looks like.** Three layers, and the registry says plainly what each does and does not do: a lint
+over committed scripts (cannot see typed commands), a probe helper that makes the safe path shorter (only helps
+when used), and now a snapshot that makes the damage recoverable (does not prevent anything). None of them stops
+the next careless command. Together they mean it costs a file copy rather than a cycle's work.
+
 ## Iteration 56 — 2026-09-29 (the deadline I left out of my own decision packet, and the feed gate PUB-1 never got)
 
 Two carried items, both outside the model track, both found by re-reading the backlog rather than by anything
