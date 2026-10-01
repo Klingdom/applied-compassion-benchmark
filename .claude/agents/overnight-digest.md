@@ -421,6 +421,26 @@ The single most authoritative primary source URL cited in the assessor's change 
 "primaryEvidenceUrl": "https://..."
 ```
 
+### releaseWatch (REQUIRED from 2026-10-01 — MB-1)
+
+Every briefing must state the AI-model release-detection state. **Silence is not neutral**: a briefing that says
+nothing about release watch is read as *"no releases shipped"*, and that is false while detection has never run.
+
+```json
+"releaseWatch": { "sourcesRegistered": 0, "detectionRan": false, "releasesDetected": 0 }
+```
+
+**Derive `sourcesRegistered`, never type it** — count the entries in
+`site/src/data/model-benchmark/release-sources-v1.json`. A hand-typed count goes stale silently, which is the
+same class `test:no-stale-counts` exists to catch.
+
+**Two invariants the validator enforces, and they will fail the build:**
+- `detectionRan` must be `false` whenever `sourcesRegistered` is `0`. Detection cannot run without a source.
+- `releasesDetected` must be `0` whenever `detectionRan` is `false`. A scan that did not happen found nothing.
+
+As of 2026-09-30 the registry holds **0 sources**, so the honest value is the all-zero object above. Write it
+rather than omitting it.
+
 ### evidence[] (carry the assessor's structured evidence to the public surface)
 Carry the assessor change-proposal's `evidence[]` items onto the corresponding `topSignals[].evidence[]` and `recentAssessments[].evidence[]`. Each item: `{ quote (VERBATIM, ≤50 words), claim?, source, url (REQUIRED when quote present), publishedDate (REQUIRED), sourceTier? }`. This is the public, citable evidence layer — quotes must be exact and traceable.
 

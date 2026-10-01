@@ -52,6 +52,26 @@ All checks below are ERRORS for post-cutoff dates.
 
 No individual sub-field of `pipeline` is enforced at this contract level; the shape may vary by cycle type.
 
+### 2b-ii. `releaseWatch` object — **required from 2026-10-01** (MB-1)
+
+| Field | Type | Required | Quality bar |
+|---|---|---|---|
+| `releaseWatch` | `object` | **YES from 2026-10-01** | `{ sourcesRegistered: int ≥ 0, detectionRan: boolean, releasesDetected: int ≥ 0 }` |
+
+**Why this is required rather than optional.** AI-model release detection has **0 sources registered**
+(`site/src/data/model-benchmark/release-sources-v1.json`), so it has never run. A briefing that says nothing about
+release watch is read as *"no releases shipped"* — a different and **false** claim. Stating the state costs one
+object; implying the wrong one costs the benchmark's accuracy.
+
+**Truthfulness invariant, enforced by `validate-daily-briefings.mjs`:** `detectionRan` must be `false` whenever
+`sourcesRegistered` is `0`, and `releasesDetected` must be `0` whenever `detectionRan` is `false`. You cannot
+detect with no sources, and you cannot find releases in a scan that did not happen.
+
+**`sourcesRegistered` is a count and must be derived, not typed** — read it from the registry at write time. A
+hand-typed count is the `test:no-stale-counts` class.
+
+Grandfathered before 2026-10-01: the 86 existing briefings predate the field and §1c forbids retro-editing them.
+
 ### 2c. `topSignals[]` array
 
 | Requirement | Rule |

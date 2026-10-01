@@ -1,5 +1,48 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 82 — 2026-09-30 (MB-1: silence in a published briefing is a claim, and it was false)
+
+**Selected:** MB-1, specified in Iteration 24 and never built because the digest agent spec was **outside that
+lane's file ownership**. Fifty-eight iterations later the lane boundary no longer applies and the defect is
+unchanged.
+
+**Verified live before building.** `release-sources-v1.json` holds **0 sources**, `releases-v1.json` holds **0
+releases**, and **no briefing JSON carries a release-watch field at all** — checked across all 86. So AI-model
+release detection has never run, and every published briefing is silent about it.
+
+**Silence is not neutral.** A reader who sees a daily briefing covering score movements, sector signals and
+evidence findings, with nothing about model releases, concludes that **no releases shipped**. The true statement
+is that **nobody looked**. Those are different claims and the briefing makes the wrong one by omission.
+
+**Built the contract, in all three places the row named.**
+
+1. **Schema** (`docs/DAILY_BRIEFING_SCHEMA.md` §2b-ii): `releaseWatch` required from **2026-10-01**, shape
+   `{ sourcesRegistered, detectionRan, releasesDetected }`.
+2. **Validator**: required post-cutoff, grandfathered before it — same mechanism and the same §1c reasoning as
+   `PUBLISHED_DATE_REQUIRED_FROM`, because 86 published briefings cannot be retro-edited.
+3. **Producer brief** (`.claude/agents/overnight-digest.md`): emit it, with the count **derived from the registry,
+   never typed** — a hand-typed count is the `test:no-stale-counts` class.
+
+**Two invariants that make it a truthfulness check rather than a type check.** Both fail the build:
+
+- `detectionRan` must be `false` while `sourcesRegistered` is `0` — **detection cannot run without a source**.
+- `releasesDetected` must be `0` while `detectionRan` is `false` — **a scan that did not happen found nothing**.
+
+So the field cannot be filled in to look reassuring. The only value consistent with an empty registry is the
+honest all-zero object.
+
+**Seven new self-test cases, both directions**, inside the validator's existing `--self-test` so the chain stays
+at **57 steps**: absent post-cutoff fails, absent pre-cutoff does not, the honest zero state passes, detection-with-
+no-sources fails, findings-from-no-scan fails, a *real* scan with 4 sources and 2 releases is allowed, and wrong
+types are rejected. 15 self-test assertions total, and 86 of 86 briefings still validate.
+
+**Deliberately not done, and filed rather than half-built: the rendering.** The contract now exists but readers
+still see silence, because nothing displays the field. `site/AGENTS.md` requires reading the Next.js 16 guide in
+`node_modules/next/dist/docs/` before writing page code, and this version has breaking changes from what I know.
+Adding a UI section on a guess is how a reader-facing page breaks. Filed as **MB-1b**, and the ordering is right
+anyway: the data contract has to exist before there is anything to render, and no briefing has been generated
+since 2026-09-24.
+
 ## Iteration 81 — 2026-09-30 (CS-3: the corpus uses both tier conventions, almost exactly half and half)
 
 **Selected:** CS-3's agent-doable half. Deciding what `sourceTier` *means* is a methodology change and the

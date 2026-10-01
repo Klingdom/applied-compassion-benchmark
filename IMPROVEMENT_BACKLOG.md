@@ -314,6 +314,18 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 82 — MB-1)
+
+- **MB-1b — the release-watch state is in the contract but nothing renders it, so readers still see silence.**
+  Iteration 82 made `releaseWatch` required from 2026-10-01 and enforced its truthfulness invariants, but
+  `site/src/app/updates/[date]/page.tsx` does not display it. Until it does, the false implicit claim ("no
+  releases shipped") survives on the published page. **Deliberately not attempted in Iteration 82:**
+  `site/AGENTS.md` requires reading the Next.js 16 guide under `node_modules/next/dist/docs/` before writing page
+  code, because this version has breaking changes from training data, and guessing at a reader-facing page is how
+  one breaks. Work: read the guide, add a one-line state sentence to the briefing page rendered from the field,
+  and assert it appears in the built HTML. Note no briefing has been generated since 2026-09-24, so there is no
+  populated field to render yet. `I3 S4 L3 C4 − E2 − R2 = 10`.
+
 ### New backlog items (2026-09-30, from Iteration 80 — Meta-review 7)
 
 - **V10 — PROPOSED, founder to ratify: coverage before absence.** V8 requires a positive control before a zero,
@@ -1029,7 +1041,7 @@ comparability.
   item may be in the training data of any model trained since publication, which the `/ai-models` page already discloses.
   Work: decide whether a holdout is wanted at all (it cannot be independently audited), and if so extend the schema and
   validator first. Founder decision. v1: I3 S5 L3 C4 − E2 − R2 = **11**.
-- **MB-1 — the digest is silent about release watch.** Lane 2 of It. 24 specified the line "Release watch: 0 sources
+- **MB-1 — CONTRACT DONE (Iteration 82, 2026-09-30); rendering filed as MB-1b.** Verified live first: **0 sources registered, 0 releases, and no briefing carries the field** across all 86. Built in all three places the row named — schema (§2b-ii, required from 2026-10-01), validator (required post-cutoff, grandfathered before, same §1c mechanism as `publishedDate`), and the digest brief (emit it, **count derived from the registry, never typed**). Two truthfulness invariants fail the build: `detectionRan` must be false with 0 sources, and `releasesDetected` must be 0 when detection did not run — so the field cannot be filled in to look reassuring. 7 new self-test cases (15 total), chain unchanged at 57 steps, 86 of 86 still validate. ~~the digest is silent about release watch.~~ Lane 2 of It. 24 specified the line "Release watch: 0 sources
   registered — detection did not run today" but could not implement it (`.claude/agents/overnight-digest.md` was
   outside its file ownership). While the registry is empty, silence in the daily briefing reads as "no releases
   shipped", which is a different and false claim. Work: add the line to the digest spec and the digest JSON schema.

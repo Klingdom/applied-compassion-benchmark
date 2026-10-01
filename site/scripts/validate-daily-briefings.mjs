@@ -68,6 +68,91 @@ const RICH_REQUIRED_FROM = "2026-05-26";
  */
 const PUBLISHED_DATE_REQUIRED_FROM = "2026-10-01";
 
+/**
+ * From this date, every briefing must carry a `releaseWatch` object. MB-1.
+ *
+ * AI-model release detection has 0 sources registered, so it has never run. A
+ * briefing silent about release watch is read as "no releases shipped" — a
+ * different and false claim. Iteration 24 specified the line and could not add
+ * it, because the digest agent spec was outside that lane's file ownership.
+ *
+ * Same cutoff mechanism and the same §1c reasoning as
+ * PUBLISHED_DATE_REQUIRED_FROM: the 86 existing briefings are published and
+ * cannot be retro-edited, so the requirement starts with the next one.
+ */
+const RELEASE_WATCH_REQUIRED_FROM = "2026-10-01";
+
+/**
+ * The truthfulness invariants on releaseWatch.
+ *
+ * These are not type checks. You cannot detect with no sources, and you cannot
+ * find releases in a scan that did not happen — so a briefing claiming either is
+ * making a false statement about its own pipeline, which is exactly the failure
+ * MB-1 exists to prevent.
+ */
+function checkReleaseWatch(data, date) {
+  const errors = [];
+  const warnings = [];
+  const rw = data.releaseWatch;
+  const required = typeof date === "string" && date >= RELEASE_WATCH_REQUIRED_FROM;
+
+  if (rw === undefined || rw === null) {
+    if (required) {
+      errors.push(
+        violation(
+          "ERROR",
+          "releaseWatch",
+          "REQUIRED from " +
+            RELEASE_WATCH_REQUIRED_FROM +
+            ". Silence about release watch reads as \"no releases shipped\", which is false while detection has " +
+            "never run. Emit { sourcesRegistered, detectionRan, releasesDetected }, with the count read from " +
+            "site/src/data/model-benchmark/release-sources-v1.json rather than typed."
+        )
+      );
+    }
+    return { errors, warnings };
+  }
+
+  if (typeof rw !== "object" || Array.isArray(rw)) {
+    errors.push(violation("ERROR", "releaseWatch", "must be a non-null object"));
+    return { errors, warnings };
+  }
+
+  const { sourcesRegistered: src, detectionRan: ran, releasesDetected: found } = rw;
+
+  if (!Number.isInteger(src) || src < 0) {
+    errors.push(violation("ERROR", "releaseWatch.sourcesRegistered", `must be an integer >= 0 (got ${JSON.stringify(src)})`));
+  }
+  if (typeof ran !== "boolean") {
+    errors.push(violation("ERROR", "releaseWatch.detectionRan", `must be a boolean (got ${JSON.stringify(ran)})`));
+  }
+  if (!Number.isInteger(found) || found < 0) {
+    errors.push(violation("ERROR", "releaseWatch.releasesDetected", `must be an integer >= 0 (got ${JSON.stringify(found)})`));
+  }
+  if (errors.length > 0) return { errors, warnings };
+
+  if (src === 0 && ran === true) {
+    errors.push(
+      violation(
+        "ERROR",
+        "releaseWatch.detectionRan",
+        "claims detection ran with 0 sources registered. Detection cannot run without a source to watch."
+      )
+    );
+  }
+  if (ran === false && found > 0) {
+    errors.push(
+      violation(
+        "ERROR",
+        "releaseWatch.releasesDetected",
+        `claims ${found} release(s) found while detectionRan is false. A scan that did not happen found nothing.`
+      )
+    );
+  }
+
+  return { errors, warnings };
+}
+
 /** A usable publication date (day or month precision), or null. */
 function usablePublishedDate(raw) {
   const s = String(raw ?? "").trim();
@@ -720,6 +805,13 @@ function validateDate(date) {
   const minViolations = checkMinimumContract(data);
   errors.push(...minViolations);
 
+  // MB-1: release-watch state, with its truthfulness invariants.
+  {
+    const { errors: e, warnings: w } = checkReleaseWatch(data, date);
+    errors.push(...e);
+    warnings.push(...w);
+  }
+
   const isRichRequired = date >= RICH_REQUIRED_FROM;
   const hasTopSignals = Array.isArray(data.topSignals) && data.topSignals.length > 0;
   const isLegacyFlat = !isRichRequired && !hasTopSignals;
@@ -952,6 +1044,57 @@ function selfTest() {
   check("any date: a malformed value present WARNS", () => {
     const { warnings } = run({ ...base, publishedDate: "last Tuesday" }, PRE);
     assert(warnings.some((w) => /unusable date/.test(w.detail)), "malformed value passed silently");
+  });
+
+  // ── MB-1: releaseWatch ────────────────────────────────────────────────────
+  const rw = (obj, date) => checkReleaseWatch(obj, date);
+  const POST_DATE = "2026-10-05";
+  const PRE_DATE = "2026-06-06";
+  const ok = { sourcesRegistered: 0, detectionRan: false, releasesDetected: 0 };
+
+  check("releaseWatch: absent post-cutoff is an ERROR", () => {
+    assert(rw({}, POST_DATE).errors.length > 0, "a silent briefing was accepted");
+  });
+
+  check("releaseWatch: absent pre-cutoff is NOT an error (grandfathered)", () => {
+    assert(rw({}, PRE_DATE).errors.length === 0, "grandfathering broken");
+  });
+
+  check("releaseWatch: the honest zero state passes", () => {
+    const { errors } = rw({ releaseWatch: ok }, POST_DATE);
+    assert(errors.length === 0, `rejected a valid state: ${JSON.stringify(errors)}`);
+  });
+
+  check("releaseWatch: detection cannot run with 0 sources", () => {
+    const { errors } = rw({ releaseWatch: { ...ok, detectionRan: true } }, POST_DATE);
+    assert(errors.some((e) => /cannot run without a source/.test(e.detail)), "accepted detection with no sources");
+  });
+
+  check("releaseWatch: a scan that did not happen cannot have found releases", () => {
+    const { errors } = rw({ releaseWatch: { ...ok, releasesDetected: 3 } }, POST_DATE);
+    assert(errors.some((e) => /did not happen found nothing/.test(e.detail)), "accepted findings from no scan");
+  });
+
+  check("releaseWatch: a real scan with sources and findings is allowed", () => {
+    const { errors } = rw(
+      { releaseWatch: { sourcesRegistered: 4, detectionRan: true, releasesDetected: 2 } },
+      POST_DATE
+    );
+    assert(errors.length === 0, `rejected a legitimate scan: ${JSON.stringify(errors)}`);
+  });
+
+  check("releaseWatch: wrong types are rejected", () => {
+    assert(rw({ releaseWatch: [] }, POST_DATE).errors.length > 0, "an array was accepted as the object");
+    assert(
+      rw({ releaseWatch: { sourcesRegistered: "0", detectionRan: false, releasesDetected: 0 } }, POST_DATE).errors
+        .length > 0,
+      "a string count was accepted"
+    );
+    assert(
+      rw({ releaseWatch: { sourcesRegistered: 0, detectionRan: "no", releasesDetected: 0 } }, POST_DATE).errors
+        .length > 0,
+      "a string boolean was accepted"
+    );
   });
 
   console.log(`\n[validate-daily-briefings] self-test: ${passed} passed, ${failed.length} failed`);
