@@ -1,5 +1,46 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 83 — 2026-09-30 (MS-2: a safety property that was argued in a comment)
+
+**Selected:** MS-2. Iteration 37 fixed a real O(n²) defect — `listRunTrials` re-parsed every trial on every step,
+so a 249-trial run spent **33 seconds** inside one function — with a path-keyed cache invalidated by `mtime:size`.
+The fix is sound. What was missing is that its **safety** argument lived in a comment: *"disk remains the single
+source of truth"*. `finish_scored_run`'s forged-run defence depends on exactly that, because it refuses to trust
+in-memory state precisely so it sees what is on disk.
+
+**Six tests, including the one the stamp is weakest against.** `${mtimeMs}:${size}` cannot distinguish two
+same-size writes if `mtimeMs` does not advance between them — and a trial file swapped for another of **identical
+byte length** is the scenario a forged-run defence has to survive. So:
+
+| case | asserts |
+|---|---|
+| write → read | the listing returns what was written |
+| rewrite, **different** length | re-read, not served from cache |
+| rewrite, **exactly the same** length | re-read — the sharp case |
+| delete a trial | it leaves the listing |
+| `clearTrialCache()` | forces a re-parse |
+| two consecutive reads | return the **same object** — proof the cache is in use |
+
+That last one is the suite's positive control. Without it every other test could pass on an implementation that
+never cached at all, and the suite would be asserting nothing about the thing it is named after.
+
+**The same-size fixture guards itself.** It asserts the replacement really is the same byte length and that the
+file really changed, before asserting the listing updated. A fixture that silently stopped being same-size would
+turn this into a duplicate of the different-length test.
+
+**Result: the cache is safe here, and the tests can fail.** All six pass on this filesystem, so `mtimeMs` does
+advance between writes. A passing test proves nothing until it can fail, so two plants:
+
+- **stamp reduced to `size` only** — the plausible regression — **fails** the same-size test.
+- **stamp made a constant**, so the cache never invalidates at all — **fails** the suite.
+
+Both restored sha-verified. cb-probe suite **182 → 188 tests**, all passing.
+
+**Honest limit.** This proves the invariant holds *on this platform*. It does not prove `mtimeMs` granularity is
+fine enough everywhere — a filesystem with one-second mtime resolution could still defeat a same-size swap inside
+one tick, and no test run on NTFS can rule that out. What the suite does guarantee is that the invariant is now
+**asserted rather than asserted-about**, and that weakening the stamp fails loudly instead of quietly.
+
 ## Iteration 82 — 2026-09-30 (MB-1: silence in a published briefing is a claim, and it was false)
 
 **Selected:** MB-1, specified in Iteration 24 and never built because the digest agent spec was **outside that

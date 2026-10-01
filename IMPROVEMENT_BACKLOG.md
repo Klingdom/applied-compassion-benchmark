@@ -832,7 +832,7 @@ comparability.
   knowledge, a real DIF risk), and one rubric-fit judgement call (INT-3-C, where the two pre-existing I3 items
   read the subdimension differently than the published text does). v1: I4 S4 L4 C4 − E3 − R2 = **11**.
 
-- **MS-2 — the trial-cache invariant needs a test.** It. 37 fixed an O(n^2) re-parse in `listRunTrials` with a
+- **MS-2 — DONE (Iteration 83, 2026-09-30).** `tools/cb-probe/tests/trial-cache.test.mjs`, 6 tests, cb-probe suite **182 → 188**. Covers the specified case (write, read, rewrite on disk, assert the new content is returned) plus the one the `mtime:size` stamp is weakest against: a rewrite of **exactly the same byte length**, which is the scenario a forged-run defence must survive. Includes a positive control (two consecutive reads return the same object, proving the cache is in use — without it the suite would pass on an implementation that never cached). Proven able to fail by two plants: a size-only stamp fails the same-size test, and a constant stamp fails the suite. Limit stated: this proves the invariant on this platform, not that mtime granularity is fine enough everywhere. ~~the trial-cache invariant needs a test.~~ It. 37 fixed an O(n^2) re-parse in `listRunTrials` with a
   path-keyed cache invalidated by mtime+size. The forged-run defence depends on disk staying authoritative;
   that property is currently argued in a comment, not asserted. Work: a test that writes a trial file, reads
   it through `listRunTrials`, rewrites it on disk with different content, and asserts the new content is
