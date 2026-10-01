@@ -314,6 +314,35 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 86 — Meta-review 8)
+
+- **QUEUE-2 — a backlog row should be falsifiable, because 13 of 23 were not.** This session hand-verified that
+  **more than half** the high-scoring "open" rows described work already finished (RS-1, RS-2, GI-1, SC-1, SC-1c,
+  MB-2a, D1-1d, OBS-1, and five superseded duplicates). `test:backlog-ids` stops two *live* rows sharing an
+  identifier, but nothing can detect a single row that is simply no longer true — and a queue that lists
+  finished work cannot be ranked honestly, which Meta-review 5 traced to 37 misdirected iterations. Work: require
+  every row to carry a falsifiable **"done when"** line (a command, a file that must exist, an assertion that must
+  pass), and a gate that runs them and reports rows whose condition is already satisfied. Not a tidying task: it
+  is the difference between a ranked queue and a notebook. `I5 S5 L4 C4 − E3 − R1 = 14`.
+
+- **V9a/V9d-1/D-35 pattern — PROPOSED as a verification rule: an expectation must come from outside the code.**
+  Three gates this session verified nothing because their expected values were read off the implementation they
+  were testing — a private copy of `rowSlug` (passed 10/0 while the shipped function was broken), two nginx
+  configs compared to each other (passed 4/4 while a URL 404'd), and a fixture asserting `atandt` (let a ratified
+  decision and its code drift for two weeks). Same family as **V10**. Proposal: a test's expected value must be
+  traceable to a shipped export, a specification, a published artifact or a decision record — never to the
+  behaviour of the code under test. **Founder's to ratify as a checklist amendment.**
+  `I4 S5 L5 C5 − E1 − R1 = 17`. **Lane: blocked-on-founder.**
+
+### New backlog items (2026-09-30, from Iteration 85 — RS-5)
+
+- **RS-7 — FOUNDER: `meta.last_updated` in rotation-state has no written contract, and reads two months stale.**
+  It carries `2026-07-22` against a `meta.last_scan` of `2026-09-24`. Iteration 85 reports the gap but
+  deliberately does **not** assert a rule, because nothing defines what updates it — a scan, an assessment, a
+  hand edit, or any write at all. Asserting a rule nobody wrote would be inventing one, and a header with an
+  invented contract is worse than one with none. Work: define the field's meaning (or delete it, if `last_scan`
+  plus the per-entity stamps already carry everything), then gate it. `I2 S4 L2 C5 − E1 − R1 = 11`.
+
 ### New backlog items (2026-09-30, from Iteration 82 — MB-1)
 
 - **MB-1b — the release-watch state is in the contract but nothing renders it, so readers still see silence.**
@@ -973,7 +1002,7 @@ comparability.
   referenced by rotation-state provenance, so a rename is an S9 re-derivation, not a `mv`), and extend
   `test:encoded-names` to cover research artifact paths rather than published names only. v1: I3 S4 L2 C5 − E2 − R2 =
   **10** · v2: Rc +2 (a gate for a class with ≥ 2 dated occurrences) → **12**.
-- **RS-5 — the top-level scan stamp drifts from the per-entity stamps.** Verified 2026-09-21: every one of the 1,329
+- **RS-5 — DONE (Iteration 85, 2026-09-30).** `validate-rotation-state.mjs` now asserts `meta.last_scan` equals the **maximum** per-entity `last_scanned` — maximum rather than all-equal, because a partial cycle legitimately leaves older stamps behind; what cannot be true is a header claiming a date no entity reached, or lagging one that was. Both directions have controls: the real 2026-09-21 lagging shape fails, and a header ahead of every entity fails. The data was already clean (1,329 stamps, 1 distinct value, matching the header), so this guarantees rather than repairs. **Also found:** `meta.last_updated` reads 2026-07-22, two months behind — reported with a caveat, not asserted, because the field has no written contract; filed as **RS-7**. ~~the top-level scan stamp drifts from the per-entity stamps.~~ Verified 2026-09-21: every one of the 1,329
   entities carried `last_scanned: "2026-09-21"` while `meta.last_scan` still read `2026-09-20`, because the scanner
   updated the per-entity fields but not the header on that cycle (it did on 09-20). Coordinator corrected the header
   by parser after confirming the per-entity stamps were uniform. A status figure that disagrees with its own source of
@@ -994,7 +1023,7 @@ comparability.
   (2025 events per HRW's 2026 World Report), **Interpublic Group** "800 layoffs in September" (September **2025**, per
   the same SEC filing), and **Figure AI**'s whistleblower claim (September 2025) — **dropped for a third consecutive
   cycle**. Work: append four entries with their true dates and sources, same schema. v1: I3 S4 L2 C5 − E1 − R1 = **12**.
-- **SC-1c — the ledger matcher reads narrative prose, not just claims.** On its first live run the gate fired twice on
+- **SC-1c — DONE, row was stale (verified Iteration 85, 2026-09-30).** `validate-scan.mjs` carries section **8c — FIELD SCOPE WITHIN A CANDIDATE (added 2026-09-21, SC-1c)**, and `test-known-misdated-claims.mjs` has **Test 8**: *a scan whose free narrative names a ledger claim, while its top_entities candidate carries no claim-specific tokens, passes clean.* **Thirteenth already-finished row.** Note the section deliberately keeps `news_summary` IN scope despite it being where an author's ledger-referencing aside lands — over-reach is safer than a miss here, so narrowing was the wrong reflex. ~~the ledger matcher reads narrative prose, not just claims.~~ On its first live run the gate fired twice on
   the scanner's own explanatory notes *about* the ledger, because they quoted the literal trigger tokens. The scanner
   reworded to get past it; requiring authors to avoid words in order to describe a defect is the wrong remedy. Work:
   restrict matching to claim/evidence fields (or exclude fields marked as disclosure/commentary), and add a test with a

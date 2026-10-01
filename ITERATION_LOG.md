@@ -1,5 +1,88 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 86 — 2026-09-30 (Meta-review 8: more than half the queue had already been done)
+
+**Compelled by the cadence gate for the third time**, and the second since the tolerance went to 5. Record:
+`docs/META_REVIEW_2026-09-30_ITER80-85.md`.
+
+**The headline, and it is the finding of the whole session.** Of the **23** high-scoring "open" rows this session
+began with, **13 were already finished** — gated, tested, and still listed as problems. RS-1's validator already
+reported `REAL GAPS (FAIL) : 0`. SC-1's ledger had **148** passing assertions. SC-1c had both the field-scope fix
+and the exact fixture its row requested. D1-1(d) had been wired end to end on 2026-09-16 and never merged.
+
+Meta-review 5 concluded the loop spent 37 iterations ranking its own follow-ups above the product backlog. **One
+mechanism is now measured:** the product backlog's top rows were fiction, so every honest application of the
+formula ranked a real self-generated item above an imaginary pre-existing one. **The loop was not ignoring the
+queue — it was reading a queue that lied.**
+
+**Closed in 80-85:** CS-3 (measured, 48.7% outlet vs 39.6% authority — both conventions live), MB-1
+(release-watch state required, with truthfulness invariants), MS-2 (cache invariant asserted, including the
+same-size rewrite), D-35 (code now follows the ratified decision; 3 of 1,325 slugs changed, **0 published URLs
+moved**), RS-5 (header must agree with its entity stamps, both directions controlled), SC-1c (verified done).
+
+**A rule earned three separate times, now stated once:** *a test whose expected value is read off the
+implementation verifies nothing except that the implementation has not changed.* V9a tested its own copy of
+`rowSlug` and passed 10/0 while the shipped function was broken. V9d-1 compared two nginx configs to each other
+and passed 4/4 while a URL 404'd. D-35's fixture asserted `atandt`, so a **founder-ratified decision** and its
+code drifted for two weeks with a green build. The expectation has to come from outside the code — a shipped
+export, a specification, a decision record. Same family as V10.
+
+**And the counter-lesson, which I record because I was about to get it wrong.** Five times today a prose check
+fired on the prose explaining it, and five times I **narrowed** the check. SC-1c looked identical — and its
+existing fix does the opposite, keeping `news_summary` in scope *precisely because* that is where an author's
+ledger-referencing aside lands. The reason is the failure direction: over-reach means a human waves through a
+candidate that was only discussing the ledger; a miss means a resurfaced misdated claim reaches a published
+briefing. **Narrowing a check is not automatically right. It depends which way the failure hurts.**
+
+**Queue state: nothing agent-doable remains at score ≥ 13.** What is left is founder-gated — D-47, D-48,
+D-49, D-50, CS-2b, CS-3's decision, RS-7, D-13 (**2026-11-17**) — plus three unratified proposals (S12, S13,
+V10) and four agent-doable rows below 13 (MB-1b, TRI-16, CI-2, HEALTH-2).
+
+**The recommendation I would most like acted on is about the backlog itself.** `test:backlog-ids` now stops
+duplicate live rows, but nothing detects a **unique** row describing finished work — that took thirteen hand
+verifications this session. Filed as **QUEUE-2**: require every row to carry a falsifiable *"done when"* line, so
+a script can ask the system whether it is satisfied instead of a human re-deriving it.
+
+## Iteration 85 — 2026-09-30 (RS-5: a header that can disagree with the entities beneath it; and SC-1c was already done)
+
+**Two rows, and together they empty the queue at score ≥ 13.**
+
+**SC-1c — already done, verified not assumed.** The row asks to restrict ledger matching to claim/evidence
+fields and add a fixture whose narrative mentions a ledger claim while its candidate does not. Both exist:
+`validate-scan.mjs` carries a section **"8c. FIELD SCOPE WITHIN A CANDIDATE (added 2026-09-21, SC-1c)"**, and
+`test-known-misdated-claims.mjs` has **Test 8** — *"a scan whose free narrative names a ledger claim, while
+its top_entities candidate carries no claim-specific tokens, passes clean"*. **Thirteenth already-finished row** of
+the 23 this session began with.
+
+Worth noting what that section decided, because it is the opposite of the reflex I have been applying all day: it
+kept `news_summary` **in** scope even though that is exactly where an author's ledger-referencing aside lands.
+The reasoning is the safe-failure-direction rule — over-reach (re-flagging a candidate that was only
+*discussing* the ledger, for a human to wave through) is safer than a miss (a resurfaced known claim slipping
+into a published briefing because its host field was excluded). **Narrowing a check is not automatically the right
+answer; it depends which way the failure hurts.**
+
+**RS-5 — genuinely open, and the data was clean while the guard was missing.** On 2026-09-21 every one of
+1,329 entities carried `last_scanned: "2026-09-21"` while `meta.last_scan` still read `2026-09-20`: the scanner
+updated the per-entity fields and not the header. A coordinator caught it **by eye** and fixed it by parser.
+
+Today the stamps agree — `meta.last_scan` is 2026-09-24 and all 1,329 entities read 2026-09-24, one distinct
+value. So there was nothing to repair, only something to **guarantee**. `validate-rotation-state.mjs` now asserts
+`meta.last_scan` equals the **maximum** per-entity `last_scanned`.
+
+**Maximum, not "all equal", deliberately.** A partial cycle legitimately leaves older stamps behind. What cannot
+be true is a header claiming a date no entity reached, or lagging behind one that was — so both directions
+fail, and both have a control:
+
+- **lagging** (the real 2026-09-21 shape, header 09-20 against entities at 09-24) — fails
+- **ahead** (header 2026-10-01 against a newest entity stamp of 09-24) — fails
+
+**And a second drifting field, found while measuring and reported rather than asserted.** `meta.last_updated`
+reads **2026-07-22** — over two months behind a `last_scan` of 2026-09-24. The independent reviewer flagged
+this during Meta-review 5 and I did not verify it then; it is now confirmed. I have **not** asserted a rule for
+it, because its contract is undefined: updated by what — a scan, an assessment, a hand edit? Asserting a rule
+nobody wrote would be inventing one. The gate prints the gap with that caveat attached, so it is visible instead
+of silently carried, and filed as **RS-7** for the founder to define.
+
 ## Iteration 84 — 2026-09-30 (D-35: a ratified decision and its implementation disagreed, and a test held the disagreement in place)
 
 **Selected:** the D-35 contradiction. D-35 (founder-approved, 2026-09-16) states **"`&` becomes `-and-`"**. The

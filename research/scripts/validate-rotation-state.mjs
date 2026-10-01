@@ -600,7 +600,12 @@ if (isMainModule) {
     process.exit(1);
   }
 
+  const stampOk = checkScanStampAgreement(rotation, entities);
   const sharedOk = checkSharedRotationKeys(entities);
+  if (!stampOk) {
+    console.log("\nRESULT: FAIL — the rotation header disagrees with the entity stamps beneath it (RS-5).\n");
+    process.exit(1);
+  }
   if (!sharedOk) {
     console.log("\nRESULT: FAIL — a published row shares a rotation key, so its freshness claim is not its own.\n");
     process.exit(1);
@@ -635,6 +640,65 @@ if (isMainModule) {
 // This stops the number growing. It does not pretend to fix it.
 // ─────────────────────────────────────────────────────────────────────────────
 
+
+/**
+ * RS-6's sibling: the header must agree with the entities beneath it (RS-5).
+ *
+ * On 2026-09-21 every one of the 1,329 entities carried
+ * `last_scanned: "2026-09-21"` while `meta.last_scan` still read `2026-09-20`:
+ * the scanner updated the per-entity fields and not the header. A coordinator
+ * noticed by eye and corrected it by parser. **A status figure that disagrees
+ * with its own source of truth is the S11 class**, and nothing was checking it.
+ *
+ * `meta.last_scan` must equal the MAXIMUM per-entity `last_scanned`. Maximum
+ * rather than "all equal", because a partial cycle legitimately leaves older
+ * stamps behind — what cannot be true is a header claiming a date no entity
+ * reached, or lagging behind one that was.
+ *
+ * `meta.last_updated` is reported but NOT asserted: its contract is undefined
+ * (updated by what — a scan, an assessment, a hand edit?), and asserting a rule
+ * nobody wrote would be inventing one. It currently reads 2026-07-22 against a
+ * last_scan of 2026-09-24, which is reported so the gap is visible rather than
+ * silently carried.
+ */
+function checkScanStampAgreement(rotation, entities) {
+  const meta = rotation.meta ?? {};
+  const headerScan = meta.last_scan ?? null;
+
+  const stamps = Object.values(entities)
+    .map((e) => e && e.last_scanned)
+    .filter((s) => typeof s === "string" && DATE_RE.test(s));
+
+  console.log(`\n  SCAN STAMP AGREEMENT (RS-5):`);
+
+  if (stamps.length === 0) {
+    console.log(`    no per-entity last_scanned stamps found — nothing to compare (INDETERMINATE, not a pass)`);
+    return true;
+  }
+
+  const maxStamp = stamps.reduce((a, b) => (b > a ? b : a));
+  const distinct = new Set(stamps).size;
+  console.log(`    meta.last_scan            ${headerScan ?? "(absent)"}`);
+  console.log(`    max per-entity last_scanned ${maxStamp}   (${stamps.length} stamps, ${distinct} distinct value(s))`);
+
+  if (meta.last_updated && meta.last_updated !== maxStamp) {
+    console.log(
+      `    ! meta.last_updated is ${meta.last_updated}, ${
+        meta.last_updated < maxStamp ? "BEHIND" : "ahead of"
+      } the newest scan (${maxStamp}) — reported, not asserted: this field has no written contract`
+    );
+  }
+
+  if (headerScan !== maxStamp) {
+    console.log(
+      `\n  x SCAN STAMP DRIFT: meta.last_scan is ${headerScan ?? "(absent)"} but the newest per-entity ` +
+        `last_scanned is ${maxStamp}. The header disagrees with its own source of truth, which is how a cycle ` +
+        `looks un-run (or run) when it was not. Set meta.last_scan to ${maxStamp}.`
+    );
+    return false;
+  }
+  return true;
+}
 
 function checkSharedRotationKeys(entities) {
   const INDEX_DIR = path.join(REPO, "site", "src", "data", "indexes");
