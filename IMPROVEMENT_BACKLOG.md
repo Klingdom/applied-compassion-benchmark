@@ -314,6 +314,24 @@ comparability.
   `manifest.latest`, which is the same invariant the deploy verify job already asserts — so the check exists,
   it just never runs outside a deploy. v1: I4 S4 L3 C5 − E1 − R1 = **14**.
 
+### New backlog items (2026-09-30, from Iteration 80 — Meta-review 7)
+
+- **V10 — PROPOSED, founder to ratify: coverage before absence.** V8 requires a positive control before a zero,
+  which proves an instrument *can* fire but says nothing about how much of the corpus it reads. Iteration 71
+  satisfied V8 in full and still published a false all-clear: **0 tier mismatches** from a matcher reading
+  **1,142 of 2,403** citations. The real figure was 43. Proposal: an absence claim over a corpus must state the
+  fraction read, independently derivable — *"0 over 300 of 2,403"* is a result and an obviously inadequate
+  one; *"0 mismatches"* is not. Cheap to apply: count what you examined, count what exists, publish the ratio
+  beside the finding. **Applied to my own absence claims from the next iteration onward, marked unratified.**
+  `I5 S5 L5 C5 − E1 − R1 = 18`. **Lane: blocked-on-founder (as a checklist amendment).**
+
+- **QUEUE-1 — the agent-doable queue is exhausted of product work.** Three of Iterations 75-79 ended "the remedy
+  belongs to the founder", which is the right conclusion and a poor selection criterion — the loop is doing
+  reconnaissance it cannot act on. Every remaining open row (MB-1, MS-2, TRI-16, HEALTH-2, CI-2) is internal
+  tooling. This is not a defect to fix but a state to name: **further iterations will produce internal work or
+  measurements of founder-gated defects, and nothing else, until a decision lands.** Recorded so the next
+  selection is made with that in view rather than discovered again.
+
 ### New backlog items (2026-09-30, from Iteration 74 — Meta-review 6)
 
 - **S13 — PROPOSED, founder to ratify: the scoring formula is indifferent to whether a reader would notice.**
@@ -344,7 +362,7 @@ comparability.
 
 ### New backlog items (2026-09-30, from Iteration 72 — CS-2b)
 
-- **CS-2b — FOUNDER: three published briefing citations are dated after the briefing itself.** The
+- **CS-2b — FOUNDER, now two defects not one: 43 contradicted tier badges AND three citations dated after their briefing.** *(43 tier mismatches added Iteration 79.)* **(a)** 43 published `sourceTier` values contradict the assessments they cite — 29 URLs over 2026-07-24/25/27, 27 overstating evidence strength (two blogs at tier **5**) and 16 understating it (justice.gov, oig.hhs.gov, ukraine.ohchr.org at tier 1). **(b)** the `2026-06-06` briefing cites three articles dated 06-07 and 06-08, with the source URLs carrying those dates. The
   `2026-06-06` briefing (`generatedAt: 2026-06-06T05:45:00Z`) cites Al Jazeera dated 2026-06-07 and ABC News and
   JURIST dated 2026-06-08, and the source URLs carry those dates too, so the fields are not typos. Either the
   briefing's date is wrong or the evidence was appended later without moving it. **Both honest remedies are
@@ -1067,7 +1085,7 @@ comparability.
   `docs/D-13_DETERMINATIONS_DRAFT_2026-09-17.md`; on ratification that draft is likely renamed or superseded, and the
   warning would then point at a stale or absent path while still looking authoritative (the DC-01 pattern). Work:
   derive the path, or assert its existence in `test-separation-waivers.mjs`. v1: I2 S4 L2 C5 − E1 − R1 = **11**.
-- **CS-2 — DONE (Iterations 71-72, 2026-09-30).** Both halves gated by `test:source-tiers`. **Tier:** every briefing `{url, sourceTier}` checked against the tier the same-date assessment cites — 72 pairs, 0 mismatches. **Recency:** age alone proved a poor signal (51 of 1,244 items are over a year old and almost all are legitimate background), so the gate fires on the case with no innocent reading — evidence published **after** the briefing citing it. Found **3**, all in `2026-06-06`, referred to the founder as **CS-2b** because the remedy is a published-content write. **CS-2c** filed for the 80 items with no parseable date. ~~TIER HALF DONE (Iteration 71, 2026-09-30); event recency still open.~~ New `test:source-tiers` (chain 54 → 55) compares every briefing `{url, sourceTier}` against the tier the same-date assessment cites, across 86 briefings and **72** url/tier pairs, currently **0** mismatches — the five from 09-17 were corrected in the briefing before the gate existed, so the missing half was the gate. Proven by flipping a real tier in the real 09-17 briefing. Ratchets via `research/known-tier-mismatches.json`, which ships **empty**, because a mismatch in an already-published briefing needs a dated correction rather than a silent edit (§1c). **Still open: the "2025 event framed as current" half** — nothing yet checks event recency against the briefing date. ~~extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).~~ The 2026-09-17
+- **CS-2 — DONE (Iterations 71-72), CORRECTED (Iteration 79).** The Iteration 71 result was **vacuous**: the matcher read one of the four citation shapes the assessments use, compared 72 pairs, and reported 0 mismatches. The CS-2 addendum had warned in writing that there were three shapes. With all four it compares **300** pairs and finds **43** contradictions — 29 URLs across 3 briefing dates, 27 overstating the evidence (two blogs carried at **T5**) and 16 understating it (justice.gov, oig.hhs.gov and the UN's ukraine.ohchr.org dropped to T1). Recorded in `known-tier-mismatches.json`, entries **generated** not typed, remediation folded into **CS-2b** because these are published briefings. Both halves gated by `test:source-tiers`. **Tier:** every briefing `{url, sourceTier}` checked against the tier the same-date assessment cites — 72 pairs, 0 mismatches. **Recency:** age alone proved a poor signal (51 of 1,244 items are over a year old and almost all are legitimate background), so the gate fires on the case with no innocent reading — evidence published **after** the briefing citing it. Found **3**, all in `2026-06-06`, referred to the founder as **CS-2b** because the remedy is a published-content write. **CS-2c** filed for the 80 items with no parseable date. ~~TIER HALF DONE (Iteration 71, 2026-09-30); event recency still open.~~ New `test:source-tiers` (chain 54 → 55) compares every briefing `{url, sourceTier}` against the tier the same-date assessment cites, across 86 briefings and **72** url/tier pairs, currently **0** mismatches — the five from 09-17 were corrected in the briefing before the gate existed, so the missing half was the gate. Proven by flipping a real tier in the real 09-17 briefing. Ratchets via `research/known-tier-mismatches.json`, which ships **empty**, because a mismatch in an already-published briefing needs a dated correction rather than a silent edit (§1c). **Still open: the "2025 event framed as current" half** — nothing yet checks event recency against the briefing date. ~~extend the claim-to-source gate to evidence tier and event recency (DC-04, now 3 cycles).~~ The 2026-09-17
   briefing was the first one live-enforced by the It. 16 gate. It passed with 0 violations while carrying 5 `sourceTier` values
   that contradicted the cited assessments (4 inflated from 2 to 4, 1 deflated from 4 to 2) and a 2025 event framed as
   current. Readers see these as tier badges, so an inflated tier overstates evidence strength in public. Coordinator

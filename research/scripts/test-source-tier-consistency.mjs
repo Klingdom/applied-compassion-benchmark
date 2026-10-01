@@ -90,10 +90,28 @@ export function assessmentTiers(md) {
     // defect, but not this gate's: record the first and move on.
     if (!out.has(url)) out.set(url, tier);
   };
-  for (const m of String(md).matchAll(/\[T([0-9])\]\(([^)]+)\)/g)) put(m[2], Number(m[1]));
-  for (const m of String(md).matchAll(/\btier\s*([0-9])\s*[—–-]\s*(https?:\/\/\S+)/gi)) {
+  const text = String(md);
+
+  // Shape 1+2: `[T4](url)` and `[T4, 2026-09-15](url)`. The optional trailing
+  // part inside the brackets is what the first version missed.
+  for (const m of text.matchAll(/\[T([0-9])(?:,[^\]]*)?\]\(([^)]+)\)/g)) put(m[2], Number(m[1]));
+
+  // Shape 3: the tier comes AFTER the url, in a parenthetical —
+  // `- https://example.com/a (tier 2 reporting of a tier-4 UN mandate finding)`.
+  // Note the FIRST tier in the parenthetical is the citation's own; a later
+  // "tier-4" in the same phrase describes the authority being reported, which
+  // is the very ambiguity CS-3 exists to settle. Taking the first is correct
+  // under either convention for the outlet's own tier.
+  for (const m of text.matchAll(/(https?:\/\/[^\s()]+)\s*\(([^)]*)\)/g)) {
+    const t = m[2].match(/\btier[\s-]*([0-9])/i);
+    if (t) put(m[1].replace(/[),.;]+$/, ""), Number(t[1]));
+  }
+
+  // Shape 4: list form with the tier before the url — `— tier 2 — https://...`.
+  for (const m of text.matchAll(/\btier\s*([0-9])\s*[—–-]\s*(https?:\/\/\S+)/gi)) {
     put(m[2].replace(/[),.;]+$/, ""), Number(m[1]));
   }
+
   return out;
 }
 
@@ -222,6 +240,29 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
   const all = dates.map(mismatchesForDate);
   const totalChecked = all.reduce((n, r) => n + r.checked, 0);
   const found = all.flatMap((r) => r.mismatches);
+
+  // --emit-allowlist prints the exception entries as JSON for a human to paste
+  // into known-tier-mismatches.json. It deliberately does NOT write the file:
+  // an exception is only legitimate alongside a published correction, and a
+  // command that silently appends would turn the allowlist into a way of making
+  // failures disappear.
+  if (process.argv.includes("--emit-allowlist")) {
+    console.log(
+      JSON.stringify(
+        found.map((m) => ({
+          date: m.date,
+          url: m.url,
+          briefingTier: m.briefingTier,
+          assessmentTier: m.assessmentTier,
+          assessment: m.file,
+          found: "2026-09-30 (Iteration 79)",
+        })),
+        null,
+        2
+      )
+    );
+    process.exit(0);
+  }
 
   if (process.argv.includes("--report")) {
     console.log(`briefings: ${dates.length} · url/tier pairs compared: ${totalChecked} · mismatches: ${found.length}\n`);

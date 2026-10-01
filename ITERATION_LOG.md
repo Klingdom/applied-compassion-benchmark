@@ -1,5 +1,104 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 80 — 2026-09-30 (Meta-review 7, forced by the tolerance this loop tightened six iterations ago)
+
+**Compelled, not selected.** `test:meta-review-cadence` fired at 6 unreviewed against a tolerance of **5** — the
+value Iteration 74 lowered from 8 *on this gate's own evidence*. It caught the drift two iterations earlier than
+the old setting would have, which is the only proof that tightening it was right.
+
+**Record:** `docs/META_REVIEW_2026-09-30_ITER74-79.md`.
+
+**The window's output, stated as what it is.** Commits touching a published surface or its contract: **1 of 6**.
+By Meta-review 6's crude measure that is barely an improvement on 1 of 13. What changed is the *kind* of work:
+these iterations found defects **in published data** rather than building machinery around hypotheticals —
+**43** contradicted tier badges, **3** citations dated after their briefing, **72** evidence items with no usable
+date, **16** published entities with no independent freshness record, **106** legacy URLs now specified as
+must-resolve. None of it is fixed, because all of it sits in published briefings that §1c forbids editing.
+
+**The finding that matters is about my own instruments, and it is the second this session.** Iteration 71
+reported **0 tier mismatches** and asserted in writing that the zero was *"not the gate being vacuous."* It was:
+the matcher read **1,142 of 2,403** citations. Iteration 71 **had** positive controls — the extractor found
+pairs, fixture URLs canonicalised, a fixture contradiction was caught — and every one passed. **None asked what
+fraction of the corpus was being read.**
+
+**Proposed V10, which is the generalisation V8 was missing.** V8 says *no zero without a positive control*. That
+proves an instrument **can** fire; it says nothing about **how much** it looks at.
+
+> **V10 — coverage before absence.** An absence claim over a corpus must state the fraction of that corpus the
+> instrument read, and that fraction must be independently derivable. *"0 mismatches"* is not a result;
+> *"0 mismatches over 300 of 2,403 citations"* is a result, and an obviously inadequate one.
+
+Had that line existed on 2026-09-30, "72 pairs" against 2,403 citations would have been visibly wrong on the day
+rather than eight iterations later. **A verification-checklist amendment is the founder's to ratify; I will apply
+it to my own absence claims from the next iteration regardless and mark it unratified.**
+
+**Gates caught their author four times in six iterations**, which is the strongest thing in the record: the
+cadence gate forced this review, `test:slug-conventions` caught a reimplemented slug rule within minutes,
+the shared-key control caught a ceiling that counted the wrong thing and **passed with a defect planted**, and
+the iteration-log gate caught a reference to an entry I had not yet written.
+
+**And the recommendation I have to put to myself.** Three of the last five iterations ended *"the remedy belongs
+to the founder."* That is the right conclusion and a poor selection criterion: the loop is doing reconnaissance
+it cannot act on. The remaining agent-doable rows — MB-1, MS-2, TRI-16, HEALTH-2, CI-2 — are all internal. **The
+queue is now exhausted of product work that does not need a decision.**
+
+## Iteration 79 — 2026-09-30 (correcting Iteration 71: the tier gate's "0 mismatches" was vacuous, and there are 43)
+
+**This entry corrects one of mine from eight iterations ago.** Iteration 71 built `test:source-tiers`, measured
+**72 url/tier pairs across 86 briefings, found 0 mismatches**, and wrote — in the log and in the allowlist — that
+*"the current count is genuinely 0, and that is not the gate being vacuous."* **It was vacuous.** The real count
+is **43**.
+
+**The backlog had told me, in writing, before I built it.** The CS-2 addendum dated 2026-09-21 says the matcher
+*"must handle three citation shapes, not one"* and records that its predecessor *"silently read 0 URLs twice"*,
+each time reporting a clean run that was empty rather than clean. I read that row, built one shape, and repeated
+the failure it documented.
+
+**Measured, this time before claiming anything.** Across 1,600 assessment files:
+
+| citation shape | occurrences | read by Iteration 71 |
+|---|---|---|
+| `[T4](url)` | 1,142 | yes |
+| `[T4, 2026-09-15](url)` | 528 | **no** |
+| `url (tier 2 reporting of …)` — tier *after* the url | 733 | **no** |
+| `— tier 2 — url` | (list form) | partially |
+
+So the gate was reading **1,142 of 2,403** tier citations and comparing **72** pairs. With all four shapes it
+compares **300** and finds **43 contradictions**.
+
+**What the 43 are, and they are not cosmetic.** 29 distinct URLs, concentrated in **three briefing dates**
+(2026-07-24, 07-25, 07-27) — a cycle's convention error, not a systemic drift. **27 overstate** the evidence and
+16 understate it:
+
+- **Blogs published as primary-source grade.** `mineralanswers.com` and `veroscribe.com` both carry **T5** — the
+  top tier — against T2 and T1 in the assessments that cite them.
+- **Primary sources demoted to T1.** `justice.gov` (assessment T5), `oig.hhs.gov` (T5), and the UN's
+  `ukraine.ohchr.org` (T4).
+
+A reader uses that badge to judge how much weight to give a finding. Twenty-seven of these tell them to trust a
+source more than the benchmark's own assessment does.
+
+**Recorded, not repaired, and the entries were generated.** 43 rows typed by hand is the DC-20 shape, so
+`--emit-allowlist` prints them from the measurement. It deliberately **does not write the file**: an exception is
+only legitimate beside a published correction, and a command that silently appended would turn the allowlist into
+a way of making failures disappear. The write used the `safeWrite` built one iteration earlier, which is the point
+of having built it.
+
+**Remediation is founder's — folded into CS-2b.** These are published briefings; §1c forbids editing them, so each
+needs a dated correction rather than a silent retier. The list is shrink-only, so an entry can only leave once
+that correction exists.
+
+**Three controls, because an allowlist of 43 is exactly where a gate goes quiet.** Removing any single entry
+re-fails the gate, so the 43 are load-bearing rather than padding. A **new** contradiction planted in the real
+`2026-09-17` briefing still fails — the allowlist does not absorb it. And the four extractor shapes each have a
+fixture asserting they parse.
+
+**The lesson, and it is not "read the backlog".** I did read it. The failure was treating a measured zero as a
+result when the instrument producing it had never been shown able to find a one. **A zero from an extractor with
+unknown coverage is not a finding — it is an absence of coverage.** Iteration 71 had positive controls for the
+briefing side and for a fixture, but none that asked *what fraction of the corpus am I reading?* That question is
+now answered in the gate: it asserts the pair count exceeds 20, and the real figure of 300 is in the file.
+
 ## Iteration 78 — 2026-09-30 (SAFE-1: writing a file should not be able to destroy it)
 
 **Selected:** **SAFE-1** at 14, the top genuinely-open row after verification, and the only one whose failure I

@@ -1,13 +1,355 @@
 {
   "asOf": "2026-09-30",
   "note": "Evidence-integrity exceptions in published daily briefings, enforced by `research/scripts/test-source-tier-consistency.mjs` (CS-2 / DC-04). Both lists may ONLY SHRINK. They exist because the defects they hold live in dated, published briefings, and AUTONOMY §1c forbids retro-editing those: a reader who saw a wrong tier or a wrong date on a given day was misled, and silently rewriting the file conceals that rather than correcting it. An entry is removed only when a dated, published correction replaces it. A defect found BEFORE publication must be fixed in the briefing, never added here.",
-
   "undatedCeiling": 72,
   "undatedCeiling_note": "CS-2c. Evidence items with no usable publication date, across all daily briefings. SHRINK-ONLY: lower this number when it drops, never raise it. Measured 2026-09-30 at 72 of 1,244 items (64 with the field absent entirely, 8 with a bare year or other unusable value; a further 8 carry month precision like \"2026-05\" and ARE now checked, normalised to the first of the month). This is NOT an early-convention artifact — splitting the 86 briefings into thirds gives early 0, middle 6, late 65, and the newest briefing (2026-09-24) is affected, so the omission is GROWING. One briefing, 2026-07-21, carries no date on any of its 26 evidence items. The ceiling stops it growing further; the real fix is upstream, in whatever writes a briefing, and the 86 already-published briefings cannot be retro-edited (§1c).",
-
-  "mismatches": [],
-  "mismatches_note": "Briefing `sourceTier` values contradicting the tier the same-date assessment cites for the same URL. EMPTY, and should stay empty. CS-2 was filed after the 2026-09-17 briefing passed the Iteration 16 claim-to-source gate while carrying five contradicted tiers (four inflated 2→4, one deflated 4→2). Those five were corrected in the briefing before this gate existed — see the CS-3 row, where the Euronews UN High Commissioner article moved from 2 to 4 to match its assessment. The gate was the missing half, not the data. Measured at introduction: 86 briefings, 72 url/tier pairs compared, 0 mismatches.",
-
+  "mismatches": [
+    {
+      "date": "2026-07-24",
+      "url": "healthcaredive.com/news/best-buy-health-lay-off-161/752784",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "best-buy-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "justice.gov/opa/pr/delta-airlines-agrees-pay-81m-settle-alleged-false-claims-act-violations-related-payroll",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "delta-air-lines-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "ukraine.ohchr.org/en/civilian-casualties-soar-in-ukraine-in-the-first-half-of-2026-amid-escalating-attacks-and-intensifying-use-of-deadly-weapons-un-human-rights-monitors-say",
+      "briefingTier": 1,
+      "assessmentTier": 4,
+      "assessment": "russia-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "freedomhouse.org/article/ecuadors-fight-against-transnational-crime-eroding-human-rights",
+      "briefingTier": 2,
+      "assessmentTier": 3,
+      "assessment": "ecuador-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline",
+      "briefingTier": 4,
+      "assessmentTier": 1,
+      "assessment": "waymo-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "kcur.org/politics-elections-and-government/2026-07-13/ice-arrested-at-least-30-kansas-city-residents-during-the-world-cup-in-deportation-push",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "kansas-city-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "ukraine.ohchr.org/en/civilian-casualties-soar-in-ukraine-in-the-first-half-of-2026-amid-escalating-attacks-and-intensifying-use-of-deadly-weapons-un-human-rights-monitors-say",
+      "briefingTier": 1,
+      "assessmentTier": 4,
+      "assessment": "russia-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "voiceofemirates.com/en/news/2026/07/22/pakistan-army-kills-10-militants-and-arrests-two-suicide-bombers-in-balochistan",
+      "briefingTier": 4,
+      "assessmentTier": 1,
+      "assessment": "pakistan-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "healthcaredive.com/news/best-buy-health-lay-off-161/752784",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "best-buy-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "en.sedaily.com/politics/2026/07/21/president-lee-says-profit-sharing-demand-not-subject-to",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "south-korea-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "barbadostoday.bb/2026/07/21/payday-to-become-legal-obligation-under-wages-bill",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "barbados-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "kcur.org/politics-elections-and-government/2026-07-13/ice-arrested-at-least-30-kansas-city-residents-during-the-world-cup-in-deportation-push",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "kansas-city-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "justice.gov/opa/pr/delta-airlines-agrees-pay-81m-settle-alleged-false-claims-act-violations-related-payroll",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "delta-air-lines-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "ukraine.ohchr.org/en/civilian-casualties-soar-in-ukraine-in-the-first-half-of-2026-amid-escalating-attacks-and-intensifying-use-of-deadly-weapons-un-human-rights-monitors-say",
+      "briefingTier": 1,
+      "assessmentTier": 4,
+      "assessment": "russia-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "ukraine.ohchr.org/en/civilian-casualties-soar-in-ukraine-in-the-first-half-of-2026-amid-escalating-attacks-and-intensifying-use-of-deadly-weapons-un-human-rights-monitors-say",
+      "briefingTier": 1,
+      "assessmentTier": 4,
+      "assessment": "russia-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "aljazeera.com/news/2026/7/23/jailed-opposition-leader-ghannouchi-faints-in-tunisian-prison-due-to-heat",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "tunisia-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-24",
+      "url": "easternherald.com/2026/07/13/nhtsa-waymo-robotaxi-emergency-responder-deadline",
+      "briefingTier": 4,
+      "assessmentTier": 1,
+      "assessment": "waymo-2026-07-24.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-25",
+      "url": "sec.gov/archives/edgar/data/1282648/000155837021002578/batl-20201231x10k.htm",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "halcon-resources-2026-07-25.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-25",
+      "url": "sec.gov/edgar/browse/",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "enservco-2026-07-25.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-25",
+      "url": "sec.gov/archives/edgar/data/1282648/000155837021002578/batl-20201231x10k.htm",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "halcon-resources-2026-07-25.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-25",
+      "url": "sec.gov/edgar/browse/",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "enservco-2026-07-25.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "fortune.com/2026/07/18/citizens-bank-corecivic-geo-group-debanking",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "geo-group-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "oig.hhs.gov/reports/all/2026/the-three-largest-medicare-advantage-organizations-denied-requests-for-long-term-acute-care-and-inpatient-rehabilitation-at-some-of-the-highest-rates",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "unitedhealth-group-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "gpb.org/news/2026/06/18/dhs-quietly-ends-plan-convert-social-circle-warehouse-ice-detention-center",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "atlanta-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "bloomberg.com/news/articles/2026-07-23/india-student-protests-spread-as-parliament-disruptions-persist",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "kolkata-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "aljazeera.com/news/2026/7/25/indias-education-minister-resigns-after-weeks-of-cockroach-protests",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "delhi-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "unocha.org/publications/report/afghanistan/afghanistan-flash-update-1-flooding-eastern-afghanistan-20-21-july-2026",
+      "briefingTier": 2,
+      "assessmentTier": 4,
+      "assessment": "afghanistan-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "aljazeera.com/news/2026/7/25/indias-education-minister-resigns-after-weeks-of-cockroach-protests",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "delhi-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "bloomberg.com/news/articles/2026-07-23/india-student-protests-spread-as-parliament-disruptions-persist",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "kolkata-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "bloomberg.com/news/articles/2026-07-23/india-student-protests-spread-as-parliament-disruptions-persist",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "kolkata-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "washingtontimes.com/news/2026/jul/27/pakistan-monsoon-death-toll-exceeds-100-month-heavy-rain-forecast",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "lahore-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "clickondetroit.com/news/local/2026/07/15/trump-ice-and-detroit-officials-clash-over-immigration-traffic-stop-policy",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "detroit-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "atlantanewsfirst.com/2026/07/26/nearly-100-gather-outside-atlanta-ice-office-vigil-call-due-process",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "atlanta-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "ipsnews.net/2026/07/guatemala-a-narrow-opening-in-a-captured-justice-system",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "guatemala-city-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "oig.hhs.gov/reports/all/2026/the-three-largest-medicare-advantage-organizations-denied-requests-for-long-term-acute-care-and-inpatient-rehabilitation-at-some-of-the-highest-rates",
+      "briefingTier": 1,
+      "assessmentTier": 5,
+      "assessment": "unitedhealth-group-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "npr.org/2026/07/17/nx-s1-5898504/ice-medicaid-palantir-data",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "palantir-ai-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "wfp.org/news/wfp-warns-more-displacement-sudan-fighting-rages-darfurs-and-kordofans-amidst-shrinking",
+      "briefingTier": 2,
+      "assessmentTier": 4,
+      "assessment": "sudan-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "nydailyrecord.com/2026/07/23/charter-communications-pay-penalty-retaliation-new-york",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "charter-communications-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "kpbs.org/news/education/2026/07/21/doj-accuses-ucsd-school-of-medicine-of-racial-discrimination-in-admissions-process",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "university-of-california-san-diego-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "fortune.com/2026/07/18/citizens-bank-corecivic-geo-group-debanking",
+      "briefingTier": 4,
+      "assessmentTier": 2,
+      "assessment": "geo-group-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "blogs.adb.org/blog/preparing-nation-integration-timor-leste-s-path-asean",
+      "briefingTier": 2,
+      "assessmentTier": 4,
+      "assessment": "timor-leste-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "mineralanswers.com/texas/producers/abraxas-petroleum-corporation/417",
+      "briefingTier": 5,
+      "assessmentTier": 2,
+      "assessment": "abraxas-petroleum-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    },
+    {
+      "date": "2026-07-27",
+      "url": "veroscribe.com/blog/abridge-review-2026",
+      "briefingTier": 5,
+      "assessmentTier": 1,
+      "assessment": "abridge-2026-07-27.md",
+      "found": "2026-09-30 (Iteration 79)"
+    }
+  ],
+  "mismatches_note": "Briefing `sourceTier` values contradicting the tier the same-date assessment cites for the same URL. **43 entries, across only 3 briefing dates (2026-07-24, 2026-07-25, 2026-07-27) and 29 distinct URLs** — concentrated, not systemic. 27 OVERSTATE the evidence (the briefing claims a stronger tier than the assessment it cites) and 16 understate it. The worst overstate a blog as tier 5, the top tier: mineralanswers.com and veroscribe.com both carry T5 in a briefing against T2 and T1 in their assessments. The worst understatements are primary sources dropped to T1 — justice.gov (assessment T5), oig.hhs.gov (T5) and the UN's ukraine.ohchr.org (T4). CORRECTION TO THE RECORD: this list shipped EMPTY on 2026-09-30 (Iteration 71) claiming \"0 mismatches\" over 72 compared pairs. That zero was vacuous. The matcher read only one of the citation shapes the assessments actually use — the CS-2 addendum had warned in writing that there were three — so it was comparing under a quarter of the corpus. With all four shapes supported it compares 300 pairs and finds these 43 (Iteration 79). REMEDIATION IS FOUNDER'S (CS-2b): these are published briefings and §1c forbids editing them, so each needs a dated correction rather than a silent retier. The list is shrink-only, so an entry can only leave once that correction exists.",
   "futureDated": [
     {
       "date": "2026-06-06",
