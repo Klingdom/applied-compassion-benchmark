@@ -1,5 +1,58 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 81 — 2026-09-30 (CS-3: the corpus uses both tier conventions, almost exactly half and half)
+
+**Selected:** CS-3's agent-doable half. Deciding what `sourceTier` *means* is a methodology change and the
+founder's; measuring what it currently means is mine. **First iteration applying V10**, so every figure below is
+stated as a fraction of what exists.
+
+**The ambiguity, restated.** Does the tier describe the **outlet** that published an item, or the **authority**
+whose finding the outlet is reporting? Nothing has ever said. Two documented cases a few days apart used opposite
+rules for the same situation, and the mechanical consistency check reports 0 mismatches for both, because each is
+internally consistent.
+
+**Measured — `research/scripts/measure-tier-convention.mjs`:**
+
+| | |
+|---|---|
+| briefings read | 86 |
+| evidence items | 1,244 |
+| with an integer `sourceTier` | 1,244 (**100%**) |
+| excluded: primary-source domain | 459 — high-tier under either rule, so they cannot discriminate |
+| **discriminating sample** | **154 (12.4% of tiered items)** — a non-primary outlet whose claim names an institutional authority |
+
+| within that sample | | |
+|---|---|---|
+| tiered 1–2 → **outlet** convention | 75 | **48.7%** |
+| tiered 4–5 → **authority** convention | 61 | **39.6%** |
+| tiered 3 → indeterminate | 18 | 11.7% |
+
+**Both conventions are in live, near-equal use.** The two cleanest examples sit side by side in the corpus:
+
+- **Reuters** reporting a Los Angeles Superior Court verdict → **T1** (the outlet is tiered)
+- **Al Jazeera** reporting a UN Fact-Finding Mission → **T4** (the authority is tiered)
+
+A reader comparing those two badges would conclude the second finding is far better evidenced. The difference is
+not evidential. It is which of two unstated rules the writer happened to use.
+
+**The measurement corrected itself once.** The first pass put `unwomen.org` and `crisisresponse.iom.int` in the
+*outlet* bucket at T2 — but a UN agency publishing its own report is a primary source under **either** rule, so
+those items cannot discriminate and were polluting the result. Widening the primary-domain exclusion (any `.int`,
+any UN-family org, any government domain) moved the sample from 170 to **154** and the split from 45.9/43.5 to
+**48.7/39.6**. Both figures are in the record; the second is the one to use.
+
+**Limit, stated in the script.** "An authority is named in the claim" is a regex, and a human would disagree with
+some of the 154. It is strong enough to answer CS-3's actual question — *are both conventions live?* — and not
+strong enough to say which is right. The recommendation in the backlog row (tier the **outlet**, carry the
+authority separately in a `reportsAuthority` field, so "tier 2 reporting a tier-4 finding" becomes
+representable rather than a judgement call) stands, and remains a founder decision.
+
+**Why this matters more than it looks.** `test:source-tiers`, built ten iterations ago, checks that a briefing's
+tier matches its assessment's. **It cannot detect this**: when both documents use the same convention they agree,
+and the gate passes, whichever convention that is. So the 43 contradictions it found are the cases where the two
+documents disagreed — and underneath them sits a corpus where roughly half the tier badges mean one thing and
+half mean another, consistently. **A gate can enforce agreement without there being anything to agree about.**
+
 ## Iteration 80 — 2026-09-30 (Meta-review 7, forced by the tolerance this loop tightened six iterations ago)
 
 **Compelled, not selected.** `test:meta-review-cadence` fired at 6 unreviewed against a tolerance of **5** — the
