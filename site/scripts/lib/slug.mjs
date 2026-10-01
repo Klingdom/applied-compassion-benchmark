@@ -105,7 +105,10 @@ export function slugifyFolded(name) {
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[̀-ͯ]/g, "")
-    .replace(/&/g, "and")
+    // D-35: "`&` becomes `-and-`" — hyphens explicit, so a TIGHT ampersand
+    // gets them too. Must stay byte-identical in behaviour to
+    // site/src/lib/slugify.ts, which this file mirrors. See the note there.
+    .replace(/&/g, "-and-")
     .replace(/'/g, "")
     .replace(/\./g, "")
     .replace(/,/g, "")

@@ -1,5 +1,50 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 84 — 2026-09-30 (D-35: a ratified decision and its implementation disagreed, and a test held the disagreement in place)
+
+**Selected:** the D-35 contradiction. D-35 (founder-approved, 2026-09-16) states **"`&` becomes `-and-`"**. The
+code mapped `&` to `and` with no hyphens, relying on **surrounding spaces** to supply them. So the decision and
+the implementation agreed for every spaced ampersand and disagreed for every tight one.
+
+**Measured across all 1,325 published entities:**
+
+| | |
+|---|---|
+| entities containing `&` | **15** |
+| **all** of them pinned | 15 — so nothing is broken today |
+| spaced `&`, pin and code agree | 12 |
+| **tight `&`, pin and code disagree** | **3** — `AT&T`, `S&T Bancorp`, `W&T Offshore` |
+
+The published pins are `at-and-t`, `s-and-t-bancorp`, `w-and-t-offshore` — the **decision's** convention. The
+code would have derived `atandt`, `sandt-bancorp`, `wandt-offshore`. Nothing was broken because every affected
+row carries an explicit pin, but **the next unpinned tight-ampersand name would have followed the code**, landing
+inconsistent with the three names already published.
+
+**Which is canonical: the decision.** Production already follows it, so the code was the outlier. `&` now maps
+to `-and-` in both `site/src/lib/slugify.ts` and its mirror `site/scripts/lib/slug.mjs`. The spaced case is
+untouched, because the existing `-+` collapse folds `procter -and- gamble` back to `procter-and-gamble`.
+
+**Proved it moves nothing, rather than asserting it.** Snapshotted every derived slug for all 1,325 entities
+before and after:
+
+- **3** derived slugs changed — exactly the three tight-ampersand names
+- **0** of them unpinned, so **no published URL moved**
+- **3 of 3** now match their own published pin
+
+**And the finding underneath the finding: a test was holding the contradiction in place.**
+`test-slug-conventions.mjs` carried the fixture `{ name: "AT&T", folded: "atandt" }` — it asserted **the code's
+behaviour as the expectation**, which is why a ratified decision and its implementation could drift apart for two
+weeks with a green build. A fixture that records what the code does cannot notice that the code is wrong.
+
+Corrected, and widened so the case that mattered is pinned down explicitly: `AT&T` → `at-and-t`,
+`S&T Bancorp` → `s-and-t-bancorp`, and `Procter & Gamble` → `procter-and-gamble` to hold the spaced form too.
+`test:slug-conventions` **80 → 85** assertions, chain green at **57** steps, cb-probe 188 still passing.
+
+**Worth stating as a rule, because this is the third shape of it this session.** After a guard that tested its own
+copy of `rowSlug` (V9a) and a gate that compared two nginx configs to each other (V9d-1): **a test whose expected
+value is read off the implementation verifies nothing except that the implementation has not changed.** The
+expectation has to come from somewhere outside the code — a decision record, a published artifact, a specification.
+
 ## Iteration 83 — 2026-09-30 (MS-2: a safety property that was argued in a comment)
 
 **Selected:** MS-2. Iteration 37 fixed a real O(n²) defect — `listRunTrials` re-parsed every trial on every step,

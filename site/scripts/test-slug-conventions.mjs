@@ -248,7 +248,17 @@ const GOLDEN_TABLE = [
   { name: "University of Wisconsin–Madison", folded: "university-of-wisconsin-madison", unfolded: "university-of-wisconsin-madison" },
   // ASCII sanity cases — must not fold/unfold differently since there is
   // nothing to fold, and must exercise the `&` handling difference.
-  { name: "AT&T", folded: "atandt", unfolded: "at-t" },
+  // D-35 says "`&` becomes `-and-`". This fixture asserted `atandt` until
+  // 2026-09-30 — it encoded the CODE's behaviour as the expectation, which is
+  // how the decision and the implementation drifted apart without any test
+  // objecting. The published pin has always been `at-and-t`.
+  //
+  // Both tight and spaced forms are now pinned down, because the tight case is
+  // the only one that ever differed: a spaced `&` already had surrounding
+  // whitespace to supply the hyphens.
+  { name: "AT&T", folded: "at-and-t", unfolded: "at-t" },
+  { name: "S&T Bancorp", folded: "s-and-t-bancorp", unfolded: "s-t-bancorp" },
+  { name: "Procter & Gamble", folded: "procter-and-gamble", unfolded: "procter-gamble" },
   { name: "3M", folded: "3m", unfolded: "3m" },
 ];
 

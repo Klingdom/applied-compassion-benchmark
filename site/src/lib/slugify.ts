@@ -16,7 +16,16 @@ export function slugify(name: string): string {
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/&/g, "and")
+    // D-35: "`&` becomes `-and-`". The hyphens are explicit because a TIGHT
+    // ampersand has no surrounding space to supply them: `&` -> "and" alone
+    // gives "AT&T" -> `atandt`, while the published pin and the decision both
+    // say `at-and-t`. With "-and-" the spaced case is unchanged, because the
+    // `-+` collapse below folds "procter -and- gamble" back to
+    // `procter-and-gamble`. Corrected 2026-09-30 after D-35 and this code were
+    // found to disagree for the three tight-ampersand names (AT&T, S&T Bancorp,
+    // W&T Offshore) — all pinned, so no published URL moved, but the next
+    // unpinned one would have followed the code instead of the decision.
+    .replace(/&/g, "-and-")
     .replace(/'/g, "")
     .replace(/\./g, "")
     .replace(/,/g, "")

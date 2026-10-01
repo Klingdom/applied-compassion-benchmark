@@ -161,7 +161,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   implementation. The new guard **cannot see it**: `test-pinned-slugs` scans `src/app` + `src/components` only.
   Deferred from It. 20 deliberately — `entities.ts` is a core registry and the loop had no local build at the time.
   v1: I2 S4 L2 C5 − E1 − R1 = **11**.
-- **D-35 contradicts `lib/slugify.ts` on the `&` convention.** D-35 states "`&` becomes `-and-`"; the code maps
+- **D-35 vs `lib/slugify.ts` — RESOLVED in favour of the decision (Iteration 84, 2026-09-30).** Measured: 15 entities contain `&`, **all pinned**; 12 spaced forms agreed, **3 tight forms disagreed** (`AT&T`, `S&T Bancorp`, `W&T Offshore`), and the published pins follow **D-35**, so the code was the outlier. `&` now maps to `-and-` in both `site/src/lib/slugify.ts` and its mirror `site/scripts/lib/slug.mjs`. Proved harmless by snapshotting all 1,325 derived slugs before and after: **3 changed, 0 unpinned, 3 of 3 now match their own pin — no published URL moved.** Root cause of the drift: `test-slug-conventions.mjs` asserted `folded: "atandt"`, i.e. **the code's behaviour as the expectation**, so no test could object. Fixture corrected and widened; 80 → 85 assertions. ~~D-35 contradicts `lib/slugify.ts` on the `&` convention.~~ D-35 states "`&` becomes `-and-`"; the code maps
   `&`→`and`, so `AT&T` slugs to `atandt` while the published pin is `at-and-t`. Every affected row is pinned, so
   nothing is broken today — but the decision record and the implementation disagree, and the next unpinned `&` name
   will follow the code, not the decision. Work: correct one to match the other and state which is canonical.
