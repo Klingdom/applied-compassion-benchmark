@@ -1,0 +1,585 @@
+{
+  "entity": "Madrid",
+  "slug": "madrid",
+  "index": "global-cities",
+  "assessment_date": "2026-10-01",
+  "assessment_file": "research/assessments/madrid-2026-10-01.md",
+  "subdim_sidecar_file": "research/assessments/madrid-2026-10-01.subdims.json",
+  "published_scores": {
+    "composite": 65.6,
+    "band": "Established",
+    "rank": 26,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 4,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 48.1,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3.4,
+      "EQU": 2.6,
+      "BND": 3,
+      "ACC": 2.6,
+      "SYS": 2.8,
+      "INT": 3
+    }
+  },
+  "score_delta": -17.5,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "First evidence-based baseline: last_assessed null, no APPLIED_CHANGES entry; published 65.6 never assessed.",
+    "Credited in-window city conduct: immediate housing offer (2026-09-23) and EMVS-mediated return home (2026-09-29) — AC1 = 4.",
+    "City homelessness data: 1,015 counted in 2025 (-9%); places rising 1,210 -> 1,428 in 2026 — A1, AC4 = 4.",
+    "Cañada Real: about 4,500 people (at least 1,800 children) without electricity since October 2020; ECSR found Spain in violation (2025) — EQ3, AB5, A4 = 2, low confidence on city share.",
+    "National decree-laws and regional (Comunidad de Madrid) conduct excluded."
+  ],
+  "evidence": [
+    {
+      "quote": "Ayer entendieron que el Ayuntamiento era el instrumento adecuado para poder llegar a un acuerdo",
+      "claim": "The city's housing company mediated the agreement returning the evicted woman home (countervailing, credited).",
+      "source": "El Correo Gallego",
+      "url": "https://www.elcorreogallego.es/espana/2026/09/29/almeida-reivindica-acuerdo-maricarmen-vuelva-casa-ayuntamiento-siempre-solucion-134787745.html",
+      "publishedDate": "2026-09-29",
+      "sourceTier": 2
+    },
+    {
+      "quote": "The electricity supply was interrupted in October 2020 until today.",
+      "claim": "The ECSR found Spain violated the European Social Charter over Cañada Real power cuts affecting about 4,500 people.",
+      "source": "FEANTSA (reporting European Committee of Social Rights decision)",
+      "url": "https://www.feantsa.org/en/press-release/2025/02/25/press?bcParent=27",
+      "publishedDate": "2025-02-25",
+      "sourceTier": 4
+    },
+    {
+      "claim": "City homelessness service data published on the municipal transparency portal.",
+      "source": "Ayuntamiento de Madrid",
+      "url": "https://transparencia.madrid.es/portales/transparencia/es/Transparencia-por-sectores/Atencion-social/Datos-de-atencion-a-personas-sin-hogar-en-2025/?vgnextfmt=default&vgnextoid=1a1cad0493599910VgnVCM200000f921e388RCRD&vgnextchannel=57a05436bc330710VgnVCM1000001d4a900aRCRD",
+      "publishedDate": "2025",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "v1.2",
+  "integration_premium": 0,
+  "published_composite_reconstruction": 65.6,
+  "math_hygiene_reconstruction_diff": 0,
+  "filing_trigger": "magnitude (-17.5) and band crossing (Established -> Functional)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "screening_3e_bis": {
+    "baseline_provenance": "No applied change and no prior assessment; unassessed initial value.",
+    "directionality": "In-window city conduct was positive and is credited (AC1 = 4, B4 = 3). The downward measurement comes from the first evidence baseline, not from in-window harm by the city. Same category as Valencia 2026-10-01.",
+    "rationale_vs_history": "First baseline; history confirms the score was never assessed.",
+    "calibration": "Spanish city rows (Valencia 60.9, Madrid 65.6) both sit on unassessed values well above evidence; recommend a cohort first-baseline pass.",
+    "filing_trigger": "Magnitude (-17.5) and band crossing (Established -> Functional). Band-crossing evidence: >=2 distinct sources including a tier-5 government source (Ayuntamiento transparency data) and a treaty-body decision (ECSR, via FEANTSA)."
+  },
+  "notes": "First evidence-based baseline of the municipal row; filed on magnitude (-17.5) and band crossing (Established -> Functional). Confidence low: 20 of 40 subdimensions are anchor-3 defaults, and the main adverse item (Cañada Real) is a decision against Spain with shared state/regional/city responsibility. The ECSR sourceTier 4 is assigned to the treaty-body decision as reported by FEANTSA; the coe.int primary page returned 403. A search summary dated the El Salto '1,975 days' figure to October 2026; the article is dated 2025-10-03 and is cited with that date. Consider alongside valencia-2026-10-01.json.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cronicamadrid.com/noticia/1301677/capital/madrid-cuantifica-en-1.015-las-personas-sin-hogar-en-2025-un-86-hombres-y-mayoritariamente-en-centro-y-arganzuela.html",
+          "date": "2025-12",
+          "claim": "The city counted 1,015 homeless people in 2025, down 9% from 1,116 in 2024."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cronicamadrid.com/noticia/1301677/capital/madrid-cuantifica-en-1.015-las-personas-sin-hogar-en-2025-un-86-hombres-y-mayoritariamente-en-centro-y-arganzuela.html",
+          "date": "2025-12"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://transparencia.madrid.es/portales/transparencia/es/Transparencia-por-sectores/Atencion-social/Datos-de-atencion-a-personas-sin-hogar-en-2025/?vgnextfmt=default&vgnextoid=1a1cad0493599910VgnVCM200000f921e388RCRD&vgnextchannel=57a05436bc330710VgnVCM1000001d4a900aRCRD",
+          "date": "2025",
+          "claim": "The city publishes homelessness service data on its transparency portal."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elsaltodiario.com/madrid/cinco-anos-condenadas-oscuridad-4-000-personas-sobreviven-luz-canada-real",
+          "date": "2025-10-03",
+          "quote": "Nunca pensamos que llegaríamos a este punto."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gacetinmadrid.com/2026/04/15/campana-frio-2025-2026-proporciono-alojamiento-1438-personas/",
+          "date": "2026-04-15",
+          "claim": "The 2025-2026 cold-weather campaign housed and supported 1,438 people."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.madridactual.es/noticias-regionales/madrid-ciudad/distrito-retiro/almeida-ofrece-recurso-habitacional-maricarmen-inmediato-20260923-8120184.html",
+          "date": "2026-09-23"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.madridactual.es/noticias-regionales/madrid-ciudad/distrito-retiro/almeida-ofrece-recurso-habitacional-maricarmen-inmediato-20260923-8120184.html",
+          "date": "2026-09-23",
+          "quote": "un recurso habitacional de manera inmediata"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elcorreogallego.es/espana/2026/09/29/almeida-reivindica-acuerdo-maricarmen-vuelva-casa-ayuntamiento-siempre-solucion-134787745.html",
+          "date": "2026-09-29",
+          "quote": "Ayer entendieron que el Ayuntamiento era el instrumento adecuado para poder llegar a un acuerdo"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cronicamadrid.com/noticia/1301677/capital/madrid-cuantifica-en-1.015-las-personas-sin-hogar-en-2025-un-86-hombres-y-mayoritariamente-en-centro-y-arganzuela.html",
+          "date": "2025-12"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cronicamadrid.com/noticia/1301677/capital/madrid-cuantifica-en-1.015-las-personas-sin-hogar-en-2025-un-86-hombres-y-mayoritariamente-en-centro-y-arganzuela.html",
+          "date": "2025-12",
+          "quote": "los recursos de la Red Municipal de Atención a Personas Sin Hogar se ampliarán de manera significativa en 2026, pasando de las 1.210 plazas actuales a 1.428"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.feantsa.org/en/press-release/2025/02/25/press?bcParent=27",
+          "date": "2025-02-25"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.feantsa.org/en/press-release/2025/02/25/press?bcParent=27",
+          "date": "2025-02-25",
+          "quote": "The electricity supply was interrupted in October 2020 until today."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elcorreogallego.es/espana/2026/09/29/almeida-reivindica-acuerdo-maricarmen-vuelva-casa-ayuntamiento-siempre-solucion-134787745.html",
+          "date": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.madridactual.es/noticias-regionales/madrid-ciudad/distrito-retiro/almeida-ofrece-recurso-habitacional-maricarmen-inmediato-20260923-8120184.html",
+          "date": "2026-09-23"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elcorreogallego.es/espana/2026/09/29/almeida-reivindica-acuerdo-maricarmen-vuelva-casa-ayuntamiento-siempre-solucion-134787745.html",
+          "date": "2026-09-29",
+          "quote": "El Ayuntamiento de Madrid siempre está en la solución"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://transparencia.madrid.es/portales/transparencia/es/Transparencia-por-sectores/Atencion-social/Datos-de-atencion-a-personas-sin-hogar-en-2025/?vgnextfmt=default&vgnextoid=1a1cad0493599910VgnVCM200000f921e388RCRD&vgnextchannel=57a05436bc330710VgnVCM1000001d4a900aRCRD",
+          "date": "2025"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.feantsa.org/en/press-release/2025/02/25/press?bcParent=27",
+          "date": "2025-02-25"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cronicamadrid.com/noticia/1301677/capital/madrid-cuantifica-en-1.015-las-personas-sin-hogar-en-2025-un-86-hombres-y-mayoritariamente-en-centro-y-arganzuela.html",
+          "date": "2025-12"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.madridactual.es/noticias-regionales/madrid-ciudad/distrito-retiro/almeida-ofrece-recurso-habitacional-maricarmen-inmediato-20260923-8120184.html",
+          "date": "2026-09-23"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    }
+  ]
+}

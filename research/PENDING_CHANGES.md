@@ -10602,3 +10602,119 @@ Both filing triggers met (magnitude, band crossing). **Withheld under Section 3e
 **Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 29** -- 25 carried forward from 2026-09-22 + 4 new tonight (Progressive, Unum Group, Australia, Abu Dhabi). 0 applied, 0 withdrawn. High priority (band change or delta >15): 21 (18 carried forward + 3 new tonight, all band crossings). Standard (delta 5-15, no band change): 8 (7 carried forward -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton -- + Abu Dhabi tonight). Oldest pending proposal: Rethink Robotics, filed 2026-08-16.
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+---
+
+## 2026-10-01 -- Six First-Ever Baselines + One Real Re-Check | 7 Proposals (4 Band Crossings, 2 Flag-For-Review) | 3 Confirmed, 2 Measured-Not-Filed | 0 Applied
+
+### Summary -- 2026-10-01
+
+Window 2026-09-17 -> 2026-10-01 (14 days). Twenty-seven organizations reviewed; 12 scored (7 proposal-filed, 3 confirmed, 2 measured-not-filed) and 15 screened without scoring. The assessor ran in two passes (an API usage limit cut the first pass off after Valencia; the resumed pass verified Valencia complete and did not modify it).
+
+**Nothing was applied.** Every published score below is the live index value; every other number is a pending proposal.
+
+Six of the seven proposals are **first-ever measurements** (Valencia, Madrid, University of Glasgow, Cornell University, Vietnam, University of Birmingham): `last_assessed` was null in `HEAD:research/rotation-state.json` and none has an `APPLIED_CHANGES.md` entry. For those six the gap reflects a first full assessment replacing an unchecked starting value, **not a measured decline in conduct**. Bangladesh is the one genuine re-measurement (applied 2026-06-16, measured 2026-09-21).
+
+Release watch: 0 sources registered -- detection did not run.
+
+---
+
+### High Priority -- 2026-10-01 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Valencia | global-cities | 60.9 | 41.9 | -19.0 | medium | 2026-10-01 | [proposal](change-proposals/valencia-2026-10-01.json) |
+| Madrid | global-cities | 65.6 | 48.1 | -17.5 | low | 2026-10-01 | [proposal](change-proposals/madrid-2026-10-01.json) |
+| University of Glasgow | universities | 62.5 | 48.7 | -13.8 | low | 2026-10-01 | [proposal](change-proposals/university-of-glasgow-2026-10-01.json) |
+| University of Birmingham | universities | 43.0 | 39.4 | -3.6 | low | 2026-10-01 | [proposal](change-proposals/university-of-birmingham-2026-10-01.json) |
+
+- **Valencia (Established -> Functional, downgrade):** first municipal baseline; published 60.9 is the uniform-seed vector. In-window city conduct was positive (flood protocols, A5/AC1 = 4); opposition-stated homeless-census refusal and shelter gaps (tier 2) weigh against; Generalitat (regional) conduct excluded. Band-crossing floor met: Ajuntament de Valencia (tier 5) + Viva Valencia + The Local (tier 2).
+- **Madrid (Established -> Functional, downgrade, LOW confidence):** first municipal baseline. Credited: immediate housing offer and EMVS-mediated return home for the evicted 87-year-old (AC1 = 4); annual homeless count. Against: Canada Real power cuts (shared state/region/city responsibility) and the unassessed 65.6; 20 of 40 subdimensions are anchor-3 defaults. Band-crossing floor met via a tier-5 municipal transparency source and the ECSR decision as reported by FEANTSA (coe.int returned 403).
+- **University of Glasgow (Established -> Functional, FLAG-FOR-REVIEW):** first baseline of the rank-1 university. Slavery-reparations work credited at anchor 4; arms divestment overridden against 81%/86% consultation support; BAE protest-coordination emails (Al Jazeera, 2026-09-24). Band-crossing evidence rule (>= 1 adverse source at sourceTier >= 4) NOT met -- adverse sources are tier 1-2 -- hence flag-for-review, not downgrade.
+- **University of Birmingham (Functional -> Developing, FLAG-FOR-REVIEW):** first baseline; filed on the band-crossing trigger alone (delta -3.6). Redundancy round falling entirely on migrant/minority-ethnic staff with the equality impact assessment withheld (Morning Star, 2026-09-11, tier 1). 39.4 is 0.6 below the line; adverse sourcing is press only. The scanner's Al Jazeera BAE trigger is not adverse to Birmingham and was not scored against it.
+
+### Standard -- 2026-10-01 (No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Cornell University | universities | 54.7 | 41.9 | -12.8 | medium | 2026-10-01 | [proposal](change-proposals/cornell-university-2026-10-01.json) |
+| Vietnam | countries | 34.4 | 23.8 | -10.6 | medium | 2026-10-01 | [proposal](change-proposals/vietnam-2026-10-01.json) |
+| Bangladesh | countries | 39.8 | 33.1 | -6.7 | medium | 2026-10-01 | [proposal](change-proposals/bangladesh-2026-10-01.json) |
+
+- **Cornell (Functional -> Functional, downgrade):** first baseline (rank 12). Scored on Cornell's own 2026-09-21 statement, the NY Attorney General's announced review and the Tompkins County DA's reopening (Boston Globe, 2026-09-30), and the Faculty Senate's 2025-11-25 finding on protest suspensions. The lawsuit's allegations are NOT scored as fact. Need-based aid and the March 2026 task force credited.
+- **Vietnam (Developing -> Developing, downgrade):** first baseline. Detention of Hiep Tran and Duc Thuan Nguyen confirmed by Vietnamese state media (ABC News, 2026-09-29) is scored; Viet Tan's abduction-from-Cambodia claim is an allegation and is not. HRW World Report 2026 (160+ political prisoners). Note: 34.4 -> 23.8 is the identical start/end of the applied Tunisia first-assessment correction (2026-07-14); 34.4 is also Bangladesh's pre-June value -- a seed-cohort value.
+- **Bangladesh (Developing -> Developing, downgrade):** genuine re-measurement; -4.8 was measured 2026-09-21 (not filed) and -1.9 is new from three September 2026 laws (HRW, 2026-09-22). June labour-reform credit retained.
+
+### Measured, Not Filed -- 2026-10-01
+
+| Entity | Index | Published | Measured | Delta | Reason |
+|--------|-------|-----------|----------|-------|--------|
+| Spain | countries | 60.0 | 51.2 | -8.8 | `spain-2026-08-26` (60.0 -> 50.6) is still pending and unreviewed; 51.2 corroborates it within 0.6. Two Royal Decree-laws (2026-09-29) credited but already in anchors. A second proposal would duplicate one queue item. |
+| South Africa | countries | 50.0 | 41.3 | -8.7 | 3e-bis check 5 (calibration is not a one-off proposal): the 2026-05-07 baseline confirmed 50.0 on largely the same evidence; only about -2.5 is new June-September 2026 conduct. Dimension-level May baseline vs first subdimension-level scoring is a coordinator calibration question. |
+
+### Confirmations -- 2026-10-01
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Egypt | countries | 21.9 | 21.3 | -0.6 | Six Matsda2sh journalists arrested 2026-09-28/29 (CPJ, 2026-09-30); only Transparency had room to fall (2 -> 1). Sits 1.3 above the Critical line. Alaa Abdel Fattah pardon "September 22" (true 2025-09-22, ledger) and al-Iskandrani "17 September" (2025, ledger) not used. |
+| Delta Air Lines | fortune-500 | 62.5 | 61.3 | -1.2 | $78.7M fuel-dump settlement tentatively approved 2026-09-28; Delta denies wrongdoing; Harm Acknowledgment 3 -> 2. Scanner's 38,000 class size not in the fetched article. Sits 1.3 above the Functional/Established line. |
+| Tennessee | us-states | 30.0 | 29.4 | -0.6 | Second failed execution of 2026 (Christa Pike, 2026-09-30); governor halted executions and ordered a third-party review (credited); Systemic Learning 3 -> 2. |
+
+Screened without scoring (15): Pakistan, Barrick Gold, Kingston, Somalia, Myanmar, Cambodia, Hong Kong, Iran, Meta Platforms, Turkey, United States, Northwestern University, OpenAI, Laos, New York City (global-cities). All recommend confirm except New York City (cross-index flag, below). Laos and New York City (global-cities) were not stamped.
+
+---
+
+### Boundary Watch -- 2026-10-01
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Berkshire Hathaway exact 40.0 boundary | Carried forward, not reviewed this cycle | Open since 2026-07-30 |
+| Nasdaq exact 60.0-adjacent boundary | Carried forward, not reviewed this cycle | Open since 2026-07-30 |
+| Alphabet/Google exact 40.0 boundary | Carried forward, not reviewed this cycle | Open since 2026-09-21 |
+| Macy's 0.15-point re-reading (band-crossing-adjacent) | Carried forward, not reviewed this cycle | Open since 2026-09-21 |
+| Unum Group -- proposed 39.4 sits 0.6 points below the Developing/Functional line | Carried forward | Open since 2026-09-24 |
+| Tronox -- published 18.8 sits 1.2 points below the Critical/Developing line, measured above it but withheld | Carried forward | Open since 2026-09-24 |
+| China -- published 19.5 sits 0.5 points above the Critical floor | Carried forward | Open since 2026-09-24 |
+| Djibouti -- published 17.5 sits 2.5 points above the Critical floor | Carried forward | Open since 2026-09-24 |
+| University of Birmingham -- proposed 39.4 sits 0.6 points below the Developing/Functional line | NEW tonight | Open since 2026-10-01 |
+| Egypt -- published 21.9, measured 21.3, sits 1.3 points above the Critical line | NEW tonight | Open since 2026-10-01 |
+| Barrick Gold -- published 18.8 sits 1.2 points below the Developing line; most generous reading reaches 20.0 (still Critical) | NEW tonight | Open since 2026-10-01 |
+| Delta Air Lines -- measured 61.3 sits 1.3 points above the Functional/Established line | NEW tonight | Open since 2026-10-01 |
+
+---
+
+### Calibration Flags -- 2026-10-01
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Unassessed top university ranks (Glasgow rank 1 62.5 -> 48.7; Cornell rank 12 54.7 -> 41.9; Birmingham 43.0 -> 39.4; Columbia 44.5 -> 31.3 from 2026-09-22). Assessor recommends a cohort first-baseline pass rather than one-off moves. | NEW tonight | Open since 2026-10-01 (Columbia 2026-09-22) |
+| Spanish municipal seed values (Valencia 60.9 -> 41.9, Madrid 65.6 -> 48.1, both about 18 points below unassessed values on municipal-only evidence). Review together; Spain country row (pending 50.6, measured 51.2) is the third level. | NEW tonight | Open since 2026-10-01 |
+| First-baseline pattern: 12 first-ever baselines in three proposal cycles (2026-09-22, 09-24, 10-01), 11 lower and 1 higher (Abu Dhabi). A first baseline starts unevidenced subdimensions at the anchor-3 default (about 50 of 100), so seeds above that are mechanically corrected. Needs one calibration decision, not twelve. | NEW tonight | Open since 2026-10-01 |
+| South Africa dimension-level May baseline (50.0) vs first subdimension-level scoring (41.3) on mostly the same evidence. Decide whether dimension-level baselines without sidecars should be re-run at subdimension level. | NEW tonight | Open since 2026-10-01 |
+| New York City cross-index: published 48.4 in global-cities (never assessed) vs 56.3 in us-cities (assessed 2026-06-10). A first global-cities baseline should reuse the us-cities evidence. | NEW tonight | Open since 2026-10-01 |
+| Southeast Asia regional: Vietnam proposed 23.8 (from 34.4); Laos 14.1 (never assessed) and Cambodia 12.5 (last assessed 2026-07-24). Re-baseline together. | NEW tonight | Open since 2026-10-01 |
+| Kingston municipal/national attribution: the 2026-09-18 police killing in Denham Town is Jamaica Constabulary Force conduct (second screening of the same incident); recommend the next Jamaica cycle absorb it. | Reinforced tonight | Open since 2026-09-22 |
+| Fortune-500 Critical-band seed cluster (Penn Virginia, Rex Energy, Tronox at 18.8; Sanchez Energy at 17.2) | Carried forward, not touched tonight | Open since 2026-09-24 |
+| Fortune-500 insurance seed plateau (Allstate 48.4, Hartford/Travelers/MetLife 60.9, Aflac 92.4) | Carried forward, not touched tonight | Open since 2026-09-22 |
+| Global-cities uniform seed plateaus (Bucharest 39.1, Lithuania 62.5, Buenos Aires 46.9) | Carried forward, not touched tonight (Valencia now assessed) | Open since 2026-09-22 |
+| Fortune 500 identical-dimension-vector cohorts (77.9 x11, 60.9 x19) | Carried forward, not touched tonight | Open since 2026-09-22 |
+| RISK-006 band-boundary ambiguity | Carried forward, not touched tonight | Open since 2026-07-30 |
+| Rethink Robotics entity-currency / RISK-003 (also ReWalk Robotics, 83.0, never assessed -- recommended for the next cycle) | Carried forward, oldest item in the queue | Open since 2026-08-16 |
+| Scanner recurring-misdate defect (SC-1 / DC-13) | Reinforced tonight -- 3 known-ledger resurfacings (Egypt pardon, Israel COI report, Figure AI whistleblower) plus new misdates (San Marino 2021 referendum, UK "890 arrests" Sept 2025, Midjourney 2025, J&J 2024, Canada Real "1,975 days" article dated 2025-10-03) | Open since 2026-08-16, reinforced 2026-10-01 |
+| Debunked-claims ledger (known-misdated-claims.json) | Four candidate entries recommended, not added directly per precedent: canada-real-1975-days, egypt-sarah-khalifa-death-sentence (watch, unverified), myanmar-kyauktaw-market-airstrike-2026 (disambiguation from the 2025-09-12 entry), san-marino-abortion-referendum | Open since 2026-08-16 |
+| All other flags listed under 2026-09-24 (Bangladesh baseline calibration, Marsh & McLennan, Lightmatter cohort, Key Energy, Macy's filename, Halodi/1X identity, Netflix cohort, Denmark override-names gap, Dayton/Unitree 35.9, Sanctuary AI RISK-002, Chile and Starbucks 2026-09-01 proposals, Mali-Burkina Faso, Bolivia) | Carried forward, not touched tonight | See 2026-09-24 |
+
+---
+
+### Operational Notes -- 2026-10-01
+
+- Scan: 1,329 entities scanned (roster unchanged); **279 searches against a derived ceiling of 274 (disclosed overage of 5)**; 31 evidence-found, 27 flagged, 22 candidates dropped. Scan start time not recorded.
+- Assessor: 12 scored, 15 screened, 12 subdimension sidecars; all 12 published composites reconstruct exactly under `computeCompositeFromDimensions` (diff 0.0). All seven proposals were independently reproduced by the coordinator with `scoring.mjs` and every baseline matches the live index (no drift).
+- **Rank drift, reported not corrected (4):** University of Birmingham (rotation-state 70 vs published 69), Barrick Gold (397 vs 396), Northwestern University (72 vs 71), Meta Platforms (446 vs 445).
+- Back-fill: General Motors, Penn Virginia, Regions Financial, Rethink Robotics, ReWalk Robotics considered; none assessed (budget used; first ReWalk fetches timed out or returned 403).
+- **Publication drift (`check-publication-drift.mjs`):** `DRIFT -- 1 committed briefing(s) are not served: 2026-09-24`; oldest invisible briefing 2026-09-24 (8 days ago). Re-run after tonight's files were written: `DRIFT -- 2 committed briefing(s) are not served: 2026-10-01, 2026-09-24` (2026-10-01 is local and undeployed, as expected). Reported, not fixed (deploy is a founder act).
+- Validation: `node site/scripts/validate-daily-briefings.mjs` PASS (87 of 87, exit 0); `node site/scripts/lint-daily-briefings.mjs` PASS (89 files clean, exit 0).
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 36** -- 29 carried forward from 2026-09-24 + 7 new tonight (Valencia, Madrid, University of Glasgow, University of Birmingham, Cornell University, Vietnam, Bangladesh). 0 applied, 0 withdrawn. High priority (band change or delta >15): 25 (21 carried forward + 4 new tonight, all band crossings). Standard (delta 5-15, no band change): 11 (8 carried forward -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton, Abu Dhabi -- + 3 new tonight: Cornell University, Vietnam, Bangladesh). Oldest pending proposal: Rethink Robotics, filed 2026-08-16. Outside this count: 37 files with status "approved" (the 2026-08-20 held batch), 346 "applied", 1 "rejected" (735 files in the directory, 7 dated 2026-10-01).
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.

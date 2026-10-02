@@ -1,0 +1,702 @@
+{
+  "entity": "Cornell University",
+  "slug": "cornell-university",
+  "index": "universities",
+  "assessment_date": "2026-10-01",
+  "assessment_file": "research/assessments/cornell-university-2026-10-01.md",
+  "subdim_sidecar_file": "research/assessments/cornell-university-2026-10-01.subdims.json",
+  "published_scores": {
+    "composite": 54.7,
+    "band": "Functional",
+    "rank": 12,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3,
+      "ACT": 3.25,
+      "EQU": 3.75,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3.25,
+      "INT": 2.75
+    }
+  },
+  "proposed_scores": {
+    "composite": 41.9,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.4,
+      "ACT": 3,
+      "EQU": 3,
+      "BND": 2.6,
+      "ACC": 2.6,
+      "SYS": 2.8,
+      "INT": 2.2
+    }
+  },
+  "score_delta": -12.8,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "First evidence-based baseline: rotation-state last_assessed null, no APPLIED_CHANGES entry.",
+    "New York Attorney General announced a review of Cornell's initial response to the 2024 Chi Phi assault allegations; the Tompkins County DA reopened the criminal case (Boston Globe, 2026-09-30).",
+    "Cornell's 2026-09-21 statement acknowledges no failure and routes response to the legal process (E4, AB1 = 2).",
+    "Faculty Senate (2025-11-25) found temporary suspensions used to deter, retaliate or compel, with about 85 percent of suspended students engaged in protest (A4, E3, I4 = 2).",
+    "Credited: need-based aid covering full cost for incomes up to $75,000 (EQ2 = 4); March 2026 task force with evidence-based prevention programmes (A3, E2, S1 = 3)."
+  ],
+  "evidence": [
+    {
+      "quote": "The New York state attorney general announced a review of the university's initial response to the allegations.",
+      "claim": "The NY Attorney General is reviewing Cornell's handling.",
+      "source": "Boston Globe",
+      "url": "https://www.bostonglobe.com/2026/09/30/metro/cornell-university-jane-doe-assault-case-reopened/",
+      "publishedDate": "2026-09-30",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Cornell University is aware of a lawsuit concerning the deeply disturbing allegations of sexual assault involving members of the student community that occurred in 2024.",
+      "claim": "Cornell's institutional response to the lawsuit.",
+      "source": "Cornell University",
+      "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+      "publishedDate": "2026-09-21",
+      "sourceTier": 4
+    },
+    {
+      "quote": "coercive discipline used to deter, retaliate, or compel immediate compliance with Cornell policies",
+      "claim": "Faculty Senate criticism of temporary suspensions of protesters.",
+      "source": "Cornell Daily Sun",
+      "url": "https://www.cornellsun.com/article/2025/11/faculty-senate-passes-resolution-criticizing-overuse-of-temporary-suspensions-calling-for-code-of-conduct-reform",
+      "publishedDate": "2025-11-25",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Students from families earning up to $75,000 receive grants, scholarships and work-study that cover the full cost of attendance.",
+      "claim": "Countervailing: need-based aid framework.",
+      "source": "Cornell Chronicle",
+      "url": "https://news.cornell.edu/stories/2026/03/board-trustees-approves-2026-27-budget-parameters",
+      "publishedDate": "2026-03-23",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "v1.2",
+  "integration_premium": 0,
+  "published_composite_reconstruction": 54.7,
+  "math_hygiene_reconstruction_diff": 0,
+  "filing_trigger": "magnitude (-12.8)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "screening_3e_bis": {
+    "baseline_provenance": "No applied change and no prior assessment; the published score is an unassessed initial value.",
+    "directionality": "Negative in-window evidence (lawsuit, AG review, DA reopening); movement is downward. Positive conduct (aid, task force) credited at anchor.",
+    "rationale_vs_history": "First baseline; no claim contradicts documented history.",
+    "calibration": "Top-15 university ranks appear to be unassessed initial values; recommend the coordinator prioritise first baselines across that cohort.",
+    "filing_trigger": "Magnitude (-12.8). Same band (Functional). Filed."
+  },
+  "notes": "First evidence-based baseline for a never-assessed row. Filed on the magnitude trigger (-12.8); no band change (Functional). The lawsuit allegations themselves are not scored as fact; scores rest on Cornell's own statement, the AG review and the DA's reopening, plus 2025-2026 institutional evidence. Same category as the 2026-09-24 seed recalibrations (Unum Group, Australia). Confidence medium: 12 subdimensions are low-confidence defaults at anchor 3.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17",
+          "quote": "addressing the persistent problem of sexual assault requires long-term institutional work and culture change"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/11/faculty-senate-passes-resolution-criticizing-overuse-of-temporary-suspensions-calling-for-code-of-conduct-reform",
+          "date": "2025-11-25",
+          "quote": "coercive discipline used to deter, retaliate, or compel immediate compliance with Cornell policies"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.wbng.com/2025/03/31/cornell-creates-new-policy-expressive-activity-campus/",
+          "date": "2025-03-31",
+          "claim": "Cornell adopted a new expressive-activity policy in March 2025."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260629-resilient-cornell-transition.cfm",
+          "date": "2026-06-29",
+          "claim": "Cornell describes Resilient Cornell as its operational transition plan."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21",
+          "quote": "We take sexual violence extremely seriously."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/11/faculty-senate-passes-resolution-criticizing-overuse-of-temporary-suspensions-calling-for-code-of-conduct-reform",
+          "date": "2025-11-25"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/10/cornell-ranks-227-out-of-257-schools-in-fire-college-free-speech-rankings",
+          "date": "2025-10",
+          "claim": "FIRE ranked Cornell 227 of 257 schools."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21",
+          "quote": "Cornell University is aware of a lawsuit concerning the deeply disturbing allegations of sexual assault involving members of the student community that occurred in 2024."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bostonglobe.com/2026/09/30/metro/cornell-university-jane-doe-assault-case-reopened/",
+          "date": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.cornell.edu/stories/2026/03/board-trustees-approves-2026-27-budget-parameters",
+          "date": "2026-03-23"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.cornell.edu/stories/2026/03/board-trustees-approves-2026-27-budget-parameters",
+          "date": "2026-03-23"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.cornell.edu/stories/2026/03/board-trustees-approves-2026-27-budget-parameters",
+          "date": "2026-03-23"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.cornell.edu/stories/2026/03/board-trustees-approves-2026-27-budget-parameters",
+          "date": "2026-03-23",
+          "quote": "Students from families earning up to $75,000 receive grants, scholarships and work-study that cover the full cost of attendance."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/11/faculty-senate-passes-resolution-criticizing-overuse-of-temporary-suspensions-calling-for-code-of-conduct-reform",
+          "date": "2025-11-25"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.wskg.org/regional-news/2025-08-26/cornell-officials-say-budget-staffing-cuts-to-continue-due-to-financial-troubles",
+          "date": "2025-08-26",
+          "claim": "Cornell officials said budget and staffing cuts would continue."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.wskg.org/regional-news/2025-06-02/climate-activists-were-banned-from-cornell-after-a-demonstration-they-say-its-an-escalation",
+          "date": "2025-06-02",
+          "claim": "Climate activists were banned from Cornell property after a demonstration."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.bostonglobe.com/2026/09/30/metro/cornell-university-jane-doe-assault-case-reopened/",
+          "date": "2026-09-30",
+          "quote": "The New York state attorney general announced a review of the university's initial response to the allegations."
+        },
+        {
+          "tier": 4,
+          "url": "https://info.cornell.edu/executive-orders/federal-agreement/",
+          "date": "2025-11-07",
+          "claim": "Cornell's federal agreement is not an admission of wrongdoing."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.wbng.com/2025/03/31/cornell-creates-new-policy-expressive-activity-campus/",
+          "date": "2025-03-31"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260317-tfcsa-final-recommendations.cfm",
+          "date": "2026-03-17"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://info.cornell.edu/executive-orders/federal-agreement/",
+          "date": "2025-11-07",
+          "claim": "Cornell agreed to pay $30 million to the US government and $30 million toward agricultural research."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://info.cornell.edu/executive-orders/federal-agreement/",
+          "date": "2025-11-07"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/10/cornell-ranks-227-out-of-257-schools-in-fire-college-free-speech-rankings",
+          "date": "2025-10"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://statements.cornell.edu/2026/20260921-update.cfm",
+          "date": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.wskg.org/regional-news/2025-08-26/cornell-officials-say-budget-staffing-cuts-to-continue-due-to-financial-troubles",
+          "date": "2025-08-26"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.cornellsun.com/article/2025/11/faculty-senate-passes-resolution-criticizing-overuse-of-temporary-suspensions-calling-for-code-of-conduct-reform",
+          "date": "2025-11-25"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    }
+  ]
+}

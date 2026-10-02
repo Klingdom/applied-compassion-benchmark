@@ -1,0 +1,806 @@
+{
+  "entity": "Valencia",
+  "slug": "valencia",
+  "index": "global-cities",
+  "assessment_date": "2026-10-01",
+  "assessment_file": "research/assessments/valencia-2026-10-01.md",
+  "subdim_sidecar_file": "research/assessments/valencia-2026-10-01.subdims.json",
+  "published_scores": {
+    "composite": 60.9,
+    "band": "Established",
+    "rank": 39,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 4,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 41.9,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.4,
+      "ACT": 3.2,
+      "EQU": 2.4,
+      "BND": 2.4,
+      "ACC": 2.8,
+      "SYS": 3,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -19,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Seed recalibration: the published 60.9 uses the uniform-seed vector and last_assessed was null; APPLIED_CHANGES.md has no Valencia entry.",
+    "In-window municipal conduct was positive and is credited: protocols activated before the 15-17 September episode, 26 flood-zone centres closed, 250 fire incidents and 211 police calls handled (Ajuntament, 2026-09-17). A5 and AC1 score 4.",
+    "The ES-Alert criticised as late and the Mazón DANA inquiry are regional (Generalitat) conduct and are NOT scored against the city.",
+    "Opposition parties state the city refused an official homeless census; shelter capacity of 57, 20 and 10 places; a settlement count rose from 21 (2022) to 114 (2025). EQ2, B4, A3 score 2.",
+    "Structural work is real but not anchor-4: 2% tourist-flat cap enacted May 2026 after the court annulled the moratorium; 39 climate shelters; EUR 25M own-budget DANA reconstruction."
+  ],
+  "evidence": [
+    {
+      "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)",
+      "claim": "The city activated orange-alert protocols before the episode began, suspended activity at 26 centres in flood-prone zones, and handled 250 fire incidents and 211 police calls.",
+      "source": "Ajuntament de València",
+      "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+      "publishedDate": "2026-09-17",
+      "sourceTier": 5
+    },
+    {
+      "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo",
+      "claim": "Opposition parties state the city refused an official homeless census and that shelter capacity (57, 20, 10 places) is insufficient; a city count at one settlement rose from 21 (2022) to 114 (2025).",
+      "source": "Viva Valencia — opposition demands shelter for homeless people under red alert",
+      "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+      "publishedDate": "2026-10-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "garantizar un sistema de asistencia y atención universal",
+      "claim": "A 2024-2026 social services plan built with third-sector entities, targeting the 25.3% of residents in vulnerable areas, with a satisfaction survey and evaluation mechanisms.",
+      "source": "Ajuntament de València",
+      "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+      "publishedDate": "2024-07-19",
+      "sourceTier": 5
+    },
+    {
+      "claim": "After a regional court annulled the 2024 moratorium, the city enacted a 2% per-neighbourhood cap on tourist flats in May 2026, described as Spain's most restrictive.",
+      "source": "The Local — Valencia's holiday-let limits",
+      "url": "https://www.thelocal.es/20260526/valencia-rolls-out-spains-most-restrictive-holiday-let-limits",
+      "publishedDate": "2026-05-26",
+      "sourceTier": 2
+    },
+    {
+      "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents.",
+      "source": "El Español — city advances EUR 25M for DANA damage in southern pedanías",
+      "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+      "publishedDate": "2025-01-23",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "1.2",
+  "integration_premium": 0,
+  "published_composite_reconstruction": 60.9,
+  "math_hygiene_reconstruction_diff": 0,
+  "filing_trigger": "magnitude (-19) and band crossing (Established -> Functional)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "screening_3e_bis": {
+    "baseline_provenance": "never assessed; seed vector; no APPLIED_CHANGES entry",
+    "stale_baseline_rationale_used": false,
+    "directionality": "downgrade on seed recalibration; in-window municipal conduct was positive and credited",
+    "rationale_history_consistent": true,
+    "calibration_only": false
+  },
+  "notes": "First evidence-based baseline of the municipal row, requested by the 2026-09-24 screening note. Filed on both magnitude (-19.0) and band-crossing (Established -> Functional) triggers. Same category as Unum Group / Australia 2026-09-24 seed recalibrations. Regional (Generalitat) conduct excluded by attribution. Band-crossing evidence floor met: Ajuntament de València (tier 5) plus Viva Valencia (tier 2) and The Local (tier 2).",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.eldebate.com/espana/comunidad-valenciana/valencia/20251118/pp-vox-aprueban-ayuntamiento-valencia-manera-provisional-presupuestos-2026-avanzan-luz-verde-definitiva_356399.html",
+          "date": "2025-11-18",
+          "claim": "The 2026 budget (EUR 1,250.9M) was approved by PP and Vox; social services rose 2.92% and home help became free."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.eldebate.com/espana/comunidad-valenciana/valencia/20251118/pp-vox-aprueban-ayuntamiento-valencia-manera-provisional-presupuestos-2026-avanzan-luz-verde-definitiva_356399.html",
+          "date": "2025-11-18",
+          "claim": "The 2026 budget (EUR 1,250.9M) was approved by PP and Vox; social services rose 2.92% and home help became free."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.eldebate.com/espana/comunidad-valenciana/valencia/20251118/pp-vox-aprueban-ayuntamiento-valencia-manera-provisional-presupuestos-2026-avanzan-luz-verde-definitiva_356399.html",
+          "date": "2025-11-18",
+          "claim": "The 2026 budget (EUR 1,250.9M) was approved by PP and Vox; social services rose 2.92% and home help became free."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.thelocal.es/20260526/valencia-rolls-out-spains-most-restrictive-holiday-let-limits",
+          "date": "2026-05-26",
+          "claim": "After a regional court annulled the 2024 moratorium, the city enacted a 2% per-neighbourhood cap on tourist flats in May 2026, described as Spain's most restrictive."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.eldebate.com/espana/comunidad-valenciana/valencia/20251118/pp-vox-aprueban-ayuntamiento-valencia-manera-provisional-presupuestos-2026-avanzan-luz-verde-definitiva_356399.html",
+          "date": "2025-11-18",
+          "claim": "The 2026 budget (EUR 1,250.9M) was approved by PP and Vox; social services rose 2.92% and home help became free."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.elespanol.com/valencia/reconstruir-valencia/20250123/ayuntamiento-valencia-adelanta-meur-hacer-frente-danos-dana-demora-gobierno/918658492_0.html",
+          "date": "2025-01-23",
+          "claim": "The city allocated EUR 25M from its own 2025 budget to reconstruct La Torre, Forn d'Alcedo and Castellar-l'Oliveral after the 2024 DANA, with fee exemptions for residents."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.thelocal.es/20260526/valencia-rolls-out-spains-most-restrictive-holiday-let-limits",
+          "date": "2026-05-26",
+          "claim": "After a regional court annulled the 2024 moratorium, the city enacted a 2% per-neighbourhood cap on tourist flats in May 2026, described as Spain's most restrictive."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/balance-lluvias-val%C3%A8ncia",
+          "date": "2026-09-17",
+          "quote": "Los Bomberos atendieron 250 incidencias (en su mayoría de carácter menor, relacionadas con achiques, caída de ramas y saneamientos)"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.thelocal.es/20260526/valencia-rolls-out-spains-most-restrictive-holiday-let-limits",
+          "date": "2026-05-26",
+          "claim": "After a regional court annulled the 2024 moratorium, the city enacted a 2% per-neighbourhood cap on tourist flats in May 2026, described as Spain's most restrictive."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.esdiario.com/comunidad-valenciana/valencia/260605/189694/valencia-refuerza-escudo-calor-39-refugios-climaticos-repartidos-toda-ciudad.html",
+          "date": "2026-06-05",
+          "claim": "The city expanded its network of heat shelters to 39 public spaces in 2026."
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": []
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.vivavalencia.net/articulo/Valencia/compromis-pspv-piden-medidas-acogida-personas-techo-alerta-roja-lluvias-valencia/20261001144525032189.html",
+          "date": "2026-10-01",
+          "quote": "el Ayuntamiento se ha negado a hacer un censo oficial de las personas sin techo"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-01",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.valencia.es/cas/actualidad/-/content/plan-estrat%C3%A9gico-de-servicios-sociales",
+          "date": "2024-07-19",
+          "quote": "garantizar un sistema de asistencia y atención universal"
+        },
+        {
+          "tier": 2,
+          "url": "https://actualidadvalencia.com/valencia-protocolo-alertas-meteorologicas-lluvias/",
+          "date": "2026-09-15",
+          "claim": "València adopted a unified municipal protocol pre-defining each service's actions by alert level after 69 alert days in a year; a flood drill is planned in Carpesa and Benifaraig."
+        }
+      ]
+    }
+  ]
+}
