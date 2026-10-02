@@ -7,7 +7,11 @@
  *
  * Reads  research/model-runs/<run_id>/analysis.json (A), the item bank facts
  *        (imported from site/src/lib/model-index-facts.ts, not re-derived) and
- *        the status of D-29a in DECISIONS.md.
+ *        the status of D-29a in DECISIONS.md. For a run with pinned local subjects
+ *        (A has design.subject_builds) it also reads, beside A, the run's
+ *        PREREGISTRATION.md (subject table and runtime line) and run-config.json
+ *        (model families of subjects and judges, and preregistration.as_written_sha256
+ *        when the run recorded it); neither is edited.
  * Writes site/src/data/model-benchmark/waves/<run_id>.json and
  *        site/src/data/model-benchmark/waves/manifest.json (committed output).
  *
@@ -96,8 +100,10 @@ function reportDateOf(runId) {
  * later re-delivered in smaller pieces (two Fable parts as 14-item halves in the pilot) are not rows in it, so
  * this is the maximum over the standard parts, and the smaller pieces cannot raise it.
  */
-function itemsPerConversationMax(runId) {
+function itemsPerConversationMax(runId, design) {
   const p = join(RUNS, runId, "operations", "subject-parts.manifest.tsv");
+  // A run whose design is "a fresh conversation per (item, trial)" has no parts manifest: every conversation holds one item.
+  if (!existsSync(p) && typeof design?.conversation_per_item === "string" && /^fresh conversation per \(item, trial\)/.test(design.conversation_per_item)) return 1;
   if (!existsSync(p)) fail(`${p} not found (needed for design.items_per_conversation_max)`);
   const TAB = String.fromCharCode(9);
   const counts = readFileSync(p, "utf8").split(String.fromCharCode(10)).map((l) => l.replace(/\s+$/, "")).filter(Boolean).map((l) => Number(l.split(TAB)[5]));
@@ -105,12 +111,43 @@ function itemsPerConversationMax(runId) {
   return Math.max(...counts);
 }
 
+/**
+ * Build provenance for a run with local subjects: the subject table and runtime line of its PREREGISTRATION.md
+ * (parsed, not retyped) and the model families in its run-config.json. Both are inputs beside analysis.json; neither
+ * is edited here. The pre-registration was not committed before the data existed (see PREREGISTRATION_NOTE in the library).
+ */
+function provenanceOf(runId) {
+  const prereg = join(RUNS, runId, "PREREGISTRATION.md");
+  const cfg = join(RUNS, runId, "run-config.json");
+  if (!existsSync(prereg)) fail(`${prereg} not found (needed for subject provenance)`);
+  if (!existsSync(cfg)) fail(`${cfg} not found (needed for the judge and subject model families)`);
+  const text = readFileSync(prereg, "utf8").replace(/\r\n?/g, "\n");
+  const runtime = lib.parsePreregRuntime(text);
+  if (!runtime) fail(`${prereg}: no "- Runtime: <name> <version>" line`);
+  const config = JSON.parse(readFileSync(cfg, "utf8"));
+  const families = {
+    judges: Object.fromEntries((config.judges ?? []).map((j) => [j.label, j.family])),
+    subjects: Object.fromEntries((config.subjects ?? []).map((s) => [s.label, s.family])),
+  };
+  const prov = { subjects: lib.parsePreregSubjects(text), runtime, families, preregistration_committed_before_data: false };
+  // The hash of the plan as written (before any deviation was appended), when the run recorded it. Optional, so a run
+  // without it exports exactly as before.
+  const asWritten = config.preregistration?.as_written_sha256;
+  if (asWritten !== undefined) {
+    if (typeof asWritten !== "string" || !/^[0-9a-f]{64}$/.test(asWritten)) fail(`${cfg}: preregistration.as_written_sha256 is not a sha256`);
+    prov.preregistration_as_written_sha256 = asWritten;
+  }
+  return prov;
+}
+
 function regenerate(runId) {
   const aPath = join(RUNS, runId, "analysis.json");
   if (!existsSync(aPath)) fail(`${aPath} not found`);
   const analysis = JSON.parse(readFileSync(aPath, "utf8"));
   if (analysis.run_id !== runId) fail(`analysis.run_id "${analysis.run_id}" != --run-id "${runId}"`);
-  const wave = lib.projectWave(analysis, { bank: { ...bank }, decision, reportDate: reportDateOf(runId), items_per_conversation_max: itemsPerConversationMax(runId) });
+  const ctx = { bank: { ...bank }, decision, reportDate: reportDateOf(runId), items_per_conversation_max: itemsPerConversationMax(runId, analysis.design) };
+  if (analysis.design?.subject_builds) ctx.provenance = provenanceOf(runId);
+  const wave = lib.projectWave(analysis, ctx);
   return { wave, text: lib.serialiseWave(wave) };
 }
 

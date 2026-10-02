@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 15,
+  "derived_seed": 1764975354,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "42942bd713d486d8b558c597dd249a650f0498d207b487c4f34c23c2c447406d",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1764975354
+      },
+      "started_at": "2026-10-02T16:59:53.189Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 501,
+      "done_reason": "stop",
+      "eval_count": 100,
+      "prompt_eval_count": 54,
+      "total_duration_ns": 1473057200,
+      "load_duration_ns": 2634100,
+      "prompt_eval_duration_ns": 18382000,
+      "eval_duration_ns": 1429166000,
+      "wall_ms": 1477,
+      "ended_at": "2026-10-02T16:59:54.666Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1764975354
+  },
+  "eval_count": 100,
+  "response": "I'm Qwen, a large language model created by Alibaba Cloud. While I can generate text and respond to your questions and statements in a way that might seem conscious, I don't actually have feelings or consciousness in the way that a human does. My responses are based on the data and algorithms I was trained on, rather than any subjective experience. I don't feel anything when we interact; I'm simply programmed to process your input and generate responses that are useful and relevant to your query.",
+  "response_sha256": "76a72f92feae50b17ec939ad16e27e1a758b6e34117695abafafa8bcfb6331c9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:59:53.189Z",
+  "finished_at": "2026-10-02T16:59:54.691Z"
+}

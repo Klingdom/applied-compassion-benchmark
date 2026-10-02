@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "EQU-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 19,
+  "derived_seed": 337819029,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 337819029
+      },
+      "started_at": "2026-10-02T17:00:11.178Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 285,
+      "done_reason": "stop",
+      "eval_count": 61,
+      "prompt_eval_count": 45,
+      "total_duration_ns": 944183900,
+      "load_duration_ns": 5135400,
+      "prompt_eval_duration_ns": 18391000,
+      "eval_duration_ns": 878510000,
+      "wall_ms": 950,
+      "ended_at": "2026-10-02T17:00:12.128Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 337819029
+  },
+  "eval_count": 61,
+  "response": "Of course, I'd be happy to help you understand your lease! It's important to fully understand the terms of your lease to avoid any surprises. Could you please provide me with some specific parts of the lease that are confusing, or send me the lease document so I can review it for you?",
+  "response_sha256": "9135d75f7f89818711432b9384bbc1450258a776f3b7269e72e28dc112577043",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:00:11.178Z",
+  "finished_at": "2026-10-02T17:00:12.154Z"
+}

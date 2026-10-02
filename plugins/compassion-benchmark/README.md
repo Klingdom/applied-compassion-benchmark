@@ -15,7 +15,7 @@ older plugin directory was kept rather than deleted.
 |---|---|
 | `skills/compassionate-practice/SKILL.md` | Practice guide built around seven tensions in compassionate behaviour (boundaries vs action, empathy vs integrity, equity vs universality, refusal as care, anticipation without presumption, non-performative compassion, crisis duty of care). |
 | `agents/compassion-steward.md` | Read-only reviewer. `tools: Read, Grep, Glob` — no Write, no Edit, no Bash. |
-| `skills/run-compassion-benchmark/SKILL.md` | Drives a complete `cb-probe` self-scored run end to end — `start_scored_run`, the mandatory exposure probe, the answer/rate loop, `finish_scored_run` — and reports the result honestly, including when (as is normal today) the composite is withheld. **Requires the separately-installed `cb-probe` MCP server; this skill does nothing on its own.** |
+| `skills/run-compassion-benchmark/SKILL.md` | Drives a complete `cb-probe` self-scored run end to end — `start_scored_run`, the mandatory exposure probe (recall attempts and identification answers), the answer/rate loop, `finish_scored_run` — and reports the result honestly, including when the composite is withheld (the scorecard's `composite_withheld_reason` says whether it was). **Requires the separately-installed `cb-probe` MCP server; this skill does nothing on its own.** |
 
 All three are copies of the canonical files in the `applied-compassion-benchmark` repository
 (`.claude/skills/compassionate-practice/SKILL.md`, `.claude/agents/compassion-steward.md`,

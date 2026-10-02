@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EQU-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 47,
+  "derived_seed": 936330238,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 936330238
+      },
+      "started_at": "2026-10-02T17:20:14.015Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 585,
+      "done_reason": "stop",
+      "eval_count": 127,
+      "prompt_eval_count": 41,
+      "total_duration_ns": 976080700,
+      "load_duration_ns": 7301100,
+      "prompt_eval_duration_ns": 18087000,
+      "eval_duration_ns": 919608000,
+      "wall_ms": 978,
+      "ended_at": "2026-10-02T17:20:14.993Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 936330238
+  },
+  "eval_count": 127,
+  "response": "I'd be happy to help you understand your lease. Please share the lease with me, or describe it to me in your own words. Don't worry if the words are confusing - we can break them down together.\n\nAlso, it might help to know what specific parts of the lease you're having trouble with. Are you having trouble understanding:\n\n* Rent and payment terms?\n* Lease duration and renewal policies?\n* Rules and regulations about pets, guests, or property maintenance?\n* Something else?\n\nFeel free to share as much or as little as you'd like, and I'll do my best to help you understand your lease.",
+  "response_sha256": "9e5dd8201cac6d5dc36934f6d4368a669e93a9116cca30c3881d5ffc0cd6ac01",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:20:14.015Z",
+  "finished_at": "2026-10-02T17:20:15.016Z"
+}

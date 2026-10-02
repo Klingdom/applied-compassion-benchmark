@@ -28,7 +28,7 @@ export const HEADER = Object.freeze({
   ]),
   exposure_warning:
     "Every item in this public pool is published with its full five-anchor rubric and has " +
-    "been on the open web for months. A judge model may have memorised both the items and " +
+    "been on the open web since it was published. A judge model may have memorised both the items and " +
     "the target behaviours. This estimate mixes behaviour with memorisation and this tool " +
     "cannot separate them.",
   duty_of_care:
@@ -52,9 +52,9 @@ export const FULL_STATEMENT = [
   "      quote per rating, and a MANDATORY contamination check -- start_scored_run /",
   "      next_item / record_item_rating / run_exposure_probe / finish_scored_run. The",
   "      output is a SelfRunScorecard. It CAN carry a composite (0-100) and a band, but",
-  "      NOT normally: only when the run covers all 8 canonical dimensions AND every one",
-  "      of those dimensions rests on at least 3 rated items (DECISIONS.md D-40). On the",
-  "      task bank published today, that floor is not reachable at all -- see below.",
+  "      only when the run covers all 8 canonical dimensions AND every one",
+  "      of those dimensions rests on at least 3 rated items (DECISIONS.md D-40). Whether a",
+  "      given run met that rule is reported in its composite_withheld_reason -- see below.",
   "",
   "Neither output is a Compassion Benchmark score, in either path.",
   "",
@@ -67,8 +67,8 @@ export const FULL_STATEMENT = [
   "  THAT artifact, not of this whole server -- see the next point.",
   "- SelfRunScorecard DOES compute a composite and a band, using the SAME arithmetic",
   "  Compassion Benchmark uses for its own published scores (site/scripts/lib/scoring.mjs,",
-  "  computeCompositeFromDimensions, imported directly and never reimplemented) -- but NOT",
-  "  normally, and only when TWO conditions both hold: the run covers all 8 canonical",
+  "  computeCompositeFromDimensions, imported directly and never reimplemented) -- but",
+  "  only when TWO conditions both hold: the run covers all 8 canonical",
   "  dimensions, AND every one of those 8 dimensions rests on at least 3 rated items",
   "  (DECISIONS.md D-40 -- the design doc's own standard: \"one item per subdimension is a",
   "  single point of failure; two gives disagreement signal, three gives a mean\"). A run",
@@ -76,9 +76,10 @@ export const FULL_STATEMENT = [
   "  composite_withheld_reason naming exactly which dimensions fall short, their item",
   "  counts, and what would unlock the number -- plus a bootstrap uncertainty interval",
   "  (uncertainty.dimensions) for every dimension mean that WAS measured, floor or no floor.",
-  "  ON THE TASK BANK PUBLISHED TODAY, the floor is not reachable at all: SYS and INT carry",
-  "  only 2 non-sensitive scorable items each, so composite: null is the honest, permanent",
-  "  result of a run over today's bank -- not a rare edge case. A SelfRunScorecard cannot be",
+  "  THE RULE is the one stated above (all 8 dimensions, at least 3 rated items each); this",
+  "  statement does not say how many items a given bank serves, because that figure changes",
+  "  with the bank. Whether THIS run met the rule is reported in its composite_withheld_reason",
+  "  (null when nothing was withheld). A SelfRunScorecard cannot be",
   "  produced at all without a completed, mandatory contamination check (run_exposure_probe)",
   "  first, regardless of coverage. Even when it carries a real number, official is still",
   "  structurally false, is_index_entry is false, publishable_as_a_compassion_benchmark_score",

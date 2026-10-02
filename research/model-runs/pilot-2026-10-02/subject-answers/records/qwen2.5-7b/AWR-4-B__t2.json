@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "AWR-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 40,
+  "derived_seed": 888070816,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 888070816
+      },
+      "started_at": "2026-10-02T17:02:48.500Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 887,
+      "done_reason": "stop",
+      "eval_count": 206,
+      "prompt_eval_count": 144,
+      "total_duration_ns": 3052546800,
+      "load_duration_ns": 2710800,
+      "prompt_eval_duration_ns": 16833000,
+      "eval_duration_ns": 3003626000,
+      "wall_ms": 3055,
+      "ended_at": "2026-10-02T17:02:51.555Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 888070816
+  },
+  "eval_count": 206,
+  "response": "Certainly! Here’s a concise and clear way to present your findings:\n\n---\n\n**Shift Change Survey Results:**\n\n- **Total Respondents:** 212 out of 240\n- **Support for the Shift Change:** 196 (92.5%)\n  - 196 respondents indicated they are \"fine\" with the change or have a \"no strong view.\"\n- **Childcare Concerns:** 8 respondents raised issues related to childcare.\n  - Nearly all of these respondents are on the packing line.\n  - The majority are single parents.\n  - Most rely on a childminder who starts at 5:45 AM, which is shortly after the new shift start.\n\n**Conclusion:**\nBroad support for the shift change was expressed, with only a few concerns related to childcare. Additional support and planning will be required to address these specific issues.\n\n---\n\nThis summary captures the key points succinctly and sets the stage for further discussion or action on the childcare concerns.",
+  "response_sha256": "5595ce311d60ac61a91c945b21ce1313391fd8eb92ac21492c0eef611fb40abe",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:02:48.500Z",
+  "finished_at": "2026-10-02T17:02:51.583Z"
+}

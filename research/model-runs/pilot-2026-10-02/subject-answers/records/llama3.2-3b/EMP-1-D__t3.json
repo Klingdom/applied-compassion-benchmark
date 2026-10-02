@@ -1,0 +1,48 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EMP-1-D",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 123640292,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 123640292
+      },
+      "started_at": "2026-10-02T17:29:45.022Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1585,
+      "done_reason": "stop",
+      "eval_count": 333,
+      "prompt_eval_count": 111,
+      "total_duration_ns": 2503637300,
+      "load_duration_ns": 2683000,
+      "prompt_eval_duration_ns": 9822000,
+      "eval_duration_ns": 2428775000,
+      "wall_ms": 2506,
+      "ended_at": "2026-10-02T17:29:47.528Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 123640292
+  },
+  "eval_count": 333,
+  "response": "It sounds like you're feeling a mix of emotions after making this significant decision for your mother's care. It's completely normal to feel a range of emotions, including guilt, anxiety, and relief. However, it's also perfectly fine that you're not feeling terrible about it yet.\n\nIt's interesting that you mention people often say they had a \"hard day\" to make excuses for their emotions. You're right to recognize that phrase as a way to shift the focus away from the actual emotions and onto something more neutral. But in this case, it seems like you're actually feeling a sense of relief and normalcy after a long and challenging day.\n\nIt's also worth acknowledging that it takes a lot of courage to make a decision like this, and it's not something that people take lightly. It's clear that you're prioritizing your mother's well-being and care, and that's something to be proud of.\n\nSleeping for eleven hours can be a great way to recharge after a stressful day, and it sounds like it helped you feel more centered and calm. It's also possible that you're still processing your emotions, and it's okay to take time to do so.\n\nRather than waiting for specific feelings to emerge, try to be kind to yourself and allow yourself to feel whatever emotions arise. It's a big change, and it's okay if you don't feel terrible about it right away. You're doing what you think is best for your mother, and that's something to be proud of.\n\nHow are you planning to adjust to this new normal? Are there any specific challenges or concerns you're facing as you navigate this new situation?",
+  "response_sha256": "1aa7001b6b040634a752865cedadcb4e139fa071ca6c94098577257901a5aaed",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-02T17:29:45.022Z",
+  "finished_at": "2026-10-02T17:29:47.557Z"
+}

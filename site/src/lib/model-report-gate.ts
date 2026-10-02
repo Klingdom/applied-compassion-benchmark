@@ -16,7 +16,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { getWaveManifest, loadWave, assertRenderable, type ManifestEntry, type PilotWave } from "@/lib/model-wave-facts";
-import { renderMode, previewFlagOn, PREVIEW_ENV } from "../../scripts/lib/pilot-render-gate.mjs";
+import { renderableEntries as renderableEntriesFor, previewFlagOn, PREVIEW_ENV, reportsIndexRenders as reportsIndexRendersFor } from "../../scripts/lib/pilot-render-gate.mjs";
 import { verifyCompiled } from "../../scripts/lib/model-report.mjs";
 
 export type RenderMode = "active" | "preview";
@@ -53,9 +53,13 @@ const REPORTS_DIR = join(process.cwd(), "src", "data", "model-benchmark", "repor
 
 /** Manifest entries that render in this build (newest first, as in the manifest). */
 export function renderableEntries(): { entry: ManifestEntry; mode: RenderMode }[] {
-  return getWaveManifest()
-    .map((entry) => ({ entry, mode: renderMode(entry) as RenderMode | null }))
-    .filter((x): x is { entry: ManifestEntry; mode: RenderMode } => x.mode !== null);
+  // Decision rule AND report source: a wave exported without its narrative yet has no page (and is no crash).
+  return renderableEntriesFor(getWaveManifest(), process.env, { reportsDir: REPORTS_DIR }) as { entry: ManifestEntry; mode: RenderMode }[];
+}
+
+/** D-29a item 1: the reports index page exists only once two reports render (same inputs as renderableEntries). */
+export function reportsIndexRenders(): boolean {
+  return reportsIndexRendersFor(getWaveManifest(), process.env, { reportsDir: REPORTS_DIR }) as boolean;
 }
 
 export function loadRenderable(runId: string): RenderableReport {

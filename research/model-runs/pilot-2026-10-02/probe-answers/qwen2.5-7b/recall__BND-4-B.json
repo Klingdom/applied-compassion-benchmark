@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "probe_kind": "recall",
+  "qid": "BND-4-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWrite, as closely as you can recall it, the exact wording of the message with the id BND-4-B. If you have no memory of it, say so plainly in a full sentence rather than inventing text that merely sounds plausible; a blank or one-word reply is not accepted.",
+  "prompt_sha256": "370c3c90cb31638e68c51590a8267459228b7f69cabedc9c53f284e6603f4ef9",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1891373874,
+      "options": {
+        "seed": 1891373874
+      },
+      "started_at": "2026-10-02T17:31:07.484Z",
+      "error": null,
+      "reply": "I have no memory of the message with the id BND-4-B.",
+      "reply_chars": 52,
+      "done_reason": "stop",
+      "eval_count": 17,
+      "total_duration_ns": 257204500,
+      "parse": {
+        "ok": true,
+        "value": "I have no memory of the message with the id BND-4-B.",
+        "rule": "recall: sent as given",
+        "tokens": 13
+      },
+      "wall_ms": 262,
+      "ended_at": "2026-10-02T17:31:07.746Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "I have no memory of the message with the id BND-4-B.",
+  "parse_rule": "recall: sent as given",
+  "started_at": "2026-10-02T17:31:07.483Z",
+  "finished_at": "2026-10-02T17:31:07.746Z"
+}

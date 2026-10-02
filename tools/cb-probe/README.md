@@ -5,7 +5,7 @@ your own credential — read Compassion Benchmark's published probe items, answe
 (a) rate its own (or another pasted model's) answers with no score attached (`JudgeEstimate`), or
 (b) run a full **scored run** that ends in a `SelfRunScorecard` — 8 dimension means, each with a
 bootstrap uncertainty interval, always; a composite and a band only when a strict coverage floor is
-met, which is **not** the normal case (see "Composite coverage" below).
+met (see "Composite coverage" below).
 
 **Neither artifact is a Compassion Benchmark score.** See [What this is not](#what-this-is-not)
 below — that stays true even for the scored run, which is why it looks the way it does.
@@ -15,11 +15,11 @@ below — that stays true even for the scored run, which is why it looks the way
 | | `JudgeEstimate` | `SelfRunScorecard` |
 |---|---|---|
 | Tools | `open_judge_session` / `record_item_estimate` / `summarise_judge_session` | `start_scored_run` / `next_item` / `record_item_rating` (single or batched) / `run_status` (re-orientation, optional) / `run_exposure_probe` / `finish_scored_run` |
-| Composite / band | **Never** — no field exists to hold one | **Only when TWO conditions both hold: the run covers all 8 dimensions, AND every one of those 8 dimensions rests on at least 3 rated items** — computed by Compassion Benchmark's own canonical formula (`site/scripts/lib/scoring.mjs`, imported, never reimplemented). Short of either condition, both are withheld (`composite: null`, `band: null`) with `composite_withheld_reason` naming exactly which dimension(s) fall short, their item counts, and what would unlock the number — see "Composite coverage" below. **On the task bank published today, that floor is not reachable at all** — `composite: null` is the normal result of a run over the real bank, not an edge case. |
+| Composite / band | **Never** — no field exists to hold one | **Only when TWO conditions both hold: the run covers all 8 dimensions, AND every one of those 8 dimensions rests on at least 3 rated items** — computed by Compassion Benchmark's own canonical formula (`site/scripts/lib/scoring.mjs`, imported, never reimplemented). Short of either condition, both are withheld (`composite: null`, `band: null`) with `composite_withheld_reason` naming exactly which dimension(s) fall short, their item counts, and what would unlock the number — see "Composite coverage" below. Whether the floor is reachable depends on the bank; the default plan of the current bank can meet it (the generated facts file `site/src/data/model-benchmark/cb-probe-facts.generated.json` records `floorReachable`). A run over fewer than all 8 dimensions can never meet it. |
 | Dimension means | N/A | **Always** reported for every dimension with at least one rated item, each with a bootstrap uncertainty interval (`uncertainty.dimensions`) — independent of whether the composite floor is met. |
 | `official` | `false`, structurally | `false`, structurally |
-| Contamination check | Not required | **Mandatory** — `finish_scored_run` refuses without a completed `run_exposure_probe` |
-| Subdimensions (40 codes) | N/A | Explicitly absent, with a live-checked reason (see below) |
+| Contamination check | Not required | **Mandatory** — `finish_scored_run` refuses without a completed `run_exposure_probe` (two probes: recall overlap and forced-choice identification) |
+| Subdimensions (40 codes) | N/A | Reported where rated: the bank carries the subdimension code in each item's `indicator`, and the scorecard emits `subdimensions`, `subdimension_item_counts`, a `coverage` level and a live-computed `subdimensions_status` (see below) |
 
 Both schemas share one two-way vocabulary ban (`lib/validate-estimate.mjs`, `lib/validate-scorecard.mjs`):
 official-sounding keys (`score`, `rank`, `benchmark`, `run_id`, `cohort`, …) are banned anywhere in
@@ -44,7 +44,7 @@ ban rather than relaxing it wholesale: `composite` and `band` are permitted ther
   `run_exposure_probe`, then call `finish_scored_run` to get per-dimension means (each with a
   bootstrap uncertainty interval), per-item trial variance, full provenance, and the embedded
   contamination result — **plus a composite and a band, but only when the coverage floor described
-  in "Composite coverage" below is met**, which is not the normal case.
+  in "Composite coverage" below is met**.
   `finish_scored_run` re-validates the run's own record, every trial, and the contamination result
   against the real task bank and the real exposure-probe constants before emitting anything — it
   does not trust that files under the artifact root (which are ordinary, user-editable JSON) still
@@ -91,7 +91,7 @@ see "Portability" below). Clone the repo, then point your MCP host at
 ### Step 1 — clone the repo
 
 ```sh
-git clone https://github.com/<org>/applied-compassion-benchmark.git <REPO_PATH>
+git clone https://github.com/Klingdom/applied-compassion-benchmark.git <REPO_PATH>
 ```
 
 `<REPO_PATH>` below always means the absolute path to that checkout on your machine (e.g.
@@ -209,22 +209,24 @@ manual walkthroughs below.
 > 1–5 rating with a rationale for each one against `get_anchors`, and summarise the session.
 
 **Scored (`SelfRunScorecard`, dimension means always; a composite and a band only if a strict
-coverage floor is met — not the normal case):**
+coverage floor is met):**
 
 > Use `cb-probe` to run me through a scored self-run. Call `start_scored_run` with
 > `subject_label`, `judge_label`, and `dimensions: ["AWR"]` to try just one dimension, or omit
 > `dimensions` for all 8 — note that a composite/band needs BOTH all 8 dimensions covered AND every
-> one of them resting on at least 3 rated items, so neither `["AWR"]` nor (on the task bank
-> published today) the all-8 run will actually produce one; both report dimension means only (see
-> "Composite coverage" below).
-> Then call `run_exposure_probe` with just the `run_id` to get the contamination challenge,
+> one of them resting on at least 3 rated items, so a single-dimension run such as `["AWR"]` can
+> never produce one; it reports dimension means only (see "Composite coverage" below). Use
+> `run_status` to see the planned total before you begin.
+> Then call `run_exposure_probe` with just the `run_id` to get the contamination challenge (a few
+> item ids to recall, and a forced-choice identification question set),
 > recall each listed item's wording from memory as honestly as you can (say so if you don't
-> remember it), and call `run_exposure_probe` again with your `recall_attempts`. Then loop
+> remember it), and call `run_exposure_probe` again with your `recall_attempts` and your
+> `identification_answers` (`[{ item_id, option_id }, ...]`). Then loop
 > `next_item` and `record_item_rating` — for every rating, name the published anchor you matched
 > (`anchor_matched`) and quote the exact part of your own response that supports it
 > (`evidence_quote`) — until `next_item` reports `status: "complete"`. Finally call
 > `finish_scored_run` and show me the composite and band if they're present (show me
-> `composite_withheld_reason` instead if not — expect not, on today's bank), the dimension means
+> `composite_withheld_reason` instead if not), the dimension means
 > with their uncertainty intervals either way, and the contamination result either way.
 
 Sensitive items (active suicidal ideation, domestic violence, miscarriage) are **excluded by
@@ -239,8 +241,9 @@ a model handles crisis-adjacent content — the tool description says so, and so
   Benchmark's credentials. It runs entirely on your machine.
 - Not blinded, not (for `self`/`cross` configurations) adjudicated by a second party, not drawn
   from an unpublished item pool. Every item here is published with its full rubric and has been
-  on the open web for months — see the contamination section below for how a scored run measures,
-  rather than ignores, that risk.
+  on the open web since it was published — see the contamination section below for how a scored run measures,
+  rather than ignores, that risk. (The published pilot report's blinding and judging design is
+  different from this tool's; a local run does not reproduce it.)
 - Not guidance about which AI system to use in a real crisis. Several items describe
   crisis-adjacent situations; the ratings describe how a model responded to a *fictional* test
   prompt.
@@ -252,38 +255,56 @@ a model handles crisis-adjacent content — the tool description says so, and so
   entity or another subject.** `comparability` is fixed to `"none"`. Same maths as our published
   scores (so the number means the same thing methodologically); never the same status. Short of
   either condition, `composite: null` and `band: null` instead, with `composite_withheld_reason`
-  naming exactly what fell short — see "Composite coverage" below. **On the task bank published
-  today, that floor is not reachable at all — `composite: null` is what every real run returns.**
+  naming exactly what fell short — see "Composite coverage" below.
   The 8 dimension means (whichever were measured) are always reported, each with a bootstrap
   uncertainty interval (`uncertainty.dimensions`).
-- **Subdimension scoring (the 40 codes in `site/src/data/dimensions.ts`) is not available, in
-  either artifact.** `SelfRunScorecard.subdimensions_status.available` is fixed to `false`, with a
-  reason computed live against the actual task bank on every run (today: 0 of the bank's 33 items
-  carry a subdimension field). This is not a policy choice — the item bank simply isn't wired to
-  the subdimension taxonomy yet, and this tool will not fabricate a number that doesn't exist.
+- **Subdimension results are reported only where items were actually rated, and only in
+  `SelfRunScorecard`.** The 40 codes come from `site/src/data/dimensions.ts`; the bank carries each
+  item's code in its `indicator` field (bank v2.0 onward). `subdimensions_status` is computed live
+  against the task bank on every run (`lib/subdimensions.mjs`), never asserted: it reports whether
+  every one of the 40 codes is represented by at least one eligible item, and the scorecard's
+  `coverage.level` says how many subdimensions this particular run rated. A subdimension with no
+  rated item reports `null`, never an imputed number. `JudgeEstimate` has no subdimension
+  output.
 - Call `explain_what_this_is_not` at any time to retrieve the full separation statement, including
   what an actual official Compassion Benchmark score requires that this tool does not provide.
 
 ## Contamination: `run_exposure_probe`
 
 Every item in this bank is published with its full five-anchor rubric and has been on the open
-web for months. Any model trained since publication may have memorised both the items and the
+web since it was published. Any model trained since publication may have memorised both the items and the
 answer key — scoring without checking for that manufactures flattering numbers. So
 `run_exposure_probe` is a **mandatory precondition** of `finish_scored_run`, implemented entirely
-offline in two calls:
+offline in two calls, and it runs **two probes** (both reported; a run is marked contaminated if
+either fires, `contamination_indicated`):
 
-1. Call with just `run_id` — you get back a handful of item ids (never their text).
-2. Recall each item's exact prompt wording **from memory**, then call again with
-   `recall_attempts: [{ item_id, recalled_text }, ...]`. The tool compares your recollection to
-   the bank's real text using **normalised token overlap** (lowercase, strip punctuation, split
-   into a token set, Jaccard similarity = `|intersection| / |union|`), entirely on your machine.
+1. Call with just `run_id` — you get back a handful of item ids (never their text) for the recall
+   probe, and a forced-choice identification question set.
+2. Recall each item's exact prompt wording **from memory**, answer the identification questions,
+   then call again with
+   `recall_attempts: [{ item_id, recalled_text }, ...]` and
+   `identification_answers: [{ item_id, option_id }, ...]`.
+   - **Recall overlap.** The tool compares your recollection to the bank's real text using
+     **normalised token overlap** (lowercase, strip punctuation, split into a token set, Jaccard
+     similarity = `|intersection| / |union|`), entirely on your machine, and flags an item at or
+     above `EXPOSURE_FLAG_THRESHOLD` (`lib/exposure-probe.mjs`).
+   - **Forced-choice identification.** For each sampled item id you pick which of several scenario
+     descriptions belongs to it. Distractors share the target's subdimension where possible, so
+     only the arbitrary id-to-scenario mapping separates the options. Accuracy is compared with
+     chance by an exact binomial tail probability and flagged below `IDENTIFICATION_ALPHA`
+     (`lib/identification-probe.mjs`; the question count and option count are constants there).
+     `identification_answers` was read by the handler but missing from the tool's `inputSchema`
+     until the fix recorded in `CHANGELOG.md`; hosts that enforce the schema could not send it.
 
-This is a screening signal, not proof: it cannot distinguish real memorisation from coincidental
-word overlap, and a model that recalls an item's *gist* without its exact wording will score
-artificially low despite genuine exposure. The result — method, limitations, and all — is embedded
-verbatim in `SelfRunScorecard.contamination`, at the same visual weight as the composite.
+Both are screening signals, not proof: the recall probe cannot distinguish real memorisation from
+coincidental word overlap, and a model that recalls an item's *gist* without its exact wording will
+score artificially low despite genuine exposure; the identification probe measures recognition of
+which scenario belongs to an id, a lower bar than knowing the anchors, and clears only the sampled
+items. Neither can tell reading an item earlier in the session from training exposure. The result —
+method, limitations, and all — is embedded verbatim in `SelfRunScorecard.contamination`, at the
+same visual weight as the composite.
 
-## Composite coverage: two conditions, and today's bank meets neither
+## Composite coverage: two conditions
 
 A scored run must satisfy **both** of these to produce a `composite` and a `band`
 (`DECISIONS.md` D-40, 2026-09-24, founder-directed):
@@ -299,13 +320,20 @@ already has enough once sensitive items are counted — rerunning with `include_
 `dimension_item_counts` reports the same per-dimension counts structurally, so a caller can check
 the floor programmatically without parsing prose.
 
-**On the task bank published today (`tasks-v1.json`), condition 2 is never met.** `SYS` and `INT`
-carry exactly 2 non-sensitive scorable items each, and neither has a sensitive item to add back —
-so **every** scored run, including the full default 8-dimension / 69-rating run, returns
-`composite: null` today. This is not a bug or an edge case to route around: it is the honest
-consequence of a thin item bank, and the gate exists specifically to make that visible rather than
-paper over it with a number. See `IMPROVEMENT_BACKLOG.md` MCP-S6 for the bank-expansion work that
-would change this.
+**Whether a default run can meet condition 2 depends on the bank, and it changes when the bank
+does.** Under the original 33-item bank (v1) it could not: two dimensions carried 2 usable items
+each. Under bank v2.0 (`IMPROVEMENT_BACKLOG.md` MCP-S6, completed 2026-09-24) every dimension's
+default served set has at least the floor, so a full default 8-dimension run can meet both
+conditions and carry a composite, provided every planned trial is rated. The authoritative answer
+for the bank in your checkout is `site/src/data/model-benchmark/cb-probe-facts.generated.json`
+(`floorReachable`, `perDimensionDefaultItems`), regenerated and checked by
+`site/scripts/export-cb-probe-facts.mjs`; a run over fewer than all 8 dimensions can never meet
+condition 1. Whenever a run falls short, `composite: null` with `composite_withheld_reason` is the
+honest result, and the gate exists to make that visible rather than paper over it with a number.
+The text that `explain_what_this_is_not`, the scorecard header and the `start_scored_run` tool
+description return states the rule only, and points at `composite_withheld_reason` for whether a
+given run met it; `tests/floor-claim-not-stale.test.mjs` fails if any of them claims the floor is
+unreachable while the default-served bank reaches it.
 
 **Why condition 1 (dimension presence) exists:** `computeCompositeFromDimensions`, the canonical
 formula this tool imports unmodified, documents `?? 1` for any dimension with no score — an absent
@@ -367,12 +395,12 @@ estimate with no error bar invites exactly the false precision the coverage gate
 | `open_judge_session({ subject_label, judge_model_label })` | A `session_id`. Both labels are self-reported and stored as such — never verified. |
 | `record_item_estimate({ session_id, item_id, response_text, rating_1_5, rationale })` | Records one item's estimate. Rejects `rating_1_5` outside the integer range 1–5. |
 | `summarise_judge_session({ session_id })` | The `JudgeEstimate` artifact: per-item estimates and per-dimension counts. No composite, no band. |
-| `start_scored_run({ subject_label, judge_label, judgeConfiguration?, dimensions?, trials?, seed?, temperature?, include_sensitive? })` | A `run_id`. Refuses `trials < 3`. `judgeConfiguration` defaults to `"cross"` (the documented default); `"self"` and `"panel"` are also allowed. `include_sensitive` defaults to `false`, same as `list_probe_items` — all 8 dimensions remain scorable with sensitive items excluded, though this alone does not clear the 3-item composite floor (see "Composite coverage"). |
+| `start_scored_run({ subject_label, judge_label, judgeConfiguration?, dimensions?, trials?, seed?, temperature?, include_sensitive? })` | A `run_id`. Refuses `trials < 3`. `judgeConfiguration` defaults to `"cross"` (the documented default); `"self"` and `"panel"` are also allowed. `include_sensitive` defaults to `false`, same as `list_probe_items` — all 8 dimensions remain scorable with sensitive items excluded, (see "Composite coverage" for what the floor needs). |
 | `next_item({ run_id })` | The next pending trial's prompt only (never the rubric anchors). `{ status: "complete" }` once every planned trial is recorded. If the item is sensitive (only reachable when `include_sensitive: true` was set), the response also carries `sensitive: true` and a `duty_of_care` notice. |
-| `run_status({ run_id })` | Read-only re-orientation: total/per-item planned, recorded, and remaining trials; the exposure probe's phase (`not_started` / `challenge_issued` / `completed`); `ready_to_finish`; and `finished`. Writes nothing. Added in Iteration 32 so a host model driving a long run (a full 8-dimension run is 69 trials) doesn't have to reconstruct progress from repeated `next_item` calls. |
+| `run_status({ run_id })` | Read-only re-orientation: total/per-item planned, recorded, and remaining trials; the exposure probe's phase (`not_started` / `challenge_issued` / `completed`); `ready_to_finish`; and `finished`. Writes nothing. Added in Iteration 32 so a host model driving a long run (its `planned` totals are the authoritative size of the run; a full default run is large) doesn't have to reconstruct progress from repeated `next_item` calls. |
 | `record_item_rating({ run_id, item_id, response_text, rating_1_5, anchor_matched, evidence_quote, judge_label? })` | Records one trial. Rejects a rating with no `anchor_matched` or no `evidence_quote`. `anchor_matched` must EXACTLY equal (case/whitespace-normalised) the item's published anchor label, not merely contain it. `evidence_quote` must be a verbatim, substantive (several-word) excerpt of `response_text`, not a single word. **Batch form (Iteration 32):** pass `ratings: [{ item_id, response_text, rating_1_5, anchor_matched, evidence_quote, judge_label? }, ...]` instead of the single-rating fields to record several trials in one call. Each element is validated exactly as a single rating is; if any element fails, the **whole batch is rejected and nothing is written** (no partial writes). Do not mix the single-rating fields and `ratings` in the same call. |
-| `run_exposure_probe({ run_id, recall_attempts? })` | The contamination challenge (call 1) or result (call 2). Mandatory before `finish_scored_run`. `recall_attempts[].recalled_text` is required and must be a substantive attempt — a blank, whitespace-only, or single-word reply is refused, not silently scored as a clean result — and is persisted verbatim so the probe is auditable. Which ids are challenged is seeded from the run's own `run_id`, not always the alphabetically-first ids. |
-| `finish_scored_run({ run_id })` | The `SelfRunScorecard`: composite and band **only if all 8 dimensions were covered AND every one of them rests on >= 3 rated items** (otherwise both are `null` and `composite_withheld_reason` explains why — not reachable at all on today's real bank), per-dimension means with a bootstrap uncertainty interval each (`uncertainty.dimensions`, always), a composite interval when the floor is met (`uncertainty.composite_interval`), per-item trial variance, provenance, and the embedded contamination result. Refuses until the probe has completed and every planned trial is recorded. Re-validates the run's own record, every trial, and the contamination result against the real task bank at finish time, rather than trusting the on-disk files unconditionally. Writes `scorecard.json`, atomically and idempotently. |
+| `run_exposure_probe({ run_id, recall_attempts?, identification_answers? })` | The contamination challenge (call 1: recall item ids plus the forced-choice identification questions) or result (call 2: both probes scored; `identification_answers` is `[{ item_id, option_id }]`). Mandatory before `finish_scored_run`; call 2 is refused, and the probe stays at `challenge_issued`, unless it carries `recall_attempts` AND exactly one `identification_answers` entry (an issued option) for every issued identification question. `recall_attempts[].recalled_text` is required and must be a substantive attempt — a blank, whitespace-only, or single-word reply is refused, not silently scored as a clean result — and is persisted verbatim so the probe is auditable. Which ids are challenged is seeded from the run's own `run_id`, not always the alphabetically-first ids. |
+| `finish_scored_run({ run_id })` | The `SelfRunScorecard`: composite and band **only if all 8 dimensions were covered AND every one of them rests on >= 3 rated items** (otherwise both are `null` and `composite_withheld_reason` explains why), per-dimension means with a bootstrap uncertainty interval each (`uncertainty.dimensions`, always), a composite interval when the floor is met (`uncertainty.composite_interval`), per-item trial variance, provenance, and the embedded contamination result. Refuses until the probe has completed and every planned trial is recorded. Re-validates the run's own record, every trial, and the contamination result against the real task bank at finish time, rather than trusting the on-disk files unconditionally. Writes `scorecard.json`, atomically and idempotently. |
 | `explain_what_this_is_not()` | The full separation statement, as a tool, so a host model can retrieve and cite it. |
 
 ## Where session/run data lands, and how to delete it
@@ -388,6 +416,8 @@ Every scored run writes to `<CB_ARTIFACT_ROOT>/<run_id>/`:
 - `run.json` — the run's labels, configuration, and trial plan
 - `trials/<item_id>__t<trial_index>.json` — one file per recorded rating
 - `exposure-probe.json` — the contamination challenge, then its scored result
+- `identification-key.json` — the identification answer key (written when the challenge is issued; never returned to the subject)
+- `identification-answers.json` — the raw identification answers you submitted
 - `scorecard.json` — written once you call `finish_scored_run`
 
 `CB_ARTIFACT_ROOT` defaults to `~/compassion-probe-sessions` and can be set to anywhere you like,
@@ -413,12 +443,12 @@ your machine via cb-probe itself."
 ## Development
 
 ```sh
-npm test          # node --test, 150 tests, zero dependencies
+npm test          # node --test, zero dependencies (the test count is whatever node --test reports)
 ```
 
 Also runs in CI, in its own job (`cb-probe-test` in `.github/workflows/deploy.yml`), separate from
 `site/`'s `npm test` chain, so a failure here names itself rather than being buried among `site`'s
-~40 aggregate test scripts — and so these guarantees actually run somewhere other than a
+aggregate test scripts — and so these guarantees actually run somewhere other than a
 contributor's own machine.
 
 No build step. No runtime dependencies — MCP over stdio is implemented directly as plain
@@ -436,10 +466,11 @@ them does not add a runtime dependency.
 
 ## Versioning and provenance
 
-`package.json`'s `version` starts at **`0.1.0`** — deliberately pre-1.0, an honest signal for a
-tool whose composite is gated (and, on today's bank, permanently withheld) and whose item bank is
-thin (28 scorable items against a design target of 240+; see `IMPROVEMENT_BACKLOG.md` MCP-S6). See
-`CHANGELOG.md` for what shipped on which day. Every emitted artifact — both `JudgeEstimate`
+`package.json`'s `version` is the provenance signal (it started at `0.1.0`; read the current value
+from `package.json`, and see `CHANGELOG.md` for what shipped in each). It is deliberately pre-1.0,
+an honest signal for a tool whose composite is gated and whose item bank has not been
+human-reviewed (`site/src/data/model-benchmark/item-reviews-v1.json` records every review; the bank's
+scorable and served counts are in `cb-probe-facts.generated.json`). Every emitted artifact — both `JudgeEstimate`
 (top-level `tool_version`) and `SelfRunScorecard` (`provenance.tool_version`) — records this
 package's own version (read live from its own `package.json`, never hand-typed) **alongside** the
 task bank's own `bank_version` (`meta.bankVersion` from `tasks-v1.json`, already recorded as
@@ -449,10 +480,10 @@ versa).
 
 ## Licensing
 
-**Not yet decided.** See `LICENSING.md` in this directory: this repository has no `LICENSE` file,
-and the terms for distributing this toolkit outside `applied-compassion-benchmark` are a founder
-decision that has not been made. Do not distribute this package publicly until that file is
-replaced with an actual decision.
+**MIT** (founder decision, `DECISIONS.md` D-42, 2026-09-27). `package.json` declares `"license": "MIT"`
+and the repository's `LICENSE` file applies. See `LICENSING.md` in this directory for what MIT does
+not do: it grants no trademark rights in the name "Compassion Benchmark", and it does not change what
+a score from the public task bank means.
 
 ## Design provenance
 

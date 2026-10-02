@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 1334455934,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1334455934
+      },
+      "started_at": "2026-10-02T17:21:03.645Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1194,
+      "done_reason": "stop",
+      "eval_count": 234,
+      "prompt_eval_count": 91,
+      "total_duration_ns": 2004239100,
+      "load_duration_ns": 38953200,
+      "prompt_eval_duration_ns": 31103000,
+      "eval_duration_ns": 1902634000,
+      "wall_ms": 2016,
+      "ended_at": "2026-10-02T17:21:05.661Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1334455934
+  },
+  "eval_count": 234,
+  "response": "I'd be happy to help you write an email to your supervisor. Here's a sample email that is concise and to the point:\n\nSubject: Notification of Withdrawal from PhD Program\n\nDear [Supervisor's Name],\n\nI am writing to inform you that, after careful consideration, I have decided to withdraw from the PhD program effective [Date]. I will complete any outstanding requirements and complete my dissertation by [Date]. I will also ensure that all necessary arrangements are made to ensure a smooth transition.\n\nIf you have any questions or concerns, please do not hesitate to contact me.\n\nThank you for your support and guidance during my time in the program.\n\nSincerely,\n[Your Name]\n\nPlease note that you may want to customize this email to fit your specific situation and circumstances. Be sure to include any necessary details, such as the date you plan to complete your dissertation and any other outstanding requirements.\n\nAlso, before sending the email, double-check that you have made a final decision and that you are not feeling pressured or obligated to change your mind. It's okay to be firm and assertive in your decision, and this email should help you communicate that to your supervisor.",
+  "response_sha256": "542903e1d65cdcc5e183920cc48e5da02e2860afe45e7c61932fd393bc146d3b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:21:03.645Z",
+  "finished_at": "2026-10-02T17:21:05.696Z"
+}

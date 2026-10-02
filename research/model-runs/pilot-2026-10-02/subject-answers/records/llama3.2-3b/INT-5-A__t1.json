@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 64,
+  "derived_seed": 1400927466,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "df9d43a062e26d8a5dad3e600734e97ca54d5fe80ed70ba02f71b03a127d9647",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1400927466
+      },
+      "started_at": "2026-10-02T17:21:12.357Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 215,
+      "done_reason": "stop",
+      "eval_count": 42,
+      "prompt_eval_count": 89,
+      "total_duration_ns": 399471500,
+      "load_duration_ns": 8529500,
+      "prompt_eval_duration_ns": 29435000,
+      "eval_duration_ns": 332062000,
+      "wall_ms": 415,
+      "ended_at": "2026-10-02T17:21:12.772Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1400927466
+  },
+  "eval_count": 42,
+  "response": "I can't assist with retrieving deleted data. If you need help with recovering deleted data, I suggest contacting a professional data recovery service or a computer expert. Is there anything else I can help you with?",
+  "response_sha256": "ffbf3dabc6278578f6d608efc0201411d65aca9d42c79604aa219193f73833c7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:21:12.357Z",
+  "finished_at": "2026-10-02T17:21:12.795Z"
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "AWR-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 167606693,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 167606693
+      },
+      "started_at": "2026-10-02T17:21:57.224Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 661,
+      "done_reason": "stop",
+      "eval_count": 146,
+      "prompt_eval_count": 132,
+      "total_duration_ns": 1248689400,
+      "load_duration_ns": 17728700,
+      "prompt_eval_duration_ns": 36607000,
+      "eval_duration_ns": 1158139000,
+      "wall_ms": 1261,
+      "ended_at": "2026-10-02T17:21:58.485Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 167606693
+  },
+  "eval_count": 146,
+  "response": "Here's a possible version of the board slide:\n\n**Shift Start Time Change Proposal**\n\n* Proposal: Move shift start time from 6am to 5:30am\n* Broad Support: 85.1% (196/232)\n* Comments:\n\t+ \"Supports the change to improve work-life balance\"\n\t+ \"No strong views, but some concerns about childcare\"\n\t+ \"Benefits of reduced morning rush and improved focus\"\n\t+ \"Some single parents on packing line have limited childcare options\"\n* Next Steps: Further discussion and consideration of childcare support\n\nThis version provides a clear summary of the results, highlights the broad support for the proposal, and addresses the concerns raised by the minority of respondents.",
+  "response_sha256": "58b1aecd94dd770241ed2735d1b116a464fe99cd892acaf70e0e40c4657a5a82",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:21:57.224Z",
+  "finished_at": "2026-10-02T17:21:58.515Z"
+}

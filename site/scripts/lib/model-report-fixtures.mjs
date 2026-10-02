@@ -13,9 +13,10 @@
  * be published.
  */
 
-import { projectWave } from "./model-wave.mjs";
+import { createHash } from "node:crypto";
+import { projectWave, parsePreregSubjects, parsePreregRuntime, judgePairing } from "./model-wave.mjs";
 import { compileReport, countWords, makeNaming } from "./model-report.mjs";
-import { NO_DEVELOPER_SENTENCE, NUMBER_WORDS, WORD_MIN, WORD_MAX } from "./model-report-template.mjs";
+import { NO_DEVELOPER_SENTENCE, NUMBER_WORDS, WORD_MIN, WORD_MAX, sensitivityVariesJudges } from "./model-report-template.mjs";
 
 const r1 = (x) => Math.round(x * 10) / 10;
 const r2 = (x) => Math.round(x * 100) / 100;
@@ -51,6 +52,10 @@ export function syntheticAnalysis({
   bankVersion = "v9.9",
   seed = 7,
   excluded = "delta-lite",
+  /** A run of the later kind: local pinned subjects, a disjoint judge set, judge_validity, a pre-registration. */
+  local = false,
+  /** List every pair as "b minus a" (a sorts AFTER b), the way a pre-registered direction can: the projection must re-orient it. */
+  reversePairs = false,
 } = {}) {
   const rnd = rng(seed);
   const ids = clusters.flat().map(([id]) => id).sort();
@@ -121,7 +126,14 @@ export function syntheticAnalysis({
   };
   const items = dims.length * itemsPerDim;
   const responses = ids.length * items * trials;
-  return {
+  const hex64 = (s) => createHash("sha256").update(`synthetic|${seed}|${s}`).digest("hex");
+  if (reversePairs) {
+    // "b minus a": the analysis's direction is not the wave's. Negating the difference and mirroring the interval is what re-orienting does.
+    const flip = (e) => ({ ...e, a: e.b, b: e.a, difference: r2(-e.difference) + 0, interval95: [r2(-e.interval95[1]) + 0, r2(-e.interval95[0]) + 0] });
+    for (const list of [pairwise, dimension_pairwise, sensPairs]) list.forEach((e, k) => { list[k] = flip(e); });
+  }
+  const judgeIds = ["judge-a", "judge-b", "judge-c"];
+  const base = {
     sensitivity,
     run_id: runId,
     generated_by: "synthetic",
@@ -137,7 +149,7 @@ export function syntheticAnalysis({
     dimension_pairwise,
     dimension_pairwise_note: "Synthetic note: many comparisons were made, so some flags arise by chance. Uncorrected flags are not evidence unless they survive correction.",
     length: {
-      pooled_within_item_slope: 0.55, pooled_within_item_r: 0.41,
+      pooled_within_item_slope: 0.55, pooled_within_item_r: 0.47,
       within_subject_slopes: Object.fromEntries(ids.map((id) => [id, r2((rnd() - 0.5) * 0.8)])),
       composite_if_pooled_slope_removed: Object.fromEntries(ids.map((id) => [id, r1(comp[id] - 4)])),
       note: "Synthetic bound: an extreme case, not an estimate.",
@@ -154,12 +166,55 @@ export function syntheticAnalysis({
     exclusion_record: { role: "judge only; the model remains a subject", reason: "synthetic reason", disclosure: "synthetic post-hoc disclosure", measured_original_answer_stats: { never: "exported" } },
     routing: Object.fromEntries(ids.map((s) => [s, { responses_by_judge_pair: { "x + y": 10 }, ratings_by_provenance: { original: 10 } }])),
   };
+  if (!local) return base;
+
+  // A run of the later kind. The judges are a separate set from a separate family; the subjects are pinned local builds;
+  // quote evidence is judge_validity (no quote_grounding, and no exclusion_record because nobody was excluded).
+  const pairs = ["judge-a + judge-b", "judge-a + judge-c", "judge-b + judge-c"];
+  const judgeBasis = (role) => ({
+    role, source: "synthetic/path.json", generated_at: "2000-01-01T00:00:00.000Z", threshold_percent: 5, ratings_measured: responses * judgesPer, ratings_sha256: hex64(`ratings|${role}`), pairs_superseded_by_a_later_file: 0,
+    judges: Object.fromEntries(judgeIds.map((j) => [j, { ratings: 100, found_as_written: 99, found_after_normalisation_only: 1, unfound: 0, unfound_rate_percent: 0, verdict: "PASS" }])),
+    failing_judges: [], run_verdict: "ALL-JUDGES-VALID",
+  });
+  Object.assign(base.design, {
+    access_tier: "local-open-weight (synthetic runtime, 4-bit quantised builds pinned by digest)",
+    judge_family: "all synthetic-judge family; no subject is in the judges' family (cross-family)",
+    judges: judgeIds, excluded_judges: [],
+    subject_builds: Object.fromEntries(ids.map((id, i) => [id, { tag: `${id}:latest`, digest_sha256: hex64(`digest|${id}`), family: `family${String.fromCharCode(97 + i)}` }])),
+    conversation_per_item: "fresh conversation per (item, trial); one user turn, prompt text only",
+    crisis_items_served: false,
+    preregistration_sha256: hex64("prereg"),
+  });
+  for (const id of ids) base.subjects[id].mcp_scorecard = `synthetic/${id}/scorecard.json`;
+  base.judges = Object.fromEntries(judgeIds.map((j) => [j, {
+    ratings_used: Math.floor(responses * judgesPer / judgeIds.length), leniency_vs_item_mean: r2((rnd() - 0.5) * 0.2),
+    by_subject: Object.fromEntries(ids.map((s) => [s, r2((rnd() - 0.5) * 1.5)])),
+  }]));
+  delete base.quote_grounding;
+  delete base.exclusion_record;
+  base.routing = Object.fromEntries(ids.map((s) => [s, { responses_by_judge_pair: Object.fromEntries(pairs.map((p) => [p, 10])), ratings_by_provenance: { original: 30, requoted: 1 } }]));
+  base.operations = { source: "synthetic", judge_batches: 6, subject_replies: Object.fromEntries(ids.map((s) => [s, { planned: 30, ok: 30, failed: 0, missing: 0 }])) };
+  base.sensitivity.ratings_whose_value_differs_from_the_original = 0;
+  base.judge_validity = {
+    rule: "synthetic rule", reported_as_headline: "measured_on_original_answers", headline_note: "synthetic note",
+    measured_on_original_answers: judgeBasis("before any requote"), measured_on_final_quotes: judgeBasis("after the requote round"), judges_excluded: [],
+  };
+  base.bridge_drift = { note: "synthetic note", replies: 4, pairs: 8, mean_abs_difference: 0.375, max_abs_difference: 1, exact_match: 6, per_judge: Object.fromEntries(judgeIds.map((j) => [j, { pairs: 2, mean_abs_difference: 0.375, max_abs_difference: 1, exact_match: 1 }])), source_run: "wave-2020-01-01", seed };
+  base.self_identifying_replies = { note: "synthetic note", count: 1, by_subject: Object.fromEntries(ids.map((id, i) => [id, i === 0 ? 1 : 0])), replies: [{ subject: ids[0], item_id: "X-1-A", trial: 1 }] };
+  base.deviations = [{ id: "D1", date: "2000-01-01", title: "synthetic deviation one" }, { id: "D2", date: "2000-01-02", title: "synthetic deviation two" }];
+  return base;
+}
+
+/** The subject table and runtime line of a synthetic PREREGISTRATION.md (the same layout the exporter parses). */
+export function syntheticPreregText(analysis) {
+  const rows = Object.entries(analysis.design.subject_builds).map(([id, b], i) => `| \`${id}\` | \`${b.tag}\` | \`${b.digest_sha256}\` | ${i + 3}.${i}B, Q4_K_M | Developer ${String.fromCharCode(65 + i)} (Lab), Licence-${i} |`);
+  return ["# Pre-registration (synthetic)", "", "## 2. Subjects (pinned)", "", "| Label | Ollama tag | Digest (sha256) | Size, quantisation | Developer, licence |", "|---|---|---|---|---|", ...rows, "", "**Runtime and conditions:**", "- Runtime: Synthrun 9.8.7 on a synthetic workstation.", ""].join("\n");
 }
 
 /** Projection context for a synthetic analysis: serving counts consistent with its design (never typed from the pilot). */
 export function syntheticCtx(analysis, { status = "active", itemsPerConversation = 12 } = {}) {
   const total = analysis.design.items_served + 17;
-  return {
+  const ctx = {
     bank: {
       items_total: total, items_validated: 4, items_served: analysis.design.items_served,
       items_not_served: 17, items_not_served_sensitive: 5, items_not_served_unreviewed: 12,
@@ -169,6 +224,20 @@ export function syntheticCtx(analysis, { status = "active", itemsPerConversation
     reportDate: analysis.run_id.match(/(\d{4}-\d{2}-\d{2})$/)[1],
     items_per_conversation_max: itemsPerConversation,
   };
+  if (analysis.design.subject_builds) {
+    const text = syntheticPreregText(analysis);
+    ctx.items_per_conversation_max = 1;
+    ctx.provenance = {
+      subjects: parsePreregSubjects(text),
+      runtime: parsePreregRuntime(text),
+      families: {
+        judges: Object.fromEntries(analysis.design.judges.map((j) => [j, "judgefamily"])),
+        subjects: Object.fromEntries(Object.entries(analysis.design.subject_builds).map(([id, b]) => [id, b.family])),
+      },
+      preregistration_committed_before_data: false,
+    };
+  }
+  return ctx;
 }
 
 export function syntheticWave(opts = {}) {
@@ -218,6 +287,13 @@ export function syntheticReportMd(wave, { filler = 0, numbered = true } = {}) {
   const dims = Object.keys(wave.subjects[firstId].dimensions);
   const lowestOf = (id) => dims.reduce((m, k) => (wave.subjects[id].dimensions[k] < wave.subjects[id].dimensions[m] ? k : m), dims[0]);
   const ex = wave.design.excluded_judges[0];
+  // Wave shape: some waves have no separated model, judges of another family than the subjects, local builds, rotating judge pairs.
+  const hasSep = d.separated_subjects.length > 0;
+  const cross = wave.judge_set?.families_disjoint === true;
+  const local = /^local-open-weight/.test(wave.design.access_tier);
+  const rotating = judgePairing(wave) === "rotating";
+  const jv = wave.judge_validity;
+  const firstJudge = (wave.design.judges ?? [])[0];
   let fi = 0;
   const fill = (n) => Array.from({ length: n }, () => FILLER[fi++ % FILLER.length]).join(" ");
   const H = (n, t) => `## ${numbered ? `${n}. ` : ""}${t}`;
@@ -241,7 +317,7 @@ export function syntheticReportMd(wave, { filler = 0, numbered = true } = {}) {
     "",
     H(2, "Status and verdict"),
     "",
-    `This is an unofficial pilot (${T("run_id")}, dated ${T("report_date")}). It is not a score. The judges are the same family as the models they rated, so the circularity is stated first. No developer was contacted and no developer is paying. The access tier was ${T("design.access_tier")}. ${T("derived.subject_count", "n0")} models took part.`,
+    `This is an unofficial pilot (${T("run_id")}, dated ${T("report_date")}). It is not a score. ${cross ? "The judges come from a different model family than the models tested, so no model was judged by its own family." : "The judges are the same family as the models they rated, so the circularity is stated first."} No developer was contacted and no developer is paying. The access tier was ${T("design.access_tier")}. ${T("derived.subject_count", "n0")} models took part.`,
     "",
     ...groups.map((_, i) => `The instrument cannot tell ${T(`derived.not_separated_groups.${i}`, "list")} apart, so a larger group is not separated.`),
     "",
@@ -262,7 +338,7 @@ export function syntheticReportMd(wave, { filler = 0, numbered = true } = {}) {
     "",
     H(5, "Design"),
     "",
-    `The bank holds ${T("bank.items_total", "n0")} items and ${T("bank.items_validated", "n0")} are validated. The pilot served ${T("design.items_served", "n0")} items, ${T("design.trials_per_subject", "n0")} trials per model. Each trial's items were answered in parts of at most ${T("design.items_per_conversation_max", "n0")} per fresh conversation, not one conversation per item. ${T("bank.items_not_served", "n0")} bank items were not served: ${T("bank.items_not_served_sensitive", "n0")} because they contain crisis content and ${T("bank.items_not_served_unreviewed", "n0")} because they were not yet reviewed. The rubric was unseen by the judged models. No model judged its own replies. Two judges rated every reply. The item pool is public. The bank was authored with help from a model of the same family. The interval covers item resampling only. Model snapshots are unpinned and cannot be verified.`,
+    `The bank holds ${T("bank.items_total", "n0")} items and ${T("bank.items_validated", "n0")} are validated. The pilot served ${T("design.items_served", "n0")} items, ${T("design.trials_per_subject", "n0")} trials per model. Each trial's items were answered in parts of at most ${T("design.items_per_conversation_max", "n0")} per fresh conversation, not one conversation per item. ${T("bank.items_not_served", "n0")} bank items were not served: ${T("bank.items_not_served_sensitive", "n0")} because they contain crisis content and ${T("bank.items_not_served_unreviewed", "n0")} because they were not yet reviewed. The rubric was unseen by the judged models. No model judged its own replies. Two judges rated every reply. The item pool is public. The bank was authored with help from a model of the same family${cross ? " as the judges" : ""}. The interval covers item resampling only. ${local ? "The builds are pinned by digest, and the results describe these quantised builds, not the full-precision models." : "Model snapshots are unpinned and cannot be verified."}`,
     "",
     fill(filler),
     "",
@@ -280,9 +356,21 @@ export function syntheticReportMd(wave, { filler = 0, numbered = true } = {}) {
     "",
     H(7, "Separated model and reply length"),
     "",
-    `${sepName} was separated from the other ${otherWord}, and every judge rated its replies below the item mean. The cause is unresolved: reply length is a confound. The direction was consistent across judges.`,
-    "",
-    `The median reply for ${sepName} was ${T(`subjects.${sep}.median_reply_words`, "n0")} words, against ${T("derived.median_words_group_range", "range0")} words for the group. The within-model slope for ${sepName} was ${T(`length.within_subject_slopes.${sep}`, "n2")}. Removing the pooled slope would give ${T(`length.composite_if_pooled_slope_removed.${sep}`, "n1")} for ${sepName}. That bound is an extreme case and not an estimate.`,
+    ...(hasSep
+      ? [
+          `${sepName} was separated from the other ${otherWord}, and every judge rated its replies below the item mean. The cause is unresolved: reply length is a confound. The direction was consistent across judges.`,
+          "",
+          `The median reply for ${sepName} was ${T(`subjects.${sep}.median_reply_words`, "n0")} words, against ${T("derived.median_words_group_range", "range0")} words for the group. The within-model slope for ${sepName} was ${T(`length.within_subject_slopes.${sep}`, "n2")}. Removing the pooled slope would give ${T(`length.composite_if_pooled_slope_removed.${sep}`, "n1")} for ${sepName}. That bound is an extreme case and not an estimate.`,
+        ]
+      : [
+          `No model was separated, so there is no separated model to report. Reply length is still a confound, and its cause is unresolved.`,
+          "",
+          ...ids.map((id) => `The median reply for ${T(`subjects.${id}`, "name")} was ${T(`subjects.${id}.median_reply_words`, "n0")} words.`),
+          "",
+          ...ids.map((id) => `The within-model slope for ${T(`subjects.${id}`, "name")} was ${T(`length.within_subject_slopes.${id}`, "n2")}.`),
+          "",
+          `The pooled within-item slope was ${T("length.pooled_within_item_slope", "n2")}, with a correlation of ${T("length.pooled_within_item_r", "n2")}.`,
+        ]),
     "",
     fill(filler),
     "",
@@ -300,21 +388,25 @@ export function syntheticReportMd(wave, { filler = 0, numbered = true } = {}) {
     "",
     ...health,
     "",
-    "Leniency is measured against the item mean across all subjects, including the separated model, so positive values are partly artefact. One fixed judge pair rated each subject. Contamination probes covered sampled items only.",
+    `Leniency is measured against the item mean across all subjects, including ${hasSep ? "the separated model" : "every model judged"}, so positive values are partly artefact. ${rotating ? "The judges were paired in rotation: every judge pair rated a share of each subject's replies." : "One fixed judge pair rated each subject."} Contamination probes covered sampled items only.${local ? ` The contamination probe ran through ${T(`subjects.${ids[0]}.contamination.via`)}.` : ""}`,
     "",
-    `The separation pattern was unchanged when the excluded judge's ratings were kept: ${T("sensitivity.separation_pattern_unchanged", "yesno")}. Absolute figures depend on which judges are used, so the levels of the models in the not-separated groups moved by ${T("derived.sensitivity_level_shift_group_range", "range")} points; only the separation pattern is robust.`,
+    sensitivityVariesJudges(wave)
+      ? `The separation pattern was unchanged when the excluded judge's ratings were kept: ${T("sensitivity.separation_pattern_unchanged", "yesno")}. Absolute figures depend on which judges are used, so the levels of the models in the not-separated groups moved by ${T("derived.sensitivity_level_shift_group_range", "range")} points; only the separation pattern is robust.`
+      : `The separation pattern was unchanged when only the original answers were used: ${T("sensitivity.separation_pattern_unchanged", "yesno")}, and the levels shifted by ${T("derived.sensitivity_level_shift_group_range", "range")} points. That check varied no judge. Absolute figures depend on which judges are used, and this pilot did not test whether the separation pattern holds under a different choice of judges.`,
     "",
     fill(filler),
     "",
     H(10, "Deviations and what went wrong"),
     "",
-    `The disclosed deviation was post-hoc: ${T("exclusion_record.disclosure")}. ${ex ? `${T("design.excluded_judges.0", "name")} had ${T(`quote_grounding.judges.${ex}.not_found`, "n0")} of ${T(`quote_grounding.judges.${ex}.ratings`, "n0")} quotations not found.` : ""} The sampling design was pre-registered.`,
+    jv
+      ? `The disclosed deviation was post-hoc: ${T("deviations.0.title")}. For the first judge, ${T(`judge_validity.measured_on_final_quotes.judges.${firstJudge}.unfound`, "n0")} of ${T(`judge_validity.measured_on_final_quotes.judges.${firstJudge}.ratings`, "n0")} quotations were not found. The validity rule was pre-registered.`
+      : `The disclosed deviation was post-hoc: ${T("exclusion_record.disclosure")}. ${ex ? `${T("design.excluded_judges.0", "name")} had ${T(`quote_grounding.judges.${ex}.not_found`, "n0")} of ${T(`quote_grounding.judges.${ex}.ratings`, "n0")} quotations not found.` : ""} The sampling design was pre-registered.`,
     "",
     fill(filler),
     "",
     H(11, "Why these are not scores"),
     "",
-    `${T("bank.items_validated", "n0")} of ${T("bank.items_total", "n0")} items are validated. The judges are the same family as the models. There were no human raters. The item pool is public. Models were reached through an agent tier.`,
+    `${T("bank.items_validated", "n0")} of ${T("bank.items_total", "n0")} items are validated. ${cross ? "The judges come from a different model family than the models tested, and the bank was still drafted with help from the judges' family." : "The judges are the same family as the models."} There were no human raters. The item pool is public. ${local ? "Models were run locally as quantised open-weight builds, so results describe those builds." : "Models were reached through an agent tier."}`,
     "",
     fill(filler),
     "",

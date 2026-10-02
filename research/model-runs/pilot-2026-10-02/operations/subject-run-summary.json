@@ -1,0 +1,41 @@
+{
+  "kind": "subject-run-summary",
+  "run_id": "pilot-2026-10-02",
+  "generated_at": "2026-10-02T17:30:52.399Z",
+  "complete": true,
+  "incomplete_briefs": [],
+  "per_subject": {
+    "qwen2.5-7b": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 8,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 585702
+    },
+    "llama3.2-3b": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 6,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 467777
+    }
+  },
+  "verdicts": {
+    "qwen2.5-7b": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "llama3.2-3b": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    }
+  },
+  "answer_files_written": 6,
+  "note": "Failed trials are recorded, never imputed. A brief with a failed or missing trial gets no answers file, so ingest-answers.mjs refuses it loudly."
+}

@@ -118,6 +118,36 @@ or deletes an existing key, batch or answer, and refuses if its outputs exist. O
 Then: save replies in `judge-answers-reroute-2/` and run
 `assemble-run.mjs ... --routing keys/judge-key.reroute-2.json --ratings judge-answers --ratings judge-answers-reroute --ratings judge-answers-reroute-2`.
 
+## Explicit judge set, bridge sample and judge validity (added 2026-10-02, `pilot-2026-10-02`)
+
+For a run whose subjects are not the judges (`run-config.json` has a `judges` array; first-pilot runs have none and
+behave exactly as before, proven by regenerating `pilot-2026-10-01/judge-batches` byte for byte). Every number below is read
+from `run-config.json`; `tests/judging-prep.test.mjs` ties each to `PREREGISTRATION.md`.
+
+1. **Routing** (`lib/judge-routing.mjs`). Each reply goes to 2 of the judges, never the subject and never a judge of the
+   subject's family (unknown family fails closed). Pairs are balanced by (subject, item), then subject, then item, so per-subject
+   judge loads are within 1 of equal.
+2. **Bridge sample** (`lib/bridge.mjs`, prereg section 6). Seeded draw of first-pilot replies, `per_source_subject` each, only those
+   that a judge of this run rated in the first pilot's final ratings (`scorecards/*.assembly-audit.json` row_mapping). Each goes to
+   the judge(s) of this run that originally rated it. Same entry shape and `r-xxxxxxxxxx` id scheme as every other entry. The
+   key holds them under `bridge` (source ids, text, original ratings), never under `responses`. The assembler builds scorer
+   rows from `responses` only and splits bridge ratings off before anything else, so no bridge rating can reach a composite;
+   it writes the descriptive `scorecards/bridge-drift.json`.
+3. **Build or inspect.** `bin/build-judge-batches.mjs --run-id <id> --out <dir>` (batch size defaults to `max_batch_entries`,
+   seed to `master_seed`). `--dry-run` writes nothing and prints per-judge counts, bridge included, and the number of batches;
+   `--dry-run --partial` reads finished replies from `subject-answers/records/` so it works while the subject run is going.
+4. **Judge validity** (`bin/judge-validity.mjs`, prereg section 5). Run it on the answer directories BEFORE assembly. Writes
+   `operations/judge-validity.json`: per judge the unfound-quote rate (shared normaliser), PASS/FAIL (strictly greater than the
+   threshold fails), the quotes under `short_quote_min_chars` for the supplement round, and a verdict. Exit 0 all valid, 1
+   incomplete, 4 one judge fails, 5 two or more fail. Bridge ratings are reported separately and never count towards a verdict.
+5. **Supplement for short quotes.** `reroute-judges.mjs --exclude-judge none --requote --min-quote-chars 12` opens a requote
+   round that excludes nobody (the existing `--supplement` chain then applies, with the same `--min-quote-chars`). Requote BEFORE
+   measuring: pass the requote answers as a later `--answers` directory to `judge-validity.mjs` and use the amended key with `--key`.
+6. **Assembly gate.** For a key with `validity_required`, `assemble-run.mjs` refuses unless the report exists, was made from
+   exactly the answer files being assembled (per-file hashes, ratings hash, key hash), and agrees with `--routing`: a failing judge
+   must be excluded and a passing judge must not be; two failures mean no composite. The only answer files allowed to be new after
+   the measurement are exclusion reroutes. Scorecards say `cross-family`, not `same-family`.
+
 ## Runbook
 
 All paths below are relative to the repo root. `RUN=pilot-2026-10-01`. Add `--seed <n>` to any builder for a

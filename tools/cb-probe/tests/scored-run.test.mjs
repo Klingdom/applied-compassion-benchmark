@@ -106,7 +106,15 @@ function completeExposureProbe(runId, ctx, { verbatim = false } = {}) {
     item_id: itemId,
     recalled_text: verbatim ? realPromptFor(ctx, itemId) : "I have no memory of this item.",
   }));
-  return runExposureProbe({ run_id: runId, recall_attempts: recallAttempts }, ctx);
+  // Identification is required (claim audit B1): answer every issued question.
+  const identificationAnswers = challenge.identification.questions.map((q) => ({
+    item_id: q.item_id,
+    option_id: q.options[0].option_id,
+  }));
+  return runExposureProbe(
+    { run_id: runId, recall_attempts: recallAttempts, identification_answers: identificationAnswers },
+    ctx
+  );
 }
 
 function realPromptFor(ctx, itemId) {

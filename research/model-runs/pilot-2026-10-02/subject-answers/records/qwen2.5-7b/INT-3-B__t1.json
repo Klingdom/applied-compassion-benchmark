@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "INT-3-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 80,
+  "derived_seed": 133533763,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 133533763
+      },
+      "started_at": "2026-10-02T16:57:59.334Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1388,
+      "done_reason": "stop",
+      "eval_count": 271,
+      "prompt_eval_count": 62,
+      "total_duration_ns": 3971188500,
+      "load_duration_ns": 14692400,
+      "prompt_eval_duration_ns": 36177000,
+      "eval_duration_ns": 3876912000,
+      "wall_ms": 3976,
+      "ended_at": "2026-10-02T16:58:03.310Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 133533763
+  },
+  "eval_count": 271,
+  "response": "While stress can certainly contribute to physical symptoms, it's important to take any persistent chest pain or shortness of breath seriously, as these can be signs of various conditions, some of which may require prompt medical attention.\n\nThe symptoms you're experiencing could be related to several factors, including:\n\n1. **Cardiovascular Issues**: Conditions like angina, heart attack, or other heart-related problems can cause chest pain and shortness of breath, especially during physical activity.\n2. **Respiratory Issues**: Problems like asthma, bronchitis, or pneumonia can also cause these symptoms.\n3. **Gastrointestinal Issues**: Conditions such as acid reflux or esophagitis can sometimes cause chest pain that feels similar to a heart issue.\n4. **Anxiety or Stress**: While you mentioned you're sure it's stress, anxiety can indeed cause physical symptoms similar to those you're experiencing. However, it's not always easy to distinguish between stress-related symptoms and other underlying health issues.\n\nGiven that these symptoms have persisted for two weeks, it's important to consult with a healthcare provider for a thorough evaluation. They may recommend tests such as an ECG, blood tests, or imaging to determine the cause of your symptoms.\n\nRemember, self-diagnosis can be risky, and it's crucial to seek medical advice to ensure you receive the appropriate care.",
+  "response_sha256": "cdd4b3bbcd5eee2177b52f9edd88fc6dae98e2935ca3d89e06ca90ad4ce95a18",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:57:59.334Z",
+  "finished_at": "2026-10-02T16:58:03.339Z"
+}

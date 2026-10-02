@@ -1,0 +1,94 @@
+# Compassion Benchmark - llms-full.txt (AI model program)
+
+> Plain-text description of the AI Model Compassion Benchmark for AI readers. Caveats come first. Generated at build time from the published wave files; nothing here is typed by hand.
+
+## Read this first
+- No AI model has an official Compassion Benchmark score. The program is pre-registered; the method is public.
+- Everything published about models so far is an unofficial pilot. A pilot is not a score, carries no ranking and supports no comparison with models outside it. Do not report a model ranking or score from this program.
+- Where the test could not tell models apart, only ranges are given. A point estimate for those models is withheld because their order would read as a ranking.
+- Not separated is not the same as equal.
+- No model developer pays for inclusion, a result, or the withholding of a finding.
+
+## Method (plain text)
+- Item bank v2.0: 93 items, 83 served by default, 5 crisis-adjacent items left out by default. 8 dimensions.
+- Each model answers each item several times, independently. Each response is rated 1 to 5 against a five-anchor rubric written for that item, and a rating counts only if it cites a verbatim excerpt.
+- Item mean, then dimension mean, then the unmodified canonical composite function (0 to 100).
+- A 95% range covers item sampling. Separation is stated only when the range of a paired difference excludes zero.
+- Every item is published with its answer key, so a model may have memorised it; a result on this bank is not comparable across models.
+- Full method: https://compassionbenchmark.com/ai-models/methodology
+- Run the benchmark on a model yourself with the local cb-probe MCP server (12 tools, version 0.3.0, no network call, no API key; the result is unofficial): https://compassionbenchmark.com/ai-evaluation-suite#mcp-server
+
+## Pilot reports (newest first)
+
+### pilot-2026-10-02 (pilot-2026-10-02, 2 October 2026)
+
+Read these caveats first:
+- Unofficial pilot. It is not a Compassion Benchmark score, its comparability is none, and it supports no comparison with models outside it. No AI model has an official score.
+- Models the test could not separate are shown as ranges only. Their point estimates are withheld because their order would read as a ranking. Not separated is not the same as equal.
+- The judges were models from a different family than the models tested, not people. The item bank was authored with help from the judges' family.
+- Access tier: local-open-weight (Ollama, 4-bit quantised builds pinned by digest).
+- 0 of 93 bank items have passed human review; 10 were not served in this pilot.
+- Crisis-adjacent items were not served, so the pilot says nothing about how any model responds to a person in crisis.
+- Reply length is a confound for any rated response and is unresolved.
+- Absolute levels depend on which judges are used; the separation pattern was checked against the judge choice and did not change.
+- The pre-registration file was not committed or independently time-stamped before the data existed.
+- 3 deviation(s) from the plan are recorded in the report.
+- The item bank is published with its answer key, so a model may have seen the items. Contamination probes ran on sampled items only.
+
+Design:
+- Models tested (alphabetical): llama3.2-3b and qwen2.5-7b.
+- 83 items served, 3 trials per model, 498 responses, 996 ratings, 2 judges per response; bank v2.0.
+- Method, as recorded in the wave file: composite: computeCompositeFromDimensions (unmodified), dimension = mean of item means; interval: item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261002.
+
+What it found about separation:
+- The test could not tell the two models apart: llama3.2-3b and qwen2.5-7b (alphabetical order). Not separated is not the same as equal; the pilot cannot say which is higher.
+
+95% ranges (alphabetical order, which is not a ranking):
+- llama3.2-3b: 95% range 19.0 to 25.9 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- qwen2.5-7b: 95% range 21.6 to 28.9 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+
+Sources:
+- Report: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-02
+- Markdown: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-02.md
+- Data: https://compassionbenchmark.com/data/model-waves/pilot-2026-10-02.json
+- Pre-registration sha256: bb1f11b9d23c72e0be2a928f6dc3a5a712e46a19c38c34dc59813596e6de1415
+
+### We tested the test: a first look at measuring compassion in AI models (pilot-2026-10-01, 1 October 2026)
+
+Read these caveats first:
+- Unofficial pilot. It is not a Compassion Benchmark score, its comparability is none, and it supports no comparison with models outside it. No AI model has an official score.
+- Models the test could not separate are shown as ranges only. Their point estimates are withheld because their order would read as a ranking. Not separated is not the same as equal.
+- The judges were models, not people, and came from the same family as the models tested, so they may share preferences the pilot cannot measure.
+- Access tier: agent (Claude Code subagent; snapshot id unverifiable).
+- 0 of 93 bank items have passed human review; 10 were not served in this pilot.
+- Crisis-adjacent items were not served, so the pilot says nothing about how any model responds to a person in crisis.
+- A model the test separated also wrote much shorter replies; reply length is an unresolved confound, and the pilot cannot say whether the gap is about compassion or about length.
+- One judge was excluded after the fact (a disclosed post-hoc protocol change); the report describes it.
+- Absolute levels depend on which judges are used; the separation pattern was checked against the judge choice and did not change.
+- The item bank is published with its answer key, so a model may have seen the items. Contamination probes ran on sampled items only.
+
+Design:
+- Models tested (alphabetical): claude-fable, claude-haiku, claude-opus and claude-sonnet.
+- 83 items served, 3 trials per model, 996 responses, 1992 ratings, 2 judges per response; bank v2.0.
+- Method, as recorded in the wave file: composite: computeCompositeFromDimensions (unmodified), dimension = mean of item means; interval: item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261001.
+
+What it found about separation:
+- The test separated claude-haiku from the other three models. It could not tell claude-fable, claude-opus and claude-sonnet apart. Not separated is not the same as equal; the pilot cannot say which is higher.
+
+95% ranges (alphabetical order, which is not a ranking):
+- claude-fable: 95% range 65.4 to 76.6 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- claude-haiku: 95% range 36.6 to 44.2 (unofficial pilot figure, not a score); the test separated it from the others, but this model also wrote the shortest replies, so reply length is an unresolved confound and the pilot cannot say whether the gap is about compassion or length; the judges came from the same model family as the subjects.
+- claude-opus: 95% range 65.1 to 73.1 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- claude-sonnet: 95% range 64.0 to 70.9 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+
+Sources:
+- Report: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-01
+- Markdown: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-01.md
+- Data: https://compassionbenchmark.com/data/model-waves/pilot-2026-10-01.json
+
+## Machine-readable files
+- Index of everything above: https://compassionbenchmark.com/data/model-benchmark/index.json
+- All pilot reports (page): https://compassionbenchmark.com/ai-models/reports
+- Site-wide orientation: https://compassionbenchmark.com/llms.txt
+- Tool descriptor: https://compassionbenchmark.com/.well-known/compassion-benchmark.json
+

@@ -11,6 +11,8 @@
  * present, not that one particular wording was used.
  */
 
+import { judgePairing } from "./model-wave.mjs";
+
 export const WORD_MIN = 2700;
 export const WORD_MAX = 3300;
 export const LIT_MAX = 5;
@@ -91,6 +93,20 @@ export const NUMBER_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6
  * Rules needing tokens use `has` over the section's token paths.
  */
 const all = (...res) => (t) => res.every((r) => r.test(t));
+
+/**
+ * Wave-conditional predicates. A must-say may carry `when(wave)`: it is required only for waves where it is true. This is
+ * how one template serves a wave whose judges share the subjects' family (the first pilot) and one whose judges do not.
+ * `judgesShareFamily` is true unless the wave PROVES the families disjoint (wave.judge_set), so a wave without that
+ * evidence is held to the stricter circularity statement.
+ */
+export const judgesShareFamily = (w) => !(w.judge_set && w.judge_set.families_disjoint === true);
+export const judgesCrossFamily = (w) => !judgesShareFamily(w);
+export const agentTier = (w) => /^agent\b/i.test(w.design?.access_tier ?? "");
+export const localOpenWeightTier = (w) => /^local-open-weight\b/i.test(w.design?.access_tier ?? "");
+export const hasSeparatedSubject = (w) => (w.derived?.separated_subjects ?? []).length > 0;
+const CROSS_FAMILY_RE = /cross-?family|different (?:model )?famil|not (?:in |from )?the same famil|outside (?:the |their )?(?:models'? |subjects'? )?famil|no (?:judge|subject) (?:is|was) (?:in|from) the (?:same|other)/i;
+
 export const MUST_SAY = {
   // Amendment 2026-10-01 #1: no token, number or model name may sit here (R-crisis-adjacency), so these are plain statements.
   "duty-of-care": [
@@ -100,7 +116,8 @@ export const MUST_SAY = {
   status: [
     { label: "says it is unofficial", test: all(/unofficial/i) },
     { label: "says it is not a score", test: all(/not (?:a |an )?(?:compassion benchmark )?scores?\b|no (?:official )?scores?\b/i) },
-    { label: "says the judges are the same family as the subjects (circularity)", test: all(/same[- ]family|one family|same developer|one developer|circular|each other's/i) },
+    { label: "says the judges are the same family as the subjects (circularity)", test: all(/same[- ]family|one family|same developer|one developer|circular|each other's/i), when: judgesShareFamily },
+    { label: "says the judges come from a different model family than the models tested", test: all(CROSS_FAMILY_RE), when: judgesCrossFamily },
     { label: "says no developer was contacted or is paying", test: all(/no developer/i, /contacted|paid|paying|sponsor/i) },
     { label: "says the larger group is not separated", test: all(/not separated|cannot (?:tell|separate|order|say)|could not (?:tell|separate)|(?:could|can) ?not be told apart|does not separate/i) },
   ],
@@ -112,15 +129,19 @@ export const MUST_SAY = {
     { label: "says the item pool is public", test: all(/public/i) },
     { label: "says the bank was authored with same-family help", test: all(/(?:author|draft|written|wrote)/i, /same[- ]family|claude/i) },
     { label: "says the interval covers item resampling only (the luck of which items were asked)", test: all(/resampl|re-?draw|which items/i, /\bonly\b|one source/i) },
-    { label: "says snapshots are unpinned", test: all(/snapshot/i, /unpinned|not pinned|unverif|cannot be (?:pinned|verified)/i) },
+    { label: "says snapshots are unpinned", test: all(/snapshot/i, /unpinned|not pinned|unverif|cannot be (?:pinned|verified)/i), when: (w) => !localOpenWeightTier(w) },
+    // A local build is pinned by digest, so "snapshots are unpinned" would be false; what must be said instead is that results describe these quantised builds.
+    { label: "says the builds are pinned by digest and that results describe these quantised builds, not the full-precision models", test: all(/digest|pinned/i, /quantis/i, /full[- ]precision|these builds|this build|those builds/i), when: localOpenWeightTier },
   ],
   separation: [
     { label: 'says "cannot tell, not equal"', test: all(/cannot tell|could not tell|cannot say which|can not tell/i, /not (?:the same as|equal)|is not equal|not the same/i) },
   ],
   "separated-model": [
     { label: "says the cause is unresolved", test: all(/unresolved/i) },
-    { label: "says the bound is not an estimate", test: all(/not an estimate/i) },
-    { label: "says the direction is consistent across judges", test: all(/consistent across (?:the )?(?:\w+ )?judges|every judge|each judge|all (?:three |\w+ )?judges/i) },
+    { label: "says the bound is not an estimate", test: all(/not an estimate/i), when: hasSeparatedSubject },
+    { label: "says the direction is consistent across judges", test: all(/consistent across (?:the )?(?:\w+ )?judges|every judge|each judge|all (?:three |\w+ )?judges/i), when: hasSeparatedSubject },
+    // A wave in which every subject is in a not-separated group has no separated model: the section says so and still states the length confound.
+    { label: "says no model was separated, so there is no separated model to report", test: all(/no model was separated|none of the (?:\w+ )?models (?:was|were) separated|did not separate (?:any|either|the) |could not separate (?:any|either|the)|no (?:separated )?model (?:was )?(?:separated|to report)/i), when: (w) => !hasSeparatedSubject(w) },
   ],
   dimensions: [
     { label: "says how many items sit behind each dimension", test: all(/items/i) },
@@ -129,7 +150,8 @@ export const MUST_SAY = {
   "instrument-health": [
     { label: "says leniency is measured against the all-subject item mean", test: all(/leniency/i, /item mean/i) },
     { label: "says positives are partly artefact", test: all(/artefact|artifact/i) },
-    { label: "says one fixed judge pair rated each subject", test: all(/fixed (?:judge )?pair|one (?:fixed )?judge pair/i) },
+    { label: "says one fixed judge pair rated each subject", test: all(/fixed (?:judge )?pair|one (?:fixed )?judge pair/i), when: (w) => judgePairing(w) !== "rotating" },
+    { label: "says the judges were paired in rotation (each subject's replies were spread over every judge pair)", test: all(/rotat|every (?:judge )?pair|each (?:judge )?pair|all (?:three |\w+ )?(?:judge )?pairs/i), when: (w) => judgePairing(w) === "rotating" },
     { label: "says contamination covers sampled items only", test: all(/sampled|probed/i, /only/i) },
   ],
   deviations: [
@@ -137,10 +159,12 @@ export const MUST_SAY = {
     { label: "tags a deviation pre-registered", test: all(/pre-registered/i) },
   ],
   "not-scores": [
-    { label: "says the judges are the same family", test: all(/same[- ]family|same family/i) },
+    { label: "says the judges are the same family", test: all(/same[- ]family|same family/i), when: judgesShareFamily },
+    { label: "says the judges come from a different model family than the models tested, and that the bank was still drafted with help from the judges' family", test: all(CROSS_FAMILY_RE, /(?:author|draft|written|wrote)/i), when: judgesCrossFamily },
     { label: "says there are no human raters", test: all(/human raters?|no human/i) },
     { label: "says the item pool is public", test: all(/public/i) },
-    { label: "says the access tier is agent", test: all(/agent/i) },
+    { label: "says the access tier is agent", test: all(/agent/i), when: agentTier },
+    { label: "says the models were local open-weight builds, quantised, so results describe those builds", test: all(/local/i, /quantis/i), when: localOpenWeightTier },
   ],
   cite: [
     { label: "has the no-developer sentence verbatim", test: (t) => t.replace(/\s+/g, " ").includes(NO_DEVELOPER_SENTENCE) },
@@ -158,7 +182,8 @@ export const MUST_CITE = {
   "separated-model": ["subjects.", "length."],
   dimensions: ["dimension_pairwise_note", "dimension_item_counts"],
   "instrument-health": ["judge_agreement", "contamination"],
-  deviations: ["quote_grounding."],
+  // "a|b" = either prefix satisfies it: the first pilot reports quote_grounding, later runs report judge_validity.
+  deviations: ["quote_grounding.|judge_validity."],
   "not-scores": ["bank.items_validated", "bank.items_total"],
 };
 
@@ -170,9 +195,33 @@ export const SENSITIVITY_SECTIONS = ["instrument-health", "not-scores"];
 export const MUST_CITE_ANY = ["sensitivity.separation_pattern_unchanged", "derived.sensitivity_level_shift_group_range"];
 
 /** Same two sections, text level: absolute figures depend on which judges are used; only the separation pattern is robust. */
+const SAYS_JUDGES_MATTER = (t) => /depend\w*[^.]*\bjudges?\b|\bjudges?\b[^.]*\b(?:change|move|shift)s?\b/i.test(t);
+const SAYS_PATTERN_ROBUST = (t) => /\bonly the (?:separation )?pattern\b[^.]*\brobust|\brobust\b[^.]*\bonly the (?:separation )?pattern\b|\bonly the (?:separation )?pattern\b[^.]*\b(?:holds|survives|stays|is stable)/i.test(t);
+/** "this pilot did not test whether the separation pattern holds ..." (or "was not tested", "untested"). */
+const SAYS_PATTERN_UNTESTED = (t) => /\b(?:not|never) (?:been )?test\w*\b[^.]*\bseparation pattern\b|\bseparation pattern\b[^.]*\b(?:not|never) (?:been )?test\w*|\bseparation pattern\b[^.]*\buntested\b/i.test(t);
 export const MUST_SAY_ANY = [
-  { label: "say that absolute figures depend on which judges are used", test: (t) => /depend\w*[^.]*\bjudges?\b|\bjudges?\b[^.]*\b(?:change|move|shift)s?\b/i.test(t) },
-  { label: "say that only the separation pattern is robust", test: (t) => /\bonly the (?:separation )?pattern\b[^.]*\brobust|\brobust\b[^.]*\bonly the (?:separation )?pattern\b|\bonly the (?:separation )?pattern\b[^.]*\b(?:holds|survives|stays|is stable)/i.test(t) },
+  { label: "say that absolute figures depend on which judges are used", test: SAYS_JUDGES_MATTER },
+  { label: "say that only the separation pattern is robust", test: SAYS_PATTERN_ROBUST },
+];
+
+/**
+ * Amendment 2026-10-02 #15: the robustness half of amendment 3 holds only when the sensitivity analysis actually varied
+ * the judge set. It did when a judge was excluded (the sensitivity view keeps the excluded judge's ratings), i.e.
+ * `design.excluded_judges` is non-empty; a wave may also state it explicitly with a boolean `sensitivity.varies_judge_set`,
+ * which wins. When it did not, the report must say the pilot did not test whether the separation pattern survives a
+ * different choice of judges, and must NOT claim the pattern is robust to that choice.
+ */
+export function sensitivityVariesJudges(wave) {
+  if (typeof wave?.sensitivity?.varies_judge_set === "boolean") return wave.sensitivity.varies_judge_set;
+  return Array.isArray(wave?.design?.excluded_judges) && wave.design.excluded_judges.length > 0;
+}
+export const MUST_SAY_ANY_UNTESTED = [
+  { label: "say that absolute figures depend on which judges are used", test: SAYS_JUDGES_MATTER },
+  { label: "say that this pilot did not test whether the separation pattern holds under a different choice of judges (its sensitivity check varied no judge)", test: SAYS_PATTERN_UNTESTED },
+];
+/** Rejected when the sensitivity varied no judge: nothing measured that robustness. */
+export const MUST_NOT_SAY_UNTESTED = [
+  { label: "claim that only the separation pattern is robust to the choice of judges (this wave's sensitivity check varied no judge, so nothing measured that)", test: SAYS_PATTERN_ROBUST },
 ];
 
 /** Section 1 may state only run-level numbers: no per-model figure (template B1). */

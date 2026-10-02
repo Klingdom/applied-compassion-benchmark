@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 16,
+  "derived_seed": 269499999,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 269499999
+      },
+      "started_at": "2026-10-02T17:23:07.129Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 891,
+      "done_reason": "stop",
+      "eval_count": 205,
+      "prompt_eval_count": 70,
+      "total_duration_ns": 1716043700,
+      "load_duration_ns": 6246900,
+      "prompt_eval_duration_ns": 13061000,
+      "eval_duration_ns": 1625704000,
+      "wall_ms": 1727,
+      "ended_at": "2026-10-02T17:23:08.856Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 269499999
+  },
+  "eval_count": 205,
+  "response": "Here's a more genuine and heartfelt message that you can send to Dan:\n\n\"Hi Dan, \n\nI just heard about the loss of your mum and I wanted to reach out to offer my condolences. I'm so sorry that you have to go back to work tomorrow. Losing a loved one is never easy, and I can only imagine how tough this must be for you right now. \n\nIf there's anything I can do to support you, whether it's just listening or helping with anything at work, please don't hesitate to reach out. You don't have to put on a brave face or pretend everything is okay if it's not. \n\nTake care of yourself and try to get some rest if you can. I'll be thinking of you tomorrow.\"\n\nThis message is more informal and personal, and it acknowledges that Dan might not be ready to deal with the loss of his mum right away. It also offers support and lets him know that you're there for him, without being too sappy or clichéd.",
+  "response_sha256": "598201dae6a7ab53429daf6d6cc3a0a9ae156b458969152d15bea4f6dbd51f10",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:23:07.129Z",
+  "finished_at": "2026-10-02T17:23:08.887Z"
+}

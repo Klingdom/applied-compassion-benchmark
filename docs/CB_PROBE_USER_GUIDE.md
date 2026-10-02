@@ -35,8 +35,8 @@ There are two things it can produce:
 
 | | `JudgeEstimate` | `SelfRunScorecard` |
 |---|---|---|
-| What it is | A quick, unscored check: answer some questions, rate them against the rubric yourself. | A fuller, structured run: multiple repeated answers per question, an audit trail per rating, a mandatory check for whether the model has memorised the test. |
-| Does it produce a 0–100 number? | **Never.** There is no field in this artifact that could hold one. | **Only sometimes** — see "The composite: usually absent, and why" below. Even when present, it is never comparable to a real Compassion Benchmark score. |
+| What it is | A quick, unscored check: answer some questions, rate them against the rubric yourself. | A fuller, structured run: multiple repeated answers per question, an audit trail per rating, a mandatory check (two probes) for whether the model has memorised the test. |
+| Does it produce a 0–100 number? | **Never.** There is no field in this artifact that could hold one. | **Only sometimes** — see "The composite: when it appears, and when it is withheld" below. Even when present, it is never comparable to a real Compassion Benchmark score. |
 
 ---
 
@@ -44,7 +44,7 @@ There are two things it can produce:
 
 Full walkthrough: `tools/cb-probe/README.md`'s "Install" section. Summary:
 
-1. **Clone the repository**: `git clone https://github.com/<org>/applied-compassion-benchmark.git <REPO_PATH>`
+1. **Clone the repository**: `git clone https://github.com/Klingdom/applied-compassion-benchmark.git <REPO_PATH>`
    (substitute your own destination path for `<REPO_PATH>` everywhere below). Requires Node.js 20
    or newer, and nothing else — the package has zero other dependencies.
 2. **Register the server** with your AI tool. For Claude Code:
@@ -72,25 +72,28 @@ or the plugin described in `plugins/compassion-benchmark/`), this is all you nee
 
 > Run the Compassion Benchmark on yourself using cb-probe, and report the results honestly.
 
-That will run the **full** default version: all 8 dimensions, 23 questions (5 are excluded by
-default — see "The crisis items" below), 3 repeated answers each = 69 individual ratings. It takes
-a while. For a first look, see the next section.
+That will run the **full** default version: all 8 dimensions, every question the bank serves by
+default (the 5 crisis-adjacent ones are excluded — see "The crisis items" below), 3 repeated answers
+each. It is a long run: `run_status` reports the planned total once the run has started, and
+`site/src/data/model-benchmark/cb-probe-facts.generated.json` records it for the current bank
+(`trialsInDefaultRun`). For a first look, see the next section.
 
 ---
 
-## 4. The short version (9 ratings)
+## 4. The short version (one dimension)
 
 Ask for one dimension instead of all eight:
 
-> Use cb-probe to run a scored self-run on just the EQU dimension (3 questions, 3 repeats each = 9
-> ratings), and tell me the dimension mean and its uncertainty interval honestly — I understand
-> this will not produce a composite score.
+> Use cb-probe to run a scored self-run on just the EQU dimension, and tell me the planned number
+> of ratings before you begin, then the dimension mean and its uncertainty interval honestly — I
+> understand this will not produce a composite score.
 
 This finishes in a few minutes and shows you the whole shape of the artifact — dimension mean,
 per-question ratings, uncertainty interval, contamination check — without committing to the full
-run. `EQU`, `BND`, and `ACC` are all 3-question dimensions today (9 ratings at 3 repeats); `AWR` is
-5 questions (15 ratings); `ACT`, `SYS`, and `INT` are 2 questions each (6 ratings) once the 5
-crisis-adjacent questions are excluded (the default).
+run. On bank v2.0 each dimension has 10 or 11 questions served by default (30 or 33 ratings at 3
+repeats), once the 5 crisis-adjacent questions are excluded; the exact figures for your checkout are
+in `perDimensionDefaultItems` in the generated facts file, and `run_status` reports the planned
+total.
 
 ---
 
@@ -111,7 +114,8 @@ composite field exists there at all, ever.
 | `uncertainty.dimensions[code]` | A statistical interval around each dimension's mean (e.g. "4.0, but could plausibly be anywhere from 3.4 to 4.6 given the small number of repeats"), always present for any dimension that was measured. Read `uncertainty.dimensions[code].method` for exactly how it was computed. |
 | `uncertainty.composite_interval` | The same kind of interval around the composite — present only when the composite itself is. |
 | `items` | Every individual question: its id, dimension, the raw text of each repeated answer, the 1–5 rating given, which rubric anchor it matched, and the exact quote used as evidence. |
-| `subdimensions_status` | Always `{ available: false, reason: "..." }`. Compassion Benchmark's published taxonomy has 40 finer-grained subdimensions; this tool cannot score them because the question bank doesn't carry that tag on any item yet — checked freshly on every run, not assumed. |
+| `subdimensions`, `subdimension_item_counts`, `coverage` | Compassion Benchmark's published taxonomy has 40 finer-grained subdimensions, and bank v2.0 tags every question with one (its `indicator`). These fields give a mean and a question count per subdimension (`null` and 0 where nothing was rated, never an imputed number), and `coverage.level` says how many subdimensions this particular run rated. |
+| `subdimensions_status` | `{ available, reason, ... }`, computed fresh from the question bank on every run, not assumed: whether every one of the 40 codes is represented by at least one eligible question. |
 | `provenance` | Who/what/when: self-reported subject and judge labels, which configuration (`self`/`cross`/`panel`), the exact bank version and tool version used, timestamps, and a hash of every question used (so you can tell later if the questions themselves changed). |
 | `contamination` | The result of the mandatory "has this model seen these exact questions before?" check — see section 6's exposure-probe entry. |
 | `judge_configuration_notice` | A plain-language warning appropriate to the configuration — most importantly, the one that appears when a model rated its own work (`"self"`). |
@@ -159,21 +163,22 @@ result. Here is every refusal you might hit, and exactly why it exists:
 
 ---
 
-## 6b. The composite: usually absent, and why
+## 6b. The composite: when it appears, and when it is withheld
 
 A `SelfRunScorecard` produces a 0–100 composite and a band **only when both of these are true**:
 
 1. All 8 dimensions have at least one rated question.
 2. **Every one of those 8 dimensions rests on at least 3 rated questions**, not fewer.
 
-**On the question bank published today, condition 2 is never met**, even for the full default run:
-two dimensions (`SYS` and `INT`) have exactly 2 questions each, and neither has a spare
-crisis-adjacent question to add back by opting in. So `composite: null` is the normal, expected
-result of running this tool today — not a bug, and not something you did wrong. You still get
-every dimension's mean rating with its own uncertainty interval, every individual answer and
-rating, and the full contamination check — you just don't get one headline number, because that
-number would be dominated by which dimension a rating happened to land in, not by how the model
-actually behaved. `composite_withheld_reason` always names, in plain language, exactly which
+**Whether condition 2 can be met depends on the question bank.** On the original 33-question bank
+it could not (two dimensions had only 2 usable questions). On bank v2.0 every dimension has at least
+3 questions served by default, so a full default run can meet both conditions — the generated
+facts file records this as `floorReachable`. A run over fewer than all 8 dimensions never meets
+condition 1, and a run that is not fully rated falls short of condition 2. When a composite is
+withheld you still get every dimension's mean rating with its own uncertainty interval, every
+individual answer and rating, and the full contamination check — you just don't get one headline
+number, because that number would be dominated by which dimension a rating happened to land in, not
+by how the model actually behaved. `composite_withheld_reason` always names, in plain language, exactly which
 dimension(s) fall short and what would need to change (more questions in the bank, or in a few
 cases, opting into the crisis-adjacent items) for the number to appear.
 
@@ -209,7 +214,9 @@ controlled by the `CB_ARTIFACT_ROOT` environment variable you set at install tim
 
 - Each scored run gets its own subfolder, named by its run id: `run.json` (the plan and
   configuration), one file per recorded rating under `trials/`, `exposure-probe.json` (the
-  contamination check), and `scorecard.json` (the final result, written once you finish).
+  contamination check), `identification-key.json` and `identification-answers.json` (the answer key
+  and your answers for the forced-choice half of that check), and `scorecard.json` (the final
+  result, written once you finish).
 - Each quick judge session similarly gets its own subfolder under the same root.
 
 **To delete one run or session**, delete its subfolder:
@@ -234,13 +241,14 @@ protection beyond "it never leaves your machine via cb-probe itself."
 
 Read this section before treating any result as more meaningful than it is.
 
-- **The published bank has 33 questions total; 28 are usable, 23 of those after excluding the 5
-  crisis-adjacent items by default.** This is a small instrument. Three of the eight dimensions
-  (`ACT`, `SYS`, `INT`) have only 2 usable questions each once crisis items are excluded — the exact
-  reason the composite is withheld on today's bank (see section 6b).
-- **No subdimension scoring exists.** Compassion Benchmark's published taxonomy names 40
-  finer-grained subdimensions; none of the published questions are tagged to them yet, so this tool
-  cannot produce that level of detail, and says so rather than inventing it.
+- **The published bank is small and unreviewed.** Bank v2.0 has 93 questions, of which 5 are drafts
+  that are never scored and 5 are crisis-adjacent and excluded by default, leaving 83 served by
+  default. Those figures come from the generated facts file, not from this guide; trust that file if
+  they differ. Even a full default run rests on 10 or 11 questions per dimension (section 6b).
+- **Subdimension detail is thin.** Compassion Benchmark's published taxonomy names 40
+  finer-grained subdimensions and bank v2.0 tags every question with one, so the scorecard reports
+  them. But each subdimension rests on only a few questions, and `coverage.level` tells you whether
+  your run rated all 40; a subdimension nothing rated is reported as `null`, never invented.
 - **Self-judging inflates results.** If the same model both answers the questions and rates its own
   answers (the ordinary situation when you ask an AI assistant to "run this on yourself"), any
   number you get is an upper bound on how well the model *reports itself* doing — not a neutral
@@ -248,14 +256,16 @@ Read this section before treating any result as more meaningful than it is.
   swing several points across just a few days; a model rating its own work adds an inflation risk on
   top of that.
 - **The contamination check has real limits.** It can only tell you whether the model can recall a
-  handful of sample questions' *exact wording* from memory well enough to raise a flag. It cannot
-  tell you *why* a model recalls something — whether that's because it read the question text
-  earlier in the same conversation (harmless) or because the question was in its training data
-  (the thing the check exists to catch). It also only samples a few questions out of the whole set,
-  so a clean result says nothing about the questions it didn't ask about, and it checks the
-  question wording, not whether the model has memorised the grading rubric itself (arguably the
-  more useful thing to know).
-- **No question has been reviewed by a human rater**, and no reference ("gold standard") rating
+  handful of sample questions well enough to raise a flag. It has two parts: recalling a sampled
+  question's *exact wording* from memory, and a forced-choice test of which scenario belongs to a
+  question id, compared with chance. Neither can tell you *why* a model knows something — whether
+  that's because it read the question text earlier in the same conversation (harmless) or because
+  the question was in its training data (the thing the check exists to catch). Both only sample a few
+  questions out of the whole set, so a result of "no contamination indicated on the sampled items"
+  says nothing about the questions it didn't ask about. The identification part gets closer to
+  knowledge of the questions than wording recall does, but it still tests recognition, not whether
+  the model has memorised the grading rubric itself.
+- **No question has been reviewed by a human rater** (the review log, `site/src/data/model-benchmark/item-reviews-v1.json`, records every human review and is empty), and no reference ("gold standard") rating
   exists anywhere for comparison. The rating a model gives itself is checked for basic auditability
   (does it name a real anchor, does it quote something real), not for whether it is *correct*.
 
@@ -275,8 +285,8 @@ claim," the most careful review of this tool's measurement validity to date.
 - "It refused to finish until a contamination check had completed."
 - "Every rating records a verbatim excerpt of the answer it's based on, and a quote that doesn't
   actually appear in the answer is rejected."
-- "Every question here has been published with its full answer key for months, so any model trained
-  since then may have memorised both — this tool cannot fully separate genuine behaviour from
+- "Every question here has been published with its full answer key, so any model trained
+  since publication may have memorised both — this tool cannot fully separate genuine behaviour from
   memorisation."
 
 **Not defensible — do not say these:**
@@ -284,9 +294,9 @@ claim," the most careful review of this tool's measurement validity to date.
 - ❌ "This measures how compassionate the model is." It is a rating of a small number of published,
   single-turn answers by an unreviewed instrument with no known accuracy rate — a narrower claim
   than "how compassionate."
-- ❌ "The contamination check verifies the model hasn't seen the bank." It checks a handful of
-  questions' wording, from self-reported recall, and cannot distinguish in-session reading from
-  training-time memorisation.
+- ❌ "The contamination check verifies the model hasn't seen the bank." It samples a handful of
+  questions (recalled wording, and a forced choice of scenario), relies on the model's own answers,
+  and cannot distinguish in-session reading from training-time memorisation.
 - ❌ "This model scored 85; [some institution] scored 62." Same formula, never the same kind of
   evidence — do not place a self-run number next to a published Compassion Benchmark score in the
   same sentence, table, or slide, even when a composite is present.

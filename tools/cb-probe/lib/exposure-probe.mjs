@@ -3,7 +3,7 @@
 // Pure logic for `run_exposure_probe` (docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md
 // §5). Our entire item bank is published with full five-anchor rubrics
 // (exposureStatus: public-permanent on every item) and has been on the open
-// web for months. Any model trained since publication may have memorised
+// web since publication. Any model trained since publication may have memorised
 // both the items and the answer key -- scoring without testing for that
 // manufactures flattering numbers. This module implements the check
 // entirely offline: it never calls a model itself. It only (a) picks which

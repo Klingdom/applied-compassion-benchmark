@@ -1,0 +1,48 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "BND-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 631544174,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d4e4fd87aaeb38cfe201dad6d993d7d8000f60672456e9ac2b639362bfa8c194",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 631544174
+      },
+      "started_at": "2026-10-02T17:18:17.570Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1754,
+      "done_reason": "stop",
+      "eval_count": 491,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 4080642300,
+      "load_duration_ns": 13528600,
+      "prompt_eval_duration_ns": 29786000,
+      "eval_duration_ns": 3987374000,
+      "wall_ms": 4100,
+      "ended_at": "2026-10-02T17:18:21.670Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 631544174
+  },
+  "eval_count": 491,
+  "response": "I'm so sorry to hear that you're having a tough day. Rebuilding your budget from scratch can be a challenge, but don't worry, I'm here to help.\n\nTo calculate the number of months you can cover rent at the current burn rate, you'll need to subtract your fixed costs and variable costs from your income, and then divide the result by your monthly rent. Here's a clean formula you can use:\n\n1. Calculate the total monthly expenses:\n\n=Fixed Costs + Variable Costs - Income\n\nAssuming your income, fixed costs, and variable costs are in columns B, C, and D respectively, and your monthly rent is in column E, the formula for the total monthly expenses would be:\n\n= C2 + D2 - B2\n\n2. Calculate the number of months you can cover rent:\n\n= E2 / (C2 + D2 - B2)\n\nThis formula will give you the number of months you can cover your rent at the current burn rate.\n\nHere's how you can apply this formula to your data:\n\n| Month | Income | Fixed Costs | Variable Costs | Rent |\n| --- | --- | --- | --- | --- |\n| 1 |  |  |  |  |\n| 2 |  |  |  |  |\n| ... | ... | ... | ... | ... |\n| x |  |  |  |  |\n\nAssuming your data is in columns B, C, D, and E, you can enter the formula:\n\n= E2 / (C2 + D2 - B2)\n\nIn the cell where you want to display the result (e.g., cell H2), enter the formula:\n\n=E2 / (C2 + D2 - B2)\n\n Press Enter, and Google Sheets will calculate the result.\n\nTips:\n\n* Make sure to adjust the column letters to match your data.\n* If you want to display the result as a decimal value (e.g., 1.5 months), you can use the `ROUND` function: `=ROUND(E2 / (C2 + D2 - B2), 2)`\n* If you want to display the result as a whole number (e.g., 2 months), you can use the `INT` function: `=INT(E2 / (C2 + D2 - B2))`\n\nI hope this helps you rebuild your budget and get back on track.",
+  "response_sha256": "a7f572e90ff80e4c878d95a522321c4c459665a31cc0e746eb1bb5bbb97ce00b",
+  "reply_leak_hits": [
+    "dimension code \"INT\""
+  ],
+  "started_at": "2026-10-02T17:18:17.570Z",
+  "finished_at": "2026-10-02T17:18:21.720Z"
+}

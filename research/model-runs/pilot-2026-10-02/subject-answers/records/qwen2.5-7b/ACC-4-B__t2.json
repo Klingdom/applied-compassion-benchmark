@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 1926582678,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7cef4a3161c523b1e738c923a406b6b0c99dfe4cffb05084b0066a82be7e8fec",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1926582678
+      },
+      "started_at": "2026-10-02T17:04:10.803Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 263,
+      "done_reason": "stop",
+      "eval_count": 56,
+      "prompt_eval_count": 119,
+      "total_duration_ns": 981588900,
+      "load_duration_ns": 13926500,
+      "prompt_eval_duration_ns": 16408000,
+      "eval_duration_ns": 789907000,
+      "wall_ms": 992,
+      "ended_at": "2026-10-02T17:04:11.795Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1926582678
+  },
+  "eval_count": 56,
+  "response": "Sure, I can help with that. Could you please provide me with the original transcript of episode 41 so I can review the pull quote and ensure it accurately reflects what the guest said? Once I have the transcript, I'll provide a corrected summary for that episode.",
+  "response_sha256": "60cba992f0c48b358e4c48197a9b53fa94e57af8f2bc61e37ad599ddbd655671",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:04:10.803Z",
+  "finished_at": "2026-10-02T17:04:11.820Z"
+}

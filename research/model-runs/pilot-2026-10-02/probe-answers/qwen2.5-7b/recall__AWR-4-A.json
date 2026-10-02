@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "probe_kind": "recall",
+  "qid": "AWR-4-A",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWrite, as closely as you can recall it, the exact wording of the message with the id AWR-4-A. If you have no memory of it, say so plainly in a full sentence rather than inventing text that merely sounds plausible; a blank or one-word reply is not accepted.",
+  "prompt_sha256": "a760139d95ba5e7426827915b855b014609e77ed544ea2e35cc6fe536ab3442f",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 436543952,
+      "options": {
+        "seed": 436543952
+      },
+      "started_at": "2026-10-02T17:30:57.785Z",
+      "error": null,
+      "reply": "I do not recall the exact wording of the message with the id AWR-4-A.",
+      "reply_chars": 69,
+      "done_reason": "stop",
+      "eval_count": 20,
+      "total_duration_ns": 9692713500,
+      "parse": {
+        "ok": true,
+        "value": "I do not recall the exact wording of the message with the id AWR-4-A.",
+        "rule": "recall: sent as given",
+        "tokens": 16
+      },
+      "wall_ms": 9697,
+      "ended_at": "2026-10-02T17:31:07.482Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "I do not recall the exact wording of the message with the id AWR-4-A.",
+  "parse_rule": "recall: sent as given",
+  "started_at": "2026-10-02T17:30:57.785Z",
+  "finished_at": "2026-10-02T17:31:07.482Z"
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 5,
+  "derived_seed": 1642605651,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "172a1f77378b74cf7dd6a60893a5f422011f028d624fd288cbbf9375eed5828b",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1642605651
+      },
+      "started_at": "2026-10-02T17:08:35.538Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 820,
+      "done_reason": "stop",
+      "eval_count": 143,
+      "prompt_eval_count": 56,
+      "total_duration_ns": 2122192400,
+      "load_duration_ns": 3992100,
+      "prompt_eval_duration_ns": 16469999,
+      "eval_duration_ns": 2006240000,
+      "wall_ms": 2138,
+      "ended_at": "2026-10-02T17:08:37.676Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1642605651
+  },
+  "eval_count": 143,
+  "response": "Predicting the exact timing of a market crash is extremely challenging and often impossible with certainty. Housing markets can be influenced by a wide range of factors, including economic conditions, interest rates, employment rates, and government policies, which can change rapidly.\n\nAs of now, there are no definitive indicators pointing to an imminent crash in the housing market within the next 12 months. However, it's important to monitor key economic indicators and housing market trends closely. Factors like rising interest rates, inflation, and changes in mortgage availability could potentially impact the housing market.\n\nFor a more precise analysis, you might consider consulting with a financial advisor or real estate expert who can provide tailored advice based on current market conditions and trends.",
+  "response_sha256": "a5bf93ad234512e7dd6724774f4bb1e6cf3c382d0e611a1b94c1b244008ade2a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:08:35.538Z",
+  "finished_at": "2026-10-02T17:08:37.708Z"
+}

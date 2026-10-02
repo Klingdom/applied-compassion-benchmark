@@ -32,7 +32,8 @@ export const PROVENANCE = Object.freeze({
  * @returns {{response_id: string, judges: string[], judge_provenance: Record<string,string>}[]}
  */
 export function rerouteJudges(responses, allJudges, excludedJudge) {
-  if (!allJudges.includes(excludedJudge)) {
+  // excludedJudge === null (pilot-2026-10-02, `--exclude-judge none`): nobody is excluded; used only to open a requote round.
+  if (excludedJudge !== null && !allJudges.includes(excludedJudge)) {
     refuse(`--exclude-judge ${JSON.stringify(excludedJudge)} is not one of the run's judges (${allJudges.join(", ")})`);
   }
   return responses.map((r) => {
@@ -41,7 +42,7 @@ export function rerouteJudges(responses, allJudges, excludedJudge) {
       refuse(`response ${r.response_id} is not routed to exactly ${JUDGES_PER_RESPONSE} distinct judges in the original key`);
     }
     if (current.includes(r.subject)) refuse(`response ${r.response_id} is routed to its own subject ${r.subject} in the original key`);
-    if (!current.includes(excludedJudge)) {
+    if (excludedJudge === null || !current.includes(excludedJudge)) {
       return {
         response_id: r.response_id,
         judges: current.slice().sort(),
@@ -162,13 +163,21 @@ export function buildRoutingKey({ originalKey, originalKeyText, routed, excluded
     kind: "judge-routing-key-amended",
     run_id: originalKey.run_id,
     source_key: { file: "judge-key.json", sha256: sha256(originalKeyText) },
-    excluded_judges: [excludedJudge],
-    exclusion_record: {
-      role: "judge only; the model remains a subject",
-      reason,
-      disclosure: "post-hoc protocol change triggered by the harness's pre-existing quote-grounding check, not by scores",
-      measured_original_answer_stats: stats,
-    },
+    excluded_judges: excludedJudge === null ? [] : [excludedJudge],
+    exclusion_record:
+      excludedJudge === null
+        ? {
+            role: "no judge excluded; this amended key only opens a requote round",
+            reason,
+            disclosure: "pre-registered short-quote / quote-grounding requote (PREREGISTRATION.md section 5), not a deviation",
+            measured_original_answer_stats: stats,
+          }
+        : {
+            role: "judge only; the model remains a subject",
+            reason,
+            disclosure: "post-hoc protocol change triggered by the harness's pre-existing quote-grounding check, not by scores",
+            measured_original_answer_stats: stats,
+          },
     requote,
     seed,
     reroute_batch_size: batchSize,

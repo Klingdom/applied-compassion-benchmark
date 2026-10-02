@@ -166,3 +166,62 @@ These supersede the sections they name. Reasons are the review findings cited.
    not-separated group — together they let a reader rebuild the group's hidden points and their order. Show the
    paired-difference *ranges* and the separated/not-separated flag instead. Coordinator-accepted; supersedes
    template K3's default.
+
+---
+
+## Amendments — 2026-10-02 (second pilot, `pilot-2026-10-02`; implementation rules, proposed by backend-engineer, pending coordinator confirmation)
+
+These record how the pipeline was generalised so that one template serves a wave that is NOT the first pilot's shape (local
+open-weight subjects, judges of another family, no separated model). Nothing here relaxes a Never in section A.
+
+9. **A group point is any display of a member's point.** R-group-point (amendment 2) now also rejects the derived range of a
+   not-separated group's points (`derived.not_separated_group_range`, `..._ranges`: its extremes are the members' own points, and for a
+   group of two they are both) and a group member's dimension mean (`subjects.<id>.dimensions.<code>`). Use each member's own 95% range.
+   When EVERY subject is in one group, no subject has a point anywhere (prose, tables, charts, front matter, `/ai-models`).
+10. **Pairs are alphabetical in the wave.** An analysis may list a pair in its pre-registered direction ("a minus b" with a after b).
+    The wave lists every pair with `a` sorting before `b`, the difference negated and the interval mirrored (flags unchanged), so the
+    wave's order never follows a result. The A-pairwise rule still guards an analysis mis-ordered after that step.
+11. **Wave-conditional must-say rules (B).** A must-say may apply only to waves where its premise is true:
+    - judges' family: a wave whose `judge_set.families_disjoint` is true must say the judges come from a different model family than the
+      models tested (sections 1 and 11, with the bank still authored with help from the judges' family); every other wave keeps the
+      same-family circularity statement;
+    - access tier: "agent" for an agent-tier wave; "local ... quantised" for a `local-open-weight` wave;
+    - judge pairing is read from `routing`: "one fixed judge pair" when every subject's replies were rated by one pair, and a
+      rotation statement when they were spread over several pairs;
+    - section 7 with no separated model says so ("no model was separated, so there is no separated model to report"), still states
+      the unresolved reply-length confound, and needs neither "not an estimate" nor "consistent across judges" (there is no bound or
+      separated model);
+    - section 10 may cite `judge_validity.*` instead of `quote_grounding.*`.
+12. **Model names are labels.** A name that carries a version number ("Qwen2.5 7B", "qwen2.5-7b", "Qwen2.5-7B") is not a bare digit
+    in prose; a figure typed beside it still is. Paths with dotted ids are written plainly (`subjects.qwen2.5-7b.x`).
+13. **Optional wave blocks.** A wave exported from a run with pinned local builds, a judge set, `judge_validity`, a bridge, deviations and
+    a pre-registration carries `subject_provenance`, `judge_set`, `judge_validity`, `bridge_drift`, `deviations`,
+    `self_identifying_replies` and `preregistration`; each is projected only when the analysis has it. `preregistration` records the
+    hash and that the file was not committed or independently time-stamped before the data existed.
+
+14a. **Machine-readable twins obey the same withholding (backend-engineer, 2026-10-02; defect class DC-24).** Amendments 2, 8 and 9 bind
+    every output a tool can read, not only the page. The public wave file `/data/model-waves/<run_id>.json` is a PROJECTION of the
+    internal wave (`site/scripts/lib/model-benchmark-public.mjs`, `projectWavePublic`), derived from `derived.not_separated_groups`:
+    for each member it withholds `pilot_composite`, `dimensions`, the judge-sensitivity point and any length-adjusted point, and it
+    withholds `difference` for every pair (composite, dimension, sensitivity) that involves a member, because that difference plus a
+    separated subject's point rebuilds the member's point (amendment 8). Intervals, separation flags and counts stay. Separated subjects
+    keep their points. The file says what it withheld (`public_projection`, `point_withheld`). The same rule covers
+    `/data/model-benchmark/index.json`, `llms.txt`, `llms-full.txt`, the markdown alternates, `.well-known` and every JSON-LD block;
+    `test:model-machine-leak` holds them to it with planted probes and a positive control (a separated subject's point is present).
+14. **A wave needs its narrative to render.** A wave file and manifest entry without `reports/<run_id>.md` render nothing (no page,
+    sitemap entry, public wave file or mention) and break nothing; generic pilot wording on `/ai-models` is checked only when no wave renders.
+15. **The robustness half of amendment 3 is conditional on what the sensitivity check varied (2026-10-02, from the second pilot's
+    claim audit, blocker B4).** Amendment 3 was written for the first pilot, whose sensitivity view put an excluded judge's ratings back,
+    so it did test a choice of judges. A wave whose sensitivity check varied no judge cannot say the separation pattern is robust to that
+    choice: nothing measured it. The rule now reads from the wave:
+    - **The check varied the judge set** (`design.excluded_judges` is non-empty, or the wave says `sensitivity.varies_judge_set: true`,
+      which wins): unchanged. Say that absolute figures depend on which judges are used and only the separation pattern is robust.
+    - **It did not** (no judge excluded and no `varies_judge_set: true`; for example the second pilot, whose check re-read the original
+      answers before the requote round): still cite `sensitivity.separation_pattern_unchanged` and
+      `derived.sensitivity_level_shift_group_range`, still say that absolute figures depend on which judges are used, and say instead that
+      the pilot did not test whether the separation pattern holds under a different choice of judges. Wording: "This check does not test
+      a different choice of judges. Absolute figures depend on which judges are used, and this pilot did not test whether the separation
+      pattern holds under a different choice of judges." The sentence "only the separation pattern is robust" (or "... holds / survives /
+      stays") is then rejected anywhere in the report (`R-sensitivity-overclaim`).
+    Enforced in `site/scripts/lib/model-report.mjs` (`sensitivityVariesJudges`, `MUST_SAY_ANY_UNTESTED`, `MUST_NOT_SAY_UNTESTED` in
+    `model-report-template.mjs`); proved both ways in `site/scripts/test-model-reports.mjs`.

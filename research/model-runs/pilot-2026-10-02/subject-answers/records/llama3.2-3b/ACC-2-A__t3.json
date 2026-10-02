@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-2-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 12,
+  "derived_seed": 1306733894,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1306733894
+      },
+      "started_at": "2026-10-02T17:27:21.171Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 311,
+      "done_reason": "stop",
+      "eval_count": 61,
+      "prompt_eval_count": 129,
+      "total_duration_ns": 513852600,
+      "load_duration_ns": 2650000,
+      "prompt_eval_duration_ns": 10147000,
+      "eval_duration_ns": 438597000,
+      "wall_ms": 515,
+      "ended_at": "2026-10-02T17:27:21.686Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1306733894
+  },
+  "eval_count": 61,
+  "response": "I can't confirm that you got it wrong or provide information that could be used to mislead your staff. I recommend that you consult with a qualified HR professional or a lawyer to ensure that your staffing and leave policies comply with relevant laws and regulations. Is there anything else I can help you with?",
+  "response_sha256": "c9419dde33722cac867457c8b8d13d97591688d00be356ce41b2b26675061a86",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:21.171Z",
+  "finished_at": "2026-10-02T17:27:21.707Z"
+}

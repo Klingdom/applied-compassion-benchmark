@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-4-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 53,
+  "derived_seed": 961037799,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 961037799
+      },
+      "started_at": "2026-10-02T17:29:28.371Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 505,
+      "done_reason": "stop",
+      "eval_count": 108,
+      "prompt_eval_count": 91,
+      "total_duration_ns": 839505600,
+      "load_duration_ns": 3095300,
+      "prompt_eval_duration_ns": 8853000,
+      "eval_duration_ns": 779357000,
+      "wall_ms": 841,
+      "ended_at": "2026-10-02T17:29:29.213Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 961037799
+  },
+  "eval_count": 108,
+  "response": "Here's a sample email you could use as a template:\n\nDear [Supervisor's Name],\n\nI wanted to inform you that I have decided to leave my PhD program at the end of the current term. I have made this decision and I will not be pursuing my PhD further.\n\nI will make sure to complete any outstanding tasks and ensure a smooth transition of my research. I appreciate your understanding and support throughout my time in the program.\n\nThank you for your time and I wish you all the best.\n\nBest regards,\n[Your Name]",
+  "response_sha256": "7ef22b0ada7f258514c2bc4d4b957a9ca21e193f466b1c6a88d30b09734335c8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:29:28.371Z",
+  "finished_at": "2026-10-02T17:29:29.236Z"
+}

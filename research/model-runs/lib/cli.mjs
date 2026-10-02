@@ -19,6 +19,21 @@ export function runRoot(values) {
   return path.resolve(values["run-root"] ?? path.join(MODEL_RUNS_ROOT, values["run-id"]));
 }
 
+/** Async twin of main() with the same error policy (used by bins that call a model). */
+export async function mainAsync(fn) {
+  try {
+    const code = await fn();
+    if (typeof code === "number") process.exitCode = code;
+  } catch (e) {
+    if (e instanceof HarnessError) {
+      console.error(e.message.startsWith("REFUSED") ? e.message : `REFUSED: ${e.message}`);
+      process.exitCode = 1;
+      return;
+    }
+    throw e;
+  }
+}
+
 export function main(fn) {
   try {
     const code = fn();

@@ -18,7 +18,7 @@
 
 import type { ReactNode } from "react";
 import type { PilotWave } from "@/lib/model-wave-facts";
-import { alpha, familyName, accessTierLabel } from "@/lib/model-report-facts";
+import { alpha, judgeFamilyName, accessTierLabel } from "@/lib/model-report-facts";
 
 export const W = 480;
 export const FS = 14;
@@ -141,7 +141,7 @@ export function footerHeight(): number {
   return 8 + 3 * LH + 8;
 }
 export function Footer({ wave, y }: { wave: PilotWave; y: number }) {
-  const fam = familyName(wave) ?? "Same";
+  const fam = judgeFamilyName(wave) ?? "Same"; // the JUDGES' family: "Claude-family judges" whether or not the subjects are Claude models
   const l3 = `${wave.run_id} · ${accessTierLabel(wave)} · comparability ${wave.comparability}`;
   return (
     <g>

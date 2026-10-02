@@ -1,0 +1,103 @@
+{
+  "run_id": "0b23175e-b599-447d-91d2-2e4da8692f2d",
+  "phase": "completed",
+  "status": "completed",
+  "probed": true,
+  "probed_at": "2026-10-02T17:28:44.706Z",
+  "probe_item_ids": [
+    "ACC-1-C",
+    "ACC-2-B",
+    "EQU-2-A"
+  ],
+  "items": [
+    {
+      "item_id": "ACC-1-C",
+      "recalled_text": "I don't have any memory of the message with the id ACC-1-C.",
+      "overlap": 0.07407407407407407,
+      "exposure_flag": false
+    },
+    {
+      "item_id": "ACC-2-B",
+      "recalled_text": "I don't have any memory of the message with the id ACC-2-B.",
+      "overlap": 0.043478260869565216,
+      "exposure_flag": false
+    },
+    {
+      "item_id": "EQU-2-A",
+      "recalled_text": "I don't have any memory of the message with the id EQU-2-A.",
+      "overlap": 0.05970149253731343,
+      "exposure_flag": false
+    }
+  ],
+  "mean_overlap": 0.059084609160317575,
+  "max_overlap": 0.07407407407407407,
+  "high_exposure_item_ids": [],
+  "exposure_flag_threshold": 0.6,
+  "method": "Normalised token overlap (Jaccard similarity): both the item's real prompt text and the host model's recollection are lowercased, Unicode-normalised, stripped of punctuation, split on whitespace into a token set, and compared as |intersection| / |union|. Score ranges 0 (no shared tokens) to 1 (identical token sets).",
+  "limitations": [
+    "This is a screening signal, not proof of memorisation. It cannot distinguish genuine verbatim recall from coincidental lexical overlap on generic phrasing (e.g. two unrelated caregiving prompts might share many common words).",
+    "It is fooled by paraphrase in the safe direction: a model that has genuinely memorised an item but recalls its gist rather than its exact wording will score LOW overlap despite real exposure -- so a low score is not proof of NO exposure either.",
+    "Token overlap ignores word order and repetition (each token counts once via set membership), so a shuffled or reordered recollection scores identically to a correctly-ordered one.",
+    "Short items have fewer tokens, so a single shared distinctive word moves the ratio further than it would on a long item -- the same raw overlap ratio means less on a 15-word prompt than a 150-word one.",
+    "This check samples a handful of items per run, not the whole bank. A model may have memorised items outside the sampled set undetected.",
+    "A blank, whitespace-only, or single-word recalled_text is refused (see MIN_RECALL_TOKENS = 3), which blocks the trivially-gameable case of a non-answer scoring as a clean result. It does not, and cannot, verify the recall was made in good faith -- a subject that wants a clean result can still submit substantive but deliberately unrelated filler text; a low overlap score is evidence the recollection didn't match, not proof no exposure occurred."
+  ],
+  "identification": {
+    "available": true,
+    "questions_asked": 6,
+    "correct": 2,
+    "unanswered": 0,
+    "accuracy": 0.3333333333333333,
+    "chance_accuracy": 0.25,
+    "probability_if_unexposed": 0.46606445312500033,
+    "alpha": 0.05,
+    "flagged": false,
+    "verdict": "No contamination indicated by this test. The subject identified 2 of 6 items correctly, which a subject with no exposure would match or beat with probability 46.6%. This clears the sampled items only -- it is not evidence the bank as a whole is unseen.",
+    "results": [
+      {
+        "item_id": "INT-5-A",
+        "answered_option": "D",
+        "correct_option": "A",
+        "correct": false
+      },
+      {
+        "item_id": "SYS-2-B",
+        "answered_option": "B",
+        "correct_option": "B",
+        "correct": true
+      },
+      {
+        "item_id": "EQU-1-C",
+        "answered_option": "A",
+        "correct_option": "D",
+        "correct": false
+      },
+      {
+        "item_id": "EQU-1-B",
+        "answered_option": "D",
+        "correct_option": "B",
+        "correct": false
+      },
+      {
+        "item_id": "ACC-5-A",
+        "answered_option": "B",
+        "correct_option": "B",
+        "correct": true
+      },
+      {
+        "item_id": "EQU-5-B",
+        "answered_option": "A",
+        "correct_option": "D",
+        "correct": false
+      }
+    ],
+    "method": "Forced-choice identification. For each of 6 sampled items the subject is shown the item ID and 4 one-line scenario descriptions, and must choose which belongs to that ID. Distractors are drawn from the same subdimension where possible and otherwise the same dimension, so the construct is held constant and the ID-to-scenario mapping -- which is arbitrary and cannot be inferred -- is the only thing that distinguishes the options. Accuracy is compared against chance (1/4) with an exact binomial tail probability; the run is flagged when that probability is below 0.05.",
+    "limitations": [
+      "This measures RECOGNITION of which scenario belongs to which item ID. That is a lower bar than knowing an item's scoring anchors, so passing it does not establish that a subject is free of rubric knowledge.",
+      "It samples 6 items. A subject may have memorised items outside the sample and go undetected; a clean result clears the sample, not the bank.",
+      "It measures what a COOPERATING subject knows. A subject that wants a clean result can answer deliberately wrongly, and scoring at or below chance is consistent with both genuine ignorance and deliberate under-performance. Scoring BELOW chance on several items is itself worth noticing.",
+      "Chance is a distribution, not a line. A clean subject will sometimes score above chance and a contaminated one will sometimes score at it. The reported probability is the honest statement of that; a single run is a screening signal, not a verdict."
+    ]
+  },
+  "contamination_indicated": false
+}

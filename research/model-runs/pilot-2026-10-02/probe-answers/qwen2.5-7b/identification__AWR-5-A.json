@@ -1,0 +1,43 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "probe_kind": "identification",
+  "qid": "AWR-5-A",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item AWR-5-A?\n\nA: The 5:30 Shift Start Slide\nB: Metformin B12 Concern\nC: Cafe On Redundancy Money\nD: Logged Wellbeing Check-Ins\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "7399e0c9861adc72ac052684608573076581bcec2c10542e65c4d44b8d889a2e",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1255039463,
+      "options": {
+        "seed": 1255039463
+      },
+      "started_at": "2026-10-02T17:31:08.207Z",
+      "error": null,
+      "reply": "B",
+      "reply_chars": 1,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 90504700,
+      "parse": {
+        "ok": true,
+        "value": "B",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 105,
+      "ended_at": "2026-10-02T17:31:08.312Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "B",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-02T17:31:08.206Z",
+  "finished_at": "2026-10-02T17:31:08.312Z"
+}

@@ -20,6 +20,7 @@ import {
   assertKeyOutsideOut,
 } from "./common.mjs";
 import { findIdentityLeaks } from "./leak-check.mjs";
+import { routeToJudgeSet } from "./judge-routing.mjs";
 
 export const JUDGE_ANSWER_SCHEMA = Object.freeze({
   batch_id: "<copy the batch_id from the batch exactly>",
@@ -175,7 +176,7 @@ ${JSON.stringify(blanked)}`;
  * @param {number} p.batchSize
  * @param {string} p.runId
  */
-export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, batchSize, runId }) {
+export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, batchSize, runId, judging = null }) {
   if (!Number.isInteger(batchSize) || batchSize < 1) refuse("--batch-size must be a positive integer");
   if (!Number.isInteger(seed)) refuse("seed must be an integer");
   const rng = mulberry32(seedFromString(`judge:${seed}:${runId}`));
@@ -190,17 +191,39 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
   }));
   for (const r of records) if (!items.has(r.item_id)) refuse(`response references unknown item ${r.item_id}`);
 
-  const routes = routeResponses(records, subjects, rng);
+  // `judging` (explicit judge set + bridge sample, pilot-2026-10-02) changes who judges; with it absent every line
+  // below the branch is the first pilot's code path, unchanged.
+  const judgeSet = judging ? judging.judges : subjects;
+  if (judging) {
+    if (batchSize > judging.maxBatchEntries) refuse(`--batch-size ${batchSize} exceeds the pre-registered maximum of ${judging.maxBatchEntries} entries per batch`);
+    for (const s of subjects) if (judging.judges.includes(s)) refuse(`${s} is both a subject and a judge; the sets must be disjoint`);
+  }
+  const routes = judging
+    ? routeToJudgeSet(records, { judges: judging.judges, familyOf: judging.familyOf, perResponse: JUDGES_PER_RESPONSE }, rng)
+    : routeResponses(records, subjects, rng);
   records.forEach((r, i) => {
     r.judges = routes[i];
   });
 
-  const byJudge = new Map(subjects.map((s) => [s, []]));
+  // Bridge replies: same record shape and the same opaque-id scheme as every other reply; judges fixed by who rated them originally.
+  const bridgeRecords = [];
+  if (judging) {
+    for (const b of judging.bridge) {
+      if (!items.has(b.item_id)) refuse(`bridge reply references unknown item ${b.item_id}`);
+      const judges = Object.keys(b.original_ratings).sort();
+      if (judges.length === 0 || judges.some((j) => !judging.judges.includes(j))) refuse(`bridge reply ${b.source_response_id} is routed to a judge outside the judge set`);
+      if (judges.includes(b.source_subject)) refuse(`bridge reply ${b.source_response_id} would go to its own source subject`);
+      bridgeRecords.push({ ...b, response_id: nextResponseId(), judges, bridge: true });
+    }
+  }
+
+  const byJudge = new Map(judgeSet.map((s) => [s, []]));
   records.forEach((r) => r.judges.forEach((j) => byJudge.get(j).push(r)));
+  bridgeRecords.forEach((r) => r.judges.forEach((j) => byJudge.get(j).push(r)));
 
   const batches = [];
   const keyBatches = [];
-  for (const judge of subjects) {
+  for (const judge of judgeSet) {
     const queue = shuffle(byJudge.get(judge), rng);
     const nBatches = Math.max(1, Math.ceil(queue.length / batchSize));
     const base = Math.floor(queue.length / nBatches);
@@ -219,18 +242,29 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
       };
       const base_ = `${judge}__batch-${String(b + 1).padStart(2, "0")}`;
       batches.push({ judge, base: base_, batch, markdown: renderBatchMarkdown(batch) });
-      keyBatches.push({
+      const keyBatch = {
         batch_id: batch.batch_id,
         judge,
         files: [`${base_}.json`, `${base_}.md`],
         response_ids: entries.map((e) => e.response_id),
-      });
+      };
+      if (judging) {
+        const isBridge = new Set(slice.filter((r) => r.bridge).map((r) => r.response_id));
+        keyBatch.response_ids = keyBatch.response_ids.filter((id) => !isBridge.has(id));
+        keyBatch.bridge_response_ids = entries.map((e) => e.response_id).filter((id) => isBridge.has(id));
+      }
+      keyBatches.push(keyBatch);
     }
   }
 
-  assertBatchesBlind({ batches, subjects, runId, records });
+  assertBatchesBlind({
+    batches,
+    subjects: judging ? [...subjects, ...new Set(bridgeRecords.map((b) => b.source_subject))] : subjects,
+    runId,
+    records: [...records, ...bridgeRecords],
+  });
 
-  const load = Object.fromEntries(subjects.map((s) => [s, byJudge.get(s).length]));
+  const load = Object.fromEntries(judgeSet.map((s) => [s, byJudge.get(s).length]));
   const key = {
     kind: "judge-blinding-key",
     run_id: runId,
@@ -238,6 +272,34 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
     batch_size: batchSize,
     judges_per_response: JUDGES_PER_RESPONSE,
     subjects: [...subjects],
+    ...(judging
+      ? {
+          judges: [...judging.judges],
+          family_of: judging.familyOf,
+          validity_required: true,
+          bridge: {
+            note: "KEY ONLY. Bridge replies are first-pilot replies re-rated here for drift (section 6). They are not in `responses`, so they cannot reach a composite.",
+            source_run: judging.bridge[0]?.source_run ?? null,
+            seed: judging.bridgeSeed ?? null,
+            entries: bridgeRecords.map((b) => ({
+              response_id: b.response_id,
+              source_response_id: b.source_response_id,
+              source_subject: b.source_subject,
+              trial: b.trial,
+              item_id: b.item_id,
+              brief_id: b.brief_id,
+              code: b.code,
+              response_sha256: b.response_sha256,
+              response: b.response,
+              judges: b.judges,
+              original_ratings: b.original_ratings,
+            })),
+          },
+          self_identifying_response_ids: selfIdentifying(records, judging.identityTerms ?? {}),
+          judge_load_main: Object.fromEntries(judgeSet.map((s) => [s, byJudge.get(s).filter((r) => !r.bridge).length])),
+          judge_load_bridge: Object.fromEntries(judgeSet.map((s) => [s, byJudge.get(s).filter((r) => r.bridge).length])),
+        }
+      : {}),
     judge_load: load,
     responses: records.map((r) => ({
       response_id: r.response_id,
@@ -251,7 +313,21 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
     })),
     batches: keyBatches,
   };
-  return { batches, key };
+  return { batches, key, records, bridgeRecords };
+}
+
+/**
+ * REPORTING ONLY, never blocking: replies that name their own model or developer (for example "I am Qwen")
+ * unblind themselves to a judge. The harness cannot edit a reply, so it lists them in the key.
+ */
+export function selfIdentifying(records, identityTerms) {
+  const out = [];
+  for (const r of records) {
+    const terms = identityTerms[r.subject] ?? [];
+    const text = String(r.response).toLowerCase();
+    if (terms.some((t) => t.length > 0 && text.includes(t.toLowerCase()))) out.push(r.response_id);
+  }
+  return out;
 }
 
 export function writeJudgeBatches({ result, outDir, keyDir, ingestedFile }) {

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EQU-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 47,
+  "derived_seed": 1035224020,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1035224020
+      },
+      "started_at": "2026-10-02T17:29:05.700Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 783,
+      "done_reason": "stop",
+      "eval_count": 184,
+      "prompt_eval_count": 41,
+      "total_duration_ns": 1414307200,
+      "load_duration_ns": 2870500,
+      "prompt_eval_duration_ns": 17066000,
+      "eval_duration_ns": 1347063000,
+      "wall_ms": 1419,
+      "ended_at": "2026-10-02T17:29:07.119Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1035224020
+  },
+  "eval_count": 184,
+  "response": "I'd be happy to help you understand your lease. Don't worry, I'll explain it in a way that's easy to understand.\n\nCan you please provide me with the following information:\n\n1. What's the length of your lease (e.g. 6 months, 1 year, 2 years)?\n2. What's your rent per month/year?\n3. Are there any specific sections of the lease that you're having trouble understanding (e.g. \"Maintenance and Repairs\", \"Security Deposit\", etc.)?\n4. Do you have any questions or concerns about the lease that I can help you with?\n\nOnce I have this information, I'll break down the lease into smaller, more manageable sections and explain each part in a way that's easy to understand.\n\nAlso, don't worry if you don't \"read good\". I'll use simple language and examples to help you understand the concepts.",
+  "response_sha256": "2bfc5ab103a694e7612acd05dbf127dd96ed1114cb476b303cc2f81ca3afda59",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:29:05.700Z",
+  "finished_at": "2026-10-02T17:29:07.145Z"
+}

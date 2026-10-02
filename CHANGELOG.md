@@ -5,6 +5,64 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-02 — A second unofficial pilot (two open-weight models), a reports index, and machine-readable access for AI systems (NO official scores; pending deploy)
+
+- **What it is.** A second unofficial pilot report, at `/ai-models/reports/pilot-2026-10-02`. It covers two small
+  open-weight models run locally as four-bit builds: Llama3.2 3B (Meta) and Qwen2.5 7B (Alibaba). Each reply was
+  rated by two of three judge models from a different developer. It is **not a score, not a ranking, and supports
+  no comparison with other models**, including those in the first pilot.
+- **What it finds.** The test could not tell the two models apart, overall or on any dimension, once multiple
+  comparisons are corrected for. The report therefore shows ranges only, for both models.
+- **How it was run.**
+  - The plan was written before any reply existed. It was committed after the data, which the report says, and
+    three dated changes to it are disclosed.
+  - The contamination check ran through the public MCP server, and neither model was flagged.
+  - One of the two builds carries a built-in system line naming its developer. The run did not control it; the
+    report discloses it, and future runs must now set the system message explicitly.
+- **What it does not cover.** The test items about people in crisis were not used. Nothing here is advice about
+  which model to use, in a crisis or otherwise.
+- **New for readers and for AI systems.**
+  - A reports index at `/ai-models/reports`.
+  - A data-and-citation block on each report.
+  - A Markdown copy of each report.
+  - A single machine entry point at `/data/model-benchmark/index.json`.
+  - `/llms-full.txt`.
+  - The `.well-known` descriptor, now generated from the tool's own facts.
+- **A correction before publication.**
+  - The public data file behind the first pilot report would have carried the exact figures the report withholds
+    for the three models it could not separate. Read in order, those figures form a ranking. Every machine-readable
+    copy now withholds them, and a test checks every such file.
+  - The figure label for dimension scores said "0 to 5". It is 1 to 5.
+  - Neither error ever reached the live site.
+- **No developer was contacted before publication, and none paid for, sponsored or reviewed the report.** The
+  commit SHA will be added when this is deployed.
+
+
+## 2026-10-02 — The MCP server gets a public page, and a contamination check that was optional is now required (NO score changes; pending commit/deploy)
+
+- **What changed on the site.**
+  - `/ai-evaluation-suite` gains a section on **cb-probe**, the local MCP server that lets an AI model in your own
+    tool take the published test items. It covers what the server produces, every tool it exposes, how to install
+    it, a step-by-step run, the contamination check, who judges, what it refuses to do, how data is handled, and
+    what its output is not.
+  - `/ai-models/methodology` gains a nine-stage table. For each stage it shows what the first pilot did, what a
+    local cb-probe run does, and what an official run would additionally need.
+  - Every count, tool name and threshold in these sections is generated from the server and the item bank at
+    build time.
+- **A defect in the tool, fixed.** The contamination check has two parts: recall, and a forced-choice question
+  about which items the model recognises. The second part could be skipped, and a skipped check read as
+  "no contamination indicated". Both parts are now required before a run can finish. The first pilot was checked
+  and was not affected.
+- **Statements corrected.** These were served by the tool, its documentation and `/ai-models`:
+  - That the scoring floor "is not reachable" on today's item bank. It is.
+  - That the items have been public "for months". The item bank was first committed on 2026-09-07 (`09d896da`).
+  - That the tool reports version 0.1.0. It is 0.3.0.
+  - Copy on the Suite page that invited readers to "compare models" using self-run numbers.
+- **Why.** A page about a measurement tool is itself a set of claims. A sentence-by-sentence audit that ran the
+  tool, rather than reading its documentation, found six statements that were false.
+- **Impact.** No score, ranking or index entry changes. Commit SHA appended on deploy.
+
+
 ## 2026-10-02 — Published: an unofficial pilot report on four AI models (NO official scores; pending deploy)
 
 - **What it is.** A report on the first blinded pilot of the AI Model Compassion Benchmark: four Claude models,

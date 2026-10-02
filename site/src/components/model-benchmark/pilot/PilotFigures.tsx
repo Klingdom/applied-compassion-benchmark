@@ -3,7 +3,7 @@
  *
  *   G1 IntervalFigure     per-model 95% ranges, point tick, "Not separated" brackets
  *   G2 PairFigure         paired-difference ranges, separated vs not, zero line
- *   G3 DimensionFigure    per-dimension ranges, 0 to 5, item counts
+ *   G3 DimensionFigure    per-dimension ranges on the 1 to 5 rating scale, item counts
  *   G4 LengthFigure       reply length: between-model scatter + within-model slopes
  *   G5 JudgeFigure        judge leniency grid (own-model cells hatched) + agreement
  *
@@ -367,7 +367,8 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
   const nameOf = (c: string) => DIMENSIONS.find((d) => d.code === c)?.name ?? c;
   const X0 = 150;
   const X1 = W - 24;
-  const xs = (v: number) => X0 + (v / 5) * (X1 - X0);
+  // Ratings run 1 to 5 (no rating can be below 1), so the axis spans exactly that.
+  const xs = (v: number) => X0 + ((v - 1) / 4) * (X1 - X0);
   const els: ReactNode[] = [];
   let y = 6;
   const descParts: string[] = [];
@@ -417,16 +418,16 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
   const footY = noteY + noteLines.length * LH + 6;
   const height = footY + footerHeight() + 4;
 
-  const desc = `Ranges for each of ${dims.length} dimensions on a 0 to 5 scale, one row per model; a separated model also has a shape marker at its mean. ${descParts.join(". ")}. ${STATUS_LINE(wave)} Order carries no meaning.`;
-  const title = "Unofficial pilot ranges by dimension and model, on the 0 to 5 rubric scale.";
+  const desc = `Ranges for each of ${dims.length} dimensions on the 1 to 5 rating scale, one row per model; a separated model also has a shape marker at its mean. ${descParts.join(". ")}. ${STATUS_LINE(wave)} Order carries no meaning.`;
+  const title = "Unofficial pilot ranges by dimension and model, on the 1 to 5 rating scale.";
   checkText("G3 title", title, wave);
   checkText("G3 desc", desc, wave);
-  const caption = `${STATUS_LINE(wave)} Each whisker is a 95% item-resampling range for one dimension. Models in a not-separated group show ranges only; a separated model also shows a shape at its mean. The axis is the full 0 to 5 rubric scale. Few items support each dimension (the count is on each heading), so the ranges are wide. ${confoundSentence(wave)}`.trim();
+  const caption = `${STATUS_LINE(wave)} Each whisker is a 95% item-resampling range for one dimension. Models in a not-separated group show ranges only; a separated model also shows a shape at its mean. The axis is the full 1 to 5 rating scale. Few items support each dimension (the count is on each heading), so the ranges are wide. ${confoundSentence(wave)}`.trim();
   checkText("G3 caption", caption, wave);
 
   const svg = (
     <>
-      <HAxis x0={X0} x1={X1} y={axisY} min={0} max={5} step={1} grid={axisY - 6} label="Rubric scale, 0 to 5." />
+      <HAxis x0={X0} x1={X1} y={axisY} min={1} max={5} step={1} grid={axisY - 6} label="Rating scale, 1 to 5." />
       {els}
       <SvgLines x={12} y={noteY} lines={noteLines} sub />
       <Footer wave={wave} y={footY} />
@@ -436,7 +437,7 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
     <FigureFrame
       id="fig-dimensions"
       number={number}
-      title="Dimension ranges, on the full 0 to 5 scale."
+      title="Dimension ranges, on the full 1 to 5 rating scale."
       caption={caption}
       svgTitle={title}
       svgDesc={desc}
@@ -445,7 +446,7 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
       tableSummary="Data table: dimension ranges"
       table={
         <DataTable
-          caption="Dimension ranges (95%), 0 to 5 scale, by model in alphabetical order. A mean appears for a separated model only. Unofficial; not a score."
+          caption="Dimension ranges (95%), 1 to 5 rating scale, by model in alphabetical order. A mean appears for a separated model only. Unofficial; not a score."
           head={
             <>
               <tr>
@@ -761,11 +762,21 @@ export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number 
   void gridTop;
   y += 8;
   const excluded = wave.design.excluded_judges.filter((id) => subs.includes(id));
+  // Predicates over the wave: which of these statements is true depends on whether a judge is also a subject,
+  // whether the wave has a separated model, and how the judge pairs were assigned (from routing).
+  const judgeIsSubject = judges.some((j) => subs.includes(j));
+  const hasSeparated = wave.derived.separated_subjects.length > 0;
+  const pairCounts = Object.values(wave.routing as Record<string, { responses_by_judge_pair?: Record<string, number> }>).map((r) => Object.values(r.responses_by_judge_pair ?? {}).filter((n) => n > 0).length);
+  const rotating = pairCounts.length > 0 && pairCounts.every((n) => n > 1);
   const notesA = [
-    "Hatched cells: the judge never rated its own model. Bars run left for a rating below the item mean and right for above.",
-    "Leniency is measured against the all-subject item mean, which includes the separated model, so positive values are partly an artefact. Read down a column.",
-    excluded.length ? `${excluded.join(", ")}: excluded as a judge${/post-hoc/i.test(wave.exclusion_record.disclosure) ? " (post-hoc, see Deviations)" : ""}; still a subject.` : "",
-    "One fixed judge pair rated each non-excluded model, so judge taste and model cannot be fully separated.",
+    judgeIsSubject
+      ? "Hatched cells: the judge never rated its own model. Bars run left for a rating below the item mean and right for above."
+      : "No judge is also a model tested in this wave, so no cell is hatched. Bars run left for a rating below the item mean and right for above.",
+    `Leniency is measured against the all-subject item mean, which includes ${hasSeparated ? "the separated model" : "the models judged"}, so positive values are partly an artefact. Read down a column.`,
+    excluded.length ? `${excluded.join(", ")}: excluded as a judge${/post-hoc/i.test(wave.exclusion_record?.disclosure ?? "") ? " (post-hoc, see Deviations)" : ""}; still a subject.` : "",
+    rotating
+      ? "Each model's replies were rated by every pair of judges in turn, so no single judge pair decides a model's figures."
+      : "One fixed judge pair rated each non-excluded model, so judge taste and model cannot be fully separated.",
   ].filter(Boolean);
   notesA.forEach((n, i) => checkText(`G5 panel A note ${i + 1}`, n, wave));
   const aLines = notesA.flatMap((n) => wrapText(n));
@@ -802,12 +813,12 @@ export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number 
   const height = footY + footerHeight() + 4;
 
   const desc =
-    `Panel A: judge leniency against the all-subject item mean, one row per judge and one column per model judged, own-model cells hatched. ${judges.map((j) => `${j}: ${subs.filter((id) => id !== j && id in wave.judges[j].by_subject).map((id) => `${id} ${signed(wave.judges[j].by_subject[id])}`).join(", ")}; overall ${signed(wave.judges[j].leniency_vs_item_mean)}`).join(". ")}. ` +
+    `Panel A: judge leniency against the all-subject item mean, one row per judge and one column per model judged${judgeIsSubject ? ", own-model cells hatched" : ""}. ${judges.map((j) => `${j}: ${subs.filter((id) => id !== j && id in wave.judges[j].by_subject).map((id) => `${id} ${signed(wave.judges[j].by_subject[id])}`).join(", ")}; overall ${signed(wave.judges[j].leniency_vs_item_mean)}`).join(". ")}. ` +
     `Panel B: exact agreement between the two judges, by model judged. ${subs.map((id) => `${id} ${(wave.subjects[id].judge_agreement.exact * 100).toFixed(1)}%`).join("; ")}. ${STATUS_LINE(wave)}`;
   const title = "Unofficial pilot instrument health: judge leniency and agreement.";
   checkText("G5 title", title, wave);
   checkText("G5 desc", desc, wave);
-  const caption = `${STATUS_LINE(wave)} Panel A is a check on the judges, not on the models. Each judge rated the other models only. Positive leniency is partly an artefact of the comparison; see the note in the figure.`;
+  const caption = `${STATUS_LINE(wave)} Panel A is a check on the judges, not on the models. ${judgeIsSubject ? "Each judge rated the other models only. " : "No judge is also a model tested here. "}Positive leniency is partly an artefact of the comparison; see the note in the figure.`;
   checkText("G5 caption", caption, wave);
 
   const svg = (
@@ -838,7 +849,7 @@ export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number 
       table={
         <>
           <DataTable
-            caption="Judge leniency against the all-subject item mean, by model judged. A blank cell is the judge's own model, never rated. Unofficial; not a score."
+            caption={`Judge leniency against the all-subject item mean, by model judged. ${judgeIsSubject ? "A blank cell is the judge's own model, never rated. " : ""}Unofficial; not a score.`}
             head={
               <tr>
                 <th scope="col">Judge</th>

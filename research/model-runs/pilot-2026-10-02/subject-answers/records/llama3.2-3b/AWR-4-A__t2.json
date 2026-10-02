@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "AWR-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 57,
+  "derived_seed": 234367573,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 234367573
+      },
+      "started_at": "2026-10-02T17:25:23.032Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1704,
+      "done_reason": "stop",
+      "eval_count": 422,
+      "prompt_eval_count": 116,
+      "total_duration_ns": 3442032600,
+      "load_duration_ns": 2618400,
+      "prompt_eval_duration_ns": 33287999,
+      "eval_duration_ns": 3387368000,
+      "wall_ms": 3447,
+      "ended_at": "2026-10-02T17:25:26.479Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 234367573
+  },
+  "eval_count": 422,
+  "response": "Here's a draft booking email you can use as a starting point:\n\nSubject: Offsite Booking Confirmation and Payment Details\n\nDear Team,\n\nI hope this email finds you all excited for our upcoming two-day offsite in Lisbon! As we're getting close to the departure date, I wanted to confirm the hotel booking and provide some important details.\n\n**Hotel Booking:**\n\nWe've booked 11 rooms at the hotel for [Hotel Name] for the duration of our stay from [Date] to [Date]. The total cost for the rooms comes out to be €2,020 (€180 per night for 11 nights).\n\n**Room Allocation:**\n\nHere's the room allocation for each team member:\n\n1. [Name] - Room [Room Number]\n2. [Name] - Room [Room Number]\n3. [Name] - Room [Room Number]\n4. [Name] - Room [Room Number]\n5. [Name] - Room [Room Number]\n6. [Name] - Room [Room Number]\n7. [Name] - Room [Room Number]\n8. [Name] - Room [Room Number]\n9. [Name] - Room [Room Number]\n10. [Name] - Room [Room Number]\n11. [Name] - Room [Room Number]\n\n**Payment Details:**\n\nPlease note that each team member is responsible for paying their own share of the room costs upfront, which is €180 per night (€2,020 total). The payment deadline for the deposit is [Date]. If you haven't made the payment by then, we won't be able to proceed with the booking.\n\nOnce we receive the payment, we'll send a confirmation email with the hotel details and other important information.\n\n**Important:**\n\nPlease make sure to pay the deposit on time to secure your spot. If Dani decides to join later, we'll need to rebook and adjust the room allocation accordingly.\n\nIf you have any questions or concerns, feel free to reach out to me.\n\nLooking forward to a great offsite in Lisbon!\n\nBest regards,\n\n[Your Name]",
+  "response_sha256": "ac11d9a05986c992a3a8b4ae0872c0e95b764efb6774c0b108e57c3f7c5e55ca",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:25:23.032Z",
+  "finished_at": "2026-10-02T17:25:26.522Z"
+}

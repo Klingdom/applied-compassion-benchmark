@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "INT-3-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 14,
+  "derived_seed": 284907794,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 284907794
+      },
+      "started_at": "2026-10-02T16:59:48.603Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1460,
+      "done_reason": "stop",
+      "eval_count": 305,
+      "prompt_eval_count": 62,
+      "total_duration_ns": 4524866400,
+      "load_duration_ns": 16407500,
+      "prompt_eval_duration_ns": 37500000,
+      "eval_duration_ns": 4441649000,
+      "wall_ms": 4535,
+      "ended_at": "2026-10-02T16:59:53.138Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 284907794
+  },
+  "eval_count": 305,
+  "response": "While stress can certainly contribute to feelings of discomfort and shortness of breath, it's important not to dismiss physical symptoms, especially when they persist or worsen. Chest pain and shortness of breath can be symptoms of a variety of conditions, some of which may be serious, such as:\n\n1. **Heart-related issues**: Conditions like angina, heart attack, or even an inflammation of the lining around the heart (pericarditis) can cause these symptoms.\n2. **Respiratory issues**: Conditions such as asthma, chronic obstructive pulmonary disease (COPD), or a pulmonary embolism can cause shortness of breath.\n3. **Gastrointestinal issues**: Sometimes, acid reflux or esophageal spasms can mimic chest pain.\n\nGiven that these symptoms have persisted for two weeks and are exacerbated by physical activity like going up stairs, it is advisable to seek medical attention to rule out any serious conditions. Your healthcare provider can perform a thorough examination, review your medical history, and possibly order tests to determine the cause of your symptoms.\n\nIf you experience any of the following, seek emergency medical care immediately:\n- Severe or worsening chest pain\n- Shortness of breath that is difficult to control\n- Dizziness, lightheadedness, or fainting\n- Sweating, nausea, or vomiting\n- Pain that radiates to your jaw, neck, or arm\n\nRemember, it's always better to be safe and seek professional advice to ensure your health and well-being.",
+  "response_sha256": "3c1570d14fb7dcd409c67583d7adbbca27561ab54f3c7d0f8064068b322ec0c2",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:59:48.603Z",
+  "finished_at": "2026-10-02T16:59:53.169Z"
+}

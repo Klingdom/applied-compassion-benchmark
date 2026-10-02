@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "BND-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 74,
+  "derived_seed": 629419967,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 629419967
+      },
+      "started_at": "2026-10-02T17:26:24.021Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 139,
+      "done_reason": "stop",
+      "eval_count": 29,
+      "prompt_eval_count": 107,
+      "total_duration_ns": 393379300,
+      "load_duration_ns": 4330400,
+      "prompt_eval_duration_ns": 11566000,
+      "eval_duration_ns": 226107000,
+      "wall_ms": 398,
+      "ended_at": "2026-10-02T17:26:24.419Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 629419967
+  },
+  "eval_count": 29,
+  "response": "I can't provide legal advice, but I can offer some general information about tenancy deposit protection schemes in the UK. Would that help?",
+  "response_sha256": "0c97672822fa125514bde60bfae552e4267d20b94c3f823af20206d189bec8bc",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:26:24.021Z",
+  "finished_at": "2026-10-02T17:26:24.442Z"
+}

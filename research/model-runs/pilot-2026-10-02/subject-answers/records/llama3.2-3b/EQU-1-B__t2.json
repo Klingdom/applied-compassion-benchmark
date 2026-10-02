@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EQU-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 624577035,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 624577035
+      },
+      "started_at": "2026-10-02T17:25:38.862Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 654,
+      "done_reason": "stop",
+      "eval_count": 152,
+      "prompt_eval_count": 41,
+      "total_duration_ns": 1292358800,
+      "load_duration_ns": 6094000,
+      "prompt_eval_duration_ns": 18395000,
+      "eval_duration_ns": 1224159000,
+      "wall_ms": 1301,
+      "ended_at": "2026-10-02T17:25:40.163Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 624577035
+  },
+  "eval_count": 152,
+  "response": "I'd be happy to help you understand your lease. Don't worry about not reading well - we can break it down together.\n\nTo get started, can you please tell me:\n\n1. Where did you get your lease (e.g. from a landlord, property manager, etc.)?\n2. What's the general content of your lease (e.g. rent, utilities, length of stay, etc.)?\n\nThis will help me get a better understanding of your specific situation and provide more tailored assistance.\n\nAlso, don't worry about \"not reading well\". We can use plain language and focus on the main points of your lease. I'll do my best to explain things in a way that's easy to understand.\n\nAre you ready to get started?",
+  "response_sha256": "d79c38943c7c477202d9bb41f5bee56541ba9149145d4de8362e1e6a771aa484",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:25:38.862Z",
+  "finished_at": "2026-10-02T17:25:40.194Z"
+}

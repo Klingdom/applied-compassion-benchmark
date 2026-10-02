@@ -28,7 +28,7 @@ export async function goodReportHtml(wave, { preview = false } = {}) {
   const ids = [...wave.design.subjects].sort();
   const rangeOf = (id) => `${wave.subjects[id].pilot_composite_interval95[0].toFixed(1)} to ${wave.subjects[id].pilot_composite_interval95[1].toFixed(1)}`;
   const rows = ids
-    .map((id) => `<tr><td>${sep.has(id) ? "Separated" : "Not separated"}</td><td>${id} <span>(agent tier, snapshot unverified)</span></td><td>${rangeOf(id)}</td><td>${sep.has(id) ? wave.subjects[id].pilot_composite.toFixed(1) : "not shown"}</td></tr>`)
+    .map((id) => `<tr><td>${sep.has(id) ? "Separated" : "Not separated"}</td><td>${id} <span>(${f.accessTierLabel(wave)})</span></td><td>${rangeOf(id)}</td><td>${sep.has(id) ? wave.subjects[id].pilot_composite.toFixed(1) : "not shown"}</td></tr>`)
     .join("");
   const ld = [
     f.reportJsonLd(wave),

@@ -56,6 +56,14 @@ await check("committed waves regenerate byte-identically", () => {
 });
 
 const manifest = JSON.parse(readFileSync(join(WAVES, "manifest.json"), "utf8"));
+await check("every committed wave regenerates on its own (--check --run-id), so one wave cannot hide behind another", () => {
+  assert(manifest.length > 0, "no waves");
+  for (const e of manifest) {
+    const r = spawnSync(process.execPath, ["--no-warnings", BIN, "--check", "--run-id", e.run_id], { encoding: "utf8", env: process.env });
+    assert(r.status === 0, `${e.run_id}: exit ${r.status}: ${r.stderr || r.stdout}`);
+  }
+  console.log(`         ${manifest.map((e) => e.run_id).join(", ")}`);
+});
 const waveName = `${manifest[0].run_id}.json`;
 const scratch = mkdtempSync(join(tmpdir(), "cb-wave-export-"));
 const fresh = () => {
@@ -87,6 +95,24 @@ try {
     assert(/differs from regeneration/.test(r.stderr), `unexpected failure: ${r.stderr}`);
     console.log(`         ${first(r)}`);
   });
+  // A later-kind wave carries build provenance parsed from its pre-registration; a hand edit of any of it must fail the check.
+  const withProvenance = manifest.map((e) => e.run_id).filter((id) => JSON.parse(readFileSync(join(WAVES, `${id}.json`), "utf8")).subject_provenance !== undefined);
+  await check("at least one committed wave carries subject_provenance (the provenance control is not vacuous)", () => assert(withProvenance.length > 0, "no committed wave has subject_provenance"));
+  for (const id of withProvenance) {
+    await check(`NC ${id}: a developer or licence edited in subject_provenance is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"licence": "[^"]*"/, '"licence": "Edited licence"')));
+      assert(r.status !== 0 && /differs from regeneration/.test(r.stderr), `not caught: ${r.stderr}`);
+      console.log(`         ${first(r)}`);
+    });
+    await check(`NC ${id}: a changed judge_set claim is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"families_disjoint": (true|false)/, (m, v) => `"families_disjoint": ${v === "true" ? "false" : "true"}`)));
+      assert(r.status !== 0 && /differs from regeneration/.test(r.stderr), `not caught: ${r.stderr}`);
+    });
+    await check(`NC ${id}: a pair re-oriented by hand (the wave's own alphabetical orientation) is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"separated": (true|false)\r?\n/, (m, v) => `"separated": ${v === "true" ? "false" : "true"}\n`)));
+      assert(r.status !== 0, "a flipped separation flag passed");
+    });
+  }
   await check("NC a changed manifest entry is caught", () => {
     const r = runIn(plant("manifest.json", (t) => t.replace('"report_date": "', '"report_date": "9')));
     assert(r.status !== 0 && /manifest/.test(r.stderr), `not caught: ${r.stderr}`);

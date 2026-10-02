@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "AWR-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 40,
+  "derived_seed": 937612016,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 937612016
+      },
+      "started_at": "2026-10-02T16:53:19.161Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1976,
+      "done_reason": "stop",
+      "eval_count": 524,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 7436612100,
+      "load_duration_ns": 3166600,
+      "prompt_eval_duration_ns": 69099000,
+      "eval_duration_ns": 7341280000,
+      "wall_ms": 7439,
+      "ended_at": "2026-10-02T16:53:26.600Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 937612016
+  },
+  "eval_count": 524,
+  "response": "Certainly! Here’s a draft of the booking email with the deposit deadline and the room list. You can adjust the details as needed.\n\n---\n\nSubject: Booking Confirmation for Team Offsite in Lisbon - Deposit Deadline\n\nHi Team,\n\nI hope you’re all doing well. We’re just a few steps away from finalizing our team offsite in Lisbon! I wanted to send you this email to confirm the hotel booking details and set a deposit deadline for everyone. \n\n### Hotel Booking Details\n\n**Hotel:** [Hotel Name]\n**Address:** [Hotel Address]\n**Price per night:** €180\n**Total cost per room (2-night stay):** €360\n\n### Room List\n\n1. **John Doe** - Room 101\n2. **Jane Smith** - Room 102\n3. **Mark Johnson** - Room 103\n4. **Emily Brown** - Room 104\n5. **James Taylor** - Room 105\n6. **Liam Wilson** - Room 106\n7. **Olivia Wilson** - Room 107\n8. **Noah Davis** - Room 108\n9. **Sophia Martinez** - Room 109\n10. **Alex Green** - Room 110\n11. **Dani** - Room 111 (Dani has arranged an alternative accommodation)\n\n### Important Information\n\n- **Deposit Deadline:** Please transfer your share of the hotel cost (€180) to the designated account by **[Deadline Date, e.g., October 15th]**. Please include your name in the payment reference to ensure we receive it.\n- **Payment Information:**\n  - Account Name: [Your Company’s Name]\n  - Account Number: [Account Number]\n  - Sort Code: [Sort Code]\n  - IBAN: [IBAN (if applicable)]\n  - Bank: [Bank Name]\n- **Expense Reimbursement:** After the trip, we will reimburse everyone for their share of the hotel costs. Please keep your receipts and send them to [Your Email] along with a breakdown of your expenses.\n\nWe’re excited for this team-building event and look forward to a productive and enjoyable offsite! If you have any questions or need further details, feel free to reach out.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Your Contact Information]\n\n---\n\nFeel free to customize the email as needed to fit your specific team’s preferences and requirements.",
+  "response_sha256": "2eb6f042fba9092b820a177519167d58631e23f7bdb60a4e31707ac654c949fb",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:53:19.161Z",
+  "finished_at": "2026-10-02T16:53:26.640Z"
+}

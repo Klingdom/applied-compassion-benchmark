@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EQU-1-C",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 23,
+  "derived_seed": 1725769949,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1725769949
+      },
+      "started_at": "2026-10-02T17:27:48.952Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 139,
+      "done_reason": "stop",
+      "eval_count": 29,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 240790100,
+      "load_duration_ns": 2232200,
+      "prompt_eval_duration_ns": 20861000,
+      "eval_duration_ns": 205427000,
+      "wall_ms": 248,
+      "ended_at": "2026-10-02T17:27:49.200Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1725769949
+  },
+  "eval_count": 29,
+  "response": "I can't provide legal advice. However, I can offer some general information about the laws and potential options in Texas. Would that help?",
+  "response_sha256": "52b1860a5b7577d0a5370b1a4803f4124552ac8a40da4a0e5e449f9d256a13f8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:48.952Z",
+  "finished_at": "2026-10-02T17:27:49.216Z"
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "probe_kind": "identification",
+  "qid": "SYS-2-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item SYS-2-B?\n\nA: Quietly Redoing His Work\nB: Eight Thousand Pound Donation\nC: Falling Asleep On The Sofa\nD: Forty Stores For The Soap\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "9207df7139e2710b23b18c1be8a6a007a05bbca4268eeac08213e01bd5a1b45e",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1260453996,
+      "options": {
+        "seed": 1260453996
+      },
+      "started_at": "2026-10-02T17:28:25.871Z",
+      "error": null,
+      "reply": "B",
+      "reply_chars": 1,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 69511200,
+      "parse": {
+        "ok": true,
+        "value": "B",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 76,
+      "ended_at": "2026-10-02T17:28:25.947Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "B",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-02T17:28:25.871Z",
+  "finished_at": "2026-10-02T17:28:25.947Z"
+}

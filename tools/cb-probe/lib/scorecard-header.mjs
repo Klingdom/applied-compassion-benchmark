@@ -36,8 +36,8 @@ export const SELF_RUN_HEADER = Object.freeze({
     "computeCompositeFromDimensions -- imported directly, never reimplemented) ONLY when all 8 " +
     "dimensions were measured AND every one of them rests on at least 3 rated items " +
     "(DECISIONS.md D-40) -- otherwise composite and band are null and composite_withheld_reason " +
-    "explains exactly why. This is NOT the normal case: on the task bank published today, that " +
-    "floor is not reachable at all (see composite_withheld_reason on any real run). Same maths " +
+    "explains exactly why. Whether a given run met that rule is reported in its " +
+    "composite_withheld_reason, not stated here, because it depends on the items the run covered. Same maths " +
     "when a composite IS present, unofficial status always: a different formula would be more " +
     "confusing, not more honest, because it would teach a wrong mental model of what the benchmark " +
     "measures. This is still not an official Compassion Benchmark score, result, ranking, or index " +

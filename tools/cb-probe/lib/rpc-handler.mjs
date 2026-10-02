@@ -10,12 +10,26 @@
 // written back) or null (for notifications, which get no response). The
 // stdio framing itself lives in bin/server.mjs.
 
-import { TOOL_DEFINITIONS, TOOL_DEFINITIONS_BY_NAME } from "./tool-definitions.mjs";
+import { readFileSync } from "node:fs";
+import { TOOL_DEFINITIONS,TOOL_DEFINITIONS_BY_NAME } from "./tool-definitions.mjs";
 import { ToolError } from "./tools.mjs";
 import { validateToolArgs } from "./validate-args.mjs";
 import { assertHonestToolResult } from "./outbound-guard.mjs";
 
-const SERVER_INFO = { name: "cb-probe", version: "0.1.0" };
+// The version is read from package.json, never typed here, so `initialize` cannot report a
+// version the package is not. package.json sits one level above lib/ both in the repository and
+// in the packed npm tarball (package/lib/rpc-handler.mjs, package/package.json), and "package.json"
+// is always included in a tarball. An unreadable or versionless file is a startup failure, not a
+// silent fallback to a made-up number.
+function readPackageVersion() {
+  const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+  if (typeof pkg.version !== "string" || pkg.version.length === 0) {
+    throw new Error("cb-probe: package.json has no version string; refusing to report a made-up serverInfo.version.");
+  }
+  return pkg.version;
+}
+
+const SERVER_INFO = { name: "cb-probe", version: readPackageVersion() };
 const DEFAULT_PROTOCOL_VERSION = "2024-11-05";
 
 function ok(id, result) {

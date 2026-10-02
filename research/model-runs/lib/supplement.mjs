@@ -14,6 +14,7 @@ import { refuse, parseJsonLenient } from "./common.mjs";
 import { isVerbatimSubstring } from "./judge-answers.mjs";
 import { cbProbeRejections } from "./probe-validate.mjs";
 import { defaultRatingSource } from "./reroute.mjs";
+import { quoteLength } from "./judge-validity.mjs";
 
 /** batch_id -> {parsed, label}, across every directory. A batch answered twice refuses. */
 export function indexAnswerDirs(dirs) {
@@ -32,7 +33,7 @@ export function indexAnswerDirs(dirs) {
 /**
  * @returns {{selected: object[], sourceByPair: Map<string,string>, inspected: number}}
  */
-export function planSupplement({ currentKey, responsesById, answerDirs, bank, seed, scratchDir }) {
+export function planSupplement({ currentKey, responsesById, answerDirs, bank, seed, scratchDir, minQuoteChars = null }) {
   const answers = indexAnswerDirs(answerDirs);
   const sourceByPair = new Map();
   const candidates = [];
@@ -68,14 +69,20 @@ export function planSupplement({ currentKey, responsesById, answerDirs, bank, se
   for (const c of candidates) {
     const f = facts.get(c.key);
     const probeError = rejections.get(c.key);
-    if (f.verbatim && !probeError) continue;
+    // pilot-2026-10-02 (section 5): quotes under `minQuoteChars` characters are requoted too. Off by default.
+    const tooShort = minQuoteChars !== null && quoteLength(c.evidence_quote) < minQuoteChars;
+    if (f.verbatim && !probeError && !tooShort) continue;
     const [response_id, judge] = c.key.split("|");
     selected.push({
       response_id,
       judge,
       from_source: f.source,
       from_batch_id: f.batch_id,
-      reason: probeError ?? "evidence_quote is not a verbatim substring of the response (harness quote-grounding rule)",
+      reason:
+        probeError ??
+        (!f.verbatim
+          ? "evidence_quote is not a verbatim substring of the response (harness quote-grounding rule)"
+          : `evidence_quote is under ${minQuoteChars} characters (pre-registered short-quote rule, section 5)`),
     });
   }
   return { selected, sourceByPair, inspected: candidates.length };

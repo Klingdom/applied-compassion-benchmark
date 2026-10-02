@@ -94,7 +94,23 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 
 ### New rows (2026-10-02, Iteration 90) — falsifiable "done when" on each
 
-- **DC23-PARSE — parse every changed script before trusting a build or test.** DC-23 hit three times on 2026-10-01;
+- **RUN-SYS-1 — DONE 2026-10-02 (It. 95).**
+  - **Problem.** pilot-2026-10-02 sent no system message, so each local build applied its own default, and the
+    defaults differed: Qwen's names its developer.
+  - **Fix.** `loadRunConfig` now refuses a run without an explicit `system_message`, unless a recorded legacy flag
+    is set. The subject runner and the MCP probe driver both send it identically to every subject.
+  - **Tests.** 7, including a refusal control.
+- **DC24-GATE — DONE 2026-10-02 (It. 95).** The public wave projection plus `test:model-machine-leak`; see
+  `docs/DEFECT_CLASS_REGISTRY.md` DC-24.
+- **MR-10 — Meta-review 10 due.** Iterations 92–95 are unreviewed, and the cadence gate allows 5. Nine consecutive
+  loops have been founder-directed. *Done when:* `docs/META_REVIEW_*_ITER92-96.md` exists and the cadence test
+  passes with the counter reset.
+- **PILOT-3 (proposal).** A wave with a length-matched arm (founder decision 6) and an explicit neutral system
+  message. Ideally it adds non-Claude judges, which needs provider keys (decision 4).
+- **DC23-PARSE — DONE 2026-10-02 (It. 92), uncommitted.** `site/scripts/test-script-syntax.mjs` = chain step 1
+  (64 → 65); scope is wider than the done-when line (every git-tracked script, 256, not the listed folders). The
+  planted control fails it; a real-tree plant in `normalise.mjs` fails it and was restored. Original row:
+  parse every changed script before trusting a build or test. DC-23 hit three times on 2026-10-01;
   a regex scan missed two of three broken strings, `node --check` caught all. *Done when:* a chain step runs
   `node --check` on every tracked `.mjs/.cjs/.js` under `site/scripts`, `research/**/bin|lib|scripts`, `tools/**/lib`,
   and a planted raw line break inside a string fails it. v1: I4 S4 L3 C5 − E1 − R1 = 14 · v2: + Rc 2 = 16.
@@ -241,7 +257,7 @@ tools it guards. Building the tools first and bolting on the guarantee is how a 
 | **MCP-B5** | `open_judge_session`, `record_item_estimate`, `summarise_judge_session`, artifact writer with the mandatory header | backend | B4 | I4 S5 L3 C5 − E3 − R2 = **12** | Labels are self-reported and stored as `self_reported: true`; we never verify which model is speaking, and the artifact says so |
 | **MCP-B6** | `run_exposure_probe` (recall + rubric-leak) | backend | B5 | I5 S5 L4 C4 − E3 − R2 = **13** | **The highest-value tool in the set.** Our items are published with full rubrics, so any model trained since may have memorised them. Measuring that publicly defends the benchmark's credibility better than any score we could publish this year |
 | **MCP-B7** | Promotion-proof scan: assert nothing under `site/` or `research/scripts/model-harness/` reads a judge artifact; `.gitignore` the artifact root; data-tree signature scan — into `npm test` | qa | B5 | I5 S5 L3 C5 − E2 − R1 = **15** | This is what stops a self-judged estimate ever becoming an official number |
-| **MCP-B8** | Disclosure copy as a **section** on `/ai-models/methodology` (not a new page — D-29 caps the page count) + tool README | frontend | B5 | I4 S5 L2 C5 − E2 − R1 = **13** | Must ship **before** the package is published, not after |
+| **MCP-B8** | **DONE 2026-10-02 (It. 93), uncommitted; placed on `/ai-evaluation-suite#mcp-server` (spec D2, departs from this row), with a pipeline table on `/ai-models/methodology#analysis`.** Original: Disclosure copy as a **section** on `/ai-models/methodology` (not a new page — D-29 caps the page count) + tool README | frontend | B5 | I4 S5 L2 C5 − E2 − R1 = **13** | Must ship **before** the package is published, not after |
 | **MCP-B9** | Claude Skill wrapper (`compassion-probe`) + Claude Code plugin bundling server, skill and config | backend | B5 | I3 S4 L2 C5 − E2 − R1 = **11** | Ergonomics only. Adds **no capability and no trust surface**; if it ever appears to add capability, something is wrong. Note the architecture rejected a *browser extension* (needs the user's key); a Code plugin needs none |
 | **MCP-B10** | *(Deferred)* Opt-in exposure-probe submission by GitHub issue/PR template — probe results only, never estimates, never `response_text` | — | B6 | — | Explicitly **not** a Worker endpoint |
 | **MCP-O1** | `cb-ops` skeleton + `plan_run` (dry-run: items, trials, token and call estimate) | backend | first-assessment P1 | I3 S4 L2 C5 − E2 − R1 = **11** | Read-only; excludes non-scorable items automatically |

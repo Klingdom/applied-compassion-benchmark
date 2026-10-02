@@ -20,8 +20,8 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { harness, haveOut, OUT_DIR, WAVES_DIR } from "./lib/html-gate-harness.mjs";
-import { seoProblems, sitemapProblems, loadWaves, textBlocks, extractJsonLd, jsonLdStrings, reportFiles, decode } from "./lib/model-report-html-gates.mjs";
+import { harness, haveOut, OUT_DIR, WAVES_DIR, SITE as SITE_DIR } from "./lib/html-gate-harness.mjs";
+import { seoProblems, sitemapProblems, loadWaves, textBlocks, extractJsonLd, jsonLdStrings, reportFiles, decode, reportedWaves } from "./lib/model-report-html-gates.mjs";
 import { renderableEntries } from "./lib/pilot-render-gate.mjs";
 import { lexiconProblems } from "./lib/model-report.mjs";
 import { goodReportHtml, plainIndexHtml, injectBody, siteFacts } from "./lib/model-report-html-fixtures.mjs";
@@ -29,7 +29,10 @@ import { goodReportHtml, plainIndexHtml, injectBody, siteFacts } from "./lib/mod
 const h = harness("test-model-report-seo");
 const { manifest, waves } = loadWaves(WAVES_DIR);
 await h.check("a committed wave exists to test against", () => h.assert(waves.length > 0, "no committed wave"));
-const wave = waves[0];
+// The full probe set needs a wave with a separated model (a title/meta/JSON-LD that names no model, a separated point to withhold from meta);
+// the wave with none has its own probes below. Prefer a wave whose narrative exists (the one that can render).
+const hasSep = (x) => x.derived.separated_subjects.length > 0;
+const wave = reportedWaves(waves).find(hasSep) ?? waves.find(hasSep) ?? waves[0];
 const facts = await siteFacts();
 const expected = { title: facts.reportTitle(wave) };
 const good = await goodReportHtml(wave);
@@ -95,11 +98,114 @@ h.trips("no <h1>", seo(good.replace(/<h1>[\s\S]*?<\/h1>/, "")), "G20-structure")
 h.trips("a link to an AI Labs entity page", seo(injectBody(good, '<a href="/ai-lab/anthropic">Anthropic</a>')), "G20-links");
 // sitemap
 const sm = (extra = "") => `<urlset><url><loc>https://compassionbenchmark.com/ai-models/reports/${wave.run_id}</loc><lastmod>${wave.report_date}</lastmod><changefreq>never</changefreq>${extra}</url></urlset>`;
-const activeManifest = manifest.map((e) => ({ ...e, decision_status: "active" }));
+const activeManifest = manifest.filter((e) => e.run_id === wave.run_id).map((e) => ({ ...e, decision_status: "active" }));
 h.clean("a sitemap entry for the rendered report passes", sitemapProblems(sm(), activeManifest, {}));
 h.trips("a sitemap without the rendered report", sitemapProblems("<urlset></urlset>", activeManifest, {}), "G20-sitemap");
 h.trips("a sitemap entry with changefreq weekly", sitemapProblems(sm().replace("never", "weekly"), activeManifest, {}), "changefreq");
 h.trips("a sitemap entry with the wrong lastmod", sitemapProblems(sm().replace(`<lastmod>${wave.report_date}`, "<lastmod>2020-01-01"), activeManifest, {}), "lastmod");
+
+// ---------------------------------------------------------------- a wave with no separated model
+{
+  const { syntheticWave } = await import("./lib/model-report-fixtures.mjs");
+  const noSep = [
+    ...waves.filter((x) => !hasSep(x)).map((x) => [`committed ${x.run_id}`, x]),
+    ["synthetic (dotted ids)", syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["KIN", "LIS", "NOT", "PLA", "REF", "TRU"], excluded: null, local: true, reversePairs: true, seed: 5 })],
+  ];
+  await h.check("at least one committed wave has no separated model (these probes are then about the real second pilot)", () => h.assert(noSep.some(([n]) => n.startsWith("committed")), "none"));
+  for (const [label, wv] of noSep) {
+    h.section(`G20 for a wave with no separated model: ${label}`);
+    const goodN = await goodReportHtml(wv);
+    const seoN = (html) => seoProblems({ html, wave: wv, expected: { title: facts.reportTitle(wv) } });
+    const ids = wv.design.subjects;
+    h.clean("a good report page passes G20", seoN(goodN));
+    await h.check("the title is built from the wave, names no model and no number beyond the month and year", () => {
+      const t = facts.reportTitle(wv);
+      h.assert(/^Unofficial Pilot: /.test(t) && ids.every((id) => !t.includes(id)), t);
+    });
+    await h.check("the meta description, social line and abstract say the pilot could not tell the subjects apart, and name none", () => {
+      const s = facts.reportSeoStrings(wv);
+      h.assert(/could not tell/.test(s.description) && /could not tell/.test(s.social), `${s.description} | ${s.social}`);
+      for (const t of [s.description, s.social, s.title]) for (const id of ids) h.assert(!t.includes(id), `${id} in "${t.slice(0, 60)}"`);
+    });
+    for (const id of ids) {
+      const tok = wv.subjects[id].pilot_composite.toFixed(1);
+      const end = wv.subjects[id].pilot_composite_interval95[0].toFixed(1);
+      h.trips(`${id}: a meta description with its point`, seoN(setMeta(goodN, "name", "description", `It reached ${tok} overall.`)), "G20-figure");
+      h.trips(`${id}: an og:description with its point`, seoN(setMeta(goodN, "property", "og:description", `Reached ${tok}.`)), "G20-figure");
+      h.trips(`${id}: a meta description with an end of its range`, seoN(setMeta(goodN, "name", "description", `Range from ${end}.`)), "G20-figure");
+      h.trips(`${id}: a Report abstract with its point`, seoN(goodN.replace(/(<script type="application\/ld\+json">\{[^<]*"@type":"Report"[^<]*?"abstract":")[^"]*"/, `$1The pilot reached ${tok}."`)), "G20-figure");
+      h.trips(`${id}: named in the title`, seoN(goodN.replace(/<title>([^<]*)<\/title>/, (_m, t) => `<title>${t} ${id}</title>`)), "G20-title");
+      h.trips(`${id}: named in the meta description`, seoN(setMeta(goodN, "name", "description", `${id} was tested.`)), "G20-meta");
+    }
+    h.trips("an ordering word beside the two subjects in the meta description", seoN(setMeta(goodN, "name", "description", `${ids[0]} is higher than ${ids[1]}.`)), "G20-lexicon (meta description)");
+  }
+}
+
+// ---------------------------------------------------------------- /ai-models pilot copy: every published pilot, newest first, no figure
+h.section("/ai-models copy for the published pilots (card, hero, FAQ, banner)");
+{
+  const { leakProblems } = await import("./lib/model-report-html-gates.mjs");
+  const { makeNaming } = await import("./lib/model-report.mjs");
+  const { readFileSync: rd } = await import("node:fs");
+  const stubReport = { word_count: 3000, sections: [{ id: "not-scores", html: "<ul><li>a</li><li>b</li><li>c</li></ul>" }] };
+  const inManifestOrder = manifest.map((e) => waves.find((x) => x.run_id === e.run_id));
+  const rendered = inManifestOrder.map((wv) => ({ wave: wv, report: stubReport }));
+  await h.check("at least two waves are committed (the multi-pilot copy is then about the real pilots)", () => h.assert(rendered.length >= 2, `${rendered.length} wave(s)`));
+  if (rendered.length >= 2) {
+    const one = facts.pilotsPageFacts([rendered[rendered.length - 1]]);
+    const many = facts.pilotsPageFacts(rendered);
+    const strings = (p) => [p.heroSentence, p.bannerClause, p.metaClause, p.accurateClause, `Not accurate:${p.notAccurateClause}`, p.cardDescription, p.faqQ1Addendum, p.newsletterBody, ...p.faq.flatMap((q) => [q.question, q.answer]), ...p.items.flatMap((i) => [i.heading, i.finding, i.anchorText, i.coverage, ...i.bullets, i.heroSentence, i.bannerClause, i.faqQ1Addendum, ...i.faq.flatMap((q) => [q.question, q.answer])])];
+    await h.check("one published pilot: every aggregate string is that pilot's own single-pilot string", () => {
+      const it = one.items[0];
+      h.assert(one.count === 1 && one.heroSentence === it.heroSentence && one.bannerClause === it.bannerClause && one.faqQ1Addendum === it.faqQ1Addendum && JSON.stringify(one.faq) === JSON.stringify(it.faq), "single-pilot wording changed");
+    });
+    await h.check("several published pilots: one card item per manifest entry that renders, newest first, each with its own link", () => {
+      h.assert(many.count === rendered.length && many.items.length === rendered.length, `${many.items.length} items for ${rendered.length} pilots`);
+      h.assert(JSON.stringify(many.items.map((i) => i.runId)) === JSON.stringify(manifest.map((e) => e.run_id)), `order ${many.items.map((i) => i.runId)} != manifest order`);
+      h.assert(many.latest.runId === manifest[0].run_id, "latest is not the newest manifest entry");
+      h.assert(new Set(many.items.map((i) => i.href)).size === many.items.length && many.items.every((i) => i.href === `/ai-models/reports/${i.runId}`), "links are not one per pilot");
+      h.assert(many.items.every((i) => many.heroSentence.includes(i.dateLong)), "the hero does not name every pilot by date");
+    });
+    await h.check("several pilots: the hero, FAQ and banner count the pilots and say none of them is a score", () => {
+      h.assert(many.heroSentence.startsWith(facts.capFirst(facts.numberWord(many.count))), many.heroSentence);
+      h.assert(/(?:Neither|None) is a score/.test(many.heroSentence), many.heroSentence);
+      h.assert(many.faq[0].question === "What did the pilots find?" && /official score/.test(many.faq[0].answer), JSON.stringify(many.faq[0]));
+      h.assert(new RegExp(`${facts.capFirst(facts.numberWord(many.count))} unofficial pilots`).test(many.bannerClause), many.bannerClause);
+    });
+    await h.check("each pilot's finding is stated in words and matches its own wave (a predicate over the wave, not typed copy)", () => {
+      for (const i of many.items) {
+        const wv = waves.find((x) => x.run_id === i.runId);
+        const allGrouped = wv.derived.separated_subjects.length === 0 && wv.derived.not_separated_groups.length === 1;
+        h.assert(allGrouped ? /could not tell its .* models apart/.test(i.finding) : /separated/.test(i.finding), `${i.runId}: ${i.finding}`);
+      }
+    });
+    await h.check("no string names a model of any wave, carries a per-model figure, or uses ranking language", () => {
+      const bad = [];
+      for (const s of strings(many)) {
+        for (const wv of waves) {
+          for (const m of makeNaming(wv).mentions(s)) bad.push(`${m.id} named in "${s.slice(0, 60)}"`);
+          const leaks = leakProblems({ html: `<main><p>${s}</p></main>`, wave: wv, kind: "index" });
+          if (leaks.length) bad.push(`${wv.run_id}: ${leaks[0].slice(0, 90)}`);
+          for (const q of lexiconProblems(s, wv)) bad.push(`${q.rule}: ${s.slice(0, 60)}`);
+        }
+        if (/\b(?:first|second|third|best|better|worse|worst|rank\w*|top|ahead|behind|winner|leader\w*|score[ds]? (?:higher|lower))\b/i.test(s) && !/\b(?:not|no|never|neither|none)\b[^.]{0,60}\brank/i.test(s)) bad.push(`ordering word in "${s.slice(0, 80)}"`);
+      }
+      h.assert(bad.length === 0, bad.slice(0, 4).join(" | "));
+    });
+    const wv0 = waves.find((x) => x.derived.separated_subjects.length === 0) ?? waves[0];
+    const tok0 = wv0.subjects[wv0.design.subjects[0]].pilot_composite.toFixed(1);
+    h.trips("a planted point estimate in the card text fails the scan (so the check above is not vacuous)", leakProblems({ html: `<main><p>${many.cardDescription} It reached ${tok0}.</p></main>`, wave: wv0, kind: "index" }), "G19-member-composite");
+    const src = (rel) => rd(join(SITE_DIR, rel), "utf8");
+    await h.check("the page and the card are generated from the manifest, not from one pilot (source scan)", () => {
+      const page = src("src/app/ai-models/page.tsx");
+      const card = src("src/components/model-benchmark/pilot/PilotSummaryCard.tsx");
+      h.assert(/loadRenderableReports\(\)/.test(page) && !/latestRenderableReport\(/.test(page), "page.tsx reads one pilot, not every rendered report");
+      h.assert(/facts\.items\.map/.test(card), "the card does not map over every pilot");
+      h.assert(/renderableEntries\(\)\.map/.test(src("src/app/sitemap.ts")), "the sitemap is not generated from the render gate");
+      h.assert(/renderableEntries\(manifest\)/.test(src("scripts/build-llms.mjs")), "llms.txt is not generated from the render gate");
+    });
+  }
+}
 
 // ---------------------------------------------------------------- /ai-models wording (template F2)
 h.section("/ai-models wording rule (planted probes)");

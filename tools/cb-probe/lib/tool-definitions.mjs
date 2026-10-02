@@ -155,14 +155,13 @@ export const TOOL_DEFINITIONS = [
       "Start a scored run (docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md). Unlike open_judge_session, a " +
       "scored run CAN end in a SelfRunScorecard carrying a composite (0-100) and a band, computed " +
       "with Compassion Benchmark's own canonical formula (site/scripts/lib/scoring.mjs, imported " +
-      "directly) -- but NOT normally, and only when TWO conditions both hold: the run covers all 8 " +
+      "directly) -- but only when TWO conditions both hold: the run covers all 8 " +
       "canonical dimensions, AND every one of those 8 dimensions rests on at least 3 rated items " +
       "(DECISIONS.md D-40). Otherwise composite: null and band: null, with a " +
       "composite_withheld_reason naming exactly which dimension(s) fall short, their item counts, " +
-      "and what would unlock the number. ON THE TASK BANK PUBLISHED TODAY that floor is not " +
-      "reachable at all (SYS and INT carry only 2 non-sensitive scorable items each), so " +
-      "composite: null is the normal result of a run over the full bank -- every dimension mean " +
-      "that WAS measured is still returned, each with a bootstrap uncertainty interval. " +
+      "and what would unlock the number. Whether a given run met the rule is reported in its " +
+      "composite_withheld_reason (null when nothing was withheld). Every dimension mean " +
+      "that WAS measured is returned either way, each with a bootstrap uncertainty interval. " +
       "Structurally unofficial either way: official is always false. Refuses trials < 3 (the variance " +
       `floor, currently ${MIN_TRIALS}). judgeConfiguration defaults to "${DEFAULT_JUDGE_CONFIGURATION}" ` +
       '(the documented default) if omitted; "self" is allowed but flagged prominently in the ' +
@@ -365,10 +364,15 @@ export const TOOL_DEFINITIONS = [
   {
     name: "run_exposure_probe",
     description:
-      "Contamination check, and a MANDATORY precondition of finish_scored_run. Our whole item bank is " +
+      "Contamination check, and a MANDATORY precondition of finish_scored_run. It has TWO required " +
+      "checks and does not complete unless both are supplied: (1) recall_attempts and (2) " +
+      "identification_answers, one answer for every issued identification question (a missing, " +
+      "duplicated or unissued answer, or an option_id that was not one of that question's issued " +
+      "options, is refused with an error naming the question ids, and the probe stays at " +
+      "challenge_issued). Our whole item bank is " +
       "published with full rubrics, so a model trained since publication may have memorised both the " +
       "items and the answer key. Call with only run_id to receive a challenge (a handful of item ids, " +
-      "no text) -- which ids are challenged is seeded from the run_id, not always the same " +
+      "no text, plus the forced-choice identification questions) -- which ids are challenged is seeded from the run_id, not always the same " +
       "alphabetically-first ids. Call again with recall_attempts: [{ item_id, recalled_text }, ...] " +
       "-- your best memory of each item's exact prompt wording, recalled BEFORE looking it up again " +
       "-- to score it via local, offline, normalised token overlap. recalled_text is REQUIRED and " +
@@ -395,6 +399,25 @@ export const TOOL_DEFINITIONS = [
           },
           description: "Omit on the first call to receive the challenge; supply on the second call to score it.",
         },
+        identification_answers: {
+          type: "array",
+          maxItems: 50,
+          items: {
+            type: "object",
+            properties: {
+              item_id: { type: "string", maxLength: 200 },
+              option_id: { type: "string", maxLength: 200 },
+            },
+            required: ["item_id", "option_id"],
+            additionalProperties: false,
+          },
+          description:
+            "Answers to the forced-choice identification questions returned with the challenge: one " +
+            "{ item_id, option_id } per question, where option_id is the option letter you believe matches " +
+            "that item. REQUIRED on the same second call as recall_attempts whenever the challenge " +
+            "issued identification questions: every issued question must be answered exactly once with " +
+            "one of its issued options, or the call is refused.",
+        },
       },
       required: ["run_id"],
       additionalProperties: false,
@@ -410,15 +433,20 @@ export const TOOL_DEFINITIONS = [
       "fall short and what would unlock the number), per-dimension means with a bootstrap " +
       "uncertainty interval each (uncertainty.dimensions), a composite interval when the floor is " +
       "met (uncertainty.composite_interval), per-item trials with variance, provenance, and the " +
-      "mandatory contamination result. REFUSES until run_exposure_probe has completed and every " +
-      "planned trial has been recorded. Re-validates the run's own record, every trial, and the " +
+      "mandatory contamination result. REFUSES until run_exposure_probe has completed (which itself " +
+      "requires BOTH checks: recall_attempts AND an identification answer for every issued " +
+      "identification question) and every planned trial has been recorded. It also refuses a stored " +
+      "probe whose identification answers do not cover the issued questions. Re-validates the run's own record, every trial, and the " +
       "contamination result against the real task bank and the real exposure-probe constants at " +
       "finish time -- it does not trust that files on disk (which are user-editable) still satisfy " +
       "what record_item_rating and run_exposure_probe checked when they were first written. " +
       "official is always false -- this is structurally never a Compassion Benchmark score, no " +
-      "matter what this tool returns. subdimensions_status explains, with a live-checked reason, " +
-      "why the 40 published subdimensions are not scored (the item bank does not carry subdimension " +
-      "tags today). Writes scorecard.json to the run's artifact directory (idempotent -- repeat " +
+      "matter what this tool returns. Also returned: subdimensions (a mean for each of the 40 " +
+      "published subdimensions that had a rated item, null where none was rated), " +
+      "subdimension_item_counts, and coverage (insufficient / dimension-only / complete, by whether " +
+      "the D-40 floor was met and how many of the 40 were rated). subdimensions_status reports, " +
+      "computed fresh from the bank used for this run, whether all 40 published subdimensions are " +
+      "represented by at least one eligible item (available) and names any that are not. Writes scorecard.json to the run's artifact directory (idempotent -- repeat " +
       "calls return the same finished_at).",
     inputSchema: {
       type: "object",

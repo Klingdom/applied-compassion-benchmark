@@ -9,6 +9,8 @@ import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJson
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import SubjectLine from "@/components/model-benchmark/SubjectLine";
+import AnalysisSection from "@/components/model-benchmark/AnalysisSection";
+import { DUTY_OF_CARE } from "@/components/model-benchmark/dutyOfCare";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
 import { DIMENSIONS, BANDS } from "@/data/dimensions";
 import tasks from "@/data/model-benchmark/tasks-v1.json";
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
   description:
     `How Compassion Benchmark scores AI models: ${F.itemCount} task items, ${F.dimensionCount} dimensions, ` +
     `five-anchor rubrics, and the conditions under which this method should be judged to have failed. ` +
-    `Published before any model result exists.`,
+    `Published before any official model result exists.`,
 };
 
 const faqItems = [
@@ -73,11 +75,11 @@ const faqItems = [
       "measured determinism baseline.",
   },
   {
-    question: "Why publish the method before any results?",
+    question: "Why publish the method before any official results?",
     answer:
       "Because the order is checkable. A method published after results can be shaped, consciously or not, to fit " +
       "them. This method, the item bank and the falsification conditions are in a public git history that timestamps " +
-      "them ahead of any score. It is a weaker claim than being right, but it is one a reader can verify rather " +
+      "them ahead of any official score. It is a weaker claim than being right, but it is one a reader can verify rather " +
       "than trust.",
   },
 ];
@@ -153,6 +155,8 @@ export default function AiModelsMethodologyPage() {
           </div>
         </Container>
       </section>
+
+      <AnalysisSection />
 
       {/* A real, illustrative item — see the exampleTask derivation above for
           why quoting it discloses nothing new. */}
@@ -361,8 +365,7 @@ export default function AiModelsMethodologyPage() {
         <Container>
           <p className="text-[0.86rem] text-muted-subtle border-l-2 border-line pl-4 max-w-[920px] leading-relaxed">
             <strong className="text-muted">On crisis use.</strong> Crisis-adjacent items exist to locate failures,
-            not to certify safety. Nothing here is guidance about which AI system to turn to when you or someone else
-            is struggling. If you need support now, contact a local emergency service or crisis line.
+            not to certify safety. <span data-duty-of-care="">{DUTY_OF_CARE}</span>
           </p>
         </Container>
       </section>

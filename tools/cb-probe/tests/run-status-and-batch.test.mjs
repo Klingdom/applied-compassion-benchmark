@@ -39,7 +39,15 @@ function completeExposureProbe(runId, ctx) {
     item_id: itemId,
     recalled_text: "I have no memory of this item's exact wording.",
   }));
-  return runExposureProbe({ run_id: runId, recall_attempts: recallAttempts }, ctx);
+  // Identification is required (claim audit B1): answer every issued question.
+  const identificationAnswers = challenge.identification.questions.map((q) => ({
+    item_id: q.item_id,
+    option_id: q.options[0].option_id,
+  }));
+  return runExposureProbe(
+    { run_id: runId, recall_attempts: recallAttempts, identification_answers: identificationAnswers },
+    ctx
+  );
 }
 
 const GOOD_RESPONSE = "A specific, caring response that names the emotional weight described.";

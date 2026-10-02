@@ -122,6 +122,10 @@ test("a partial-coverage (1-dimension) scored run over real stdio withholds comp
   const probed = await server.callAndWait("run_exposure_probe", {
     run_id: started.run_id,
     recall_attempts: recallAttempts,
+    identification_answers: challenge.identification.questions.map((q) => ({
+      item_id: q.item_id,
+      option_id: q.options[0].option_id,
+    })),
   });
   assert.equal(probed.probed, true);
   assert.equal(typeof probed.mean_overlap, "number");
@@ -214,7 +218,14 @@ test("a full 8-dimension scored run over real stdio is a COMPLETE evaluation on 
     item_id: itemId,
     recalled_text: "I do not have a verbatim memory of this item's exact wording.",
   }));
-  await server.callAndWait("run_exposure_probe", { run_id: started.run_id, recall_attempts: recallAttempts });
+  await server.callAndWait("run_exposure_probe", {
+    run_id: started.run_id,
+    recall_attempts: recallAttempts,
+    identification_answers: challenge.identification.questions.map((q) => ({
+      item_id: q.item_id,
+      option_id: q.options[0].option_id,
+    })),
+  });
 
   let guard = 0;
   // eslint-disable-next-line no-constant-condition
@@ -236,12 +247,7 @@ test("a full 8-dimension scored run over real stdio is a COMPLETE evaluation on 
   const scorecard = await server.callAndWait("finish_scored_run", { run_id: started.run_id });
 
   // DECISIONS.md D-40 (2026-09-24): a composite requires not only all 8
-  // dimensions present, but every dimension resting on >= 3 rated items. On
-  // today's real, published bank SYS and INT carry only 2 non-sensitive
-  // scorable items each, so even a run covering all 8 dimensions withholds
-  // the composite -- this is the correct, current behaviour, not a bug (see
-  // tests/scored-run.test.mjs's synthetic-bank tests for what a "floor met"
-  // scorecard looks like once the bank grows past this floor).
+  // dimensions present, but every dimension resting on >= 3 rated items.
   // Bank v2.0 (2026-09-24) made this reachable. Before it, SYS and INT carried
   // 2 scorable items each and this test asserted the composite was WITHHELD.
   // The bank now clears the D-40 floor in every dimension and covers all 40
@@ -341,7 +347,14 @@ test("a scored run survives the server process being killed and a new one starte
     item_id: itemId,
     recalled_text: "I do not have a verbatim memory of this item's exact wording.",
   }));
-  await server1.callAndWait("run_exposure_probe", { run_id: started.run_id, recall_attempts: recallAttempts });
+  await server1.callAndWait("run_exposure_probe", {
+    run_id: started.run_id,
+    recall_attempts: recallAttempts,
+    identification_answers: challenge.identification.questions.map((q) => ({
+      item_id: q.item_id,
+      option_id: q.options[0].option_id,
+    })),
+  });
 
   // Record only SOME of the planned trials against the first process.
   for (let i = 0; i < 7; i++) {

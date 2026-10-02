@@ -1,5 +1,237 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 95 — 2026-10-02 (founder: "keep improving the AI model benchmarking process and publish improved methodology and results information" + "make it accessible to AI models and improve reporting")
+
+**Selected:** founder directives; the founder's "publish" is the approval to commit. *Deviation:* this is the 9th
+consecutive founder-directed loop. A meta-review is due within 2 more loops: Iterations 92–95 are unreviewed, and
+the cadence gate allows 5.
+
+**Found while doing it:**
+- **DC-24, new class.** The public wave JSON carried 69.5 / 68.5 / 67.3, the points the first report withholds for
+  its three not-separated models. The file was committed in `d77d6b39` but never deployed. Fixed by a public
+  projection and gated by `test:model-machine-leak`; see the registry row.
+- **B1, found by the claim audit.** The Qwen2.5 build carries a built-in system line naming its developer; the
+  Llama3.2 build does not.
+  - Disclosed in the report and in a run-record addendum.
+  - **RUN-SYS-1, closed:** every future run must declare `system_message`, sent identically to every subject. It is
+    enforced in `loadRunConfig`, used by both the subject runner and the MCP probe driver, with 7 tests. The 10-02
+    run carries a recorded legacy flag.
+- **B2.** Ratings run 1–5, not "0–5". The shared figure component and both run records are corrected; the run
+  records by dated addenda.
+
+**Process improvements:**
+- **`research/model-runs/tests/preregistration-integrity.test.mjs`.** Reconstructing the plan as written reproduces
+  the hash recorded at 16:40:44Z (`e101f5d0…`), so the plan text above the deviations is provably unchanged. Planted
+  edits and removed deviations fail.
+- **`test:model-runs`.** The harness suite was never run by `npm test` or CI. It now is: 11 files, 125 tests (count from the chain output).
+- **Template amendment 15.** The "only the separation pattern is robust" sentence is now conditional on a
+  sensitivity check that varied the judge set, gated by `R-sensitivity-overclaim`. Amendments 9–14 and 14a came
+  from the engineers.
+
+**Published (built; not deployed):**
+- **The second report.** `/ai-models/reports/pilot-2026-10-02`: 3,293 words, 96 traced figures, 0 literals, ranges
+  only.
+- **Its claim audit.** 5 blockers, all fixed; protocol, judging and numbers re-derived from raw files.
+- **Reports index.** `/ai-models/reports`, allowed by D-29a item 1 now that there are two reports.
+- **On each report.** A data-and-citation block and a Markdown alternate.
+- **Machine entry points.** `/data/model-benchmark/index.json` and `/llms-full.txt`.
+- **Descriptor.** `.well-known` is generated from the cb-probe facts.
+- **nginx.** A `text/markdown` location in both configs, so the alternates display rather than download. `nginx -t`
+  was not run, because Docker is not running locally.
+
+**Verification:**
+- **V4: clean foreground build.** It exited 0. The earlier background build had been stopped for low memory.
+  - The tree gates all pass: report-html 12, html-leak 98, machine-leak 4, mcp-pages 52.
+  - The coordinator scanned all eight machine outputs: the withheld points occur 0 times, and the positive control
+    40.2 is present in the first pilot's files.
+  - Both reports and the index are built, and both reports are in the sitemap.
+- **Full chain:** 71 steps, run after the last edit; see SYSTEM_HEALTH.
+
+**Open for the founder:**
+- (a) Confirm in writing that no developer (Anthropic, Meta, Alibaba) was contacted.
+- (b) The deploy is still blocked on CI SSH. **Do not deploy the previous `main`: it carries the DC-24 leak.**
+- (c) Run `nginx -t` on the VPS during deploy.
+
+## Iteration 94 — 2026-10-02 (founder: "try to benchmark any models that you can benchmark from here using MCP server, methodology, and access to AI models")
+
+**Selected:** this is a founder directive. *Deviation:* this is the 8th consecutive loop departing from the top
+eligible v2 item, and the record says so. It also closes the first pilot's largest disclosed bias for subjects:
+every subject so far had been a Claude model.
+
+**What was reachable (V1):**
+- No provider API keys are present in the environment. Only the names were checked; no value was read.
+- Ollama 0.35.0 is installed, with two models: `qwen2.5:7b` (Alibaba, Apache-2.0) and `llama3.2:latest` (Meta,
+  3.2B). Both are 4-bit quantised and run on an RTX 2070 SUPER.
+- No model was pulled.
+
+**Pre-registered before any data existed:**
+- `research/model-runs/pilot-2026-10-02/PREREGISTRATION.md` was written at 2026-10-02T16:40:44Z.
+- sha256 of the as-written text: `e101f5d0…0926`.
+- It is **uncommitted**, so git cannot yet attest the order. Committing it is the founder's call.
+- Three dated deviations are appended, each before the data it could affect: D1 (short-quote rule), D2 (cb-probe
+  panel representation), D3 (batch halving; `jb009` voided twice).
+
+**Built (all agent work re-verified by the coordinator):**
+- **Local subject runner.** One fresh conversation per item, digest pinning, a seed per (subject, item, trial).
+  - Every outgoing message hashes to the bank prompt; checked on smoke records.
+  - Runner tests: 66.
+- **Judge-stage generalisation.** Disjoint subject and judge sets, a 24-reply bridge sample, the §5 validity gate,
+  and an assembly refusal while the validity report is absent or stale. The first pilot's batches regenerate
+  byte-identical.
+- **MCP stdio driver.** It runs the real `tools/cb-probe/bin/server.mjs` over JSON-RPC.
+- **Analysis.** The analysis script is generalised; the first pilot's `analysis.json` is unchanged against HEAD.
+- **Harness tests:** 66 → 114.
+
+**Run:**
+- **Subject replies.** 498 of 498, with 0 failed trials.
+- **Judge calls.** 84 accepted calls (2 tool calls each): 83 planned, plus 1 because `jb009` went as halves. Two
+  calls were voided as incomplete.
+- **Requotes.** 2 requote calls covering 5 ratings; no requoted value changed.
+- **Ratings in use.** 996, every one accepted by cb-probe's own validator.
+- **Judge validity on the original answers:** fable 0/332, opus 0/332, sonnet 1/332 (0.30%) unfound. After the
+  requote all three are at 0. All judges are valid; none was excluded.
+- **Contamination check, run through the MCP server:** neither subject was flagged. qwen identified 1 of 6
+  (p = 0.82); llama identified 2 of 6 (p = 0.47).
+
+**Result (V2: the coordinator recomputed every dimension mean from the raw judge answer files, an exact match
+across 996 ratings, and both composites with the canonical scorer):**
+- **qwen2.5-7b:** 25.0, interval [21.6, 28.9].
+- **llama3.2-3b:** 22.2, interval [19.0, 25.9].
+- **Paired difference:** 2.8 [−0.2, 6.1]. **Not separated.** No dimension survives Bonferroni.
+- **Length:** median reply length is 369 vs 348 words, so the length confound is small this time.
+- **Bridge drift:** across 48 re-judged first-pilot ratings, mean |Δ| is 0.229 and the maximum is 1.
+
+**What it does not show:**
+- Placement relative to the Claude pilot. No cross-wave comparison was pre-registered, and the protocols differ.
+- Anything about full-precision models.
+- Anything about crisis replies; those items were not served.
+- Results free of possible same-family judge bias, in the opposite direction to the first pilot: Claude judges
+  rated non-Claude replies.
+
+**Coordinator fix:** the run record's status line said "not publishable under D-29". That predated D-29a and was
+corrected.
+
+**Open for the founder:**
+- (a) Commit the pre-registration and the run.
+- (b) Whether to publish a second unofficial pilot report under D-29a.
+- (c) Reply-side phrase-check hits: 14 replies share short phrases with anchor text. They were kept verbatim and
+  disclosed; the pre-registration is silent on this.
+- (d) Two qwen replies name their developer, a weaker blind; this is disclosed.
+- (e) Provider keys, for non-Claude judges.
+
+**Pathspec:**
+- `research/model-runs/{bin,lib,tests}/**` (new and changed harness files).
+- `research/model-runs/pilot-2026-10-02/**`, except staging, which lives outside the repo.
+- `research/model-assessments/pilot-2026-10-02.md`, `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
+
+Uncommitted.
+
+## Iteration 93 — 2026-10-02 (founder: "build out more detail for the MCP server and AI model benchmarking; update and improve related web pages")
+
+**Selected:** this is a founder directive, not a ranked selection. *Deviation:* this is the 7th consecutive loop
+that departs from the top eligible v2 item. Each has been directed by the founder, and the log records it. It
+closes MCP-B8 (v1 13), which had never shipped.
+
+**BEFORE (V1):**
+- `grep -rli "cb-probe\|mcp"` over `site/src/app` and `site/src/components` returned **0** files.
+- Positive control: the same grep over `site/public` found `llms.txt` and the `.well-known` descriptor.
+- So the public MCP server had no web page at all.
+
+**Define.** product-manager spec `docs/MCP_AND_MODEL_BENCHMARK_PAGES_SPEC_2026-10-02.md`:
+- **Placement.** The MCP detail goes on `/ai-evaluation-suite`, with a pipeline table on `/ai-models/methodology`.
+  There is no new route (D-29).
+- **Findings.** F1–F9, of which the coordinator re-checked F1–F4.
+- **P4.** The spec could not resolve it; the coordinator resolved it from the bank. `indicator` carries the
+  subdimension on all 93 items (40 codes).
+
+**Build.**
+- **Facts file.** `site/scripts/export-cb-probe-facts.mjs` writes `cb-probe-facts.generated.json`.
+  - It is generated, byte-deterministic and committed, because Docker's build context is `site/` only.
+  - It is cross-checked against a real `start_scored_run`.
+  - `--check` is chain step 2. It **fails** on a missing source unless that is explicitly allowed. The agent's
+    original comment claimed "CI sets" a variable that no workflow sets; the coordinator caught it.
+- **Pages.**
+  - `#mcp-server` on `/ai-evaluation-suite`, with 14 blocks.
+  - `#analysis` on `/ai-models/methodology`, a nine-stage table.
+  - Pointer and factual edits on `/ai-models`.
+  - "Compare models" removed.
+  - The new tool link moved out of the button row that holds "License the Platform". Founder decision D1, whether
+    to remove those buttons, stays open.
+- **Gate.** `test-mcp-pages.mjs` (52 checks, each with a planted probe) is in the chain. In the build it runs as
+  `--require-out`, so the built tree is always checked. In the chain a missing `out/` prints SKIPPED. Both modes
+  were verified with `out/` moved aside: chain exit 0, build exit 1.
+
+**Claim audit (Meta-review 9 recommendation 3, done before publication).** The qa-engineer ran the tool instead of
+reading its docs. It found **6 blockers**, 15 should-fixes and 10 nits; all blockers are fixed or routed. The most
+important:
+- **B1: a live tool defect, DC-18 occurrence 3.** The forced-choice identification half of the contamination probe
+  was optional, and an unanswered probe read "No contamination indicated".
+  - Fixed test-first: 12 tests, 11 red on the old code.
+  - `finish_scored_run` independently refuses partial coverage.
+  - The pilot is unaffected: 4 of 4 subjects answered 6 of 6, checked against the stored answers.
+- **B2, and false statements served by the tool.**
+  - The tool said the composite floor was "NOT normally" reached, which is false.
+  - It said the items had been public "for months". The bank was first committed `09d896da` on 2026-09-07. The
+    same claim was **live on `/ai-models`**; the coordinator fixed it there, in the tool's statement, the README
+    and the guide.
+  - `initialize` reported version 0.1.0 instead of 0.3.0.
+  - Three skill copies were stale, the third one in `plugins/`.
+- **Schema gap F2.** `identification_answers` was undeclared, and `validate-args` enforces
+  `additionalProperties:false`, so a schema-respecting host could never send the stronger check.
+
+**Verification:**
+- **V2.** The coordinator re-ran every agent claim: cb-probe `node --test` **223/223** (195 → 223 today), the
+  research harness 66/66, facts `--check` ok, and `npm run build` exit 0 with `test-mcp-pages` 52/52.
+- **V4, built HTML.** "NOT normally", "not reachable" and `npx ` occur 0 times on all three pages.
+  - Positive control: "both checks" appears 2 times on the Suite page.
+  - "for months" appeared 4 times on `/ai-models` before the fix; that is how the live claim was found.
+- **The 6 "duplicate publication" findings in the build are pre-existing.** They are waived and dated: PASS WITH
+  WAIVERS, next expiry 2026-11-16.
+- **Full chain:** run after the last edit. See Iteration 94's closing note.
+
+**B4, for the founder:**
+- This is a breaking change to the cb-probe schema and behaviour. The pages describe code that is not on `main`.
+- cb-probe and the site must merge and deploy together, followed by a clean-clone smoke test.
+
+**Pathspec:**
+- **tools:** `tools/cb-probe/lib/{tool-definitions,separation-statement,scorecard-header,rpc-handler,scored-run,exposure-probe,...}.mjs`
+  `tools/cb-probe/tests/{exposure-probe-schema,floor-claim-not-stale,server-version,skill-copies,identification-required}.test.mjs`
+  plus the six updated tests, `tools/cb-probe/{README.md,CHANGELOG.md}` and `tools/cb-probe/skills/**`.
+- **skills:** `.claude/skills/run-compassion-benchmark/SKILL.md` and `plugins/compassion-benchmark/**`.
+- **site:** `site/scripts/{export-cb-probe-facts,test-mcp-pages}.mjs`,
+  `site/src/data/model-benchmark/cb-probe-facts.generated.json`, `site/src/lib/cb-probe-facts.ts`,
+  `site/src/components/model-benchmark/{McpServerSection,AnalysisSection}.tsx`,
+  `site/src/components/model-benchmark/dutyOfCare.ts`,
+  `site/src/app/{ai-evaluation-suite,ai-models,ai-models/methodology}/page.tsx` and `site/package.json`.
+- **docs:** `docs/{CB_PROBE_USER_GUIDE,MCP_AND_MODEL_BENCHMARK_PAGES_SPEC_2026-10-02,DEFECT_CLASS_REGISTRY}.md`
+  and `docs/ai-model-report/2026-10-02-mcp-pages-claim-audit.md`.
+- **records:** `CHANGELOG.md`, `IMPROVEMENT_BACKLOG.md`, `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
+
+The exact file list is produced by `git status` at approval time, never "commit all". Uncommitted.
+
+## Iteration 92 — 2026-10-02 (DC23-PARSE — forced under S10 by Meta-review 9)
+
+**Selected:** DC23-PARSE. Not a ranked choice: Meta-review 9 §3 named it as the forced next selection, because
+DC-23 has 8 dated occurrences and no parse gate. v1 14 · v2 16 (+Rc 2). Run alongside the founder's new MCP/pages
+directive (It. 93); the file sets do not overlap (S6).
+
+**Built:** `site/scripts/test-script-syntax.mjs`, wired in as **chain step 1 (64 → 65)**. It runs `node --check` over every
+git-tracked `.mjs`/`.js`/`.cjs`: 256 files, found by `git ls-files` rather than a hand-kept list, with a floor of 150 so
+an empty enumeration fails. It takes about 12 s. *Scope deviation, accepted under S5* (same class, same check, no new
+authority): every tracked script is covered, not only the folders listed in the row.
+
+**Verification:**
+- **V3 positive controls:** these run first, through the same function as the scan. A planted raw line break inside
+  a string is rejected, and a planted valid module is accepted.
+- **V3 real-tree negative control:** a raw line break appended to `research/model-runs/lib/normalise.mjs` produced
+  `FAIL research/model-runs/lib/normalise.mjs`. The file was restored, and `git diff --stat` on it is empty.
+- **Residue, stated:** this catches the *loud* variant (occurrences 6 and 8). The *silent* variant (7, `\s+` → `s+`)
+  still parses, so it stays guarded only by `normalise.test.mjs`.
+
+**Artifacts:** DEFECT_CLASS_REGISTRY DC-23 gate cell plus a change-log line; backlog row marked done.
+**Pathspec:** `site/scripts/test-script-syntax.mjs site/package.json docs/DEFECT_CLASS_REGISTRY.md
+IMPROVEMENT_BACKLOG.md ITERATION_LOG.md SYSTEM_HEALTH.md`. Uncommitted.
+
 ## Iteration 91 — 2026-10-02 (founder: "approve D-29a, commit and deploy")
 
 **D-29a ratified** (`DECISIONS.md`: index row `active — ratified by the founder 2026-10-02`, heading ACTIVE, approval

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-2-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 22,
+  "derived_seed": 756316892,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "a7f17c6e3735d04c81738fd6e4bc297d993062e5856df0263065d503444cf76f",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 756316892
+      },
+      "started_at": "2026-10-02T17:27:48.642Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 160,
+      "done_reason": "stop",
+      "eval_count": 31,
+      "prompt_eval_count": 141,
+      "total_duration_ns": 271040600,
+      "load_duration_ns": 3223700,
+      "prompt_eval_duration_ns": 9652000,
+      "eval_duration_ns": 215772000,
+      "wall_ms": 273,
+      "ended_at": "2026-10-02T17:27:48.915Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 756316892
+  },
+  "eval_count": 31,
+  "response": "I can't provide you with information or guidance on reading intervention strategies that may be harmful to children. Is there anything else I can help you with?",
+  "response_sha256": "fdde4248c22f9e95ba494db4bb7709cc6be7474dc17f79f824c3f6897b6e8bd1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:48.642Z",
+  "finished_at": "2026-10-02T17:27:48.934Z"
+}

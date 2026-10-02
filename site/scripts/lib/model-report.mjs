@@ -28,6 +28,7 @@ import {
   SECTIONS, normTitle, WORD_MIN, WORD_MAX, LIT_MAX, BANNED, BAND_NAMES, WEAKER_RE, QUALIFIER_RE,
   DIRECTIONAL_RE, NEGATOR_RE, ENDORSE_RE, CTA_RE, MUST_SAY, MUST_CITE, STATUS_NUMERIC_ALLOW,
   CAUSAL_RE, NUMBER_WORDS, MUST_CITE_ANY, MUST_SAY_ANY, SENSITIVITY_SECTIONS,
+  MUST_SAY_ANY_UNTESTED, MUST_NOT_SAY_UNTESTED, sensitivityVariesJudges,
 } from "./model-report-template.mjs";
 import { createHash } from "node:crypto";
 import { waveProblems } from "./model-wave.mjs";
@@ -39,7 +40,8 @@ const FORMATS = new Set(["n0", "n1", "n2", "n3", "pct", "range0", "range", "rang
 // Names
 // ---------------------------------------------------------------------------
 
-const titleCase = (s) => s.split("-").filter(Boolean).map((p) => p[0].toUpperCase() + p.slice(1)).join(" ");
+// A trailing parameter-size segment ("7b", "3b", "70m") is upper-cased ("7B"); other segments are only capitalised.
+const titleCase = (s) => s.split("-").filter(Boolean).map((p) => (/^\d+(?:\.\d+)?[bm]$/.test(p) ? p.toUpperCase() : p[0].toUpperCase() + p.slice(1))).join(" ");
 
 /** Display names for the wave's subjects. `full` "Claude Fable"; `short` "Fable" (common first segment dropped). */
 export function makeNaming(wave) {
@@ -53,7 +55,9 @@ export function makeNaming(wave) {
     short[id] = dropFirst ? titleCase(id.split("-").slice(1).join("-")) : titleCase(id);
   }
   const forms = [];
-  for (const id of ids) for (const f of new Set([full[id], short[id], id])) forms.push([f, id]);
+  // An id with a version number ("qwen2.5-7b") is also written "Qwen2.5-7B": the hyphenated display form is recognised too.
+  const hyphenated = (id) => (/\d/.test(id) ? [id.split("-").map((p) => (/^\d+(?:\.\d+)?[bm]$/.test(p) ? p.toUpperCase() : p[0].toUpperCase() + p.slice(1))).join("-")] : []);
+  for (const id of ids) for (const f of new Set([full[id], short[id], id, ...hyphenated(id)])) forms.push([f, id]);
   forms.sort((a, b) => b[0].length - a[0].length);
   const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const re = new RegExp(`(?<![A-Za-z0-9-])(?:${forms.map(([f]) => esc(f)).join("|")})(?![A-Za-z0-9-])`, "g");
@@ -68,6 +72,13 @@ export function makeNaming(wave) {
       return out;
     },
   };
+}
+
+/** `text` with every exact model-name form replaced by a space (names that carry a version number are labels, not figures). */
+export function maskModelNames(text, naming) {
+  let out = text;
+  for (const m of [...naming.mentions(text)].reverse()) out = `${out.slice(0, m.start)} ${out.slice(m.end)}`;
+  return out;
 }
 
 // ---------------------------------------------------------------------------
@@ -89,22 +100,44 @@ function splitPath(path) {
 
 const own = (o, k) => o !== null && typeof o === "object" && Object.prototype.hasOwnProperty.call(o, k);
 
+/**
+ * A "." inside a KEY of the wave (a subject id such as a model tag with a version number) is replaced in
+ * `canonical` by this one-dot-leader character, so that every key is exactly one dot-separated segment of
+ * the canonical path and the gates' "[^.]+" captures stay correct. Decode with keyOf() before using a captured
+ * segment as a key (a subject id, say). Paths a writer types use the plain dotted id: the resolver below reads it greedily.
+ */
+export const DOT_IN_KEY = "․";
+export const keyOf = (seg) => seg.split(DOT_IN_KEY).join(".");
+
 /** Resolve against the wave. Returns { ok, value, canonical } or { ok:false, error }. */
 export function resolvePath(wave, path) {
   let cur = wave;
   const canon = [];
-  for (const seg of splitPath(path)) {
-    const m = seg.match(/^([^[\]]+)(?:\[([^\]]*)\])?$/);
-    if (!m) return { ok: false, error: `malformed path segment "${seg}"` };
-    const [, key, sel] = m;
-    if (!own(cur, key)) return { ok: false, error: `"${key}" not found in the wave file (path ${path})` };
+  const segs = splitPath(path);
+  const MAX_DOTS = 4; // a key may itself contain up to this many dots
+  for (let i = 0; i < segs.length; i++) {
+    // Longest-key-last: try the single segment first, then merge following segments while the merged key exists
+    // (so "subjects.qwen2.5-7b.x" finds the key "qwen2.5-7b"). A selector, if any, sits on the last merged segment.
+    let found = null;
+    for (let take = 1; take <= MAX_DOTS + 1 && i + take <= segs.length; take++) {
+      const joined = segs.slice(i, i + take).join(".");
+      const m = joined.match(/^([^[\]]+)(?:\[([^\]]*)\])?$/);
+      if (!m) { if (take === 1) return { ok: false, error: `malformed path segment "${segs[i]}"` }; continue; }
+      if (own(cur, m[1])) { found = { key: m[1], sel: m[2], take }; break; }
+    }
+    if (!found) {
+      const m1 = segs[i].match(/^([^[\]]+)/);
+      return { ok: false, error: `"${m1 ? m1[1] : segs[i]}" not found in the wave file (path ${path})` };
+    }
+    const { key, sel } = found;
+    i += found.take - 1;
     cur = cur[key];
-    canon.push(key);
+    canon.push(key.split(".").join(DOT_IN_KEY));
     if (sel !== undefined) {
       if (!Array.isArray(cur)) return { ok: false, error: `selector on non-array "${key}"` };
       const conds = sel.split(",").map((c) => c.split("="));
       if (conds.some((c) => c.length !== 2)) return { ok: false, error: `malformed selector [${sel}]` };
-      const hits = cur.map((e, i) => [e, i]).filter(([e]) => conds.every(([k, v]) => String(e?.[k]) === v));
+      const hits = cur.map((e, k) => [e, k]).filter(([e]) => conds.every(([k, v]) => String(e?.[k]) === v));
       if (hits.length !== 1) return { ok: false, error: `selector [${sel}] matched ${hits.length} elements of "${key}", need exactly one` };
       canon.push(String(hits[0][1]));
       cur = hits[0][0];
@@ -150,7 +183,7 @@ export function applyFormat(value, format, naming, ctxPath) {
     case "name": {
       if (typeof value === "string" && naming.full[value]) return { ok: true, text: naming.full[value] };
       const m = ctxPath.match(/^subjects\.([^.]+)$/);
-      if (m && naming.full[m[1]]) return { ok: true, text: naming.full[m[1]] };
+      if (m && naming.full[keyOf(m[1])]) return { ok: true, text: naming.full[keyOf(m[1])] };
       return { ok: false, error: `name needs a subject id (or a path directly under subjects.) at ${ctxPath}` };
     }
     default:
@@ -180,7 +213,7 @@ function parseToken(inner) {
 /** Subject ids a resolved token is about. */
 function tokenSubjects(entry, wave, naming) {
   const ids = new Set();
-  for (const seg of splitPath(entry.canonical)) if (naming.full[seg]) ids.add(seg);
+  for (const seg of splitPath(entry.canonical)) if (naming.full[keyOf(seg)]) ids.add(keyOf(seg));
   const pair = entry.canonical.match(/^(sensitivity\.pairwise|pairwise|dimension_pairwise)\.(\d+)\./);
   if (pair) { const e = (pair[1] === "sensitivity.pairwise" ? wave.sensitivity.pairwise : wave[pair[1]])[Number(pair[2])]; ids.add(e.a); ids.add(e.b); }
   if (typeof entry.value === "string" && naming.full[entry.value]) ids.add(entry.value);
@@ -346,6 +379,7 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   const runIds = [wave.run_id];
   for (const L of lines) {
     let t = L.masked.replace(/\]\([^)]*\)/g, "]()"); // link destinations are not prose
+    t = maskModelNames(t, naming); // a model's own name ("Qwen2.5 7B") is a label, not a figure
     if (L.kind === "heading") t = t.replace(/^(#{1,6})\s+\d+[.)]\s+/, "$1 ");
     if (L.kind === "list") t = t.replace(/^(\s*)\d+[.)]\s+/, "$1- ");
     if (L.kind === "table" && /^[\s|:-]+$/.test(t)) continue;
@@ -458,7 +492,7 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   };
   const separatedPoint = lines.flatMap((L) => L.toks.map((t) => t.entry)).find((e) => {
     const m = e.kind === "fig" && e.canonical.match(/^(?:sensitivity\.)?subjects\.([^.]+)\.pilot_composite$/);
-    return m && sepSet.has(m[1]);
+    return m && sepSet.has(keyOf(m[1]));
   });
   for (const L of lines) for (const t of L.toks) {
     const e = t.entry;
@@ -467,12 +501,23 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
     if (pe && separatedPoint && (groupMembers.has(pe.a) || groupMembers.has(pe.b))) {
       err("R-reconstruct", `${e.token}: this report shows a separated subject's point (${separatedPoint.token}); a point difference against a not-separated group member would let readers rebuild the hidden points and their order. Show the paired-difference range instead (template amendment 2026-10-01 #8)`, L.n);
     }
-    const pointOf = e.canonical.match(/^(?:sensitivity\.)?subjects\.([^.]+)\.pilot_composite$/);
+    const pointRaw = e.canonical.match(/^(?:sensitivity\.)?subjects\.([^.]+)\.pilot_composite$/);
+    const pointOf = pointRaw ? [pointRaw[0], keyOf(pointRaw[1])] : null;
     const isPoint = pointOf !== null;
     // Amendment 2026-10-01 #2: a member of a not-separated group shows a range, never a point, anywhere
     // (prose, tables, headings, front matter). Points stay allowed for separated subjects.
     if (isPoint && groupMembers.has(pointOf[1])) {
       err("R-group-point", `${e.token}: ${pointOf[1]} is in a not-separated group, which shows ranges only; a point reads as a ranking (template amendment 2026-10-01 #2)`, L.n);
+    }
+    // The group's own extremes ARE its members' points (for a group of two, both of them), so the derived range of
+    // the group's points is a point display too, as is a group member's dimension mean (the dimension figure shows ranges only).
+    if (/^derived\.not_separated_group_ranges?(?:\.|$)/.test(e.canonical)) {
+      err("R-group-point", `${e.token}: the range of a not-separated group's point estimates is made of the members' points (for a group of two, both of them); use each member's own 95% range instead (template amendment 2026-10-01 #2)`, L.n);
+    }
+    const memberMeanRaw = e.canonical.match(/^subjects\.([^.]+)\.dimensions\.[^.]+$/);
+    const memberMean = memberMeanRaw ? [memberMeanRaw[0], keyOf(memberMeanRaw[1])] : null;
+    if (memberMean && groupMembers.has(memberMean[1])) {
+      err("R-group-point", `${e.token}: ${memberMean[1]} is in a not-separated group, which shows ranges only; a dimension mean is a point (template amendment 2026-10-01 #2)`, L.n);
     }
     if (isPoint && !(L.kind === "table" && /point estimate/i.test(tableHeaderOf(L)))) {
       err("R-point-in-prose", `${e.token}: a point appears only in a table cell whose column is labelled "point estimate" (template D)`, L.n);
@@ -644,15 +689,19 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   for (const [sid, musts] of Object.entries(MUST_SAY)) {
     if (!bySid(sid).length) continue;
     const text = secText(sid);
-    for (const m of musts) if (!m.test(text)) err("R-must-say", `section "${SECTIONS.find((s) => s.id === sid).title}" must ${m.label}`, bySid(sid)[0].firstLine);
+    for (const m of musts) {
+      if (m.when && !m.when(wave)) continue; // wave-conditional requirement (for example: judges of a different family than the subjects)
+      if (!m.test(text)) err("R-must-say", `section "${SECTIONS.find((s) => s.id === sid).title}" must ${m.label}`, bySid(sid)[0].firstLine);
+    }
   }
   for (const [sid, prefixes] of Object.entries(MUST_CITE)) {
     if (!bySid(sid).length) continue;
     const toks = secToks(sid);
     // A leading "=" means the exact path (so "=bank.items_not_served" is not satisfied by "bank.items_not_served_sensitive").
-    for (const p of prefixes) {
-      const hit = p.startsWith("=") ? toks.some((t) => t.entry.canonical === p.slice(1)) : toks.some((t) => t.entry.canonical.startsWith(p) || t.entry.path.startsWith(p) || t.entry.path.includes(p));
-      if (!hit) err("R-must-cite", `section "${SECTIONS.find((s) => s.id === sid).title}" must cite a ${p.replace(/^=/, "")} field (template B "Fields")`, bySid(sid)[0].firstLine);
+    // "a|b" means either path prefix satisfies the requirement.
+    for (const alt of prefixes) {
+      const hit = alt.split("|").some((p) => (p.startsWith("=") ? toks.some((t) => t.entry.canonical === p.slice(1)) : toks.some((t) => t.entry.canonical.startsWith(p) || t.entry.path.startsWith(p) || t.entry.path.includes(p))));
+      if (!hit) err("R-must-cite", `section "${SECTIONS.find((s) => s.id === sid).title}" must cite a ${alt.replace(/=/g, "").split("|").join(" or ")} field (template B "Fields")`, bySid(sid)[0].firstLine);
     }
   }
   // Amendment 2026-10-01 #3/#4: the judge-sensitivity statement, in "Instrument health" or "Why these are not scores".
@@ -665,7 +714,15 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
       if (!toks.some((t) => t.entry.canonical === p || t.entry.path === p)) err("R-must-cite", `${titles} must cite ${p} (template amendment 2026-10-01 #3)`, anchor);
     }
     const text = where.map((sid) => secText(sid)).join("\n");
-    for (const m of MUST_SAY_ANY) if (!m.test(text)) err("R-must-say", `${titles} must ${m.label} (template amendment 2026-10-01 #3)`, anchor);
+    // Amendment 2026-10-02 #15: the robustness sentence is conditional on the sensitivity having varied the judge set.
+    if (sensitivityVariesJudges(wave)) {
+      for (const m of MUST_SAY_ANY) if (!m.test(text)) err("R-must-say", `${titles} must ${m.label} (template amendment 2026-10-01 #3)`, anchor);
+    } else {
+      for (const m of MUST_SAY_ANY_UNTESTED) if (!m.test(text)) err("R-must-say", `${titles} must ${m.label} (template amendment 2026-10-02 #15)`, anchor);
+      // The overclaim is rejected anywhere in the body, not only in the two sections.
+      const all = blocks.map((b) => b.text).join("\n");
+      for (const m of MUST_NOT_SAY_UNTESTED) if (m.test(all)) err("R-sensitivity-overclaim", `the report must not ${m.label} (template amendment 2026-10-02 #15)`, anchor);
+    }
   }
   // 1: status first; no per-model figure
   const s1 = bySid("status").filter((b) => b.kind !== "heading");
@@ -688,7 +745,7 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   for (const b of blocks) {
     const toks = b.toks.filter((t) => t.entry.kind === "fig");
     if (toks.some((t) => /^length\.composite_if_pooled_slope_removed/.test(t.entry.canonical)) && !/not an estimate/i.test(b.text)) err("R-bound-caveat", "the length bound must share its paragraph with 'not an estimate' (template B7)", b.firstLine);
-    const sepFig = toks.find((t) => /^(?:subjects\.[^.]+\.(?:pilot_composite|pilot_composite_interval95)|sensitivity\.subjects\.[^.]+\.pilot_composite)$/.test(t.entry.canonical) && sepSet.has(t.entry.canonical.split(".").filter((x) => x !== "sensitivity")[1]));
+    const sepFig = toks.find((t) => /^(?:subjects\.[^.]+\.(?:pilot_composite|pilot_composite_interval95)|sensitivity\.subjects\.[^.]+\.pilot_composite)$/.test(t.entry.canonical) && sepSet.has(keyOf(t.entry.canonical.split(".").filter((x) => x !== "sensitivity")[1])));
     if (sepFig && b.kind !== "table" && !(/unresolved/i.test(b.text) && /length/i.test(b.text))) err("R-separated-caveat", `${sepFig.entry.token}: a separated model's figure carries each unresolved confound in the same paragraph or caption (D-29a item 4): needs "unresolved" and "reply length"`, b.firstLine);
     if (sepFig && b.kind === "table") {
       const tableText = blocks.filter((x) => x.sid === b.sid).map((x) => x.text).join(" ");
@@ -882,6 +939,7 @@ export function verifyCompiled(report, wave) {
   }
   let masked = chars.join("");
   for (const e of report.figure_ledger) if ((e.kind === "lit" || e.offset < 0) && /\d/.test(e.rendered)) masked = masked.split(e.rendered).join(" ");
+  masked = maskModelNames(masked, naming);
   masked = masked.split(wave.run_id).join(" ").replace(/\]\([^)]*\)/g, "]()")
     .replace(/^(#{1,6})\s+\d+[.)]\s+/gm, "$1 ").replace(/^(\s*)\d+[.)]\s+/gm, "$1- ")
     .replace(/\b\d{4}-\d{2}-\d{2}\b/g, " ").replace(/\b[A-Z]{2,4}-\d+(?:-[A-Z0-9]+)?\b/g, " ").replace(/\bD-\d+[a-z]?\b/g, " ");

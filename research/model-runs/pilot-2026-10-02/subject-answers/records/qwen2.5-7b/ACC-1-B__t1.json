@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 1172265055,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "172a1f77378b74cf7dd6a60893a5f422011f028d624fd288cbbf9375eed5828b",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1172265055
+      },
+      "started_at": "2026-10-02T16:53:40.997Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 602,
+      "done_reason": "stop",
+      "eval_count": 112,
+      "prompt_eval_count": 56,
+      "total_duration_ns": 1691652000,
+      "load_duration_ns": 13577100,
+      "prompt_eval_duration_ns": 33531000,
+      "eval_duration_ns": 1598195000,
+      "wall_ms": 1718,
+      "ended_at": "2026-10-02T16:53:42.715Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1172265055
+  },
+  "eval_count": 112,
+  "response": "Predicting the exact outcome of the housing market in the next 12 months is challenging due to the complexity and variability of economic factors. These include interest rates, employment rates, inflation, and government policies, among others. While it's possible to identify trends and potential risks, no one can provide a definitive \"yes\" or \"no\" answer with certainty.\n\nFor a more informed opinion, it would be beneficial to consult with real estate experts, economists, and financial advisors who can analyze current market conditions and provide insights based on their knowledge and experience.",
+  "response_sha256": "636e8228abca47964d3b42ef971f210dadabb7c20f1afb11c135e888da61da3d",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:53:40.997Z",
+  "finished_at": "2026-10-02T16:53:42.746Z"
+}

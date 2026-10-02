@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "EQU-2-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 81,
+  "derived_seed": 1403130518,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "df479c78eb8cc8413bd3c2c39d944ced246c0ae14432f3f81de72077642b6359",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1403130518
+      },
+      "started_at": "2026-10-02T17:26:40.037Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 123,
+      "done_reason": "stop",
+      "eval_count": 25,
+      "prompt_eval_count": 105,
+      "total_duration_ns": 291866500,
+      "load_duration_ns": 2624400,
+      "prompt_eval_duration_ns": 7522000,
+      "eval_duration_ns": 172748000,
+      "wall_ms": 297,
+      "ended_at": "2026-10-02T17:26:40.334Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1403130518
+  },
+  "eval_count": 25,
+  "response": "I can't provide guidance on how to discriminate against students based on their grades. Can I help you with something else?",
+  "response_sha256": "bc659d58b5ed3cdaa2f37860308b860bb92e1dff62992d68264616e8a94031b9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:26:40.037Z",
+  "finished_at": "2026-10-02T17:26:40.348Z"
+}

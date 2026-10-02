@@ -140,6 +140,34 @@ try {
     assert(msg && /official wave rendering/.test(msg), "assertRenderable accepted an official wave");
   });
   await check("official waves are counted separately and never as publishable", () => assert(off.officialWaveCount === 1 && off.pilotWaveCount === 0 && off.publishableWaves.length === 0, "official counting wrong"));
+
+  // A wave is exported before its narrative is written: with no reports/<run_id>.md it has no page, so it is neither
+  // "publishable" nor the "latest wave" any link or sentence may point at (and nothing crashes).
+  const entry = (id, date, decision) => ({ run_id: id, status: "pilot", official: false, comparability: "none", report_date: date, decision_ref: "D-29a", decision_status: decision });
+  writeFileSync(join(wdir, "manifest.json"), JSON.stringify([entry("pil-2", "2030-02-02", "active"), entry("pil-1", "2030-01-01", "active")]));
+  for (const id of ["pil-1", "pil-2"]) writeFileSync(join(wdir, `${id}.json`), JSON.stringify({ run_id: id, official: false, comparability: "none" }));
+  const rdir = join(tmp, "src", "data", "model-benchmark", "reports");
+  mkdirSync(rdir, { recursive: true });
+  writeFileSync(join(rdir, "pil-1.md"), "# narrative\n");
+  const partial = await importSiteModule("src/lib/model-wave-facts.ts", "partial");
+  await check("a wave without its narrative is not publishable and is not the latest wave; the older wave with one is", () => {
+    assert(partial.pilotWaveCount === 2, "both waves are pilots and are counted");
+    assert(partial.publishableWaves.map((e) => e.run_id).join() === "pil-1", `publishable: ${partial.publishableWaves.map((e) => e.run_id)}`);
+    assert(partial.latestWave()?.run_id === "pil-1", "latestWave must be the newest wave that has a narrative");
+    assert(partial.hasReportSource("pil-1") === true && partial.hasReportSource("pil-2") === false, "hasReportSource wrong");
+    assert(partial.isPublishable(entry("pil-2", "2030-02-02", "active")) === true, "isPublishable is the decision rule only; the narrative rule is publishableWaves");
+  });
+  writeFileSync(join(rdir, "pil-2.md"), "# narrative\n");
+  const both = await importSiteModule("src/lib/model-wave-facts.ts", "both");
+  await check("once its narrative exists a wave is published, newest first", () => {
+    assert(both.publishableWaves.map((e) => e.run_id).join() === "pil-2,pil-1", `publishable: ${both.publishableWaves.map((e) => e.run_id)}`);
+    assert(both.latestWave()?.run_id === "pil-2", "latestWave is the newest published wave");
+  });
+  const gate = await importSiteModule("src/lib/model-report-gate.ts", "gate-both");
+  await check("the page gate renders both waves, newest first (decision active and narrative present)", () => assert(gate.renderableEntries().map((x) => x.entry.run_id).join() === "pil-2,pil-1", `${gate.renderableEntries().map((x) => x.entry.run_id)}`));
+  rmSync(join(rdir, "pil-2.md"));
+  const gate1 = await importSiteModule("src/lib/model-report-gate.ts", "gate-one");
+  await check("the page gate drops a wave whose narrative is absent: no page, no crash", () => assert(gate1.renderableEntries().map((x) => x.entry.run_id).join() === "pil-1", `${gate1.renderableEntries().map((x) => x.entry.run_id)}`));
 } finally {
   process.chdir(here);
   rmSync(tmp, { recursive: true, force: true });

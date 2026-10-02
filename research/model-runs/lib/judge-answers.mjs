@@ -54,7 +54,8 @@ export function validateJudgeAnswers(parsed, batchKey, responsesById, label) {
     return { errors, ratings };
   }
 
-  const inBatch = new Set(batchKey.response_ids);
+  // bridge_response_ids (pilot-2026-10-02 only) are rated in the same batch; absent in the first pilot's keys.
+  const inBatch = new Set([...batchKey.response_ids, ...(batchKey.bridge_response_ids ?? [])]);
   const seen = new Map();
   parsed.ratings.forEach((r, i) => {
     if (!r || typeof r !== "object" || Array.isArray(r)) {
@@ -99,19 +100,26 @@ export function validateJudgeAnswers(parsed, batchKey, responsesById, label) {
     }
   });
 
-  const missing = batchKey.response_ids.filter((id) => !seen.has(id));
+  const missing = [...batchKey.response_ids, ...(batchKey.bridge_response_ids ?? [])].filter((id) => !seen.has(id));
   if (missing.length > 0) {
     fail(`${missing.length} response_id(s) not rated: ${missing.slice(0, 6).join(", ")}${missing.length > 6 ? ", ..." : ""}`);
   }
   return { errors, ratings };
 }
 
-/** Read every *.json in `ratingsDir`, match by batch_id, require every batch to be present exactly once. */
-export function loadJudgeAnswers({ judgeKey, ratingsDir, responsesById }) {
+/**
+ * Read every *.json in `ratingsDir`, match by batch_id, require every batch to be present exactly once.
+ * Bridge ratings (batches carrying `bridge_response_ids`) are validated against `bridgeById` and returned
+ * SEPARATELY as `bridgeRatings`; `ratings` never contains one.
+ */
+export function loadJudgeAnswers({ judgeKey, ratingsDir, responsesById, bridgeById = null }) {
   const errors = [];
   const byBatch = new Map(judgeKey.batches.map((b) => [b.batch_id, b]));
   const claimed = new Map();
   const all = [];
+  const bridgeRatings = [];
+  const texts = bridgeById ? new Map([...responsesById, ...bridgeById]) : responsesById;
+  const bridgeIds = new Set(bridgeById ? bridgeById.keys() : []);
 
   for (const f of readdirSync(ratingsDir).filter((x) => x.endsWith(".json")).sort()) {
     let parsed;
@@ -134,14 +142,14 @@ export function loadJudgeAnswers({ judgeKey, ratingsDir, responsesById }) {
       continue;
     }
     claimed.set(batchKey.batch_id, f);
-    const r = validateJudgeAnswers(parsed, batchKey, responsesById, `${f} (judge ${batchKey.judge})`);
+    const r = validateJudgeAnswers(parsed, batchKey, texts, `${f} (judge ${batchKey.judge})`);
     errors.push(...r.errors);
-    all.push(...r.ratings);
+    for (const x of r.ratings) (bridgeIds.has(x.response_id) ? bridgeRatings : all).push(x);
   }
   for (const b of judgeKey.batches) {
     if (!claimed.has(b.batch_id)) errors.push(`no answer file for batch ${b.batch_id} (judge ${b.judge})`);
   }
-  return { errors, ratings: all };
+  return { errors, ratings: all, bridgeRatings };
 }
 
 // ---------------------------------------------------------------------------
@@ -171,11 +179,13 @@ function readAnswerFile(dir, f) {
  */
 export function describeAnswerFile(parsed, batchKey, responsesById) {
   const inBatch = new Set(batchKey.response_ids);
+  const bridge = new Set(batchKey.bridge_response_ids ?? []); // described elsewhere; never counted as this batch's main ratings
   const byId = new Map();
   let unknownOrDuplicate = 0;
   const list = parsed && Array.isArray(parsed.ratings) ? parsed.ratings : [];
   for (const r of list) {
     const id = r && r.response_id;
+    if (typeof id === "string" && bridge.has(id)) continue;
     if (typeof id !== "string" || !inBatch.has(id) || byId.has(id)) {
       unknownOrDuplicate += 1;
       continue;
@@ -211,8 +221,10 @@ export const emptyJudgeStats = () => ({
  * rating, shape). A rating is IGNORED only if the key says so: its judge is in `excluded_judges`, or the key
  * marks that pair `requoted` and the rating came from the original batch. Any other rating is an error.
  */
-export function loadRoutedAnswers({ routingKey, dirs, responsesById }) {
+export function loadRoutedAnswers({ routingKey, dirs, responsesById, bridgeById = null }) {
   const errors = [];
+  const bridgeRatings = [];
+  const bridgeTexts = bridgeById ? new Map([...responsesById, ...bridgeById]) : responsesById;
   const batches = new Map(routingKey.batches.map((b) => [b.batch_id, b]));
   const excluded = new Set(routingKey.excluded_judges);
   const wantSource = new Map(); // pair -> "original" | "reroute"
@@ -264,6 +276,23 @@ export function loadRoutedAnswers({ routingKey, dirs, responsesById }) {
       continue;
     }
 
+    // Bridge ratings (pilot-2026-10-02) are split off and validated on their own; they never reach `used`.
+    const bridgeInBatch = new Set(batchKey.bridge_response_ids ?? []);
+    if (bridgeInBatch.size > 0) {
+      const mine = parsed.ratings.filter((r) => r && bridgeInBatch.has(r.response_id));
+      parsed = { ...parsed, ratings: parsed.ratings.filter((r) => !(r && bridgeInBatch.has(r.response_id))) };
+      if (!excluded.has(batchKey.judge)) {
+        const bv = validateJudgeAnswers(
+          { batch_id: parsed.batch_id, ratings: mine },
+          { ...batchKey, response_ids: [...bridgeInBatch], bridge_response_ids: [] },
+          bridgeTexts,
+          `${label} (judge ${batchKey.judge}, bridge)`
+        );
+        errors.push(...bv.errors);
+        bridgeRatings.push(...bv.ratings);
+      }
+    }
+
     const facts = describeAnswerFile(parsed, batchKey, responsesById);
     if (batchKey.source === "original") {
       const s = (judgeStats[batchKey.judge] ??= emptyJudgeStats());
@@ -297,7 +326,7 @@ export function loadRoutedAnswers({ routingKey, dirs, responsesById }) {
     const extraKeys = Object.keys(parsed).filter((k) => !FILE_KEYS.has(k));
     for (const k of extraKeys) errors.push(`${label}: unexpected top-level key "${k}"`);
     const subset = { batch_id: parsed.batch_id, ratings: parsed.ratings.filter((r) => r && useIds.has(r.response_id)) };
-    const v = validateJudgeAnswers(subset, { ...batchKey, response_ids: expectedHere }, responsesById, `${label} (judge ${batchKey.judge}, ${batchKey.source})`);
+    const v = validateJudgeAnswers(subset, { ...batchKey, response_ids: expectedHere, bridge_response_ids: [] }, responsesById, `${label} (judge ${batchKey.judge}, ${batchKey.source})`);
     errors.push(...v.errors);
     used.push(...v.ratings.map((r) => ({ ...r, source: batchKey.source })));
   }
@@ -307,5 +336,5 @@ export function loadRoutedAnswers({ routingKey, dirs, responsesById }) {
     const needed = b.response_ids.some((id) => wantSource.get(`${id}|${b.judge}`) === b.source);
     if (needed) errors.push(`no answer file for batch ${b.batch_id} (judge ${b.judge}, ${b.source})`);
   }
-  return { errors, ratings: used, ignored, judgeStats };
+  return { errors, ratings: used, ignored, judgeStats, bridgeRatings };
 }

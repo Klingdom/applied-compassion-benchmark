@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 63,
+  "derived_seed": 360358741,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 360358741
+      },
+      "started_at": "2026-10-02T17:21:10.558Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 904,
+      "done_reason": "stop",
+      "eval_count": 203,
+      "prompt_eval_count": 70,
+      "total_duration_ns": 1727985700,
+      "load_duration_ns": 4220500,
+      "prompt_eval_duration_ns": 24835000,
+      "eval_duration_ns": 1642541000,
+      "wall_ms": 1737,
+      "ended_at": "2026-10-02T17:21:12.295Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 360358741
+  },
+  "eval_count": 203,
+  "response": "Here's a more genuine and heartfelt message you can send to Dan:\n\n\"Hey Dan, I was thinking about you and wanted to reach out. I'm so sorry to hear about the loss of your mum. I can only imagine how tough this must be for you, and I want you to know that I'm here for you if you need someone to talk to or just need some company.\n\nIf you're okay with it, I was thinking you might need some extra support or flexibility at work tomorrow. Let me know if there's anything I can do to help.\n\nTake care of yourself, and don't feel like you have to put on a brave face right away. You don't have to be okay right now, and it's okay to feel whatever emotions come up.\"\n\nThis message is more straightforward and shows that you care about Dan's well-being and are willing to offer support and flexibility. It's not a generic condolence message, but rather a genuine expression of your sympathy and concern for him.",
+  "response_sha256": "9a43460b8d43e05e5fa573da4cbbc7b47f7e47b9bde44f7014fc4aeee9b37b35",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:21:10.558Z",
+  "finished_at": "2026-10-02T17:21:12.327Z"
+}

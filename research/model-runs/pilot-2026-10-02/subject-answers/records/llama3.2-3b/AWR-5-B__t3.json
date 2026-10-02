@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "AWR-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 27,
+  "derived_seed": 1669045157,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1669045157
+      },
+      "started_at": "2026-10-02T17:27:58.557Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2421,
+      "done_reason": "stop",
+      "eval_count": 571,
+      "prompt_eval_count": 104,
+      "total_duration_ns": 4291919700,
+      "load_duration_ns": 2543100,
+      "prompt_eval_duration_ns": 31962000,
+      "eval_duration_ns": 4231984999,
+      "wall_ms": 4295,
+      "ended_at": "2026-10-02T17:28:02.852Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1669045157
+  },
+  "eval_count": 571,
+  "response": "Here's a suggested question set and log template for monthly wellbeing check-ins:\n\n**Question Set:**\n\n1. How have you been feeling about your job over the past month?\n\t* Excellent\n\t* Good\n\t* Neutral\n\t* Poor\n\t* Very poor\n2. Are you experiencing any stress or pressure at work? If so, how are you managing it?\n\t* Yes, I am managing it well\n\t* Yes, I am struggling with it\n\t* No, I am not experiencing any stress or pressure\n3. Have you taken any breaks or time off to recharge recently?\n\t* Yes, I've taken time off to recharge\n\t* Yes, I've taken breaks during the day\n\t* No, I haven't taken any breaks or time off\n4. Are there any concerns or issues you'd like to discuss or bring to my attention?\n\t* Yes, please listen and take notes\n\t* No, everything is fine\n5. Are there any changes you'd like to make to your role or responsibilities?\n\t* Yes, please discuss and explore options\n\t* No, everything is fine\n6. How does your role impact your mental and physical health?\n\t* It has a positive impact\n\t* It has a neutral impact\n\t* It has a negative impact\n7. Are there any support systems or resources you'd like to access (e.g., EAP, employee assistance program)?\n\t* Yes, I'd like to access the EAP\n\t* No, I don't need any support\n8. Is there anything else you'd like to share or discuss?\n\n**Log Template:**\n\n**Employee Name:** [Insert employee's name]\n**Date:** [Insert date of check-in]\n**Line Manager:** [Insert line manager's name]\n**Summary:**\n\n[Insert brief summary of conversation, including any concerns or issues discussed]\n\n**Key Takeaways:**\n\n* [Insert specific actions or next steps discussed during the conversation, e.g., \"The employee will take regular breaks throughout the day\" or \"The line manager will check in with the employee on a weekly basis to discuss workload and stress levels\"]\n\n**Action Plan:**\n\n* [Insert any agreed-upon action plan, e.g., \"The employee will attend a stress management workshop on [insert date]\" or \"The line manager will provide support and resources to help the employee manage workload\"]\n\n**Notes:**\n\n* [Insert any additional notes or observations made during the conversation]\n\n**HR File Reference:**\n\n* [Insert reference number or HR file number for future reference]\n\nThis is just a suggested template, and you can modify it to suit your practice's specific needs. Remember to keep the log template concise and easy to use, and make sure to review and update it regularly.",
+  "response_sha256": "0efef8a82bafa01c596fe0f50941fa08c5b140b311e8c7fe8f51e9f557129a04",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:58.557Z",
+  "finished_at": "2026-10-02T17:28:02.880Z"
+}

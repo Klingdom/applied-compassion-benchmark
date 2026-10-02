@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import McpServerSection from "@/components/model-benchmark/McpServerSection";
 import { BANDS } from "@/data/dimensions";
 import taskBank from "@/data/model-benchmark/tasks-v1.json";
 import EvaluationScorer from "@/components/model-benchmark/EvaluationScorer";
@@ -160,7 +161,7 @@ export default function AIEvaluationSuitePage() {
                 Compassion Benchmark AI Evaluation Suite
               </h1>
               <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                Score any AI model or chatbot across 8 dimensions and all 40 subdimensions of compassionate behavior using {PROMPTS.length} standardized test prompts. Track progress, compare models, and export structured results.
+                Score any AI model or chatbot across 8 dimensions and all 40 subdimensions of compassionate behavior using {PROMPTS.length} standardized test prompts. Export structured results for your own records.
               </p>
 
               <div className="flex gap-3 flex-wrap mt-2">
@@ -168,6 +169,12 @@ export default function AIEvaluationSuitePage() {
                 <Button href="/contact-sales">License the Platform</Button>
                 <Button href="/methodology">Read Methodology</Button>
               </div>
+              <p className="text-muted text-[0.92rem] mt-3">
+                <a href="#mcp-server" className="underline underline-offset-2">
+                  Run it from your own AI tool
+                </a>{" "}
+                &mdash; a separate, local, unofficial tool.
+              </p>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
                 <Stat value={`${PROMPTS.length} prompts`} label={`${SCORABLE_COUNT} scorable, ${NON_SCORABLE_COUNT} pending review`} />
@@ -192,6 +199,9 @@ export default function AIEvaluationSuitePage() {
                 Self-serve evaluation aid for a single human rater &mdash; not an official Compassion Benchmark score.
                 An optional AI-judge mode lets a second AI model score the response instead of you doing it by hand
                 (still self-serve, still unofficial, still no 0&ndash;100 composite &mdash; see below).
+                Prefer to run it from your own AI tool instead of the browser? See the{" "}
+                <a href="#mcp-server" className="underline underline-offset-2">MCP server section</a>. It is a
+                separate tool with different output.
               </p>
             </Panel>
           </div>
@@ -255,6 +265,10 @@ export default function AIEvaluationSuitePage() {
         </Container>
       </section>
 
+      {/* cb-probe MCP server (spec docs/MCP_AND_MODEL_BENCHMARK_PAGES_SPEC_2026-10-02.md section 3.4).
+          Deliberately NOT placed beside the "License the Platform" buttons (founder decision D1 open). */}
+      <McpServerSection />
+
       {/* Score interpretation reference */}
       <section className="py-[30px]">
         <Container>
@@ -315,7 +329,7 @@ export default function AIEvaluationSuitePage() {
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Evaluate AI compassion with structured rigor</h2>
             <p className="text-muted max-w-[920px] mb-[18px]">
-              Use the Compassion Benchmark AI Evaluation Suite to score any AI model across {PROMPTS.length} standardized prompts, 8 behavioral dimensions and all 40 subdimensions. Export structured results, compare models, and track progress over time.
+              Use the Compassion Benchmark AI Evaluation Suite to score any AI model across {PROMPTS.length} standardized prompts, 8 behavioral dimensions and all 40 subdimensions. Export structured results for your own records.
             </p>
             <div className="flex gap-3 flex-wrap">
               <Button href="/contact-sales" variant="primary">License the Platform</Button>

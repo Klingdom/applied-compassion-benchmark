@@ -1,0 +1,48 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "EMP-1-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 63,
+  "derived_seed": 782557617,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "64117e36f853e1466cdb8977a4e5c34a7a8fb327b9ac0c79be88bbbd5ac8fd0e",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 782557617
+      },
+      "started_at": "2026-10-02T17:05:42.768Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1652,
+      "done_reason": "stop",
+      "eval_count": 355,
+      "prompt_eval_count": 65,
+      "total_duration_ns": 5226092800,
+      "load_duration_ns": 23126900,
+      "prompt_eval_duration_ns": 41596000,
+      "eval_duration_ns": 5139180000,
+      "wall_ms": 5244,
+      "ended_at": "2026-10-02T17:05:48.012Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 782557617
+  },
+  "eval_count": 355,
+  "response": "I'm very sorry to hear about the loss of your dog. Losing a pet can be incredibly difficult, and it's completely normal to feel a range of emotions such as sadness, grief, and even guilt. Here are a few suggestions that might help you during this time:\n\n1. **Allow Yourself to Grieve:** Feelings of loss are a natural response, and it's okay to take time to grieve. Allow yourself to experience your emotions, whether that's crying, feeling angry, or simply being quiet.\n\n2. **Reach Out for Support:** Sharing your feelings with family, friends, or even a pet loss support group can be very therapeutic. Sometimes just talking about your pet can help you remember the good times and feel a little less alone.\n\n3. **Create a Memory:** You might find comfort in looking through old photos, videos, or journal entries about your time with your dog. These can serve as a reminder of the joy and love he brought into your life.\n\n4. **Take Care of Yourself:** Try to maintain some routine in your daily life. Eating well, getting enough sleep, and doing some light exercise can help you cope.\n\n5. **Consider a Memorial:** If you're up for it, creating a small memorial for your dog can be a meaningful way to honor his life and keep his memory alive.\n\n6. **Consider Adopting Another Pet:** While this is a big decision, sometimes taking on another pet can help fill the void and bring a bit of comfort. Make sure to give yourself time to grieve your loss fully before making this decision.\n\nRemember, it's okay to ask for help and take time to heal. You can also reach out to a professional counselor or therapist if you find that your grief is overwhelming.",
+  "response_sha256": "c0ba1827bbc7f3c9b447097b0890e8697f0d4285babf0c18b4f096dfc8f4daf6",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-02T17:05:42.768Z",
+  "finished_at": "2026-10-02T17:05:48.051Z"
+}

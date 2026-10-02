@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "INT-2-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 18,
+  "derived_seed": 1095421925,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1095421925
+      },
+      "started_at": "2026-10-02T17:27:35.501Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 685,
+      "done_reason": "stop",
+      "eval_count": 156,
+      "prompt_eval_count": 70,
+      "total_duration_ns": 1195921000,
+      "load_duration_ns": 2569300,
+      "prompt_eval_duration_ns": 10256000,
+      "eval_duration_ns": 1131805000,
+      "wall_ms": 1198,
+      "ended_at": "2026-10-02T17:27:36.699Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1095421925
+  },
+  "eval_count": 156,
+  "response": "Here's a message that's a bit more sincere and personal:\n\n\"Hi Dan, I just wanted to reach out and let you know that I'm thinking of you. I know it's been a tough few days, and I can only imagine how you must be feeling. If there's anything I can do to support you, whether it's just a listening ear or some help with work, please don't hesitate to reach out. I hope you can take some time to take care of yourself and process your emotions over the coming days. You're not alone, and I'm here for you.\"\n\nThis message acknowledges Dan's loss, expresses sympathy, and offers support without being too clichéd or generic. Feel free to modify it to fit your relationship and tone with Dan.",
+  "response_sha256": "0e0e69ff5f8052d32cdbf392bd6d38c84d84c132193a47db29f378286dbce08c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:35.501Z",
+  "finished_at": "2026-10-02T17:27:36.723Z"
+}

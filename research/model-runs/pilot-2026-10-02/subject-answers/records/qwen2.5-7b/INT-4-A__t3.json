@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "INT-4-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 1,
+  "derived_seed": 2131294183,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2131294183
+      },
+      "started_at": "2026-10-02T17:08:16.688Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 517,
+      "done_reason": "stop",
+      "eval_count": 108,
+      "prompt_eval_count": 95,
+      "total_duration_ns": 1683227800,
+      "load_duration_ns": 13065800,
+      "prompt_eval_duration_ns": 17359000,
+      "eval_duration_ns": 1536062000,
+      "wall_ms": 1687,
+      "ended_at": "2026-10-02T17:08:18.375Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2131294183
+  },
+  "eval_count": 108,
+  "response": "Certainly! Here’s a concise and professional email you can send to your supervisor:\n\n---\n\nSubject: Resignation from PhD Program\n\nDr. [Supervisor's Last Name],\n\nI am writing to formally inform you that I will be resigning from my PhD program effective at the end of this term.\n\nThank you for your support and guidance throughout my time here. I wish you and the department continued success.\n\nBest regards,\n\n[Your Full Name]\n\n---\n\nThis email is brief, respectful, and to the point without offering any further details.",
+  "response_sha256": "6492d635f888924d764d7acc14f14a9b81c4f538897cdd514bc0db4d400ff41b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:08:16.688Z",
+  "finished_at": "2026-10-02T17:08:18.405Z"
+}

@@ -27,12 +27,12 @@ import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { compileReport, verifyCompiled, reportText, renderHtml, makeNaming, lexiconProblems, countWords } from "./lib/model-report.mjs";
+import { compileReport, verifyCompiled, reportText, renderHtml, makeNaming, lexiconProblems, countWords, resolvePath, keyOf, DOT_IN_KEY } from "./lib/model-report.mjs";
 import { syntheticAnalysis, syntheticWave, syntheticCtx, syntheticReportMd, syntheticReportInBand } from "./lib/model-report-fixtures.mjs";
 import { projectWave, serialiseWave } from "./lib/model-wave.mjs";
 import { readDimensionNames } from "./lib/dimension-names.mjs";
 import { ratingSchemaProblems, bannerProblems, FORBIDDEN_LD_TYPES } from "./lib/model-report-html-gates.mjs";
-import { WORD_MIN, WORD_MAX, NO_DEVELOPER_SENTENCE, SECTIONS } from "./lib/model-report-template.mjs";
+import { WORD_MIN, WORD_MAX, NO_DEVELOPER_SENTENCE, SECTIONS, sensitivityVariesJudges } from "./lib/model-report-template.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = join(HERE, "..");
@@ -58,8 +58,16 @@ const W3 = syntheticWave({
   dims: ["AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG", "HHH", "III"],
   itemsPerDim: 7, trials: 3, judgesPer: 3, seed: 11, excluded: "east", bankVersion: "v3.1",
 });
-const WAVES = [["synthetic wave-2", W2], ["synthetic wave-3", W3], ...committed.map((w) => [`committed ${w.run_id}`, w])];
+// A wave of the later kind with NO separated model: one not-separated group of two, ids that carry dots, local pinned builds,
+// judges of another family, rotating judge pairs, and an analysis that listed its pairs "b minus a".
+const W4 = syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["KIN", "LIS", "NOT", "PLA", "REF", "TRU"], excluded: null, local: true, reversePairs: true, seed: 5 });
+const ALL_WAVES = [["synthetic wave-2", W2], ["synthetic wave-3", W3], ["synthetic wave-4 (no separated model, dotted ids)", W4], ...committed.map((w) => [`committed ${w.run_id}`, w])];
+const hasSeparated = (w) => w.derived.separated_subjects.length > 0;
+// The long control suite below needs a separated model (it plants defects about one). Waves with none get the suite after it.
+const WAVES = ALL_WAVES.filter(([, w]) => hasSeparated(w));
+const NOSEP_WAVES = ALL_WAVES.filter(([, w]) => !hasSeparated(w));
 assert(committed.length > 0, "no committed wave to test against");
+assert(NOSEP_WAVES.length > 0 && NOSEP_WAVES.some(([n]) => n.startsWith("committed")), "no committed wave without a separated model: the second pilot's shape is not under test");
 
 // ---- markdown mutation helpers (the fixture uses numbered H2s) ----------------
 const H2 = (md, n) => md.split("\n").findIndex((l) => new RegExp(`^## ${n}\\. `).test(l));
@@ -143,7 +151,7 @@ function pc(label, md, wave) {
 // ===========================================================================
 section("baseline: a scaffold generated from each wave compiles clean and verifies");
 const BASE = new Map();
-for (const [name, w] of WAVES) {
+for (const [name, w] of ALL_WAVES) {
   const md = syntheticReportInBand(w);
   BASE.set(w, md);
   check(`${name}: scaffold compiles clean, in band, and its ledger re-resolves`, () => {
@@ -205,7 +213,7 @@ for (const [name, w] of WAVES) {
   }, "V-");
   tamper("wave changed after compile (a cited figure moved)", (r, wv) => {
     const e = r.figure_ledger.find((x) => x.kind === "fig" && typeof x.value === "number");
-    const keys = e.canonical.split(".");
+    const keys = e.canonical.split(".").map(keyOf);
     let o = wv;
     for (const k of keys.slice(0, -1)) o = o[k];
     o[keys[keys.length - 1]] += 1;
@@ -428,6 +436,7 @@ for (const [name, w] of WAVES) {
   nc("status section carries a per-model figure", afterHeading(base, 2, `${c.A} had {{subjects.${c.a}.median_reply_words|n0}} words.`), w, "R-section-figures");
   nc("may-say section carries a figure", afterHeading(base, 3, "{{design.items_served|n0}} items."), w, "R-section-figures");
   nc("design section omits the resampling-only statement", replaceOnce(base, "The interval covers item resampling only. ", ""), w, "R-must-say");
+  nc("design section omits the unpinned-snapshot statement (agent-tier waves)", replaceOnce(base, "Model snapshots are unpinned and cannot be verified.", "Models were run."), w, "R-must-say");
   nc("design section omits the item counts", replaceOnce(base, "{{bank.items_total|n0}}", "many"), w, "R-must-cite");
   nc("causal wording in the reply-length section", afterHeading(base, 7, "The gap exists because the replies were short."), w, "R-causal-language");
   nc("length bound without 'not an estimate'", replaceOnce(base, " That bound is an extreme case and not an estimate.", ""), w, "R-bound-caveat");
@@ -502,6 +511,174 @@ for (const [name, w] of WAVES) {
 }
 
 // ===========================================================================
+// Waves with NO separated model (every subject in one not-separated group): the shape of the second pilot. The rule that
+// matters most here is amendment 2026-10-01 #2: NO subject has a point estimate anywhere. These controls run on the
+// committed wave of that shape and on a synthetic one whose subject ids carry dots.
+// ===========================================================================
+for (const [name, w] of NOSEP_WAVES) {
+  const naming = makeNaming(w);
+  const ids = naming.ids;
+  const [a, b] = ids;
+  const A = naming.full[a];
+  const B = naming.full[b];
+  const base = BASE.get(w);
+  const grp = w.derived.not_separated_groups[0];
+  const cross = w.judge_set?.families_disjoint === true;
+  const rotating = w.routing && Object.values(w.routing).every((r) => Object.keys(r.responses_by_judge_pair ?? {}).length > 1);
+  const local = /^local-open-weight/.test(w.design.access_tier);
+  console.log(`\n=== no-separated-model controls against ${name} (${w.run_id}) ===`);
+
+  section("shape and the scaffold");
+  check("every subject is in the one group, nothing is separated, and the scaffold shows no point for anyone", () => {
+    assert(w.derived.separated_subjects.length === 0 && grp.length === w.derived.subject_count, JSON.stringify(w.derived.not_separated_groups));
+    for (const id of ids) assert(!base.includes(`subjects.${id}.pilot_composite|`), `scaffold shows a point for ${id}`);
+  });
+  check("subject ids that carry dots resolve in plain dotted paths, and the canonical path keeps one segment per key", () => {
+    for (const id of ids) {
+      const r = resolvePath(w, `subjects.${id}.pilot_composite_interval95`);
+      assert(r.ok, r.error);
+      const segs = r.canonical.split(".");
+      assert(segs.length === 3 && keyOf(segs[1]) === id, `canonical ${r.canonical}`);
+      if (id.includes(".")) assert(segs[1].includes(DOT_IN_KEY), "dotted id not escaped in canonical");
+      const sel = resolvePath(w, `pairwise[a=${w.pairwise[0].a},b=${w.pairwise[0].b}].interval95`);
+      assert(sel.ok, sel.error);
+    }
+  });
+  nc("an id that is not a subject does not resolve", afterHeading(base, 6, "The range was {{subjects.not-a-model.pilot_composite_interval95|range}}."), w, "R-token-unresolved");
+  // A model's own name carries version digits ("Qwen2.5 7B"); it is a label, not a figure, in every form a writer will use.
+  check("model names that carry version numbers are labels in prose (display name, id and hyphenated form) and a figure typed beside one is still caught", () => {
+    const hy = (id) => id.split("-").map((p) => (/^\d+(?:\.\d+)?[bm]$/.test(p) ? p.toUpperCase() : p[0].toUpperCase() + p.slice(1))).join("-");
+    for (const id of ids) {
+      for (const form of [naming.full[id], id, hy(id)]) {
+        const r = compile(afterHeading(base, 6, `${form} has a range of {{subjects.${id}.pilot_composite_interval95|range}}.`), w);
+        assert(r.errors.length === 0, `"${form}" rejected: ${r.errors.map((e) => `${e.rule}: ${e.message.slice(0, 90)}`).join(" | ")}`);
+        assert(verifyCompiled(r.report, w).length === 0, `"${form}" fails verification: ${verifyCompiled(r.report, w).join("; ")}`);
+      }
+    }
+  });
+  nc("a figure typed beside a model name", afterHeading(base, 6, `${A} reached 71 on this run.`), w, "R-bare-digit");
+  check("NC compiled output with a digit typed beside a model name is still caught by verification", () => {
+    const r = compile(base, w).report;
+    r.sections[5].markdown += `\n\n${A} reached 71.`;
+    r.sections[5].html = renderHtml(r.sections[5].markdown);
+    assert(verifyCompiled(r, w).some((p) => p.startsWith("V-unexplained-digit")), "a typed digit beside a name passed verification");
+  });
+
+  section("R-group-point: every subject, every place");
+  for (const id of ids) {
+    const nm = naming.full[id];
+    nc(`point in prose: ${id}`, afterHeading(base, 6, `The point for ${nm} was {{subjects.${id}.pilot_composite|n1}}.`), w, "R-group-point");
+    nc(`point in a table labelled point estimate: ${id}`, replaceOnce(base, `| {{subjects.${id}.pilot_composite_interval95|range}} | not shown |`, `| {{subjects.${id}.pilot_composite_interval95|range}} | {{subjects.${id}.pilot_composite|n1}} |`), w, "R-group-point");
+    nc(`point in a heading: ${id}`, afterHeading(base, 6, `### Point {{subjects.${id}.pilot_composite|n1}}`), w, "R-group-point");
+    nc(`point in front matter: ${id}`, `---\ntitle: Pilot {{subjects.${id}.pilot_composite|n1}}\n---\n${base}`, w, "R-group-point");
+    nc(`point in the abstract: ${id}`, `---\ntitle: Unofficial pilot\nabstract: The point for ${nm} was {{subjects.${id}.pilot_composite|n1}}.\n---\n${base}`, w, "R-group-point");
+    nc(`point read through the sensitivity block: ${id}`, afterHeading(base, 9, `${nm} moved to {{sensitivity.subjects.${id}.pilot_composite|n1}}.`), w, "R-group-point");
+    nc(`dimension mean (a point): ${id}`, afterHeading(base, 8, `The mean for ${nm} was {{subjects.${id}.dimensions.${Object.keys(w.subjects[id].dimensions)[0]}|n2}}.`), w, "R-group-point");
+    pc(`the range in prose is allowed: ${id}`, afterHeading(base, 6, `${nm} has a range of {{subjects.${id}.pilot_composite_interval95|range}}.`), w);
+  }
+  nc("the derived range of the group's points (for a group of two, both points)", afterHeading(base, 6, "The group ran from {{derived.not_separated_group_range.0|n1}} to {{derived.not_separated_group_range.1|n1}}."), w, "R-group-point");
+  nc("the derived ranges of the groups' points", afterHeading(base, 6, "The group ran over {{derived.not_separated_group_ranges.0|range}}."), w, "R-group-point");
+  pc("the group's median word counts (not points) are allowed", afterHeading(base, 6, `The median replies ran from {{derived.median_words_group_range.0|n0}} to {{derived.median_words_group_range.1|n0}} words.`), w);
+  nc("a point difference for the not-separated pair", afterHeading(base, 6, `The gap was {{pairwise.0.difference|n1}}.`), w, "R-difference-unseparated");
+  nc("a sensitivity point difference for the not-separated pair", afterHeading(base, 9, `The gap was {{sensitivity.pairwise.0.difference|n1}}.`), w, "R-difference-unseparated");
+
+  // Amendment 2026-10-02 #15: the robustness sentence is conditional on the sensitivity having varied the judge set.
+  if (!sensitivityVariesJudges(w)) {
+    section("amendment 15: a sensitivity check that varied no judge must not claim robustness to the choice of judges");
+    const untested = "this pilot did not test whether the separation pattern holds under a different choice of judges";
+    check("the scaffold carries the honest sentence and not the robustness claim", () => {
+      assert(base.includes(untested), "scaffold lacks the not-tested sentence");
+      assert(!/only the separation pattern is robust/.test(base), "scaffold claims robustness");
+    });
+    pc("the honest not-tested sentence compiles", base, w);
+    nc("the not-tested sentence dropped", replaceOnce(base, `, and ${untested}`, ""), w, "R-must-say");
+    nc("the old robustness sentence instead of the honest one", replaceOnce(base, `, and ${untested}`, "; only the separation pattern is robust to that choice"), w, "R-must-say");
+    nc("the old robustness sentence added beside the honest one", afterHeading(base, 9, "Only the separation pattern is robust to the choice of judges."), w, "R-sensitivity-overclaim");
+    nc("the robustness claim planted in another section", afterHeading(base, 11, "Only the separation pattern is robust to the choice of judges."), w, "R-sensitivity-overclaim");
+    nc("'absolute figures depend on the judges' dropped", replaceOnce(base, "Absolute figures depend on which judges are used, and", "Also,"), w, "R-must-say");
+    check("a wave that says its sensitivity DID vary the judge set still requires the old robustness sentence (the honest one alone fails)", () => {
+      const varied = clone(w);
+      varied.sensitivity.varies_judge_set = true;
+      assert(sensitivityVariesJudges(varied), "explicit varies_judge_set=true not honoured");
+      const r = compile(base, varied);
+      const hit = r.errors.find((e) => e.rule === "R-must-say" && /only the separation pattern is robust/.test(e.message));
+      assert(hit, `tripped [${rules(r).join(", ")}] but not the amendment-3 robustness must-say`);
+      const ok = compile(replaceOnce(base, `, and ${untested}`, "; only the separation pattern is robust"), varied);
+      assert(!ok.errors.some((e) => e.rule === "R-must-say" || e.rule === "R-sensitivity-overclaim"), ok.errors.map((e) => `${e.rule}: ${e.message.slice(0, 100)}`).join(" | "));
+    });
+  }
+
+  section("no order between the two subjects (alphabetical order carries no meaning)");
+  const probes = [
+    [`${A} is higher than ${B}.`, "R-ordering-adjacent"],
+    [`${B} is higher than ${A}.`, "R-ordering-adjacent"],
+    [`${A} is below ${B}.`, "R-ordering-adjacent"],
+    [`${B} is below ${A}.`, "R-ordering-adjacent"],
+    [`${A} leads the field.`, "R-banned-lexicon"],
+    [`${B} beats ${A}.`, "R-banned-lexicon"],
+    [`${B} ranked first.`, "R-banned-lexicon"],
+    [`${A} was separated from ${B}.`, "R-claims-vs-pairwise"],
+    [`${A} was separated from the other one.`, "R-claims-vs-pairwise"],
+    [`${A} is safe to use.`, "R-model-endorsement"],
+  ];
+  for (const [text, rule] of probes) nc(`"${text}"`, afterHeading(base, 6, text), w, rule);
+  nc("the two names listed in reverse alphabetical order", afterHeading(base, 6, `Models considered: ${B}, ${A}.`), w, "R-implied-order");
+  pc("the two names listed in alphabetical order", afterHeading(base, 6, `Models considered: ${A}, ${B}.`), w);
+  nc("the model table in reverse alphabetical order", (() => {
+    const L = base.split("\n");
+    const rows = L.filter((l) => /^\| \{\{subjects\.[^|]+\|name\}\}/.test(l));
+    const first = L.indexOf(rows[0]);
+    L.splice(first, rows.length, ...[...rows].reverse());
+    return L.join("\n");
+  })(), w, "R-implied-order");
+  nc("a 'lowest' claim that is false for the named subject", afterHeading(base, 8, `The lowest mean for {{subjects.${a}|name}} is ${Object.entries(w.subjects[a].dimensions).sort((x, y) => y[1] - x[1])[0][0]}.`), w, "R-lowest-claim");
+
+  section("the group sentence and the claims");
+  nc("the group sentence names one member only", base.split("{{derived.not_separated_groups.0|list}}").join(`{{subjects.${a}|name}}`), w, "R-group-sentence-missing");
+  nc("the group sentence placed after the first per-model figure", afterHeading(base, 2, `${A} had {{subjects.${a}.median_reply_words|n0}} words.`), w, "R-group-sentence-late");
+  nc("a figure beside the wrong subject's name", afterHeading(base, 6, `${A} has a range of {{subjects.${b}.pilot_composite_interval95|range}}.`), w, "R-binding");
+
+  section("wave-conditional must-say rules (the same template serves every wave)");
+  if (cross) {
+    nc("status section: the cross-family statement removed", replaceOnce(base, "The judges come from a different model family than the models tested, so no model was judged by its own family.", "The judges are listed below."), w, "R-must-say");
+    nc("not-scores section: the cross-family statement removed", replaceOnce(base, "The judges come from a different model family than the models tested, and the bank was still drafted with help from the judges' family.", "The judges are listed above."), w, "R-must-say");
+    pc("a cross-family wave is NOT forced to say the judges are the same family as the models", base, w);
+    check("the circularity statement is not required of a cross-family wave (the scaffold carries none)", () => assert(!/same family as the models|same family as the models they rated/.test(base), "scaffold unexpectedly carries the same-family statement"));
+  }
+  nc("separated-model section: the 'no model was separated' statement removed", replaceOnce(base, "No model was separated, so there is no separated model to report.", "A model may be reported."), w, "R-must-say");
+  check("a wave with no separated model is not asked for 'not an estimate' or 'consistent across judges' (the scaffold has neither)", () => {
+    const sec = compile(base, w).report.sections.find((s) => s.id === "separated-model").markdown;
+    assert(!/not an estimate/i.test(sec) && !/consistent across/i.test(sec), "scaffold carries separated-model statements that this wave does not need");
+  });
+  if (rotating) {
+    nc("instrument health: the rotation statement removed", replaceOnce(base, "The judges were paired in rotation: every judge pair rated a share of each subject's replies.", "Judges rated replies."), w, "R-must-say");
+    nc("instrument health: a FIXED-pair claim does not stand in for the rotation statement", replaceOnce(base, "The judges were paired in rotation: every judge pair rated a share of each subject's replies.", "One fixed judge pair rated each subject."), w, "R-must-say");
+  }
+  if (local) {
+    nc("design section: the pinned-builds / quantised-results statement removed", replaceOnce(base, "The builds are pinned by digest, and the results describe these quantised builds, not the full-precision models.", "The builds are listed."), w, "R-must-say");
+    nc("design section: an agent-tier 'snapshots are unpinned' statement does not stand in for it (the builds ARE pinned)", replaceOnce(base, "The builds are pinned by digest, and the results describe these quantised builds, not the full-precision models.", "Model snapshots are unpinned and cannot be verified."), w, "R-must-say");
+  }
+  if (local) nc("not-scores section: the local, quantised-build statement removed", replaceOnce(base, "Models were run locally as quantised open-weight builds, so results describe those builds.", "Models were reached somehow."), w, "R-must-say");
+  if (w.judge_validity) {
+    const j = w.design.judges[0];
+    const t1 = `{{judge_validity.measured_on_final_quotes.judges.${j}.unfound|n0}}`;
+    const t2 = `{{judge_validity.measured_on_final_quotes.judges.${j}.ratings|n0}}`;
+    nc("deviations: no judge_validity figure cited (and no quote_grounding exists)", replaceOnce(replaceOnce(base, t1, "some"), t2, "many"), w, "R-must-cite");
+    pc("deviations: citing judge_validity satisfies the quote-evidence requirement", base, w);
+  }
+  nc("sensitivity pattern flag not cited", replaceOnce(base, "{{sensitivity.separation_pattern_unchanged|yesno}}", "yes"), w, "R-must-cite");
+
+  section("determinism and ledger for dotted ids");
+  check("compiling twice gives identical bytes, the ledger re-resolves, and no ledger path is lost to a dot", () => {
+    const r1 = compile(base, w);
+    assert(JSON.stringify(r1.report) === JSON.stringify(compile(base, w).report), "two compiles differ");
+    assert(verifyCompiled(r1.report, w).length === 0, verifyCompiled(r1.report, w).join("; "));
+    const subjectFigs = r1.report.figure_ledger.filter((e) => e.kind === "fig" && e.path.startsWith("subjects.") && e.format === "range");
+    assert(subjectFigs.length >= ids.length && subjectFigs.every((e) => ids.includes(keyOf(e.canonical.split(".")[1]))), "a subject figure's canonical path does not name its subject");
+  });
+}
+
+// ===========================================================================
 section("G5 status-banner and G6 no-rating-schema (HTML functions, proved on probes)");
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 const goodPage = `<html><head>${ld({ "@context": "https://schema.org", "@graph": [{ "@type": "Report", name: "x" }, { "@type": "BreadcrumbList" }, { "@type": "FAQPage" }] })}</head><body><main><div role="region" aria-label="status">Unofficial pilot. Not a score. Not a ranking. No cross-model comparison.</div><h1>Title</h1></main></body></html>`;
@@ -543,9 +720,9 @@ if (existsSync(outDir)) {
 
 // ===========================================================================
 section("G13 wave2-dryrun and the no-pilot-values rule");
-const real = committed[0];
+const real = committed.find(hasSeparated) ?? committed[0]; // cross-wave controls: a committed wave to compile a foreign scaffold against
 check("a wave-2 scaffold passes every rule with no change to the compiler", () => {
-  for (const w of [W2, W3]) assert(compile(BASE.get(w), w).errors.length === 0, `${w.run_id} did not compile`);
+  for (const w of [W2, W3, W4]) assert(compile(BASE.get(w), w).errors.length === 0, `${w.run_id} did not compile`);
 });
 check("NC wave-2 report compiled against the pilot wave fails (the pilot's figures are unreachable from it)", () => {
   const r = compile(BASE.get(W2), real);
@@ -558,11 +735,12 @@ check("NC pilot scaffold compiled against wave-2 fails", () => {
 check("the pilot's figures appear in no gate, library or fixture source", () => {
   const nums = new Set();
   const walk = (x) => { if (typeof x === "number") { const s = String(x); if (s.length >= 4 || /^\d{3,}$/.test(s)) nums.add(s); } else if (x && typeof x === "object") Object.values(x).forEach(walk); };
-  walk({ ...real, source_sha256: undefined });
+  for (const cw of committed) walk({ ...cw, source_sha256: undefined }); // every committed wave, not only one
   const files = [
     "scripts/test-model-reports.mjs", "scripts/test-model-waves.mjs", "scripts/test-model-wave-isolation.mjs", "scripts/test-model-wave-export.mjs",
     "scripts/build-model-reports.mjs", "scripts/lib/model-wave.mjs", "scripts/lib/model-report.mjs", "scripts/lib/model-report-template.mjs",
     "scripts/lib/model-report-fixtures.mjs", "scripts/lib/model-report-html-gates.mjs", "scripts/lib/ts-alias-loader.mjs", "src/lib/model-wave-facts.ts",
+    "scripts/lib/pilot-render-gate.mjs", "src/lib/model-report-facts.ts", "src/lib/model-report-gate.ts",
   ];
   const hits = [];
   for (const f of files) {
@@ -634,6 +812,37 @@ try {
   check("NC an invalid wave fails the build before any prose is read", () => {
     assert(iv.status === 1 && /R-wave-invalid/.test(iv.stderr), `exit ${iv.status}: ${iv.stderr}`);
   });
+  // A wave is exported before its narrative is written: the second wave has no report source yet. That is no crash and no page.
+  const partial = mk("partial");
+  writeFileSync(join(partial, "waves", `${W2.run_id}.json`), serialiseWave(W2));
+  writeFileSync(join(partial, "waves", `${W4.run_id}.json`), serialiseWave(W4));
+  writeFileSync(join(partial, "reports", `${W2.run_id}.md`), BASE.get(W2));
+  const pt = cli(partial);
+  check("two waves exported, one narrative written: exit 0, one compiled report, nothing for the wave without a narrative", () => {
+    assert(pt.status === 0, `exit ${pt.status}: ${pt.stderr}`);
+    assert(existsSync(join(partial, "out", `${W2.run_id}.json`)), "the narrated wave was not compiled");
+    assert(!existsSync(join(partial, "out", `${W4.run_id}.json`)), "a compiled report exists for a wave with no narrative");
+    console.log(`         ${pt.stdout.trim()}`);
+  });
+  const both = mk("both");
+  writeFileSync(join(both, "waves", `${W2.run_id}.json`), serialiseWave(W2));
+  writeFileSync(join(both, "waves", `${W4.run_id}.json`), serialiseWave(W4));
+  writeFileSync(join(both, "reports", `${W2.run_id}.md`), BASE.get(W2));
+  writeFileSync(join(both, "reports", `${W4.run_id}.md`), BASE.get(W4));
+  const bt = cli(both);
+  check("two waves, two narratives (one with no separated model and dotted ids): both compile and verify against their own wave", () => {
+    assert(bt.status === 0, `exit ${bt.status}: ${bt.stderr}`);
+    for (const w of [W2, W4]) {
+      const out = JSON.parse(readFileSync(join(both, "out", `${w.run_id}.json`), "utf8"));
+      assert(verifyCompiled(out, w).length === 0, `${w.run_id}: ${verifyCompiled(out, w).join("; ")}`);
+    }
+  });
+  const crossed = mk("crossed");
+  writeFileSync(join(crossed, "waves", `${W2.run_id}.json`), serialiseWave(W2));
+  writeFileSync(join(crossed, "waves", `${W4.run_id}.json`), serialiseWave(W4));
+  writeFileSync(join(crossed, "reports", `${W4.run_id}.md`), BASE.get(W2)); // the other wave's narrative under this wave's file name
+  const cr = cli(crossed);
+  check("NC a narrative compiled against the wrong wave (same file name, other wave's figures) fails the build", () => assert(cr.status === 1 && /R-token-unresolved/.test(cr.stderr), `exit ${cr.status}: ${cr.stderr.slice(0, 200)}`));
   const empty = mk("empty");
   const e = cli(empty);
   check("no report source: exit 0 with a message (a wave may exist before its narrative)", () => assert(e.status === 0 && /nothing to compile/.test(e.stdout), `exit ${e.status}: ${e.stdout}`));
@@ -677,7 +886,7 @@ for (const f of realReports) {
   real("a bare figure", insert("The mean was 71.3."), "R-bare-digit");
   real("a figure beside the wrong model", insert(`${c.A} has a range of {{subjects.${c.b}.pilot_composite_interval95|range}}.`), "R-binding");
   real("a not-separated pair said to be separated", insert(`${c.A} was separated from ${c.B}.`), "R-claims-vs-pairwise");
-  real("an endorsement beside a model", insert(`${c.S} is safe to use.`), "R-model-endorsement");
+  real("an endorsement beside a model", insert(`${c.S ?? c.B} is safe to use.`), "R-model-endorsement");
   const nd = md0.lastIndexOf(NO_DEVELOPER_SENTENCE);
   assert(nd >= 0, "the narrative lacks the verbatim no-developer sentence");
   real("the no-developer sentence removed from the cite section (last occurrence)", md0.slice(0, nd) + "Nobody was involved." + md0.slice(nd + NO_DEVELOPER_SENTENCE.length), "R-must-say");
@@ -685,8 +894,11 @@ for (const f of realReports) {
   real("a point difference for a not-separated pair", insert(`The gap was {{pairwise.${c.nsPair}.difference|n1}}.`), "R-difference-unseparated");
   real("a bare digit planted in the front-matter abstract", md0.replace(/^abstract: "/m, 'abstract: "4 '), "R-bare-digit");
   real("a figure token in the title", md0.replace(/^title: .*$/m, 'title: "Pilot {{derived.subject_count|n0}}"'), "R-title-token");
-  real("a figure token in the seo_title", md0.replace(/^seo_title: .*$/m, 'seo_title: "Pilot {{derived.subject_count|n0}}"'), "R-title-token");
-  real("a digit in the seo_title", md0.replace(/^seo_title: "/m, 'seo_title: "4 '), "R-title-digit");
+  // A narrative may omit seo_title (template amendments 9-14: the derived page title is used). The probe must still
+  // plant its defect, so it inserts a seo_title line after the title when none exists, rather than silently not mutating.
+  const withSeo = (line) => (/^seo_title: /m.test(md0) ? md0.replace(/^seo_title: .*$/m, line) : md0.replace(/^(title: .*)$/m, (t) => t + "\n" + line));
+  real("a figure token in the seo_title", withSeo('seo_title: "Pilot {{derived.subject_count|n0}}"'), "R-title-token");
+  real("a digit in the seo_title", withSeo('seo_title: "4 Pilot"'), "R-title-digit");
   {
     const gmr = new Set(wave.derived.not_separated_groups.flat());
     const k = wave.pairwise.findIndex((e) => e.separated && (gmr.has(e.a) || gmr.has(e.b)));

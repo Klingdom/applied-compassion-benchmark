@@ -5,7 +5,7 @@ import manifest from "@/data/updates/manifest.json";
 import specialBriefingsManifest from "@/data/special-briefings/manifest.json";
 import { DIMENSIONS } from "@/data/dimensions";
 import { getHistoryManifest } from "@/data/history";
-import { renderableEntries } from "@/lib/model-report-gate";
+import { renderableEntries, reportsIndexRenders } from "@/lib/model-report-gate";
 import { reportPath } from "@/lib/model-report-facts";
 
 // G4 (organic-growth Wave 1, safe-subset additions only): dimension-name
@@ -103,6 +103,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "never" as const,
       priority: 0.7,
     })),
+    // The reports index (D-29a item 1: only once two reports render). lastmod is the newest report's date, never "now".
+    ...(reportsIndexRenders()
+      ? [{
+          url: `${BASE}/ai-models/reports`,
+          lastModified: renderableEntries().map((x) => x.entry.report_date).sort().slice(-1)[0],
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        }]
+      : []),
     ...aiModelPages.map((path) => ({
       url: `${BASE}${path}`,
       lastModified: now,

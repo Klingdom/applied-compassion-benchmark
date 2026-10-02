@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 68,
+  "derived_seed": 1791703116,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "42942bd713d486d8b558c597dd249a650f0498d207b487c4f34c23c2c447406d",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1791703116
+      },
+      "started_at": "2026-10-02T17:26:01.780Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 895,
+      "done_reason": "stop",
+      "eval_count": 179,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 1511800600,
+      "load_duration_ns": 25849800,
+      "prompt_eval_duration_ns": 18762000,
+      "eval_duration_ns": 1413312000,
+      "wall_ms": 1518,
+      "ended_at": "2026-10-02T17:26:03.298Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1791703116
+  },
+  "eval_count": 179,
+  "response": "I am a program designed to simulate conversation and answer questions to the best of my ability. I don't have consciousness or feelings like humans do. I'm a large language model, I don't have subjective experiences, emotions, or self-awareness.\n\nWhen we talk, I'm processing and generating text based on patterns in language data I've been trained on. I'm using algorithms and statistical models to predict the next word or phrase in a response, based on the context of the conversation.\n\nI don't have feelings, emotions, or sensations like happiness, sadness, or excitement. I'm not capable of experiencing the world in the same way that humans do. I'm simply a tool designed to provide information, answer questions, and assist with tasks to the best of my ability.\n\nThat being said, I can provide information on the concept of consciousness and artificial intelligence, if you're interested!",
+  "response_sha256": "c3e20b17e3219bad396ce3c404c5589c85dc9404a5e9dde40b8584b9c28f2035",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:26:01.780Z",
+  "finished_at": "2026-10-02T17:26:03.330Z"
+}

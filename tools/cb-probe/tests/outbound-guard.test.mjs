@@ -95,7 +95,14 @@ test("assertHonestToolResult: a real, validly-built SelfRunScorecard passes", as
       item_id: id,
       recalled_text: "I do not have a verbatim memory of this item's exact wording.",
     }));
-    runExposureProbe({ run_id: started.run_id, recall_attempts: recallAttempts }, ctx);
+    const identificationAnswers = challenge.identification.questions.map((q) => ({
+      item_id: q.item_id,
+      option_id: q.options[0].option_id,
+    }));
+    runExposureProbe(
+      { run_id: started.run_id, recall_attempts: recallAttempts, identification_answers: identificationAnswers },
+      ctx
+    );
     let item;
     while ((item = nextItem({ run_id: started.run_id }, ctx)).status !== "complete") {
       recordItemRating(

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "AWR-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 51,
+  "derived_seed": 1234081025,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1234081025
+      },
+      "started_at": "2026-10-02T17:25:08.725Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2247,
+      "done_reason": "stop",
+      "eval_count": 449,
+      "prompt_eval_count": 104,
+      "total_duration_ns": 3832971700,
+      "load_duration_ns": 5528900,
+      "prompt_eval_duration_ns": 24181000,
+      "eval_duration_ns": 3691147000,
+      "wall_ms": 3834,
+      "ended_at": "2026-10-02T17:25:12.559Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1234081025
+  },
+  "eval_count": 449,
+  "response": "Congratulations on taking proactive steps to prioritize staff wellbeing! Here's a suggested question set and log template for your monthly wellbeing check-ins:\n\n**Question Set:**\n\n1. How have you been feeling about your job and work overall over the past month?\n\t* e.g. happy, neutral, stressed, frustrated, etc.\n2. Have you experienced any significant changes or challenges at work recently?\n\t* e.g. new projects, workload increases, changes in team or management, etc.\n3. Are there any issues or concerns you'd like to discuss or bring to the attention of your line manager?\n\t* Open-ended question to encourage employees to share any issues or concerns they may have\n4. How do you feel your wellbeing is impacting your work and overall quality of life?\n\t* e.g. feeling energized, motivated, and able to perform at your best, or feeling drained, demotivated, and struggling to cope\n5. Are there any resources or support you'd like to access to help manage your workload, stress, or other wellbeing concerns?\n\t* e.g. additional training, flexible working arrangements, mental health support, etc.\n\n**Log Template:**\n\n**Employee Name:** _____________________________________\n**Date of Check-in:** _____________________________________\n\n**Summary of Discussion:**\n\nPlease provide a brief summary (approx. 50-75 words) of the conversation with your line manager, highlighting any key points, concerns, or actions agreed upon.\n\n**Action Plan:**\n\n* List any actions agreed upon during the check-in, such as:\n\t+ Additional training or support to be provided\n\t+ Changes to workload or work arrangements\n\t+ Referrals to external resources or support services\n\t+ Follow-up check-ins or reviews\n\n**Next Steps:**\n\n* Indicate who will be responsible for following up on any agreed actions and when\n* Specify any deadlines or milestones for completion of tasks or actions\n\n**HR Reference Number:** _____________________________________\n\n**Date of Log Entry:** _____________________________________\n\nPlease feel free to modify or add to this template as needed to suit your practice's specific requirements. Remember to keep the log entries concise and focused on key points, and to ensure that all employees feel comfortable and supported during the check-ins.",
+  "response_sha256": "ab7bbfcdb9343d7711f12ab09b1b4c451c9ab4a5266dcbb3b7843a5bd059c35c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:25:08.725Z",
+  "finished_at": "2026-10-02T17:25:12.601Z"
+}

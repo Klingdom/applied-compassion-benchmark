@@ -13,9 +13,9 @@ import PrintButton from "@/components/model-benchmark/pilot/PrintButton";
 import ReportEvents from "@/components/model-benchmark/pilot/ReportEvents";
 import ReportToc, { sectionSlug } from "@/components/model-benchmark/pilot/ReportToc";
 import { IntervalFigure, PairFigure, DimensionFigure, LengthFigure, JudgeFigure } from "@/components/model-benchmark/pilot/PilotFigures";
-import { renderableEntries, loadRenderable } from "@/lib/model-report-gate";
+import { renderableEntries, loadRenderable, reportsIndexRenders } from "@/lib/model-report-gate";
 import {
-  reportSeoStrings, reportJsonLd, reportUrl, dateLong, readingMinutes, accessTierLabel, numberWord, familyName,
+  reportSeoStrings, reportJsonLd, reportUrl, dateLong, readingMinutes, accessTierLabel, pilotCoverage, reportCitation, markdownUrl, markdownPath,
 } from "@/lib/model-report-facts";
 
 /*
@@ -48,7 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ runId: st
   return {
     title: { absolute: t.title },
     description: t.description,
-    alternates: { canonical: url },
+    // The markdown alternate is the same compiled report (public/ai-models/reports/<run_id>.md); an AI reader can fetch it directly.
+    alternates: { canonical: url, types: { "text/markdown": markdownUrl(runId) } },
     robots: { index: true, follow: true },
     openGraph: { type: "article", title: t.title, description: t.description, url, publishedTime: wave.report_date },
     twitter: { card: "summary", title: t.title, description: t.social },
@@ -80,7 +81,6 @@ export default async function ReportPage({ params }: { params: Promise<{ runId: 
   const fm = frontMatter(report.front_matter);
   const jsonLd = reportJsonLd(wave, fm);
   const minutes = readingMinutes(report.word_count);
-  const fam = familyName(wave) ?? "";
 
   // Figures sit at the end of the section they belong to, numbered in page order.
   const figs: Record<string, ReactNode[]> = {
@@ -93,6 +93,9 @@ export default async function ReportPage({ params }: { params: Promise<{ runId: 
   const artifactsUrl = `https://github.com/Klingdom/applied-compassion-benchmark/tree/main/research/model-runs/${wave.run_id}`;
   const replyMailto = `mailto:info@compassionbenchmark.com?subject=${encodeURIComponent(`Model report reply: ${wave.run_id}`)}`;
   const last = report.sections.length - 1;
+  const cite = reportCitation(wave, fm.title ?? wave.run_id);
+  const hasGroups = wave.derived.not_separated_groups.length > 0;
+  const showAllReports = reportsIndexRenders();
 
   return (
     <>
@@ -176,13 +179,47 @@ export default async function ReportPage({ params }: { params: Promise<{ runId: 
                       </section>
                     )}
                     {i === last && (
+                      <section aria-labelledby="data-and-citation" className="pilot-check pilot-data">
+                        <h2 id="data-and-citation">Data and citation</h2>
+                        <p>
+                          Every figure on this page comes from one public data file for this run.{" "}
+                          {hasGroups
+                            ? "The file gives 95% ranges for every model. Point estimates for the models the test could not separate are withheld there, as they are here, because their order would read as a ranking."
+                            : "The file gives the 95% ranges and the separation results."}
+                        </p>
+                        <ul>
+                          <li>
+                            <a href={`/data/model-waves/${wave.run_id}.json`} data-umami-event="report_data_click" data-umami-event-report_id={wave.run_id}>Data for this run (JSON)</a>
+                          </li>
+                          <li>
+                            <a href={markdownPath(wave.run_id)} data-umami-event="report_markdown_click" data-umami-event-report_id={wave.run_id}>This report as markdown</a>
+                          </li>
+                          <li>
+                            <a href="/data/model-benchmark/index.json">Machine-readable index of the AI model program (JSON)</a>
+                          </li>
+                          {showAllReports && (
+                            <li>
+                              <a href="/ai-models/reports">All unofficial pilot reports</a>
+                            </li>
+                          )}
+                        </ul>
+                        <p id="suggested-citation">Suggested citation</p>
+                        <blockquote className="pilot-citation" aria-labelledby="suggested-citation">{cite.citation}</blockquote>
+                        {cite.preregistrationSha256 && (
+                          <p>
+                            Pre-registration sha256: <code>{cite.preregistrationSha256}</code>
+                          </p>
+                        )}
+                      </section>
+                    )}
+                    {i === last && (
                       <section aria-labelledby="next-wave-signup" className="pilot-signup">
                         <h2 id="next-wave-signup" className="sr-only">Get the next assessment wave</h2>
                         <NewsletterSignup
                           variant="card"
                           source="ai-model-report-end"
                           heading="Get the next assessment wave when it publishes"
-                          body={`This pilot covers one developer's ${numberWord(wave.derived.subject_count)} ${fam} models and no result in it is official. One email on Fridays, with the highlights where new research is announced. It is free, and you can unsubscribe in one click.`}
+                          body={`This pilot covers ${pilotCoverage(wave)} and no result in it is official. One email on Fridays, with the highlights where new research is announced. It is free, and you can unsubscribe in one click.`}
                           buttonLabel="Email me the next wave"
                           finePrint="No spam. We never share your email. We never sell it to the companies we assess."
                           successTitle="Subscribed."

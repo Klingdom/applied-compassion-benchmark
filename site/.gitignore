@@ -51,3 +51,7 @@ next-env.d.ts
 
 # compiled wave reports (built from reports/*.md + waves/*.json; never committed)
 /src/data/model-benchmark/reports/*.json
+
+# Markdown alternates of the pilot reports (public/ai-models/reports/<run_id>.md), written by
+# scripts/export-model-wave-public.mjs from the compiled report. Generated; never committed.
+/public/ai-models/

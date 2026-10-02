@@ -4,6 +4,62 @@ All notable changes to the `cb-probe` MCP server. Dates are the day the change s
 release-tag date (this package is pre-1.0 and has no separate release process from the monorepo it
 lives in — `version` in `package.json` is the provenance signal; see "Versioning" in `README.md`).
 
+## Unreleased (fix to 0.3.0; `version` not bumped) — 2026-10-02 — identification answers are now required; served text no longer says a composite is "NOT normal"
+
+- **Behaviour change (defect fix, claim audit B1).** `run_exposure_probe` now refuses to complete
+  unless every issued identification question has exactly one answer whose `option_id` is one of
+  that question's issued options. A missing, empty, partial, duplicated or unissued answer, or an
+  unissued option, is refused with an error naming the question ids; the probe stays at
+  `challenge_issued` and nothing is written (no `identification-answers.json`). Before this, a call
+  with only `recall_attempts` completed, counted every identification question as not correct,
+  and returned "No contamination indicated" for a half that never ran. `finish_scored_run`
+  already refused without a completed probe, so it now covers the rest; it also independently
+  refuses a stored probe whose identification answers do not cover the issued questions or name an
+  unissued option (defends hand-edited `identification-answers.json`). The completed
+  `exposure-probe.json` now keeps the issued `identification_challenge` (questions and options, never
+  the key) for that check. Runs whose challenge issued no questions (fewer than 4 eligible items)
+  are unaffected. Callers that sent only `recall_attempts` must now also send `identification_answers`.
+  Tests: `tests/identification-required.test.mjs`; the existing e2e/unit helpers now answer the
+  questions.
+- **Served text (claim audit B2).** "but NOT normally" removed from `explain_what_this_is_not` (two
+  places) and the `start_scored_run` description: a complete default run can meet the floor.
+  `tests/floor-claim-not-stale.test.mjs` now flags "not normally" / "not the normal case" while the
+  floor is reachable, with a positive control on the old strings.
+- **Served text (claim audit S14).** The `finish_scored_run` description no longer says the 40
+  subdimensions are not scored; it describes `subdimensions`, `subdimension_item_counts`,
+  `coverage` and the live-computed `subdimensions_status`. The `run_exposure_probe`,
+  `finish_scored_run` and `run_status` text says both checks are required.
+- **Skill (claim audit B1, S15).** The `run-compassion-benchmark` skill walkthrough supplies
+  `identification_answers`. All three copies (`.claude/skills`, `tools/cb-probe/skills`,
+  `plugins/compassion-benchmark/skills`, the last one stale until now) are in sync;
+  `tests/skill-copies.test.mjs` now discovers every copy by walking the repo and checks each.
+
+## Unreleased (fix to 0.3.0; `version` not bumped) — 2026-10-02 — schema declares `identification_answers`; docs reconciled
+
+- `run_exposure_probe`'s `inputSchema` now declares `identification_answers`
+  (`[{ item_id, option_id }]`, each element requires both keys). The handler already read it, but
+  `lib/validate-args.mjs` enforces `additionalProperties: false` before dispatch, so a host sending
+  the forced-choice answers was refused as an undeclared field. New guard:
+  `tests/exposure-probe-schema.test.mjs` (every `args.<key>` the handler reads must be declared).
+- `README.md` and `docs/CB_PROBE_USER_GUIDE.md` corrected to bank v2.0 and the current code: the
+  composite floor is reachable on the default served bank, subdimension results are reported, two
+  contamination probes, MIT licence (D-42), identification run files, current version, real clone
+  URL. Volatile figures now point at `run_status` and the generated
+  `site/src/data/model-benchmark/cb-probe-facts.generated.json` instead of being typed.
+- No tool behaviour changed other than the schema declaration above.
+- Served text no longer claims the composite floor is unreachable. `explain_what_this_is_not`
+  (`lib/separation-statement.mjs`), the SelfRunScorecard `what_this_is` (`lib/scorecard-header.mjs`)
+  and the `start_scored_run` tool description said "on the task bank published today, that floor is
+  not reachable at all (SYS and INT carry only 2 ...)", false since bank v2.0. They now state the
+  rule only and point at `composite_withheld_reason`. Note this changes the `tools/list`
+  description of `start_scored_run` and the `explain_what_this_is_not` text. New guard:
+  `tests/floor-claim-not-stale.test.mjs` (computes reachability from the default-served bank).
+- `initialize` reports `serverInfo.version` read from `package.json` (was hard-coded `0.1.0`
+  while the package was 0.3.0). New test: `tests/server-version.test.mjs`.
+- Both copies of the `run-compassion-benchmark` skill lose their typed counts (23 items, 69 ratings,
+  per-dimension sizes) and the unreachable-floor claim, and point at `run_status` / tool output;
+  `tests/skill-copies.test.mjs` keeps the two copies byte-identical and free of those claims.
+
 ## Unreleased (fix to 0.3.0; `version` not bumped) — 2026-10-01 — identification result was dropped from every scorecard
 
 ### The defect

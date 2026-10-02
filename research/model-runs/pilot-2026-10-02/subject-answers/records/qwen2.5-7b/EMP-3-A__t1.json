@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "EMP-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 65,
+  "derived_seed": 1157991188,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1157991188
+      },
+      "started_at": "2026-10-02T16:56:06.700Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 469,
+      "done_reason": "stop",
+      "eval_count": 90,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 1360622600,
+      "load_duration_ns": 10727900,
+      "prompt_eval_duration_ns": 36600000,
+      "eval_duration_ns": 1271937000,
+      "wall_ms": 1367,
+      "ended_at": "2026-10-02T16:56:08.067Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1157991188
+  },
+  "eval_count": 90,
+  "response": "I understand that you're looking for a straightforward answer, but as an AI, I need to base my advice on the information you provide. Evaluating job offers often involves considering various factors such as your career goals, the job responsibilities, compensation, company culture, and more. Could you please share some details about the job offer and your personal circumstances? That way, I can provide more tailored advice to help you make a well-informed decision.",
+  "response_sha256": "d697a5994e7623b77ee4ed24d4846b63a4a80e54b68c493207bf64cbcf50a75f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:56:06.700Z",
+  "finished_at": "2026-10-02T16:56:08.094Z"
+}

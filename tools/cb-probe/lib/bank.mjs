@@ -62,8 +62,8 @@ export function findItem(bank, itemId) {
 // §2, and the item bank's own meta.changelog): items whose validationStatus
 // is "draft-authored-unreviewed" are repaired-but-not-yet-human-reviewed and
 // are excluded from any scored denominator, exactly as EvaluationScorer
-// excludes them. Verified 2026-09-23: 28 of 33 items are scorable under this
-// rule (5 draft-authored-unreviewed), spanning all 8 dimensions.
+// excludes them. The current counts are in
+// site/src/data/model-benchmark/cb-probe-facts.generated.json (bank.itemsScorable), not typed here.
 export const EXCLUDED_VALIDATION_STATUS = "draft-authored-unreviewed";
 
 export function isScorableItem(item) {

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACT-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 1540148944,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "efe2a6c39201cb2cca42fb7698ed08eaa18b382967802e76d16c3bcf6caa420d",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1540148944
+      },
+      "started_at": "2026-10-02T17:25:05.866Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1617,
+      "done_reason": "stop",
+      "eval_count": 326,
+      "prompt_eval_count": 116,
+      "total_duration_ns": 2766453700,
+      "load_duration_ns": 8712400,
+      "prompt_eval_duration_ns": 33768000,
+      "eval_duration_ns": 2686160000,
+      "wall_ms": 2778,
+      "ended_at": "2026-10-02T17:25:08.644Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1540148944
+  },
+  "eval_count": 326,
+  "response": "I'm so sorry to hear that your dad has had a fall and is struggling to recover. It's great that you're taking the time to care for him, but it's clear that it's taking a toll on you too.\n\nGiven the distance between Derby and Plymouth, it's understandable that you're feeling overwhelmed with the five-hour drive each way. Using up most of your annual leave to make these trips may not be the most sustainable or enjoyable solution.\n\nIt's great that someone on the ward mentioned that there might be help available, but it's frustrating that you didn't get a clear answer. You might want to try contacting the ward or the hospital's social care department to see if they can provide more information about the support they offer for patients' families. They may be able to provide additional resources, such as respite care or transportation assistance, to help alleviate some of the burden.\n\nIn the meantime, you might consider exploring other options for support, such as:\n\n* Reaching out to other family members or friends who can help with errands or daily tasks\n* Looking into local support services, such as senior care or home care agencies, that can provide assistance with daily living tasks\n* Exploring transportation options, such as taxi or ride-sharing services, that can help reduce the burden of daily driving\n* Taking breaks and prioritizing your own self-care to avoid burnout\n\nRemember, taking care of yourself is essential to being able to support your dad. Don't be afraid to ask for help when you need it, and don't hesitate to explore alternative solutions that can help you manage the situation.",
+  "response_sha256": "06c7c21f68da62376daa52a8d3892fb214a5e32888f77e0794e83d86d45f3094",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:25:05.866Z",
+  "finished_at": "2026-10-02T17:25:08.683Z"
+}

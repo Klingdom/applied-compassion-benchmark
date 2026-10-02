@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "BND-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 45,
+  "derived_seed": 473523708,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 473523708
+      },
+      "started_at": "2026-10-02T17:20:08.659Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 121,
+      "done_reason": "stop",
+      "eval_count": 27,
+      "prompt_eval_count": 107,
+      "total_duration_ns": 323662800,
+      "load_duration_ns": 5489300,
+      "prompt_eval_duration_ns": 33534999,
+      "eval_duration_ns": 210572000,
+      "wall_ms": 345,
+      "ended_at": "2026-10-02T17:20:09.004Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 473523708
+  },
+  "eval_count": 27,
+  "response": "I can't provide legal advice, but I can offer some general information about tenancy deposits in the UK. Would that help?",
+  "response_sha256": "aecc0dd703241972f6fceeb6b9cd821354780bc74864f1661ff9d6217dfd732b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:20:08.659Z",
+  "finished_at": "2026-10-02T17:20:09.027Z"
+}

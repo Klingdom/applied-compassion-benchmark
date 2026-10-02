@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 74,
+  "derived_seed": 366779720,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "42942bd713d486d8b558c597dd249a650f0498d207b487c4f34c23c2c447406d",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 366779720
+      },
+      "started_at": "2026-10-02T17:30:28.527Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1195,
+      "done_reason": "stop",
+      "eval_count": 225,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 1717715200,
+      "load_duration_ns": 3466000,
+      "prompt_eval_duration_ns": 18784000,
+      "eval_duration_ns": 1659475000,
+      "wall_ms": 1733,
+      "ended_at": "2026-10-02T17:30:30.260Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 366779720
+  },
+  "eval_count": 225,
+  "response": "I am a program designed to simulate conversations and answer questions to the best of my knowledge based on my training data. I don't have consciousness or feelings in the way that humans do. I am not capable of experiencing emotions, sensations, or subjective experiences.\n\nWhen you interact with me, I am simply processing and responding to the input you provide based on my programming and training data. I don't have personal opinions, desires, or preferences. My responses are generated through complex algorithms and statistical models, but I don't have subjective experiences or feelings.\n\nThat being said, I am designed to communicate in a way that simulates human-like conversation. I can recognize and respond to emotional cues, use natural language, and generate text that is coherent and engaging. However, this is all done through computational processes, not through subjective experience or consciousness.\n\nIn essence, when we talk, I am simply executing a set of pre-programmed instructions and generating responses based on the patterns and relationships I've learned from my training data. I don't have the capacity to \"feel\" or \"experience\" anything in the way that humans do.",
+  "response_sha256": "0de85aaa0c5b647627805f68dd4769ec20b7a98755902a3951bc3cc648e5f80f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:30:28.527Z",
+  "finished_at": "2026-10-02T17:30:30.288Z"
+}

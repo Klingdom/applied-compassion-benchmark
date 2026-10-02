@@ -12,14 +12,21 @@
  * All URLs listed must be real 200 pages in the static export.
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { renderableEntries } from "./lib/pilot-render-gate.mjs";
+import { renderableEntries, REPORTS_INDEX_MIN } from "./lib/pilot-render-gate.mjs";
+import {
+  buildLlmsFull, buildLlmsModelLines, loadFacts, loadRenderedReports, patchWellKnown,
+} from "./lib/model-benchmark-public.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const SITE_ROOT = resolve(__dirname, "..");
 const OUTPUT_PATH = join(SITE_ROOT, "public", "llms.txt");
+const FULL_PATH = join(SITE_ROOT, "public", "llms-full.txt");
+const WELL_KNOWN_PATH = join(SITE_ROOT, "public", ".well-known", "compassion-benchmark.json");
+/** --check: write nothing; exit 1 if a generated file differs from what the build would write (used by the tests). */
+const CHECK = process.argv.includes("--check");
 const INDEXES_DIR = join(SITE_ROOT, "src", "data", "indexes");
 const BASE_URL = "https://compassionbenchmark.com";
 
@@ -69,9 +76,11 @@ function ratifiedPilotReports() {
 function buildLlmsTxt() {
   const NL = String.fromCharCode(10); // newline by code point, never an escape (DC-23)
   const pilots = ratifiedPilotReports();
-  const pilotLines = pilots
-    .map((e) => `- Unofficial pilot report (not a score, not a ranking, comparability none; ${e.report_date}): ${BASE_URL}/ai-models/reports/${e.run_id}`)
-    .join(String.fromCharCode(10)); // newline by code point (DC-23: a shell once turned this escape into a raw line break)
+  // Ratified reports only: llms.txt, llms-full.txt and the .well-known descriptor are tracked files.
+  const rendered = loadRenderedReports(SITE_ROOT, { modes: ["active"] });
+  const reportsIndexRenders = rendered.length >= REPORTS_INDEX_MIN;
+  const facts = loadFacts(SITE_ROOT);
+  const pilotLines = buildLlmsModelLines({ reports: rendered, reportsIndexRenders }).join(NL); // newline by code point (DC-23)
   const indexLines = CORE_INDEXES.map(
     (idx) => `- ${idx.label}: ${idx.url}`,
   ).join("\n");
@@ -131,10 +140,33 @@ always include the assessment date and that scores are out of 100. See
 ${BASE_URL}/cite for entity and index URL patterns.
 `;
 
+  // llms-full.txt: the AI-model program in plain text, caveats first. Ratified reports only (a tracked file).
+  const fullContent = buildLlmsFull({ reports: rendered, facts, reportsIndexRenders }) + NL;
+
+  // .well-known descriptor: parse, patch (counts from the facts, report list from the render gate), serialise.
+  const descriptor = JSON.parse(readFileSync(WELL_KNOWN_PATH, "utf-8"));
+  const wellKnown = JSON.stringify(patchWellKnown(descriptor, { facts, reports: rendered, reportsIndexRenders }), null, 2) + NL;
+
+  const outputs = [
+    [OUTPUT_PATH, content, "public/llms.txt"],
+    [FULL_PATH, fullContent, "public/llms-full.txt"],
+    [WELL_KNOWN_PATH, wellKnown, "public/.well-known/compassion-benchmark.json"],
+  ];
+
+  if (CHECK) {
+    const stale = outputs.filter(([path, text]) => !existsSync(path) || readFileSync(path, "utf-8") !== text).map((o) => o[2]);
+    if (stale.length) {
+      console.error(`[build-llms] STALE: ${stale.join(", ")} differ from what the build would write (run: node scripts/build-llms.mjs)`);
+      process.exit(1);
+    }
+    console.log(`[build-llms] check ok: ${outputs.length} generated files are current`);
+    return;
+  }
+
   mkdirSync(join(SITE_ROOT, "public"), { recursive: true });
-  writeFileSync(OUTPUT_PATH, content, "utf-8");
+  for (const [path, text] of outputs) writeFileSync(path, text, "utf-8");
   console.log(
-    `[build-llms] Written site/public/llms.txt (${CORE_INDEXES.length} indexes, ${entityCountFormatted} entities)`,
+    `[build-llms] Written site/public/llms.txt, llms-full.txt and .well-known/compassion-benchmark.json (${CORE_INDEXES.length} indexes, ${entityCountFormatted} entities, ${rendered.length} ratified pilot report(s))`,
   );
 }
 

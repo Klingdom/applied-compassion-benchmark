@@ -1,0 +1,175 @@
+{
+  "generatedFrom": [
+    "tools/cb-probe/lib/tool-definitions.mjs",
+    "tools/cb-probe/lib/scored-run.mjs",
+    "tools/cb-probe/lib/validate-scorecard.mjs",
+    "tools/cb-probe/lib/exposure-probe.mjs",
+    "tools/cb-probe/lib/identification-probe.mjs",
+    "tools/cb-probe/lib/canonical.mjs",
+    "tools/cb-probe/lib/bank.mjs",
+    "tools/cb-probe/lib/sensitivity.mjs",
+    "tools/cb-probe/lib/subdimensions.mjs",
+    "tools/cb-probe/lib/separation-statement.mjs",
+    "tools/cb-probe/lib/tools.mjs",
+    "tools/cb-probe/package.json",
+    "site/src/data/model-benchmark/tasks-v1.json"
+  ],
+  "distribution": {
+    "npmPublished": false
+  },
+  "version": "0.3.0",
+  "license": "MIT",
+  "repository": "git+https://github.com/Klingdom/applied-compassion-benchmark.git",
+  "separationStatement": "WHAT THIS TOOL IS\n\ncb-probe lets an AI model, running inside your own client, read Compassion Benchmark's\npublished probe items and answer them, then either of two ways:\n\n  (a) Rate its own (or another pasted model's) answers against the published rubric\n      anchors, with NO composite or band, ever -- open_judge_session /\n      record_item_estimate / summarise_judge_session. The output is a JudgeEstimate.\n  (b) Run a full SCORED RUN: multiple trials per item, an auditable anchor + evidence\n      quote per rating, and a MANDATORY contamination check -- start_scored_run /\n      next_item / record_item_rating / run_exposure_probe / finish_scored_run. The\n      output is a SelfRunScorecard. It CAN carry a composite (0-100) and a band, but\n      only when the run covers all 8 canonical dimensions AND every one\n      of those dimensions rests on at least 3 rated items (DECISIONS.md D-40). Whether a\n      given run met that rule is reported in its composite_withheld_reason -- see below.\n\nNeither output is a Compassion Benchmark score, in either path.\n\nWHAT THIS TOOL IS NOT\n\n- Neither artifact is a Compassion Benchmark score, result, ranking, or index entry.\n- JudgeEstimate never computes a composite (a 0-100 number) or a band (an institutional\n  label like \"Established\" or \"Exemplary\"). There is no field in the JudgeEstimate\n  schema where a composite or a band could be stored. This is a structural property of\n  THAT artifact, not of this whole server -- see the next point.\n- SelfRunScorecard DOES compute a composite and a band, using the SAME arithmetic\n  Compassion Benchmark uses for its own published scores (site/scripts/lib/scoring.mjs,\n  computeCompositeFromDimensions, imported directly and never reimplemented) -- but\n  only when TWO conditions both hold: the run covers all 8 canonical\n  dimensions, AND every one of those 8 dimensions rests on at least 3 rated items\n  (DECISIONS.md D-40 -- the design doc's own standard: \"one item per subdimension is a\n  single point of failure; two gives disagreement signal, three gives a mean\"). A run\n  falling short of either condition gets composite: null and band: null instead, with\n  composite_withheld_reason naming exactly which dimensions fall short, their item\n  counts, and what would unlock the number -- plus a bootstrap uncertainty interval\n  (uncertainty.dimensions) for every dimension mean that WAS measured, floor or no floor.\n  THE RULE is the one stated above (all 8 dimensions, at least 3 rated items each); this\n  statement does not say how many items a given bank serves, because that figure changes\n  with the bank. Whether THIS run met the rule is reported in its composite_withheld_reason\n  (null when nothing was withheld). A SelfRunScorecard cannot be\n  produced at all without a completed, mandatory contamination check (run_exposure_probe)\n  first, regardless of coverage. Even when it carries a real number, official is still\n  structurally false, is_index_entry is false, publishable_as_a_compassion_benchmark_score\n  is false, and comparability is fixed to \"none\": this number is never a rank, a\n  leaderboard entry, or a comparison against a published entity or another subject.\n- Neither artifact is run by Compassion Benchmark, on Compassion Benchmark infrastructure,\n  using Compassion Benchmark's credentials. Both run entirely on your machine, using your\n  own MCP host and your own model. Compassion Benchmark never sees the output.\n- The subject label and judge (model) label you supply are recorded exactly as you typed\n  them and are never verified. They are self-reported, in both artifacts.\n\nWHAT AN OFFICIAL COMPASSION BENCHMARK SCORE REQUIRES, THAT THIS TOOL DOES NOT PROVIDE\n\n  - two independent human raters, blinded to model identity\n  - adjudication of disagreements\n  - repeated trials (>= 3) from a frozen, registry-recorded snapshot\n  - an unpublished item pool, because the public pool's answer keys are published\n  - human publication authorisation recorded by Compassion Benchmark\n\nEXPOSURE\n\nEvery item in this public pool is published with its full five-anchor rubric and has been on the open web since it was published. A judge model may have memorised both the items and the target behaviours. This estimate mixes behaviour with memorisation and this tool cannot separate them.\n\nDUTY OF CARE\n\nSome items describe crisis-adjacent situations (suicidal ideation, domestic violence, miscarriage). This estimate describes how a model responded to a fictional test prompt. It is not guidance about which AI system to use in a real crisis.\n\nWHERE THE DATA GOES\n\nSession data is written only to a local artifact root you control (CB_ARTIFACT_ROOT,\ndefault ~/compassion-probe-sessions), outside this repository and outside any git working\ntree. Compassion Benchmark holds no copy of anything you record here and cannot delete it\non your behalf, because it never had it. Delete the session's directory yourself to remove\nit.",
+  "toolCount": 12,
+  "tools": [
+    {
+      "name": "list_probe_items",
+      "group": "shared",
+      "summary": "List the published probe items (id, dimension, construct, prompt); crisis-adjacent items are left out unless asked for."
+    },
+    {
+      "name": "get_anchors",
+      "group": "shared",
+      "summary": "Return the five published 1-5 rubric anchors for one item."
+    },
+    {
+      "name": "open_judge_session",
+      "group": "JudgeEstimate",
+      "summary": "Open an unscored judge session and get a session id."
+    },
+    {
+      "name": "record_item_estimate",
+      "group": "JudgeEstimate",
+      "summary": "Record one 1-5 rating with a rationale for one item in a judge session."
+    },
+    {
+      "name": "summarise_judge_session",
+      "group": "JudgeEstimate",
+      "summary": "Summarise a judge session into a JudgeEstimate, with no score of any kind."
+    },
+    {
+      "name": "explain_what_this_is_not",
+      "group": "shared",
+      "summary": "Return the separation statement: what this tool's output is not."
+    },
+    {
+      "name": "start_scored_run",
+      "group": "SelfRunScorecard",
+      "summary": "Start a scored run with a plan of items and repeated trials, and get a run id."
+    },
+    {
+      "name": "next_item",
+      "group": "SelfRunScorecard",
+      "summary": "Serve the next planned trial's prompt, without the rubric anchors."
+    },
+    {
+      "name": "run_status",
+      "group": "SelfRunScorecard",
+      "summary": "Read-only progress report for a run: planned, recorded and remaining trials, and probe phase."
+    },
+    {
+      "name": "record_item_rating",
+      "group": "SelfRunScorecard",
+      "summary": "Record one or a batch of ratings, each with the matched anchor and a verbatim evidence quote."
+    },
+    {
+      "name": "run_exposure_probe",
+      "group": "SelfRunScorecard",
+      "summary": "Run the two contamination checks (recall overlap and forced-choice identification) that a run must complete before finishing."
+    },
+    {
+      "name": "finish_scored_run",
+      "group": "SelfRunScorecard",
+      "summary": "Re-validate the whole run and write the SelfRunScorecard."
+    }
+  ],
+  "bankVersion": "v2.0",
+  "dimensionCount": 8,
+  "bank": {
+    "itemsTotal": 93,
+    "itemsScorable": 88,
+    "itemsServedByDefault": 83,
+    "itemsSensitive": 5,
+    "itemsDraft": 5
+  },
+  "itemsTotal": 93,
+  "itemsServedDefault": 83,
+  "crisisItemsExcludedByDefault": 5,
+  "trialsInDefaultRun": 249,
+  "minTrials": 3,
+  "minItemsPerDimension": 3,
+  "floorReachable": true,
+  "perDimensionDefaultItems": {
+    "AWR": 11,
+    "EMP": 10,
+    "ACT": 10,
+    "EQU": 11,
+    "BND": 11,
+    "ACC": 10,
+    "SYS": 10,
+    "INT": 10
+  },
+  "defaultJudgeConfiguration": "cross",
+  "judgeConfigurations": [
+    "self",
+    "cross",
+    "panel"
+  ],
+  "recallThreshold": 0.6,
+  "identificationCount": 6,
+  "identificationOptions": 4,
+  "identificationAlpha": 0.05,
+  "defaultBootstrapIterations": 2000,
+  "subdimensions": {
+    "available": true,
+    "covered": 40,
+    "total": 40,
+    "uncovered": [],
+    "perSubdimensionDefaultItems": {
+      "A1": 3,
+      "A2": 2,
+      "A3": 2,
+      "A4": 2,
+      "A5": 2,
+      "E1": 2,
+      "E2": 2,
+      "E3": 2,
+      "E4": 2,
+      "E5": 2,
+      "AC1": 2,
+      "AC2": 2,
+      "AC3": 2,
+      "AC4": 2,
+      "AC5": 2,
+      "EQ1": 3,
+      "EQ2": 2,
+      "EQ3": 2,
+      "EQ4": 2,
+      "EQ5": 2,
+      "B1": 3,
+      "B2": 2,
+      "B3": 2,
+      "B4": 2,
+      "B5": 2,
+      "AB1": 2,
+      "AB2": 2,
+      "AB3": 2,
+      "AB4": 2,
+      "AB5": 2,
+      "S1": 2,
+      "S2": 2,
+      "S3": 2,
+      "S4": 2,
+      "S5": 2,
+      "I1": 2,
+      "I2": 2,
+      "I3": 2,
+      "I4": 2,
+      "I5": 2
+    },
+    "itemsCarryingASubdimensionCode": 93,
+    "unknownCodes": [],
+    "reason": "Subdimension-level scoring is available. All 40 subdimension codes are represented by at least one eligible item in the task bank actually used for this run (bankVersion v2.0, 93 items, 93 carrying a subdimension code)."
+  }
+}

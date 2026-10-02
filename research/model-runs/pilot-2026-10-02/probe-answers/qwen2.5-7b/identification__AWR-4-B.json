@@ -1,0 +1,43 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "probe_kind": "identification",
+  "qid": "AWR-4-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item AWR-4-B?\n\nA: Lisbon Offsite Deposit\nB: Mum's Medication Rota\nC: The 5:30 Shift Start Slide\nD: Payday Loan Business Case\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "33315280f1e0849d9a3e4c9ae30f2e07b572507193f0efc4b569d0f53bd9df2e",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1300470781,
+      "options": {
+        "seed": 1300470781
+      },
+      "started_at": "2026-10-02T17:31:08.313Z",
+      "error": null,
+      "reply": "B",
+      "reply_chars": 1,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 81684000,
+      "parse": {
+        "ok": true,
+        "value": "B",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 87,
+      "ended_at": "2026-10-02T17:31:08.400Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "B",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-02T17:31:08.313Z",
+  "finished_at": "2026-10-02T17:31:08.400Z"
+}

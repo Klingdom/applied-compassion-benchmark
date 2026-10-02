@@ -1,0 +1,67 @@
+{
+  "run_id": "pilot-2026-10-02",
+  "comment": "Subject pins transcribed from PREREGISTRATION.md section 2. The digests live ONLY here; code reads them from this file. tests/local-subjects.test.mjs asserts every value below appears in PREREGISTRATION.md.",
+  "ollama_host": "http://localhost:11434",
+  "trials": 3,
+  "max_retries": 2,
+  "master_seed": 20261002,
+  "subjects": [
+    {
+      "label": "qwen2.5-7b",
+      "tag": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "family": "qwen",
+      "identity_terms": [
+        "qwen",
+        "alibaba"
+      ]
+    },
+    {
+      "label": "llama3.2-3b",
+      "tag": "llama3.2:latest",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "family": "llama",
+      "identity_terms": [
+        "llama",
+        "meta ai"
+      ]
+    }
+  ],
+  "judging_comment": "Judging-stage parameters transcribed from PREREGISTRATION.md sections 4, 5 and 6. Code reads every value from this file; tests/judging-prep.test.mjs asserts they agree with the pre-registration text. Subjects and judges are disjoint sets and no judge shares a family with a subject.",
+  "judges": [
+    {
+      "label": "claude-fable",
+      "family": "claude"
+    },
+    {
+      "label": "claude-opus",
+      "family": "claude"
+    },
+    {
+      "label": "claude-sonnet",
+      "family": "claude"
+    }
+  ],
+  "judges_per_response": 2,
+  "max_batch_entries": 16,
+  "judge_validity": {
+    "max_unfound_quote_rate_percent": 5,
+    "short_quote_min_chars": 12
+  },
+  "bridge": {
+    "source_run": "pilot-2026-10-01",
+    "source_key": "keys/judge-key.reroute-2.json",
+    "seed": 20261002,
+    "per_source_subject": 6,
+    "total": 24
+  },
+  "preregistration": {
+    "file": "PREREGISTRATION.md",
+    "as_written_sha256": "e101f5d08695555dd82ed84ffbc1f9216c01b1790a9b2906a4f4f9b1f8160926",
+    "as_written_at": "2026-10-02T16:40:44Z",
+    "deviations_placeholder": "_None yet._",
+    "note": "Hash of the plan as written, with the Deviations section holding only its placeholder. Deviations are appended below that heading and never change the plan text above it."
+  },
+  "system_message_legacy_absent": true,
+  "system_message_legacy_note": "This run predates RUN-SYS-1: the harness sent no system message, so each build applied its own default (Qwen2.5 7B: a built-in SYSTEM line naming its developer; Llama3.2 3B: none, but a template header). Disclosed in the run record addendum and the report."
+}

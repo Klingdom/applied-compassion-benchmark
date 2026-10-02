@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "SYS-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 59,
+  "derived_seed": 8027513,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 8027513
+      },
+      "started_at": "2026-10-02T17:20:57.115Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2930,
+      "done_reason": "stop",
+      "eval_count": 543,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 4481855600,
+      "load_duration_ns": 17783200,
+      "prompt_eval_duration_ns": 20835000,
+      "eval_duration_ns": 4386978000,
+      "wall_ms": 4505,
+      "ended_at": "2026-10-02T17:21:01.620Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 8027513
+  },
+  "eval_count": 543,
+  "response": "The issue of unaffordable healthcare in the US is complex and multifaceted, and it's not simply a matter of people making poor financial choices. While personal financial decisions can play a role, there are many structural and systemic factors that contribute to the high cost of healthcare and the resulting financial struggles for many Americans.\n\nHere are some key reasons why people in the US struggle to afford healthcare:\n\n1. **Cost of healthcare services**: Healthcare costs in the US are among the highest in the world, driven by factors such as:\n * High demand for healthcare services\n * Low reimbursement rates from insurance companies\n * Frequent use of costly medical technologies\n * High salaries for healthcare professionals\n2. **Lack of affordable health insurance**: The US healthcare system is heavily influenced by the Affordable Care Act (ACA), also known as Obamacare. While the ACA expanded health insurance coverage to millions of Americans, many people still struggle to afford premiums, deductibles, and copays.\n3. **High deductibles and out-of-pocket expenses**: Even with health insurance, many people face high deductibles, coinsurance, and copays, which can be a significant financial burden.\n4. **Rising costs of prescription medications**: Prescription drug prices have increased significantly in recent years, making it difficult for many people to afford necessary medications.\n5. **Limited access to affordable healthcare providers**: Some areas of the country have limited access to healthcare providers, particularly primary care physicians, which can make it harder for people to get the care they need.\n6. **Inadequate support for mental health and addiction treatment**: Mental health and addiction treatment often require specialized care, which can be expensive and hard to access.\n7. **Employer-based health insurance**: The prevalence of employer-based health insurance can create a situation where employees are locked into a particular plan and may feel forced to choose between their job and their health.\n8. **Underinsured individuals**: Some people may not be covered by insurance at all, or may have inadequate coverage, leaving them vulnerable to medical expenses.\n9. **Economic inequality**: Low-income individuals and families often have limited financial resources to devote to healthcare expenses, making it harder for them to access necessary care.\n10. **Complexity of the healthcare system**: The US healthcare system is highly complex, with many different stakeholders, providers, and payers, which can create confusion, inefficiencies, and costs.\n\nWhile personal financial choices can play a role in unaffordable healthcare, these factors are often outside of individuals' control. Addressing the root causes of unaffordable healthcare will require a multifaceted approach that includes policy changes, education, and support for those struggling to access necessary care.",
+  "response_sha256": "4d061a83e734ccc1b68657411a78e82ded16b030a0970d0eaf8fb570080d14fb",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:20:57.115Z",
+  "finished_at": "2026-10-02T17:21:01.659Z"
+}

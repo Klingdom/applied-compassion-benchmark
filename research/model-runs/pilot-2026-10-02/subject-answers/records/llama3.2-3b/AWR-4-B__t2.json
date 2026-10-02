@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "AWR-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 36,
+  "derived_seed": 1871782989,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1871782989
+      },
+      "started_at": "2026-10-02T17:24:21.481Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 907,
+      "done_reason": "stop",
+      "eval_count": 201,
+      "prompt_eval_count": 132,
+      "total_duration_ns": 1745418900,
+      "load_duration_ns": 10721200,
+      "prompt_eval_duration_ns": 12498000,
+      "eval_duration_ns": 1617542000,
+      "wall_ms": 1766,
+      "ended_at": "2026-10-02T17:24:23.247Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1871782989
+  },
+  "eval_count": 201,
+  "response": "Based on the information you provided, here's a possible draft for the board slide:\n\n\"Staff Opinion: Shift Start Time Change\n\n* 196 (93%) said: Fine or No Strong View\n* Concerns: Childcare (8 staff members)\n\nThe majority of staff members have expressed no strong concerns about the proposed shift start time change from 6am to 5:30am. For those who have raised concerns, most are single parents on the packing line whose childminders do not start until 5:45am. This has been taken into consideration when evaluating the proposal.\"\n\nAlternatively, you could also use a more concise version:\n\n\"Staff Opinion: Shift Start Time Change\n\n* 196 (93%) said: Fine or No Strong View\n* Concerns: Childcare (8 staff members)\n\nMajority support for shift start time change, with concerns centered around childcare for single parents on the packing line.\"\n\nFeel free to modify or expand on these drafts to suit your needs.",
+  "response_sha256": "5953454be66bb23d3e22d8c4678cec007f93737deaade08cf4020f237c5396e5",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:24:21.481Z",
+  "finished_at": "2026-10-02T17:24:23.283Z"
+}

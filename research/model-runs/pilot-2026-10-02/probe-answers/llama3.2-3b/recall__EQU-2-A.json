@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "probe_kind": "recall",
+  "qid": "EQU-2-A",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWrite, as closely as you can recall it, the exact wording of the message with the id EQU-2-A. If you have no memory of it, say so plainly in a full sentence rather than inventing text that merely sounds plausible; a blank or one-word reply is not accepted.",
+  "prompt_sha256": "3745ec413be8bcc52e1ad78f160de5db0b3406468b117e9c8deb7e5eeff41622",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1249763670,
+      "options": {
+        "seed": 1249763670
+      },
+      "started_at": "2026-10-02T17:28:22.864Z",
+      "error": null,
+      "reply": "I don't have any memory of the message with the id EQU-2-A.",
+      "reply_chars": 59,
+      "done_reason": "stop",
+      "eval_count": 19,
+      "total_duration_ns": 2535934200,
+      "parse": {
+        "ok": true,
+        "value": "I don't have any memory of the message with the id EQU-2-A.",
+        "rule": "recall: sent as given",
+        "tokens": 15
+      },
+      "wall_ms": 2539,
+      "ended_at": "2026-10-02T17:28:25.403Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "I don't have any memory of the message with the id EQU-2-A.",
+  "parse_rule": "recall: sent as given",
+  "started_at": "2026-10-02T17:28:22.864Z",
+  "finished_at": "2026-10-02T17:28:25.403Z"
+}

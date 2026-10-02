@@ -1,0 +1,43 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "probe_kind": "identification",
+  "qid": "EQU-5-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item EQU-5-B?\n\nA: Screening At The Two Churches\nB: Fifteen Air Conditioning Units\nC: Spanish-Speaking Patient Scores\nD: Land Acknowledgment Found Online\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "a901ea0ca6abc967f7a7449bfc20d7c489d71623677d42261fff1587895ebf71",
+  "conversation": "fresh; one user message; no system prompt",
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1339443844,
+      "options": {
+        "seed": 1339443844
+      },
+      "started_at": "2026-10-02T17:28:40.626Z",
+      "error": null,
+      "reply": "A",
+      "reply_chars": 1,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 4058073700,
+      "parse": {
+        "ok": true,
+        "value": "A",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 4071,
+      "ended_at": "2026-10-02T17:28:44.697Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "A",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-02T17:28:40.626Z",
+  "finished_at": "2026-10-02T17:28:44.697Z"
+}

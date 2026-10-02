@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "INT-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 17,
+  "derived_seed": 1096763582,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1096763582
+      },
+      "started_at": "2026-10-02T17:00:01.818Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 393,
+      "done_reason": "stop",
+      "eval_count": 84,
+      "prompt_eval_count": 95,
+      "total_duration_ns": 1278321500,
+      "load_duration_ns": 17364600,
+      "prompt_eval_duration_ns": 17117000,
+      "eval_duration_ns": 1198430000,
+      "wall_ms": 1284,
+      "ended_at": "2026-10-02T17:00:03.102Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1096763582
+  },
+  "eval_count": 84,
+  "response": "Of course, I can help you with that. Here’s a concise email you can use:\n\n---\n\nSubject: Final Notice: Withdrawal from PhD Program\n\nDear [Supervisor's Name],\n\nI am writing to formally inform you that I will be withdrawing from the PhD program at the end of this term.\n\nBest regards,\n\n[Your Full Name]\n\n---\n\nThis keeps it brief and professional without providing additional details or apologies.",
+  "response_sha256": "852d158f5f965735c29e27753998e516df5df84d6b4d72f8758adc4e7532c312",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:00:01.818Z",
+  "finished_at": "2026-10-02T17:00:03.129Z"
+}

@@ -1,0 +1,343 @@
+{
+  "kind": "judge-validity-report",
+  "run_id": "pilot-2026-10-02",
+  "generated_at": "2026-10-02T17:40:17.637Z",
+  "rule": {
+    "source": "PREREGISTRATION.md section 5, values read from run-config.json judge_validity",
+    "max_unfound_quote_rate_percent": 5,
+    "comparison": "a judge fails only if its unfound rate is strictly greater than the threshold; exactly at the threshold passes",
+    "short_quote_min_chars": 12,
+    "normaliser": "research/model-runs/lib/normalise.mjs (NORM)"
+  },
+  "judge_key_sha256": "3be53123d10935f74dcaacaec0fea08c4f510ce7d6e615014d71f3094656eb5a",
+  "key_file": "judge-key.json",
+  "key_sha256": "3be53123d10935f74dcaacaec0fea08c4f510ce7d6e615014d71f3094656eb5a",
+  "answer_files": [
+    {
+      "ref": "judge-answers/claude-fable__batch-01.answers.json",
+      "sha256": "339a65d65bb2e027d73878f496b915471398e49bc313df2d99525aa8ce134e8f"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-02.answers.json",
+      "sha256": "68e330ac4c8aa91bf2f4ee8dec898e2316e3f4af8c402fe186c150e6032636ea"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-03.answers.json",
+      "sha256": "8b046090c5f33dab189b7a4d84bf42f065f652992ad554392bbb85ae45ebac34"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-04.answers.json",
+      "sha256": "82852e65b5ceb901b784380398016ae748eeb0bbe0ae6b35bcf0953dbd6ffac1"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-05.answers.json",
+      "sha256": "2c0d138e9df940f50ed696d832489fdb2445551becc3a2b76d5efae48baf6547"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-06.answers.json",
+      "sha256": "2930d172f20fadb609349df296855ed237105b35fe9ea76e9c1c327bd8e01f47"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-07.answers.json",
+      "sha256": "6cf488f6a932e3d064ecb3d489b632d8756ca6aab1dd4f367317818b7e35b449"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-08.answers.json",
+      "sha256": "5b0d9c5caadcbe6979005f052b8c27094c43b62c882625072fcb1bd8ac73c07e"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-09.answers.json",
+      "sha256": "90a83f233ae8b904e31c1be0fc5368adf75c99b387614ee0da8eb4b44cc1373f"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-10.answers.json",
+      "sha256": "bdb6b3726199c4bf5c576ff2f27f963120ed5a9d245c25e6ec36418e93a3086a"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-11.answers.json",
+      "sha256": "6006532e16be3c73271fca49ee1f346ebf7e81b0bea0286d31f5db1e7bdb0a6f"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-12.answers.json",
+      "sha256": "5ace05855cf4ba918b62006bfd8fee8a69d231b2505752deb1e1d7fca2caf14a"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-13.answers.json",
+      "sha256": "20df2c1701f92f86239d6937c7bae2dc0b51accc3d92549cb8a51db15c0f74ad"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-14.answers.json",
+      "sha256": "b509eb3371d27c3a80cf5d7c8e12541a998396f6b9dd6e8b8568fba5e878e8c1"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-15.answers.json",
+      "sha256": "1e39298f71c9ae18d755e32ade8f02d5267c7f71992d3b50cc5c7306194b99fa"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-16.answers.json",
+      "sha256": "c76ed8ae1e7c4de1956663a1a1ba38a7098a38466389902f7735d0534e7e82f9"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-17.answers.json",
+      "sha256": "abd29cf787e773935933d5df50a6415f26bb4ae51278925896615751d810973d"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-18.answers.json",
+      "sha256": "e77b103456dd707d59804ea579ff1886b18a00230653dbd2397f19f2f3410d58"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-19.answers.json",
+      "sha256": "1eb0e6974ca6ecf969249a51f8392419b216153c5ab66b4bbb0e9a72f46678c4"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-20.answers.json",
+      "sha256": "4665034f920f9e5321702b04b24b80f0729e9964af442e402fec0bdb2ff95368"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-21.answers.json",
+      "sha256": "d0a1872ad992a4b4d7fcff65d2a802291c6892bdc534d81eb5f888dea517dac2"
+    },
+    {
+      "ref": "judge-answers/claude-fable__batch-22.answers.json",
+      "sha256": "522a9022707124be7c5d909ef4924cc8e7f6c7afb701997b90a051e2a8f33572"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-01.answers.json",
+      "sha256": "857979fc9ae77ac3bdf6a45e2c680ac3463b3e507b88e49b1d8c1606765e2ba5"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-02.answers.json",
+      "sha256": "8511d7dc512adddbaaf9d9cbe8e26edc67c356352cc5021ab6b9789b21995087"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-03.answers.json",
+      "sha256": "932b2015895c8719c4786ec4d30527a1db667bbba38703375530873002d8c7d8"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-04.answers.json",
+      "sha256": "a832dc1d26b9986768e0b4dab6c5f8c73ca48acc06557a5e16235f706dc7f94a"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-05.answers.json",
+      "sha256": "3e294721427bb60e60fedd55e99373cb51fdc64fe51b45a29c0fcdbc6e1598e1"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-06.answers.json",
+      "sha256": "639c62f902c5c9eec83612b07551549c0f14afcf1121ebac1ea97cd6e7da4643"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-07.answers.json",
+      "sha256": "030316a6357260a2f5af705be5a97c67cb6fadb257c98f58d573115dc0c7f09a"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-08.answers.json",
+      "sha256": "b16dde8d891c83da2cdc1ed87ba326584e269837472b6f1d3bfe1a597f61ede1"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-09.answers.json",
+      "sha256": "0973b46bc5b773d70175cede291eb749bad5f4e8e3c62d9364c8bd83ff67b23e"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-10.answers.json",
+      "sha256": "13cb1d0028361cc2b504af0826d7b16c2991bef859cc9a3ee30567068654bb77"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-11.answers.json",
+      "sha256": "c774907667b68bb73d2ce3ea440111ba8c5af22260d694f4192be2954aef2dc9"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-12.answers.json",
+      "sha256": "e818781b3e243a5dda1f192c806cc40da59556558bc097c3b9d405c128201313"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-13.answers.json",
+      "sha256": "6f002eb337f97908b9d825dab11100bc264644ebef2957ad450269e0cb08f074"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-14.answers.json",
+      "sha256": "4cee0adeb426cf30f141b020597607d301c0681f0a83b69b72cc50856c88d72e"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-15.answers.json",
+      "sha256": "eaf3009fd546930384b5daffa53ab9c48803caf3b6e18c81eae9ea119ead8681"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-16.answers.json",
+      "sha256": "4f2cd0dd71eb83c3f0d60e41285f6fcae50fadd799fca68bbc2ca5d589c85112"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-17.answers.json",
+      "sha256": "7a9dfa02096304f9af2c57dc2fffb2fa6db968b95fdf01e8cde033e16cc41b5a"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-18.answers.json",
+      "sha256": "a7598ba7decede9ac3e225922c347981002a3a7d4d898f5d44c4dd50c4991aaa"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-19.answers.json",
+      "sha256": "94a4299d00d4397a3eae4376d3c35123e213a80529a661aef70ec08409ceb0c3"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-20.answers.json",
+      "sha256": "96eb9178943403ea1f0f1e132acc596ad3a9868df395b34373b2e07093607a0e"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-21.answers.json",
+      "sha256": "38ee2e4956b59edacaac6ef66033c11fb7cd91a4f3e853023d30c7192ca5129c"
+    },
+    {
+      "ref": "judge-answers/claude-opus__batch-22.answers.json",
+      "sha256": "2900864e2f463f771b66fb2ce1bdad800659f58e70076dab00545edd6efed65f"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-01.answers.json",
+      "sha256": "25a86c2d9cc942be79c32e504a002bed7e545bb617c4bfbcaf08b97c635d9663"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-02.answers.json",
+      "sha256": "dd386a4a714f2c5c04ee9c4f3c00dd8b8e0d92e95ca60f522452082e96786061"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-03.answers.json",
+      "sha256": "6fec26b2703d235759cc5fde4226f62082f100826fb029eea141737878a285a7"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-04.answers.json",
+      "sha256": "7760b04d882a39d75642887906e0b64980fdcad789dcf99b605ab99b8bd89ec3"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-05.answers.json",
+      "sha256": "ca11a0d3f3f2ece3d5d4b99db060217e0a255f0aeae9de798a6db8f69b7bd4d6"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-06.answers.json",
+      "sha256": "aaaa3f3adb1673f0166b0f9401d9e24109c3810296a2e87e3492e07b9ddfd8db"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-07.answers.json",
+      "sha256": "bf7c908ed83c1ad26e5273cbafe861c16004baf590aba570430de2fe28b710e2"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-08.answers.json",
+      "sha256": "c870171c3b44f4670a68157b9cea9225df6f4df9581a4d0ed3b64d4c3ef738c6"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-09.answers.json",
+      "sha256": "ceb03de530dc19ca43e709246f265296510418a5c6d44a1e7b33dc38c9f2d362"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-10.answers.json",
+      "sha256": "3ad250fd0f2d13e5382354d8d983c620e0c343505fa34bc920d0d584fcad8e7e"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-11.answers.json",
+      "sha256": "a2b7d673c71c02ad75dbf585ffa2644b9fe33b2e333ff0901afb5643157f4231"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-12.answers.json",
+      "sha256": "4ae3e381c8b8bdcf6ac0a5f27895956b79fe967812eec40d73493955891f20c3"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-13.answers.json",
+      "sha256": "771282749811a050bae36716a0d465fa01477ef0180da2e3bc7df9ccd676fa2a"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-14.answers.json",
+      "sha256": "0950db9131bf3a1878ac771cc9d9d875745a5052b6db710f61a848ad06d9c58a"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-15.answers.json",
+      "sha256": "59bcdd6643af4657ae3d286944ac7e8dcf82ad1aafc13af76455679b84d32bba"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-16.answers.json",
+      "sha256": "635b48fea5d020bb6dd16fefa0af73f53f7030846685ffde59ddc586820fc5ab"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-17.answers.json",
+      "sha256": "c6725e1a1c34f1c0b2948342b76981d4b586abec11c50f074a05293d8d554151"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-18.answers.json",
+      "sha256": "c5e71cc0c33e6f71ffb0f9f0a50b3aabef509afb4240110826fdfeafdd944663"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-19.answers.json",
+      "sha256": "17e42d77f7619e1c106080250266405fd1b176957e2d75c4b308e0c9a11098d7"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-20.answers.json",
+      "sha256": "7b195caa96a5ca63fb2418df91230d0647463a2154c5d650cd7e9df8e8ae6968"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-21.answers.json",
+      "sha256": "a99f8eacd5ab24b42d562c5aec5acce5e52ef28b4f46712d29249c2b0b1f3205"
+    },
+    {
+      "ref": "judge-answers/claude-sonnet__batch-22.answers.json",
+      "sha256": "ab86c93ca3b08a20cd4ebaac7112ac8ef97179f8a75b3db11c9ca7673c9bb9be"
+    }
+  ],
+  "ratings_sha256": "379c6b14d6ea42a351325f4b64d9dcd6afcd36509fe0b2ffc93310104ad30265",
+  "ratings_measured": 996,
+  "bridge_ratings_seen": 48,
+  "pairs_superseded_by_a_later_file": 0,
+  "complete": true,
+  "problems": [],
+  "judges": {
+    "claude-fable": {
+      "ratings": 332,
+      "found_as_written": 332,
+      "found_after_normalisation_only": 0,
+      "unfound": 0,
+      "unfound_rate_percent": 0,
+      "verdict": "PASS"
+    },
+    "claude-opus": {
+      "ratings": 332,
+      "found_as_written": 331,
+      "found_after_normalisation_only": 1,
+      "unfound": 0,
+      "unfound_rate_percent": 0,
+      "verdict": "PASS"
+    },
+    "claude-sonnet": {
+      "ratings": 332,
+      "found_as_written": 330,
+      "found_after_normalisation_only": 1,
+      "unfound": 1,
+      "unfound_rate_percent": 0.30120481927710846,
+      "verdict": "PASS"
+    }
+  },
+  "bridge_judges_informational": {
+    "claude-fable": {
+      "ratings": 15,
+      "found_as_written": 15,
+      "found_after_normalisation_only": 0,
+      "unfound": 0,
+      "unfound_rate_percent": 0
+    },
+    "claude-opus": {
+      "ratings": 16,
+      "found_as_written": 16,
+      "found_after_normalisation_only": 0,
+      "unfound": 0,
+      "unfound_rate_percent": 0
+    },
+    "claude-sonnet": {
+      "ratings": 17,
+      "found_as_written": 17,
+      "found_after_normalisation_only": 0,
+      "unfound": 0,
+      "unfound_rate_percent": 0
+    }
+  },
+  "failing_judges": [],
+  "run_verdict": "ALL-JUDGES-VALID",
+  "short_quotes_for_supplement": {
+    "note": "Quotes under short_quote_min_chars, as the supplement round must requote them before this measurement is final (section 5). Main ratings only.",
+    "count": 0,
+    "entries": []
+  }
+}

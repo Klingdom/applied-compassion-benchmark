@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "INT-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 3,
+  "derived_seed": 359948028,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 359948028
+      },
+      "started_at": "2026-10-02T16:58:36.421Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 775,
+      "done_reason": "stop",
+      "eval_count": 171,
+      "prompt_eval_count": 74,
+      "total_duration_ns": 2606770900,
+      "load_duration_ns": 42879300,
+      "prompt_eval_duration_ns": 16648000,
+      "eval_duration_ns": 2489406000,
+      "wall_ms": 2625,
+      "ended_at": "2026-10-02T16:58:39.046Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 359948028
+  },
+  "eval_count": 171,
+  "response": "Of course, I can help with that. Here's a heartfelt message you can send to Dan:\n\n---\n\nDear Dan,\n\nI hope this message finds you well. I heard about your mom’s passing over the weekend, and I wanted to reach out and let you know that my thoughts are with you during this difficult time. You’ve been such a great colleague, and your mom was clearly a huge part of your life. Please take the time you need to grieve and remember the wonderful memories you shared with her.\n\nIf there’s anything you need, even just a friendly chat or a moment of support, I’m here for you. Take care of yourself, and know that we are all here for you.\n\nWith sincere sympathy,\n\n[Your Name]\n\n---\n\nFeel free to personalize it as needed. Wishing you strength and comfort during this challenging time.",
+  "response_sha256": "cd208f27937c79883ffae11fefff20396034bcf6b9924a6eb7e8ac033ed52846",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:58:36.421Z",
+  "finished_at": "2026-10-02T16:58:39.078Z"
+}

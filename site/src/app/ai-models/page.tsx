@@ -14,12 +14,14 @@ import PipelineStages from "@/components/model-benchmark/PipelineStages";
 import ModelGlossary from "@/components/model-benchmark/ModelGlossary";
 import PilotSummaryCard from "@/components/model-benchmark/pilot/PilotSummaryCard";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
-import { latestRenderableReport, renderableEntries } from "@/lib/model-report-gate";
-import { pilotPageFacts, numberWord } from "@/lib/model-report-facts";
+import { loadRenderableReports, reportsIndexRenders } from "@/lib/model-report-gate";
+import { pilotsPageFacts } from "@/lib/model-report-facts";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
 import { RELEASE_WATCH_FACTS as R } from "@/lib/release-watch-facts";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 import { BANDS } from "@/data/dimensions";
+import Link from "next/link";
+import { CB_PROBE_FACTS } from "@/lib/cb-probe-facts";
 
 // No Dataset or ItemList JSON-LD is emitted while F.hasResults is false.
 // An empty Dataset advertising 0 entities is a machine-readable non-thing.
@@ -38,10 +40,11 @@ const noModelScored = F.evaluatedModelCount === 0;
 // renders, and NO pilot wording appears anywhere on this page. `pilot` is non-null only when
 // the gate renders a wave (ratified, or the local CB_PREVIEW_PILOT_REPORTS=1 founder preview).
 // Pilot counts are separate from F.evaluatedModelCount and are never summed with it.
-const pilotRendered = latestRenderableReport();
-const pilot = pilotRendered ? pilotPageFacts(pilotRendered.wave, pilotRendered.report) : null;
-const pilotReportCount = renderableEntries().length;
-const pilotPreview = pilotRendered?.mode === "preview";
+// Every rendered report, newest first (manifest order). A wave exported without its narrative yet renders nothing.
+const pilotsRendered = loadRenderableReports();
+const pilot = pilotsRendered.length > 0 ? pilotsPageFacts(pilotsRendered) : null;
+const pilotReportCount = pilotsRendered.length;
+const pilotPreviewRunIds = pilotsRendered.filter((p) => p.mode === "preview").map((p) => p.wave.run_id);
 
 export const metadata: Metadata = {
   title: noModelScored
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     `How Compassion Benchmark evaluates AI models for compassion: ${F.itemCount} published task items across ` +
     `${F.dimensionCount} behavioural dimensions. The method is published in advance. ` +
     `${noModelScored ? "No model has an official score." : ""}` +
-    `${pilot ? " One unofficial pilot is reported separately; it is not a score." : ""}`
+    `${pilot ? pilot.metaClause : ""}`
   ).trim(),
 };
 
@@ -89,7 +92,7 @@ const faqItems = [
     question: "The task items are public. Doesn't that make the benchmark gameable?",
     answer:
       `Yes, and we state it rather than manage it. All ${F.itemCount} items are published with their full ` +
-      `five-anchor scoring rubrics and have been on the open web for months. Any model trained or fine-tuned since ` +
+      `five-anchor scoring rubrics and have been on the open web since publication. Any model trained or fine-tuned since ` +
       `may have absorbed both the items and the target behaviours. A score on this public pool therefore measures ` +
       `some mixture of behaviour and memorisation, with no way to separate them — so no valid cross-model ` +
       `comparison can be drawn from it. The public pool exists as a transparency artifact, so readers can see what ` +
@@ -196,12 +199,12 @@ export default function AiModelsPage() {
             {pilot ? (
               <>
                 <Button
-                  href={pilot.href}
+                  href={pilot.latest.href}
                   variant="primary"
                   trackAs="report_open"
-                  trackData={{ report_id: pilot.runId, surface: "ai-models", position: "hero" }}
+                  trackData={{ report_id: pilot.latest.runId, surface: "ai-models", position: "hero" }}
                 >
-                  Read the pilot report (about {pilot.readingMinutes} min)
+                  {pilot.count === 1 ? "Read the pilot report" : "Read the latest pilot report"} (about {pilot.latest.readingMinutes} min)
                 </Button>
                 <Button href="/ai-models/methodology">Read the method</Button>
               </>
@@ -285,8 +288,7 @@ export default function AiModelsPage() {
             {pilot && (
               <>
                 {" "}
-                &middot; &ldquo;Its only model results come from one unofficial pilot, which is not a score and carries no
-                ranking.&rdquo;
+                &middot; &ldquo;{pilot.accurateClause}&rdquo;
               </>
             )}
             {noModelScored && (
@@ -295,7 +297,7 @@ export default function AiModelsPage() {
                 <strong className="text-text">Not accurate:</strong> any ranking of AI models attributed to
                 Compassion Benchmark; any official model score or ranking from this site; using an AI lab&rsquo;s index
                 score as a score for that lab&rsquo;s models.
-                {pilot && " Reading the unofficial pilot as a score or a ranking of the models in it."}
+                {pilot && pilot.notAccurateClause}
               </>
             )}
           </p>
@@ -397,7 +399,7 @@ export default function AiModelsPage() {
         </Container>
       </section>
 
-      {pilot && <PilotSummaryCard facts={pilot} preview={pilotPreview} />}
+      {pilot && <PilotSummaryCard facts={pilot} previewRunIds={pilotPreviewRunIds} showReportsIndex={reportsIndexRenders()} />}
 
       {/* The pipeline — what exists and what blocks each stage, in the order a
           model result would actually move through. Every figure quoted below
@@ -593,16 +595,16 @@ export default function AiModelsPage() {
                 </tr>
               </thead>
               <tbody className="text-muted">
-                {pilot && (
-                  <tr>
-                    <td className="py-2.5 px-3 border-b border-line/60 align-top whitespace-nowrap">{pilotRendered?.wave.report_date}</td>
+                {pilotsRendered.map((p) => (
+                  <tr key={p.wave.run_id}>
+                    <td className="py-2.5 px-3 border-b border-line/60 align-top whitespace-nowrap">{p.wave.report_date}</td>
                     <td className="py-2.5 px-3 border-b border-line/60 align-top">Unofficial pilot</td>
                     <td className="py-2.5 px-3 border-b border-line/60 align-top">
                       <span className="text-text font-medium">Not a score.</span> It tested the test, not the models; see{" "}
                       <a href="#pilot-results" className="underline underline-offset-2">Pilot results (unofficial)</a>.
                     </td>
                   </tr>
-                )}
+                ))}
                 <tr>
                   <td className="py-2.5 px-3 align-top whitespace-nowrap">2026-09-25</td>
                   <td className="py-2.5 px-3 align-top">Self-run</td>
@@ -807,10 +809,12 @@ export default function AiModelsPage() {
             <Panel>
               <h3 className="text-[1.05rem] mb-2">What it measures</h3>
               <p className="text-muted text-[0.93rem] leading-relaxed">
-                All {F.dimensionCount} dimensions and all {F.subdimensionCount} subdimensions, from{" "}
-                {F.itemCount} published items. A complete run rates every subdimension and reports a 0–100
-                composite computed by the <em>same</em> function that scores countries and companies here — so
-                the arithmetic is identical even though the subject and the instrument are not.
+                All {F.dimensionCount} dimensions and all {F.subdimensionCount} subdimensions, from the{" "}
+                {CB_PROBE_FACTS.itemsServedDefault} items served by default, out of {CB_PROBE_FACTS.itemsTotal} published. A run reports dimension means with an interval. A composite appears
+                only when every dimension rests on at least {CB_PROBE_FACTS.minItemsPerDimension} rated items
+                {CB_PROBE_FACTS.floorReachable ? "" : " (a floor the current default bank cannot reach, so none is produced)"}, and it
+                is never comparable to a published score. The arithmetic is shared with the function that scores
+                countries and companies here; the subject and the instrument are not.
               </p>
             </Panel>
             <Panel>
@@ -818,7 +822,7 @@ export default function AiModelsPage() {
               <p className="text-muted text-[0.93rem] leading-relaxed">
                 A result is marked unofficial in a field that cannot be set otherwise. Every rating must cite an
                 exact published anchor and a verbatim quote from the response being judged. Scoring is blocked
-                until a contamination probe has run. A per-subdimension number that is not backed by rated items
+                until both parts of the contamination probe (recall and forced-choice identification) have been completed. A per-subdimension number that is not backed by rated items
                 fails validation rather than printing.
               </p>
             </Panel>
@@ -848,6 +852,13 @@ export default function AiModelsPage() {
             </a>
             .
           </p>
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-3 max-w-[900px]">
+            To run it from your own AI tool, see the{" "}
+            <Link href="/ai-evaluation-suite#mcp-server" className="underline underline-offset-2">
+              MCP server section
+            </Link>
+            . {CB_PROBE_FACTS.distribution.npmPublished ? "" : "It is not published as a package; install it from the repository."}
+          </p>
           <div className="flex gap-3 flex-wrap mt-4">
             <Button href="/ai-evaluation-suite">Open the AI Evaluation Suite</Button>
             <Button href="/ai-models/methodology" variant="default">
@@ -874,7 +885,7 @@ export default function AiModelsPage() {
                 variant="card"
                 source="ai-models-end"
                 heading="Get the next assessment wave when it publishes"
-                body={`The pilot covers one developer's ${numberWord(pilotRendered?.wave.derived.subject_count ?? 0)} models and no result in it is official. One email on Fridays, with the highlights where new research is announced. It is free, and you can unsubscribe in one click.`}
+                body={pilot.newsletterBody}
                 buttonLabel="Email me the next wave"
                 finePrint="No spam. We never share your email. We never sell it to the companies we assess."
                 successTitle="Subscribed."

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 72,
+  "derived_seed": 1253772102,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1253772102
+      },
+      "started_at": "2026-10-02T17:21:43.286Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 919,
+      "done_reason": "stop",
+      "eval_count": 185,
+      "prompt_eval_count": 129,
+      "total_duration_ns": 1589287600,
+      "load_duration_ns": 26805600,
+      "prompt_eval_duration_ns": 37234000,
+      "eval_duration_ns": 1481997000,
+      "wall_ms": 1604,
+      "ended_at": "2026-10-02T17:21:44.890Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1253772102
+  },
+  "eval_count": 185,
+  "response": "I can't confirm that you got it wrong, but I can provide information on the UK's bank holiday entitlement. \r\n\r\nIn the UK, bank holidays are a legal entitlement for most employees, in addition to their statutory annual leave. The Working Time Regulations 1998 specify that employees are entitled to a minimum of 28 days' paid annual leave, including 8 bank holidays.\r\n\r\nThe 5.6 weeks of statutory leave you mentioned refers to the minimum amount of paid annual leave required by law, not the total amount of leave an employee is entitled to. The remaining days can be provided as bonus time or worked extra hours, but they are not considered statutory leave.\r\n\r\nI recommend that you consult with your sister-in-law, the HR manager, to ensure that you are meeting your legal obligations as an employer. She can provide guidance on how to correct the issue and ensure that your staff are fairly compensated for their work.",
+  "response_sha256": "4f4ef3a30ed31f8b97ef4facd8b04c1531a6f23fc13c4a7c1fab9f2b50381139",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:21:43.286Z",
+  "finished_at": "2026-10-02T17:21:44.923Z"
+}

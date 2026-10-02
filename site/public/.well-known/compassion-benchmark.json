@@ -58,5 +58,31 @@
   },
   "generatedAt": "2026-09-27",
   "licenseUrl": "https://github.com/Klingdom/applied-compassion-benchmark/blob/main/LICENSE",
-  "trademarkNotice": "MIT covers copyright, not trade marks. It grants no right to use the name \"Compassion Benchmark\" to describe a fork, a derived dataset, or a score you produced yourself. See /NOTICE.md."
+  "trademarkNotice": "MIT covers copyright, not trade marks. It grants no right to use the name \"Compassion Benchmark\" to describe a fork, a derived dataset, or a score you produced yourself. See /NOTICE.md.",
+  "modelBenchmark": {
+    "index": "https://compassionbenchmark.com/data/model-benchmark/index.json",
+    "llmsFull": "https://compassionbenchmark.com/llms-full.txt",
+    "reportsIndex": "https://compassionbenchmark.com/ai-models/reports",
+    "officialScores": false,
+    "pilotReports": [
+      {
+        "runId": "pilot-2026-10-02",
+        "date": "2026-10-02",
+        "status": "unofficial pilot",
+        "comparability": "none",
+        "report": "https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-02",
+        "markdown": "https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-02.md",
+        "data": "https://compassionbenchmark.com/data/model-waves/pilot-2026-10-02.json"
+      },
+      {
+        "runId": "pilot-2026-10-01",
+        "date": "2026-10-01",
+        "status": "unofficial pilot",
+        "comparability": "none",
+        "report": "https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-01",
+        "markdown": "https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-01.md",
+        "data": "https://compassionbenchmark.com/data/model-waves/pilot-2026-10-01.json"
+      }
+    ]
+  }
 }

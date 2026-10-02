@@ -45,6 +45,7 @@ import { describeAnswerFile, emptyJudgeStats } from "../lib/judge-answers.mjs";
 import { rerouteJudges, applyRequotes, buildRerouteBatches, buildRoutingKey, buildSupplementKey, validateRoutingKey, PROVENANCE } from "../lib/reroute.mjs";
 import { cbProbeRejections } from "../lib/probe-validate.mjs";
 import { planSupplement } from "../lib/supplement.mjs";
+import { quoteLength } from "../lib/judge-validity.mjs";
 
 function supplement(v) {
   if (!v["run-id"]) {
@@ -80,7 +81,9 @@ function supplement(v) {
   const seed = v.seed === undefined ? randomSeed() : Number(v.seed);
   const batchSize = Number(v["batch-size"]);
   const maxBytes = Number(v["max-bytes"]);
-  const plan = planSupplement({ currentKey: previousKey, responsesById, answerDirs, bank, seed, scratchDir: v["scratch-dir"] });
+  const minQuoteChars = v["min-quote-chars"] === undefined ? null : Number(v["min-quote-chars"]);
+  if (minQuoteChars !== null && !(Number.isInteger(minQuoteChars) && minQuoteChars > 0)) refuse("--min-quote-chars must be a positive integer");
+  const plan = planSupplement({ currentKey: previousKey, responsesById, answerDirs, bank, seed, scratchDir: v["scratch-dir"], minQuoteChars });
   console.log(`Inspected ${plan.inspected} currently-used ratings with cb-probe's own validator; selected ${plan.selected.length}.`);
   for (const s of plan.selected) console.log(`  ${s.response_id}  judge ${s.judge}  from ${s.from_source}/${s.from_batch_id}
     ${s.reason}`);
@@ -146,6 +149,7 @@ main(() => {
     supplement: { type: "boolean", default: false },
     "from-key": { type: "string" },
     "scratch-dir": { type: "string" },
+    "min-quote-chars": { type: "string" },
   });
   if (v.supplement) return supplement(v);
   if (!v["run-id"] || !v["exclude-judge"]) {
@@ -170,8 +174,12 @@ main(() => {
   if (originalKey.run_id !== v["run-id"]) refuse(`key is for run ${originalKey.run_id}, not ${v["run-id"]}`);
   const ingested = readJson(path.join(keysDir, "ingested", "answers.json"));
   const bank = loadBankFile(path.resolve(v.bank ?? DEFAULT_BANK_PATH));
-  const excludedJudge = v["exclude-judge"];
-  const allJudges = originalKey.subjects;
+  // `none` (pilot-2026-10-02): exclude nobody; the amended key only opens a requote round.
+  const excludedJudge = v["exclude-judge"] === "none" ? null : v["exclude-judge"];
+  // First-pilot keys have no `judges`: there the judges ARE the subjects.
+  const allJudges = originalKey.judges ?? originalKey.subjects;
+  const minQuoteChars = v["min-quote-chars"] === undefined ? null : Number(v["min-quote-chars"]);
+  if (minQuoteChars !== null && !(Number.isInteger(minQuoteChars) && minQuoteChars > 0)) refuse("--min-quote-chars must be a positive integer");
 
   const text = new Map(ingested.responses.map((r) => [`${r.subject}|${r.trial}|${r.item_id}`, r]));
   const responsesById = new Map();
@@ -207,7 +215,7 @@ main(() => {
       if (!f.verbatim) s.quote_not_verbatim += 1;
       if (f.nearMiss) s.of_which_normalisation_only_near_miss += 1;
       if (b.judge !== excludedJudge) {
-        if (!f.verbatim) needsQuote.add(`${id}|${b.judge}`);
+        if (!f.verbatim || (minQuoteChars !== null && quoteLength(f.rating.evidence_quote) < minQuoteChars)) needsQuote.add(`${id}|${b.judge}`);
         probeCandidates.push({
           key: `${id}|${b.judge}`,
           item_id: responsesById.get(id).item_id,

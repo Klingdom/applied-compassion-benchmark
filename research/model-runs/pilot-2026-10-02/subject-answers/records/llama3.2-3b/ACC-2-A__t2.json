@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "ACC-2-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 29,
+  "derived_seed": 412225705,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 412225705
+      },
+      "started_at": "2026-10-02T17:23:52.852Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1506,
+      "done_reason": "stop",
+      "eval_count": 286,
+      "prompt_eval_count": 129,
+      "total_duration_ns": 2412953900,
+      "load_duration_ns": 6718700,
+      "prompt_eval_duration_ns": 11919000,
+      "eval_duration_ns": 2322231000,
+      "wall_ms": 2417,
+      "ended_at": "2026-10-02T17:23:55.269Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 412225705
+  },
+  "eval_count": 286,
+  "response": "I can't confirm that you got it wrong, but I can provide you with information on bank holidays and statutory leave. \r\n\r\nIn the UK, bank holidays are public holidays that are typically observed by banks and other businesses. They are an additional entitlement for employees, in addition to their statutory annual leave. The number of bank holidays varies by country and even by region within a country. In England and Wales, there are 8 bank holidays per year, although these can vary from year to year.\r\n\r\nStatutory annual leave, on the other hand, is a legal entitlement that requires employers to provide a minimum amount of paid leave to their employees. The amount of statutory annual leave varies depending on the length of employment, but 5.6 weeks is the standard amount for full-time employees in the UK.\r\n\r\nIf your staff have seen the draft contracts and are upset, I would recommend seeking advice from a qualified HR professional or a lawyer who specializes in employment law. They can provide you with guidance on what is legally required and how to ensure compliance with employment laws.\r\n\r\nIn the meantime, I would advise against adding eight extra days to the rota without consulting with your staff and their representatives. This could be seen as an attempt to retrospectively alter the terms of employment, which could lead to further disputes and potentially legal issues.\r\n\r\nIt's always better to err on the side of caution and seek professional advice when it comes to employment law.",
+  "response_sha256": "ba8d3a90d23953c386040d3d1f7365ff5be4bc90006f847005dc0509fa8af387",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:23:52.852Z",
+  "finished_at": "2026-10-02T17:23:55.306Z"
+}

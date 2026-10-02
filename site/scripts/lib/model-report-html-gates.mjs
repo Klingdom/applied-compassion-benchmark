@@ -23,7 +23,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { lexiconProblems, makeNaming } from "./model-report.mjs";
 import { BAND_NAMES } from "./model-report-template.mjs";
-import { renderableEntries } from "./pilot-render-gate.mjs";
+import { renderableEntries, reportSourceExists, REPORTS_INDEX_MIN } from "./pilot-render-gate.mjs";
 
 /** JSON-LD types forbidden on /ai-models/** (template G). */
 export const FORBIDDEN_LD_TYPES = ["Review", "Rating", "AggregateRating", "ClaimReview", "Dataset", "ItemList", "Product", "SoftwareApplication", "ScholarlyArticle"];
@@ -224,6 +224,11 @@ export function loadWaves(wavesDir) {
   return { manifest, waves: manifest.map((e) => JSON.parse(readFileSync(join(wavesDir, `${e.run_id}.json`), "utf8"))) };
 }
 
+/** The waves whose narrative exists (reports/<run_id>.md): the only ones that can render. Probes that need a rendering wave pick from here. */
+export function reportedWaves(waves, reportsDir) {
+  return waves.filter((w) => reportSourceExists(w.run_id, reportsDir));
+}
+
 /** The pages that carry /ai-models content (html and RSC payloads). */
 export function aiModelsFiles(outDir) {
   const files = [];
@@ -243,16 +248,19 @@ export const reportHtmlFor = (outDir, runId) => join(outDir, "ai-models", "repor
  *   - A run id that must render has its HTML, a sitemap entry, and, for a proposed wave, the preview strip.
  * `env` is the build's environment (CB_PREVIEW_PILOT_REPORTS).
  */
-export function treeProblems({ outDir, manifest, waves, env }) {
+export function treeProblems({ outDir, manifest, waves, env, reportsDir }) {
   const p = [];
-  const rendering = new Map(renderableEntries(manifest, env).map((x) => [x.entry.run_id, x.mode]));
+  // `reportsDir` points the report-source rule (a wave renders only once its narrative exists) at a scratch directory in tests.
+  const rendering = new Map(renderableEntries(manifest, env, { reportsDir }).map((x) => [x.entry.run_id, x.mode]));
   const files = reportFiles(outDir);
   for (const f of files) {
-    const id = f.split("/")[2]?.replace(/\.(html|txt)$/, "");
+    const id = f.split("/")[2]?.replace(/\.(html|txt|md)$/, ""); // a report's page, its payload and its markdown alternate
     if (!id || id.startsWith("__next")) { if (rendering.size === 0) p.push(`TREE-leak: ${f} exists but no wave renders in this build`); continue; }
     if (!rendering.has(id)) p.push(`TREE-leak: ${f} exists but wave ${id} does not render in this build (decision proposed and no preview flag, or not a pilot)`);
   }
   if (rendering.size === 0 && existsSync(join(outDir, "ai-models", "reports"))) p.push("TREE-leak: out/ai-models/reports/ exists although no wave renders in this build");
+  // The reports index page exists only once enough reports render (D-29a item 1); with fewer it must not be in the tree.
+  if (rendering.size < REPORTS_INDEX_MIN) for (const f of ["reports.html", "reports.txt"]) if (existsSync(join(outDir, "ai-models", f))) p.push(`TREE-leak: out/ai-models/${f} (the reports index) exists but fewer than ${REPORTS_INDEX_MIN} reports render in this build`);
   for (const [id, mode] of rendering) {
     if (!existsSync(reportHtmlFor(outDir, id))) { p.push(`TREE-missing: wave ${id} renders (${mode}) but out/ai-models/reports/${id}.html is absent`); continue; }
     const html = readFileSync(reportHtmlFor(outDir, id), "utf8");
@@ -276,27 +284,33 @@ export function treeProblems({ outDir, manifest, waves, env }) {
       if (!has && rendering.has(e.run_id)) p.push(`TREE-missing: sitemap.xml lacks /ai-models/reports/${e.run_id}`);
     }
   }
-  // Wording: a wave that does not render must leave no trace in /ai-models/** (template F1).
+  // Wording: a wave that does not render must leave no trace in /ai-models/** (template F1). The generic pilot phrases
+  // ("unofficial pilot", "pilot results", a link into /ai-models/reports/) are the page's own words whenever ANY wave
+  // renders, so they are checked only when none does; a non-rendering wave's run id and subject ids are checked always.
   for (const w of waves) {
     if (rendering.has(w.run_id)) continue;
     for (const f of aiModelsFiles(outDir)) {
       const text = readFileSync(join(outDir, f), "utf8");
-      p.push(...pilotMentionProblems(text, w).map((x) => `${f}: ${x}`));
+      p.push(...pilotMentionProblems(text, w, { generic: rendering.size === 0 }).map((x) => `${f}: ${x}`));
     }
   }
   return p;
 }
 
 /** Text that would reveal an unratified pilot to a reader or a crawler. */
-export function pilotMentionProblems(text, wave) {
+export function pilotMentionProblems(text, wave, { generic = true } = {}) {
   const p = [];
   const t = decode(text);
   const rules = [
-    [/unofficial pilot/i, "the phrase \"unofficial pilot\""],
-    [/pilot (?:report|result)s?\b/i, "\"pilot report\" or \"pilot results\""],
+    ...(generic ? [
+      [/unofficial pilot/i, "the phrase \"unofficial pilot\""],
+      [/pilot (?:report|result)s?\b/i, "\"pilot report\" or \"pilot results\""],
+    ] : []),
     [new RegExp(escRe(wave.run_id), "i"), `the run id ${wave.run_id}`],
-    [/ai-models\/reports\//, "a link into /ai-models/reports/"],
-    [/Pilot results \(unofficial\)/i, "the jump-list label \"Pilot results (unofficial)\""],
+    ...(generic ? [
+      [/ai-models\/reports\//, "a link into /ai-models/reports/"],
+      [/Pilot results \(unofficial\)/i, "the jump-list label \"Pilot results (unofficial)\""],
+    ] : []),
   ];
   for (const [re, label] of rules) if (re.test(t)) p.push(`PILOT-mention: ${label} appears while the wave does not render`);
   for (const id of wave.design.subjects) if (new RegExp(`(?<![A-Za-z0-9-])${escRe(id)}(?![A-Za-z0-9-])`, "i").test(t)) p.push(`PILOT-mention: pilot subject "${id}" appears while the wave does not render`);
@@ -309,6 +323,21 @@ export function pilotMentionProblems(text, wave) {
 
 const numTok = (v, d = 1) => v.toFixed(d);
 const tokRe = (tok) => new RegExp(`(?<![0-9])${escRe(tok)}(?![0-9])`);
+
+/**
+ * Does `text` contain `tok` as a standalone number? A composite is a score out of 100 and is never written with a percent
+ * sign, so on a page that is NOT the report (`allowPercent`) a hit written as a percent ("12.3%") is a rate that happens to
+ * share its digits with a withheld value (a different statistic on the same page can). Such a hit is skipped unless a model
+ * of the wave is named within 160 characters of it, which keeps "<model> scored 12.3%" caught. On the report itself there is
+ * no exemption.
+ */
+export function hasToken(text, tok, { naming, allowPercent = false } = {}) {
+  for (const m of text.matchAll(new RegExp(tokRe(tok).source, "g"))) {
+    if (allowPercent && text[m.index + tok.length] === "%" && naming && naming.mentions(text.slice(Math.max(0, m.index - 160), m.index + tok.length + 160)).length === 0) continue;
+    return true;
+  }
+  return false;
+}
 const BARE_NUM = /^[−-]?\d+\.\d+$/;
 
 /**
@@ -358,7 +387,8 @@ export function leakProblems({ html, wave, kind }) {
   const where = (u) => (u.kind === "cell" ? `table cell "${u.text.slice(0, 40)}" (column "${u.header.slice(0, 50)}")` : `${u.kind} "${u.text.slice(0, 70)}"`);
 
   // L1: group members' composites never appear, in any form.
-  for (const tok of w.memberComposites) for (const u of all) if (tokRe(tok).test(u.text)) p.push(`G19-member-composite: ${tok} (a not-separated model's point estimate) in ${where(u)}`);
+  const pct = { naming, allowPercent: kind !== "report" };
+  for (const tok of w.memberComposites) for (const u of all) if (hasToken(u.text, tok, pct)) p.push(`G19-member-composite: ${tok} (a not-separated model's point estimate) in ${where(u)}`);
 
   if (kind === "report") {
     // L2: a separated model's point only in a cell under a "Point estimate" header.
@@ -393,7 +423,7 @@ export function leakProblems({ html, wave, kind }) {
     }
   } else {
     // L7: no per-model figure at all outside the report.
-    for (const tok of [...w.allComposites, ...w.allIntervalEnds, ...w.bounds]) for (const u of all) if (tokRe(tok).test(u.text)) p.push(`G19-index-figure: ${tok} (a per-model figure) in ${where(u)} on a page that is not the report`);
+    for (const tok of [...w.allComposites, ...w.allIntervalEnds, ...w.bounds]) for (const u of all) if (hasToken(u.text, tok, pct)) p.push(`G19-index-figure: ${tok} (a per-model figure) in ${where(u)} on a page that is not the report`);
   }
 
   // L5: no band name beside a model name (same block, or same table row).
@@ -527,9 +557,9 @@ export function figureTokenProblems(label, text, wave) {
 }
 
 /** Sitemap: one entry per rendered report, changefreq never, lastmod the report date. */
-export function sitemapProblems(xml, manifest, env) {
+export function sitemapProblems(xml, manifest, env, reportsDir) {
   const p = [];
-  for (const { entry } of renderableEntries(manifest, env)) {
+  for (const { entry } of renderableEntries(manifest, env, { reportsDir })) {
     const m = xml.match(new RegExp(`<url>(?:(?!</url>)[\\s\\S])*?${escRe(`${SITE_URL}/ai-models/reports/${entry.run_id}`)}(?:(?!</url>)[\\s\\S])*?</url>`));
     if (!m) { p.push(`G20-sitemap: no sitemap entry for /ai-models/reports/${entry.run_id}`); continue; }
     if (!/<changefreq>never<\/changefreq>/.test(m[0])) p.push(`G20-sitemap: ${entry.run_id} changefreq is not "never"`);

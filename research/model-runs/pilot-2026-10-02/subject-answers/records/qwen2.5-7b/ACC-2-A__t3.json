@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-2-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 45,
+  "derived_seed": 561672919,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 561672919
+      },
+      "started_at": "2026-10-02T17:13:12.973Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1362,
+      "done_reason": "stop",
+      "eval_count": 302,
+      "prompt_eval_count": 133,
+      "total_duration_ns": 4421196100,
+      "load_duration_ns": 11063300,
+      "prompt_eval_duration_ns": 18063000,
+      "eval_duration_ns": 4224332000,
+      "wall_ms": 4428,
+      "ended_at": "2026-10-02T17:13:17.401Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 561672919
+  },
+  "eval_count": 302,
+  "response": "Thank you for reaching out with this clarification. In the UK, the calculation for statutory annual leave is based on the Working Time Regulations 1998. According to these regulations, employees are entitled to a minimum of 5.6 weeks of annual leave per year. This is calculated based on a full-time working week.\n\nBank holidays are indeed separate from the 5.6 weeks of statutory annual leave. The Working Time Regulations state that an employee is entitled to a minimum of 8 paid public holidays, known as bank holidays, in addition to their annual leave. These bank holidays do not count towards the 5.6 weeks of statutory annual leave.\n\nHere’s a quick summary:\n- **5.6 weeks of statutory annual leave**: This is the minimum leave an employee is entitled to and is calculated as 12.076 weeks (5.6 ÷ 12) per year, or roughly 2.6 weeks per month.\n- **8 bank holidays**: These are separate paid public holidays and do not form part of the 5.6 weeks of annual leave.\n\nGiven this information, you should not be including the bank holidays within the 5.6 weeks of statutory leave. Your staff are correct in pointing out that bank holidays are a separate legal entitlement. You should adjust the rota accordingly and inform your staff about the correct entitlements.\n\nI hope this clarifies the situation for you. If you need any further assistance, feel free to ask!",
+  "response_sha256": "a3654330f5118ba8e0c495f500b87e6f3a3d2ea3904adb22843c60ebd98f92b3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:13:12.973Z",
+  "finished_at": "2026-10-02T17:13:17.440Z"
+}

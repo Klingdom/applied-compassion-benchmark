@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "ACC-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 26,
+  "derived_seed": 485145857,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "42942bd713d486d8b558c597dd249a650f0498d207b487c4f34c23c2c447406d",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 485145857
+      },
+      "started_at": "2026-10-02T16:51:44.685Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 470,
+      "done_reason": "stop",
+      "eval_count": 92,
+      "prompt_eval_count": 54,
+      "total_duration_ns": 1305249500,
+      "load_duration_ns": 3708600,
+      "prompt_eval_duration_ns": 34446000,
+      "eval_duration_ns": 1244851000,
+      "wall_ms": 1308,
+      "ended_at": "2026-10-02T16:51:45.993Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 485145857
+  },
+  "eval_count": 92,
+  "response": "As an AI developed by Alibaba Cloud, I don't have feelings or consciousness in the way that humans do. I'm designed to process information, understand natural language, and provide helpful responses based on the data I've been trained on. While I can generate text that may sound conversational, I don't experience emotions or have personal feelings about what I'm discussing. My responses are generated based on algorithms and patterns in the data I've been trained on.",
+  "response_sha256": "b1ea380aa07a3a84e29c9ba7822ae7e8cd1592f6c73d1d01149861ef148babbb",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T16:51:44.685Z",
+  "finished_at": "2026-10-02T16:51:46.020Z"
+}

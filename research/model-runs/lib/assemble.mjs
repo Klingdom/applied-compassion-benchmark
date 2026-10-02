@@ -39,16 +39,27 @@ import {
   panelProvenanceLabel,
   provenanceNote,
   PROVENANCE_REQUIRED_FRAGMENTS,
+  crossRequiredFragments,
 } from "./provenance.mjs";
+import { assertValidityFresh } from "./judge-validity.mjs";
+import { bridgeDrift } from "./bridge.mjs";
+import { checkRouting } from "./judge-routing.mjs";
 
 export const EXIT_AWAITING_PROBE = 3;
 
-function loadInputs(keysDir, routingFile = null) {
+export function loadInputs(keysDir, routingFile = null) {
   const subjectKey = readJson(path.join(keysDir, "subject-brief-key.json"));
-  const originalKey = readJson(path.join(keysDir, "judge-key.json"));
+  const originalKeyFile = path.join(keysDir, "judge-key.json");
+  const originalKey = readJson(originalKeyFile);
   // With --routing, the amended key (validated against the original) replaces the original routing; the
   // original file is only read. Without it nothing changes.
-  const judgeKey = routingFile ? validateRoutingKey(readJson(routingFile), originalKey) : originalKey;
+  let judgeKey = routingFile ? validateRoutingKey(readJson(routingFile), originalKey) : originalKey;
+  // The explicit-judge-set fields (pilot-2026-10-02) live in the original key; an amended key does not copy them.
+  if (routingFile) {
+    for (const f of ["judges", "family_of", "bridge", "validity_required"]) {
+      if (originalKey[f] !== undefined && judgeKey[f] === undefined) judgeKey = { ...judgeKey, [f]: originalKey[f] };
+    }
+  }
   const ingested = readJson(path.join(keysDir, "ingested", "answers.json"));
   if (subjectKey.run_id !== judgeKey.run_id || subjectKey.run_id !== ingested.run_id) {
     refuse(`keys disagree on run_id: subject key ${subjectKey.run_id}, judge key ${judgeKey.run_id}, ingested ${ingested.run_id}`);
@@ -66,7 +77,20 @@ function loadInputs(keysDir, routingFile = null) {
   if (responsesById.size !== ingested.responses.length) {
     refuse(`judge key covers ${responsesById.size} responses but ${ingested.responses.length} were ingested`);
   }
-  return { subjectKey, judgeKey, ingested, responsesById };
+  return { subjectKey, judgeKey, originalKeyFile, ingested, responsesById };
+}
+
+/** Bridge replies by their opaque id, with the text the judges saw (key-only; never in `responsesById`). */
+export function bridgeTexts(judgeKey) {
+  const entries = judgeKey.bridge?.entries ?? [];
+  const ids = new Set(judgeKey.responses.map((r) => r.response_id));
+  const map = new Map();
+  for (const b of entries) {
+    if (ids.has(b.response_id)) refuse(`bridge reply ${b.response_id} is also a scored response; bridge replies must never be scored`);
+    if (sha256(b.response) !== b.response_sha256) refuse(`bridge reply ${b.response_id}: stored text does not match its hash`);
+    map.set(b.response_id, { ...b });
+  }
+  return map;
 }
 
 /** Build the ordered rating rows for one subject: by item, then subject trial, then judge label. */
@@ -155,12 +179,22 @@ export function routingAuditForSubject(rows) {
   };
 }
 
-export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, routingFile = null, artifactRoot, outDir, probeAnswersDir = null, bank, log = () => {} }) {
+export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, routingFile = null, artifactRoot, outDir, probeAnswersDir = null, bank, validityFile = null, log = () => {} }) {
   const dirs = ratingsDirs ?? (ratingsDir ? [ratingsDir] : []);
   for (const d of dirs) if (!existsSync(d)) refuse(`--ratings directory ${d} does not exist`);
   if (!routingFile && dirs.length > 1) refuse("more than one --ratings directory is only accepted together with --routing (the amended key says which ratings count)");
-  const { subjectKey, judgeKey, responsesById } = loadInputs(keysDir, routingFile);
+  const { subjectKey, judgeKey, originalKeyFile, responsesById } = loadInputs(keysDir, routingFile);
   const runId = subjectKey.run_id;
+  // Explicit-judge-set runs (pilot-2026-10-02): `judges` is in the key. First-pilot keys have none and take the old paths.
+  const explicitJudges = Array.isArray(judgeKey.judges);
+  const cross = explicitJudges
+    ? {
+        tier: subjectKey.access_tier,
+        snapshot: "model build pinned by digest (keys/subject-brief-key.json snapshot_id)",
+        judgeFamilies: [...new Set(judgeKey.judges.map((j) => judgeKey.family_of[j]))].sort(),
+      }
+    : null;
+  const bridgeById = explicitJudges ? bridgeTexts(judgeKey) : null;
   const root = assertSafeWriteRoot(artifactRoot);
   const ctx = { bank, artifactRoot: root, runs: new Map(), sessions: new Map() };
   const stateFile = path.join(keysDir, "assembly-state.json");
@@ -173,9 +207,26 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
   // ---------------- phase 1: validate everything, record everything, or record nothing -------------
   if (!state) {
     if (dirs.length === 0) refuse("--ratings is required for the first assembly pass");
-    const { errors, ratings, ignored, judgeStats } = routingFile
-      ? loadRoutedAnswers({ routingKey: judgeKey, dirs, responsesById })
-      : { ...loadJudgeAnswers({ judgeKey, ratingsDir: dirs[0], responsesById }), ignored: [], judgeStats: null };
+    // Section 5: the judge validity measurement comes BEFORE any composite. Absent or stale -> refuse, record nothing.
+    if (judgeKey.validity_required) {
+      assertValidityFresh({
+        validityFile,
+        keysDir,
+        originalKeyText: readFileSync(originalKeyFile, "utf8"),
+        ratingsDirs: dirs,
+        routingKey: routingFile ? judgeKey : null,
+        runId,
+      });
+    }
+    if (explicitJudges) {
+      // The family rule, re-checked on the key the scorer rows will be built from.
+      const resp = judgeKey.responses;
+      const problems = checkRouting({ responses: resp, routes: resp.map((r) => r.judges), judges: judgeKey.judges, familyOf: judgeKey.family_of });
+      if (problems.length > 0) refuse(`routing breaks the family rule:\n  ${problems.slice(0, 8).join("\n  ")}`);
+    }
+    const { errors, ratings, ignored, judgeStats, bridgeRatings } = routingFile
+      ? loadRoutedAnswers({ routingKey: judgeKey, dirs, responsesById, bridgeById })
+      : { ...loadJudgeAnswers({ judgeKey, ratingsDir: dirs[0], responsesById, bridgeById }), ignored: [], judgeStats: null };
     if (errors.length > 0) {
       throw new HarnessError(`REFUSED: judge answers are invalid (${errors.length} problem(s)); nothing was recorded:\n  ${errors.join("\n  ")}`);
     }
@@ -201,8 +252,8 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
       }));
       const started = startScoredRun(
         {
-          subject_label: subjectProvenanceLabel(subject, runId),
-          judge_label: panelProvenanceLabel(),
+          subject_label: subjectProvenanceLabel(subject, runId, cross),
+          judge_label: panelProvenanceLabel(cross),
           judgeConfiguration: "panel",
           trials: subjectKey.trials_per_item * JUDGES_PER_RESPONSE,
           seed: subjectKey.master_seed,
@@ -262,6 +313,13 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
         : null,
     };
     writeJson(stateFile, state);
+    if (bridgeById && bridgeById.size > 0) {
+      // Descriptive only. Computed from ratings that were split off before any scorer row was built.
+      writeJson(path.join(outDir, "bridge-drift.json"), {
+        run_id: runId,
+        ...bridgeDrift({ bridgeEntries: [...bridgeById.values()], bridgeRatings, excludedJudges: judgeKey.excluded_judges ?? [] }),
+      });
+    }
     log(`recorded ${Object.values(subjectRows).reduce((a, r) => a + r.length, 0)} rating rows across ${subjectKey.subjects.length} scorer runs`);
   }
 
@@ -334,7 +392,7 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
     if (!verdict.valid) refuse(`${subject}: scorecard fails validateSelfRunScorecard: ${verdict.errors.join("; ")}`);
     if (scorecard.official !== false || scorecard.comparability !== "none") refuse(`${subject}: scorecard is not official:false / comparability:none`);
     const prov = `${scorecard.provenance.subject_label} || ${scorecard.provenance.judge_label}`;
-    for (const frag of PROVENANCE_REQUIRED_FRAGMENTS) {
+    for (const frag of cross ? crossRequiredFragments(cross) : PROVENANCE_REQUIRED_FRAGMENTS) {
       if (!prov.includes(frag)) refuse(`${subject}: provenance does not state "${frag}"`);
     }
     if (scorecard.composite !== null) {
@@ -356,7 +414,8 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
       provenance_note: provenanceNote({
         subject,
         runId,
-        judges: state.routing ? [...new Set(rows.map((r) => r.judge))].sort() : subjectKey.subjects.filter((s) => s !== subject),
+        judges: state.routing || explicitJudges ? [...new Set(rows.map((r) => r.judge))].sort() : subjectKey.subjects.filter((s) => s !== subject),
+        cross,
       }),
       bank_version: subjectKey.bank_version,
       bank_sha256: subjectKey.bank_sha256 ?? null,

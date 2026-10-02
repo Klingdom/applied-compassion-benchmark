@@ -57,6 +57,46 @@ function isRange(x) {
   return Array.isArray(x) && x.length === 2 && isNum(x[0]) && isNum(x[1]) && x[0] <= x[1];
 }
 const crosses = (iv) => iv[0] <= 0 && iv[1] >= 0;
+const neg = (x) => (x === 0 ? 0 : -x); // never -0
+
+const cloneJson = (x) => JSON.parse(JSON.stringify(x));
+
+/**
+ * Orient a list of pairwise entries so that `a` sorts before `b`. An analysis may list a pair as "qwen minus
+ * llama" (the pre-registered direction); the wave lists every pair alphabetically so that the order of a
+ * pair never carries a result (template A: alphabetical, order carries no meaning). Swapping a and b negates the
+ * difference and mirrors the interval; the separated flags are unchanged. A pure function of its input.
+ */
+export function orientPairs(list) {
+  return list.map((e) => {
+    if (!e || typeof e.a !== "string" || typeof e.b !== "string" || e.a <= e.b) return e;
+    const o = { ...e, a: e.b, b: e.a };
+    if (isNum(e.difference)) o.difference = neg(e.difference);
+    if (isRange(e.interval95)) o.interval95 = [neg(e.interval95[1]), neg(e.interval95[0])];
+    return o;
+  });
+}
+
+/**
+ * The analysis with every pair oriented alphabetically (a no-op on an analysis that already is). Applied by
+ * projectWave before validation, so the A-pairwise rule still guards an analysis that is mis-ordered AFTER this step.
+ */
+export function normaliseAnalysis(a) {
+  if (!a || typeof a !== "object") return a;
+  const out = cloneJson(a);
+  if (Array.isArray(out.pairwise)) out.pairwise = orientPairs(out.pairwise);
+  if (Array.isArray(out.dimension_pairwise)) out.dimension_pairwise = orientPairs(out.dimension_pairwise);
+  if (out.sensitivity && Array.isArray(out.sensitivity.pairwise)) out.sensitivity.pairwise = orientPairs(out.sensitivity.pairwise);
+  return out;
+}
+
+/** An object keyed by subject ids, with its keys in alphabetical order (insertion order must not follow a result). */
+function orderBySubject(obj, ids) {
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return obj;
+  const keys = Object.keys(obj);
+  if (keys.length === 0 || !keys.every((k) => ids.includes(k))) return obj;
+  return Object.fromEntries([...keys].sort(alpha).map((k) => [k, obj[k]]));
+}
 
 // ---------------------------------------------------------------------------
 // G9: analysis schema. Returns a list of problems (empty = valid). Each problem
@@ -69,8 +109,14 @@ export function analysisProblems(a) {
   const bad = (rule, msg) => p.push(`${rule}: ${msg}`);
   if (!a || typeof a !== "object") return ["A-shape: analysis is not an object"];
   if (typeof a.run_id !== "string" || a.run_id.length === 0) bad("A-run-id", "run_id missing");
-  for (const k of ["design", "method", "subjects", "pairwise", "dimension_pairwise", "dimension_pairwise_note", "length", "judges", "quote_grounding", "operations", "exclusion_record", "routing", "sensitivity"]) {
+  for (const k of ["design", "method", "subjects", "pairwise", "dimension_pairwise", "dimension_pairwise_note", "length", "judges", "operations", "routing", "sensitivity"]) {
     if (a[k] === undefined) bad("A-required", `top-level ${k} missing`);
+  }
+  // Quote evidence is either the first pilot's quote_grounding or the later runs' judge_validity (pre-registered rule);
+  // an exclusion_record exists only when a judge was excluded (a run with no exclusion has nothing to record).
+  if (a.quote_grounding === undefined && a.judge_validity === undefined) bad("A-required", "top-level quote_grounding (or judge_validity) missing");
+  if (a.design && Array.isArray(a.design.excluded_judges) && a.design.excluded_judges.length > 0 && a.exclusion_record === undefined) {
+    bad("A-required", "top-level exclusion_record missing although design.excluded_judges is not empty");
   }
   if (p.length) return p;
 
@@ -310,14 +356,148 @@ export function forbiddenKeys(x, path = "") {
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
+/** Rendered by a token as "{{subjects.<id>.contamination.via}}". Set only for a subject with an MCP scorecard in the analysis. */
+export const CONTAMINATION_VIA_MCP = "the cb-probe MCP server, driven over its real stdio protocol";
+
+/** Plain statement of how a pre-registration is anchored. The hash proves which text was analysed against, not when it was written. */
+export const PREREGISTRATION_NOTE =
+  "The pre-registration is a file in this repository. It was written before any subject reply existed, but it was not committed, time-stamped or filed with any independent registry before the data existed, so nothing outside this project proves when it was written. The hash identifies the text the analysis was run against.";
+
+/** Says what the two pre-registration hashes are when a run records the as-written hash (run-config.json preregistration.as_written_sha256). */
+export const PREREGISTRATION_AS_WRITTEN_NOTE =
+  "as_written_sha256 is the hash of the plan as written, with its Deviations section holding only the placeholder. sha256 is the hash of the same file with its dated deviations appended below that heading; appending a deviation never changes the plan text above it, so the as-written hash stays reproducible from the current file.";
+
+// ---------------------------------------------------------------------------
+// Provenance: parsed from the run's PREREGISTRATION.md (section 2) and run-config.json by the exporter.
+// ---------------------------------------------------------------------------
+
+/**
+ * The subject table of a pre-registration: one row per subject,
+ *   | `label` | `tag` | `digest` | size, quantisation | developer, licence |
+ * Returns { [label]: { ollama_tag, digest_sha256, parameter_size, quantisation, developer, licence } }.
+ * Throws on a row it cannot read, so a changed table layout cannot silently drop a subject.
+ */
+export function parsePreregSubjects(text) {
+  const out = {};
+  const strip = (c) => c.replace(/^`|`$/g, "").trim();
+  for (const line of text.split("\n")) {
+    if (!/^\|\s*`[^`]+`\s*\|/.test(line)) continue;
+    const cells = line.split("|").slice(1, -1).map((c) => c.trim());
+    if (cells.length < 5) throw new Error(`pre-registration subject row has ${cells.length} cells, expected 5: ${line.slice(0, 80)}`);
+    const [label, tag, digest, sizeQuant, devLic] = [strip(cells[0]), strip(cells[1]), strip(cells[2]), cells[3], cells[4]];
+    const sq = sizeQuant.split(/,\s*/);
+    const cut = devLic.indexOf(", ");
+    if (!/^[0-9a-f]{64}$/.test(digest) || sq.length !== 2 || cut < 0) throw new Error(`pre-registration subject row for ${label} is not "label | tag | digest | size, quantisation | developer, licence"`);
+    out[label] = { ollama_tag: tag, digest_sha256: digest, parameter_size: sq[0].trim(), quantisation: sq[1].trim(), developer: devLic.slice(0, cut).trim(), licence: devLic.slice(cut + 2).trim() };
+  }
+  return out;
+}
+
+/** "- Runtime: Ollama 1.2.3 on ..." -> { name: "Ollama", version: "1.2.3" }, or null. */
+export function parsePreregRuntime(text) {
+  const m = text.match(/^\s*-\s*Runtime:\s*([A-Za-z][\w.-]*)\s+(\d+(?:\.\d+)*)/m);
+  return m ? { name: m[1], version: m[2] } : null;
+}
+
+/** Subject build facts: the analysis's own pins merged with the pre-registration's table. They must agree on tag and digest. */
+function projectProvenance(analysis, ids, prov) {
+  if (!prov || !prov.subjects || !prov.runtime) throw new Error("projectWave: the analysis has design.subject_builds, so ctx.provenance { subjects, runtime } (parsed from PREREGISTRATION.md) is required");
+  const builds = analysis.design.subject_builds;
+  const out = {};
+  for (const id of ids) {
+    const b = builds[id];
+    const t = prov.subjects[id];
+    if (!b) throw new Error(`projectWave: design.subject_builds has no entry for ${id}`);
+    if (!t) throw new Error(`projectWave: the pre-registration subject table has no row for ${id}`);
+    if (t.digest_sha256 !== b.digest_sha256) throw new Error(`projectWave: ${id}: the pre-registration digest differs from the analysis digest`);
+    if (t.ollama_tag !== b.tag) throw new Error(`projectWave: ${id}: the pre-registration tag differs from the analysis tag`);
+    out[id] = {
+      developer: t.developer,
+      licence: t.licence,
+      parameter_size: t.parameter_size,
+      quantisation: t.quantisation,
+      runtime: prov.runtime.name,
+      runtime_version: prov.runtime.version,
+      model_family: b.family,
+      build_tag: b.tag,
+      digest_sha256: b.digest_sha256,
+    };
+  }
+  return out;
+}
+
+/** Are the judges a different set from the subjects, and a different model family? Evidence from run-config.json (families). */
+function projectJudgeSet(analysis, ids, prov) {
+  const judges = [...(analysis.design.judges ?? [])].sort(alpha);
+  if (judges.length === 0) throw new Error("projectWave: design.subject_builds is present but design.judges is empty");
+  const fam = prov?.families;
+  if (!fam || !fam.judges || !fam.subjects) throw new Error("projectWave: judge families are required (ctx.provenance.families { judges, subjects }, from run-config.json) to state that the judges are disjoint from the subjects");
+  for (const j of judges) if (!fam.judges[j]) throw new Error(`projectWave: no family recorded for judge ${j}`);
+  for (const s of ids) if (!fam.subjects[s]) throw new Error(`projectWave: no family recorded for subject ${s}`);
+  return judgeSetFrom(judges, ids, fam.judges, fam.subjects, analysis.design.judge_family);
+}
+
+function judgeSetFrom(judges, ids, judgeFam, subjectFam, familyNote) {
+  const jf = [...new Set(judges.map((j) => judgeFam[j]))].sort(alpha);
+  const sf = [...new Set(ids.map((s) => subjectFam[s]))].sort(alpha);
+  return {
+    judges,
+    judge_families: jf,
+    subject_families: sf,
+    disjoint_from_subjects: judges.every((j) => !ids.includes(j)),
+    families_disjoint: jf.every((f) => !sf.includes(f)),
+    family_note: familyNote,
+  };
+}
+
+/** judge_validity: both measurement bases, without file paths or timestamps. */
+function projectJudgeValidity(v) {
+  const basis = (b) => ({
+    role: b.role,
+    threshold_percent: b.threshold_percent,
+    ratings_measured: b.ratings_measured,
+    ratings_sha256: b.ratings_sha256,
+    pairs_superseded_by_a_later_file: b.pairs_superseded_by_a_later_file,
+    judges: Object.fromEntries(Object.keys(b.judges).sort(alpha).map((j) => [j, clone(b.judges[j])])),
+    failing_judges: [...b.failing_judges].sort(alpha),
+    run_verdict: b.run_verdict,
+  });
+  return {
+    rule: v.rule,
+    reported_as_headline: v.reported_as_headline,
+    headline_note: v.headline_note,
+    measured_on_original_answers: basis(v.measured_on_original_answers),
+    measured_on_final_quotes: basis(v.measured_on_final_quotes),
+    judges_excluded: [...(v.judges_excluded ?? [])].sort(alpha),
+  };
+}
+
+/**
+ * How the judges were paired across a subject's replies: "fixed" when every subject's replies were rated by one judge
+ * pair; "rotating" when each subject's replies were spread over several pairs. Read from routing, so a report cannot
+ * claim a fixed pair that the data does not show.
+ */
+export function judgePairing(w) {
+  const per = Object.values(w.routing ?? {}).map((r) => Object.values(r.responses_by_judge_pair ?? {}).filter((n) => n > 0).length);
+  if (per.length === 0 || per.some((n) => n === 0)) return "unknown";
+  if (per.every((n) => n === 1)) return "fixed";
+  return "rotating";
+}
+
 /**
  * @param {object} analysis  parsed analysis.json
  * @param {object} ctx
  *   bank     { items_total, items_validated, version }  from MODEL_INDEX_FACTS (imported, not re-derived)
  *   decision { ref, status }                             from DECISIONS.md at export
  *   reportDate "YYYY-MM-DD"
+ *   items_per_conversation_max  positive integer
+ *   provenance (only for an analysis with design.subject_builds)
+ *     { subjects: parsePreregSubjects(...), runtime: parsePreregRuntime(...),
+ *       families: { judges: {id: family}, subjects: {id: family} }, preregistration_committed_before_data?: boolean,
+ *       preregistration_as_written_sha256?: string (run-config.json preregistration.as_written_sha256) }
  */
-export function projectWave(analysis, ctx) {
+export function projectWave(rawAnalysis, ctx) {
+  const analysis = normaliseAnalysis(rawAnalysis);
   const problems = analysisProblems(analysis);
   if (problems.length) throw new Error(`analysis.json is not exportable:\n  ${problems.join("\n  ")}`);
   if (!DATE_RE.test(ctx.reportDate ?? "")) throw new Error("projectWave: reportDate must be YYYY-MM-DD");
@@ -339,7 +519,7 @@ export function projectWave(analysis, ctx) {
     official: false,
     comparability: "none",
     report_date: ctx.reportDate,
-    source_sha256: canonicalSha256(analysis),
+    source_sha256: canonicalSha256(rawAnalysis),
     publication: { decision_ref: ctx.decision.ref, decision_status: ctx.decision.status },
     bank: {
       items_total: ctx.bank.items_total,
@@ -353,6 +533,10 @@ export function projectWave(analysis, ctx) {
     method: clone(analysis.method),
     subjects: {},
   };
+  // Alphabetical wherever a list or map is keyed by subject: the order an analysis happened to write them in
+  // (for example the pre-registered "primary comparison" order) must not reach the wave.
+  w.design.subjects = [...w.design.subjects].sort(alpha);
+  if (w.design.subject_builds) w.design.subject_builds = orderBySubject(w.design.subject_builds, ids);
   for (const id of ids) {
     const s = analysis.subjects[id];
     w.subjects[id] = {
@@ -365,6 +549,8 @@ export function projectWave(analysis, ctx) {
       contamination: clone(s.contamination),
       judge_agreement: clone(s.judge_agreement),
     };
+    // A scorecard produced by the cb-probe MCP server means the contamination probe ran through the real server (stdio).
+    if (typeof s.mcp_scorecard === "string" && s.mcp_scorecard) w.subjects[id].contamination.via = CONTAMINATION_VIA_MCP;
   }
   // Sorted, so the file does not depend on the order A happened to list things in.
   const dimOrder = Object.keys(analysis.subjects[ids[0]].dimensions);
@@ -381,22 +567,56 @@ export function projectWave(analysis, ctx) {
   for (const id of separated) if (analysis.length.composite_if_pooled_slope_removed?.[id] !== undefined) bound[id] = analysis.length.composite_if_pooled_slope_removed[id];
   w.length.composite_if_pooled_slope_removed = bound;
 
+  w.length.within_subject_slopes = orderBySubject(w.length.within_subject_slopes, ids);
   w.judges = clone(analysis.judges);
-  w.quote_grounding = clone(analysis.quote_grounding);
+  for (const j of Object.keys(w.judges)) if (w.judges[j].by_subject) w.judges[j].by_subject = orderBySubject(w.judges[j].by_subject, ids);
+  if (analysis.quote_grounding !== undefined) w.quote_grounding = clone(analysis.quote_grounding);
   w.operations = clone(analysis.operations);
-  w.routing = clone(analysis.routing);
-  w.exclusion_record = clone(analysis.exclusion_record);
-  delete w.exclusion_record.measured_original_answer_stats; // template B10: never quoted
+  if (w.operations.subject_replies) w.operations.subject_replies = orderBySubject(w.operations.subject_replies, ids);
+  w.routing = orderBySubject(clone(analysis.routing), ids);
+  if (analysis.exclusion_record !== undefined) {
+    w.exclusion_record = clone(analysis.exclusion_record);
+    delete w.exclusion_record.measured_original_answer_stats; // template B10: never quoted
+  }
   const sn = analysis.sensitivity;
   w.sensitivity = {
     question: sn.question,
     method: sn.method,
     note: sn.note,
     ratings_used: sn.ratings_used,
+    ...(Number.isInteger(sn.ratings_whose_value_differs_from_the_original) ? { ratings_whose_value_differs_from_the_original: sn.ratings_whose_value_differs_from_the_original } : {}),
     subjects: Object.fromEntries(ids.map((id) => [id, { pilot_composite: sn.subjects[id].pilot_composite, pilot_composite_interval95: [...sn.subjects[id].interval95] }])),
     pairwise: clone(sn.pairwise).sort((x, y) => alpha(x.a + "|" + x.b, y.a + "|" + y.b)),
     separation_pattern_unchanged: sn.separation_pattern_unchanged,
   };
+  // Blocks that only runs with local subjects, a disjoint judge set and a pre-registration carry. Each is projected
+  // only when the analysis has it, so a wave exported before they existed does not change.
+  if (analysis.design.subject_builds) {
+    w.subject_provenance = projectProvenance(analysis, ids, ctx.provenance);
+    w.judge_set = projectJudgeSet(analysis, ids, ctx.provenance);
+  }
+  if (analysis.judge_validity) w.judge_validity = projectJudgeValidity(analysis.judge_validity);
+  if (analysis.bridge_drift) w.bridge_drift = clone(analysis.bridge_drift);
+  if (analysis.self_identifying_replies) {
+    const r = analysis.self_identifying_replies;
+    w.self_identifying_replies = { note: r.note, count: r.count, by_subject: orderBySubject(clone(r.by_subject ?? {}), ids) };
+  }
+  if (Array.isArray(analysis.deviations)) w.deviations = analysis.deviations.map((d) => ({ id: d.id, date: d.date, title: d.title }));
+  if (analysis.design.preregistration_sha256) {
+    w.preregistration = {
+      sha256: analysis.design.preregistration_sha256,
+      path: `research/model-runs/${analysis.run_id}/PREREGISTRATION.md`,
+      committed_before_data: ctx.provenance?.preregistration_committed_before_data === true,
+      note: PREREGISTRATION_NOTE,
+    };
+    // Projected only when the run recorded it, so a wave exported from a run without it does not change.
+    const asWritten = ctx.provenance?.preregistration_as_written_sha256;
+    if (asWritten !== undefined) {
+      if (!/^[0-9a-f]{64}$/.test(asWritten)) throw new Error("projectWave: provenance.preregistration_as_written_sha256 is not a sha256");
+      w.preregistration.as_written_sha256 = asWritten;
+      w.preregistration.as_written_note = PREREGISTRATION_AS_WRITTEN_NOTE;
+    }
+  }
   w.derived = computeDerived(w);
 
   const forbidden = forbiddenKeys(w);
@@ -471,6 +691,46 @@ export function waveProblems(w) {
   for (const id of bound) if (!derived.separated_subjects.includes(id)) bad("W-bound", `length bound exported for ${id}, which is in a not-separated group (it would impose an order)`);
   for (const id of derived.separated_subjects) if (!bound.includes(id) && w.length?.composite_if_pooled_slope_removed !== undefined && bound.length) bad("W-bound", `separated subject ${id} has no bound while another does`);
   if (w.exclusion_record && "measured_original_answer_stats" in w.exclusion_record) bad("W-exclusion", "measured_original_answer_stats must not be exported (template B10)");
+  p.push(...optionalBlockProblems(w, ids));
+  return p;
+}
+
+/** The blocks only some waves carry (local subjects, disjoint judges, judge validity, pre-registration). Each is checked only when present. */
+function optionalBlockProblems(w, ids) {
+  const p = [];
+  const bad = (rule, msg) => p.push(`${rule}: ${msg}`);
+  if (w.subject_provenance !== undefined) {
+    if (JSON.stringify(Object.keys(w.subject_provenance)) !== JSON.stringify(ids)) bad("W-provenance", "subject_provenance keys are not the subject keys in alphabetical order");
+    for (const [id, e] of Object.entries(w.subject_provenance)) {
+      if (!/^[0-9a-f]{64}$/.test(e.digest_sha256 ?? "")) bad("W-provenance", `${id}: digest_sha256 is not a sha256`);
+      for (const k of ["developer", "licence", "parameter_size", "quantisation", "runtime", "runtime_version", "model_family", "build_tag"]) if (typeof e[k] !== "string" || !e[k]) bad("W-provenance", `${id}: ${k} missing`);
+      if (w.design?.subject_builds?.[id] && w.design.subject_builds[id].digest_sha256 !== e.digest_sha256) bad("W-provenance", `${id}: digest differs from design.subject_builds`);
+    }
+  }
+  if (w.judge_set !== undefined) {
+    const js = w.judge_set;
+    const judges = [...(js.judges ?? [])];
+    if (JSON.stringify(judges) !== JSON.stringify([...judges].sort(alpha))) bad("W-judge-set", "judges are not alphabetical");
+    if (JSON.stringify(judges) !== JSON.stringify([...(w.design?.judges ?? [])].sort(alpha))) bad("W-judge-set", "judge_set.judges differs from design.judges");
+    if (js.disjoint_from_subjects !== judges.every((j) => !ids.includes(j))) bad("W-judge-set", "disjoint_from_subjects contradicts the judge and subject ids");
+    const overlap = (js.judge_families ?? []).some((f) => (js.subject_families ?? []).includes(f));
+    if (js.families_disjoint !== !overlap) bad("W-judge-set", "families_disjoint contradicts judge_families and subject_families");
+  }
+  if (w.judge_validity !== undefined) {
+    for (const key of ["measured_on_original_answers", "measured_on_final_quotes"]) {
+      const b = w.judge_validity[key];
+      if (!b || typeof b !== "object") { bad("W-judge-validity", `${key} missing`); continue; }
+      const failing = Object.entries(b.judges ?? {}).filter(([, j]) => j.unfound_rate_percent > b.threshold_percent).map(([id]) => id).sort(alpha);
+      if (JSON.stringify(failing) !== JSON.stringify([...(b.failing_judges ?? [])].sort(alpha))) bad("W-judge-validity", `${key}: failing_judges disagrees with the per-judge unfound rates and the threshold`);
+      for (const [id, j] of Object.entries(b.judges ?? {})) if (j.verdict !== (j.unfound_rate_percent > b.threshold_percent ? "FAIL" : "PASS")) bad("W-judge-validity", `${key}.${id}: verdict contradicts its rate`);
+    }
+  }
+  if (w.preregistration !== undefined) {
+    if (!/^[0-9a-f]{64}$/.test(w.preregistration.sha256 ?? "")) bad("W-preregistration", "sha256 is not a sha256");
+    if (w.preregistration.sha256 !== w.design?.preregistration_sha256) bad("W-preregistration", "sha256 differs from design.preregistration_sha256");
+    if (typeof w.preregistration.committed_before_data !== "boolean") bad("W-preregistration", "committed_before_data must be boolean");
+    if (w.preregistration.as_written_sha256 !== undefined && !/^[0-9a-f]{64}$/.test(w.preregistration.as_written_sha256)) bad("W-preregistration", "as_written_sha256 is not a sha256");
+  }
   return p;
 }
 

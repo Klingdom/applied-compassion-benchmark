@@ -52,6 +52,8 @@ export interface WaveSubject {
     identification_asked: number;
     identification_p_if_unexposed: number;
     identification_flagged: boolean;
+    /** Set when the probe ran through the cb-probe MCP server (later waves). */
+    via?: string;
   };
   judge_agreement: {
     exact: number;
@@ -94,6 +96,27 @@ export interface WaveDerived {
   responses_total: number;
 }
 
+export interface SubjectProvenance {
+  developer: string;
+  licence: string;
+  parameter_size: string;
+  quantisation: string;
+  runtime: string;
+  runtime_version: string;
+  model_family: string;
+  build_tag: string;
+  digest_sha256: string;
+}
+
+export interface JudgeSet {
+  judges: string[];
+  judge_families: string[];
+  subject_families: string[];
+  disjoint_from_subjects: boolean;
+  families_disjoint: boolean;
+  family_note: string;
+}
+
 interface WaveBase {
   run_id: string;
   report_date: string;
@@ -131,6 +154,12 @@ interface WaveBase {
     judge_family: string;
     excluded_judges: string[];
     bank_version: string;
+    /** Later runs: the judge set, the pinned builds, the conversation protocol and the pre-registration hash. */
+    judges?: string[];
+    subject_builds?: Record<string, { tag: string; digest_sha256: string; family: string }>;
+    conversation_per_item?: string;
+    crisis_items_served?: boolean;
+    preregistration_sha256?: string;
   };
   method: { composite: string; interval: string; length: string };
   subjects: Record<string, WaveSubject>;
@@ -146,10 +175,21 @@ interface WaveBase {
     note: string;
   };
   judges: Record<string, { ratings_used: number; leniency_vs_item_mean: number; by_subject: Record<string, number> }>;
-  quote_grounding: Record<string, unknown>;
+  /** The first pilot's quote-grounding record; later runs report judge_validity instead. */
+  quote_grounding?: Record<string, unknown>;
   operations: Record<string, unknown>;
   routing: Record<string, unknown>;
-  exclusion_record: { role: string; reason: string; disclosure: string };
+  /** Present only when a judge was excluded. */
+  exclusion_record?: { role: string; reason: string; disclosure: string };
+  /** Build and licence facts per subject (waves with local, pinned subjects). */
+  subject_provenance?: Record<string, SubjectProvenance>;
+  /** Are the judges a different set, and a different model family, than the subjects? */
+  judge_set?: JudgeSet;
+  judge_validity?: Record<string, unknown>;
+  bridge_drift?: Record<string, unknown>;
+  self_identifying_replies?: { note: string; count: number; by_subject: Record<string, number> };
+  deviations?: { id: string; date: string; title: string }[];
+  preregistration?: { sha256: string; path: string; committed_before_data: boolean; note: string };
   derived: WaveDerived;
 }
 
@@ -213,12 +253,22 @@ export function isPublishable(entry: ManifestEntry): boolean {
   return entry.status === "pilot" && entry.decision_status === "active";
 }
 
-export const publishableWaves: ManifestEntry[] = manifest.filter(isPublishable);
+/**
+ * A wave is exported (waves/) before its narrative is written (reports/<run_id>.md). Until the narrative exists the wave
+ * has no page, so it is not "published" for any link or sentence that points at its report.
+ */
+const REPORTS_DIR = join(process.cwd(), "src", "data", "model-benchmark", "reports");
+export function hasReportSource(runId: string): boolean {
+  return existsSync(join(REPORTS_DIR, `${runId}.md`));
+}
 
-/** The newest wave, loaded; null when there is none or the newest is not publishable. */
+/** Newest first. Decision active AND a report narrative exists. */
+export const publishableWaves: ManifestEntry[] = manifest.filter((e) => isPublishable(e) && hasReportSource(e.run_id));
+
+/** The newest published wave, loaded; null when there is none. */
 export function latestWave(): PilotWave | null {
-  const e = latestWaveEntry;
-  return e && isPublishable(e) ? assertRenderable(loadWave(e.run_id)) : null;
+  const e = publishableWaves[0];
+  return e ? assertRenderable(loadWave(e.run_id)) : null;
 }
 
 export const MODEL_WAVE_FACTS = {

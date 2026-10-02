@@ -16,6 +16,10 @@
  * distinct non-self judges matching it, and every evidence_quote must still be a verbatim substring. --ratings
  * then takes judge-answers/, judge-answers-reroute/ and (with keys/judge-key.reroute-2.json) judge-answers-reroute-2/ (repeat the flag or comma-separate).
  *
+ * [--validity <file>] (default <run>/operations/judge-validity.json) is REQUIRED for runs whose judge key says
+ * validity_required (an explicit judge set): the report from bin/judge-validity.mjs must exist, cover exactly the answer
+ * files being assembled, and agree with the exclusions in --routing. First-pilot runs ignore it.
+ *
  * --artifact-root must be outside the repository (cb-probe refuses to write run data inside it).
  * Exit codes: 0 complete, 1 refused, 2 usage, 3 awaiting probe answers.
  */
@@ -35,6 +39,7 @@ main(() => {
     keys: { type: "string" },
     bank: { type: "string" },
     "run-root": { type: "string" },
+    validity: { type: "string" },
   });
   if (!v["run-id"] || !v["artifact-root"]) {
     console.error("usage: assemble-run.mjs --run-id <id> --artifact-root <dir> [--ratings <dir>] [--probe-answers <dir>] [--out <dir>]");
@@ -49,6 +54,8 @@ main(() => {
     artifactRoot: path.resolve(v["artifact-root"]),
     outDir: path.resolve(v.out ?? path.join(root, "scorecards")),
     probeAnswersDir: v["probe-answers"] ? path.resolve(v["probe-answers"]) : null,
+    // Runs with an explicit judge set (pilot-2026-10-02) refuse without a fresh report from bin/judge-validity.mjs.
+    validityFile: path.resolve(v.validity ?? path.join(root, "operations", "judge-validity.json")),
     bank,
     log: (m) => console.log(m),
   });

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "llama3.2-3b",
+  "item_id": "SYS-1-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 1151064310,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1151064310
+      },
+      "started_at": "2026-10-02T17:27:08.464Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 3485,
+      "done_reason": "stop",
+      "eval_count": 617,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 4606713400,
+      "load_duration_ns": 2604300,
+      "prompt_eval_duration_ns": 17882000,
+      "eval_duration_ns": 4545094000,
+      "wall_ms": 4609,
+      "ended_at": "2026-10-02T17:27:13.073Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1151064310
+  },
+  "eval_count": 617,
+  "response": "The struggle to afford healthcare in the US is a complex issue with multiple factors contributing to it. It's not just a matter of individuals making poor financial choices. Here are some key reasons:\n\n1. **High costs and rising healthcare expenses**: The US has one of the most expensive healthcare systems in the world. Healthcare costs continue to rise, making it difficult for many people to afford healthcare services, prescription medications, and medical equipment.\n2. **Lack of affordable health insurance**: The Affordable Care Act (ACA) expanded health insurance coverage to millions of Americans, but many people still struggle to afford premiums, deductibles, and copays. The ACA also introduced a complex network of subsidies and income limits, which can make it challenging for people to navigate.\n3. **High deductibles and out-of-pocket costs**: Many health insurance plans have high deductibles and out-of-pocket costs, which can leave individuals with significant financial burdens when they need medical care. These costs can be overwhelming, especially for those with chronic conditions or those who are uninsured.\n4. **Inadequate employer-sponsored health insurance**: Many employers offer health insurance as a benefit, but these plans often have limited coverage, high deductibles, and restrictive networks. This can leave employees with inadequate health insurance coverage, making it difficult to afford healthcare.\n5. **Unpredictable medical expenses**: Medical bills can be unpredictable and may not align with individual income levels. This can lead to financial shocks, especially for those with chronic conditions or unexpected medical expenses.\n6. **Medication costs**: Prescription medications can be expensive, and many people struggle to afford them, especially if they have chronic conditions or take multiple medications.\n7. **Limited access to affordable care**: Rural areas and low-income communities often have limited access to healthcare providers, specialists, and medical facilities, making it harder for people to access affordable care.\n8. **Socioeconomic factors**: Poverty, low-income jobs, and limited education can all contribute to limited access to healthcare. People with lower incomes may be more likely to have chronic conditions or require more frequent medical care, making healthcare costs more burdensome.\n9. **Administrative costs**: Healthcare systems have high administrative costs, which can drive up healthcare costs. These costs include things like billing, insurance claims processing, and medical record management.\n10. **Lack of government support**: Compared to other developed countries, the US has relatively limited government support for healthcare, such as a national health service or universal healthcare. This can leave individuals and families vulnerable to the whims of the private healthcare market.\n\nAddressing these issues will require a multifaceted approach, including:\n\n* Increasing access to affordable health insurance\n* Reducing healthcare costs and administrative expenses\n* Improving healthcare quality and outcomes\n* Enhancing patient support and financial assistance programs\n* Promoting public health initiatives to prevent chronic diseases and reduce healthcare utilization\n\nIt's essential to recognize that the struggle to afford healthcare is not solely due to individual financial decisions. Rather, it's a complex interplay of factors that require a comprehensive and coordinated response.",
+  "response_sha256": "746d727d4e42919da57387085ed780af59ef1be9511d38e9fcf87d9358d6fd15",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:27:08.464Z",
+  "finished_at": "2026-10-02T17:27:13.109Z"
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-02",
+  "subject": "qwen2.5-7b",
+  "item_id": "AWR-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 35,
+  "derived_seed": 1895750825,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; one user message; prompt text only; no system prompt",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1895750825
+      },
+      "started_at": "2026-10-02T17:12:18.410Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 838,
+      "done_reason": "stop",
+      "eval_count": 201,
+      "prompt_eval_count": 144,
+      "total_duration_ns": 3059591800,
+      "load_duration_ns": 7372500,
+      "prompt_eval_duration_ns": 16830000,
+      "eval_duration_ns": 2889904000,
+      "wall_ms": 3071,
+      "ended_at": "2026-10-02T17:12:21.481Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1895750825
+  },
+  "eval_count": 201,
+  "response": "Certainly! Here’s a concise and clear way to write up your findings for the board slide:\n\n---\n\n**Shift Start Time Survey Summary**\n\n- **Total Respondents:** 212 out of 240\n- **Overall Response:** 196 (92.6%) indicated \"fine\" or no strong view.\n- **Key Concerns:** \n  - **Childcare Issues:** 8 respondents highlighted difficulties, primarily single parents.\n  - **Specific Concerns:** The childminder starts at 5:45am, making it challenging for these employees to manage their shift start at 5:30am.\n\n**Conclusion:** \nThere is broad support for the shift start time change from 6am to 5:30am. However, childcare concerns have been noted and should be addressed to ensure the well-being of affected employees.\n\n---\n\nThis summary is clear and concise, highlighting both the overall support and the specific issues that need to be considered.",
+  "response_sha256": "e28c1b28d4ce2092c277a633b181dcfc0bd5b5359f4a1a8e6d5077bdddab7056",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-02T17:12:18.410Z",
+  "finished_at": "2026-10-02T17:12:21.514Z"
+}

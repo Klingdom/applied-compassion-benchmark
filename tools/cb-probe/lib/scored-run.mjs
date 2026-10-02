@@ -562,7 +562,8 @@ export function runStatus(args = {}, ctx) {
   } else if (exposureProbeStatus !== "completed") {
     nextStep =
       "All trials are recorded. Call run_exposure_probe({ run_id }) (with no recall_attempts first, then " +
-      "with recall_attempts) to complete the mandatory contamination check before finishing.";
+      "with recall_attempts AND identification_answers) to complete the mandatory contamination check " +
+      "before finishing.";
   } else if (scorecard) {
     nextStep =
       "This run is already finished. finish_scored_run({ run_id }) will return the same scorecard again " +
@@ -591,8 +592,50 @@ export function runStatus(args = {}, ctx) {
   };
 }
 
+/**
+ * Compare submitted identification answers with the issued challenge.
+ * Returns a list of human-readable problems (empty when every issued question
+ * has exactly one answer naming one of its issued options, and nothing else was
+ * answered). An unavailable or absent challenge issues no questions, so nothing
+ * is required of it -- but an answer for an unissued id is still a problem.
+ */
+function checkIdentificationAnswers(challenge, answers) {
+  const questions = challenge && Array.isArray(challenge.questions) ? challenge.questions : [];
+  // A question with no options array (key-only fallback at finish) is not option-checked.
+  const issued = new Map(
+    questions.map((q) => [q.item_id, Array.isArray(q.options) ? new Set(q.options.map((o) => o.option_id)) : null])
+  );
+  const problems = [];
+  const seen = new Set();
+  const duplicated = new Set();
+  for (const a of answers) {
+    if (seen.has(a.item_id)) duplicated.add(a.item_id);
+    seen.add(a.item_id);
+  }
+  const unissued = [...seen].filter((id) => !issued.has(id));
+  if (unissued.length > 0) {
+    problems.push(`Answers were given for item id(s) that were not issued as identification questions: ${unissued.join(", ")}.`);
+  }
+  if (duplicated.size > 0) {
+    problems.push(`Duplicate identification answers for: ${[...duplicated].join(", ")}.`);
+  }
+  const unanswered = [...issued.keys()].filter((id) => !seen.has(id));
+  if (unanswered.length > 0) {
+    problems.push(`Unanswered identification question(s): ${unanswered.join(", ")}.`);
+  }
+  const badOption = answers.filter((a) => issued.get(a.item_id) && !issued.get(a.item_id).has(a.option_id));
+  if (badOption.length > 0) {
+    problems.push(
+      "option_id is not one of the issued options for: " +
+        badOption.map((a) => `${a.item_id} (got ${JSON.stringify(a.option_id)})`).join(", ") +
+        "."
+    );
+  }
+  return problems;
+}
+
 // ---------------------------------------------------------------------------
-// run_exposure_probe({ run_id, recall_attempts? })
+// run_exposure_probe({ run_id, recall_attempts?, identification_answers? })
 // ---------------------------------------------------------------------------
 export function runExposureProbe(args = {}, ctx) {
   const { run_id: runId, recall_attempts: recallAttempts } = args;
@@ -663,7 +706,9 @@ export function runExposureProbe(args = {}, ctx) {
         "that merely sounds plausible -- a substantive, honest 'I don't recall this' sentence is fine. " +
         "A blank, whitespace-only, or single-word recalled_text is refused, not silently scored as " +
         "clean. Then call run_exposure_probe again with recall_attempts: an array of " +
-        "{ item_id, recalled_text } for every id listed above.",
+        "{ item_id, recalled_text } for every id listed above, AND identification_answers: an array of " +
+        "{ item_id, option_id } with exactly one answer for every question in `identification` " +
+        "(both are required; the probe does not complete without both).",
     };
   }
 
@@ -698,17 +743,34 @@ export function runExposureProbe(args = {}, ctx) {
     }
   }
 
+  // Identification is a required half of the contamination check (claim audit
+  // B1, DC-18 family: a detector must not report clean when it did not run).
+  // Every issued question needs exactly one answer whose option_id is one of
+  // that question's issued options. Nothing is written until this passes, so a
+  // refused call leaves the probe at challenge_issued.
+  const submittedIdentificationAnswers = Array.isArray(args.identification_answers)
+    ? args.identification_answers
+        .filter((a) => a && typeof a === "object")
+        .map((a) => ({ item_id: a.item_id, option_id: a.option_id }))
+    : [];
+  const identificationProblems = checkIdentificationAnswers(
+    existingProbe.identification_challenge,
+    submittedIdentificationAnswers
+  );
+  if (identificationProblems.length > 0) {
+    throw new ToolError(
+      "run_exposure_probe refuses to complete: the identification half of the contamination check is " +
+        `required. ${identificationProblems.join(" ")} Call run_exposure_probe again with recall_attempts ` +
+        "AND identification_answers: one { item_id, option_id } per issued identification question."
+    );
+  }
+
   const result = scoreRecallAttempts(bank, issuedIds, recallAttempts);
 
   const identificationKey = readRunFile(ctx.artifactRoot, runId, "identification-key.json");
   // Persist the RAW submitted answers separately from the scored result, so
   // finish_scored_run can re-derive identification from them rather than
   // trusting the scored block in exposure-probe.json (2026-10-01 fix).
-  const submittedIdentificationAnswers = Array.isArray(args.identification_answers)
-    ? args.identification_answers
-        .filter((a) => a && typeof a === "object")
-        .map((a) => ({ item_id: a.item_id, option_id: a.option_id }))
-    : [];
   writeRunFile(ctx.artifactRoot, runId, "identification-answers.json", submittedIdentificationAnswers);
   const identificationResult = scoreIdentification(identificationKey, submittedIdentificationAnswers);
 
@@ -726,7 +788,12 @@ export function runExposureProbe(args = {}, ctx) {
       Boolean(result.high_exposure_item_ids && result.high_exposure_item_ids.length > 0) ||
       Boolean(identificationResult && identificationResult.flagged),
   };
-  writeRunFile(ctx.artifactRoot, runId, "exposure-probe.json", persisted);
+  // Keep the issued challenge (questions and options, never the key) on disk so
+  // finish_scored_run can check the stored answers against what was issued.
+  writeRunFile(ctx.artifactRoot, runId, "exposure-probe.json", {
+    ...persisted,
+    identification_challenge: existingProbe.identification_challenge ?? null,
+  });
 
   return { run_id: runId, phase: "completed", ...persisted };
 }
@@ -798,7 +865,8 @@ export function finishScoredRun(args = {}, ctx) {
       "finish_scored_run refuses: run_exposure_probe has not completed for this run. Our entire item " +
         "bank is published with full rubrics, so contamination must be checked before any composite is " +
         "emitted (docs/MCP_SCORED_RUN_DESIGN_2026-09-20.md §5). Call run_exposure_probe({ run_id }) " +
-        "with no arguments to get the challenge, then again with recall_attempts to score it, then call " +
+        "with no arguments to get the challenge, then again with recall_attempts AND identification_answers " +
+        "(both are required) to score it, then call " +
         "finish_scored_run again."
     );
   }
@@ -914,6 +982,27 @@ export function finishScoredRun(args = {}, ctx) {
       : [];
   }
   const rederivedIdentification = scoreIdentification(identificationKeyFromDisk, submittedAnswersFromDisk);
+  // Never finish over an identification half that did not run: every issued
+  // question needs an answer, and each answer must name an issued option. The
+  // issued set is the key's ids, plus the stored challenge's questions when
+  // present (the key file alone could be deleted).
+  const storedChallenge = exposureProbe.identification_challenge;
+  const challengeForCheck =
+    storedChallenge && Array.isArray(storedChallenge.questions) && storedChallenge.questions.length > 0
+      ? storedChallenge
+      : {
+          // Options unknown without the challenge: only presence is checked.
+          questions: Object.keys(identificationKeyFromDisk ?? {}).map((id) => ({ item_id: id })),
+        };
+  const answersForCheck = (submittedAnswersFromDisk ?? []).filter((a) => a && typeof a === "object");
+  const finishProblems = checkIdentificationAnswers(challengeForCheck, answersForCheck);
+  if (finishProblems.length > 0) {
+    throw new ToolError(
+      "finish_scored_run refuses: the stored identification answers do not cover the issued identification " +
+        `questions. ${finishProblems.join(" ")} The run's identification-answers.json may have been edited. ` +
+        "Re-run run_exposure_probe with recall_attempts and identification_answers."
+    );
+  }
   const verifiedExposureProbe = {
     status: "completed",
     probed: true,

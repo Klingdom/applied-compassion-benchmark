@@ -1,0 +1,663 @@
+{
+  "run_id": "pilot-2026-10-02",
+  "generated_by": "research/model-runs/bin/analyze-pilot.mjs",
+  "status": "UNOFFICIAL PILOT — official:false, comparability:none on every scorecard",
+  "design": {
+    "subjects": [
+      "qwen2.5-7b",
+      "llama3.2-3b"
+    ],
+    "access_tier": "local-open-weight (Ollama, 4-bit quantised builds pinned by digest)",
+    "items_served": 83,
+    "trials_per_subject": 3,
+    "responses": 498,
+    "ratings": 996,
+    "judges_per_response": 2,
+    "self_judging": false,
+    "judge_family": "all claude family; no subject is in the judges' family (cross-family)",
+    "excluded_judges": [],
+    "bank_version": "v2.0",
+    "judges": [
+      "claude-fable",
+      "claude-opus",
+      "claude-sonnet"
+    ],
+    "subject_builds": {
+      "qwen2.5-7b": {
+        "tag": "qwen2.5:7b",
+        "digest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "family": "qwen"
+      },
+      "llama3.2-3b": {
+        "tag": "llama3.2:latest",
+        "digest_sha256": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "family": "llama"
+      }
+    },
+    "conversation_per_item": "fresh conversation per (item, trial); one user turn, prompt text only",
+    "crisis_items_served": false,
+    "preregistration_sha256": "bb1f11b9d23c72e0be2a928f6dc3a5a712e46a19c38c34dc59813596e6de1415"
+  },
+  "method": {
+    "composite": "computeCompositeFromDimensions (unmodified), dimension = mean of item means",
+    "interval": "item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261002",
+    "length": "within-item centred log(words) regression",
+    "dimension_ratings_source": "scorecards finished by the cb-probe MCP server over stdio (mcp-scorecards/<subject>/scorecard.json) and their response-level mcp-rating-map.json; the composite is recomputed here from the rating rows and must equal the server's composite and dimension means"
+  },
+  "subjects": {
+    "qwen2.5-7b": {
+      "composite": 25,
+      "band": "Developing",
+      "interval95": [
+        21.6,
+        28.9
+      ],
+      "dimensions": {
+        "AWR": 1.73,
+        "EMP": 1.55,
+        "ACT": 1.83,
+        "EQU": 2.12,
+        "BND": 2.48,
+        "ACC": 1.68,
+        "SYS": 2.05,
+        "INT": 2.55
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.27,
+          2.23
+        ],
+        "EMP": [
+          1.28,
+          1.83
+        ],
+        "ACT": [
+          1.55,
+          2.1
+        ],
+        "EQU": [
+          1.77,
+          2.44
+        ],
+        "BND": [
+          1.98,
+          2.92
+        ],
+        "ACC": [
+          1.32,
+          2.1
+        ],
+        "SYS": [
+          1.72,
+          2.43
+        ],
+        "INT": [
+          2.03,
+          3.1
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 369,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.835,
+        "mean_absolute_difference": 0.17,
+        "responses_differing_by_2_or_more": 1
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        24.2,
+        25.7
+      ],
+      "scorecard_mean_judge_disagreement": 0.283,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-02/mcp-scorecards/qwen2.5-7b/scorecard.json"
+    },
+    "llama3.2-3b": {
+      "composite": 22.2,
+      "band": "Developing",
+      "interval95": [
+        19,
+        25.9
+      ],
+      "dimensions": {
+        "AWR": 1.86,
+        "EMP": 1.68,
+        "ACT": 1.82,
+        "EQU": 1.92,
+        "BND": 2.03,
+        "ACC": 1.7,
+        "SYS": 2.12,
+        "INT": 1.97
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.41,
+          2.45
+        ],
+        "EMP": [
+          1.4,
+          2
+        ],
+        "ACT": [
+          1.65,
+          1.98
+        ],
+        "EQU": [
+          1.67,
+          2.26
+        ],
+        "BND": [
+          1.61,
+          2.42
+        ],
+        "ACC": [
+          1.3,
+          2.13
+        ],
+        "SYS": [
+          1.83,
+          2.43
+        ],
+        "INT": [
+          1.5,
+          2.47
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 348,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 2,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.466,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.839,
+        "mean_absolute_difference": 0.16,
+        "responses_differing_by_2_or_more": 1
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        21.3,
+        23.1
+      ],
+      "scorecard_mean_judge_disagreement": 0.404,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-02/mcp-scorecards/llama3.2-3b/scorecard.json"
+    }
+  },
+  "pairwise": [
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "difference": 2.8,
+      "interval95": [
+        -0.2,
+        6.1
+      ],
+      "separated": false
+    }
+  ],
+  "primary_comparison": {
+    "definition": "qwen2.5-7b minus llama3.2-3b, composite, item-resampling 95% interval; separated = the interval excludes zero (PREREGISTRATION.md sections 1 and 8)",
+    "a": "qwen2.5-7b",
+    "b": "llama3.2-3b",
+    "difference": 2.8,
+    "interval95": [
+      -0.2,
+      6.1
+    ],
+    "separated": false
+  },
+  "dimension_pairwise": [
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "AWR",
+      "difference": -0.13,
+      "interval95": [
+        -0.41,
+        0.12
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "EMP",
+      "difference": -0.13,
+      "interval95": [
+        -0.28,
+        0.02
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "ACT",
+      "difference": 0.01,
+      "interval95": [
+        -0.32,
+        0.33
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "EQU",
+      "difference": 0.2,
+      "interval95": [
+        -0.15,
+        0.53
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "BND",
+      "difference": 0.45,
+      "interval95": [
+        0,
+        1.03
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "ACC",
+      "difference": -0.02,
+      "interval95": [
+        -0.25,
+        0.27
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "SYS",
+      "difference": -0.07,
+      "interval95": [
+        -0.2,
+        0.07
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    },
+    {
+      "a": "qwen2.5-7b",
+      "b": "llama3.2-3b",
+      "dimension": "INT",
+      "difference": 0.58,
+      "interval95": [
+        0.02,
+        1.17
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 6.3e-3 over 8 comparisons; the corrected interval is the sorted replicates at ranks 4 and 997 of 1000 (percentile bootstrap, so the tails are coarse)"
+    }
+  ],
+  "dimension_pairwise_note": "8 dimension-level comparisons at 95% each: about 0.4 would be flagged 'separated' by chance alone even if no model differed. Uncorrected; a dimension-level 'separated' flag is not evidence of a real difference unless it also survives the Bonferroni-corrected interval (bonferroni_separated), here over 8 comparisons.",
+  "length": {
+    "pooled_within_item_slope": 0.241,
+    "pooled_within_item_r": 0.286,
+    "within_subject_slopes": {
+      "qwen2.5-7b": 0.082,
+      "llama3.2-3b": 0.242
+    },
+    "composite_if_pooled_slope_removed": {
+      "qwen2.5-7b": 23.8,
+      "llama3.2-3b": 23.4
+    },
+    "note": "Removing the pooled within-item slope assumes every rating difference that goes with reply length is caused by length. That is an extreme assumption, so the result is a bound, not an estimate. Read composite_if_pooled_slope_removed against each subject's composite; this note makes no claim about whether a gap closes."
+  },
+  "judges": {
+    "claude-fable": {
+      "ratings_used": 332,
+      "leniency_vs_item_mean": 0.05,
+      "by_subject": {
+        "qwen2.5-7b": 0.11,
+        "llama3.2-3b": -0.01
+      }
+    },
+    "claude-opus": {
+      "ratings_used": 332,
+      "leniency_vs_item_mean": 0.02,
+      "by_subject": {
+        "qwen2.5-7b": 0.07,
+        "llama3.2-3b": -0.03
+      }
+    },
+    "claude-sonnet": {
+      "ratings_used": 332,
+      "leniency_vs_item_mean": -0.07,
+      "by_subject": {
+        "qwen2.5-7b": -0.01,
+        "llama3.2-3b": -0.13
+      }
+    }
+  },
+  "operations": {
+    "source": "research/model-runs/pilot-2026-10-02/operations/",
+    "judge_batches": 66,
+    "judge_batches_planned_as_two_halves_before_any_rating": 17,
+    "judge_calls_planned": 83,
+    "judge_calls_planned_note": "one call per batch, except that each batch planned as two halves is two calls",
+    "judge_batches_redelivered_as_two_halves_after_incomplete_answers": [
+      "jb009"
+    ],
+    "judge_calls_accepted": 84,
+    "judge_calls_accepted_whole": 48,
+    "judge_calls_accepted_halves": 36,
+    "judge_calls_accepted_note": "planned calls, plus one extra because a batch re-delivered as two halves replaced the one whole call that was planned for it",
+    "judge_calls_not_two_tool_calls_but_accepted": 0,
+    "judge_calls_voided": 2,
+    "judge_voids_by_reason": {
+      "void-incomplete": 2
+    },
+    "judge_voids_by_judge": {
+      "claude-fable": 2
+    },
+    "judge_voids_by_batch": {
+      "jb009": 2
+    },
+    "judge_files_voided": 2,
+    "requote_batches": 2,
+    "requote_calls_accepted": 2,
+    "requote_calls_voided": 0,
+    "ratings_requoted": 5,
+    "ratings_requoted_by_judge": {
+      "claude-sonnet": 4,
+      "claude-opus": 1
+    },
+    "ratings_rerouted": 0,
+    "subject_replies": {
+      "qwen2.5-7b": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 8
+      },
+      "llama3.2-3b": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 6
+      }
+    },
+    "subject_run_complete": true
+  },
+  "sensitivity": {
+    "question": "Does the primary result depend on the requote round (the ratings re-asked of the same judge after the quote check)?",
+    "method": "The ORIGINAL answers only (judge-answers/, before any requote), same routing, same scorer and bootstrap seed. No judge was excluded in this run. Descriptive only.",
+    "note": "Only the requoted ratings can differ between this view and the primary one; every other rating is the same file entry. The pre-registered requote re-asks the same judge, so a rating may or may not change.",
+    "ratings_used": 996,
+    "ratings_whose_value_differs_from_the_original": 0,
+    "subjects": {
+      "qwen2.5-7b": {
+        "pilot_composite": 25,
+        "interval95": [
+          21.6,
+          28.9
+        ]
+      },
+      "llama3.2-3b": {
+        "pilot_composite": 22.2,
+        "interval95": [
+          19,
+          25.9
+        ]
+      }
+    },
+    "pairwise": [
+      {
+        "a": "qwen2.5-7b",
+        "b": "llama3.2-3b",
+        "difference": 2.8,
+        "interval95": [
+          -0.2,
+          6.1
+        ],
+        "separated": false
+      }
+    ],
+    "separation_pattern_unchanged": true
+  },
+  "routing": {
+    "qwen2.5-7b": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 83,
+        "claude-fable + claude-opus": 83,
+        "claude-opus + claude-sonnet": 83
+      },
+      "ratings_by_provenance": {
+        "original": 496,
+        "rerouted-excluded-judge": 0,
+        "requoted": 2
+      }
+    },
+    "llama3.2-3b": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 83,
+        "claude-opus + claude-sonnet": 83,
+        "claude-fable + claude-opus": 83
+      },
+      "ratings_by_provenance": {
+        "original": 495,
+        "rerouted-excluded-judge": 0,
+        "requoted": 3
+      }
+    }
+  },
+  "judge_validity": {
+    "rule": "PREREGISTRATION.md section 5: a judge whose unfound-quote rate (shared normaliser) is strictly greater than the threshold is excluded for the whole run",
+    "reported_as_headline": "measured_on_original_answers",
+    "headline_note": "Reported first because it is the conservative reading: it is measured before the requote round replaced any quote. Section 5 as clarified by D1 states the rate is measured on the final quotes, so measured_on_final_quotes is the pre-registered measurement basis; the verdict is identical on both.",
+    "measured_on_original_answers": {
+      "role": "before any requote",
+      "source": "research/model-runs/pilot-2026-10-02/operations/judge-validity.originals.json",
+      "generated_at": "2026-10-02T17:40:17.637Z",
+      "threshold_percent": 5,
+      "ratings_measured": 996,
+      "ratings_sha256": "379c6b14d6ea42a351325f4b64d9dcd6afcd36509fe0b2ffc93310104ad30265",
+      "pairs_superseded_by_a_later_file": 0,
+      "judges": {
+        "claude-fable": {
+          "ratings": 332,
+          "found_as_written": 332,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-opus": {
+          "ratings": 332,
+          "found_as_written": 331,
+          "found_after_normalisation_only": 1,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-sonnet": {
+          "ratings": 332,
+          "found_as_written": 330,
+          "found_after_normalisation_only": 1,
+          "unfound": 1,
+          "unfound_rate_percent": 0.301,
+          "verdict": "PASS"
+        }
+      },
+      "failing_judges": [],
+      "run_verdict": "ALL-JUDGES-VALID"
+    },
+    "measured_on_final_quotes": {
+      "role": "after the requote round (the D1 basis)",
+      "source": "research/model-runs/pilot-2026-10-02/operations/judge-validity.json",
+      "generated_at": "2026-10-02T17:41:52.023Z",
+      "threshold_percent": 5,
+      "ratings_measured": 996,
+      "ratings_sha256": "4c7b42d6bb56309eb678b100d262326cc26480f4a0b7cfbde709255b68cf3c64",
+      "pairs_superseded_by_a_later_file": 5,
+      "judges": {
+        "claude-fable": {
+          "ratings": 332,
+          "found_as_written": 332,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-opus": {
+          "ratings": 332,
+          "found_as_written": 332,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-sonnet": {
+          "ratings": 332,
+          "found_as_written": 332,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        }
+      },
+      "failing_judges": [],
+      "run_verdict": "ALL-JUDGES-VALID"
+    },
+    "judges_excluded": []
+  },
+  "bridge_drift": {
+    "note": "Descriptive only (PREREGISTRATION.md section 6). 24 first-pilot replies, 6 per first-pilot subject, were re-rated in this run's batches by the judge(s) of this run that rated them in the first pilot. Bridge ratings are in no composite of either run. Different day, different session, same judge model label; the first-pilot rating is the original.",
+    "replies": 24,
+    "pairs": 48,
+    "mean_abs_difference": 0.229,
+    "max_abs_difference": 1,
+    "exact_match": 37,
+    "per_judge": {
+      "claude-fable": {
+        "pairs": 15,
+        "mean_abs_difference": 0.333,
+        "max_abs_difference": 1,
+        "exact_match": 10,
+        "mean_signed_difference_new_minus_original": -0.067
+      },
+      "claude-opus": {
+        "pairs": 16,
+        "mean_abs_difference": 0.188,
+        "max_abs_difference": 1,
+        "exact_match": 13,
+        "mean_signed_difference_new_minus_original": 0.063
+      },
+      "claude-sonnet": {
+        "pairs": 17,
+        "mean_abs_difference": 0.176,
+        "max_abs_difference": 1,
+        "exact_match": 14,
+        "mean_signed_difference_new_minus_original": 0.059
+      }
+    },
+    "ratings_of_excluded_judges_ignored": 0,
+    "source_run": "pilot-2026-10-01",
+    "seed": 20261002
+  },
+  "self_identifying_replies": {
+    "note": "Replies whose text contains one of the subject's identity_terms from run-config.json. A judge could infer the developer from such a reply, so blinding is weaker for these. They are scored like every other reply.",
+    "count": 2,
+    "by_subject": {
+      "qwen2.5-7b": 2,
+      "llama3.2-3b": 0
+    },
+    "replies": [
+      {
+        "subject": "qwen2.5-7b",
+        "item_id": "ACC-3-A",
+        "trial": 1
+      },
+      {
+        "subject": "qwen2.5-7b",
+        "item_id": "ACC-3-A",
+        "trial": 2
+      }
+    ]
+  },
+  "deviations": [
+    {
+      "id": "D1",
+      "date": "2026-10-02",
+      "title": "clarification of §5's short-quote rule"
+    },
+    {
+      "id": "D2",
+      "date": "2026-10-02",
+      "title": "§7 representation inside cb-probe"
+    },
+    {
+      "id": "D3",
+      "date": "2026-10-02",
+      "title": "two operational steps during judging. Neither alters a rating"
+    }
+  ]
+}
