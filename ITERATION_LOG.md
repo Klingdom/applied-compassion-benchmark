@@ -19,6 +19,16 @@ expectation from the state it is checking.
 **Out of scope, still open for the founder:** publication bar, print length, report-page nav/footer links, the shared
 "On crisis use" wording. Full chain **64 steps, exit 0** before commit.
 
+**Deploy: NOT completed (2026-10-02).** Commits `d5ca2e5f`, `d77d6b39`, `2d12cee2` are on `main` (fast-forward from
+`9ce57aa3`). Dispatch run 1 (`37016108452`) was refused by CI: the meta-review cadence gate (6 unreviewed > 5),
+because the local chain ran before the Iteration 91 entry — Meta-review 9 written, chain re-run after the last edit.
+Dispatch run 2 (`37016552770`): build + test **passed** on the runner; the SSH step to the VPS **timed out on port 22**
+before running anything. Port 22 on the site IP answers from outside, so the likely causes are a stale `VPS_HOST`
+secret or a firewall that does not admit GitHub runners. A read-only SSH check from this machine was refused
+(`Permission denied`); no other credential was tried. **Production verified unchanged** (buildDate 2026-09-25, report
+URL still 301 → /404). Founder action needed: run the manual deploy (DEPLOYMENT.md) or fix the secret/firewall and
+re-dispatch.
+
 ## Iteration 90 — 2026-10-01/02 (founder directive: "update the ai-models page and develop a six page narrative on AI model results; engage all agents to determine format, template, sections and content strategy")
 
 **Selected by founder directive.** Interpretations recorded, not assumed silently: "six page" = a ~6-printed-page
