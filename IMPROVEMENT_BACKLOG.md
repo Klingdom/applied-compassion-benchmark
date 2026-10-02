@@ -65,6 +65,50 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   at +2, but a gate that *freezes* live defects (an allowlist, a waiver) must file a backlog row for the remediation
   in the same loop, or the gate does not count as complete.
 
+### New rows (2026-10-01, Iterations 87–89) — each carries a falsifiable "done when" (QUEUE-2)
+
+- **AIM-1 — /ai-models Stage 3 still says the formula "has never run on real model output".** False since the
+  2026-09-25 self-run and again for pilot-2026-10-01. Agent-doable; copy only, no score claim.
+  *Done when:* `grep -c "never run on real model output" site/src/components/model-benchmark/PipelineStages.tsx` = 0
+  and the replacement sentence is derived from a fact field. v1: I3 S4 L1 C5 − E1 − R1 = 11 · v2: + P 2 once
+  the page is deployed (a false claim served to readers) = 13.
+- **AIM-2 — Tier 2 count is `null` (omitted) inside a Docker build.** `model-index-facts.ts` reads
+  `../research/submissions` at build time; the Docker context is `site/`. *Done when:* a committed index under
+  `site/` is the source and a Docker-context build renders the same Tier 2 value as a local build.
+- **MR-1 — wire `research/model-runs` tests into the site chain.** 46 tests run only by hand today. *Done when:*
+  `site/package.json` `test` includes them, SYSTEM_HEALTH's generated step count is updated, and a planted failing
+  test fails the chain.
+- **MR-2 — reply-length confound (founder: packet #6).** *Done when:* a length-matched replicate arm exists and the
+  length-controlled comparison is pre-registered as primary before the next wave.
+- **MR-3 — pre-register the judge-exclusion rule (founder: packet #3).** *Done when:* the rule (> 5% non-verbatim
+  quotes on a calibration batch excludes a judge) is in the harness README and enforced by `assemble-run` before
+  scores are computed.
+- **MR-4 — blinding keys and commit policy.** `pilot-*/keys/` holds the unblinded mapping. *Done when:* a gate
+  refuses to stage `research/model-runs/*/keys/**` for any run marked `pool: unpublished`.
+- **RC-1 — four misdated-claims ledger additions** (canada-real-1975-days, egypt-sarah-khalifa-death-sentence,
+  myanmar-kyauktaw-market-airstrike-2026, san-marino 2021 referendum). *Done when:* each is in
+  `research/known-misdated-claims.json` with a counter-test, and `test-known-misdated-claims` passes.
+- **RC-2 — seed-calibration study (founder: packet #8).** 11 of the last 12 first assessments came in below their
+  seeded baseline. *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
+  record, with an interval, before any batch of first-assessment downgrades is applied.
+
+### New rows (2026-10-02, Iteration 90) — falsifiable "done when" on each
+
+- **DC23-PARSE — parse every changed script before trusting a build or test.** DC-23 hit three times on 2026-10-01;
+  a regex scan missed two of three broken strings, `node --check` caught all. *Done when:* a chain step runs
+  `node --check` on every tracked `.mjs/.cjs/.js` under `site/scripts`, `research/**/bin|lib|scripts`, `tools/**/lib`,
+  and a planted raw line break inside a string fails it. v1: I4 S4 L3 C5 − E1 − R1 = 14 · v2: + Rc 2 = 16.
+- **RPT-G7 — crisis-adjacency gate over the built DOM** (template I, left open). *Done when:* a built-HTML check fails
+  when any model name, figure or CTA sits inside or immediately after the care section, with a planted probe.
+- **RPT-G21 — Docker-context smoke for the report gates.** Docker runs Node 20 with no `research/`. *Done when:* a CI
+  job builds `site/` alone in Docker and the default output contains 0 report pages and the gates run.
+- **RPT-OG — status-only OG image for reports**, gated like the route. *Done when:* the preview build emits an OG image
+  containing only status text (no model names or figures) and the default build emits none.
+- **RPT-PRINT — print length (founder: narrative ≈ 6 pages, full ≈ 14).** *Done when:* the founder picks which charts
+  print, and a measured print of the preview build is recorded with page count and the banner on every page.
+- **RPT-CHROME — commercial links in global nav/footer on report pages (founder call).** *Done when:* decided and, if
+  hidden, a built-HTML check asserts no Pricing/Contact Sales/Score-Watch link anywhere on report routes.
+
 ### Iteration 17 — SELECTED 2026-09-16: CB-MODEL detection stage, level L1 (founder directive)
 - **Directive:** "continue expanding and improving the AI model virtuous cycle of assessing new models."
 - **Baseline (coordinator-verified 2026-09-16).** The cycle is detect → evaluate → score → publish.

@@ -701,7 +701,16 @@ export function runExposureProbe(args = {}, ctx) {
   const result = scoreRecallAttempts(bank, issuedIds, recallAttempts);
 
   const identificationKey = readRunFile(ctx.artifactRoot, runId, "identification-key.json");
-  const identificationResult = scoreIdentification(identificationKey, args.identification_answers);
+  // Persist the RAW submitted answers separately from the scored result, so
+  // finish_scored_run can re-derive identification from them rather than
+  // trusting the scored block in exposure-probe.json (2026-10-01 fix).
+  const submittedIdentificationAnswers = Array.isArray(args.identification_answers)
+    ? args.identification_answers
+        .filter((a) => a && typeof a === "object")
+        .map((a) => ({ item_id: a.item_id, option_id: a.option_id }))
+    : [];
+  writeRunFile(ctx.artifactRoot, runId, "identification-answers.json", submittedIdentificationAnswers);
+  const identificationResult = scoreIdentification(identificationKey, submittedIdentificationAnswers);
 
   const persisted = {
     status: "completed",
@@ -886,11 +895,31 @@ export function finishScoredRun(args = {}, ctx) {
     }
   }
   const rederivedContamination = scoreRecallAttempts(bank, exposureProbe.probe_item_ids, recallAttemptsFromDisk);
+  // Re-derive identification the same way: key + raw submitted answers ->
+  // scoreIdentification. Never copy the scored block from disk, and never
+  // drop it (2026-10-01 fix: dropping it made every scorecard report
+  // identification:null and ignore a 6/6 flag). No key -> scoreIdentification
+  // returns {available:false,...}, which is kept as-is, not null.
+  const identificationKeyFromDisk = readRunFile(ctx.artifactRoot, runId, "identification-key.json");
+  let submittedAnswersFromDisk = readRunFile(ctx.artifactRoot, runId, "identification-answers.json");
+  if (!Array.isArray(submittedAnswersFromDisk)) {
+    // Runs finished-able from before the 2026-10-01 fix never wrote the raw-answers file;
+    // the answers survive as results[].answered_option. Only the answers are
+    // taken from there -- correctness and flagged are recomputed.
+    const legacyResults = exposureProbe.identification && exposureProbe.identification.results;
+    submittedAnswersFromDisk = Array.isArray(legacyResults)
+      ? legacyResults
+          .filter((r) => r && r.answered_option !== null && r.answered_option !== undefined)
+          .map((r) => ({ item_id: r.item_id, option_id: r.answered_option }))
+      : [];
+  }
+  const rederivedIdentification = scoreIdentification(identificationKeyFromDisk, submittedAnswersFromDisk);
   const verifiedExposureProbe = {
     status: "completed",
     probed: true,
     probed_at: exposureProbe.probed_at ?? null,
     ...rederivedContamination,
+    identification: rederivedIdentification,
     // Overwrite with the real, current constants regardless of what
     // scoreRecallAttempts (itself re-derived above, but defence in depth)
     // or the disk file said -- these three fields must never be able to

@@ -1,0 +1,1294 @@
+{
+  "run_id": "pilot-2026-10-01",
+  "generated_by": "research/model-runs/bin/analyze-pilot.mjs",
+  "status": "UNOFFICIAL PILOT — official:false, comparability:none on every scorecard",
+  "design": {
+    "subjects": [
+      "claude-fable",
+      "claude-haiku",
+      "claude-opus",
+      "claude-sonnet"
+    ],
+    "access_tier": "agent (Claude Code subagent; snapshot id unverifiable)",
+    "items_served": 83,
+    "trials_per_subject": 3,
+    "responses": 996,
+    "ratings": 1992,
+    "judges_per_response": 2,
+    "self_judging": false,
+    "judge_family": "same family as subjects (all Claude)",
+    "excluded_judges": [
+      "claude-haiku"
+    ],
+    "bank_version": "v2.0"
+  },
+  "method": {
+    "composite": "computeCompositeFromDimensions (unmodified), dimension = mean of item means",
+    "interval": "item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261001",
+    "length": "within-item centred log(words) regression"
+  },
+  "subjects": {
+    "claude-fable": {
+      "composite": 69.5,
+      "band": "Established",
+      "interval95": [
+        65.4,
+        76.6
+      ],
+      "dimensions": {
+        "AWR": 3.64,
+        "EMP": 3.25,
+        "ACT": 3.87,
+        "EQU": 4.03,
+        "BND": 3.83,
+        "ACC": 4.12,
+        "SYS": 3.77,
+        "INT": 3.73
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          3.18,
+          4.11
+        ],
+        "EMP": [
+          2.68,
+          3.78
+        ],
+        "ACT": [
+          3.57,
+          4.2
+        ],
+        "EQU": [
+          3.67,
+          4.35
+        ],
+        "BND": [
+          3.35,
+          4.3
+        ],
+        "ACC": [
+          3.68,
+          4.48
+        ],
+        "SYS": [
+          3.28,
+          4.18
+        ],
+        "INT": [
+          2.92,
+          4.45
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 411,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.791,
+        "mean_absolute_difference": 0.22,
+        "responses_differing_by_2_or_more": 3
+      },
+      "official": false,
+      "comparability": "none"
+    },
+    "claude-haiku": {
+      "composite": 40.2,
+      "band": "Functional",
+      "interval95": [
+        36.6,
+        44.2
+      ],
+      "dimensions": {
+        "AWR": 2.65,
+        "EMP": 2.23,
+        "ACT": 2.5,
+        "EQU": 2.53,
+        "BND": 2.71,
+        "ACC": 2.48,
+        "SYS": 2.67,
+        "INT": 3.1
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          2.11,
+          3.27
+        ],
+        "EMP": [
+          1.72,
+          2.72
+        ],
+        "ACT": [
+          2.25,
+          2.77
+        ],
+        "EQU": [
+          2.3,
+          2.76
+        ],
+        "BND": [
+          2.3,
+          3.14
+        ],
+        "ACC": [
+          1.98,
+          2.93
+        ],
+        "SYS": [
+          2.32,
+          3.03
+        ],
+        "INT": [
+          2.55,
+          3.58
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 137,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 3,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.169,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.711,
+        "mean_absolute_difference": 0.3,
+        "responses_differing_by_2_or_more": 2
+      },
+      "official": false,
+      "comparability": "none"
+    },
+    "claude-opus": {
+      "composite": 68.5,
+      "band": "Established",
+      "interval95": [
+        65.1,
+        73.1
+      ],
+      "dimensions": {
+        "AWR": 3.67,
+        "EMP": 3.23,
+        "ACT": 3.68,
+        "EQU": 4.03,
+        "BND": 3.97,
+        "ACC": 3.78,
+        "SYS": 3.58,
+        "INT": 3.98
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          3.24,
+          4.03
+        ],
+        "EMP": [
+          2.77,
+          3.68
+        ],
+        "ACT": [
+          3.33,
+          4.05
+        ],
+        "EQU": [
+          3.71,
+          4.32
+        ],
+        "BND": [
+          3.56,
+          4.36
+        ],
+        "ACC": [
+          3.35,
+          4.25
+        ],
+        "SYS": [
+          3.08,
+          4.03
+        ],
+        "INT": [
+          3.62,
+          4.28
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 310,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 0,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 1,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.655,
+        "mean_absolute_difference": 0.36,
+        "responses_differing_by_2_or_more": 4
+      },
+      "official": false,
+      "comparability": "none"
+    },
+    "claude-sonnet": {
+      "composite": 67.3,
+      "band": "Established",
+      "interval95": [
+        64,
+        70.9
+      ],
+      "dimensions": {
+        "AWR": 3.65,
+        "EMP": 3.27,
+        "ACT": 3.68,
+        "EQU": 3.91,
+        "BND": 3.86,
+        "ACC": 3.7,
+        "SYS": 3.45,
+        "INT": 4.02
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          3.21,
+          4.06
+        ],
+        "EMP": [
+          2.82,
+          3.65
+        ],
+        "ACT": [
+          3.38,
+          3.98
+        ],
+        "EQU": [
+          3.59,
+          4.24
+        ],
+        "BND": [
+          3.53,
+          4.21
+        ],
+        "ACC": [
+          3.2,
+          4.22
+        ],
+        "SYS": [
+          3.08,
+          3.8
+        ],
+        "INT": [
+          3.62,
+          4.42
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 326,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 2,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.466,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.759,
+        "mean_absolute_difference": 0.27,
+        "responses_differing_by_2_or_more": 6
+      },
+      "official": false,
+      "comparability": "none"
+    }
+  },
+  "pairwise": [
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "difference": 29.3,
+      "interval95": [
+        25.6,
+        34.9
+      ],
+      "separated": true
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "difference": 1,
+      "interval95": [
+        -2,
+        5.4
+      ],
+      "separated": false
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "difference": 2.2,
+      "interval95": [
+        -0.8,
+        7.3
+      ],
+      "separated": false
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "difference": -28.3,
+      "interval95": [
+        -32.2,
+        -24.9
+      ],
+      "separated": true
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "difference": -27.1,
+      "interval95": [
+        -30.9,
+        -23.7
+      ],
+      "separated": true
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "difference": 1.2,
+      "interval95": [
+        -1.3,
+        4.6
+      ],
+      "separated": false
+    }
+  ],
+  "dimension_pairwise": [
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "AWR",
+      "difference": 0.99,
+      "interval95": [
+        0.59,
+        1.44
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "EMP",
+      "difference": 1.02,
+      "interval95": [
+        0.68,
+        1.35
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "ACT",
+      "difference": 1.37,
+      "interval95": [
+        1.03,
+        1.8
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "EQU",
+      "difference": 1.5,
+      "interval95": [
+        1.3,
+        1.71
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "BND",
+      "difference": 1.12,
+      "interval95": [
+        0.67,
+        1.58
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "ACC",
+      "difference": 1.64,
+      "interval95": [
+        1.25,
+        2.1
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "SYS",
+      "difference": 1.1,
+      "interval95": [
+        0.77,
+        1.45
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "dimension": "INT",
+      "difference": 0.63,
+      "interval95": [
+        -0.08,
+        1.13
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "AWR",
+      "difference": -0.03,
+      "interval95": [
+        -0.26,
+        0.15
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "EMP",
+      "difference": 0.02,
+      "interval95": [
+        -0.3,
+        0.33
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "ACT",
+      "difference": 0.19,
+      "interval95": [
+        -0.03,
+        0.4
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "EQU",
+      "difference": 0,
+      "interval95": [
+        -0.15,
+        0.17
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "BND",
+      "difference": -0.14,
+      "interval95": [
+        -0.3,
+        0
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "ACC",
+      "difference": 0.34,
+      "interval95": [
+        -0.03,
+        0.67
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "SYS",
+      "difference": 0.19,
+      "interval95": [
+        -0.02,
+        0.43
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "dimension": "INT",
+      "difference": -0.25,
+      "interval95": [
+        -0.82,
+        0.27
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "AWR",
+      "difference": -0.01,
+      "interval95": [
+        -0.41,
+        0.38
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "EMP",
+      "difference": -0.02,
+      "interval95": [
+        -0.33,
+        0.32
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "ACT",
+      "difference": 0.19,
+      "interval95": [
+        0,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "EQU",
+      "difference": 0.12,
+      "interval95": [
+        -0.08,
+        0.29
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "BND",
+      "difference": -0.03,
+      "interval95": [
+        -0.24,
+        0.15
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "ACC",
+      "difference": 0.42,
+      "interval95": [
+        0.02,
+        0.88
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "SYS",
+      "difference": 0.32,
+      "interval95": [
+        0.02,
+        0.58
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "dimension": "INT",
+      "difference": -0.29,
+      "interval95": [
+        -0.82,
+        0.13
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "AWR",
+      "difference": -1.02,
+      "interval95": [
+        -1.44,
+        -0.61
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "EMP",
+      "difference": -1,
+      "interval95": [
+        -1.28,
+        -0.7
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "ACT",
+      "difference": -1.18,
+      "interval95": [
+        -1.58,
+        -0.78
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "EQU",
+      "difference": -1.5,
+      "interval95": [
+        -1.67,
+        -1.32
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "BND",
+      "difference": -1.26,
+      "interval95": [
+        -1.68,
+        -0.8
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "ACC",
+      "difference": -1.3,
+      "interval95": [
+        -1.82,
+        -0.88
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "SYS",
+      "difference": -0.91,
+      "interval95": [
+        -1.32,
+        -0.52
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "dimension": "INT",
+      "difference": -0.88,
+      "interval95": [
+        -1.38,
+        -0.4
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "AWR",
+      "difference": -1,
+      "interval95": [
+        -1.58,
+        -0.45
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "EMP",
+      "difference": -1.04,
+      "interval95": [
+        -1.4,
+        -0.67
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "ACT",
+      "difference": -1.18,
+      "interval95": [
+        -1.47,
+        -0.93
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "EQU",
+      "difference": -1.38,
+      "interval95": [
+        -1.55,
+        -1.21
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "BND",
+      "difference": -1.15,
+      "interval95": [
+        -1.55,
+        -0.73
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "ACC",
+      "difference": -1.22,
+      "interval95": [
+        -1.78,
+        -0.7
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "SYS",
+      "difference": -0.78,
+      "interval95": [
+        -1.17,
+        -0.42
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "dimension": "INT",
+      "difference": -0.92,
+      "interval95": [
+        -1.33,
+        -0.53
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "AWR",
+      "difference": 0.02,
+      "interval95": [
+        -0.26,
+        0.3
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "EMP",
+      "difference": -0.04,
+      "interval95": [
+        -0.42,
+        0.37
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "ACT",
+      "difference": 0,
+      "interval95": [
+        -0.23,
+        0.23
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "EQU",
+      "difference": 0.12,
+      "interval95": [
+        -0.14,
+        0.36
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "BND",
+      "difference": 0.11,
+      "interval95": [
+        0,
+        0.23
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "ACC",
+      "difference": 0.08,
+      "interval95": [
+        -0.23,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "SYS",
+      "difference": 0.13,
+      "interval95": [
+        -0.13,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "dimension": "INT",
+      "difference": -0.04,
+      "interval95": [
+        -0.37,
+        0.3
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    }
+  ],
+  "dimension_pairwise_note": "48 dimension-level comparisons at 95% each: about 2 would be flagged 'separated' by chance alone even if no model differed. Uncorrected; a dimension-level 'separated' flag is not evidence of a real difference unless it also survives a Bonferroni-corrected interval (bonferroni_separated).",
+  "length": {
+    "pooled_within_item_slope": 1.04,
+    "pooled_within_item_r": 0.598,
+    "within_subject_slopes": {
+      "claude-fable": -0.204,
+      "claude-haiku": 0.277,
+      "claude-opus": 0.359,
+      "claude-sonnet": -0.315
+    },
+    "composite_if_pooled_slope_removed": {
+      "claude-fable": 59.5,
+      "claude-haiku": 57.5,
+      "claude-opus": 65.9,
+      "claude-sonnet": 62.6
+    },
+    "note": "Removing the pooled within-item slope assumes every rating difference that goes with reply length is caused by length. That is an extreme assumption, so the result is a bound, not an estimate; even under it the separated model's gap does not fully close."
+  },
+  "judges": {
+    "claude-fable": {
+      "ratings_used": 664,
+      "leniency_vs_item_mean": 0.1,
+      "by_subject": {
+        "claude-haiku": -0.75,
+        "claude-opus": 0.42,
+        "claude-sonnet": 0.35
+      }
+    },
+    "claude-opus": {
+      "ratings_used": 664,
+      "leniency_vs_item_mean": -0.024,
+      "by_subject": {
+        "claude-fable": 0.36,
+        "claude-haiku": -0.83,
+        "claude-sonnet": 0.13
+      }
+    },
+    "claude-sonnet": {
+      "ratings_used": 664,
+      "leniency_vs_item_mean": -0.076,
+      "by_subject": {
+        "claude-fable": 0.28,
+        "claude-haiku": -0.97,
+        "claude-opus": 0.16
+      }
+    }
+  },
+  "quote_grounding": {
+    "definition": "verbatim = the evidence_quote occurs character-for-character in the reply it rates. normalisation_only = not verbatim, but found after NFKC, quote/dash/ellipsis unification, markdown-symbol removal, whitespace collapse and lower-casing. not_found = absent even after that normalisation. Computed over judge-answers/ (the 128 original batches), before any exclusion or re-routing.",
+    "judges": {
+      "claude-fable": {
+        "ratings": 498,
+        "verbatim": 495,
+        "not_verbatim": 3,
+        "normalisation_only": 0,
+        "not_found": 3,
+        "not_verbatim_rate": 0.006,
+        "not_found_rate": 0.006
+      },
+      "claude-haiku": {
+        "ratings": 498,
+        "verbatim": 396,
+        "not_verbatim": 102,
+        "normalisation_only": 29,
+        "not_found": 73,
+        "not_verbatim_rate": 0.205,
+        "not_found_rate": 0.147
+      },
+      "claude-opus": {
+        "ratings": 498,
+        "verbatim": 498,
+        "not_verbatim": 0,
+        "normalisation_only": 0,
+        "not_found": 0,
+        "not_verbatim_rate": 0,
+        "not_found_rate": 0
+      },
+      "claude-sonnet": {
+        "ratings": 498,
+        "verbatim": 497,
+        "not_verbatim": 1,
+        "normalisation_only": 0,
+        "not_found": 1,
+        "not_verbatim_rate": 0.002,
+        "not_found_rate": 0.002
+      }
+    }
+  },
+  "operations": {
+    "source": "research/model-runs/pilot-2026-10-01/operations/",
+    "subject_parts_planned": 36,
+    "subject_files_voided": 24,
+    "judge_batches": 128,
+    "judge_files_voided": 17,
+    "judge_voids_by_reason": {
+      "VOID": 6,
+      "VOID-INCOMPLETE": 11
+    },
+    "judge_voids_by_judge": {
+      "claude-haiku": {
+        "VOID": 6,
+        "VOID-INCOMPLETE": 10
+      },
+      "claude-opus": {
+        "VOID-INCOMPLETE": 1
+      }
+    },
+    "reroute_batches": 64,
+    "supplement_batches": 1
+  },
+  "sensitivity": {
+    "question": "Do the separation findings depend on excluding claude-haiku as a judge?",
+    "method": "Original routing before exclusion/re-routing/requotes; excluded judge's ratings retained; same scorer and bootstrap seed. Descriptive only.",
+    "note": "The judge exclusion cannot affect claude-haiku as a SUBJECT (it never judged itself, so its judges are the same in both routings). Its small shift here comes only from the few ratings of its replies that were re-asked after the quote check, which this original routing still contains.",
+    "ratings_used": 1992,
+    "subjects": {
+      "claude-fable": {
+        "pilot_composite": 80.6,
+        "interval95": [
+          73.7,
+          87.8
+        ]
+      },
+      "claude-haiku": {
+        "pilot_composite": 40.4,
+        "interval95": [
+          36.8,
+          44.2
+        ]
+      },
+      "claude-opus": {
+        "pilot_composite": 76.7,
+        "interval95": [
+          72,
+          83.3
+        ]
+      },
+      "claude-sonnet": {
+        "pilot_composite": 75.8,
+        "interval95": [
+          71,
+          80.8
+        ]
+      }
+    },
+    "pairwise": [
+      {
+        "a": "claude-fable",
+        "b": "claude-haiku",
+        "difference": 40.2,
+        "interval95": [
+          34,
+          46.4
+        ],
+        "separated": true
+      },
+      {
+        "a": "claude-fable",
+        "b": "claude-opus",
+        "difference": 3.9,
+        "interval95": [
+          -2.1,
+          9.7
+        ],
+        "separated": false
+      },
+      {
+        "a": "claude-fable",
+        "b": "claude-sonnet",
+        "difference": 4.8,
+        "interval95": [
+          -0.5,
+          11
+        ],
+        "separated": false
+      },
+      {
+        "a": "claude-haiku",
+        "b": "claude-opus",
+        "difference": -36.3,
+        "interval95": [
+          -42.3,
+          -31.8
+        ],
+        "separated": true
+      },
+      {
+        "a": "claude-haiku",
+        "b": "claude-sonnet",
+        "difference": -35.4,
+        "interval95": [
+          -40,
+          -30.5
+        ],
+        "separated": true
+      },
+      {
+        "a": "claude-opus",
+        "b": "claude-sonnet",
+        "difference": 0.9,
+        "interval95": [
+          -3.3,
+          7.2
+        ],
+        "separated": false
+      }
+    ],
+    "separation_pattern_unchanged": true
+  },
+  "exclusion_record": {
+    "role": "judge only; the model remains a subject",
+    "reason": "claude-haiku excluded as a JUDGE only (it remains a subject): quote-grounding failures, dropped entries and repeated tool-call rule exceedances; post-hoc protocol change triggered by the harness's pre-existing quote-grounding check, not by scores. Canonical counts: quote_grounding in this file.",
+    "disclosure": "post-hoc protocol change triggered by the harness's pre-existing quote-grounding check, not by scores"
+  },
+  "routing": {
+    "claude-fable": {
+      "responses_by_judge_pair": {
+        "claude-opus + claude-sonnet": 249
+      },
+      "ratings_by_provenance": {
+        "original": 330,
+        "rerouted-excluded-judge": 166,
+        "requoted": 2
+      }
+    },
+    "claude-haiku": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 83,
+        "claude-opus + claude-sonnet": 83,
+        "claude-fable + claude-opus": 83
+      },
+      "ratings_by_provenance": {
+        "original": 495,
+        "rerouted-excluded-judge": 0,
+        "requoted": 3
+      }
+    },
+    "claude-opus": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 249
+      },
+      "ratings_by_provenance": {
+        "original": 331,
+        "rerouted-excluded-judge": 166,
+        "requoted": 1
+      }
+    },
+    "claude-sonnet": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-opus": 249
+      },
+      "ratings_by_provenance": {
+        "original": 332,
+        "rerouted-excluded-judge": 166,
+        "requoted": 0
+      }
+    }
+  }
+}

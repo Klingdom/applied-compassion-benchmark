@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import IndexHero from "@/components/index/IndexHero";
 import RankingTable, { ColumnDef } from "@/components/index/RankingTable";
@@ -12,6 +13,7 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import IndexPageCharts from "@/components/index/IndexPageCharts";
+import { MODEL_INDEX_FACTS } from "@/lib/model-index-facts";
 import data from "@/data/indexes/ai-labs.json";
 
 export const metadata: Metadata = {
@@ -116,6 +118,18 @@ export default function AILabsPage() {
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
+      {/* Cross-link to the separate Model Index (the lab-is-not-model distinction).
+          No score is shown or merged here; the count is derived, never typed. */}
+      <section className="py-[14px]">
+        <Container>
+          <p className="text-[0.93rem] text-muted max-w-[900px] leading-relaxed">
+            This index scores AI <strong className="text-text">organisations</strong> on their public governance
+            record. It does not score how their models behave &mdash; that is the separate{" "}
+            <Link href="/ai-models" className="underline underline-offset-2">Model Index</Link>, which has scored{" "}
+            {MODEL_INDEX_FACTS.evaluatedModelCount} models so far.
+          </p>
+        </Container>
+      </section>
       <IndexPageCharts
         rankings={data.rankings as Parameters<typeof IndexPageCharts>[0]["rankings"]}
         indexSlug="ai-labs"

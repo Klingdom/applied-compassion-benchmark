@@ -50,14 +50,23 @@ const ALLOWLIST = [
 // ordinary 4-digit numbers elsewhere in the codebase (prices, pixel
 // dimensions, placeholder text) would false-positive.
 const CATALOG_NOUN = "(entities|entries|institutions|files)";
+//
+// The number and its noun may be separated by whitespace (including newlines),
+// JSX/HTML tags (`</span>`), JSX whitespace expressions (`{" "}`), `&nbsp;`,
+// and up to a few intervening words ("scored", "rated", ...). Without this, a
+// count written as `<span>1,325</span> scored entities` slipped past a
+// matcher that required the noun to follow the number directly (found
+// 2026-10-01 in ai-models/page.tsx). Matching runs over the whole file, not
+// line by line, so markup that wraps across lines is also caught.
+const GAP = `(?:\\s|<[^>]{0,120}>|\\{[^}]{0,40}\\}|&nbsp;|[A-Za-z-]+\\s+){1,6}?`;
 const PATTERNS = [
   {
     name: "stale total-entity count (1,1xx/1,2xx/1,3xx)",
-    re: new RegExp(`~?\\b1,[123]\\d\\d\\b\\s+${CATALOG_NOUN}\\b`, "gi"),
+    re: new RegExp(`~?\\b1,[123]\\d\\d\\b${GAP}${CATALOG_NOUN}\\b`, "gi"),
   },
   {
     name: "unformatted stale total-entity count (11xx/12xx/13xx)",
-    re: new RegExp(`~?\\b1[123]\\d\\d\\b\\s+${CATALOG_NOUN}\\b`, "gi"),
+    re: new RegExp(`~?\\b1[123]\\d\\d\\b${GAP}${CATALOG_NOUN}\\b`, "gi"),
   },
   { name: "hard-coded index-family count", re: /\b(7|seven|8|eight)[- ]ind(ex|ices|exes)\b/gi },
   { name: "stale U.S. states count", re: /\b21 (U\.S\. )?states\b/gi },
@@ -95,14 +104,15 @@ for (const root of SCAN_ROOTS) {
     const lines = content.split("\n");
 
     for (const { name, re } of PATTERNS) {
-      lines.forEach((line, i) => {
-        re.lastIndex = 0;
-        let m;
-        while ((m = re.exec(line)) !== null) {
-          if (isAllowed(fileRel, m[0], line)) continue;
-          failures.push(`${fileRel}:${i + 1}  [${name}]  "${line.trim()}"`);
-        }
-      });
+      re.lastIndex = 0;
+      let m;
+      while ((m = re.exec(content)) !== null) {
+        // Report the line the match starts on.
+        const lineIdx = content.slice(0, m.index).split("\n").length - 1;
+        const line = lines[lineIdx];
+        if (isAllowed(fileRel, m[0], line)) continue;
+        failures.push(`${fileRel}:${lineIdx + 1}  [${name}]  "${line.trim()}"`);
+      }
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "brief_id": "b-66bvzndh",
+  "rules": [
+    "escape raw U+0000-U+001F inside JSON string literals only (lossless)",
+    "restore one miscoded answer code: exactly 1 missing + 1 extra, edit distance <= 2, same index as brief order"
+  ],
+  "repairs": [
+    {
+      "part": "(merged)",
+      "miscoded_code": "q-n9fcytf",
+      "restored_code": "q-n9jfcytf",
+      "edit_distance": 1,
+      "index": 79
+    }
+  ]
+}

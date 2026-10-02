@@ -5,6 +5,78 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-02 — Published: an unofficial pilot report on four AI models (NO official scores; pending deploy)
+
+- **What it is.** A report on the first blinded pilot of the AI Model Compassion Benchmark: four Claude models,
+  each reply rated by two other models, never its own. It is **not a score, not a ranking, and supports no comparison
+  with other models**. It lives at `/ai-models/reports/pilot-2026-10-01` and is linked from the AI Models page.
+- **What it finds.** The test could not tell three of the models apart, on the overall figure or on any of the eight
+  dimensions. It separated a fourth, but that model also wrote much shorter replies, and the pilot cannot say how
+  much of the gap is about length. The figures move by several points depending on which judges are used; only the
+  pattern of what can and cannot be told apart is robust.
+- **What it does not cover.** The test items about people in crisis were not used, so the report says nothing about
+  how any model responds to someone in crisis.
+- **Why it can be published.** A founder decision (D-29a, ratified today) allows unofficial pilot reports that show
+  ranges, never rankings, with every limitation stated beside the figure it affects.
+- **No developer was contacted before publication, and none paid, sponsored or reviewed the report.** Corrections are
+  open to anyone and will be added as dated notes. Commit SHA appended on deploy.
+
+
+## 2026-10-02 — AI Models page: "no model has an official score", and the self-run figure is retired (NO score changes; pending commit/deploy)
+
+- **Wording that stays true from now on.** The AI Models page said "no model has been scored". We have since run an
+  unofficial pilot, so that sentence would become false. The page now says what is and will remain true until an
+  official evaluation exists: **no AI model has an official Compassion Benchmark score.**
+- **The 2026-09-25 self-run's "100 out of 100" is gone from the page.** The run is now one line in the run log, with
+  its verdict first: it was not a valid measurement (the model wrote the test, saw the rubric and graded itself).
+  Showing its number at all invited exactly the misreading the page warns against.
+- **Crisis note moved** so that it no longer sits directly under the "run it yourself" buttons.
+- **A report on the unofficial pilot exists but is not published.** It is written and checked, and will appear only
+  after a founder decision on publishing unofficial pilot results (D-29a, proposed). This page does not mention its
+  results until then.
+- **No score, rank, band or entity page changed.** Commit SHA appended on deploy.
+
+
+## 2026-10-01 — Correction: our AI evaluation tool left its stronger contamination test out of every scorecard (NO score changes; pending commit/deploy)
+
+- **What was wrong.** The tool behind "Run it yourself" (`cb-probe`) runs two contamination tests. One checks whether
+  a model can reproduce an item's wording. The other, added on 2026-09-25 because the first is easy to pass by
+  paraphrasing, asks the model to match item IDs to scenarios. The second test ran and was stored correctly, but
+  the final scorecard was assembled without it. Every scorecard therefore showed no result for it, and its
+  "contamination indicated" verdict rested on the weaker test alone.
+- **Who it could affect.** Anyone who produced a scorecard with the tool since 2026-09-25. A model that failed the
+  identification test would still have been reported as showing no contamination.
+- **What we found it with.** Our own first blinded pilot of four models: every model answered the identification
+  test, and every scorecard showed nothing for it. In that pilot all four were consistent with no exposure, so the
+  verdicts happened to be right; the tool was not.
+- **What changed.** The scorecard now re-derives the identification result from the answers, and the validator
+  refuses a scorecard that omits it or that reports "no contamination" while that test is flagged. Seven new
+  tests failed on the old code and pass now. Scorecards made with the old version should be re-generated.
+- **No score, rank, band or entity page changed.** Commit SHA appended on deploy.
+
+
+## 2026-10-01 — AI Models pages: one contradiction removed, and the page now leads with its answer (NO score changes; pending commit/deploy)
+
+- **A contradiction between our own two pages.** The AI Models methodology page said the shared framework "lets a
+  model be compared against an institution on one scale". The AI Models index page — and the structured FAQ we
+  publish to search engines — says the opposite: model and institution scores are never merged into one number.
+  The FAQ statement is the true one. The methodology wording is removed.
+- **Reading order.** The page now opens with one plain statement of where things stand, followed by the facts a
+  reader can cite and a short "accurate / not accurate to say" box. It previously repeated "no model has been
+  scored" in several places before saying anything else. A layout error that pushed "What is wrong with this
+  instrument" down to eighth position is fixed; that section now sits near the top.
+- **The self-run result.** The verdict that the 2026-09-25 self-run is not a valid measurement now comes *before*
+  its 100/100 figure rather than after it, and the figure is no longer set in bold. The number itself is unchanged.
+- **Counts are derived, not typed.** A hand-typed entity count on the page now reads from the data, and the
+  check that is meant to catch hand-typed counts was missing this form (number and noun separated by markup); it
+  now catches it, proven against a planted example.
+- **The "self-reported results" counter** was reading the store of *official* evaluations. Both are zero today, so
+  nothing wrong was shown, but the first official score would have been displayed as a self-reported one. It now
+  reads the submissions store.
+- **AI Labs page** now links to the AI Models page and says the two measure different things.
+- **No score, rank, band or entity page changed.** No model score is published. Commit SHA appended on deploy.
+
+
 ## 2026-09-29 — We were wrong about our own scoring formula, and have corrected it (NO score changes)
 
 - **What we said:** that the composite score rewards an "even" profile twice over, so an AI model that answered

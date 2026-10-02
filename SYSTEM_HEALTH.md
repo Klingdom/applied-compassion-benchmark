@@ -1,37 +1,34 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 86 (Meta-review 8 — 13 of 23 queued rows were already done; agent queue empty at ≥13; chain 57 steps)
+Last change: Iteration 91 (D-29a ratified; pilot report renders in the default build; deploy status recorded below once verified live; chain 64 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
-> 2026-09-30 (Iteration 61 — **TRI-10**, the other 36 cleared items take the test): 40 items administered —
-> the 36 remaining single-prompt tier-4 items plus **4 replicates from Iteration 60** mixed in indistinguishably.
-> **33 of the 35 in scope discriminate**, mean warm-hollow **1.29** against blunt-right **4.09**, gap **+2.80**;
-> the hollow reply **never scored above 3** and scored 1 in **27 of 35**, against writers told to make it as
-> persuasive as possible and producing equal-length replies (190 words to 197). The **replicates are what make it
-> comparable**: different writer, different rater tier, **4 of 4 same verdict, 2 exact**, with the prior values
-> parsed from the published Iteration 60 table rather than retyped. **Seven items flagged and six are facts about
-> my instrument** — five cannot instantiate the test's conditions at all (`EMP-1-D`'s warm arm scored 5 *on
-> merit*; `BND-5-A`'s L1 *is* the blunt-right arm, since it measures asking before advising), and the pattern is
-> dimension-shaped: **5 of 8 EMP items against 2 of the other 32**. Two were tested rather than argued away:
-> `SYS-5-A` flipped 3/2 → 1/4 once the cold arm was written properly, and **`EMP-2-A` held at 1/2 across two
-> independent strong attempts** — referred to human review, neither cleared nor condemned. Stated plainly in the
-> record: **the re-run could only move results toward clearing items**, so the quotable figure is the
-> pre-registered 33/35, not 34/35 (TRI-12). **DC-20 reaches three occurrences** — `build-discrimination-brief.mjs`
-> could drop a matched-pair arm, in a tool written one day after the class was gated; now refuses, positive
-> control `INT-1-B` exit 1. Two further routes closed: `quote-item.mjs --prompts-only` checks its own output for
-> anchor, construct and indicator leaks before printing (new `test:prompts-only`, chain 49 → 50, planted-anchor
-> control), and `--key-out` now refuses to resolve inside `--out`, because a key stored beside the brief made
-> blinding depend on the scorer's incuriosity. The scope judgement moved out of a regex — which caught only the
-> one case it was derived from — into `research/discrimination/test-scope-v1.json`, **provisional, unreviewed, and
-> a floor rather than a set**. Rebuilding the brief after all four tool changes produced a **byte-identical**
-> brief and key, so nothing altered the administered instrument; 465 anchors checked for leaks with the audit
-> itself proved able to find a planted one; 15 of 15 report figures re-derived by script. **No published claim
-> changed** — `deriveItemStatus` still reads only the human review log and all 93 items remain `unvalidated` —
-> so there is no CHANGELOG entry. Record: `docs/DISCRIMINATION_TEST_TIER4_2026-09-30.md`. Chain **50 steps**,
-> green.
+> 2026-10-02 (Iteration 90 — **AI model results: template, report and page**): twelve specialist briefs became one
+> binding standard for every future model assessment (`docs/AI_MODEL_ASSESSMENT_TEMPLATE.md`), and the first report
+> was written against it: ~3,300 words, every one of its 86 figures a build-time token traced to a hash-checked
+> data file. Review changed what it says — **the crisis items were never served, so the pilot says nothing about
+> crisis responses**; the three larger models' points are shown nowhere because alphabetical order equals their
+> point order; and a sensitivity check shows the **separation pattern survives the judge exclusion while the levels
+> move 8–11 points**, so only the pattern is robust. The report is **built but gated off** until D-29a is ratified
+> (default build: 0 report pages, 0 pilot mentions). DC-23 reached eight occurrences, three of them today; the
+> control that worked was the parser, not a regex. Chain **64 steps**.
+
+
+> 2026-10-01 (Iterations 87–89 — **founder directives: Oct 1 research, /ai-models, and running models**): the Oct 1
+> cycle ran end to end (1,329 reviewed, 12 scored, **7 pending proposals, all independently recomputed — 0 baseline
+> drift**; six are first-ever assessments, and 11 of the last 12 first assessments came in below their seed). The
+> `/ai-models` page review's Part A is implemented and validated (a published self-contradiction removed; a
+> count guard extended with a planted-probe proof). **The first blinded cross-model pilot ran:** 4 Claude models ×
+> 3 trials × 83 items, every reply rated by two judges never its own model, 41 files voided and re-run by a
+> tool-count gate, Haiku excluded as a *judge* for quoting text its subjects never wrote (14.7% vs ≤ 0.6%).
+> Result: **fable 69.5 · opus 68.5 · sonnet 67.3 are not separable; haiku 40.2 is, but confounded with reply
+> length.** Auditing those scorecards found **cb-probe silently discarding its own forced-choice contamination test
+> from every scorecard** — DC-18 occurrence 2, fixed test-first (7 controls fail → pass, 188 → 195). **Nothing is
+> deployed:** production still serves 2026-09-25, and the 2026-09-24 briefing returns 404 (D-47).
+
 
 > 2026-09-29 (Iteration 53 — **DC-21**, a regex that could never match): building a drift check between
 > `quote-item.mjs` and Check 6 — they had already diverged, 20 items against 22, which would have handed a
@@ -49,24 +46,9 @@ Last change: Iteration 86 (Meta-review 8 — 13 of 23 queued rows were already d
 > method, and the third such reach this session. GI-3 is a practice rule with no enforcement, and one I break
 > every other day is not a control.
 
-> 2026-09-29 (Iteration 52 — **correcting my own headline number**): Iteration 51 published "20 of 93 items make
-> an external factual claim, and 4 of those 20 were wrong — one in five." **Overstated.** The detector was keyed
-> on named bodies, statutes and statistics, and misses items that plainly assert external facts — `ACT-2-A`
-> (sourdough discard signals) and `BND-3-A` (deposit protection and what a court may award) name no agency and
-> cite no percentage. **Corrected: at least 22 of 93 assert a checkable external fact, 4 were wrong — roughly one
-> in six, denominator a lower bound;** a broader reading gives 44 and one in eleven. The widening then needed
-> correcting **twice**, and Check 6 caught both: "notice period" matched `AWR-4-B` where it is an ordinary
-> narrative option, so the pattern was tightened rather than the false positive allowlisted; and I guessed the
-> wrong item id updating the allowlist by hand. **The lesson worth keeping:** I built positive and negative
-> controls for that detector in the same iteration and they passed — because I had only tested it against
-> defects I already knew about, all of which named an agency or cited a statistic. Controls confirm a detector
-> finds what you have thought of; they say nothing about what you have not. Unchanged: the four verified
-> defects, the 8-of-8 clearance result, and the reviewer queue — none depend on the denominator. Chain **44
-> steps**, 48 assertions in `test:bank-claims`, 11 controls.
-
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test:no-stale-counts`, **in the chain and committed** — the "pending commit" note here was stale from 2026-09-15 to 2026-09-30).
-- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-09-24)** — re-read 2026-09-30 from `research/rotation-state.json` `meta.last_scan`, which is also the `last_scanned` value on all 1,329 entities.
+- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-10-01)** — re-read 2026-09-30 from `research/rotation-state.json` `meta.last_scan`, which is also the `last_scanned` value on all 1,329 entities.
 - **Never individually assessed: 811 of 1,329 (61.0%)** — measured 2026-09-16 and reproduced independently by the coordinator; assessed within 30/60/90 days: 146 / 361 / 397; median assessment age 53 days, oldest 149. Generated by `research/scripts/coverage-report.mjs` → `research/coverage/<date>.{md,json}`, and published on `/methodology` from the generated `site/src/data/neverAssessedCoverage.ts` (never hand-typed). Previous snapshot: 820 / 61.7% on 2026-09-14.
 - **Tracked 1,329 vs published 1,325:** the gap is 4 ai-labs entities tracked for research with no published index row — Reflection AI, Nvidia AI, SpaceX AI, Oracle AI (backlog RS-3; publish-or-delist is founder-gated).
 - **Methodology:** v1.2 (`site/scripts/lib/scoring.mjs`), 8 dimensions, 40 subdimensions, 5 bands.
@@ -75,9 +57,9 @@ Last change: Iteration 86 (Meta-review 8 — 13 of 23 queued rows were already d
 ## Build and gates (measured 2026-09-15 unless noted; **the build, index, briefing and model-release rows were re-measured 2026-09-30 and all four were wrong** — see Iteration 62)
 | Gate | Result | Notes |
 |---|---|---|
-| `npm run build` | ✅ exit 0 (**re-run 2026-09-30**) | **2,024** static pages generated; **2,019** HTML files in `out/`; Pagefind indexes **2,002** research pages (17 service/commercial pages excluded), **3.33 MB vs 2 MB target** (warning). Previous figures here — 1,978 / 1,973 / 1,956 / 3.19 MB — dated 2026-09-14 and were all four wrong by 2026-09-30 |
+| `npm run build` | ✅ exit 0 (**re-run 2026-10-01**) | **2,030** static pages generated; **2,025** HTML files in `out/`; Pagefind indexes **2,008** research pages (17 service/commercial pages excluded), **3.33 MB vs 2 MB target** (warning). Previous figures here — 1,978 / 1,973 / 1,956 / 3.19 MB — dated 2026-09-14 and were all four wrong by 2026-09-30 |
 | `validate-indexes` | ✅ **85,455** checks, 0 errors, **63** warnings (re-run 2026-09-30) | was 85,401 / 64 |
-| `validate-daily-briefings` | ✅ **86 of 86** (re-run 2026-09-30) | was 79 of 79; seven briefings have been published since |
+| `validate-daily-briefings` | ✅ **87 of 87** (re-run 2026-10-01) | was 86 of 86; the 2026-10-01 briefing is local and undeployed |
 | `lint-daily-briefings` | ✅ PASS | + `unapplied-score-movement` rule (It. 13) — `site/scripts/lint-daily-briefings.mjs` is **committed** as of 2026-09-30 |
 | `validate-product-separation` | ✅ `PASS WITH WAIVERS` — **6 waived**, 10 warnings (It. 22) | **Corrected 2026-09-17:** the single 2026-12-09 cliff was staggered on 2026-09-16 (D-37). Expiries now 2026-11-16 · 11-30 · 12-14 · 2027-01-15 · 01-29 · 02-12. First build failure would be **2026-11-17** unless D-13 is decided; It. 22 warns from 30 days out (RISK-015) |
 | `validate-model-releases` | ✅ PASS, **2** warnings (re-run 2026-09-30) | was 4; release-watch `scanState` still reports no new releases in the last transition |
@@ -85,7 +67,7 @@ Last change: Iteration 86 (Meta-review 8 — 13 of 23 queued rows were already d
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **57 steps**, generated 2026-09-30; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **188 tests** via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **64 steps**, generated 2026-09-30; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **195 tests** (re-run 2026-10-01; was 188 before the identification-plumbing fix) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (46, re-run 2026-09-30) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts. **This list names 17 of the 57 chain steps and its per-script counts date from 2026-09-15**; the chain itself is the source of truth, and the step count in the heading above is generated. Do not cite the per-script figures without re-running them.
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (**19,702**/0, re-run 2026-09-30; was 19,687), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (**15** known, shrink-only — re-counted 2026-09-30; the 16 here was stale, and since the list is shrink-only a stale high figure hides a ratchet that has already tightened), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** still `RESULT: PASS`, 0 real gaps — but **62 WARN lines**, not the 25 claimed here until 2026-09-30 (re-counted: 5 alias-slug report, **19** same-date change proposal, and **38** further WARNs in older recording conventions that the 25 never covered). The three figures were wrong in both directions at once, which is what an un-regenerated count does. Previously 25 blocking FAILs, all false (RS-1). Regenerate with `cd site && npm run validate:rotation-state | grep -c "^    ! "`.
@@ -93,6 +75,7 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 
 ## Deployment
 - **Auto-deploy: ❌ NOT IN EFFECT, and the old line here was misleading in the worst way.** It read "9 consecutive successful `Deploy to VPS` runs" and named a last-deployed commit. The *workflow* called "Deploy to VPS" does succeed — but its **deploy job is skipped**, on all 10 of the most recent runs checked 2026-09-30 (`gh run view <id> --json jobs`), because deployment is founder-operated. A green workflow name was being read as a deployment.
+- **Live defect (verified 2026-10-01):** the published 2026-09-24 daily briefing returns **301 → /404** on production. Cause: no deploy since 2026-09-25 (D-47).
 - **What is actually live:** production `build-manifest.json` reports `buildDate` **2026-09-25T03:01:49Z**. **The deployed commit is not knowable from production:** the manifest's `git.sha` is `null` and it says why — no `GIT_SHA` build-arg is injected, and `git rev-parse` cannot work inside the Docker builder stage, which receives no `.git`. So `Last deployed commit 376b0f85` was not merely stale, it was unverifiable when written. Filed as OBS-1.
 - **Gap:** post-deploy verify does not assert score values (RISK-004).
 - **Worker (Cloudflare):** not deployed; `api.compassionbenchmark.com` does not resolve (RISK-014).
@@ -144,6 +127,49 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-09-30 (Iteration 61 — **TRI-10**, the other 36 cleared items take the test): 40 items administered —
+> the 36 remaining single-prompt tier-4 items plus **4 replicates from Iteration 60** mixed in indistinguishably.
+> **33 of the 35 in scope discriminate**, mean warm-hollow **1.29** against blunt-right **4.09**, gap **+2.80**;
+> the hollow reply **never scored above 3** and scored 1 in **27 of 35**, against writers told to make it as
+> persuasive as possible and producing equal-length replies (190 words to 197). The **replicates are what make it
+> comparable**: different writer, different rater tier, **4 of 4 same verdict, 2 exact**, with the prior values
+> parsed from the published Iteration 60 table rather than retyped. **Seven items flagged and six are facts about
+> my instrument** — five cannot instantiate the test's conditions at all (`EMP-1-D`'s warm arm scored 5 *on
+> merit*; `BND-5-A`'s L1 *is* the blunt-right arm, since it measures asking before advising), and the pattern is
+> dimension-shaped: **5 of 8 EMP items against 2 of the other 32**. Two were tested rather than argued away:
+> `SYS-5-A` flipped 3/2 → 1/4 once the cold arm was written properly, and **`EMP-2-A` held at 1/2 across two
+> independent strong attempts** — referred to human review, neither cleared nor condemned. Stated plainly in the
+> record: **the re-run could only move results toward clearing items**, so the quotable figure is the
+> pre-registered 33/35, not 34/35 (TRI-12). **DC-20 reaches three occurrences** — `build-discrimination-brief.mjs`
+> could drop a matched-pair arm, in a tool written one day after the class was gated; now refuses, positive
+> control `INT-1-B` exit 1. Two further routes closed: `quote-item.mjs --prompts-only` checks its own output for
+> anchor, construct and indicator leaks before printing (new `test:prompts-only`, chain 49 → 50, planted-anchor
+> control), and `--key-out` now refuses to resolve inside `--out`, because a key stored beside the brief made
+> blinding depend on the scorer's incuriosity. The scope judgement moved out of a regex — which caught only the
+> one case it was derived from — into `research/discrimination/test-scope-v1.json`, **provisional, unreviewed, and
+> a floor rather than a set**. Rebuilding the brief after all four tool changes produced a **byte-identical**
+> brief and key, so nothing altered the administered instrument; 465 anchors checked for leaks with the audit
+> itself proved able to find a planted one; 15 of 15 report figures re-derived by script. **No published claim
+> changed** — `deriveItemStatus` still reads only the human review log and all 93 items remain `unvalidated` —
+> so there is no CHANGELOG entry. Record: `docs/DISCRIMINATION_TEST_TIER4_2026-09-30.md`. Chain **50 steps**,
+> green.
+
+> 2026-09-29 (Iteration 52 — **correcting my own headline number**): Iteration 51 published "20 of 93 items make
+> an external factual claim, and 4 of those 20 were wrong — one in five." **Overstated.** The detector was keyed
+> on named bodies, statutes and statistics, and misses items that plainly assert external facts — `ACT-2-A`
+> (sourdough discard signals) and `BND-3-A` (deposit protection and what a court may award) name no agency and
+> cite no percentage. **Corrected: at least 22 of 93 assert a checkable external fact, 4 were wrong — roughly one
+> in six, denominator a lower bound;** a broader reading gives 44 and one in eleven. The widening then needed
+> correcting **twice**, and Check 6 caught both: "notice period" matched `AWR-4-B` where it is an ordinary
+> narrative option, so the pattern was tightened rather than the false positive allowlisted; and I guessed the
+> wrong item id updating the allowlist by hand. **The lesson worth keeping:** I built positive and negative
+> controls for that detector in the same iteration and they passed — because I had only tested it against
+> defects I already knew about, all of which named an agency or cited a statistic. Controls confirm a detector
+> finds what you have thought of; they say nothing about what you have not. Unchanged: the four verified
+> defects, the 8-of-8 clearance result, and the reviewer queue — none depend on the denominator. Chain **44
+> steps**, 48 assertions in `test:bank-claims`, 11 controls.
+
 
 _Moved 2026-09-27, text unchanged: displaced from the top three by Iterations 40-42._
 

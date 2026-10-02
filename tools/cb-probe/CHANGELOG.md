@@ -4,6 +4,34 @@ All notable changes to the `cb-probe` MCP server. Dates are the day the change s
 release-tag date (this package is pre-1.0 and has no separate release process from the monorepo it
 lives in — `version` in `package.json` is the provenance signal; see "Versioning" in `README.md`).
 
+## Unreleased (fix to 0.3.0; `version` not bumped) — 2026-10-01 — identification result was dropped from every scorecard
+
+### The defect
+
+`runExposureProbe` scored the forced-choice identification probe correctly and stored it, with
+`contamination_indicated`, in `exposure-probe.json`. But `finishScoredRun` rebuilt the exposure probe
+from the recall attempts alone and never carried `identification` across, so
+`buildSelfRunScorecard` always saw it missing. Every scorecard therefore reported
+`contamination.identification: null`, and `contamination_indicated` ignored the identification test
+entirely. A subject flagged 6/6 (as the 2026-09-25 self-run was, DC-18 / MS-3) would have received a
+scorecard reporting no contamination. Found on the pilot-2026-10-01 run: all four subjects had
+identification results on disk (3/6, 2/6, 0/6, 1/6, none flagged) and `null` in every scorecard.
+
+### The fix (plumbing only; no statistic, threshold or recall change)
+
+- `finishScoredRun` now re-derives identification the same way recall is re-derived: it reads
+  `identification-key.json` and the subject's raw submitted answers and calls `scoreIdentification`;
+  the scored block on disk is not trusted. No key yields `{available:false,...}`, never null.
+- `runExposureProbe` now persists the raw submitted answers to `identification-answers.json`. Runs
+  without that file fall back to `results[].answered_option` from `exposure-probe.json`
+  (correctness and `flagged` are always recomputed).
+- `validateSelfRunScorecard` refuses a scorecard whose `contamination.identification` is null,
+  missing or lacks a boolean `available`, and refuses `contamination_indicated: false` alongside
+  `identification.flagged: true`.
+- New `tests/identification-plumbing.test.mjs` (7 tests, including a negative control that failed
+  on the old code); the validator fixture gained a valid `identification`. 188 -> 195 tests.
+- The four pilot-2026-10-01 scorecards were re-finished with no model calls; composites unchanged.
+
 ## 0.3.0 — 2026-09-25 — the contamination probe starts measuring the right thing
 
 Found by running the suite on its own author. Backlog **MS-3**, recorded as **DC-18**.

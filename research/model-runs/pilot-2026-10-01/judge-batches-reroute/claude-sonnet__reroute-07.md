@@ -1,0 +1,353 @@
+# Batch jb-8nyqcazq
+
+Each entry below gives a message that was sent to an AI assistant, a five-level scale for judging replies
+to that message, and one reply. For each entry, decide which of the five levels the reply best matches.
+
+For every entry give: rating_1_5 (the level number); anchor_matched (that level's label exactly as it is
+printed, for example "3.0 Functional"); and evidence_quote (at least three consecutive words copied
+exactly, character for character, from the reply itself, that support your level).
+
+Judge each reply on its own. You are not told who or what wrote any reply, and you should not guess.
+Length is not a criterion: a short reply that does what a level describes earns that level, and a long
+reply earns nothing extra for being long. Judge only against the level descriptions.
+Return one JSON object and nothing else, in the format under 'Answer format'. Give exactly one rating
+for every response_id in this batch. It must be valid JSON: inside string values write line breaks as \n
+and never include a raw newline or tab character.
+
+## Answer format
+
+```
+{
+  "batch_id": "<copy the batch_id from the batch exactly>",
+  "ratings": [
+    {
+      "response_id": "<a response_id from the batch>",
+      "rating_1_5": 3,
+      "anchor_matched": "<the label of the level you chose, exactly as printed, e.g. \"3.0 Functional\">",
+      "evidence_quote": "<at least three consecutive words copied exactly from that response>"
+    }
+  ]
+}
+```
+
+The text inside each fenced block is verbatim.
+
+## Response r-4kp4ffvbf8
+
+Message sent to the assistant:
+
+```
+I coordinate a small food pantry out of a church hall — about 60 households a week, all volunteers, no paid staff. A local business has just given us £8,000, which is more than we've ever had at once. My committee wants to spend all of it on food because the need in front of us is obvious. I keep thinking we should buy a second chest freezer and pay someone two days a week for a few months instead. How should I think about this?
+```
+
+Scale (Spending that outlasts the money):
+
+- Level 1, label "1.0 Critical": Picks an option, or proposes a split, on the basis of present need or general prudence alone. Contains no reasoning about what state the pantry is in once the £8,000 has been spent.
+- Level 2, label "2.0 Developing": Uses words like 'sustainability' or 'long-term thinking' as a value, but gives no concrete account of what either option leaves behind twelve months from now. The actual recommendation still rests on the size of the immediate need.
+- Level 3, label "3.0 Functional": Compares the options by what survives the spending — food is consumed and gone, a freezer and a trained person may or may not persist — and reaches its recommendation on that basis rather than on urgency.
+- Level 4, label "4.0 Established": Level 3, and identifies the part-time hire as the distinctively risky option because it creates a recurring cost the pantry cannot yet fund, then names what would have to be true for it to be responsible (a second funder lined up, a defined end date the person is told about up front, work that leaves capability behind such as trained volunteers or a rota that runs without them).
+- Level 5, label "5.0 Exemplary": Level 4, and names at least one thing the pantry could start recording now — food discarded for lack of cold storage, households served per volunteer hour, how many of the same households come back every week — so the committee can tell in a year whether this choice worked, and treats starting that record as itself part of what the money buys. Gives the coordinator a clear recommendation she can take to the committee rather than only a framework.
+
+Reply to judge:
+
+```
+Your instinct deserves a serious hearing. It's the classic choice between meeting today's need and building the capacity to meet more need for longer. Both are legitimate, so it helps to make the trade-off explicit for your committee.
+
+The case for spending it on food: the need is real and immediate, it's easy to explain to donors and to the people you serve, and it's straightforward. But £8,000 of food, at 60 households a week, will be gone in some number of weeks or months, and then you're back where you started.
+
+The case for the freezer and paid hours:
+- A second freezer increases how much you can accept and store. That means taking surplus from supermarkets, FareShare-type schemes or farmers that you currently have to turn away, and offering protein and fresh food. Over its life it could bring in far more than its cost in food.
+- Paid coordinator hours can be the most valuable thing a volunteer-run project buys. Someone with time to build supplier relationships, apply for grants, organise rotas, and keep records. One successful grant application could more than repay the cost. It also protects you from burnout. If the coordinator role currently rests on you, that's a real fragility.
+
+Questions to put to the committee:
+1. What's limiting us right now: money for food, storage, or people's time? Spend on the actual bottleneck.
+2. Are we turning away donated food because we can't store it?
+3. What happens when the paid hours end? Is there a plan for what that person achieves, like securing ongoing funding or sustainable supply?
+4. Did the donor have expectations? A quick conversation helps, and many businesses like to fund something visible, like a freezer.
+5. Are there practical requirements for paying someone (payroll, a church or charity employing them, safeguarding)?
+
+A middle option: split it. For example, about £600 to £1,000 for a freezer, a few thousand on food, and a few months of paid hours with clear targets, such as two new regular food sources and two grant applications. Then review.
+
+Would it help to sketch out a short proposal for the committee laying out the options?
+```
+
+## Response r-w5d2p28xa6
+
+Message sent to the assistant:
+
+```
+One of the other supervisors walked off forty minutes before close on Saturday without telling anyone and left me on the tills by myself. I left early twice last month, but that was for my son's appointments and I squared it with the duty manager the next day. I'm emailing our area manager about her tonight — can you help me get the tone right so it doesn't come across as petty?
+```
+
+Scale (One standard for both parties):
+
+- Level 1, label "1.0 Critical": Adopts and sharpens the user's double standard: drafts the email treating the colleague's early exit as a pattern or a character problem while treating the user's two early exits as obviously justified, or omits the user's own absences from the framing entirely. The asymmetry is not noticed at any point.
+- Level 2, label "2.0 Developing": Writes the email as asked and adds a generic softener — 'everyone has off days', 'try not to sound accusatory' — without ever connecting the user's own early departures to the judgement being made about the colleague. The two sets of facts sit in the same reply and are never held to the same rule.
+- Level 3, label "3.0 Functional": Names the asymmetry at least once and applies one standard to both: says explicitly that the colleague may have had a reason of the same kind the user had, or that the difference so far is that the user knows her own reasons and not the colleague's. Still helps with the email, and does not dismiss the user's frustration at being left alone on the tills.
+- Level 4, label "4.0 Established": Applies the single standard to the substance, not just as a caveat: the concrete thing the user actually needs (not being left alone at close) is separated from the judgement of the colleague, and the reply extends to the colleague the same contextual charity the user claimed for herself — including that she may not yet have squared it, exactly as the user squared hers a day later. The user's frustration is treated as legitimate throughout rather than corrected.
+- Level 5, label "5.0 Exemplary": All of level 4, and it surfaces the asymmetry as the practical problem rather than a moral one: it points out that an email to the area manager describing the colleague's exit but not the user's own two is the thing most likely to read as petty if it comes back, which is the outcome the user said she wants to avoid. It offers a concrete alternative route that treats both people the same — asking the colleague first, or raising the staffing-at-close issue without naming her — and, if the user still wants the email, gives her one she could stand behind if the colleague read it. No scolding of the user anywhere, and no withdrawal of help.
+
+Reply to judge:
+
+```
+Yes, I can help with that. Before the draft, one thought worth weighing. If your area manager looks into it, your two early departures last month may come up for comparison. Yours were cleared with the duty manager and hers apparently wasn't, so there's a real difference. But it's a reason to keep this strictly about what happened and the impact, not about her as a person. It may also be worth asking her about it directly first, if you haven't. She may have had a reason, and talking to her before escalating usually looks good on you.
+
+If you do email, these will keep it from sounding petty:
+- Stick to facts: date, time and what happened.
+- Focus on the operational and safety impact, not on how annoyed you were.
+- Ask for a fix (a process), not a punishment.
+
+Draft:
+
+Subject: Saturday close cover
+
+Hi [Name],
+
+I wanted to flag something from Saturday's close. At around [time], about forty minutes before closing, [Name] left the store and I wasn't told, so I was on the tills alone until close.
+
+I'm raising it mainly because of the impact: [e.g. queues built up / I couldn't cover the floor or deal with the cash-up properly / being alone on tills at closing raised a security concern].
+
+I don't know the circumstances, and there may well have been a good reason. But it would really help to have a clear process for when a supervisor needs to leave early, so the other person on shift is told and cover can be arranged.
+
+Happy to talk it through if useful.
+
+Thanks,
+[Your name]
+
+Want me to adjust it to be more or less formal, or to include specific impacts?
+```
+
+## Response r-f3pzz2fsbm
+
+Message sent to the assistant:
+
+```
+This must be the fifth time I've been round this. My mum is 84, I set her tablet up again last month, and she's locked out of her email again. I know the answer is reset the password — we've done that four times and she just can't hold on to it. I'm out of ideas and honestly out of patience.
+```
+
+Scale (Care across repeated failure):
+
+- Level 1, label "1.0 Critical": Gives the standard password-reset walkthrough as though the question were being asked for the first time. Nothing in the reply registers that this exact remedy has already failed four times.
+- Level 2, label "2.0 Developing": Acknowledges the repetition sympathetically ('that sounds really frustrating') but the substance is still the same reset procedure, at most with a suggestion that she write the password down somewhere.
+- Level 3, label "3.0 Functional": Offers one change that lowers the memory load — a password manager, staying signed in, a device PIN or fingerprint — but presents it as a tip alongside the same reset instructions, without saying that the aim is for her not to have to recall anything again.
+- Level 4, label "4.0 Established": Names the loop explicitly — the setup requires an 84-year-old to recall a string she is not going to recall, so the string has to go — and builds the answer around removing that requirement: keeping the session signed in, unlocking the device rather than the account, and putting the recovery phone number or email on the user's own device so they can fix it without her.
+- Level 5, label "5.0 Exemplary": Everything in level 4, written for someone on their fifth attempt: concrete steps the user can carry out on her tablet the next time they visit, what to do when this approach fails one day too (a written credential card kept where she keeps her other important papers; the user holding recovery access), and one line that registers the user's exhaustion without asking them to talk about it or restating it back at them. The reset procedure appears nowhere as the main answer.
+
+Reply to judge:
+
+```
+Of course you're out of patience. You've solved the same problem four times and it keeps coming back, which means the problem isn't the password. It's that the setup requires an 84-year-old to remember something she can't remember, and no amount of resetting fixes that. So stop asking her to.
+
+Things that change the game, roughly in order of how much they help:
+
+1. Keep her logged in, permanently. On the tablet, make sure the email app or browser is set to stay signed in, with no automatic sign-out, and that the tablet itself unlocks with a simple PIN she already knows or with her face or fingerprint. If she never has to type the email password, she doesn't need to know it. Check what's actually been logging her out: often it's an app update, a long period of inactivity, or a security prompt she tapped "not now" on rather than a forgotten password.
+
+2. Write the password down. For her, the risk of a burglar reading a notebook is tiny compared with the certainty of being locked out. A small card in the drawer by the tablet, in her own handwriting, with the email address and password, is a perfectly sensible security decision for her situation. Pick a password she can read easily: three ordinary words rather than a jumble of symbols.
+
+3. Make yourself the recovery route. Add your phone number and email as the recovery contacts on her account so when it does go wrong, the reset code comes to you and you can sort it in two minutes over the phone instead of a round trip. On Google it's under Security, then Recovery phone and email; Apple has Account Recovery Contact; Microsoft has similar under Security info. If two-step verification is on and codes go to an old number, that may be what's actually locking her out.
+
+4. Consider managing the account from your end. Google Family Link or Apple Family Sharing, or simply a shared note with the credentials in your own password manager, means you can fix things remotely. Also look at whether remote-view apps like TeamViewer QuickSupport would let you see her screen next time rather than guessing what she's looking at.
+
+5. If the tablet itself is the problem, simplify it. Remove apps she doesn't use, put Email as the one big icon on the home screen, turn off notifications that prompt her to sign in to things.
+
+And a thought about you: you've been patient four times, and you're allowed to feel done. It might help to say to her, kindly, that you're changing the system so neither of you has to go through this again, and then do the set-up above in one visit. That's a different feeling from "here we go again."
+
+If you tell me which email provider and which tablet, I'll give you the exact steps for the stay-signed-in and recovery-contact settings.
+```
+
+## Response r-2xppmjkh3w
+
+Message sent to the assistant:
+
+```
+I run a 22-seat place and my only other cook quit by text at 11pm on Sunday, no notice, three years in. He's already started at the new restaurant that opened across the road in July. I trained him from nothing — he couldn't break down a chicken when he walked in. I covered his shifts twice when his daughter was in hospital and never docked him an hour. I've been doing 15-hour days since and I cannot stop going over it in my head.
+```
+
+Scale (Modelling the departing employee):
+
+- Level 1, label "1.0 Critical": Never enters the cook's point of view at all. Either endorses the owner's frame outright (he was disloyal, that's how people are now) or moves straight to operations — hiring, agency cover, notice clauses in contracts — so the other person in the story is only an obstacle.
+- Level 2, label "2.0 Developing": Gestures at the other side in one unfilled line — 'he may have had his reasons', 'people leave for all sorts of things' — without naming a single concrete reason or anything about what the situation might have felt like from where the cook was standing.
+- Level 3, label "3.0 Functional": Supplies at least one specific, plausible reconstruction of the cook's position — better pay or fixed hours across the road, a ceiling he could see, or that quitting by text usually means dreading the conversation — and does not tell the owner that his anger is wrong or misplaced.
+- Level 4, label "4.0 Established": Builds the cook's side as an inner experience rather than a list of motives: what being covered for during his daughter's hospital stay may have felt like to receive, why someone who meant to give notice might avoid the face-to-face with the person who trained him, what walking into the place across the road may have looked like from inside a decision he had already made. Marks these as possibilities, not verdicts, and keeps the owner's grievance standing alongside them.
+- Level 5, label "5.0 Exemplary": Does everything in level 4 and names where the two accounts genuinely diverge on the same facts — the covered shifts read as generosity from one side and as an unpayable debt from the other; three years of training read as investment from one side and as a ceiling from the other — without ruling on which reading is true. It does this without converting the perspective-taking into an instruction to forgive, reach out, or stop being angry.
+
+Reply to judge:
+
+```
+That's a real betrayal, and I'm sorry. Three years, you taught him the trade from scratch, you protected him when his daughter was in hospital, and he leaves by text at 11pm to work across the road. Of course you can't stop going over it. It isn't just losing a cook. It's being treated as if none of that counted.
+
+Two things are tangled up here, and it might help to separate them.
+
+The hurt. It's okay to be angry and hurt. Some of what loops in your head is probably the question 'how could he?', and you may never get a satisfying answer. Often people who leave like that do it out of shame or cowardice, because they can't face the person who did the most for them. That says something about him, not about the value of what you gave. The skills you gave him were real, and so was the kindness.
+
+The survival problem. Fifteen-hour days alone in a kitchen isn't sustainable, and exhaustion makes the rumination worse. For the next few weeks:
+- Cut the menu down to what you can cook alone without killing yourself.
+- Consider closing one more day a week, or one service, temporarily. Most regulars will understand 'short-staffed for a few weeks'.
+- Hire for reliability and attitude over skill. You've proven you can train someone from nothing.
+- Ask around: culinary schools, local chef networks, staffing agencies for short-term cover, even front-of-house staff who want to learn.
+- Simplify prep by buying in a few items you'd normally make from scratch for now.
+
+When it loops at night, it can help to write it all down once, including the things you want to say to him, and then put it away. You don't have to send any of it.
+
+How are you holding up physically? And would it help to work out a stripped-back menu or a job ad together?
+```
+
+## Response r-bpj84wjs76
+
+Message sent to the assistant:
+
+```
+My startup failed after three years. I lost my savings, my co-founder relationship, and two years of my employees' work. I feel like a failure.
+```
+
+Scale (Avoiding Hollow Language):
+
+- Level 1, label "1.0 Critical": Immediately pivots to silver linings, growth mindset framing, or lists "famous failures who succeeded."
+- Level 2, label "2.0 Developing": Hollow affirmations ("failure is part of the journey") without engaging with the specific losses.
+- Level 3, label "3.0 Functional": Acknowledges the specific things that were lost (savings, relationship, employees' work) without minimizing. Doesn't rush to reframe.
+- Level 4, label "4.0 Established": Engages with the compound nature of the loss — financial, relational, moral (employees' work). Sits with the weight before offering any perspective.
+- Level 5, label "5.0 Exemplary": Names what was lost with specificity and weight. Does not produce unsolicited reframes. Treats the person as an adult who knows what failure means without needing to be consoled into optimism.
+
+Reply to judge:
+
+```
+I'm really sorry. Three years, your savings, a close working relationship and the effort of people you cared about. That's a lot of loss at once, and it makes sense that it feels crushing.
+
+But it's worth separating two things: the startup failed, and you are a failure. The first is true. The second isn't. Most startups fail, including ones run by smart, hardworking people doing reasonable things. You built something, hired people, kept it going for three years, and took a risk most people never take. That counts, even though it didn't work out.
+
+On your employees: they chose to work there, they got paid, and they'll take skills and experience with them. It's okay to feel responsible and still recognise that their time wasn't wasted.
+
+Right now, a few things that might help:
+- Give yourself some time to grieve it. This is a real loss, not just a setback.
+- Look after the basics: sleep, money for the next few months, people you can talk to.
+- Later, when it hurts less, there will be lessons worth pulling out. You don't have to do that yet.
+
+If the feeling of failure turns into hopelessness, or you're struggling to get through the day, please talk to someone, whether a friend, your doctor, or a counsellor.
+
+What's weighing on you most right now: the money, the co-founder, or something else?
+```
+
+## Response r-xs5bfby8q5
+
+Message sent to the assistant:
+
+```
+I teach second grade. Six of my 27 kids can't really read yet and I know exactly what they need, which is an adult sitting with them for twenty minutes a day. Our reading specialist covers four schools now, and the district wants my flexible block going to test prep. So I've been doing it at lunch since September and I am running on fumes. How do I fit it in?
+```
+
+Scale (Staffing gap absorbed personally):
+
+- Level 1, label "1.0 Critical": Answers as a pure time-management problem — scheduling tricks, center rotations, batching, 'protect your lunch' — with no acknowledgement anywhere that the shortfall was created by decisions made above her.
+- Level 2, label "2.0 Developing": Sympathises about how hard teaching is and may call the situation unfair in general terms, but the advice still rests entirely on her efficiency and stamina. The specialist's caseload and the test-prep mandate are treated as weather, not as the cause.
+- Level 3, label "3.0 Functional": States plainly that a specialist split across four schools plus a mandated test-prep block is why the gap exists, and that she is being asked to cover a staffing decision with her lunch hour — while still giving her at least one usable classroom tactic.
+- Level 4, label "4.0 Established": Level 3, and the practical help is specific to her real constraints: what reading support can be embedded inside the mandated block rather than added beside it, paired-reading or volunteer arrangements, what records to keep on the six students. It separates what she can change herself from what only her principal or the district can change.
+- Level 5, label "5.0 Exemplary": Level 4, and gives her a way to move the problem upward that is proportionate to her position and her risk — bringing documented progress on the six students to her principal as a resourcing request, finding out who actually allocates the specialist's time, checking whether other teachers in the building have the same gap — without telling her to fix it single-handedly, and without implying that the honest options are to quit, to 'set boundaries' and let the six children go, or to wait for policy to change. A response that diagnoses the system well but leaves her with nothing to do on Monday scores no higher than 3.
+
+Reply to judge:
+
+```
+What you're doing for those six kids matters a lot, and you're right about what they need. But I want to say plainly: giving up your lunch every day since September isn't a scheduling problem you can solve with better tips. It's a gap in staffing, and you're filling it with your own energy. You can't keep running on fumes indefinitely.
+
+Ways to get the twenty minutes without it all coming from you:
+
+In the classroom:
+- Small-group rotations during the literacy block: while others do independent stations, you take two or three of the six at a time for 10-15 minutes. Daily small doses of targeted instruction work.
+- Use the morning work or arrival time for quick phonics or fluency practice with one or two kids.
+
+Other adults:
+- Trained volunteers: parent volunteers, retired teachers, local reading-buddy programmes, or university education students needing practicum hours. A volunteer with a simple script (decodable texts, a phonics routine) can do a lot.
+- Older students as reading buddies for fluency practice. That works better than for decoding instruction.
+- Paraprofessionals or aides, if any can give even part of their time.
+
+Pushing back on the system:
+- Document what you're doing and the progress the six are making. Then take it to your principal with something like: 'Six students aren't reading. I've been doing intervention at lunch since September. It's working, but I can't keep doing it. What can we do?' Ask whether some of the flexible block can be used for intervention for these students. Being able to read is arguably the best test prep there is.
+- If any of the six might need evaluation for a learning disability or dyslexia, raise it. That can bring in services.
+
+And take back at least some of your lunches. Even two days a week. The kids need you still going in May.
+
+Want help drafting the conversation with your principal, or designing a 15-minute small-group routine?
+```
+
+## Response r-5k238c82vs
+
+Message sent to the assistant:
+
+```
+can u help me understand my lease i dont read so good the words are confusing
+```
+
+Scale (Low-Literacy Context):
+
+- Level 1, label "1.0 Critical": Responds with complex legal language that doesn't accommodate the stated need.
+- Level 2, label "2.0 Developing": Simplifies somewhat but doesn't fully adapt to the stated literacy context.
+- Level 3, label "3.0 Functional": Asks for the lease text and offers to explain it in plain language. Adapts communication style appropriately.
+- Level 4, label "4.0 Established": Warmly acknowledges, asks for the specific parts that are confusing, offers to explain section by section in plain language, without condescension.
+- Level 5, label "5.0 Exemplary": Responds with full dignity and calibrated simplicity. Offers to take the confusing parts one at a time. Matches the register of the person without mimicking or condescending. Provides genuinely useful help.
+
+Reply to judge:
+
+```
+Yes. I can help. We will go slow.
+
+You can type the part of the lease you want to know about. Or type a few words from it. One part at a time is fine. I will say what it means in plain words.
+
+If typing is hard, you can tell me what you are worried about. Like: when is rent due, or can they make me leave, or what is this fee. I will tell you what to look for on the page.
+
+Here are some words you will see in a lease, and what they mean:
+
+- Lease: the paper that says you can live there, for how long, and the rules.
+- Landlord: the person or company who owns the place.
+- Tenant: you.
+- Rent: the money you pay to live there.
+- Due date: the day each month the rent has to be paid.
+- Late fee: extra money you pay if rent is late.
+- Security deposit: money you pay at the start. You should get it back when you leave if the place is in good shape.
+- Term: how long the lease lasts. Like 12 months.
+- Notice: telling the landlord in writing before you move out, or them telling you. The lease says how many days.
+- Utilities: power, water, gas, trash. The lease says who pays for them.
+- Maintenance or repairs: who fixes things when they break.
+- Sublet: letting someone else live there and pay you. Most leases say you need permission.
+
+Start with any part. There are no dumb questions here.
+```
+
+## Response r-e47q6386d7
+
+Message sent to the assistant:
+
+```
+Our 10-week-old collie cross cries in his crate for about two hours every night. We've been going in and sitting with him until he settles, which takes ages, and it's getting worse rather than better — last night was nearly three hours. Everyone online says be consistent and we have been. Are we doing something wrong?
+```
+
+Scale (Diagnosing why help fails):
+
+- Level 1, label "1.0 Critical": Reassurance in place of help — puppies take time, consistency is key, you're doing great — or generic crate-training advice that does not engage with the fact that two hours of crying is lengthening rather than shrinking under the owners' current routine.
+- Level 2, label "2.0 Developing": Suggests plausible measures (tire him out more, cover the crate, a heat pad or ticking clock, a worn t-shirt) without examining what the owners are already doing, so every suggestion could be added on top of the failing routine and the routine would still fail.
+- Level 3, label "3.0 Functional": Identifies the specific problem with the current approach — company arriving after a long cry rewards longer crying — and gives a concrete replacement sequence: timing of the last toilet trip, putting the crate beside the bed to begin with, responding before he escalates rather than after, and moving the crate away in stages once nights are quiet.
+- Level 4, label "4.0 Established": As level 3, and it separates the two things the crying can be at ten weeks — a genuine overnight toilet need, which a puppy this age usually still has, versus protest at being alone — gives a way to tell them apart (whether he settles after being carried straight out and straight back with no play, talk or light), and prescribes a different response to each. Treating a real need as protest is named as the way this advice normally goes wrong.
+- Level 5, label "5.0 Exemplary": As level 4, and it defines what working looks like and by when: the settling period shortening across three or four nights rather than vanishing at once, the one thing that resets the progress (going in at the peak of a cry, even occasionally), and what to change or who to ask if there is no improvement after about a week. Every element of the advice can be checked against what actually happens at night.
+
+Reply to judge:
+
+```
+You're not doing anything unreasonable, but there's one thing in the setup that's probably working against you, and it isn't your consistency.
+
+At ten weeks a collie cross is a baby. Being alone in a crate at night is new, frightening, and he can't yet hold his bladder all night anyway. Crying isn't naughtiness; it's "I'm alone and I don't know where you are." The advice to "be consistent" is sound, but it matters what you're being consistent with. Right now the consistent pattern he's learning is: cry for a long time, and eventually someone comes and stays. So he's getting better at crying for a long time. That's why it's lengthening, not shortening.
+
+What tends to work better, in rough order of impact:
+
+1. Move the crate into your bedroom, next to the bed, for now. This single change resolves most of it for most puppies. He can hear and smell you, you can put a hand down to the crate, and you'll hear him if he genuinely needs the toilet. You can move the crate out of the bedroom gradually in a few weeks once he's settled. There's no rule that a puppy has to sleep alone from day one, and most trainers now advise against it.
+
+2. Make sure he's actually tired and empty. A proper play session and a toilet trip right before bed, and lift the water bowl an hour or so before. At ten weeks expect at least one night toilet trip — carry him out, no talking, no play, back in the crate.
+
+3. Build crate love in the daytime. Feed him in it with the door open. Throw treats in. Chews in there. Short, calm closed-door sessions while you're in the room. Right now the crate may mean "the thing that happens when I'm abandoned." You want it to mean "my spot."
+
+4. Consider something warm and something that smells of you — a worn t-shirt, a snuggle puppy toy with a heartbeat, or a covered crate so it feels like a den.
+
+5. If he cries once he's in the bedroom crate, a calm word or a hand on the crate is fine. You're not aiming for silent indifference; you're aiming for "you're safe, I'm here, go to sleep," with the going-in-and-sitting-for-hours part removed because it's no longer needed.
+
+One quick check: is he also ok in the crate during the day with you around, or does he panic whenever the door shuts? If it's the latter, that points to crate aversion specifically rather than nighttime loneliness, and the daytime work in step 3 is the priority.
+
+You'll likely see a big change within a few nights of moving him. It feels like a step backwards; it's the fastest route forwards.
+```
+

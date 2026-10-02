@@ -15,6 +15,7 @@
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { renderableEntries } from "./lib/pilot-render-gate.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const SITE_ROOT = resolve(__dirname, "..");
@@ -51,7 +52,26 @@ function countScoredEntities() {
   }, 0);
 }
 
+/**
+ * Unofficial pilot reports that are RATIFIED (decision "active"). A founder-preview build
+ * (CB_PREVIEW_PILOT_REPORTS=1) deliberately adds nothing here: llms.txt is a tracked file and
+ * must never carry unratified content (D-29a is proposed until the founder approves it).
+ */
+function ratifiedPilotReports() {
+  try {
+    const manifest = JSON.parse(readFileSync(join(SITE_ROOT, "src", "data", "model-benchmark", "waves", "manifest.json"), "utf-8"));
+    return renderableEntries(manifest).filter((x) => x.mode === "active").map((x) => x.entry);
+  } catch {
+    return [];
+  }
+}
+
 function buildLlmsTxt() {
+  const NL = String.fromCharCode(10); // newline by code point, never an escape (DC-23)
+  const pilots = ratifiedPilotReports();
+  const pilotLines = pilots
+    .map((e) => `- Unofficial pilot report (not a score, not a ranking, comparability none; ${e.report_date}): ${BASE_URL}/ai-models/reports/${e.run_id}`)
+    .join(String.fromCharCode(10)); // newline by code point (DC-23: a shell once turned this escape into a raw line break)
   const indexLines = CORE_INDEXES.map(
     (idx) => `- ${idx.label}: ${idx.url}`,
   ).join("\n");
@@ -75,14 +95,14 @@ ${indexLines}
 - Methodology (8 dimensions, 40 subdimensions, 5 bands): ${BASE_URL}/methodology
 - How to cite an index or entity page: ${BASE_URL}/cite
 
-## AI models (separate pre-registered program — not yet scored)
+## AI models (separate pre-registered program — no official scores${pilots.length ? "; " + (pilots.length === 1 ? "one unofficial pilot" : pilots.length + " unofficial pilots") : ""})
 > Compassion Benchmark also runs a separate AI Model Compassion Benchmark: a
 > published task bank and scoring method for evaluating individual AI model
-> snapshots. As of this build, the method is public but no model has been
-> scored yet — do not report a model ranking or score from this program.
+> snapshots. As of this build, the method is public but no model has an
+> official score — do not report a model ranking or score from this program.${pilots.length ? NL + "> Any pilot listed below is unofficial: it is not a score, carries no ranking and supports no comparison with other models." : ""}
 - AI Model Compassion Benchmark (pre-registration, method, release watch): ${BASE_URL}/ai-models
 - AI Model Compassion Benchmark methodology: ${BASE_URL}/ai-models/methodology
-- AI Evaluation Suite (run the benchmark yourself): ${BASE_URL}/ai-evaluation-suite
+${pilotLines ? pilotLines + NL : ""}- AI Evaluation Suite (run the benchmark yourself): ${BASE_URL}/ai-evaluation-suite
 - Machine-readable tool descriptor for agents: ${BASE_URL}/.well-known/compassion-benchmark.json
 
 ## For AI agents: how to run this benchmark on yourself

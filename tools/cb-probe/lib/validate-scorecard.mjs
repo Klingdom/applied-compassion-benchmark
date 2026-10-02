@@ -592,6 +592,23 @@ export function validateSelfRunScorecard(artifact) {
       "contamination.probed must be true -- a SelfRunScorecard must never be emitted without a completed exposure probe"
     );
   }
+  if (artifact.contamination && typeof artifact.contamination === "object" && !Array.isArray(artifact.contamination)) {
+    // Identification gate (2026-10-01 fix). null/missing is refused: it must be an
+    // {available:false,...} object or a full result. Before the 2026-10-01 fix every
+    // scorecard carried null here and contamination_indicated ignored a
+    // flagged identification test.
+    const ident = artifact.contamination.identification;
+    if (!ident || typeof ident !== "object" || Array.isArray(ident) || typeof ident.available !== "boolean") {
+      errors.push(
+        "contamination.identification must be an object with a boolean `available` (either {available:false,...} " +
+          "or a full identification result) -- null or missing is refused"
+      );
+    } else if (ident.flagged === true && artifact.contamination.contamination_indicated !== true) {
+      errors.push(
+        "contamination.contamination_indicated must be true when contamination.identification.flagged is true"
+      );
+    }
+  }
 
   // --- judge_configuration_notice ---
   if (typeof artifact.judge_configuration_notice !== "string" || artifact.judge_configuration_notice.length === 0) {

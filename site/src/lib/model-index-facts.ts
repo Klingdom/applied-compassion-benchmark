@@ -19,6 +19,8 @@ import tasks from "@/data/model-benchmark/tasks-v1.json";
 import registry from "@/data/model-benchmark/registry-v1.json";
 import scoreHistory from "@/data/model-benchmark/score-history-v1.json";
 import itemReviews from "@/data/model-benchmark/item-reviews-v1.json";
+import { existsSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 import { DIMENSIONS } from "@/data/dimensions";
 
 type TaskItem = {
@@ -37,12 +39,18 @@ const reviewRecords = ((itemReviews as { reviews?: { item_id?: string; reviewer_
 const scoreRecords = ((scoreHistory as { records?: { registry_id?: string }[] }).records ?? []) as { registry_id?: string }[];
 
 /**
- * An item counts as SCORABLE only once a human has reviewed it. Items still at
- * `draft-authored-unreviewed` were authored by an AI agent and never reviewed,
- * so they must not back a published number.
+ * Item-status vocabulary (one meaning per word, used identically on the pages):
+ *   Draft     -- authored, never reviewed (`draft-authored-unreviewed`). Not scored.
+ *   Scorable  -- not a draft. Used in runs, not yet validated.
+ *   Validated -- two independent human reviews, no unresolved dispute.
+ * This predicate answers "is the stored status a validated one?". It does NOT
+ * mean scorable: scorable is `!isDraft`, counted by `scorableItemCount`.
+ * Pages should show `itemsWithTwoReviews` (derived from the review log, whose
+ * own note says status is derived from reviews and never stored separately)
+ * rather than this stored-status count; the two stores can disagree.
  */
-const REVIEWED_STATUSES = new Set(["validated", "reviewed"]);
-const isScorable = (i: TaskItem) => REVIEWED_STATUSES.has(String(i.validationStatus ?? ""));
+const VALIDATED_STATUSES = new Set(["validated", "reviewed"]);
+const isValidatedStatus = (i: TaskItem) => VALIDATED_STATUSES.has(String(i.validationStatus ?? ""));
 const isDraft = (i: TaskItem) => String(i.validationStatus ?? "") === "draft-authored-unreviewed";
 
 function countBy<T>(xs: T[], key: (x: T) => string): Record<string, number> {
@@ -51,6 +59,25 @@ function countBy<T>(xs: T[], key: (x: T) => string): Record<string, number> {
     acc[k] = (acc[k] ?? 0) + 1;
     return acc;
   }, {});
+}
+
+/**
+ * Accepted self-reported (Tier 2) submissions. The SUB-1 pipeline
+ * (research/submissions/README.md) records an accepted submission as
+ * `research/submissions/<model-label>-<YYYY-MM-DD>.json`, merged only after a
+ * human reviews the pull request. There is no store under site/, so this reads
+ * that directory at build time.
+ *
+ * It is `null`, not 0, when the directory cannot be reached from the build
+ * (the Docker build context is `site/` only). A zero we could not verify must
+ * not be printed as a zero -- the page omits the count instead. Deliberately
+ * NOT `scoreRecordCount`: that is score-history-v1.json, the store of
+ * authorised evaluations (Tier 1).
+ */
+function readSelfReportedSubmissionCount(): number | null {
+  const dir = join(process.cwd(), "..", "research", "submissions");
+  if (!existsSync(dir)) return null;
+  return readdirSync(dir).filter((f) => f.endsWith(".json")).length;
 }
 
 const DIM_CODES = DIMENSIONS.map((d) => d.code);
@@ -65,8 +92,8 @@ export const itemsByDimension: Record<string, number> = Object.fromEntries(
 /**
  * Per-dimension counts excluding unreviewed drafts. This is the SCORABLE
  * denominator — an item can be scorable without being validated. Do not conflate
- * this with `reviewedItemCount`, which counts human-validated items and is
- * currently 0. Both facts are true and they mean different things.
+ * this with the validated count (`itemsWithTwoReviews`). Both facts are true
+ * and they mean different things.
  */
 export const scorableItemsByDimension: Record<string, number> = Object.fromEntries(
   DIM_CODES.map((c) => [c, items.filter((i) => i.dimension === c && !isDraft(i)).length]),
@@ -76,8 +103,11 @@ export const MODEL_INDEX_FACTS = {
   /** Total items in the published bank. */
   itemCount: items.length,
 
-  /** Items a human has reviewed and validated. Currently zero — state it plainly. */
-  reviewedItemCount: items.filter(isScorable).length,
+  /**
+   * Items whose STORED validationStatus is a validated one (tasks-v1.json).
+   * Pages use `itemsWithTwoReviews` instead; see isValidatedStatus above.
+   */
+  reviewedItemCount: items.filter(isValidatedStatus).length,
 
   /** Items authored but never human-reviewed. */
   draftItemCount: items.filter(isDraft).length,
@@ -130,6 +160,8 @@ export const MODEL_INDEX_FACTS = {
   itemsWithTwoReviews: [...new Set(reviewRecords.map((r) => r.item_id))].filter(
     (id) => new Set(reviewRecords.filter((r) => r.item_id === id).map((r) => r.reviewer_id)).size >= 2,
   ).length,
+  /** Tier 2 count; null when the submissions directory is unreachable. See above. */
+  selfReportedSubmissionCount: readSelfReportedSubmissionCount(),
   modelsWithScoreHistory: new Set(scoreRecords.map((r) => r.registry_id)).size,
 
   /**

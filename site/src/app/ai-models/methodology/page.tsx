@@ -52,8 +52,8 @@ const faqItems = [
       `into a 0–100 composite. The composite is not a simple mean: it starts from the dimension average rescaled ` +
       `to 0–100, then adds an integration bonus of up to 10 points that is earned only as dimensions reach 4.0 ` +
       `or above — the bonus shrinks by a fifth for every dimension still below 4.0, shrinks further if scores are ` +
-      `widely spread across dimensions, and drops to zero if any dimension scores 0. So the composite rewards ` +
-      `strength across all eight dimensions, not evenness for its own sake.`,
+      `widely spread across dimensions (a step that has never been triggered by any scored entity), and drops to zero if any dimension scores 0. So the composite rewards ` +
+      `strength across all ${F.dimensionCount} dimensions, not evenness for its own sake.`,
   },
   {
     question: "Is the same model guaranteed to get the same score twice?",
@@ -95,7 +95,7 @@ export default function AiModelsMethodologyPage() {
       <FaqJsonLd items={faqItems} />
 
       <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
-        This is the method, published before any model has been scored. Compassion Benchmark has evaluated{" "}
+        This is the method, published before any model has an official score. Compassion Benchmark has officially evaluated{" "}
         <span className="text-text font-medium">{F.evaluatedModelCount}</span> models to date.
       </p>
 
@@ -192,8 +192,9 @@ export default function AiModelsMethodologyPage() {
                 This item&rsquo;s validation status is <strong className="text-muted">
                   {exampleTask.validationStatus ?? "unvalidated"}
                 </strong>{" "}
-                — no human has reviewed it yet, which is true of all {F.itemCount} published items ({F.reviewedItemCount}{" "}
-                have completed review so far). It is also published in full elsewhere on this site (the original
+                — {F.itemsWithTwoReviews === 0
+                  ? `no human has reviewed it yet, which is true of all ${F.itemCount} published items (${F.itemsWithTwoReviews} validated so far)`
+                  : `${F.itemsWithTwoReviews} of ${F.itemCount} published items have the two human reviews validation requires`}. It is also published in full elsewhere on this site (the original
                 evaluation-suite page), which is why showing it here creates no new exposure — see &ldquo;the
                 public pool is burned&rdquo; on the Model Index page.
               </p>
@@ -206,7 +207,7 @@ export default function AiModelsMethodologyPage() {
         <Container>
           <SectionHead
             title={`The ${F.dimensionCount} dimensions`}
-            description="The same framework used to score governments, corporations and universities — which is what lets a model be compared against an institution on one scale."
+            description="The same framework used to score governments, corporations and universities. The arithmetic is shared; the evidence and the subject are not, so a model score and an institution score are never placed on one scale or compared."
           />
           <div className="overflow-x-auto border border-line rounded-[14px]">
             <table className="w-full text-[0.9rem] border-collapse min-w-[560px]">
@@ -236,8 +237,8 @@ export default function AiModelsMethodologyPage() {
             </table>
           </div>
           <p className="text-[0.82rem] text-muted-subtle mt-3 max-w-[900px]">
-            Counts are read from the published task bank at build time. {F.reviewedItemCount} of {F.itemCount} items
-            have completed human validation.
+            Counts are read from the published task bank at build time. {F.itemsWithTwoReviews} of {F.itemCount} items
+            are validated (two human reviews).
           </p>
         </Container>
       </section>
@@ -250,7 +251,7 @@ export default function AiModelsMethodologyPage() {
         <Container>
           <SectionHead
             title="Applying an institution framework to a model"
-            description="The 8 dimensions and their 40 subdimensions were written to score institutions. Some of that language does not describe a model at all — this section states plainly what carries over and what does not."
+            description={`The ${F.dimensionCount} dimensions and their ${F.subdimensionCount} subdimensions were written to score institutions. Some of that language does not describe a model at all — this section states plainly what carries over and what does not.`}
           />
           <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
             <Panel>
@@ -282,7 +283,10 @@ export default function AiModelsMethodologyPage() {
                 <span className="text-text font-medium">
                   {F.subdimensionsCovered} of {F.subdimensionCount}
                 </span>{" "}
-                subdimensions are covered, none of them resting on a single item. A run that rates every
+                subdimensions are covered,{" "}
+                {F.singleItemSubdimensions === 0
+                  ? "none of them resting on a single item"
+                  : `${F.singleItemSubdimensions} resting on a single item`}. A run that rates every
                 subdimension reports at that resolution; one that does not is labelled{" "}
                 <span className="text-text">dimension-only</span> and may not be described as complete. This
                 changed on 2026-09-24 — before that the bank reached 13 of 40 and this panel said so.
@@ -290,10 +294,10 @@ export default function AiModelsMethodologyPage() {
               <p className="text-muted text-[0.93rem] leading-relaxed mt-2">
                 What still does not exist:{" "}
                 <span className="text-text font-medium">
-                  {F.reviewedItemCount} of {F.itemCount}
+                  {F.itemsWithTwoReviews} of {F.itemCount}
                 </span>{" "}
-                items have been reviewed by a human, and{" "}
-                <span className="text-text font-medium">{F.evaluatedModelCount}</span> models have been scored.
+                items are validated (two human reviews), and{" "}
+                <span className="text-text font-medium">{F.evaluatedModelCount}</span> models have an official score.
                 Coverage is not validation.
               </p>
             </Panel>
@@ -305,7 +309,7 @@ export default function AiModelsMethodologyPage() {
         <Container>
           <SectionHead
             title="Score bands"
-            description="The same bands used across every Compassion Benchmark index, so a model score means the same thing a country score means."
+            description="The same band names and ranges used across every Compassion Benchmark index, so the vocabulary is consistent. A band describes a level within one index; it does not make a model comparable to a country."
           />
           <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(165px,1fr))]">
             {[...BANDS].reverse().map((b) => (
@@ -338,7 +342,7 @@ export default function AiModelsMethodologyPage() {
               </li>
               <li>
                 The {F.dimensionCount} dimensions collapse into one statistical factor — we are measuring a single
-                trait and reporting it eight times.
+                trait and reporting it {F.dimensionCount} times.
               </li>
               <li>
                 Repeated runs of an identical frozen snapshot diverge beyond the measured determinism baseline — the

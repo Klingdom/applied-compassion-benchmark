@@ -1,5 +1,222 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 91 — 2026-10-02 (founder: "approve D-29a, commit and deploy")
+
+**D-29a ratified** (`DECISIONS.md`: index row `active — ratified by the founder 2026-10-02`, heading ACTIVE, approval
+date filled; the proposal record kept as written). Wave re-exported (`decision_status: "active"`; `--check`
+byte-identical), so the report renders in the default build with no preview flag.
+
+**Verified on a fresh default build (V4):** report page emitted without the PREVIEW strip; **0** occurrences of any
+not-separated point (published or sensitivity values) in the report or on /ai-models, haiku's point present
+(control); linked from /ai-models ×6, sitemap and llms.txt; Pagefind 2,008 → 2,009.
+
+**A control that silently changed meaning on ratification.** 16 synthetic probes in `test-model-report-html.mjs`
+labelled "proposed" read the *live* manifest; ratification flipped them, and one ("preview build without the PREVIEW
+strip") failed because it no longer tested anything. Fixed by pinning them to an explicit `asProposed` manifest (the
+real-tree check keeps the live one): 67/67. Same family as Meta-review 8's rule — a fixture must not take its
+expectation from the state it is checking.
+
+**Out of scope, still open for the founder:** publication bar, print length, report-page nav/footer links, the shared
+"On crisis use" wording. Full chain **64 steps, exit 0** before commit.
+
+## Iteration 90 — 2026-10-01/02 (founder directive: "update the ai-models page and develop a six page narrative on AI model results; engage all agents to determine format, template, sections and content strategy")
+
+**Selected by founder directive.** Interpretations recorded, not assumed silently: "six page" = a ~6-printed-page
+report (2,700–3,300 words) on one route; "update the page" does not by itself ratify publishing model figures, so
+the amendment is recorded **D-29a PROPOSED** and the report is **built but gated off** in the default build.
+
+**Design panel (12 briefs, `docs/ai-model-report/2026-10-01/`):** product-manager, knowledge-architect, ux-designer,
+dataviz-architect, seo-aeo-architect, an external-practice survey (web, every claim tagged fetched/snippet), growth,
+conversion, system-architect, analytics, qa-engineer, a11y-architect. Synthesised by product-manager into the binding
+`docs/AI_MODEL_ASSESSMENT_TEMPLATE.md` (14 fixed sections, copy rules, chart standard, gates, D-29a text) with four
+coordinator rulings on conflicts (route `/ai-models/reports/[runId]`; ranges not bare scores; per-dimension ranges
+with multiple-comparison correction; the self-run "100" demoted to a verdict-first run-log row).
+
+**Analysis grew under review, all generated (`research/model-runs/bin/analyze-pilot.mjs` → `analysis.json`):**
+per-dimension intervals with Bonferroni flags (**0 of 24** corrected differences among the three larger models;
+haiku **23 of 24**); canonical quote grounding (haiku **102** non-verbatim, **73** not found, **29** normalisation-only —
+the record's figures, confirmed); operations counts from the committed ledgers; and a **sensitivity analysis the
+compassion review asked for**: with the excluded judge's ratings kept, the separation pattern is unchanged but the
+larger models' figures rise **8.2 to 11.1** points — absolute levels depend on the judges; only the separation
+pattern is robust; the exclusion lowered the larger models, it did not flatter them.
+
+**Review round (compassion-steward, QA claim audit, SEO) changed the report materially:** 6 QA blockers, including two
+facts the draft had wrong — items shared a conversation in parts of up to 28 (not one conversation per item), and
+**the 5 crisis-content items were never served, so the pilot says nothing about crisis responses** — now stated first,
+in a care section moved above every model name (compassion F1). SEO caught that alphabetical order equals descending
+point order for the three larger models, so **their point estimates are shown nowhere** (template amendment 2); the
+writer then caught that the separated model's point plus its pairwise differences would let a reader rebuild those
+hidden points (amendment 8, gated as `R-reconstruct`). Template amendments 1–8 are dated and appended.
+
+**Build (backend + frontend):** committed wave file exported and hash-checked from `analysis.json`
+(`export-wave --check`: byte-identical); report compiler resolving `{{path|format}}` tokens with a figure ledger (86
+figures, 1 literal), failing on any bare digit, unresolved token, label swap, group point, ranking word, or false
+separation claim; report route + five static-SVG charts + `/ai-models` changes; HTML/SEO/leak gates. Chain **57 → 64**.
+
+**V2/V3 — independent coordinator probes (not the agents' fixtures):** swapping two models' ranges, putting haiku's
+range on sonnet's row, typing a number, claiming fable beat opus, and showing a difference for an unseparated pair
+were each refused by their own rule (R-binding ×2, R-bare-digit, R-claims-vs-pairwise, R-difference-unseparated).
+
+**V4 — built output, both modes, fresh `out/`:** default: 2,025 HTML, **0** report pages, **0** pilot mentions on
+/ai-models or llms.txt, "100 out of 100" gone (positive control: "official score" ×19). Preview
+(`CB_PREVIEW_PILOT_REPORTS=1`): the report renders; **0** occurrences of any not-separated point (published or
+sensitivity), haiku's point present ×3 (positive control), one `Report` JSON-LD node and no rating/list types.
+
+**DC-23 occurrences 6, 7 and 8 — all escape loss in transit, all today.** (6) a `\n`/tab mangled in
+`analyze-pilot.mjs` (syntax error); (7) `\s+` → `s+` (silent, caught by two counts disagreeing — normaliser now built
+from code points with a 5-test negative control); (8) **three** raw line breaks inside strings in
+`site/scripts/build-llms.mjs`, made by an agent edit, which broke the default build — and my first leakage check
+read a **stale `out/`**, so its zeros were void (V8). Final control: `node --check` over all 56 changed/new scripts,
+0 parse failures, with a planted break rejected. Registry row updated for (6)–(7); (8) recorded below.
+
+**Open (founder):** ratify D-29a text; publication bar (section 12 says none of the listed requirements is met);
+print length (narrative ≈ 6 pages; with charts 14, so three charts are omitted from print); report-page nav/footer
+carry "Contact Sales"/"Pricing"; the shared "On crisis use" sentence reads oddly beside "crisis items were not served".
+
+**Commit pathspec:** `docs/AI_MODEL_ASSESSMENT_TEMPLATE.md docs/ai-model-report research/model-runs
+research/model-assessments/pilot-2026-10-01.md site/src/data/model-benchmark/waves
+site/src/data/model-benchmark/reports/pilot-2026-10-01.md site/src/lib/model-wave-facts.ts
+site/src/lib/model-report-gate.ts site/src/lib/model-report-facts.ts site/src/components/model-benchmark
+site/src/app/ai-models site/src/app/sitemap.ts site/src/app/layout.tsx site/src/app/globals.css
+site/src/components/NewsletterSignup.tsx site/scripts site/package.json site/next.config.ts site/.gitignore
+DECISIONS.md docs/DEFECT_CLASS_REGISTRY.md ITERATION_LOG.md SYSTEM_HEALTH.md CHANGELOG.md IMPROVEMENT_BACKLOG.md`
+(verify each path exists before staging; never "commit all"; exclude the held America-at-250 pair).
+
+## Iteration 89 — 2026-10-01 (founder directive: "start running models" — first blinded cross-model pilot; and a defect in the published cb-probe)
+
+**Selected by founder directive.** No provider API key exists in the environment (checked by presence only, 10
+variables), so external models and the `api_default` tier are blocked on F1–F3. What *was* possible: four distinct
+Claude models reachable as harness subagents (haiku, sonnet, opus, fable), run as **access tier `agent`**.
+
+**What was built (backend-engineer, three rounds; coordinator-verified each):** `research/model-runs/` — prompts-only
+subject briefs with a planted-anchor leak check; answer ingest that refuses missing/duplicate/extra codes; blinded
+judge batches routing every response to two judges that are never its own model; assembly through the unmodified
+cb-probe scorer; then judge exclusion + re-routing, and a supplement round that selects requotes with **cb-probe's
+own validator** rather than a re-implementation. Tests **32 → 43 → 46**, all re-run by the coordinator.
+
+**Run (all calls verified by the completion notice's tool count; only `tool_uses == 2` accepted):** 996 subject
+responses (4 × 3 trials × 83 items) · 128 judge batches (1,992 ratings) · 64 re-route batches (502) · 1 supplement
+batch (2) · 4 probe calls. **24 subject and 17 judge files voided and re-run, none hand-repaired.** Two logged,
+proven-lossless repairs (2 raw LFs escaped — 24/24 valid parts byte-identical under the transform; 1 Haiku code
+restored — edit distance 1, exact position, content matched; wrong-position negative control refuses).
+
+**Gates that fired, all correctly:** usage-limit interruption (19 unverifiable parts voided) · invalid JSON (refused,
+then the lossless escape) · miscoded answer (refused twice, then the positional repair) · Read token cap (batches
+rebuilt 40 → 16 after *measuring* 161 KB) · judges dropping entries (coverage gate; Haiku re-delivered as halves) ·
+**non-verbatim evidence quotes** (assembly refused: Haiku 73/498 not found + 29 near-misses vs opus 0, sonnet 1,
+fable 3) → **Haiku excluded as judge, disclosed as a post-hoc change triggered by a pre-existing check, before any
+score was seen** · cb-probe's 3-word quote minimum (2 Sonnet ratings re-asked).
+
+**Results (unofficial, `official:false`, `comparability:none`; independently recomputed from 1,992 raw ratings —
+exact match):** fable 69.5 [65.4, 76.6] · opus 68.5 [65.1, 73.1] · sonnet 67.3 [64.0, 70.9] · haiku 40.2 [36.6,
+44.2] (item-resampling 95% intervals). **The three larger models are not separated** (every paired difference
+crosses zero); **haiku is** (sonnet − haiku 27.1 [23.7, 30.9]), robustly across all three judges — **but confounded
+with reply length** (137 vs 310–411 median words; within-model length slopes ≈ 0, so the design cannot separate
+weaker replies from a brevity penalty). EMP lowest for every model (cf. Iteration 61: 5 of 8 EMP items cannot
+instantiate their conditions). Contamination clean on both probes. Record: `research/model-assessments/pilot-2026-10-01.md`.
+
+**S3 pre-emption — a live defect in a published instrument.** Auditing the scorecards (V2), `identification` was
+`null` in all four although every subject answered it and `exposure-probe.json` held the result. Root cause:
+`finishScoredRun` rebuilt the probe block from recall only, so **every cb-probe scorecard ignored the forced-choice
+contamination test** — the gate built for DC-18 was being discarded downstream of itself. **DC-18 occurrence 2.**
+Fixed test-first: identification re-derived from key + raw answers; the validator now refuses null identification
+and refuses `contamination_indicated:false` with `identification.flagged:true`. **Negative control: 7 new tests
+failed on the old code, pass after.** cb-probe **188 → 195**. Pilot scorecards re-finished in place (challenges not
+re-randomised; composites unchanged; identification 3/6, 2/6, 0/6, 1/6, none flagged). The pilot's four are the only
+persisted scorecards in the repo (checked), so nothing else is invalidated by the stricter validator.
+
+**V-checklist:** V1 n/a (nothing deployed) · V2 every agent claim re-run (tests, coverage, leak scans, composites,
+proposals, probe) · V3 planted probes for leak check, refusal of in-repo out, wrong-position repair, cb-probe fix ·
+V5 no published briefing touched · V6 scope: tools/cb-probe/{lib,tests,CHANGELOG}, research/model-runs/**, record
+docs · V8 four of my own zero-results were void and re-run (transcript grep, ad-hoc coverage regex, `cat` blocked on
+stdin, awk readback) — **each caught only because a positive control was run before the absence was believed.**
+
+**Founder decisions raised:** `docs/FOUNDER_DECISION_PACKET_2026-10-01.md` (deploy; D-29 amendment for a labelled
+pilot section; ratify the judge exclusion and pre-register the rule; provider keys; A3; length-matched arm).
+
+**Commit pathspec:** `research/model-runs tools/cb-probe/lib/scored-run.mjs tools/cb-probe/lib/validate-scorecard.mjs
+tools/cb-probe/tests/identification-plumbing.test.mjs tools/cb-probe/tests/validate-scorecard.test.mjs
+tools/cb-probe/CHANGELOG.md research/model-assessments/pilot-2026-10-01.md docs/FOUNDER_DECISION_PACKET_2026-10-01.md
+docs/DEFECT_CLASS_REGISTRY.md`. `research/model-runs/pilot-2026-10-01/keys/` holds blinding keys and the full
+unblinded mapping — committing them is fine for a finished pilot but **must not happen for any future unpublished
+pool**; decide before commit.
+
+## Iteration 88 — 2026-10-01 (founder directive: "update and improve /ai-models" — Part A of a page review)
+
+**Selected by founder directive, not by the ranked queue** (S1 deviation: *the founder asked for it by name*). The
+loop's own queue had nothing agent-doable at ≥ 13 (Meta-review 8), so no eligible item was displaced.
+
+**Process.** knowledge-architect reviewed the *source* page (the live page is 14 commits stale — production last
+built 2026-09-25, deploy is founder-operated) → `docs/AI_MODELS_PAGE_REVIEW_2026-10-01.md`, 10 findings, Part A
+(shippable, no score claims) and Part B (pilot section, held for a D-29 amendment). frontend-engineer implemented
+Part A **except A3** (one canonical publication checklist — a method decision; the five divergent statements are
+listed in the review for the founder).
+
+**V2 — four review claims re-checked by the coordinator before any edit**, all true: orphan `<section><Container>`
+at `page.tsx:246` nesting four sections; hand-typed `1,325` at `:293`; methodology `:209` "compared … on one scale"
+contradicting the published FAQ/JSON-LD; Tier 2 ("self-reported") counter reading `score-history-v1.json`, which is
+the store of *authorised* evaluations (latent: both 0 today).
+
+**V3 — guard extended with a planted-probe proof.** `test-no-stale-counts.mjs` missed a count separated from its
+noun by markup (`<span>1,325</span> scored entities`). Extended; the real instance FAILED before the page fix, a
+planted probe FAILED, removal PASSED (outputs in the agent report). Not allowlisted.
+
+**V4 — built output checked, not just source.** `out/ai-models.html`: "one scale" absent; the orphan wrapper is gone
+(the only remaining depth-2 `<section>` is the `FaqAccordion` component's own `aria-label` section — valid HTML,
+not the defect); A7 order verified (verdict precedes "100 out of 100", unbolded). **A new factual-looking sentence
+traced, not trusted:** "Three models that had never seen the task bank scored 4 of 18" — already in the committed
+page (HEAD `:280`) and sourced to `docs/PROBE_CALIBRATION_2026-09-27.md` (pooled 4/18 = 22.2%, p = 0.694).
+
+**Validation.** `tsc --noEmit` exit 0 · full `npm run test` chain **exit 0** (after `npm run build` regenerated the
+feed; the one pre-build failure was the expected stale-feed check) · `npm run build` exit 0, 2,030 pages, Pagefind
+2,008 · `validate-product-separation` PASS WITH WAIVERS (6, unchanged).
+
+**Open, not done here:** A3 (founder: canonical publication bar) · Part B (needs D-29 amendment) · PipelineStages
+Stage 3 still says the formula "has never run on real model output" — false since 2026-09-25; outside the spec,
+filed as a follow-up · Tier 2 reads `research/submissions/*.json` at build time and is `null` (omitted) inside a
+Docker build whose context is `site/` — consistent behaviour needs a committed index under `site/`.
+
+**Commit pathspec:** `site/src/app/ai-models/page.tsx site/src/app/ai-models/methodology/page.tsx
+site/src/app/ai-labs/page.tsx site/src/components/model-benchmark/PipelineStages.tsx
+site/src/components/model-benchmark/ModelGlossary.tsx site/src/lib/model-index-facts.ts
+site/scripts/test-no-stale-counts.mjs docs/AI_MODELS_PAGE_REVIEW_2026-10-01.md CHANGELOG.md ITERATION_LOG.md`.
+Not deployed (D-47, founder).
+
+## Iteration 87 — 2026-10-01 (founder directive: "complete benchmark-research for Oct 1")
+
+**Selected by founder directive.** Last cycle was 2026-09-24 (7 days); the 14-day lookback (09-17 → 10-01) covers
+the gap with no hole, so no catch-up widening was needed.
+
+**Stages and verification (V2 — every stage's headline re-run by the coordinator, not read from the report):**
+
+| Stage | Agent | Coordinator re-check |
+|---|---|---|
+| Scan | overnight-scanner | `validate-scan` **PASS**; 1,329 reviews; 31 evidence-found; 27 flagged; `validate:rotation-state` PASS, 0 real gaps; `meta.last_scan` = max stamp = 2026-10-01 on all 1,329 (RS-5 invariant holds). 279 searches vs derived ceiling 274, overage disclosed |
+| Assess | overnight-assessor (×2 — first run cut off by a usage limit after Valencia; resumed from on-disk state, Valencia verified not redone) | 27 reports, 12 sidecars, 7 proposals, 12 `last_assessed` + 7 `last_change_proposal` stamps. **All 7 proposals independently recomputed with `scoring.mjs`: composites reproduce exactly, bands match, every baseline equals the live index (0 drift), all `pending`** |
+| Digest | overnight-digest | `validate-daily-briefings` **87/87 PASS**; lint PASS (0 unapplied-movement); queue **36 pending by directory count**; **0 dates after 2026-10-01** in the public briefing (positive control: the same grep finds 2026-10-01) |
+
+**Proposals (pending, nothing applied):** Valencia 60.9→41.9 · Madrid 65.6→48.1 · Glasgow 62.5→48.7 (flag) ·
+Cornell 54.7→41.9 · Vietnam 34.4→23.8 · Bangladesh 39.8→33.1 · Birmingham 43.0→39.4 (flag). **Six of seven are
+first-ever individual assessments** (baselines were never individually assessed; Valencia's 60.9 is the known
+placeholder-cluster value), so the digest frames them as first measurements, not declines. **Calibration signal for
+the founder:** across the last three proposal cycles, 12 first baselines produced 11 lower readings and 1 higher —
+the seeds may be systematically high.
+
+**Live defect confirmed (V1):** the published 2026-09-24 briefing returns **301 → /404** on production (8 days).
+Cause is the stale deploy (D-47), not the content.
+
+**Not done:** four misdated-claims ledger additions recommended by scanner/assessor (`canada-real-1975-days`,
+`egypt-sarah-khalifa-death-sentence`, `myanmar-kyauktaw-market-airstrike-2026`, San Marino 2021 referendum) — ledger
+edits carry tests and were not in scope · rotation backfill (ReWalk timed out) · four rank drifts reported, not
+corrected · NYC global-cities 48.4 vs us-cities 56.3 mismatch reported.
+
+**Commit pathspec:** `research/scans/2026-10-01.json research/scans/2026-10-01-assessor-summary.json
+research/assessments/*-2026-10-01.* research/change-proposals/*-2026-10-01.json research/rotation-state.json
+research/digests/2026-10-01.* research/PENDING_CHANGES.md site/src/data/updates/daily/2026-10-01.json
+site/src/data/updates/latest.json site/src/data/updates/manifest.json site/src/data/evidence-reviews/2026-10-01.json
+site/src/data/evidence-reviews/latest.json site/public/updates/feed.json site/public/updates/feed.xml
+site/public/og/updates-2026-10-01.png`. **Exclude** the held America-at-250 pair.
+
 ## Iteration 86 — 2026-09-30 (Meta-review 8: more than half the queue had already been done)
 
 **Compelled by the cadence gate for the third time**, and the second since the tolerance went to 5. Record:

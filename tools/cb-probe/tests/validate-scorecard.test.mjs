@@ -113,7 +113,13 @@ function validFixture(overrides = {}) {
       finished_at: new Date().toISOString(),
       local_run_reference: "run-1",
     },
-    contamination: { probed: true, method: "x", limitations: [] },
+    contamination: {
+      probed: true,
+      method: "x",
+      limitations: [],
+      identification: { available: false, reason: "No identification challenge was issued for this run." },
+      contamination_indicated: false,
+    },
     judge_configuration_notice: "cross-judge notice",
     judge_panel: null,
   };

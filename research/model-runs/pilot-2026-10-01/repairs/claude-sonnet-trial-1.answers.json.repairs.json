@@ -1,0 +1,14 @@
+{
+  "brief_id": "b-t57hew8n",
+  "rules": [
+    "escape raw U+0000-U+001F inside JSON string literals only (lossless)",
+    "restore one miscoded answer code: exactly 1 missing + 1 extra, edit distance <= 2, same index as brief order"
+  ],
+  "repairs": [
+    {
+      "part": "b-t57hew8n-p2.answers.json",
+      "raw_control_chars_escaped": 2,
+      "original_error": "Bad control character in string literal in JSON at position 48986 (line 102 column 868)"
+    }
+  ]
+}

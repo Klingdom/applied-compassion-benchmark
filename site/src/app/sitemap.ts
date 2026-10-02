@@ -5,6 +5,8 @@ import manifest from "@/data/updates/manifest.json";
 import specialBriefingsManifest from "@/data/special-briefings/manifest.json";
 import { DIMENSIONS } from "@/data/dimensions";
 import { getHistoryManifest } from "@/data/history";
+import { renderableEntries } from "@/lib/model-report-gate";
+import { reportPath } from "@/lib/model-report-facts";
 
 // G4 (organic-growth Wave 1, safe-subset additions only): dimension-name
 // slugs for the /dimensions/<slug> pages. Matches the dimension `name`
@@ -46,7 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // AI Model Compassion Benchmark — pre-registration pages. Per DECISIONS.md
   // D-29, exactly these two routes ship before any model is evaluated; no
-  // per-model or leaderboard route exists yet to derive here.
+  // per-model or leaderboard route exists. Unofficial pilot reports
+  // (/ai-models/reports/<run_id>, D-29a) are added below from the wave manifest
+  // and only while they render.
   const aiModelPages = ["/ai-models", "/ai-models/methodology"];
 
   const infoPages = [
@@ -89,6 +93,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}${path}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    // Unofficial pilot reports: one URL per RENDERED wave (empty in the default build while
+    // D-29a is proposed). A published report is immutable (corrections are new dated records).
+    ...renderableEntries().map(({ entry }) => ({
+      url: `${BASE}${reportPath(entry.run_id)}`,
+      lastModified: entry.report_date,
+      changeFrequency: "never" as const,
       priority: 0.7,
     })),
     ...aiModelPages.map((path) => ({

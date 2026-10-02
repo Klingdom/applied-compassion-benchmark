@@ -38,6 +38,17 @@ interface Props {
   source?: string;
   /** Optional override text shown above the card form title (card variant only). */
   preamble?: string;
+  /**
+   * Copy overrides (card variant only). Used where the default "score
+   * highlights" wording would be untrue or misleading, for example beside an
+   * unofficial model pilot (template H). All optional; defaults are unchanged.
+   */
+  heading?: string;
+  body?: string;
+  buttonLabel?: string;
+  finePrint?: string;
+  successTitle?: string;
+  successBody?: string;
 }
 
 async function submitToFormspree(email: string, source: string): Promise<boolean> {
@@ -68,7 +79,17 @@ async function submitToListmonk(email: string): Promise<boolean> {
   return res.ok;
 }
 
-export default function NewsletterSignup({ variant = "inline", source = "unknown", preamble }: Props) {
+export default function NewsletterSignup({
+  variant = "inline",
+  source = "unknown",
+  preamble,
+  heading,
+  body,
+  buttonLabel,
+  finePrint,
+  successTitle,
+  successBody,
+}: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -130,9 +151,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
     }
     return (
       <div className={variant === "card" ? "rounded-[20px] border border-[rgba(134,239,172,0.25)] bg-[rgba(134,239,172,0.06)] p-6 text-center" : ""}>
-        <p className="text-[#86efac] font-semibold mb-1">You&apos;re subscribed</p>
+        <p className="text-[#86efac] font-semibold mb-1">{successTitle ?? "You’re subscribed"}</p>
         <p className="text-muted text-[0.92rem]">
-          Daily briefings publish here on the site every morning. The Friday highlights digest emails you the week&apos;s most consequential findings.
+          {successBody ??
+            "Daily briefings publish here on the site every morning. The Friday highlights digest emails you the week’s most consequential findings."}
         </p>
       </div>
     );
@@ -217,10 +239,11 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           <p className="text-muted text-[0.88rem] mb-3 italic">{preamble}</p>
         )}
         <h3 className="text-[1.12rem] font-bold mb-1.5">
-          Weekly score highlights — institutional compassion findings
+          {heading ?? "Weekly score highlights — institutional compassion findings"}
         </h3>
         <p className="text-muted text-[0.94rem] mb-4">
-          The week&apos;s top score movements and evidence-linked findings across {SCORED_ENTITY_COUNT_FORMATTED} entities, delivered every Friday. Daily briefings publish on the site. Free.
+          {body ??
+            `The week’s top score movements and evidence-linked findings across ${SCORED_ENTITY_COUNT_FORMATTED} entities, delivered every Friday. Daily briefings publish on the site. Free.`}
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5">
           <input
@@ -237,7 +260,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
             disabled={status === "submitting"}
             className="shrink-0 bg-[rgba(125,211,252,0.15)] hover:bg-[rgba(125,211,252,0.25)] border border-[rgba(125,211,252,0.3)] text-[#7dd3fc] rounded-[12px] px-5 py-3 text-[0.95rem] font-semibold transition-colors disabled:opacity-50"
           >
-            {status === "submitting" ? "Subscribing…" : "Subscribe — free"}
+            {status === "submitting" ? "Subscribing…" : (buttonLabel ?? "Subscribe — free")}
           </button>
         </form>
         {status === "error" && (
@@ -249,7 +272,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           </p>
         )}
         <p className="text-[rgba(148,163,184,0.5)] text-[0.78rem] mt-3">
-          No spam. Unsubscribe anytime. Your email is never shared.
+          {finePrint ?? "No spam. Unsubscribe anytime. Your email is never shared."}
         </p>
       </div>
     );

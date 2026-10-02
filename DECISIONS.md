@@ -34,6 +34,7 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 | D-44 | 2026-09-29 | Repair three more published rubric defects (DFEH name, admin-overhead statistic, firearms premise) | **proposed (awaiting founder)** |
 | D-43 | 2026-09-28 | Repair `EQU-1-C` level 5 — the EEOC deadline it rewards is wrong for Texas | **proposed (awaiting founder)** |
 | D-30 | 2026-09-11 | Release watch ships as a section, not a route; BYO scoring is clipboard round-trip and emits no composite | active |
+| D-29a | 2026-10-02 | Unofficial pilot reports may show ranges and separation (amends D-29) | active — ratified by the founder 2026-10-02 |
 | D-29 | 2026-09-10 | Model Index lives at `/ai-models`; pre-result pages ship as pre-registration | active |
 | D-23 | 2026-09-07 | Build a mechanical product-separation guard for CB-MODEL's three-product rule | active |
 | D-22 | 2026-08-24 | `DECISIONS.md` supersedes `.claude/decisions.md` | active |
@@ -632,6 +633,29 @@ launder itself; and disclosure is encoded in JSON *key names*, not only in `meta
 get cropped.
 
 ---
+
+## D-29a — 2026-10-02 · ACTIVE · Unofficial pilot reports (amends D-29)
+
+**Ratified 2026-10-02 by the founder** ("approve D-29a, commit and deploy"). The text below is unchanged from the
+proposal except the approval date. The proposal record that follows is kept as written.
+
+
+**Status: PROPOSED, not ratified.** The founder directed on 2026-10-01: *"Update the ai-models page and develop a six
+page narrative on AI model results."* That directive authorises building the report and the page changes locally.
+It does not by itself ratify this text, which governs what may be published; the "[founder approval date]" placeholder
+below stays until the founder approves the wording. Until then the report route is built but must not be deployed.
+Source: `docs/AI_MODEL_ASSESSMENT_TEMPLATE.md` §J (verbatim below), synthesised from the 12-brief panel in
+`docs/ai-model-report/2026-10-01/`. Evidence base: `research/model-assessments/pilot-2026-10-01.md`.
+
+> **D-29a — 2026-10-02 · Unofficial pilot reports. Amends D-29; D-29 otherwise stands.**
+> 1. Pages: `/ai-models`, `/ai-models/methodology`, and one report at `/ai-models/reports/<run_id>` per run in `waves/manifest.json`. No reports index until two reports. No per-model routes or anchors.
+> 2. Exception to "no model composite or band, anywhere, in any form": a report of a wave with `status:"pilot"` (`official:false`, `comparability:none`) may show per-model 95% ranges with a point tick, per-dimension ranges, separation statements and paired-difference ranges.
+> 3. Still forbidden: band labels or colours on models, ranks, sorting by result, best/worst language, a bare point score in any headline, title, meta, JSON-LD, feed, OG image or FAQ, `Dataset`, `ItemList` or rating markup.
+> 4. Every figure is labelled unofficial pilot with run id, date, access tier and "not a score, comparability none". Models are alphabetical; non-separated models are grouped as "Not separated" before any per-model figure; a separated model's figure carries each disclosed unresolved confound in the same sentence or caption.
+> 5. Every figure derives from the committed, hash-checked wave file exported from the analysis artifact.
+> 6. `evaluatedModelCount`, `scoreRecordCount`, `hasResults`, the registry and score history are unchanged; pilot counts are separate, never summed.
+> 7. No developer or journalist is briefed before publication; none pays, sponsors or reviews. A corrections channel is open to all; corrections are dated, append-only.
+> 8. Official publication still requires the amended publication bar; official wave rendering stays disabled.
 
 ## D-29 — 2026-09-10 · Model Index lives at `/ai-models`; pre-result pages ship as pre-registration
 

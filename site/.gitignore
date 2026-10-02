@@ -48,3 +48,6 @@ next-env.d.ts
 # Legitimately contains a wall-clock buildDate/buildTimestamp, so it must
 # not be a tracked file (DC-08); see scripts/build-manifest.mjs.
 /public/build-manifest.json
+
+# compiled wave reports (built from reports/*.md + waves/*.json; never committed)
+/src/data/model-benchmark/reports/*.json

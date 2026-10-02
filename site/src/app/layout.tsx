@@ -121,6 +121,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        {/* Skip link: first in tab order (WCAG 2.4.1). Visible on focus only. */}
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -135,7 +139,9 @@ export default function RootLayout({
         <ChromeGate>
           <Navbar />
         </ChromeGate>
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <ChromeGate>
           <Footer />
         </ChromeGate>

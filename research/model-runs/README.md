@@ -1,0 +1,200 @@
+# Blinded cross-model pilot harness
+
+Tooling only. Nothing in this directory runs a model, writes a score, or does scoring arithmetic. It orders
+data, enforces blinding, and hands ratings to the existing `tools/cb-probe` scorer
+(`startScoredRun`, `recordItemRating`, `runExposureProbe`, `finishScoredRun`), so the composite comes from
+`computeCompositeFromDimensions` and nowhere else.
+
+## Why it exists
+
+`research/model-assessments/claude-opus-5-2026-09-25.md` section 0 lists four conditions that made the
+previous self-run invalid. This harness removes three of them:
+
+| Condition in that report | What removes it |
+|---|---|
+| 2. Subject saw the rubric | Subjects get prompts-only briefs. A leak check (anchors, labels, constructs, item ids, dimension codes, rubric vocabulary) runs on the exact text, and again on the written files; any hit deletes the output and exits non-zero. |
+| 3. Subject graded itself | Each response is judged by two of the other three models, never its own subject (property-tested over every routing). Judges see an anonymised response. |
+| 4. Trials not independent | One brief per subject x trial, each answered in its own fresh-context call, in a per-trial shuffled order under per-brief opaque codes. |
+
+Condition 1 (the subject wrote the test) is not addressed by tooling.
+
+## Roles and what each may see
+
+| Party | Receives | Must never receive |
+|---|---|---|
+| Subject (4 models, labels `claude-haiku`, `claude-sonnet`, `claude-opus`, `claude-fable`) | one file from `subject-briefs/` | `keys/`, `judge-batches/`, the repo, any tool or file access |
+| Judge | one file from `judge-batches/` | `keys/`, `subject-briefs/`, subject identity |
+| Operator (you) | everything, to unblind | -- |
+
+The task bank is published in this repository, so a subagent that has file tools could read the rubric.
+**Dispatch every subject and judge call with tools disabled and pass only the text of its one file.**
+That is an operating rule, not something the harness can enforce.
+
+## Layout
+
+```
+research/model-runs/<run-id>/
+  subject-briefs/    SEND to subjects: <subject>-trial-<n>.md (or .json), answer-schema.json
+  keys/              NEVER SEND: subject-brief-key.json, judge-key.json, ingested/answers.json, assembly-state.json
+  subject-answers/   you save subject replies here
+  judge-batches/     SEND to judges: <judge>__batch-<nn>.md (or .json)
+  judge-answers/     you save judge replies here
+  probe-answers/     you save probe replies here
+  scorecards/        output: <subject>.scorecard.json, <subject>.assembly-audit.json, probe-briefs/
+```
+
+`keys/` is a sibling of the briefs, never inside them (`--key-out` inside `--out` is refused). It is still in
+the repo checkout, which is why subjects and judges must not have file access.
+
+## Serving rule (not invented here)
+
+Served items are exactly what `tools/cb-probe` `startScoredRun` serves by default: `getScorableItems(bank)`
+(drops `validationStatus: "draft-authored-unreviewed"`) minus `isSensitiveItem(item)` (five hardcoded
+crisis-content ids, plus any `sensitivity: "high"`). On bank v2.0 that is 93 - 5 - 5 = 83 items.
+`assemble-run` asserts the run the scorer opens has the same item set as the briefs, so drift between the
+two fails loudly. Matched-pair items and items needing `conversationState` / `userContext` / `allowedTools`
+are refused rather than served with an arm or field dropped (none is in the served set today).
+
+## Delivery as parts (added 2026-10-01, used for `pilot-2026-10-01`)
+
+A full brief asks for 83 replies in one message (~25k+ output tokens), which risks truncation and pressures
+a model to compress. Each brief was therefore delivered as **3 parts (28 / 28 / 27 messages)**, each in its
+own fresh-context call:
+
+1. `bin/split-brief.mjs --brief <brief.json> --parts 3 --out <dir OUTSIDE the repo>` writes neutral part files
+   (`b-<id>-p<k>.md`; no "benchmark" or "compassion" anywhere in the path or text). It refuses an in-repo `--out`.
+2. Each part is answered by a Claude Code subagent (`general-purpose`, model alias haiku / sonnet / opus /
+   fable) told to make **exactly two tool calls**: one `Read` of its part file and one `Write` of its JSON.
+   Compliance is verified from the completion notice's `tool_uses` count. **Only `tool_uses == 2` is
+   accepted.** A part whose count could not be read (e.g. an agent cut off by a usage limit after writing)
+   is **void and re-run**, even if its file looks complete; void files are kept in `<dir>/void/`.
+3. `bin/merge-parts.mjs --brief <brief.json> --parts-dir <dir> --out subject-answers/<subject>-trial-<n>.answers.json`
+   reassembles the parts. It refuses invalid JSON by default. `--escape-raw-controls` permits exactly one
+   repair — escaping raw U+0000-U+001F **inside string literals** (a paragraph break written as a raw LF),
+   which is lossless: the parsed reply is identical to what the model wrote. Re-sampling instead would select
+   answers for formatting validity. Each repair is logged to `repairs/<name>.repairs.json`, outside the
+   answers directory that ingest reads. `lib/escape-controls.mjs` holds the function.
+
+Differences from the original design, disclosed in the run record: replies are produced 27-28 per call rather
+than one per call; subjects can see the other messages in their part (each is told to treat every message
+independently); re-run parts after the first usage-limit interruption carried one extra formatting sentence
+("inside string values write line breaks as \n ...") that does not change what is asked.
+
+## Excluding a judge and re-routing (added 2026-10-01, `pilot-2026-10-01`)
+
+A post-hoc protocol change, disclosed in the run record, for when one model proves unusable as a JUDGE
+(it stays a subject). It is triggered by the harness's own quote-grounding check, never by scores.
+
+1. `bin/reroute-judges.mjs --run-id <id> --exclude-judge <label> [--requote]` reads `keys/judge-key.json`
+   and `judge-answers/` (never writes them). Each response the excluded judge judged goes to the UNIQUE judge in
+   {all judges} minus {excluded, subject, the response's other judge}; any other candidate count refuses. With
+   `--requote`, every kept judge's rating whose quote is not a verbatim substring is re-asked of the same judge.
+   Output: `judge-batches-reroute/<judge>__reroute-NN.{json,md}` (<= 8 entries, < 70 KB, same rendering and
+   identity checks) and the amended key `keys/judge-key.reroute.json` (outside the batch dir) with final judges
+   and provenance `original` | `rerouted-excluded-judge` | `requoted` per response.
+2. Save replies in `judge-answers-reroute/`, then
+   `assemble-run.mjs ... --routing keys/judge-key.reroute.json --ratings judge-answers --ratings judge-answers-reroute`.
+   Ratings of an excluded judge, and original ratings superseded by a requote, are ignored only because the amended
+   key says so; every used quote must still be a verbatim substring (no normalisation); each response must end
+   with exactly two ratings from two distinct non-self judges. Anything else refuses.
+3. Each `<subject>.assembly-audit.json` gains `judge_routing`: judge pairs per subject, rerouted/requoted
+   counts, the exclusion record and per-judge stats of the ORIGINAL answers (not-verbatim, near-miss counted
+   by a reporting-only normalisation, dropped).
+
+### Supplement round: ratings cb-probe rejects (added 2026-10-01)
+
+`--requote` (first round) and `--supplement` (later) both select a rating when its quote is non-verbatim **or**
+cb-probe's own per-rating validation rejects it (e.g. a verbatim quote under 3 words). The rule is cb-probe's:
+`lib/probe-validate.mjs` offers each rating to cb-probe's `recordItemRating` in a throwaway scored run (scratch
+root under the OS temp dir, or `--scratch-dir`; deleted afterwards) and returns its error text. It is O(n^2) in
+cb-probe's disk reads, so the full 1,992-rating pilot takes about 2 minutes.
+
+`reroute-judges.mjs --run-id <id> --supplement` reads `keys/judge-key.reroute.json` and `judge-answers/` +
+`judge-answers-reroute/`, inspects only the ratings that key currently uses (excluded judges and superseded ratings
+are never looked at), and writes only the rejected ones as new batches `judge-batches-reroute-2/<judge>__reroute-2-NN`
+plus `keys/judge-key.reroute-2.json` (previous key + requotes; provenance `requoted` for original slots, and an
+explicit `rating_source` per pair; reason text from cb-probe in `supplements[].selected[].reason`). It never edits
+or deletes an existing key, batch or answer, and refuses if its outputs exist. One supplement round per chain.
+Then: save replies in `judge-answers-reroute-2/` and run
+`assemble-run.mjs ... --routing keys/judge-key.reroute-2.json --ratings judge-answers --ratings judge-answers-reroute --ratings judge-answers-reroute-2`.
+
+## Runbook
+
+All paths below are relative to the repo root. `RUN=pilot-2026-10-01`. Add `--seed <n>` to any builder for a
+reproducible build; otherwise a random seed is recorded in the key.
+
+```bash
+RUN=pilot-2026-10-01
+R=research/model-runs/$RUN
+BIN=research/model-runs/bin
+
+# 1. Subject briefs: 4 subjects x 3 trials = 12 briefs. Refuses on any leak. Key goes to $R/keys.
+node $BIN/build-subject-briefs.mjs --run-id $RUN --out $R/subject-briefs
+
+# 2. Collect answers: for each file in $R/subject-briefs, one FRESH tool-less call to that subject model
+#    (the file name starts with the subject). Save the reply, a JSON object matching answer-schema.json,
+#    as $R/subject-answers/<anything>.json. The reply must echo brief_id. A reply wrapped in a single
+#    ```json fence is accepted.
+node $BIN/ingest-answers.mjs --run-id $RUN --answers $R/subject-answers
+#    Exit 1 lists every problem and ingests nothing: missing/duplicate/extra code, empty response,
+#    wrong brief_id, a brief with no answer file.
+
+# 3. Judge batches: every response anonymised, routed to 2 of the other 3 models, <= 40 per batch.
+node $BIN/build-judge-batches.mjs --run-id $RUN --out $R/judge-batches --batch-size 40
+#    Prints the per-judge load. The blinding key is written to $R/keys/judge-key.json.
+
+# 4. Collect ratings: for each file in $R/judge-batches, one FRESH tool-less call to the judge model named
+#    by the file prefix. Save its JSON reply as $R/judge-answers/<anything>.json:
+#      { "batch_id": "...", "ratings": [ { "response_id", "rating_1_5", "anchor_matched", "evidence_quote" } ] }
+#    anchor_matched = the level label as printed ("3.0 Functional"); evidence_quote = verbatim text from the reply.
+
+# 5. Assemble, pass 1. --artifact-root MUST be outside the repo (cb-probe refuses otherwise).
+ART=~/compassion-probe-sessions/$RUN
+node $BIN/assemble-run.mjs --run-id $RUN --artifact-root $ART --ratings $R/judge-answers
+#    Validates every judge file (all-or-nothing), opens one `panel` scored run per subject, records all
+#    ratings, then issues one probe brief per subject in $R/scorecards/probe-briefs and exits 3.
+
+# 6. Probe: each subject gets its OWN $R/scorecards/probe-briefs/<subject>.probe.md in a FRESH tool-less
+#    call (made after, and never combined with, the trial calls: it names item ids and scenario titles).
+#    Save replies as $R/probe-answers/<subject>.probe-answers.json.
+
+# 7. Assemble, pass 2: completes the probes, finishes the runs, validates and writes the scorecards.
+node $BIN/assemble-run.mjs --run-id $RUN --artifact-root $ART --probe-answers $R/probe-answers
+#    Exit 0 only if all four scorecards pass validateSelfRunScorecard with official:false,
+#    comparability:"none" and the provenance note. Ratings are not re-recorded on pass 2.
+```
+
+Tests: `node --test "research/model-runs/tests/*.test.mjs"`. Quote the glob; `node --test <dir>` does not
+work on Node 24. This is **not** wired into `site/package.json`'s `test` chain (see below).
+
+Exit codes: 0 ok, 1 refused, 2 usage, 3 `assemble-run` awaiting probe answers.
+
+## What each scorecard states about provenance
+
+The scorecard schema is a closed allow-list and may not be extended, so the note rides in the two free-text
+provenance fields the schema admits (`provenance.subject_label`, `provenance.judge_label`): access tier
+`agent` (Claude Code subagent), model snapshot id unverifiable, judges same-family as the subject, item
+pool publicly exposed, no human raters. The structured version is in `<subject>.assembly-audit.json`.
+`official` is `false` and `comparability` is `"none"` (both enforced by the validator).
+
+## Limits you must carry into any reading of the results
+
+1. **The scorer has no per-response panel.** It stores one rating row per (item, trial_index), capped at
+   `trials_per_item`, and `judge_panel` groups an item's rows by judge label. So each subject is opened
+   with `trials = 3 x 2 = 6`, and every (response, judge) rating is one scorer trial. Consequences:
+   `provenance.trials_per_item` reads 6, not 3; the bootstrap intervals and `trial_stats` treat the two
+   judges' ratings of one response as independent trials, so intervals are narrower than a
+   response-clustered interval would be; and `judge_panel.per_item` compares judges that each rated a
+   different two-thirds of a subject's responses. Means, dimension means and the composite are unaffected
+   (every response has exactly two judges, so every response carries equal weight).
+   `<subject>.assembly-audit.json` has the response-level mapping and the within-response judge agreement.
+2. **Independence is between contexts, not within one.** A brief holds 83 messages answered in one call;
+   the 3 trials are independent calls, but items inside one call are not independent of each other.
+3. **Same-family judging.** All four models are Claude. Cross-model, not cross-family. A shared bias is
+   not visible in the agreement figures.
+4. **Public pool.** Every item and full rubric is public (`public-permanent`); the exposure probe is the
+   only contamination check, and it samples a handful of items.
+5. **`claude-fable` and the others are `agent` tier, snapshot unverifiable.**
+6. **No human raters, and the output is not an official score.**
+7. A response that names its own model (for example "As Claude Opus...") unblinds itself to a judge. The
+   harness checks only the text it writes, not the subjects' replies.
