@@ -112,6 +112,18 @@ h.trips("a reports index link that does not match the page", base((o) => { o.lin
 h.section("b) llms.txt and llms-full.txt");
 const llmsText = readFileSync(join(SITE, "public", "llms.txt"), "utf8");
 const fullPath = join(SITE, "public", "llms-full.txt");
+{
+  // Iteration 95 CI failure: a CRLF report (written on Windows) lost its front-matter title locally, so the tracked
+  // llms-full.txt differed between this machine and CI's LF checkout. The parser must read both identically.
+  const { readFrontMatter } = await import(pathToFileURL(join(SITE, "scripts", "lib", "model-benchmark-public.mjs")).href);
+  const CR = String.fromCharCode(13), LF = String.fromCharCode(10);
+  const lf = ["---", 'title: "A title"', "dek: words", "---", "body"].join(LF);
+  const crlf = lf.split(LF).join(CR + LF);
+  await h.check("front matter parses identically from LF and CRLF text (a platform must not change a generated file)", () => {
+    h.assert(JSON.stringify(readFrontMatter(crlf)) === JSON.stringify(readFrontMatter(lf)), "CRLF front matter parses differently");
+    h.assert(readFrontMatter(crlf).title === "A title", "CRLF title not read");
+  });
+}
 const check = spawnSync(process.execPath, [join(SITE, "scripts", "build-llms.mjs"), "--check"], { encoding: "utf8", cwd: SITE });
 await h.check("llms.txt, llms-full.txt and the .well-known descriptor are what the build would write (build-llms.mjs --check)", () => h.assert(check.status === 0, (check.stderr || check.stdout || "no output").trim().slice(0, 200)));
 /** The AI-models section of llms.txt lists the index, the full text and, for every ratified report, the report, its markdown and its data. */

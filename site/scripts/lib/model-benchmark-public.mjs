@@ -185,7 +185,10 @@ export function projectionProblems(pub, wave) {
 /** `key: value` lines between the first pair of --- fences (value optionally in double quotes). */
 export function readFrontMatter(mdText) {
   const out = {};
-  const lines = mdText.split(NL);
+  // CRLF-tolerant (Iteration 95): a report written on Windows has CRLF in the working tree; "." never matches a CR,
+  // so the key regex silently failed and the title fell back to the run id locally while CI (LF checkout) parsed it,
+  // making a tracked generated file differ by platform. Strip one trailing CR per line before parsing.
+  const lines = mdText.split(NL).map((l) => (l.endsWith(String.fromCharCode(13)) ? l.slice(0, -1) : l));
   if (lines[0]?.trim() !== "---") return out;
   for (let i = 1; i < lines.length && lines[i].trim() !== "---"; i++) {
     const m = lines[i].match(/^([a-z_]+):\s*(.*)$/);

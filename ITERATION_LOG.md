@@ -47,6 +47,16 @@ the cadence gate allows 5.
   - Both reports and the index are built, and both reports are in the sitemap.
 - **Full chain:** 71 steps, run after the last edit; see SYSTEM_HEALTH.
 
+**Post-commit, same day: CI caught what the local chain could not.**
+- Commit `6b3e0360` was pushed to `main`. CI run `37076497666` failed `Build + test`, because `llms-full.txt` was
+  stale on CI only. The local check had passed.
+- Reproduced in a clean worktree of the commit. The cause was a CRLF report in the working tree, whose front-matter
+  title the parser could not read; this is a DC-08 occurrence.
+- Fixed with a CRLF-tolerant parser, an LF/CRLF parity check and the regenerated file. The fix was verified in the
+  clean worktree before re-committing.
+- `nginx -t` passed on CI, which verifies the new `.md` location.
+- The deploy job did not run: it is dispatch-only and still blocked on SSH.
+
 **Open for the founder:**
 - (a) Confirm in writing that no developer (Anthropic, Meta, Alibaba) was contacted.
 - (b) The deploy is still blocked on CI SSH. **Do not deploy the previous `main`: it carries the DC-24 leak.**
