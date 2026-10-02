@@ -240,6 +240,13 @@ h.trips("a report claiming to be official", wkMut((o) => { o.modelBenchmark.pilo
 
 // ----------------------------------------------------------------------------------------------------- e,f) rendered components
 h.section("e, f) the reports index page and the methodology analysis table, rendered");
+{
+  // The pages below read the COMPILED reports (gitignored; written by prebuild's build-model-reports.mjs). CI runs
+  // `npm test` before `npm run build`, so on a clean checkout they do not exist yet (Iteration 95 CI failure).
+  // Compile them here, deterministically, rather than depend on whatever an earlier local build left behind.
+  const comp = spawnSync(process.execPath, [join(SITE, "scripts", "build-model-reports.mjs")], { encoding: "utf8", cwd: SITE });
+  await h.check("the reports compile before the pages that read them are rendered", () => h.assert(comp.status === 0, (comp.stderr || comp.stdout || "").trim().slice(0, 300)));
+}
 register(pathToFileURL(join(SITE, "scripts", "lib", "tsx-render-loader.mjs")).href);
 const req = createRequire(join(SITE, "package.json"));
 const React = req("react");
