@@ -57,9 +57,31 @@ the cadence gate allows 5.
 - `nginx -t` passed on CI, which verifies the new `.md` location.
 - The deploy job did not run: it is dispatch-only and still blocked on SSH.
 
+**A second CI-only failure, and the rule it earns.**
+- Commit `cf0dfdbc` failed CI again: `test-model-benchmark-public` rendered the reports index from compiled reports
+  that are gitignored and absent before the build.
+- Fixed in `43e90bcd`: the test now compiles them itself.
+- **Before that push, the full chain was run in a clean worktree of the exact commit**, with `node_modules` linked by
+  a junction that was unlinked before the worktree was removed. It exited 0, and CI then went green.
+- **Rule:** when a change adds or reads gitignored or generated artifacts, the pre-push check is a clean-worktree
+  chain, not the working tree. The working tree carries state CI does not have. This happened twice in one hour.
+
+**Deployed and verified (V7).**
+- The dispatch run `37077608892` succeeded, including the post-deploy health check. The SSH block did not recur.
+- Production `build-manifest.json`: sha `43e90bcd`, built 2026-10-02T23:30:21Z. It also shows `dirty: true`, which is
+  flagged and not investigated.
+- **Live leak scan, done in Node because the `grep -P` attempt errored and its zero proved nothing (V8):**
+  - 69.5 / 68.5 / 67.3 appear 0 times standalone across the public wave JSONs, `index.json`, `llms*.txt`, both
+    reports and `/ai-models`. The control, 40.2, appears 6 times on the first report.
+  - `68.5` did appear inside an SVG coordinate (`268.575`). The same false positive affects any substring scan.
+- **Copy fixes live:** "for months" 0, "since publication" 4, `#mcp-server` 1, "compare models" 0, `npx` 0.
+- **The BEFORE record was wrong.** It used `/updates/daily/<date>`, which is not a route. The briefings live at
+  `/updates/<date>`, and both now return 200. SYSTEM_HEALTH is corrected; whether the 09-24 briefing was missing
+  before the deploy cannot now be re-checked.
+
 **Open for the founder:**
 - (a) Confirm in writing that no developer (Anthropic, Meta, Alibaba) was contacted.
-- (b) The deploy is still blocked on CI SSH. **Do not deploy the previous `main`: it carries the DC-24 leak.**
+- (b) DONE: deployed `43e90bcd`; the DC-24 leak never reached production.
 - (c) Run `nginx -t` on the VPS during deploy.
 
 ## Iteration 94 — 2026-10-02 (founder: "try to benchmark any models that you can benchmark from here using MCP server, methodology, and access to AI models")

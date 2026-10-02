@@ -1,7 +1,7 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 95 (second unofficial pilot report + reports index + machine-readable access for AI systems; DC-24 found and gated — public wave JSON carried withheld points, never deployed; RUN-SYS-1 explicit system message required; harness suite now in the chain; deploy still BLOCKED on CI SSH; chain 71 steps)
+Last change: Iteration 95 (second unofficial pilot report + reports index + machine-readable access for AI systems; DC-24 found and gated — public wave JSON carried withheld points, never deployed; RUN-SYS-1 explicit system message required; harness suite now in the chain; DEPLOYED 43e90bcd 2026-10-02T23:30Z, verified live (V7); chain 71 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
@@ -75,8 +75,8 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 
 ## Deployment
 - **Auto-deploy: ❌ NOT IN EFFECT, and the old line here was misleading in the worst way.** It read "9 consecutive successful `Deploy to VPS` runs" and named a last-deployed commit. The *workflow* called "Deploy to VPS" does succeed — but its **deploy job is skipped**, on all 10 of the most recent runs checked 2026-09-30 (`gh run view <id> --json jobs`), because deployment is founder-operated. A green workflow name was being read as a deployment.
-- **Live defect (verified 2026-10-01):** the published 2026-09-24 daily briefing returns **301 → /404** on production. Cause: no deploy since 2026-09-25 (D-47).
-- **What is actually live:** production `build-manifest.json` reports `buildDate` **2026-09-25T03:01:49Z**. **The deployed commit is not knowable from production:** the manifest's `git.sha` is `null` and it says why — no `GIT_SHA` build-arg is injected, and `git rev-parse` cannot work inside the Docker builder stage, which receives no `.git`. So `Last deployed commit 376b0f85` was not merely stale, it was unverifiable when written. Filed as OBS-1.
+- **Live defect (verified 2026-10-01) — CORRECTED 2026-10-02 after deploy:** this row said the 2026-09-24 briefing returned 301 → /404. The URL that check used was not recorded. The 2026-10-01 BEFORE check used `/updates/daily/<date>`, which is the data-file path, never a page route. That was an absence claim with no positive control (V8). After the deploy, `/updates/2026-09-24` and `/updates/2026-10-01` both return **200** (the route is `/updates/<date>`), and `/updates/daily/<date>` still 301s to /404, as it always would. Whether the 09-24 briefing was actually missing before the deploy cannot now be re-checked.
+- **What is actually live (verified 2026-10-02, post-deploy):** production `build-manifest.json` reports `buildDate` **2026-10-02T23:30:21Z** and `git.sha` **`43e90bcd`**, so the deployed commit is now knowable. It also reports `dirty: true`, which means the VPS checkout has local modifications; not investigated, and flagged for the founder. Deployed by dispatch run `37077608892` (Deploy to VPS and the post-deploy health check both succeeded). The CI SSH block recorded in Iteration 91 did not recur.
 - **Gap:** post-deploy verify does not assert score values (RISK-004).
 - **Worker (Cloudflare):** not deployed; `api.compassionbenchmark.com` does not resolve (RISK-014).
 

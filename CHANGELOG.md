@@ -2,6 +2,16 @@
 
 Public-facing record of published score updates to the Compassion Benchmark indexes.
 
+> **Status note, 2026-10-02 (deploy):** every entry below marked "pending deploy" or "pending commit/deploy" and dated
+> 2026-10-01 or 2026-10-02 is now live. Production was built from **`43e90bcd`** at 2026-10-02T23:30:21Z by dispatch
+> run `37077608892`; the deploy and the post-deploy health check both succeeded. Verified live:
+> - All new pages and machine endpoints return 200; the Markdown report copies are served as `text/markdown`.
+> - The three withheld first-pilot points appear in no public file or page, while the separated model's figure is
+>   present as a control.
+> - The `/ai-models` copy corrections are live.
+>
+> The dated entries themselves are unchanged.
+
 ---
 
 
