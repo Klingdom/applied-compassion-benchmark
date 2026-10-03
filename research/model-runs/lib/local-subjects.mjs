@@ -334,7 +334,22 @@ const REVERIFY_EVERY = 50; // calls between digest re-checks
  * @param {(m:string)=>void} [p.log]
  * @param {()=>Date} [p.now]
  */
-export async function runSubjects({ bank, config, client, runRoot, limit, retryFailed = false, log = () => {}, now = () => new Date() }) {
+/**
+ * Call order only: subjects whose build tag is in `deferTags` run after all others (stable otherwise). Seeds, item
+ * order and messages are derived per (subject, item, trial), so this cannot change any reply's content; it exists
+ * to keep a build that overflows GPU memory from running while the machine is short of RAM (pilot-2026-10-03 D1).
+ */
+export function orderedRunLabels(plan, deferTags = []) {
+  const defer = new Set(deferTags);
+  const bySubject = new Map(plan.subjects.map((s) => [s.label, s]));
+  const unknown = [...defer].filter((t) => !plan.subjects.some((s) => s.tag === t));
+  if (unknown.length) refuse(`--defer-build names no subject build in this run: ${unknown.join(", ")}`);
+  const first = plan.run_order.filter((l) => !defer.has(bySubject.get(l).tag));
+  const last = plan.run_order.filter((l) => defer.has(bySubject.get(l).tag));
+  return [...first, ...last];
+}
+
+export async function runSubjects({ bank, config, client, runRoot, limit, retryFailed = false, deferTags = [], log = () => {}, now = () => new Date() }) {
   const plan = buildPlan({ bank, config });
   const byId = new Map(plan.items.map((i) => [i.id, i]));
 
@@ -356,7 +371,7 @@ export async function runSubjects({ bank, config, client, runRoot, limit, retryF
   let consecutiveFailures = 0;
 
   const planBySubject = new Map(plan.subjects.map((s) => [s.label, s]));
-  for (const subject of plan.run_order.map((l) => planBySubject.get(l))) {
+  for (const subject of orderedRunLabels(plan, deferTags).map((l) => planBySubject.get(l))) {
     const st = (stats[subject.label] = { planned: subject.trials.length * plan.items.length, already_ok: 0, already_failed: 0, new_ok: 0, new_failed: 0 });
     const subjectHasSystem = Object.prototype.hasOwnProperty.call(subject, "system_message");
     let newCalls = 0;

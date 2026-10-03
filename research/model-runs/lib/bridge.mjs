@@ -8,9 +8,48 @@
 //   - the assembler builds scorer rows from `responses` only and demands that the rated pairs equal the routed
 //     pairs of `responses` exactly, so a bridge rating has nowhere to go (tests/judging-prep.test.mjs proves it).
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { readJson, refuse, sha256, mulberry32, seedFromString, shuffle } from "./common.mjs";
+import { loadRoutedAnswers } from "./judge-answers.mjs";
+import { validateRoutingKey } from "./reroute.mjs";
+
+/**
+ * The source run's final used ratings from its routed judge answers: the amended key (`sourceKeyRel`, validated
+ * against the run's original judge key) plus every judge-answers / judge-answers-reroute* directory of the run.
+ * Any validation error refuses; nothing is guessed. Ratings the source run itself made on ITS bridge replies are
+ * validated by the loader and are never returned (they are not final ratings of scored replies).
+ */
+export function loadSourceRatingsFromRoutedAnswers({ sourceRoot, sourceKeyRel, sourceKey }) {
+  if (sourceKey.kind !== "judge-routing-key-amended") {
+    refuse(`bridge: ${sourceKeyRel} is not an amended routing key and ${sourceRoot} has no assembly audits; cannot find the final ratings`);
+  }
+  const keysDir = path.join(sourceRoot, "keys");
+  const originalKey = readJson(path.join(keysDir, "judge-key.json"));
+  const routingKey = validateRoutingKey(sourceKey, originalKey);
+  const bridgeById = new Map();
+  for (const b of originalKey.bridge?.entries ?? []) bridgeById.set(b.response_id, { ...b });
+  const ingested = readJson(path.join(keysDir, "ingested", "answers.json"));
+  const text = new Map(ingested.responses.map((r) => [`${r.subject}|${r.trial}|${r.item_id}`, r]));
+  const responsesById = new Map();
+  for (const k of routingKey.responses) {
+    const rec = text.get(`${k.subject}|${k.trial}|${k.item_id}`);
+    if (!rec || sha256(rec.response) !== k.response_sha256) {
+      refuse(`bridge: source reply ${k.response_id} is missing from, or no longer matches, its ingested text`);
+    }
+    responsesById.set(k.response_id, { ...k, response: rec.response });
+  }
+  const dirs = readdirSync(sourceRoot, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && /^judge-answers(-reroute(-\d+)?)?$/.test(d.name))
+    .map((d) => path.join(sourceRoot, d.name))
+    .sort();
+  if (dirs.length === 0) refuse(`bridge: ${sourceRoot} has neither assembly audits nor judge-answers directories`);
+  const loaded = loadRoutedAnswers({ routingKey, dirs, responsesById, bridgeById });
+  if (loaded.errors.length > 0) {
+    refuse(`bridge: the source run's judge answers did not validate (${loaded.errors.length}): ${loaded.errors.slice(0, 3).join("; ")}`);
+  }
+  return loaded.ratings;
+}
 
 /**
  * Every first-pilot reply that was rated, in the first pilot's FINAL used ratings, by at least one judge in `runJudges`.
@@ -30,20 +69,39 @@ export function loadBridgePool({ sourceRoot, sourceKeyRel, runJudges, currentBan
   const byId = new Map(sourceKey.responses.map((r) => [r.response_id, r]));
   const judgeSet = new Set(runJudges);
 
+  // Where the source run's FINAL ratings come from:
+  //   - its per-subject assembly audits (row_mapping) when every subject has one (runs finished by assemble-run);
+  //   - otherwise its routed judge answers (runs finished through the MCP driver have no audit; their final ratings
+  //     are the amended key's routed answers, read with the same loader the assembler and analyze-pilot use).
+  // Audits win when present, so a run that has them is read exactly as before.
+  const subjects = [...sourceKey.subjects].sort();
+  const auditFileOf = (s) => path.join(sourceRoot, "scorecards", `${s}.assembly-audit.json`);
+  const haveAudits = subjects.every((s) => existsSync(auditFileOf(s)));
+  const routedRatings = haveAudits ? null : loadSourceRatingsFromRoutedAnswers({ sourceRoot, sourceKeyRel, sourceKey });
+
   const pool = [];
-  for (const subject of [...sourceKey.subjects].sort()) {
-    const auditFile = path.join(sourceRoot, "scorecards", `${subject}.assembly-audit.json`);
-    if (!existsSync(auditFile)) refuse(`bridge: ${auditFile} does not exist`);
-    const audit = JSON.parse(readFileSync(auditFile, "utf8"));
-    if (audit.subject !== subject) refuse(`bridge: ${auditFile} is for ${audit.subject}, not ${subject}`);
+  for (const subject of subjects) {
     const ratings = new Map();
-    for (const row of audit.row_mapping) {
-      const key = byId.get(row.response_id);
-      if (!key || key.subject !== subject || key.item_id !== row.item_id || key.trial !== row.subject_trial) {
-        refuse(`bridge: audit row for ${row.response_id} does not match the first pilot's key`);
+    if (haveAudits) {
+      const auditFile = auditFileOf(subject);
+      const audit = JSON.parse(readFileSync(auditFile, "utf8"));
+      if (audit.subject !== subject) refuse(`bridge: ${auditFile} is for ${audit.subject}, not ${subject}`);
+      for (const row of audit.row_mapping) {
+        const key = byId.get(row.response_id);
+        if (!key || key.subject !== subject || key.item_id !== row.item_id || key.trial !== row.subject_trial) {
+          refuse(`bridge: audit row for ${row.response_id} does not match the first pilot's key`);
+        }
+        if (!ratings.has(row.response_id)) ratings.set(row.response_id, {});
+        ratings.get(row.response_id)[row.judge] = row.rating_1_5;
       }
-      if (!ratings.has(row.response_id)) ratings.set(row.response_id, {});
-      ratings.get(row.response_id)[row.judge] = row.rating_1_5;
+    } else {
+      for (const r of routedRatings) {
+        const key = byId.get(r.response_id);
+        if (!key) refuse(`bridge: routed rating for ${r.response_id} does not match the source run's key`);
+        if (key.subject !== subject) continue;
+        if (!ratings.has(r.response_id)) ratings.set(r.response_id, {});
+        ratings.get(r.response_id)[r.judge] = r.rating_1_5;
+      }
     }
     for (const [responseId, all] of ratings) {
       const key = byId.get(responseId);

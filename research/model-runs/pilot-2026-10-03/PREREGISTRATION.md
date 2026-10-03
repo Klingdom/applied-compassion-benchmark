@@ -152,4 +152,16 @@ As in pilot-2026-10-02:
 
 ## Deviations (append-only, dated)
 
-_None yet._
+- **2026-10-03, D1 — call order: `gemma2:9b` runs last.**
+  - **What happened.** The first subject run was stopped by the host, outside the harness, because system memory
+    was critically low: about 0.6 GB free of 15.8 GB. It had completed 17 of 1,328 replies, all `gemma2-9b-A`.
+    `gemma2:9b` loads at 7.1 GB and does not fit the 8 GB GPU; about 20% of it ran from system RAM.
+  - **What changes.** With founder approval (2026-10-03, "Approve the for you stuff and proceed"), the run resumes
+    with `--defer-build gemma2:9b`. The other three builds, which fit in GPU memory, run first, and Gemma 2 runs
+    last.
+  - **Why it changes nothing else.** It changes call order only. Every reply's seed, item order, system message and
+    fresh conversation are derived per (subject variant, item, trial), so no reply's input changes.
+  - **Kept, not re-run.** The 17 completed replies stay. They were produced under the same inputs they would have
+    had in any order.
+  - **Before this note.** No reply from the other seven subject variants existed when it was written.
+  - **Code.** `orderedRunLabels` in `lib/local-subjects.mjs`, tested in `tests/defer-build.test.mjs`.

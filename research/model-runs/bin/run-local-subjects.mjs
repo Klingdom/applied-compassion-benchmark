@@ -33,6 +33,7 @@ mainAsync(async () => {
     "dry-run": { type: "boolean", default: false },
     "retry-failed": { type: "boolean", default: false },
     finalize: { type: "boolean", default: false },
+    "defer-build": { type: "string", multiple: true },
   });
   const root = runRoot(v);
   const config = loadRunConfig(path.resolve(v.config ?? path.join(root, "run-config.json")));
@@ -88,6 +89,7 @@ mainAsync(async () => {
     runRoot: root,
     limit,
     retryFailed: v["retry-failed"],
+    deferTags: v["defer-build"] ?? [],
     log: (m) => console.log(m),
   });
   console.log(`Ollama ${ver}. Per subject: ${JSON.stringify(stats)}`);
