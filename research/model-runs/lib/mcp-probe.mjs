@@ -34,7 +34,13 @@ import { loadInputs, bridgeTexts, buildSubjectRows } from "./assemble.mjs";
 import { loadJudgeAnswers, loadRoutedAnswers } from "./judge-answers.mjs";
 import { assertValidityFresh } from "./judge-validity.mjs";
 import { checkRouting } from "./judge-routing.mjs";
-import { readRecord, recordPath, buildMessages } from "./local-subjects.mjs";
+import { readRecord, recordPath, buildSubjectMessages, resolveSubject, runOrderLabels } from "./local-subjects.mjs";
+
+/**
+ * cb-probe's variance floor for start_scored_run `trials` (THRESHOLDS.MIN_TRIALS_PER_ITEM_FOR_VARIANCE). Pinned here so a
+ * plan can be made offline, and CHECKED against the live server's tools/list schema in openSession: a drift refuses.
+ */
+export const SCORER_MIN_TRIALS = 3;
 
 export const REQUIRED_TOOLS = Object.freeze(["start_scored_run", "next_item", "record_item_rating", "run_exposure_probe", "run_status", "finish_scored_run"]);
 
@@ -73,6 +79,53 @@ export function judgeLabelFor(config) {
 
 export function assertLabelFits(name, value) {
   if (value.length > 200) refuse(`${name} is ${value.length} characters; cb-probe's start_scored_run schema allows 200: ${value}`);
+}
+
+// ---------------------------------------------------------------------------
+// Scorer runs and probes per BUILD (arms)
+// ---------------------------------------------------------------------------
+/** cb-probe stores one rating per (item, trial_index): a run needs subject trials x judges per response of them. */
+export const scorerTrialsFor = (config, subject) => resolveSubject(config, subject).trials * config.judges_per_response;
+
+/** A variant can open a cb-probe scored run only if its scorer trials reach the server's floor. */
+export const scorerEligible = (config, subject, minTrials = SCORER_MIN_TRIALS) => scorerTrialsFor(config, subject) >= minTrials;
+
+/**
+ * The contamination probe is about a BUILD's memory, so it is planned once per build, not once per arm.
+ *
+ * What the server forces (tools/cb-probe, read-only): the probe lives inside a scored run (its questions are seeded from
+ * the server-assigned run_id), and finish_scored_run refuses unless THAT run's probe completed. So a variant that is to
+ * have a SelfRunScorecard needs its own scored run, and with it a probe whose questions differ from any other run's.
+ * A variant whose scorer trials (subject trials x judges) are below the server's floor cannot open a run at all.
+ * Therefore, per build:
+ *   - the probe runs in the build's FIRST scorer-eligible variant in config order (`primary`), with that variant's
+ *     system message sent on every probe question (record: probe_system_from);
+ *   - any further eligible variant gets a `server-required-repeat` probe (same system message as the primary, new
+ *     questions chosen by the server): the server cannot share a probe between runs;
+ *   - ineligible variants open no run; they reference the primary's probe result (`ineligible`).
+ * A build with no eligible variant is refused: it could have no probe at all.
+ */
+export function planBuildProbes(config, { minTrials = SCORER_MIN_TRIALS } = {}) {
+  const bySubject = new Map(config.subjects.map((s) => [s.label, s]));
+  return runOrderLabels(config.subjects).map((b) => {
+    const variants = b.variants.map((l) => bySubject.get(l));
+    const eligible = variants.filter((s) => scorerEligible(config, s, minTrials));
+    if (eligible.length === 0) {
+      refuse(`build ${b.build}: no variant has subject trials x judges per response >= ${minTrials}, so no scored run (and no probe) can be opened for it`);
+    }
+    const primary = eligible[0];
+    const sys = resolveSubject(config, primary);
+    return {
+      build: b.build,
+      tag: b.tag,
+      digest: b.digest,
+      primary: primary.label,
+      probe_system_from: primary.label,
+      probe_system_message_sha256: sys.hasSystem ? sha256(sys.systemMessage) : null,
+      scored_runs: eligible.map((s, i) => ({ subject: s.label, arm: s.arm ?? null, role: i === 0 ? "primary" : "server-required-repeat", scorer_trials: scorerTrialsFor(config, s) })),
+      ineligible: variants.filter((s) => !eligible.includes(s)).map((s) => ({ subject: s.label, arm: s.arm ?? null, scorer_trials: scorerTrialsFor(config, s), probe_from: primary.label })),
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -222,6 +275,10 @@ export async function openSession({ artifactRoot, transcriptFile, serverOptions 
     if (!probe.inputSchema?.properties?.identification_answers) {
       refuse("run_exposure_probe's published schema has no identification_answers; this server predates the 2026-10-02 change that requires them");
     }
+    const floor = tools.find((t) => t.name === "start_scored_run")?.inputSchema?.properties?.trials?.minimum;
+    if (floor !== SCORER_MIN_TRIALS) {
+      refuse(`start_scored_run publishes a trials floor of ${JSON.stringify(floor)} but this harness plans arms around ${SCORER_MIN_TRIALS} (SCORER_MIN_TRIALS); update the pin deliberately`);
+    }
     return { client, serverInfo: init.serverInfo, toolsSha256: sha256(JSON.stringify(tools)), artifactRoot };
   } catch (e) {
     await client.close();
@@ -233,13 +290,17 @@ export async function openSession({ artifactRoot, transcriptFile, serverOptions 
 // ---------------------------------------------------------------------------
 // Asking the local model one question
 // ---------------------------------------------------------------------------
-async function askQuestion({ ollama, subject, runId, kind, qid, prompt, accept, maxRetries, file, retryFailed, meta, log, now, config = {} }) {
+async function askQuestion({ ollama, subject, runId, kind, qid, prompt, accept, maxRetries, file, retryFailed, meta, log, now, config = {}, probeSubject = subject }) {
   if (!SAFE_ID.test(qid)) refuse(`unsafe question id ${qid}`);
   const promptHash = sha256(prompt);
+  const probeSystem = resolveSubject(config, probeSubject);
   const existing = existsSync(file) ? readJson(file) : null;
   let previousFailed;
   if (existing) {
     if (existing.prompt_sha256 !== promptHash) refuse(`${file} was recorded for a different prompt; refusing to reuse it`);
+    if ((existing.system_message_sha256 ?? null) !== (probeSystem.hasSystem ? sha256(probeSystem.systemMessage) : null)) {
+      refuse(`${file} was recorded under a different system message; refusing to reuse it`);
+    }
     if (existing.status === "ok" || !retryFailed) return existing;
     previousFailed = [...(existing.previous_failed ?? []), { attempts: existing.attempts, recorded_at: existing.finished_at }];
   }
@@ -253,8 +314,8 @@ async function askQuestion({ ollama, subject, runId, kind, qid, prompt, accept, 
     const a = { attempt, seed, options, started_at: now().toISOString() };
     const t0 = Date.now();
     try {
-      // RUN-SYS-1: same explicit system message as the subject answers (legacy runs: one user turn, as recorded).
-      const r = await ollama.chat({ model: subject.tag, messages: buildMessages(config, prompt), options });
+      // RUN-SYS-1: the explicit system message of the probe variant (legacy runs: one user turn, as recorded).
+      const r = await ollama.chat({ model: subject.tag, messages: buildSubjectMessages(config, probeSubject, prompt), options });
       const content = r && r.message && typeof r.message.content === "string" ? r.message.content : "";
       Object.assign(a, {
         error: null,
@@ -284,7 +345,11 @@ async function askQuestion({ ollama, subject, runId, kind, qid, prompt, accept, 
     status: final ? "ok" : "failed",
     prompt, // verbatim
     prompt_sha256: promptHash,
-    conversation: "fresh; one user message; no system prompt",
+    conversation: probeSystem.hasSystem
+      ? "fresh; explicit system message (sha256 in system_message_sha256) then one user message"
+      : "fresh; one user message; no system prompt",
+    ...(probeSystem.hasSystem ? { system_message_sha256: sha256(probeSystem.systemMessage) } : {}),
+    ...(probeSubject.label !== subject.label ? { probe_system_from: probeSubject.label } : {}),
     model_tag: subject.tag,
     model_digest: meta.digest,
     ollama_version: meta.ollamaVersion,
@@ -308,7 +373,14 @@ async function askQuestion({ ollama, subject, runId, kind, qid, prompt, accept, 
 /**
  * @returns {Promise<{status: "completed"|"incomplete"|"server-refused", scorer_run_id: string, ...}>}
  */
-export async function runProbePhase({ config, subject, runRoot, artifactBase, ollama, bank, serverOptions = {}, retryFailed = false, log = () => {}, now = () => new Date() }) {
+export async function runProbePhase({ config, subject, probeSubject = subject, runRoot, artifactBase, ollama, bank, serverOptions = {}, retryFailed = false, log = () => {}, now = () => new Date() }) {
+  // `subject` is the variant whose scored run hosts the probe. `probeSubject` is the variant whose system message is sent on
+  // every probe question: the build's primary variant (planBuildProbes), which for a repeat probe is not `subject` itself.
+  if (resolveSubject(config, probeSubject).build !== resolveSubject(config, subject).build) refuse(`probe system message must come from a variant of the same build (${probeSubject.label} is not of ${subject.label}'s build)`);
+  if (!scorerEligible(config, subject)) {
+    refuse(`${subject.label}: subject trials x judges = ${scorerTrialsFor(config, subject)} is below cb-probe's floor of ${SCORER_MIN_TRIALS}; this variant cannot open a scored run. It references its build's probe instead (planBuildProbes).`);
+  }
+  const probeSystemSha = resolveSubject(config, probeSubject).hasSystem ? sha256(resolveSubject(config, probeSubject).systemMessage) : null;
   const P = subjectPaths(runRoot, subject.label);
   const artifactRoot = path.resolve(artifactBase, subject.label);
   assertArtifactRootOutsideRepo(artifactRoot);
@@ -321,6 +393,9 @@ export async function runProbePhase({ config, subject, runRoot, artifactBase, ol
   if (state) {
     if (path.resolve(state.artifact_root) !== artifactRoot) refuse(`${P.state} was written for artifact root ${state.artifact_root}; this invocation uses ${artifactRoot}`);
     if (state.run_id !== config.run_id) refuse(`${P.state} belongs to run ${state.run_id}`);
+    if (state.probe_system_message_sha256 !== undefined && state.probe_system_message_sha256 !== probeSystemSha) {
+      refuse(`${P.state} was written with a different probe system message; refusing to continue it under another`);
+    }
     if (state.probe?.status === "completed") return { status: "completed", scorer_run_id: state.scorer_run_id, already: true, result_file: P.result };
   }
 
@@ -343,7 +418,7 @@ export async function runProbePhase({ config, subject, runRoot, artifactBase, ol
         subject_label: subjectLabelFor({ subject, runId: config.run_id, digest }),
         judge_label: judgeLabelFor(config),
         judgeConfiguration: "panel",
-        trials: config.trials * config.judges_per_response,
+        trials: scorerTrialsFor(config, subject),
         seed: config.master_seed,
         include_sensitive: false,
       };
@@ -360,6 +435,9 @@ export async function runProbePhase({ config, subject, runRoot, artifactBase, ol
         run_id: config.run_id,
         subject: subject.label,
         scorer_run_id: started.run_id,
+        build: resolveSubject(config, subject).build,
+        probe_system_from: probeSubject.label,
+        probe_system_message_sha256: probeSystemSha,
         artifact_root: artifactRoot,
         started_at: now().toISOString(),
         model_tag: subject.tag,
@@ -404,7 +482,7 @@ export async function runProbePhase({ config, subject, runRoot, artifactBase, ol
     log(`[${subject.label}] challenge: ${challenge.probe_item_ids.length} recall, ${questions.length} identification question(s)`);
 
     // ---- ask the local model
-    const common = { ollama, subject, runId: config.run_id, maxRetries: config.max_retries, retryFailed, meta, log, now, config };
+    const common = { ollama, subject, probeSubject, runId: config.run_id, maxRetries: config.max_retries, retryFailed, meta, log, now, config };
     const recall = [];
     for (const id of challenge.probe_item_ids) {
       recall.push(
@@ -557,7 +635,7 @@ export async function runFinishPhase({ config, subject, rows, runRoot, artifactB
   if (path.resolve(state.artifact_root) !== artifactRoot) refuse(`${P.state} was written for artifact root ${state.artifact_root}; this invocation uses ${artifactRoot}`);
   assertArtifactRootOutsideRepo(artifactRoot);
   const runId = state.scorer_run_id;
-  const trialsPerItem = config.trials * config.judges_per_response;
+  const trialsPerItem = scorerTrialsFor(config, subject);
 
   const byItem = new Map();
   for (const r of rows) {
@@ -661,6 +739,69 @@ export async function runFinishPhase({ config, subject, rows, runRoot, artifactB
   } finally {
     await client.close();
   }
+}
+
+/**
+ * A variant below cb-probe's trials floor cannot have a server-made scorecard (start_scored_run refuses it). Its validated
+ * ratings are still recorded, response by response, in the same mcp-rating-map.json the analysis reads, with
+ * `scorecard: null`; the composite for it is computed ONLY by bin/analyze-pilot.mjs (the canonical function), and its
+ * contamination figures are the BUILD's probe (`probe_subject`). No server is started and nothing is scored here.
+ * Each row's served prompt is checked against the bank prompt and the hash of the message the subject was sent.
+ */
+export function writeUnscoredRatingMap({ config, subject, probeSubject, rows, runRoot, bank, now = () => new Date() }) {
+  if (scorerEligible(config, subject)) refuse(`${subject.label} can open a scored run; it must finish through runFinishPhase, not as an unscored variant`);
+  if (resolveSubject(config, probeSubject).build !== resolveSubject(config, subject).build) refuse(`${probeSubject.label} is not a variant of ${subject.label}'s build`);
+  if (!scorerEligible(config, probeSubject)) refuse(`${probeSubject.label} cannot host a probe (below cb-probe's trials floor)`);
+  const PP = subjectPaths(runRoot, probeSubject.label);
+  const pstate = loadState(PP.state);
+  if (pstate?.probe?.status !== "completed") refuse(`${subject.label}: its build's probe (hosted by ${probeSubject.label}) is ${pstate?.probe?.status ?? "not started"}; run --phase probe first`);
+  const trialsPerItem = scorerTrialsFor(config, subject);
+  const bankById = new Map(bank.items.map((i) => [i.id, i]));
+  const byItem = new Map();
+  for (const r of rows) {
+    if (!byItem.has(r.item_id)) byItem.set(r.item_id, []);
+    byItem.get(r.item_id).push(r);
+  }
+  const served = new Set(servedItems(bank).map((i) => i.id));
+  if (byItem.size !== served.size || [...byItem.keys()].some((id) => !served.has(id))) refuse(`${subject.label}: the rated item set differs from the served item set`);
+  for (const [id, list] of byItem) {
+    list.sort((a, b) => a.scorer_trial_index - b.scorer_trial_index);
+    if (list.length !== trialsPerItem || list.some((r, i) => r.scorer_trial_index !== i + 1)) refuse(`${subject.label} ${id}: ${list.length} rows, expected ${trialsPerItem} numbered 1..${trialsPerItem}`);
+    const prompt = bankById.get(id)?.prompt;
+    for (const r of list) {
+      if (typeof prompt !== "string" || sha256(prompt) !== r.outgoing_message_sha256) {
+        refuse(`${subject.label}: the bank prompt for ${id} does not hash to the message the subject was sent for ${r.response_id}`);
+      }
+    }
+  }
+  const P = subjectPaths(runRoot, subject.label);
+  const mapping = [...byItem.values()].flat().map((r) => ({
+    item_id: r.item_id,
+    scorer_trial_index: r.scorer_trial_index,
+    response_id: r.response_id,
+    subject_trial: r.subject_trial,
+    judge: r.judge,
+    judge_provenance: r.judge_provenance,
+    rating_1_5: r.rating_1_5,
+    response_sha256: sha256(r.response_text),
+    served_prompt_sha256: sha256(bankById.get(r.item_id).prompt),
+  }));
+  const file = path.join(P.scorecards, "mcp-rating-map.json");
+  writeJson(file, {
+    kind: "mcp-rating-map",
+    run_id: config.run_id,
+    subject: subject.label,
+    scorer_run_id: null,
+    scorecard: null,
+    scorecard_ineligible_reason: `subject trials x judges per response = ${trialsPerItem}, below cb-probe's start_scored_run floor of ${SCORER_MIN_TRIALS}; the server cannot open a scored run for this variant`,
+    scorer_trials_per_item: trialsPerItem,
+    probe_subject: probeSubject.label,
+    probe_scorer_run_id: pstate.scorer_run_id,
+    note: "Response-level mapping with no server scorecard. The composite for this variant is computed by bin/analyze-pilot.mjs with the canonical function from these rows; contamination figures are its build's probe. Descriptive; never an input to any score computed elsewhere.",
+    rows: mapping,
+    written_at: now().toISOString(),
+  });
+  return { status: "unscored-map-written", file, rows: mapping.length };
 }
 
 /**

@@ -153,6 +153,8 @@ main(() => {
       bridge: drawn,
       bridgeSeed: judging.bridge.seed,
       identityTerms: judging.identityTerms,
+      armLabels: judging.armLabels,
+      hiddenSystemMessages: judging.hiddenSystemMessages,
     };
   }
 

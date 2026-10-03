@@ -52,7 +52,12 @@ const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
 // First pilot: alphabetical, no implied order. Explicit-judge-set run: the config's registered order, so that
 // pairs[0] is "first minus second" exactly as the pre-registration states the primary comparison.
 const SUBJ = LOCAL ? CFG.subjects.map((s) => s.label) : ["claude-fable", "claude-haiku", "claude-opus", "claude-sonnet"];
-if (LOCAL && !(SUBJ.length === 2 && SUBJ[0] === "qwen2.5-7b" && SUBJ[1] === "llama3.2-3b")) {
+// ARMS (2026-10-02): a run whose config carries arm labels, per-subject trials/system messages or a `comparisons` list.
+// Per-subject results are computed exactly as before; the arms run adds `comparisons`, per-subject trial counts and, for a
+// variant below cb-probe's trials floor (no server scorecard; map.scorecard === null), a composite computed here from its
+// rating rows. A config without any of these keeps the first-pilot guard below and an output identical to before.
+const ARMS = Boolean(LOCAL && (Array.isArray(CFG.comparisons) || CFG.subjects.some((s) => s.arm !== undefined || s.trials !== undefined || Object.prototype.hasOwnProperty.call(s, "system_message"))));
+if (LOCAL && !ARMS && !(SUBJ.length === 2 && SUBJ[0] === "qwen2.5-7b" && SUBJ[1] === "llama3.2-3b")) {
   throw new Error("PREREGISTRATION.md section 8: the primary comparison is qwen2.5-7b minus llama3.2-3b; the config subject order must match");
 }
 const DIMS = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
@@ -65,16 +70,23 @@ for (const r of ing.responses ?? ing.answers ?? ing) words.set(`${r.subject}|${r
 const rows = [];
 const card = {};
 const audit = {};
+const unscored = {}; // arms only: label -> its mcp-rating-map (scorecard:null)
 const SKEY = LOCAL ? JSON.parse(readFileSync(join(R, "keys", "subject-brief-key.json"), "utf8")) : null;
 for (const s of SUBJ) {
   if (LOCAL) {
     const dir = join(R, "mcp-scorecards", s);
-    card[s] = JSON.parse(readFileSync(join(dir, "scorecard.json"), "utf8"));
     const map = JSON.parse(readFileSync(join(dir, "mcp-rating-map.json"), "utf8"));
     if (map.subject !== s || map.run_id !== RUN) throw new Error(`${dir}/mcp-rating-map.json is not for ${RUN} ${s}`);
+    if (map.scorecard === null) {
+      // Below cb-probe's trials floor: no server scorecard exists. Only an arms run may have such a variant.
+      if (!ARMS) throw new Error(`${s}: unscored rating map in a run that does not use arms`);
+      unscored[s] = map;
+    } else {
+      card[s] = JSON.parse(readFileSync(join(dir, "scorecard.json"), "utf8"));
+    }
     // Audit-shaped record, built with the assembler's own descriptive helpers (same functions, same figures).
     audit[s] = {
-      bank_version: card[s].provenance.bank_version,
+      bank_version: unscored[s] ? undefined : card[s].provenance.bank_version,
       paired_judge_agreement: asm.pairedAgreement(map.rows),
       judge_routing: asm.routingAuditForSubject(map.rows),
       row_mapping: map.rows,
@@ -83,9 +95,17 @@ for (const s of SUBJ) {
     audit[s] = JSON.parse(readFileSync(join(R, "scorecards", `${s}.assembly-audit.json`), "utf8"));
     card[s] = JSON.parse(readFileSync(join(R, "scorecards", `${s}.scorecard.json`), "utf8"));
   }
-  if (card[s].official !== false || card[s].comparability !== "none") throw new Error(`${s}: scorecard is not official:false / comparability:none`);
+  if (!unscored[s] && (card[s].official !== false || card[s].comparability !== "none")) throw new Error(`${s}: scorecard is not official:false / comparability:none`);
   for (const m of audit[s].row_mapping)
     rows.push({ s, item: m.item_id, dim: dimOf[m.item_id], trial: m.subject_trial, judge: m.judge, rating: m.rating_1_5, len: words.get(`${s}|${m.subject_trial}|${m.item_id}`) });
+}
+// An unscored variant cites its BUILD's probe (the variant that hosted it) and takes the bank version from that scorecard.
+const probeOf = {};
+for (const [s, map] of Object.entries(unscored)) {
+  const host = card[map.probe_subject];
+  if (!host) throw new Error(`${s}: its probe subject ${map.probe_subject} has no server scorecard`);
+  probeOf[s] = map.probe_subject;
+  audit[s].bank_version = host.provenance.bank_version;
 }
 if (rows.some((r) => r.len === undefined)) throw new Error("a rating row has no matching response text");
 const items = [...new Set(rows.map((r) => r.item))].sort();
@@ -98,29 +118,24 @@ const dimScores = (s, valueFn) => Object.fromEntries(DIMS.map((d) => {
 
 // bootstrap: items resampled within dimension, same draw for every subject
 const SEED = LOCAL ? CFG.master_seed : 20261001, B = 1000;
-let seed = SEED;
-const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
-const byDim = Object.fromEntries(DIMS.map((d) => [d, items.filter((i) => dimOf[i] === d)]));
-const boots = Object.fromEntries(SUBJ.map((s) => [s, []]));
-const dimBoots = Object.fromEntries(SUBJ.map((s) => [s, Object.fromEntries(DIMS.map((d) => [d, []]))]));
-for (let b = 0; b < B; b++) {
-  const pick = Object.fromEntries(DIMS.map((d) => [d, byDim[d].map(() => byDim[d][Math.floor(rnd() * byDim[d].length)])]));
-  for (const s of SUBJ) {
-    const dm = Object.fromEntries(DIMS.map((d) => [d, mean(pick[d].map((i) => im[`${s}|${i}`]))]));
-    for (const k of DIMS) dimBoots[s][k].push(dm[k]);
-    boots[s].push(comp(dm));
-  }
-}
+// (the resampling itself lives in lib/paired-bootstrap.mjs, moved verbatim so arm comparisons can be tested)
+const { pairedBootstrap, pairedComparisons } = await import("../lib/paired-bootstrap.mjs");
+const { byDim, boots, dimBoots } = pairedBootstrap({ subjects: SUBJ, items, dimOf, im, dims: DIMS, seed: SEED, B, comp });
 const ci = (xs) => { const t = [...xs].sort((a, b) => a - b); return [r1(t[Math.floor(0.025 * B)]), r1(t[Math.floor(0.975 * B)])]; };
 
 const subjects = {};
 for (const s of SUBJ) {
   const d = dimScores(s);
   const c = comp(d);
-  const maxDiff = Math.max(...DIMS.map((k) => Math.abs(d[k] - card[s].dimensions[k])));
-  if (r1(c) !== card[s].composite || maxDiff > 1e-9) throw new Error(`${s}: recompute ${r1(c)} disagrees with scorecard ${card[s].composite}`);
+  // A variant below cb-probe's trials floor has no server scorecard: nothing to cross-check, and its contamination
+  // figures are those of its build's probe (the variant that hosted it). Every other subject is checked as before.
+  if (!unscored[s]) {
+    const maxDiff = Math.max(...DIMS.map((k) => Math.abs(d[k] - card[s].dimensions[k])));
+    if (r1(c) !== card[s].composite || maxDiff > 1e-9) throw new Error(`${s}: recompute ${r1(c)} disagrees with scorecard ${card[s].composite}`);
+  }
   const lens = rows.filter((r) => r.s === s).map((r) => r.len).sort((a, b) => a - b);
-  const id = card[s].contamination.identification;
+  const probeCard = unscored[s] ? card[probeOf[s]] : card[s];
+  const id = probeCard.contamination.identification;
   subjects[s] = {
     composite: r1(c), band: getBand(c), interval95: ci(boots[s]),
     dimensions: Object.fromEntries(DIMS.map((k) => [k, r2(d[k])])),
@@ -128,25 +143,32 @@ for (const s of SUBJ) {
     dimension_item_counts: Object.fromEntries(DIMS.map((k) => [k, byDim[k].length])),
     median_reply_words: lens[lens.length >> 1],
     contamination: {
-      indicated: card[s].contamination.contamination_indicated,
-      recall_items_flagged: card[s].contamination.items.filter((i) => i.exposure_flag).length,
-      recall_items_probed: card[s].contamination.items.length,
+      indicated: probeCard.contamination.contamination_indicated,
+      recall_items_flagged: probeCard.contamination.items.filter((i) => i.exposure_flag).length,
+      recall_items_probed: probeCard.contamination.items.length,
       identification_correct: id.correct, identification_asked: id.questions_asked,
       identification_p_if_unexposed: r3(id.probability_if_unexposed), identification_flagged: id.flagged,
+      ...(unscored[s] ? { from_build_probe_of: probeOf[s] } : {}),
     },
     judge_agreement: {
       exact: r3(audit[s].paired_judge_agreement.exact_agreement),
       mean_absolute_difference: r2(audit[s].paired_judge_agreement.mean_absolute_difference),
       responses_differing_by_2_or_more: audit[s].paired_judge_agreement.responses_differing_by_2_or_more,
     },
-    official: card[s].official, comparability: card[s].comparability,
-    ...(LOCAL ? {
+    official: unscored[s] ? false : card[s].official, comparability: unscored[s] ? "none" : card[s].comparability,
+    ...(LOCAL && !unscored[s] ? {
       composite_floor_met: card[s].composite_withheld_reason === null,
       // The server's own interval resamples trials inside each item and treats a response's two judges as independent
       // trials (harness README, limit 1), so it is narrower than interval95 above. Shown for transparency, not for use.
       scorecard_trial_level_interval95: card[s].uncertainty.composite_interval.ci,
       scorecard_mean_judge_disagreement: r3(card[s].judge_panel.mean_disagreement),
       mcp_scorecard: `research/model-runs/${RUN}/mcp-scorecards/${s}/scorecard.json`,
+    } : {}),
+    ...(unscored[s] ? {
+      mcp_scorecard: null,
+      scorecard_ineligible_reason: unscored[s].scorecard_ineligible_reason,
+      composite_source: "computed here by computeCompositeFromDimensions from the rating rows (no server scorecard exists for this variant)",
+      rating_map: `research/model-runs/${RUN}/mcp-scorecards/${s}/mcp-rating-map.json`,
     } : {}),
   };
 }
@@ -157,6 +179,20 @@ for (let a = 0; a < SUBJ.length; a++) for (let b = a + 1; b < SUBJ.length; b++) 
   const [lo, hi] = ci(diffs);
   pairs.push({ a: x, b: y, difference: r1(subjects[x].composite - subjects[y].composite), interval95: [lo, hi], separated: lo > 0 || hi < 0 });
 }
+// Pre-registered comparisons from the config (arms runs): the SAME paired item-resampling bootstrap draws as `pairs`
+// (boots[x][k] - boots[y][k] over the same resampled items), in the order and orientation the config lists them.
+const comparisons = ARMS && Array.isArray(CFG.comparisons)
+  ? pairedComparisons({ comparisons: CFG.comparisons, boots, composites: Object.fromEntries(SUBJ.map((s) => [s, subjects[s].composite])), ci, r1 }).map((p) => {
+    const sx = CFG.subjects.find((s) => s.label === p.a), sy = CFG.subjects.find((s) => s.label === p.b);
+    return {
+      a: p.a, b: p.b, kind: p.kind,
+      build_a: `${sx.tag}@sha256:${sx.digest}`, build_b: `${sy.tag}@sha256:${sy.digest}`, arm_a: sx.arm ?? null, arm_b: sy.arm ?? null,
+      composite_a: subjects[p.a].composite, composite_b: subjects[p.b].composite,
+      difference: p.difference, interval95: p.interval95, separated: p.separated,
+      median_reply_words_a: subjects[p.a].median_reply_words, median_reply_words_b: subjects[p.b].median_reply_words,
+    };
+  })
+  : null;
 // per-dimension paired separation (same resampled items)
 const dimension_pairwise = [];
 for (let a = 0; a < SUBJ.length; a++) for (let b = a + 1; b < SUBJ.length; b++) for (const k of DIMS) {
@@ -433,7 +469,7 @@ const out = {
   status: "UNOFFICIAL PILOT — official:false, comparability:none on every scorecard",
   design: {
     subjects: SUBJ, access_tier: LOCAL ? SKEY.access_tier : "agent (Claude Code subagent; snapshot id unverifiable)",
-    items_served: items.length, trials_per_subject: 3, responses: rows.length / 2, ratings: rows.length,
+    items_served: items.length, trials_per_subject: ARMS ? Object.fromEntries(CFG.subjects.map((s) => [s.label, s.trials ?? CFG.trials])) : 3, responses: rows.length / 2, ratings: rows.length,
     judges_per_response: 2, self_judging: false,
     judge_family: LOCAL ? `all ${families.join("/")} family; no subject is in the judges' family (cross-family)` : "same family as subjects (all Claude)",
     excluded_judges: LOCAL ? local.judge_validity.judges_excluded : (ex?.judge_exclusion?.excluded_judges ?? (() => { throw new Error("no exclusion record in audit"); })()),
@@ -445,6 +481,18 @@ const out = {
       crisis_items_served: false,
       preregistration_sha256: local.preregistration_sha256,
     } : {}),
+    ...(ARMS ? {
+      arms: Object.fromEntries(CFG.subjects.map((s) => {
+        const own = Object.prototype.hasOwnProperty.call(s, "system_message");
+        const sys = own ? s.system_message : Object.prototype.hasOwnProperty.call(CFG, "system_message") ? CFG.system_message : null;
+        return [s.label, {
+          build: `${s.tag}@sha256:${s.digest}`, arm: s.arm ?? null, trials: s.trials ?? CFG.trials,
+          system_message_sha256: sys === null ? null : createHash("sha256").update(sys).digest("hex"),
+          scorecard: unscored[s.label] ? "none (below cb-probe's trials floor)" : "server",
+          probe_from: probeOf[s.label] ?? s.label,
+        }];
+      })),
+    } : {}),
   },
   method: {
     composite: "computeCompositeFromDimensions (unmodified), dimension = mean of item means",
@@ -453,7 +501,11 @@ const out = {
     ...(LOCAL ? { dimension_ratings_source: "scorecards finished by the cb-probe MCP server over stdio (mcp-scorecards/<subject>/scorecard.json) and their response-level mcp-rating-map.json; the composite is recomputed here from the rating rows and must equal the server's composite and dimension means" } : {}),
   },
   subjects, pairwise: pairs,
-  ...(LOCAL ? { primary_comparison: { definition: `${SUBJ[0]} minus ${SUBJ[1]}, composite, item-resampling 95% interval; separated = the interval excludes zero (PREREGISTRATION.md sections 1 and 8)`, ...pairs[0] } } : {}),
+  ...(LOCAL && !ARMS ? { primary_comparison: { definition: `${SUBJ[0]} minus ${SUBJ[1]}, composite, item-resampling 95% interval; separated = the interval excludes zero (PREREGISTRATION.md sections 1 and 8)`, ...pairs[0] } } : {}),
+  ...(comparisons ? {
+    comparisons,
+    comparisons_note: "Pre-registered in run-config.json, listed as written (a minus b). Same paired item-resampling bootstrap as `pairwise`: items resampled within dimension, the same draw for every subject, so a variant with fewer trials is compared on the same items; the interval reflects item sampling, not the extra within-item noise of a one-trial variant, and it is a composite difference, not a causal estimate of the instruction alone (reply length differs: see median_reply_words_*).",
+  } : {}),
   dimension_pairwise,
   dimension_pairwise_note: LOCAL
     ? `${dimension_pairwise.length} dimension-level comparisons at 95% each: about ${(dimension_pairwise.length * 0.05).toFixed(1)} would be flagged 'separated' by chance alone even if no model differed. Uncorrected; a dimension-level 'separated' flag is not evidence of a real difference unless it also survives the Bonferroni-corrected interval (bonferroni_separated), here over ${dimension_pairwise.length} comparisons.`

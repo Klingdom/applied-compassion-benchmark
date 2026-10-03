@@ -23,6 +23,11 @@
  *                 served prompt is the bank prompt the reply answered -> finish_scored_run. Writes scorecard.json beside the
  *                 probe files in <run-root>/mcp-scorecards/<subject>/.
  *
+ * ARMS (variants of one build that differ in system message and trial count): the probe is planned once per BUILD
+ * (planBuildProbes). It runs in the build's first variant whose subject trials x judges reach cb-probe's floor, with that
+ * variant's system message. A variant below the floor opens no scored run; --phase finish records its ratings in
+ * mcp-rating-map.json with scorecard:null and analyze-pilot.mjs computes its composite and cites the build's probe.
+ *
  * Exit codes: 0 done, 1 refused / error, 2 usage, 3 at least one probe INCOMPLETE.
  */
 import os from "node:os";
@@ -31,7 +36,7 @@ import { parse, runRoot, mainAsync } from "../lib/cli.mjs";
 import { DEFAULT_BANK_PATH, loadBankFile, refuse } from "../lib/common.mjs";
 import { createOllamaClient } from "../lib/ollama.mjs";
 import { loadRunConfig } from "../lib/local-subjects.mjs";
-import { loadFinishRows, runFinishPhase, runProbePhase, summariseProbeResult } from "../lib/mcp-probe.mjs";
+import { loadFinishRows, planBuildProbes, runFinishPhase, runProbePhase, summariseProbeResult, writeUnscoredRatingMap } from "../lib/mcp-probe.mjs";
 
 const DEFAULT_RUN_ID = "pilot-2026-10-02";
 
@@ -65,13 +70,21 @@ mainAsync(async () => {
   const subjects = wanted.map((l) => config.subjects.find((s) => s.label === l) ?? refuse(`unknown subject ${l}`));
   const artifactBase = path.resolve(v["artifact-base"] ?? path.join(os.homedir(), "compassion-probe-sessions", `${config.run_id}-mcp`));
   const log = (m) => console.log(m);
+  // One probe per BUILD (arms share it); see planBuildProbes for what the server forces.
+  const probePlan = planBuildProbes(config);
+  const byLabel = new Map(config.subjects.map((s) => [s.label, s]));
+  const buildOf = new Map(probePlan.flatMap((b) => [...b.scored_runs.map((r) => [r.subject, b]), ...b.ineligible.map((r) => [r.subject, b])]));
 
   if (v.phase === "probe") {
     const ollama = createOllamaClient({ host: config.ollama_host });
     let exit = 0;
-    for (const subject of subjects) {
-      log(`== ${subject.label}: probe phase (artifact root ${path.join(artifactBase, subject.label)})`);
-      const r = await runProbePhase({ config, subject, runRoot: root, artifactBase, ollama, bank, retryFailed: v["retry-failed"], log });
+    const hosts = [];
+    for (const b of probePlan) for (const r of b.scored_runs) hosts.push({ subject: byLabel.get(r.subject), probeSubject: byLabel.get(b.probe_system_from), role: r.role });
+    const wantedSet = new Set(subjects.map((s) => s.label));
+    for (const l of wantedSet) if (!hosts.some((h) => h.subject.label === l)) refuse(`${l} has no scored run (below cb-probe's trials floor); its build's probe is hosted by ${buildOf.get(l)?.primary}`);
+    for (const { subject, probeSubject, role } of hosts.filter((h) => wantedSet.has(h.subject.label))) {
+      log(`== ${subject.label}: probe phase, ${role}, system message of ${probeSubject.label} (artifact root ${path.join(artifactBase, subject.label)})`);
+      const r = await runProbePhase({ config, subject, probeSubject, runRoot: root, artifactBase, ollama, bank, retryFailed: v["retry-failed"], log });
       if (r.status === "completed") {
         log(`${subject.label}: probe COMPLETED${r.already ? " (already, from an earlier invocation)" : ""}; scorer run ${r.scorer_run_id}`);
         if (r.result) log(JSON.stringify(summariseProbeResult(r.result), null, 2));
@@ -99,6 +112,13 @@ mainAsync(async () => {
     const subjectRows = rows.rowsBySubject[subject.label];
     if (!subjectRows) refuse(`no validated rows for ${subject.label}`);
     log(`== ${subject.label}: finish phase (${subjectRows.length} ratings)`);
+    const b = buildOf.get(subject.label);
+    const unscored = b.ineligible.some((x) => x.subject === subject.label);
+    if (unscored) {
+      const w = writeUnscoredRatingMap({ config, subject, probeSubject: byLabel.get(b.primary), rows: subjectRows, runRoot: root, bank });
+      log(`${subject.label}: below cb-probe's trials floor, so no server scorecard; ratings recorded in ${w.file} (${w.rows} rows); composite comes from analyze-pilot.mjs; probe = ${b.primary}'s`);
+      continue;
+    }
     const r = await runFinishPhase({ config, subject, rows: subjectRows, runRoot: root, artifactBase, bank, log });
     log(`${subject.label}: finished; composite ${r.scorecard.composite}, band ${r.scorecard.band}, official ${r.scorecard.official}; ${r.scorecard_file}`);
   }

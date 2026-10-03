@@ -144,10 +144,14 @@ export function renderBatchMarkdown(batch, textFn = (t) => t) {
  * Blinding self-check on the harness-written text (everything except verbatim prompts/replies).
  * Refuses on any identity term in the scaffold or any forbidden entry field.
  */
-export function assertBatchesBlind({ batches, subjects, runId, records }) {
+export function assertBatchesBlind({ batches, subjects, runId, records, armLabels = [], hiddenSystemMessages = [] }) {
+  // Arms: a judge must learn neither which arm a reply came from nor what system message the subject was given.
+  // Arm labels of 1-2 characters ("A", "B") would match ordinary words, so they are covered structurally instead
+  // (no `arm` / `system_message` / `build` field on any entry) and by the label-bearing subject names above.
   const identityTerms = [
     ...subjects,
     ...subjects.flatMap((s) => s.split("-")).filter((w) => w.length > 2 && w !== "claude"),
+    ...armLabels.filter((a) => a.length > 2),
     runId,
     ...records.flatMap((r) => [r.brief_id, r.code]),
   ];
@@ -160,8 +164,12 @@ export function assertBatchesBlind({ batches, subjects, runId, records }) {
 ${JSON.stringify(blanked)}`;
     const leaks = findIdentityLeaks({ scaffoldText: scaffold, identityTerms });
     if (leaks.length > 0) refuse(`judge batch ${base} scaffold would reveal identity: ${leaks.join(", ")}`);
+    const lowered = scaffold.toLowerCase();
+    for (const m of hiddenSystemMessages) {
+      if (m.length > 0 && lowered.includes(m.toLowerCase())) refuse(`judge batch ${base} scaffold contains a subject system message`);
+    }
     const entryKeys = new Set(batch.entries.flatMap((e) => Object.keys(e)));
-    for (const forbidden of ["subject", "trial", "code", "brief_id", "item_id", "judges"]) {
+    for (const forbidden of ["subject", "trial", "code", "brief_id", "item_id", "judges", "arm", "build", "system_message", "system_message_sha256"]) {
       if (entryKeys.has(forbidden)) refuse(`judge batch ${base} carries forbidden field "${forbidden}"`);
     }
   }
@@ -262,6 +270,8 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
     subjects: judging ? [...subjects, ...new Set(bridgeRecords.map((b) => b.source_subject))] : subjects,
     runId,
     records: [...records, ...bridgeRecords],
+    armLabels: judging?.armLabels ?? [],
+    hiddenSystemMessages: judging?.hiddenSystemMessages ?? [],
   });
 
   const load = Object.fromEntries(judgeSet.map((s) => [s, byJudge.get(s).length]));

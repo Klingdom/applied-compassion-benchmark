@@ -98,9 +98,11 @@ export function buildSubjectRows({ subject, subjectKey, responsesById, ratingsBy
   const byCell = new Map();
   for (const r of responsesById.values()) if (r.subject === subject) byCell.set(`${r.item_id}|${r.trial}`, r);
   const rows = [];
+  // Arms: a subject variant may have its own trial count (keys written for arm runs carry trials_by_subject).
+  const trialCount = subjectKey.trials_by_subject?.[subject] ?? subjectKey.trials_per_item;
   for (const itemId of [...subjectKey.served_item_ids].sort()) {
     let k = 0;
-    for (let trial = 1; trial <= subjectKey.trials_per_item; trial += 1) {
+    for (let trial = 1; trial <= trialCount; trial += 1) {
       const resp = byCell.get(`${itemId}|${trial}`);
       if (!resp) refuse(`no response for ${subject} trial ${trial} item ${itemId}`);
       if (resp.judges.length !== JUDGES_PER_RESPONSE || new Set(resp.judges).size !== JUDGES_PER_RESPONSE) {
@@ -237,6 +239,9 @@ export function assembleRun({ keysDir, ratingsDir = null, ratingsDirs = null, ro
       refuse("rating set does not equal the routed (response, judge) pairs");
     }
 
+    if (subjectKey.trials_by_subject) {
+      refuse("this run uses arms (per-subject trial counts); assemble-run.mjs opens one uniform scorer run per subject. Finish it with bin/run-mcp-probe.mjs --phase finish.");
+    }
     const runs = {};
     const problems = [];
     const subjectRows = {};

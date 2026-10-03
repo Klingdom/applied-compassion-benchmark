@@ -65,15 +65,84 @@ export function loadRunConfig(file) {
   }
   // RUN-SYS-1 (Iteration 95). pilot-2026-10-02 sent no system message, so each build's own default applied, and
   // Qwen2.5's names its developer while Llama3.2's does not: the subjects ran under different framings without
-  // anyone choosing that. Every run must now state its system message explicitly (a string, "" allowed, sent
-  // identically to every subject). The one exception is a recorded legacy flag for runs made before this rule.
+  // anyone choosing that. Every run must now state its system message explicitly (a string, "" allowed).
+  // The one exception is a recorded legacy flag for runs made before this rule.
+  // ARMS (2026-10-02): a subject may carry its own `system_message`, which overrides the run-level one. The rule is
+  // unchanged in substance: no subject may END UP without an explicit system message. So the run-level message is
+  // required unless EVERY subject states its own; the legacy flag stays exclusive of any explicit message.
   const hasSystem = Object.prototype.hasOwnProperty.call(c, "system_message");
   if (hasSystem && typeof c.system_message !== "string") bad("system_message must be a string (an empty string is allowed)");
+  const ownSystem = (s) => Object.prototype.hasOwnProperty.call(s, "system_message");
+  for (const s of c.subjects) {
+    if (ownSystem(s) && typeof s.system_message !== "string") bad(`subject ${s.label}: system_message must be a string (an empty string is allowed)`);
+    if (s.arm !== undefined && (typeof s.arm !== "string" || !SAFE_NAME.test(s.arm))) bad(`subject ${s.label}: arm must be a safe name (letters, digits, . _ -)`);
+    if (s.trials !== undefined && (!Number.isInteger(s.trials) || s.trials < 1)) bad(`subject ${s.label}: trials must be a positive integer`);
+  }
   if (!hasSystem && c.system_message_legacy_absent !== true) {
-    bad("system_message is required: state the exact system message sent to every subject (\"\" for an explicit empty one). " +
-      "Without it each model build's own default system line applies silently and may differ between subjects (RUN-SYS-1).");
+    const without = c.subjects.filter((s) => !ownSystem(s)).map((s) => s.label);
+    if (without.length > 0) {
+      bad("system_message is required: state the exact system message sent to every subject (\"\" for an explicit empty one), " +
+        "either run-level or on every subject. " +
+        `Without it each model build's own default system line applies silently and may differ between subjects (RUN-SYS-1). Subjects with none: ${without.join(", ")}.`);
+    }
   }
   if (hasSystem && c.system_message_legacy_absent === true) bad("system_message and system_message_legacy_absent are mutually exclusive");
+  if (!hasSystem && c.system_message_legacy_absent === true && c.subjects.some(ownSystem)) {
+    bad("system_message_legacy_absent is exclusive of explicit messages: a subject-level system_message is present, so this is not a legacy run");
+  }
+
+  // Arms: subjects with the same tag+digest are variants of one build. They may differ ONLY in system message and trial count.
+  const byBuild = new Map();
+  for (const s of c.subjects) {
+    const k = buildKeyOf(s);
+    if (!byBuild.has(k)) byBuild.set(k, []);
+    byBuild.get(k).push(s);
+  }
+  const sharing = [...byBuild.values()].some((v) => v.length > 1);
+  if (sharing) {
+    const missing = c.subjects.filter((s) => s.arm === undefined).map((s) => s.label);
+    if (missing.length > 0) bad(`two subjects share a build, so every subject needs an arm label; missing on: ${missing.join(", ")}`);
+  }
+  for (const [build, variants] of byBuild) {
+    const arms = new Set();
+    const shapes = new Set();
+    const families = new Set();
+    for (const s of variants) {
+      if (s.arm !== undefined) {
+        if (arms.has(s.arm)) bad(`build ${build}: arm "${s.arm}" is used twice (build + arm must be unique)`);
+        arms.add(s.arm);
+      }
+      const r = resolveSubject(c, s);
+      const shape = JSON.stringify([r.hasSystem ? r.systemMessage : null, r.trials]);
+      if (shapes.has(shape)) bad(`build ${build}: two variants have the same system message and trial count; a variant must differ in at least one`);
+      shapes.add(shape);
+      if (s.family !== undefined) families.add(s.family);
+    }
+    if (families.size > 1) bad(`build ${build}: variants of one build must carry the same family (${[...families].join(", ")})`);
+  }
+
+  // Pre-registerable comparisons between subject variants (read by bin/analyze-pilot.mjs).
+  if (c.comparisons !== undefined) {
+    if (!Array.isArray(c.comparisons)) bad("comparisons must be an array");
+    const seen = new Set();
+    const byLabel = new Map(c.subjects.map((s) => [s.label, s]));
+    for (const [i, cmp] of c.comparisons.entries()) {
+      const where = `comparisons[${i}]`;
+      if (!cmp || !byLabel.has(cmp.a) || !byLabel.has(cmp.b)) bad(`${where}: a and b must be subject labels`);
+      if (cmp.a === cmp.b) bad(`${where}: a and b are the same subject`);
+      if (cmp.kind !== "arm" && cmp.kind !== "build") bad(`${where}: kind must be "arm" (same build, different arm) or "build" (different build, same arm)`);
+      const [x, y] = [byLabel.get(cmp.a), byLabel.get(cmp.b)];
+      if (cmp.kind === "arm" && (buildKeyOf(x) !== buildKeyOf(y) || x.arm === undefined || x.arm === y.arm)) {
+        bad(`${where}: an "arm" comparison needs two arms of the same build`);
+      }
+      if (cmp.kind === "build" && (buildKeyOf(x) === buildKeyOf(y) || x.arm === undefined || x.arm !== y.arm)) {
+        bad(`${where}: a "build" comparison needs two different builds under the same arm label`);
+      }
+      const pair = `${cmp.a}|${cmp.b}`;
+      if (seen.has(pair) || seen.has(`${cmp.b}|${cmp.a}`)) bad(`${where}: ${cmp.a} vs ${cmp.b} is listed twice`);
+      seen.add(pair);
+    }
+  }
   return c;
 }
 
@@ -83,6 +152,60 @@ export function buildMessages(config, prompt) {
   return hasSystem
     ? [{ role: "system", content: config.system_message }, { role: "user", content: prompt }]
     : [{ role: "user", content: prompt }];
+}
+
+// ---------------------------------------------------------------------------
+// Builds, arms and per-subject overrides
+// ---------------------------------------------------------------------------
+/** Variants of one build share tag + digest. This string is the build's identity everywhere (plan, records, probe, analysis). */
+export const buildKeyOf = (s) => `${s.tag}@sha256:${s.digest}`;
+
+/**
+ * One subject's effective settings: its own `system_message` / `trials` when present, else the run-level value.
+ * `hasSystem` false only for legacy runs (no run-level message, legacy flag, no subject override: loadRunConfig refuses
+ * anything else).
+ */
+export function resolveSubject(config, s) {
+  const own = Object.prototype.hasOwnProperty.call(s, "system_message");
+  const run = Object.prototype.hasOwnProperty.call(config, "system_message");
+  const hasSystem = own || run;
+  return {
+    label: s.label,
+    tag: s.tag,
+    digest: s.digest,
+    build: buildKeyOf(s),
+    arm: s.arm ?? null,
+    trials: s.trials ?? config.trials,
+    hasSystem,
+    systemMessage: hasSystem ? (own ? s.system_message : config.system_message) : null,
+    systemSource: own ? "subject" : run ? "run" : "none",
+  };
+}
+
+/** True when any subject carries an arm label or a per-subject override: the run uses ARMS. Legacy runs return false. */
+export const usesArms = (config) =>
+  config.subjects.some((s) => s.arm !== undefined || s.trials !== undefined || Object.prototype.hasOwnProperty.call(s, "system_message"));
+
+/**
+ * The messages array for one subject: its effective system message (own, else run-level) then the prompt.
+ * `subject` may be a config subject or a plan subject (a plan subject carries `system_message` only when one applies).
+ */
+export function buildSubjectMessages(config, subject, prompt) {
+  return Object.prototype.hasOwnProperty.call(subject, "system_message")
+    ? [{ role: "system", content: subject.system_message }, { role: "user", content: prompt }]
+    : buildMessages(config, prompt);
+}
+
+/** Labels grouped by build (builds in order of first appearance, variants in config order). Calls run in this order. */
+export function runOrderLabels(subjects) {
+  const builds = [];
+  const idx = new Map();
+  for (const s of subjects) {
+    const k = buildKeyOf(s);
+    if (!idx.has(k)) { idx.set(k, builds.length); builds.push({ build: k, tag: s.tag, digest: s.digest, variants: [] }); }
+    builds[idx.get(k)].variants.push(s.label);
+  }
+  return builds;
 }
 
 // ---------------------------------------------------------------------------
@@ -107,9 +230,12 @@ export function buildPlan({ bank, config }) {
   assertAdministrable(items);
   if (items.length === 0) refuse("the serving rule yields no items");
   const nextBriefId = idFactory(mulberry32(seedFromString(`brief-id:${config.run_id}`)), "b-", 8);
+  // Brief ids, order seeds and codes are derived in CONFIG order and from the subject LABEL (unique per variant), so an
+  // arm gets its own shuffles and its own seeds, and a legacy config derives exactly what it always did.
   const subjects = config.subjects.map((s) => {
+    const r = resolveSubject(config, s);
     const trials = [];
-    for (let trial = 1; trial <= config.trials; trial += 1) {
+    for (let trial = 1; trial <= r.trials; trial += 1) {
       const orderSeed = seedFromString(`order:${config.run_id}:${s.label}:${trial}`);
       const rng = mulberry32(orderSeed);
       const order = shuffle(items, rng);
@@ -117,9 +243,26 @@ export function buildPlan({ bank, config }) {
       const entries = order.map((item) => ({ item_id: item.id, code: nextCode() }));
       trials.push({ trial, brief_id: nextBriefId(), order_seed: orderSeed, entries });
     }
-    return { label: s.label, tag: s.tag, digest: s.digest, trials };
+    return {
+      label: s.label,
+      tag: s.tag,
+      digest: s.digest,
+      build: r.build,
+      arm: r.arm,
+      ...(r.hasSystem ? { system_message: r.systemMessage, system_message_sha256: sha256(r.systemMessage) } : {}),
+      trials,
+    };
   });
-  return { items, subjects, total_calls: subjects.reduce((n, s) => n + s.trials.length * items.length, 0) };
+  // Calls are made build by build (all variants of one build consecutively) so the GPU swaps models once per build.
+  const builds = runOrderLabels(config.subjects);
+  const run_order = builds.flatMap((b) => b.variants);
+  return {
+    items,
+    subjects,
+    builds,
+    run_order,
+    total_calls: subjects.reduce((n, s) => n + s.trials.length * items.length, 0),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -197,6 +340,13 @@ export async function runSubjects({ bank, config, client, runRoot, limit, retryF
 
   // Preflight 1: every outgoing message is leak-checked before any model is called.
   for (const item of plan.items) assertOutgoingClean({ bank, item, message: item.prompt });
+  // Preflight 1b: every system message (a subject sees it too) gets the same scaffold/rubric-vocabulary check.
+  for (const text of new Set(plan.subjects.filter((s) => Object.prototype.hasOwnProperty.call(s, "system_message")).map((s) => s.system_message))) {
+    const leaks = findSubjectLeaks({ text, scaffoldText: text, promptTexts: [], bank });
+    if (leaks.length > 0) {
+      throw new HarnessError(`LEAK in a system message (${JSON.stringify(text).slice(0, 80)}): ${leaks.length} hit(s):\n  ${leaks.join("\n  ")}\nSection 9: any leak-check hit on an outgoing message stops the run.`);
+    }
+  }
   // Preflight 2: every pinned digest matches the live one before any model is called.
   const digests = {};
   for (const s of plan.subjects) digests[s.label] = await verifyPinnedDigest(client, s);
@@ -205,8 +355,10 @@ export async function runSubjects({ bank, config, client, runRoot, limit, retryF
   const stats = {};
   let consecutiveFailures = 0;
 
-  for (const subject of plan.subjects) {
+  const planBySubject = new Map(plan.subjects.map((s) => [s.label, s]));
+  for (const subject of plan.run_order.map((l) => planBySubject.get(l))) {
     const st = (stats[subject.label] = { planned: subject.trials.length * plan.items.length, already_ok: 0, already_failed: 0, new_ok: 0, new_failed: 0 });
+    const subjectHasSystem = Object.prototype.hasOwnProperty.call(subject, "system_message");
     let newCalls = 0;
     let sinceVerify = 0;
     let liveDigest = digests[subject.label];
@@ -242,7 +394,7 @@ export async function runSubjects({ bank, config, client, runRoot, limit, retryF
           const a = { attempt, options, started_at: now().toISOString() };
           const t0 = Date.now();
           try {
-            const r = await client.chat({ model: subject.tag, messages: buildMessages(config, message), options });
+            const r = await client.chat({ model: subject.tag, messages: buildSubjectMessages(config, subject, message), options });
             const content = r && r.message && typeof r.message.content === "string" ? r.message.content : "";
             Object.assign(a, {
               error: null,
@@ -280,10 +432,11 @@ export async function runSubjects({ bank, config, client, runRoot, limit, retryF
           model_digest: liveDigest,
           ollama_version: ollamaVersion,
           outgoing_message_sha256: sha256(message),
-          conversation: Object.prototype.hasOwnProperty.call(config, "system_message")
+          conversation: subjectHasSystem
             ? "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only"
             : "fresh; one user message; prompt text only; no system prompt",
-          ...(Object.prototype.hasOwnProperty.call(config, "system_message") ? { system_message_sha256: sha256(config.system_message) } : {}),
+          ...(subjectHasSystem ? { system_message_sha256: subject.system_message_sha256 } : {}),
+          ...(subject.arm !== null ? { arm: subject.arm, build: subject.build } : {}),
           attempts,
           final_attempt: ok ? reply.attempt : null,
           realised_options: ok ? attempts[reply.attempt].options : null,
@@ -358,6 +511,7 @@ export function finalizeRun({ bank, bankPath = DEFAULT_BANK_PATH, config, runRoo
       keyBriefs.push({
         brief_id: t.brief_id,
         subject: subject.label,
+        ...(subject.arm !== null ? { arm: subject.arm } : {}),
         trial: t.trial,
         order_seed: t.order_seed,
         files: [`${base}.answers.json`],
@@ -388,6 +542,21 @@ export function finalizeRun({ bank, bankPath = DEFAULT_BANK_PATH, config, runRoo
     trials_per_item: config.trials,
     access_tier: "local-open-weight (Ollama, 4-bit quantised builds pinned by digest)",
     snapshot_id: Object.fromEntries(config.subjects.map((s) => [s.label, `${s.tag}@sha256:${s.digest}`])),
+    // Only a run that uses arms carries these (a legacy key stays byte-identical to what it always was).
+    ...(usesArms(config)
+      ? {
+          trials_by_subject: Object.fromEntries(plan.subjects.map((s) => [s.label, s.trials.length])),
+          builds: plan.builds.map((b) => ({
+            build: b.build,
+            tag: b.tag,
+            digest: b.digest,
+            variants: b.variants.map((label) => {
+              const s = plan.subjects.find((x) => x.label === label);
+              return { label, arm: s.arm, trials: s.trials.length, system_message_sha256: s.system_message_sha256 ?? null };
+            }),
+          })),
+        }
+      : {}),
     briefs: keyBriefs,
   };
   writeJsonAtomic(path.join(runRoot, "keys", "subject-brief-key.json"), key);

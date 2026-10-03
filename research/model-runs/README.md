@@ -148,6 +148,44 @@ from `run-config.json`; `tests/judging-prep.test.mjs` ties each to `PREREGISTRAT
    must be excluded and a passing judge must not be; two failures mean no composite. The only answer files allowed to be new after
    the measurement are exclusion reroutes. Scorecards say `cross-family`, not `same-family`.
 
+## Arms: one build as several subject variants (added 2026-10-02, for `pilot-2026-10-03`)
+
+A run may hold the same model build several times, as variants ("arms") that differ ONLY in system message and trial
+count. Everything downstream treats a variant as an ordinary subject (its label is unique), except where noted.
+
+```jsonc
+{ "run_id": "...", "trials": 3, "max_retries": 2, "master_seed": 0,
+  "system_message": "<neutral message; run-level default, required unless every subject states its own>",
+  "subjects": [
+    { "label": "gemma2-9b-A", "tag": "gemma2:9b", "digest": "<64 hex>", "family": "google", "arm": "A" },
+    { "label": "gemma2-9b-B", "tag": "gemma2:9b", "digest": "<64 hex>", "family": "google", "arm": "B",
+      "trials": 1, "system_message": "<neutral message> Reply in about 250 words." } ],
+  "comparisons": [ { "a": "gemma2-9b-A", "b": "gemma2-9b-B", "kind": "arm" },      // same build, different arm
+                   { "a": "gemma2-9b-A", "b": "mistral-7b-A", "kind": "build" } ] } // different build, same arm
+```
+
+- **Build** = same `tag` + `digest`. If any two subjects share a build, every subject needs an `arm` (safe name), and
+  (build, arm) must be unique. Variants of one build must differ in system message or trial count and share one `family`.
+- **RUN-SYS-1 stays enforced per subject**: the run-level `system_message` is required unless every subject has its own;
+  the legacy flag excludes any explicit message.
+- **Seeds** come from the variant label, so arms are independent. Records carry `arm`, `build`, `system_message_sha256`.
+- **Order**: calls are made build by build (all variants of a build consecutively): one GPU model swap per build.
+- **Judging**: arms are routed like any subject; the family rule uses the build's family. Batches carry no arm, build or
+  system message (`assertBatchesBlind` refuses an entry field or scaffold text that does, and arm labels longer than two
+  characters as identity terms). Judges never see system messages: an entry is the item prompt, the ladder and the reply.
+  Reply length can still hint at an arm (the batch instructions already say length is not a criterion).
+- **MCP probe: once per build** (`planBuildProbes`). cb-probe seeds a probe's questions from the scored run's server-assigned
+  id and `finish_scored_run` needs THAT run's probe, and `start_scored_run` refuses fewer than 3 trials per item. So the probe
+  runs in the build's first variant whose subject trials x judges reach 3 (arm A: 3 x 2 = 6), with that variant's system
+  message (`probe_system_from` in the state and every question record). A variant below the floor (arm B: 1 x 2 = 2) opens no run:
+  `--phase finish` writes `mcp-scorecards/<label>/mcp-rating-map.json` with `scorecard: null` and `probe_subject`; the analysis
+  computes its composite from the rating rows with the same canonical function and cites the build's probe. A second eligible
+  arm in one build would need its own `server-required-repeat` probe (new questions, same system message): the server cannot
+  share one. `assemble-run.mjs` refuses an arms run; use `run-mcp-probe.mjs`.
+- **Analysis**: per-subject results are unchanged; a config with arms adds `design.arms`, per-subject `trials_per_subject`
+  and `comparisons` (composite difference a minus b, paired item-resampling bootstrap, same replicates as `pairwise`).
+  `primary_comparison` is the two-subject pilot's and is not produced for an arms run.
+
 ## Runbook
 
 All paths below are relative to the repo root. `RUN=pilot-2026-10-01`. Add `--seed <n>` to any builder for a

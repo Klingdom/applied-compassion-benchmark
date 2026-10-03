@@ -1,5 +1,33 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 98 — 2026-10-03 (founder-approved pilot 3: more open models + a length-matched arm; in progress)
+
+**Selected:** founder approval of 2026-10-02 ("Approve the for you stuff and proceed"), covering decision-packet item
+6 and more open models. *Deviation:* this is founder-directed, not the top v2 item.
+
+**Pre-registered and committed BEFORE any reply exists.** This answers Meta-review 10's R2. The pilot-2026-10-02 plan
+predated its data only on the coordinator's word.
+- `research/model-runs/pilot-2026-10-03/PREREGISTRATION.md`, as-written sha256 `558c450d…7f10`. The run config
+  records `committed_before_data: true`.
+- **Subjects:** four 4-bit builds pinned by digest: `gemma2:9b` (Google, newly pulled), `llama3.2:latest`,
+  `mistral:7b` (Mistral AI, newly pulled) and `qwen2.5:7b`. That makes four developers.
+- **Arms:** A uses "You are a helpful assistant." with 3 trials. B adds "Reply in about 250 words." with 1 trial.
+  Each (build, arm) is one subject variant, judged blind. The plan totals 1,328 calls.
+- **Known constraint, written into the plan before the data:** arm B cannot get a cb-probe scorecard (trials floor
+  3), so its composite comes from the analysis via the canonical function.
+
+**Harness:** the arms support built by the backend-engineer.
+- Per-subject system message and trials, calls grouped by build, a probe per build, and a refusal of any
+  system-message or arm text in judge batches.
+- A `comparisons` list in the config, computed with the same paired bootstrap.
+- Both earlier analyses stay byte-identical (sha256 `5e31500e…` and `1e9b95cd…`).
+- Tests: 125 → 147, all passing.
+
+**Pathspec (this commit):**
+- `research/model-runs/pilot-2026-10-03/{PREREGISTRATION.md,run-config.json}`
+- `research/model-runs/{lib,bin,tests}/**` (arms changes) and `research/model-runs/README.md`
+- `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`
+
 ## Iteration 97 — 2026-10-02 (PREPUSH-CLEAN — forced under S10: DC-08 reached a second dated occurrence with no gate)
 
 **Selected:** Meta-review 10 R1. It is forced, not ranked: DC-08 gained its second dated occurrence in It. 95 (CRLF

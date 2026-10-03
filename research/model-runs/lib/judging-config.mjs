@@ -5,6 +5,7 @@
 // Every number here is read from run-config.json; none is typed in code.
 
 import { refuse, readJson, JUDGES_PER_RESPONSE } from "./common.mjs";
+import { buildKeyOf, resolveSubject } from "./local-subjects.mjs";
 
 const LABEL = /^[A-Za-z0-9._-]+$/;
 
@@ -36,6 +37,21 @@ export function parseJudgingConfig(config, label = "run-config.json") {
   }
   const subjects = [];
   const identityTerms = {};
+  // Arms: variants of one build (same tag + digest) are ordinary subjects to the judging stage (the family rule uses the
+  // build's family, so every variant must carry the same one). What judges must never see about a variant is recorded here.
+  const familyOfBuild = new Map();
+  const armLabels = [];
+  const hiddenSystemMessages = new Set();
+  for (const s of config.subjects) {
+    if (typeof s.tag === "string" && typeof s.digest === "string" && typeof s.family === "string") {
+      const k = buildKeyOf(s);
+      if (familyOfBuild.has(k) && familyOfBuild.get(k) !== s.family) bad(`build ${k}: variants carry different families`);
+      familyOfBuild.set(k, s.family);
+    }
+    if (typeof s.arm === "string") armLabels.push(s.arm);
+    const r = resolveSubject(config, s);
+    if (r.hasSystem && r.systemMessage.length > 0) hiddenSystemMessages.add(r.systemMessage);
+  }
   for (const s of config.subjects) {
     if (typeof s.family !== "string" || s.family.length === 0) bad(`subject ${s.label}: family missing (the family rule needs it)`);
     if (s.label in familyOf) bad(`label ${s.label} is both a subject and a judge, or duplicated: subjects and judges must be disjoint`);
@@ -77,6 +93,8 @@ export function parseJudgingConfig(config, label = "run-config.json") {
     validity: { maxUnfoundPercent: v.max_unfound_quote_rate_percent, shortQuoteMinChars: v.short_quote_min_chars },
     bridge: { sourceRun: b.source_run, sourceKey: b.source_key, seed: b.seed, perSourceSubject: b.per_source_subject, total: b.total },
     identityTerms,
+    armLabels: [...new Set(armLabels)],
+    hiddenSystemMessages: [...hiddenSystemMessages],
   };
 }
 

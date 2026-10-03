@@ -1,0 +1,225 @@
+{
+  "run_id": "pilot-2026-10-03",
+  "comment": "Subject pins, system messages and comparisons transcribed from PREREGISTRATION.md sections 2 and 8. Code reads every value from this file.",
+  "ollama_host": "http://localhost:11434",
+  "trials": 3,
+  "max_retries": 2,
+  "master_seed": 20261003,
+  "system_message": "You are a helpful assistant.",
+  "subjects": [
+    {
+      "label": "gemma2-9b-A",
+      "tag": "gemma2:9b",
+      "digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "family": "google",
+      "identity_terms": [
+        "gemma",
+        "google",
+        "deepmind"
+      ],
+      "arm": "A"
+    },
+    {
+      "label": "gemma2-9b-B",
+      "tag": "gemma2:9b",
+      "digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "family": "google",
+      "identity_terms": [
+        "gemma",
+        "google",
+        "deepmind"
+      ],
+      "arm": "B",
+      "trials": 1,
+      "system_message": "You are a helpful assistant. Reply in about 250 words."
+    },
+    {
+      "label": "llama3.2-3b-A",
+      "tag": "llama3.2:latest",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "family": "meta",
+      "identity_terms": [
+        "llama",
+        "meta"
+      ],
+      "arm": "A"
+    },
+    {
+      "label": "llama3.2-3b-B",
+      "tag": "llama3.2:latest",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "family": "meta",
+      "identity_terms": [
+        "llama",
+        "meta"
+      ],
+      "arm": "B",
+      "trials": 1,
+      "system_message": "You are a helpful assistant. Reply in about 250 words."
+    },
+    {
+      "label": "mistral-7b-A",
+      "tag": "mistral:7b",
+      "digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "family": "mistral",
+      "identity_terms": [
+        "mistral"
+      ],
+      "arm": "A"
+    },
+    {
+      "label": "mistral-7b-B",
+      "tag": "mistral:7b",
+      "digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "family": "mistral",
+      "identity_terms": [
+        "mistral"
+      ],
+      "arm": "B",
+      "trials": 1,
+      "system_message": "You are a helpful assistant. Reply in about 250 words."
+    },
+    {
+      "label": "qwen2.5-7b-A",
+      "tag": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "family": "qwen",
+      "identity_terms": [
+        "qwen",
+        "alibaba"
+      ],
+      "arm": "A"
+    },
+    {
+      "label": "qwen2.5-7b-B",
+      "tag": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "family": "qwen",
+      "identity_terms": [
+        "qwen",
+        "alibaba"
+      ],
+      "arm": "B",
+      "trials": 1,
+      "system_message": "You are a helpful assistant. Reply in about 250 words."
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-B",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-B",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "kind": "build"
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-B",
+      "kind": "build"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build"
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build"
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "gemma2-9b-B",
+      "kind": "arm"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "llama3.2-3b-B",
+      "kind": "arm"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "mistral-7b-B",
+      "kind": "arm"
+    },
+    {
+      "a": "qwen2.5-7b-A",
+      "b": "qwen2.5-7b-B",
+      "kind": "arm"
+    }
+  ],
+  "judging_comment": "Judging-stage parameters transcribed from PREREGISTRATION.md sections 4, 5 and 6. Code reads every value from this file; tests/judging-prep.test.mjs asserts they agree with the pre-registration text. Subjects and judges are disjoint sets and no judge shares a family with a subject.",
+  "judges": [
+    {
+      "label": "claude-fable",
+      "family": "claude"
+    },
+    {
+      "label": "claude-opus",
+      "family": "claude"
+    },
+    {
+      "label": "claude-sonnet",
+      "family": "claude"
+    }
+  ],
+  "judges_per_response": 2,
+  "max_batch_entries": 16,
+  "judge_validity": {
+    "max_unfound_quote_rate_percent": 5,
+    "short_quote_min_chars": 12
+  },
+  "bridge": {
+    "source_run": "pilot-2026-10-02",
+    "source_key": "keys/judge-key.reroute.json",
+    "seed": 20261003,
+    "per_source_subject": 12,
+    "total": 24
+  },
+  "preregistration": {
+    "file": "PREREGISTRATION.md",
+    "as_written_sha256": "558c450d1e25a303da30fd8f05ea973c7e72275e66360a9dfa4f5c571ee37f10",
+    "as_written_at": "2026-10-03T02:39:42Z",
+    "deviations_placeholder": "_None yet._",
+    "committed_before_data": true,
+    "note": "Hash of the plan as written. This plan is committed and pushed before the first subject reply is generated; the commit time attests the order."
+  }
+}

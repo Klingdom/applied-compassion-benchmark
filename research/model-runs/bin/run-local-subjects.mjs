@@ -60,13 +60,20 @@ mainAsync(async () => {
     console.log(`Run:        ${config.run_id}   bank ${bank.meta.bankVersion}, ${bank.items.length} items, ${plan.items.length} served`);
     console.log(`Ollama:     ${config.ollama_host} (not contacted in a dry run)`);
     console.log(`Per call:   one fresh conversation, one user message (prompt text only), options {seed}, up to ${config.max_retries} retries (seed + attempt)`);
-    for (const s of plan.subjects) {
-      const n = s.trials.length * plan.items.length;
-      const e = existing[s.label];
-      console.log(
-        `  ${s.label.padEnd(14)} ${s.tag.padEnd(17)} digest ${s.digest.slice(0, 12)}...  ${plan.items.length} items x ${config.trials} trials = ${n} calls` +
-          `  (already ok ${e.ok}, failed ${e.failed}, pending ${n - e.ok - e.failed})`
-      );
+    // Calls are made build by build; variants (arms) of one build run consecutively.
+    const bySubject = new Map(plan.subjects.map((s) => [s.label, s]));
+    for (const b of plan.builds) {
+      if (b.variants.length > 1) console.log(`  build ${b.build.slice(0, 40)}...: ${b.variants.length} variants run consecutively`);
+      for (const label of b.variants) {
+        const s = bySubject.get(label);
+        const n = s.trials.length * plan.items.length;
+        const e = existing[s.label];
+        const sys = Object.prototype.hasOwnProperty.call(s, "system_message") ? ` system ${s.system_message_sha256.slice(0, 8)}` : " no system message";
+        console.log(
+          `  ${s.label.padEnd(14)} ${s.tag.padEnd(17)} digest ${s.digest.slice(0, 12)}...${s.arm !== null ? ` arm ${s.arm}` : ""}${sys}  ${plan.items.length} items x ${s.trials.length} trials = ${n} calls` +
+            `  (already ok ${e.ok}, failed ${e.failed}, pending ${n - e.ok - e.failed})`
+        );
+      }
     }
     console.log(`Total:      ${plan.total_calls} calls${limit ? `; --limit ${limit} would make at most ${limit * plan.subjects.length} new calls` : ""}`);
     for (const s of plan.subjects) for (const t of s.trials) console.log(`  order ${s.label} t${t.trial}: seed ${t.order_seed}, first items ${t.entries.slice(0, 3).map((e) => e.item_id).join(", ")}`);
