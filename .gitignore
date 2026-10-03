@@ -50,3 +50,7 @@ research/scripts/.gen-results-*.json
 # committed: they duplicate work that is deliberately not in git yet, and one of
 # them currently holds the held America-at-250 rewrite.
 .preflight/
+
+# VPS deploy: a manual `docker compose build` log left in the checkout made build-manifest report git.dirty=true
+# although the deployed source was clean (deploy run 37077608892, 2026-10-02). It is not source.
+/.build.log

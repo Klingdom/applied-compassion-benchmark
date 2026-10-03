@@ -1,7 +1,7 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 95 (second unofficial pilot report + reports index + machine-readable access for AI systems; DC-24 found and gated — public wave JSON carried withheld points, never deployed; RUN-SYS-1 explicit system message required; harness suite now in the chain; DEPLOYED 43e90bcd 2026-10-02T23:30Z, verified live (V7); chain 71 steps)
+Last change: Iteration 97 (PREPUSH-CLEAN: npm run prepush:clean runs the chain in a clean worktree; real-history negative control cf0dfdbc fails as on CI; DC-08 gated; production on 43e90bcd; chain 71 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)

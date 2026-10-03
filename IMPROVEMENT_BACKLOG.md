@@ -94,6 +94,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 
 ### New rows (2026-10-02, Iteration 90) — falsifiable "done when" on each
 
+- **PREPUSH-CLEAN — DONE 2026-10-02 (It. 97):** `npm run prepush:clean`; negative control = real CI-failing commit cf0dfdbc. Original row (MR-10 R1) — `npm run prepush:clean`: full chain in a clean worktree of HEAD (junctioned node_modules, unlinked before teardown). *Done when:* it runs green and a planted CRLF report makes it fail where the working-tree chain passes. v1: I4 S5 L3 C5 − E2 − R1 = **14**; v2 + Rc 2 (DC-08 now 2 dated occurrences) = **16**.
 - **RUN-SYS-1 — DONE 2026-10-02 (It. 95).**
   - **Problem.** pilot-2026-10-02 sent no system message, so each local build applied its own default, and the
     defaults differed: Qwen's names its developer.
@@ -102,7 +103,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - **Tests.** 7, including a refusal control.
 - **DC24-GATE — DONE 2026-10-02 (It. 95).** The public wave projection plus `test:model-machine-leak`; see
   `docs/DEFECT_CLASS_REGISTRY.md` DC-24.
-- **MR-10 — Meta-review 10 due.** Iterations 92–95 are unreviewed, and the cadence gate allows 5. Nine consecutive
+- **MR-10 — DONE 2026-10-02 (It. 96):** docs/META_REVIEW_2026-10-02_ITER92-96.md. Original row: Meta-review 10 due. Iterations 92–95 are unreviewed, and the cadence gate allows 5. Nine consecutive
   loops have been founder-directed. *Done when:* `docs/META_REVIEW_*_ITER92-96.md` exists and the cadence test
   passes with the counter reset.
 - **PILOT-3 (proposal).** A wave with a length-matched arm (founder decision 6) and an explicit neutral system

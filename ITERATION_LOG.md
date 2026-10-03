@@ -1,5 +1,53 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 97 — 2026-10-02 (PREPUSH-CLEAN — forced under S10: DC-08 reached a second dated occurrence with no gate)
+
+**Selected:** Meta-review 10 R1. It is forced, not ranked: DC-08 gained its second dated occurrence in It. 95 (CRLF
+platform drift) and had no gate. v1 14 · v2 16.
+
+**Built:** `site/scripts/prepush-clean.mjs`, run as `npm run prepush:clean` (optionally `--ref <commit>` and
+`--expect-fail`).
+- It runs the full chain in a clean worktree of the commit.
+- `node_modules` is linked by a junction, which is unlinked before the worktree is removed, with a guard that stops
+  if the real `node_modules` looks damaged.
+- It warns when uncommitted paths exist, because they are not tested.
+
+**Verification:**
+- **V3, negative control seeded from real history:** `--ref cf0dfdbc --expect-fail` fails, for the exact reason CI
+  failed that commit ("compiled report … is missing"). The working-tree chain had passed that commit.
+- **Positive control:** `43e90bcd` passes.
+- **After both runs:** `site/node_modules/next` is present and `git worktree list` shows only the main tree.
+
+**Pathspec:** `site/scripts/prepush-clean.mjs`, `site/package.json`, `docs/DEFECT_CLASS_REGISTRY.md`,
+`IMPROVEMENT_BACKLOG.md`, `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
+
+## Iteration 96 — 2026-10-02 (founder: "Approve the for you stuff and proceed")
+
+**Founder approvals recorded verbatim, all four items from the end of Iteration 95:**
+- (1) **Confirmed:** no model developer (Anthropic, Meta, Alibaba) was contacted about either pilot report. This
+  closes claim-audit item K5.
+- (2) Investigate the `dirty: true` flag.
+- (3) Meta-review 10.
+- (4) Next wave:
+  - a length-matched arm (packet decision 6) and more open models: approved;
+  - non-Claude judges: approved, but **not actionable**, because no provider key is present in the environment
+    (only the names were checked).
+
+**Work:**
+- **Dirty flag diagnosed from the deploy log of run `37077608892`.** The VPS `git status --porcelain` showed only
+  `?? .build.log`, a manual build log, so the deployed source was clean. `/.build.log` is now in `.gitignore`.
+- **Meta-review 10:** `docs/META_REVIEW_2026-10-02_ITER92-96.md`.
+  - Headline: checks passed against a state only this machine had (a CRLF working copy, gitignored compiled
+    reports, a URL that was never a route, an HTML-only gate).
+  - Recommendations R1–R4. R1 is a clean-worktree pre-push script.
+- **Models pulled for pilot 3:** `gemma2:9b` and `mistral:7b`, in the background; digests are recorded in the
+  pilot-3 plan.
+
+**Verification:** the cadence counter resets with this review; the full chain runs after the last edit.
+
+**Pathspec:** `.gitignore`, `docs/META_REVIEW_2026-10-02_ITER92-96.md`, `ITERATION_LOG.md`, `SYSTEM_HEALTH.md` and
+`IMPROVEMENT_BACKLOG.md`.
+
 ## Iteration 95 — 2026-10-02 (founder: "keep improving the AI model benchmarking process and publish improved methodology and results information" + "make it accessible to AI models and improve reporting")
 
 **Selected:** founder directives; the founder's "publish" is the approval to commit. *Deviation:* this is the 9th
