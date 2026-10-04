@@ -12,6 +12,16 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 >
 > The dated entries themselves are unchanged.
 
+> **Status note, 2026-10-04 (deploy):** the 2026-10-04 entry below, the third unofficial pilot, is live. Production
+> was built from **`c5b53451`** at 2026-10-04T07:30:36Z by dispatch run `37185549827`; the deploy and the
+> post-deploy health check both succeeded, and the build manifest now reports a clean checkout. Verified live:
+> - The report, its Markdown copy, its public data file, the programme index and `/llms-full.txt` all return 200.
+> - No figure the report withholds appears on any page or in any machine-readable file, while the one figure it
+>   shows is present.
+> - No figure uses an ordinal name for an arm.
+>
+> The dated entry itself is unchanged.
+
 ---
 
 

@@ -56,6 +56,19 @@
   immediately caught "second-arm" twice in `PilotFigures.tsx`; both are fixed, and a grammar slip with them.
 - Nothing was pushed until the clean chain passes.
 
+**Deployed and verified (V7, 2026-10-04).**
+- Clean chain PASS on `c5b53451`, CI green, and dispatch run `37185549827` succeeded, including the post-deploy
+  health check.
+- Live `build-manifest.json`: sha `c5b53451`, **dirty false**. The `.build.log` ignore from Iteration 96 worked.
+- These all return 200: `/ai-models/reports`, the third report, its `.md` (served as `text/markdown`), its public
+  wave, `index.json` and `/llms-full.txt`.
+- **Live leak scan.** For llama-A, mistral-A, qwen-A, gemma-B and qwen-B, standalone occurrences are 0 on every live
+  file checked, with SVG polygon coordinates excluded.
+  - The control, 29.5, is present on the report (6 times) and in its wave (once).
+  - Ordinal arm phrases: 0.
+- **Iteration 98 is complete.** Still open: the founder's confirmation of "no developer contacted" for Google and
+  Mistral AI.
+
 **Selected:** founder approval of 2026-10-02 ("Approve the for you stuff and proceed"), covering decision-packet item
 6 and more open models. *Deviation:* this is founder-directed, not the top v2 item.
 
