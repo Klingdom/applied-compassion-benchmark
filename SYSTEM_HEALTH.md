@@ -1,7 +1,7 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 98 (pilot 3 data complete and verified: 1,328 replies, 2,656 ratings, all judges valid; arm A separates gemma2 from the other three even under Bonferroni; report pending; production on 43e90bcd; chain 71 steps)
+Last change: Iteration 98 (third unofficial pilot report built and audited: gemma2 separated from the other three under Bonferroni; self-identification detector fixed (14 flagged, 1 real; DC-18 occurrence 4); D2 recorded; awaiting deploy; production on 43e90bcd)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)

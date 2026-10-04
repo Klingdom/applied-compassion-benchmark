@@ -21,7 +21,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { harness, WAVES_DIR } from "./lib/html-gate-harness.mjs";
 import { leakProblems, bannerProblems, loadWaves, withheldValues } from "./lib/model-report-html-gates.mjs";
 import { makeNaming } from "./lib/model-report.mjs";
-import { syntheticWave } from "./lib/model-report-fixtures.mjs";
+import { syntheticWave, syntheticArmsWave } from "./lib/model-report-fixtures.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = join(HERE, "..");
@@ -32,6 +32,7 @@ const req = createRequire(join(SITE, "package.json"));
 const React = req("react");
 const { renderToStaticMarkup } = req("react-dom/server");
 const figs = await import("@/components/model-benchmark/pilot/PilotFigures.tsx");
+const kit = await import("@/components/model-benchmark/pilot/figure-kit.tsx");
 const banner = (await import("@/components/model-benchmark/pilot/StatusBanner.tsx")).default;
 const Card = (await import("@/components/model-benchmark/pilot/PilotSummaryCard.tsx")).default;
 const facts = await import("@/lib/model-report-facts.ts");
@@ -42,14 +43,16 @@ const asPilot = (w) => ({ ...w, status: "pilot", official: false, comparability:
 const { manifest, waves } = loadWaves(WAVES_DIR);
 await h.check("committed waves exist to render", () => h.assert(waves.length > 0, "none"));
 const synthetic = asPilot(syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"], excluded: null, local: true, reversePairs: true, seed: 5 }));
-const targets = [...waves.map((w) => [`committed ${w.run_id}`, asPilot(w)]), ["synthetic no-separated wave (dotted ids)", synthetic]];
+const syntheticArms = asPilot(syntheticArmsWave({ dims: ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"] }));
+const targets = [...waves.map((w) => [`committed ${w.run_id}`, asPilot(w)]), ["synthetic no-separated wave (dotted ids)", synthetic], ["synthetic arms wave", syntheticArms]];
 
 const FIGURES = [["IntervalFigure", figs.IntervalFigure], ["PairFigure", figs.PairFigure], ["DimensionFigure", figs.DimensionFigure], ["LengthFigure", figs.LengthFigure], ["JudgeFigure", figs.JudgeFigure]];
 
 for (const [label, wave] of targets) {
   h.section(`rendering ${label}`);
   const naming = makeNaming(wave);
-  const members = wave.derived.not_separated_groups.flat();
+  // Subjects that show a range only: a not-separated group's members and, in an arms wave (amendment 16), every secondary-arm variant.
+  const members = wave.derived.point_withheld_subjects ?? wave.derived.not_separated_groups.flat();
   const parts = {};
   for (const [name, C] of FIGURES) {
     await h.check(`${name} renders (no failed predicate, no copy-rule failure)`, () => {
@@ -96,6 +99,65 @@ for (const [label, wave] of targets) {
     });
   }
   void naming;
+
+  if (wave.derived.display_rule) {
+    // ARMS wave (template amendment 16): one panel per arm, alphabetical within an arm, ranges only for the secondary arm, no point difference.
+    const d = wave.derived;
+    const text = (html) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const secondary = d.range_only_subjects;
+    await h.check("panel order: the primary arm first, then the secondary arm, alphabetical within each (figure-kit.panelSubjects)", () => {
+      const order = kit.panelSubjects(wave);
+      const A = wave.design.subjects.filter((id) => !secondary.includes(id)).sort();
+      h.assert(JSON.stringify(order) === JSON.stringify([...A, ...[...secondary].sort()]), `panel order ${order.join(", ")}`);
+    });
+    await h.check("the interval figure has a primary-arm panel then a secondary-arm panel, and the secondary arm says ranges only", () => {
+      const t = text(parts.IntervalFigure);
+      h.assert(t.indexOf("Primary arm") >= 0 && t.indexOf("Secondary arm") > t.indexOf("Primary arm"), "arm panels missing or out of order");
+      h.assert(/Ranges only: no point and no ordering/.test(t), "the secondary arm is not said to be ranges only");
+      for (const id of secondary) h.assert(new RegExp(`<td>Secondary arm: ranges only</td><td>${esc(id)} <span`).test(parts.IntervalFigure), `${id}: its table row is not in the secondary-arm group`);
+      h.assert((parts.IntervalFigure.match(/pf-hollow/g) ?? []).length >= secondary.length, "secondary-arm variants are not drawn hollow");
+    });
+    await h.check("within each arm the variants are alphabetical in the interval figure's table", () => {
+      const ids = [...parts.IntervalFigure.matchAll(/<td>[^<]*<\/td><td>([^<]+?) <span/g)].map((m) => m[1]);
+      // The primary arm lists its groups (larger group first, alphabetical within); the secondary arm follows, alphabetical.
+      const nA = ids.length - secondary.length;
+      h.assert(JSON.stringify(ids.slice(nA)) === JSON.stringify([...secondary].sort()), `secondary-arm order ${ids.slice(nA).join(", ")}`);
+      h.assert(JSON.stringify([...ids.slice(0, nA)].sort()) === JSON.stringify(wave.design.subjects.filter((id) => !secondary.includes(id)).sort()), "the primary arm's rows are not exactly its variants");
+      const g = d.not_separated_groups[0];
+      h.assert(JSON.stringify(ids.slice(0, g.length)) === JSON.stringify([...g].sort()), `the group is not first and alphabetical: ${ids.slice(0, g.length).join(", ")}`);
+    });
+    await h.check("the comparisons figure shows the pre-declared comparisons with both ranges, groups the pairs by what survived correction, and prints no point difference", () => {
+      const html = parts.PairFigure;
+      const t = text(html);
+      h.assert(/Separated after correction/.test(t) && /Secondary arm, ranges only/.test(t) && /Secondary arm minus primary arm/.test(t), "a comparison group is missing");
+      if (d.separated_uncorrected_only_pairs.length) h.assert(/Separated only without correction/.test(t), "the pairs separated only without correction are not their own group");
+      h.assert((html.match(/pf-dash/g) ?? []).length >= d.separated_pairs.length, "the corrected range is not drawn");
+      h.assert((html.match(/<td>not shown<\/td>/g) ?? []).length === wave.comparisons.length, "a comparison row prints a point estimate");
+      for (const q of w.withheldDifferencePairs) h.assert(!new RegExp(`<td>[\\u2212-]?${esc(q.tok)}</td>`).test(html), `a point difference ${q.tok} of ${q.a} / ${q.b} is printed`);
+    });
+    await h.check("the dimension figure lists the primary arm's variants first, and prints a mean only for the separated variant", () => {
+      const html = parts.DimensionFigure;
+      const heads = [...html.matchAll(/<th scope="colgroup"[^>]*>([^<]+?) <span/g)].map((m) => m[1]);
+      h.assert(JSON.stringify(heads) === JSON.stringify(kit.panelSubjects(wave)), `column order ${heads.join(", ")}`);
+      h.assert((html.match(/Point estimate \(mean\)/g) ?? []).length === d.separated_subjects.length, "a mean column for a variant that shows ranges only");
+    });
+    await h.check("the length figure: slopes of one-trial variants are not computed, each build has a pre-registered length verdict, no bound for a withheld variant", () => {
+      const html = parts.LengthFigure;
+      h.assert((html.match(/not computed \(one trial per item\)/g) ?? []).length === secondary.length, "slope cells of the one-trial variants");
+      for (const r of wave.length_check.per_build) h.assert(html.includes(`<td>${r.arm_a}</td><td>${r.arm_b}</td>`) && html.includes(`<td>${r.length_instruction}</td>`), `${r.arm_a}: verdict row`);
+      const nEff = wave.length_check.per_build.filter((r) => r.length_instruction === "effective").length;
+      h.assert(text(html).includes(`moved the median reply closer to its target for ${["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"][nEff]} of`), "the instruction clause is missing");
+      for (const id of members) h.assert(!new RegExp(`${esc(id)} <span[^>]*>[^<]*</span></td><td>[^<]*</td><td>[^<]*</td><td>[^<]*</td><td>(?!not shown)`).test(html), `${id}: a bound or point in the length table`);
+    });
+    await h.check("the judge figure has one leniency block per arm", () => {
+      const t = text(parts.JudgeFigure);
+      h.assert(t.indexOf("Primary arm") >= 0 && t.indexOf("Secondary arm") > t.indexOf("Primary arm"), "arm blocks missing");
+    });
+    await h.check("no figure text uses an ordinal for an arm (the site's ordering-word rule): primary and secondary only", () => {
+      for (const [n, html] of Object.entries(parts)) h.assert(!/(?:first|second|third) arm|(?:first|second)-arm/i.test(text(html)), `${n} says first/second arm`);
+    });
+  }
 }
 
 h.section("the /ai-models card lists every published pilot, newest first, with no figure");

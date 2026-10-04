@@ -44,12 +44,37 @@ function pilotCell(pilots: PilotWave[], describe: (w: PilotWave) => string): Rea
   );
 }
 
+/** Does this wave run every build in two arms (template amendment 16)? From design.arms, never inferred. */
+const hasArms = (w: PilotWave): boolean => w.design.arms !== undefined;
+
+const countWord = (n: number): string => ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"][n] ?? String(n);
+
+/** Trials per item: one number for every subject, or (an arms wave) the number in each arm, from design.arms. */
+function trialsSentence(w: PilotWave): string {
+  const t = w.design.trials_per_subject;
+  if (typeof t === "number") return `${t} trials. `;
+  const byArm = new Map<string, Set<number>>();
+  for (const e of Object.values(w.design.arms ?? {})) byArm.set(e.arm, (byArm.get(e.arm) ?? new Set()).add(e.trials));
+  const parts = [...byArm.entries()].sort(([x], [y]) => (x < y ? -1 : 1)).map(([arm, n]) => `arm ${arm}: ${[...n].map((v) => `${countWord(v)} trial${v === 1 ? "" : "s"} per item`).join("/")}`);
+  return `${capitalise(parts.join("; "))}. `;
+}
+
+/** The explicit system message of an arms wave, per arm, verbatim from design.arms, and where it sits (a build's own template). */
+function systemMessageSentence(w: PilotWave): string {
+  const arms = w.design.arms;
+  if (!arms) return "";
+  const first = new Map<string, string>();
+  for (const id of Object.keys(arms).sort()) if (!first.has(arms[id].arm) && arms[id].system_message) first.set(arms[id].arm, arms[id].system_message as string);
+  const quoted = [...first.entries()].sort(([x], [y]) => (x < y ? -1 : 1)).map(([arm, m]) => `arm ${arm} \u201c${m}\u201d`).join(", ");
+  return ` An explicit system message was sent with every item, identical for every build within an arm (${quoted}). Where it sits in the prompt differs by each build's own template, which is disclosed and not controlled.`;
+}
+
 /** How a pilot's items were put to the subjects, from design.items_per_conversation_max. */
 function conversationSentence(w: PilotWave): string {
   const max = w.design.items_per_conversation_max;
-  const trials = `${w.design.trials_per_subject} trials. `;
+  const trials = trialsSentence(w);
   if (max <= 1) {
-    return `${trials}Each item of each trial was sent in its own fresh conversation, as one user turn, so no item shared a conversation with another.`;
+    return `${trials}Each item of each trial was sent in its own fresh conversation, as one user turn${hasArms(w) ? " after the system message" : ""}, so no item shared a conversation with another.${systemMessageSentence(w)}`;
   }
   return `${trials}Within each trial the ${w.design.items_served} items were sent in parts of up to ${max}, and each part was answered in its own fresh conversation, so up to ${max} items shared a conversation.`;
 }
@@ -141,7 +166,11 @@ export default function AnalysisSection() {
       // pilot: pilot report section on separation; D-29a item 4 (grouping, same-sentence confound).
       stage: "7. Separation",
       does: "State separation only when the range of the paired difference excludes zero.",
-      pilot: pilotCell(pilots, (w) => `Paired differences on the same resampled items. The ${w.pairwise.length} model pair${w.pairwise.length === 1 ? "" : "s"} at composite level use uncorrected 95% ranges; the ${w.dimension_pairwise.length} dimension-level comparisons add a Bonferroni correction. Models that could not be told apart are grouped, not ordered.`),
+      pilot: pilotCell(pilots, (w) =>
+        hasArms(w)
+          ? `Paired differences on the same resampled items, declared before the data: ${w.comparisons?.length ?? 0} comparisons across the two arms. In the primary arm each pair is reported both without correction and with a Bonferroni correction over the primary arm's pairs; neither is promoted, and a point is shown only for a model separated after correction. The secondary arm has one trial per item and shows ranges only, as does each build's second arm against its first. ${w.dimension_pairwise.length} dimension-level comparisons add a Bonferroni correction. Models that could not be told apart are grouped, not ordered.`
+          : `Paired differences on the same resampled items. The ${w.pairwise.length} model pair${w.pairwise.length === 1 ? "" : "s"} at composite level use uncorrected 95% ranges; the ${w.dimension_pairwise.length} dimension-level comparisons add a Bonferroni correction. Models that could not be told apart are grouped, not ordered.`,
+      ),
       local: "Not applicable: one subject only, so there is no comparison between subjects.",
       official: "Same, plus a fixed publication bar that is not yet canonical.",
     },
@@ -149,7 +178,9 @@ export default function AnalysisSection() {
       // pilot: report (both probes on sampled items); local: facts recallThreshold, identificationCount/Options/Alpha.
       stage: "8. Contamination",
       does: "Test whether the subject already knows the items.",
-      pilot: pilotCell(pilots, () => "Both probes, on sampled items. Not flagged means only that no contamination was indicated on the sampled items."),
+      pilot: pilotCell(pilots, (w) => hasArms(w)
+        ? "Both probes, once per build rather than per arm, through the cb-probe MCP server, on sampled items; the secondary arm uses its build's probe. Not flagged means only that no contamination was indicated on the sampled items."
+        : "Both probes, on sampled items. Not flagged means only that no contamination was indicated on the sampled items."),
       local: (
         <>
           Both probes are required to finish: recall overlap flagged at {P.recallThreshold}, and forced-choice identification
@@ -167,6 +198,7 @@ export default function AnalysisSection() {
         const parts = ["reply length"];
         parts.push(judgesAreCrossFamily(w) ? "a bank authored with help from the judges' model family" : "overlap between the judges' and the subjects' model family, a bank authored with that family's assistance");
         if (isLocalOpenWeight(w)) parts.push("quantised local builds, which may behave differently from the unquantised models");
+        if (hasArms(w)) parts.push("a system message that sits differently in each build's template, and a secondary arm with one trial per item");
         if (w.bank.items_not_served_sensitive > 0) parts.push("crisis items not served");
         return capitalise(`${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}.`);
       }),

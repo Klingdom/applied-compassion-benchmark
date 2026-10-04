@@ -249,7 +249,7 @@ function makeRun(t, { suffix = "" } = {}) {
     trials: 3,
     max_retries: 2,
     master_seed: 20261002,
-    subjects: SUBJ.map((label) => ({ label, tag: `${label}:1`, digest: "a".repeat(64), family: FAMILY[label], identity_terms: [`as ${label.split("-")[0]}`] })),
+    subjects: SUBJ.map((label) => ({ label, tag: `${label}:1`, digest: "a".repeat(64), family: FAMILY[label], identity_terms: [label.split("-")[0]] })),
     judges: JUDGES.map((label) => ({ label, family: "claude" })),
     judges_per_response: 2,
     max_batch_entries: 16,

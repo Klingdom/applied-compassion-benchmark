@@ -21,9 +21,9 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { harness, haveOut, OUT_DIR, WAVES_DIR, SITE as SITE_DIR } from "./lib/html-gate-harness.mjs";
-import { seoProblems, sitemapProblems, loadWaves, textBlocks, extractJsonLd, jsonLdStrings, reportFiles, decode, reportedWaves } from "./lib/model-report-html-gates.mjs";
+import { withheldValues, seoProblems, sitemapProblems, loadWaves, textBlocks, extractJsonLd, jsonLdStrings, reportFiles, decode, reportedWaves } from "./lib/model-report-html-gates.mjs";
 import { renderableEntries } from "./lib/pilot-render-gate.mjs";
-import { lexiconProblems } from "./lib/model-report.mjs";
+import { lexiconProblems, makeNaming } from "./lib/model-report.mjs";
 import { goodReportHtml, plainIndexHtml, injectBody, siteFacts } from "./lib/model-report-html-fixtures.mjs";
 
 const h = harness("test-model-report-seo");
@@ -225,6 +225,40 @@ h.trips("\"has evaluated 0 models to date\"", officialRuleProblems(plainIndexHtm
 h.clean("\"officially evaluated\" passes", officialRuleProblems(plainIndexHtml("<p>The index has officially evaluated 0 models.</p>")));
 
 // ---------------------------------------------------------------- real tree
+// ARMS waves (template amendment 16): the title, meta, social line, citable sentences and a clean good page, for the committed arms wave and a synthetic one.
+{
+  const { syntheticArmsWave } = await import("./lib/model-report-fixtures.mjs");
+  const armsTargets = [...waves.filter((x) => x.derived.display_rule !== undefined).map((x) => [`committed ${x.run_id}`, x]), ["synthetic arms wave", syntheticArmsWave({ dims: ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"] })]];
+  await h.check("a committed arms wave exists", () => h.assert(armsTargets.some(([n]) => n.startsWith("committed")), "none"));
+  for (const [label, aw] of armsTargets) {
+    h.section(`G20 for an arms wave: ${label}`);
+    const aGood = await goodReportHtml(aw);
+    const aExpected = { title: facts.reportTitle(aw) };
+    h.clean("a good report page for an arms wave passes the whole G20 set", seoProblems({ html: aGood, wave: aw, expected: aExpected }));
+    await h.check("the title counts builds, says each is run two ways, names no variant and carries no number beyond month and year", () => {
+      const t = facts.reportTitle(aw);
+      h.assert(/^Unofficial Pilot: \w+ [\w-]+ Models, Each Run Two Ways, on the AI Model Compassion Benchmark \(\w{3} \d{4}\)$/.test(t), t);
+      h.assert(makeNaming(aw).mentions(t).length === 0 && makeNaming(aw).buildMentions(t).length === 0, "the title names a model");
+    });
+    await h.check("meta description, social line and citable sentences say 'primary arm', 'after correction' and 'ranges only', name no model, carry no figure, and use no ordinal for an arm", () => {
+      const all = [facts.reportMetaDescription(aw), facts.reportSocialLine(aw), ...facts.citableSentences(aw)];
+      const naming = makeNaming(aw);
+      for (const s of all) {
+        h.assert(naming.mentions(s).length === 0 || /could not be told apart/.test(s), `a model named in: ${s.slice(0, 80)}`);
+        h.assert(!/\b(?:first|second|third) arm\b/i.test(s), `ordinal arm in: ${s.slice(0, 80)}`);
+        for (const tok of withheldValues(aw).allComposites) h.assert(!new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(s), `figure ${tok} in: ${s.slice(0, 60)}`);
+      }
+      h.assert(/primary arm/.test(all.join(" ")) && /after correction/.test(all.join(" ")) && /ranges only/.test(all.join(" ")), "the arm wording is missing");
+    });
+    await h.check("the /ai-models strings for this wave alone pass the lexicon, and describe the primary arm and the secondary arm in words", () => {
+      const pf = facts.pilotsPageFacts([{ wave: aw, report: { word_count: 3000, sections: [{ id: "not-scores", html: "<ul><li>a</li><li>b</li><li>c</li></ul>" }] } }]);
+      const t = [pf.heroSentence, pf.cardDescription, pf.latest.finding, ...pf.latest.bullets, ...pf.faq.map((f) => f.answer)].join(" ");
+      h.assert(/primary arm/.test(t) && /secondary arm/.test(t) && /after correction for multiple comparisons/.test(t), t.slice(0, 200));
+    });
+    h.trips("an arm ordinal in the meta description is caught by the page-level scan used below", [/\b(?:first|second|third)\b/i.test("The second arm shows ranges only.") ? "ordering word" : ""].filter(Boolean), "ordering word");
+  }
+}
+
 h.section("the built tree in site/out");
 if (haveOut(h)) {
   const rendering = new Map(renderableEntries(manifest, process.env).map((x) => [x.entry.run_id, x.mode]));

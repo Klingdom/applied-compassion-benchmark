@@ -15,6 +15,44 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-04 — A third unofficial pilot: four open-weight models, each run two ways, with the plan committed before any data (NO official scores; pending deploy)
+
+- **What it is.** An unofficial pilot report at `/ai-models/reports/pilot-2026-10-03`.
+  - **Models:** four open-weight models from four developers, each run locally as a four-bit build: Gemma2 9B
+    (Google), Llama3.2 3B (Meta), Mistral 7B (Mistral AI) and Qwen2.5 7B (Alibaba).
+  - **Two arms:** each model ran twice. Once with a neutral instruction, the same for all four, and once also asked
+    to reply in about 250 words.
+  - **Judges:** three Claude models rated every reply, blind to which model and which version produced it.
+  - **Status:** it is **not a score, not a ranking, and supports no comparison** with models outside it.
+- **What it finds.**
+  - With a correction for multiple comparisons, the test separated Gemma2 9B from each of the other three in the
+    main arm. The cause is unresolved, so the report shows that one model's figure and ranges for everyone else.
+  - It could not tell the other three apart.
+  - The pair it could not separate in the previous pilot, Llama3.2 3B and Qwen2.5 7B, it again could not separate.
+  - Asking for about 250 words changed reply length for two of the four models and changed no model's figure
+    measurably.
+- **How it was run.**
+  - The plan was written and pushed to the public repository before the first reply existed. The repository's
+    history shows it, and a test proves the plan text has not changed since.
+  - Two later changes are disclosed in the plan as dated deviations: the order in which models were run, after the
+    host machine ran short of memory twice.
+  - The contamination check ran through the public MCP server for each model, and none was flagged.
+  - All three judges passed the pre-registered evidence-quote check.
+- **What it does not cover.** The test items about people in crisis were not used. Nothing here is advice about
+  which model to use, in a crisis or otherwise.
+- **A correction made before publication.** The check that flags replies naming their own model or developer had
+  counted product names, such as "Google Calendar", and unrelated words. It found 14 when the true number is 1.
+  The check is fixed and tested, the report states the corrected count, and the second pilot's published count
+  was re-verified as correct.
+- **A correction to the second pilot's machine-readable summary.** `/llms-full.txt` said the second pilot had
+  checked its result against a different choice of judges. It had not. That sentence is removed from the second
+  pilot's section.
+- **No developer was contacted before publication, and none paid for, sponsored or reviewed the report.** The
+  commit SHA will be added when this is deployed.
+
+---
+
+
 ## 2026-10-02 — A second unofficial pilot (two open-weight models), a reports index, and machine-readable access for AI systems (NO official scores; pending deploy)
 
 - **What it is.** A second unofficial pilot report, at `/ai-models/reports/pilot-2026-10-02`. It covers two small

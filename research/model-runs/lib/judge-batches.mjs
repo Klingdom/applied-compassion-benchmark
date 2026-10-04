@@ -21,6 +21,7 @@ import {
 } from "./common.mjs";
 import { findIdentityLeaks } from "./leak-check.mjs";
 import { routeToJudgeSet } from "./judge-routing.mjs";
+import { namesItself } from "./self-identification.mjs";
 
 export const JUDGE_ANSWER_SCHEMA = Object.freeze({
   batch_id: "<copy the batch_id from the batch exactly>",
@@ -327,15 +328,16 @@ export function buildJudgeBatches({ bank, responses, subjects = SUBJECTS, seed, 
 }
 
 /**
- * REPORTING ONLY, never blocking: replies that name their own model or developer (for example "I am Qwen")
- * unblind themselves to a judge. The harness cannot edit a reply, so it lists them in the key.
+ * REPORTING ONLY, never blocking: replies in which the subject names ITSELF (its model or developer, for example
+ * "I am Qwen", "trained by Alibaba Cloud") unblind themselves to a judge. The harness cannot edit a reply, so it
+ * lists them in the key. Whole-word, case-insensitive, and only inside a self-reference pattern: product names
+ * ("Google Calendar") and ordinary words ("metal") do not count. Patterns and limits: lib/self-identification.mjs.
+ * (The first version used text.includes(term); see docs/ai-model-report/2026-10-03-pilot-3-claim-audit.md, B1.)
  */
 export function selfIdentifying(records, identityTerms) {
   const out = [];
   for (const r of records) {
-    const terms = identityTerms[r.subject] ?? [];
-    const text = String(r.response).toLowerCase();
-    if (terms.some((t) => t.length > 0 && text.includes(t.toLowerCase()))) out.push(r.response_id);
+    if (namesItself(r.response, identityTerms[r.subject] ?? [])) out.push(r.response_id);
   }
   return out;
 }

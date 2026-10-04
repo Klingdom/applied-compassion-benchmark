@@ -22,6 +22,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { lexiconProblems } from "./model-report.mjs";
+import { sensitivityVariesJudges } from "./model-report-template.mjs";
 import { renderableEntries, reportsIndexRenders as gateReportsIndexRenders } from "./pilot-render-gate.mjs";
 
 export const SITE_URL = "https://compassionbenchmark.com";
@@ -66,7 +67,11 @@ export function dateLong(iso) {
 // The projection (DC-24)
 // ---------------------------------------------------------------------------
 
-/** Subjects whose points are withheld: every member of a not-separated group (and any subject that is not separated). */
+/**
+ * Subjects whose points are withheld: every member of a not-separated group (and any subject that is not separated). In an arms wave
+ * (template amendment 16) `derived.separated_subjects` holds only the primary arm's corrected-separated subjects, so every variant of the
+ * secondary arm falls into "not separated" here and is withheld too, with no second rule to keep in step.
+ */
 export function notSeparatedMembers(wave) {
   const sep = new Set(wave.derived.separated_subjects);
   const fromGroups = wave.derived.not_separated_groups.flat();
@@ -78,6 +83,14 @@ export const POINT_WITHHELD_REASON =
   "This model is in a not-separated group: the pilot could not tell it apart from the other members, so point estimates would let their order read as a ranking. " +
   "Point estimates, dimension means and point differences that involve it are withheld here and in the report; 95% ranges, separation flags and counts are published. " +
   "See DECISIONS.md D-29a and docs/AI_MODEL_ASSESSMENT_TEMPLATE.md, amendments 2, 8 and 9.";
+
+export const RANGE_ONLY_ARM_REASON =
+  "This variant belongs to the secondary arm (one trial per item), which shows ranges only; the pilot states no separation among its variants and no point is shown for any of them. " +
+  "Point estimates, dimension means and point differences that involve it are withheld here and in the report; 95% ranges, separation flags and counts are published. " +
+  "See DECISIONS.md D-29a and docs/AI_MODEL_ASSESSMENT_TEMPLATE.md, amendments 2, 8, 9 and 16.";
+
+/** The reason a subject's points are withheld: a not-separated group (every wave) or the secondary arm (arms waves, amendment 16). */
+export const withheldReasonFor = (wave, id) => ((wave.derived.range_only_subjects ?? []).includes(id) ? RANGE_ONLY_ARM_REASON : POINT_WITHHELD_REASON);
 
 const PAIR_LISTS = [["pairwise"], ["dimension_pairwise"], ["sensitivity", "pairwise"]];
 
@@ -96,12 +109,12 @@ export function projectWavePublic(wave) {
     if (s) {
       delete s.pilot_composite;
       delete s.dimensions;
-      s.point_withheld = { withheld: ["pilot_composite", "dimensions"], reason: POINT_WITHHELD_REASON };
+      s.point_withheld = { withheld: ["pilot_composite", "dimensions"], reason: withheldReasonFor(wave, id) };
     }
     const ss = out.sensitivity?.subjects?.[id];
     if (ss) {
       delete ss.pilot_composite;
-      ss.point_withheld = { withheld: ["pilot_composite"], reason: POINT_WITHHELD_REASON };
+      ss.point_withheld = { withheld: ["pilot_composite"], reason: withheldReasonFor(wave, id) };
     }
     // Any length-adjusted point of a member (the first pilot lists separated subjects only; this is the fail-closed guard).
     if (out.length?.composite_if_pooled_slope_removed) delete out.length.composite_if_pooled_slope_removed[id];
@@ -116,6 +129,17 @@ export function projectWavePublic(wave) {
         delete q.difference;
         q.point_withheld = ["difference"];
       }
+    }
+  }
+
+  // The pre-declared comparisons of an arms wave: a point difference that involves a withheld subject is withheld, and so is a B - A difference
+  // (every B - A comparison involves a secondary-arm variant). Ranges, flags and corrected ranges stay.
+  for (const q of out.comparisons ?? []) {
+    if (isMember.has(q.a) || isMember.has(q.b)) {
+      const withheld = ["difference"];
+      delete q.difference;
+      if (q.b_minus_a && "difference" in q.b_minus_a) { delete q.b_minus_a.difference; withheld.push("b_minus_a.difference"); }
+      q.point_withheld = withheld;
     }
   }
 
@@ -134,7 +158,7 @@ export function projectWavePublic(wave) {
       withheld_for: members,
       rule: POINT_WITHHELD_REASON,
       decision_ref: "DECISIONS.md D-29a",
-      template_ref: "docs/AI_MODEL_ASSESSMENT_TEMPLATE.md amendments 2, 8 and 9",
+      template_ref: `docs/AI_MODEL_ASSESSMENT_TEMPLATE.md amendments ${wave.derived.display_rule ? "2, 8, 9 and 16" : "2, 8 and 9"}`,
       separated_subjects_keep_points: [...wave.derived.separated_subjects].sort(alpha),
     },
     ...rest,
@@ -175,6 +199,19 @@ export function projectionProblems(pub, wave) {
     });
   }
   for (const k of ["not_separated_group_range", "not_separated_group_ranges"]) if (pub.derived && k in pub.derived) p.push(`G24-group-range: derived.${k} is published (its extremes are the members' own points)`);
+  // The comparisons of an arms wave (amendment 16).
+  if (Array.isArray(wave.comparisons)) {
+    const out = pub.comparisons;
+    if (!Array.isArray(out) || out.length !== wave.comparisons.length) p.push("G24-pairs: comparisons changed length");
+    else wave.comparisons.forEach((q, i) => {
+      const o = out[i];
+      const involvesMember = isMember.has(q.a) || isMember.has(q.b);
+      if (involvesMember && "difference" in o) p.push(`G24-member-difference: comparisons[${i}] (${q.a} / ${q.b}) publishes a point difference`);
+      if (involvesMember && o.b_minus_a && "difference" in o.b_minus_a) p.push(`G24-member-difference: comparisons[${i}].b_minus_a (${q.a} / ${q.b}) publishes a point difference`);
+      if (!involvesMember && o.difference !== q.difference) p.push(`G24-difference-missing: comparisons[${i}] (${q.a} / ${q.b}) between two separated subjects must keep its difference`);
+      if (JSON.stringify(o.interval95) !== JSON.stringify(q.interval95) || o.separated !== q.separated || JSON.stringify(o.bonferroni) !== JSON.stringify(q.bonferroni) || JSON.stringify(o.b_minus_a?.interval95) !== JSON.stringify(q.b_minus_a?.interval95)) p.push(`G24-pair-range: comparisons[${i}] interval or separated flag changed`);
+    });
+  }
   return p;
 }
 
@@ -203,6 +240,7 @@ export function frontMatterObject(lines) {
 
 /** The sentences a pilot is described by when a person or tool needs one line about what it found about separation. */
 export function separationWords(wave) {
+  if (wave.derived.display_rule) return separationWordsArms(wave);
   const n = wave.derived.subject_count;
   const sep = [...wave.derived.separated_subjects].sort(alpha);
   const groups = wave.derived.not_separated_groups.map((g) => [...g].sort(alpha)).sort((a, b) => alpha(a[0], b[0]));
@@ -219,6 +257,41 @@ export function separationWords(wave) {
   }
   if (groups.length) parts.push("Not separated is not the same as equal; the pilot cannot say which is higher.");
   return parts.join(" ");
+}
+
+/**
+ * An arms wave's separation result in words (template amendment 16): the primary arm after correction for multiple comparisons, the pairs
+ * separated only without correction (stated as that, never as a separation), and the secondary arm (ranges only). No figure.
+ */
+function separationWordsArms(wave) {
+  const d = wave.derived;
+  const A = d.by_arm[d.primary_arm];
+  const n = A.subjects.length;
+  const sep = [...A.separated_subjects].sort(alpha);
+  const groups = A.not_separated_groups.map((g) => [...g].sort(alpha));
+  const parts = [];
+  const head = `In the primary arm (no length instruction), after correction for multiple comparisons`;
+  if (sep.length === 1 && groups.length === 1 && groups[0].length === n - 1) parts.push(`${head}, the test separated ${sep[0]} from the other ${numberWord(n - 1)} variants and could not tell ${listWords(groups[0])} apart (alphabetical order).`);
+  else {
+    if (sep.length) parts.push(`${head}, the test separated ${listWords(sep)} from the other variants.`);
+    groups.forEach((g) => parts.push(`${sep.length ? "It" : head + ", the test"} could not tell ${listWords(g)} apart.`));
+  }
+  const only = d.separated_uncorrected_only_pairs.map(([a, b]) => `${a} and ${b}`);
+  if (only.length) parts.push(`${listWords(only)} ${only.length === 1 ? "were" : "were each"} separated only without correction for multiple comparisons; that is not stated as a separation.`);
+  const B = d.range_only_subjects;
+  if (B.length) parts.push(`The secondary arm (length instruction, one trial per item) shows ranges only: ${listWords([...B].sort(alpha))}.`);
+  parts.push("Not separated is not the same as equal; the pilot cannot say which is higher.");
+  return parts.join(" ");
+}
+
+/** Trials per subject, in words a reader can use: one number, or the number for each arm of an arms wave. */
+export function trialsPhrase(wave) {
+  const t = wave.design.trials_per_subject;
+  if (typeof t === "number") return String(t);
+  const arms = wave.design.arms ?? {};
+  const byArm = {};
+  for (const [id, n] of Object.entries(t)) (byArm[arms[id]?.arm ?? id] ??= new Set()).add(n);
+  return Object.keys(byArm).sort(alpha).map((a) => `${[...byArm[a]].join("/")} in arm ${a}`).join(", ");
 }
 
 /** Does the wave prove its judges are a different model family than every subject? */
@@ -251,9 +324,18 @@ export function pilotCaveats(wave) {
   }
   if (wave.design.excluded_judges?.length) c.push("One judge was excluded after the fact (a disclosed post-hoc protocol change); the report describes it.");
   if (wave.sensitivity) {
-    c.push(wave.sensitivity.separation_pattern_unchanged
-      ? "Absolute levels depend on which judges are used; the separation pattern was checked against the judge choice and did not change."
-      : "Absolute levels depend on which judges are used, and the separation pattern changed when the judge choice changed.");
+    // Amendment 15: a sensitivity check that varied no judge cannot say anything about the choice of judges.
+    if (!sensitivityVariesJudges(wave)) {
+      c.push(`Absolute levels depend on which judges are used; the pilot did not test whether the separation pattern holds under a different choice of judges. ${wave.sensitivity.separation_pattern_unchanged ? "Its sensitivity check, which varied no judge, left the separation pattern unchanged." : "Its sensitivity check, which varied no judge, changed the separation pattern."}`);
+    } else {
+      c.push(wave.sensitivity.separation_pattern_unchanged
+        ? "Absolute levels depend on which judges are used; the separation pattern was checked against the judge choice and did not change."
+        : "Absolute levels depend on which judges are used, and the separation pattern changed when the judge choice changed.");
+    }
+  }
+  if (wave.derived.display_rule) {
+    c.push("Each build was run twice, with and without a length instruction. Only the arm without it carries the corrected comparison; the other arm has one trial per item and shows ranges only.");
+    c.push("The system message is explicit and identical within an arm, but its place in the prompt differs by each build's own template. The secondary arm has no server scorecard because the cb-probe server needs more trials per item; its composites are computed from the same ratings.");
   }
   if (wave.preregistration && wave.preregistration.committed_before_data === false) {
     c.push("The pre-registration file was not committed or independently time-stamped before the data existed.");
@@ -321,6 +403,7 @@ export function sortReports(reports) {
 function subjectsOf(wave) {
   return [...wave.design.subjects].sort(alpha).map((id) => ({
     label: id,
+    ...(wave.design.arms?.[id] ? { arm: wave.design.arms[id].arm, trials: wave.design.arms[id].trials } : {}),
     provenance: wave.subject_provenance?.[id] ?? { access_tier: wave.design.access_tier },
   }));
 }
@@ -352,7 +435,10 @@ export function pilotIndexEntry({ wave, title }) {
       not_separated_groups: groups,
       separated_subjects: sep,
       point_estimates_withheld_for: notSeparatedMembers(wave),
-      note: "Ranges for every subject are in wave_url. Point estimates for not-separated models are withheld (D-29a, template amendment 2).",
+      note: wave.derived.display_rule
+        ? "Ranges for every subject are in wave_url. Point estimates are withheld for every variant except one the corrected comparison separated (D-29a, template amendments 2 and 16)."
+        : "Ranges for every subject are in wave_url. Point estimates for not-separated models are withheld (D-29a, template amendment 2).",
+      ...(wave.derived.display_rule ? { display_rule: wave.derived.display_rule.text, range_only_subjects: [...wave.derived.range_only_subjects].sort(alpha) } : {}),
     },
     caveats,
     ...(sha ? { preregistration_sha256: sha } : {}),
@@ -423,7 +509,9 @@ export function buildLlmsModelLines({ reports, reportsIndexRenders }) {
     for (const r of sorted) {
       lines.push(`- Unofficial pilot report (not a score, not a ranking, comparability none; ${r.wave.report_date}): ${reportUrlFor(r.wave.run_id)}`);
       lines.push(`  - markdown: ${markdownUrlFor(r.wave.run_id)}`);
-      lines.push(`  - data (ranges; point estimates withheld for models the test could not separate): ${waveUrlFor(r.wave.run_id)}`);
+      lines.push(r.wave.derived.display_rule
+        ? `  - data (ranges; point estimates withheld except for a variant the corrected comparison separated): ${waveUrlFor(r.wave.run_id)}`
+        : `  - data (ranges; point estimates withheld for models the test could not separate): ${waveUrlFor(r.wave.run_id)}`);
     }
   }
   return lines;
@@ -435,13 +523,30 @@ const fmt1 = (v) => v.toFixed(1);
 function rangeLine(wave, id, sepSet) {
   const [lo, hi] = wave.subjects[id].pilot_composite_interval95;
   const base = `${id}: 95% range ${fmt1(lo)} to ${fmt1(hi)} (unofficial pilot figure, not a score)`;
+  if ((wave.derived.range_only_subjects ?? []).includes(id)) return `${base}; point estimate withheld: this variant is in the secondary arm (one trial per item), which shows ranges only.`;
   if (!sepSet.has(id)) return `${base}; point estimate withheld because the test could not separate it from the others in its group.`;
   const conf = [];
-  const words = Object.values(wave.subjects).map((s) => s.median_reply_words);
+  // Compared with the subjects the separation was tested against: all of them, or the primary arm of an arms wave.
+  const compared = wave.derived.by_arm?.[wave.derived.primary_arm]?.subjects ?? Object.keys(wave.subjects);
+  const words = compared.map((k) => wave.subjects[k].median_reply_words);
   if (wave.subjects[id].median_reply_words === Math.min(...words)) conf.push("this model also wrote the shortest replies, so reply length is an unresolved confound and the pilot cannot say whether the gap is about compassion or length");
   else conf.push("reply length is an unresolved confound");
   if (!crossFamily(wave)) conf.push("the judges came from the same model family as the subjects");
   return `${base}; the test separated it from the others, but ${conf.join("; ")}.`;
+}
+
+/** One pre-registered comparison of an arms wave, in words: ranges and flags, never a point difference. */
+function comparisonLine(wave, q) {
+  const r = (iv) => `${fmt1(iv[0])} to ${fmt1(iv[1])}`;
+  if (q.kind === "arm") {
+    const lc = wave.length_check?.per_build?.find((x) => x.arm_a === q.a);
+    return `${q.a} and ${q.b} (the build with and without the length instruction): 95% range of the arm B minus arm A difference ${r(q.b_minus_a.interval95)}; ${q.b_minus_a.separated ? "the range excludes zero" : "the range includes zero"}; ${lc ? `the length instruction was ${lc.length_instruction} (${lc.length_instruction === "ineffective" ? "this comparison is uninformative about length" : "read with the length change in mind"})` : "see the report"}.`;
+  }
+  if (q.bonferroni) {
+    const verdict = q.bonferroni.separated ? "separated after correction" : q.separated ? "separated only without correction for multiple comparisons (not stated as a separation)" : "not separated";
+    return `${q.a} and ${q.b} (primary arm): 95% range ${r(q.interval95)}; after correction for multiple comparisons ${r(q.bonferroni.interval)}; ${verdict}.`;
+  }
+  return `${q.a} and ${q.b} (secondary arm, one trial per item, no correction, ranges only): 95% range ${r(q.interval95)}; ${q.separated ? "the range excludes zero" : "the range includes zero"}.`;
 }
 
 export function pilotFindingsText({ wave, title }) {
@@ -454,7 +559,7 @@ export function pilotFindingsText({ wave, title }) {
   t.push("");
   t.push("Design:");
   t.push(`- Models tested (alphabetical): ${listWords([...wave.design.subjects].sort(alpha))}.`);
-  t.push(`- ${wave.design.items_served} items served, ${wave.design.trials_per_subject} trials per model, ${wave.design.responses} responses, ${wave.design.ratings} ratings, ${wave.design.judges_per_response} judges per response; bank ${wave.design.bank_version}.`);
+  t.push(`- ${wave.design.items_served} items served, ${typeof wave.design.trials_per_subject === "number" ? `${wave.design.trials_per_subject} trials per model` : `trials per model: ${trialsPhrase(wave)}`}, ${wave.design.responses} responses, ${wave.design.ratings} ratings, ${wave.design.judges_per_response} judges per response; bank ${wave.design.bank_version}.`);
   t.push(`- Method, as recorded in the wave file: composite: ${wave.method.composite}; interval: ${wave.method.interval}.`);
   t.push("");
   t.push("What it found about separation:");
@@ -462,6 +567,14 @@ export function pilotFindingsText({ wave, title }) {
   t.push("");
   t.push("95% ranges (alphabetical order, which is not a ranking):");
   for (const id of [...wave.design.subjects].sort(alpha)) t.push(`- ${rangeLine(wave, id, sepSet)}`);
+  if (wave.derived.display_rule) {
+    t.push("");
+    t.push("Pre-registered comparisons (95% range of the difference, first minus second, alphabetical; a point difference is never given):");
+    for (const q of wave.comparisons) t.push(`- ${comparisonLine(wave, q)}`);
+    t.push("");
+    t.push("Display rule (template amendment 16):");
+    t.push(`- ${wave.derived.display_rule.text}`);
+  }
   t.push("");
   t.push("Sources:");
   t.push(`- Report: ${reportUrlFor(wave.run_id)}`);

@@ -94,6 +94,58 @@ export interface WaveDerived {
   subject_count: number;
   ratings_total: number;
   responses_total: number;
+  /**
+   * Arms waves only (template amendment 16). The grouping above is the PRIMARY ARM's, after correction for multiple comparisons.
+   * `separated_subjects` then holds only the primary arm's corrected-separated variants, so every secondary-arm variant is range-only.
+   */
+  range_only_subjects?: string[];
+  point_withheld_subjects?: string[];
+  separated_uncorrected_only_pairs?: [string, string][];
+  primary_arm?: string;
+  primary_arm_subject_count?: number;
+  build_count?: number;
+  arm_count?: number;
+  by_arm?: Record<string, { subjects: string[]; comparison_basis: string; separated_subjects: string[]; not_separated_groups: string[][]; points: string }>;
+  display_rule?: { amendment: number; text: string };
+}
+
+/** One variant of an arms wave: which arm, trials, the verbatim system message and its hash, and what the cb-probe server did for it. */
+export interface ArmEntry {
+  arm: string;
+  trials: number;
+  system_message_sha256: string;
+  system_message?: string;
+  /** "server" for a variant the cb-probe server finished a report for; otherwise why not. */
+  server_report: string;
+  probe_from: string;
+}
+
+/** A pre-declared comparison of an arms wave: ranges and flags; a point difference only where the display rule allows it. */
+export interface ComparisonEntry {
+  a: string;
+  b: string;
+  kind: "build" | "arm";
+  arm_a: string;
+  arm_b: string;
+  difference?: number;
+  interval95: Range;
+  separated: boolean;
+  median_reply_words_a: number;
+  median_reply_words_b: number;
+  bonferroni?: { comparisons: number; confidence_percent: number; interval: Range; separated: boolean };
+  b_minus_a?: { difference?: number; interval95: Range; separated: boolean };
+}
+
+export interface LengthCheckEntry {
+  arm_a: string;
+  arm_b: string;
+  target_words: number;
+  median_words_a: number;
+  median_words_b: number;
+  distance_from_target_a: number;
+  distance_from_target_b: number;
+  length_instruction: "effective" | "ineffective";
+  b_minus_a_reading: string;
 }
 
 export interface SubjectProvenance {
@@ -146,7 +198,8 @@ interface WaveBase {
     items_served: number;
     /** Largest standard part (one fresh conversation) of a trial, from the operations manifest. */
     items_per_conversation_max: number;
-    trials_per_subject: number;
+    /** One number for every subject, or (arms waves) the number for each variant. */
+    trials_per_subject: number | Record<string, number>;
     responses: number;
     ratings: number;
     judges_per_response: number;
@@ -160,10 +213,16 @@ interface WaveBase {
     conversation_per_item?: string;
     crisis_items_served?: boolean;
     preregistration_sha256?: string;
+    /** Arms waves: per variant, its arm, trials and system message. */
+    arms?: Record<string, ArmEntry>;
   };
   method: { composite: string; interval: string; length: string };
   subjects: Record<string, WaveSubject>;
   pairwise: PairwiseEntry[];
+  /** Arms waves: every pair is in `pairwise` (exploratory across arms); the pre-declared findings are here. */
+  comparisons?: ComparisonEntry[];
+  length_check?: { rule: string; per_build: LengthCheckEntry[] };
+  replication?: Record<string, unknown>;
   dimension_pairwise: DimensionPairwiseEntry[];
   dimension_pairwise_note: string;
   length: {

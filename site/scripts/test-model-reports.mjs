@@ -28,7 +28,7 @@ import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { compileReport, verifyCompiled, reportText, renderHtml, makeNaming, lexiconProblems, countWords, resolvePath, keyOf, DOT_IN_KEY } from "./lib/model-report.mjs";
-import { syntheticAnalysis, syntheticWave, syntheticCtx, syntheticReportMd, syntheticReportInBand } from "./lib/model-report-fixtures.mjs";
+import { syntheticAnalysis, syntheticWave, syntheticCtx, syntheticReportMd, syntheticReportInBand, syntheticArmsWave } from "./lib/model-report-fixtures.mjs";
 import { projectWave, serialiseWave } from "./lib/model-wave.mjs";
 import { readDimensionNames } from "./lib/dimension-names.mjs";
 import { ratingSchemaProblems, bannerProblems, FORBIDDEN_LD_TYPES } from "./lib/model-report-html-gates.mjs";
@@ -61,13 +61,18 @@ const W3 = syntheticWave({
 // A wave of the later kind with NO separated model: one not-separated group of two, ids that carry dots, local pinned builds,
 // judges of another family, rotating judge pairs, and an analysis that listed its pairs "b minus a".
 const W4 = syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["KIN", "LIS", "NOT", "PLA", "REF", "TRU"], excluded: null, local: true, reversePairs: true, seed: 5 });
-const ALL_WAVES = [["synthetic wave-2", W2], ["synthetic wave-3", W3], ["synthetic wave-4 (no separated model, dotted ids)", W4], ...committed.map((w) => [`committed ${w.run_id}`, w])];
+// An ARMS wave (template amendment 16): four builds x two arms; one primary-arm variant separated after correction, a group of three, and a secondary arm that shows ranges only.
+const W5 = syntheticArmsWave();
+const ALL_WAVES = [["synthetic wave-2", W2], ["synthetic wave-3", W3], ["synthetic wave-4 (no separated model, dotted ids)", W4], ["synthetic wave-5 (arms)", W5], ...committed.map((w) => [`committed ${w.run_id}`, w])];
 const hasSeparated = (w) => w.derived.separated_subjects.length > 0;
-// The long control suite below needs a separated model (it plants defects about one). Waves with none get the suite after it.
-const WAVES = ALL_WAVES.filter(([, w]) => hasSeparated(w));
+const isArms = (w) => w.derived.display_rule !== undefined;
+// The long control suite below needs a separated model (it plants defects about one). Waves with none get the suite after it; arms waves their own.
+const WAVES = ALL_WAVES.filter(([, w]) => hasSeparated(w) && !isArms(w));
 const NOSEP_WAVES = ALL_WAVES.filter(([, w]) => !hasSeparated(w));
+const ARMS_WAVES = ALL_WAVES.filter(([, w]) => isArms(w));
 assert(committed.length > 0, "no committed wave to test against");
 assert(NOSEP_WAVES.length > 0 && NOSEP_WAVES.some(([n]) => n.startsWith("committed")), "no committed wave without a separated model: the second pilot's shape is not under test");
+assert(ARMS_WAVES.length >= 2 && ARMS_WAVES.some(([n]) => n.startsWith("committed")), "no committed arms wave: the third pilot's shape is not under test");
 
 // ---- markdown mutation helpers (the fixture uses numbered H2s) ----------------
 const H2 = (md, n) => md.split("\n").findIndex((l) => new RegExp(`^## ${n}\\. `).test(l));
@@ -679,6 +684,125 @@ for (const [name, w] of NOSEP_WAVES) {
 }
 
 // ===========================================================================
+// ARMS waves (template amendment 16): every build in two arms. Point display follows the CORRECTED primary-arm comparison: one separated
+// variant may show a point; the not-separated group and every variant of the secondary arm show ranges only; no point difference that
+// involves a withheld variant appears. Run on the committed third pilot and on a synthetic arms wave whose numbers are unlike it.
+// ===========================================================================
+for (const [name, w] of ARMS_WAVES) {
+  const naming = makeNaming(w);
+  const ids = naming.ids;
+  const d = w.derived;
+  const base = BASE.get(w);
+  const sep = d.separated_subjects[0];
+  const grp = d.not_separated_groups[0];
+  const bIds = d.range_only_subjects;
+  const NM = (id) => naming.full[id];
+  const unc = d.separated_uncorrected_only_pairs[0];
+  const dim0 = Object.keys(w.subjects[ids[0]].dimensions)[0];
+  const sepPointTok = `{{subjects.${sep}.pilot_composite|n1}}`;
+  const sel = (x, y) => `comparisons[a=${[x, y].sort()[0]},b=${[x, y].sort()[1]}]`;
+  const pwIdx = (list, x, y) => list.findIndex((e) => e.a === [x, y].sort()[0] && e.b === [x, y].sort()[1]);
+  const buildName = NM(ids[0]).replace(/ [AB]$/, "");
+  const armKind = w.comparisons.find((e) => e.kind === "arm");
+  const bPair = w.comparisons.find((e) => e.kind === "build" && e.arm_a === "B");
+  console.log(`\n=== arms controls against ${name} (${w.run_id}) ===`);
+
+  section("shape and the scaffold");
+  check("one separated variant of the primary arm, a group of the rest of it, the secondary arm range-only; the withheld set is the group plus arm B; the rule cites amendment 16", () => {
+    assert(d.separated_subjects.length === 1 && d.not_separated_groups.length === 1 && grp.length === d.primary_arm_subject_count - 1, JSON.stringify(d.by_arm));
+    assert(JSON.stringify(d.point_withheld_subjects) === JSON.stringify([...grp, ...bIds].sort()) && bIds.length === d.primary_arm_subject_count, "withheld set");
+    assert(d.display_rule.amendment === 16 && /stricter evidence/.test(d.display_rule.text), "display rule");
+    assert(d.separated_pairs.length === grp.length && d.separated_pairs.every(([x, y]) => x === sep || y === sep), "separated pairs are not exactly the separated variant's pairs");
+    assert(d.separated_uncorrected_only_pairs.length > 0, "no pair separated only without correction: the Bonferroni-versus-uncorrected controls would be vacuous");
+  });
+  check("the scaffold shows the separated variant's point once and no other point or point difference anywhere (positive control)", () => {
+    assert(base.includes(sepPointTok), "separated point missing from the scaffold");
+    for (const id of d.point_withheld_subjects) assert(!base.includes(`subjects.${id}.pilot_composite|`) && !base.includes(`subjects.${id}.dimensions`), `scaffold shows a point for ${id}`);
+    assert(!/\.difference\|/.test(base), "scaffold shows a point difference");
+  });
+  pc("ranges for every variant, the corrected range of a primary-arm pair and the B minus A range are allowed", afterHeading(base, 6, `${NM(grp[0])} has a range of {{subjects.${grp[0]}.pilot_composite_interval95|range}}. ${NM(bIds[0])} has a range of {{subjects.${bIds[0]}.pilot_composite_interval95|range}}. For ${NM(sep)} and ${NM(grp[0])} the corrected range of the difference is {{${sel(sep, grp[0])}.bonferroni.interval|range}}. For ${NM(armKind.a)} and ${NM(armKind.b)} the range of the arm B minus arm A difference is {{${sel(armKind.a, armKind.b)}.b_minus_a.interval95|range}}.`), w);
+
+  section("R-group-point (amendment 2, 9, 16): every withheld variant, every place");
+  for (const id of d.point_withheld_subjects) {
+    const arm = bIds.includes(id) ? "arm B" : "group";
+    nc(`${id} (${arm}): its point in prose`, afterHeading(base, 6, `${NM(id)} reached {{subjects.${id}.pilot_composite|n1}}.`), w, "R-group-point");
+    nc(`${id} (${arm}): its point in the point-estimate cell of its own row`, replaceOnce(base, `| {{subjects.${id}.pilot_composite_interval95|range}} | not shown |`, `| {{subjects.${id}.pilot_composite_interval95|range}} | {{subjects.${id}.pilot_composite|n1}} |`), w, "R-group-point");
+    nc(`${id} (${arm}): its judge-sensitivity point`, afterHeading(base, 9, `${NM(id)} moved to {{sensitivity.subjects.${id}.pilot_composite|n1}}.`), w, "R-group-point");
+    nc(`${id} (${arm}): its dimension mean`, afterHeading(base, 8, `${NM(id)} has a mean of {{subjects.${id}.dimensions.${dim0}|n2}} in ${dim0}.`), w, "R-group-point");
+    nc(`${id} (${arm}): its point in the front matter`, `---\ntitle: Unofficial pilot\nabstract: The point for ${NM(id)} was {{subjects.${id}.pilot_composite|n1}}.\n---\n${base}`, w, "R-group-point");
+  }
+  nc("the range of the group's points (its extremes are the members' own points)", afterHeading(base, 6, "The group ran from {{derived.not_separated_group_range|range}}."), w, "R-group-point");
+  pc("the separated variant's own point stays allowed (positive control: the rule is not a blanket ban)", base, w);
+
+  section("R-withheld-difference and R-reconstruct (amendments 8, 16): no point difference that involves a withheld variant");
+  for (const m of grp) {
+    const i = pwIdx(w.pairwise, sep, m);
+    nc(`pairwise point difference ${sep} against ${m} (separated point shown)`, afterHeading(base, 6, `The gap was {{pairwise.${i}.difference|n1}}.`), w, "R-reconstruct");
+    nc(`the same difference is still refused when the separated point is NOT shown (amendment 16 is unconditional)`, afterHeading(base.split(sepPointTok).join("not shown"), 6, `The gap was {{pairwise.${i}.difference|n1}}.`), w, "R-withheld-difference");
+    nc(`comparisons point difference ${sep} against ${m}`, afterHeading(base, 6, `The gap was {{${sel(sep, m)}.difference|n1}}.`), w, "R-withheld-difference");
+    const si = pwIdx(w.sensitivity.pairwise, sep, m);
+    nc(`sensitivity point difference ${sep} against ${m}`, afterHeading(base, 9, `The gap was {{sensitivity.pairwise.${si}.difference|n1}}.`), w, "R-reconstruct");
+  }
+  nc("a B minus A point difference", afterHeading(base, 6, `The gap was {{${sel(armKind.a, armKind.b)}.b_minus_a.difference|n1}}.`), w, "R-withheld-difference");
+  nc("a secondary-arm pair's point difference", afterHeading(base, 6, `The gap was {{${sel(bPair.a, bPair.b)}.difference|n1}}.`), w, "R-withheld-difference");
+  nc("a point difference of the pair separated only without correction", afterHeading(base, 6, `The gap was {{${sel(unc[0], unc[1])}.difference|n1}}.`), w, "R-difference-unseparated");
+  nc("a point difference of a primary-arm pair not separated", afterHeading(base, 6, `The gap was {{${sel(grp[0], grp[1])}.difference|n1}}.`), w, "R-difference-unseparated");
+
+  section("Bonferroni versus uncorrected wording (amendment 16)");
+  nc("a pair separated only without correction, said plainly as a separation", afterHeading(base, 6, `${NM(unc[0])} and ${NM(unc[1])} were separated.`), w, "R-uncorrected-claim");
+  nc("the same pair, 'X was separated from Y'", afterHeading(base, 6, `${NM(unc[0])} was separated from ${NM(unc[1])}.`), w, "R-claims-vs-pairwise");
+  pc("the same pair stated in words with the qualifier and its uncorrected range", afterHeading(base, 6, `${NM(unc[0])} and ${NM(unc[1])} were separated only without correction for multiple comparisons; the uncorrected range of their difference is {{${sel(unc[0], unc[1])}.interval95|range}}.`), w);
+  const secondary = w.pairwise.find((e) => bIds.includes(e.a) && bIds.includes(e.b) && e.separated);
+  if (secondary) nc("two secondary-arm variants said to be separated (their uncorrected range excludes zero; the arm states no separation)", afterHeading(base, 6, `${NM(secondary.a)} was separated from ${NM(secondary.b)}.`), w, "R-claims-vs-pairwise");
+  nc("the separated variant said to be separated from 'the other seven' (the family is the primary arm)", replaceOnce(base, /was separated from the other \w+ after correction/.exec(base)[0], "was separated from the other seven after correction"), w, "R-claims-count");
+  nc("a separation of the primary arm left unsaid", removeLines(base, /^- May say: \{\{derived\.separated_subjects\.0\|name\}\} was separated from/).replace(/was separated from the other \w+ after correction/, "stood apart after correction"), w, "R-claims-missing");
+  nc("a group pair said to be separated 'from' each other", afterHeading(base, 6, `${NM(grp[0])} was separated from ${NM(grp[grp.length - 1])}.`), w, "R-claims-vs-pairwise");
+  nc("the group sentence placed after the first per-model figure", afterHeading(base, 2, `${NM(grp[0])} had {{subjects.${grp[0]}.median_reply_words|n0}} words.`), w, "R-group-sentence-late");
+  nc("an ordering word beside two group members", afterHeading(base, 6, `${NM(grp[0])} is higher than ${NM(grp[1])}.`), w, "R-ordering-adjacent");
+  nc("an ordering word beside a secondary-arm variant", afterHeading(base, 6, `${NM(bIds[0])} is lower than ${NM(grp[0])}.`), w, "R-ordering-adjacent");
+
+  section("build names are labels, and stand for both of their variants");
+  check("a build name is not a variant mention, but masks its digits and is found by buildMentions", () => {
+    assert(naming.mentions(`The ${buildName} build ran twice.`).length === 0, "a build name was read as a variant");
+    assert(naming.buildMentions(`The ${buildName} build ran twice.`).length === 1 && naming.buildMentions(`${NM(ids[0])} ran.`).length === 0, "buildMentions");
+  });
+  pc("a build name carrying digits is a label in prose", afterHeading(base, 4, `The ${buildName} build ran in two arms.`), w);
+  nc("an ordering word beside a build name (its variants were not all separated)", afterHeading(base, 4, `The ${buildName} build was rated higher by the judges.`), w, "R-ordering-adjacent");
+  nc("a figure typed beside a build name", afterHeading(base, 4, `The ${buildName} build reached 71 on this run.`), w, "R-bare-digit");
+  nc("an implied order: the table rows reversed (not alphabetical)", (() => {
+    const L = base.split("\n");
+    const rowIdx = L.map((l, i) => (/^\| \{\{subjects\.[^|]+\|name\}\}/.test(l) ? i : -1)).filter((i) => i >= 0);
+    const rows = rowIdx.map((i) => L[i]).reverse();
+    rowIdx.forEach((i, k) => { L[i] = rows[k]; });
+    return L.join("\n");
+  })(), w, "R-implied-order");
+  nc("a figure beside the wrong variant (arm A name, arm B range)", afterHeading(base, 6, `${NM(grp[0])} has a range of {{subjects.${bIds[0]}.pilot_composite_interval95|range}}.`), w, "R-binding");
+
+  section("must-say and must-cite rules of an arms wave");
+  const noRule = (md) => md.split("{{derived.display_rule.text}}").join("");
+  nc("status: the two-arms statement removed", replaceOnce(base, /ran in \{\{derived\.arm_count\|n0\}\} arms, with and without a length instruction\./.exec(base)[0], "took part."), w, "R-must-say");
+  nc("design: where the system message sits (differs by build template) removed", replaceOnce(base, "Where the system message sits differs by build template; that is a build's own format, disclosed and not controlled.", "The message is listed."), w, "R-must-say");
+  nc("design: arm B has one trial and no server scorecard removed", replaceOnce(base, "Arm B has no server scorecard, because the cb-probe server needs more trials; its composites are computed from the same ratings.", "Arm B is listed."), w, "R-must-say");
+  nc("separation: the Bonferroni-versus-uncorrected statement removed", replaceOnce(noRule(base), /The pre-registration reports both an uncorrected and a Bonferroni-corrected result[^\n]*?show ranges only\. /.exec(base)[0], ""), w, "R-must-say");
+  nc("separation: arm B shows ranges only, removed", replaceOnce(noRule(base), "Arm B, the secondary arm with one trial per item, shows ranges only: the pilot states no separation among its variants and shows no point for any of them.", "Arm B is listed."), w, "R-must-say");
+  nc("separation: the replication statement removed", replaceOnce(base, /Replication is descriptive only, with no claim about a cause: [^\n]*/.exec(base)[0], "Replication is listed."), w, "R-must-say");
+  nc("separated model: the section-9 verdicts removed (the b_minus_a readings)", base.replace(/\{\{length_check\.per_build\[[^\]]*\]\.b_minus_a_reading\}\}/g, "x"), w, "R-must-say");
+  nc("instrument health: once per build, through the MCP server, removed", replaceOnce(base, "once per build, through the cb-probe MCP server", "through the server"), w, "R-must-say");
+  nc("instrument health: the bridge statement removed", replaceOnce(base, /The bridge sample of first-pilot replies is descriptive:[^\n]*/.exec(base)[0], "A sample was listed."), w, "R-must-say");
+  nc("deviations: the call-order deviation statement removed", replaceOnce(base, "It changed call order only, so it is a departure after data existed and not a change to any reply.", "It is listed."), w, "R-must-say");
+  nc("deviations: the original-answers-primary statement removed", replaceOnce(base, "The figure measured on the original answers, before any requote, is the primary one: it is the conservative reading.", ""), w, "R-must-say");
+  nc("separation: no comparisons figure cited", base.replace(/\{\{comparisons\[[^}]*\}\}/g, "a range"), w, "R-must-cite");
+  nc("separation: no replication figure cited", base.replace(/\{\{replication\.[^}]*\}\}/g, "x"), w, "R-must-cite");
+  nc("separated model: no length_check figure cited", base.replace(/\{\{length_check\.[^}]*\}\}/g, "x"), w, "R-must-cite");
+  nc("deviations: no deviations figure cited", base.replace(/\{\{deviations\.[^}]*\}\}/g, "x"), w, "R-must-cite");
+  nc("design: no design.arms figure cited", base.replace(/\{\{design\.arms\.[^}]*\}\}/g, "x"), w, "R-must-cite");
+  check("the display rule travels with the data: it is derived, and cites the amendment", () => {
+    const r = compile(base, w).report;
+    assert(r.figure_ledger.some((e) => e.canonical === "derived.display_rule.text"), "the scaffold does not cite the rule");
+  });
+}
+
+// ===========================================================================
 section("G5 status-banner and G6 no-rating-schema (HTML functions, proved on probes)");
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 const goodPage = `<html><head>${ld({ "@context": "https://schema.org", "@graph": [{ "@type": "Report", name: "x" }, { "@type": "BreadcrumbList" }, { "@type": "FAQPage" }] })}</head><body><main><div role="region" aria-label="status">Unofficial pilot. Not a score. Not a ranking. No cross-model comparison.</div><h1>Title</h1></main></body></html>`;
@@ -720,7 +844,7 @@ if (existsSync(outDir)) {
 
 // ===========================================================================
 section("G13 wave2-dryrun and the no-pilot-values rule");
-const real = committed.find(hasSeparated) ?? committed[0]; // cross-wave controls: a committed wave to compile a foreign scaffold against
+const real = committed.find((w) => hasSeparated(w) && !isArms(w)) ?? committed[0]; // cross-wave controls: a committed wave to compile a foreign scaffold against
 check("a wave-2 scaffold passes every rule with no change to the compiler", () => {
   for (const w of [W2, W3, W4]) assert(compile(BASE.get(w), w).errors.length === 0, `${w.run_id} did not compile`);
 });
@@ -734,7 +858,8 @@ check("NC pilot scaffold compiled against wave-2 fails", () => {
 });
 check("the pilot's figures appear in no gate, library or fixture source", () => {
   const nums = new Set();
-  const walk = (x) => { if (typeof x === "number") { const s = String(x); if (s.length >= 4 || /^\d{3,}$/.test(s)) nums.add(s); } else if (x && typeof x === "object") Object.values(x).forEach(walk); };
+  // `target_words` (a length instruction's target) is a design constant of the run, like a section budget, not a result.
+  const walk = (x, key = "") => { if (typeof x === "number") { if (key === "target_words") return; const s = String(x); if (s.length >= 4 || /^\d{3,}$/.test(s)) nums.add(s); } else if (x && typeof x === "object") Object.entries(x).forEach(([k, v]) => walk(v, k)); };
   for (const cw of committed) walk({ ...cw, source_sha256: undefined }); // every committed wave, not only one
   const files = [
     "scripts/test-model-reports.mjs", "scripts/test-model-waves.mjs", "scripts/test-model-wave-isolation.mjs", "scripts/test-model-wave-export.mjs",

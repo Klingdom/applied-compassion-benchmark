@@ -14,6 +14,7 @@
  * A gate that examines zero waves fails.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
+import nodeCrypto from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -21,7 +22,8 @@ import {
   parseDecisionStatus, notSeparatedGroups, forbiddenKeys,
   normaliseAnalysis, orientPairs, parsePreregSubjects, parsePreregRuntime, judgePairing,
 } from "./lib/model-wave.mjs";
-import { syntheticAnalysis, syntheticWave, syntheticCtx, syntheticPreregText } from "./lib/model-report-fixtures.mjs";
+import { syntheticAnalysis, syntheticWave, syntheticCtx, syntheticPreregText, syntheticArmsAnalysis, syntheticArmsWave, SYNTH_SYSTEM } from "./lib/model-report-fixtures.mjs";
+import { PREREGISTRATION_COMMITTED_NOTE, armsProblems, armsStructure, isArmsDesign } from "./lib/model-wave.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = join(HERE, "..");
@@ -67,8 +69,9 @@ const synth = syntheticWave();
 // A wave of the later kind with NO separated model: two subjects whose ids carry dots, local pinned builds, judges of another family.
 const ALL_GROUPED_OPTS = { runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["KIN", "LIS", "NOT", "PLA", "REF", "TRU"], excluded: null, local: true, reversePairs: true, seed: 5 };
 const synthAllGrouped = syntheticWave(ALL_GROUPED_OPTS);
-const pilot = waves.find(({ w }) => w.derived.separated_subjects.length > 0)?.w ?? synth; // the committed wave with a separated model, else the synthetic one
-const controlTargets = [...waves.map(({ w }) => [`committed ${w.run_id}`, w]), ["synthetic wave-2", synth], ["synthetic all-grouped wave", synthAllGrouped]];
+const pilot = waves.find(({ w }) => w.derived.separated_subjects.length > 0 && w.derived.display_rule === undefined)?.w ?? synth; // the committed wave with a separated model, else the synthetic one
+const synthArms = syntheticArmsWave();
+const controlTargets = [...waves.map(({ w }) => [`committed ${w.run_id}`, w]), ["synthetic wave-2", synth], ["synthetic all-grouped wave", synthAllGrouped], ["synthetic arms wave", synthArms]];
 for (const [name, base] of controlTargets) {
   console.log(`  -- ${name} (${base.run_id})`);
   check(`${name}: unmodified copy is valid`, () => assert(waveProblems(clone(base)).length === 0, waveProblems(clone(base)).join("; ")));
@@ -227,7 +230,7 @@ check("a wave with no separated model: one group of two, no separated subject, n
   assert(d.dimension_bonferroni_separated_for && Object.keys(d.dimension_bonferroni_separated_for).length === 0, "outside-group counts exist without an outside subject");
 });
 check("the committed second pilot is exactly that shape (no separated subject, both subjects in one group)", () => {
-  const w2 = waves.find(({ w }) => w.derived.separated_subjects.length === 0)?.w;
+  const w2 = waves.find(({ w }) => w.derived.separated_subjects.length === 0 && w.derived.display_rule === undefined)?.w;
   assert(w2, "no committed wave without a separated subject");
   assert(w2.derived.not_separated_groups.length === 1 && w2.derived.not_separated_groups[0].length === w2.derived.subject_count, "not one all-subject group");
   assert(Object.keys(w2.length.composite_if_pooled_slope_removed).length === 0, "length bound present");
@@ -317,6 +320,172 @@ check("judgePairing reads routing: fixed for one pair per subject, rotating for 
   trips("later-kind wave: a failing judge's verdict flipped to PASS", mutL((w) => { const b = w.judge_validity.measured_on_final_quotes; const j = Object.keys(b.judges)[0]; b.judges[j].unfound_rate_percent = b.threshold_percent + 1; }), "W-judge-validity");
   trips("later-kind wave: pre-registration hash differs from design.preregistration_sha256", mutL((w) => { w.preregistration.sha256 = "a".repeat(64); }), "W-preregistration");
   trips("later-kind wave: an official flag", mutL((w) => { w.official = true; }), "W-official");
+}
+
+function createHashHex(t) {
+  return nodeCrypto.createHash("sha256").update(t).digest("hex");
+}
+
+// ===========================================================================
+// ARMS waves (template amendment 16): the third pilot's shape. Four builds x two arms, pre-declared comparisons, a corrected primary-arm
+// grouping that governs point display, a secondary arm that shows ranges only, section-9 length verdicts, a replication note.
+// ===========================================================================
+console.log("\nARMS waves (amendment 16)\n");
+const armsTargets = [...waves.filter(({ w }) => w.derived.display_rule !== undefined).map(({ w }) => [`committed ${w.run_id}`, w]), ["synthetic arms wave", synthArms]];
+check("a committed arms wave exists (the arms controls are then about the real third pilot)", () => assert(armsTargets.some(([n]) => n.startsWith("committed")), "no committed arms wave"));
+for (const [name, base] of armsTargets) {
+  console.log(`  -- ${name} (${base.run_id})`);
+  const d = base.derived;
+  const mutA = (f) => { const w = clone(base); f(w); return waveProblems(w); };
+  const ids = Object.keys(base.subjects);
+  const sepId = d.separated_subjects[0];
+  check(`${name}: the grouping that governs points is the primary arm's, after correction; the secondary arm is range-only; the rule cites amendment 16`, () => {
+    assert(isArmsDesign(base.design) && d.display_rule.amendment === 16, "not an arms wave");
+    const s = armsStructure(base, ids.sort());
+    assert(JSON.stringify(s.groups) === JSON.stringify(d.not_separated_groups) && JSON.stringify(s.separated) === JSON.stringify(d.separated_subjects), "derived groups differ from the corrected comparisons");
+    assert(d.separated_subjects.length === 1 && d.range_only_subjects.length === d.primary_arm_subject_count, "one separated variant and a range-only secondary arm");
+    assert(JSON.stringify(d.point_withheld_subjects) === JSON.stringify([...d.not_separated_groups.flat(), ...d.range_only_subjects].sort()), "withheld set");
+    assert(d.separated_pairs.every(([a, b]) => base.comparisons.find((c) => c.a === a && c.b === b)?.bonferroni?.separated === true), "a separated pair that is not separated after correction");
+  });
+  check(`${name}: a pair separated only without correction is NOT in separated_pairs but IS recorded (the stricter evidence governs; the weaker is stated in words only)`, () => {
+    assert(d.separated_uncorrected_only_pairs.length > 0, "none");
+    for (const [a, b] of d.separated_uncorrected_only_pairs) {
+      const c = base.comparisons.find((x) => x.a === a && x.b === b);
+      assert(c.separated === true && c.bonferroni.separated === false, `${a}/${b} is not separated only without correction`);
+      assert(!d.separated_pairs.some(([x, y]) => x === a && y === b) && !d.not_separated_groups.every((g) => !(g.includes(a) && g.includes(b))) === true, `${a}/${b} must sit in one not-separated group`);
+    }
+  });
+  check(`${name}: nothing point-valued of a withheld subject, and no composite, rank or band key, reached comparisons, length_check or replication`, () => {
+    const text = JSON.stringify({ c: base.comparisons, l: base.length_check, r: base.replication, a: base.design.arms });
+    assert(!/composite|"ranks"|"band"|scorecard|"of":/.test(text.replace(/pilot_composite_interval95/g, "")), "a withheld key reached the wave");
+    assert(base.comparisons.every((c) => !("composite_a" in c) && !("build_a" in c)), "a comparison carries its composites");
+    assert(!("contamination_per_build" in base), "contamination_per_build (it carries composites and a band) reached the wave");
+  });
+  check(`${name}: every comparison and arm is alphabetical; the wave lists its comparisons in alphabetical order`, () => {
+    for (const c of base.comparisons) assert(c.a < c.b, `${c.a}/${c.b}`);
+    const keys = base.comparisons.map((c) => `${c.a}|${c.b}`);
+    assert(JSON.stringify(keys) === JSON.stringify([...keys].sort()), "comparisons not in alphabetical order");
+    assert(JSON.stringify(Object.keys(base.design.arms)) === JSON.stringify([...Object.keys(base.design.arms)].sort()) && JSON.stringify(Object.keys(base.design.trials_per_subject)) === JSON.stringify(Object.keys(base.design.trials_per_subject).sort()), "design.arms or trials_per_subject not alphabetical");
+  });
+  check(`${name}: design.arms carries each arm's system message verbatim with its hash; the secondary arm has no server report`, () => {
+    for (const id of ids) {
+      const a = base.design.arms[id];
+      assert(typeof a.system_message === "string" && createHashHex(a.system_message) === a.system_message_sha256, `${id}: system message does not hash to its recorded hash`);
+      assert(a.server_report === "server" || /^none/.test(a.server_report), `${id}: server_report ${a.server_report}`);
+    }
+    for (const id of d.range_only_subjects) assert(/^none/.test(base.design.arms[id].server_report), `${id}: a secondary-arm variant claims a server report`);
+  });
+  check(`${name}: a secondary-arm variant borrows its build's contamination probe and the wave says it ran through the MCP server`, () => {
+    for (const id of d.range_only_subjects) {
+      assert(base.subjects[id].contamination.from_build_probe_of, `${id}: no probe host recorded`);
+      assert(typeof base.subjects[id].contamination.via === "string" && base.subjects[id].contamination.via.length > 0, `${id}: contamination.via missing for a variant whose build's probe ran through the server`);
+    }
+  });
+  check(`${name}: the replication block carries ranges, flags and medians only`, () => {
+    assert(base.replication, "no replication block");
+    const bad = [];
+    const walk = (x, path) => { if (Array.isArray(x)) x.forEach((v, i) => walk(v, path + "[" + i + "]")); else if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) { if (/^(?:difference|composite|point)|_difference/i.test(k)) bad.push(path + "." + k); walk(v, path + "." + k); } };
+    walk(base.replication, "replication");
+    assert(bad.length === 0, "a point or point difference reached replication: " + bad.join(", "));
+  });
+  trips(`${name}: a design.arms entry removed`, mutA((w) => { delete w.design.arms[ids[0]]; }), "W-arms");
+  trips(`${name}: two variants of one arm carry different system message hashes`, mutA((w) => { w.design.arms[sepId].system_message_sha256 = "0".repeat(64); }), "W-arms");
+  trips(`${name}: design.arms trials differ from design.trials_per_subject`, mutA((w) => { w.design.arms[sepId].trials += 1; }), "W-arms");
+  trips(`${name}: a build with no secondary-arm variant (a variant renamed)`, mutA((w) => { w.design.arms[d.range_only_subjects[0]].arm = "A"; }), "W-arms");
+  trips(`${name}: a comparison dropped`, mutA((w) => { w.comparisons.pop(); }), "W-comparison");
+  trips(`${name}: a comparison with a after b`, mutA((w) => { const c = w.comparisons[0]; [c.a, c.b] = [c.b, c.a]; }), "W-comparison");
+  trips(`${name}: a build comparison across arms`, mutA((w) => { const c = w.comparisons.find((x) => x.kind === "build"); c.arm_b = c.arm_a === "A" ? "B" : "A"; }), "W-comparison");
+  trips(`${name}: a comparison flag contradicts its interval`, mutA((w) => { const c = w.comparisons.find((x) => !x.separated); c.separated = true; }), "W-comparison-consistent");
+  trips(`${name}: a corrected flag contradicts its corrected interval`, mutA((w) => { const c = w.comparisons.find((x) => x.bonferroni && !x.bonferroni.separated); c.bonferroni.separated = true; }), "W-comparison-consistent");
+  trips(`${name}: separated after correction but not at 95%`, mutA((w) => { const c = w.comparisons.find((x) => x.bonferroni && !x.separated); if (!c) throw new Error("fixture has no primary pair that is not separated at 95%"); c.bonferroni.interval = [c.interval95[1] + 1, c.interval95[1] + 3]; c.bonferroni.separated = true; }), "W-comparison-consistent");
+  trips(`${name}: a corrected interval narrower than the uncorrected one`, mutA((w) => { const c = w.comparisons.find((x) => x.bonferroni); c.bonferroni.interval = [c.interval95[0] + 0.3125, c.interval95[1] - 0.3125]; c.bonferroni.separated = !(c.bonferroni.interval[0] <= 0 && c.bonferroni.interval[1] >= 0); }), "W-comparison");
+  trips(`${name}: a corrected interval on a secondary-arm comparison`, mutA((w) => { const c = w.comparisons.find((x) => x.kind === "build" && x.arm_a !== d.primary_arm); c.bonferroni = { comparisons: 1, confidence_percent: 1, interval: [-1, 1], separated: false }; }), "W-comparison");
+  trips(`${name}: the corrected count is not the number of primary-arm pairs`, mutA((w) => { w.comparisons.find((x) => x.bonferroni).bonferroni.comparisons += 1; }), "W-comparison");
+  trips(`${name}: b_minus_a is not the mirror of a minus b`, mutA((w) => { const c = w.comparisons.find((x) => x.kind === "arm"); c.b_minus_a.difference += 0.5; }), "W-comparison-consistent");
+  trips(`${name}: median reply words in a comparison differ from the subjects'`, mutA((w) => { w.comparisons[0].median_reply_words_a += 1; }), "W-comparison");
+  trips(`${name}: comparisons and pairwise disagree about a pair`, mutA((w) => { const c = w.comparisons[0]; const q = w.pairwise.find((x) => x.a === c.a && x.b === c.b); q.interval95 = [q.interval95[0] - 0.5, q.interval95[1] + 0.5]; }), "W-comparison-consistent");
+  trips(`${name}: a length verdict flipped`, mutA((w) => { const r = w.length_check.per_build[0]; r.length_instruction = r.length_instruction === "effective" ? "ineffective" : "effective"; }), "W-length-check-verdict");
+  trips(`${name}: a length median differs from the subject's`, mutA((w) => { w.length_check.per_build[0].median_words_a += 1; }), "W-length-check");
+  trips(`${name}: a distance from the target not recomputed`, mutA((w) => { w.length_check.per_build[0].distance_from_target_b += 1; }), "W-length-check");
+  trips(`${name}: derived.separated_uncorrected_only_pairs tampered`, mutA((w) => { w.derived.separated_uncorrected_only_pairs = []; }), "W-derived");
+  trips(`${name}: derived.point_withheld_subjects tampered (a secondary-arm variant dropped from the withheld set)`, mutA((w) => { w.derived.point_withheld_subjects = w.derived.point_withheld_subjects.slice(1); }), "W-derived");
+  trips(`${name}: derived.range_only_subjects tampered`, mutA((w) => { w.derived.range_only_subjects = []; }), "W-derived");
+  trips(`${name}: derived.display_rule edited`, mutA((w) => { w.derived.display_rule.text += " Edited."; }), "W-derived");
+  trips(`${name}: derived.separated_pairs tampered`, mutA((w) => { w.derived.separated_pairs = []; }), "W-derived");
+  trips(`${name}: a point difference added to replication`, mutA((w) => { w.replication.this_run_arm_a_result.difference = 1.5; }), "W-replication");
+  trips(`${name}: replication flag contradicts its range`, mutA((w) => { w.replication.source_run_result.separated = !w.replication.source_run_result.separated; }), "W-replication");
+  trips(`${name}: separation_repeats contradicts the two results`, mutA((w) => { w.replication.separation_repeats = !w.replication.separation_repeats; }), "W-replication");
+  trips(`${name}: a length bound for a secondary-arm variant (it would impose an order)`, mutA((w) => { w.length.composite_if_pooled_slope_removed[d.range_only_subjects[0]] = 1; }), "W-bound");
+  check(`${name}: a not-separated relation that is not a clique under the corrected comparisons is refused (W-clique)`, () => {
+    const p = mutA((w) => {
+      const g = w.derived.not_separated_groups[0];
+      const [x, y] = [g[0], g[1]];
+      const c = w.comparisons.find((e) => e.kind === "build" && e.a === x && e.b === y);
+      c.interval95 = [2, 9]; c.separated = true;
+      c.bonferroni.interval = [1, 12]; c.bonferroni.separated = true;
+      const q = w.pairwise.find((e) => e.a === x && e.b === y); q.interval95 = c.interval95; q.separated = true;
+      const s = w.sensitivity.pairwise.find((e) => e.a === x && e.b === y); s.interval95 = c.interval95; s.separated = true;
+    });
+    assert(p.some((m) => m.startsWith("W-clique")), `tripped ${p.map((m) => m.split(":")[0]).join(", ")} instead of W-clique`);
+    console.log(`         tripped: ${p.find((m) => m.startsWith("W-clique")).slice(0, 150)}`);
+  });
+}
+
+
+console.log("\nARMS analysis schema and projection (synthetic arms analysis)\n");
+{
+  const AA = syntheticArmsAnalysis();
+  check("a synthetic arms analysis is valid", () => assert(analysisProblems(normaliseAnalysis(AA)).length === 0, analysisProblems(normaliseAnalysis(AA)).join("; ")));
+  const aM = (f) => { const a = clone(AA); f(a); return analysisProblems(normaliseAnalysis(a)); };
+  const aIds = Object.keys(AA.subjects).sort();
+  trips("arms analysis: comparisons missing", aM((a) => { delete a.comparisons; }), "A-required");
+  trips("arms analysis: length_check missing", aM((a) => { delete a.length_check; }), "A-required");
+  trips("arms analysis: trials_per_subject as one number", aM((a) => { a.design.trials_per_subject = 3; }), "A-counts");
+  trips("arms analysis: responses do not add up over the variants' trials", aM((a) => { a.design.responses += 1; }), "A-counts");
+  trips("arms analysis: a dimension comparison outside the primary arm", aM((a) => { const e = a.dimension_pairwise[0]; e.b = aIds.find((i) => i.endsWith("-B")); }), "A-dim-pairwise");
+  trips("arms analysis: a primary-arm dimension comparison missing", aM((a) => { a.dimension_pairwise.pop(); }), "A-dim-pairwise");
+  trips("arms analysis: an arm id without its suffix", aM((a) => { a.design.arms[aIds[0]].arm = "B"; }), "A-arms");
+  trips("arms analysis: a comparison flag contradicts its interval", aM((a) => { const c = a.comparisons.find((x) => !x.separated); c.separated = true; }), "A-comparison-consistent");
+  trips("arms analysis: a verdict contradicts the medians", aM((a) => { const r = a.length_check.per_build[0]; r.length_instruction = r.length_instruction === "effective" ? "ineffective" : "effective"; }), "A-length-check-verdict");
+  trips("arms analysis: a corrected interval that does not contain the uncorrected one", aM((a) => { const c = a.comparisons.find((x) => x.bonferroni); c.bonferroni.interval = [c.interval95[0] + 0.3, c.interval95[1] - 0.3]; c.bonferroni.separated = !(c.bonferroni.interval[0] <= 0 && c.bonferroni.interval[1] >= 0); }), "A-comparison");
+  const ctx = syntheticCtx(AA);
+  check("projection: the arms wave is independent of the order the analysis lists subjects, pairs and comparisons in (shuffle control)", () => {
+    const a = clone(AA);
+    a.subjects = Object.fromEntries(Object.entries(a.subjects).reverse());
+    a.pairwise.reverse(); a.dimension_pairwise.reverse(); a.comparisons.reverse(); a.length_check.per_build.reverse();
+    a.design.arms = Object.fromEntries(Object.entries(a.design.arms).reverse());
+    a.design.trials_per_subject = Object.fromEntries(Object.entries(a.design.trials_per_subject).reverse());
+    const strip = (w) => { const c = clone(w); delete c.source_sha256; return serialiseWave(c); };
+    assert(strip(projectWave(clone(AA), ctx)) === strip(projectWave(a, ctx)), "wave output depends on input order");
+  });
+  check("projection: a system message that does not hash to the analysis's recorded hash is refused", () => {
+    const bad = clone(ctx); bad.provenance.system_messages[aIds[0]] = "A different message.";
+    assert(throwsWith(() => projectWave(clone(AA), bad), /does not hash/), "a system message that does not match its hash was accepted");
+  });
+  check("projection: a pre-registration committed before the data says so, with a different note; otherwise the not-committed note", () => {
+    const yes = clone(ctx); yes.provenance.preregistration_committed_before_data = true;
+    const w1 = projectWave(clone(AA), yes);
+    const w0 = projectWave(clone(AA), ctx);
+    assert(w1.preregistration.committed_before_data === true && w1.preregistration.note === PREREGISTRATION_COMMITTED_NOTE, "committed note");
+    assert(w0.preregistration.committed_before_data === false && w0.preregistration.note !== PREREGISTRATION_COMMITTED_NOTE, "not-committed note");
+    assert(waveProblems(w1).length === 0, waveProblems(w1).join("; "));
+  });
+  check("projection: a variant reads its BUILD's row of the pre-registration table (one row per build)", () => {
+    const text = syntheticPreregText(AA);
+    const rows = Object.keys(parsePreregSubjects(text));
+    assert(rows.length === 4 && rows.every((r) => !/-[AB]$/.test(r)), `rows ${rows.join(",")}`);
+    const w = projectWave(clone(AA), ctx);
+    for (const id of aIds) assert(w.subject_provenance[id].digest_sha256 === AA.design.subject_builds[id].digest_sha256, `${id}: digest`);
+  });
+  check("the exporter's bold runtime line (**Runtime:** Name 1.2.3 ...) parses, and a missing line is still null", () => {
+    const r = parsePreregRuntime("**Runtime:** Ollama 9.8.7 on the founder's workstation.");
+    assert(r && r.name === "Ollama" && r.version === "9.8.7", JSON.stringify(r));
+    assert(parsePreregRuntime("Runtime unknown") === null, "an invented runtime");
+  });
+  check("an arms analysis that lists a build comparison 'b minus a' is refused by the schema (the pre-registered direction is already alphabetical)", () => {
+    const p = aM((a) => { const c = a.comparisons[0]; [c.a, c.b] = [c.b, c.a]; });
+    assert(p.some((m) => m.startsWith("A-comparison")), p.join("; "));
+  });
 }
 
 console.log(`\n${passed} passed, ${failures.length} failed`);

@@ -225,3 +225,48 @@ open-weight subjects, judges of another family, no separated model). Nothing her
       stays") is then rejected anywhere in the report (`R-sensitivity-overclaim`).
     Enforced in `site/scripts/lib/model-report.mjs` (`sensitivityVariesJudges`, `MUST_SAY_ANY_UNTESTED`, `MUST_NOT_SAY_UNTESTED` in
     `model-report-template.mjs`); proved both ways in `site/scripts/test-model-reports.mjs`.
+
+---
+
+## Amendments — 2026-10-03 (third pilot, `pilot-2026-10-03`: an ARMS run; coordinator decision, implemented by backend-engineer)
+
+16. **Point display in an arms run follows the stricter of the two pre-registered corrections (coordinator decision, 2026-10-03).**
+    An arms run has 8 subject variants (4 builds x arms A and B) and pre-declared `comparisons`: 6 primary-arm (A) pairs, each reported with an
+    uncorrected 95% interval AND a Bonferroni-over-6 interval (99.17%); 6 secondary-arm (B) pairs; and 4 B minus A. The pre-registration reports both
+    corrections and promotes neither. Showing a point is a more consequential public act than reporting a range, so the point display takes the
+    stricter evidence. Rules:
+    - **Primary arm, corrected grouping.** `derived.separated_subjects` and `derived.not_separated_groups` are computed from the primary arm's
+      comparisons under the corrected interval (`comparisons[].bonferroni.separated`), not from the 95% flags of `pairwise` (which also lists
+      exploratory pairs across arms and builds). A subject separated from every other primary-arm subject after correction may show its point (amendment 2
+      unchanged: always with its confound in the same sentence or caption). Members of a not-separated group show ranges only (amendments 2, 8, 9).
+    - **Pairs separated only without correction** (`derived.separated_uncorrected_only_pairs`) may be stated in words with their uncorrected range as
+      "separated only without correction for multiple comparisons"; never as a point, an ordering, or "X was separated from Y" (`R-uncorrected-claim`,
+      `R-claims-vs-pairwise`).
+    - **Secondary arm (one trial per item) and every B minus A comparison: ranges only.** No point of any B variant, anywhere; no group claim among them.
+      `derived.range_only_subjects` lists them; `derived.point_withheld_subjects` is the group members plus the secondary arm.
+    - **No point difference that involves a withheld subject** in any list (`pairwise`, `comparisons`, `comparisons[].b_minus_a`, `sensitivity.pairwise`),
+      whether or not the separated subject's point is shown (`R-withheld-difference`, unconditional here; `R-reconstruct` as before).
+    - **"The other N"** in a separation claim counts the primary arm (`derived.primary_arm_subject_count`).
+    - **Carried in the data:** `derived.display_rule { amendment: 16, text }` and `derived.by_arm`. Every gate reads the withheld set from the wave;
+      `notSeparatedMembers` (public projection) treats every subject not in `separated_subjects` as withheld, so the secondary arm is withheld with no
+      second rule. The public projection (DC-24) withholds every group member's and every secondary-arm point, dimension means, sensitivity points,
+      and every comparison difference (and `b_minus_a.difference`) that involves one.
+    - **Wave blocks (exporter, arms runs only):** `design.arms` (arm, trials, verbatim system message and its hash, `server_report` = "server" or why not,
+      `probe_from`), `comparisons` (no composites, no `ranks`), `length_check` (section 9 verdicts, recomputed and validated), `replication`
+      (ranges, flags and medians only; no point, no point difference), `pairwise_note` and `comparisons_note`. `contamination_per_build` is not exported
+      (it carries composites and a band); each variant's `contamination` records `from_build_probe_of` and `via` when its build's probe ran through the server.
+      `preregistration.committed_before_data` is read from `run-config.json` (`preregistration.committed_before_data`) with its own note.
+    - **Must-say additions (arms waves):** every build ran in two arms; the system message is explicit, the same within an arm, and sits differently by
+      build template; arm B has one trial and no server scorecard; both corrections reported, neither promoted, points only after correction; arm B ranges
+      only; replication descriptive only; section 9 verdicts (ineffective: "uninformative about length"; effective: read with the length change in mind);
+      contamination once per build through the MCP server; bridge drift descriptive; the recorded deviation changed call order only; the judge-validity figure
+      measured on the original answers is primary. Must-cite: `design.arms`, `comparisons`, `replication.`, `length_check.`, `deviations.`.
+    - **Pattern masks, not exemptions.** At one decimal a withheld point often equals an end of another subject's (or another wave's) published range. A
+      number written as part of a published range phrase ("lo to hi", either orientation) is that published figure; a point written alone is still caught
+      (`maskPublishedRanges`, `ownerWaveOf`). RSC payload geometry (`points`, `x`, `y` ...) is not text a reader sees (`stripSvgGeometry`).
+    - **Machine twin correction (also 2026-10-03):** `pilotCaveats` said "the separation pattern was checked against the judge choice" for every wave;
+      amendment 15 makes that false when the sensitivity check varied no judge. It now follows `sensitivityVariesJudges` (affects the second pilot's
+      `llms-full.txt` line only).
+    Enforced in `site/scripts/lib/model-wave.mjs` (`armsProblems`, `armsStructure`, `computeDerivedArms`), `model-report.mjs`, `model-report-template.mjs`,
+    `model-benchmark-public.mjs`, `model-machine-leak.mjs`, `model-report-html-gates.mjs`; proved in `test-model-waves.mjs`, `test-model-reports.mjs`,
+    `test-model-html-leak.mjs`, `test-model-machine-leak.mjs`, `test-model-benchmark-public.mjs`, `test-model-pilot-figures.mjs`, `test-model-report-seo.mjs`.

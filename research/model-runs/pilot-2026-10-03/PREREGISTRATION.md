@@ -165,3 +165,16 @@ As in pilot-2026-10-02:
     had in any order.
   - **Before this note.** No reply from the other seven subject variants existed when it was written.
   - **Code.** `orderedRunLabels` in `lib/local-subjects.mjs`, tested in `tests/defer-build.test.mjs`.
+- **2026-10-04, D2 — a second host stop, recorded late (post-hoc).**
+  - **What happened.** After D1, the resumed subject run was stopped by the host a second time for low system
+    memory. That was partway through `mistral-7b-A` (105 of 249 replies done), between 2026-10-03T16:07:17Z and
+    2026-10-04T01:26:05Z.
+  - **How it resumed.** With founder approval (2026-10-03), the rest ran in the foreground, in chunks bounded to
+    about nine minutes each (`timeout 540–560`), using the same runner and the same `--defer-build gemma2:9b`
+    order.
+  - **Why no input changed.** Records are written atomically, the runner resumes from the records on disk, and
+    every reply's seed, item order and system message are fixed per (subject variant, item, trial). No partial
+    file was left, and all 1,328 records have exactly one attempt.
+  - **Why this is post-hoc.** It belonged in this list when it happened. It is appended now because the
+    pre-publication claim audit (`docs/ai-model-report/2026-10-03-pilot-3-claim-audit.md`, B2) found it missing
+    here. It had been recorded only in `ITERATION_LOG.md` Iteration 98.

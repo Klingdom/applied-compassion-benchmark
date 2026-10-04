@@ -26,7 +26,7 @@ import {
 import {
   publicWaveProblems, separatedPointsPresentProblems, machineTextProblems, jsonLdText, scanMachineTree, machineTreeProblems, withheldNumbers,
 } from "./lib/model-machine-leak.mjs";
-import { syntheticWave } from "./lib/model-report-fixtures.mjs";
+import { syntheticWave, syntheticArmsWave } from "./lib/model-report-fixtures.mjs";
 import { readFileSync } from "node:fs";
 
 const h = harness("test-model-machine-leak");
@@ -38,7 +38,7 @@ if (!TREE_ONLY) {
   const facts = loadFacts(SITE);
   const wellKnown = JSON.parse(readFileSync(join(SITE, "public", ".well-known", "compassion-benchmark.json"), "utf8"));
   const synthetic = syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]], [["pavo-9b", 71.3]]], dims: ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"], excluded: null, local: true, reversePairs: true, seed: 5 });
-  const targets = [...waves.map((w) => [`committed ${w.run_id}`, w]), ["synthetic (a group and a separated model, dotted ids)", synthetic]];
+  const targets = [...waves.map((w) => [`committed ${w.run_id}`, w]), ["synthetic (a group and a separated model, dotted ids)", synthetic], ["synthetic arms wave", syntheticArmsWave()]];
 
   await h.check("at least one committed wave has a not-separated member and one has a separated subject (otherwise the positive control proves nothing)", () => {
     h.assert(waves.some((w) => notSeparatedMembers(w).length > 0), "no wave with a not-separated member");
@@ -141,6 +141,68 @@ if (!TREE_ONLY) {
     h.trips("a member's composite as a JSON-LD number", text(jsonLdText(html.replace("</head>", `<script type="application/ld+json">${JSON.stringify({ "@type": "Report", ratingLike: memberNum, point: memberNum })}</script></head>`)), "JSON-LD"), "G24-member-point-leaf");
     h.trips("the group's range (the members' own points) in a text file", text(`${fullText}${NL}The group ran from ${wave.derived.not_separated_group_range[0].toFixed(1)} to ${wave.derived.not_separated_group_range[1].toFixed(1)}.`, "llms-full.txt"), "G24-member-point-token");
     await h.check("the scan is not vacuous: withheld numbers exist for this wave", () => h.assert(withheldNumbers(wave).size >= members.length, "no withheld numbers"));
+
+    // ARMS waves (template amendment 16): every withheld variant (the group members and every secondary-arm variant), every machine output.
+    if (wave.derived.display_rule !== undefined) {
+      const d = wave.derived;
+      h.section(`G24 arms wave (amendment 16): ${label}`);
+      await h.check("the withheld set is the group plus the secondary arm; one separated variant keeps its point", () => {
+        h.assert(JSON.stringify(members) === JSON.stringify(d.point_withheld_subjects), "withheld members differ from derived.point_withheld_subjects");
+        h.assert(d.separated_subjects.length === 1 && d.range_only_subjects.every((id) => members.includes(id)), "separated or secondary-arm set");
+      });
+      await h.check("POSITIVE CONTROL (arms): the separated variant's point IS in the public file and the projection says it keeps it", () => {
+        const o = pubObj();
+        h.assert(o.subjects[d.separated_subjects[0]].pilot_composite === wave.subjects[d.separated_subjects[0]].pilot_composite, "point absent");
+        h.assert(JSON.stringify(o.public_projection.separated_subjects_keep_points) === JSON.stringify(d.separated_subjects), "projection note");
+        h.assert(/amendments 2, 8, 9 and 16/.test(o.public_projection.template_ref) && /secondary arm/.test(o.subjects[d.range_only_subjects[0]].point_withheld.reason), "the projection does not cite amendment 16 for the secondary arm");
+      });
+      for (const id of members) {
+        const arm = d.range_only_subjects.includes(id) ? "secondary arm" : "group";
+        const pt = wave.subjects[id].pilot_composite;
+        const tok = pt.toFixed(1);
+        const note = `${id} reached ${tok} in the pilot.`;
+        h.trips(`${id} (${arm}): its point re-inserted in the public wave file`, (() => { const o = pubObj(); o.subjects[id].pilot_composite = pt; return file(asText(o)); })(), "G24-member-point");
+        h.trips(`${id} (${arm}): its dimension means re-inserted`, (() => { const o = pubObj(); o.subjects[id].dimensions = wave.subjects[id].dimensions; return file(asText(o)); })(), "G24-member-point");
+        h.trips(`${id} (${arm}): its judge-sensitivity point re-inserted`, (() => { const o = pubObj(); o.sensitivity.subjects[id].pilot_composite = wave.sensitivity.subjects[id].pilot_composite; return file(asText(o)); })(), "G24-member-point");
+        h.trips(`${id} (${arm}): its point in a note string of the public file`, (() => { const o = pubObj(); o.public_projection.note += ` ${note}`; return file(asText(o)); })(), "G24-member-value");
+        h.trips(`${id} (${arm}): its point in index.json`, (() => { const o = JSON.parse(indexText); o.pilot_reports[0].separation.summary += ` ${note}`; return text(asText(o), "index.json"); })(), "G24-member-point-token");
+        h.trips(`${id} (${arm}): its point as a JSON number in index.json`, (() => { const o = JSON.parse(indexText); o.pilot_reports[0].composite = pt; return text(asText(o), "index.json"); })(), "G24-member-point-leaf");
+        h.trips(`${id} (${arm}): its point in llms-full.txt`, text(`${fullText}${NL}- ${note}`, "llms-full.txt"), "G24-member-point-token");
+        h.trips(`${id} (${arm}): its point in the .well-known descriptor`, (() => { const o = JSON.parse(wk); o.modelBenchmark.note = note; return text(asText(o), ".well-known"); })(), "G24-member-point-token");
+        h.trips(`${id} (${arm}): its point in a markdown alternate`, text(`${md}${NL}${note}${NL}`, "markdown"), "G24-member-point-token");
+        h.trips(`${id} (${arm}): its point in JSON-LD`, text(jsonLdText(html.replace("No point here.", `It was ${tok}.`)), "JSON-LD"), "G24-member-point-token");
+      }
+      // Point differences that involve a withheld variant, in the pre-declared comparisons too (the first pilot's lists had none).
+      const iC = (pred) => wave.comparisons.findIndex(pred);
+      const withheldPair = (q) => members.includes(q.a) || members.includes(q.b);
+      for (const [what, i] of [["a primary-arm pair of the separated variant against a group member", iC((q) => q.kind === "build" && q.arm_a === d.primary_arm && withheldPair(q) && q.bonferroni?.separated)], ["a pair separated only without correction", iC((q) => q.bonferroni && q.separated && !q.bonferroni.separated)], ["a secondary-arm pair", iC((q) => q.kind === "build" && q.arm_a !== d.primary_arm)]]) {
+        if (i < 0) continue;
+        h.trips(`${what}: the comparison's point difference re-inserted`, (() => { const o = pubObj(); o.comparisons[i].difference = wave.comparisons[i].difference; return file(asText(o)); })(), "G24-member-difference");
+      }
+      const iA = iC((q) => q.kind === "arm");
+      h.trips("a build's B minus A point difference re-inserted", (() => { const o = pubObj(); o.comparisons[iA].b_minus_a.difference = wave.comparisons[iA].b_minus_a.difference; return file(asText(o)); })(), "G24-member-difference");
+      h.trips("a comparison's point difference re-inserted for EVERY comparison at once (the original-defect shape)", (() => { const o = pubObj(); o.comparisons = wave.comparisons; return file(asText(o)); })(), "G24-member-difference");
+      h.trips("a comparison lost its corrected range in the projection", (() => { const o = pubObj(); const j = iC((q) => q.bonferroni); delete o.comparisons[j].bonferroni; return file(asText(o)); })(), "G24-pair-range");
+      await h.check("every comparison keeps its ranges and flags in the projection, and loses exactly the point differences that involve a withheld variant", () => {
+        const o = pubObj();
+        wave.comparisons.forEach((q, i) => {
+          h.assert(withheldPair(q) === !("difference" in o.comparisons[i]), `${q.a}/${q.b}: difference withheld ${!("difference" in o.comparisons[i])} but involves a withheld variant ${withheldPair(q)}`);
+          h.assert(JSON.stringify(o.comparisons[i].interval95) === JSON.stringify(q.interval95) && o.comparisons[i].separated === q.separated, `${q.a}/${q.b}: range or flag changed`);
+          if (q.b_minus_a) h.assert(!("difference" in o.comparisons[i].b_minus_a) && JSON.stringify(o.comparisons[i].b_minus_a.interval95) === JSON.stringify(q.b_minus_a.interval95), `${q.a}/${q.b}: b_minus_a`);
+        });
+      });
+      await h.check("withheldNumbers covers the comparisons' point differences (the scan is not blind to them)", () => {
+        const nums = withheldNumbers(wave);
+        for (const q of wave.comparisons) if (withheldPair(q) && Math.abs(q.difference) > 0) h.assert(nums.has(q.difference) && nums.has(-q.difference), `${q.a}/${q.b}: ${q.difference} not among the withheld numbers`);
+      });
+      await h.check("the replication note carries ranges and flags only, never a point or a point difference", () => {
+        const o = pubObj();
+        const keys = [];
+        const walk = (x, path) => { if (Array.isArray(x)) x.forEach((v, i) => walk(v, `${path}[${i}]`)); else if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) { if (/^(?:difference|composite|point)|_difference/i.test(k)) keys.push(`${path}.${k}`); walk(v, `${path}.${k}`); } };
+        if (o.replication) walk(o.replication, "replication");
+        h.assert(keys.length === 0, `point-like keys in replication: ${keys.join(", ")}`);
+      });
+    }
   }
 
   // ---- the existence rules for the new outputs, on a synthetic tree ------------------------------------------------

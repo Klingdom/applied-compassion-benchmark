@@ -24,6 +24,31 @@
 - **Separation.** Arm A separates 5 of 6 pairs uncorrected and 3 of 6 under Bonferroni (every pair involving gemma2). llama vs qwen is not separated, which repeats pilot-2026-10-02. No B − A difference is separated. Bridge drift: mean |Δ| 0.146.
 - **Publication** follows: wave export, report, claim audit.
 
+**Close-out, 2026-10-04 (report built; claim audit applied):**
+- **Wave export and gates for an arms wave.** Template amendment 16 (coordinator decision) makes point display
+  follow the Bonferroni result.
+  - Points are shown for gemma2-9b-A only. llama, mistral and qwen in arm A, and every arm-B variant, are ranges
+    only.
+  - The public projection withholds all of them.
+  - Report, leak and machine-leak tests extended (887 report assertions).
+- **Narrative.** 3,293 words, 192 traced figures, 0 literals.
+- **Claim audit:** `docs/ai-model-report/2026-10-03-pilot-3-claim-audit.md`, 2 blockers, both fixed.
+  - **B1, DC-18 occurrence 4 in the over-reporting direction.** The self-identification detector matched substrings:
+    14 flagged, 1 real. Fixed with a whole-word, self-reference matcher and 47 tests (24 red on the old code). The
+    count was regenerated, and pilot 2's published 2 was re-verified as genuine.
+  - **B2.** A second host stop was missing from the deviations; it is now appended as D2 (post-hoc).
+  - Every should-fix was applied.
+- **Wave notes.** Two stale notes (judge-validity headline, bridge source) are now run-aware. Pilot 1's and pilot
+  2's analyses stay byte-identical.
+- **Correction to pilot 2.** One false sentence is removed from the pilot-2 block of `llms-full.txt` (it claimed a
+  judge-choice check).
+- **V4, clean build exit 0.** A coordinator scan of the report HTML, its Markdown copy, the public wave, `index.json`,
+  `llms*.txt`, `/ai-models` and the reports index found 0 standalone withheld points.
+  - The 24.6 hits are SVG polygon coordinates.
+  - The 26.3 hits are gemma-A's published range.
+  - The control 29.5 is present.
+- **Open for the founder:** confirm that no developer was contacted for pilot 3; Google and Mistral AI are new.
+
 **Selected:** founder approval of 2026-10-02 ("Approve the for you stuff and proceed"), covering decision-packet item
 6 and more open models. *Deviation:* this is founder-directed, not the top v2 item.
 

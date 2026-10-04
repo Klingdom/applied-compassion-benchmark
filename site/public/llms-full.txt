@@ -20,6 +20,67 @@
 
 ## Pilot reports (newest first)
 
+### A third look: four open-weight builds, each run two ways (pilot-2026-10-03, 3 October 2026)
+
+Read these caveats first:
+- Unofficial pilot. It is not a Compassion Benchmark score, its comparability is none, and it supports no comparison with models outside it. No AI model has an official score.
+- Models the test could not separate are shown as ranges only. Their point estimates are withheld because their order would read as a ranking. Not separated is not the same as equal.
+- The judges were models from a different family than the models tested, not people. The item bank was authored with help from the judges' family.
+- Access tier: local-open-weight (Ollama, 4-bit quantised builds pinned by digest).
+- 0 of 93 bank items have passed human review; 10 were not served in this pilot.
+- Crisis-adjacent items were not served, so the pilot says nothing about how any model responds to a person in crisis.
+- Reply length is an unresolved confound for any separated model.
+- Absolute levels depend on which judges are used; the pilot did not test whether the separation pattern holds under a different choice of judges. Its sensitivity check, which varied no judge, left the separation pattern unchanged.
+- Each build was run twice, with and without a length instruction. Only the arm without it carries the corrected comparison; the other arm has one trial per item and shows ranges only.
+- The system message is explicit and identical within an arm, but its place in the prompt differs by each build's own template. The secondary arm has no server scorecard because the cb-probe server needs more trials per item; its composites are computed from the same ratings.
+- 2 deviation(s) from the plan are recorded in the report.
+- The item bank is published with its answer key, so a model may have seen the items. Contamination probes ran on sampled items only.
+
+Design:
+- Models tested (alphabetical): gemma2-9b-A, gemma2-9b-B, llama3.2-3b-A, llama3.2-3b-B, mistral-7b-A, mistral-7b-B, qwen2.5-7b-A and qwen2.5-7b-B.
+- 83 items served, trials per model: 3 in arm A, 1 in arm B, 1328 responses, 2656 ratings, 2 judges per response; bank v2.0.
+- Method, as recorded in the wave file: composite: computeCompositeFromDimensions (unmodified), dimension = mean of item means; interval: item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261003.
+
+What it found about separation:
+- In the primary arm (no length instruction), after correction for multiple comparisons, the test separated gemma2-9b-A from the other three variants and could not tell llama3.2-3b-A, mistral-7b-A and qwen2.5-7b-A apart (alphabetical order). llama3.2-3b-A and mistral-7b-A and mistral-7b-A and qwen2.5-7b-A were each separated only without correction for multiple comparisons; that is not stated as a separation. The secondary arm (length instruction, one trial per item) shows ranges only: gemma2-9b-B, llama3.2-3b-B, mistral-7b-B and qwen2.5-7b-B. Not separated is not the same as equal; the pilot cannot say which is higher.
+
+95% ranges (alphabetical order, which is not a ranking):
+- gemma2-9b-A: 95% range 26.3 to 33.0 (unofficial pilot figure, not a score); the test separated it from the others, but reply length is an unresolved confound.
+- gemma2-9b-B: 95% range 25.2 to 32.3 (unofficial pilot figure, not a score); point estimate withheld: this variant is in the secondary arm (one trial per item), which shows ranges only.
+- llama3.2-3b-A: 95% range 21.2 to 28.2 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- llama3.2-3b-B: 95% range 22.3 to 30.2 (unofficial pilot figure, not a score); point estimate withheld: this variant is in the secondary arm (one trial per item), which shows ranges only.
+- mistral-7b-A: 95% range 18.4 to 25.6 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- mistral-7b-B: 95% range 18.2 to 26.1 (unofficial pilot figure, not a score); point estimate withheld: this variant is in the secondary arm (one trial per item), which shows ranges only.
+- qwen2.5-7b-A: 95% range 21.3 to 28.7 (unofficial pilot figure, not a score); point estimate withheld because the test could not separate it from the others in its group.
+- qwen2.5-7b-B: 95% range 21.3 to 29.7 (unofficial pilot figure, not a score); point estimate withheld: this variant is in the secondary arm (one trial per item), which shows ranges only.
+
+Pre-registered comparisons (95% range of the difference, first minus second, alphabetical; a point difference is never given):
+- gemma2-9b-A and gemma2-9b-B (the build with and without the length instruction): 95% range of the arm B minus arm A difference -3.5 to 1.8; the range includes zero; the length instruction was ineffective (this comparison is uninformative about length).
+- gemma2-9b-A and llama3.2-3b-A (primary arm): 95% range 2.3 to 7.6; after correction for multiple comparisons 1.3 to 8.7; separated after correction.
+- gemma2-9b-A and mistral-7b-A (primary arm): 95% range 4.6 to 10.8; after correction for multiple comparisons 3.5 to 11.7; separated after correction.
+- gemma2-9b-A and qwen2.5-7b-A (primary arm): 95% range 1.7 to 7.8; after correction for multiple comparisons 0.5 to 8.2; separated after correction.
+- gemma2-9b-B and llama3.2-3b-B (secondary arm, one trial per item, no correction, ranges only): 95% range -1.2 to 6.3; the range includes zero.
+- gemma2-9b-B and mistral-7b-B (secondary arm, one trial per item, no correction, ranges only): 95% range 3.2 to 10.3; the range excludes zero.
+- gemma2-9b-B and qwen2.5-7b-B (secondary arm, one trial per item, no correction, ranges only): 95% range -0.1 to 7.0; the range includes zero.
+- llama3.2-3b-A and llama3.2-3b-B (the build with and without the length instruction): 95% range of the arm B minus arm A difference -1.2 to 4.5; the range includes zero; the length instruction was effective (read with the length change in mind).
+- llama3.2-3b-A and mistral-7b-A (primary arm): 95% range 0.1 to 5.6; after correction for multiple comparisons -1.2 to 6.3; separated only without correction for multiple comparisons (not stated as a separation).
+- llama3.2-3b-A and qwen2.5-7b-A (primary arm): 95% range -3.4 to 2.6; after correction for multiple comparisons -4.3 to 4.1; not separated.
+- llama3.2-3b-B and mistral-7b-B (secondary arm, one trial per item, no correction, ranges only): 95% range 0.9 to 7.8; the range excludes zero.
+- llama3.2-3b-B and qwen2.5-7b-B (secondary arm, one trial per item, no correction, ranges only): 95% range -2.7 to 4.8; the range includes zero.
+- mistral-7b-A and mistral-7b-B (the build with and without the length instruction): 95% range of the arm B minus arm A difference -1.9 to 2.3; the range includes zero; the length instruction was ineffective (this comparison is uninformative about length).
+- mistral-7b-A and qwen2.5-7b-A (primary arm): 95% range -5.7 to -0.5; after correction for multiple comparisons -6.9 to 0.2; separated only without correction for multiple comparisons (not stated as a separation).
+- mistral-7b-B and qwen2.5-7b-B (secondary arm, one trial per item, no correction, ranges only): 95% range -6.1 to -0.3; the range excludes zero.
+- qwen2.5-7b-A and qwen2.5-7b-B (the build with and without the length instruction): 95% range of the arm B minus arm A difference -2.1 to 2.8; the range includes zero; the length instruction was effective (read with the length change in mind).
+
+Display rule (template amendment 16):
+- The pre-registration reports an uncorrected 95% interval and a Bonferroni-corrected interval for each primary comparison and promotes neither. Showing a point is a more consequential public act than reporting a range, so the point display takes the stricter evidence: in the primary arm only a subject separated from every other subject after correction may show a point; subjects not separated after correction, and every variant of the secondary one-trial arm, show ranges only; no point difference that involves a withheld subject is shown. A pair separated only without correction may be stated in words with its uncorrected range, never as a point or an ordering.
+
+Sources:
+- Report: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-03
+- Markdown: https://compassionbenchmark.com/ai-models/reports/pilot-2026-10-03.md
+- Data: https://compassionbenchmark.com/data/model-waves/pilot-2026-10-03.json
+- Pre-registration sha256: 47994b94612d124c5f463beb3c88f295a2cf2c8cc11889899db71cf9ae350f22
+
 ### A second look: two open-weight models, judged from outside their family (pilot-2026-10-02, 2 October 2026)
 
 Read these caveats first:
@@ -30,7 +91,7 @@ Read these caveats first:
 - 0 of 93 bank items have passed human review; 10 were not served in this pilot.
 - Crisis-adjacent items were not served, so the pilot says nothing about how any model responds to a person in crisis.
 - Reply length is a confound for any rated response and is unresolved.
-- Absolute levels depend on which judges are used; the separation pattern was checked against the judge choice and did not change.
+- Absolute levels depend on which judges are used; the pilot did not test whether the separation pattern holds under a different choice of judges. Its sensitivity check, which varied no judge, left the separation pattern unchanged.
 - The pre-registration file was not committed or independently time-stamped before the data existed.
 - 3 deviation(s) from the plan are recorded in the report.
 - The item bank is published with its answer key, so a model may have seen the items. Contamination probes ran on sampled items only.

@@ -86,7 +86,12 @@ export function subjectDescriptor(wave: PilotWave): string | null {
 
 /** Structural facts the copy can rely on, each a predicate over the wave. */
 export interface WaveShape {
+  /** Models in words: the subjects, or (an arms wave, amendment 16) the BUILDS, each of which is run in every arm. */
   n: number;
+  /** An arms wave: every subject is a (build, arm) variant and the separation is the primary arm's, after correction. */
+  arms: boolean;
+  /** Subjects the separation was tested among: all of them, or the primary arm's variants. */
+  familySize: number;
   /** Every subject is in one not-separated group and none is separated (nothing else to report about separation). */
   allOneGroup: boolean;
   /** One subject separated from all others, and the others form a single not-separated group. */
@@ -97,25 +102,38 @@ export interface WaveShape {
   separatedWroteShortest: boolean;
   /** Every judge's figure for the separated subject is negative (below the item mean). */
   directionConsistentAcrossJudges: boolean;
+  /** Every judge's figure for the separated subject is positive (above the item mean). */
+  directionAboveAcrossJudges: boolean;
+}
+
+/** Is this an arms wave (every build in two arms; template amendment 16)? */
+export function isArmsWave(wave: PilotWave): boolean {
+  return wave.derived.display_rule !== undefined;
 }
 
 export function waveShape(wave: PilotWave): WaveShape {
-  const n = wave.derived.subject_count;
+  const arms = isArmsWave(wave);
+  const familySize = arms ? (wave.derived.primary_arm_subject_count ?? wave.derived.subject_count) : wave.derived.subject_count;
+  const n = arms ? (wave.derived.build_count ?? familySize) : familySize;
   const groups = wave.derived.not_separated_groups;
   const seps = wave.derived.separated_subjects;
-  const oneApart = seps.length === 1 && groups.length === 1 && groups[0].length === n - 1;
+  const oneApart = seps.length === 1 && groups.length === 1 && groups[0].length === familySize - 1;
   const sep = oneApart ? seps[0] : null;
   let shortest = false;
   let consistent = false;
+  let above = false;
   if (sep) {
-    const words = Object.entries(wave.subjects).map(([id, s]) => [id, s.median_reply_words] as const);
+    // The separated subject is compared with the subjects the separation was tested among.
+    const family = arms ? (wave.derived.by_arm?.[wave.derived.primary_arm ?? ""]?.subjects ?? Object.keys(wave.subjects)) : Object.keys(wave.subjects);
+    const words = family.map((id) => [id, wave.subjects[id].median_reply_words] as const);
     const min = Math.min(...words.map(([, w]) => w));
     shortest = wave.subjects[sep].median_reply_words === min && words.filter(([, w]) => w === min).length === 1;
     const per = Object.values(wave.judges).map((j) => j.by_subject[sep]).filter((v): v is number => typeof v === "number");
     consistent = per.length > 0 && per.every((v) => v < 0);
+    above = per.length > 0 && per.every((v) => v > 0);
   }
-  const allOne = seps.length === 0 && groups.length === 1 && groups[0].length === n;
-  return { n, allOneGroup: allOne, oneApartFromOneGroup: oneApart, separated: sep, groupSize: oneApart ? groups[0].length : 0, separatedWroteShortest: shortest, directionConsistentAcrossJudges: consistent };
+  const allOne = seps.length === 0 && groups.length === 1 && groups[0].length === familySize;
+  return { n, arms, familySize, allOneGroup: allOne, oneApartFromOneGroup: oneApart, separated: sep, groupSize: oneApart ? groups[0].length : 0, separatedWroteShortest: shortest, directionConsistentAcrossJudges: consistent, directionAboveAcrossJudges: above };
 }
 
 /** Throws (failing the build) when a derived string breaks the copy rules of template D. */
@@ -132,8 +150,11 @@ export function assertLexicon(label: string, text: string, wave: PilotWave): voi
 
 export function reportTitle(wave: PilotWave): string {
   const desc = subjectDescriptor(wave);
-  const n = capFirst(numberWord(wave.derived.subject_count));
-  const subject = desc ? `${n} ${desc.split("-").map(capFirst).join("-")} Models` : `${n} Models`;
+  const arms = isArmsWave(wave);
+  // An arms wave counts BUILDS (each is run in every arm), not variants.
+  const n = capFirst(numberWord(arms ? (wave.derived.build_count ?? wave.derived.subject_count) : wave.derived.subject_count));
+  const models = desc ? `${n} ${desc.split("-").map(capFirst).join("-")} Models` : `${n} Models`;
+  const subject = arms ? `${models}, Each Run Two Ways,` : models;
   return `Unofficial Pilot: ${subject} on the AI Model Compassion Benchmark (${monthYear(wave.report_date)})`;
 }
 
@@ -142,20 +163,30 @@ function judgesPhrase(wave: PilotWave): string {
   return judgeFamilyName(wave) ?? "same-family";
 }
 
+/** What an arms wave found, in words with no figure: the primary arm after correction, and the secondary arm's ranges only. */
+function armsMetaFind(s: WaveShape): string {
+  if (s.oneApartFromOneGroup) return `In its primary arm it separated one from ${numberWord(s.groupSize)} others after correction and could not tell those ${numberWord(s.groupSize)} apart; the secondary arm shows ranges only. Not a score.`;
+  if (s.allOneGroup) return `In its primary arm it could not tell the ${numberWord(s.familySize)} apart after correction; the secondary arm shows ranges only. Not a score.`;
+  return "It is not a score and carries no ranking.";
+}
+
 export function reportMetaDescription(wave: PilotWave): string {
   const s = waveShape(wave);
   const desc = subjectDescriptor(wave);
-  const head = `Unofficial pilot (${dateShort(wave.report_date)}): ${numberWord(s.n)} ${desc ?? ""} models judged by ${judgesPhrase(wave)} models. `.replace(/\s+/g, " ");
-  const find = s.oneApartFromOneGroup
-    ? `It separated ${numberWord(1)} from ${numberWord(s.groupSize)} others and could not tell those ${numberWord(s.groupSize)} apart. Not a score.`
-    : s.allOneGroup
-      ? `It could not tell the ${numberWord(s.n)} models apart. Not a score.`
-      : "It is not a score and carries no ranking.";
+  const head = `Unofficial pilot (${dateShort(wave.report_date)}): ${numberWord(s.n)} ${desc ?? ""} models${s.arms ? ", each run in two arms," : ""} judged by ${judgesPhrase(wave)} models. `.replace(/\s+/g, " ");
+  const find = s.arms
+    ? armsMetaFind(s)
+    : s.oneApartFromOneGroup
+      ? `It separated ${numberWord(1)} from ${numberWord(s.groupSize)} others and could not tell those ${numberWord(s.groupSize)} apart. Not a score.`
+      : s.allOneGroup
+        ? `It could not tell the ${numberWord(s.n)} models apart. Not a score.`
+        : "It is not a score and carries no ranking.";
   return `${head}${find}`;
 }
 
 export function reportSocialLine(wave: PilotWave): string {
   const s = waveShape(wave);
+  if (s.arms) return s.oneApartFromOneGroup ? `In one arm, after correction, the test told ${numberWord(1)} model from ${numberWord(s.groupSize)} others, and could not tell the ${numberWord(s.groupSize)} apart.` : "An unofficial pilot of an AI model compassion test, with each model run two ways. Not a score.";
   return s.oneApartFromOneGroup
     ? `The test told ${numberWord(1)} model from ${numberWord(s.groupSize)} others, and could not tell the ${numberWord(s.groupSize)} apart.`
     : s.allOneGroup
@@ -188,7 +219,7 @@ export function citableSentences(wave: PilotWave): string[] {
     : `${numberWord(wave.design.judges_per_response)} judges that never rated their own model`;
   const out: string[] = [];
   out.push(
-    `On ${dateLong(wave.report_date)}, Compassion Benchmark's unofficial pilot (${wave.run_id}) tested ${numberWord(s.n)} ${desc ?? ""} models ` +
+    `On ${dateLong(wave.report_date)}, Compassion Benchmark's unofficial pilot (${wave.run_id}) tested ${numberWord(s.n)} ${desc ?? ""} models${s.arms ? ", each in two arms," : ""} ` +
       `(${accessTierLabel(wave)}) on ${wave.design.items_served} public items, each reply rated by ` +
       `${judged}; it is not a score and its comparability is ${wave.comparability}.`,
   );
@@ -198,8 +229,11 @@ export function citableSentences(wave: PilotWave): string[] {
     // Two names read "a and b"; three or more keep the list form the first pilot shipped with.
     const names = g.length === 2 ? `${g[0]} and ${g[1]}` : g.join(", ");
     out.push(
-      `In the same pilot, ${names} (alphabetical order) could not be told apart: each paired difference had a 95% range that includes zero. ` +
-        `The pilot cannot say which is higher; that is not the same as equal.`,
+      s.arms
+        ? `In the same pilot, in the primary arm and after correction for multiple comparisons, ${names} (alphabetical order) could not be told apart: each paired difference had a corrected range that includes zero. ` +
+            `The pilot cannot say which is higher; that is not the same as equal. The secondary arm shows ranges only.`
+        : `In the same pilot, ${names} (alphabetical order) could not be told apart: each paired difference had a 95% range that includes zero. ` +
+            `The pilot cannot say which is higher; that is not the same as equal.`,
     );
   }
   return out.map((t) => t.replace(/\s+/g, " "));
@@ -365,6 +399,7 @@ export interface PilotPageFacts {
 
 /** "one developer's four Claude models" for a single-family wave; "two open-weight models" otherwise. No figure, no model name. */
 export function pilotCoverage(wave: PilotWave): string {
+  if (isArmsWave(wave)) return `${numberWord(wave.derived.build_count ?? wave.derived.subject_count)} ${subjectDescriptor(wave) ?? ""} models, each run in two arms,`.replace(/\s+/g, " ");
   const n = numberWord(wave.derived.subject_count);
   const fam = familyName(wave);
   if (fam) return `one developer's ${n} ${fam} models`;
@@ -387,6 +422,11 @@ function sizesDiffer(wave: PilotWave): boolean {
 /** What a pilot found about separation, in words and with no figure. */
 function findingClause(wave: PilotWave): string {
   const s = waveShape(wave);
+  if (s.arms) {
+    if (s.oneApartFromOneGroup) return `separated one model from the other ${numberWord(s.groupSize)} in its primary arm, after correction for multiple comparisons, and could not tell those ${numberWord(s.groupSize)} apart; its secondary arm shows ranges only`;
+    if (s.allOneGroup) return `could not tell its ${numberWord(s.familySize)} models apart in its primary arm, after correction for multiple comparisons; its secondary arm shows ranges only`;
+    return "states which models it could and could not tell apart";
+  }
   if (s.oneApartFromOneGroup) return `separated one model from the other ${numberWord(s.groupSize)} and could not tell those ${numberWord(s.groupSize)} apart`;
   if (s.allOneGroup) return `could not tell its ${numberWord(s.n)} models apart`;
   return "states which models it could and could not tell apart";
@@ -398,44 +438,49 @@ export function pilotPageFacts(wave: PilotWave, report: { word_count: number; se
   const jfam = judgeFamilyName(wave) ?? "";
   const cross = judgesAreCrossFamily(wave);
   const nW = numberWord(s.n);
-  const anchorText = `unofficial pilot of ${nW} ${desc} models (${dateLong(wave.report_date)})`.replace(/\s+/g, " ");
+  const anchorText = `unofficial pilot of ${nW} ${desc} models${s.arms ? ", each in two arms," : ""} (${dateLong(wave.report_date)})`.replace(/\s+/g, " ").replace(", (", " (");
   const apart = s.oneApartFromOneGroup;
   const grp = numberWord(s.groupSize);
+  // An arms wave (amendment 16): the separation is the primary arm's, after correction for multiple comparisons; the secondary arm shows ranges only.
+  const where = s.arms ? " in its primary arm, after correction for multiple comparisons" : "";
+  const second = s.arms ? " The secondary arm shows ranges only." : "";
 
   const b1 = apart
-    ? `The test separated one model from the other ${grp} and could not tell those ${grp} apart. Not separated is not the same as equal: the pilot cannot say.`
+    ? `The test${where} separated one model from the other ${grp} and could not tell those ${grp} apart.${second} Not separated is not the same as equal: the pilot cannot say.`
     : s.allOneGroup
-      ? `The test could not tell the ${nW} models apart. Not separated is not the same as equal: the pilot cannot say.`
+      ? `The test${where} could not tell the ${s.arms ? numberWord(s.familySize) : nW} models apart.${second} Not separated is not the same as equal: the pilot cannot say.`
       : "The report states which models the test could and could not tell apart. Not separated is not the same as equal.";
   const b2 = apart && s.separatedWroteShortest
     ? "The separated model also wrote much shorter replies, so the pilot cannot say whether the gap is about compassion or about reply length. The cause is unresolved."
-    : "The report sets out how reply length relates to the separation. Any cause is unresolved.";
+    : s.arms
+      ? "The report sets out how reply length relates to the separation, and whether the length instruction moved reply length for each build. Any cause is unresolved."
+      : "The report sets out how reply length relates to the separation. Any cause is unresolved.";
   const b3 = (cross
     ? `The judges were ${jfam ? `${jfam} ` : ""}models from a different family than the models tested, not people, and ${wave.bank.items_validated} of ${wave.bank.items_total} test items have passed human review. None of this is a score.`
     : `The judges were ${jfam ? `${jfam} ` : ""}models, not people, and ${wave.bank.items_validated} of ${wave.bank.items_total} test items have passed human review. None of this is a score.`
   ).replace(/\s+/g, " ");
 
   const hero = apart
-    ? `One unofficial pilot of ${nW} ${desc} models tested the test, not the models: it separated one model from ${grp} others and could not tell those ${grp} apart. It is not a score.`
+    ? `One unofficial pilot of ${nW} ${desc} models${s.arms ? ", each run in two arms," : ""} tested the test, not the models: it${where} separated one model from ${grp} others and could not tell those ${grp} apart.${second} It is not a score.`
     : s.allOneGroup
-      ? `One unofficial pilot of ${nW} ${desc} models tested the test, not the models: it could not tell the ${nW} models apart. It is not a score.`
-      : `One unofficial pilot of ${nW} ${desc} models tested the test, not the models. It is not a score.`;
+      ? `One unofficial pilot of ${nW} ${desc} models${s.arms ? ", each run in two arms," : ""} tested the test, not the models: it${where} could not tell the ${s.arms ? numberWord(s.familySize) : nW} models apart.${second} It is not a score.`
+      : `One unofficial pilot of ${nW} ${desc} models${s.arms ? ", each run in two arms," : ""} tested the test, not the models. It is not a score.`;
   const banner = `One unofficial pilot (not a score) is reported under Pilot results.`;
 
   const li = (report.sections.find((x) => x.id === "not-scores")?.html.match(/<li>/g) ?? []).length;
 
   const judgedBy = cross
-    ? `tested ${nW} ${desc} models, with ${jfam} models from a different family as judges. `
-    : `tested ${nW} ${desc} models with ${jfam} models as judges. `;
+    ? `tested ${nW} ${desc} models${s.arms ? ", each in two arms," : ""} with ${jfam} models from a different family as judges. `
+    : `tested ${nW} ${desc} models${s.arms ? ", each in two arms," : ""} with ${jfam} models as judges. `;
   const faq = [
     {
       question: "What did the pilot find?",
       answer:
         `In an unofficial pilot dated ${dateLong(wave.report_date)}, Compassion Benchmark ${judgedBy}` +
         (apart
-          ? `The test separated one model from the other ${grp} and could not tell those ${grp} apart. `
+          ? `The test${where} separated one model from the other ${grp} and could not tell those ${grp} apart.${second} `
           : s.allOneGroup
-            ? `The test could not tell the ${nW} models apart. `
+            ? `The test${where} could not tell the ${s.arms ? numberWord(s.familySize) : nW} models apart.${second} `
             : "The report states which models the test could and could not tell apart. ") +
         (apart && s.separatedWroteShortest
           ? "The separated model also wrote much shorter replies, so the pilot cannot say whether the gap is about compassion or about reply length. "
@@ -447,7 +492,7 @@ export function pilotPageFacts(wave: PilotWave, report: { word_count: number; se
       answer:
         "No. " +
         (apart && s.separatedWroteShortest
-          ? `The pilot separated one model from ${grp} others, but that model also wrote much shorter replies, and the design cannot tell a real difference in compassion from a penalty on short replies; the cause is unresolved. `
+          ? `The pilot${where} separated one model from ${grp} others, but that model also wrote much shorter replies, and the design cannot tell a real difference in compassion from a penalty on short replies; the cause is unresolved. `
           : s.allOneGroup
             ? "The pilot could not tell its models apart, and the cause of any difference it did see is unresolved. "
             : "The pilot cannot say whether any difference reflects the model or the length of its replies; the cause is unresolved. ") +
@@ -457,9 +502,9 @@ export function pilotPageFacts(wave: PilotWave, report: { word_count: number; se
     },
   ];
   const addendum = apart
-    ? ` Its only model results come from an ${anchorText}, which separated one model from the other ${grp} and could not tell those ${grp} apart. That pilot is not a score.`
+    ? ` Its only model results come from an ${anchorText}, which${where} separated one model from the other ${grp} and could not tell those ${grp} apart.${second} That pilot is not a score.`
     : s.allOneGroup
-      ? ` Its only model results come from an ${anchorText}, which could not tell the ${nW} models apart. That pilot is not a score.`
+      ? ` Its only model results come from an ${anchorText}, which${where} could not tell the ${s.arms ? numberWord(s.familySize) : nW} models apart.${second} That pilot is not a score.`
       : ` Its only model results come from an ${anchorText}. That pilot is not a score.`;
 
   const facts: PilotPageFacts = {
@@ -476,7 +521,7 @@ export function pilotPageFacts(wave: PilotWave, report: { word_count: number; se
     faqQ1Addendum: addendum,
     heading: `Pilot of ${dateLong(wave.report_date)} (${wave.run_id})`,
     finding: findingClause(wave),
-    coverage: `${nW} ${desc} models`.replace(/\s+/g, " "),
+    coverage: `${nW} ${desc} models${s.arms ? ", each run in two arms" : ""}`.replace(/\s+/g, " "),
   };
   const all: Record<string, string> = { hero, banner, addendum, anchorText, heading: facts.heading, finding: facts.finding };
   facts.bullets.forEach((b, i) => (all[`bullet ${i + 1}`] = b));

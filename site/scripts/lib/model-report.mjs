@@ -28,7 +28,7 @@ import {
   SECTIONS, normTitle, WORD_MIN, WORD_MAX, LIT_MAX, BANNED, BAND_NAMES, WEAKER_RE, QUALIFIER_RE,
   DIRECTIONAL_RE, NEGATOR_RE, ENDORSE_RE, CTA_RE, MUST_SAY, MUST_CITE, STATUS_NUMERIC_ALLOW,
   CAUSAL_RE, NUMBER_WORDS, MUST_CITE_ANY, MUST_SAY_ANY, SENSITIVITY_SECTIONS,
-  MUST_SAY_ANY_UNTESTED, MUST_NOT_SAY_UNTESTED, sensitivityVariesJudges,
+  MUST_SAY_ANY_UNTESTED, MUST_NOT_SAY_UNTESTED, sensitivityVariesJudges, MUST_CITE_WHEN,
 } from "./model-report-template.mjs";
 import { createHash } from "node:crypto";
 import { waveProblems } from "./model-wave.mjs";
@@ -62,6 +62,23 @@ export function makeNaming(wave) {
   const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const re = new RegExp(`(?<![A-Za-z0-9-])(?:${forms.map(([f]) => esc(f)).join("|")})(?![A-Za-z0-9-])`, "g");
   const byForm = new Map(forms);
+  // An arms wave names variants ("<build>-A", "<build>-B"); the BUILD ("<build>") is a label too ("Llama3.2 3B"), so its digits are not figures.
+  // A build name is not a variant mention (it names no arm), but it stands for both variants wherever an ordering word is checked.
+  const arms = wave.design?.arms && typeof wave.design.arms === "object" ? wave.design.arms : null;
+  const buildOf = {};
+  const buildForms = [];
+  if (arms) {
+    for (const id of ids) {
+      const arm = arms[id]?.arm;
+      const b = typeof arm === "string" && id.endsWith(`-${arm}`) ? id.slice(0, -(arm.length + 1)) : id;
+      buildOf[id] = b;
+    }
+    for (const b of new Set(Object.values(buildOf))) for (const f of new Set([titleCase(b), b, ...hyphenated(b)])) buildForms.push([f, b]);
+    buildForms.sort((a, b) => b[0].length - a[0].length);
+  }
+  const buildRe = buildForms.length ? new RegExp(`(?<![A-Za-z0-9-])(?:${buildForms.map(([f]) => esc(f)).join("|")})(?![A-Za-z0-9-])`, "g") : null;
+  const byBuildForm = new Map(buildForms);
+  const variantsOf = (b) => ids.filter((i) => buildOf[i] === b);
   return {
     ids, full, short,
     displayName: (id) => full[id] ?? id,
@@ -71,6 +88,20 @@ export function makeNaming(wave) {
       for (const m of text.matchAll(re)) out.push({ id: byForm.get(m[0]), start: m.index, end: m.index + m[0].length });
       return out;
     },
+    /** Build names ("Llama3.2 3B") in `text` that are not part of a variant mention: [{build, ids, start, end}]. Empty for a wave without arms. */
+    buildMentions(text) {
+      if (!buildRe) return [];
+      const spans = [...text.matchAll(re)].map((m) => [m.index, m.index + m[0].length]);
+      const out = [];
+      for (const m of text.matchAll(buildRe)) {
+        const s = m.index;
+        const e = s + m[0].length;
+        if (spans.some(([a, b]) => s < b && e > a)) continue;
+        const build = byBuildForm.get(m[0]);
+        out.push({ build, ids: variantsOf(build), start: s, end: e });
+      }
+      return out;
+    },
   };
 }
 
@@ -78,6 +109,7 @@ export function makeNaming(wave) {
 export function maskModelNames(text, naming) {
   let out = text;
   for (const m of [...naming.mentions(text)].reverse()) out = `${out.slice(0, m.start)} ${out.slice(m.end)}`;
+  for (const m of [...naming.buildMentions(out)].reverse()) out = `${out.slice(0, m.start)} ${out.slice(m.end)}`;
   return out;
 }
 
@@ -214,8 +246,11 @@ function parseToken(inner) {
 function tokenSubjects(entry, wave, naming) {
   const ids = new Set();
   for (const seg of splitPath(entry.canonical)) if (naming.full[keyOf(seg)]) ids.add(keyOf(seg));
-  const pair = entry.canonical.match(/^(sensitivity\.pairwise|pairwise|dimension_pairwise)\.(\d+)\./);
+  const pair = entry.canonical.match(/^(sensitivity\.pairwise|pairwise|dimension_pairwise|comparisons)\.(\d+)\./);
   if (pair) { const e = (pair[1] === "sensitivity.pairwise" ? wave.sensitivity.pairwise : wave[pair[1]])[Number(pair[2])]; ids.add(e.a); ids.add(e.b); }
+  // A section-9 verdict is about one build's two variants.
+  const lc = entry.canonical.match(/^length_check\.per_build\.(\d+)\./);
+  if (lc) { const e = wave.length_check?.per_build?.[Number(lc[1])]; if (e) { ids.add(e.arm_a); ids.add(e.arm_b); } }
   if (typeof entry.value === "string" && naming.full[entry.value]) ids.add(entry.value);
   return ids;
 }
@@ -246,6 +281,12 @@ export function lexiconProblems(txt, wave, naming = makeNaming(wave)) {
       ? sepSet.has(named[0])
       : named.every((a, i) => named.every((b2, j) => i >= j || pairSeparated(a, b2)));
     if (!okSet) bad("R-ordering-adjacent", `an ordering word beside ${named.map((n) => naming.short[n]).join(" / ")}, which the pilot did not separate: "${txt.slice(0, 120)}"`);
+  }
+  // A build name stands for both of its variants (arms wave). The secondary arm is never separated, so an ordering word beside a build
+  // name is always an ordering of something the pilot did not separate.
+  const bms = naming.buildMentions(txt);
+  if (bms.length && DIRECTIONAL_RE.test(txt) && !negated) {
+    bad("R-ordering-adjacent", `an ordering word beside the build name ${bms.map((m) => txt.slice(m.start, m.end)).join(" / ")}, whose variants the pilot did not all separate: "${txt.slice(0, 120)}"`);
   }
   return out;
 }
@@ -446,13 +487,17 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   const isPerModelFigure = (t) => {
     if (t.entry.kind !== "fig" || t.entry.format === "name") return false;
     if (!isNumeric(t.entry.value) && typeof t.entry.value !== "boolean") return false;
-    if (/^(sensitivity\.pairwise|pairwise|dimension_pairwise)\.\d+\./.test(t.entry.canonical)) return true;
+    if (/^(sensitivity\.pairwise|pairwise|dimension_pairwise|comparisons)\.\d+\./.test(t.entry.canonical)) return true;
     return subjectsOf(t).size > 0;
   };
   const derived = wave.derived;
   const groups = derived.not_separated_groups;
   const sepSet = new Set(derived.separated_subjects);
-  const groupMembers = new Set(groups.flat());
+  // Subjects that show ranges only: the members of a not-separated group and, in an arms wave (amendment 16), every variant of the
+  // secondary arm. For every other wave this is exactly the group members, so the older rules read as before.
+  const groupMembers = new Set(derived.point_withheld_subjects ?? groups.flat());
+  const armsWave = derived.display_rule !== undefined;
+  const uncorrectedOnly = (a, b) => (derived.separated_uncorrected_only_pairs ?? []).some(([x, y]) => (x === a && y === b) || (x === b && y === a));
   const pairSeparated = (a, b) => derived.separated_pairs.some(([x, y]) => (x === a && y === b) || (x === b && y === a));
 
   // ---- group sentence precedes the first per-model figure -------------------------------
@@ -487,8 +532,8 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   // Amendment 2026-10-01 #8 gate: once any report shows a separated subject's point, no point difference
   // involving a member of a not-separated group may appear (point + difference rebuild the hidden point).
   const pairOfDiff = (canonical) => {
-    const pw = canonical.match(/^(sensitivity\.pairwise|pairwise)\.(\d+)\.difference$/);
-    return pw ? (pw[1] === "sensitivity.pairwise" ? wave.sensitivity.pairwise : wave.pairwise)[Number(pw[2])] : null;
+    const pw = canonical.match(/^(sensitivity\.pairwise|pairwise|comparisons)\.(\d+)\.(?:b_minus_a\.)?difference$/);
+    return pw ? (pw[1] === "sensitivity.pairwise" ? wave.sensitivity.pairwise : wave[pw[1]])[Number(pw[2])] : null;
   };
   const separatedPoint = lines.flatMap((L) => L.toks.map((t) => t.entry)).find((e) => {
     const m = e.kind === "fig" && e.canonical.match(/^(?:sensitivity\.)?subjects\.([^.]+)\.pilot_composite$/);
@@ -501,13 +546,18 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
     if (pe && separatedPoint && (groupMembers.has(pe.a) || groupMembers.has(pe.b))) {
       err("R-reconstruct", `${e.token}: this report shows a separated subject's point (${separatedPoint.token}); a point difference against a not-separated group member would let readers rebuild the hidden points and their order. Show the paired-difference range instead (template amendment 2026-10-01 #8)`, L.n);
     }
+    // Amendment 16: in an arms wave a point difference that involves a withheld subject is never shown, whether or not the separated point is
+    // (every B - A comparison and every secondary-arm pair involves one; so does each separated pair of the primary arm).
+    if (pe && armsWave && (groupMembers.has(pe.a) || groupMembers.has(pe.b))) {
+      err("R-withheld-difference", `${e.token}: a point difference that involves ${[pe.a, pe.b].filter((x) => groupMembers.has(x)).join(" and ")} (ranges only under amendment 16) is never shown; give the paired-difference range instead`, L.n);
+    }
     const pointRaw = e.canonical.match(/^(?:sensitivity\.)?subjects\.([^.]+)\.pilot_composite$/);
     const pointOf = pointRaw ? [pointRaw[0], keyOf(pointRaw[1])] : null;
     const isPoint = pointOf !== null;
     // Amendment 2026-10-01 #2: a member of a not-separated group shows a range, never a point, anywhere
     // (prose, tables, headings, front matter). Points stay allowed for separated subjects.
     if (isPoint && groupMembers.has(pointOf[1])) {
-      err("R-group-point", `${e.token}: ${pointOf[1]} is in a not-separated group, which shows ranges only; a point reads as a ranking (template amendment 2026-10-01 #2)`, L.n);
+      err("R-group-point", `${e.token}: ${pointOf[1]} ${armsWave && (derived.range_only_subjects ?? []).includes(pointOf[1]) ? "is a variant of the secondary one-trial arm" : "is in a not-separated group"}, which shows ranges only; a point reads as a ranking (template amendment 2026-10-01 #2, amendment 16)`, L.n);
     }
     // The group's own extremes ARE its members' points (for a group of two, both of them), so the derived range of
     // the group's points is a point display too, as is a group member's dimension mean (the dimension figure shows ranges only).
@@ -522,11 +572,12 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
     if (isPoint && !(L.kind === "table" && /point estimate/i.test(tableHeaderOf(L)))) {
       err("R-point-in-prose", `${e.token}: a point appears only in a table cell whose column is labelled "point estimate" (template D)`, L.n);
     }
-    const pw = e.canonical.match(/^(sensitivity\.pairwise|pairwise|dimension_pairwise)\.(\d+)\.difference$/);
+    const pw = e.canonical.match(/^(sensitivity\.pairwise|pairwise|dimension_pairwise|comparisons)\.(\d+)\.(?:b_minus_a\.)?difference$/);
     if (pw) {
       const el = (pw[1] === "sensitivity.pairwise" ? wave.sensitivity.pairwise : wave[pw[1]])[Number(pw[2])];
-      const ok = pw[1] === "dimension_pairwise" ? el.bonferroni_separated : el.separated;
-      if (!ok) err("R-difference-unseparated", `${e.token}: a point difference is shown only for a separated pair (Bonferroni-separated for dimensions); this comparison is not`, L.n);
+      // A comparison of an arms wave is separated for display only when its corrected interval says so (a B - A or secondary-arm comparison has none).
+      const ok = pw[1] === "dimension_pairwise" ? el.bonferroni_separated : pw[1] === "comparisons" ? el.bonferroni?.separated === true && !/b_minus_a/.test(e.canonical) : armsWave ? derived.separated_pairs.some(([x, y]) => x === el.a && y === el.b) : el.separated;
+      if (!ok) err("R-difference-unseparated", `${e.token}: a point difference is shown only for a separated pair (Bonferroni-separated for dimensions and for an arms wave's pairs); this comparison is not`, L.n);
     }
   }
 
@@ -534,7 +585,7 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   // Two orders carry no meaning: alphabetical, and template E's group order (size
   // descending then first label, alphabetical within). Anything else (for example
   // sorted by a result) is an implied ranking.
-  const clusters = [...groups, ...derived.separated_subjects.map((s) => [s])].sort((g, h) => h.length - g.length || alpha(g[0], h[0]));
+  const clusters = [...groups, ...derived.separated_subjects.map((s) => [s]), ...((derived.range_only_subjects ?? []).length ? [derived.range_only_subjects] : [])].sort((g, h) => h.length - g.length || alpha(g[0], h[0]));
   const clusterRank = new Map(clusters.flat().map((id, i) => [id, i]));
   const alphaRank = new Map([...naming.ids].sort(alpha).map((id, i) => [id, i]));
   const monotone = (ids, rank) => ids.every((x, i) => i === 0 || rank.get(ids[i - 1]) <= rank.get(x));
@@ -630,6 +681,7 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
   // ---- claims vs pairwise ------------------------------------------------------------------------
   const clauseSplit = /;|,\s+(?:and|but|while|whereas)\s+|\s+(?:but|while|whereas)\s+/;
   const NEG = /(?:includes?|crosses?) zero|not separated|cannot (?:tell|separate|say|order)|could not (?:tell|separate|order)|does not separate|did not separate|can not tell/i;
+  const UNCORRECTED_RE = /without (?:any |the )?(?:multiple[- ]comparisons? |bonferroni )?(?:correction|adjustment)|\buncorrected\b|before (?:any )?correction/i;
   const coveredPairs = new Set();
   const pairKey = (x, y) => [x, y].sort(alpha).join("|");
   for (const s of claimSentences) {
@@ -649,6 +701,17 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
         }
         continue;
       }
+      // Amendment 16: a pair separated only without correction for multiple comparisons may be stated in words, with the qualifier in the
+      // same sentence and never as a point or an ordering. Said plainly ("X was separated from Y") it is a misstatement.
+      // ("X separated from Y, Z" is checked pair by pair below, X against each of Y and Z; the pairs among Y and Z are not claimed.)
+      if (armsWave && !NEGATOR_RE.test(clause) && /\bseparat(?:e|es|ed|ing)\b|\bexcludes? zero\b/i.test(clause) && !/\bseparat(?:e|es|ed|ing)\b[^.;]*?\bfrom\b/i.test(clause)) {
+        const named = [...new Set(ms.map((m) => m.id))];
+        for (let i = 0; i < named.length; i++) for (let j = i + 1; j < named.length; j++) {
+          if (uncorrectedOnly(named[i], named[j]) && !UNCORRECTED_RE.test(s.text)) {
+            err("R-uncorrected-claim", `${naming.short[named[i]]} and ${naming.short[named[j]]} are separated only without correction for multiple comparisons; the sentence must say "separated only without correction" (amendment 16): "${clause.trim().slice(0, 120)}"`, s.line);
+          }
+        }
+      }
       const pos = clause.match(/\bseparat(?:e|es|ed|ing)\b[^.;]*?\bfrom\b/i);
       if (!pos || NEGATOR_RE.test(clause)) continue;
       const fromAt = pos.index + pos[0].length - 4;
@@ -656,14 +719,16 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
       const after = [...new Set(ms.filter((m) => m.start >= fromAt).map((m) => m.id))];
       if (before.length && after.length) {
         for (const x of before) for (const y of after) if (x !== y) coveredPairs.add(pairKey(x, y));
-        for (const x of before) for (const y of after) if (x !== y && !pairSeparated(x, y)) err("R-claims-vs-pairwise", `the prose says ${naming.short[x]} was separated from ${naming.short[y]}, but the wave marks that pair not separated: "${clause.trim().slice(0, 120)}"`, s.line);
+        for (const x of before) for (const y of after) if (x !== y && !pairSeparated(x, y) && !(uncorrectedOnly(x, y) && UNCORRECTED_RE.test(s.text))) err("R-claims-vs-pairwise", `the prose says ${naming.short[x]} was separated from ${naming.short[y]}, but the wave marks that pair not separated: "${clause.trim().slice(0, 120)}"`, s.line);
       } else if (before.length && !after.length) {
         const other = clause.match(/\b(?:the )?other (\w+)|\beach of the others\b|\ball (?:the )?others\b/i);
         if (other) {
           for (const x of before) for (const y of naming.ids) if (x !== y) coveredPairs.add(pairKey(x, y));
           for (const x of before) if (!sepSet.has(x)) err("R-claims-vs-pairwise", `the prose says ${naming.short[x]} was separated from the others, but it is in a not-separated group`, s.line);
           const w = (other[1] ?? "").toLowerCase();
-          if (NUMBER_WORDS[w] !== undefined && NUMBER_WORDS[w] !== wave.derived.subject_count - 1) err("R-claims-count", `"the other ${w}" but the wave has ${wave.derived.subject_count} subjects`, s.line);
+          // In an arms wave "the others" are the other subjects of the primary arm, the only ones the corrected comparisons cover.
+          const familySize = wave.derived.primary_arm_subject_count ?? wave.derived.subject_count;
+          if (NUMBER_WORDS[w] !== undefined && NUMBER_WORDS[w] !== familySize - 1) err("R-claims-count", `"the other ${w}" but the comparison family has ${familySize} subjects`, s.line);
         }
       }
     }
@@ -702,6 +767,17 @@ export function compileReport({ md, wave, dimensionNames = {} }) {
     for (const alt of prefixes) {
       const hit = alt.split("|").some((p) => (p.startsWith("=") ? toks.some((t) => t.entry.canonical === p.slice(1)) : toks.some((t) => t.entry.canonical.startsWith(p) || t.entry.path.startsWith(p) || t.entry.path.includes(p))));
       if (!hit) err("R-must-cite", `section "${SECTIONS.find((s) => s.id === sid).title}" must cite a ${alt.replace(/=/g, "").split("|").join(" or ")} field (template B "Fields")`, bySid(sid)[0].firstLine);
+    }
+  }
+  // Amendment 16: an arms wave's report cites the arms, comparisons, replication, length verdicts and deviation its statements rest on.
+  for (const [sid, wants] of Object.entries(MUST_CITE_WHEN)) {
+    if (!bySid(sid).length) continue;
+    const toks = secToks(sid);
+    for (const { path, when } of wants) {
+      if (!when(wave)) continue;
+      if (!toks.some((t) => t.entry.canonical.startsWith(path) || t.entry.path.startsWith(path) || t.entry.path.includes(path))) {
+        err("R-must-cite", `section "${SECTIONS.find((s) => s.id === sid).title}" must cite a ${path} field (template amendment 16, "Fields" of an arms wave)`, bySid(sid)[0].firstLine);
+      }
     }
   }
   // Amendment 2026-10-01 #3/#4: the judge-sensitivity statement, in "Instrument health" or "Why these are not scores".

@@ -27,9 +27,47 @@ const WRAP_CHARS = 54;
 
 export const sortedSubjects = (wave: PilotWave): string[] => [...wave.design.subjects].sort(alpha);
 
+// ---------------------------------------------------------------------------
+// Arms waves (template amendment 16): every build is run in two arms. Figures draw one panel per arm, alphabetical within an arm, the
+// primary arm first; a build keeps one shape in both arms and its secondary-arm variant is drawn hollow.
+// ---------------------------------------------------------------------------
+
+export const hasArms = (wave: PilotWave): boolean => wave.derived.display_rule !== undefined && wave.design.arms !== undefined;
+export const armOf = (wave: PilotWave, id: string): string | null => wave.design.arms?.[id]?.arm ?? null;
+/** The arm names in panel order: the primary arm first. */
+export const armNames = (wave: PilotWave): string[] => {
+  const primary = wave.derived.primary_arm ?? "A";
+  const all = [...new Set(sortedSubjects(wave).map((id) => armOf(wave, id) ?? ""))].filter(Boolean);
+  return [primary, ...all.filter((a) => a !== primary).sort(alpha)];
+};
+/** The subjects of one arm, alphabetical. */
+export const subjectsOfArm = (wave: PilotWave, arm: string): string[] => sortedSubjects(wave).filter((id) => armOf(wave, id) === arm);
+/** Every subject in panel order: arm by arm (primary first), alphabetical within an arm. Plain alphabetical for a wave without arms. */
+export const panelSubjects = (wave: PilotWave): string[] => (hasArms(wave) ? armNames(wave).flatMap((a) => subjectsOfArm(wave, a)) : sortedSubjects(wave));
+export const isSecondaryArm = (wave: PilotWave, id: string): boolean => hasArms(wave) && armOf(wave, id) !== (wave.derived.primary_arm ?? "A");
+/** The build a variant belongs to ("<build>-A" gives "<build>"). */
+export const buildOfSubject = (wave: PilotWave, id: string): string => {
+  const arm = armOf(wave, id);
+  return arm && id.endsWith(`-${arm}`) ? id.slice(0, -(arm.length + 1)) : id;
+};
+/** Words for an arm panel heading, from the wave's own design.arms (never typed): "primary arm", "secondary arm". */
+export const armPanelName = (wave: PilotWave, arm: string): string => (arm === (wave.derived.primary_arm ?? "A") ? "Primary arm" : "Secondary arm");
+/** Trials per item of an arm, when every variant of it agrees. */
+export const armTrials = (wave: PilotWave, arm: string): number | null => {
+  const t = new Set(subjectsOfArm(wave, arm).map((id) => wave.design.arms?.[id]?.trials));
+  return t.size === 1 ? ([...t][0] ?? null) : null;
+};
+
 const SHAPES = ["circle", "square", "triangle", "diamond", "plus", "hexagon"] as const;
 export type ShapeKind = (typeof SHAPES)[number];
-export const shapeFor = (wave: PilotWave, id: string): ShapeKind => SHAPES[sortedSubjects(wave).indexOf(id) % SHAPES.length];
+export const shapeFor = (wave: PilotWave, id: string): ShapeKind => {
+  if (hasArms(wave)) {
+    // One shape per build (both of its arms), so a build is recognised across the panels.
+    const builds = [...new Set(sortedSubjects(wave).map((s) => buildOfSubject(wave, s)))];
+    return SHAPES[builds.indexOf(buildOfSubject(wave, id)) % SHAPES.length];
+  }
+  return SHAPES[sortedSubjects(wave).indexOf(id) % SHAPES.length];
+};
 
 export const shapeWord = (k: ShapeKind): string => ({ circle: "circle", square: "square", triangle: "triangle", diamond: "diamond", plus: "plus sign", hexagon: "hexagon" })[k];
 

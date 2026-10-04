@@ -16,12 +16,13 @@
  */
 
 import type { ReactNode } from "react";
-import type { PilotWave, PairwiseEntry } from "@/lib/model-wave-facts";
+import type { PilotWave, PairwiseEntry, ComparisonEntry } from "@/lib/model-wave-facts";
 import { DIMENSIONS } from "@/data/dimensions";
 import { alpha, assertLexicon, numberWord, waveShape, accessTierLabel } from "@/lib/model-report-facts";
 import {
   W, LH, FS, Footer, footerHeight, FigureFrame, DataTable, Glyph, HAxis, HWhisker, VWhisker, ModelName,
   SvgLines, SvgText, shapeFor, shapeWord, sortedSubjects, wrapText, fmt1, range1, range2,
+  hasArms, armNames, subjectsOfArm, panelSubjects, isSecondaryArm, armPanelName, armTrials,
 } from "./figure-kit";
 
 function must(cond: unknown, msg: string): asserts cond {
@@ -57,6 +58,14 @@ function checkText(label: string, text: string, wave: PilotWave) {
 interface Block {
   ids: string[];
   notSeparated: boolean;
+  /** Secondary arm (amendment 16): ranges only, no point, no ordering and no group claim. */
+  rangeOnly?: boolean;
+}
+
+/** One panel of the interval figure: one arm of an arms wave, or the whole wave. */
+interface Panel {
+  arm: string | null;
+  blocks: Block[];
 }
 
 export function groupBlocks(wave: PilotWave): { blocks: Block[]; transitive: boolean } {
@@ -74,70 +83,116 @@ export function groupBlocks(wave: PilotWave): { blocks: Block[]; transitive: boo
   return { blocks, transitive: within && across };
 }
 
+/**
+ * Panels of an arms wave (template amendment 16): the primary arm as its corrected groups, then each other arm as one range-only block.
+ * The groups are derived.not_separated_groups (corrected, primary arm), never the 95% flags of the exploratory pairs across arms.
+ */
+function armPanels(wave: PilotWave): Panel[] {
+  const primary = wave.derived.primary_arm ?? "A";
+  return armNames(wave).map((arm) => {
+    const ids = subjectsOfArm(wave, arm);
+    if (arm !== primary) return { arm, blocks: [{ ids, notSeparated: false, rangeOnly: true }] };
+    const groups = wave.derived.not_separated_groups.map((g) => [...g].sort(alpha));
+    const inGroup = new Set(groups.flat());
+    const blocks: Block[] = [
+      ...groups.map((g) => ({ ids: g, notSeparated: true })),
+      ...ids.filter((i) => !inGroup.has(i)).map((i) => ({ ids: [i], notSeparated: false })),
+    ].sort((a, b) => b.ids.length - a.ids.length || alpha(a.ids[0], b.ids[0]));
+    return { arm, blocks };
+  });
+}
+
+/** "three trials per item", "one trial per item" from the wave's own design.arms. */
+function trialsPhrase(wave: PilotWave, arm: string): string {
+  const t = armTrials(wave, arm);
+  return t === null ? "trials per item differ" : `${numberWord(t)} trial${t === 1 ? "" : "s"} per item`;
+}
+
 export function IntervalFigure({ wave, number }: { wave: PilotWave; number: number }) {
-  const { blocks: rawBlocks, transitive } = groupBlocks(wave);
-  // A non-transitive set of separation flags cannot be drawn as brackets (dataviz G1): one plain list.
-  const blocks: Block[] = transitive ? rawBlocks : [{ ids: sortedSubjects(wave), notSeparated: false }];
+  const arms = hasArms(wave);
+  let panels: Panel[];
+  let transitive = true;
+  if (arms) {
+    panels = armPanels(wave);
+  } else {
+    const g = groupBlocks(wave);
+    transitive = g.transitive;
+    // A non-transitive set of separation flags cannot be drawn as brackets (dataviz G1): one plain list.
+    panels = [{ arm: null, blocks: transitive ? g.blocks : [{ ids: sortedSubjects(wave), notSeparated: false }] }];
+  }
   const X0 = 26;
   const X1 = W - 24;
   const xs = (v: number) => X0 + (v / 100) * (X1 - X0);
   const els: ReactNode[] = [];
   let y = 8;
-  const rowsText: string[] = [];
-  blocks.forEach((b, bi) => {
-    if (transitive) {
-      const head = b.ids.length > 1 ? `Not separated: the pilot cannot order these ${numberWord(b.ids.length)}` : "Separated from each of the others";
-      checkText("G1 group header", head, wave);
+  const panelHead = (p: Panel) => `${armPanelName(wave, p.arm ?? "")}: ${trialsPhrase(wave, p.arm ?? "")}${p.blocks.some((b) => b.rangeOnly) ? ", ranges only" : ""}`;
+  panels.forEach((p, pi) => {
+    if (arms && p.arm) {
+      const head = panelHead(p);
+      checkText("G1 arm header", head, wave);
       const lines = wrapText(head);
-      els.push(<SvgLines key={`h${bi}`} x={X0} y={y + LH - 4} lines={lines} bold />);
-      y += lines.length * LH + 4;
+      els.push(<SvgLines key={`p${pi}`} x={12} y={y + LH - 4} lines={lines} bold />);
+      y += lines.length * LH + 6;
     }
-    const yTop = y;
-    b.ids.forEach((id) => {
-      const iv = wave.subjects[id].pilot_composite_interval95;
-      const pt = wave.subjects[id].pilot_composite;
-      els.push(
-        <g key={id}>
-          <Glyph kind={shapeFor(wave, id)} cx={X0 + 6} cy={y + 8} r={5} />
-          <SvgText x={X0 + 18} y={y + 14}>{id}</SvgText>
-          <HWhisker x1={xs(iv[0])} x2={xs(iv[1])} y={y + 30} tick={showsPoint(wave, id) ? xs(pt) : undefined} />
-        </g>,
-      );
-      rowsText.push(`${id} ${range1(iv)}`);
-      y += 40;
-      const bound = wave.length.composite_if_pooled_slope_removed;
-      if (id in bound) {
-        const cav = "Reply length is an unresolved confound for this model’s range.";
-        checkText("G1 caveat", cav, wave);
-        const lines = wrapText(cav);
-        els.push(<SvgLines key={`c${id}`} x={X0} y={y + 10} lines={lines} sub />);
-        y += lines.length * LH;
+    p.blocks.forEach((b, bi) => {
+      if (transitive) {
+        const head = b.rangeOnly
+          ? "Ranges only: no point and no ordering"
+          : b.ids.length > 1
+            ? `Not separated${arms ? " after correction" : ""}: the pilot cannot order these ${numberWord(b.ids.length)}`
+            : `Separated from each of the others${arms ? " after correction" : ""}`;
+        checkText("G1 group header", head, wave);
+        const lines = wrapText(head);
+        els.push(<SvgLines key={`h${pi}-${bi}`} x={X0} y={y + LH - 4} lines={lines} bold />);
+        y += lines.length * LH + 4;
       }
+      const yTop = y;
+      b.ids.forEach((id) => {
+        const iv = wave.subjects[id].pilot_composite_interval95;
+        const pt = wave.subjects[id].pilot_composite;
+        els.push(
+          <g key={id}>
+            <Glyph kind={shapeFor(wave, id)} cx={X0 + 6} cy={y + 8} r={5} hollow={isSecondaryArm(wave, id)} />
+            <SvgText x={X0 + 18} y={y + 14}>{id}</SvgText>
+            <HWhisker x1={xs(iv[0])} x2={xs(iv[1])} y={y + 30} tick={showsPoint(wave, id) ? xs(pt) : undefined} />
+          </g>,
+        );
+        y += 40;
+        const bound = wave.length.composite_if_pooled_slope_removed;
+        if (id in bound) {
+          const cav = "Reply length is an unresolved confound for this model’s range.";
+          checkText("G1 caveat", cav, wave);
+          const lines = wrapText(cav);
+          els.push(<SvgLines key={`c${id}`} x={X0} y={y + 10} lines={lines} sub />);
+          y += lines.length * LH;
+        }
+      });
+      if (transitive && b.ids.length > 1 && !b.rangeOnly) {
+        els.push(<path key={`br${pi}-${bi}`} className="pf-stroke pf-thick" d={`M 16 ${yTop + 2} L 10 ${yTop + 2} L 10 ${y - 6} L 16 ${y - 6}`} />);
+      }
+      y += 8;
     });
-    if (transitive && b.ids.length > 1) {
-      els.push(<path key={`br${bi}`} className="pf-stroke pf-thick" d={`M 16 ${yTop + 2} L 10 ${yTop + 2} L 10 ${y - 6} L 16 ${y - 6}`} />);
-    }
-    y += 8;
   });
   const axisY = y + 4;
   const axisLabel = "Pilot range scale, 0 to 100. Unofficial; not a score.";
-  const noteLines = wrapText("Whisker: 95% range from item resampling. A small tick marks a point only for a separated model. Order carries no meaning.");
+  const noteLines = wrapText(`Whisker: 95% range from item resampling. A small tick marks a point only for a separated model. Order carries no meaning.${arms ? " Hollow shapes: the secondary arm." : ""}`);
   const axisEnd = axisY + 5 + 2 * LH + 6;
   const noteY = axisEnd + LH - 4;
   const footY = noteY + noteLines.length * LH + 6;
   const height = footY + footerHeight() + 4;
 
+  const blockWord = (b: Block) => (b.rangeOnly ? "Ranges only" : transitive ? (b.ids.length > 1 ? "Not separated group" : "Separated from each of the others") : "");
   const desc =
     "Horizontal ranges on a 0 to 100 scale, alphabetical within groups. " +
-    blocks
-      .map((b) => `${transitive ? (b.ids.length > 1 ? "Not separated group: " : "Separated from each of the others: ") : ""}${b.ids.map((id) => `${id} ${range1(wave.subjects[id].pilot_composite_interval95)}`).join("; ")}`)
+    panels
+      .map((p) => `${arms && p.arm ? `${panelHead(p)}. ` : ""}${p.blocks.map((b) => `${transitive ? `${blockWord(b)}: ` : ""}${b.ids.map((id) => `${id} ${range1(wave.subjects[id].pilot_composite_interval95)}`).join("; ")}`).join(". ")}`)
       .join(". ") +
     `. ${STATUS_LINE(wave)} Order carries no meaning.`;
   const confound = confoundSentence(wave);
   const title = "Unofficial pilot ranges by model, in groups. Not a ranking.";
   checkText("G1 title", title, wave);
   checkText("G1 desc", desc, wave);
-  const captionText = `${STATUS_LINE(wave)} Each whisker is a 95% range from item resampling. Models in a not-separated group show ranges only; a separated model also shows a small tick for its point estimate, which is in the table. Larger group first, alphabetical within each group. Order carries no meaning. ${confound}`;
+  const captionText = `${STATUS_LINE(wave)} Each whisker is a 95% range from item resampling. Models in a not-separated group show ranges only; a separated model also shows a small tick for its point estimate, which is in the table. ${arms ? "The groups are the primary arm's, after correction for multiple comparisons; the secondary arm has one trial per item and shows ranges only. " : ""}Larger group first, alphabetical within each group. Order carries no meaning. ${confound}`;
   checkText("G1 caption", captionText, wave);
 
   const svg = (
@@ -148,6 +203,10 @@ export function IntervalFigure({ wave, number }: { wave: PilotWave; number: numb
       <Footer wave={wave} y={footY} />
     </>
   );
+  const groupCell = (p: Panel, b: Block) => {
+    const kind = b.rangeOnly ? "Ranges only" : transitive ? (b.ids.length > 1 ? "Not separated" : "Separated") : "Listed alphabetically";
+    return arms && p.arm ? `${armPanelName(wave, p.arm)}: ${kind.toLowerCase()}` : kind;
+  };
   return (
     <FigureFrame
       id="fig-ranges"
@@ -170,15 +229,17 @@ export function IntervalFigure({ wave, number }: { wave: PilotWave; number: numb
               <th scope="col">Point estimate</th>
             </tr>
           }
-          rows={blocks.flatMap((b) =>
-            b.ids.map((id) => (
-              <tr key={id}>
-                <td>{transitive ? (b.ids.length > 1 ? "Not separated" : "Separated") : "Listed alphabetically"}</td>
-                <td><ModelName id={id} wave={wave} /></td>
-                <td>{range1(wave.subjects[id].pilot_composite_interval95)}</td>
-                <td>{showsPoint(wave, id) ? fmt1(wave.subjects[id].pilot_composite) : "not shown"}</td>
-              </tr>
-            )),
+          rows={panels.flatMap((p) =>
+            p.blocks.flatMap((b) =>
+              b.ids.map((id) => (
+                <tr key={id}>
+                  <td>{groupCell(p, b)}</td>
+                  <td><ModelName id={id} wave={wave} /></td>
+                  <td>{range1(wave.subjects[id].pilot_composite_interval95)}</td>
+                  <td>{showsPoint(wave, id) ? fmt1(wave.subjects[id].pilot_composite) : "not shown"}</td>
+                </tr>
+              )),
+            ),
           )}
         />
       }
@@ -211,7 +272,152 @@ function pairRows(wave: PilotWave): PairRow[] {
   });
 }
 
+/**
+ * G2 for an ARMS wave (template amendment 16): the pre-declared comparisons, not the 28 exploratory pairs. Ranges only: no point difference is
+ * drawn or printed, because every separated pair of the primary arm involves a subject that shows a range only, and every other comparison
+ * involves the secondary arm. The primary arm's pairs show both the 95% range without correction (solid) and the range after correction for
+ * multiple comparisons (dashed); the secondary arm's pairs show the uncorrected range only; each build's secondary arm minus primary arm is one row.
+ */
+function ComparisonFigure({ wave, number }: { wave: PilotWave; number: number }) {
+  const cs: ComparisonEntry[] = wave.comparisons ?? [];
+  must(cs.length > 0, "an arms wave carries no comparisons");
+  const d = wave.derived;
+  const primary = d.primary_arm ?? "A";
+  const isPrimaryBuild = (c: ComparisonEntry) => c.kind === "build" && c.arm_a === primary;
+  const byName = (x: ComparisonEntry, z: ComparisonEntry) => alpha(`${x.a}|${x.b}`, `${z.a}|${z.b}`);
+  const sepAfter = cs.filter((c) => isPrimaryBuild(c) && c.bonferroni?.separated === true).sort(byName);
+  const sepOnlyUncorrected = cs.filter((c) => isPrimaryBuild(c) && c.separated && c.bonferroni?.separated !== true).sort(byName);
+  const notSep = cs.filter((c) => isPrimaryBuild(c) && !c.separated).sort(byName);
+  const secondary = cs.filter((c) => c.kind === "build" && c.arm_a !== primary).sort(byName);
+  const perBuild = cs.filter((c) => c.kind === "arm").sort(byName);
+  must(sepAfter.length + sepOnlyUncorrected.length + notSep.length === cs.filter(isPrimaryBuild).length, "the primary-arm comparisons do not partition");
+  must(JSON.stringify(sepAfter.map((c) => [c.a, c.b])) === JSON.stringify(d.separated_pairs), "the pairs separated after correction differ from derived.separated_pairs");
+  must(JSON.stringify(sepOnlyUncorrected.map((c) => [c.a, c.b])) === JSON.stringify(d.separated_uncorrected_only_pairs ?? []), "the pairs separated only without correction differ from derived");
+  const groupsDef: { label: string; rows: ComparisonEntry[]; word: string }[] = [
+    { label: "Primary arm: separated after correction for multiple comparisons", rows: sepAfter, word: "Separated after correction" },
+    { label: "Primary arm: separated only without correction (not stated as a separation)", rows: sepOnlyUncorrected, word: "Separated only without correction" },
+    { label: "Primary arm: not separated, even without correction", rows: notSep, word: "Not separated" },
+    { label: "Secondary arm, one trial per item: ranges only, no correction", rows: secondary, word: "Secondary arm, ranges only" },
+    { label: "Each build, secondary arm minus primary arm: ranges only", rows: perBuild, word: "Secondary arm minus primary arm" },
+  ].filter((g) => g.rows.length > 0);
+
+  const rangeOf = (c: ComparisonEntry): [number, number] => (c.kind === "arm" && c.b_minus_a ? c.b_minus_a.interval95 : c.interval95);
+  const all = cs.flatMap((c) => [rangeOf(c), ...(c.bonferroni ? [c.bonferroni.interval] : [])]);
+  const minLo = Math.min(0, ...all.map((r) => r[0]));
+  const maxHi = Math.max(0, ...all.map((r) => r[1]));
+  const span = maxHi - minLo;
+  const step = span <= 60 ? 5 : span <= 120 ? 10 : 20;
+  const min = Math.floor(minLo / step) * step;
+  const max = Math.ceil(maxHi / step) * step;
+  const X0 = 24;
+  const X1 = W - 24;
+  const xs = (v: number) => X0 + ((v - min) / (max - min)) * (X1 - X0);
+  const labelOf = (c: ComparisonEntry) => (c.kind === "arm" ? `${c.a} and ${c.b}, ${c.arm_b} minus ${c.arm_a}` : `${c.a} minus ${c.b}`);
+
+  const els: ReactNode[] = [];
+  let y = 8;
+  groupsDef.forEach((g, gi) => {
+    checkText("G2 group header", g.label, wave);
+    const lines = wrapText(g.label);
+    els.push(<SvgLines key={`h${gi}`} x={12} y={y + LH - 4} lines={lines} bold />);
+    y += lines.length * LH + 4;
+    g.rows.forEach((c) => {
+      const r = rangeOf(c);
+      const corrected = c.bonferroni?.interval;
+      els.push(
+        <g key={`${c.a}${c.b}`}>
+          <SvgText x={X0} y={y + 14}>{labelOf(c)}</SvgText>
+          <HWhisker x1={xs(r[0])} x2={xs(r[1])} y={y + 28} />
+          {corrected && (
+            <g>
+              <line className="pf-dash" x1={xs(corrected[0])} x2={xs(corrected[1])} y1={y + 40} y2={y + 40} />
+              <line className="pf-stroke pf-thick" x1={xs(corrected[0])} x2={xs(corrected[0])} y1={y + 35} y2={y + 45} />
+              <line className="pf-stroke pf-thick" x1={xs(corrected[1])} x2={xs(corrected[1])} y1={y + 35} y2={y + 45} />
+            </g>
+          )}
+        </g>,
+      );
+      y += corrected ? 52 : 38;
+    });
+    y += 6;
+  });
+
+  const axisY = y + 4;
+  const k = (d.primary_arm_subject_count ?? 1) - 1;
+  must(d.separated_subjects.length === 1 && sepAfter.length === k && sepAfter.every((c) => c.a === d.separated_subjects[0] || c.b === d.separated_subjects[0]), "the pairs separated after correction are not exactly the pairs of the one separated variant");
+  const annotation = `${d.separated_subjects[0]} was separated from each of the other ${numberWord(k)} after correction. No other primary-arm pair was. No point difference is shown.`;
+  checkText("G2 annotation", annotation, wave);
+  const confound = confoundSentence(wave);
+  const legend = "Solid: 95% range without correction. Dashed: range after correction for multiple comparisons. Zero line: no difference.";
+  const noteLines = wrapText(`${annotation} ${legend} ${confound}`.trim());
+  const axisLabel = "Difference in the pilot range scale. 0 = no difference.";
+  const noteY = axisY + 5 + 2 * LH + 6 + LH - 4;
+  const footY = noteY + noteLines.length * LH + 6;
+  const height = footY + footerHeight() + 4;
+
+  const desc =
+    "Ranges of the pre-declared comparisons on one shared axis with a line at zero. " +
+    groupsDef
+      .map((g) => `${g.word}: ${g.rows.map((c) => `${labelOf(c)} ${range1(rangeOf(c))}${c.bonferroni ? `, after correction ${range1(c.bonferroni.interval)}` : ""}`).join("; ")}`)
+      .join(". ") +
+    `. ${STATUS_LINE(wave)}`;
+  const title = "Unofficial pilot pre-declared comparisons: which pairs separated and which did not.";
+  checkText("G2 title", title, wave);
+  checkText("G2 desc", desc, wave);
+  const caption = `${STATUS_LINE(wave)} Each whisker is the range of the difference between two variants on the same items, from the same item re-draws for every variant. The primary arm's pairs also show the range after correction for multiple comparisons; a pair is stated as separated only if its corrected range excludes zero. No point is shown for any comparison, and a not-separated range does not mean the models are equal. ${confound}`.trim();
+  checkText("G2 caption", caption, wave);
+
+  const svg = (
+    <>
+      <HAxis x0={X0} x1={X1} y={axisY} min={min} max={max} step={step} grid={axisY - 8} label={axisLabel} />
+      <line className="pf-zero" x1={xs(0)} x2={xs(0)} y1={8} y2={axisY} />
+      {els}
+      <SvgLines x={12} y={noteY} lines={noteLines} bold />
+      <Footer wave={wave} y={footY} />
+    </>
+  );
+  return (
+    <FigureFrame
+      id="fig-pairs"
+      number={number}
+      title="Which differences are real: the pre-declared comparisons."
+      caption={caption}
+      svgTitle={title}
+      svgDesc={desc}
+      height={height}
+      svg={svg}
+      tableSummary="Data table: pre-declared comparisons"
+      table={
+        <DataTable
+          caption="Pre-declared comparisons, first minus second (a build's secondary arm minus primary arm for the last group). Ranges only. Unofficial; not a score."
+          head={
+            <tr>
+              <th scope="col">Group</th>
+              <th scope="col">Pair</th>
+              <th scope="col">Range of the difference (95%)</th>
+              <th scope="col">Range after correction</th>
+              <th scope="col">Point estimate</th>
+            </tr>
+          }
+          rows={groupsDef.flatMap((g) =>
+            g.rows.map((c) => (
+              <tr key={`${c.a}${c.b}`}>
+                <td>{g.word}</td>
+                <td>{labelOf(c)}</td>
+                <td>{range1(rangeOf(c))}</td>
+                <td>{c.bonferroni ? range1(c.bonferroni.interval) : "not computed"}</td>
+                <td>not shown</td>
+              </tr>
+            )),
+          )}
+        />
+      }
+    />
+  );
+}
+
 export function PairFigure({ wave, number }: { wave: PilotWave; number: number }) {
+  if (hasArms(wave)) return <ComparisonFigure wave={wave} number={number} />;
   const rows = pairRows(wave);
   const notSep = rows.filter((r) => !r.separated).sort((x, y) => alpha(x.a + x.b, y.a + y.b));
   const sep = rows.filter((r) => r.separated).sort((x, y) => alpha(x.a + x.b, y.a + y.b));
@@ -361,7 +567,8 @@ function PairMatrix({ wave, number, rows }: { wave: PilotWave; number: number; r
 // ===========================================================================
 
 export function DimensionFigure({ wave, number }: { wave: PilotWave; number: number }) {
-  const ids = sortedSubjects(wave);
+  // An arms wave lists the primary arm's variants first, then the secondary arm's, alphabetical within an arm.
+  const ids = panelSubjects(wave);
   const dims = DIMENSIONS.map((d) => d.code).filter((c) => c in wave.subjects[ids[0]].dimensions);
   must(dims.length === Object.keys(wave.subjects[ids[0]].dimensions).length, "a wave dimension code is missing from DIMENSIONS");
   const nameOf = (c: string) => DIMENSIONS.find((d) => d.code === c)?.name ?? c;
@@ -379,12 +586,13 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
     const countText = lo === hi ? `${lo} items` : `${lo} to ${hi} items`;
     els.push(<SvgText key={`h${c}`} x={12} y={y + LH - 4} bold>{`${c} ${nameOf(c)} · ${countText}`}</SvgText>);
     y += LH + 2;
-    ids.forEach((id) => {
+    ids.forEach((id, k) => {
       const iv = wave.subjects[id].dimension_intervals95[c];
       const mean = wave.subjects[id].dimensions[c];
+      if (hasArms(wave) && k > 0 && isSecondaryArm(wave, id) !== isSecondaryArm(wave, ids[k - 1])) y += 6; // a small gap between the arms' panels
       els.push(
         <g key={`${c}${id}`}>
-          <Glyph kind={shapeFor(wave, id)} cx={20} cy={y + 9} r={4} />
+          <Glyph kind={shapeFor(wave, id)} cx={20} cy={y + 9} r={4} hollow={isSecondaryArm(wave, id)} />
           <SvgText x={32} y={y + 14}>{id}</SvgText>
           <HWhisker x1={xs(iv[0])} x2={xs(iv[1])} y={y + 9} capH={8} />
           {showsPoint(wave, id) && <Glyph kind={shapeFor(wave, id)} cx={xs(mean)} cy={y + 9} r={4} />}
@@ -411,6 +619,7 @@ export function DimensionFigure({ wave, number }: { wave: PilotWave; number: num
     must(survived === wave.derived.dimension_bonferroni_separated_among_group && among.length === wave.derived.dimension_comparisons_among_group, "derived dimension comparison counts disagree with dimension_pairwise");
     notes.push(`Among the ${numberWord(g.size)} models the pilot could not tell apart, ${survived} of ${among.length} dimension comparisons survived the multiple-comparison correction.`);
   }
+  if (hasArms(wave)) notes.push("Dimension comparisons cover the primary arm only. The secondary arm shows ranges only, with a hollow shape. A mean appears for a separated variant only.");
   notes.push("Ranges are 95% item-resampling ranges only. The correction is conservative; only corrected flags count as differences. Order carries no meaning.");
   notes.forEach((n, i) => checkText(`G3 note ${i + 1}`, n, wave));
   const noteLines = notes.flatMap((n) => wrapText(n));
@@ -496,12 +705,16 @@ function ColPair({ point }: { point: boolean }) {
 // ===========================================================================
 
 export function LengthFigure({ wave, number }: { wave: PilotWave; number: number }) {
-  const ids = sortedSubjects(wave);
+  // An arms wave: the primary arm's variants first, then the secondary arm's, alphabetical within an arm.
+  const ids = panelSubjects(wave);
   const s = waveShape(wave);
   const words = ids.map((i) => wave.subjects[i].median_reply_words);
   const bounds = wave.length.composite_if_pooled_slope_removed;
-  const slopes = wave.length.within_subject_slopes;
+  const slopes: Record<string, number | null> = wave.length.within_subject_slopes;
   const pooled = wave.length.pooled_within_item_slope;
+  // A variant with one trial per item has no within-item slope (null in the wave): it is not drawn in panel B and the table says why.
+  const slopeIds = ids.filter((id) => typeof slopes[id] === "number");
+  const slopeOf = (id: string): number => slopes[id] as number;
 
   // ---- Panel A geometry
   const AX0 = 52;
@@ -511,7 +724,7 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
   const lx = (w: number) => AX0 + ((Math.log(w) - Math.log(dmin)) / (Math.log(dmax) - Math.log(dmin))) * (AX1 - AX0);
   const xticks: number[] = [];
   for (let v = 25; v <= dmax; v *= 2) if (v >= dmin) xticks.push(v);
-  const LEVELS = 3;
+  const LEVELS = ids.length > 6 ? 4 : 3;
   const zoneTop = 8 + LH + 6; // below the panel title
   const plotTop = zoneTop + LEVELS * LH + 10;
   const plotH = 170;
@@ -551,7 +764,7 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
     aEls.push(
       <g key={`pt${id}`}>
         <line className="pf-leader" x1={x} x2={x} y1={baseY + 3} y2={vy(hi)} />
-        <Glyph kind={shapeFor(wave, id)} cx={x} cy={baseY - 5} r={5} />
+        <Glyph kind={shapeFor(wave, id)} cx={x} cy={baseY - 5} r={5} hollow={isSecondaryArm(wave, id)} />
         <SvgText x={x - 10} y={baseY} anchor="end">{id}</SvgText>
         <VWhisker x={x} y1={vy(hi)} y2={vy(lo)} tick={showsPoint(wave, id) ? vy(sub.pilot_composite) : undefined} />
         {id in bounds && (
@@ -579,19 +792,19 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
   // ---- Panel B
   const bTitleY = y + LH - 4;
   y += LH + 6;
-  const mmax = Math.max(0.25, Math.ceil(Math.max(...Object.values(slopes).map(Math.abs), Math.abs(pooled)) * 4) / 4);
+  const mmax = Math.max(0.25, Math.ceil(Math.max(...slopeIds.map((i) => Math.abs(slopeOf(i))), Math.abs(pooled)) * 4) / 4);
   const BX0 = 24;
   const BX1 = W - 24;
   const bx = (v: number) => BX0 + ((v + mmax) / (2 * mmax)) * (BX1 - BX0);
   const bTop = y + LH; // room for the pooled-line label
   const bEls: ReactNode[] = [];
   let by = bTop;
-  ids.forEach((id) => {
+  slopeIds.forEach((id) => {
     bEls.push(
       <g key={`b${id}`}>
-        <Glyph kind={shapeFor(wave, id)} cx={BX0 + 6} cy={by + 8} r={5} />
+        <Glyph kind={shapeFor(wave, id)} cx={BX0 + 6} cy={by + 8} r={5} hollow={isSecondaryArm(wave, id)} />
         <SvgText x={BX0 + 18} y={by + 14}>{id}</SvgText>
-        <Glyph kind={shapeFor(wave, id)} cx={bx(slopes[id])} cy={by + 28} r={6} />
+        <Glyph kind={shapeFor(wave, id)} cx={bx(slopeOf(id))} cy={by + 28} r={6} hollow={isSecondaryArm(wave, id)} />
       </g>,
     );
     by += 40;
@@ -599,9 +812,10 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
   const bAxisY = by + 2;
   const pooledX = bx(pooled);
   const pooledLabelRight = pooledX < (BX0 + BX1) / 2;
-  const posN = ids.filter((i) => slopes[i] > 0).length;
-  const negN = ids.filter((i) => slopes[i] < 0).length;
-  const allSmaller = ids.every((i) => Math.abs(slopes[i]) < Math.abs(pooled));
+  const posN = slopeIds.filter((i) => slopeOf(i) > 0).length;
+  const negN = slopeIds.filter((i) => slopeOf(i) < 0).length;
+  const allSmaller = slopeIds.every((i) => Math.abs(slopeOf(i)) < Math.abs(pooled));
+  const noSlope = ids.filter((i) => !slopeIds.includes(i));
 
   const bSvg = (
     <>
@@ -617,11 +831,17 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
 
   // ---- Panel B note + title predicate sentences
   const slopeClause = allSmaller
-    ? `Within each model the slopes are small and ${posN > 0 && negN > 0 ? "mixed in sign" : posN > 0 ? "all positive" : "all negative"}, each smaller than the pooled slope.`
+    ? `Within each model${noSlope.length ? " that has one" : ""} the slopes are small and ${posN > 0 && negN > 0 ? "mixed in sign" : posN > 0 ? "all positive" : "all negative"}, each smaller than the pooled slope.${noSlope.length ? " The secondary arm has one trial per item and no slope." : ""}`
     : "Within-model slopes are shown beside the pooled slope.";
   const lengthClause = s.oneApartFromOneGroup && s.separatedWroteShortest ? `${s.separated} was separated and also wrote the shortest replies. ` : "";
   const nonCausal = "This design cannot tell a real difference from a penalty on brief replies: reply length is an unresolved confound.";
-  const bNote = `${lengthClause}${slopeClause} ${nonCausal}`;
+  // An arms wave: what each build's length instruction did (pre-registered section 9), as a predicate over length_check; the readings stay in the table.
+  const lc = wave.length_check?.per_build ?? [];
+  const effective = lc.filter((r) => r.length_instruction === "effective").length;
+  const ineffective = lc.filter((r) => r.length_instruction === "ineffective").length;
+  must(effective + ineffective === lc.length, "a length verdict is neither effective nor ineffective");
+  const instructionClause = lc.length ? `The length instruction moved the median reply closer to its target for ${numberWord(effective)} of ${numberWord(lc.length)} builds; for ${numberWord(ineffective)} it did not, so that build's second-arm comparison is uninformative about length.` : "";
+  const bNote = `${lengthClause}${slopeClause} ${nonCausal}${instructionClause ? ` ${instructionClause}` : ""}`;
   checkText("G4 panel B note", bNote, wave);
   const bNoteLines = wrapText(bNote);
   const noteY = y + LH - 4;
@@ -634,10 +854,12 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
   const title = "Unofficial pilot: reply length and range, between models and within each model.";
   checkText("G4 title", title, wave);
   checkText("G4 desc", desc, wave);
-  const consistent = s.directionConsistentAcrossJudges && s.separated
+  const consistent = s.separated && s.directionConsistentAcrossJudges
     ? `Direction consistent across judges: every judge rated ${s.separated}’s replies below the item mean. `
-    : "";
-  const caption = `${STATUS_LINE(wave)} ${lengthClause}${slopeClause} ${consistent}Cause unresolved. The hollow marker, if shown, is an extreme bound, not an estimate. Panel A never appears without Panel B.`.replace(/\s+/g, " ");
+    : s.separated && s.directionAboveAcrossJudges
+      ? `Direction consistent across judges: every judge rated ${s.separated}’s replies above the item mean. `
+      : "";
+  const caption = `${STATUS_LINE(wave)} ${lengthClause}${slopeClause} ${consistent}${instructionClause ? `${instructionClause} ` : ""}Cause unresolved. The hollow marker, if shown, is an extreme bound, not an estimate. Panel A never appears without Panel B.`.replace(/\s+/g, " ");
   checkText("G4 caption", caption, wave);
 
   const svg = (
@@ -661,8 +883,9 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
       svg={svg}
       tableSummary="Data table: reply length, ranges, bound and slopes"
       table={
+        <>
         <DataTable
-          caption="Reply length against range, by model in alphabetical order. The bound exists for the separated model only and is not an estimate. Unofficial; not a score."
+          caption={`Reply length against range, by model, ${hasArms(wave) ? "primary arm first, then the secondary arm, alphabetical within each" : "in alphabetical order"}. The bound exists for the separated model only and is not an estimate. Unofficial; not a score.`}
           head={
             <tr>
               <th scope="col">Model</th>
@@ -681,7 +904,7 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
                 <td>{range1(wave.subjects[id].pilot_composite_interval95)}</td>
                 <td>{showsPoint(wave, id) ? fmt1(wave.subjects[id].pilot_composite) : "not shown"}</td>
                 <td>{id in bounds ? fmt1(bounds[id]) : "not shown"}</td>
-                <td>{slopes[id].toFixed(3)}</td>
+                <td>{typeof slopes[id] === "number" ? slopeOf(id).toFixed(3) : "not computed (one trial per item)"}</td>
               </tr>
             )),
             <tr key="pooled">
@@ -690,6 +913,34 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
             </tr>,
           ]}
         />
+        {lc.length > 0 && (
+          <DataTable
+            caption="Did the length instruction move each build's median reply toward its target? The pre-registered rule: the secondary arm must be closer to the target than the primary arm, or the build's second-arm comparison is uninformative about length. Unofficial; not a score."
+            head={
+              <tr>
+                <th scope="col">Primary-arm variant</th>
+                <th scope="col">Secondary-arm variant</th>
+                <th scope="col">Target words</th>
+                <th scope="col">Median words, primary arm</th>
+                <th scope="col">Median words, secondary arm</th>
+                <th scope="col">Length instruction</th>
+                <th scope="col">Reading</th>
+              </tr>
+            }
+            rows={lc.map((r) => (
+              <tr key={r.arm_a}>
+                <td>{r.arm_a}</td>
+                <td>{r.arm_b}</td>
+                <td>{r.target_words}</td>
+                <td>{r.median_words_a}</td>
+                <td>{r.median_words_b}</td>
+                <td>{r.length_instruction}</td>
+                <td>{r.b_minus_a_reading}</td>
+              </tr>
+            ))}
+          />
+        )}
+        </>
       }
     />
   );
@@ -700,14 +951,17 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
 // ===========================================================================
 
 export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number }) {
-  const subs = sortedSubjects(wave);
+  // An arms wave: the primary arm's variants first, then the secondary arm's, alphabetical within an arm; the leniency grid has one block per arm.
+  const subs = panelSubjects(wave);
+  const blocks: string[][] = hasArms(wave) ? armNames(wave).map((a) => subjectsOfArm(wave, a)) : [subs];
   const judges = Object.keys(wave.judges).sort(alpha);
   const maxAbs = Math.max(0.25, Math.ceil(Math.max(...judges.flatMap((j) => [...Object.values(wave.judges[j].by_subject).map(Math.abs), Math.abs(wave.judges[j].leniency_vs_item_mean)])) * 4) / 4);
   const LBL = 112;
   const OVER = 84;
-  const cw = Math.min(62, Math.floor((W - 8 - LBL - OVER) / subs.length));
+  const widest = Math.max(...blocks.map((b) => b.length));
+  const cw = Math.min(62, Math.floor((W - 8 - LBL - OVER) / widest));
   const cells0 = LBL;
-  const overX = cells0 + cw * subs.length + 8;
+  const overX = cells0 + cw * blocks[0].length + 8;
   const rowH = 36;
   const signed = (v: number) => `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(2)}`;
 
@@ -715,49 +969,59 @@ export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number 
   let y = 8;
   els.push(<SvgText key="atitle" x={12} y={y + LH - 4} bold>A. Judge leniency by model judged</SvgText>);
   y += LH + 8;
-  // Column headers: two lines, split after the first hyphen.
-  subs.forEach((id, i) => {
-    const [h1, h2] = id.includes("-") ? [id.slice(0, id.indexOf("-") + 1), id.slice(id.indexOf("-") + 1)] : [id, ""];
-    els.push(
-      <SvgLines key={`ch${id}`} x={cells0 + i * cw + cw / 2} y={y + LH - 4} lines={[h1, h2].filter(Boolean)} anchor="middle" sub />,
-    );
-  });
-  els.push(<SvgLines key="och" x={overX + OVER / 2 - 4} y={y + LH - 4} lines={["overall"]} anchor="middle" sub />);
-  y += 2 * LH + 2;
   const gridTop = y;
-  judges.forEach((j) => {
-    els.push(<SvgText key={`jl${j}`} x={12} y={y + rowH / 2 + 5}>{j}</SvgText>);
-    subs.forEach((id, i) => {
-      const x = cells0 + i * cw;
-      const v = wave.judges[j].by_subject[id];
-      els.push(<rect key={`c${j}${id}`} className="pf-cell" x={x} y={y} width={cw} height={rowH} />);
-      if (id === j || v === undefined) {
-        els.push(<rect key={`o${j}${id}`} className="pf-hatch" x={x} y={y} width={cw} height={rowH} />);
-      } else {
-        const half = cw / 2 - 5;
-        const len = (Math.abs(v) / maxAbs) * half;
+  blocks.forEach((block, bi) => {
+    if (blocks.length > 1) {
+      const head = `${armPanelName(wave, armNames(wave)[bi])}`;
+      els.push(<SvgText key={`bh${bi}`} x={12} y={y + LH - 4} bold>{head}</SvgText>);
+      y += LH + 4;
+    }
+    // Column headers: two lines, split after the first hyphen.
+    block.forEach((id, i) => {
+      const [h1, h2] = id.includes("-") ? [id.slice(0, id.indexOf("-") + 1), id.slice(id.indexOf("-") + 1)] : [id, ""];
+      els.push(
+        <SvgLines key={`ch${id}`} x={cells0 + i * cw + cw / 2} y={y + LH - 4} lines={[h1, h2].filter(Boolean)} anchor="middle" sub />,
+      );
+    });
+    if (bi === 0) els.push(<SvgLines key="och" x={overX + OVER / 2 - 4} y={y + LH - 4} lines={["overall"]} anchor="middle" sub />);
+    y += 2 * LH + 2;
+    judges.forEach((j) => {
+      els.push(<SvgText key={`jl${bi}${j}`} x={12} y={y + rowH / 2 + 5}>{j}</SvgText>);
+      block.forEach((id, i) => {
+        const x = cells0 + i * cw;
+        const v = wave.judges[j].by_subject[id];
+        els.push(<rect key={`c${j}${id}`} className="pf-cell" x={x} y={y} width={cw} height={rowH} />);
+        if (id === j || v === undefined) {
+          els.push(<rect key={`o${j}${id}`} className="pf-hatch" x={x} y={y} width={cw} height={rowH} />);
+        } else {
+          const half = cw / 2 - 5;
+          const len = (Math.abs(v) / maxAbs) * half;
+          els.push(
+            <g key={`v${j}${id}`}>
+              <SvgText x={x + cw / 2} y={y + 16} anchor="middle">{signed(v)}</SvgText>
+              <line className="pf-axis" x1={x + cw / 2} x2={x + cw / 2} y1={y + 21} y2={y + 31} />
+              <rect className="pf-fill" x={v >= 0 ? x + cw / 2 : x + cw / 2 - len} y={y + 23} width={Math.max(len, 1)} height={6} />
+            </g>,
+          );
+        }
+      });
+      if (bi === 0) {
+        const ov = wave.judges[j].leniency_vs_item_mean;
+        const half = OVER / 2 - 8;
+        const cx = overX + OVER / 2 - 4;
+        const len = (Math.abs(ov) / maxAbs) * half;
         els.push(
-          <g key={`v${j}${id}`}>
-            <SvgText x={x + cw / 2} y={y + 16} anchor="middle">{signed(v)}</SvgText>
-            <line className="pf-axis" x1={x + cw / 2} x2={x + cw / 2} y1={y + 21} y2={y + 31} />
-            <rect className="pf-fill" x={v >= 0 ? x + cw / 2 : x + cw / 2 - len} y={y + 23} width={Math.max(len, 1)} height={6} />
+          <g key={`ov${j}`}>
+            <rect className="pf-cell" x={overX} y={y} width={OVER - 8} height={rowH} />
+            <SvgText x={cx} y={y + 16} anchor="middle">{signed(ov)}</SvgText>
+            <line className="pf-axis" x1={cx} x2={cx} y1={y + 21} y2={y + 31} />
+            <rect className="pf-fill" x={ov >= 0 ? cx : cx - len} y={y + 23} width={Math.max(len, 1)} height={6} />
           </g>,
         );
       }
+      y += rowH;
     });
-    const ov = wave.judges[j].leniency_vs_item_mean;
-    const half = OVER / 2 - 8;
-    const cx = overX + OVER / 2 - 4;
-    const len = (Math.abs(ov) / maxAbs) * half;
-    els.push(
-      <g key={`ov${j}`}>
-        <rect className="pf-cell" x={overX} y={y} width={OVER - 8} height={rowH} />
-        <SvgText x={cx} y={y + 16} anchor="middle">{signed(ov)}</SvgText>
-        <line className="pf-axis" x1={cx} x2={cx} y1={y + 21} y2={y + 31} />
-        <rect className="pf-fill" x={ov >= 0 ? cx : cx - len} y={y + 23} width={Math.max(len, 1)} height={6} />
-      </g>,
-    );
-    y += rowH;
+    y += 6;
   });
   void gridTop;
   y += 8;
@@ -794,11 +1058,11 @@ export function JudgeFigure({ wave, number }: { wave: PilotWave; number: number 
     const a = wave.subjects[id].judge_agreement;
     els.push(
       <g key={`bj${id}`}>
-        <Glyph kind={shapeFor(wave, id)} cx={BX0 + 6} cy={y + 8} r={5} />
+        <Glyph kind={shapeFor(wave, id)} cx={BX0 + 6} cy={y + 8} r={5} hollow={isSecondaryArm(wave, id)} />
         <SvgText x={BX0 + 18} y={y + 14}>{id}</SvgText>
         <SvgText x={BX1} y={y + 14} anchor="end" sub>{`MAD ${a.mean_absolute_difference.toFixed(2)} · ${a.responses_differing_by_2_or_more} differed by 2 or more`}</SvgText>
         <line className="pf-grid" x1={BX0} x2={BX1} y1={y + 28} y2={y + 28} />
-        <Glyph kind={shapeFor(wave, id)} cx={bx(a.exact * 100)} cy={y + 28} r={6} />
+        <Glyph kind={shapeFor(wave, id)} cx={bx(a.exact * 100)} cy={y + 28} r={6} hollow={isSecondaryArm(wave, id)} />
       </g>,
     );
     y += 40;

@@ -183,9 +183,11 @@ export default async function ReportPage({ params }: { params: Promise<{ runId: 
                         <h2 id="data-and-citation">Data and citation</h2>
                         <p>
                           Every figure on this page comes from one public data file for this run.{" "}
-                          {hasGroups
-                            ? "The file gives 95% ranges for every model. Point estimates for the models the test could not separate are withheld there, as they are here, because their order would read as a ranking."
-                            : "The file gives the 95% ranges and the separation results."}
+                          {wave.derived.display_rule
+                            ? "The file gives 95% ranges for every model. Point estimates are withheld there, as they are here, for every model except one that the corrected comparison separated, because their order would read as a ranking. Point differences that involve a withheld model are withheld too."
+                            : hasGroups
+                              ? "The file gives 95% ranges for every model. Point estimates for the models the test could not separate are withheld there, as they are here, because their order would read as a ranking."
+                              : "The file gives the 95% ranges and the separation results."}
                         </p>
                         <ul>
                           <li>

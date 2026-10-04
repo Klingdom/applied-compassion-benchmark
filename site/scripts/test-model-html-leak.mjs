@@ -20,13 +20,18 @@ import { harness, haveOut, OUT_DIR, WAVES_DIR, TREE_ONLY } from "./lib/html-gate
 import { leakProblems, withheldValues, loadWaves, aiModelsFiles, hasToken } from "./lib/model-report-html-gates.mjs";
 import { makeNaming } from "./lib/model-report.mjs";
 import { renderableEntries } from "./lib/pilot-render-gate.mjs";
+import { ownerWaveOf } from "./lib/model-machine-leak.mjs";
+import { projectWavePublic } from "./lib/model-benchmark-public.mjs";
+import { numericLeaves } from "./lib/model-machine-leak.mjs";
+import { maskPublishedRanges, stripSvgGeometry } from "./lib/model-report-html-gates.mjs";
 import { goodReportHtml, plainIndexHtml, injectBody } from "./lib/model-report-html-fixtures.mjs";
 
 const h = harness("test-model-html-leak");
 const { manifest, waves } = loadWaves(WAVES_DIR);
 await h.check("a committed wave exists to test against", () => h.assert(waves.length > 0, "no committed wave"));
 // The full probe set below needs a wave with a separated model; a wave with none (every subject in one not-separated group) has its own section.
-const wave = waves.find((x) => x.derived.separated_subjects.length > 0) ?? waves[0];
+// (An arms wave also has a separated subject, but its withholding rule is wider; it has its own section below.)
+const wave = waves.find((x) => x.derived.separated_subjects.length > 0 && x.derived.display_rule === undefined) ?? waves[0];
 const w = withheldValues(wave);
 if (!TREE_ONLY) {
 await h.check("the wave has a not-separated group and a separated model (otherwise the probes prove nothing)", () => h.assert(w.members.length > 0 && w.sep.size > 0 && w.bounds.length > 0, "wave shape"));
@@ -83,7 +88,7 @@ h.trips("a band name beside a model name on /ai-models", idx(plainIndexHtml(`<p>
 // ---------------------------------------------------------------------------------------------------------
 const { syntheticWave } = await import("./lib/model-report-fixtures.mjs");
 const noSepWaves = [
-  ...waves.filter((x) => x.derived.separated_subjects.length === 0).map((x) => [`committed ${x.run_id}`, x]),
+  ...waves.filter((x) => x.derived.separated_subjects.length === 0 && x.derived.display_rule === undefined).map((x) => [`committed ${x.run_id}`, x]),
   ["synthetic (dotted ids)", syntheticWave({ runId: "wave-2029-05-05", clusters: [[["orion1.5-9b", 40.1], ["vega2.0-3b", 42.0]]], dims: ["KIN", "LIS", "NOT", "PLA", "REF", "TRU"], excluded: null, local: true, reversePairs: true, seed: 5 })],
 ];
 await h.check("at least one committed wave has no separated model (the planted probes below are then about the real second pilot)", () => h.assert(noSepWaves.some(([n]) => n.startsWith("committed")), "no committed wave without a separated model"));
@@ -135,6 +140,74 @@ for (const [label, wv] of noSepWaves) {
   h.trips("the range of the group's points printed in prose (for a group of two it is both points)", repN(injectBody(goodN, `<p>The group ran from ${gr[0].toFixed(1)} to ${gr[1].toFixed(1)}.</p>`)), "G19-member-composite");
 }
 
+// ---------------------------------------------------------------------------------------------------------
+// ARMS waves (template amendment 16): one primary-arm variant separated after correction keeps its point; the not-separated group and every
+// variant of the secondary arm show ranges only; no point difference that involves a withheld variant appears. Run on the committed third
+// pilot and on a synthetic arms wave.
+// ---------------------------------------------------------------------------------------------------------
+const { syntheticArmsWave } = await import("./lib/model-report-fixtures.mjs");
+const armsWaves = [
+  ...waves.filter((x) => x.derived.display_rule !== undefined).map((x) => [`committed ${x.run_id}`, x]),
+  ["synthetic arms wave", syntheticArmsWave()],
+];
+await h.check("at least one committed wave is an arms wave (the planted probes below are then about the real third pilot)", () => h.assert(armsWaves.some(([n]) => n.startsWith("committed")), "no committed arms wave"));
+const escRe2 = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+for (const [label, wv] of armsWaves) {
+  const ww = withheldValues(wv);
+  const d = wv.derived;
+  const sepId = d.separated_subjects[0];
+  const sepTok = wv.subjects[sepId].pilot_composite.toFixed(1);
+  h.section(`G19 for an arms wave: ${label}`);
+  await h.check("the withheld set is the group plus the secondary arm, and one separated variant keeps its point", () => h.assert(JSON.stringify(ww.members) === JSON.stringify(d.point_withheld_subjects) && ww.sep.size === 1 && ww.separatedComposites.length > 0, "wave shape"));
+  const goodA = await goodReportHtml(wv);
+  const repA = (html) => leakProblems({ html, wave: wv, kind: "report" });
+  const idxA = (html) => leakProblems({ html, wave: wv, kind: "index" });
+  h.clean("a good report page: ranges only for the group and the secondary arm, the separated variant's point in its labelled cell", repA(goodA));
+  await h.check("POSITIVE CONTROL: the separated variant's point is on the page, in its Point estimate cell", () => h.assert(goodA.includes(`<td>${sepTok}</td>`), "separated point absent from the good page"));
+  h.clean("a good /ai-models page passes", idxA(plainIndexHtml()));
+  for (const id of d.point_withheld_subjects) {
+    const arm = d.range_only_subjects.includes(id) ? "secondary arm" : "group";
+    const tok = wv.subjects[id].pilot_composite.toFixed(1);
+    const sensTok = wv.sensitivity.subjects[id].pilot_composite.toFixed(1);
+    const dimMean = Object.values(wv.subjects[id].dimensions)[0].toFixed(2);
+    const own = (html, text) => html.replace(new RegExp(`(${escRe2(id)} <span>[^<]*</span></td><td>[^<]*</td><td>)not shown`), `$1${text}`);
+    h.trips(`${id} (${arm}): its point in the Point estimate cell of its own row`, repA(own(goodA, tok)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its point in prose`, repA(injectBody(goodA, `<p>${id} reached ${tok} in the pilot.</p>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its point in a heading`, repA(injectBody(goodA, `<h3>${tok}</h3>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its point inside the SVG text`, repA(injectBody(goodA, `<svg role="img"><text x="1" y="1">${tok}</text></svg>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its point in an aria-label`, repA(injectBody(goodA, `<svg role="img" aria-label="${id} ${tok}"></svg>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its point in JSON-LD`, repA(goodA.replace("</head>", `<script type="application/ld+json">${JSON.stringify({ "@type": "Report", abstract: `It was ${tok}.` })}</script></head>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its judge-sensitivity point in prose`, repA(injectBody(goodA, `<p>${id} moved to ${sensTok}.</p>`)), "G19-member-composite");
+    h.trips(`${id} (${arm}): its dimension mean in the dimension table (even under a Point estimate header)`, repA(injectBody(goodA, `<figure id="fig-dimensions"><table><thead><tr><th>Dimension</th><th>${id} (tier) Point estimate (mean)</th></tr></thead><tbody><tr><td>KIN</td><td>${dimMean}</td></tr></tbody></table></figure>`)), "G19-member-dimension-mean");
+    h.trips(`${id} (${arm}): its point on /ai-models`, idxA(plainIndexHtml(`<p>${tok}</p>`)), "G19-member-composite");
+    h.clean(`${id} (${arm}): its own 95% range in prose passes (an end of it may equal another variant's withheld point; a range phrase is a published figure)`, repA(injectBody(goodA, `<p>${id} has a range of ${wv.subjects[id].pilot_composite_interval95[0].toFixed(1)} to ${wv.subjects[id].pilot_composite_interval95[1].toFixed(1)}.</p>`)));
+  }
+  await h.check("the scan is not vacuous about coincidences: some published range end equals a withheld point of this wave, and a bare planted copy is still caught", () => {
+    const ends = new Set(Object.values(wv.subjects).flatMap((s) => s.pilot_composite_interval95.map((v) => v.toFixed(1))));
+    const hit = ww.memberComposites.find((t) => ends.has(t));
+    if (!hit) return; // the wave has no such coincidence (the synthetic one): nothing to prove here
+    h.assert(repA(injectBody(goodA, `<p>The pilot gave ${hit}.</p>`)).some((x) => x.includes("G19-member-composite")), "a bare coincident point was not caught");
+  });
+  // Point differences that involve a withheld variant: every list, separated pair or not (amendment 16).
+  const pairs = ww.withheldDifferencePairs;
+  await h.check("withheld point differences exist for this wave", () => h.assert(pairs.length > 0, "none"));
+  const sepPair = pairs.find((q) => (q.a === sepId || q.b === sepId));
+  const bPair = pairs.find((q) => d.range_only_subjects.includes(q.a) && d.range_only_subjects.includes(q.b));
+  for (const [what, q] of [["a separated primary-arm pair (the separated variant against a group member)", sepPair], ["a secondary-arm pair", bPair]]) {
+    if (!q) continue;
+    h.trips(`${what}: its point difference in a table row`, repA(injectBody(goodA, `<table><thead><tr><th>Pair</th><th>Point estimate</th></tr></thead><tbody><tr><td>${q.a} minus ${q.b}</td><td>${q.tok}</td></tr></tbody></table>`)), "G19-withheld-difference");
+    h.trips(`${what}: its point difference in prose beside both names`, repA(injectBody(goodA, `<p>${q.a} minus ${q.b} was ${q.tok}.</p>`)), "G19-withheld-difference");
+    h.trips(`${what}: the same difference written with a minus sign`, repA(injectBody(goodA, `<p>${q.b} minus ${q.a} was −${q.tok}.</p>`)), "G19-withheld-difference");
+  }
+  const cmpB = (wv.comparisons ?? []).find((c) => c.kind === "arm");
+  if (cmpB) h.trips("a build's B minus A point difference beside the build's two variants", repA(injectBody(goodA, `<p>${cmpB.a} minus ${cmpB.b} was ${Math.abs(cmpB.difference).toFixed(1)}.</p>`)), "G19-withheld-difference");
+  h.clean("a withheld pair's RANGE beside its names passes", repA(injectBody(goodA, `<p>${sepPair.a} minus ${sepPair.b} has a range of ${wv.pairwise.find((q) => q.a === sepPair.a && q.b === sepPair.b)?.interval95.map((v) => v.toFixed(1)).join(" to ") ?? "0.0 to 1.0"}.</p>`)));
+  h.trips("the range of the group's points printed in prose", repA(injectBody(goodA, `<p>The group ran from ${d.not_separated_group_range[0].toFixed(1)} to ${d.not_separated_group_range[1].toFixed(1)}.</p>`)), "G19-member-composite");
+  h.trips("the separated variant's point in prose (it appears only in its labelled cell)", repA(injectBody(goodA, `<p>${sepId} came in at ${sepTok}.</p>`)), "G19-point-outside-cell");
+  h.trips("a band name beside a variant", repA(injectBody(goodA, `<p>${sepId} is Established.</p>`)), "G19-band-beside-model");
+  h.trips("an interval end on /ai-models", idxA(plainIndexHtml(`<p>${wv.subjects[d.point_withheld_subjects[0]].pilot_composite_interval95[0].toFixed(1)}</p>`)), "G19-index-figure");
+}
+
 }
 
 h.section("the built tree in site/out");
@@ -146,11 +219,16 @@ if (haveOut(h)) {
     const wk = withheldValues(wv);
     for (const f of files) {
       const text = readFileSync(join(OUT_DIR, f), "utf8");
+      // A page of ANOTHER wave publishes that wave's own numbers; one decimal makes it likely that one equals this wave's withheld point.
+      const owner = ownerWaveOf(f, waves);
+      const foreign = owner && owner.run_id !== wv.run_id ? owner : null;
+      const explained = foreign ? new Set(numericLeaves(projectWavePublic(foreign)).map((l) => Math.abs(l.value))) : new Set();
       if (f.endsWith(".txt") || f.endsWith(".md")) { // RSC payloads and the markdown alternates (the machine-leak test applies the full machine rules to the .md files too)
         // RSC payloads: the strict, context-free rule (a member's composite, any wave) applies.
         await h.check(`${f} (payload, ${wv.run_id})`, () => {
           // A rate written as a percent that shares its digits with a withheld value (a self-run statistic, say) is not a score; a model named beside it still is.
-          const bad = wk.memberComposites.filter((tok) => hasToken(text, tok, { naming: makeNaming(wv), allowPercent: !f.startsWith("ai-models/reports/") }));
+          const seen = maskPublishedRanges(stripSvgGeometry(text), [wv, ...(owner ? [owner] : [])]);
+          const bad = wk.memberComposites.filter((tok) => !explained.has(Number(tok)) && hasToken(seen, tok, { naming: makeNaming(wv), allowPercent: !f.startsWith("ai-models/reports/") }));
           h.assert(bad.length === 0, `member composite(s) ${bad.join(", ")} in the payload`);
         });
         examined += 1;
@@ -158,7 +236,7 @@ if (haveOut(h)) {
       }
       const isThisReport = f === `ai-models/reports/${wv.run_id}.html`;
       await h.check(`${f} (${wv.run_id})`, () => {
-        const p = leakProblems({ html: text, wave: wv, kind: isThisReport ? "report" : "index" });
+        const p = leakProblems({ html: text, wave: wv, kind: isThisReport ? "report" : "index", owner: foreign });
         h.assert(p.length === 0, p.slice(0, 6).join(" | "));
       });
       examined += 1;

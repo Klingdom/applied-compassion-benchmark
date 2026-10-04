@@ -19,12 +19,12 @@ import { createRequire, register } from "node:module";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { harness, SITE, WAVES_DIR } from "./lib/html-gate-harness.mjs";
-import { loadWaves, withheldValues, textBlocks } from "./lib/model-report-html-gates.mjs";
+import { loadWaves, withheldValues, textBlocks, maskPublishedRanges } from "./lib/model-report-html-gates.mjs";
 import { reportsIndexRenders, REPORTS_INDEX_MIN } from "./lib/pilot-render-gate.mjs";
 import { compileReport, lexiconProblems } from "./lib/model-report.mjs";
 import { readDimensionNames } from "./lib/dimension-names.mjs";
 import {
-  buildModelBenchmarkIndex, dataDirs, loadFacts, loadRenderedReports, markdownUrlFor, patchWellKnown,
+  buildModelBenchmarkIndex, buildLlmsFull, dataDirs, loadFacts, loadRenderedReports, markdownUrlFor, patchWellKnown,
   pilotCaveats, reportMarkdown, reportUrlFor, separationWords, sortReports, waveUrlFor, INDEX_JSON_URL, LLMS_FULL_URL, REPORTS_INDEX_URL, notSeparatedMembers,
 } from "./lib/model-benchmark-public.mjs";
 
@@ -78,7 +78,7 @@ function indexProblems(idx, { reports, indexPage }) {
     const sha = w.preregistration?.sha256 ?? w.design.preregistration_sha256;
     if ((sha ?? null) !== (r.preregistration_sha256 ?? null)) p.push(`${r.run_id}.preregistration_sha256 differs from the wave`);
     const text = JSON.stringify(r);
-    for (const tok of tokensOf(w)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(text)) p.push(`${r.run_id}: a not-separated model's point ${tok} appears in the index`);
+    for (const tok of tokensOf(w)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(maskPublishedRanges(text, w))) p.push(`${r.run_id}: a not-separated model's point ${tok} appears in the index`);
     if ("subjects" in r && r.subjects.some((s) => "pilot_composite" in s)) p.push(`${r.run_id}: a subject carries a figure`);
   }
   if ((idx.links?.reports_index ?? null) !== (indexPage ? REPORTS_INDEX_URL : null)) p.push("links.reports_index must be set exactly when the reports index page renders");
@@ -158,7 +158,7 @@ function fullProblems(text, reports) {
       const [lo, hi] = w.subjects[id].pilot_composite_interval95;
       if (!block.includes(`${id}: 95% range ${lo.toFixed(1)} to ${hi.toFixed(1)}`)) p.push(`${w.run_id}: ${id} lacks its 95% range`);
     }
-    for (const tok of tokensOf(w)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(text)) p.push(`${w.run_id}: a not-separated model's point ${tok} is in llms-full.txt`);
+    for (const tok of tokensOf(w)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(maskPublishedRanges(text, reports.map((x) => x.wave)))) p.push(`${w.run_id}: a not-separated model's point ${tok} is in llms-full.txt`);
     for (const id of w.derived.separated_subjects) if (new RegExp(`(?<![0-9])${w.subjects[id].pilot_composite.toFixed(1).replace(".", "\\.")}(?![0-9])`).test(block)) p.push(`${w.run_id}: llms-full.txt gives a point where only ranges are listed`);
   }
   return p;
@@ -188,7 +188,7 @@ function markdownProblems(md, report, wave) {
   if (body !== expected) p.push("the markdown body is not exactly the compiled sections");
   if (md.includes("{{")) p.push("an unresolved token");
   if (!md.includes(`run_id: ${report.run_id}`) || !md.includes("status: unofficial pilot")) p.push("header lacks run_id or status");
-  for (const tok of tokensOf(wave)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(md)) p.push(`a not-separated model's point ${tok} is in the markdown`);
+  for (const tok of tokensOf(wave)) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(maskPublishedRanges(md, wave))) p.push(`a not-separated model's point ${tok} is in the markdown`);
   return p;
 }
 for (const r of rendered) {
@@ -345,6 +345,82 @@ for (const r of rendered) {
     for (const tok of withheldValues(r.wave).allComposites) h.assert(!new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(c.citation), `a figure ${tok} in the citation`);
   });
 }
+// ----------------------------------------------------------------------------------------------------- h) arms wave (amendment 16)
+// The third pilot has no narrative yet, so it renders nothing in this build; its machine-readable surface is still built and checked here from
+// its committed wave, and the methodology table is rendered from a scratch copy of the waves that holds a stub narrative for it.
+h.section("h) an arms wave: index, llms-full, markdown header, .well-known and the methodology table");
+{
+  const armsWaves = loadWaves(WAVES_DIR).waves.filter((x) => x.derived.display_rule !== undefined);
+  await h.check("a committed arms wave exists", () => h.assert(armsWaves.length > 0, "none"));
+  for (const aw of armsWaves) {
+    const reports = [{ wave: aw, title: `Title of ${aw.run_id}` }];
+    const idx = buildModelBenchmarkIndex({ reports, facts, reportsIndexRenders: false });
+    h.clean(`${aw.run_id}: the index entry is consistent with the wave (separation, withheld set, caveats, lexicon)`, indexProblems(idx, { reports, indexPage: false }));
+    const entry = idx.pilot_reports[0];
+    await h.check(`${aw.run_id}: the index names the display rule and the secondary-arm variants, and lists every variant with its arm and trials`, () => {
+      h.assert(entry.separation.display_rule === aw.derived.display_rule.text, "display rule");
+      h.assert(JSON.stringify(entry.separation.range_only_subjects) === JSON.stringify([...aw.derived.range_only_subjects].sort(alpha)), "range-only subjects");
+      h.assert(entry.subjects.every((s) => s.arm === aw.design.arms[s.label].arm && s.trials === aw.design.arms[s.label].trials), "subject arms");
+      h.assert(JSON.stringify(entry.separation.point_estimates_withheld_for) === JSON.stringify(aw.derived.point_withheld_subjects), "withheld list is not derived.point_withheld_subjects");
+    });
+    await h.check(`${aw.run_id}: the separation words say corrected, name the pairs separated only without correction as that, and state the secondary arm's ranges only`, () => {
+      const words = separationWords(aw);
+      h.assert(/after correction for multiple comparisons/.test(words) && /separated only without correction/.test(words) && /secondary arm/.test(words) && /ranges only/.test(words), words);
+      for (const [a, b] of aw.derived.separated_uncorrected_only_pairs) h.assert(words.includes(`${a} and ${b}`), `${a}/${b} missing`);
+      h.assert(lexiconProblems(words, aw).length === 0, "lexicon");
+    });
+    await h.check(`${aw.run_id}: the caveats name the two arms, the template-dependent system message, and no scorecard for the secondary arm`, () => {
+      const c = pilotCaveats(aw).join(" ");
+      h.assert(/twice, with and without a length instruction/.test(c) && /differs by each build's own template/.test(c) && /no server scorecard/.test(c), c);
+    });
+    const full = buildLlmsFullText(reports);
+    h.clean(`${aw.run_id}: llms-full.txt has caveats first, a range for every variant, and no withheld point`, fullProblems(full, reports));
+    await h.check(`${aw.run_id}: llms-full.txt lists every pre-registered comparison as ranges and carries the display rule`, () => {
+      for (const c of aw.comparisons) h.assert(full.includes(`${c.a} and ${c.b}`), `${c.a}/${c.b} missing`);
+      h.assert(full.includes(aw.derived.display_rule.text) && /trials per model: /.test(full), "display rule or trials");
+      h.assert(!/composite/i.test(full.slice(full.indexOf("Pre-registered comparisons"))), "a composite in the comparisons block");
+    });
+    h.trips(`${aw.run_id}: llms-full.txt with a secondary-arm variant's point added`, fullProblems(`${full}${NL}${tokensOf(aw).find((t) => aw.derived.range_only_subjects.some((id) => aw.subjects[id].pilot_composite.toFixed(1) === t))}`, reports), "point");
+    const wkArms = patchWellKnown(wk, { facts, reports, reportsIndexRenders: false });
+    h.clean(`${aw.run_id}: the descriptor lists the arms report with its three URLs`, wellKnownProblems(wkArms, reports, false));
+  }
+  // The methodology table, rendered from a scratch copy of the waves with a stub narrative for the arms wave only.
+  const { mkdtempSync, mkdirSync, cpSync, writeFileSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const scratch = mkdtempSync(join(tmpdir(), "cb-analysis-"));
+  try {
+    mkdirSync(join(scratch, "src", "data", "model-benchmark", "reports"), { recursive: true });
+    cpSync(WAVES_DIR, join(scratch, "src", "data", "model-benchmark", "waves"), { recursive: true });
+    for (const aw of armsWaves) writeFileSync(join(scratch, "src", "data", "model-benchmark", "reports", `${aw.run_id}.md`), "---\ntitle: t\n---\n");
+    const probe = spawnSync(process.execPath, ["--no-warnings", join(SITE, "scripts", "lib", "render-analysis-probe.mjs")], { cwd: scratch, encoding: "utf8" });
+    await h.check("the methodology table renders for an arms wave", () => h.assert(probe.status === 0 && probe.stdout.length > 1000, (probe.stderr || "no output").slice(0, 300)));
+    const t = textBlocks(probe.stdout).join(NL);
+    for (const aw of armsWaves) {
+      await h.check(`${aw.run_id}: the pilot column describes a fresh conversation per item, an explicit system message per arm (verbatim), the template placement, two arms with their trials, and the corrected comparisons`, () => {
+        h.assert(/own fresh conversation/.test(t), "fresh conversation");
+        const msgs = [...new Set(Object.values(aw.design.arms).map((a) => a.system_message))];
+        for (const m of msgs) h.assert(t.includes(m), `system message "${m}" not shown`);
+        h.assert(/explicit system message/i.test(t) && /sits in the prompt differs by each build's own template/.test(t), "template placement");
+        h.assert(/Arm A: three trials per item; arm B: one trial per item/.test(t), "trials per arm");
+        h.assert(/Bonferroni correction over the primary arm's pairs/.test(t) && /secondary arm has one trial per item and shows ranges only/.test(t), "corrected comparisons");
+        h.assert(/once per build rather than per arm, through the cb-probe MCP server/.test(t), "contamination per build");
+        h.assert(!/up to 1\b/.test(t), "a parts-of-one phrase");
+      });
+      await h.check(`${aw.run_id}: the table names no variant and states no figure of the wave`, () => {
+        const bad = [];
+        for (const id of aw.design.subjects) if (new RegExp(`(?<![A-Za-z0-9])${id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![A-Za-z0-9])`, "i").test(t)) bad.push(id);
+        for (const tok of [...withheldValues(aw).allComposites, ...withheldValues(aw).allIntervalEnds]) if (new RegExp(`(?<![0-9])${tok.replace(".", "\\.")}(?![0-9])`).test(t)) bad.push(tok);
+        h.assert(bad.length === 0, `found ${bad.join(", ")}`);
+      });
+    }
+  } finally {
+    rmSync(scratch, { recursive: true, force: true });
+  }
+}
+function buildLlmsFullText(reports) {
+  return buildLlmsFull({ reports, facts, reportsIndexRenders: false });
+}
+
 h.finish();
 
 function asPilot(w) { return { ...w, status: "pilot", official: false, comparability: "none" }; }

@@ -116,7 +116,7 @@ function itemsPerConversationMax(runId, design) {
  * (parsed, not retyped) and the model families in its run-config.json. Both are inputs beside analysis.json; neither
  * is edited here. The pre-registration was not committed before the data existed (see PREREGISTRATION_NOTE in the library).
  */
-function provenanceOf(runId) {
+function provenanceOf(runId, { arms = false } = {}) {
   const prereg = join(RUNS, runId, "PREREGISTRATION.md");
   const cfg = join(RUNS, runId, "run-config.json");
   if (!existsSync(prereg)) fail(`${prereg} not found (needed for subject provenance)`);
@@ -130,6 +130,14 @@ function provenanceOf(runId) {
     subjects: Object.fromEntries((config.subjects ?? []).map((s) => [s.label, s.family])),
   };
   const prov = { subjects: lib.parsePreregSubjects(text), runtime, families, preregistration_committed_before_data: false };
+  // A run whose plan was committed and pushed before any reply existed says so in run-config.json (preregistration.committed_before_data).
+  // Absent or false, the exporter keeps the default (not committed before the data), so a wave exported before this field existed does not change.
+  if (config.preregistration?.committed_before_data === true) prov.preregistration_committed_before_data = true;
+  // An arms run publishes its system messages verbatim (each variant's own text, else the run-wide one); the exporter checks each against its hash.
+  if (arms) {
+    prov.system_messages = Object.fromEntries((config.subjects ?? []).map((s) => [s.label, s.system_message ?? config.system_message]));
+    for (const [label, m] of Object.entries(prov.system_messages)) if (typeof m !== "string") fail(`${cfg}: no system message for subject ${label} (neither subjects[].system_message nor system_message)`);
+  }
   // The hash of the plan as written (before any deviation was appended), when the run recorded it. Optional, so a run
   // without it exports exactly as before.
   const asWritten = config.preregistration?.as_written_sha256;
@@ -146,7 +154,7 @@ function regenerate(runId) {
   const analysis = JSON.parse(readFileSync(aPath, "utf8"));
   if (analysis.run_id !== runId) fail(`analysis.run_id "${analysis.run_id}" != --run-id "${runId}"`);
   const ctx = { bank: { ...bank }, decision, reportDate: reportDateOf(runId), items_per_conversation_max: itemsPerConversationMax(runId, analysis.design) };
-  if (analysis.design?.subject_builds) ctx.provenance = provenanceOf(runId);
+  if (analysis.design?.subject_builds) ctx.provenance = provenanceOf(runId, { arms: lib.isArmsDesign(analysis.design) });
   const wave = lib.projectWave(analysis, ctx);
   return { wave, text: lib.serialiseWave(wave) };
 }
@@ -171,7 +179,8 @@ if (!CHECK) {
   console.log(`wrote ${target}`);
   console.log(`wrote ${MANIFEST}`);
   console.log(`status: ${wave.official ? "official" : "pilot"} comparability:${wave.comparability} decision ${wave.publication.decision_ref}: ${wave.publication.decision_status}`);
-  console.log(`derived: groups=${JSON.stringify(d.not_separated_groups)} range=${JSON.stringify(d.not_separated_group_range)} separated=${JSON.stringify(d.separated_subjects)}`);
+  // Point-valued derived fields are not printed for an arms wave: the console is not a place amendment 16's withheld points belong.
+  console.log(`derived: groups=${JSON.stringify(d.not_separated_groups)} separated=${JSON.stringify(d.separated_subjects)}${d.display_rule ? ` range_only=${JSON.stringify(d.range_only_subjects)} display_rule=amendment ${d.display_rule.amendment}` : ` range=${JSON.stringify(d.not_separated_group_range)}`}`);
   console.log(`sensitivity: pattern_unchanged=${wave.sensitivity.separation_pattern_unchanged} level_shift_group_range=${JSON.stringify(d.sensitivity_level_shift_group_range)} level_shift=${JSON.stringify(d.sensitivity_level_shift)}`);
   console.log(`bank: served=${wave.bank.items_served} not_served=${wave.bank.items_not_served} (sensitive ${wave.bank.items_not_served_sensitive}, unreviewed ${wave.bank.items_not_served_unreviewed}); items_per_conversation_max=${wave.design.items_per_conversation_max}`);
   process.exit(0);

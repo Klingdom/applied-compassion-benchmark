@@ -113,6 +113,33 @@ try {
       assert(r.status !== 0, "a flipped separation flag passed");
     });
   }
+  // An ARMS wave (template amendment 16) carries system messages parsed from run-config.json, pre-declared comparisons, length verdicts and
+  // the display rule; a hand edit of any of them must fail the check.
+  const armsIds = manifest.map((e) => e.run_id).filter((id) => JSON.parse(readFileSync(join(WAVES, `${id}.json`), "utf8")).derived?.display_rule !== undefined);
+  await check("at least one committed wave is an arms wave (the arms controls are not vacuous)", () => assert(armsIds.length > 0, "no committed arms wave"));
+  for (const id of armsIds) {
+    await check(`NC ${id}: a system message edited by hand is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"system_message": "[^"]*"/, '"system_message": "Edited message."')));
+      assert(r.status !== 0 && /differs from regeneration/.test(r.stderr), `not caught: ${r.stderr}`);
+      console.log(`         ${first(r)}`);
+    });
+    await check(`NC ${id}: a corrected-separation flag flipped by hand is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/("bonferroni": \{[^}]*?"separated": )(true|false)/, (m, a, v) => `${a}${v === "true" ? "false" : "true"}`)));
+      assert(r.status !== 0, "a flipped corrected flag passed");
+    });
+    await check(`NC ${id}: the display rule edited by hand is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"text": "The pre-registration reports/, '"text": "Edited. The pre-registration reports')));
+      assert(r.status !== 0 && /differs from regeneration/.test(r.stderr), `not caught: ${r.stderr}`);
+    });
+    await check(`NC ${id}: a length verdict flipped by hand is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"length_instruction": "(?:in)?effective"/, (m) => (m.includes('"ineffective"') ? '"length_instruction": "effective"' : '"length_instruction": "ineffective"'))));
+      assert(r.status !== 0, "a flipped length verdict passed");
+    });
+    await check(`NC ${id}: the pre-registration's committed-before-data claim flipped by hand is caught`, () => {
+      const r = runIn(plant(`${id}.json`, (t) => t.replace(/"committed_before_data": (true|false)/, (m, v) => `"committed_before_data": ${v === "true" ? "false" : "true"}`)));
+      assert(r.status !== 0, "a flipped committed_before_data passed");
+    });
+  }
   await check("NC a changed manifest entry is caught", () => {
     const r = runIn(plant("manifest.json", (t) => t.replace('"report_date": "', '"report_date": "9')));
     assert(r.status !== 0 && /manifest/.test(r.stderr), `not caught: ${r.stderr}`);

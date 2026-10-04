@@ -341,6 +341,45 @@ export function hasToken(text, tok, { naming, allowPercent = false } = {}) {
 const BARE_NUM = /^[−-]?\d+\.\d+$/;
 
 /**
+ * Every interval of the wave as the site writes a range ("lo to hi", one decimal, plain minus). A withheld point may coincide with an end of
+ * a PUBLISHED range of another subject (one decimal puts roughly twenty values under a dozen intervals); such an end, written as part of its own
+ * range phrase, is a published figure and not the withheld point. A planted point, written alone, is not a range phrase and is still found.
+ */
+export function publishedRangePhrases(waveOrWaves) {
+  const out = new Set();
+  const f = (v) => (Object.is(v, -0) ? 0 : v).toFixed(1);
+  const walkIv = (x, key = "") => {
+    if (Array.isArray(x)) {
+      if (x.length === 2 && x.every((v) => typeof v === "number" && Number.isFinite(v)) && /interval/i.test(key)) {
+        out.add(`${f(x[0])} to ${f(x[1])}`);
+        // A pair figure draws a pair "larger side first": the mirrored range of the difference is the same published figure.
+        out.add(`${f(-x[1])} to ${f(-x[0])}`);
+      } else x.forEach((v) => walkIv(v, key));
+    } else if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) walkIv(v, k);
+  };
+  for (const w of Array.isArray(waveOrWaves) ? waveOrWaves : [waveOrWaves]) walkIv(w);
+  return [...out].sort((a, b) => b.length - a.length);
+}
+
+/**
+ * An RSC payload serialises SVG geometry as data (`"points":"x1,y1 x2,y2"`, `"x":12.5`): coordinates are not figures a reader sees, and at one
+ * decimal some coincide with a withheld point. Removed before a payload is scanned; the text a reader sees (children of <text>, cells, labels) is not.
+ */
+export function stripSvgGeometry(text) {
+  return text
+    .replace(/"(?:points|d|viewBox|transform)":"[^"]*"/g, '"geom":""')
+    .replace(/"(?:x|y|x1|x2|y1|y2|cx|cy|r|rx|ry|width|height|dx|dy|fontSize|strokeWidth)":-?[0-9.]+/g, '"geom":0');
+}
+
+/** `text` with every published range phrase replaced by a space (see publishedRangePhrases). Accepts one wave or a list. */
+export function maskPublishedRanges(text, waveOrWaves) {
+  const phrases = publishedRangePhrases(waveOrWaves);
+  if (phrases.length === 0) return text;
+  const re = new RegExp(`(?<![0-9.])(?:${phrases.map((p) => escRe(p)).join("|")})(?![0-9])`, "g");
+  return text.replace(re, " ");
+}
+
+/**
  * Values an unratified or restricted page must not show, derived from the wave only.
  *  composites     point estimates of every subject (group members: never; separated: only in a
  *                 table cell under a "Point estimate" header)
@@ -362,6 +401,11 @@ export function withheldValues(wave) {
     allIntervalEnds: [...new Set(intervalEnds(subjects))],
     bounds: [...new Set(Object.values(wave.length.composite_if_pooled_slope_removed).map((v) => numTok(v)))],
     unseparatedPairs: wave.pairwise.filter((q) => !q.separated).map((q) => ({ a: q.a, b: q.b, tok: numTok(q.difference) })),
+    // Amendment 16 (arms waves): EVERY point difference that involves a withheld subject, separated or not, in every list that carries one
+    // (a separated primary-arm pair always involves a withheld subject; so does every B - A and secondary-arm comparison).
+    withheldDifferencePairs: wave.derived.display_rule
+      ? [wave.pairwise, wave.comparisons, wave.sensitivity?.pairwise].flatMap((list) => (list ?? []).filter((q) => members.includes(q.a) || members.includes(q.b)).flatMap((q) => [q.difference, q.b_minus_a?.difference].filter((v) => typeof v === "number").map((v) => ({ a: q.a, b: q.b, tok: numTok(Math.abs(v)) }))))
+      : [],
     memberDimMeans: [...new Set(members.flatMap((id) => Object.values(wave.subjects[id].dimensions).map((v) => numTok(v, 2))))],
   };
 }
@@ -370,8 +414,10 @@ export function withheldValues(wave) {
  * G19. `kind`:
  *   "report"  the report route of this wave
  *   "index"   any other /ai-models/** page while this wave renders: no per-model figure at all
+ * `owner` (optional): the wave whose own report this page is, when it is another wave's. That wave's published ranges are legitimate on it, so a
+ * range phrase of its own is not read as this wave's withheld point when the digits coincide (see publishedRangePhrases).
  */
-export function leakProblems({ html, wave, kind }) {
+export function leakProblems({ html, wave, kind, owner = null }) {
   const p = [];
   const w = withheldValues(wave);
   const naming = makeNaming(wave);
@@ -388,18 +434,28 @@ export function leakProblems({ html, wave, kind }) {
 
   // L1: group members' composites never appear, in any form.
   const pct = { naming, allowPercent: kind !== "report" };
-  for (const tok of w.memberComposites) for (const u of all) if (hasToken(u.text, tok, pct)) p.push(`G19-member-composite: ${tok} (a not-separated model's point estimate) in ${where(u)}`);
+  // On the report, a published range phrase (one subject's "lo to hi") is masked before a withheld point is looked for: one decimal makes it likely that a
+  // withheld point equals an end of another subject's published range (see publishedRangePhrases). A point written alone is still found.
+  const mu = (text) => {
+    let o = text;
+    if (kind === "report") o = maskPublishedRanges(o, wave);
+    if (owner) o = maskPublishedRanges(o, owner);
+    return o;
+  };
+  for (const tok of w.memberComposites) for (const u of all) if (hasToken(mu(u.text), tok, pct)) p.push(`G19-member-composite: ${tok} (a not-separated model's point estimate) in ${where(u)}`);
 
   if (kind === "report") {
     // L2: a separated model's point only in a cell under a "Point estimate" header.
     for (const tok of w.separatedComposites) for (const u of all) {
-      if (!tokRe(tok).test(u.text)) continue;
+      if (!tokRe(tok).test(mu(u.text))) continue;
       if (u.kind === "cell" && /point estimate/i.test(u.header) && BARE_NUM.test(u.text)) continue;
+      // A separated subject's length-removed bound can equal its own judge-sensitivity point (one decimal); beside "not an estimate" it is the bound.
+      if (w.bounds.includes(tok) && ((u.kind === "cell" && /extreme bound/i.test(u.header)) || (u.kind !== "cell" && /not an estimate|extreme bound/i.test(u.text)))) continue;
       p.push(`G19-point-outside-cell: ${tok} (a separated model's point estimate) in ${where(u)}, not in a "Point estimate" table cell`);
     }
     // L3: the length-removed bound only beside "not an estimate" / "extreme bound".
     for (const tok of w.bounds) for (const u of all) {
-      if (!tokRe(tok).test(u.text)) continue;
+      if (!tokRe(tok).test(mu(u.text))) continue;
       if (u.kind === "cell" && /extreme bound/i.test(u.header)) continue;
       if (u.kind !== "cell" && /not an estimate|extreme bound/i.test(u.text)) continue;
       p.push(`G19-bound-unlabelled: ${tok} (the length-removed bound) in ${where(u)} without "not an estimate" / "extreme bound"`);
@@ -417,13 +473,23 @@ export function leakProblems({ html, wave, kind }) {
       for (const u of units) if (proseRe.test(u.text)) p.push(`G19-unseparated-difference: ${q.tok} (point difference of ${q.a} / ${q.b}) beside the pair in ${where(u)}`);
 
     }
+    // L4b (arms waves, amendment 16): a point difference that involves a withheld subject, separated pair or not, appears nowhere beside its pair.
+    for (const q of w.withheldDifferencePairs) {
+      for (const t of tables) for (const row of t.rows) {
+        const rowText = row.map((c) => c.text).join(" | ");
+        if (rowText.includes(q.a) && rowText.includes(q.b) && row.some((c) => BARE_NUM.test(c.text) && c.text.replace(/^[−-]/, "") === q.tok)) p.push(`G19-withheld-difference: ${q.tok} (a point difference of ${q.a} / ${q.b}, which involves a withheld subject) in a table row`);
+      }
+      const names = [`${escRe(q.a)} minus ${escRe(q.b)}`, `${escRe(q.b)} minus ${escRe(q.a)}`, `difference between ${escRe(q.a)} and ${escRe(q.b)}`, `difference between ${escRe(q.b)} and ${escRe(q.a)}`];
+      const re = new RegExp(`(?:${names.join("|")})[^\n]{0,50}?(?<![0-9])[−-]?${escRe(q.tok)}(?![0-9])`);
+      for (const u of units) if (re.test(mu(u.text))) p.push(`G19-withheld-difference: ${q.tok} (a point difference of ${q.a} / ${q.b}, which involves a withheld subject) beside the pair in ${where(u)}`);
+    }
     // L6: dimension means of group members never appear in the dimension figure's table.
     for (const t of tables.filter((x) => x.figure === "fig-dimensions")) for (const row of t.rows) for (const c of row) {
       if (BARE_NUM.test(c.text) && w.memberDimMeans.includes(c.text) && w.members.some((id) => c.header.includes(id))) p.push(`G19-member-dimension-mean: ${c.text} (a not-separated model's mean) in the dimension table under "${c.header.slice(0, 50)}"`);
     }
   } else {
     // L7: no per-model figure at all outside the report.
-    for (const tok of [...w.allComposites, ...w.allIntervalEnds, ...w.bounds]) for (const u of all) if (hasToken(u.text, tok, pct)) p.push(`G19-index-figure: ${tok} (a per-model figure) in ${where(u)} on a page that is not the report`);
+    for (const tok of [...w.allComposites, ...w.allIntervalEnds, ...w.bounds]) for (const u of all) if (hasToken(mu(u.text), tok, pct)) p.push(`G19-index-figure: ${tok} (a per-model figure) in ${where(u)} on a page that is not the report`);
   }
 
   // L5: no band name beside a model name (same block, or same table row).

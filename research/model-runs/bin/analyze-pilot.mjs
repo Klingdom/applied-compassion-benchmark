@@ -42,6 +42,8 @@ if (LOCAL && CFG.run_id !== RUN) throw new Error(`run-config.json is for ${CFG.r
 const asm = LOCAL ? await import("../lib/assemble.mjs") : null;
 const jans = LOCAL ? await import("../lib/judge-answers.mjs") : null;
 const brg = LOCAL ? await import("../lib/bridge.mjs") : null;
+const { selfIdentifying } = LOCAL ? await import("../lib/judge-batches.mjs") : {};
+const { loadRunReplies } = LOCAL ? await import("../lib/run-replies.mjs") : {};
 const { computeCompositeFromDimensions, getBand } = await import(pathToFileURL(join(ROOT, "site", "scripts", "lib", "scoring.mjs")).href);
 const comp = (d) => { const c = computeCompositeFromDimensions(d); return typeof c === "number" ? c : c.composite ?? c.score; };
 const r1 = (x) => Math.round(x * 10) / 10;
@@ -454,9 +456,13 @@ const local = LOCAL ? (() => {
   const judge_validity = {
     rule: "PREREGISTRATION.md section 5: a judge whose unfound-quote rate (shared normaliser) is strictly greater than the threshold is excluded for the whole run",
     reported_as_headline: "measured_on_original_answers",
-    headline_note: "Reported first because it is the conservative reading: it is measured before the requote round replaced any quote. Section 5 as clarified by D1 states the rate is measured on the final quotes, so measured_on_final_quotes is the pre-registered measurement basis; the verdict is identical on both.",
+    // The wording is run-specific (Iteration 98): in pilot-2026-10-02 deviation D1 made the final quotes the basis; in
+    // later runs the pre-registration itself names the original-answer figure as primary (pilot-2026-10-03 section 5).
+    headline_note: CFG.run_id === "pilot-2026-10-02"
+      ? "Reported first because it is the conservative reading: it is measured before the requote round replaced any quote. Section 5 as clarified by D1 states the rate is measured on the final quotes, so measured_on_final_quotes is the pre-registered measurement basis; the verdict is identical on both."
+      : "Reported first and as the pre-registered primary measurement (PREREGISTRATION.md section 5): it is measured on the original answers, before any requote replaced a quote. The measurement on the final quotes is reported alongside; the verdict is identical on both.",
     measured_on_original_answers: shape(origV, "judge-validity.originals.json", "before any requote"),
-    measured_on_final_quotes: shape(finalV, "judge-validity.json", "after the requote round (the D1 basis)"),
+    measured_on_final_quotes: shape(finalV, "judge-validity.json", CFG.run_id === "pilot-2026-10-02" ? "after the requote round (the D1 basis)" : "after the requote rounds"),
     judges_excluded: [...(JSON.parse(readFileSync(join(R, "keys", "judge-key.reroute.json"), "utf8")).excluded_judges)],
   };
 
@@ -473,7 +479,9 @@ const local = LOCAL ? (() => {
   const signed = {};
   for (const e of bridgeById.values()) for (const j of e.judges) (signed[j] ??= []).push(newBy.get(`${e.response_id}|${j}`) - e.original_ratings[j]);
   const bridge_drift = {
-    note: `Descriptive only (PREREGISTRATION.md section 6). ${bridgeById.size} first-pilot replies, ${CFG.bridge.per_source_subject} per first-pilot subject, were re-rated in this run's batches by the judge(s) of this run that rated them in the first pilot. Bridge ratings are in no composite of either run. Different day, different session, same judge model label; the first-pilot rating is the original.`,
+    note: CFG.bridge.source_run === "pilot-2026-10-01"
+      ? `Descriptive only (PREREGISTRATION.md section 6). ${bridgeById.size} first-pilot replies, ${CFG.bridge.per_source_subject} per first-pilot subject, were re-rated in this run's batches by the judge(s) of this run that rated them in the first pilot. Bridge ratings are in no composite of either run. Different day, different session, same judge model label; the first-pilot rating is the original.`
+      : `Descriptive only (PREREGISTRATION.md section 6). ${bridgeById.size} replies from ${CFG.bridge.source_run}, ${CFG.bridge.per_source_subject} per source subject, were re-rated in this run's batches by the judge(s) of this run that rated them in ${CFG.bridge.source_run}. Bridge ratings are in no composite of either run. Different day, different session, same judge model label; the ${CFG.bridge.source_run} rating is the original.`,
     replies: bridgeById.size,
     pairs: drift.overall.pairs,
     mean_abs_difference: r3(drift.overall.mean_abs_difference),
@@ -495,10 +503,17 @@ const local = LOCAL ? (() => {
   if (deviations.length === 0) throw new Error("no deviations parsed from PREREGISTRATION.md; the section heading or line format changed");
 
   // Replies whose text names their own model or developer (config identity_terms). They are scored like every other reply.
+  // The COUNT is a re-scan of the saved replies with the current detector (lib/self-identification.mjs), made at analysis
+  // time. It does NOT read keys/judge-key.json's self_identifying_response_ids: that list was written at batch-build time
+  // by the first detector (text.includes), which over-reported (claim audit B1, pilot-2026-10-03: 14 flagged, 1 real).
+  // The key is left as built; the replies are checked against its response_sha256 so the scan sees the judged text.
   const okey = JSON.parse(readFileSync(join(R, "keys", "judge-key.json"), "utf8"));
-  const sid = new Set(okey.self_identifying_response_ids ?? []);
+  const identityTerms = Object.fromEntries(CFG.subjects.map((s) => [s.label, Array.isArray(s.identity_terms) ? s.identity_terms.map(String) : []]));
+  const sid = new Set(selfIdentifying(loadRunReplies(R, okey), identityTerms));
   const self_identifying_replies = {
-    note: "Replies whose text contains one of the subject's identity_terms from run-config.json. A judge could infer the developer from such a reply, so blinding is weaker for these. They are scored like every other reply.",
+    note: CFG.run_id === "pilot-2026-10-02"
+      ? "Replies whose text contains one of the subject's identity_terms from run-config.json. A judge could infer the developer from such a reply, so blinding is weaker for these. They are scored like every other reply."
+      : "Replies in which the subject names itself, its model or its developer, for example 'I am Qwen' or 'trained by Alibaba Cloud': a whole-word, case-insensitive match of the subject's identity_terms from run-config.json inside a self-reference pattern (lib/self-identification.mjs), re-scanned from the saved replies at analysis time. Product names ('Google Calendar') and ordinary words do not count. The match covers names only, not style. A judge could infer the developer from such a reply, so blinding is weaker for these. They are scored like every other reply.",
     count: sid.size,
     by_subject: Object.fromEntries(SUBJ.map((s) => [s, okey.responses.filter((r) => r.subject === s && sid.has(r.response_id)).length])),
     replies: okey.responses.filter((r) => sid.has(r.response_id)).map((r) => ({ subject: r.subject, item_id: r.item_id, trial: r.trial })),

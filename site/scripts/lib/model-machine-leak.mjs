@@ -17,7 +17,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { withheldValues, extractJsonLd, listFiles, aiModelsFiles, SITE_URL } from "./model-report-html-gates.mjs";
+import { withheldValues, extractJsonLd, listFiles, aiModelsFiles, SITE_URL, maskPublishedRanges } from "./model-report-html-gates.mjs";
 import { projectWavePublic, projectionProblems, notSeparatedMembers } from "./model-benchmark-public.mjs";
 import { renderableEntries, REPORTS_INDEX_MIN } from "./pilot-render-gate.mjs";
 
@@ -51,8 +51,14 @@ export function withheldNumbers(wave) {
     for (const v of Object.values(wave.subjects[id]?.dimensions ?? {})) add(v);
     add(wave.length?.composite_if_pooled_slope_removed?.[id]);
   }
-  const pairLists = [wave.pairwise, wave.dimension_pairwise, wave.sensitivity?.pairwise];
-  for (const list of pairLists) for (const q of list ?? []) if (members.has(q.a) || members.has(q.b)) { add(q.difference); if (typeof q.difference === "number") add(-q.difference); }
+  const pairLists = [wave.pairwise, wave.dimension_pairwise, wave.sensitivity?.pairwise, wave.comparisons];
+  for (const list of pairLists) for (const q of list ?? []) if (members.has(q.a) || members.has(q.b)) {
+    add(q.difference);
+    if (typeof q.difference === "number") add(-q.difference);
+    // A B - A difference of an arms wave (the mirror of a minus b) is withheld with it.
+    add(q.b_minus_a?.difference);
+    if (typeof q.b_minus_a?.difference === "number") add(-q.b_minus_a.difference);
+  }
   for (const r of [wave.derived.not_separated_group_range, ...(wave.derived.not_separated_group_ranges ?? [])]) for (const v of r ?? []) add(v);
   return vals;
 }
@@ -92,12 +98,23 @@ export function separatedPointsPresentProblems({ text, wave, label = "public wav
  * Any other machine-readable text (markdown, llms files, descriptors, the index, JSON-LD text): no member point in any
  * form. `text` may be JSON; its numeric leaves are checked as well, because a JSON number prints without a trailing zero.
  */
-export function machineTextProblems({ text, wave, label }) {
+export function machineTextProblems({ text, wave, label, owner = null, allWaves = null }) {
   const p = [];
   const w = withheldValues(wave);
   const tokens = new Set([...w.memberComposites]);
   for (const r of [wave.derived.not_separated_group_range, ...(wave.derived.not_separated_group_ranges ?? [])]) for (const v of r ?? []) tokens.add(v.toFixed(1));
-  for (const tok of tokens) if (tokRe(tok).test(text)) p.push(`G24-member-point-token: ${tok} (a not-separated model's point estimate) in ${label}`);
+  // One decimal makes it likely that a withheld point equals a number another wave (or another subject) legitimately publishes. Two rules keep that
+  // from being read as a leak while a planted point still is one:
+  //  - an end written as part of a PUBLISHED range phrase ("lo to hi") is that published figure (publishedRangePhrases); the phrases of this wave,
+  //    of the file's owner, and (for a file that lists every wave) of every wave are masked;
+  //  - a file OWNED by another wave (its public wave file, its markdown alternate, its report page) already equals its own build (projection
+  //    equality and the compiled report), so a number that wave publishes is that wave's number, not this wave's point.
+  const masked = maskPublishedRanges(text, [wave, ...(owner ? [owner] : []), ...(allWaves ?? [])]);
+  if (owner && owner.run_id !== wave.run_id) {
+    const explained = new Set(numericLeaves(projectWavePublic(owner)).map((l) => Math.abs(l.value)));
+    for (const t of [...tokens]) if (explained.has(Number(t))) tokens.delete(t);
+  }
+  for (const tok of tokens) if (tokRe(tok).test(masked)) p.push(`G24-member-point-token: ${tok} (a not-separated model's point estimate) in ${label}`);
   let parsed = null;
   try { parsed = JSON.parse(text); } catch { /* plain text */ }
   if (parsed !== null) {
@@ -134,6 +151,17 @@ export function machineFiles(outDir) {
   return files;
 }
 
+/** The wave whose own output a built file is (its public wave file, its markdown alternate, its report page or payload), or null. */
+export function ownerWaveOf(file, waves) {
+  // By run id, longest first, so one id that prefixes another cannot claim its file.
+  for (const w of [...waves].sort((a, b) => b.run_id.length - a.run_id.length)) {
+    for (const prefix of [`data/model-waves/${w.run_id}`, `ai-models/reports/${w.run_id}`]) {
+      if (file === `${prefix}.json` || file === `${prefix}.md` || file === `${prefix}.html` || file === `${prefix}.txt` || file.startsWith(`${prefix}/`)) return w;
+    }
+  }
+  return null;
+}
+
 /**
  * Scan the real tree. Returns { problems, examined } where `examined` counts what was scanned (fail on zero).
  * Every file is checked against EVERY manifest wave (rendering or not): a withheld value of any wave must not appear anywhere.
@@ -144,10 +172,11 @@ export function scanMachineTree({ outDir, waves }) {
   for (const f of machineFiles(outDir)) {
     const text = read(outDir, f);
     examined += 1;
+    const owner = ownerWaveOf(f, waves);
     for (const wave of waves) {
       const own = f === `data/model-waves/${wave.run_id}.json`;
       if (own) problems.push(...publicWaveProblems({ text, wave, label: f }), ...separatedPointsPresentProblems({ text, wave, label: f }));
-      else problems.push(...machineTextProblems({ text, wave, label: `${f} (against ${wave.run_id})` }));
+      else problems.push(...machineTextProblems({ text, wave, label: `${f} (against ${wave.run_id})`, owner, allWaves: owner ? null : waves }));
     }
   }
   for (const f of aiModelsFiles(outDir)) {
@@ -155,7 +184,8 @@ export function scanMachineTree({ outDir, waves }) {
     const ld = jsonLdText(read(outDir, f));
     if (!ld) continue;
     examined += 1;
-    for (const wave of waves) problems.push(...machineTextProblems({ text: ld, wave, label: `JSON-LD of ${f} (against ${wave.run_id})` }));
+    const owner = ownerWaveOf(f, waves);
+    for (const wave of waves) problems.push(...machineTextProblems({ text: ld, wave, label: `JSON-LD of ${f} (against ${wave.run_id})`, owner, allWaves: owner ? null : waves }));
   }
   return { problems, examined };
 }

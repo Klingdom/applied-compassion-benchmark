@@ -61,6 +61,33 @@ const neg = (x) => (x === 0 ? 0 : -x); // never -0
 
 const cloneJson = (x) => JSON.parse(JSON.stringify(x));
 
+// ---------------------------------------------------------------------------
+// Arms runs (template amendment 16)
+// ---------------------------------------------------------------------------
+
+/**
+ * An ARMS run has `design.arms`: every subject is a (build, arm) variant, for example one build run with and without a system
+ * instruction. Its comparisons are pre-declared (`comparisons`) and its display rule is the coordinator's amendment 16.
+ */
+export const isArmsDesign = (d) => !!d && typeof d.arms === "object" && d.arms !== null && !Array.isArray(d.arms);
+
+/** The build a variant belongs to: its id without the "-<arm>" suffix ("x-3b-A" with arm "A" gives "x-3b"). */
+export const buildIdOf = (id, arm) => (typeof arm === "string" && arm && id.endsWith(`-${arm}`) ? id.slice(0, -(arm.length + 1)) : id);
+
+/** The arm that carries the primary, corrected comparison and the only points that may ever be shown. */
+export const PRIMARY_ARM = "A";
+
+/**
+ * Amendment 16 in one sentence, carried in `derived.display_rule` of every arms wave so that the rule travels with the data
+ * and every gate reads one source.
+ */
+export const DISPLAY_RULE_TEXT =
+  "The pre-registration reports an uncorrected 95% interval and a Bonferroni-corrected interval for each primary comparison and promotes neither. " +
+  "Showing a point is a more consequential public act than reporting a range, so the point display takes the stricter evidence: " +
+  "in the primary arm only a subject separated from every other subject after correction may show a point; subjects not separated after correction, " +
+  "and every variant of the secondary one-trial arm, show ranges only; no point difference that involves a withheld subject is shown. " +
+  "A pair separated only without correction may be stated in words with its uncorrected range, never as a point or an ordering.";
+
 /**
  * Orient a list of pairwise entries so that `a` sorts before `b`. An analysis may list a pair as "qwen minus
  * llama" (the pre-registered direction); the wave lists every pair alphabetically so that the order of a
@@ -115,6 +142,7 @@ export function analysisProblems(a) {
   // Quote evidence is either the first pilot's quote_grounding or the later runs' judge_validity (pre-registered rule);
   // an exclusion_record exists only when a judge was excluded (a run with no exclusion has nothing to record).
   if (a.quote_grounding === undefined && a.judge_validity === undefined) bad("A-required", "top-level quote_grounding (or judge_validity) missing");
+  if (isArmsDesign(a.design)) for (const k of ["comparisons", "length_check"]) if (a[k] === undefined) bad("A-required", `top-level ${k} missing (an arms run declares its comparisons and checks its length instruction)`);
   if (a.design && Array.isArray(a.design.excluded_judges) && a.design.excluded_judges.length > 0 && a.exclusion_record === undefined) {
     bad("A-required", "top-level exclusion_record missing although design.excluded_judges is not empty");
   }
@@ -158,7 +186,10 @@ export function analysisProblems(a) {
   const d = a.design;
   const itemSum = Object.values(a.subjects[ids[0]].dimension_item_counts).reduce((x, y) => x + y, 0);
   if (itemSum !== d.items_served) bad("A-counts", `dimension item counts sum to ${itemSum}, design.items_served is ${d.items_served}`);
-  if (d.responses !== ids.length * d.items_served * d.trials_per_subject) bad("A-counts", "design.responses != subjects x items_served x trials_per_subject");
+  const arms = isArmsDesign(d);
+  const trialsOf = (id) => (arms ? d.trials_per_subject?.[id] : d.trials_per_subject);
+  if (arms && ids.some((id) => !Number.isInteger(trialsOf(id)) || trialsOf(id) < 1)) bad("A-counts", "an arms run needs design.trials_per_subject as a map of positive integers, one per subject");
+  else if (d.responses !== ids.reduce((n, id) => n + d.items_served * trialsOf(id), 0)) bad("A-counts", "design.responses != the sum over subjects of items_served x trials");
   if (d.ratings !== d.responses * d.judges_per_response) bad("A-counts", "design.ratings != responses x judges_per_response");
 
   // pairwise: every unordered pair once, flag consistent with its own interval.
@@ -176,10 +207,13 @@ export function analysisProblems(a) {
   }
   if (seen.size !== want) bad("A-pairwise", `expected ${want} pairs, found ${seen.size}`);
 
-  const wantDim = want * dims.length;
+  // An arms run compares dimensions only inside the primary arm (the secondary arm has one trial and no dimension-level claim).
+  const primaryIds = arms ? ids.filter((i) => d.arms?.[i]?.arm === PRIMARY_ARM) : ids;
+  const wantDim = ((primaryIds.length * (primaryIds.length - 1)) / 2) * dims.length;
   const seenD = new Set();
   for (const e of a.dimension_pairwise) {
     const key = [e.a, e.b].sort(alpha).join("|") + "|" + e.dimension;
+    if (arms && !(primaryIds.includes(e.a) && primaryIds.includes(e.b))) bad("A-dim-pairwise", `${key}: an arms run compares dimensions inside the primary arm only`);
     if (seenD.has(key)) bad("A-dim-pairwise", `duplicate ${key}`);
     seenD.add(key);
     if (!dims.includes(e.dimension)) bad("A-dim-pairwise", `unknown dimension in ${key}`);
@@ -191,6 +225,115 @@ export function analysisProblems(a) {
   if (seenD.size !== wantDim) bad("A-dim-pairwise", `expected ${wantDim} dimension comparisons, found ${seenD.size}`);
   if (typeof a.dimension_pairwise_note !== "string" || !a.dimension_pairwise_note) bad("A-required", "dimension_pairwise_note empty");
   p.push(...sensitivityProblems(a.sensitivity, ids, a.pairwise, "A"));
+  if (arms) p.push(...armsProblems(a, ids, "A"));
+  return p;
+}
+
+/**
+ * The arms structure and its pre-declared comparisons, shared by analysis (prefix "A") and wave (prefix "W") validation.
+ * `x` is the analysis or the wave: both carry design.arms, comparisons, length_check, subjects (median reply words).
+ * Rule ids are `${prefix}-arms*`, `${prefix}-comparison*` and `${prefix}-length-check*`.
+ */
+export function armsProblems(x, ids, prefix) {
+  const p = [];
+  const bad = (rule, msg) => p.push(`${prefix}-${rule}: ${msg}`);
+  const arms = x.design?.arms;
+  if (!isArmsDesign(x.design)) return [`${prefix}-arms: design.arms missing`];
+  if (JSON.stringify(Object.keys(arms).sort(alpha)) !== JSON.stringify([...ids].sort(alpha))) {
+    bad("arms", "design.arms keys differ from the subjects");
+    return p;
+  }
+  const armNames = [...new Set(ids.map((i) => arms[i].arm))].sort(alpha);
+  if (JSON.stringify(armNames) !== JSON.stringify(["A", "B"])) bad("arms", `expected exactly the arms A and B, found ${armNames.join(", ")}`);
+  const sysOf = (arm) => [...new Set(ids.filter((i) => arms[i].arm === arm).map((i) => arms[i].system_message_sha256))];
+  for (const arm of armNames) if (sysOf(arm).length !== 1 || !/^[0-9a-f]{64}$/.test(sysOf(arm)[0] ?? "")) bad("arms", `arm ${arm}: every variant must carry the same system_message_sha256 (the message is identical within an arm)`);
+  if (armNames.length === 2 && sysOf("A")[0] === sysOf("B")[0]) bad("arms", "the two arms carry the same system message hash (they would not differ)");
+  const builds = new Map();
+  for (const id of ids) {
+    const e = arms[id];
+    const t = x.design.trials_per_subject?.[id];
+    if (e.trials !== t) bad("arms", `${id}: design.arms trials ${e.trials} differ from design.trials_per_subject ${t}`);
+    const b = buildIdOf(id, e.arm);
+    if (b === id) bad("arms", `${id}: an arms id must end in -${e.arm}`);
+    builds.set(b, [...(builds.get(b) ?? []), e.arm].sort(alpha));
+  }
+  for (const [b, list] of builds) if (JSON.stringify(list) !== JSON.stringify(["A", "B"])) bad("arms", `build ${b} must have exactly one A and one B variant, has ${list.join(",") || "none"}`);
+  if (p.length) return p;
+
+  // comparisons: pre-declared; every build pair in each arm, and every build's B against A.
+  const cs = x.comparisons;
+  if (!Array.isArray(cs)) return [...p, `${prefix}-comparison: comparisons is not a list`];
+  const nBuilds = builds.size;
+  const pairsPerArm = (nBuilds * (nBuilds - 1)) / 2;
+  const kinds = { build: 0, arm: 0 };
+  const seen = new Set();
+  for (const e of cs) {
+    const key = `${e.a}|${e.b}`;
+    if (!ids.includes(e.a) || !ids.includes(e.b) || e.a === e.b) { bad("comparison", `unknown or self comparison ${key}`); continue; }
+    if (e.a > e.b) bad("comparison", `${key}: a must sort before b (alphabetical, so order carries no meaning)`);
+    if (seen.has(key)) bad("comparison", `duplicate comparison ${key}`);
+    seen.add(key);
+    const [aa, ab] = [arms[e.a].arm, arms[e.b].arm];
+    if (e.arm_a !== aa || e.arm_b !== ab) bad("comparison", `${key}: arm_a/arm_b do not match design.arms`);
+    if (e.kind === "build") {
+      kinds.build += 1;
+      if (aa !== ab) bad("comparison", `${key}: a build comparison must stay inside one arm`);
+      if (buildIdOf(e.a, aa) === buildIdOf(e.b, ab)) bad("comparison", `${key}: a build comparison needs two different builds`);
+    } else if (e.kind === "arm") {
+      kinds.arm += 1;
+      if (buildIdOf(e.a, aa) !== buildIdOf(e.b, ab) || aa === ab) bad("comparison", `${key}: an arm comparison is one build in its two arms`);
+    } else bad("comparison", `${key}: kind must be "build" or "arm"`);
+    if (!isNum(e.difference) || !isRange(e.interval95) || typeof e.separated !== "boolean") { bad("comparison", `${key}: difference, interval or flag malformed`); continue; }
+    if (e.separated !== !crosses(e.interval95)) bad("comparison-consistent", `${key}: separated=${e.separated} contradicts interval ${JSON.stringify(e.interval95)}`);
+    if (!isNum(e.median_reply_words_a) || !isNum(e.median_reply_words_b)) bad("comparison", `${key}: median reply words missing`);
+    else if (e.median_reply_words_a !== x.subjects[e.a].median_reply_words || e.median_reply_words_b !== x.subjects[e.b].median_reply_words) bad("comparison", `${key}: median reply words differ from the subjects'`);
+    // The corrected interval exists exactly for the primary arm's build comparisons.
+    const primaryBuild = e.kind === "build" && aa === PRIMARY_ARM;
+    if (primaryBuild) {
+      const bf = e.bonferroni;
+      if (!bf || !isRange(bf.interval) || typeof bf.separated !== "boolean" || !Number.isInteger(bf.comparisons) || !isNum(bf.confidence_percent)) bad("comparison", `${key}: a primary-arm build comparison needs bonferroni { comparisons, confidence_percent, interval, separated }`);
+      else {
+        if (bf.comparisons !== pairsPerArm) bad("comparison", `${key}: bonferroni.comparisons ${bf.comparisons} is not the ${pairsPerArm} primary-arm pairs`);
+        if (bf.separated !== !crosses(bf.interval)) bad("comparison-consistent", `${key}: bonferroni.separated=${bf.separated} contradicts interval ${JSON.stringify(bf.interval)}`);
+        if (bf.separated && !e.separated) bad("comparison-consistent", `${key}: Bonferroni-separated but not separated at 95%`);
+        if (!(bf.interval[0] <= e.interval95[0] && e.interval95[1] <= bf.interval[1])) bad("comparison", `${key}: the corrected interval must contain the uncorrected one`);
+      }
+    } else if (e.bonferroni !== undefined) bad("comparison", `${key}: only primary-arm build comparisons carry a corrected interval`);
+    if (e.kind === "arm") {
+      const m = e.b_minus_a;
+      if (!m || !isNum(m.difference) || !isRange(m.interval95) || typeof m.separated !== "boolean") bad("comparison", `${key}: an arm comparison needs b_minus_a { difference, interval95, separated }`);
+      else {
+        if (m.separated !== !crosses(m.interval95)) bad("comparison-consistent", `${key}: b_minus_a.separated contradicts its interval`);
+        // The two intervals come from separate bootstrap percentiles, so the interval is not an exact mirror; the difference and the flag are.
+        if (m.difference !== neg(e.difference) || !(m.interval95[0] <= m.difference && m.difference <= m.interval95[1])) bad("comparison-consistent", `${key}: b_minus_a is not the mirror of a minus b`);
+      }
+    } else if (e.b_minus_a !== undefined) bad("comparison", `${key}: only arm comparisons carry b_minus_a`);
+  }
+  const perArm = (arm) => cs.filter((e) => e.kind === "build" && e.arm_a === arm).length;
+  if (perArm("A") !== pairsPerArm || perArm("B") !== pairsPerArm) bad("comparison", `expected ${pairsPerArm} build comparisons in each arm, found ${perArm("A")} and ${perArm("B")}`);
+  if (kinds.arm !== nBuilds) bad("comparison", `expected one arm comparison per build (${nBuilds}), found ${kinds.arm}`);
+  // Every arm-A build pair of `pairwise` must agree with its comparison (one result, two views).
+  const pw = new Map((x.pairwise ?? []).map((e) => [`${e.a}|${e.b}`, e]));
+  for (const e of cs) {
+    const q = pw.get(`${e.a}|${e.b}`);
+    if (q && (q.separated !== e.separated || JSON.stringify(q.interval95) !== JSON.stringify(e.interval95))) bad("comparison-consistent", `${e.a}|${e.b}: comparisons and pairwise disagree`);
+  }
+
+  // length check: the pre-registered rule is "the instructed arm is closer to the target than the plain arm".
+  const lc = x.length_check;
+  if (!lc || !Array.isArray(lc.per_build) || lc.per_build.length !== nBuilds) { bad("length-check", `length_check.per_build must list every build (${nBuilds})`); return p; }
+  for (const r of lc.per_build) {
+    const a = x.subjects[r.arm_a];
+    const b = x.subjects[r.arm_b];
+    if (!a || !b || arms[r.arm_a]?.arm !== "A" || arms[r.arm_b]?.arm !== "B" || buildIdOf(r.arm_a, "A") !== buildIdOf(r.arm_b, "B")) { bad("length-check", `${r.arm_a}/${r.arm_b}: not one build's A and B variants`); continue; }
+    if (r.median_words_a !== a.median_reply_words || r.median_words_b !== b.median_reply_words) bad("length-check", `${r.arm_a}: median words differ from the subjects'`);
+    if (!isNum(r.target_words)) { bad("length-check", `${r.arm_a}: target_words missing`); continue; }
+    const dA = Math.abs(r.median_words_a - r.target_words);
+    const dB = Math.abs(r.median_words_b - r.target_words);
+    if (r.distance_from_target_a !== dA || r.distance_from_target_b !== dB) bad("length-check", `${r.arm_a}: distances from the target are not recomputed from the medians`);
+    const verdict = dB < dA ? "effective" : "ineffective";
+    if (r.length_instruction !== verdict) bad("length-check-verdict", `${r.arm_a}: length_instruction "${r.length_instruction}" contradicts the medians (${verdict})`);
+  }
   return p;
 }
 
@@ -290,6 +433,7 @@ const minMax = (xs) => [Math.min(...xs), Math.max(...xs)];
  */
 export function computeDerived(w) {
   const ids = Object.keys(w.subjects).sort(alpha);
+  if (isArmsDesign(w.design)) return computeDerivedArms(w, ids);
   const groups = notSeparatedGroups(ids, w.pairwise);
   const grouped = new Set(groups.flat());
   const primary = groups[0] ?? [];
@@ -330,6 +474,83 @@ export function computeDerived(w) {
   };
 }
 
+/**
+ * Derived facts of an ARMS wave (template amendment 16). The grouping that governs point display is read from the primary arm's
+ * pre-declared comparisons under the CORRECTED interval, not from the 95% flags of `pairwise` (which also lists exploratory
+ * pairs across arms and builds):
+ *   not_separated_groups / separated_subjects   primary-arm variants, after correction (the keys every existing gate reads)
+ *   range_only_subjects                         every variant of the secondary arm: ranges only, no point, no group claim
+ *   point_withheld_subjects                     group members and the secondary arm: no point anywhere, no difference involving them
+ *   separated_pairs                             primary-arm pairs separated after correction (the only pairs "separated from" may be said of)
+ *   separated_uncorrected_only_pairs            separated at 95% but not after correction: words with the uncorrected range only
+ *   by_arm                                      the same facts per arm
+ *   display_rule                                the rule itself, citing the amendment
+ * Pure function of wave fields, so validateWave can recompute and compare.
+ */
+/** The primary arm's structure from a wave's (or analysis's) design.arms and comparisons, under the corrected interval. */
+export function armsStructure(x, ids) {
+  const arms = x.design.arms;
+  const A = ids.filter((i) => arms[i].arm === PRIMARY_ARM);
+  const B = ids.filter((i) => arms[i].arm !== PRIMARY_ARM);
+  const aPairs = x.comparisons.filter((e) => e.kind === "build" && arms[e.a].arm === PRIMARY_ARM);
+  const corrected = aPairs.map((e) => ({ a: e.a, b: e.b, separated: e.bonferroni.separated }));
+  const groups = notSeparatedGroups(A, corrected);
+  const grouped = new Set(groups.flat());
+  return { A, B, aPairs, groups, separated: A.filter((i) => !grouped.has(i)) };
+}
+
+function computeDerivedArms(w, ids) {
+  const arms = w.design.arms;
+  const { A, B, aPairs, groups, separated } = armsStructure(w, ids);
+  const primary = groups[0] ?? [];
+  const inPrimary = new Set(primary);
+  const pairKeys = (list) => list.map((e) => [e.a, e.b].sort(alpha)).sort((x, y) => alpha(x.join("|"), y.join("|")));
+  const among = w.dimension_pairwise.filter((e) => inPrimary.has(e.a) && inPrimary.has(e.b));
+  const forObj = {};
+  const ofObj = {};
+  for (const id of A.filter((i) => !inPrimary.has(i))) {
+    const mine = w.dimension_pairwise.filter((e) => e.a === id || e.b === id);
+    forObj[id] = mine.filter((e) => e.bonferroni_separated).length;
+    ofObj[id] = mine.length;
+  }
+  const r1 = (x) => Math.round(x * 10) / 10 + 0;
+  const shift = Object.fromEntries(ids.map((i) => [i, r1(w.sensitivity.subjects[i].pilot_composite - w.subjects[i].pilot_composite)]));
+  const members = groups.flat();
+  const byArm = {};
+  for (const arm of [...new Set(ids.map((i) => arms[i].arm))].sort(alpha)) {
+    const here = ids.filter((i) => arms[i].arm === arm);
+    byArm[arm] = arm === PRIMARY_ARM
+      ? { subjects: here, comparison_basis: "corrected", separated_subjects: separated, not_separated_groups: groups, points: "separated subjects only" }
+      : { subjects: here, comparison_basis: "none", separated_subjects: [], not_separated_groups: [], points: "none" };
+  }
+  return {
+    not_separated_groups: groups,
+    not_separated_group_range: primary.length ? minMax(primary.map((i) => w.subjects[i].pilot_composite)) : null,
+    not_separated_group_ranges: groups.map((g) => minMax(g.map((i) => w.subjects[i].pilot_composite))),
+    separated_subjects: separated,
+    separated_pairs: pairKeys(aPairs.filter((e) => e.bonferroni.separated)),
+    dimension_bonferroni_separated_among_group: among.filter((e) => e.bonferroni_separated).length,
+    dimension_comparisons_among_group: among.length,
+    dimension_bonferroni_separated_for: forObj,
+    dimension_bonferroni_separated_of: ofObj,
+    median_words_group_range: primary.length ? minMax(primary.map((i) => w.subjects[i].median_reply_words)) : null,
+    sensitivity_level_shift_group_range: members.length ? minMax(members.map((i) => shift[i])) : null,
+    sensitivity_level_shift: shift,
+    subject_count: ids.length,
+    ratings_total: w.design.ratings,
+    responses_total: w.design.responses,
+    range_only_subjects: B,
+    point_withheld_subjects: [...members, ...B].sort(alpha),
+    separated_uncorrected_only_pairs: pairKeys(aPairs.filter((e) => e.separated && !e.bonferroni.separated)),
+    primary_arm: PRIMARY_ARM,
+    primary_arm_subject_count: A.length,
+    build_count: new Set(ids.map((i) => buildIdOf(i, arms[i].arm))).size,
+    arm_count: Object.keys(byArm).length,
+    by_arm: byArm,
+    display_rule: { amendment: 16, text: DISPLAY_RULE_TEXT },
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Key scan
 // ---------------------------------------------------------------------------
@@ -363,6 +584,10 @@ export const CONTAMINATION_VIA_MCP = "the cb-probe MCP server, driven over its r
 export const PREREGISTRATION_NOTE =
   "The pre-registration is a file in this repository. It was written before any subject reply existed, but it was not committed, time-stamped or filed with any independent registry before the data existed, so nothing outside this project proves when it was written. The hash identifies the text the analysis was run against.";
 
+/** The pre-registration of a run whose plan was committed and pushed before any subject reply existed (run-config.json preregistration.committed_before_data). */
+export const PREREGISTRATION_COMMITTED_NOTE =
+  "The pre-registration is a file in this repository. It was committed and pushed before any subject reply was generated, so its commit time attests the order. The hash identifies the text the analysis was run against; departures after data existed are appended to it as dated deviations and never edited into the plan.";
+
 /** Says what the two pre-registration hashes are when a run records the as-written hash (run-config.json preregistration.as_written_sha256). */
 export const PREREGISTRATION_AS_WRITTEN_NOTE =
   "as_written_sha256 is the hash of the plan as written, with its Deviations section holding only the placeholder. sha256 is the hash of the same file with its dated deviations appended below that heading; appending a deviation never changes the plan text above it, so the as-written hash stays reproducible from the current file.";
@@ -393,9 +618,9 @@ export function parsePreregSubjects(text) {
   return out;
 }
 
-/** "- Runtime: Ollama 1.2.3 on ..." -> { name: "Ollama", version: "1.2.3" }, or null. */
+/** "- Runtime: Ollama 1.2.3 on ..." or "**Runtime:** Ollama 1.2.3 on ..." -> { name: "Ollama", version: "1.2.3" }, or null. */
 export function parsePreregRuntime(text) {
-  const m = text.match(/^\s*-\s*Runtime:\s*([A-Za-z][\w.-]*)\s+(\d+(?:\.\d+)*)/m);
+  const m = text.match(/^\s*(?:-\s*)?(?:\*\*)?Runtime:(?:\*\*)?\s*([A-Za-z][\w.-]*)\s+(\d+(?:\.\d+)*)/m);
   return m ? { name: m[1], version: m[2] } : null;
 }
 
@@ -406,7 +631,8 @@ function projectProvenance(analysis, ids, prov) {
   const out = {};
   for (const id of ids) {
     const b = builds[id];
-    const t = prov.subjects[id];
+    // An arms run's pre-registration table has one row per BUILD; a variant ("<build>-A") reads its build's row.
+    const t = prov.subjects[id] ?? (isArmsDesign(analysis.design) ? prov.subjects[buildIdOf(id, analysis.design.arms[id]?.arm)] : undefined);
     if (!b) throw new Error(`projectWave: design.subject_builds has no entry for ${id}`);
     if (!t) throw new Error(`projectWave: the pre-registration subject table has no row for ${id}`);
     if (t.digest_sha256 !== b.digest_sha256) throw new Error(`projectWave: ${id}: the pre-registration digest differs from the analysis digest`);
@@ -485,6 +711,92 @@ export function judgePairing(w) {
 }
 
 /**
+ * design.arms of the wave: which arm, how many trials, which system message (text and hash), whether the cb-probe server finished a
+ * scorecard for the variant, and which variant hosted its build's contamination probe. Key `scorecard` of the analysis is renamed
+ * `server_report` (a wave carries no key containing "score"); the long `build` string is dropped (design.subject_builds has it).
+ */
+function projectArms(analysis, ids, prov) {
+  const out = {};
+  for (const id of ids) {
+    const e = analysis.design.arms[id];
+    const text = prov?.system_messages?.[id];
+    out[id] = {
+      arm: e.arm,
+      trials: e.trials,
+      system_message_sha256: e.system_message_sha256,
+      ...(typeof text === "string" ? { system_message: text } : {}),
+      server_report: e.scorecard,
+      probe_from: e.probe_from,
+    };
+    if (typeof text === "string" && createHash("sha256").update(text).digest("hex") !== e.system_message_sha256) {
+      throw new Error(`projectWave: ${id}: the system message in run-config.json does not hash to design.arms.${id}.system_message_sha256`);
+    }
+  }
+  return out;
+}
+
+/**
+ * The pre-declared comparisons, each without the two composites (those are points) and without the long build strings.
+ * `bonferroni.ranks` and `.of` are dropped (a key may not contain "rank"; they are bootstrap bookkeeping).
+ */
+function projectComparisons(list) {
+  return clone(list)
+    .map((e) => {
+      const o = {
+        a: e.a, b: e.b, kind: e.kind, arm_a: e.arm_a, arm_b: e.arm_b,
+        difference: e.difference, interval95: e.interval95, separated: e.separated,
+        median_reply_words_a: e.median_reply_words_a, median_reply_words_b: e.median_reply_words_b,
+      };
+      if (e.bonferroni) o.bonferroni = { comparisons: e.bonferroni.comparisons, confidence_percent: e.bonferroni.confidence_percent, interval: e.bonferroni.interval, separated: e.bonferroni.separated };
+      if (e.b_minus_a) o.b_minus_a = { difference: e.b_minus_a.difference, interval95: e.b_minus_a.interval95, separated: e.b_minus_a.separated };
+      return o;
+    })
+    .sort((x, y) => alpha(x.a + "|" + x.b, y.a + "|" + y.b));
+}
+
+/** The section-9 verdicts, one per build, keyed by the two variants (no digest string). Alphabetical by the plain variant. */
+function projectLengthCheck(lc) {
+  return {
+    rule: lc.rule,
+    per_build: clone(lc.per_build)
+      .map((r) => ({
+        arm_a: r.arm_a, arm_b: r.arm_b, target_words: r.target_words, median_words_a: r.median_words_a, median_words_b: r.median_words_b,
+        distance_from_target_a: r.distance_from_target_a, distance_from_target_b: r.distance_from_target_b,
+        length_instruction: r.length_instruction, b_minus_a_reading: r.b_minus_a_reading,
+      }))
+      .sort((x, y) => alpha(x.arm_a, y.arm_a)),
+  };
+}
+
+/**
+ * The replication note: whether the separation result of a pair repeats. The per-build composites, their difference and the pair's
+ * point difference are POINTS of subjects that show ranges only, so they are not exported; ranges, flags and medians are.
+ */
+function projectReplication(r) {
+  const builds = {};
+  for (const b of Object.keys(r.builds ?? {}).sort(alpha)) {
+    const e = r.builds[b];
+    builds[b] = {
+      this_run: { label: e.this_run.label, interval95: e.this_run.interval95, median_reply_words: e.this_run.median_reply_words },
+      source_run: { interval95: e.source_run.interval95, median_reply_words: e.source_run.median_reply_words },
+    };
+  }
+  return {
+    note: r.note,
+    source_run: r.source_run,
+    pair: r.pair,
+    source_run_result: { interval95: r.source_run_result.interval95, separated: r.source_run_result.separated },
+    this_run_arm_a_result: {
+      interval95: r.this_run_arm_a_result.interval95,
+      separated: r.this_run_arm_a_result.separated,
+      bonferroni_over_comparisons_separated: r.this_run_arm_a_result.bonferroni_over_6_separated,
+    },
+    separation_repeats: r.separation_repeats,
+    builds,
+  };
+}
+
+/**
  * @param {object} analysis  parsed analysis.json
  * @param {object} ctx
  *   bank     { items_total, items_validated, version }  from MODEL_INDEX_FACTS (imported, not re-derived)
@@ -513,6 +825,7 @@ export function projectWave(rawAnalysis, ctx) {
     throw new Error(`bank version mismatch: analysis used ${analysis.design.bank_version}, tasks-v1.json is ${ctx.bank.version}`);
   }
   const ids = Object.keys(analysis.subjects).sort(alpha);
+  const arms = isArmsDesign(analysis.design);
 
   const w = {
     run_id: analysis.run_id,
@@ -537,6 +850,10 @@ export function projectWave(rawAnalysis, ctx) {
   // (for example the pre-registered "primary comparison" order) must not reach the wave.
   w.design.subjects = [...w.design.subjects].sort(alpha);
   if (w.design.subject_builds) w.design.subject_builds = orderBySubject(w.design.subject_builds, ids);
+  if (isArmsDesign(analysis.design)) {
+    w.design.trials_per_subject = orderBySubject(w.design.trials_per_subject, ids);
+    w.design.arms = projectArms(analysis, ids, ctx.provenance);
+  }
   for (const id of ids) {
     const s = analysis.subjects[id];
     w.subjects[id] = {
@@ -550,17 +867,29 @@ export function projectWave(rawAnalysis, ctx) {
       judge_agreement: clone(s.judge_agreement),
     };
     // A scorecard produced by the cb-probe MCP server means the contamination probe ran through the real server (stdio).
-    if (typeof s.mcp_scorecard === "string" && s.mcp_scorecard) w.subjects[id].contamination.via = CONTAMINATION_VIA_MCP;
+    // An arms run probes each BUILD once (hosted by one variant); a variant that borrows its build's probe (from_build_probe_of) was probed the same way.
+    const host = s.contamination?.from_build_probe_of;
+    const viaMcp = (typeof s.mcp_scorecard === "string" && s.mcp_scorecard) || (typeof host === "string" && typeof analysis.subjects[host]?.mcp_scorecard === "string" && analysis.subjects[host].mcp_scorecard);
+    if (viaMcp) w.subjects[id].contamination.via = CONTAMINATION_VIA_MCP;
   }
   // Sorted, so the file does not depend on the order A happened to list things in.
   const dimOrder = Object.keys(analysis.subjects[ids[0]].dimensions);
   w.pairwise = clone(analysis.pairwise).sort((x, y) => alpha(x.a + "|" + x.b, y.a + "|" + y.b));
   w.dimension_pairwise = clone(analysis.dimension_pairwise).sort((x, y) => alpha(x.a + "|" + x.b, y.a + "|" + y.b) || dimOrder.indexOf(x.dimension) - dimOrder.indexOf(y.dimension));
   w.dimension_pairwise_note = analysis.dimension_pairwise_note;
+  if (arms) {
+    // Exploratory pairs across arms and builds are kept (flags and ranges) with the analysis's own warning; the findings are `comparisons`.
+    if (typeof analysis.pairwise_note === "string") w.pairwise_note = analysis.pairwise_note;
+    w.comparisons = projectComparisons(analysis.comparisons);
+    if (typeof analysis.comparisons_note === "string") w.comparisons_note = analysis.comparisons_note;
+    w.length_check = projectLengthCheck(analysis.length_check);
+    if (analysis.replication) w.replication = projectReplication(analysis.replication);
+  }
 
-  const groups = notSeparatedGroups(ids, analysis.pairwise);
+  // An arms run's groups come from its corrected, pre-declared comparisons (amendment 16); every other run's from `pairwise`.
+  const groups = arms ? armsStructure(analysis, ids).groups : notSeparatedGroups(ids, analysis.pairwise);
   const grouped = new Set(groups.flat());
-  const separated = ids.filter((i) => !grouped.has(i));
+  const separated = arms ? armsStructure(analysis, ids).separated : ids.filter((i) => !grouped.has(i));
   w.length = clone(analysis.length);
   // A bound for a non-separated model would impose an order on the group.
   const bound = {};
@@ -607,7 +936,7 @@ export function projectWave(rawAnalysis, ctx) {
       sha256: analysis.design.preregistration_sha256,
       path: `research/model-runs/${analysis.run_id}/PREREGISTRATION.md`,
       committed_before_data: ctx.provenance?.preregistration_committed_before_data === true,
-      note: PREREGISTRATION_NOTE,
+      note: ctx.provenance?.preregistration_committed_before_data === true ? PREREGISTRATION_COMMITTED_NOTE : PREREGISTRATION_NOTE,
     };
     // Projected only when the run recorded it, so a wave exported from a run without it does not change.
     const asWritten = ctx.provenance?.preregistration_as_written_sha256;
@@ -675,6 +1004,12 @@ export function waveProblems(w) {
     if (e.separated !== !crosses(e.interval95)) bad("W-dim-pairwise", `${e.a}/${e.b}/${e.dimension}: flag contradicts interval`);
     if (e.bonferroni_separated && !e.separated) bad("W-dim-pairwise", `${e.a}/${e.b}/${e.dimension}: Bonferroni flag without 95% flag`);
   }
+  // An arms wave: the structure and the pre-declared comparisons must hold before anything is derived from them.
+  if (isArmsDesign(w.design)) {
+    const ap = armsProblems(w, ids, "W");
+    p.push(...ap);
+    if (ap.length) return p;
+  }
   // The sensitivity block is validated after the main flags so a flipped main flag reports as itself (and as a pattern change).
   const sp = sensitivityProblems(w.sensitivity, ids, w.pairwise, "W");
   p.push(...sp);
@@ -724,6 +1059,23 @@ function optionalBlockProblems(w, ids) {
       if (JSON.stringify(failing) !== JSON.stringify([...(b.failing_judges ?? [])].sort(alpha))) bad("W-judge-validity", `${key}: failing_judges disagrees with the per-judge unfound rates and the threshold`);
       for (const [id, j] of Object.entries(b.judges ?? {})) if (j.verdict !== (j.unfound_rate_percent > b.threshold_percent ? "FAIL" : "PASS")) bad("W-judge-validity", `${key}.${id}: verdict contradicts its rate`);
     }
+  }
+  if (w.replication !== undefined) {
+    const r = w.replication;
+    for (const key of ["source_run_result", "this_run_arm_a_result"]) {
+      const e = r[key];
+      if (!e || !isRange(e.interval95) || typeof e.separated !== "boolean") bad("W-replication", `${key} needs a range and a flag`);
+      else if (e.separated !== !crosses(e.interval95)) bad("W-replication", `${key}: flag contradicts its range`);
+    }
+    if (typeof r.separation_repeats === "boolean" && r.source_run_result && r.this_run_arm_a_result && r.separation_repeats !== (r.source_run_result.separated === r.this_run_arm_a_result.separated)) bad("W-replication", "separation_repeats contradicts the two results");
+    // A replication note compares builds whose points are withheld: it carries ranges, flags and medians, never a point or a point difference.
+    const pointKey = (x, path = "replication") => {
+      const out = [];
+      if (Array.isArray(x)) x.forEach((v, i) => out.push(...pointKey(v, `${path}[${i}]`)));
+      else if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) { if (/^(?:difference|composite|point)/i.test(k) || /_difference/.test(k)) out.push(`${path}.${k}`); out.push(...pointKey(v, `${path}.${k}`)); }
+      return out;
+    };
+    for (const k of pointKey(r)) bad("W-replication", `${k}: a point or point difference was exported (replication carries ranges, flags and medians only)`);
   }
   if (w.preregistration !== undefined) {
     if (!/^[0-9a-f]{64}$/.test(w.preregistration.sha256 ?? "")) bad("W-preregistration", "sha256 is not a sha256");
