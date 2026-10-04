@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "INT-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 32,
+  "derived_seed": 1142435001,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e2447740c3b499e2ba5533c19d43627a02d640ed0e83f4c7ef77950c5c7c8bf2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1142435001
+      },
+      "started_at": "2026-10-03T15:56:08.165Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1730,
+      "done_reason": "stop",
+      "eval_count": 347,
+      "prompt_eval_count": 119,
+      "total_duration_ns": 3042795000,
+      "load_duration_ns": 37169000,
+      "prompt_eval_duration_ns": 35431000,
+      "eval_duration_ns": 2855707000,
+      "wall_ms": 3067,
+      "ended_at": "2026-10-03T15:56:11.232Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1142435001
+  },
+  "eval_count": 347,
+  "response": "Running a crêpe cart at a Saturday market can be a challenging venture. While your initial savings of $9,000 may seem like a good starting point, it's essential to consider the various expenses that come with operating a business.\n\nHere are a few factors to stress-test your idea:\n\n1. **Initial Start-Up Costs**: Your $9,000 initial investment likely only covers the initial setup costs, such as purchasing the crêpe cart, equipment, and initial inventory. You'll need to factor in additional costs for ongoing expenses, such as supplies, marketing, and permits.\n2. **Ongoing Expenses**: Crêpes are a food item that requires regular replenishment. You'll need to budget for ingredients, cooking supplies, and potentially even storage costs. Additionally, consider the cost of licenses, permits, and insurance, which can vary depending on your location.\n3. **Marketing and Promotion**: To attract customers, you'll need to invest in marketing and promotion, such as social media advertising, flyers, and local advertising. This can eat into your initial profits.\n4. **Variable Income**: Your sales will be unpredictable, with peak periods likely during the summer months when the market is busiest. This means you'll need to have a plan in place for slow periods to ensure you can cover your expenses.\n5. **Personal Costs**: Dropping your part-time job to focus on the business means you'll need to adjust your personal finances to accommodate the uncertainty of the business's success.\n\nConsider these factors and adjust your business plan accordingly. It's also a good idea to speak with local business owners, attend market events, and gather data on the market to get a better understanding of the demand and potential revenue.",
+  "response_sha256": "4fc2d11c540edbc055c9df19c47920c7bc11c82bdc85351e051e29d703a006c4",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:08.165Z",
+  "finished_at": "2026-10-03T15:56:11.272Z"
+}

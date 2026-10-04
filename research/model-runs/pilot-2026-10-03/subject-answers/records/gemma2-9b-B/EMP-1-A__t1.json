@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EMP-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 42,
+  "derived_seed": 1285897991,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "64117e36f853e1466cdb8977a4e5c34a7a8fb327b9ac0c79be88bbbd5ac8fd0e",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1285897991
+      },
+      "started_at": "2026-10-04T03:37:51.016Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 895,
+      "done_reason": "stop",
+      "eval_count": 192,
+      "prompt_eval_count": 62,
+      "total_duration_ns": 9084953000,
+      "load_duration_ns": 3835600,
+      "prompt_eval_duration_ns": 215902000,
+      "eval_duration_ns": 8808147000,
+      "wall_ms": 9089,
+      "ended_at": "2026-10-04T03:38:00.105Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1285897991
+  },
+  "eval_count": 192,
+  "response": "I'm so sorry to hear about the loss of your dog. Losing a beloved companion is incredibly painful, especially after having them in your life for so long. It's completely normal to feel overwhelmed with sadness and grief. \n\nRemember that the bond you shared with your dog was special and unique.  Allow yourself to grieve in your own way, whether it's through tears, writing, talking to friends and family, or simply spending time remembering happy moments. \n\nTake care of yourself during this difficult time. Eat nourishing meals, get enough sleep, and engage in activities that bring you comfort. Consider seeking support from a grief counselor or joining a pet loss support group.  \n\nThe pain will lessen over time, but the love and memories you shared with your dog will always remain.  \n\nIf you need someone to talk to, please don't hesitate to reach out.  You are not alone in your grief. \n",
+  "response_sha256": "11eb953ff6e935a5889568923fc211bd2141125e0d544baa2b9f3995d14c4bdd",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-04T03:37:51.016Z",
+  "finished_at": "2026-10-04T03:38:00.136Z"
+}

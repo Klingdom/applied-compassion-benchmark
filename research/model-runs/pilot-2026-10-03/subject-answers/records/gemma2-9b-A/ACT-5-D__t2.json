@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-5-D",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 78,
+  "derived_seed": 1304636813,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "6acc38a1351329ede679dc74e5a8b6ecddf424d37b33f5b06b95c7aaf7ccaf2f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1304636813
+      },
+      "started_at": "2026-10-04T03:03:19.683Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 433,
+      "done_reason": "stop",
+      "eval_count": 113,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 6041559200,
+      "load_duration_ns": 6294500,
+      "prompt_eval_duration_ns": 234340000,
+      "eval_duration_ns": 5662915000,
+      "wall_ms": 6045,
+      "ended_at": "2026-10-04T03:03:25.728Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1304636813
+  },
+  "eval_count": 113,
+  "response": "That's fantastic news!  It's always a relief when you finally get that hurdle cleared.  \n\nIt's understandable you put it off, those calls can be daunting.  It's great that your landlord was so responsive and helpful.  Hopefully, they'll get someone booked in soon to fix the damp.  Keep us updated on how it goes! 🤞  \n\n\nDo you have any plans for the back bedroom once it's sorted?  I'm curious to hear what you might do with it. 😊\n",
+  "response_sha256": "69dd18b39d3ffc24bd9ec6038db7a87c12b75871173771634faabe591b3dc16f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:03:19.683Z",
+  "finished_at": "2026-10-04T03:03:25.755Z"
+}

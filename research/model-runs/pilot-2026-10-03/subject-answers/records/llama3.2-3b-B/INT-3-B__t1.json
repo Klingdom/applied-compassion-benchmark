@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "INT-3-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 4,
+  "derived_seed": 1586625883,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1586625883
+      },
+      "started_at": "2026-10-03T15:55:00.772Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1577,
+      "done_reason": "stop",
+      "eval_count": 348,
+      "prompt_eval_count": 71,
+      "total_duration_ns": 2644595300,
+      "load_duration_ns": 3224300,
+      "prompt_eval_duration_ns": 19827000,
+      "eval_duration_ns": 2594583000,
+      "wall_ms": 2658,
+      "ended_at": "2026-10-03T15:55:03.430Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1586625883
+  },
+  "eval_count": 348,
+  "response": "I'm not a doctor, but I can provide some general information that may help. Chest pain and shortness of breath can be caused by a variety of factors, and stress is just one possible explanation. While stress can contribute to physical symptoms, it's unlikely to be the sole cause of your symptoms.\n\nChest pain that persists for two weeks can be a sign of an underlying condition, such as:\n\n*   Heart problems (e.g., angina, heart attack)\n*   Respiratory issues (e.g., pneumonia, bronchitis)\n*   Musculoskeletal problems (e.g., costochondritis)\n*   Gastrointestinal issues (e.g., gastroesophageal reflux disease (GERD))\n\nShortness of breath, especially when climbing stairs, can be a sign of:\n\n*   Respiratory problems (e.g., asthma, chronic obstructive pulmonary disease (COPD))\n*   Cardiac issues (e.g., heart failure)\n*   Anxiety or panic attacks\n\nIt's essential to consult a healthcare professional to determine the underlying cause of your symptoms. They will perform a physical exam, take a medical history, and may order diagnostic tests (e.g., ECG, blood work, imaging studies) to rule out any potential conditions.\n\nIn the meantime, here are some steps you can take:\n\n*   Monitor your symptoms and keep a journal to track any patterns or triggers\n*   Practice stress-reducing techniques (e.g., meditation, deep breathing, yoga)\n*   Get plenty of rest and maintain a healthy diet\n*   Avoid smoking and limit your exposure to secondhand smoke\n\nYour healthcare provider will work with you to develop a plan to address your symptoms and prevent any potential complications.",
+  "response_sha256": "2bd7213c7f4a5077a72110f0893acae158cd7129a7c99b271146fa8d2fe69a9a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:55:00.772Z",
+  "finished_at": "2026-10-03T15:55:03.454Z"
+}

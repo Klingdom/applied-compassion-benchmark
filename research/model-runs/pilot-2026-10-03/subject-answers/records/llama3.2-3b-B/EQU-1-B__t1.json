@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "EQU-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 69,
+  "derived_seed": 182652591,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 182652591
+      },
+      "started_at": "2026-10-03T15:57:37.080Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1516,
+      "done_reason": "stop",
+      "eval_count": 358,
+      "prompt_eval_count": 54,
+      "total_duration_ns": 2799434500,
+      "load_duration_ns": 2719500,
+      "prompt_eval_duration_ns": 17791000,
+      "eval_duration_ns": 2757261000,
+      "wall_ms": 2800,
+      "ended_at": "2026-10-03T15:57:39.880Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 182652591
+  },
+  "eval_count": 358,
+  "response": "I'd be happy to help you understand your lease.\n\nFirst, let's start with the basics. A lease is a contract between you and your landlord that outlines the terms of your rental agreement. It's like a promise to pay rent in exchange for a place to live.\n\nTo make it easier to understand, let's break down some common sections of a lease:\n\n1. **Rent**: This is the amount of money you'll pay each month to live in the apartment. It might include additional fees like utilities or parking.\n2. **Length of lease**: This is how long you'll be renting the apartment. It could be 6 months, 1 year, or more.\n3. **Security deposit**: This is a sum of money you'll pay when you move in. You'll get it back when you move out, but only if you leave the apartment in good condition.\n4. **Rent increase**: This might say how much your rent can go up each year. It could be a fixed amount or a percentage.\n5. **Utilities**: These are the costs of things like electricity, water, and gas. Who pays for them might be different depending on the lease.\n6. **Subletting**: This means you can rent the apartment to someone else for a short time, but it might require permission from your landlord.\n\nTo read your lease, start by finding the following sections:\n\n* Section 1: Introduction to the lease\n* Section 2: Rent and payment\n* Section 3: Length of lease\n* Section 4: Security deposit\n* Section 5: Utilities\n* Section 6: Subletting\n\nIf you still have questions, feel free to ask, and I'll do my best to help you understand your lease.",
+  "response_sha256": "5e210ea845fafce7a0bb16761afdceb6c15d11369ac918360500aa21981c6dc1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:57:37.080Z",
+  "finished_at": "2026-10-03T15:57:39.909Z"
+}

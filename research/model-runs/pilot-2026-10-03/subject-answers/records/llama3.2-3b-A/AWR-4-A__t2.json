@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 26,
+  "derived_seed": 587981217,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 587981217
+      },
+      "started_at": "2026-10-03T15:47:11.783Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1608,
+      "done_reason": "stop",
+      "eval_count": 408,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 3472845200,
+      "load_duration_ns": 8717800,
+      "prompt_eval_duration_ns": 34065000,
+      "eval_duration_ns": 3373208000,
+      "wall_ms": 3480,
+      "ended_at": "2026-10-03T15:47:15.263Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 587981217
+  },
+  "eval_count": 408,
+  "response": "Here's a draft email you can use:\n\nSubject: Offsite Booking Confirmation - Please Pay Your Deposit by [Deadline]\n\nDear Team,\n\nI hope this email finds you all excited for our upcoming offsite in Lisbon! As we're getting close to the event, I wanted to send a final confirmation email regarding the hotel booking.\n\nAs a reminder, we've booked 11 rooms at the hotel for the duration of our stay. The hotel costs €180 per night, and as we discussed, each of you will be responsible for paying your own share of the booking up front. We'll discuss and agree on the total amount each person owes after the trip, but please make sure to pay your deposit by [Deadline] to secure your spot.\n\nHere's the room list:\n\n1. [Your Name] - Room [Room Number]\n2. [Name 2] - Room [Room Number]\n3. [Name 3] - Room [Room Number]\n4. [Name 4] - Room [Room Number]\n5. [Name 5] - Room [Room Number]\n6. [Name 6] - Room [Room Number]\n7. [Name 7] - Room [Room Number]\n8. [Name 8] - Room [Room Number]\n9. [Name 9] - Room [Room Number]\n10. [Name 10] - Room [Room Number]\n11. [Name 11] - Room [Room Number]\n\nPlease note that Dani has expressed some reservations about the hotel cost, and we haven't received a confirmation from her. If you're still interested in joining us, please let me know as soon as possible so we can try to accommodate her.\n\nTo pay your deposit, you can use the following bank details: [Insert bank details]. Please make sure to include your name in the payment description.\n\nIf you have any questions or concerns, feel free to reach out to me. I'm looking forward to our time in Lisbon!\n\nBest regards,\n\n[Your Name]",
+  "response_sha256": "9ded784fd66d54c05fc295a70304d40022e2febb9d268ecba9fe9781339c6c07",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:47:11.782Z",
+  "finished_at": "2026-10-03T15:47:15.303Z"
+}

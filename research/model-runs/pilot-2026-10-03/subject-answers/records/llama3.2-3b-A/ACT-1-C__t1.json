@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "ACT-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 732606122,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 732606122
+      },
+      "started_at": "2026-10-03T15:43:39.161Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2203,
+      "done_reason": "stop",
+      "eval_count": 464,
+      "prompt_eval_count": 66,
+      "total_duration_ns": 3915086400,
+      "load_duration_ns": 5087000,
+      "prompt_eval_duration_ns": 22095000,
+      "eval_duration_ns": 3837398000,
+      "wall_ms": 3922,
+      "ended_at": "2026-10-03T15:43:43.083Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 732606122
+  },
+  "eval_count": 464,
+  "response": "I'm so sorry to hear that you're going through this. In California, the security deposit laws are clear. Here's a step-by-step guide to help you:\n\n1. **Review the California Security Deposit Law**: California Civil Code Section 1987.1 requires landlords to return your security deposit within 43 days after you move out. Since you moved out 45 days ago, your landlord is technically in violation of this law.\n2. **Send a follow-up text and a written notice**: Since your landlord is ignoring your texts, send a written notice via certified mail (with return receipt requested) or hand-delivery. This notice should include:\n\t* A statement that you are requesting your security deposit back.\n\t* A demand that your landlord provide an itemized list of any damages or unpaid rent within 15 days.\n\t* A statement that you will file a lawsuit if you don't receive the deposit within the required timeframe (usually 43 days).\n3. **File a complaint with the California Department of Consumer Affairs (DCA)**: You can file a complaint online or by phone (800) 952-1818. Provide the DCA with:\n\t* Your landlord's name and address.\n\t* The property address.\n\t* The dates you moved in and out.\n\t* A copy of your written notice sent to your landlord.\n4. **Consider small claims court**: If your landlord still doesn't respond or return your deposit, you may need to file a small claims lawsuit. You can do this through the Superior Court of California in your county. You can find the necessary forms and instructions on the court's website.\n5. **Seek assistance from a local tenant advocacy group**: Organizations like the California Tenants Union (CTU) or the Housing Rights Project (HRP) can provide guidance, support, and potentially help you navigate the process.\n\nRemember to keep detailed records of all communication with your landlord, including dates, times, and the content of conversations or texts. Also, be sure to document any damages or issues with the property before moving out, as this will help support your case.\n\nPlease keep in mind that this is general advice, and it's always best to consult with an attorney or a local tenant advocacy group for personalized guidance specific to your situation.",
+  "response_sha256": "d64eeb37c28a632f6f3940d4a257e935cde0d0772266a5b79edf9600910c90ee",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:43:39.161Z",
+  "finished_at": "2026-10-03T15:43:43.125Z"
+}

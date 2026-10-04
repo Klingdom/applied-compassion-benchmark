@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "probe_kind": "identification",
+  "qid": "AWR-3-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item AWR-3-B?\n\nA: Metformin B12 Concern\nB: Mum's Medication Rota\nC: Traffic-Light Behaviour Chart\nD: Cafe On Redundancy Money\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "a3c16eb5d801e0585b20fc36d84ee29817ec08c500579dd697d4795f01237f54",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1896990383,
+      "options": {
+        "seed": 1896990383
+      },
+      "started_at": "2026-10-04T03:46:57.806Z",
+      "error": null,
+      "reply": " A: Metformin B12 Concern (This answer is based on my previous interactions, where I was asked to help manage a hypothetical patient's medication. However, if I don't have specific context, I would have to guess.)",
+      "reply_chars": 213,
+      "done_reason": "stop",
+      "eval_count": 56,
+      "total_duration_ns": 832257900,
+      "parse": {
+        "ok": true,
+        "value": "A",
+        "rule": "R2: the first line starts with the option id and a delimiter"
+      },
+      "wall_ms": 848,
+      "ended_at": "2026-10-04T03:46:58.654Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "A",
+  "parse_rule": "R2: the first line starts with the option id and a delimiter",
+  "started_at": "2026-10-04T03:46:57.806Z",
+  "finished_at": "2026-10-04T03:46:58.654Z"
+}

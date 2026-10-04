@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "probe_kind": "identification",
+  "qid": "INT-2-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item INT-2-B?\n\nA: Supervisor Left Shift Early\nB: Cancelled Connection At The Gate\nC: Message To Dan Tonight\nD: Blamed For Wiping Column D\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "e753dfe37ce62a2e62449557f7d92b92c0eeeba3d7e87c247e8c9be65ff0a6a0",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1336085584,
+      "options": {
+        "seed": 1336085584
+      },
+      "started_at": "2026-10-04T03:47:36.080Z",
+      "error": null,
+      "reply": "D \n",
+      "reply_chars": 3,
+      "done_reason": "stop",
+      "eval_count": 4,
+      "total_duration_ns": 445622600,
+      "parse": {
+        "ok": true,
+        "value": "D",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 448,
+      "ended_at": "2026-10-04T03:47:36.528Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "D",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-04T03:47:36.080Z",
+  "finished_at": "2026-10-04T03:47:36.528Z"
+}

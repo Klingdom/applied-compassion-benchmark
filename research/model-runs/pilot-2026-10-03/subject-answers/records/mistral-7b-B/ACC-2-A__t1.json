@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "ACC-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 35,
+  "derived_seed": 755807642,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 755807642
+      },
+      "started_at": "2026-10-04T01:41:03.817Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 609,
+      "done_reason": "stop",
+      "eval_count": 143,
+      "prompt_eval_count": 137,
+      "total_duration_ns": 2055058400,
+      "load_duration_ns": 2622100,
+      "prompt_eval_duration_ns": 80276000,
+      "eval_duration_ns": 1960675000,
+      "wall_ms": 2066,
+      "ended_at": "2026-10-04T01:41:05.883Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 755807642
+  },
+  "eval_count": 143,
+  "response": " I'm sorry for any confusion caused. In the UK, employees are entitled to 5.6 weeks' paid annual leave (28 days for full-time workers). While employees also have the right to take time off on bank holidays, this is in addition to their annual leave. So, bank holidays should not be included in the 5.6 weeks of statutory leave.\n\nI recommend reviewing the Employment Rights Act 1996 for more detailed information. To rectify the situation, you may need to adjust the contracts and the rota accordingly. I apologize for any inconvenience this may have caused and hope this clarification helps resolve the issue.",
+  "response_sha256": "1e35fcc89320676307805feced636b866ad55747b96c5b2f36ba272073946868",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:41:03.817Z",
+  "finished_at": "2026-10-04T01:41:05.905Z"
+}

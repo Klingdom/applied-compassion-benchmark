@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EMP-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 53,
+  "derived_seed": 1738560118,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e5a4ada379c57ec9fc59bd8984ff93f7e6995e89fd8dda7db5a2575cb2a1ca53",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1738560118
+      },
+      "started_at": "2026-10-04T02:31:10.054Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1781,
+      "done_reason": "stop",
+      "eval_count": 395,
+      "prompt_eval_count": 124,
+      "total_duration_ns": 17310277600,
+      "load_duration_ns": 3877800,
+      "prompt_eval_duration_ns": 250110000,
+      "eval_duration_ns": 17013061000,
+      "wall_ms": 17323,
+      "ended_at": "2026-10-04T02:31:27.377Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1738560118
+  },
+  "eval_count": 395,
+  "response": "I'm so sorry to hear about your situation. That's incredibly frustrating and disrespectful, especially after all you've done for him. It's understandable that you're feeling upset, betrayed, and overwhelmed. \n\nIt sounds like you're dealing with a lot right now, both emotionally and practically.  Here are some things that might help:\n\n**Acknowledge your feelings:** Don't bottle them up. Allow yourself to be angry, hurt, and disappointed. Talk to a trusted friend, family member, or therapist about how you're feeling. \n\n**Take care of yourself:** You're running on fumes right now. Make sure you're eating, sleeping, and taking breaks. It's tempting to push yourself harder, but you need to prioritize your well-being to function effectively.\n\n**Focus on what you can control:** You can't change the past, but you can control your actions moving forward. \n\n* **Hire new staff:** Post the job opening immediately. Be clear about your expectations and values in the description. \n* **Streamline operations:** Can you adjust your menu to be simpler and faster to prepare? Can you delegate tasks to other staff members? \n* **Seek support:** Talk to other restaurant owners, join a local restaurant association, or reach out to business mentors. \n\n**Remember your worth:** Don't let this experience diminish your skills and value as a chef and business owner. You built a successful restaurant, and you'll get through this.\n\n**Learn from the experience:** \n\n*  Review your hiring and training processes.\n*  Consider implementing a clear exit policy.\n*  Set boundaries with your staff to protect your time and energy.\n\nThis is a difficult situation, but you're not alone. With time, support, and a clear plan, you can overcome this challenge and continue to build a thriving business.",
+  "response_sha256": "738908c9b03089aaa2bfa2cfb8340513bfb031cf79cc2af1f869aaa87ae79127",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:31:10.054Z",
+  "finished_at": "2026-10-04T02:31:27.405Z"
+}

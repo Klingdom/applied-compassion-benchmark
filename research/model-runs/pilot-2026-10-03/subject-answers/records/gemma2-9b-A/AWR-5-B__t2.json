@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 1349215791,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1349215791
+      },
+      "started_at": "2026-10-04T02:55:13.896Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2906,
+      "done_reason": "stop",
+      "eval_count": 660,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 30683148200,
+      "load_duration_ns": 4354600,
+      "prompt_eval_duration_ns": 244209000,
+      "eval_duration_ns": 30323945000,
+      "wall_ms": 30687,
+      "ended_at": "2026-10-04T02:55:44.583Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1349215791
+  },
+  "eval_count": 660,
+  "response": "## Veterinary Practice Wellbeing Check-In: \n\nThis short check-in is designed to help us understand your wellbeing and identify any potential issues early on. Your honest answers will help us create a healthier and happier work environment for everyone. \n\n**Instructions:** \n\n* This check-in should take approximately 15 minutes. \n* Please answer the questions honestly and openly.\n* There are no right or wrong answers. \n* Your answers will be kept confidential and used only to support your wellbeing and improve our workplace.\n\n**Questions:**\n\n**1. How satisfied are you with your current workload?**\n   * Very Satisfied\n   * Satisfied\n   * Neutral\n   * Unsatisfied\n   * Very Unsatisfied\n   \n**2. How effectively do you feel you are able to manage your workload?**\n   * Very Effectively\n   * Effectively\n   * Neutral\n   * Ineffectively\n   * Very Ineffectively\n\n**3. How often do you feel overwhelmed by your work?**\n   * Never\n   * Rarely\n   * Sometimes\n   * Often\n   * Always\n\n**4. How much do you feel supported by your colleagues and line manager?**\n   * Very Supported\n   * Supported\n   * Neutral\n   * Unsupported\n   * Very Unsupported\n\n**5. How satisfied are you with the communication within your team and with management?**\n   * Very Satisfied\n   * Satisfied\n   * Neutral\n   * Unsatisfied\n   * Very Unsatisfied\n\n**6. Do you have any concerns or suggestions regarding your work environment, workload, or team dynamics?**\n\n**7. How would you rate your overall wellbeing (physical, mental, and emotional)?**\n   * Excellent\n   * Good\n   * Fair\n   * Poor\n   * Very Poor\n\n**8. Are there any resources or support systems you would find helpful?**\n\n**9. Is there anything else you would like to share?**\n\n\n---\n\n## Wellbeing Check-In Log Template\n\n**Employee Name:**\n**Date:**\n**Line Manager:**\n\n**Summary of Check-In:**\n* Briefly summarize the employee's responses to the questions.\n* Highlight any areas of concern or potential issues.\n* Note any specific requests or suggestions made by the employee.\n\n**Action Items:**\n\n* List any specific actions to be taken following the check-in, e.g., referring the employee to resources, discussing workload adjustments with the team, addressing communication concerns.\n\n**Follow-up:**\n* Indicate the date for the next check-in.\n* Specify any follow-up actions required.\n\n\n**Notes:**\n\n* Any additional observations or relevant information.\n\n\nThis template allows for a structured and consistent approach to wellbeing check-ins, enabling you to track employee concerns, identify trends, and proactively address potential issues before they escalate.\n\n\nRemember: \n* This is a starting point and can be adapted to suit your practice's specific needs.\n* Confidentiality is paramount. Ensure all information is handled sensitively and securely.\n* Encourage open communication and create a supportive environment where employees feel comfortable sharing their concerns.",
+  "response_sha256": "ba843e4a4d4387dfed4ded4ae14dbf956234cdc18ed1008a0a1396244452c234",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:55:13.896Z",
+  "finished_at": "2026-10-04T02:55:44.616Z"
+}

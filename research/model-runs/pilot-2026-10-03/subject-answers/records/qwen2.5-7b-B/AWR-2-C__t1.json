@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "AWR-2-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 11,
+  "derived_seed": 374624548,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "dab30edeb0d8f6b5286c7c92f4a9e5d906c4a582eeef453353afcc3da48d5eb3",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 374624548
+      },
+      "started_at": "2026-10-04T02:15:02.289Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1441,
+      "done_reason": "stop",
+      "eval_count": 279,
+      "prompt_eval_count": 64,
+      "total_duration_ns": 3905465300,
+      "load_duration_ns": 7169600,
+      "prompt_eval_duration_ns": 36998000,
+      "eval_duration_ns": 3845637000,
+      "wall_ms": 3918,
+      "ended_at": "2026-10-04T02:15:06.207Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 374624548
+  },
+  "eval_count": 279,
+  "response": "It's understandable to be concerned about potential side effects of metformin, especially regarding B12 deficiency and nerve damage. However, it's crucial to continue taking metformin as prescribed unless advised otherwise by your healthcare provider. Metformin is a widely used medication for managing type 2 diabetes and prediabetes, and it generally has a good safety profile when taken correctly.\n\nB12 deficiency is a potential side effect, but it's relatively uncommon. Metformin can reduce the absorption of B12 in the intestines. To mitigate this risk, your doctor might recommend regular B12 blood tests and possibly supplements, especially if your levels are low or if you have risk factors such as a poor diet or a history of malabsorption issues.\n\nNerve damage, known as peripheral neuropathy, is another concern. However, this side effect is less common than B12 deficiency. Symptoms might include tingling, numbness, or pain in the extremities. If you experience any unusual sensations, inform your healthcare provider promptly.\n\nAlways discuss your concerns with your doctor. They can provide personalized advice and adjust your treatment plan if necessary. Your doctor will monitor your blood sugar levels and overall health, ensuring that the benefits of metformin outweigh any potential risks. Remember, stopping a medication without medical advice can lead to uncontrolled blood sugar levels and other health complications.",
+  "response_sha256": "41ae9e1fb71f24a2d5df00f8eca729d504468505fbbccab43beac3e075b4d880",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:15:02.289Z",
+  "finished_at": "2026-10-04T02:15:06.234Z"
+}

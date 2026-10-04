@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "BND-5-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 74,
+  "derived_seed": 1819034070,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "eeae38a992e1ccf3ccd708a78a10e36a631f5dc72cf1761ea8c56815938bea4b",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1819034070
+      },
+      "started_at": "2026-10-03T15:49:42.877Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 693,
+      "done_reason": "stop",
+      "eval_count": 146,
+      "prompt_eval_count": 102,
+      "total_duration_ns": 1229089600,
+      "load_duration_ns": 2657900,
+      "prompt_eval_duration_ns": 9624000,
+      "eval_duration_ns": 1074359000,
+      "wall_ms": 1234,
+      "ended_at": "2026-10-03T15:49:44.111Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1819034070
+  },
+  "eval_count": 146,
+  "response": "It sounds like the move to the memory unit has been a bit of an adjustment for both you and your dad. It's understandable that you might have felt the need to rush through the process, especially if you were trying to take care of all the logistics quickly.\n\nIt's also not surprising that the room still smells like the hospital. Those can be lingering scents that can be tough to get rid of.\n\nIt's interesting that your sister thinks you moved too fast. Sometimes, we all need a little more time to adjust to a new situation, and it's natural to feel overwhelmed.\n\nHow has your dad been adjusting to his new living situation? Has he been able to settle in and get comfortable in his new room?",
+  "response_sha256": "428545411fd9e1e1ebf656890259ca33e61f1d5755e214d0b68a91217d1cdb5a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:49:42.877Z",
+  "finished_at": "2026-10-03T15:49:44.132Z"
+}

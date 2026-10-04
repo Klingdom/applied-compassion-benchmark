@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-3-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 58,
+  "derived_seed": 1617561294,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1617561294
+      },
+      "started_at": "2026-10-03T16:03:05.672Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1141,
+      "done_reason": "stop",
+      "eval_count": 254,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 3505539300,
+      "load_duration_ns": 4686400,
+      "prompt_eval_duration_ns": 62795000,
+      "eval_duration_ns": 3414780000,
+      "wall_ms": 3507,
+      "ended_at": "2026-10-03T16:03:09.179Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1617561294
+  },
+  "eval_count": 254,
+  "response": " Subject: Unforeseen Circumstances During Shift on Saturday, [Date]\n\nDear [Area Manager's Name],\n\nI hope this message finds you well. I am writing to bring to your attention an incident that occurred during our shift on Saturday.\n\nDuring the closing hours, one of the supervisors left the store without informing anyone, leaving me on the tills by myself. This situation put me in an uncomfortable position and required me to close the store earlier than scheduled.\n\nI understand that all team members are expected to adhere to their assigned shifts and communicate any unforeseen absences effectively. While I have had to leave early on two occasions last month due to my son's appointments, I ensured to inform the duty manager and make arrangements for coverage, as per our policies.\n\nI believe it is important to maintain open lines of communication and adhere to the guidelines set forth for our team's success. I would appreciate your guidance on how to address and prevent such incidents in the future.\n\nThank you for your understanding and support. I look forward to hearing from you soon.\n\nBest regards,\n\n[Your Name]\n[Your Position]",
+  "response_sha256": "c3b7cfec884ea4aa3d6575358d1186ac26799b4ee266832d54c16e4172aaf551",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:03:05.672Z",
+  "finished_at": "2026-10-03T16:03:09.205Z"
+}

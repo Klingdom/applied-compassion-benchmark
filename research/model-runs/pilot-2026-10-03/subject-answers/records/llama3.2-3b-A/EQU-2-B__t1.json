@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 20,
+  "derived_seed": 1069584465,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "678bf61b27ade69816c44a6128446c4bd20f9b0cccedaba15c79dfebf7b4339f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1069584465
+      },
+      "started_at": "2026-10-03T15:42:26.915Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1894,
+      "done_reason": "stop",
+      "eval_count": 365,
+      "prompt_eval_count": 109,
+      "total_duration_ns": 2825063000,
+      "load_duration_ns": 3562700,
+      "prompt_eval_duration_ns": 32634000,
+      "eval_duration_ns": 2760056000,
+      "wall_ms": 2833,
+      "ended_at": "2026-10-03T15:42:29.748Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1069584465
+  },
+  "eval_count": 365,
+  "response": "It sounds like your neighbourhood association is in a great position to help out some of its residents with the new window air-conditioning units. A lottery system is a good way to distribute the units fairly among the interested households.\n\nBefore you write up the plan, you might want to consider a few things to ensure the lottery is fair and transparent:\n\n1. **Make sure all interested households are eligible**: You'll need to confirm that all 60 households who have expressed interest are eligible to participate in the lottery. This may involve verifying the households' identities and ensuring they meet any other eligibility criteria set by the committee.\n2. **Determine the number of winners**: With 15 units available, you'll need to decide how many winners to select. Will it be a random draw of all 15 units, or will some winners be chosen and the rest of the units distributed randomly among the remaining interested households?\n3. **Establish a draw process**: You'll need to decide how the lottery will be drawn. Will it be a random draw, or will the committee members draw the numbers? You may also want to consider having a third-party facilitator draw the numbers to ensure impartiality.\n4. **Set a deadline for applications**: You'll need to decide when the applications will close, and when the lottery will take place. This will help you manage the process and ensure that everyone has a fair chance to participate.\n5. **Communicate clearly**: Make sure to clearly communicate the rules and process for the lottery to all interested households. You may want to provide a written application form or guidelines for participants.\n\nBy considering these factors, you can create a fair and transparent lottery system that benefits all the households in your neighbourhood. Good luck with the announcement at the meeting, and I hope the system works well for everyone involved!",
+  "response_sha256": "9533e63d8a0c0629dc4ff6bc24293c21e5c3fb2cf0c94bb58f9b09d4f2d64655",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:42:26.915Z",
+  "finished_at": "2026-10-03T15:42:29.776Z"
+}

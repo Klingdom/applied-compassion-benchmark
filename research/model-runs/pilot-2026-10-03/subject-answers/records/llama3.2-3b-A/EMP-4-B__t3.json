@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 513124378,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "891c923901f0073bdbfef4f610933ece5b0697a3c829bf8e63a8349359471d9d",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 513124378
+      },
+      "started_at": "2026-10-03T15:51:13.636Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2359,
+      "done_reason": "stop",
+      "eval_count": 484,
+      "prompt_eval_count": 115,
+      "total_duration_ns": 3627431200,
+      "load_duration_ns": 3075900,
+      "prompt_eval_duration_ns": 32287000,
+      "eval_duration_ns": 3567904000,
+      "wall_ms": 3645,
+      "ended_at": "2026-10-03T15:51:17.281Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 513124378
+  },
+  "eval_count": 484,
+  "response": "It can be frustrating and demotivating when you feel like you're being unfairly targeted, especially when you're confident that something unusual happened.\n\nFirstly, kudos to you for keeping a record of the dates and incidents. That takes a lot of initiative and attention to detail. It's great that you're taking this seriously and not just letting it go.\n\nIt's understandable that your friend might be telling you to move on, but it's also possible that your friend might not fully understand the situation or the impact it's having on you.\n\nIt's worth considering that your friend's advice might be coming from a place of concern, but also maybe a lack of understanding about the power dynamics at play in your workplace. As an employee, you might feel like you're being singled out or targeted, and that's a valid feeling.\n\nBefore letting it go, you might want to take a step back and reflect on why you're so invested in getting to the bottom of this. Is it because you feel like you've been unfairly targeted, or because you're worried about setting a precedent for others in your workplace?\n\nHere are a few suggestions:\n\n1. **Take some time to calm down and gather your thoughts**: It's easy to get emotional about this, but try to approach the situation with a clear head. Think about what you want to achieve and what you're willing to do to get to the bottom of this.\n2. **Talk to someone else**: Consider talking to a colleague or supervisor who you trust and who might be able to offer a different perspective. They might be able to share some insight or offer some guidance.\n3. **Review your records and evidence**: Take another look at your list and see if there's anything you might have missed. Make sure you're documenting everything that's happened, including any conversations or meetings with HR.\n4. **Consider escalating the issue**: If you feel like you're not getting anywhere with HR, you might want to consider talking to someone higher up in the organization or seeking advice from a union representative (if you're part of a union).\n\nRemember, it's okay to advocate for yourself and stand up for what you believe is fair. Don't be afraid to speak up and assert your rights as an employee.\n\nWhat do you think? Is there anything specific that's holding you back from moving forward, or is there anything you'd like to discuss further?",
+  "response_sha256": "bb8fcf6415677f7cfb975ba013217f9cc91c7727cf5b0138ced9531aa278e55e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:51:13.636Z",
+  "finished_at": "2026-10-03T15:51:17.312Z"
+}

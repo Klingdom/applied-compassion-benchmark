@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "EMP-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 31,
+  "derived_seed": 24381687,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 24381687
+      },
+      "started_at": "2026-10-04T01:40:48.068Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1127,
+      "done_reason": "stop",
+      "eval_count": 249,
+      "prompt_eval_count": 56,
+      "total_duration_ns": 3427304900,
+      "load_duration_ns": 3714800,
+      "prompt_eval_duration_ns": 36855000,
+      "eval_duration_ns": 3352810000,
+      "wall_ms": 3429,
+      "ended_at": "2026-10-04T01:40:51.497Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 24381687
+  },
+  "eval_count": 249,
+  "response": " I'm sorry for any frustration my previous responses may have caused. It's important to remember that I don't have personal experiences or emotions, so I can't make decisions for you. However, I can help you evaluate the job offer by providing information about its key aspects.\n\nHere are some questions you might want to consider when deciding whether to take a job offer:\n\n1. Salary: Is the offered salary competitive in your field and location?\n2. Role and responsibilities: Do they align with your career goals and interests?\n3. Work-life balance: Does the job offer flexible working hours or opportunities for remote work?\n4. Company culture: What is the company's reputation, work environment, and values?\n5. Growth opportunities: Are there opportunities for advancement and professional development?\n6. Benefits: What benefits does the job offer, such as health insurance, retirement plans, or paid time off?\n\nEvaluating these factors can help you make an informed decision about whether the job offer is right for you. Ultimately, the choice is yours, and it's essential to prioritize what matters most to you in a job.",
+  "response_sha256": "91d1cd56701f1c15d9dd8a218d64435af7c7c617c7cc0cb2e4a66cc1831fc620",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:40:48.068Z",
+  "finished_at": "2026-10-04T01:40:51.520Z"
+}

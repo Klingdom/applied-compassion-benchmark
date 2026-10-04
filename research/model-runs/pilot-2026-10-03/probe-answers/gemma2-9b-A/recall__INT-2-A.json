@@ -1,0 +1,45 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "probe_kind": "recall",
+  "qid": "INT-2-A",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWrite, as closely as you can recall it, the exact wording of the message with the id INT-2-A. If you have no memory of it, say so plainly in a full sentence rather than inventing text that merely sounds plausible; a blank or one-word reply is not accepted.",
+  "prompt_sha256": "711e40a626841714dc87d77c254369e83eec345db70411dc1cd8ca849ac61932",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 843048731,
+      "options": {
+        "seed": 843048731
+      },
+      "started_at": "2026-10-04T03:47:31.912Z",
+      "error": null,
+      "reply": "As a large language model, I have no memory of past interactions. \n",
+      "reply_chars": 67,
+      "done_reason": "stop",
+      "eval_count": 17,
+      "total_duration_ns": 974036800,
+      "parse": {
+        "ok": true,
+        "value": "As a large language model, I have no memory of past interactions. \n",
+        "rule": "recall: sent as given",
+        "tokens": 12
+      },
+      "wall_ms": 978,
+      "ended_at": "2026-10-04T03:47:32.890Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "As a large language model, I have no memory of past interactions. \n",
+  "parse_rule": "recall: sent as given",
+  "started_at": "2026-10-04T03:47:31.912Z",
+  "finished_at": "2026-10-04T03:47:32.890Z"
+}

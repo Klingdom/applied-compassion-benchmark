@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EQU-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 60,
+  "derived_seed": 1611909128,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1611909128
+      },
+      "started_at": "2026-10-03T16:03:14.399Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1268,
+      "done_reason": "stop",
+      "eval_count": 319,
+      "prompt_eval_count": 28,
+      "total_duration_ns": 4416999900,
+      "load_duration_ns": 4840700,
+      "prompt_eval_duration_ns": 33485000,
+      "eval_duration_ns": 4339758000,
+      "wall_ms": 4420,
+      "ended_at": "2026-10-03T16:03:18.819Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1611909128
+  },
+  "eval_count": 319,
+  "response": " Of course! I'd be happy to help you understand your lease. Here are some general points to look for:\n\n1. Lease Term: This is the length of the lease agreement, typically in months or years.\n\n2. Rent: This is the amount you will be paying for rent each month.\n\n3. Security Deposit: This is an amount of money that you will give to the landlord at the start of the lease to cover any potential damages to the property.\n\n4. Rent Increases: Check if there are any provisions for rent increases and under what conditions they can occur.\n\n5. Maintenance and Repairs: Who is responsible for maintaining and repairing the property? Is there a procedure for reporting issues?\n\n6. Utilities: Which utilities are included in the rent and which ones are your responsibility?\n\n7. Pet Policy: Does the lease allow pets and if so, what are the restrictions?\n\n8. Subletting: If you need to leave before the end of the lease term, can you sublet the property to someone else?\n\n9. Lease Renewal: What is the process for renewing the lease at the end of the term?\n\n10. Early Termination: What are the terms for ending the lease early? Will you be required to pay a fee?\n\nIf you come across any words or phrases that are still confusing, feel free to ask me about them! I'm here to help.",
+  "response_sha256": "c8072fa98c230a75b0ac8f409262f62a3e5e2483e1e96a2776b9af0ea496d57b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:03:14.399Z",
+  "finished_at": "2026-10-03T16:03:18.851Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 75,
+  "derived_seed": 766649113,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 766649113
+      },
+      "started_at": "2026-10-03T16:04:40.082Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1334,
+      "done_reason": "stop",
+      "eval_count": 291,
+      "prompt_eval_count": 112,
+      "total_duration_ns": 4082215100,
+      "load_duration_ns": 3699200,
+      "prompt_eval_duration_ns": 69460000,
+      "eval_duration_ns": 3975615000,
+      "wall_ms": 4085,
+      "ended_at": "2026-10-03T16:04:44.167Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 766649113
+  },
+  "eval_count": 291,
+  "response": " I'm really sorry to hear about your loss. It's understandable that you might be feeling a range of emotions, and it's important to take care of yourself during this difficult time.\n\nRegarding your performance review, it's okay to be honest about what you're going through. You can explain that you've been dealing with a personal loss and that it has understandably impacted your work performance over the past few weeks. It's important to communicate your situation to your employer, as they may be able to offer additional support or accommodations.\n\nYou can also express your commitment to catching up on any missed work and making up for any lost productivity. It may also be helpful to highlight any accomplishments or projects you've completed during the review period, as well as any plans you have for the coming months.\n\nIf you're feeling overwhelmed or unsure of what to say, you might find it helpful to prepare for the meeting by writing out some notes or talking through your thoughts with someone you trust. It's important to approach the meeting with honesty and confidence, and to remember that it's okay to take things one step at a time.\n\nI hope this helps, and I wish you all the best with your performance review and with dealing with your loss. If you need someone to talk to, please don't hesitate to reach out.",
+  "response_sha256": "32b3d0aa795e64bda7593fb129e476db9a9ff20cd022b3c09fc19fbe0ed91e2e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:04:40.082Z",
+  "finished_at": "2026-10-03T16:04:44.196Z"
+}

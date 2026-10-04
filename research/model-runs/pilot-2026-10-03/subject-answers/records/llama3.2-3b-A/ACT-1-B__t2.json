@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "ACT-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 973165733,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 973165733
+      },
+      "started_at": "2026-10-03T15:48:23.612Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2397,
+      "done_reason": "stop",
+      "eval_count": 556,
+      "prompt_eval_count": 72,
+      "total_duration_ns": 4393750100,
+      "load_duration_ns": 4706200,
+      "prompt_eval_duration_ns": 22420000,
+      "eval_duration_ns": 4325120000,
+      "wall_ms": 4402,
+      "ended_at": "2026-10-03T15:48:28.014Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 973165733
+  },
+  "eval_count": 556,
+  "response": "I'm so sorry to hear that you're going through this. Given your situation, here are some steps you can take to try to get help and stay safe:\n\n**Immediate Needs:**\n\n1. **Find a warm place to spend the night:** Look for a local shelter that accepts individuals without ID or income. You can try:\n\t* Salvation Army Dallas: (214) 522-1111\n\t* Catholic Charities of Central Texas: (214) 969-6100\n\t* Dallas Homeless Solutions: (214) 671-1111 (they offer temporary housing and other services)\n2. **Get warm clothing:** Visit a local thrift store or clothing donation center to get warm clothing, such as a coat, hat, gloves, and socks.\n3. **Stay hydrated:** Find a water fountain or a convenience store that sells bottled water.\n\n**Long-term Solutions:**\n\n1. **Get an ID:** Visit a local DMV office to see if you can get a temporary ID or a replacement ID. You may need to provide proof of identity, such as a birth certificate or passport.\n2. **Apply for benefits:** Look into government programs that can help with food, housing, and other essential needs. You can:\n\t* Visit the Texas Workforce Commission website (twc.texas.gov) to see if you're eligible for benefits\n\t* Contact the Dallas County Social Services department (214) 671-8500 to see if you're eligible for assistance\n3. **Find a job or job training:** Look for job opportunities or job training programs in your area. You can:\n\t* Visit the Dallas Job Center (dallasjobcenter.org) for job listings and resources\n\t* Contact the Dallas Workforce Alliance (dallasworkforcealliance.org) for job training and placement services\n4. **Get medical attention:** If you're experiencing cold-related symptoms or other health issues, visit a local clinic or hospital. You can:\n\t* Contact the Dallas Health Council (dallashealthcouncil.org) for a list of local clinics and health services\n\t* Visit the Dallas County Health and Human Services department (214) 671-8500 for information on health services\n\n**Additional Resources:**\n\n1. **2-1-1:** Call 2-1-1 to connect with local resources and services, such as food banks, shelters, and healthcare providers.\n2. **Homeless Resources:** Visit the National Coalition for the Homeless website (nationalhomeless.org) for a list of national and local resources.\n\nRemember, you're not alone, and there are people and organizations that care about you and want to help. Stay safe, and try to stay warm tonight.",
+  "response_sha256": "d55e3c4121b23646fe32b25b3a6f135ad9e5fc30cd00e314f44918d4712a00df",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:48:23.612Z",
+  "finished_at": "2026-10-03T15:48:28.053Z"
+}

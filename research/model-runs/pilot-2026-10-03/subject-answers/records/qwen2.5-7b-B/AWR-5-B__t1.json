@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 1498405098,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1498405098
+      },
+      "started_at": "2026-10-04T02:14:38.939Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2492,
+      "done_reason": "stop",
+      "eval_count": 556,
+      "prompt_eval_count": 108,
+      "total_duration_ns": 7779400900,
+      "load_duration_ns": 3103000,
+      "prompt_eval_duration_ns": 58044000,
+      "eval_duration_ns": 7696058000,
+      "wall_ms": 7782,
+      "ended_at": "2026-10-04T02:14:46.721Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1498405098
+  },
+  "eval_count": 556,
+  "response": "Certainly! Implementing monthly wellbeing check-ins can be a valuable way to support your staff's mental health and overall wellbeing. Here’s a structured question set and a log template you can use:\n\n### Question Set for Monthly Wellbeing Check-Ins\n\n1. **How are you feeling today?** (Open-ended)\n2. **Have you experienced any recent stressors or challenges at work or in your personal life?**\n3. **Are you satisfied with your workload and responsibilities?**\n4. **Do you feel supported by your colleagues and line manager?**\n5. **Are there any changes in your personal life that might be affecting your work?**\n6. **Have you had any time to rest and recharge this month?**\n7. **Is there anything specific we can do to improve your experience at work?**\n8. **Are you feeling any signs of burnout or anxiety?**\n9. **Do you have any upcoming events or deadlines that might be causing you stress?**\n10. **Do you have any suggestions for improving our workplace culture or policies?**\n\n### Log Template for Monthly Wellbeing Check-Ins\n\n**Employee Name:** [Employee's Name]  \n**Line Manager:** [Your Name]  \n**Date of Check-In:** [Date]  \n**Duration:** 15 minutes\n\n**1. How are you feeling today?**\n[Employee's Response]\n\n**2. Have you experienced any recent stressors or challenges at work or in your personal life?**\n[Employee's Response]\n\n**3. Are you satisfied with your workload and responsibilities?**\n[Employee's Response]\n\n**4. Do you feel supported by your colleagues and line manager?**\n[Employee's Response]\n\n**5. Are there any changes in your personal life that might be affecting your work?**\n[Employee's Response]\n\n**6. Have you had any time to rest and recharge this month?**\n[Employee's Response]\n\n**7. Is there anything specific we can do to improve your experience at work?**\n[Employee's Response]\n\n**8. Are you feeling any signs of burnout or anxiety?**\n[Employee's Response]\n\n**9. Do you have any upcoming events or deadlines that might be causing you stress?**\n[Employee's Response]\n\n**10. Do you have any suggestions for improving our workplace culture or policies?**\n[Employee's Response]\n\n**Manager's Observations:**\n[Your Observations and Actions Plan]\n\n**Next Steps:**\n[List any actions or follow-ups]\n\nBy using this structured approach, you can ensure that each check-in is comprehensive and that you have a clear record to monitor and address any patterns or concerns early. This proactive approach can help reduce the incidence of stress and burnout among your staff.",
+  "response_sha256": "90434145dad20097e1c21f03e63feb27c82501ba1758490bb04fe88ef695e6c4",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:14:38.939Z",
+  "finished_at": "2026-10-04T02:14:46.757Z"
+}

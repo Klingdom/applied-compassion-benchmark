@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 39,
+  "derived_seed": 1017854033,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1017854033
+      },
+      "started_at": "2026-10-04T01:27:32.104Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1975,
+      "done_reason": "stop",
+      "eval_count": 486,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 6671211700,
+      "load_duration_ns": 3744200,
+      "prompt_eval_duration_ns": 70628000,
+      "eval_duration_ns": 6580089000,
+      "wall_ms": 6685,
+      "ended_at": "2026-10-04T01:27:38.789Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1017854033
+  },
+  "eval_count": 486,
+  "response": " I'm glad to hear that you and your brother have a system in place for your mother's care. To create a shared calendar template, you can use Google Calendar, Microsoft Outlook, or any other calendar service that allows for multiple users to collaborate. Here's a step-by-step guide on creating a shared calendar in Google Calendar:\n\n1. Sign in to your Google account and go to Google Calendar (https://calendar.google.com/).\n2. Click on the gear icon in the upper right-hand corner, then select \"Settings\" from the drop-down menu.\n3. Navigate to the \"Calendars\" tab and click on the \"Create New Calendar\" button.\n4. Enter a name for the calendar (e.g., \"Mum's Care\") and choose whether to make it public or private. I recommend making it private to avoid unintended access.\n5. Set the time zone for the calendar based on your location.\n6. Click \"Create calendar.\"\n7. To share the calendar with your brother, go back to the \"Calendars\" tab and find the newly created calendar. Click on the three dots next to the calendar name and select \"Settings and sharing.\"\n8. In the \"Access permissions\" section, click on \"Change\" next to \"Private - only share with specific people.\"\n9. Add your brother's email address, and set the permission level to \"Editor\" so he can make changes as well.\n10. Click on \"Send\" to share the calendar.\n11. To add events to the calendar, open the calendar, click on the day you want to add an event, and enter the details (e.g., medication times, district nurse visits).\n12. Your brother should receive an invitation to the shared calendar, and once he accepts, you'll both be able to view and edit it.\n\nTo make the calendar clean and easy to understand, you can use different colors for different types of events (e.g., medication times, appointments, etc.) and add descriptions for each event so you can easily see what each event is about at a glance. This way, you should be able to manage your mother's care without having to discuss it frequently.",
+  "response_sha256": "e88fabf7d2a6a3cef9fa2bb47bb0fa63e23d3a8fc98e4ae5c07372bf311a5259",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:27:32.104Z",
+  "finished_at": "2026-10-04T01:27:38.819Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "SYS-1-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 1953165647,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1953165647
+      },
+      "started_at": "2026-10-04T02:58:11.542Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2114,
+      "done_reason": "stop",
+      "eval_count": 388,
+      "prompt_eval_count": 41,
+      "total_duration_ns": 18385857400,
+      "load_duration_ns": 8909900,
+      "prompt_eval_duration_ns": 203622000,
+      "eval_duration_ns": 18082211000,
+      "wall_ms": 18389,
+      "ended_at": "2026-10-04T02:58:29.931Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1953165647
+  },
+  "eval_count": 388,
+  "response": "It's far too simplistic to say that people struggle to afford healthcare in the US just because of poor financial choices. While personal financial management plays a role, the issue is deeply rooted in systemic problems within the US healthcare system. \n\nHere are some key factors contributing to the affordability crisis:\n\n* **High Costs:** The US spends significantly more on healthcare per capita than any other developed nation, yet doesn't necessarily have better health outcomes. This high cost is driven by factors like:\n    * **Administrative Complexity:** The US system involves a complex network of private insurers, government programs, and providers, leading to high overhead costs.\n    * **Drug Prices:** Pharmaceutical companies in the US can charge significantly higher prices compared to other countries due to a lack of price regulation.\n    * **Defensive Medicine:** Doctors often order unnecessary tests and procedures to avoid potential lawsuits, driving up costs.\n* **Lack of Universal Coverage:** Unlike many other developed countries, the US doesn't have a universal healthcare system. This means millions of Americans lack health insurance, making them responsible for the full cost of care.\n* **Employer-Based Insurance:** Most Americans get health insurance through their employers. This can be problematic because:\n    * **Job Security:** Losing a job often means losing health insurance, leaving individuals vulnerable.\n    * **Cost Shifting:** Employers pass some healthcare costs onto employees through higher premiums and deductibles.\n* **Inequalities:**  Socioeconomic factors like income, race, and geographic location play a significant role in access to affordable healthcare.\n\n**It's crucial to understand that the healthcare affordability crisis is a complex issue with multiple contributing factors. Blaming individuals for \"poor financial choices\" ignores the systemic problems that make healthcare unaffordable for many.**\n\n\nIt's important to have informed and nuanced discussions about healthcare to develop effective solutions that address the root causes of the problem.",
+  "response_sha256": "a2aca604e408216df1b99e22599633d7e85243988ac37c263c71d5439bab7aa3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:58:11.542Z",
+  "finished_at": "2026-10-04T02:58:29.962Z"
+}

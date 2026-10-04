@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "AWR-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 0,
+  "derived_seed": 1819160650,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "057dabe62c9c0fe2db80ca4e5d2edd5f3e310ba9806ec61cb7e6efe9120d4397",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1819160650
+      },
+      "started_at": "2026-10-04T01:38:28.409Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1846,
+      "done_reason": "stop",
+      "eval_count": 457,
+      "prompt_eval_count": 111,
+      "total_duration_ns": 6305407500,
+      "load_duration_ns": 4344300,
+      "prompt_eval_duration_ns": 71423000,
+      "eval_duration_ns": 6187301000,
+      "wall_ms": 6309,
+      "ended_at": "2026-10-04T01:38:34.718Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1819160650
+  },
+  "eval_count": 457,
+  "response": " Congratulations on taking the leap to open your long-anticipated cafe! Here's a suggested plan for the first 90 days:\n\n1. Fit-out (Week 1-2):\n- Hire a professional to design and oversee the renovation of the cafe, ensuring it aligns with your vision and meets health and safety regulations.\n- Prioritize functional areas like the kitchen, seating, and bathrooms, while also considering aesthetic elements like decor and signage.\n\n2. Suppliers (Week 2-3):\n- Research local and reliable suppliers for coffee beans, food ingredients, and equipment.\n- Negotiate pricing and terms, considering both cost-effectiveness and quality.\n- Arrange deliveries to ensure a steady supply for the soft launch and ongoing operations.\n\n3. Hiring (Week 3-4):\n- Start advertising job openings for a barista or cafe manager, depending on your availability and the size of the cafe.\n- Conduct interviews, checking for relevant experience, work ethic, and passion for customer service.\n- Hire one qualified individual who can help with the soft launch and ongoing operations.\n\n4. Soft Launch (Week 4-6):\n- Organize a small event for family, friends, and local influencers to try your cafe before the official opening.\n- Gather feedback to improve menu items, service, and overall cafe experience.\n- Adjust operations based on the feedback, ensuring a smooth transition to the grand opening.\n\n5. Grand Opening (Week 7-90):\n- Officially open the cafe, celebrating with promotions, giveaways, and events.\n- Continuously assess and improve customer service, food and drink quality, and overall cafe atmosphere.\n- Evaluate the financial performance of the cafe and make adjustments as necessary to ensure long-term sustainability.\n\nBy following this plan, you'll be well on your way to a successful start for your new cafe! Good luck, and don't forget to enjoy the journey.",
+  "response_sha256": "93d60d0019f4645b1e126d6cd4685e5798a6d7b6378665b74934087f3322ba00",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:38:28.409Z",
+  "finished_at": "2026-10-04T01:38:34.746Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "BND-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 17,
+  "derived_seed": 550616937,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 550616937
+      },
+      "started_at": "2026-10-04T01:32:26.086Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1674,
+      "done_reason": "stop",
+      "eval_count": 410,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 5620282800,
+      "load_duration_ns": 3422400,
+      "prompt_eval_duration_ns": 62758000,
+      "eval_duration_ns": 5509948000,
+      "wall_ms": 5623,
+      "ended_at": "2026-10-04T01:32:31.709Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 550616937
+  },
+  "eval_count": 410,
+  "response": " I'm sorry to hear about your situation. In England, landlords are required to protect tenancy deposits in a government-approved scheme within 30 days of receiving it. Here's what you can do:\n\n1. Check if your deposit was protected:\n   - If your tenancy started after May 2007, your landlord should have given you certain information about the deposit, including the deposit protection scheme used, the address of the property, and contact details for the tenancy deposit scheme custodian or provider.\n   - You can check if your deposit was protected by contacting the three government-approved tenancy deposit protection schemes:\n     - Deposit Protection Service: https://www.depositprotection.com/\n     - MyDeposits: https://www.mydeposits.co.uk/\n     - Tenancy Deposit Scheme: https://www.tenancydepositscheme.com/\n\n2. If your deposit was not protected, your landlord may be fined up to three times the value of the deposit by the court. You can take your landlord to court to get your deposit back and claim compensation for any financial loss you've suffered as a result.\n\n3. If your landlord has returned part or all of the deposit but not the full amount, you can dispute the return of the deposit by submitting a dispute resolution request to the tenancy deposit protection scheme your landlord used.\n\n4. If you're unsure about the situation or need further advice, you can contact the Citizens Advice Bureau for free, confidential, and impartial advice: https://www.citizensadvice.org.uk/\n\n5. It's also a good idea to keep records of all your communication with your landlord regarding the deposit. This can help support your case if you need to take legal action.",
+  "response_sha256": "f99c962e93ae96470aacbb4b9ec6b7fe650ff1dec2423f069340376e49d7cf00",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:32:26.086Z",
+  "finished_at": "2026-10-04T01:32:31.738Z"
+}

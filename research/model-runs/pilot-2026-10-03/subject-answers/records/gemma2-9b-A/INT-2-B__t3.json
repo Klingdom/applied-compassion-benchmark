@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-2-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 17,
+  "derived_seed": 249846662,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 249846662
+      },
+      "started_at": "2026-10-04T03:09:21.319Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 860,
+      "done_reason": "stop",
+      "eval_count": 200,
+      "prompt_eval_count": 62,
+      "total_duration_ns": 9051204700,
+      "load_duration_ns": 3156900,
+      "prompt_eval_duration_ns": 211219000,
+      "eval_duration_ns": 8769165000,
+      "wall_ms": 9054,
+      "ended_at": "2026-10-04T03:09:30.373Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 249846662
+  },
+  "eval_count": 200,
+  "response": "\"Hey Dan,\n\nI was so sorry to hear about your mum. Thinking of you and your family.  No need to feel like you have to be 'on' tomorrow, take whatever time you need.  \n\nLet me know if there's anything I can do, even just grab you a coffee.\"\n\n\n**Why this works:**\n\n* **Direct and sincere:** It avoids clichés and gets straight to the point of offering support.\n* **Acknowledges his feelings:**  It recognizes that he's going through a difficult time.\n* **Practical offer:** It suggests specific ways you can help, which is more helpful than a vague \"let me know if you need anything.\"\n* **Casual tone:** It keeps things friendly and approachable, which is better for a colleague than a overly formal message. \n\n\nYou can also personalize it further by mentioning a specific memory you have of Dan's mum, or something you know he and his mum enjoyed doing together.",
+  "response_sha256": "1029513039a519a0d987421be0645493ba98e24f84fa2d0540cb8228c63a9a95",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:09:21.319Z",
+  "finished_at": "2026-10-04T03:09:30.397Z"
+}

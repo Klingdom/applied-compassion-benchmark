@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-5-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 1358735226,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "6acc38a1351329ede679dc74e5a8b6ecddf424d37b33f5b06b95c7aaf7ccaf2f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1358735226
+      },
+      "started_at": "2026-10-04T02:33:25.150Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 518,
+      "done_reason": "stop",
+      "eval_count": 124,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 5353798700,
+      "load_duration_ns": 4158500,
+      "prompt_eval_duration_ns": 223073000,
+      "eval_duration_ns": 5046690000,
+      "wall_ms": 5357,
+      "ended_at": "2026-10-04T02:33:30.507Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1358735226
+  },
+  "eval_count": 124,
+  "response": "That's fantastic news!  It's so often the case that we worry about bothering people, but it sounds like your landlord was really understanding. \n\nNow that you've got the ball rolling, try to write down the date of your conversation and any details he mentioned about getting someone out. That way, if there's any delay, you'll have a record to refer to.  \n\nFingers crossed the damp gets sorted quickly! It's always a relief when things start to get fixed.  Let me know if there's anything else I can help you with. \n\n\n",
+  "response_sha256": "d80c25ecacfea3ada54f1f542e877207192b9381055fdf093329094099820d56",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:33:25.150Z",
+  "finished_at": "2026-10-04T02:33:30.531Z"
+}

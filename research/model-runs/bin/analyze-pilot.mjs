@@ -181,6 +181,9 @@ for (let a = 0; a < SUBJ.length; a++) for (let b = a + 1; b < SUBJ.length; b++) 
 }
 // Pre-registered comparisons from the config (arms runs): the SAME paired item-resampling bootstrap draws as `pairs`
 // (boots[x][k] - boots[y][k] over the same resampled items), in the order and orientation the config lists them.
+const armAPairs = ARMS && Array.isArray(CFG.comparisons)
+  ? CFG.comparisons.filter((c) => c.kind === "build" && CFG.subjects.find((s) => s.label === c.a)?.arm === "A" && CFG.subjects.find((s) => s.label === c.b)?.arm === "A").map((c) => [c.a, c.b])
+  : null;
 const comparisons = ARMS && Array.isArray(CFG.comparisons)
   ? pairedComparisons({ comparisons: CFG.comparisons, boots, composites: Object.fromEntries(SUBJ.map((s) => [s, subjects[s].composite])), ci, r1 }).map((p) => {
     const sx = CFG.subjects.find((s) => s.label === p.a), sy = CFG.subjects.find((s) => s.label === p.b);
@@ -190,16 +193,35 @@ const comparisons = ARMS && Array.isArray(CFG.comparisons)
       composite_a: subjects[p.a].composite, composite_b: subjects[p.b].composite,
       difference: p.difference, interval95: p.interval95, separated: p.separated,
       median_reply_words_a: subjects[p.a].median_reply_words, median_reply_words_b: subjects[p.b].median_reply_words,
+      // Arm-A build pairs: PREREGISTRATION.md section 1.1 requires the Bonferroni-over-6 reading beside the uncorrected one.
+      // Same sorted replicates, tails at ranks floor(alpha/2 * B) + 1 and ceil((1 - alpha/2) * B) of B (percentile bootstrap).
+      ...(sx.arm === "A" && sy.arm === "A" && p.kind === "build" ? (() => {
+        const m = armAPairs.length, aB = 0.05 / m;
+        const t = boots[p.a].map((v, k) => v - boots[p.b][k]).sort((u, w) => u - w);
+        const loIdx = Math.max(0, Math.floor((aB / 2) * B)), hiIdx = Math.min(B - 1, Math.ceil((1 - aB / 2) * B) - 1);
+        return {
+          bonferroni: { comparisons: m, confidence_percent: r2(100 * (1 - aB)), interval: [r1(t[loIdx]), r1(t[hiIdx])], ranks: [loIdx + 1, hiIdx + 1], of: B, separated: t[loIdx] > 0 || t[hiIdx] < 0 },
+        };
+      })() : {}),
+      // Arm comparisons: the question is B minus A (the config lists a = arm A, b = arm B, so `difference` is A minus B).
+      ...(p.kind === "arm" ? (() => {
+        const [lo, hi] = ci(boots[p.b].map((v, k) => v - boots[p.a][k]));
+        return { b_minus_a: { difference: r1(subjects[p.b].composite - subjects[p.a].composite), interval95: [lo, hi], separated: lo > 0 || hi < 0 } };
+      })() : {}),
     };
   })
   : null;
 // per-dimension paired separation (same resampled items)
 const dimension_pairwise = [];
-for (let a = 0; a < SUBJ.length; a++) for (let b = a + 1; b < SUBJ.length; b++) for (const k of DIMS) {
-  const [x, y] = [SUBJ[a], SUBJ[b]];
+// ARMS (pilot-2026-10-03, PREREGISTRATION.md section 8): dimension-level differences for the arm-A build pairs ONLY,
+// Bonferroni over (arm-A pairs x dimensions) = 6 x 8 = 48. Other runs keep every subject pair, as before.
+const dimPairs = [];
+if (armAPairs) { for (const p of armAPairs) for (const k of DIMS) dimPairs.push([p[0], p[1], k]); }
+else { for (let a = 0; a < SUBJ.length; a++) for (let b = a + 1; b < SUBJ.length; b++) for (const k of DIMS) dimPairs.push([SUBJ[a], SUBJ[b], k]); }
+for (const [x, y, k] of dimPairs) {
   const t = dimBoots[x][k].map((v, i) => v - dimBoots[y][k][i]).sort((p, q) => p - q);
   const lo = t[Math.floor(0.025 * B)], hi = t[Math.floor(0.975 * B)];
-  const m = SUBJ.length * (SUBJ.length - 1) / 2 * DIMS.length, aB = 0.05 / m;
+  const m = armAPairs ? dimPairs.length : SUBJ.length * (SUBJ.length - 1) / 2 * DIMS.length, aB = 0.05 / m;
   const loIdx = Math.max(0, Math.floor((aB / 2) * B)), hiIdx = Math.min(B - 1, Math.ceil((1 - aB / 2) * B) - 1);
   const loB = t[loIdx], hiB = t[hiIdx];
   const bonferroni_note = loIdx === 0
@@ -305,6 +327,26 @@ function localOperations() {
       replies_flagged_by_reply_side_phrase_check: p.reply_leak_flagged,
     }])),
     subject_run_complete: sum.complete,
+    ...(existsSync(join(R, "keys", "judge-key.reroute-2.json")) ? (() => {
+      // Supplement round (the reroute-2 chain): counts from its own ledger, map and key.
+      const sk = JSON.parse(readFileSync(join(R, "keys", "judge-key.reroute-2.json"), "utf8"));
+      const sq = lines("supplement-batches.ledger.tsv").map((l) => l.split(TAB));
+      const sqMap = lines("supplement-batches.map.tsv").map((l) => l.split(TAB));
+      const bySupp = {};
+      for (const r of sk.responses) for (const [j, p] of Object.entries(r.judge_provenance ?? {})) if (p === "requoted") bySupp[j] = (bySupp[j] ?? 0) + 1;
+      return {
+        supplement_batches: sqMap.length,
+        supplement_calls_accepted: sq.filter((r) => r[2] === "ok").length,
+        supplement_calls_voided: sq.filter((r) => r[2] !== "ok").length,
+        ratings_requoted_in_supplements: sk.summary.ratings_requoted_in_supplements,
+        supplement_note: "ratings_requoted_in_supplements counts slots requoted a second time; each of them is one of the slots requoted in round 1 (checked against judge-key.reroute.json), so the distinct requoted ratings are ratings_requoted_after_both_rounds",
+        supplement_slots_were_all_round_1_slots: sk.supplements.flatMap((x) => x.selected).every((x) => rkey.responses.some((r) => r.response_id === x.response_id && r.judge_provenance?.[x.judge] === "requoted")),
+        ratings_requoted_after_both_rounds: sk.summary.ratings_requoted,
+        ratings_requoted_after_both_rounds_by_judge: bySupp,
+        ratings_rerouted_after_both_rounds: sk.summary.ratings_rerouted,
+        judges_excluded_after_both_rounds: sk.excluded_judges,
+      };
+    })() : {}),
   };
 }
 const operations = LOCAL ? localOperations() : {
@@ -419,10 +461,12 @@ const local = LOCAL ? (() => {
   };
 
   // Bridge drift: the library's own function over the SAME validated ratings the finish phase used.
-  const rkeyFile = join(R, "keys", "judge-key.reroute.json");
+  // The FINAL routed key and its answer directories: the supplement chain (reroute-2) when the run has one.
+  const hasSupp = existsSync(join(R, "keys", "judge-key.reroute-2.json"));
+  const rkeyFile = join(R, "keys", hasSupp ? "judge-key.reroute-2.json" : "judge-key.reroute.json");
   const { judgeKey, responsesById } = asm.loadInputs(join(R, "keys"), rkeyFile);
   const bridgeById = asm.bridgeTexts(judgeKey);
-  const loaded = jans.loadRoutedAnswers({ routingKey: judgeKey, dirs: [join(R, "judge-answers"), join(R, "judge-answers-reroute")], responsesById, bridgeById });
+  const loaded = jans.loadRoutedAnswers({ routingKey: judgeKey, dirs: [join(R, "judge-answers"), join(R, "judge-answers-reroute"), ...(hasSupp ? [join(R, "judge-answers-reroute-2")] : [])], responsesById, bridgeById });
   if (loaded.errors.length > 0) throw new Error(`bridge: judge answers did not validate: ${loaded.errors.slice(0, 3).join("; ")}`);
   const drift = brg.bridgeDrift({ bridgeEntries: [...bridgeById.values()], bridgeRatings: loaded.bridgeRatings, excludedJudges: judgeKey.excluded_judges ?? [] });
   const newBy = new Map(loaded.bridgeRatings.map((x) => [`${x.response_id}|${x.judge}`, x.rating_1_5]));
@@ -462,7 +506,69 @@ const local = LOCAL ? (() => {
   return { judge_validity, bridge_drift, deviations, self_identifying_replies, preregistration_sha256: sha256File(prereg) };
 })() : null;
 
-const families = LOCAL ? [...new Set(CFG.judges.map((j) => j.family))].sort() : null;
+// ---- arms runs only: PREREGISTRATION.md section 9 length check, section 1.3 replication, per-build contamination ------
+const armsExtra = ARMS ? (() => {
+  const builds = [...new Set(CFG.subjects.map((s) => `${s.tag}@sha256:${s.digest}`))];
+  const armOf = (b, arm) => CFG.subjects.find((s) => `${s.tag}@sha256:${s.digest}` === b && s.arm === arm);
+  const lengthCheck = builds.map((b) => {
+    const a = armOf(b, "A"), bb = armOf(b, "B");
+    const m = /about (\d+) words/.exec(bb.system_message ?? "");
+    if (!m) throw new Error(`${bb.label}: no 'about N words' target in its system message`);
+    const target = Number(m[1]), medA = subjects[a.label].median_reply_words, medB = subjects[bb.label].median_reply_words;
+    const effective = Math.abs(medB - target) < Math.abs(medA - target);
+    return {
+      build: b, arm_a: a.label, arm_b: bb.label, target_words: target, median_words_a: medA, median_words_b: medB,
+      distance_from_target_a: Math.abs(medA - target), distance_from_target_b: Math.abs(medB - target),
+      length_instruction: effective ? "effective" : "ineffective",
+      b_minus_a_reading: effective ? "length-instructed arm is closer to the target; the B-A difference is read with the length change in mind" : "uninformative about length (section 9: arm B's median is not closer to the target than arm A's)",
+    };
+  });
+  // Replication (section 1.3): descriptive only, against the source run's analysis.json.
+  let replication = null;
+  const srcFile = join(ROOT, "research", "model-runs", CFG.bridge?.source_run ?? "", "analysis.json");
+  if (CFG.bridge?.source_run && existsSync(srcFile)) {
+    const prior = JSON.parse(readFileSync(srcFile, "utf8"));
+    const shared = CFG.subjects.filter((s) => s.arm === "A" && prior.subjects[s.label.replace(/-A$/, "")]);
+    const perBuild = Object.fromEntries(shared.map((s) => {
+      const base = s.label.replace(/-A$/, ""), pr = prior.subjects[base];
+      return [base, {
+        this_run: { label: s.label, composite: subjects[s.label].composite, interval95: subjects[s.label].interval95, median_reply_words: subjects[s.label].median_reply_words },
+        source_run: { composite: pr.composite, interval95: pr.interval95, median_reply_words: pr.median_reply_words },
+        composite_difference_this_minus_source: r1(subjects[s.label].composite - pr.composite),
+      }];
+    }));
+    const [pa, pb] = prior.pairwise[0] ? [prior.pairwise[0].a, prior.pairwise[0].b] : [null, null];
+    const xa = shared.find((s) => s.label === `${pa}-A`), xb = shared.find((s) => s.label === `${pb}-A`);
+    if (xa && xb) {
+      const [lo, hi] = ci(boots[xa.label].map((v, k) => v - boots[xb.label][k]));
+      const sep = lo > 0 || hi < 0;
+      const m = comparisons.find((c) => (c.a === xa.label && c.b === xb.label) || (c.a === xb.label && c.b === xa.label));
+      replication = {
+        note: "Descriptive only (PREREGISTRATION.md section 1.3). The same two builds (same digests) as the source run. No claim that a difference in level is caused by the system message: the judge sessions also differ.",
+        source_run: CFG.bridge.source_run,
+        pair: `${pa} minus ${pb}`,
+        source_run_result: { difference: prior.pairwise[0].difference, interval95: prior.pairwise[0].interval95, separated: prior.pairwise[0].separated },
+        this_run_arm_a_result: { difference: r1(subjects[xa.label].composite - subjects[xb.label].composite), interval95: [lo, hi], separated: sep, bonferroni_over_6_separated: m?.bonferroni?.separated ?? null },
+        separation_repeats: prior.pairwise[0].separated === sep,
+        builds: perBuild,
+        bridge_drift_mean_abs_difference: local.bridge_drift.mean_abs_difference,
+      };
+    }
+  }
+  const contamination_per_build = Object.fromEntries(builds.map((b) => {
+    const a = armOf(b, "A"), c = subjects[a.label].contamination;
+    return [b, { probe_hosted_by: a.label, arm_b_variant: armOf(b, "B").label, ...c, scorecard_composite_arm_a: card[a.label].composite, scorecard_band_arm_a: card[a.label].band }];
+  }));
+  const allRows = SUBJ.flatMap((s) => audit[s].row_mapping);
+  const pa2 = asm.pairedAgreement(allRows);
+  return {
+    length_check: { rule: "PREREGISTRATION.md section 9: if arm B's median reply length is not closer to the target than arm A's for a build, that build's length instruction is ineffective and its B - A comparison uninformative about length", per_build: lengthCheck },
+    replication, contamination_per_build,
+    judge_agreement_overall: { responses: pa2.responses, exact: r3(pa2.exact_agreement), mean_absolute_difference: r2(pa2.mean_absolute_difference), responses_differing_by_2_or_more: pa2.responses_differing_by_2_or_more },
+  };
+})() : null;
+
+const families = LOCAL ?[...new Set(CFG.judges.map((j) => j.family))].sort() : null;
 const out = {
   run_id: RUN,
   generated_by: "research/model-runs/bin/analyze-pilot.mjs",
@@ -501,11 +607,13 @@ const out = {
     ...(LOCAL ? { dimension_ratings_source: "scorecards finished by the cb-probe MCP server over stdio (mcp-scorecards/<subject>/scorecard.json) and their response-level mcp-rating-map.json; the composite is recomputed here from the rating rows and must equal the server's composite and dimension means" } : {}),
   },
   subjects, pairwise: pairs,
+  ...(ARMS ? { pairwise_note: "ALL subject pairs in registered order, including pairs that cross arms. Exploratory and NOT pre-registered; the pre-registered comparisons are `comparisons` (6 arm-A pairs, 6 arm-B pairs, 4 B - A). Do not quote a pairwise entry as a finding." } : {}),
   ...(LOCAL && !ARMS ? { primary_comparison: { definition: `${SUBJ[0]} minus ${SUBJ[1]}, composite, item-resampling 95% interval; separated = the interval excludes zero (PREREGISTRATION.md sections 1 and 8)`, ...pairs[0] } } : {}),
   ...(comparisons ? {
     comparisons,
     comparisons_note: "Pre-registered in run-config.json, listed as written (a minus b). Same paired item-resampling bootstrap as `pairwise`: items resampled within dimension, the same draw for every subject, so a variant with fewer trials is compared on the same items; the interval reflects item sampling, not the extra within-item noise of a one-trial variant, and it is a composite difference, not a causal estimate of the instruction alone (reply length differs: see median_reply_words_*).",
   } : {}),
+  ...(armsExtra ? { length_check: armsExtra.length_check, replication: armsExtra.replication, contamination_per_build: armsExtra.contamination_per_build, judge_agreement_overall: armsExtra.judge_agreement_overall } : {}),
   dimension_pairwise,
   dimension_pairwise_note: LOCAL
     ? `${dimension_pairwise.length} dimension-level comparisons at 95% each: about ${(dimension_pairwise.length * 0.05).toFixed(1)} would be flagged 'separated' by chance alone even if no model differed. Uncorrected; a dimension-level 'separated' flag is not evidence of a real difference unless it also survives the Bonferroni-corrected interval (bonferroni_separated), here over ${dimension_pairwise.length} comparisons.`

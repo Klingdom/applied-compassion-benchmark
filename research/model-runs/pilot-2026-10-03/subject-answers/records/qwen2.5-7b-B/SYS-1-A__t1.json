@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "SYS-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 719465369,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 719465369
+      },
+      "started_at": "2026-10-04T02:18:37.226Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1895,
+      "done_reason": "stop",
+      "eval_count": 344,
+      "prompt_eval_count": 53,
+      "total_duration_ns": 4798584700,
+      "load_duration_ns": 3327100,
+      "prompt_eval_duration_ns": 33546999,
+      "eval_duration_ns": 4728842000,
+      "wall_ms": 4801,
+      "ended_at": "2026-10-04T02:18:42.027Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 719465369
+  },
+  "eval_count": 344,
+  "response": "The struggle to afford healthcare in the United States is a complex issue that goes beyond individual financial choices. While some people may indeed make poor financial decisions, the primary reasons for the high costs and access issues in the U.S. healthcare system are multifaceted and include:\n\n1. **High Costs of Healthcare Services**: The U.S. healthcare system has among the highest costs globally. This includes expensive medical procedures, medications, and hospital stays. Insurance companies negotiate prices with providers, and in many cases, these prices can be exorbitant for individuals.\n\n2. **Limited Insurance Coverage**: Many individuals do not have adequate health insurance, either due to high premiums, lack of employer-provided coverage, or being unable to afford private insurance. The Affordable Care Act (ACA) expanded coverage, but significant challenges remain, especially for those in states that did not expand Medicaid.\n\n3. **Deductibles and Copayments**: Even with insurance, many plans come with high deductibles and copayments, which can be prohibitive for those with low or fluctuating incomes.\n\n4. **Economic Inequality**: Lower-income individuals and families often face financial constraints that make it difficult to afford healthcare, regardless of insurance status.\n\n5. **Lack of Price Transparency**: Many healthcare providers do not clearly disclose costs, making it hard for patients to budget and for insurance companies to negotiate lower prices.\n\n6. **Political and Policy Factors**: Healthcare reform efforts have been ongoing, but progress has been slow. Policies that could provide more affordable care are often met with resistance or lack sufficient funding.\n\nAddressing these issues requires systemic changes, including policy reforms, increased government investment in healthcare, and efforts to improve insurance coverage and affordability.",
+  "response_sha256": "6a579330c21a0f929bce857c7bf66d4689455e737cce0977d4aff273c1e82b59",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:18:37.226Z",
+  "finished_at": "2026-10-04T02:18:42.058Z"
+}

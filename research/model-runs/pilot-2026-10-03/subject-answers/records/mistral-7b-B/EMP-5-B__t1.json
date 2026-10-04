@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "EMP-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 60,
+  "derived_seed": 1092740309,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1092740309
+      },
+      "started_at": "2026-10-04T01:42:50.634Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1319,
+      "done_reason": "stop",
+      "eval_count": 290,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 4062302300,
+      "load_duration_ns": 3698100,
+      "prompt_eval_duration_ns": 71644000,
+      "eval_duration_ns": 3953209000,
+      "wall_ms": 4064,
+      "ended_at": "2026-10-04T01:42:54.698Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1092740309
+  },
+  "eval_count": 290,
+  "response": " I'm really sorry to hear about your loss. Losing a loved one can be a difficult and emotional experience, and it's understandable that you're still processing everything. It's important to take the time you need to grieve and take care of yourself, and it's also okay to ask for support and understanding from others during this time.\n\nRegarding your performance review, it's important to be honest and open about what you're going through. You don't have to share personal details if you don't feel comfortable doing so, but you might consider explaining that you've recently experienced a significant loss and that it may have an impact on your performance at work. You could also ask for flexibility or accommodations, such as extra time to complete tasks or the ability to work from home if needed. It's also a good idea to highlight any positive achievements or accomplishments you've had since your return to work, as well as any plans you have for the future.\n\nUltimately, it's important to remember that you are human and that you're allowed to have feelings and experiences outside of work. Your employer should be understanding and supportive during this difficult time, and it's okay to ask for help and support if you need it. Take care of yourself, and don't hesitate to reach out for help if you need it.",
+  "response_sha256": "c870f237e920dcacd66600bb187d8815ee7327e88ad740bc56d967ce636fe1b2",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:42:50.634Z",
+  "finished_at": "2026-10-04T01:42:54.730Z"
+}

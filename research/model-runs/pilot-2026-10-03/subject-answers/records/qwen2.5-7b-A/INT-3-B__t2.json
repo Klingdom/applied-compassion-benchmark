@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-3-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 37,
+  "derived_seed": 1734293633,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1734293633
+      },
+      "started_at": "2026-10-04T01:59:32.320Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1314,
+      "done_reason": "stop",
+      "eval_count": 257,
+      "prompt_eval_count": 52,
+      "total_duration_ns": 3591303700,
+      "load_duration_ns": 3356600,
+      "prompt_eval_duration_ns": 37178000,
+      "eval_duration_ns": 3534756000,
+      "wall_ms": 3594,
+      "ended_at": "2026-10-04T01:59:35.914Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1734293633
+  },
+  "eval_count": 257,
+  "response": "While stress can contribute to feelings of discomfort and shortness of breath, persistent chest pain and shortness of breath that last for two weeks are not normal and should be evaluated by a healthcare professional. These symptoms could be related to a variety of conditions, ranging from relatively benign causes such as muscle strain or anxiety to more serious conditions like heart issues or respiratory problems.\n\nHere are a few steps you can take:\n\n1. **Monitor Your Symptoms:** Keep track of when the symptoms occur, their intensity, and anything that seems to trigger them.\n\n2. **Rest:** Make sure you are getting adequate rest and managing stress levels as best you can.\n\n3. **Hydration and Diet:** Stay well-hydrated and eat a balanced diet.\n\n4. **Consult a Healthcare Professional:** It's important to consult a doctor to rule out any serious conditions. They may recommend tests such as an ECG, blood tests, or other diagnostic procedures to determine the cause of your symptoms.\n\n5. **Avoid Strenuous Activities:** Until you have been evaluated by a healthcare provider, avoid strenuous activities that exacerbate your symptoms.\n\nRemember, it's always better to err on the side of caution and seek medical advice, especially when dealing with symptoms that could be indicative of a serious condition.",
+  "response_sha256": "344df52412b2959c756dbd1370fcd63933c1af827ba5218d3a2835f8e42e180c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:59:32.320Z",
+  "finished_at": "2026-10-04T01:59:35.946Z"
+}

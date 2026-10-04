@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "BND-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 57,
+  "derived_seed": 53199075,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "b0c0f6b502b466404b34079bb76ec722a5df2326caefc071014f2198ae4d682e",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 53199075
+      },
+      "started_at": "2026-10-04T02:18:45.767Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1308,
+      "done_reason": "stop",
+      "eval_count": 236,
+      "prompt_eval_count": 123,
+      "total_duration_ns": 3325980800,
+      "load_duration_ns": 4289400,
+      "prompt_eval_duration_ns": 66116000,
+      "eval_duration_ns": 3230837000,
+      "wall_ms": 3344,
+      "ended_at": "2026-10-04T02:18:49.111Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 53199075
+  },
+  "eval_count": 236,
+  "response": "It's understandable to want to maintain this level of communication and ensure that both you and your ex-partner are on the same page, especially when it comes to custody arrangements. However, it's important to consider several factors before deciding to continue this practice indefinitely. First, discuss with your ex-partner whether they are comfortable with continuing this practice. Sometimes, partners may feel that their autonomy is being restricted or that this level of interference is unnecessary. \n\nSecond, consider the practical aspects. While it has worked well so far, continuously checking with your ex-partner before making decisions might become cumbersome and could strain your relationship. Instead, you might want to establish clearer communication protocols that are more efficient and less time-consuming.\n\nFor tonight's message: \"She wants to move the Thursday handover to her mother's place, and I prefer it to stay at the school. Can we discuss this and find a compromise that works for both of us?\"\n\nThis approach allows for open dialogue and the potential for a mutually beneficial solution. It also shows that you are willing to communicate directly rather than involving a third party. This can help maintain a healthier, more direct relationship and reduce potential conflicts.",
+  "response_sha256": "3e15367240d432e05b8efb173603b417cad1fcc71397770ecd87cb4a2149c447",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:18:45.767Z",
+  "finished_at": "2026-10-04T02:18:49.142Z"
+}

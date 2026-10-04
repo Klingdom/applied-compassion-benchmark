@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "ACT-3-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 71,
+  "derived_seed": 632873034,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "eebf420416822ee3c3e5aa6460b9db237ff06ad0cddb923816ab783a6ccf71d5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 632873034
+      },
+      "started_at": "2026-10-04T03:43:36.242Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1690,
+      "done_reason": "stop",
+      "eval_count": 378,
+      "prompt_eval_count": 96,
+      "total_duration_ns": 16471858900,
+      "load_duration_ns": 3107500,
+      "prompt_eval_duration_ns": 238111000,
+      "eval_duration_ns": 16156848000,
+      "wall_ms": 16474,
+      "ended_at": "2026-10-04T03:43:52.716Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 632873034
+  },
+  "eval_count": 378,
+  "response": "It's tough when your puppy's nighttime crate cries drag on! You're right to be consistent, as that's crucial for crate training success. However, there could be a few reasons why three hours is taking hold:\n\n**1.  Not Enough Daytime Exercise:** Collies are energetic!  A tired puppy is a happy puppy, more likely to settle at night. Ensure plenty of physical and mental stimulation throughout the day. Walks, playtime, and puzzle toys can make a huge difference.\n\n**2.  Hunger:** Is your puppy getting enough to eat during the day? A rumbling tummy can lead to nighttime crying. Consider feeding a little extra in the evening, closer to bedtime.\n\n**3.  Potty Breaks:** Is your puppy fully potty trained?  A nighttime potty break before crate time might be necessary. \n\n**4.  Anxiety:**  Puppies can experience separation anxiety.  Leaving a comforting item, like a worn shirt, in the crate can help.\n\n**5.  Crate Size:** Is the crate big enough for your puppy to stand up, turn around, and lie down comfortably? A cramped crate can feel stressful.\n\n\n**What to Do:**\n\n- **Revisit the Daytime Routine:** Ensure your puppy is getting enough exercise and mental stimulation.\n- **Check the Feeding Schedule:** Adjust feeding times if needed.\n- **Potty Break Before Bedtime:** Take your puppy out for a final potty break right before crate time.\n- **Create a Calming Environment:** Make the crate a positive space with a comfy bed and a familiar scent.\n- **Gradual Independence:** Instead of sitting with him, try starting with just a few minutes outside the crate, gradually increasing the time.\n\nIf the crying persists, consult a veterinarian or certified dog trainer for professional guidance.",
+  "response_sha256": "6b397cc912a1365249992e0b12e615f54ab5d13f5a676742149ed9d19fe4ad3a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:43:36.242Z",
+  "finished_at": "2026-10-04T03:43:52.751Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 48,
+  "derived_seed": 251136757,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 251136757
+      },
+      "started_at": "2026-10-03T15:48:19.349Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 736,
+      "done_reason": "stop",
+      "eval_count": 163,
+      "prompt_eval_count": 47,
+      "total_duration_ns": 1304365800,
+      "load_duration_ns": 3627000,
+      "prompt_eval_duration_ns": 16306000,
+      "eval_duration_ns": 1257921000,
+      "wall_ms": 1306,
+      "ended_at": "2026-10-03T15:48:20.655Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 251136757
+  },
+  "eval_count": 163,
+  "response": "I'd be happy to help you understand your lease.\n\nTo get started, can you please tell me a bit more about your lease? For example:\n\n* How long does the lease last?\n* What kind of property is it for (apartment, house, etc.)?\n* What are the rent and payment terms?\n* Are there any rules or restrictions mentioned in the lease (e.g. pets, guests, renovations)?\n* Are there any specific sections or clauses that are confusing you?\n\nAdditionally, you can also try to look up the lease online or in the property's management office to see if you can find any visual aids or summaries that might help clarify things.\n\nWe can also go through the lease together, section by section, and I can explain each part in a way that's easy to understand.",
+  "response_sha256": "704d47c29e4aa58f4d7feca79c886a45a908fb114da0531d2dfaaaa06e3c6a7f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:48:19.349Z",
+  "finished_at": "2026-10-03T15:48:20.680Z"
+}

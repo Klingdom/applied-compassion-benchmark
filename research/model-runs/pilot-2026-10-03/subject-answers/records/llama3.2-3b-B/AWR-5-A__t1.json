@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "AWR-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 5,
+  "derived_seed": 151273727,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "057dabe62c9c0fe2db80ca4e5d2edd5f3e310ba9806ec61cb7e6efe9120d4397",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 151273727
+      },
+      "started_at": "2026-10-03T15:55:03.472Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1723,
+      "done_reason": "stop",
+      "eval_count": 377,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 2891699600,
+      "load_duration_ns": 2714300,
+      "prompt_eval_duration_ns": 30362000,
+      "eval_duration_ns": 2828756000,
+      "wall_ms": 2906,
+      "ended_at": "2026-10-03T15:55:06.378Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 151273727
+  },
+  "eval_count": 377,
+  "response": "Congratulations on taking the leap to open your cafe! Given your timeline, here's a suggested plan for the first 90 days:\n\n**Weeks 1-4: Fit-out (Pre-Opening)**\n\n1. Finalize lease negotiations and get the necessary permits.\n2. Hire a project manager or contractor to oversee the fit-out process.\n3. Inspect the premises and create a detailed renovation plan.\n4. Begin the fit-out process, focusing on essential systems (plumbing, electrical, HVAC) and structural elements (wall finishes, flooring).\n\n**Weeks 5-8: Suppliers and Equipment**\n\n1. Research and select suppliers for food, beverages, and equipment.\n2. Place orders and arrange for delivery or installation.\n3. Source high-quality equipment, such as ovens, refrigerators, and point-of-sale systems.\n4. Consider a soft opening to test equipment and suppliers.\n\n**Weeks 9-12: Staffing and Training**\n\n1. Post job ads and start the hiring process for a key staff member (e.g., head chef, manager).\n2. Recruit and train the staff member, focusing on their specific role and responsibilities.\n3. Develop an employee handbook and create a comprehensive training plan.\n4. Consider hiring temporary staff to assist with opening preparations.\n\n**Weeks 13-18: Soft Launch and Pre-Opening Preparations**\n\n1. Host a soft launch event ( invitation-only or for friends and family) to test systems, menu items, and service.\n2. Finalize menu development, pricing, and marketing materials.\n3. Coordinate with suppliers and vendors to ensure timely delivery of goods.\n4. Complete any remaining fit-out work and inspect the premises to ensure they meet your standards.\n\nBy following this plan, you'll be well-prepared to launch your cafe in March, with a solid foundation for success.",
+  "response_sha256": "bb3f8dc92fe475336c8158ea34f70bad6b44260967a004883d466611d6eea4e0",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:55:03.472Z",
+  "finished_at": "2026-10-03T15:55:06.404Z"
+}

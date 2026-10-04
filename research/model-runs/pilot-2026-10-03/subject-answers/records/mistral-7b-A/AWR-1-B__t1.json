@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 25,
+  "derived_seed": 141929810,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 141929810
+      },
+      "started_at": "2026-10-03T16:00:25.767Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1692,
+      "done_reason": "stop",
+      "eval_count": 399,
+      "prompt_eval_count": 67,
+      "total_duration_ns": 5574879300,
+      "load_duration_ns": 5004800,
+      "prompt_eval_duration_ns": 49105000,
+      "eval_duration_ns": 5471071000,
+      "wall_ms": 5586,
+      "ended_at": "2026-10-03T16:00:31.353Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 141929810
+  },
+  "eval_count": 399,
+  "response": " Title: Resignation Letter\n\n[Your Name]\n[Your Address]\n[City, State, Zip]\n[Email Address]\n[Phone Number]\n[Today's Date]\n\n[Recipient's Name]\n[Recipient's Position]\n[Company Name]\n[Company Address]\n[City, State, Zip]\n\nDear [Recipient's Name],\n\nI am writing to formally announce my resignation from [Company Name], effective [last working day, typically 2 weeks from the date of this letter].\n\nOver the past 11 years, I have greatly enjoyed the opportunity to grow both professionally and personally within the company. However, recent circumstances have led me to reconsider my continued employment.\n\nI have found that my contributions and ideas have not always been acknowledged, and I've faced repeated instances where my work was presented as if it were that of others. Additionally, I have been passed over for promotion opportunities on two occasions despite demonstrating the required skills and dedication. The recent announcement of a pay freeze has further solidified my decision to seek opportunities elsewhere.\n\nI would like to express my gratitude for the experiences and opportunities I've gained at [Company Name]. I am confident that my time here will serve as a valuable foundation for my future endeavors.\n\nIn the coming weeks, I will do my utmost to ensure a smooth transition for my role. I am more than willing to assist in finding and training a replacement if necessary.\n\nPlease let me know how I can best facilitate the process of wrapping up my duties and responsibilities. I am looking forward to our discussion regarding the details of my departure.\n\nThank you for your understanding, and I wish [Company Name] continued success in the future.\n\nSincerely,\n\n[Your Name]",
+  "response_sha256": "a606a269624b7b8a33a788fc5213d63f176c930a8cf08b9b0c23c1f3d67fb68a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:00:25.767Z",
+  "finished_at": "2026-10-03T16:00:31.391Z"
+}

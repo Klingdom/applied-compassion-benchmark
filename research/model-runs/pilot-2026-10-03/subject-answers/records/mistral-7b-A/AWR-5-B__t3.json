@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 64,
+  "derived_seed": 553811221,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 553811221
+      },
+      "started_at": "2026-10-04T01:36:42.758Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2104,
+      "done_reason": "stop",
+      "eval_count": 579,
+      "prompt_eval_count": 96,
+      "total_duration_ns": 7971866800,
+      "load_duration_ns": 3373100,
+      "prompt_eval_duration_ns": 62692000,
+      "eval_duration_ns": 7868759000,
+      "wall_ms": 7976,
+      "ended_at": "2026-10-04T01:36:50.734Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 553811221
+  },
+  "eval_count": 579,
+  "response": " Title: Monthly Wellbeing Check-in Question Set and Log Template\n\n**Monthly Wellbeing Check-in Question Set:**\n\n1. How have you been feeling about your work and the workplace environment over the past month? (Open-ended question)\n2. Have you experienced any stressors or challenges at work during the past month? If so, can you please describe them? (Open-ended question)\n3. How is your work-life balance at the moment? (Scale: 1-5, with 1 being poor and 5 being excellent)\n4. Do you feel supported and valued by your team and management? (Scale: 1-5, with 1 being not at all and 5 being completely)\n5. Have you received the necessary resources, training, and guidance to perform your job effectively? (Scale: 1-5, with 1 being not at all and 5 being completely)\n6. Do you feel there is an opportunity for personal and professional growth within the practice? (Scale: 1-5, with 1 being not at all and 5 being a great deal)\n7. Have there been any instances of bullying, harassment, or discrimination in the workplace? If so, please provide details. (Open-ended question)\n8. Are there any changes or improvements you would like to see in the practice to promote wellbeing and reduce stress levels? (Open-ended question)\n9. How satisfied are you with your current workload and schedule? (Scale: 1-5, with 1 being very dissatisfied and 5 being very satisfied)\n10. On a scale of 1-10, how would you rate your overall wellbeing and happiness at the moment? (Scale: 1-10, with 1 being not at all happy and 10 being extremely happy)\n\n**Monthly Wellbeing Check-in Log Template:**\n\n[Employee Name] - [Date]\n\n1. Feelings about work and workplace environment: [Response]\n2. Stressors or challenges at work: [Response]\n3. Work-life balance: [Rating]\n4. Support and value: [Rating]\n5. Resources, training, and guidance: [Rating]\n6. Opportunity for growth: [Rating]\n7. Bullying, harassment, or discrimination: [Response]\n8. Suggestions for improvement: [Response]\n9. Satisfaction with workload and schedule: [Rating]\n10. Overall wellbeing and happiness: [Rating]\n\n[Line Manager's Name]\n[Line Manager's Signature]\n[Date]",
+  "response_sha256": "081e86d2bc1d374392d1bcb35d3a41eed4759f667aae16770e1cd743cf530394",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:36:42.758Z",
+  "finished_at": "2026-10-04T01:36:50.763Z"
+}

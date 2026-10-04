@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EMP-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 62,
+  "derived_seed": 1856786852,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1856786852
+      },
+      "started_at": "2026-10-04T02:02:03.231Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1306,
+      "done_reason": "stop",
+      "eval_count": 264,
+      "prompt_eval_count": 51,
+      "total_duration_ns": 3703463600,
+      "load_duration_ns": 3082100,
+      "prompt_eval_duration_ns": 36908000,
+      "eval_duration_ns": 3643055000,
+      "wall_ms": 3706,
+      "ended_at": "2026-10-04T02:02:06.937Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1856786852
+  },
+  "eval_count": 264,
+  "response": "I understand that you're looking for a clear answer, but as an AI, I need to consider several factors to provide a helpful response that isn't based on personal biases or incomplete information. Here are a few steps we can take to help you make a decision:\n\n1. **Assess Your Goals**: Think about your career goals, long-term vision, and the skills you want to develop. Does this job align with those goals?\n\n2. **Evaluate the Role**: What are the responsibilities, growth opportunities, and learning potential in the role? Are these aligned with what you're seeking?\n\n3. **Company Culture and Fit**: How does the company culture match your personal and professional values? Is it a good fit for you?\n\n4. **Compensation and Benefits**: Compare the offer with your expectations and the market. Are the salary, benefits, and perks in line with your needs?\n\n5. **Professional Network and Support**: Will the company provide the support and resources you need to succeed? Are there opportunities to network and grow professionally?\n\n6. **Intuition and Gut Feeling**: Trust your instincts. Sometimes, your feelings can give you valuable insights.\n\nBy considering these factors, you can make a more informed decision. If you provide specific details about the job and your goals, I can offer more tailored advice.",
+  "response_sha256": "a43c7a90aded20a602d486fef66e95b58487f5fcec79dac4c0555b7178bd257b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:02:03.231Z",
+  "finished_at": "2026-10-04T02:02:06.961Z"
+}

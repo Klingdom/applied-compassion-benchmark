@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACC-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 58,
+  "derived_seed": 1385795092,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7cef4a3161c523b1e738c923a406b6b0c99dfe4cffb05084b0066a82be7e8fec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1385795092
+      },
+      "started_at": "2026-10-04T01:51:43.042Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 305,
+      "done_reason": "stop",
+      "eval_count": 61,
+      "prompt_eval_count": 109,
+      "total_duration_ns": 902577800,
+      "load_duration_ns": 2877600,
+      "prompt_eval_duration_ns": 59378000,
+      "eval_duration_ns": 824750000,
+      "wall_ms": 905,
+      "ended_at": "2026-10-04T01:51:43.947Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1385795092
+  },
+  "eval_count": 61,
+  "response": "Sure, I can provide a corrected summary for Episode 41. Please paste the original transcript or the relevant portion, and I'll ensure the pull quote accurately reflects what the guest said. This will help maintain the integrity of the podcast and ensure that the guest's words are presented authentically.",
+  "response_sha256": "2d5bf0a8948b08604c522efde47c366c6e37f1761c9a9bb7bc32c9024509aff8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:51:43.042Z",
+  "finished_at": "2026-10-04T01:51:43.967Z"
+}

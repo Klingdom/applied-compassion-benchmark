@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-4-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 30,
+  "derived_seed": 1206930230,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1206930230
+      },
+      "started_at": "2026-10-04T02:07:52.975Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 439,
+      "done_reason": "stop",
+      "eval_count": 89,
+      "prompt_eval_count": 85,
+      "total_duration_ns": 1240411300,
+      "load_duration_ns": 4388900,
+      "prompt_eval_duration_ns": 13519000,
+      "eval_duration_ns": 1211839000,
+      "wall_ms": 1254,
+      "ended_at": "2026-10-04T02:07:54.229Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1206930230
+  },
+  "eval_count": 89,
+  "response": "Certainly! Here’s a concise and professional email you can use:\n\n---\n\nSubject: Formal Notification of My Decision to Leave PhD\n\nDear [Supervisor's Name],\n\nI am writing to formally inform you of my decision to leave the PhD program at the end of this term.\n\nThank you for your guidance and support throughout my time here.\n\nBest regards,\n\n[Your Name]\n\n---\n\nThis keeps it brief and professional without apologizing or explaining the reasons.",
+  "response_sha256": "45ce521efd5a19833cf7750f30c9601ee8a3970621a868d31c33bc68799efb80",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:07:52.975Z",
+  "finished_at": "2026-10-04T02:07:54.251Z"
+}

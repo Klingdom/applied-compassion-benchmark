@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "probe_kind": "identification",
+  "qid": "ACT-3-A",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item ACT-3-A?\n\nA: Neglected Sourdough Starter\nB: Puppy Crying In The Crate\nC: Last Ten Minutes Of Year 9\nD: Meal Rota That Fizzled Out\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "25f29b15f8fec1dc92982c9520a565afd4f39781b08b12bb98002df45d850036",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1084835775,
+      "options": {
+        "seed": 1084835775
+      },
+      "started_at": "2026-10-04T03:47:34.693Z",
+      "error": null,
+      "reply": "C \n",
+      "reply_chars": 3,
+      "done_reason": "stop",
+      "eval_count": 4,
+      "total_duration_ns": 435248300,
+      "parse": {
+        "ok": true,
+        "value": "C",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 452,
+      "ended_at": "2026-10-04T03:47:35.145Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "C",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-04T03:47:34.693Z",
+  "finished_at": "2026-10-04T03:47:35.145Z"
+}

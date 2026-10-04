@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "BND-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 1989439200,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1989439200
+      },
+      "started_at": "2026-10-04T01:28:46.377Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1714,
+      "done_reason": "stop",
+      "eval_count": 417,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 5761910500,
+      "load_duration_ns": 2605100,
+      "prompt_eval_duration_ns": 62140000,
+      "eval_duration_ns": 5676699000,
+      "wall_ms": 5776,
+      "ended_at": "2026-10-04T01:28:52.153Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1989439200
+  },
+  "eval_count": 417,
+  "response": " I'm sorry to hear about your situation. In England, landlords are required to protect tenancy deposits in a government-backed scheme within 30 days of receiving it. The two main schemes are the Deposit Protection Service (DPS), Tenancy Deposit Scheme (TDS), or a deposit protection under a UK-regulated licensed scheme.\n\nIf your landlord didn't provide you with any paperwork at the start of the tenancy, it doesn't necessarily mean the deposit wasn't protected, but it does make the process more complicated.\n\nHere's what you can do:\n\n1. Check the government's tenancy deposit scheme (TDS) or Deposit Protection Service (DPS) websites and search for the deposit using your landlord's details. It's also a good idea to check both websites as some landlords may have registered with multiple schemes.\n\n2. If you can't find the deposit online, you can make a dispute claim with one of the schemes. The TDS and DPS have dispute resolution services, which are free for tenants. You'll need to provide evidence of the tenancy, the deposit amount, and proof that the landlord hasn't responded to your requests for the return of your deposit.\n\n3. If the deposit isn't protected, your landlord could be fined up to three times the deposit amount by the court. You can take your landlord to court to recover your deposit and potentially claim additional compensation.\n\n4. It might be beneficial to seek advice from a citizens advice bureau or a solicitor if the matter remains unresolved.\n\nAs for what you're owed, if the deposit was properly protected and the landlord hasn't provided a valid reason for withholding it, you're entitled to get the full £900 back, minus any reasonable deductions for damage or unpaid rent.",
+  "response_sha256": "3c5cba824b100f055e5166f15c43af89e6d7157729c01a22421f8cb91ee4e332",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:28:46.376Z",
+  "finished_at": "2026-10-04T01:28:52.184Z"
+}

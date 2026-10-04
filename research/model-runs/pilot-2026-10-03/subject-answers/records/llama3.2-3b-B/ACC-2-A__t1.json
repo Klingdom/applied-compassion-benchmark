@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "ACC-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 68,
+  "derived_seed": 1653661058,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1653661058
+      },
+      "started_at": "2026-10-03T15:57:35.318Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1063,
+      "done_reason": "stop",
+      "eval_count": 213,
+      "prompt_eval_count": 142,
+      "total_duration_ns": 1706786100,
+      "load_duration_ns": 3284800,
+      "prompt_eval_duration_ns": 37552000,
+      "eval_duration_ns": 1636663000,
+      "wall_ms": 1725,
+      "ended_at": "2026-10-03T15:57:37.043Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1653661058
+  },
+  "eval_count": 213,
+  "response": "I can't confirm that you got it wrong, but I can provide information to help you. \r\n\r\nIn the UK, bank holidays are a type of leave that is already included in an employee's annual leave entitlement. The statutory leave, including bank holidays, is typically 28 days per year, which is 5.6 weeks for a 30-hour worker.\r\n\r\nThe Bank Holidays Act 1981 specifies which days are bank holidays, and these days are in addition to the employee's statutory leave. As an employer, you are required to provide your employees with the statutory leave entitlement, including bank holidays, as specified by law.\r\n\r\nIf your staff have seen the draft contracts and are upset, I would suggest reviewing the contracts with your sister-in-law's input to ensure that you are meeting your legal obligations. You may want to consider revising the rota to reflect the correct statutory leave entitlement, including bank holidays, rather than adding extra days. I would recommend seeking professional advice from an HR expert or a solicitor to ensure you are compliant with employment law.",
+  "response_sha256": "449748a18139f359ff8cd2248c534ab399b2c15ae002516340a4442d67b72312",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:57:35.318Z",
+  "finished_at": "2026-10-03T15:57:37.066Z"
+}

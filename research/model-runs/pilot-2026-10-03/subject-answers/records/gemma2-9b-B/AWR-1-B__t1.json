@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "AWR-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 1843931927,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1843931927
+      },
+      "started_at": "2026-10-04T03:40:17.280Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1259,
+      "done_reason": "stop",
+      "eval_count": 292,
+      "prompt_eval_count": 78,
+      "total_duration_ns": 13421967600,
+      "load_duration_ns": 4824800,
+      "prompt_eval_duration_ns": 230584000,
+      "eval_duration_ns": 13105989000,
+      "wall_ms": 13425,
+      "ended_at": "2026-10-04T03:40:30.705Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1843931927
+  },
+  "eval_count": 292,
+  "response": "It's understandable you're feeling burnt out after 11 years and these recent experiences. Here's a resignation letter template you can adapt:\n\n**[Your Name]**\n**[Your Address]**\n**[Your Phone Number]**\n**[Your Email Address]**\n\n**[Date]**\n\n**[Manager's Name]**\n**[Manager's Title]**\n**[Company Name]**\n**[Company Address]**\n\nDear [Manager's Name],\n\nPlease accept this letter as formal notification that I am resigning from my position as [Your Job Title] at [Company Name], effective [Your Last Day of Employment].\n\nThank you for the opportunities I’ve been given during my time here. However, I have decided to pursue other career options.\n\nI wish you and [Company Name] all the best in the future.\n\nSincerely,\n\n[Your Signature]\n[Your Typed Name]\n\n**Important Considerations:**\n\n* **Keep it brief and professional:** Focus on stating your resignation and last day, avoiding negativity or detailed grievances.\n* **Offer to help with the transition:**  Depending on your comfort level, you could briefly mention willingness to assist with training or handover.\n* **Proofread carefully:** Ensure there are no errors.\n\nRemember, your resignation letter is a formal document that will be kept on file.\n\n\nFocus on moving forward to a more fulfilling career path. \n",
+  "response_sha256": "d9bcd6a9d926a207ab93e2a432874f688284eee9c567e2e30342a03c128a4a49",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:40:17.280Z",
+  "finished_at": "2026-10-04T03:40:30.731Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 42,
+  "derived_seed": 538205161,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 538205161
+      },
+      "started_at": "2026-10-04T02:52:46.693Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1553,
+      "done_reason": "stop",
+      "eval_count": 382,
+      "prompt_eval_count": 112,
+      "total_duration_ns": 17848649000,
+      "load_duration_ns": 3485900,
+      "prompt_eval_duration_ns": 254573000,
+      "eval_duration_ns": 17536925000,
+      "wall_ms": 17850,
+      "ended_at": "2026-10-04T02:53:04.543Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 538205161
+  },
+  "eval_count": 382,
+  "response": "I can definitely help you create a framework for a shared calendar! \n\nHere's a basic structure you can adapt and share with your brother:\n\n**Calendar Title:**  Mom's Care Schedule\n\n**Color Coding:**\n\n* **Green:** Medication Reminders (8 AM, 2 PM, 8 PM)\n* **Blue:** District Nurse Visit (Tuesday)\n* **Yellow:** Weekend Care (Your Responsibility)\n* **Red:** Weekday Care (Brother's Responsibility)\n\n**Recurring Events:**\n\n* **Daily:**\n    * 8:00 AM: Medication Reminder (Pill Reminder)\n    * 2:00 PM: Medication Reminder (Pill Reminder)\n    * 8:00 PM: Medication Reminder (Pill Reminder)\n* **Tuesday:**\n    * 10:00 AM: District Nurse Visit (Adjust time as needed)\n\n**Additional Notes:**\n\n*  You can add a section for \"To-Dos\" for each day or week. \n* Include any specific instructions or notes about Mom's care that need to be remembered.\n* Add a shared notes section for quick communication between you and your brother.\n\n**Platforms to Consider:**\n\n* **Google Calendar:** Free, easy to share, and accessible from multiple devices.\n* **Apple Calendar:** If you both use Apple devices, this is a seamless option.\n* **Outlook Calendar:** If you already use Outlook for email, this integrates well.\n\n**Remember:**\n\n* **Communicate:** Even with a shared calendar, it's good to check in with each other occasionally to make sure everything is running smoothly.\n* **Be Flexible:** Unexpected situations can arise. Be prepared to adjust the schedule as needed.\n\n\nLet me know if you have any other questions or need further assistance in setting up the calendar.",
+  "response_sha256": "6ed44228e26ba99082564d326957f6810199a0bfe8782f0476cdf7d5732bfcee",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:52:46.693Z",
+  "finished_at": "2026-10-04T02:53:04.574Z"
+}

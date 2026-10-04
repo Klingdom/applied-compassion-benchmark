@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "INT-3-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 82,
+  "derived_seed": 979561337,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 979561337
+      },
+      "started_at": "2026-10-04T01:44:32.068Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1211,
+      "done_reason": "stop",
+      "eval_count": 258,
+      "prompt_eval_count": 111,
+      "total_duration_ns": 3591221900,
+      "load_duration_ns": 3319900,
+      "prompt_eval_duration_ns": 62488000,
+      "eval_duration_ns": 3509510000,
+      "wall_ms": 3593,
+      "ended_at": "2026-10-04T01:44:35.661Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 979561337
+  },
+  "eval_count": 258,
+  "response": " Title: Unforeseen Circumstances Regarding Last Saturday's Shift\n\nDear Area Manager,\n\nI hope this email finds you well. I am writing to bring to your attention an unusual incident that occurred during last Saturday's shift.\n\nOn that day, one of the supervisors departed forty minutes before the scheduled close, without communicating this to the team. This left me managing the tills on my own, which extended my work hours beyond the planned duration. I understand that such an occurrence may have implications for our store's operational efficiency and customer service.\n\nIn the past, I have had to leave early on two occasions last month due to my son's scheduled appointments. In each case, I made sure to inform the duty manager as soon as I was aware of the appointment and coordinated to ensure the smooth running of the store during my absence.\n\nI believe it is important to maintain open communication within our team, particularly in situations where unforeseen circumstances arise. I am looking forward to discussing this incident further and exploring potential solutions to ensure similar incidents do not occur in the future.\n\nThank you for your understanding and time.\n\nBest regards,\n\n[Your Name]",
+  "response_sha256": "22d7dafa4a22b082ea4691ce63249f0f29f04be03f3a8ef07f996583e3e2bd8d",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:44:32.068Z",
+  "finished_at": "2026-10-04T01:44:35.682Z"
+}

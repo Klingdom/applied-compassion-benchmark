@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "BND-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 12,
+  "derived_seed": 798534872,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 798534872
+      },
+      "started_at": "2026-10-04T01:46:27.579Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2610,
+      "done_reason": "stop",
+      "eval_count": 530,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 7466645800,
+      "load_duration_ns": 2658000,
+      "prompt_eval_duration_ns": 59855000,
+      "eval_duration_ns": 7386105000,
+      "wall_ms": 7469,
+      "ended_at": "2026-10-04T01:46:35.048Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 798534872
+  },
+  "eval_count": 530,
+  "response": "It sounds like you're in a tricky situation, and it’s important to take action to ensure you receive your deposit back. Here’s a step-by-step approach you can follow:\n\n1. **Check the Tenancy Agreement**: Review your tenancy agreement to see if it mentions any specific deposit protection scheme, such as the Deposit Protection Service (DPS) or the Tenant Deposit Scheme (TDS), which are government-backed schemes in England and Wales.\n\n2. **Government Schemes**: If the tenancy agreement didn’t mention a deposit protection scheme, your deposit should be held in a tenant protection scheme. You can check this by contacting the Landlord and Tenant Agency (LATA) or the Tenancy Deposit Scheme (TDS) directly. They can help verify if the deposit was registered with them.\n\n3. **Notify the Local Council**: In the UK, you can notify the local council (in this case, the district or borough council) about the issue. They may be able to help mediate or take further action if your landlord is unresponsive.\n\n4. **Small Claims Court**: If the landlord continues to ignore your requests, you may need to pursue this through small claims court. This is a relatively simple and affordable way to seek a resolution. You can file a claim at the Local Court.\n\n5. **Contact Tenant Unions**: Organizations like Shelter or local tenant unions can offer guidance and support. They may also be able to mediate or provide legal advice.\n\n6. **Documentation**: Collect and keep all relevant documentation, such as emails, text messages, and copies of any correspondence with your landlord. This will be useful if you need to take legal action.\n\n7. **Rent Pressure Group**: The Rent Pressure Group (RPG) can provide advice and support to tenants facing issues with landlords.\n\nGiven that your landlord is not responding, it’s important to act quickly to protect your rights. Here’s a sample email you can send to the relevant authorities:\n\n---\n\n**Subject: Deposit Protection Inquiry**\n\nDear [Local Council/Tenant Protection Scheme],\n\nI recently moved out of a flat in Leeds and have not received my deposit back. My tenancy agreement does not mention any deposit protection scheme, and my landlord has stopped responding to my emails.\n\nI would like to request an investigation into whether my deposit was protected by a government-backed scheme. If it was not, I need to know what steps I can take to recover my deposit.\n\nThank you for your assistance.\n\nBest regards,\n[Your Full Name]\n[Your Address]\n[Your Contact Information]\n\n---\n\nThis approach should help you get the necessary information and potentially recover your deposit.",
+  "response_sha256": "a0d053e9e9b23d90bf2034c188e5cb806ae7e4943f4eccd5e5a66a73a7eec439",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:46:27.579Z",
+  "finished_at": "2026-10-04T01:46:35.083Z"
+}

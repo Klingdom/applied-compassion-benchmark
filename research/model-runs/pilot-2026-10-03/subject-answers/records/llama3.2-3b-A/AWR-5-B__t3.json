@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 832889089,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 832889089
+      },
+      "started_at": "2026-10-03T15:53:20.038Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2268,
+      "done_reason": "stop",
+      "eval_count": 483,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 3735912700,
+      "load_duration_ns": 3112200,
+      "prompt_eval_duration_ns": 33798000,
+      "eval_duration_ns": 3651334000,
+      "wall_ms": 3739,
+      "ended_at": "2026-10-03T15:53:23.777Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 832889089
+  },
+  "eval_count": 483,
+  "response": "Here's a suggested set of questions for the monthly wellbeing check-ins, as well as a log template:\n\n**Wellbeing Check-in Questions:**\n\n1. How have you been feeling about your job overall? (Scale: 1-5, where 1 is \"very unhappy\" and 5 is \"very happy\")\n2. What are the things that you're enjoying most about your role?\n3. What are the challenges or difficulties you're facing in your role, and how are you coping with them?\n4. Have you experienced any significant changes or stressors in the past month (e.g. work-related, personal, financial)? If yes, please describe.\n5. How is your workload and workload management? Are you feeling overwhelmed or undervalued?\n6. Are there any changes or improvements you'd like to see in the workplace or your role?\n7. How is your work-life balance? Are you feeling able to disconnect from work outside of hours?\n8. Have you received any feedback or recognition for your work in the past month? If yes, what was it, and how did it make you feel?\n9. Are there any concerns or worries that you're holding onto, and if so, what are they?\n10. Is there anything else you'd like to talk about or bring up?\n\n**Log Template:**\n\n**Employee Name:** _____________________________________\n**Date:** _____________________________________________\n**Line Manager's Name:** __________________________________\n**Summary of Discussion:**\n\nPlease use this space to write a brief summary (approx. 50-100 words) of the discussion, highlighting any key points, concerns, or suggestions discussed during the check-in.\n\n**Action Points:**\n\nList any action points or next steps discussed during the check-in, such as:\n\n* Providing additional support or resources\n* Addressing specific concerns or challenges\n* Setting goals or objectives\n* Scheduling follow-up check-ins\n\n**Notes:**\n\nAny additional notes or observations that may be relevant to the employee's wellbeing or performance.\n\n**Patterns or Trends:**\n\nUse this space to identify any patterns or trends that may emerge from the check-ins, such as:\n\n* Common themes or concerns\n* Employees who may be at higher risk of stress or burnout\n* Areas where the practice can improve support or resources\n\nRemember to keep the log template concise and focused on the key points discussed during the check-in.",
+  "response_sha256": "12067b149d68f64e318d55bb0ef0f61ab0a2ab04ccf50c49f626a5ba949f4f43",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:53:20.038Z",
+  "finished_at": "2026-10-03T15:53:23.809Z"
+}

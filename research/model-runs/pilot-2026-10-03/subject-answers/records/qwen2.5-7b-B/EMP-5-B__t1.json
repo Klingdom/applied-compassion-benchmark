@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "EMP-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 504177526,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 504177526
+      },
+      "started_at": "2026-10-04T02:17:32.902Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1338,
+      "done_reason": "stop",
+      "eval_count": 251,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 3597976000,
+      "load_duration_ns": 3377600,
+      "prompt_eval_duration_ns": 66640000,
+      "eval_duration_ns": 3505752000,
+      "wall_ms": 3599,
+      "ended_at": "2026-10-04T02:17:36.501Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 504177526
+  },
+  "eval_count": 251,
+  "response": "I'm deeply sorry for your loss and understand the difficult position you're in. Losing a parent is an incredibly painful experience, and the support of your uncles in planning the funeral is a sign of their love and solidarity. Sending money for the funeral is a meaningful way to honor your father's memory and contribute to the family's tradition of respect and care.\n\nThe fact that work has given you compassionate leave is a positive step, but it's understandable that you feel overwhelmed by the expectations and the upcoming performance review. It's important to communicate your situation openly and honestly with your employer. Consider reaching out to your manager or HR to explain your current circumstances and any support you might need. You could say something like, \"I'm grateful for the compassionate leave and support I've received, but I'm currently dealing with the loss of my father and may need some additional time to process my emotions. I would appreciate any flexibility in my upcoming performance review.\"\n\nRemember, it's entirely valid to focus on your grief and family obligations for a while. Your well-being is important, and your contributions to the company can be made in other ways even during this time. Take care of yourself and make sure you have the support you need to navigate this difficult period.",
+  "response_sha256": "af7f1b8759bd8277f57011eefee25b4e7822fbb359aeef80c95b638e7e9a3d5a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:17:32.902Z",
+  "finished_at": "2026-10-04T02:17:36.531Z"
+}

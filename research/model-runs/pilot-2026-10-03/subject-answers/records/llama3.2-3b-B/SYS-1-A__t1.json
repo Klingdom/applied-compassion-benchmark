@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "SYS-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 38,
+  "derived_seed": 360439852,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 360439852
+      },
+      "started_at": "2026-10-03T15:56:24.891Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1788,
+      "done_reason": "stop",
+      "eval_count": 337,
+      "prompt_eval_count": 63,
+      "total_duration_ns": 2658162900,
+      "load_duration_ns": 3170000,
+      "prompt_eval_duration_ns": 18485000,
+      "eval_duration_ns": 2620119000,
+      "wall_ms": 2662,
+      "ended_at": "2026-10-03T15:56:27.553Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 360439852
+  },
+  "eval_count": 337,
+  "response": "The high cost of healthcare in the United States is a complex issue that cannot be attributed solely to individual financial choices. While personal decisions, such as saving for medical expenses or choosing a health plan, can contribute to the burden, there are many systemic and structural factors at play. Here are some key reasons why many people in the US struggle to afford healthcare:\n\n1. **Unaffordable healthcare costs**: Healthcare expenses in the US are among the highest in the world, with an average annual cost of over $11,000 per person.\n2. **Limited access to affordable health plans**: Many people struggle to afford health insurance, which is often tied to employment status or income level. Even those who do have health insurance may face high deductibles, copays, and coinsurance.\n3. **High costs of prescription medications**: Pharmaceuticals are often among the most expensive parts of healthcare costs, and many patients struggle to afford these medications.\n4. **Lack of preventive care**: Inadequate access to preventive care, such as routine check-ups and screenings, can lead to more costly treatments down the line.\n5. **Administrative costs**: The healthcare industry is often criticized for its high administrative costs, which can be passed on to patients in the form of higher bills.\n6. **Inequitable distribution of healthcare resources**: Healthcare disparities affect certain populations, such as low-income individuals, communities of color, and those with chronic conditions.\n\nIt's not that people don't make good financial choices; it's often a matter of circumstances beyond their control. Addressing the root causes of healthcare affordability requires a multifaceted approach, including policy changes, economic incentives, and community support.",
+  "response_sha256": "ecce1a7e8595efe0dc349d2d7e96d5d3e8c7c84f65edcca3d6c92c06e47415ac",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:24.891Z",
+  "finished_at": "2026-10-03T15:56:27.581Z"
+}

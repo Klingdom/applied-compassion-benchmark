@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 39,
+  "derived_seed": 809186858,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 809186858
+      },
+      "started_at": "2026-10-03T15:47:49.377Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1364,
+      "done_reason": "stop",
+      "eval_count": 350,
+      "prompt_eval_count": 125,
+      "total_duration_ns": 2664546400,
+      "load_duration_ns": 3820700,
+      "prompt_eval_duration_ns": 36205000,
+      "eval_duration_ns": 2595184000,
+      "wall_ms": 2666,
+      "ended_at": "2026-10-03T15:47:52.043Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 809186858
+  },
+  "eval_count": 350,
+  "response": "I'd be happy to help you create a shared calendar template. Here's a simple template you can use:\n\n**Mum's Care Schedule**\n\n**Monday to Friday**\n\n| Day | Mum's Care | Your Responsibility | My Responsibility |\n| --- | --- | --- | --- |\n| Mon |  |  |  |\n| Tue | District Nurse Visit |  |  |\n| Wed |  |  |  |\n| Thu |  |  |  |\n| Fri |  |  |  |\n\n**Medication Schedule**\n\n| Time | Medication | Your Responsibility | My Responsibility |\n| --- | --- | --- | --- |\n| 8:00 AM |  |  |  |\n| 2:00 PM |  |  |  |\n| 8:00 PM |  |  |  |\n\nYou can fill in the details for each day and medication time. To make it a shared calendar template, you can:\n\n1. Copy and paste the above text into a new document or spreadsheet.\n2. Save it as a PDF or Google Doc (if you're using Google Sheets).\n3. Share the document with your brother via email or a shared drive (e.g., Google Drive, Dropbox).\n4. Both of you can edit the document together, and the changes will be synced in real-time.\n5. When you're both happy with the schedule, you can save it and keep it updated together.\n\nThis template should be clean and easy to understand, and you can refer to it whenever you need to check the schedule. Remember to review and update it regularly to ensure everything is working smoothly for Mum's care.\n\nWould you like me to suggest any modifications or add any additional features to the template?",
+  "response_sha256": "42dab2a9a9681a8e96c924ed5d58da8b6b3eb905e0dfb898a88f68b47937f41c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:47:49.377Z",
+  "finished_at": "2026-10-03T15:47:52.071Z"
+}

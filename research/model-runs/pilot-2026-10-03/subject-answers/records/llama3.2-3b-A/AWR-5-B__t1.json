@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 18,
+  "derived_seed": 979098869,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 979098869
+      },
+      "started_at": "2026-10-03T15:42:20.652Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2363,
+      "done_reason": "stop",
+      "eval_count": 491,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 3816938500,
+      "load_duration_ns": 3503100,
+      "prompt_eval_duration_ns": 34137000,
+      "eval_duration_ns": 3741956000,
+      "wall_ms": 3820,
+      "ended_at": "2026-10-03T15:42:24.472Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 979098869
+  },
+  "eval_count": 491,
+  "response": "Here's a suggested question set and log template for monthly wellbeing check-ins:\n\n**Question Set:**\n\n1. What's been the most positive aspect of your job this month?\n2. What's been the most challenging part of your job this month?\n3. Have you experienced any significant stressors or pressures at work this month? If so, please describe.\n4. How have you been managing your workload and prioritizing tasks this month?\n5. Are you feeling supported and able to ask for help when needed? Why or why not?\n6. How's your physical and mental health been this month? Have you noticed any changes or concerns?\n7. Have you had any successes or achievements at work this month that you're particularly proud of?\n8. Is there anything you're looking forward to or excited about in the coming month?\n\n**Log Template:**\n\n**Employee Name:** [Insert Employee Name]\n\n**Date of Check-in:** [Insert Date]\n\n**Line Manager Name:** [Insert Line Manager Name]\n\n**Summary:**\n\n* Positive aspects of the job this month: [Insert brief description]\n* Challenges faced this month: [Insert brief description]\n* Stressors or pressures at work this month: [Insert brief description]\n* Workload and prioritization: [Insert brief description]\n* Support and resources: [Insert brief description]\n* Physical and mental health: [Insert brief description]\n* Successes or achievements: [Insert brief description]\n* Looking forward to in the coming month: [Insert brief description]\n\n**Action Plan:**\n\n* If the employee is experiencing stress or pressures, suggest potential solutions or resources (e.g. taking on additional support, prioritizing tasks, etc.)\n* If the employee is feeling supported, thank them and reiterate the availability of resources\n* If the employee has successes or achievements, offer recognition or rewards (if applicable)\n* If the employee is looking forward to something, acknowledge and reiterate the importance of their role and responsibilities\n\n**Next Steps:**\n\n* Schedule a follow-up check-in with the employee in [insert time frame, e.g. 2-4 weeks]\n* Review HR file for any patterns or trends\n* Consider providing additional support or resources to the employee, if necessary\n\n**Notes:**\n\n* [Insert any additional notes or comments]\n\nRemember to keep the check-ins confidential and respectful. The goal is to support and listen to the employee, not to criticize or judge.",
+  "response_sha256": "5ff242f278bf23f9dae9bd3f343136ebfcb7d4ab078b40d491574c6cc1469e33",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:42:20.652Z",
+  "finished_at": "2026-10-03T15:42:24.504Z"
+}

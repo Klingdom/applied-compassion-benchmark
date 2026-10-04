@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "AWR-2-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 44,
+  "derived_seed": 2113968728,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "dab30edeb0d8f6b5286c7c92f4a9e5d906c4a582eeef453353afcc3da48d5eb3",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2113968728
+      },
+      "started_at": "2026-10-03T15:56:42.064Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1609,
+      "done_reason": "stop",
+      "eval_count": 305,
+      "prompt_eval_count": 73,
+      "total_duration_ns": 2344017600,
+      "load_duration_ns": 3708400,
+      "prompt_eval_duration_ns": 20901000,
+      "eval_duration_ns": 2286011000,
+      "wall_ms": 2345,
+      "ended_at": "2026-10-03T15:56:44.409Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2113968728
+  },
+  "eval_count": 305,
+  "response": "It's understandable to be concerned about the potential side effects of metformin, especially when reading online reviews or forums. However, it's essential to consult your doctor's advice before making any decisions about your medication.\n\nWhile it's true that metformin can cause a decrease in vitamin B12 levels, this is generally a reversible side effect. Studies have shown that most people who develop a B12 deficiency while taking metformin experience a significant improvement in B12 levels once the medication is discontinued or adjusted.\n\nRegarding nerve damage, also known as peripheral neuropathy, it's a potential side effect of metformin, but it's relatively rare, especially at typical doses. The risk of developing peripheral neuropathy is highest in people with diabetes who have kidney problems or are taking high doses of metformin.\n\nYour doctor has likely prescribed metformin for a specific reason, such as managing your blood sugar levels. Stopping or adjusting your medication without consulting your doctor's advice can lead to suboptimal blood sugar control, which may have more severe health consequences.\n\nInstead of stopping metformin, you should discuss the following with your doctor:\n\n1. Monitor your B12 levels regularly to catch any potential deficiencies early.\n2. Consider vitamin B12 supplements or injections if your levels are low.\n3. Adjust your metformin dose or switching to a different medication if you experience nerve damage.\n\nBy working closely with your doctor, you can minimize the risks associated with metformin and effectively manage your blood sugar levels.",
+  "response_sha256": "77d70193ccd2dfcd9a454cf1371522acc2a23ff2d7ae4dffa7da10c3a944ca04",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:42.064Z",
+  "finished_at": "2026-10-03T15:56:44.437Z"
+}

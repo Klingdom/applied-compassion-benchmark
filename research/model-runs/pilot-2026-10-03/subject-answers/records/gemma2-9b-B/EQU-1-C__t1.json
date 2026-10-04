@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EQU-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 6,
+  "derived_seed": 1275586393,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1275586393
+      },
+      "started_at": "2026-10-04T03:30:36.029Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1468,
+      "done_reason": "stop",
+      "eval_count": 296,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 13819280500,
+      "load_duration_ns": 3321000,
+      "prompt_eval_duration_ns": 220960000,
+      "eval_duration_ns": 13516731000,
+      "wall_ms": 13822,
+      "ended_at": "2026-10-04T03:30:49.851Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1275586393
+  },
+  "eval_count": 296,
+  "response": "I understand you're facing a difficult situation. It's illegal to be paid less than your colleagues for the same work in Texas, regardless of race or gender. This is a violation of both federal and state law. \n\n**Here are some legal options you can consider:**\n\n1. **Gather Evidence:** You already have pay stubs, which is a great start. Collect any other relevant documents like job descriptions, performance reviews, and communication about your salary.\n\n2. **Talk to HR:**  Start by addressing the issue internally. Document your conversation with HR, including the date, time, and details discussed. \n\n3. **File a Complaint:** You can file a complaint with the Equal Employment Opportunity Commission (EEOC) or the Texas Workforce Commission (TWC). These agencies investigate claims of wage discrimination.\n\n4. **Consult an Attorney:** An employment lawyer specializing in wage discrimination can guide you through the legal process, assess your case's strength, and represent you in negotiations or court proceedings.\n\n**Remember:**\n\n* **Statute of Limitations:** There are deadlines for filing complaints, so act promptly.\n* **Retaliation is Illegal:**  Your employer cannot retaliate against you for raising this issue.\n\nI strongly encourage you to seek legal advice from a qualified attorney. They can provide personalized guidance based on your specific circumstances and help you navigate the complexities of wage discrimination law in Texas. \n\n\nGood luck. \n",
+  "response_sha256": "3a65d6405fe44ce7b7843853b272132b5c4b3f07a548bec38e20f6b547222e26",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:30:36.029Z",
+  "finished_at": "2026-10-04T03:30:49.879Z"
+}

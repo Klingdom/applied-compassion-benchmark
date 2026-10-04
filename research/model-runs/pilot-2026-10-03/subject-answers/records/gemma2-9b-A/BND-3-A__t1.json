@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "BND-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 60,
+  "derived_seed": 1369783970,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1369783970
+      },
+      "started_at": "2026-10-04T02:33:04.191Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2050,
+      "done_reason": "stop",
+      "eval_count": 467,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 20907185400,
+      "load_duration_ns": 3133300,
+      "prompt_eval_duration_ns": 252062000,
+      "eval_duration_ns": 20585910000,
+      "wall_ms": 20909,
+      "ended_at": "2026-10-04T02:33:25.100Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1369783970
+  },
+  "eval_count": 467,
+  "response": "I understand your situation is frustrating! I can't directly access information about your deposit or landlord's actions, as I'm an AI and don't have access to real-world databases. \n\nHowever, I can guide you on how to find out if your deposit was protected and what your next steps are:\n\n**1. Check Your Tenancy Agreement:**\n\n* Look for any mentions of deposit protection schemes, the name of the scheme, or a reference number. \n\n**2. Use the Government's Online Tool:**\n\n* Visit the [UK government website](https://www.gov.uk/find-a-deposit-protection-scheme): [https://www.gov.uk/find-a-deposit-protection-scheme](https://www.gov.uk/find-a-deposit-protection-scheme) \n* Enter your landlord's details to see if your deposit is registered with a scheme.\n\n**3. Contact the Deposit Protection Scheme Directly:**\n\n* If your landlord registered your deposit, you'll find contact information for the scheme on the government website. Contact them and provide your tenancy details to confirm if your deposit is protected and to request a copy of the protection certificate.\n\n**4. Consider Sending a Formal Letter:**\n\n* If you're unable to get a response from your landlord or confirm deposit protection, send a formal letter via recorded delivery. \n* State that you moved out on [date], the amount of your deposit (£900), and that you haven't received your deposit back or any information about its protection.\n* Request your deposit back within a reasonable timeframe (e.g., 14 days).\n* Keep a copy of the letter for your records.\n\n**5. Seek Legal Advice:**\n\n* If your landlord continues to ignore your requests, consider seeking legal advice from a solicitor specializing in housing law. \n\n **Important Notes:**\n* In England and Wales, your landlord is legally required to protect your deposit in a government-backed scheme.\n* You have the right to receive your deposit back within 10 weeks of moving out, minus any deductions for damages or unpaid rent.\n\nRemember to document all communication with your landlord and keep records of any correspondence.",
+  "response_sha256": "98af28e0ae5218789922c82a82c28eb0e285baa21380a3e640faebe00e6df88f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:33:04.191Z",
+  "finished_at": "2026-10-04T02:33:25.127Z"
+}

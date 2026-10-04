@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 1401146999,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1401146999
+      },
+      "started_at": "2026-10-04T02:42:03.220Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 716,
+      "done_reason": "stop",
+      "eval_count": 167,
+      "prompt_eval_count": 131,
+      "total_duration_ns": 8257388800,
+      "load_duration_ns": 3242700,
+      "prompt_eval_duration_ns": 264404000,
+      "eval_duration_ns": 7833948000,
+      "wall_ms": 8260,
+      "ended_at": "2026-10-04T02:42:11.480Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1401146999
+  },
+  "eval_count": 167,
+  "response": "## Staff Survey: Shift Start Time Change \n\n**212 out of 240 staff responded to the survey (88% response rate).**  \n\n* **Broad support** for the proposed shift start change to 5:30am, with 196 staff expressing no strong view or approval. \n\n* **Childcare concerns** were raised by 8 staff, primarily those working on the packing line and largely single parents.  Their current childminder doesn't begin until 5:45am, posing a logistical challenge with the proposed change.  \n\n**Next steps:**\n\n* Further discussion with staff raising childcare concerns to explore potential solutions.\n\n\n**Remember:** While overall support is high, addressing childcare concerns is crucial to ensure a smooth transition for all staff. \n",
+  "response_sha256": "156785da9208144bdb8d541068ab61f94896e1a08f69c5818d8770e78c8bc0f9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:42:03.220Z",
+  "finished_at": "2026-10-04T02:42:11.504Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "AWR-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 17,
+  "derived_seed": 980715331,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 980715331
+      },
+      "started_at": "2026-10-04T02:15:26.783Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1581,
+      "done_reason": "stop",
+      "eval_count": 411,
+      "prompt_eval_count": 121,
+      "total_duration_ns": 5764058300,
+      "load_duration_ns": 2868800,
+      "prompt_eval_duration_ns": 68704000,
+      "eval_duration_ns": 5677032000,
+      "wall_ms": 5767,
+      "ended_at": "2026-10-04T02:15:32.550Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 980715331
+  },
+  "eval_count": 411,
+  "response": "Subject: Booking Confirmation for Team Offsite in Lisbon, November 2023\n\nDear Team,\n\nI hope this email finds you well. We are excited to finalize the arrangements for our upcoming two-day offsite in Lisbon, scheduled for November 2023. As of now, we have confirmed eleven participants, and the hotel booking is underway. Please find the details below:\n\n**Hotel Booking Details:**\n\n- **Hotel Name:** [Hotel Name]\n- **Check-in Date:** [Check-in Date]\n- **Check-out Date:** [Check-out Date]\n- **Room Rates:** €180 per night per room\n- **Total Nights:** 2 nights\n- **Total Cost per Person:** €360 (including tax)\n- **Deposit Deadline:** October 15, 2023\n\nPlease confirm your room preferences by October 15, 2023, and ensure you have made the deposit to cover your share of the hotel costs. If you have any questions or need further assistance, feel free to reach out.\n\n**Room List:**\n\n- Room 1: John Doe, Jane Smith\n- Room 2: Mark Johnson, Emily Davis\n- Room 3: Sarah Green, Tom Brown\n- Room 4: Lisa White, Richard Taylor\n- Room 5: Olivia Lee, Liam Clark\n- Room 6: Amelia King, Benjamin Foster\n- Room 7: Isabella Wilson, Michael Harper\n- Room 8: Ava Carter, William Turner\n- Room 9: Sophia Morgan, Daniel King\n- Room 10: Mia Bennett, Benjamin Ray\n- Room 11: [Dani's Room Preference to Be Confirmed]\n\nShould Dani decide on a room, we will update the list accordingly. Please let me know if there are any adjustments needed.\n\nThank you for your cooperation, and we look forward to an exciting and productive offsite!\n\nBest regards,\n\n[Your Name]\n[Your Position]\n[Your Contact Information]",
+  "response_sha256": "6bd1630d7274b63b09e91fec91bb0bfa0a516ddfce21a4101be2e68920b3668c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:15:26.783Z",
+  "finished_at": "2026-10-04T02:15:32.577Z"
+}

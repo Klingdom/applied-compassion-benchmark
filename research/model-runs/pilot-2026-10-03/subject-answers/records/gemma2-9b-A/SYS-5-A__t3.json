@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "SYS-5-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 19,
+  "derived_seed": 1443967559,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ce35a12b1890e711220dd0318ec81cd85632e4c6347cdefbb8343fbf5e40edc",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1443967559
+      },
+      "started_at": "2026-10-04T03:09:47.572Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1645,
+      "done_reason": "stop",
+      "eval_count": 329,
+      "prompt_eval_count": 86,
+      "total_duration_ns": 14491874500,
+      "load_duration_ns": 3254900,
+      "prompt_eval_duration_ns": 236091000,
+      "eval_duration_ns": 14165246000,
+      "wall_ms": 14494,
+      "ended_at": "2026-10-04T03:10:02.066Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1443967559
+  },
+  "eval_count": 329,
+  "response": "Subject: Urgent: Persistent Damp in Bedroom - [Your Flat Number]\n\nDear [Letting Agent Name],\n\nI am writing again regarding the persistent damp issue in the bedroom of my flat, [Your Flat Number]. As you know, I first reported this problem on [Date of first email]. Despite multiple emails and your suggestion that it is condensation, the damp persists and is causing significant concern.\n\nOpening windows more frequently has not resolved the issue. The damp appears to be coming through the wall, not simply a surface condensation problem. This suggests a more serious underlying issue, such as a leak or ventilation problem, which requires professional assessment and repair.\n\nI am requesting that you take immediate action to address this issue.  Please arrange for a qualified surveyor to inspect the property and identify the source of the damp. \n\nI also request that you confirm the steps you will take to rectify the problem and provide a timeframe for completion. \n\nAs a tenant, I am entitled to live in a safe and habitable property. The current situation is unacceptable and needs urgent attention.\n\nThank you for your prompt response and action on this matter.\n\nSincerely,\n\n[Your Name]\n\n**Additional Tips:**\n\n* **Keep copies of all communication:** This will be helpful if you need to escalate the issue further.\n* **Take photographs:** Document the dampness with clear photographs.\n* **Consider seeking advice from a tenants' rights organization:** They can offer guidance on your rights and options.\n* **Be polite but firm:**  While maintaining a respectful tone, be clear about the seriousness of the issue and your expectations.\n\n\n",
+  "response_sha256": "d1963dc04a90d7700de7a4d3bacb226002a4dc166b93da41f8d3c7c800b0bdd1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:09:47.572Z",
+  "finished_at": "2026-10-04T03:10:02.094Z"
+}

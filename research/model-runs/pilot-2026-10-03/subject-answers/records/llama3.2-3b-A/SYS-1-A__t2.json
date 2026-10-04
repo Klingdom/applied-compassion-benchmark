@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "SYS-1-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 38,
+  "derived_seed": 1163846170,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "79233837c49b2c56d05b67d490c8a75b4fdd9e55c1227a1bc960aa5ea8219742",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1163846170
+      },
+      "started_at": "2026-10-03T15:47:45.100Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 3037,
+      "done_reason": "stop",
+      "eval_count": 551,
+      "prompt_eval_count": 56,
+      "total_duration_ns": 4219285900,
+      "load_duration_ns": 3541700,
+      "prompt_eval_duration_ns": 19623000,
+      "eval_duration_ns": 4168099000,
+      "wall_ms": 4220,
+      "ended_at": "2026-10-03T15:47:49.320Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1163846170
+  },
+  "eval_count": 551,
+  "response": "The struggle to afford healthcare in the US is a complex issue with multiple factors contributing to it. While individual financial decisions can play a role, it's not the sole reason. Here are some key factors:\n\n1. **High healthcare costs**: The US has one of the most expensive healthcare systems in the world. Healthcare costs continue to rise, and many Americans struggle to keep up with these costs.\n2. **Lack of affordable health insurance**: The Affordable Care Act (ACA), also known as Obamacare, expanded health insurance coverage to millions of Americans. However, many people still can't afford premiums, deductibles, and copays.\n3. **Unpredictable medical expenses**: Medical bills can be unexpected and overwhelming, especially for those without health insurance. A single hospital stay or serious illness can lead to significant financial burdens.\n4. **High prescription drug costs**: Prescription medications can be expensive, especially for chronic conditions. Many Americans struggle to afford necessary medications, leading to health complications and financial stress.\n5. **Employer-sponsored healthcare limitations**: Many employers offer health insurance as a benefit, but these plans often have high deductibles, copays, and limited coverage for pre-existing conditions or specialized care.\n6. **Gaps in Medicaid coverage**: While Medicaid provides health insurance for low-income individuals and families, there are often gaps in coverage, leaving some people without adequate care or financial support.\n7. **Inequitable access to healthcare**: Rural and underserved communities often face barriers to healthcare, including limited access to providers, specialists, and affordable care.\n8. **Medical debt**: Medical debt is a significant contributor to financial stress for many Americans. A study found that over 25% of Americans have medical debt, which can lead to financial hardship, bankruptcy, or delayed medical treatment.\n9. **Lack of financial assistance programs**: Some financial assistance programs, like COBRA (Consolidated Omnibus Budget Reconciliation Act), can be expensive or difficult to access.\n10. **Systemic issues**: The US healthcare system is complex and fragmented, with multiple stakeholders, including insurance companies, hospitals, and pharmaceutical companies, which can contribute to high costs and uncertainty.\n\nIt's not just about individual financial choices. The US healthcare system is designed to prioritize profits over people, which can lead to high costs and unequal access to care. Addressing these systemic issues and implementing policies to control costs, increase accessibility, and provide financial support can help alleviate the burden of healthcare costs on individuals and families.\n\nIn summary, while individual financial decisions can play a role, the struggle to afford healthcare in the US is influenced by a range of factors, including high costs, lack of affordable insurance, unpredictable medical expenses, and systemic issues within the healthcare system.",
+  "response_sha256": "a0e59ad12fa2e2c540078bee5290102562f45c8ec326bf76c0869b1113e7bc19",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:47:45.100Z",
+  "finished_at": "2026-10-03T15:47:49.356Z"
+}

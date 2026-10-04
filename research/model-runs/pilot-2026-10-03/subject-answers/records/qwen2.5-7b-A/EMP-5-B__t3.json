@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EMP-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 41,
+  "derived_seed": 289090563,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 289090563
+      },
+      "started_at": "2026-10-04T02:09:01.014Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2801,
+      "done_reason": "stop",
+      "eval_count": 567,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 7845412300,
+      "load_duration_ns": 3102400,
+      "prompt_eval_duration_ns": 67105999,
+      "eval_duration_ns": 7768050000,
+      "wall_ms": 7851,
+      "ended_at": "2026-10-04T02:09:08.865Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 289090563
+  },
+  "eval_count": 567,
+  "response": "I'm very sorry to hear about your loss and the challenging situation you're in. It's understandable that you're feeling mixed emotions and might be unsure about how to navigate your performance review after such a significant personal event.\n\nHere are a few suggestions that might help you:\n\n1. **Acknowledge Your Emotions**: It's perfectly fine to share how you've been feeling with your manager. You can say something like, \"Thank you for the opportunity to discuss my performance. I've been dealing with some personal matters recently, and it has been affecting my well-being, but I'm doing my best to stay focused and productive.\"\n\n2. **Be Honest but Concise**: You don't need to go into great detail, but it's important to convey that your personal circumstances have had an impact. You could say, \"While I've been dealing with some personal issues, I'm committed to maintaining my performance and meeting all my responsibilities.\"\n\n3. **Discuss Your Future Availability**: If you're worried about your future availability due to travel plans, you can address that as well. For example, \"I understand that we have some upcoming projects, and I want to ensure that I'm fully prepared. Given that I'll be traveling for the funeral, I'll need to ensure I have enough time to prepare and catch up on any missed work.\"\n\n4. **Seek Support**: Let your manager know if you need any support or accommodations. You could say, \"I'm grateful for your support and understanding. If there's anything specific I can do to make the upcoming period easier, please let me know.\"\n\n5. **Schedule a Follow-Up Meeting**: If you feel your manager might need more information or support, you could suggest scheduling a follow-up meeting after the review. This shows that you're proactive and committed to maintaining open communication.\n\nHere's a sample response you might use:\n\n\"Hi [Manager's Name],\n\nThank you for setting up the performance review. I’ve been dealing with some personal matters recently, and it’s been tough, but I’m committed to maintaining my performance and meeting all my responsibilities. I understand we have some upcoming projects, and I want to ensure I’m fully prepared. Given that I’ll be traveling for the funeral in January, I’ll need to ensure I have enough time to prepare and catch up on any missed work. If there’s anything specific I can do to make the upcoming period easier, please let me know.\n\nI’m grateful for your support and understanding. I’d like to schedule a follow-up meeting after the review to discuss any adjustments or support I might need in the coming weeks.\n\nThank you.\n\nBest regards,\n[Your Name]\"\n\nBy being honest and clear, you can help your manager understand your situation and work together to find solutions that meet both your personal and professional needs.",
+  "response_sha256": "67062ac2d67535c70ce52ee9a7977956c53482cb3dc16b92d956f94230f9836b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:09:01.014Z",
+  "finished_at": "2026-10-04T02:09:08.902Z"
+}

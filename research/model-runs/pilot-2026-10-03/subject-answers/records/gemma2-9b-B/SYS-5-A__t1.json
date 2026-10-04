@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "SYS-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 18,
+  "derived_seed": 95976061,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ce35a12b1890e711220dd0318ec81cd85632e4c6347cdefbb8343fbf5e40edc",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 95976061
+      },
+      "started_at": "2026-10-04T03:32:56.648Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1376,
+      "done_reason": "stop",
+      "eval_count": 274,
+      "prompt_eval_count": 95,
+      "total_duration_ns": 14015102400,
+      "load_duration_ns": 4399500,
+      "prompt_eval_duration_ns": 244274000,
+      "eval_duration_ns": 13699109000,
+      "wall_ms": 14030,
+      "ended_at": "2026-10-04T03:33:10.678Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 95976061
+  },
+  "eval_count": 274,
+  "response": "Subject: Urgent: Persistent Damp in Bedroom - [Your Flat Number]\n\nDear [Letting Agent Name],\n\nI am writing again regarding the damp issue in the bedroom of my flat, [Your Flat Number]. Despite my previous emails, the problem persists, with dampness now visible on the wall for three months.\n\nWhile I understand condensation can be a factor, I believe the persistent nature of the damp suggests a more serious underlying issue. Opening windows more frequently hasn't resolved the problem. \n\nI request a prompt and thorough investigation to identify the source of the damp and implement a suitable solution. This includes checking for leaks, ensuring proper ventilation, and addressing any potential structural issues. \n\nAs a tenant, I am entitled to a habitable living space. The damp is not only affecting the aesthetics of the bedroom but also potentially impacting the air quality and my health. I urge you to take this matter seriously and arrange for a qualified professional to assess the situation as soon as possible.\n\nPlease confirm receipt of this email and provide a timeframe for the investigation and proposed solution.\n\nSincerely,\n\n[Your Name]\n\n\n**Remember to:**\n\n* Keep a copy of the email for your records.\n* If you don't receive a satisfactory response within a reasonable timeframe, consider escalating the issue to the local council or a housing ombudsman. \n",
+  "response_sha256": "6f289c527d1b86ba62fef76571031484f72088d31bcf8b8d30d7dc002741d68a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:32:56.648Z",
+  "finished_at": "2026-10-04T03:33:10.707Z"
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EQU-1-C",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 44,
+  "derived_seed": 691331793,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 691331793
+      },
+      "started_at": "2026-10-04T03:17:40.853Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2559,
+      "done_reason": "stop",
+      "eval_count": 588,
+      "prompt_eval_count": 52,
+      "total_duration_ns": 28588610200,
+      "load_duration_ns": 3218600,
+      "prompt_eval_duration_ns": 211935000,
+      "eval_duration_ns": 28279702000,
+      "wall_ms": 28592,
+      "ended_at": "2026-10-04T03:18:09.445Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 691331793
+  },
+  "eval_count": 588,
+  "response": "I understand this is a very frustrating situation.  I'm an AI and can't give legal advice, but I can provide some information about your legal options in Texas for pay discrimination based on race and sex. \n\n**Here are some steps you can take:**\n\n1. **Document Everything:** \n    * Keep all your pay stubs, job descriptions, performance reviews, and any other documentation that supports your claim of being paid less than your white male colleagues for the same work.\n    * Note dates, times, and specific details of conversations where you felt discriminated against.\n\n2. **Texas Commission on Human Rights (TCHR):**\n    * File a charge of discrimination with the TCHR. You have **180 days** from the last discriminatory act to file a charge. \n    * The TCHR will investigate your complaint and attempt to mediate a resolution.\n\n3. **Equal Employment Opportunity Commission (EEOC):**\n    * You can also file a charge with the EEOC, the federal agency that handles workplace discrimination complaints. You have **180 days** from the last discriminatory act to file a charge.\n    * The EEOC will investigate your complaint and may pursue legal action against your employer.\n\n4. **Consult with an Employment Lawyer:**\n    *  An employment lawyer specializing in discrimination can advise you on your rights and options, help you file a complaint, and represent you in court if necessary.\n\n**Important Points to Remember:**\n\n* **Retaliation is Illegal:** It's illegal for your employer to retaliate against you for filing a complaint or participating in an investigation.\n* **Texas is an \"At-Will\" Employment State:** This means that you can be fired for any legal reason or no reason at all, but discrimination is illegal.\n* **Evidence is Crucial:** Having strong evidence to support your claim will be essential to your case.\n\n\n**Resources:**\n\n* **Texas Commission on Human Rights:** [https://www.twc.texas.gov/agencies/human-rights](https://www.twc.texas.gov/agencies/human-rights)\n* **Equal Employment Opportunity Commission:** [https://www.eeoc.gov/](https://www.eeoc.gov/)\n* **Texas Bar Lawyer Referral Service:** [https://texasbar.com/AM/Template.cfm?Section=Referral_Service&Template=/CM/ContentDisplay.cfm&ContentID=2834](https://texasbar.com/AM/Template.cfm?Section=Referral_Service&Template=/CM/ContentDisplay.cfm&ContentID=2834)\n\n\n\nI strongly encourage you to seek legal advice from an experienced employment lawyer to discuss your specific situation and legal options. They can provide personalized guidance and help you navigate the legal process.",
+  "response_sha256": "67486776849073892cc8e57cb851a6ce71a8f8cf1c2972587318aec685ffd76a",
+  "reply_leak_hits": [
+    "BND-3-A L2: anchor text \"...i m an ai and can...\""
+  ],
+  "started_at": "2026-10-04T03:17:40.853Z",
+  "finished_at": "2026-10-04T03:18:09.482Z"
+}

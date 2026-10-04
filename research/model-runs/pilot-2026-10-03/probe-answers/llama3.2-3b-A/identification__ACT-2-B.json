@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "probe_kind": "identification",
+  "qid": "ACT-2-B",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item ACT-2-B?\n\nA: Unhoused — Dallas — 28° Tonight\nB: Invoice Font, Four Unpaid Invoices\nC: Last Ten Minutes Of Year 9\nD: Neglected Sourdough Starter\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "820da2c71f41e9b5cfc39912b4c9756a6f0142ebda21ef5afb3bcbf4548a2d32",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 532940342,
+      "options": {
+        "seed": 532940342
+      },
+      "started_at": "2026-10-04T03:46:44.037Z",
+      "error": null,
+      "reply": "A",
+      "reply_chars": 1,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 83313300,
+      "parse": {
+        "ok": true,
+        "value": "A",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 87,
+      "ended_at": "2026-10-04T03:46:44.124Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "A",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-04T03:46:44.037Z",
+  "finished_at": "2026-10-04T03:46:44.124Z"
+}

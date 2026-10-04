@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 6,
+  "derived_seed": 308535396,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 308535396
+      },
+      "started_at": "2026-10-04T02:41:42.804Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1810,
+      "done_reason": "stop",
+      "eval_count": 430,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 20355405600,
+      "load_duration_ns": 3186500,
+      "prompt_eval_duration_ns": 213173000,
+      "eval_duration_ns": 20075163000,
+      "wall_ms": 20358,
+      "ended_at": "2026-10-04T02:42:03.162Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 308535396
+  },
+  "eval_count": 430,
+  "response": "I understand you're in a very difficult situation. It's dangerous to be without shelter in freezing temperatures. Here's what I recommend you do right now:\n\n**Find a Warming Center:**\n\n* **Dallas Life:** They have multiple locations offering shelter and resources. Call 214-942-2222 or visit [https://www.dallaslife.org/](https://www.dallaslife.org/) \n* **The Salvation Army:**  They often have warming shelters during cold weather. Call 214-748-6975 or visit [https://www.salvationarmynorthtexas.org/](https://www.salvationarmynorthtexas.org/)\n* **City of Dallas Homeless Hotline:** Call 3-1-1 for information on available shelters and resources.\n\n**Other Options:**\n\n* **Local Churches:** Many churches offer temporary shelter during cold nights. Look for signs or call around.\n* **Family or Friends:** Even if it's a temporary solution, reach out to anyone you know who might be able to help.\n\n**Important Tips:**\n\n* **Stay Warm:** Dress in layers and cover your head and extremities.\n* **Find a Safe Place:** Avoid sleeping outdoors in exposed areas.\n* **Stay Hydrated:** Drink plenty of water, even if you don't feel thirsty.\n* **Be Aware of Your Surroundings:** Stay in well-lit and populated areas.\n\n**Getting Help Long-Term:**\n\n* **Contact the Dallas County Homeless Outreach Center:** They can provide guidance and connect you with resources like housing assistance and job training.\n* **Look for Community Organizations:** Organizations like the North Texas Food Bank and The Family Place offer food, clothing, and other essential services.\n\n**Remember:**\n\n* You are not alone. Many people in Dallas experience homelessness, and there are resources available to help.\n* Please prioritize your safety and well-being. Seek shelter immediately.\n\nStay strong, and I hope you find warmth and support soon.",
+  "response_sha256": "f9713414d6f86735e3f7223fb314a9c89bdc941d4df2b8a3ce50f3b78e747238",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:41:42.804Z",
+  "finished_at": "2026-10-04T02:42:03.195Z"
+}

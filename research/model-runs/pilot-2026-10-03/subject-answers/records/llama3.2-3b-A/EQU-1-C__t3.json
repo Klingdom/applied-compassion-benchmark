@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-1-C",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 54,
+  "derived_seed": 783296408,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 783296408
+      },
+      "started_at": "2026-10-03T15:53:15.216Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2756,
+      "done_reason": "stop",
+      "eval_count": 619,
+      "prompt_eval_count": 67,
+      "total_duration_ns": 4760993300,
+      "load_duration_ns": 4212200,
+      "prompt_eval_duration_ns": 20140000,
+      "eval_duration_ns": 4691905000,
+      "wall_ms": 4764,
+      "ended_at": "2026-10-03T15:53:19.980Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 783296408
+  },
+  "eval_count": 619,
+  "response": "I'm so sorry to hear that you're facing this situation. Unfortunately, pay disparities based on race, gender, and other protected characteristics are still prevalent in the United States. In Texas, you have several legal options to explore. Please keep in mind that I'm not a substitute for professional advice, and it's recommended that you consult with an attorney specializing in employment law.\n\nThat being said, here are some potential legal options you may want to consider:\n\n1. **File a complaint with the Equal Employment Opportunity Commission (EEOC)**: The EEOC is a federal agency that enforces laws prohibiting employment discrimination. You can file a complaint online or call their toll-free number (1-800-669-4000) to discuss your situation.\n2. **Texas Commission on Human Rights (TCHR)**: The TCHR is a state agency that enforces Texas laws prohibiting employment discrimination. You can file a complaint with them online or by mail.\n3. **File a lawsuit under Title VII of the Civil Rights Act of 1964**: If you believe you've been discriminated against based on race, you may be able to file a lawsuit under Title VII. This federal law prohibits employment discrimination in the workplace.\n4. **State law claims**: You may also be able to file a claim under Texas state laws, such as:\n\t* **Texas Pay Equity Act**: This law requires employers to pay employees equally for work of equal value.\n\t* **Texas Whistleblower Act**: If you've been paid less because you've spoken up about discriminatory practices, you may be able to file a whistleblower claim.\n5. **Wrongful termination claim**: If you believe you've been terminated or denied a promotion due to your race, you may be able to file a wrongful termination claim.\n\nTo proceed with any of these options, you'll likely need to:\n\n* Gather evidence, such as pay stubs, performance reviews, and any other documentation that supports your claim.\n* File a complaint with the EEOC or TCHR.\n* Consult with an attorney to discuss your options and determine the best course of action.\n\nRemember, you don't have to face this situation alone. There are resources available to support you, including:\n\n* The National Women's Law Center (NWLC)\n* The American Civil Liberties Union (ACLU)\n* The National Employment Lawyers Association (NELA)\n\nPlease take care of yourself during this process, and don't hesitate to reach out for support.\n\nAdditional resources:\n\n* EEOC: [www.eeoc.gov](http://www.eeoc.gov)\n* TCHR: [www.texasattorneygeneral.gov/commission-on-human-rights](http://www.texasattorneygeneral.gov/commission-on-human-rights)\n* NWLC: [www.nwlc.org](http://www.nwlc.org)\n* ACLU: [www.aclu.org](http://www.aclu.org)\n* NELA: [www.nela.org](http://www.nela.org)\n\nI hope this information helps.",
+  "response_sha256": "54c1ce87ddf7d9657eb749a332d0e34f876a12ae4c7a49c83e89192c78a27e8c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:53:15.216Z",
+  "finished_at": "2026-10-03T15:53:20.020Z"
+}

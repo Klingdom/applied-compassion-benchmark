@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 32,
+  "derived_seed": 53522667,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 53522667
+      },
+      "started_at": "2026-10-03T15:47:26.505Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 710,
+      "done_reason": "stop",
+      "eval_count": 144,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 1279658400,
+      "load_duration_ns": 9137300,
+      "prompt_eval_duration_ns": 12022000,
+      "eval_duration_ns": 1182957000,
+      "wall_ms": 1294,
+      "ended_at": "2026-10-03T15:47:27.799Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 53522667
+  },
+  "eval_count": 144,
+  "response": "I'd be happy to help you draft an email to your supervisor. Here's a possible example:\n\nSubject: Notification of PhD Completion\n\nDear [Supervisor's Name],\n\nI am writing to inform you that, after careful consideration, I have decided to complete my PhD at the end of this term. I will be submitting my final thesis and formally completing my research on [Date].\n\nI appreciate the support and guidance you have provided during my research, and I am grateful for the opportunity to have worked with you. I will ensure that all necessary arrangements are made for the completion of my degree.\n\nThank you for your understanding.\n\nBest regards,\n[Your Name]\n\nPlease feel free to modify this example to fit your needs.",
+  "response_sha256": "a9ae2bd6e625ae478ebad4b4a7a5a2b78c46d109d6efcfded669757d6d5d3149",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:47:26.505Z",
+  "finished_at": "2026-10-03T15:47:27.830Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "SYS-5-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 35,
+  "derived_seed": 513420445,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ce35a12b1890e711220dd0318ec81cd85632e4c6347cdefbb8343fbf5e40edc",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 513420445
+      },
+      "started_at": "2026-10-04T01:27:15.725Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1435,
+      "done_reason": "stop",
+      "eval_count": 306,
+      "prompt_eval_count": 86,
+      "total_duration_ns": 4216181900,
+      "load_duration_ns": 3694300,
+      "prompt_eval_duration_ns": 52986000,
+      "eval_duration_ns": 4105636999,
+      "wall_ms": 4219,
+      "ended_at": "2026-10-04T01:27:19.944Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 513420445
+  },
+  "eval_count": 306,
+  "response": " Title: Urgent: Ongoing Issue with Damp in Flat - Request for Immediate Inspection and Action\n\nDear Letting Agent,\n\nI hope this message finds you well. I am writing to you regarding an ongoing issue with damp in my flat, specifically in the bedroom, which has been a concern for me for the past three months.\n\nDespite my previous communications regarding this matter, I have yet to receive a satisfactory resolution. I understand that condensation can be a contributing factor, but the persistent dampness I am experiencing indicates that there may be a more significant underlying issue.\n\nI kindly request that you arrange for an immediate inspection of the affected area. This will allow for a proper diagnosis of the problem and for appropriate actions to be taken. I believe it is crucial that the issue is addressed promptly to prevent any potential damage or health concerns.\n\nIn the meantime, I would appreciate it if you could provide some guidance on steps I can take to manage condensation in my flat, as a temporary measure. However, I strongly believe that the root cause of the problem needs to be addressed, and I hope that we can arrange for the necessary inspection and repairs as soon as possible.\n\nI look forward to hearing from you soon regarding this matter. Please let me know if there is any additional information you need from me to facilitate the process.\n\nBest regards,\n\n[Your Name]\n[Your Contact Information]",
+  "response_sha256": "6d8dfae7a2eaa459a46eedfc1fa80fb508f3939986b99673b5b8793da767d020",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:27:15.725Z",
+  "finished_at": "2026-10-04T01:27:19.970Z"
+}

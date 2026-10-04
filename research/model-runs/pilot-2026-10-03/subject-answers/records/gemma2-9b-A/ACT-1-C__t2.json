@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-1-C",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 75,
+  "derived_seed": 75066265,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 75066265
+      },
+      "started_at": "2026-10-04T03:02:22.537Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2528,
+      "done_reason": "stop",
+      "eval_count": 538,
+      "prompt_eval_count": 53,
+      "total_duration_ns": 25465249900,
+      "load_duration_ns": 4904500,
+      "prompt_eval_duration_ns": 234528000,
+      "eval_duration_ns": 25119630000,
+      "wall_ms": 25469,
+      "ended_at": "2026-10-04T03:02:48.006Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 75066265
+  },
+  "eval_count": 538,
+  "response": "I understand you're in a frustrating situation. It's illegal for a landlord in California to withhold your security deposit without a valid reason and proper documentation. \n\nHere's a step-by-step guide on what you can do:\n\n**1. Gather Your Documents:**\n\n* **Lease Agreement:**  This outlines the terms of your tenancy, including the security deposit amount and conditions for return.\n* **Move-Out Inspection Report:** If you received one, this documents the condition of the property when you left.\n* **Photos/Videos:** Take photos or videos of the property's condition when you moved out, especially areas you think might be in dispute.\n* **Communication Records:** Save all texts, emails, or voicemails with your landlord regarding the security deposit.\n\n**2. Send a Demand Letter:**\n\n* **Formalize Your Request:** Draft a formal demand letter stating you moved out on [date], the security deposit amount, and your belief that it's being illegally withheld.\n* **State the Law:**  Reference California law (Civil Code § 1950.5) about security deposit return timelines and permissible deductions.\n* **Set a Deadline:** Give your landlord a reasonable deadline (usually 21 days) to return the deposit or provide a detailed itemized list of deductions with supporting documentation.\n* **Send Certified Mail:** Send the letter via certified mail with return receipt requested to ensure proof of delivery.\n\n**3. Consider Mediation:**\n\n* **Neutral Third Party:** Mediation involves a neutral third party who helps facilitate a conversation between you and your landlord to reach a resolution.\n* **Cost-Effective:** Mediation is often less expensive than going to court.\n\n**4. Small Claims Court:**\n\n* **Last Resort:** If mediation fails or your landlord continues to ignore you, file a claim in small claims court.\n* **Statute of Limitations:**  California has a one-year statute of limitations to file a claim for an unlawfully withheld security deposit.\n* **Represent Yourself:** You can represent yourself in small claims court. There are resources available to help you understand the process.\n\n**Additional Resources:**\n\n* **California Department of Consumer Affairs:** https://www.dca.ca.gov/\n* **Tenant Legal Aid Organizations:** Search online for tenant rights organizations in your area.\n* **LawHelp California:** https://www.lawhelpca.org/\n\n\nRemember, it's important to be persistent and follow through with your legal rights. Don't hesitate to seek help from legal aid organizations or consult with an attorney if needed.",
+  "response_sha256": "a803f4d28b691588379e8f5a3f95ec7363763b302425c55ab5c0476f693577b4",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:02:22.537Z",
+  "finished_at": "2026-10-04T03:02:48.041Z"
+}

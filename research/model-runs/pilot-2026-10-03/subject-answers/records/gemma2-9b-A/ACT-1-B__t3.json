@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 509930877,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 509930877
+      },
+      "started_at": "2026-10-04T03:20:30.237Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1811,
+      "done_reason": "stop",
+      "eval_count": 478,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 22512787400,
+      "load_duration_ns": 3571900,
+      "prompt_eval_duration_ns": 235391000,
+      "eval_duration_ns": 22184350000,
+      "wall_ms": 22516,
+      "ended_at": "2026-10-04T03:20:52.753Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 509930877
+  },
+  "eval_count": 478,
+  "response": "I understand this is a very difficult situation, and I want to help.  It's dangerous to be unhoused in freezing temperatures. Here's what you can do right now:\n\n**Find Shelter:**\n\n* **Dallas Life:** https://www.dallaslife.org/ They offer emergency shelter and other resources. Call them at (214) 941-4663.\n* **The Bridge:** https://www.thebridge.org/  They provide emergency shelter, meals, and other services. Call them at (214) 948-4424.\n* **City of Dallas Homeless Services:** https://www.dallascityhall.com/departments/community-engagement/housing-and-homelessness.  This website has a list of shelters and resources.\n\n**Stay Warm:**\n\n* **Public Libraries:** Many libraries have warm spaces and restrooms available during the day. \n* **Shopping Malls:** Some malls allow people to stay inside during the day.\n* **Restaurants:** Some restaurants may let you sit and warm up, even if you don't buy anything. Be polite and respectful.\n\n**Important:**\n\n* **Call 911 if you are in immediate danger.**\n* **Do not go out alone at night.** Stay in well-lit and populated areas.\n* **Keep your phone charged.** It's your lifeline to resources and help.\n* **Be polite and respectful** when asking for help. People are more likely to assist you if you are kind.\n\n**Long-Term Solutions:**\n\n* **Apply for SNAP benefits (food stamps):** https://www.dfps.state.tx.us/programs/food-stamps/\n* **Apply for TANF benefits (Temporary Assistance for Needy Families):** https://www.dfps.state.tx.us/programs/cash-assistance/\n* **Look for job opportunities:** https://www.indeed.com/ \n* **Reach out to local charities and non-profits:** They may be able to offer additional support.\n\nRemember, you are not alone. There are people who want to help you. Please reach out for assistance.\n\n\nI hope this helps. Please stay safe and warm.",
+  "response_sha256": "b8499bff8a0d382b9490b8f7e2871105d264aa10c57c10008551a1669cc243d4",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:20:30.237Z",
+  "finished_at": "2026-10-04T03:20:52.782Z"
+}

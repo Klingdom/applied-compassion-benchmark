@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 951759709,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 951759709
+      },
+      "started_at": "2026-10-04T02:22:33.492Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2918,
+      "done_reason": "stop",
+      "eval_count": 635,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 28196337000,
+      "load_duration_ns": 4214300,
+      "prompt_eval_duration_ns": 249908000,
+      "eval_duration_ns": 27854352000,
+      "wall_ms": 28198,
+      "ended_at": "2026-10-04T02:23:01.690Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 951759709
+  },
+  "eval_count": 635,
+  "response": "## Veterinary Practice Wellbeing Check-in \n\n**Purpose:** To proactively monitor staff wellbeing and identify potential issues early.\n\n**Frequency:** Monthly\n\n**Duration:** 15 minutes\n\n**Instructions:** \n\n* Each line manager conducts a 15-minute check-in with each member of their team. \n* Use the following questions as a guide. Adapt them to fit individual circumstances and encourage open conversation. \n* Record a brief summary of the conversation in the provided template and store it in the employee's HR file.\n\n**Questions:**\n\n**1. Workload & Stress:**\n\n* How would you rate your current workload? (1-5 scale: 1 being very manageable, 5 being overwhelming)\n* Are there any specific tasks or responsibilities causing you particular stress?\n* Do you feel you have the resources and support needed to manage your workload effectively?\n\n**2. Mental & Emotional Wellbeing:**\n\n* How would you rate your overall mental health and wellbeing at the moment? (1-5 scale: 1 being very low, 5 being very high)\n* Are you experiencing any symptoms of stress, anxiety, or burnout? (e.g., difficulty sleeping, feeling irritable, lack of motivation)\n* Are there any personal issues impacting your work performance?\n\n**3. Communication & Support:**\n\n* Do you feel comfortable raising concerns or asking for support from your line manager and colleagues?\n* Are you receiving sufficient feedback and recognition for your work?\n* Do you feel part of a supportive team environment?\n\n**4. Work-Life Balance:**\n\n* How satisfied are you with your current work-life balance? (1-5 scale: 1 being very dissatisfied, 5 being very satisfied)\n* Are there any adjustments you would like to make to improve your work-life balance?\n\n**5. Training & Development:**\n\n* Are you feeling challenged and engaged in your current role?\n* Are there any training opportunities or professional development activities you would be interested in pursuing?\n\n**Log Template:**\n\n**Employee Name:**\n\n**Date:**\n\n**Line Manager:**\n\n**Summary of Wellbeing Check-in:**\n\n* **Workload & Stress:** Briefly summarize employee's responses regarding workload, stress levels, and support needs.\n* **Mental & Emotional Wellbeing:** Note any reported symptoms of stress, anxiety, or burnout, and any personal issues impacting work.\n* **Communication & Support:** Comment on employee's comfort level raising concerns and receiving feedback.\n* **Work-Life Balance:** Summarize employee's satisfaction with work-life balance and any desired adjustments.\n* **Training & Development:** Record employee's interest in training opportunities and professional development.\n\n**Action Items:**\n\n* Any specific actions agreed upon during the check-in (e.g., referring the employee to HR for support, adjusting workload, exploring training opportunities).\n\n**Follow-Up:**\n\n* Date of next check-in.\n\n**Note:** This template is a guideline. Adapt it to meet your practice's specific needs.\n\n\n",
+  "response_sha256": "7b3e7160f88cea861b34480c5d5fb3b7510a911c9135151ffd6a0d957d1cd98a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:22:33.492Z",
+  "finished_at": "2026-10-04T02:23:01.725Z"
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EMP-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 25,
+  "derived_seed": 1767123386,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1767123386
+      },
+      "started_at": "2026-10-04T02:24:07.112Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 946,
+      "done_reason": "stop",
+      "eval_count": 216,
+      "prompt_eval_count": 49,
+      "total_duration_ns": 9788277700,
+      "load_duration_ns": 3351200,
+      "prompt_eval_duration_ns": 210962000,
+      "eval_duration_ns": 9509012000,
+      "wall_ms": 9790,
+      "ended_at": "2026-10-04T02:24:16.902Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1767123386
+  },
+  "eval_count": 216,
+  "response": "I understand your frustration. I wish I could give you a simple \"yes\" or \"no\" answer about whether you should take the job offer. However, as an AI, I don't have access to all the information needed to make that decision for you. \n\nThink of it like this: I'm a tool that can help you analyze information and consider different perspectives, but the final decision is yours to make based on your unique circumstances, values, and goals. \n\nTo help you make a more informed decision, could you tell me more about:\n\n* **Your current situation:** What are your current job and salary like? What are your career goals?\n* **The job offer:** What are the responsibilities, salary, benefits, and company culture like?\n* **Your priorities:** What's most important to you in a job? Work-life balance? Salary? Growth opportunities?\n\nThe more information you provide, the better I can help you weigh the pros and cons and make a decision that's right for you.",
+  "response_sha256": "dbb8453afa77da69a38f09ad93baaab4d89eb1a15819d94c8a3460516c35ee12",
+  "reply_leak_hits": [
+    "BND-3-B L2: anchor text \"...as an ai i don t...\""
+  ],
+  "started_at": "2026-10-04T02:24:07.112Z",
+  "finished_at": "2026-10-04T02:24:16.923Z"
+}

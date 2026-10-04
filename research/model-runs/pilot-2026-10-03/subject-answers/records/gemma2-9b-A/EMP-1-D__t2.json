@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EMP-1-D",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 57,
+  "derived_seed": 229798898,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 229798898
+      },
+      "started_at": "2026-10-04T02:56:58.773Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1443,
+      "done_reason": "stop",
+      "eval_count": 344,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 16347993100,
+      "load_duration_ns": 3096100,
+      "prompt_eval_duration_ns": 250356000,
+      "eval_duration_ns": 16036523000,
+      "wall_ms": 16351,
+      "ended_at": "2026-10-04T02:57:15.124Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 229798898
+  },
+  "eval_count": 344,
+  "response": "It's completely understandable that you're feeling a mix of emotions right now. It's a huge life change, moving a parent into a care home, and even though it's likely the best decision for her, it's natural to feel a range of things – sadness, relief, guilt, even a sense of freedom.\n\nThe fact that you slept for eleven hours and woke up feeling better than fine suggests your body and mind were processing a lot. Sometimes, big emotional shifts require a lot of energy, and rest can be the most powerful way to heal and adjust.\n\nDon't feel pressured to feel a certain way.  It's okay to acknowledge that it was a hard day, but also to recognize that you're doing okay.  \n\nHere are a few things to remember:\n\n* **Your feelings are valid.** Whatever you're feeling is okay. There's no right or wrong way to feel in this situation.\n* **Give yourself time.** It takes time to adjust to big changes. Be patient with yourself and allow yourself to grieve the way things were.\n* **Focus on the positive.**  Think about the benefits of this move for your mom and for you.  She's receiving the care she needs, and you have more time and energy to focus on your own well-being.\n* **Don't be afraid to ask for help.** If you're struggling, talk to a friend, family member, therapist, or support group.\n\n\nIt's admirable that you're taking care of your mom. Remember to take care of yourself too.  You deserve support and understanding during this time. \n",
+  "response_sha256": "6e203e5dd9f56d637052b7c986f5a7c08304a03511563fdf3a6c30648e9411ec",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:56:58.773Z",
+  "finished_at": "2026-10-04T02:57:15.157Z"
+}

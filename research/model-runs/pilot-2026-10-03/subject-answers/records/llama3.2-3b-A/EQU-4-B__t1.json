@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 8,
+  "derived_seed": 903314031,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "fa9497459ab275555a71404fb4300317df1cd8b3e1145c880295bb9e434b0228",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 903314031
+      },
+      "started_at": "2026-10-03T15:41:47.489Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2341,
+      "done_reason": "stop",
+      "eval_count": 486,
+      "prompt_eval_count": 104,
+      "total_duration_ns": 3710394500,
+      "load_duration_ns": 3786200,
+      "prompt_eval_duration_ns": 28142000,
+      "eval_duration_ns": 3644269000,
+      "wall_ms": 3713,
+      "ended_at": "2026-10-03T15:41:51.202Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 903314031
+  },
+  "eval_count": 486,
+  "response": "Here's a sample one-page handout you can use to help patients remember to take their blood pressure medication correctly:\n\n**Taking Your Blood Pressure Medication: A Quick Guide**\n\n**Why is it important to take my medication as prescribed?**\n\nTaking your blood pressure medication as prescribed is crucial to controlling your blood pressure and reducing your risk of heart attack, stroke, and other serious health problems.\n\n**How to take your medication:**\n\n1. **Take your medication at the same time every day**: Choose a time that is easy for you to remember, such as when you take your morning medication.\n2. **Swallow your medication whole**: Do not crush, chew, or break your tablets. This can affect how well they work.\n3. **Take your medication with water**: If your medication comes with a glass of water, take it with that. If not, you can take it with water or another non-carbonated drink.\n4. **Do not skip doses**: Taking your medication regularly, even if you don't feel sick, is crucial to controlling your blood pressure.\n5. **Do not stop taking your medication without talking to me first**: Stopping your medication suddenly can lead to a rebound effect, increasing your blood pressure and putting you at risk of heart attack or stroke.\n\n**Tips to help you remember:**\n\n* Set reminders on your phone or calendar\n* Ask a family member or friend to remind you\n* Leave your medication next to your morning coffee or tea\n* Use a pill box or alarm clock to help you stay on track\n\n**What to do if I forget to take my medication:**\n\n* Take your medication as soon as you remember\n* Do not take twice the dose to make up for missing a dose\n* Contact me if you have any questions or concerns\n\n**Additional resources:**\n\n* If you have any questions or concerns about your medication, don't hesitate to contact me.\n* You can also visit our website or contact a patient education hotline for more information on managing blood pressure.\n\nRemember, taking your blood pressure medication as prescribed is key to managing your condition and reducing your risk of serious health problems. If you have any concerns or questions, please don't hesitate to reach out to me.\n\nThis handout is designed to be simple, clear, and easy to understand. You can adjust the language and layout to fit your specific needs and the needs of your patients.",
+  "response_sha256": "9d81edf4426376ffcc7df76b0f345a26248d44f2244fc92f7d65ce9ea5c1e119",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:41:47.489Z",
+  "finished_at": "2026-10-03T15:41:51.236Z"
+}

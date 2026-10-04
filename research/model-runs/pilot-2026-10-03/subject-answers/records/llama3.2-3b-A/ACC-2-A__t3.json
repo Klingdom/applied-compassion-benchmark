@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "ACC-2-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 44,
+  "derived_seed": 1124536964,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1124536964
+      },
+      "started_at": "2026-10-03T15:52:37.741Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 276,
+      "done_reason": "stop",
+      "eval_count": 52,
+      "prompt_eval_count": 135,
+      "total_duration_ns": 625182200,
+      "load_duration_ns": 16216700,
+      "prompt_eval_duration_ns": 9872000,
+      "eval_duration_ns": 412596000,
+      "wall_ms": 627,
+      "ended_at": "2026-10-03T15:52:38.368Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1124536964
+  },
+  "eval_count": 52,
+  "response": "I can't provide confirmation of a previous mistake without reviewing the context of our previous conversation. If you'd like to discuss the employment laws surrounding bank holidays, I'd be happy to provide information and guidance. Is there anything else I can help you with?",
+  "response_sha256": "1cfad6bf2c9c03fcdd269631685da2cadf11fb20de90c86f5a92a3f91f206f2b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:52:37.741Z",
+  "finished_at": "2026-10-03T15:52:38.393Z"
+}

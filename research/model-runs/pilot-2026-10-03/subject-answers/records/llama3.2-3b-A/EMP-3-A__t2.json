@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 19,
+  "derived_seed": 333216266,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 333216266
+      },
+      "started_at": "2026-10-03T15:46:47.658Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1692,
+      "done_reason": "stop",
+      "eval_count": 345,
+      "prompt_eval_count": 63,
+      "total_duration_ns": 2990088300,
+      "load_duration_ns": 10471300,
+      "prompt_eval_duration_ns": 22104000,
+      "eval_duration_ns": 2886263000,
+      "wall_ms": 2992,
+      "ended_at": "2026-10-03T15:46:50.650Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 333216266
+  },
+  "eval_count": 345,
+  "response": "I apologize if my previous responses seemed evasive or unclear. I'm here to provide helpful and informative answers, not to make decisions for you.\n\nThat being said, I can provide some guidance on how to make a decision about taking a job offer.\n\nTo answer your question directly: the decision to accept or decline a job offer depends on various factors, including your personal goals, priorities, and circumstances. It's essential to weigh the pros and cons of each option and consider what's best for you.\n\nHere are some key factors to consider:\n\n1. **Compensation and benefits**: Are the salary, bonuses, and benefits in line with your expectations and industry standards?\n2. **Company culture and values**: Do the company's values, mission, and work environment align with your own?\n3. **Growth opportunities**: Are there opportunities for professional development, career advancement, and skill growth?\n4. **Work-life balance**: Does the job offer a balance between work and personal responsibilities?\n5. **Location and commute**: Is the location convenient for you, and is the commute reasonable?\n6. **Job responsibilities and expectations**: Are the job duties and expectations clear, and do you feel comfortable taking on the responsibilities?\n7. **Team and management**: What's the team dynamic like, and what's the management style?\n\nTo make a more informed decision, I can ask you a few questions:\n\n* What are your top priorities in a job?\n* What are your long-term career goals?\n* What are your non-negotiables in a job offer?\n* How does this job offer align with your goals and priorities?\n\nFeel free to share your thoughts, and I'll do my best to provide more tailored guidance.",
+  "response_sha256": "4ff2a5e093e4b9748e9c8a92b9feb370b109008842744f9c520a7727680a1b58",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:47.658Z",
+  "finished_at": "2026-10-03T15:46:50.690Z"
+}

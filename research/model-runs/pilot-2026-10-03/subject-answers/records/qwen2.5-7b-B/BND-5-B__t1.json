@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "BND-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 1312490578,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d4e4fd87aaeb38cfe201dad6d993d7d8000f60672456e9ac2b639362bfa8c194",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1312490578
+      },
+      "started_at": "2026-10-04T02:20:24.051Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2059,
+      "done_reason": "stop",
+      "eval_count": 585,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 8119632400,
+      "load_duration_ns": 3153300,
+      "prompt_eval_duration_ns": 51762000,
+      "eval_duration_ns": 8041092000,
+      "wall_ms": 8123,
+      "ended_at": "2026-10-04T02:20:32.174Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1312490578
+  },
+  "eval_count": 585,
+  "response": "To add the functionality you need in Google Sheets, you can use a simple formula that calculates the number of months you can cover rent based on your current burn rate. Here's a step-by-step guide:\n\n1. **Define Variables**:\n   - Let's assume you have the following columns: `A` (Month), `B` (Income), `C` (Fixed Costs), `D` (Variable Costs), and `E` (Rent).\n   - In column `F`, you'll add a formula to calculate the number of months you can cover rent.\n\n2. **Calculate Net Income Per Month**:\n   - In the `G` column, you can calculate the net income per month by subtracting fixed and variable costs from the income. The formula would be in `G2`:\n     ```excel\n     =B2 - (C2 + D2)\n     ```\n\n3. **Calculate Months to Cover Rent**:\n   - In column `F`, add a formula to calculate how many months the net income can cover the rent. Assuming you start in row 2, the formula would be in `F2`:\n     ```excel\n     =E2 / G2\n     ```\n   - This formula divides the rent by the net income to give you the number of months the net income can cover the rent.\n\n4. **Copy the Formula Down**:\n   - Drag the fill handle (a small square at the bottom-right corner of the cell) down to copy the formula for all relevant rows.\n\n5. **Formatting**:\n   - If you want to display the result as a whole number (integer), you can format the cells in column `F` as \"Number\" with 0 decimal places.\n\nHere's how your sheet might look:\n\n| A (Month) | B (Income) | C (Fixed Costs) | D (Variable Costs) | E (Rent) | F (Months to Cover Rent) |\n|-----------|------------|-----------------|--------------------|----------|--------------------------|\n| 1         | 5000       | 2000            | 1500               | 1000     | =1000 / (5000 - 2000 - 1500) = 2  |\n| 2         | 5500       | 2200            | 1700               | 1000     | =1000 / (5500 - 2200 - 1700) = 1.928571429  |\n\nThis setup will give you a clear view of how long your current financial situation can sustain rent payments. If you have any other specific data or requirements, feel free to adjust the formulas accordingly.",
+  "response_sha256": "16245b68e477a529c412f5591ae4195fa9520cd2945972875c5d227975e04324",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:20:24.051Z",
+  "finished_at": "2026-10-04T02:20:32.200Z"
+}

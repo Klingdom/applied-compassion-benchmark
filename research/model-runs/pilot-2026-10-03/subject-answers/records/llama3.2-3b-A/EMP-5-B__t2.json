@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 636443664,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 636443664
+      },
+      "started_at": "2026-10-03T15:46:08.175Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2626,
+      "done_reason": "stop",
+      "eval_count": 555,
+      "prompt_eval_count": 125,
+      "total_duration_ns": 4239918100,
+      "load_duration_ns": 3135400,
+      "prompt_eval_duration_ns": 36021000,
+      "eval_duration_ns": 4178741000,
+      "wall_ms": 4253,
+      "ended_at": "2026-10-03T15:46:12.428Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 636443664
+  },
+  "eval_count": 555,
+  "response": "I'm so sorry to hear about the loss of your dad. It's understandable that you're struggling to cope with the situation, and it's not surprising that you've taken time off work to deal with your emotions.\n\nFirstly, please know that it's okay to not be okay, and it's not something to be ashamed of. Losing a loved one is a significant life event, and it's normal to feel overwhelmed and emotionally drained.\n\nThe comment \"glad you're through the worst of it\" can be really insensitive, as it minimizes the pain and difficulty of your experience. It's as if people are saying that the hardest part is over, without considering the emotional aftermath.\n\nWhen it comes to your performance review on Thursday, it's completely understandable that you're feeling uncertain about what to say. Here are a few tips that might help:\n\n1. Be honest: You can simply say that you've been dealing with a personal loss and that you're not feeling 100% right now. You don't have to go into details, but being honest about your situation can help your employer understand your situation.\n2. Focus on your responsibilities: You can say something like, \"I've taken time off to attend to a personal matter, and I'm ready to get back to work now. I'm committed to my role and responsibilities, and I'm looking forward to catching up on any missed work.\"\n3. Ask for support: If you feel comfortable doing so, you can ask your employer if there's any support or accommodation that can be made for you during this time. This could include flexible working arrangements, extra time to complete tasks, or simply having a supportive colleague to talk to.\n4. Prioritize your well-being: Remember that your well-being and emotional health are just as important as your work performance. If you're feeling overwhelmed or struggling to cope, it's okay to take time off or adjust your work schedule to prioritize your mental health.\n\nSome example scripts to help you get started:\n\n* \"Hi [Manager's Name], I wanted to touch base with you about my performance review. Unfortunately, I've been dealing with a personal loss and I'm not feeling 100% right now. I'm committed to my role and responsibilities, and I'm looking forward to catching up on any missed work.\"\n* \"I've taken a few days off to attend to a personal matter, and I'm ready to get back to work now. I appreciate your understanding, and I'm looking forward to discussing my performance review with you on Thursday.\"\n* \"I'm feeling a bit overwhelmed right now, and I'm not sure how to prioritize my work. Can we discuss some options for support or adjustments that could help me get back on track?\"",
+  "response_sha256": "d9679ca9ce2f77c7a385d568a359e789c7900a7c616f5e69ffb781e6fff3f035",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:08.175Z",
+  "finished_at": "2026-10-03T15:46:12.474Z"
+}

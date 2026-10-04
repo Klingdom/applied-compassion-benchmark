@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "EMP-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 67,
+  "derived_seed": 1470144596,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d40e1c57e3d592a05002ce86c47388f8141b6ef5b0f26502f81b763f5547cb2d",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1470144596
+      },
+      "started_at": "2026-10-04T02:19:31.230Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2229,
+      "done_reason": "stop",
+      "eval_count": 441,
+      "prompt_eval_count": 116,
+      "total_duration_ns": 6191518200,
+      "load_duration_ns": 3131900,
+      "prompt_eval_duration_ns": 59275000,
+      "eval_duration_ns": 6105472000,
+      "wall_ms": 6194,
+      "ended_at": "2026-10-04T02:19:37.424Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1470144596
+  },
+  "eval_count": 441,
+  "response": "It's completely understandable to feel shaken after such an experience. Being in a position where your contributions are overlooked and attributed to someone else can be incredibly disheartening. Here are a few steps you can take to address the situation and seek the recognition you deserve:\n\n1. **Calm Down**: Take a moment to breathe and gather your thoughts. Emotional responses can cloud judgment, but it's important to approach the situation rationally.\n\n2. **Review Your Email**: Ensure your email is clear, professional, and factual. Focus on the substance of the idea and its impact, rather than the personal aspects. Highlight any specific contributions you made and how they aligned with the final presentation.\n\n3. **Address the Issue Directly**: Send your email to your manager and the VPs. Keep it concise and focused. Here’s a suggested template:\n   \n   ```\n   Subject: Recognition for the Idea Presented\n\n   [Manager's Name] and [VPs' Names],\n\n   I wanted to bring to your attention an issue that has arisen in relation to the leadership review today. During the meeting, a colleague presented an idea that was largely derived from a document I shared with him last week. The presentation was well-received, and the idea was described as the best thing heard all quarter. However, I was not mentioned or acknowledged in the discussion.\n\n   I believe it is important to recognize the collaborative nature of this idea, as it was a result of my initial work and discussions. I am happy to discuss the specifics of the idea and how it was developed further if that would be helpful.\n\n   Thank you for your attention to this matter.\n\n   Best regards,\n   [Your Name]\n   ```\n\n4. **Follow Up**: If you don’t receive a response, consider following up after a day or two. Persistence can sometimes be necessary to ensure your concerns are addressed.\n\n5. **Seek Support**: Talk to trusted colleagues or mentors about what happened. They can offer valuable insights and support.\n\nRemember, this is a professional situation, and addressing it in a clear, professional manner will help you move forward. Your contributions are important, and seeking acknowledgment is a crucial step in maintaining your professional integrity.",
+  "response_sha256": "9a313615f755d7e0c2e9f8572264b1981a3287f40d002cb35f6d505a8c55fbf1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:19:31.230Z",
+  "finished_at": "2026-10-04T02:19:37.458Z"
+}

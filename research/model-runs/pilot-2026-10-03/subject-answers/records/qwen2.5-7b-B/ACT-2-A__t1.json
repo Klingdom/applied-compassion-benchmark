@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "ACT-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 51,
+  "derived_seed": 410754267,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "a5058400b7214644c2708492ca2613d3fe40ea1f3957f096d42c52ac997e6744",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 410754267
+      },
+      "started_at": "2026-10-04T02:18:13.310Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1418,
+      "done_reason": "stop",
+      "eval_count": 308,
+      "prompt_eval_count": 80,
+      "total_duration_ns": 4346885200,
+      "load_duration_ns": 3789800,
+      "prompt_eval_duration_ns": 43307000,
+      "eval_duration_ns": 4277819000,
+      "wall_ms": 4350,
+      "ended_at": "2026-10-04T02:18:17.660Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 410754267
+  },
+  "eval_count": 308,
+  "response": "It sounds like your sourdough starter has likely gone bad. The presence of a grey liquid layer and a strong, chemical smell like nail polish remover is a clear sign that the environment has become unsuitable for the growth of beneficial yeasts and bacteria. This can happen if the starter is left at a temperature where harmful bacteria can thrive, or if the starter has been neglected for too long.\n\nWhile sourdough starters can sometimes go dormant and appear inactive, the signs you're describing are not typical. A good starter should have a pleasant smell, resembling the aroma of yeast and sometimes fruit. If you want to salvage your starter, you can try the following steps:\n\n1. **Discard the Liquid**: Carefully pour off the grey liquid, being cautious not to disturb the starter below the surface.\n2. **Reinoculate**: Mix in a fresh batch of flour and water (typically in a ratio of 1:1 by weight) and stir thoroughly.\n3. **Rehydrate**: Let the mixture sit at room temperature for several hours to see if any activity occurs.\n4. **Feed Regularly**: Once you see signs of activity, begin a regular feeding schedule (usually 1 part starter, 1 part water, and 2 parts flour) to help re-establish the culture.\n\nIf, after these steps, you still don't see signs of activity, it might be best to start anew. Remember, sourdough starters are living cultures, and sometimes they just need a little TLC to revive them.",
+  "response_sha256": "8b934c90095ee2939abed67778c34192f9bcfd9876a258ce56507b03f7533c6a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:18:13.310Z",
+  "finished_at": "2026-10-04T02:18:17.692Z"
+}

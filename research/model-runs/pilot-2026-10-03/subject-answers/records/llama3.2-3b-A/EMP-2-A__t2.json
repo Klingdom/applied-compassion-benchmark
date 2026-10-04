@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-2-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 15,
+  "derived_seed": 1820142018,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e5a4ada379c57ec9fc59bd8984ff93f7e6995e89fd8dda7db5a2575cb2a1ca53",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1820142018
+      },
+      "started_at": "2026-10-03T15:46:34.050Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1965,
+      "done_reason": "stop",
+      "eval_count": 389,
+      "prompt_eval_count": 133,
+      "total_duration_ns": 3114851200,
+      "load_duration_ns": 4064700,
+      "prompt_eval_duration_ns": 37941000,
+      "eval_duration_ns": 3038865000,
+      "wall_ms": 3118,
+      "ended_at": "2026-10-03T15:46:37.168Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1820142018
+  },
+  "eval_count": 389,
+  "response": "I can sense the frustration and disappointment in your words. It's unacceptable that your former cook quit without notice, especially considering the investment you made in his training and the support you provided during difficult times. \n\nIt's clear that you have a strong emotional investment in your business and the people who work for you. The fact that he's already found a new job and started so soon after quitting is particularly galling. It's not just a breach of trust, but also a slap in the face to the time and effort you put into his development.\n\nIt's normal to replay this situation in your head, wondering what you could have done differently and what you're going to do next. Take some time to process your emotions and gather your thoughts. Consider having an open and honest conversation with your remaining staff to ensure everyone is on the same page and to discuss any concerns or fears they may have.\n\nAs for finding a new cook, you may want to consider a few options:\n\n1. Post the job listing on social media, local job boards, or industry-specific websites to reach potential candidates.\n2. Reach out to your professional network, including former colleagues, mentors, or friends in the industry, to see if they know anyone who might be interested in the role.\n3. Consider running an ad in a local newspaper or food industry publication to target potential candidates.\n4. Ask your regular customers if they know anyone who might be interested in working in your restaurant.\n\nRemember, finding the right person for the job takes time, and it's better to be patient and thorough in your search than to rush into hiring someone who may not be a good fit.\n\nLastly, don't forget to prioritize your own well-being during this challenging time. Make sure you're taking care of yourself, both physically and emotionally, as you navigate this situation.\n\nHow do you think you'll approach finding a new cook, and what's the first step you'll take?",
+  "response_sha256": "4b37ac337f554c5f32caca9fc07721ccd3bd6854bc65d8699aecb230b07a860c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:34.050Z",
+  "finished_at": "2026-10-03T15:46:37.209Z"
+}

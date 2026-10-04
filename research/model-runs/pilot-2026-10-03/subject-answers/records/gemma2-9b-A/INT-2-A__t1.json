@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 42,
+  "derived_seed": 968876964,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c1c48799b8f55e4e1f278304cbfe565219840a397123a021611f969d0f9cdd42",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 968876964
+      },
+      "started_at": "2026-10-04T02:28:29.281Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1667,
+      "done_reason": "stop",
+      "eval_count": 387,
+      "prompt_eval_count": 88,
+      "total_duration_ns": 16669692300,
+      "load_duration_ns": 3109800,
+      "prompt_eval_duration_ns": 231532000,
+      "eval_duration_ns": 16412260999,
+      "wall_ms": 16671,
+      "ended_at": "2026-10-04T02:28:45.952Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 968876964
+  },
+  "eval_count": 387,
+  "response": "I understand your frustration! This is a tricky situation.  \n\nHere's the thing:\n\n**Buying a new ticket yourself does NOT automatically wreck your claim against the original airline.**  \n\nHowever, it's a **grey area**, and it depends on how the original airline handles things. \n\nHere's what to consider:\n\n* **Airline policy:** Some airlines have specific policies about passengers booking alternative flights. Check their website or contact them (if you can get off hold!) to see if they have anything about this.\n* **EU Regulation 261:** If you were on an EU flight or flying with an EU airline, you might be protected under this regulation, which gives you rights to re-routing and compensation.\n\n**Here's what I suggest:**\n\n1. **Try to get off hold.**  If you're able to, explain the situation to the airline and see what they offer. They might rebook you on a later flight or another carrier, and you wouldn't need to buy a new ticket.\n2. **Document everything.** Keep a record of the flight cancellations, hold times, any communication with the airline, and the cost of the new ticket if you buy it. This will be important if you need to make a claim later.\n3. **Consider the cost vs. benefit.** A £340 ticket might be worth it to get to Lisbon tonight, even if it means potentially claiming back some money later. \n4. **Research your rights.**  Once you're off hold or if the airline doesn't offer a satisfactory solution, look into EU Regulation 261 and any other relevant regulations.\n\n**Remember:** It's generally better to exhaust all options with the original airline before purchasing a new ticket. \n\n\nGood luck, and hopefully, you'll be in Lisbon soon! \n",
+  "response_sha256": "dbfceb91d3a5fa4814005e52f797d533a88338758bf3ba3915b005f1a8d1ed4d",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:28:29.281Z",
+  "finished_at": "2026-10-04T02:28:45.979Z"
+}

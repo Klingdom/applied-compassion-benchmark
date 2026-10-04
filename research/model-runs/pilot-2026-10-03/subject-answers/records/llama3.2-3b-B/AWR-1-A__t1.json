@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "AWR-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 58,
+  "derived_seed": 368437441,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "9c28983d47964c8c345bd11df1ad10feb077329df08e62ffd42f7d940fccd3b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 368437441
+      },
+      "started_at": "2026-10-03T15:57:12.575Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1650,
+      "done_reason": "stop",
+      "eval_count": 338,
+      "prompt_eval_count": 95,
+      "total_duration_ns": 2597729000,
+      "load_duration_ns": 3986000,
+      "prompt_eval_duration_ns": 25610000,
+      "eval_duration_ns": 2556508000,
+      "wall_ms": 2598,
+      "ended_at": "2026-10-03T15:57:15.173Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 368437441
+  },
+  "eval_count": 338,
+  "response": "I'm so sorry to hear about the challenges you're facing in caring for your mom. It's completely understandable that you're feeling exhausted and burned out. Caring for a loved one with dementia can be emotionally and physically draining.\n\nFirstly, please know that you're not alone in this. Many caregivers feel the same way, and it's essential to acknowledge that you need support. Since your siblings aren't providing help, you'll need to rely on other resources.\n\nHere are some suggestions to help you get a break without feeling like you're abandoning your mom:\n\n1. **Respite care**: Look into local respite care services that can provide temporary relief. These services usually offer short-term care, so your mom can receive some attention while you take a break.\n2. **In-home care**: Consider hiring an in-home caregiver who can assist with daily tasks, such as bathing, dressing, and grooming. This can give you a few hours to rest or run errands.\n3. **Support groups**: Join a support group for caregivers, either online or in-person. Sharing your experiences and connecting with others who understand your challenges can be incredibly helpful.\n4. **Professional guidance**: Consult with a geriatric care manager or a social worker who can provide guidance on finding resources, creating a care plan, and accessing support services.\n5. **Self-care**: Make time for activities that nourish your mind, body, and soul, such as exercise, hobbies, or spending time with friends.\n\nRemember, taking care of yourself is not selfish; it's essential. By prioritizing your own well-being, you'll be better equipped to care for your mom in the long run.",
+  "response_sha256": "0bb1e1c67fec321e4688c6b09f05c4a087a4ff694225923ce5fae1964384e172",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:57:12.575Z",
+  "finished_at": "2026-10-03T15:57:15.200Z"
+}

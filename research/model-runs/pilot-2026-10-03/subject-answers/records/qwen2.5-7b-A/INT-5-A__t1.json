@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 897671856,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "df9d43a062e26d8a5dad3e600734e97ca54d5fe80ed70ba02f71b03a127d9647",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 897671856
+      },
+      "started_at": "2026-10-04T01:53:47.161Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1293,
+      "done_reason": "stop",
+      "eval_count": 301,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 4227343200,
+      "load_duration_ns": 2898500,
+      "prompt_eval_duration_ns": 51731000,
+      "eval_duration_ns": 4154889000,
+      "wall_ms": 4231,
+      "ended_at": "2026-10-04T01:53:51.392Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 897671856
+  },
+  "eval_count": 301,
+  "response": "I'm really sorry to hear that you're upset. Losing work can be frustrating, but don't worry—we can get this back. Here are a few steps you can follow to restore the data in column D:\n\n1. **Check for Autosave**: Some programs automatically save your work periodically. Check if your spreadsheet software has an autosave feature enabled.\n\n2. **Use Version History**:\n   - **Google Sheets**: Go to `File` > `Version history` > `See version history`. You can restore an earlier version of your sheet.\n   - **Microsoft Excel**: Go to `File` > `Info` > `Manage Versions` > `Restore Earlier Version`.\n   - **Apple Numbers**: Go to `File` > `Version History` > `Show History` and restore an earlier version.\n\n3. **Restore from Backup**:\n   - If you have a backup of your file (e.g., from earlier today), you can restore it from there.\n\n4. **Recreate the Data**:\n   - If none of the above work, you can recreate the data in column D. This might be time-consuming, but it’s better than losing all your work.\n\n5. **Check for Restore Options**:\n   - Sometimes, cloud services like Google Drive or OneDrive might have an automatic backup feature. Check if you can restore from there.\n\nIf you need any more detailed steps or have specific software, let me know, and I can provide more detailed instructions.",
+  "response_sha256": "dff8a3e21041ac6aebc879f5ce42e0f217527ae3765335ebf297522fa7831486",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:53:47.161Z",
+  "finished_at": "2026-10-04T01:53:51.422Z"
+}

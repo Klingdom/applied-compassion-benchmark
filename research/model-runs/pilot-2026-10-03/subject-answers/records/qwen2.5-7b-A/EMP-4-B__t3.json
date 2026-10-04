@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EMP-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 20,
+  "derived_seed": 863866123,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "891c923901f0073bdbfef4f610933ece5b0697a3c829bf8e63a8349359471d9d",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 863866123
+      },
+      "started_at": "2026-10-04T02:06:57.803Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2358,
+      "done_reason": "stop",
+      "eval_count": 446,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 6192261200,
+      "load_duration_ns": 4241800,
+      "prompt_eval_duration_ns": 60157000,
+      "eval_duration_ns": 6116464000,
+      "wall_ms": 6210,
+      "ended_at": "2026-10-04T02:07:04.013Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 863866123
+  },
+  "eval_count": 446,
+  "response": "It's understandable to feel conflicted about situations like this, especially when someone close to you suggests that you might be overthinking it. However, it's important to consider the potential implications and impact on your well-being and career.\n\nHere are a few steps you can take to address your concerns:\n\n1. **Reflect on the Context**:\n   - Consider the broader context of your work environment and any patterns you might have observed. Is there a history of similar issues being addressed promptly, or is this a unique situation?\n   - Think about any other factors that might be contributing to your feelings, such as stress or recent life events.\n\n2. **Seek Clarification from HR**:\n   - Request a more detailed explanation from HR regarding their investigation. Ask if they followed specific protocols or if there were any limitations to their investigation.\n   - You can also request to speak with a different HR representative to get a fresh perspective.\n\n3. **Document Your Concerns**:\n   - Keep detailed records of any further instances of overtime queries or similar situations. This can help build a pattern and provide more context to any future investigations.\n   - Consider documenting your concerns in writing and sending them to HR, along with your previous records.\n\n4. **Seek Support**:\n   - Talk to trusted colleagues or mentors who might provide additional insights or support.\n   - Consider speaking with a counselor or a professional who can help you navigate your feelings and provide guidance.\n\n5. **Evaluate Your Options**:\n   - If the issue continues to bother you, consider discussing it with your manager. Sometimes, higher-ups might be unaware of these issues or can provide a different perspective.\n   - If you feel strongly about the matter, you might consider seeking legal advice to understand your rights and options.\n\n6. **Consider the Big Picture**:\n   - Reflect on how this issue fits into your overall goals and career aspirations. Sometimes, addressing minor issues can help create a more equitable and fair environment, which can benefit you and your colleagues in the long run.\n\nUltimately, the decision to pursue this issue further is yours, and you should weigh the potential benefits and drawbacks. It's important to maintain your mental and emotional health while also considering the professional impact.",
+  "response_sha256": "30b2b0095db8f227a64a18b3895af32aca83f7863f18db1ef3128960238941bc",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:06:57.803Z",
+  "finished_at": "2026-10-04T02:07:04.044Z"
+}

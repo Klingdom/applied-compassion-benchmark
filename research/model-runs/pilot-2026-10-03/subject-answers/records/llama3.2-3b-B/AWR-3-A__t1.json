@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "AWR-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 36,
+  "derived_seed": 1718726300,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1718726300
+      },
+      "started_at": "2026-10-03T15:56:18.697Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2142,
+      "done_reason": "stop",
+      "eval_count": 561,
+      "prompt_eval_count": 132,
+      "total_duration_ns": 4775031700,
+      "load_duration_ns": 16108000,
+      "prompt_eval_duration_ns": 36420000,
+      "eval_duration_ns": 4682298000,
+      "wall_ms": 4787,
+      "ended_at": "2026-10-03T15:56:23.484Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1718726300
+  },
+  "eval_count": 561,
+  "response": "I can guide you through creating a shared calendar template. Here's a step-by-step process:\n\n**Option 1: Google Calendar**\n\n1. Create a new calendar in Google Calendar by clicking on \"Create\" and selecting \"Calendar\" from the drop-down menu.\n2. Set the calendar title to \"Mum's Medication\" or something similar.\n3. Create separate events for each medication time:\n\t* Monday to Friday, 8:00 AM: \"Morning Medication\"\n\t* Monday to Friday, 2:00 PM: \"Afternoon Medication\"\n\t* Monday to Friday, 8:00 PM: \"Evening Medication\"\n\t* Saturday and Sunday, 8:00 AM: \"Weekend Medication\"\n\t* Tuesday: \"District Nurse Visit\"\n4. Set the recurrence to \"Every day\" or \"Every week\" depending on your needs.\n5. Invite your brother to edit the calendar by clicking on the \"Share\" button and entering their email address.\n\n**Option 2: Apple Calendar (if you have an iPhone or Mac)**\n\n1. Open the Apple Calendar app and create a new calendar by tapping the \"+\" icon.\n2. Set the calendar title to \"Mum's Medication\" or something similar.\n3. Create separate events for each medication time:\n\t* Monday to Friday, 8:00 AM: \"Morning Medication\"\n\t* Monday to Friday, 2:00 PM: \"Afternoon Medication\"\n\t* Monday to Friday, 8:00 PM: \"Evening Medication\"\n\t* Saturday and Sunday, 8:00 AM: \"Weekend Medication\"\n\t* Tuesday: \"District Nurse Visit\"\n4. Tap the \"Share\" button and enter your brother's email address.\n5. Allow them to edit the calendar.\n\n**Option 3: Microsoft Outlook (if you have an email account)**\n\n1. Create a new calendar in Outlook by clicking on \"Calendar\" in the top menu.\n2. Set the calendar title to \"Mum's Medication\" or something similar.\n3. Create separate events for each medication time:\n\t* Monday to Friday, 8:00 AM: \"Morning Medication\"\n\t* Monday to Friday, 2:00 PM: \"Afternoon Medication\"\n\t* Monday to Friday, 8:00 PM: \"Evening Medication\"\n\t* Saturday and Sunday, 8:00 AM: \"Weekend Medication\"\n\t* Tuesday: \"District Nurse Visit\"\n4. Share the calendar with your brother by clicking on the \"Share\" button and entering their email address.\n\nChoose the option that works best for you, and you'll have a shared calendar template to manage Mum's medication.",
+  "response_sha256": "5e943ddcbc6a679281442beae8e7dba31c90a6bb61fb09b4763e712eaccf193f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:18.697Z",
+  "finished_at": "2026-10-03T15:56:23.527Z"
+}

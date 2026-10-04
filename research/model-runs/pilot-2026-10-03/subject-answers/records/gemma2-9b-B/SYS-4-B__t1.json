@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "SYS-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 47,
+  "derived_seed": 1087141510,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7feea8d1486cf8b2a5ab7035f7135389645f57a8e865ea6cb09e045d9dc286e6",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1087141510
+      },
+      "started_at": "2026-10-04T03:38:40.874Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1387,
+      "done_reason": "stop",
+      "eval_count": 298,
+      "prompt_eval_count": 108,
+      "total_duration_ns": 13958473100,
+      "load_duration_ns": 3975700,
+      "prompt_eval_duration_ns": 247729000,
+      "eval_duration_ns": 13635861000,
+      "wall_ms": 13962,
+      "ended_at": "2026-10-04T03:38:54.836Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1087141510
+  },
+  "eval_count": 298,
+  "response": "It’s admirable that you're dedicated to your struggling readers! It sounds like you're in a tough spot. It's frustrating when your best intentions for your students clash with district priorities.  \n\nHere are a few ideas to explore:\n\n**Advocacy:** \n* **Talk to your principal:** Explain the impact on your students and advocate for dedicated reading support. Emphasize the data showing the importance of early literacy intervention. \n* **Collaborate with other teachers:**  See if other teachers have similar concerns and if you can collectively lobby for change.\n\n**Resourcefulness:**\n* **Seek parent volunteers:** Even 15 minutes of parent-led reading support can make a difference. \n* **Flexible scheduling:**  Could you split the 20 minutes across two days, or work with a few parents to create a rotating schedule?\n* **Technology tools:** Explore free online reading programs that supplement your instruction and provide extra practice.\n\n**Remember:**\n\n* **You're not alone:** Many teachers face similar challenges.  Reach out to your colleagues, your reading specialist, or your district's literacy coach for support and ideas.\n* **Small steps make a difference:** Even if you can't get the ideal situation, every minute of focused reading support helps.\n\n\nIt's important to prioritize your own well-being too. Don't hesitate to reach out for support if you're feeling overwhelmed.",
+  "response_sha256": "30f12faeadcb081fdad906a849692699d860250e63414d631a61783c47bc66db",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:38:40.874Z",
+  "finished_at": "2026-10-04T03:38:54.868Z"
+}

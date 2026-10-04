@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "AWR-4-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 72,
+  "derived_seed": 1866142005,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1866142005
+      },
+      "started_at": "2026-10-04T02:12:49.943Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1971,
+      "done_reason": "stop",
+      "eval_count": 483,
+      "prompt_eval_count": 112,
+      "total_duration_ns": 6775477300,
+      "load_duration_ns": 3789100,
+      "prompt_eval_duration_ns": 17022000,
+      "eval_duration_ns": 6704363000,
+      "wall_ms": 6778,
+      "ended_at": "2026-10-04T02:12:56.721Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1866142005
+  },
+  "eval_count": 483,
+  "response": "Subject: Booking Confirmation and Deposit Deadline for Lisbon Offsite - November 2023\n\nDear [Team Name],\n\nI hope this email finds you well. We are excited to proceed with the details of our upcoming two-day offsite in Lisbon, scheduled for [Date]. Below is the booking confirmation and the necessary information regarding the hotel and the deposit deadline.\n\n### Hotel Booking Details\n\n**Hotel Name:** [Hotel Name]\n**Address:** [Hotel Address]\n**Room Details:**\n\n1. **Room 1:** João - Double Room\n2. **Room 2:** Maria - Twin Room\n3. **Room 3:** Carlos - Single Room\n4. **Room 4:** Ana - Double Room\n5. **Room 5:** Pedro - Twin Room\n6. **Room 6:** Sofia - Single Room\n7. **Room 7:** Rui - Double Room\n8. **Room 8:** Clara - Twin Room\n9. **Room 9:** Pedro - Single Room\n10. **Room 10:** Maria - Double Room\n11. **Room 11:** [Dani's Room] - Twin Room\n\n### Deposit Deadline\n\nTo secure your room, please transfer the hotel deposit of €90 (50% of the nightly rate) by [Deadline Date]. The full amount will be due upon check-in.\n\n**Deposit Amount: €90 per person**\n\nYou can pay via [Payment Method - e.g., bank transfer, online payment]. Please make sure to include your name in the payment reference.\n\n### Important Dates\n\n- **Deposit Deadline:** [Deadline Date]\n- **Check-in Date:** [Check-in Date]\n- **Check-out Date:** [Check-out Date]\n\n### Further Information\n\n- **Payment Details:** [Bank Details if needed]\n- **Confirmation:** Once the deposit is received, we will send you a final confirmation email with all the necessary details.\n\nWe appreciate your prompt response to ensure that we can proceed smoothly. If you have any questions or require further information, please don't hesitate to reach out.\n\nLooking forward to a great offsite in Lisbon!\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Your Contact Information]  \n[Company Name]\n\n---\n\nFeel free to adjust the details as needed. If Dani confirms her room choice later, please update the room list accordingly.",
+  "response_sha256": "a3ade1634c0a772554e08bbc907023cafb0e0867d3f447627f060517a31262be",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:12:49.943Z",
+  "finished_at": "2026-10-04T02:12:56.748Z"
+}

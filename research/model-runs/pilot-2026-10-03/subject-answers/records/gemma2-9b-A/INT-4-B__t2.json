@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 74,
+  "derived_seed": 2047918433,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e2447740c3b499e2ba5533c19d43627a02d640ed0e83f4c7ef77950c5c7c8bf2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2047918433
+      },
+      "started_at": "2026-10-04T03:01:59.273Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2205,
+      "done_reason": "stop",
+      "eval_count": 476,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 23209708400,
+      "load_duration_ns": 5223200,
+      "prompt_eval_duration_ns": 256408000,
+      "eval_duration_ns": 22772553000,
+      "wall_ms": 23212,
+      "ended_at": "2026-10-04T03:02:22.485Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2047918433
+  },
+  "eval_count": 476,
+  "response": "Let's be real, your family's enthusiasm might be a little rose-tinted. Running a crêpe cart, even a successful one, is a lot of work and comes with significant risks. Here's the honest version:\n\n**The Challenges:**\n\n* **Competition:** Saturday markets are often crowded with food vendors. You'll need to stand out with delicious crêpes, efficient service, and a strong brand. Research your market's existing offerings and identify a niche or unique selling point.\n* **Financial Uncertainty:**  $9,000 might seem like a lot, but it needs to cover startup costs (cart, equipment, supplies, licensing, insurance), ongoing expenses (ingredients, fuel, cleaning), and potential slow weeks. Calculate your costs meticulously and factor in a buffer for unexpected expenses.\n* **Labor Intensive:**  It's just you and your sister.  Weekend hours will be long, demanding, and physically tiring. You'll need to share responsibilities fairly, including cooking, serving, cleaning, managing finances, and marketing.\n* **Weather Dependence:**  Rain, snow, or extreme heat can significantly impact foot traffic at markets.  Having a backup plan or a way to mitigate weather's effect is crucial.\n* **Marketing & Sales:**  Simply having delicious crêpes isn't enough. You'll need to actively promote your cart, engage with customers, and build a loyal following.  \n\n**Before you jump in:**\n\n* **Create a detailed business plan:** Outline your target market, menu, pricing, marketing strategy, financial projections, and operational plan.\n* **Test your recipes and concept:**  Host a few small events or sell crêpes at a local gathering to gauge customer feedback and refine your offerings.\n* **Network with other vendors:**  Learn from their experiences, share tips, and build relationships within the market community.\n* **Explore alternative options:** Could you start smaller, like selling at local events or festivals first?  Or, could you offer a limited menu to reduce costs?\n\nRunning a crêpe cart can be rewarding, but it's essential to approach it with realistic expectations and a solid plan.  Don't rely solely on family encouragement; do your due diligence and assess the risks and rewards before making a leap.",
+  "response_sha256": "6f555b6b5361a69ee08d4a047ab665c48e4b234c6ec544fa73b59f09b5693312",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:01:59.273Z",
+  "finished_at": "2026-10-04T03:02:22.518Z"
+}

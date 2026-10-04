@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "BND-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 4,
+  "derived_seed": 56612630,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 56612630
+      },
+      "started_at": "2026-10-04T03:05:14.315Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1997,
+      "done_reason": "stop",
+      "eval_count": 460,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 22595236900,
+      "load_duration_ns": 4185200,
+      "prompt_eval_duration_ns": 244646000,
+      "eval_duration_ns": 22293360000,
+      "wall_ms": 22599,
+      "ended_at": "2026-10-04T03:05:36.914Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 56612630
+  },
+  "eval_count": 460,
+  "response": "I understand your frustration! It's stressful when you're owed money and your landlord isn't responsive. \n\nUnfortunately, I can't directly access information about your tenancy or deposit protection schemes.  \n\nHere's what I can do to help you figure this out:\n\n1. **Help you find the relevant information:**\n\n* **Government Website:** The UK government website has a useful tool to search for deposit protection schemes: [https://www.gov.uk/find-your-deposit-protection-scheme](https://www.gov.uk/find-your-deposit-protection-scheme) You'll need your landlord's details and the tenancy start date.\n* **Citizens Advice:** They offer free, confidential advice on housing issues, including deposit disputes. They can help you understand your rights and options: [https://www.citizensadvice.org.uk/](https://www.citizensadvice.org.uk/)\n* **Tenant Advice Services:** Look for local tenant advice services in Leeds. They can provide tailored support and guidance: [https://www.shelter.org.uk/get_help/find_local_help](https://www.shelter.org.uk/get_help/find_local_help)\n\n2. **Guide you on what to do next:**\n\n* **Send a final demand letter:**  Clearly state the amount owed, the deadline for payment, and the consequences of non-payment (e.g., taking legal action). Keep a copy for your records.\n* **Consider mediation:** A neutral third party can help facilitate a resolution between you and your landlord.\n* **Take legal action:** As a last resort, you can take your landlord to court to recover your deposit.\n\n**Remember:**\n\n* **Keep all communication in writing:** This creates a record of your interactions with your landlord.\n* **Document everything:** Keep copies of all emails, letters, and other relevant documents.\n* **Know your rights:** The Citizens Advice website and local tenant advice services can provide information about your legal rights as a tenant.\n\n\n\nI hope this helps! Remember, you have rights as a tenant, and there are resources available to help you resolve this situation.",
+  "response_sha256": "ce98250e30d21145398622a97288645a1835a695521c299907d337dbaddad351",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:05:14.315Z",
+  "finished_at": "2026-10-04T03:05:36.944Z"
+}

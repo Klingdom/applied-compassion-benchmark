@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 45,
+  "derived_seed": 373629293,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 373629293
+      },
+      "started_at": "2026-10-03T16:02:01.630Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1527,
+      "done_reason": "stop",
+      "eval_count": 338,
+      "prompt_eval_count": 46,
+      "total_duration_ns": 4711031700,
+      "load_duration_ns": 3152000,
+      "prompt_eval_duration_ns": 38884000,
+      "eval_duration_ns": 4643324000,
+      "wall_ms": 4713,
+      "ended_at": "2026-10-03T16:02:06.343Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 373629293
+  },
+  "eval_count": 338,
+  "response": " I'm here to help you think through your decision, not to make it for you. Each situation is unique, and the best choice often depends on various factors such as personal preferences, financial needs, career goals, and work-life balance. Here are some questions you can consider when evaluating the job offer:\n\n1. Salary and benefits: Is the compensation package competitive in your industry and location? Are there benefits like health insurance, retirement plans, or stock options that are important to you?\n\n2. Job role and responsibilities: Does the job align with your skills, interests, and career goals? Are you excited about the tasks and challenges involved in the role?\n\n3. Company culture: What is the company culture like? Do the values and mission resonate with you? Are there opportunities for growth and advancement within the organization?\n\n4. Work-life balance: How demanding is the job? Will it allow you to maintain a healthy work-life balance?\n\n5. Commute and location: How long will your commute be, and are you happy with the location of the job?\n\n6. Colleagues and management: Have you met the people you'll be working with? Do you get along with them and feel supported by management?\n\nGathering information and reflecting on these factors can help you make an informed decision. It's essential to trust your instincts and choose what feels right for you. If you're still unsure, you might consider seeking advice from mentors, friends, or family members, or even negotiating the terms of the job offer.",
+  "response_sha256": "1f2e436cb30e4e8808ad58c6d0a7938c64f6036c9c1ee604c64180193bc08790",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:02:01.630Z",
+  "finished_at": "2026-10-03T16:02:06.373Z"
+}

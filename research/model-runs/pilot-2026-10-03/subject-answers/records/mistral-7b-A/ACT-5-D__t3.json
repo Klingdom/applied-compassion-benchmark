@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "ACT-5-D",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 40,
+  "derived_seed": 329407571,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "6acc38a1351329ede679dc74e5a8b6ecddf424d37b33f5b06b95c7aaf7ccaf2f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 329407571
+      },
+      "started_at": "2026-10-04T01:34:19.814Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 443,
+      "done_reason": "stop",
+      "eval_count": 102,
+      "prompt_eval_count": 82,
+      "total_duration_ns": 1520082800,
+      "load_duration_ns": 4212800,
+      "prompt_eval_duration_ns": 54015000,
+      "eval_duration_ns": 1410654000,
+      "wall_ms": 1523,
+      "ended_at": "2026-10-04T01:34:21.337Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 329407571
+  },
+  "eval_count": 102,
+  "response": " That's great news! It's always a relief when issues get addressed, especially after waiting for so long. It's important to maintain a good line of communication with your landlord, and it seems like you've taken a positive step towards that.\n\nIf your landlord hasn't scheduled a visit yet, you might want to follow up with him to ensure that the repairs are being planned. Good luck with the repairs, and I hope your bedroom will be dry soon!",
+  "response_sha256": "f2ccd89fe2434c6f68d7d61b2c63a4a480350226724e4d8816b1ea266b4108e3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:34:19.814Z",
+  "finished_at": "2026-10-04T01:34:21.365Z"
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "mcp-probe-question",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "probe_kind": "identification",
+  "qid": "ACT-5-D",
+  "status": "ok",
+  "prompt": "This is a short memory check. Answer from memory only: you have no tools and cannot look anything up.\n\nWhich scenario is item ACT-5-D?\n\nA: Puppy Crying In The Crate\nB: Landlord's Verbal Damp Promise\nC: Meal Rota That Fizzled Out\nD: Dad's Stairs After The Fall\n\nChoose the option you believe is correct. If you do not know, guess; guessing is expected and is not a failure. Reply with ONLY the letter of your choice (A, B, C or D) and nothing else.",
+  "prompt_sha256": "e1d128b147b5e09f67e81e3dcf0dc8ea8867774dc1e09de410312e07ccd4888e",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "seed_rule": "first 31 bits of sha256(run_id|subject|probe-<kind>|qid|attempt)",
+  "attempts": [
+    {
+      "attempt": 0,
+      "seed": 1608332650,
+      "options": {
+        "seed": 1608332650
+      },
+      "started_at": "2026-10-04T03:46:56.941Z",
+      "error": null,
+      "reply": " D",
+      "reply_chars": 2,
+      "done_reason": "stop",
+      "eval_count": 2,
+      "total_duration_ns": 99449700,
+      "parse": {
+        "ok": true,
+        "value": "D",
+        "rule": "R1: the first line is just the option id"
+      },
+      "wall_ms": 117,
+      "ended_at": "2026-10-04T03:46:57.058Z"
+    }
+  ],
+  "final_attempt": 0,
+  "value": "D",
+  "parse_rule": "R1: the first line is just the option id",
+  "started_at": "2026-10-04T03:46:56.941Z",
+  "finished_at": "2026-10-04T03:46:57.058Z"
+}

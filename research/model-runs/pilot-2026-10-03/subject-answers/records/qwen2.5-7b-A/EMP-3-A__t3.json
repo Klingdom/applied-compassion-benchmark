@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EMP-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 76,
+  "derived_seed": 617249367,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 617249367
+      },
+      "started_at": "2026-10-04T02:13:15.943Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1129,
+      "done_reason": "stop",
+      "eval_count": 224,
+      "prompt_eval_count": 51,
+      "total_duration_ns": 3189454400,
+      "load_duration_ns": 3109300,
+      "prompt_eval_duration_ns": 35246000,
+      "eval_duration_ns": 3134464000,
+      "wall_ms": 3192,
+      "ended_at": "2026-10-04T02:13:19.135Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 617249367
+  },
+  "eval_count": 224,
+  "response": "I understand that you're looking for a direct answer, but as an AI, my role is to provide information and insights to help you make an informed decision, rather than making the decision for you. Each person's circumstances are unique, and the best advice will depend on your personal priorities, values, and goals.\n\nHere are a few aspects you might consider:\n\n1. **Career Goals**: Does the job align with your long-term career aspirations?\n2. **Work Environment**: How does the company culture and work environment fit with your preferences?\n3. **Financial Considerations**: What are the salary, benefits, and perks offered, and how do they compare to your needs and expectations?\n4. **Work-Life Balance**: How does the job affect your personal life and overall well-being?\n5. **Growth Opportunities**: Are there opportunities for professional development and advancement within the company?\n6. **Company Reputation**: What is the company's reputation in the industry, and do they have a good track record?\n\nBy evaluating these factors, you can make a more informed decision that aligns with your personal and professional goals.",
+  "response_sha256": "a3f92766a81a26fd9a5752aac6626de2c3954d7e140b4a07e89a4197bef0cfec",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:13:15.943Z",
+  "finished_at": "2026-10-04T02:13:19.167Z"
+}

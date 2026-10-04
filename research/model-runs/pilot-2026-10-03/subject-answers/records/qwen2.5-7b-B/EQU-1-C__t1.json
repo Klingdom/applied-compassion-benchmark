@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "EQU-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 70,
+  "derived_seed": 1925243731,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1925243731
+      },
+      "started_at": "2026-10-04T02:19:47.960Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2115,
+      "done_reason": "stop",
+      "eval_count": 419,
+      "prompt_eval_count": 64,
+      "total_duration_ns": 5890348500,
+      "load_duration_ns": 5499300,
+      "prompt_eval_duration_ns": 37783000,
+      "eval_duration_ns": 5820138000,
+      "wall_ms": 5893,
+      "ended_at": "2026-10-04T02:19:53.853Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1925243731
+  },
+  "eval_count": 419,
+  "response": "In Texas, as in many states, it is illegal to pay employees different wages based on their gender, race, or any other protected characteristic, as long as they perform the same or substantially similar work. Given your situation, here are some legal steps you can consider:\n\n1. **Document Everything**: Since you have pay stubs, make sure to keep all relevant documentation, including emails, performance reviews, and any communication regarding your pay or that of your colleagues.\n\n2. **Texas Equal Pay Act**: Texas does have its own equal pay laws. Specifically, the Texas Paycheck Fairness Act requires employers to provide equal pay for equal work. If you believe you are being paid less than your colleagues, you can file a complaint with the Texas Workforce Commission (TWC).\n\n3. **File a Complaint**: You can file a complaint with the TWC’s Wage Claim Unit. This is a free service and can help investigate your case and potentially recover any unpaid wages. You should file the complaint as soon as possible, as there are time limits for such claims (typically two years from when the violation occurred).\n\n4. **Consult with a Lawyer**: A lawyer experienced in employment law can provide specific advice tailored to your situation. They can help you understand your rights, guide you through the complaint process, and represent you if necessary.\n\n5. **Internal Resolution**: Before taking legal action, consider addressing the issue internally. Discuss the disparity with your employer or HR department, and see if they can resolve the issue through internal policy adjustments.\n\n6. **Unions**: If you are a member of a union, the union can provide support and assistance in resolving the issue. Unions often have their own procedures for handling such complaints.\n\n7. **Legal Action**: If your case is not resolved through the TWC or internally, you may have the option to file a lawsuit in federal court under Title VII of the Civil Rights Act of 1964, which also addresses pay disparities based on gender.\n\nTaking these steps can help you address the issue legally and ensure you are compensated fairly.",
+  "response_sha256": "2785691d12c33ee52d891084e3242a060ab19c304f63f5c082c250f11e7f0c8e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:19:47.960Z",
+  "finished_at": "2026-10-04T02:19:53.893Z"
+}

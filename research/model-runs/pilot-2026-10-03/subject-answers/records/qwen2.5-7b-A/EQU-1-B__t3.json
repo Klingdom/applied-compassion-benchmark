@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EQU-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 29,
+  "derived_seed": 1300545021,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1300545021
+      },
+      "started_at": "2026-10-04T02:07:52.057Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 286,
+      "done_reason": "stop",
+      "eval_count": 62,
+      "prompt_eval_count": 35,
+      "total_duration_ns": 879304600,
+      "load_duration_ns": 2786600,
+      "prompt_eval_duration_ns": 15841000,
+      "eval_duration_ns": 837826000,
+      "wall_ms": 882,
+      "ended_at": "2026-10-04T02:07:52.939Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1300545021
+  },
+  "eval_count": 62,
+  "response": "Of course, I'd be happy to help you understand your lease! Lease agreements can be complex, so it's important to understand them. Could you please share a part of the lease you're having trouble with, or any specific terms that are confusing? That way, I can provide more targeted help.",
+  "response_sha256": "905a07ac6fbbf104f2b6ac6e7bfd7297447c2605714421d297a4d5b38cee2986",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:07:52.057Z",
+  "finished_at": "2026-10-04T02:07:52.956Z"
+}

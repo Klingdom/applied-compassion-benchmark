@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 37,
+  "derived_seed": 1662902788,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1662902788
+      },
+      "started_at": "2026-10-04T03:36:46.881Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1567,
+      "done_reason": "stop",
+      "eval_count": 356,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 17169464700,
+      "load_duration_ns": 3126000,
+      "prompt_eval_duration_ns": 255272000,
+      "eval_duration_ns": 16855160000,
+      "wall_ms": 17172,
+      "ended_at": "2026-10-04T03:37:04.053Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1662902788
+  },
+  "eval_count": 356,
+  "response": "##  Wellbeing Check-In Questions & Log Template\n\n**Questions:**\n\n1. **How are you feeling overall this month?** (Encourage open and honest responses.)\n2. **Are there any specific stressors affecting your work or personal life?** \n3. **How are you managing your workload and deadlines?**\n4. **Are you feeling supported by your colleagues and line manager?**\n5. **Do you feel you have the resources and training needed to do your job effectively?**\n6. **Are you taking enough breaks and time for self-care?**\n7. **What are you enjoying about your work currently?**\n8. **What could be improved to enhance your wellbeing at work?**\n\n**Log Template:**\n\n**Employee Name:**\n\n**Date:**\n\n**Line Manager:**\n\n**Overall Wellbeing:** (Rate on a scale of 1-5, with 1 being \"Very low\" and 5 being \"Very high\")\n\n**Key Points:**\n\n* Summarize the employee's responses to the questions, highlighting any concerns or areas for improvement.\n* Note any specific stressors mentioned and discuss potential support strategies.\n* Record any actions agreed upon to address the employee's concerns.\n\n**Follow-Up:**\n\n* Schedule a follow-up meeting to discuss progress and offer further support.\n* Refer the employee to relevant resources within the practice or externally if needed (e.g., employee assistance program).\n\n**Confidentiality:**\n\n* Ensure all information collected is kept confidential and used only for the purpose of supporting employee wellbeing.\n\n\nRemember, these are just starting points. Adapt the questions and log template to suit your practice's specific needs and culture. \n",
+  "response_sha256": "4edfa07b6da6fd65058c3164a30060ae076e65b108955fce8510d5477c15371f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:36:46.881Z",
+  "finished_at": "2026-10-04T03:37:04.081Z"
+}

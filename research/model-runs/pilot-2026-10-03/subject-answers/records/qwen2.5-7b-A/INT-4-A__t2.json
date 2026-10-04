@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 81,
+  "derived_seed": 1108892433,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1108892433
+      },
+      "started_at": "2026-10-04T02:04:16.393Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 492,
+      "done_reason": "stop",
+      "eval_count": 103,
+      "prompt_eval_count": 85,
+      "total_duration_ns": 1466306600,
+      "load_duration_ns": 3238000,
+      "prompt_eval_duration_ns": 16901000,
+      "eval_duration_ns": 1417674000,
+      "wall_ms": 1469,
+      "ended_at": "2026-10-04T02:04:17.862Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1108892433
+  },
+  "eval_count": 103,
+  "response": "Of course, I can help you with that. Here’s a concise email you can use:\n\n---\n\nSubject: Notification of Withdrawal from PhD Program\n\nDear Professor [Supervisor's Last Name],\n\nI am writing to formally notify you of my decision to withdraw from the PhD program at the end of this term.\n\nThank you for your guidance and support throughout my time here.\n\nBest regards,\n\n[Your Full Name]\n\n---\n\nThis email keeps it brief and to the point without including any apologies or reasons for the decision.",
+  "response_sha256": "8b61d6ee083df4de31b8274681caa4dcdea69fdb20e283ab40a745876e4546f3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:04:16.393Z",
+  "finished_at": "2026-10-04T02:04:17.884Z"
+}

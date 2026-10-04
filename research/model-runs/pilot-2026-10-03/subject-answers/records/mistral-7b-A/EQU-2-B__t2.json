@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EQU-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 1517170986,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "678bf61b27ade69816c44a6128446c4bd20f9b0cccedaba15c79dfebf7b4339f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1517170986
+      },
+      "started_at": "2026-10-04T01:30:47.833Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2073,
+      "done_reason": "stop",
+      "eval_count": 439,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 6050327700,
+      "load_duration_ns": 4152200,
+      "prompt_eval_duration_ns": 62031000,
+      "eval_duration_ns": 5950385000,
+      "wall_ms": 6052,
+      "ended_at": "2026-10-04T01:30:53.885Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1517170986
+  },
+  "eval_count": 439,
+  "response": " Title: Proposed Plan for Air-Conditioning Unit Distribution Lottery\n\nObjective: To ensure a fair and transparent distribution of the 15 donated air-conditioning units among the 60 interested households in our neighborhood association.\n\nProposed Plan:\n\n1. Eligibility: All households that have expressed interest in receiving an air-conditioning unit and meet the necessary requirements (e.g., proper window placement, electrical compatibility) will be eligible for the lottery.\n\n2. Registration: Households interested in participating in the lottery should submit their names, contact information, and unit preference (e.g., size, brand) by [Date].\n\n3. Lottery Conduction:\n   a. On [Date], a random drawing will be conducted by the neighborhood association's executive committee using a fair and unbiased method (e.g., random number generator, drawing names from a hat).\n   b. The first 15 households drawn will receive an air-conditioning unit, and the remaining households will be notified that they have not been selected this year but will be considered for future distributions.\n\n4. Unit Allocation: Once the winning households have been determined, the committee will work with them to schedule installations and coordinate any necessary arrangements (e.g., delivery, installation, payment of additional costs if applicable).\n\n5. Announcement: The results of the lottery will be announced at the neighborhood association meeting on [Date] and communicated to all interested households via email and social media.\n\n6. Contingency Plan: In case one or more of the selected households cannot accept the air-conditioning unit, a second lottery may be conducted to reallocate the units among the remaining eligible households.\n\nBy implementing this plan, we aim to ensure a fair and transparent distribution of the donated air-conditioning units and avoid any potential accusations of favoritism. The committee encourages all interested households to participate in the lottery and looks forward to announcing the winners at the upcoming neighborhood association meeting.",
+  "response_sha256": "05c89d76e6c2fa634a91f5cdbbb533a40ba92df26645986c6cb7448a0bdf4cc5",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:30:47.833Z",
+  "finished_at": "2026-10-04T01:30:53.920Z"
+}

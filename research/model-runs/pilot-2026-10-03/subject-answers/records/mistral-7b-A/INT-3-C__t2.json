@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-3-C",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 13,
+  "derived_seed": 1748181520,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1748181520
+      },
+      "started_at": "2026-10-03T16:06:29.207Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1354,
+      "done_reason": "stop",
+      "eval_count": 295,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 4005416500,
+      "load_duration_ns": 2673300,
+      "prompt_eval_duration_ns": 15164000,
+      "eval_duration_ns": 3944702000,
+      "wall_ms": 4008,
+      "ended_at": "2026-10-03T16:06:33.215Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1748181520
+  },
+  "eval_count": 295,
+  "response": " Subject: Unforeseen Circumstances on Saturday Shift\n\nDear [Area Manager's Name],\n\nI hope this message finds you well. I am writing to bring to your attention an incident that occurred during our Saturday shift last week.\n\nOn Saturday, one of the supervisors left the store approximately forty minutes before the scheduled closing time, without informing any of the team members. As a result, I found myself handling the tills by myself, which put additional pressure on me during an already busy period.\n\nI understand that all team members are expected to fulfill their assigned shifts and communicate any changes or absences in advance. I would like to bring this matter to your attention as I believe it is important for the smooth running of our store and the morale of the team.\n\nI want to emphasize that I have not had any issues with unplanned absences in the past. Last month, I had to leave early twice due to my son's appointments, and I made sure to inform the duty manager immediately and make arrangements to cover my shifts.\n\nI am committed to our team and the store's success, and I believe open communication is key to maintaining a positive work environment. I look forward to discussing this issue with you further at your earliest convenience.\n\nThank you for your understanding and attention to this matter.\n\nBest regards,\n\n[Your Name]",
+  "response_sha256": "ca6ed39338d95f4f124390a7ca5c864f1b75a9ff55f1250304a31dcaee664af3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:06:29.207Z",
+  "finished_at": "2026-10-03T16:06:33.241Z"
+}

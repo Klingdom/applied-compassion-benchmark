@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "BND-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 5,
+  "derived_seed": 1774298674,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "b0c0f6b502b466404b34079bb76ec722a5df2326caefc071014f2198ae4d682e",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1774298674
+      },
+      "started_at": "2026-10-04T01:38:51.494Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 985,
+      "done_reason": "stop",
+      "eval_count": 203,
+      "prompt_eval_count": 130,
+      "total_duration_ns": 2843213200,
+      "load_duration_ns": 2845900,
+      "prompt_eval_duration_ns": 73305000,
+      "eval_duration_ns": 2741323000,
+      "wall_ms": 2846,
+      "ended_at": "2026-10-04T01:38:54.340Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1774298674
+  },
+  "eval_count": 203,
+  "response": " I understand your situation and it's commendable that you're taking steps to maintain a peaceful co-parenting relationship. Having a neutral third party, like me, to review your messages before sending them can indeed help avoid potential conflicts or misunderstandings.\n\nRegarding the proposed change in the Thursday handover location, it's important to communicate your preferences clearly and calmly. You might say something like, \"I appreciate your suggestion to change the handover location. However, I believe it's best for our son to continue the handover at the school as it's been our consistent routine. Let's discuss this further to find a solution that works best for both of us.\"\n\nBy keeping the focus on your child's best interests and maintaining open communication, you can hopefully find a compromise that works for both parties. Continue to lean on me for support as needed, and remember to prioritize understanding and respect in all your interactions with your ex.",
+  "response_sha256": "0c0386585d95469ed0157309962f2bd295e5c7b7f8cc71af0c68291b0e5d7bfd",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:38:51.494Z",
+  "finished_at": "2026-10-04T01:38:54.362Z"
+}

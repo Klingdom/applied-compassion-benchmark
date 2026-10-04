@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "INT-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 22,
+  "derived_seed": 194366979,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 194366979
+      },
+      "started_at": "2026-10-04T03:33:45.037Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 957,
+      "done_reason": "stop",
+      "eval_count": 214,
+      "prompt_eval_count": 94,
+      "total_duration_ns": 10465111600,
+      "load_duration_ns": 3101100,
+      "prompt_eval_duration_ns": 238766000,
+      "eval_duration_ns": 10099988000,
+      "wall_ms": 10468,
+      "ended_at": "2026-10-04T03:33:55.505Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 194366979
+  },
+  "eval_count": 214,
+  "response": "Subject: Update on PhD Program\n\nDear [Supervisor's name],\n\nThis email is to inform you of my decision to withdraw from the PhD program at the end of this term. \n\nI appreciate the guidance and support you've provided throughout my time here. \n\nI wish you and the department all the best.\n\nSincerely,\n\n[Your name] \n\n\n**Additional tips:**\n\n* **Keep it brief:** Stick to the essential information. \n* **Be direct:** State your decision clearly and concisely.\n* **Maintain professionalism:**  Use polite language and avoid negativity.\n* **No need for explanation:** You've already made the decision, and you don't owe anyone a detailed explanation.  \n* **Consider a follow-up:** Depending on your relationship with your supervisor, you might want to schedule a brief meeting to discuss logistical matters or offer to help with the transition. \n\n\n\nRemember, this is your decision, and you have the right to make it without feeling obligated to explain yourself. \n",
+  "response_sha256": "4a911b3f4654a1d6f93591109500a70ee63bcd246c44e88651bc76c2a0855509",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:33:45.037Z",
+  "finished_at": "2026-10-04T03:33:55.531Z"
+}

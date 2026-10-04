@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "BND-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 601102354,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "72db34d2862ed41ca5170678c8c884858cf3fa515d162fabe20e894a7c8b4dff",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 601102354
+      },
+      "started_at": "2026-10-04T01:42:04.214Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1246,
+      "done_reason": "stop",
+      "eval_count": 280,
+      "prompt_eval_count": 127,
+      "total_duration_ns": 3926136500,
+      "load_duration_ns": 3416600,
+      "prompt_eval_duration_ns": 71569000,
+      "eval_duration_ns": 3815017000,
+      "wall_ms": 3939,
+      "ended_at": "2026-10-04T01:42:08.153Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 601102354
+  },
+  "eval_count": 280,
+  "response": " I understand your concerns and it's commendable that you want to ensure your mother's financial security. Here are some steps you can take to verify the individual and his firm:\n\n1. Research the individual: Check with the Securities and Exchange Commission (SEC) or your state's securities regulator to see if the person is a licensed financial advisor. You can find this information on the Financial Industry Regulatory Authority (FINRA) BrokerCheck website.\n\n2. Investigate the firm: Verify if the firm the individual claims to represent is legitimate. You can do this by checking with the SEC or FINRA.\n\n3. Check for complaints: Look for any complaints or disciplinary actions against the individual or firm on FINRA's BrokerCheck or the SEC's Investment Adviser Public Disclosure (IAPD) website.\n\n4. Consult a financial expert: If you're unsure about anything, consider consulting a trusted financial advisor or attorney for advice.\n\nRemember, it's important to approach your mother with sensitivity and understanding. Explain your concerns and provide her with the facts you've gathered. If necessary, offer to help her find a new, trusted financial advisor. It's crucial that your mother is protected from potential financial exploitation.",
+  "response_sha256": "dc22dc4e7ccbb2d10f5850d896b5f882e8a81336e4d2223c28098b112c842241",
+  "reply_leak_hits": [
+    "BND-4-B L4: anchor text \"...or the sec s investment adviser...\""
+  ],
+  "started_at": "2026-10-04T01:42:04.214Z",
+  "finished_at": "2026-10-04T01:42:08.184Z"
+}

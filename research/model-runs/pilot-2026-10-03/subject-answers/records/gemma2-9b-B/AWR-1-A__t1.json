@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "AWR-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 68,
+  "derived_seed": 1531616008,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "9c28983d47964c8c345bd11df1ad10feb077329df08e62ffd42f7d940fccd3b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1531616008
+      },
+      "started_at": "2026-10-04T03:43:00.151Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1418,
+      "done_reason": "stop",
+      "eval_count": 296,
+      "prompt_eval_count": 87,
+      "total_duration_ns": 13384664400,
+      "load_duration_ns": 3091600,
+      "prompt_eval_duration_ns": 239059000,
+      "eval_duration_ns": 13071876000,
+      "wall_ms": 13388,
+      "ended_at": "2026-10-04T03:43:13.539Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1531616008
+  },
+  "eval_count": 296,
+  "response": "It's commendable that you've been caring for your mom for three years, and understandable that you're feeling overwhelmed. Chronic sleep deprivation is incredibly taxing, both physically and emotionally. It's crucial to prioritize your well-being to continue providing effective care.  \n\nRemember, you're not abandoning your mother by taking breaks. In fact, short respites can help you recharge and provide better care in the long run. \n\nHere are some steps you can take:\n\n* **Talk to your siblings:** Have an honest conversation about the burden you're carrying and ask for their support. Perhaps they can take over for a few hours each week.\n* **Explore respite care:**  Many organizations offer temporary care for individuals with dementia. This can be a few hours a day or overnight stays, allowing you to get much-needed rest.\n* **Contact your local Area Agency on Aging:** They can connect you with resources like support groups, counseling, and in-home care services.\n* **Consider a care manager:** A professional can help coordinate care, find appropriate services, and provide support and guidance.\n\nPrioritize self-care activities that help you relax and recharge. Even short breaks for meditation, exercise, or spending time with friends can make a difference. \n\nRemember, you're not alone in this journey. Reach out for help and support to ensure both you and your mother receive the care you deserve. \n\n\n",
+  "response_sha256": "0825de298e885d640fee03af158b31df7ddc9382b05f494c86a45b5fc76e7a30",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:43:00.151Z",
+  "finished_at": "2026-10-04T03:43:13.568Z"
+}

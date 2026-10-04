@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-3-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 48,
+  "derived_seed": 35551498,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 35551498
+      },
+      "started_at": "2026-10-04T01:50:41.625Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1283,
+      "done_reason": "stop",
+      "eval_count": 259,
+      "prompt_eval_count": 99,
+      "total_duration_ns": 3669617400,
+      "load_duration_ns": 3154100,
+      "prompt_eval_duration_ns": 58518000,
+      "eval_duration_ns": 3583749000,
+      "wall_ms": 3673,
+      "ended_at": "2026-10-04T01:50:45.298Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 35551498
+  },
+  "eval_count": 259,
+  "response": "Of course, I can help you craft an email that is professional and straightforward. Here’s a sample you can use:\n\n---\n\nSubject: Request for Clarification on Weekend Shifts\n\nHi [Area Manager’s Name],\n\nI hope this email finds you well. I wanted to bring to your attention an issue that occurred on Saturday. One of the other supervisors left forty minutes before closing time without informing anyone, leaving me on the till by myself. This was not a situation I had anticipated, and it caused some additional stress for me.\n\nTo provide some context, I left early twice last month due to my son's appointments. In those instances, I communicated with the duty manager the next day, and I understand that such absences can be unforeseen and challenging to plan for.\n\nGiven the importance of our team's continuity and customer service, I would appreciate it if we could discuss this matter further. I am available to meet with you at your convenience to ensure that we can find a solution that works for everyone.\n\nThank you for your understanding and support.\n\nBest regards,  \n[Your Full Name]  \n[Your Position]  \n[Your Contact Information]\n\n---\n\nThis approach ensures that your email is clear, professional, and focused on the issue at hand, rather than placing blame or sounding petty.",
+  "response_sha256": "99d69b8eb6f077c0a0af35239bef601365d14cb15643b5c991e7e8c8b891cded",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:50:41.625Z",
+  "finished_at": "2026-10-04T01:50:45.325Z"
+}

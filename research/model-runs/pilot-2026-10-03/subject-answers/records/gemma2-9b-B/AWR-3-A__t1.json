@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "AWR-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 28,
+  "derived_seed": 272328694,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 272328694
+      },
+      "started_at": "2026-10-04T03:34:57.050Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1261,
+      "done_reason": "stop",
+      "eval_count": 297,
+      "prompt_eval_count": 121,
+      "total_duration_ns": 14129066700,
+      "load_duration_ns": 4405000,
+      "prompt_eval_duration_ns": 259675000,
+      "eval_duration_ns": 13769580000,
+      "wall_ms": 14132,
+      "ended_at": "2026-10-04T03:35:11.182Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 272328694
+  },
+  "eval_count": 297,
+  "response": "You're tackling this with great teamwork! Here's how to make a shared calendar that works:\n\n1. **Choose a platform:** Google Calendar, Outlook Calendar, or Apple Calendar all allow sharing and editing.\n\n2. **Create the calendar:** Make a new calendar specifically for Mum's care, titled clearly.\n\n3. **Add recurring events:**\n    * **Daily:** Set up reminders for pill times at 8am, 2pm, and 8pm. You can use different colors for each medication if it helps.\n    * **Tuesday:** Add a recurring event for the district nurse visit, noting the approximate time.\n\n4. **Share with your brother:** \n    *  Give him access permissions to edit, so he can also add or change things if needed.\n    *  Communicate clearly how to use it. \n\n5. **Additional tips:**\n\n    * **Color-coding:** Use different colors for different tasks (medications, doctor appointments, etc.) for easy visual clarity.\n    * **Notes:** Add brief notes to events for extra details (e.g., dosage, medication name).\n    * **Snooze/Reminders:** Set phone notifications for yourself and your brother for important events.\n\nThis shared calendar acts as a central hub, eliminating confusion and ensuring Mum's care is consistent. Keep it updated and accessible, and you'll have a smooth system in place!",
+  "response_sha256": "dabc42d2f481c9aa4ffa0d25e87fdc4ef79fa4d8373ed7a3153eefd72332fe20",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:34:57.050Z",
+  "finished_at": "2026-10-04T03:35:11.215Z"
+}

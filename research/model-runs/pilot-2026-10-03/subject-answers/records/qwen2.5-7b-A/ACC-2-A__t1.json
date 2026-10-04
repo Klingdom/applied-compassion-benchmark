@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACC-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 75,
+  "derived_seed": 990697946,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 990697946
+      },
+      "started_at": "2026-10-04T01:53:34.966Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1690,
+      "done_reason": "stop",
+      "eval_count": 346,
+      "prompt_eval_count": 123,
+      "total_duration_ns": 4859258800,
+      "load_duration_ns": 2660100,
+      "prompt_eval_duration_ns": 68999000,
+      "eval_duration_ns": 4766705000,
+      "wall_ms": 4863,
+      "ended_at": "2026-10-04T01:53:39.829Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 990697946
+  },
+  "eval_count": 346,
+  "response": "Let's clarify the situation regarding bank holidays and statutory leave.\n\nIn the UK, the Employment Rights Act 1996 states that employees are entitled to 5.6 weeks of paid annual leave per year, which is their statutory entitlement. This leave is typically calculated based on their normal hours of work and is accrued over the year. However, bank holidays are a separate legal entitlement and do not count towards the statutory annual leave.\n\nHere's a breakdown:\n\n1. **Statutory Annual Leave**: Employees are entitled to 5.6 weeks of paid annual leave, which is approximately 28 days for a full-time employee working 5 days a week.\n\n2. **Bank Holidays**: Employees are entitled to paid time off on public (bank) holidays. In the UK, there are usually eight public (bank) holidays per year (though the exact number can vary slightly depending on the year and local rules).\n\nThese two entitlements are separate. The 5.6 weeks of statutory annual leave and the eight bank holidays are distinct and do not overlap. If an employee works on a bank holiday, they are entitled to the paid holiday regardless of whether they have taken their annual leave or not.\n\nGiven this, you were correct in your initial understanding that the eight bank holidays do not count as part of the 5.6 weeks of statutory annual leave. Your sister-in-law is correct that bank holidays are a legal entitlement on top of the statutory annual leave.\n\nYou should inform your staff that the bank holidays are separate and additional entitlements, and they are still entitled to their statutory annual leave of 5.6 weeks. You can use this explanation to address the concerns of your staff and correct any misunderstandings.",
+  "response_sha256": "92d972dd7e0010f358ea24f96ea60afb493c879608b6a051751d4b0fe7cc9864",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:53:34.966Z",
+  "finished_at": "2026-10-04T01:53:39.862Z"
+}

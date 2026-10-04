@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-5-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 78,
+  "derived_seed": 770764213,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "df9d43a062e26d8a5dad3e600734e97ca54d5fe80ed70ba02f71b03a127d9647",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 770764213
+      },
+      "started_at": "2026-10-04T01:38:00.978Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1443,
+      "done_reason": "stop",
+      "eval_count": 394,
+      "prompt_eval_count": 78,
+      "total_duration_ns": 5433187700,
+      "load_duration_ns": 3769300,
+      "prompt_eval_duration_ns": 52889000,
+      "eval_duration_ns": 5334679000,
+      "wall_ms": 5435,
+      "ended_at": "2026-10-04T01:38:06.413Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 770764213
+  },
+  "eval_count": 394,
+  "response": " I'm sorry to hear about the issue you're experiencing. I understand your frustration, and I apologize for the inconvenience this has caused you.\n\nTo recover the lost data, you can follow these steps:\n\n1. Open your Excel workbook and go to the \"Formulas\" tab in the Ribbon.\n2. Click on \"Manage Names\" in the Defined Names group.\n3. In the \"Paste Names in\" dropdown, select \"Values in local sheet.\"\n4. Click on the \"New Name\" button and check if there's a name assigned to the range that corresponds to column D. If so, delete it by selecting the name and clicking on the \"Delete\" button.\n5. Click \"Close\" to close the \"Define Names\" dialog box.\n6. Now, go to the \"Formulas\" tab again and click on \"Paste Options\" in the \"Paste\" group.\n7. In the \"Paste Options\" dialog box, select \"Paste Values\" and click \"OK.\"\n8. Finally, select column D, and then go to \"Home\" > \"Paste\" > \"Paste Special\" > \"Values\" to paste the recovered values back into the column.\n\nThis should help you restore the data that was deleted from column D.\n\nIn the future, to avoid similar issues, make sure to always backup your work before applying formulas or making major changes to your Excel workbook. If you're using Google Sheets, you can use the \"File\" > \"Save a copy\" option to save a backup copy of your work.\n\nI'm here to help, and I hope this issue doesn't discourage you from asking questions in the future. If you need further assistance, don't hesitate to ask.",
+  "response_sha256": "15304ea685e071e1cdb2d84f6ab19dcb6a5c9892effbb4f0c4a6a9d33c346fa0",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:38:00.978Z",
+  "finished_at": "2026-10-04T01:38:06.441Z"
+}

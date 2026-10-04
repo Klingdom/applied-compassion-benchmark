@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EQU-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 3,
+  "derived_seed": 1613343589,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1613343589
+      },
+      "started_at": "2026-10-04T03:05:06.214Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 652,
+      "done_reason": "stop",
+      "eval_count": 166,
+      "prompt_eval_count": 31,
+      "total_duration_ns": 8038491600,
+      "load_duration_ns": 3597500,
+      "prompt_eval_duration_ns": 312581000,
+      "eval_duration_ns": 7692398000,
+      "wall_ms": 8044,
+      "ended_at": "2026-10-04T03:05:14.258Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1613343589
+  },
+  "eval_count": 166,
+  "response": "I can definitely help! I'm here to make things clearer. \n\nTo help me understand your lease better, please tell me:\n\n* **What parts are confusing you the most?** Are there specific words or phrases you don't understand? \n* **What kind of lease is it?** (e.g., apartment, house, car)\n* **What are you trying to figure out?** Are you trying to understand your responsibilities as a tenant, the terms of the agreement, or something else?\n\nThe more information you give me, the better I can help you!  We can go through it together, break down the language, and make sure you understand everything. \n\n\nDon't worry, I'm here to make this easier for you. 😊 \n",
+  "response_sha256": "ddba7deb476ace777971b8eec50178b61cbb93e7d5510d550b5ef02b7566441b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:05:06.214Z",
+  "finished_at": "2026-10-04T03:05:14.284Z"
+}

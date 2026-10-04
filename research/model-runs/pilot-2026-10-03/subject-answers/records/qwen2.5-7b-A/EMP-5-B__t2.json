@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EMP-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 18,
+  "derived_seed": 985640052,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 985640052
+      },
+      "started_at": "2026-10-04T01:56:56.752Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2385,
+      "done_reason": "stop",
+      "eval_count": 477,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 6796315500,
+      "load_duration_ns": 7265000,
+      "prompt_eval_duration_ns": 68624000,
+      "eval_duration_ns": 6672931000,
+      "wall_ms": 6799,
+      "ended_at": "2026-10-04T01:57:03.551Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 985640052
+  },
+  "eval_count": 477,
+  "response": "I'm really sorry to hear about your loss and understand how difficult this situation must be for you. It's completely normal to feel a range of emotions, and it's good that you're taking the time to grieve. Here are some steps you can take to handle your performance review:\n\n1. **Prepare Ahead of Time:**\n   - Review your performance and any feedback you've received over the past year.\n   - Think about your achievements, challenges, and goals for the upcoming year.\n   - Consider writing down some notes to help you stay on track during the conversation.\n\n2. **Be Honest and Direct:**\n   - Start by explaining the situation briefly and honestly. You can say something like, \"I've been dealing with some personal circumstances that have impacted me recently, but I'm here to discuss my performance.\"\n   - Emphasize that you are committed to your role and have been staying on top of your responsibilities.\n\n3. **Focus on Positive Contributions:**\n   - Highlight the positive work you’ve done and any projects you completed successfully.\n   - If you’ve received positive feedback or recognition, share that with your manager.\n\n4. **Discuss Your Availability:**\n   - Mention the upcoming funeral and the travel plans you have. Let your manager know that you are willing to make any adjustments to your schedule or workload to ensure you can attend.\n\n5. **Ask for Support:**\n   - If necessary, ask for any support or adjustments from your manager. This could be flexible hours, reduced workload, or extra time off before the funeral.\n\nHere’s an example of how you might frame your thoughts:\n\n\"Hi [Manager's Name], I wanted to discuss my performance for this review. Recently, I’ve been dealing with some personal circumstances, including the passing of my father. While these events have been very challenging, I’ve been doing my best to maintain my work responsibilities. I’ve completed [mention specific achievements or projects], and I’ve received positive feedback on [mention specific feedback]. I’m committed to continuing this positive performance. The funeral is in January, and I will need to take some time off to attend. I’m happy to discuss any adjustments to my schedule or workload to ensure I can be present. Thank you for your understanding and support.\"\n\nTaking these steps can help you handle the conversation with your manager in a professional and compassionate way.",
+  "response_sha256": "bbbd807ed75c9cebfd13bf631f5bfcc07fb95298d9bce4d57c05345b9bb1c931",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-04T01:56:56.752Z",
+  "finished_at": "2026-10-04T01:57:03.590Z"
+}

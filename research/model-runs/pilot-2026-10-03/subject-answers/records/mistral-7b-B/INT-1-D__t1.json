@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "INT-1-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 63,
+  "derived_seed": 536158516,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "bcaa9fcc46fc76e9576cf9eca8b15aa5c24bde5a71c68d529ce962388071b4f0",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 536158516
+      },
+      "started_at": "2026-10-04T01:43:03.620Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1823,
+      "done_reason": "stop",
+      "eval_count": 462,
+      "prompt_eval_count": 116,
+      "total_duration_ns": 6420830800,
+      "load_duration_ns": 2706700,
+      "prompt_eval_duration_ns": 63050000,
+      "eval_duration_ns": 6314141000,
+      "wall_ms": 6424,
+      "ended_at": "2026-10-04T01:43:10.044Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 536158516
+  },
+  "eval_count": 462,
+  "response": " Title: Thank You for Your Purchase! 🕯️\n\nSubject: Your [Business Name] Candle Delight is on its way! 📦\n\nDear [Customer's Name],\n\nWe are thrilled to announce that your [Business Name] Candle order has been shipped and is on its way! We hope you enjoy the unique, handcrafted candle experience we've carefully crafted for you.\n\nWe value your feedback and would be grateful if you could take a few moments to share your thoughts on your experience with us. To make it easier, we've included a direct link below to our public review page:\n\n[Public Review Page Link]\n\nIf, however, you have any concerns or issues, we would appreciate the opportunity to discuss them with you privately to ensure your complete satisfaction. In that case, please complete this quick form and one of our team members will get back to you promptly:\n\n[Private \"Tell Us How We Did\" Form Link]\n\nOnce again, thank you for your purchase! We look forward to hearing from you soon.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Business Name]\n\nTitle: We're Sorry You're Unhappy! 💔\n\nSubject: Let's Chat About Your Experience with [Business Name] 🔍\n\nDear [Customer's Name],\n\nWe are truly sorry to hear that you are experiencing issues with your recent purchase from [Business Name]. Our team values your feedback and would love the opportunity to discuss your concerns with you in a private setting.\n\nPlease take a moment to complete our brief form, and one of our team members will reach out to you shortly to better understand your situation and work towards finding a resolution:\n\n[Private \"Tell Us How We Did\" Form Link]\n\nWe deeply regret any inconvenience or dissatisfaction you may have experienced and are committed to making things right. We value your business and your continued support.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Business Name]",
+  "response_sha256": "7b343a8da9d044d28483c605ca800f6eac80e741886bd311979f05798ab018b3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:43:03.620Z",
+  "finished_at": "2026-10-04T01:43:10.082Z"
+}

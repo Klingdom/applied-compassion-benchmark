@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACT-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 1675795998,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1675795998
+      },
+      "started_at": "2026-10-04T01:51:18.719Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2522,
+      "done_reason": "stop",
+      "eval_count": 488,
+      "prompt_eval_count": 55,
+      "total_duration_ns": 7354000000,
+      "load_duration_ns": 10392800,
+      "prompt_eval_duration_ns": 38101000,
+      "eval_duration_ns": 7281061000,
+      "wall_ms": 7360,
+      "ended_at": "2026-10-04T01:51:26.079Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1675795998
+  },
+  "eval_count": 488,
+  "response": "In California, the law regarding security deposits is quite specific and designed to protect tenant rights. Here’s what you can do to address the situation:\n\n1. **Review Your Lease Agreement:**\n   - Carefully read your lease agreement to understand the terms and conditions related to security deposits. This can provide guidance on when and how the landlord is allowed to withhold the security deposit.\n\n2. **Follow Proper Procedures:**\n   - Make sure you have followed all the procedures outlined in your lease agreement for moving out. This includes giving proper notice and leaving the premises in a condition as required by the lease.\n\n3. **Send a Formal Demand Letter:**\n   - Draft a formal demand letter to your landlord requesting a detailed itemization of any deductions from your security deposit. Include a copy of your lease agreement, your move-out notice, and any other relevant documents.\n   - Send this letter via certified mail with a return receipt requested so you have proof of delivery.\n\n4. **Contact Your Local Rent Board:**\n   - In California, most municipalities have a Rent Board or Rental Housing Agency that can help resolve disputes between landlords and tenants. Contact your local Rent Board to file a complaint. They can provide guidance and possibly mediate the situation.\n\n5. **File a Small Claims Case:**\n   - If the landlord still does not respond, you may file a small claims case against your landlord. Small claims court is a quicker and more affordable alternative to regular court. You can file a claim in your local small claims court and follow the procedures there.\n\n6. **Consult a Lawyer:**\n   - Consider consulting with a tenant lawyer who can provide legal advice specific to your situation. A lawyer can help you understand your rights and guide you through the legal process.\n\n7. **Document Everything:**\n   - Keep detailed records of all communications with your landlord, including dates, times, and content of texts, emails, and letters. This documentation can be crucial if you need to take legal action.\n\n8. **Check for Special Regulations:**\n   - California has specific laws regarding security deposits. Familiarize yourself with these laws, which can provide additional protections for tenants. For example, landlords must return the security deposit within 21 days of the tenant vacating the property, and they must provide an itemized list of any deductions.\n\nBy following these steps, you can effectively address the situation and protect your rights as a tenant.",
+  "response_sha256": "8aa8c7e77f9acc1542a6b9667dc20f0b1631646653842e0ee9d784b4edbfec18",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:51:18.719Z",
+  "finished_at": "2026-10-04T01:51:26.128Z"
+}

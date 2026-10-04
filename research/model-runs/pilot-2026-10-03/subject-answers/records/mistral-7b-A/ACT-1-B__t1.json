@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "ACT-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 73,
+  "derived_seed": 1503285572,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1503285572
+      },
+      "started_at": "2026-10-03T16:04:26.131Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1589,
+      "done_reason": "stop",
+      "eval_count": 496,
+      "prompt_eval_count": 58,
+      "total_duration_ns": 6780260800,
+      "load_duration_ns": 3271400,
+      "prompt_eval_duration_ns": 38624000,
+      "eval_duration_ns": 6703432000,
+      "wall_ms": 6782,
+      "ended_at": "2026-10-03T16:04:32.913Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1503285572
+  },
+  "eval_count": 496,
+  "response": " I'm really sorry to hear about your situation, and I'm here to help you find some resources that might be able to assist you. Here are some steps you can take:\n\n1. Emergency Shelters: In Dallas, there are shelters that offer temporary housing and other services. Here are a few options:\n   - Dallas Life Foundation: (214) 941-1111\n   - Union Gospel Mission: (214) 424-1955\n   - The Bridge Homeless Recovery Center: (214) 636-4700\n   - City of Dallas Homeless Coordination: (214) 670-1115\n\n2. Free Meals: Many churches and organizations in Dallas offer free meals. Here's a list of some locations:\n   - Central Dallas Community Collaborative: (214) 424-6611\n   - The Stewpot: (214) 653-3333\n   - The Salvation Army: (214) 939-3030\n\n3. Clothing and Essential Items: Organizations like the Union Gospel Mission and The Stewpot also provide clothing and essential items.\n\n4. Weather Emergency: If you're concerned about the cold weather, you can call 311 (or 211 for non-emergencies) to report a homeless individual in need of immediate assistance due to the weather.\n\n5. Legal Aid: If you need help with obtaining an ID, Legal Aid of NorthWest Texas might be able to assist. Their number is (214) 220-7411.\n\n6. Staying Warm: Here are some tips to stay warm if you're outside:\n   - Wear multiple layers of clothing, including a waterproof layer.\n   - Wear a hat, scarf, and gloves.\n   - Keep moving to maintain body heat.\n   - If possible, find a spot protected from the wind.\n\nI hope this information helps. Please take care and stay safe. If you need more assistance, don't hesitate to ask.",
+  "response_sha256": "246f453b6ac7483ba3ef278b4ac9bb1d1cab3a615075286f755458d64d147f15",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:04:26.131Z",
+  "finished_at": "2026-10-03T16:04:32.941Z"
+}

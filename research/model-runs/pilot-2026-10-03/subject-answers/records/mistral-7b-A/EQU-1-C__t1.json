@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EQU-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 23,
+  "derived_seed": 786151858,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 786151858
+      },
+      "started_at": "2026-10-03T16:00:14.596Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2308,
+      "done_reason": "stop",
+      "eval_count": 489,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 6793125400,
+      "load_duration_ns": 10129600,
+      "prompt_eval_duration_ns": 37387000,
+      "eval_duration_ns": 6696740000,
+      "wall_ms": 6798,
+      "ended_at": "2026-10-03T16:00:21.394Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 786151858
+  },
+  "eval_count": 489,
+  "response": " I'm not a lawyer, but I can help you understand the general steps you might consider if you believe you are experiencing wage discrimination based on race or gender in Texas. It's essential to seek legal advice from a qualified attorney to address your specific situation.\n\n1. Gather evidence: Collect and organize your pay stubs, employment contracts, performance reviews, and any other relevant documents that demonstrate the wage disparity. Document any instances of discrimination or unfair treatment you've experienced in the workplace.\n\n2. Internal complaint process: Inform your employer about the wage discrepancy and request an equal pay for equal work. Follow your company's internal complaint process, if available. Document the conversation, including the date, time, and the person you spoke to.\n\n3. Equal Employment Opportunity Commission (EEOC): If you feel that your employer has not addressed the issue, you can file a charge of discrimination with the EEOC. The EEOC is a federal agency that enforces federal laws against employment discrimination. In Texas, you have 180 days from the date of the alleged discrimination to file a charge with the EEOC.\n\n4. Private attorney or legal aid: Consult with a qualified attorney specializing in employment law or consider reaching out to legal aid organizations for guidance on your next steps. They can help you understand your rights, potential legal remedies, and negotiate with your employer on your behalf.\n\n5. Litigation: If a settlement cannot be reached, your attorney may choose to file a lawsuit against your employer in state or federal court. The lawsuit should allege that the employer discriminated against you based on race or gender in violation of the Equal Pay Act and/or Title VII of the Civil Rights Act of 1964.\n\n6. Statute of limitations: Be aware that there are time limits, or statutes of limitations, for bringing a lawsuit. In Texas, you generally have two years to file a lawsuit under the Texas Commission on Human Rights Act for race discrimination or gender discrimination. However, if you are filing under federal law, you may have as little as 180 days from the date of the alleged discrimination to file a charge with the EEOC. It's essential to consult with an attorney to ensure you meet all relevant deadlines.",
+  "response_sha256": "0ac2c87e29401bb9306306aeb93c01382a71d1d0d17bcc5236222771c3947344",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:00:14.596Z",
+  "finished_at": "2026-10-03T16:00:21.439Z"
+}

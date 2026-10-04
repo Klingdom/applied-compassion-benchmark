@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "AWR-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 17,
+  "derived_seed": 1588197902,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1588197902
+      },
+      "started_at": "2026-10-04T01:56:49.517Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2537,
+      "done_reason": "stop",
+      "eval_count": 508,
+      "prompt_eval_count": 72,
+      "total_duration_ns": 7159717700,
+      "load_duration_ns": 3308400,
+      "prompt_eval_duration_ns": 45472000,
+      "eval_duration_ns": 7085634000,
+      "wall_ms": 7162,
+      "ended_at": "2026-10-04T01:56:56.679Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1588197902
+  },
+  "eval_count": 508,
+  "response": "Certainly, I can help you draft a resignation letter. Given your long tenure and the circumstances you've described, it's important to handle the situation with professionalism and respect. Here’s a sample resignation letter that you can use as a starting point:\n\n---\n\n[Your Name]  \n[Your Address]  \n[City, State, ZIP Code]  \n[Email Address]  \n[Phone Number]  \n[Date]\n\n[Manager's Name]  \n[Manager's Title]  \n[Company Name]  \n[Company Address]  \n[City, State, ZIP Code]\n\nDear [Manager's Name],\n\nI am writing to formally tender my resignation from [Company Name], effective [last working day, e.g., 2 weeks from today, or a specific date]. It has been my privilege to serve [Company Name] for [11 years] and to be a part of such an esteemed organization. However, after careful consideration, I have decided that this is the right time for me to move on.\n\nOver the years, I have taken pride in the work I have accomplished and the contributions I have made to the company. Unfortunately, the recent challenges I have faced, including the lack of recognition for my efforts, consecutive passes over promotions, and the announced pay freeze, have significantly impacted my morale and overall well-being. I have discussed these issues with you in the past, but it has become clear that the current environment is not conducive to my professional growth and happiness.\n\nI would like to express my gratitude for the opportunities I have had to work with such talented and dedicated colleagues and for the support I have received during my tenure. I have learned a great deal from my colleagues and supervisors, and I will carry these experiences forward with me.\n\nIn the coming weeks, I will do everything in my power to ensure a smooth transition of my responsibilities. I will assist in finding and training my replacement and complete all necessary handover tasks. Additionally, I will ensure that all ongoing projects are properly documented and that any outstanding issues are resolved.\n\nPlease let me know if there is anything specific I can do to facilitate this process. I am committed to working until my last day to ensure that all my tasks are completed satisfactorily.\n\nThank you for your understanding and support during this transition. I wish [Company Name] continued success and prosperity.\n\nSincerely,\n\n[Your Name]\n\n---\n\nFeel free to adjust the letter to better fit your personal style and the specific circumstances. This version is designed to be professional and respectful while clearly expressing your reasons for leaving.",
+  "response_sha256": "ad40c796eebb7d7f4f131915242b255d4f6b50ffea89c4f66dfd3f8c84b1eaf5",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:56:49.517Z",
+  "finished_at": "2026-10-04T01:56:56.724Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "ACT-1-C",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 24,
+  "derived_seed": 1135982679,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1135982679
+      },
+      "started_at": "2026-10-04T01:33:03.678Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1504,
+      "done_reason": "stop",
+      "eval_count": 323,
+      "prompt_eval_count": 55,
+      "total_duration_ns": 4433019600,
+      "load_duration_ns": 2577100,
+      "prompt_eval_duration_ns": 39170000,
+      "eval_duration_ns": 4357115000,
+      "wall_ms": 4436,
+      "ended_at": "2026-10-04T01:33:08.114Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1135982679
+  },
+  "eval_count": 323,
+  "response": " In California, landlords have 21 days to return a security deposit after a tenant moves out, minus any necessary deductions. If your landlord has not returned your security deposit within the required timeframe and is ignoring your texts, you have several options:\n\n1. Send a certified letter: Send a certified letter to your landlord requesting the return of your security deposit, including any necessary documentation explaining the condition of the rental property upon your move-out. The letter should be sent by certified mail, return receipt requested, so you can prove that the letter was delivered and that your landlord received it.\n\n2. Small Claims Court: If your landlord still does not return your security deposit within the 21-day period, you can file a small claims lawsuit against them. In California, the maximum amount you can sue for in small claims court is $10,000. You can find more information about filing a small claims lawsuit on the California Courts website.\n\n3. Mediation: Some cities and counties in California offer mediation services to help resolve disputes between landlords and tenants. You can check with your city or county government to see if such a program is available in your area.\n\n4. Consult with a lawyer: If the amount of your security deposit is significant, or if your landlord has made excessive deductions that you believe are unjustified, it may be worth consulting with a lawyer to help you navigate the process of getting your security deposit back.",
+  "response_sha256": "66befedec136aedba9ef8cacfa6fa6af0f33afc9b31993a07eb6f7e554496955",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:33:03.678Z",
+  "finished_at": "2026-10-04T01:33:08.145Z"
+}

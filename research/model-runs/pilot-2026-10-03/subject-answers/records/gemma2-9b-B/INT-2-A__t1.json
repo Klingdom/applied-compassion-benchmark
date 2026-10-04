@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "INT-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 53,
+  "derived_seed": 1448542529,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c1c48799b8f55e4e1f278304cbfe565219840a397123a021611f969d0f9cdd42",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1448542529
+      },
+      "started_at": "2026-10-04T03:39:50.917Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1201,
+      "done_reason": "stop",
+      "eval_count": 254,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 11397703600,
+      "load_duration_ns": 3177100,
+      "prompt_eval_duration_ns": 235467000,
+      "eval_duration_ns": 11096892000,
+      "wall_ms": 11401,
+      "ended_at": "2026-10-04T03:40:02.318Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1448542529
+  },
+  "eval_count": 254,
+  "response": "That's a tough situation! Unfortunately, it's best to **stay on hold with your original airline**.  \n\nHere's why:\n\n* **EU Regulations:** If your original flight was within the EU or departing from an EU airport, you have rights under EU regulations. These regulations often require airlines to provide alternative flights or compensation if flights are cancelled. By proactively seeking a solution with your original airline, you're more likely to be covered.\n\n* **Claim Strength:** Purchasing a separate ticket could weaken your claim against your original airline. They might argue that you chose an alternative option, potentially absolving them of responsibility.  \n\n**However, don't wait indefinitely.** \n\n* **Set a Time Limit:** Give yourself a reasonable time limit on hold (e.g., another 30 minutes).  If you don't get through, purchasing the alternative ticket becomes a viable option.  \n* **Document Everything:** Keep a record of the hold time, any messages you receive, and the date/time you attempted to contact the airline. This documentation will be helpful if you need to file a claim later.\n\nRemember, it's always worth trying to resolve the issue with your original airline first.  \n",
+  "response_sha256": "4782ab5924a1547553564c80c0906787f6639cb986ee24705eb50ae3fedc6219",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:39:50.917Z",
+  "finished_at": "2026-10-04T03:40:02.347Z"
+}

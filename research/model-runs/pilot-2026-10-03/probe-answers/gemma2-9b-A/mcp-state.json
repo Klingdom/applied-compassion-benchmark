@@ -1,0 +1,65 @@
+{
+  "kind": "mcp-probe-state",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "scorer_run_id": "0c8f12a6-03b9-40aa-beaf-806682e518f4",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "probe_system_from": "gemma2-9b-A",
+  "probe_system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "artifact_root": "C:\\Users\\philk\\compassion-probe-sessions\\pilot-2026-10-03-mcp\\gemma2-9b-A",
+  "started_at": "2026-10-04T03:47:18.137Z",
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "server": {
+    "info": {
+      "name": "cb-probe",
+      "version": "0.3.0"
+    },
+    "tools_list_sha256": "3014d7f01b9407dab3224656c49b7c3aa9e714a57715f5c4602aec80b856c9aa"
+  },
+  "start_scored_run": {
+    "request": {
+      "subject_label": "gemma2-9b-A (access tier: local-open-weight; gemma2:9b@sha256:ff02c3702f32, 4-bit; blinded cross-model pilot pilot-2026-10-03; via MCP stdio)",
+      "judge_label": "panel: 2 judges per response, all claude family, subject not: cross-family; LLM-only, no human raters; item bank publicly exposed",
+      "judgeConfiguration": "panel",
+      "trials": 6,
+      "seed": 20261003,
+      "include_sensitive": false
+    },
+    "result": {
+      "run_id": "0c8f12a6-03b9-40aa-beaf-806682e518f4",
+      "judge_configuration": "panel",
+      "item_count": 83,
+      "trials_per_item": 6,
+      "total_planned_trials": 498,
+      "dimensions": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "include_sensitive": false,
+      "sensitive_items_excluded": 5,
+      "artifact_path": "C:\\Users\\philk\\compassion-probe-sessions\\pilot-2026-10-03-mcp\\gemma2-9b-A\\0c8f12a6-03b9-40aa-beaf-806682e518f4\\run.json",
+      "next_step": "Call run_exposure_probe({ run_id }) first (recommended, and mandatory before finish_scored_run) to check for bank contamination, then next_item({ run_id }) to get the first prompt.",
+      "data_handling_notice": "This run's data is written only to this local file, under the artifact root you configured (CB_ARTIFACT_ROOT), never transmitted anywhere by cb-probe. Whatever you paste as response_text will also be seen by your own model provider, the same as any other message you send it."
+    },
+    "judge_configuration_rationale": "panel: 2 judges rate every reply, so cross (one other model) would under-describe it and self is false. trials = subject trials x judges per response, because cb-probe stores one rating per (item, trial_index) and has no per-response panel (same representation as lib/assemble.mjs)."
+  },
+  "leak_check_decision": "Not applied to probe questions: the challenge references item ids and scenario titles by design, which the subject-brief leak check would flag. Anchors never appear in the challenge. Trial prompts are verified by sha256 against the outgoing messages recorded when the subject answered (finish phase).",
+  "probe": {
+    "status": "completed",
+    "completed_at": "2026-10-04T03:47:36.546Z"
+  },
+  "finish": {
+    "status": "completed",
+    "completed_at": "2026-10-04T04:19:39.884Z",
+    "composite": 29.5,
+    "band": "Developing"
+  }
+}

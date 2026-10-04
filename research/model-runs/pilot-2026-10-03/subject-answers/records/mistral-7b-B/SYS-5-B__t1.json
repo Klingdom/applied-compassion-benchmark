@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "SYS-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 6,
+  "derived_seed": 909196596,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "60e89bdcec3cedf8fe3c47eb598a13833a5a7723a846ffde24d8bb3cb15a0e83",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 909196596
+      },
+      "started_at": "2026-10-04T01:38:54.379Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1225,
+      "done_reason": "stop",
+      "eval_count": 253,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 3505490300,
+      "load_duration_ns": 2845100,
+      "prompt_eval_duration_ns": 62682000,
+      "eval_duration_ns": 3416682000,
+      "wall_ms": 3506,
+      "ended_at": "2026-10-04T01:38:57.885Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 909196596
+  },
+  "eval_count": 253,
+  "response": " It's understandable that you're concerned about the future of your daughter's football team, and your desire to keep the team going shows great dedication and care. While you might feel a bit overwhelmed considering you've never coached anything before, taking on this role can be a rewarding experience for both you and the team.\n\nStarting a new journey can sometimes be challenging, but there are numerous resources available to help you learn the basics of coaching. Online guides, books, and even other coaches might be willing to provide advice or tips. Additionally, reaching out to the local youth football association could help connect you with training and support.\n\nRemember, the most important thing is to create a fun and safe environment for the girls to learn and grow. Your passion and enthusiasm will likely motivate the team, and it's an excellent opportunity for you to gain new skills while making a positive impact on the lives of these young athletes.\n\nIf you decide to take on this challenge, be prepared for a learning curve, and don't hesitate to ask for help when needed. The other parents might also step up to assist once they see your commitment. Good luck, and enjoy this wonderful opportunity!",
+  "response_sha256": "cf6ba37e91a30404478840758221b1d49cfc12cfc0d12496d6642dce09897baa",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:38:54.379Z",
+  "finished_at": "2026-10-04T01:38:57.911Z"
+}

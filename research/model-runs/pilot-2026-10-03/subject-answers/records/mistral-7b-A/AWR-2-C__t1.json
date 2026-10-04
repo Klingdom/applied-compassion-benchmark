@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-2-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 44,
+  "derived_seed": 632692362,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "dab30edeb0d8f6b5286c7c92f4a9e5d906c4a582eeef453353afcc3da48d5eb3",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 632692362
+      },
+      "started_at": "2026-10-03T16:01:58.181Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1204,
+      "done_reason": "stop",
+      "eval_count": 242,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 3395487000,
+      "load_duration_ns": 4661300,
+      "prompt_eval_duration_ns": 37348000,
+      "eval_duration_ns": 3318571000,
+      "wall_ms": 3399,
+      "ended_at": "2026-10-03T16:02:01.580Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 632692362
+  },
+  "eval_count": 242,
+  "response": " It's important to remember that the internet can sometimes provide misleading or incomplete information. Metformin is a widely used medication for the treatment of type 2 diabetes, and while it can potentially cause a slight decrease in vitamin B12 levels, it does not typically cause significant B12 deficiency or nerve damage.\n\nIf you have concerns about any potential side effects, it's always best to discuss them with your healthcare provider. They can provide you with accurate information based on your specific health situation and monitor your health closely to ensure any potential side effects are managed effectively.\n\nIt's also essential to maintain a balanced diet rich in vitamins, including B12, and to take any recommended supplements under the guidance of a healthcare professional. If you're experiencing any unusual symptoms while taking metformin, contact your doctor immediately. They may adjust your dosage or prescribe additional medications to manage any side effects.\n\nIn summary, while it's normal to have concerns about the medications you're taking, it's crucial to rely on the advice of your healthcare provider to ensure you're making informed decisions about your health.",
+  "response_sha256": "ca669b97695d3ad1a9b0d877c6ea871ef7789e24ec3e159768d8dec39cb81e40",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:01:58.181Z",
+  "finished_at": "2026-10-03T16:02:01.609Z"
+}

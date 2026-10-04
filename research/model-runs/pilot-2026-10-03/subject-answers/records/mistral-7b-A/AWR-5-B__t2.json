@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 67,
+  "derived_seed": 1103912011,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1103912011
+      },
+      "started_at": "2026-10-04T01:29:47.750Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2254,
+      "done_reason": "stop",
+      "eval_count": 552,
+      "prompt_eval_count": 96,
+      "total_duration_ns": 7552786500,
+      "load_duration_ns": 3301800,
+      "prompt_eval_duration_ns": 62356000,
+      "eval_duration_ns": 7464316000,
+      "wall_ms": 7554,
+      "ended_at": "2026-10-04T01:29:55.304Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1103912011
+  },
+  "eval_count": 552,
+  "response": " Title: Monthly Wellbeing Check-in Question Set and Log Template\n\n**Monthly Wellbeing Check-in Question Set**\n\n1. On a scale of 1-10, how would you rate your current level of work-related stress? (1 being minimal stress and 10 being extreme stress)\n\n2. Have you noticed any changes in your overall mental health over the past month? If so, could you please describe them?\n\n3. How supportive do you feel your work environment is in addressing work-related stress and promoting wellbeing? (1 being not supportive and 5 being very supportive)\n\n4. Have you felt that your workload is manageable in the past month? If not, could you please describe any challenges you have encountered?\n\n5. Are there any resources, training, or support that you feel would be beneficial to help manage stress and promote wellbeing in your role?\n\n6. How satisfied are you with your current work-life balance? (1 being very dissatisfied and 5 being very satisfied)\n\n7. Do you feel that your role and responsibilities align with your skills and interests? If not, could you please describe any areas of misalignment?\n\n8. Have there been any incidents or interactions at work that have caused you distress or concern in the past month? If so, could you please describe them?\n\n9. Do you feel valued and appreciated by the practice and your colleagues? (1 being not valued and 5 being highly valued)\n\n10. Is there anything else you would like to discuss or share regarding your wellbeing at work?\n\n**Monthly Wellbeing Check-in Log Template**\n\nEmployee Name: ______________________\nDate: ______________________\n\n1. Stress Level: __________\n2. Changes in Mental Health: __________\n3. Work Environment Support: __________\n4. Workload Management: __________\n5. Resource Requests: __________\n6. Work-Life Balance: __________\n7. Skills and Interest Alignment: __________\n8. Incidents/Interactions: __________\n9. Feeling of Value/Appreciation: __________\n10. Additional Comments: __________\n\nNotes: __________ (Any additional observations or actions taken by the line manager)\n\nThe log should be stored confidentially in the employee's HR file for future reference. This question set can be modified or expanded upon based on the specific needs and preferences of your veterinary practice.",
+  "response_sha256": "98978dd8917861e63d71680243cbb5fd0994de21de79b10f354a789a75b283fe",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:29:47.750Z",
+  "finished_at": "2026-10-04T01:29:55.333Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 70,
+  "derived_seed": 531586851,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 531586851
+      },
+      "started_at": "2026-10-03T15:49:30.946Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1068,
+      "done_reason": "stop",
+      "eval_count": 255,
+      "prompt_eval_count": 76,
+      "total_duration_ns": 1937703800,
+      "load_duration_ns": 3244200,
+      "prompt_eval_duration_ns": 9787000,
+      "eval_duration_ns": 1874336000,
+      "wall_ms": 1952,
+      "ended_at": "2026-10-03T15:49:32.898Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 531586851
+  },
+  "eval_count": 255,
+  "response": "I'd be happy to help you craft a message that's more sincere and less like a card. Here are a few options:\n\n**Option 1: Simple condolence**\n\n\"Hi Dan, I'm so sorry to hear about your loss. I hope you're taking care of yourself today and feeling supported. If you need any time to talk or just need someone to listen, I'm here for you.\"\n\n**Option 2: Reference to the upcoming workday**\n\n\"Hi Dan, I know tomorrow is going to be a tough day back at work, but I want to acknowledge the loss of your mum first. My thoughts are with you and your family. If you need a minute or a distraction during the day, don't hesitate to reach out.\"\n\n**Option 3: Expressing support**\n\n\"Hi Dan, I'm thinking of you today and hoping you have someone to lean on. Your mum's passing is a significant loss, and I'm here to support you in any way I can. If you need to talk or just need someone to be present, I'm here.\"\n\nFeel free to modify any of these options to fit your relationship with Dan and your workplace culture. I hope this helps, and I'm sure Dan appreciates your thoughtfulness.",
+  "response_sha256": "643b1a7cd66dc2cdd2eec9f35d194fc75c4aa85460286fabb5b5d4cbb020be38",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:49:30.946Z",
+  "finished_at": "2026-10-03T15:49:32.925Z"
+}

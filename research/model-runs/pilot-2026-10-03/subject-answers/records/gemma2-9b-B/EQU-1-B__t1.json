@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EQU-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 2040803011,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2040803011
+      },
+      "started_at": "2026-10-04T03:38:00.155Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 640,
+      "done_reason": "stop",
+      "eval_count": 146,
+      "prompt_eval_count": 40,
+      "total_duration_ns": 6732713600,
+      "load_duration_ns": 3178400,
+      "prompt_eval_duration_ns": 231132000,
+      "eval_duration_ns": 6448292000,
+      "wall_ms": 6735,
+      "ended_at": "2026-10-04T03:38:06.890Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2040803011
+  },
+  "eval_count": 146,
+  "response": "I understand! Leases can be tricky to read, with lots of legal jargon.  \n\nTo help me understand your specific lease and explain it in a way that makes sense, could you tell me:\n\n* **What part of the lease is confusing you the most?** Is it a specific clause, a section about payments, or something else entirely?\n* **What are some of the words or phrases that you're finding difficult?**\n\nThe more details you can give me, the better I can help you understand your lease.  \n\nRemember, it's always a good idea to ask questions if something is unclear. You can always contact your landlord or a legal professional for further clarification. \n",
+  "response_sha256": "99bdd6df47ab1c2e621d44fdd804940df4b0d9b1322c2613eba79b73d0f19f0b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:38:00.155Z",
+  "finished_at": "2026-10-04T03:38:06.917Z"
+}

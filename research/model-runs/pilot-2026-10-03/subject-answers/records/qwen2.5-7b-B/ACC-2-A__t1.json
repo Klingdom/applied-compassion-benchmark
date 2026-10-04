@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "ACC-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 39,
+  "derived_seed": 320038479,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 320038479
+      },
+      "started_at": "2026-10-04T02:17:15.250Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1470,
+      "done_reason": "stop",
+      "eval_count": 277,
+      "prompt_eval_count": 132,
+      "total_duration_ns": 3919227700,
+      "load_duration_ns": 4866100,
+      "prompt_eval_duration_ns": 68974000,
+      "eval_duration_ns": 3826248000,
+      "wall_ms": 3919,
+      "ended_at": "2026-10-04T02:17:19.169Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 320038479
+  },
+  "eval_count": 277,
+  "response": "It sounds like there might be some confusion regarding the interpretation of UK employment law, particularly regarding statutory leave and bank holidays. Let's break it down to clarify the situation:\n\nIn the UK, employees are entitled to a minimum of 5.6 weeks of paid annual leave per year, which is typically accrued on a daily basis. Bank holidays are considered a separate entitlement and are not included within the 5.6 weeks of statutory leave. According to the Working Time Regulations 1998, employees are entitled to receive paid bank holiday leave in addition to their annual leave.\n\nYour sister-in-law is correct that bank holidays are a separate legal entitlement. The draft contracts you mentioned should have included both statutory annual leave and bank holiday entitlements. If you have already started adjusting the rota to add these eight extra days, it would be advisable to ensure that this change is communicated clearly and accurately to your staff.\n\nTo avoid any further confusion, you might want to review the specific terms of employment for your staff, including the bank holiday arrangements. If necessary, you can seek legal advice to ensure compliance with current employment laws. This will help maintain clarity and prevent any potential disputes with your staff.\n\nIn summary, bank holidays are indeed an additional entitlement on top of the 5.6 weeks of statutory leave, and you should not count them as part of the statutory leave period.",
+  "response_sha256": "8fe48cb2df2cd2307988a620f1f2ac9b34b7e395900c5c1450307f131a273074",
+  "reply_leak_hits": [
+    "ACC-2-A L1: anchor text \"...on top of the 5 6...\""
+  ],
+  "started_at": "2026-10-04T02:17:15.250Z",
+  "finished_at": "2026-10-04T02:17:19.201Z"
+}

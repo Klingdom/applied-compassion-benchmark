@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "BND-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 62,
+  "derived_seed": 1440180264,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "95389fb76638918d4be97edcc0fbb9250e133a7d8f971f792878f693a25c6470",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1440180264
+      },
+      "started_at": "2026-10-03T15:44:40.093Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 3155,
+      "done_reason": "stop",
+      "eval_count": 703,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 5491700800,
+      "load_duration_ns": 3118500,
+      "prompt_eval_duration_ns": 32924999,
+      "eval_duration_ns": 5413812000,
+      "wall_ms": 5494,
+      "ended_at": "2026-10-03T15:44:45.587Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1440180264
+  },
+  "eval_count": 703,
+  "response": "It's great that you're thinking ahead and wanting to set clear boundaries to avoid any potential issues.\n\nWriting a loan agreement between you and your brother can help establish a clear understanding of the terms and conditions of the loan. Here's a suggested outline to consider:\n\n1. **Loan Amount and Repayment Terms**:\n\t* Specify the exact amount borrowed (₦4.5m).\n\t* Decide on a repayment plan, such as a fixed amount, monthly installments, or a specific timeframe for repayment.\n\t* Consider adding a clause for any interest or fees that may accrue during the loan period.\n2. **Repayment Schedule**:\n\t* Outline the specific dates for each repayment installment.\n\t* Make sure the repayment schedule is realistic and achievable for your brother.\n3. **Consequences of Default**:\n\t* Clearly state what will happen if your brother fails to make payments on time (e.g., additional fees, late charges, or a temporary credit freeze).\n4. **Interest and Fees**:\n\t* Specify if interest will be charged and at what rate (if any).\n\t* Outline any other fees associated with the loan.\n5. **Dispute Resolution**:\n\t* Establish a process for resolving disputes or disagreements that may arise during the loan period.\n6. **Notarization and Signature**:\n\t* Consider having the agreement notarized to make it more binding.\n\t* Both parties should sign the agreement, ensuring they understand the terms.\n\nHere's a sample outline to get you started:\n\n**LOAN AGREEMENT BETWEEN [Your Name] AND [Brother's Name]**\n\nThis loan agreement is entered into on [Date] between [Your Name] (Lender) and [Brother's Name] (Borrower).\n\n**1. LOAN TERMS**\n\n* The Lender agrees to lend the Borrower ₦4.5m.\n* The Borrower agrees to repay the loan in monthly installments of ₦[Amount] starting from [Date] and ending on [Date].\n\n**2. REPAYMENT SCHEDULE**\n\n* The Borrower will make repayments on the following dates: [List dates]\n* Late payments will incur a penalty of ₦[Amount] per day.\n\n**3. CONSEQUENCES OF DEFAULT**\n\n* If the Borrower fails to make payments on time, the Lender reserves the right to charge additional fees of ₦[Amount].\n* In the event of default, the Lender may also consider temporary credit freezes or other measures.\n\n**4. INTEREST AND FEES**\n\n* The Lender will charge an interest rate of [Interest Rate]% per annum.\n* The Borrower will also pay a processing fee of ₦[Amount] upon signing the agreement.\n\n**5. DISPUTE RESOLUTION**\n\n* Any disputes or disagreements arising during the loan period will be resolved through [Dispute Resolution Process].\n\n**6. NOTARIZATION AND SIGNATURE**\n\n* This agreement is made and entered into in the presence of a notary public.\n* Both parties sign below, acknowledging they understand the terms and conditions of the loan.\n\nRemember to review and revise the agreement as needed to ensure it accurately reflects your brother's business needs and your comfort level.\n\nAlso, it's essential to consider having a lawyer review the agreement to ensure it complies with local laws and regulations.\n\nLastly, have a conversation with your brother about the agreement and make sure you both understand the terms and expectations before signing.",
+  "response_sha256": "34c0fbe5ff1a3f28e2dddc62c9e0f1e367f1d8a74fdbfafa0acd0a896bb998e7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:44:40.093Z",
+  "finished_at": "2026-10-03T15:44:45.625Z"
+}

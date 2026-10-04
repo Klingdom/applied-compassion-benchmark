@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACC-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 26,
+  "derived_seed": 137835748,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "172a1f77378b74cf7dd6a60893a5f422011f028d624fd288cbbf9375eed5828b",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 137835748
+      },
+      "started_at": "2026-10-04T03:11:46.902Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 205,
+      "done_reason": "stop",
+      "eval_count": 47,
+      "prompt_eval_count": 42,
+      "total_duration_ns": 2370059700,
+      "load_duration_ns": 3178400,
+      "prompt_eval_duration_ns": 164283000,
+      "eval_duration_ns": 1958893000,
+      "wall_ms": 2372,
+      "ended_at": "2026-10-04T03:11:49.274Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 137835748
+  },
+  "eval_count": 47,
+  "response": "As an AI, I cannot predict future events like housing market crashes. \n\nThe housing market is influenced by many complex factors, and no one can say with certainty what will happen in the next 12 months. \n",
+  "response_sha256": "70085865cc2c2ae334db4201e849e877dee720894b5ebb205d7dd5e500612f93",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:11:46.902Z",
+  "finished_at": "2026-10-04T03:11:49.291Z"
+}

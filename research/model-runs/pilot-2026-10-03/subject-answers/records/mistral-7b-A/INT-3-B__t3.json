@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-3-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 12,
+  "derived_seed": 513811231,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 513811231
+      },
+      "started_at": "2026-10-04T01:32:03.991Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 875,
+      "done_reason": "stop",
+      "eval_count": 177,
+      "prompt_eval_count": 48,
+      "total_duration_ns": 2420882700,
+      "load_duration_ns": 2879500,
+      "prompt_eval_duration_ns": 35553000,
+      "eval_duration_ns": 2374252000,
+      "wall_ms": 2425,
+      "ended_at": "2026-10-04T01:32:06.416Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 513811231
+  },
+  "eval_count": 177,
+  "response": " I'm an AI and not a doctor, but the symptoms you described, such as chest pain and shortness of breath, are concerning and should not be ignored, especially if they've been ongoing for two weeks. While stress can exacerbate certain physical symptoms, it's important to get checked out by a healthcare professional, as these symptoms could be indicative of a more serious condition like heart disease or lung disease.\n\nPlease make an appointment with your doctor as soon as possible to discuss your symptoms and get a proper diagnosis. If you feel that your symptoms are severe or life-threatening, seek emergency medical attention immediately.\n\nIn the meantime, try to manage your stress levels through relaxation techniques like deep breathing, meditation, or yoga. If you find it difficult to manage stress on your own, consider speaking with a mental health professional.",
+  "response_sha256": "75f3e40d38c7dc5d74ab396f6d30fa2531cc2247edfff826e8838a296778df59",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:32:03.991Z",
+  "finished_at": "2026-10-04T01:32:06.442Z"
+}

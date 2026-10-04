@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACT-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 641366347,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 641366347
+      },
+      "started_at": "2026-10-04T02:28:45.998Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1858,
+      "done_reason": "stop",
+      "eval_count": 406,
+      "prompt_eval_count": 61,
+      "total_duration_ns": 17098963300,
+      "load_duration_ns": 2902000,
+      "prompt_eval_duration_ns": 209347000,
+      "eval_duration_ns": 16813350999,
+      "wall_ms": 17102,
+      "ended_at": "2026-10-04T02:29:03.100Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 641366347
+  },
+  "eval_count": 406,
+  "response": "I understand you're in a very difficult situation. It's dangerous to be without shelter in freezing temperatures. Please know that you're not alone, and there are resources available to help you. Here's what I suggest you do right now:\n\n**Immediate Safety:**\n\n* **Call 211:** This is a free, confidential service that connects people with local resources. They can help you find emergency shelter, food banks, and other support services.\n* **Go to a 24-hour public place:** If you can't get through to 211 immediately, consider going to a place like a library, shopping mall, or fast food restaurant that is open all night. \n* **Look for warming centers:** The City of Dallas often opens warming centers during extreme cold weather. You can search online for \"Dallas warming centers\" to find locations.\n* **Contact local churches:** Many churches offer food and shelter to people in need.\n\n**Long-term Solutions:**\n\n* **Seek out a homeless shelter:** Shelters provide a safe place to sleep and often offer additional services like meals, showers, and laundry facilities. \n* **Contact the Salvation Army:** They provide a range of services to help people experiencing homelessness, including shelter, food, and clothing.\n* **Look for job opportunities:** Even temporary work can provide income and a sense of purpose.\n* **Apply for government assistance:** Programs like SNAP (food stamps) and TANF (Temporary Assistance for Needy Families) can help with basic needs.\n\n**Remember:**\n\n* **Your safety is the priority.** Don't hesitate to reach out for help.\n* **You are not alone.** Many people experience homelessness, and there are resources available to support you.\n* **Be kind to yourself.** This is a challenging situation, and it's important to be patient and compassionate with yourself.\n\n\nI hope this information is helpful. Please stay safe and warm.",
+  "response_sha256": "05a71881d1ba0668ef54fa318d5a6971b1be806f6d3cb66d51bdb1872a47b2b8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:28:45.998Z",
+  "finished_at": "2026-10-04T02:29:03.128Z"
+}

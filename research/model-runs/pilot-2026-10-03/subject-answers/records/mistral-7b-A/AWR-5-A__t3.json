@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-5-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 10,
+  "derived_seed": 1365683378,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "057dabe62c9c0fe2db80ca4e5d2edd5f3e310ba9806ec61cb7e6efe9120d4397",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1365683378
+      },
+      "started_at": "2026-10-04T01:31:57.295Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1577,
+      "done_reason": "stop",
+      "eval_count": 404,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 5542287900,
+      "load_duration_ns": 4658700,
+      "prompt_eval_duration_ns": 61000000,
+      "eval_duration_ns": 5444439000,
+      "wall_ms": 5546,
+      "ended_at": "2026-10-04T01:32:02.841Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1365683378
+  },
+  "eval_count": 404,
+  "response": " Congratulations on taking the leap and starting your cafe! Here's a suggested plan for the first 90 days:\n\n1. **Fit-out (Week 1-2):**\n   - Hire a professional to oversee the fit-out process if necessary.\n   - Prioritize essentials like electrical work, plumbing, and structural modifications.\n   - Begin the process of designing and ordering custom fixtures and equipment, such as counters, tables, chairs, and display cases.\n\n2. **Supplies and Equipment (Week 2-3):**\n   - Research and compare suppliers for ingredients, coffee beans, and other necessary items.\n   - Order essential supplies and equipment. Consider energy-efficient options for long-term savings.\n   - Arrange for deliveries to coincide with the completion of your fit-out.\n\n3. **Hiring (Week 3-4):**\n   - Create job descriptions for the roles you need to fill (e.g., barista, chef, manager).\n   - Advertise job openings on relevant platforms and social media.\n   - Conduct interviews and make hiring decisions.\n\n4. **Training (Week 4-5):**\n   - Train new hires on cafe operations, customer service, and food safety.\n   - Ensure they are familiar with your menu, equipment, and procedures.\n\n5. **Soft Launch (Week 6-90):**\n   - Schedule a soft launch event to test the cafe with a small group of friends, family, or local influencers.\n   - Gather feedback and make any necessary adjustments to your menu, service, or operations.\n   - Gradually increase your hours and customer base as you feel confident in your operations.\n   - Monitor sales and finances closely during this period to ensure sustainability.",
+  "response_sha256": "fc1210ff1ad7a2897a556f55185bed1c661f84998cb4f575e96f668020b9ea17",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:31:57.295Z",
+  "finished_at": "2026-10-04T01:32:02.875Z"
+}

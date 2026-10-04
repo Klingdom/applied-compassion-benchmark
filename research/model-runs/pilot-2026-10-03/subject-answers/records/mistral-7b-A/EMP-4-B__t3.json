@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 742229868,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "891c923901f0073bdbfef4f610933ece5b0697a3c829bf8e63a8349359471d9d",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 742229868
+      },
+      "started_at": "2026-10-04T01:35:57.219Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1424,
+      "done_reason": "stop",
+      "eval_count": 299,
+      "prompt_eval_count": 100,
+      "total_duration_ns": 4297586500,
+      "load_duration_ns": 4505200,
+      "prompt_eval_duration_ns": 15576000,
+      "eval_duration_ns": 4079467000,
+      "wall_ms": 4300,
+      "ended_at": "2026-10-04T01:36:01.519Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 742229868
+  },
+  "eval_count": 299,
+  "response": " It sounds like you've been through a challenging situation. It's understandable that you might feel frustrated or concerned, especially since you've noticed a pattern that seems unusual. However, the HR's response indicating no evidence of differential treatment can be disheartening.\n\nIn such cases, it's essential to consider all angles. Your colleague's advice to let it go could stem from a desire to maintain a harmonious work environment. On the other hand, the list you've compiled could be a valid concern, and it might be worth discussing it further.\n\nOne approach could be to express your concerns again, but this time, focus on the patterns you've observed rather than the specific instances. For example, you could discuss the frequency and duration of your overtime compared to your colleagues, and ask for an explanation or clarification about the company's overtime policies.\n\nIt's also important to remember that patterns don't always imply intentional discrimination. There could be factors at play that you're not aware of. A constructive conversation with HR or your supervisor might help shed light on these factors and provide a satisfactory explanation.\n\nIn the end, it's crucial to find a balance between advocating for yourself and maintaining a positive work environment. If you decide to address the issue again, approach it with a open mind and a willingness to listen to the response. Good luck!",
+  "response_sha256": "840721d3787962dde6d213aa1ff37758545135ffd44380c3b109d88f1c49418c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:35:57.219Z",
+  "finished_at": "2026-10-04T01:36:01.544Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-5-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 79,
+  "derived_seed": 1518941291,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1518941291
+      },
+      "started_at": "2026-10-03T15:49:59.579Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2106,
+      "done_reason": "stop",
+      "eval_count": 454,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 3462986900,
+      "load_duration_ns": 3440500,
+      "prompt_eval_duration_ns": 33314999,
+      "eval_duration_ns": 3399074000,
+      "wall_ms": 3471,
+      "ended_at": "2026-10-03T15:50:03.050Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1518941291
+  },
+  "eval_count": 454,
+  "response": "Here's a suggested question set and log template for your monthly wellbeing check-ins:\n\n**Question Set:**\n\n1. What are you feeling stressed or overwhelmed about in your role, if anything?\n2. How have you been managing your workload and workload-related stress?\n3. Have you been taking breaks or time off to recharge? If so, how often?\n4. Are you feeling supported in your role? Who can you turn to for help or advice?\n5. How's your physical and mental health? Have you noticed any changes or concerns?\n6. Have you taken any time off sick or been absent due to stress? If so, what was it for?\n7. Are there any changes or challenges you're facing that you'd like to talk about or seek support for?\n8. How confident do you feel in your role and with your work? Have you noticed any improvements or areas for development?\n9. Have you had any successes or accomplishments that you're proud of? If so, what were they?\n10. Is there anything you're looking forward to or any positive experiences you've had recently?\n\n**Log Template:**\n\n**Date:** [Insert Date]\n**Staff Name:** [Insert Staff Name]\n**Line Manager:** [Insert Line Manager Name]\n**Summary:**\n\n* [Insert brief summary of conversation, e.g. \"Staff member mentioned feeling overwhelmed with workload, but mentioned that they've been managing it well and have a good support system.\"]\n\n**Key Points:**\n\n* [Insert specific points discussed during conversation, e.g. \"Staff member mentioned taking regular breaks and prioritizing self-care.\"]\n\n**Action Plan:**\n\n* [Insert any agreed-upon actions or next steps, e.g. \"Line manager to check in with staff member regularly to monitor workload and offer support.\"]\n\n**Notes:**\n\n* [Insert any additional notes or observations, e.g. \"Staff member seemed anxious about a specific task, line manager to discuss with HR for support.\"]\n\n**HR File Reference:**\n\n* [Insert HR file reference number]\n\nRemember to keep the log template concise and focused on the key points discussed during the conversation. The goal is to capture the main themes and areas for support, rather than trying to document every minor detail.",
+  "response_sha256": "4d2dfcab200b1f19e09c27c2d5ce042ea1ba1fa5f8c323c2efeb8d4852fb1d65",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:49:59.579Z",
+  "finished_at": "2026-10-03T15:50:03.080Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACC-2-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 14,
+  "derived_seed": 1932772581,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "325c7c67bdeae2a1f6d35f3ba3367fe22dab45854d0ae5900732e4002b01fea4",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1932772581
+      },
+      "started_at": "2026-10-04T01:56:29.786Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2009,
+      "done_reason": "stop",
+      "eval_count": 424,
+      "prompt_eval_count": 123,
+      "total_duration_ns": 5937969300,
+      "load_duration_ns": 3242400,
+      "prompt_eval_duration_ns": 16771000,
+      "eval_duration_ns": 5863392000,
+      "wall_ms": 5940,
+      "ended_at": "2026-10-04T01:56:35.726Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1932772581
+  },
+  "eval_count": 424,
+  "response": "It's important to clarify the legal entitlements regarding statutory leave and bank holidays in the UK to avoid any confusion or legal issues.\n\nIn the UK, the right to statutory leave is typically 5.6 weeks of paid annual leave per year, which is based on a 52-week year. This leave must include any public or bank holidays, but the bank holidays do not count as part of the 5.6 weeks of leave. Instead, the employee is entitled to be paid for the bank holidays separately.\n\nHere’s the breakdown:\n\n1. **Statutory Annual Leave**: 5.6 weeks per year.\n2. **Bank Holidays**: Additional days that are paid separately.\n\nSo, to clarify:\n- You cannot count the bank holidays as part of the 5.6 weeks of statutory leave.\n- Employees are entitled to be paid for bank holidays on top of their statutory leave.\n\nIf your sister-in-law is an HR manager, she is correct in saying that bank holidays are a separate legal entitlement. Therefore, you should not be counting the bank holidays as part of the 5.6 weeks of leave.\n\nGiven this, you should not be adjusting your rota to include the bank holidays as part of the statutory leave period. Instead, ensure that your staff are paid for the bank holidays separately as required by law.\n\nYou can explain this to your staff and show them the legal basis, which might help resolve the confusion. Here is a brief explanation you can use:\n\n---\n\n\"Hello everyone,\n\nThank you for bringing this to my attention. I want to clarify that according to UK labor laws, bank holidays are a separate legal entitlement and do not count as part of the statutory 5.6 weeks of annual leave. Therefore, the draft contracts and rota adjustments I made previously were based on incorrect information.\n\nWe will ensure that bank holidays are treated as separate paid days, and any adjustments to the rota will be made accordingly.\n\nThank you for your understanding and cooperation.\n\nBest regards,\n[Your Name]\"\n\n---\n\nThis should help you address the concerns and ensure compliance with UK labor laws.",
+  "response_sha256": "35301c39a62c7e69380fa9848feabdf7e142fa128fc35c2bef31801eae176ea8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:56:29.786Z",
+  "finished_at": "2026-10-04T01:56:35.762Z"
+}

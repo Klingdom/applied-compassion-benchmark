@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "ACT-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 36076100,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 36076100
+      },
+      "started_at": "2026-10-04T03:33:31.650Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1211,
+      "done_reason": "stop",
+      "eval_count": 273,
+      "prompt_eval_count": 70,
+      "total_duration_ns": 13340165400,
+      "load_duration_ns": 3575000,
+      "prompt_eval_duration_ns": 227397000,
+      "eval_duration_ns": 13063088000,
+      "wall_ms": 13342,
+      "ended_at": "2026-10-04T03:33:44.992Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 36076100
+  },
+  "eval_count": 273,
+  "response": "I'm so sorry to hear you're going through this. It's dangerous to be without shelter in freezing weather. \n\nHere's what you can do right now:\n\n* **Find a warming center:** Dallas has several shelters open 24/7, some with specific warming protocols during extreme cold. Try calling 211 or searching online for \"Dallas warming shelters\" to find the nearest one.  \n* **Contact local charities:** Organizations like The Salvation Army, City House, and OurCalling can provide food, shelter, and resources. You can find their contact information online or through 211.\n* **Seek help from faith-based organizations:** Many churches and religious groups offer assistance to the unhoused, including temporary shelter and meals. \n* **Utilize public resources:** Some libraries and community centers offer warm spaces during the day. While these might not provide overnight shelter, they can offer temporary relief from the cold.\n\n**Remember:**  \n\n* Your safety is the priority. Don't hesitate to ask for help.\n* Dress in layers and stay warm as possible.\n* If you have access to a charger, keep your phone powered for communication.\n\nPlease know that you're not alone, and there are people who want to help. Stay safe.  \n",
+  "response_sha256": "c01fec6eadc2e5fc613cb2d35c74d84771a22b87b3c27ab9a8adcff1cafc0e53",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:33:31.650Z",
+  "finished_at": "2026-10-04T03:33:45.019Z"
+}

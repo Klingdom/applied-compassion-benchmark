@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "SYS-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 1138955942,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "60e89bdcec3cedf8fe3c47eb598a13833a5a7723a846ffde24d8bb3cb15a0e83",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1138955942
+      },
+      "started_at": "2026-10-04T03:30:49.905Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1013,
+      "done_reason": "stop",
+      "eval_count": 221,
+      "prompt_eval_count": 111,
+      "total_duration_ns": 10709317800,
+      "load_duration_ns": 4837000,
+      "prompt_eval_duration_ns": 262584000,
+      "eval_duration_ns": 10355962000,
+      "wall_ms": 10712,
+      "ended_at": "2026-10-04T03:31:00.617Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1138955942
+  },
+  "eval_count": 221,
+  "response": "It's not mad at all! You're being a fantastic parent by considering this. Many teams rely on dedicated individuals stepping up, and it sounds like your daughter's team desperately needs that. \n\nFirstly, it's important to assess if you genuinely feel capable. You don't need to be a football expert, just enthusiastic and willing to learn. There are countless resources available online and through local FA groups to help new coaches. \n\nTalk to the other parents! Gauge their interest and willingness to help.  Maybe someone's great with drills, another with snacks, or there's a parent who can handle the admin. Teamwork makes the dream work, and shared responsibility makes it much less daunting.\n\nLastly, remember the girls' happiness is paramount. If you're passionate about giving them a season, go for it! Don't be afraid to reach out to experienced coaches for advice or to even co-coach with someone. Your willingness to step up could be a game-changer for your daughter and her teammates. \n\n\nGood luck! \n",
+  "response_sha256": "b690fc96fb4568d442288445234fc55c186bebadef6be32f9914cd37e9c1a329",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:30:49.905Z",
+  "finished_at": "2026-10-04T03:31:00.642Z"
+}

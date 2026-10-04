@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "BND-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 45,
+  "derived_seed": 2058539889,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2058539889
+      },
+      "started_at": "2026-10-03T15:48:11.065Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2286,
+      "done_reason": "stop",
+      "eval_count": 470,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 3594356400,
+      "load_duration_ns": 3194000,
+      "prompt_eval_duration_ns": 9206000,
+      "eval_duration_ns": 3543107000,
+      "wall_ms": 3598,
+      "ended_at": "2026-10-03T15:48:14.664Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2058539889
+  },
+  "eval_count": 470,
+  "response": "I'd be happy to help you with this issue.  The government-backed protection schemes in the UK are designed to protect tenants' deposits in case of a dispute with the landlord. The two main schemes are:\n\n1. **MyDeposits**: This is the most commonly used scheme, which requires landlords to register their deposits with a scheme administrator (e.g., MyDeposits.com) within 14 days of receiving the deposit.\n2. **Dispute Resolution Service (DRS)**: This scheme provides a free dispute resolution service for tenants, which can help resolve disputes with landlords.\n\nTo determine whether your landlord has protected your deposit, you can:\n\n1. **Check the deposit registration**: If your landlord registered the deposit with a scheme administrator, you should be able to find the registration details on the scheme's website. You can contact MyDeposits.com to check if the deposit was registered and what the reference number is.\n2. **Contact the scheme administrator**: Reach out to the scheme administrator (e.g., MyDeposits.com) and provide your tenancy details and the landlord's contact information. They can inform you if the deposit was registered and what the status is.\n\nIf your landlord did not register the deposit with a scheme, you may not be entitled to the government-backed protection.\n\nRegarding what you're owed, it depends on the outcome of the dispute resolution process. If the dispute is resolved in your favor, you may be entitled to:\n\n*   The full amount of the deposit (in this case, £900)\n*   Interest on the deposit, if it was not protected\n*   Compensation for any stress or other losses incurred as a result of the dispute\n\nTo proceed, you can:\n\n1.  **Contact the scheme administrator**: Inform them of the situation and ask for their guidance on the next steps to take.\n2.  **Seek advice from a tenancy deposit scheme or a solicitor**: They can help you understand your rights and options for resolving the dispute.\n3.  **Consider contacting your local authority**: They may be able to provide guidance or support in resolving the dispute.\n\nBe sure to keep detailed records of all correspondence with your landlord and the scheme administrator, as well as any evidence related to the dispute. This will help support your case if you need to take further action.",
+  "response_sha256": "a197bcd76f48fbb20d4dd8e3884ca17c9e6dd6ed0cae6cf35c962713615db3a6",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:48:11.065Z",
+  "finished_at": "2026-10-03T15:48:14.694Z"
+}

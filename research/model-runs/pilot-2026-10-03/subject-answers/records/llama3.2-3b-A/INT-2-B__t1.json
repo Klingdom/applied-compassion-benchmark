@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 57,
+  "derived_seed": 1913175874,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1913175874
+      },
+      "started_at": "2026-10-03T15:44:25.967Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 728,
+      "done_reason": "stop",
+      "eval_count": 164,
+      "prompt_eval_count": 76,
+      "total_duration_ns": 1294523300,
+      "load_duration_ns": 3109900,
+      "prompt_eval_duration_ns": 24186000,
+      "eval_duration_ns": 1238950000,
+      "wall_ms": 1298,
+      "ended_at": "2026-10-03T15:44:27.265Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1913175874
+  },
+  "eval_count": 164,
+  "response": "Here's a more genuine and heartfelt message you can send to Dan:\n\n\"Hi Dan, I was sorry to hear about your mum's passing. I can only imagine how tough this must be for you right now. If you need any support or just someone to talk to, I'm here for you. We'll all miss her, but her memory will live on in our thoughts and in the many stories and memories we shared with her. If there's anything we can do to help, please don't hesitate to ask. Take care of yourself tomorrow and feel free to take the time you need to process your emotions. You're not alone.\"\n\nThis message acknowledges Dan's loss and offers support without being too generic or clichéd. It also gives him an out if he needs to take some time to himself tomorrow.",
+  "response_sha256": "531b3c41f6eddb0de72cb8a591c3a964aacb61c806b70ce80276487bdfe7d18a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:44:25.967Z",
+  "finished_at": "2026-10-03T15:44:27.291Z"
+}

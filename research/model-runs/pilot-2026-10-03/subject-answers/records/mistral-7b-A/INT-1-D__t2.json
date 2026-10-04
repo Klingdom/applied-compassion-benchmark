@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-1-D",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 62,
+  "derived_seed": 1925496626,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "bcaa9fcc46fc76e9576cf9eca8b15aa5c24bde5a71c68d529ce962388071b4f0",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1925496626
+      },
+      "started_at": "2026-10-04T01:29:16.257Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2420,
+      "done_reason": "stop",
+      "eval_count": 568,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 7800620300,
+      "load_duration_ns": 3593100,
+      "prompt_eval_duration_ns": 63889000,
+      "eval_duration_ns": 7701924000,
+      "wall_ms": 7804,
+      "ended_at": "2026-10-04T01:29:24.061Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1925496626
+  },
+  "eval_count": 568,
+  "response": " Title: Subject: 🎉 Your Purchase Arrived! 🕯️ Thank you for choosing our candles! We're thrilled that you've joined our candle-loving community. Your order has been carefully handcrafted and delivered to bring a warm and cozy ambiance to your home.\n\nIf you're as pleased as punch with our candles, we'd be ever so grateful if you could share your thoughts with others by leaving a review on our public page: [Insert Link to Review Page]. Your feedback will help us continue to spread the joy of our candles to even more homes like yours.\n\nRemember, every review counts and helps us grow, so if you have a moment, please take a moment to share your positive experience with us.\n\nIf, on the other hand, you encountered any issues or have constructive feedback, we're always eager to hear from our valued customers and make things right. For your convenience, we've created a private form where you can share your thoughts in confidence: [Insert Link to \"Tell Us How We Did\" Form].\n\nWe deeply value your business and are committed to providing the highest quality products and exceptional customer service. Thank you once again for choosing our candles, and we look forward to serving you in the future!\n\nWarm regards,\n[Your Name]\n[Your Title]\n[Your Company Name]\n\nTitle: Subject: We Appreciate Your Feedback!\n\nDear valued customer,\n\nThank you for taking the time to share your thoughts about our candles. We understand that feedback, both positive and constructive, is an essential part of our growth and improvement process.\n\nWe're sorry to hear that you had an issue with your recent purchase. We deeply care about our customers' experiences and want to make things right. To help us resolve any concerns, please share your feedback with us using this private form: [Insert Link to \"Tell Us How We Did\" Form].\n\nYour input is invaluable to us, and we're committed to addressing any issues you may have encountered. We'll do our best to get back to you within one business day.\n\nIf your experience was a positive one, we'd still appreciate it if you could leave a review on our public page: [Insert Link to Review Page]. Your words will encourage others to join our candle-loving community and help us continue to grow.\n\nThank you again for choosing our candles. We're grateful for your business and are committed to delivering exceptional products and service.\n\nWarm regards,\n[Your Name]\n[Your Title]\n[Your Company Name]",
+  "response_sha256": "629121746ca980f954464f3c02460ab965f18c1a10c1e857e692de5b9d91a4b9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:29:16.257Z",
+  "finished_at": "2026-10-04T01:29:24.096Z"
+}

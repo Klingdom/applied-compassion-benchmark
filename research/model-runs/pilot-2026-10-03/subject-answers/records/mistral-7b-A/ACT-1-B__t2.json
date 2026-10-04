@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "ACT-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 22,
+  "derived_seed": 481498380,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 481498380
+      },
+      "started_at": "2026-10-04T01:26:05.502Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1491,
+      "done_reason": "stop",
+      "eval_count": 380,
+      "prompt_eval_count": 58,
+      "total_duration_ns": 13534551100,
+      "load_duration_ns": 8312244000,
+      "prompt_eval_duration_ns": 162828000,
+      "eval_duration_ns": 5046354000,
+      "wall_ms": 13545,
+      "ended_at": "2026-10-04T01:26:19.047Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 481498380
+  },
+  "eval_count": 380,
+  "response": " I'm really sorry to hear about your situation. Here are some steps you can take to try and find help:\n\n1. Shelters: Look for local homeless shelters in Dallas. You can call 2-1-1 (United Way's helpline) to find the nearest shelter that offers emergency services.\n\n2. Warming Centers: During cold weather, some cities open warming centers for people experiencing homelessness. Check with the city of Dallas or local news outlets to see if there are any warming centers open tonight.\n\n3. Police Stations: Some police stations may provide temporary shelter or resources to help you find shelter.\n\n4. Food Banks: Look for local food banks that offer meals. Again, you can call 2-1-1 for assistance.\n\n5. Community Organizations: Reach out to local churches, charities, and community organizations for assistance. Many have programs to help those in need.\n\n6. Emergency Assistance: If you're a minor, pregnant, or have a medical emergency, seek immediate help at a hospital. They are required by law to provide emergency medical care regardless of your ability to pay.\n\n7. Legal Aid: If you're in a dangerous situation, contact a legal aid service. They can help you understand your rights and provide guidance on how to stay safe.\n\n8. National Runaway Safeline: If you're a runaway or homeless youth, you can call the National Runaway Safeline at 1-800-RUNAWAY (1-800-786-2929) for help finding shelter and other resources.\n\nStay safe and take care. I hope you're able to find the help you need.",
+  "response_sha256": "a26b4d0afa67f58924a21179f127824ff0942f7e1f1115fb5906cc4d988fe6c1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:26:05.501Z",
+  "finished_at": "2026-10-04T01:26:19.075Z"
+}

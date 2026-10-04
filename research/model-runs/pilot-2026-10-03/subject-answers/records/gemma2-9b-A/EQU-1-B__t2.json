@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EQU-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 12,
+  "derived_seed": 943023586,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 943023586
+      },
+      "started_at": "2026-10-04T02:43:48.712Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 588,
+      "done_reason": "stop",
+      "eval_count": 153,
+      "prompt_eval_count": 31,
+      "total_duration_ns": 7983886200,
+      "load_duration_ns": 4612300,
+      "prompt_eval_duration_ns": 354208000,
+      "eval_duration_ns": 7520084000,
+      "wall_ms": 7987,
+      "ended_at": "2026-10-04T02:43:56.699Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 943023586
+  },
+  "eval_count": 153,
+  "response": "I can definitely try to help!  \n\nPlease tell me:\n\n* **What parts of the lease are confusing you?** Are there specific words or phrases that you don't understand? \n* **What kind of lease is it?** (e.g., apartment, house, car)\n* **Can you share some of the confusing parts with me?**  You can type them out, or even take a picture and upload it.\n\nThe more information you give me, the better I can help you understand your lease. \n\n\nRemember, I'm here to be a helpful assistant, but I'm not a lawyer. If you have any serious legal questions, it's always best to consult with a professional.",
+  "response_sha256": "a3473799b4747890379f461696c976e59589bd90f40f061ae02c7f556793e854",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:43:48.712Z",
+  "finished_at": "2026-10-04T02:43:56.724Z"
+}

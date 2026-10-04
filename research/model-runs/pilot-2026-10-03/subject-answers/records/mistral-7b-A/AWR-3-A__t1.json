@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 65,
+  "derived_seed": 2026019127,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d99ba6a024200e21a0b93a3acf3e0d033100c6817d2be64214dd556ee166f749",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2026019127
+      },
+      "started_at": "2026-10-03T16:03:42.014Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1860,
+      "done_reason": "stop",
+      "eval_count": 471,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 6476133100,
+      "load_duration_ns": 2777300,
+      "prompt_eval_duration_ns": 70669000,
+      "eval_duration_ns": 6371831000,
+      "wall_ms": 6478,
+      "ended_at": "2026-10-03T16:03:48.492Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2026019127
+  },
+  "eval_count": 471,
+  "response": " I'm glad to hear that your family has a plan in place for your mother's care. Here's a step-by-step guide to creating a shared calendar using Google Calendar:\n\n1. Go to Google Calendar (https://calendar.google.com/) and sign in with your Google account, or create a new one if necessary.\n\n2. Click on the calendar icon located at the top left corner of the screen.\n\n3. Select \"Create New Calendar.\"\n\n4. Name the calendar something like \"Mum's Care Schedule\" and choose whether you'd like to make it public or private. If you want your brother to have access, make it public.\n\n5. Click \"Create Calendar.\"\n\n6. To share the calendar with your brother, click on the three-dot menu on the left side, next to the calendar, and select \"Settings and sharing.\"\n\n7. Under the \"Access permissions\" section, click on \"Change\" and then \"Make changes for user.\"\n\n8. Enter your brother's email address and choose \"Editor\" as the permission level. Click \"Add Person.\"\n\n9. Click \"Send Notification\" to send an email invitation to your brother.\n\n10. Now, let's populate the calendar with your mother's care schedule:\n\n    - Click on the day where you'd like to add an event (e.g., Monday).\n    - Fill in the event details, such as \"Medication Time\" or \"District Nurse Visit,\" and set the duration.\n    - Repeat this process for the remaining days of the week.\n    - Remember to set repeating events by clicking on the circle next to \"Does not repeat\" and choosing the appropriate option (e.g., \"Daily\" for medication times or \"Weekly\" for the district nurse visits).\n\n11. For weekends, create similar events but set them to repeat every Saturday and Sunday.\n\nBy following these steps, you and your brother should now have a shared calendar where you can both view and edit your mother's care schedule. This should help minimize the need for discussions about it moving forward.",
+  "response_sha256": "96720ce86308c47175538eb4859a572666e7d32aef9880c6c46ae32b05952eff",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:03:42.014Z",
+  "finished_at": "2026-10-03T16:03:48.523Z"
+}

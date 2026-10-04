@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 15,
+  "derived_seed": 883189677,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "fa9497459ab275555a71404fb4300317df1cd8b3e1145c880295bb9e434b0228",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 883189677
+      },
+      "started_at": "2026-10-03T15:50:58.702Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2391,
+      "done_reason": "stop",
+      "eval_count": 507,
+      "prompt_eval_count": 104,
+      "total_duration_ns": 3861767500,
+      "load_duration_ns": 2603300,
+      "prompt_eval_duration_ns": 30523000,
+      "eval_duration_ns": 3784956000,
+      "wall_ms": 3880,
+      "ended_at": "2026-10-03T15:51:02.582Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 883189677
+  },
+  "eval_count": 507,
+  "response": "Here's a sample one-page handout you can use to help patients remember to take their blood pressure medication correctly:\n\n**Taking Your Blood Pressure Medication: A Guide**\n\n**Why is it important to take your medication as prescribed?**\n\n* High blood pressure can cause serious health problems, such as heart attack, stroke, and kidney damage.\n* Taking your medication as prescribed helps to lower your blood pressure and reduce your risk of these problems.\n\n**How to take your blood pressure medication:**\n\n1. **Take it at the same time every day**: Try to take your medication at the same time every day, so it becomes a habit.\n2. **Take it with food and water**: Take your medication with a meal or snack, and a glass of water. This can help to reduce stomach upset.\n3. **Don't take it on an empty stomach**: Take your medication at least 30 minutes after eating, and at least 2 hours before bedtime.\n4. **Don't skip doses**: Take your medication as scheduled, even if you miss a meal. Skipping doses can lead to high blood pressure returning to its normal level.\n5. **Don't stop taking it suddenly**: If you need to stop taking your medication, talk to your doctor before stopping. Stopping suddenly can lead to high blood pressure returning to its normal level.\n\n**Additional tips:**\n\n* Ask a family member or friend to remind you to take your medication.\n* Set a reminder on your phone or calendar to take your medication at the same time every day.\n* Keep your medication in a safe and accessible place, so you can easily find it when it's time to take it.\n\n**What if I forget to take my medication?**\n\n* If you forget to take your medication, take it as soon as you remember.\n* If it's almost time for your next dose, skip the missed dose and take the next one at the usual time.\n* Don't take two doses at the same time to make up for a missed dose.\n\n**Remember:**\n\n* Your medication is an important tool in managing your high blood pressure.\n* By taking it as prescribed, you can help to lower your blood pressure and reduce your risk of serious health problems.\n\n**If you have any questions or concerns, talk to your doctor or pharmacist**.\n\nThis handout is designed to be simple, clear, and easy to understand. By highlighting the most important points and providing additional tips and reminders, you can help patients remember to take their blood pressure medication correctly.",
+  "response_sha256": "e2e97746fd13c88be58e543cc6eb1acf0499b35c585f493b669e41da3d2d2299",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:50:58.702Z",
+  "finished_at": "2026-10-03T15:51:02.611Z"
+}

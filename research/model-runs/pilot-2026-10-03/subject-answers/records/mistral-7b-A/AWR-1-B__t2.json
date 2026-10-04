@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 72,
+  "derived_seed": 829149247,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 829149247
+      },
+      "started_at": "2026-10-04T01:30:12.151Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1874,
+      "done_reason": "stop",
+      "eval_count": 440,
+      "prompt_eval_count": 67,
+      "total_duration_ns": 6058427400,
+      "load_duration_ns": 4991100,
+      "prompt_eval_duration_ns": 46971000,
+      "eval_duration_ns": 5951814000,
+      "wall_ms": 6070,
+      "ended_at": "2026-10-04T01:30:18.221Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 829149247
+  },
+  "eval_count": 440,
+  "response": " Title: Resignation Letter\n\n[Your Name]\n[Your Address]\n[City, State, ZIP]\n[Email Address]\n[Phone Number]\n[Today's Date]\n\n[Recipient's Name]\n[Recipient's Position]\n[Company Name]\n[Company Address]\n[City, State, ZIP]\n\nDear [Recipient's Name],\n\nI am writing to formally announce my resignation from [Company Name], effective [last working day, typically two weeks from the date of the letter]. I am grateful for the opportunity to have worked here for the past 11 years, but I have decided it is time for me to pursue new opportunities.\n\nDuring my tenure at the company, I have dedicated myself to my roles and have consistently strived for excellence. I have appreciated the support and guidance from my colleagues throughout these years. However, recent events have led me to reevaluate my professional growth and career aspirations.\n\nRegrettably, I have felt that my contributions have not been adequately recognized, as my work has sometimes been presented as if it were my manager's. Additionally, I was disappointed to have been passed over for promotion on two occasions, despite my efforts and dedication to the company. The recent announcement of the pay freeze has further reinforced my decision to seek new challenges.\n\nI am committed to making this transition as smooth as possible for the team and the company. I will do everything I can to ensure a seamless handover of my responsibilities. I am more than willing to help train a successor or work with you to determine the best approach to facilitate a smooth transition.\n\nI would like to express my appreciation for the opportunities and experiences I have gained during my time at [Company Name]. I am confident that my skills and knowledge will serve me well in my next endeavor.\n\nThank you for your understanding, and I look forward to discussing the details of my departure with you.\n\nSincerely,\n[Your Name]",
+  "response_sha256": "34f91b7fd8db3c0783d02e06d9a184ef3f568dd07558cc005766f9285742eae8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:30:12.151Z",
+  "finished_at": "2026-10-04T01:30:18.248Z"
+}

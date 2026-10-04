@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 59,
+  "derived_seed": 81305783,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 81305783
+      },
+      "started_at": "2026-10-03T15:53:33.773Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 891,
+      "done_reason": "stop",
+      "eval_count": 180,
+      "prompt_eval_count": 138,
+      "total_duration_ns": 1732072300,
+      "load_duration_ns": 10860000,
+      "prompt_eval_duration_ns": 11043000,
+      "eval_duration_ns": 1480336000,
+      "wall_ms": 1743,
+      "ended_at": "2026-10-03T15:53:35.516Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 81305783
+  },
+  "eval_count": 180,
+  "response": "I can help you craft a concise and clear message for the board slide. Here's a suggestion:\n\n\"Shift start: 5:30am (previously 6am)\n\n Broad support for this change has been expressed by 87% of staff who have responded to our survey. The main rationale cited is the need for more time for personal care and childcare arrangements, particularly for single parents and staff on the packing line. Staff are encouraged to share their thoughts and feedback on this change.\"\n\nAlternatively, you could use a more concise version:\n\n\"Shift start: 5:30am (previously 6am)\n\n Broad support (87%) citing improved work-life balance and childcare arrangements. We value your feedback and encourage continued discussion on this change.\"\n\nBoth options aim to convey the key points from the survey in a clear and concise manner, while also acknowledging the potential concerns and encouraging further discussion.",
+  "response_sha256": "6ee9d127619bb864669c50c7653747c66885457402dc9be3bf57c20a80271fdf",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:53:33.773Z",
+  "finished_at": "2026-10-03T15:53:35.548Z"
+}

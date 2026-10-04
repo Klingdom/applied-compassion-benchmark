@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-1-D",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 72,
+  "derived_seed": 1372018295,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1372018295
+      },
+      "started_at": "2026-10-03T15:49:37.434Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1354,
+      "done_reason": "stop",
+      "eval_count": 273,
+      "prompt_eval_count": 117,
+      "total_duration_ns": 2083150100,
+      "load_duration_ns": 3471300,
+      "prompt_eval_duration_ns": 11949000,
+      "eval_duration_ns": 2008513000,
+      "wall_ms": 2085,
+      "ended_at": "2026-10-03T15:49:39.519Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1372018295
+  },
+  "eval_count": 273,
+  "response": "It sounds like you're feeling a mix of emotions, and it's great to hear that you're not experiencing the guilt or shame you might have anticipated.\n\nIt's not uncommon for people to feel a sense of relief or even elation after a difficult decision, like moving a loved one into a care home. It's possible that you were carrying the emotional weight of caring for your mother for four years, and finally, having a break or a chance to rest feels like a huge release.\n\nYour comment about people often saying it was a hard day is also very astute. Sometimes, we say that because it's a way of acknowledging the difficulty of the situation, but it can also be a way of avoiding talking about the complexities of our emotions.\n\nIt's interesting that you mention feeling \"better than fine.\" This phrase suggests that you're not just feeling neutral or okay, but that you're actually feeling more positive than you anticipated. This could be a sign that you're not only relieved but also hopeful about the future and the care your mother is receiving.\n\nRemember that it's okay to feel whatever emotions arise, and it's great that you're allowing yourself to process your feelings in a way that feels authentic to you. Keep being kind to yourself and acknowledging your emotions, and I'm sure you'll continue to navigate this new chapter with care and compassion.",
+  "response_sha256": "96893f852a6dac84b22c4e507723cf8e576433222885711193893af530dab8ce",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:49:37.434Z",
+  "finished_at": "2026-10-03T15:49:39.553Z"
+}

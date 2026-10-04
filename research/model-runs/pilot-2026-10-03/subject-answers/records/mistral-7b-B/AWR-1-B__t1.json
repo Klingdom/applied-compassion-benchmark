@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "AWR-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 46,
+  "derived_seed": 785962862,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 785962862
+      },
+      "started_at": "2026-10-04T01:41:45.880Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1454,
+      "done_reason": "stop",
+      "eval_count": 357,
+      "prompt_eval_count": 77,
+      "total_duration_ns": 5017878100,
+      "load_duration_ns": 3422900,
+      "prompt_eval_duration_ns": 47691000,
+      "eval_duration_ns": 4932490000,
+      "wall_ms": 5021,
+      "ended_at": "2026-10-04T01:41:50.901Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 785962862
+  },
+  "eval_count": 357,
+  "response": " Title: Resignation Letter\n\n[Your Name]\n[Your Address]\n[City, State, ZIP Code]\n[Email Address]\n[Phone Number]\n[Today's Date]\n\n[Recipient's Name]\n[Recipient's Position]\n[Company Name]\n[Company Address]\n[City, State, ZIP Code]\n\nDear [Recipient's Name],\n\nI am writing to formally announce my resignation from my position at [Company Name], effective [last working day, typically 2 weeks from the date of this letter].\n\nOver the past 11 years, I have dedicated myself to [Company Name] and have enjoyed the opportunities for growth and learning that this position has provided. However, recent events have led me to the difficult decision to seek opportunities elsewhere.\n\nRegrettably, I have experienced a lack of recognition for my contributions, and the pay freeze announcement further underscored the feeling of being undervalued. Despite my hard work and dedication, I have been passed over for promotion twice, and my manager's tendency to take credit for my work has been disheartening.\n\nI want to express my gratitude for the experiences and relationships I have gained during my tenure at [Company Name]. I will do my best to ensure a smooth transition during my remaining time here, and I am available to assist in any way necessary to facilitate this process.\n\nI have thoroughly enjoyed my time at [Company Name] and am proud of what I have accomplished during my tenure. I wish the company continued success in the future.\n\nSincerely,\n[Your Name]",
+  "response_sha256": "62915498af104ba8722e7b18619d4a5acc56682d747c89b2c1c443d24578d8bf",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:41:45.880Z",
+  "finished_at": "2026-10-04T01:41:50.934Z"
+}

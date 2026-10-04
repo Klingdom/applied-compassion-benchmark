@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 586500606,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e5a4ada379c57ec9fc59bd8984ff93f7e6995e89fd8dda7db5a2575cb2a1ca53",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 586500606
+      },
+      "started_at": "2026-10-03T15:42:29.795Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2149,
+      "done_reason": "stop",
+      "eval_count": 453,
+      "prompt_eval_count": 133,
+      "total_duration_ns": 3504248100,
+      "load_duration_ns": 3124100,
+      "prompt_eval_duration_ns": 48999000,
+      "eval_duration_ns": 3424050000,
+      "wall_ms": 3518,
+      "ended_at": "2026-10-03T15:42:33.313Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 586500606
+  },
+  "eval_count": 453,
+  "response": "I can sense the frustration and disappointment you're feeling right now. It's unacceptable for someone to leave a job in such a way, especially after you've invested time and effort into training them. It's even more hurtful that they've already started at a new job just three months after quitting.\n\nIt's not just the sudden departure that's the issue, but also the fact that you've been supporting them during a difficult time (their daughter's hospitalization) and they didn't even have the decency to give you some notice or a word of explanation.\n\nAs you're replaying the situation in your head, I want you to know that you're not alone. Many people in your shoes are wondering how someone could be so selfish and inconsiderate. It's natural to feel hurt, angry, and disappointed.\n\nHowever, it's also an opportunity to reflect on your own well-being and what you need to take care of yourself. You've been putting in 15-hour days, and that's taking a toll on your physical and mental health. Perhaps it's time to reassess your work-life balance and prioritize your own needs.\n\nConsider taking some time off to recharge and focus on yourself. You deserve it. You've earned it. Remember all the hard work you've put into training your former employee, and how they repaid you with such disrespect. You can't control how others behave, but you can control how you respond to the situation.\n\nAs you move forward, take comfort in knowing that you're not defined by one person's behavior. You're a skilled and capable cook with a lot to offer. You've built a reputation, and that's something to be proud of. Don't let someone else's actions bring you down. Instead, focus on building a positive and supportive network of colleagues, friends, and family who will lift you up.\n\nLastly, consider having a conversation with your manager or HR department (if your workplace has one) about the situation. They may be able to offer guidance, support, or help you find a new employee who will be a better fit for your restaurant.\n\nKeep in mind that you're strong, capable, and deserving of respect. Don't let someone else's behavior take that away from you.",
+  "response_sha256": "05e453aa9b701e730eb708603417f0a6970832fb289c556871eb49e5e4c4fb18",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:42:29.795Z",
+  "finished_at": "2026-10-03T15:42:33.347Z"
+}

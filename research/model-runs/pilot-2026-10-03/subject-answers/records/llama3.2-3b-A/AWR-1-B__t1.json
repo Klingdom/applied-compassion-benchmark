@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 79,
+  "derived_seed": 1978803426,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1978803426
+      },
+      "started_at": "2026-10-03T15:45:33.358Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2184,
+      "done_reason": "stop",
+      "eval_count": 443,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 3468425300,
+      "load_duration_ns": 7240400,
+      "prompt_eval_duration_ns": 25524000,
+      "eval_duration_ns": 3393234000,
+      "wall_ms": 3472,
+      "ended_at": "2026-10-03T15:45:36.830Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1978803426
+  },
+  "eval_count": 443,
+  "response": "I can help you write a resignation letter. Here's a sample template you can use as a starting point:\n\n[Your Name]\n[Your Address]\n[City, State ZIP Code]\n[Date]\n\n[Manager's Name]\n[Manager's Title]\n[Company Name]\n[Company Address]\n[City, State ZIP Code]\n\nDear [Manager's Name],\n\nPlease accept this letter as formal notice of my resignation from my position as [Your Position] at [Company Name], effective [Date of Last Day of Work].\n\nIt has been 11 years since I joined the company, and I have always been committed to delivering high-quality work and contributing to the team's success. However, over the past few years, I have faced numerous challenges that have made it difficult for me to continue in this role.\n\nUnfortunately, I have consistently felt undervalued and unappreciated, with my contributions often being taken credit for by others. Despite my efforts to address these issues with you and the company, I have not seen sufficient changes to improve the situation. Furthermore, I was disappointed to learn that the company has implemented a pay freeze, which is a concerning development for any employee.\n\nAdditionally, I had hoped to have been considered for promotion on multiple occasions, but unfortunately, I was passed over. This lack of recognition and opportunities for growth has made it clear that it is time for me to move on.\n\nI want to thank the colleagues and friends I have made during my time at [Company Name]. I appreciate the support and camaraderie I have received from them, and I am grateful for the experiences and skills I have gained while working here.\n\nI will do everything possible to ensure a smooth transition of my responsibilities and complete any outstanding tasks before my departure. If there is anything specific you would like me to focus on during my remaining time here, please let me know.\n\nThank you again for the opportunity to work at [Company Name]. I wish the company all the best in the future.\n\nSincerely,\n\n[Your Signature]\n[Your Name]\n\nPlease feel free to modify this template to fit your personal style and circumstances. Remember to keep the tone professional and avoid burning any bridges. Good luck with your transition!",
+  "response_sha256": "405a6d8d7f6a3c1d2a0394b054f7bd68306c839657d9293bf9196916e6da062f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:45:33.358Z",
+  "finished_at": "2026-10-03T15:45:36.860Z"
+}

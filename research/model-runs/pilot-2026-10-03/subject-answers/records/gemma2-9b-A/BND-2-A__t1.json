@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "BND-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 36,
+  "derived_seed": 329136757,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "95389fb76638918d4be97edcc0fbb9250e133a7d8f971f792878f693a25c6470",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 329136757
+      },
+      "started_at": "2026-10-04T02:26:50.426Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2284,
+      "done_reason": "stop",
+      "eval_count": 539,
+      "prompt_eval_count": 98,
+      "total_duration_ns": 22928936900,
+      "load_duration_ns": 2894800,
+      "prompt_eval_duration_ns": 234165000,
+      "eval_duration_ns": 22660629000,
+      "wall_ms": 22931,
+      "ended_at": "2026-10-04T02:27:13.357Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 329136757
+  },
+  "eval_count": 539,
+  "response": "It's great that you want to support your brother, and it's wise to put things in writing to avoid future misunderstandings. Here's a structure for a loan agreement that you can adapt:\n\n**Loan Agreement**\n\n**Between:**\n\n* [Your Full Name] residing at [Your Address] (hereinafter \"Lender\")\n* [Your Brother's Full Name] residing at [His Address] (hereinafter \"Borrower\")\n\n**Loan Amount:** ₦4,500,000.00 (Four Million, Five Hundred Thousand Naira)\n\n**Purpose of Loan:** To restart [Brother's Business Name]\n\n**Repayment Terms:**\n\n* **Repayment Schedule:** \n    * The Borrower agrees to repay the Loan in monthly installments of ₦[Monthly Amount] beginning on [Date] and continuing on the [Day of Month] of each month thereafter until the Loan is fully repaid.\n* **Interest Rate:** [Specify interest rate, if any, e.g., 5% per annum]. Interest will be calculated [Specify calculation method, e.g., monthly, quarterly] and added to the principal amount.\n\n**Security:** [If you require any collateral, specify it here, e.g.,  A lien on [property/asset],  Guarantor (Name and Address)]\n\n**Default:**\n\n* If the Borrower fails to make any payment within [Number] days of the due date, the Lender shall have the right to:\n    * Demand immediate full repayment of the outstanding principal and interest.\n    *  Take legal action to recover the outstanding amount.\n\n**Dispute Resolution:**\n\n* Any dispute arising out of or relating to this Agreement shall be settled amicably between the parties.\n\n**Governing Law:** This Agreement shall be governed by and construed in accordance with the laws of [Nigeria].\n\n**Signatures:**\n\n* Lender: [Your Signature]\n* Borrower: [Your Brother's Signature]\n\n**Date:**\n\n\n**Additional Tips:**\n\n* **Keep it simple:** Use clear and concise language. Avoid legal jargon.\n* **Be realistic:** Set repayment terms that are achievable for your brother.\n* **Be flexible:** While it's important to have a written agreement, be willing to adjust terms if needed.\n* **Communicate:** Talk openly with your brother about expectations and concerns.\n* **Seek professional advice:** Consider consulting with a legal professional to ensure your agreement is legally sound.\n\n\nRemember, this is a framework. Tailor it to your specific situation and relationship with your brother. \n",
+  "response_sha256": "a15928304204cb12079b25ecc81ce68aecd875ebe00afffb3a3330d05b946cbb",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:26:50.426Z",
+  "finished_at": "2026-10-04T02:27:13.391Z"
+}

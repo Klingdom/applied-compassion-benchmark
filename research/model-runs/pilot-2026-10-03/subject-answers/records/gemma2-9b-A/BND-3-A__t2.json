@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "BND-3-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 23,
+  "derived_seed": 374794475,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 374794475
+      },
+      "started_at": "2026-10-04T02:47:05.969Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1749,
+      "done_reason": "stop",
+      "eval_count": 399,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 18629875700,
+      "load_duration_ns": 5326800,
+      "prompt_eval_duration_ns": 253586000,
+      "eval_duration_ns": 18259718000,
+      "wall_ms": 18632,
+      "ended_at": "2026-10-04T02:47:24.601Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 374794475
+  },
+  "eval_count": 399,
+  "response": "I understand your frustration! It's stressful when a landlord doesn't return your deposit on time.  \n\nUnfortunately, I can't directly access information about your deposit or whether it was protected. I'm a text-based AI and don't have access to real-time databases or personal records.\n\n**Here's what I can suggest to help you find out:**\n\n1. **Check your tenancy agreement:** Your tenancy agreement should state if a deposit protection scheme was used and which one. Look for clauses about the deposit, its protection, and how it will be returned.\n2. **Contact the government's tenancy deposit scheme:** You can use the government's online tool to check if your deposit was protected: [https://www.gov.uk/find-your-deposit-protection-certificate](https://www.gov.uk/find-your-deposit-protection-certificate) You'll need your tenancy start date, address, and some other details. \n3. **Contact a Citizens Advice Bureau:** They can offer free, impartial advice on your rights and options regarding your deposit. You can find your local CAB here: [https://www.citizensadvice.org.uk/](https://www.citizensadvice.org.uk/)\n4. **Send a formal letter:** Write a formal letter to your landlord reminding them of your deposit and requesting its return. Keep a copy of the letter for your records.\n5. **Consider using a mediation service:** If you can't resolve the issue directly with your landlord, a mediation service can help you reach an agreement.\n\n**Remember:** You are entitled to have your deposit returned within 30 days of leaving your tenancy, minus any deductions for damages or unpaid rent. If your landlord continues to ignore you, you may need to take legal action to recover your deposit.\n\n\nGood luck! I hope you get your deposit back soon. \n",
+  "response_sha256": "f32f338c988443ab4bc94a81b5a3074b2005f6c09059ed57ba4c880909a2a274",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:47:05.969Z",
+  "finished_at": "2026-10-04T02:47:24.630Z"
+}

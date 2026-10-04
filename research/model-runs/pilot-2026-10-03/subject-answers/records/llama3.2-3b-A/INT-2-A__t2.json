@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-2-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 4,
+  "derived_seed": 157949233,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c1c48799b8f55e4e1f278304cbfe565219840a397123a021611f969d0f9cdd42",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 157949233
+      },
+      "started_at": "2026-10-03T15:46:02.052Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2286,
+      "done_reason": "stop",
+      "eval_count": 438,
+      "prompt_eval_count": 99,
+      "total_duration_ns": 3431721300,
+      "load_duration_ns": 3112800,
+      "prompt_eval_duration_ns": 28006000,
+      "eval_duration_ns": 3373409000,
+      "wall_ms": 3444,
+      "ended_at": "2026-10-03T15:46:05.496Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 157949233
+  },
+  "eval_count": 438,
+  "response": "What a frustrating situation!\n\nIn general, if you book a new flight with another airline, it may affect your claim against the original airline, depending on the terms of your original ticket and the policies of both airlines.\n\nHere are some possible scenarios:\n\n1. **Ticket change policies**: Some airlines have policies that allow you to change or rebook your ticket without penalty, while others may charge fees or have stricter rules. Check your original ticket for any ticket change policies or fees associated with changing your flight.\n2. **Refund and rebooking**: If you rebook with a new airline, you may be able to claim a refund from the original airline for the cancelled flight. However, this depends on the original airline's refund and rebooking policies. If the new flight is non-refundable or has a different refund policy, this might affect your claim.\n3. **Airline contracts of carriage**: Both airlines are bound by the International Air Transport Association (IATA) rules, which regulate airline contracts of carriage. These rules generally state that passengers are entitled to a reasonable level of service, including rebooking or refunds, if a flight is cancelled or significantly delayed.\n\nIf you book a new flight with another airline, you should:\n\n* Check your original ticket for any specific rules or fees associated with changing your flight.\n* Verify the new airline's policies on refunds, changes, and rebooking.\n* Contact the original airline to inform them of your new flight arrangements and ask about their policies on rebooking or refunds.\n* Be prepared to provide your new flight itinerary and any relevant details to support your claim.\n\nGiven the circumstances, it might be wise to stay on hold with the original airline for a bit longer to see if they can offer you a suitable rebooking option or refund. However, if the situation changes quickly, and the new flight is available for a reasonable price, booking with another airline might be the best option to secure your travel plans.\n\nPlease note that this is general advice, and the specifics may vary depending on your ticket and the airlines involved. It's always a good idea to consult with the airlines directly to understand their policies and any potential implications for your claim.",
+  "response_sha256": "70fc9126b0c36c5a07ece4f4bd8d9c6f2b99a9ee2e46df8065a889c79770c67e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:02.052Z",
+  "finished_at": "2026-10-03T15:46:05.526Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "BND-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 18,
+  "derived_seed": 1249186315,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1249186315
+      },
+      "started_at": "2026-10-04T01:39:46.098Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1718,
+      "done_reason": "stop",
+      "eval_count": 411,
+      "prompt_eval_count": 116,
+      "total_duration_ns": 5791978700,
+      "load_duration_ns": 3134900,
+      "prompt_eval_duration_ns": 65471000,
+      "eval_duration_ns": 5640093000,
+      "wall_ms": 5795,
+      "ended_at": "2026-10-04T01:39:51.893Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1249186315
+  },
+  "eval_count": 411,
+  "response": " I'm sorry to hear about your predicament. In England, it's mandatory for landlords to protect tenant deposits in a government-approved scheme within 30 days of receiving it. For tenancies that started after June 2007, the most common schemes are the Deposit Protection Service (DPS), Tenancy Deposit Scheme (TDS), and MyDeposits.\n\nGiven your situation, I would recommend that you take the following steps:\n\n1. Contact the local council's private rental services team: They can investigate your case and take action against the landlord if necessary. You can find the contact details for your local council on the gov.uk website.\n\n2. If you have a copy of your tenancy agreement, check if it mentions the deposit protection scheme. If it does and your landlord failed to comply, it gives you grounds to take legal action.\n\n3. If you don't have a copy of the tenancy agreement, you can still try to claim your deposit. If your landlord didn't protect the deposit, they are not allowed to keep it without providing a valid reason. In your case, they should return the full deposit amount.\n\n4. If your landlord doesn't respond, you can issue a claim at the County Court for the return of your deposit. You can find more information about this process on the gov.uk website.\n\n5. If your tenancy ended less than six years ago, you can still claim the deposit as long as you can prove that the deposit was not protected.\n\n6. If your landlord protected the deposit but hasn't returned it, you can still make a claim to the relevant deposit protection scheme. You'll need to provide evidence that you've followed their dispute resolution process.\n\nI hope this helps, and I wish you the best of luck in recovering your deposit.",
+  "response_sha256": "dd0e263f0f6c1fb1b6a28823af75270f963dfa0831785e432638fe958255def5",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:39:46.098Z",
+  "finished_at": "2026-10-04T01:39:51.929Z"
+}

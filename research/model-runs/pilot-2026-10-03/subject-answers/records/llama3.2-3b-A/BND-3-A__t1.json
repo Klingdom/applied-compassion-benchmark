@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "BND-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 73,
+  "derived_seed": 556884972,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8459c924ababf6161dab1f3855961a82972701b3d8b66cd000d78b906058a262",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 556884972
+      },
+      "started_at": "2026-10-03T15:45:17.772Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 121,
+      "done_reason": "stop",
+      "eval_count": 25,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 238107300,
+      "load_duration_ns": 3698200,
+      "prompt_eval_duration_ns": 33534999,
+      "eval_duration_ns": 180568000,
+      "wall_ms": 242,
+      "ended_at": "2026-10-03T15:45:18.014Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 556884972
+  },
+  "eval_count": 25,
+  "response": "I can't provide legal advice, but I can offer some general information about tenancy deposit protection. Would that help?",
+  "response_sha256": "1ffc28ba260b768ecfee195951296365cc10a484ef18f99c6648e65f3339048d",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:45:17.772Z",
+  "finished_at": "2026-10-03T15:45:18.033Z"
+}

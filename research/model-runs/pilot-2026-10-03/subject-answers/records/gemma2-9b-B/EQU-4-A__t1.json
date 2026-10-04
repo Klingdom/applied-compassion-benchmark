@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EQU-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 2,
+  "derived_seed": 1673609082,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "09f0c2655fcc12420540b48fa00c2eaf0fc532c44c22be63dccf0353f15c9c8a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1673609082
+      },
+      "started_at": "2026-10-04T03:29:44.782Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1598,
+      "done_reason": "stop",
+      "eval_count": 324,
+      "prompt_eval_count": 101,
+      "total_duration_ns": 15495614900,
+      "load_duration_ns": 3260500,
+      "prompt_eval_duration_ns": 248646000,
+      "eval_duration_ns": 15176046000,
+      "wall_ms": 15498,
+      "ended_at": "2026-10-04T03:30:00.280Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1673609082
+  },
+  "eval_count": 324,
+  "response": "This is a difficult situation, but there are steps you can take to help your mom.  \n\n**1. Immediate Contact:** Call your mom immediately to understand the situation fully.  Find out exactly what type of housing assistance was cut and why.  \n\n**2. Translation Support:**  \n\n* Contact a local community center or social service agency that provides Cantonese translation services. They can help your mom understand the letter and explain the appeal process.  \n* Explore online translation tools like Google Translate, but remember these aren't perfect and it's best to have a human translator verify important information.\n\n**3. Appeal Assistance:**\n\n* **Contact the housing agency directly:** Explain the situation and ask for assistance in filing an appeal. Many agencies offer phone support and can guide your mom through the process.\n* **Look for legal aid:** Many areas offer free or low-cost legal aid for seniors facing housing issues. A legal aid lawyer can help your mom file a strong appeal.\n* **Community Organizations:** Contact local organizations that assist seniors. They may have resources, volunteers, or staff who can help with translation and appeal preparation. \n\n**4. Logistics:**  \n\n* **Access a computer:** Help your mom find a place with internet access and a printer to complete the appeal form, such as a library or community center. \n* **Gather supporting documents:** Help your mom gather any documents that support her case, such as income statements or medical records.\n\n\nRemember, time is of the essence. Act quickly to connect your mom with the resources she needs.  \n",
+  "response_sha256": "e536680b3737de30402f0080df3dcf3854804aec83b01bd80e69fdab7e1ce074",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:29:44.782Z",
+  "finished_at": "2026-10-04T03:30:00.311Z"
+}

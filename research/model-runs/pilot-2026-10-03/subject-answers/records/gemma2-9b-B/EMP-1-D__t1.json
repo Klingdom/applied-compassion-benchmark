@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EMP-1-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 65,
+  "derived_seed": 1307682700,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1307682700
+      },
+      "started_at": "2026-10-04T03:42:23.907Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1017,
+      "done_reason": "stop",
+      "eval_count": 221,
+      "prompt_eval_count": 112,
+      "total_duration_ns": 10324403300,
+      "load_duration_ns": 3899600,
+      "prompt_eval_duration_ns": 253241000,
+      "eval_duration_ns": 9987842000,
+      "wall_ms": 10327,
+      "ended_at": "2026-10-04T03:42:34.234Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1307682700
+  },
+  "eval_count": 221,
+  "response": "It’s completely understandable that you're feeling a sense of relief and even lightness after such a significant transition.  Four years is a long time to provide care for a loved one, and it can be incredibly emotionally and physically draining. \n\nIt's normal to feel a range of emotions after such a major life change.  You've likely been carrying a lot of responsibility and stress for years, so it's natural to feel a sense of freedom and even joy now that those burdens have lessened. Don't feel pressured to feel guilty or sad – your feelings are valid.  \n\nIt's okay to acknowledge the relief you're experiencing, even if it feels a bit counterintuitive.  Allow yourself to feel this positive shift.  Remember, you made a difficult but loving decision to ensure your mother receives the best possible care.  \n\nFocus on self-care and healing during this time.  Explore new hobbies, reconnect with friends, or simply enjoy the newfound quiet and space in your home. This is a time to prioritize your well-being. \n",
+  "response_sha256": "5cb6d099d61999489fe7c56c0b243cfc02a019912ab9bd8908078dc212bbc56c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:42:23.907Z",
+  "finished_at": "2026-10-04T03:42:34.264Z"
+}

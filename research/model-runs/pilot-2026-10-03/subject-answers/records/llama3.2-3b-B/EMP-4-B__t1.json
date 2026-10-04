@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "EMP-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 48,
+  "derived_seed": 230451113,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "891c923901f0073bdbfef4f610933ece5b0697a3c829bf8e63a8349359471d9d",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 230451113
+      },
+      "started_at": "2026-10-03T15:56:52.025Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1196,
+      "done_reason": "stop",
+      "eval_count": 236,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 1835726900,
+      "load_duration_ns": 2694300,
+      "prompt_eval_duration_ns": 33351000,
+      "eval_duration_ns": 1774099000,
+      "wall_ms": 1845,
+      "ended_at": "2026-10-03T15:56:53.870Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 230451113
+  },
+  "eval_count": 236,
+  "response": "It can be frustrating and demotivating when you feel like your concerns aren't being taken seriously. Your mate's suggestion to \"let it go\" might be well-intentioned, but it's understandable that you're struggling with whether to do so. The fact that HR has already concluded that there's \"no evidence of differential treatment\" doesn't necessarily mean that your concerns are unfounded.\n\nIt's possible that your mate didn't fully consider the impact of your overtime being queried on your workload and stress levels. Just because others on your shift didn't experience the same issues, it doesn't mean that you were treated differently. You can't help but wonder if you're being singled out or if there's a systemic problem that's not being addressed.\n\nRather than dismissing your concerns, you might consider having a calm and rational conversation with your mate about why you feel the need to document and share your experiences. Explain how the querying of your overtime has affected your work and your mental health, and see if they can offer a more nuanced understanding of the situation. It's okay to advocate for yourself and your concerns, even if others don't see it in the same light.",
+  "response_sha256": "dcc6de6bb88854bed5a635c42e017af3cc6b7514fd8a738f758c1d9ead1d10e7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:52.025Z",
+  "finished_at": "2026-10-03T15:56:53.899Z"
+}

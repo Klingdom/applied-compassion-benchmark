@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "BND-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 9,
+  "derived_seed": 666605452,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "95389fb76638918d4be97edcc0fbb9250e133a7d8f971f792878f693a25c6470",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 666605452
+      },
+      "started_at": "2026-10-04T01:45:58.431Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 4919,
+      "done_reason": "stop",
+      "eval_count": 1212,
+      "prompt_eval_count": 99,
+      "total_duration_ns": 17040244200,
+      "load_duration_ns": 3129200,
+      "prompt_eval_duration_ns": 58598000,
+      "eval_duration_ns": 16955144000,
+      "wall_ms": 17043,
+      "ended_at": "2026-10-04T01:46:15.474Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 666605452
+  },
+  "eval_count": 1212,
+  "response": "Writing down the terms of the loan can help ensure clarity and reduce potential misunderstandings. Here’s a step-by-step guide to help you draft a simple, clear loan agreement:\n\n### 1. **Title and Parties**\n   - **Title:** Loan Agreement\n   - **Parties:**\n     - **Lender:** Your name\n     - **Borrower:** Your brother’s name\n\n### 2. **Date and Amount**\n   - **Date:** [Insert the current date]\n   - **Amount:** ₦4,500,000 (Four million five hundred thousand Naira only)\n\n### 3. **Purpose of the Loan**\n   - **Purpose:** To support the restart of the logistics business.\n\n### 4. **Repayment Terms**\n   - **Repayment Method:** [Specify whether it will be in lump sum or installments, e.g., monthly installments of ₦X for Y months.]\n   - **Repayment Schedule:** [Specify the due dates and amounts for each installment.]\n   - **Grace Period:** [If applicable, specify a grace period before interest or penalties start accruing.]\n\n### 5. **Interest Rate and Late Fees**\n   - **Interest Rate:** [Specify the interest rate if applicable, e.g., 5% per annum.]\n   - **Late Fees:** [Specify any late fees, e.g., ₦X for each day the payment is late.]\n\n### 6. **Default Provisions**\n   - **Default:** If the Borrower fails to make timely payments, the Lender may charge late fees or other penalties.\n   - **Remedies:** The Lender may declare the full amount due and payable, or any other remedies as may be provided by law.\n\n### 7. **Security (if applicable)**\n   - **Security:** [Specify if any collateral or security is provided, e.g., property, assets, etc.]\n\n### 8. **Confidentiality and Dispute Resolution**\n   - **Confidentiality:** The terms of this agreement are confidential and should not be disclosed without the consent of both parties.\n   - **Dispute Resolution:** Any disputes arising from this agreement will be resolved through [mediation/arbitration] or by [court proceedings] in [the jurisdiction].\n\n### 9. **Termination**\n   - **Termination:** Either party may terminate this agreement with [specify notice period, e.g., 30 days written notice].\n\n### 10. **Signatures and Witnesses**\n   - **Signatures:** \n     - **Lender:** [Your Name] \n     - **Borrower:** [Your Brother’s Name]\n   - **Witnesses:** [Optional, if you want to have witnesses for additional validation]\n\n### 11. **Notarization (Optional)**\n   - **Notarization:** If you choose to have the agreement notarized, include the notary’s details and signature.\n\n### Sample Agreement\n\n```plaintext\nLOAN AGREEMENT\n\nThis Loan Agreement (\"Agreement\") is made on [Insert Date] by and between:\n1. LENDER: [Your Full Name]\n2. BORROWER: [Your Brother’s Full Name]\n\nWHEREAS, the Lender agrees to lend the sum of ₦4,500,000 (Four million five hundred thousand Naira only) to the Borrower for the purpose of restarting the logistics business; and\n\nWHEREAS, the Borrower agrees to repay the Lender the principal amount with interest, as set forth herein.\n\nNOW, THEREFORE, the parties agree as follows:\n\n1. **Amount of Loan:**\n   - The Lender agrees to lend the sum of ₦4,500,000 (Four million five hundred thousand Naira only) to the Borrower.\n\n2. **Purpose:**\n   - The funds will be used solely for the restart of the logistics business.\n\n3. **Repayment Terms:**\n   - The Borrower agrees to repay the principal amount in installments of ₦X (specify amount) per [month/quarter] for [number of months/quarters].\n   - The first installment is due on [insert date].\n   - Any late payments will incur a late fee of ₦X per day.\n\n4. **Interest Rate:**\n   - The loan will carry an interest rate of [specify percentage] per annum, payable in arrears.\n\n5. **Default:**\n   - In the event of a default, the Lender may declare the full amount due and payable immediately.\n\n6. **Confidentiality and Dispute Resolution:**\n   - This Agreement is confidential and any disputes will be resolved through [mediation/arbitration] or by [court proceedings] in [specify jurisdiction].\n\n7. **Termination:**\n   - Either party may terminate this Agreement with 30 days written notice.\n\n8. **Signatures:**\n   - [Your Full Name]\n   - [Your Brother’s Full Name]\n   - Witnesses: [Optional]\n   - Notary: [Optional, if notarized]\n\nIN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.\n\n_________________________ [Your Signature]\n_________________________ [Your Brother’s Signature]\n_________________________ [Witness 1, if applicable]\n_________________________ [Witness 2, if applicable]\n_________________________ [Notary, if applicable]\n```\n\n### Tips:\n- **Clear and Concise:** Ensure the agreement is easy to understand.\n- **Legal Advice:** Consider consulting a lawyer to ensure the agreement complies with local laws and to address any specific concerns.\n- **Goodwill:** Make sure both parties understand and agree to the terms. \n\nThis agreement should help you and your brother have a clear understanding and reduce any potential misunderstandings.",
+  "response_sha256": "815ebb1faef1cb6fd9ea3cf52e3e5a3299e11ae245399b0c95c9b72c61f974c7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:45:58.431Z",
+  "finished_at": "2026-10-04T01:46:15.518Z"
+}

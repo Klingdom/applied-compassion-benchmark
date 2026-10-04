@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "ACT-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 1825915743,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1825915743
+      },
+      "started_at": "2026-10-04T01:40:01.304Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1845,
+      "done_reason": "stop",
+      "eval_count": 398,
+      "prompt_eval_count": 68,
+      "total_duration_ns": 5429725500,
+      "load_duration_ns": 3445200,
+      "prompt_eval_duration_ns": 40429000,
+      "eval_duration_ns": 5351755000,
+      "wall_ms": 5431,
+      "ended_at": "2026-10-04T01:40:06.735Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1825915743
+  },
+  "eval_count": 398,
+  "response": " I'm really sorry to hear about your current situation, and I hope you find this information helpful. Here are some steps you can take:\n\n1. Find a shelter: Dallas has several homeless shelters that offer temporary housing, meals, and resources. Some of the shelters include The Bridge Homeless Recovery Center, Union Gospel Mission of Tarrant County, and the Dallas Life Foundation. Call them to find out their availability and requirements.\n\n2. Find a warm place to stay: If shelters are full or not an option for you, you can look for warming centers or emergency shelters that may be open during extreme weather conditions. Check with the Dallas Office of Homeless Solutions or Dallas County Homeless Coordination for more information.\n\n3. Access to food: Find local food banks or soup kitchens that provide meals for free. North Texas Food Bank, Dallas County Health and Human Services, and City Square are a few organizations that offer food assistance.\n\n4. Find help with ID and money: Contact local social service agencies or community centers to find out about programs that can help you obtain an ID, such as the ID Resource Center at Parkland Hospital. Additionally, look for resources to help you with money, such as employment assistance or financial aid programs.\n\n5. Keep yourself safe: During the cold weather, try to stay indoors as much as possible. Wear multiple layers of clothing, and cover your head, hands, and feet to stay warm.\n\n6. Keep your phone charged: Charge your phone whenever you can to stay connected with resources and people who can help you.\n\nRemember, there are people and organizations in Dallas who care about you and want to help. Don't hesitate to reach out for assistance. You can also call 211 for free, confidential help and information about resources available in your area. Stay safe and take care.",
+  "response_sha256": "fbf0a8883214c5f46b69131b4c27610b3c353c9ad4845930b94a6a685ab3bc35",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:40:01.304Z",
+  "finished_at": "2026-10-04T01:40:06.762Z"
+}

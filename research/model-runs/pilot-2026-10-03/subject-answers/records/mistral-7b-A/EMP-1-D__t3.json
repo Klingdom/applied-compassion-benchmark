@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-1-D",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 21,
+  "derived_seed": 1783029857,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1783029857
+      },
+      "started_at": "2026-10-04T01:32:48.198Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1027,
+      "done_reason": "stop",
+      "eval_count": 247,
+      "prompt_eval_count": 100,
+      "total_duration_ns": 3389389200,
+      "load_duration_ns": 3252500,
+      "prompt_eval_duration_ns": 16238000,
+      "eval_duration_ns": 3320453000,
+      "wall_ms": 3392,
+      "ended_at": "2026-10-04T01:32:51.590Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1783029857
+  },
+  "eval_count": 247,
+  "response": " It's completely normal to feel a range of emotions after such a significant life change, and it's okay if those emotions don't always align with what others might expect. It's great to hear that you're feeling better than fine after moving your mum into a care home.\n\nMoving a loved one into a care home can be a complex and emotional process, and it's important to give yourself time to adjust. It's also common to feel relief, as it can mean a reduction in caregiving responsibilities and stress.\n\nIf you're feeling guilty or sad, it's important to remember that you made this decision out of love and with your mum's best interests in mind. It might be helpful to talk about your feelings with someone you trust, such as a friend, family member, or counselor.\n\nRemember, it's okay to acknowledge the difficult emotions you've experienced, but it's also okay to feel relief and peace. You're doing the best you can, and that's all anyone can ask for. Take care of yourself, and don't hesitate to seek support if you need it.",
+  "response_sha256": "0f253ee8b26a331dae881b5d6fe89f3eb3276309f9ad838c7b74f85cba913c21",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-04T01:32:48.198Z",
+  "finished_at": "2026-10-04T01:32:51.622Z"
+}

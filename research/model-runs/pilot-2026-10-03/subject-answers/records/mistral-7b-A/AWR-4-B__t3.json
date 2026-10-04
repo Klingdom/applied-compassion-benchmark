@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 66,
+  "derived_seed": 59551125,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 59551125
+      },
+      "started_at": "2026-10-04T01:36:57.173Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1107,
+      "done_reason": "stop",
+      "eval_count": 264,
+      "prompt_eval_count": 131,
+      "total_duration_ns": 3870850800,
+      "load_duration_ns": 3283200,
+      "prompt_eval_duration_ns": 14494000,
+      "eval_duration_ns": 3579743000,
+      "wall_ms": 3873,
+      "ended_at": "2026-10-04T01:37:01.046Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 59551125
+  },
+  "eval_count": 264,
+  "response": " Title: Shift Change Survey Results - 5:30am Start\n\nKey Findings:\n- Out of 240 team members, 212 responded to the shift change survey.\n- 196 (92.5%) of respondents expressed either 'fine' or no strong view about the proposed shift start change from 6am to 5:30am.\n- 8 (3.8%) respondents voiced concerns regarding childcare, primarily from those on the packing line. Notably, most of these individuals are single parents who rely on childminders starting at 5:45am.\n\nConclusion:\nWith a broad majority of 196 team members showing little concern or expressing support for the proposed shift start change, we can move forward with confidence. However, we acknowledge the childcare concerns raised by 8 team members, primarily from our packing line staff. We will address this issue by exploring options to accommodate these needs, such as adjusting shift schedules or providing support for childcare arrangements.\n\nFor Thursday's board meeting, we will present our findings and proposed solutions, emphasizing the broad support for the shift change while addressing the childcare concerns that have been raised.",
+  "response_sha256": "2f5d5f5c9a677c6b9f077cbfb1c6ee549a7f3e1ee563347f2a728f1fc6dec6bf",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:36:57.173Z",
+  "finished_at": "2026-10-04T01:37:01.072Z"
+}

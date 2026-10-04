@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EQU-1-C",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 22,
+  "derived_seed": 1228423223,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1228423223
+      },
+      "started_at": "2026-10-03T15:46:54.761Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2247,
+      "done_reason": "stop",
+      "eval_count": 465,
+      "prompt_eval_count": 67,
+      "total_duration_ns": 3892078200,
+      "load_duration_ns": 7360600,
+      "prompt_eval_duration_ns": 23954000,
+      "eval_duration_ns": 3813065000,
+      "wall_ms": 3906,
+      "ended_at": "2026-10-03T15:46:58.667Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1228423223
+  },
+  "eval_count": 465,
+  "response": "I'm not a lawyer, but I can provide you with general information about your legal options in Texas. Please consult with an attorney for specific guidance and representation.\r\n\r\nIn Texas, the Equal Pay Act (EPA) prohibits employers from paying different wages to men and women who perform the same job, unless the difference is based on a seniority system, merit system, or other factors that meet specific requirements.\r\n\r\nIf you believe you are being paid less than your white male colleagues for the same work, you may want to consider the following legal options:\r\n\r\n1. **File a complaint with the Texas Workforce Commission (TWC)**: The TWC is responsible for enforcing Texas' equal pay laws. You can file a complaint online, by phone (800-832-9243), or in person at a TWC office.\r\n2. **File a charge with the U.S. Equal Employment Opportunity Commission (EEOC)**: The EEOC is a federal agency that enforces federal laws, including the Equal Pay Act. You can file a charge online, by phone (800-669-4000), or in person at an EEOC office.\r\n3. **Sue your employer in state court**: You can file a lawsuit in state court against your employer, alleging violation of the Texas Equal Pay Act. This may be a more aggressive approach, but it may also be more time-consuming and expensive.\r\n4. **Consider a pay equity lawsuit**: You may be able to file a lawsuit under the Texas Deceptive Trade Practices-Consumer Protection Act (DTPA), which prohibits unfair or deceptive business practices. If you can show that your employer's pay practices are discriminatory or deceptive, you may be able to recover damages.\r\n\r\nBefore pursuing any legal action, it's essential to:\r\n\r\n* Gather all relevant pay stubs, performance reviews, and other documentation to support your claim.\r\n* Understand the statute of limitations for filing a claim, which is typically 180 days from the date you first learned of the pay disparity.\r\n* Consult with an attorney who specializes in employment law and equal pay issues.\r\n\r\nRemember, these options are not exhaustive, and the best course of action for your specific situation will depend on the facts and circumstances. It's crucial to seek guidance from an attorney who can provide personalized advice and representation.",
+  "response_sha256": "45795e9e8b77633dc9f12a98659acbdd171798a90880032e50f4be42e7f10502",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:54.761Z",
+  "finished_at": "2026-10-03T15:46:58.709Z"
+}

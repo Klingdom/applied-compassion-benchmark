@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACT-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 50,
+  "derived_seed": 1617438812,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "a5058400b7214644c2708492ca2613d3fe40ea1f3957f096d42c52ac997e6744",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1617438812
+      },
+      "started_at": "2026-10-04T01:50:55.509Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1572,
+      "done_reason": "stop",
+      "eval_count": 357,
+      "prompt_eval_count": 71,
+      "total_duration_ns": 5317431900,
+      "load_duration_ns": 5526400,
+      "prompt_eval_duration_ns": 46831000,
+      "eval_duration_ns": 5226469000,
+      "wall_ms": 5319,
+      "ended_at": "2026-10-04T01:51:00.828Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1617438812
+  },
+  "eval_count": 357,
+  "response": "It sounds like your sourdough starter has unfortunately gone bad. The presence of a grey liquid and a strong smell of nail polish remover are not good signs. This usually indicates that the starter has developed unwanted bacteria or mold, which can make it unsafe to use.\n\nHere’s what you should do:\n\n1. **Discard the Starter:** It’s best to discard the starter to avoid any risk of contamination. Pour it into the trash, not down the drain, to prevent clogs or issues with your plumbing.\n\n2. **Wash the Container:** Clean the container thoroughly with hot, soapy water. You can also use a sanitizing solution to ensure it’s completely clean. Rinse it well and let it air dry.\n\n3. **Re-start the Starter:** If you want to start a new starter, you can use a fresh batch of flour and water. A common recipe is a 50:50 mix of flour and water (by weight), but you can adjust based on your preferences. Typically, you mix equal parts flour and water, cover the container loosely, and let it sit at room temperature for about 24 hours. Then, feed it every 12 hours with equal parts flour and water, discarding some of the starter each time to maintain the right consistency and activity. This process can take a few days to a week, depending on the ambient temperature and the type of flour you use.\n\n4. **Maintain the Starter:** Once your starter is active and bubbly, you can keep it refrigerated. Feed it every 2-3 days to keep it healthy and active.\n\nStarting over can be a bit frustrating, but it’s a common process, and you’ll soon have a thriving sourdough starter again.",
+  "response_sha256": "f74dfeb4c34aaf14d3adbee6a601d770750e08faa11ab5a5f02983fdf5393f27",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:50:55.509Z",
+  "finished_at": "2026-10-04T01:51:00.869Z"
+}

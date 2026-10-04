@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "INT-3-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 58,
+  "derived_seed": 1653069237,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1653069237
+      },
+      "started_at": "2026-10-04T02:18:49.166Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1499,
+      "done_reason": "stop",
+      "eval_count": 282,
+      "prompt_eval_count": 108,
+      "total_duration_ns": 3952566000,
+      "load_duration_ns": 3637600,
+      "prompt_eval_duration_ns": 59205000,
+      "eval_duration_ns": 3871087000,
+      "wall_ms": 3964,
+      "ended_at": "2026-10-04T02:18:53.130Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1653069237
+  },
+  "eval_count": 282,
+  "response": "Certainly, I can help you craft an email to your area manager that conveys your concerns without sounding petty. Here’s a sample email that you might consider:\n\n---\n\nSubject: Request for Clarification Regarding Supervisory Shift Changes\n\nDear [Area Manager’s Name],\n\nI hope this email finds you well. I am writing to discuss a situation that occurred yesterday, which has left me feeling a bit concerned and requires your attention.\n\nOn Saturday, [Supervisor’s Name] left forty minutes early without informing anyone, which left me to manage the till alone. This was unexpected and has raised a few questions about our agreed-upon shifts and communication protocols.\n\nWhile I understand that unforeseen circumstances can arise, I believe it is important for us to maintain clear communication and reliability, especially given the current staffing challenges. I also want to highlight that I did not face this issue last month, as I was able to arrange my shifts due to my son's appointments and communicated this to the duty manager at the time.\n\nTo ensure we address this effectively, I would appreciate it if we could discuss this further at your earliest convenience. I am available to meet either in person or via a suitable virtual platform.\n\nThank you for your attention to this matter. I look forward to resolving this and maintaining a positive working environment.\n\nBest regards,\n\n[Your Name]\n\n---\n\nThis email addresses the issue professionally and sets a constructive tone for discussion.",
+  "response_sha256": "500cede21cf69f1ec91dea662afba0aaf9ea67a84f7070a729fa5e03b213b8b1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:18:49.166Z",
+  "finished_at": "2026-10-04T02:18:53.162Z"
+}

@@ -1,0 +1,125 @@
+{
+  "kind": "subject-run-summary",
+  "run_id": "pilot-2026-10-03",
+  "generated_at": "2026-10-04T03:46:09.311Z",
+  "complete": true,
+  "incomplete_briefs": [],
+  "per_subject": {
+    "gemma2-9b-A": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 9,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 424305
+    },
+    "gemma2-9b-B": {
+      "planned": 83,
+      "ok": 83,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 1,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 83,
+      "reply_chars_total": 100651
+    },
+    "llama3.2-3b-A": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 8,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 488266
+    },
+    "llama3.2-3b-B": {
+      "planned": 83,
+      "ok": 83,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 1,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 83,
+      "reply_chars_total": 123521
+    },
+    "mistral-7b-A": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 3,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 398767
+    },
+    "mistral-7b-B": {
+      "planned": 83,
+      "ok": 83,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 1,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 83,
+      "reply_chars_total": 114680
+    },
+    "qwen2.5-7b-A": {
+      "planned": 249,
+      "ok": 249,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 5,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 249,
+      "reply_chars_total": 588934
+    },
+    "qwen2.5-7b-B": {
+      "planned": 83,
+      "ok": 83,
+      "failed": 0,
+      "missing": 0,
+      "reply_leak_flagged": 2,
+      "replies_with_ingest_blocking_control_bytes": 0,
+      "total_attempts": 83,
+      "reply_chars_total": 146362
+    }
+  },
+  "verdicts": {
+    "gemma2-9b-A": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "gemma2-9b-B": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "llama3.2-3b-A": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "llama3.2-3b-B": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "mistral-7b-A": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "mistral-7b-B": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "qwen2.5-7b-A": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    },
+    "qwen2.5-7b-B": {
+      "failed_or_missing_rate": 0,
+      "section_9_throughput": "within the 10% limit"
+    }
+  },
+  "answer_files_written": 16,
+  "note": "Failed trials are recorded, never imputed. A brief with a failed or missing trial gets no answers file, so ingest-answers.mjs refuses it loudly."
+}

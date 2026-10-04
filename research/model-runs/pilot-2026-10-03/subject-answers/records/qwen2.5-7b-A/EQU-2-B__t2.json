@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EQU-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 43,
+  "derived_seed": 1179342983,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "678bf61b27ade69816c44a6128446c4bd20f9b0cccedaba15c79dfebf7b4339f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1179342983
+      },
+      "started_at": "2026-10-04T02:00:05.953Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2175,
+      "done_reason": "stop",
+      "eval_count": 441,
+      "prompt_eval_count": 99,
+      "total_duration_ns": 6215091400,
+      "load_duration_ns": 4403500,
+      "prompt_eval_duration_ns": 58940000,
+      "eval_duration_ns": 6132713000,
+      "wall_ms": 6216,
+      "ended_at": "2026-10-04T02:00:12.169Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1179342983
+  },
+  "eval_count": 441,
+  "response": "That sounds like a fair and straightforward approach to ensure the distribution of the air-conditioning units is as equitable as possible. Here’s a simple plan you can use for the lottery:\n\n### Neighbourhood Air-Conditioning Unit Lottery Plan\n\n---\n\n**Date of Lottery:** [Insert Date Here]\n\n**Objective:** To distribute 15 window air-conditioning units to eligible households in a fair manner.\n\n**Eligibility:**\n- Households must be current members of the neighbourhood association.\n- Households must have requested a unit by the deadline (e.g., [Insert Deadline Here]).\n\n**Process:**\n1. **Household Registration:**\n   - Collect a signed form from each household that has requested a unit. This form should include the household name, address, and the reason for requesting the unit (e.g., medical condition, elderly resident, etc.).\n   - Ensure that all requested households are registered by the deadline.\n\n2. **Random Selection:**\n   - Use a random number generator or a lottery draw to select 15 households from the pool of registered households.\n   - Ensure the randomness is conducted in front of witnesses or recorded to maintain transparency.\n\n3. **Verification:**\n   - Verify the results with the households selected to ensure accuracy.\n   - If there are any issues, conduct a re-draw to maintain fairness.\n\n4. **Distribution:**\n   - Announce the selected households at the meeting.\n   - Distribute the air-conditioning units to the selected households immediately or schedule a convenient time for delivery.\n\n5. **Documentation:**\n   - Keep a record of all selected households, the process used, and any relevant documentation.\n   - Ensure all records are properly stored and accessible for future reference or review.\n\n**Contact Information:**\n- For any questions or concerns, please contact the Neighbourhood Association Office at [Phone Number/Email].\n\n---\n\n**Note:** Ensure you have a backup plan in case you don’t meet the required number of participants. This could include adjusting the number of units to be distributed or having a waiting list.\n\nFeel free to customize the plan to better fit your specific needs and preferences. Good luck with your lottery!",
+  "response_sha256": "a04d5933d571611fe5a2a3496adc8edecb29143b3fb2942e38454ca2e8950a34",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:00:05.953Z",
+  "finished_at": "2026-10-04T02:00:12.205Z"
+}

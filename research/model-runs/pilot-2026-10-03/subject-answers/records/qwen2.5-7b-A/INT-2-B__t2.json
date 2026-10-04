@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 33,
+  "derived_seed": 1866501459,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1866501459
+      },
+      "started_at": "2026-10-04T01:58:53.276Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 737,
+      "done_reason": "stop",
+      "eval_count": 161,
+      "prompt_eval_count": 64,
+      "total_duration_ns": 2269433200,
+      "load_duration_ns": 2745400,
+      "prompt_eval_duration_ns": 16137000,
+      "eval_duration_ns": 2219979000,
+      "wall_ms": 2272,
+      "ended_at": "2026-10-04T01:58:55.548Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1866501459
+  },
+  "eval_count": 161,
+  "response": "Of course, I understand that it can be challenging to find the right words. Here’s a heartfelt message that conveys your condolences and support:\n\n---\n\nDear Dan,\n\nI was so sorry to hear about your mum. She was a wonderful person, and I remember her kindness and warmth. Please know that everyone at work is thinking of you during this difficult time. I hope you find some comfort in the memories you have with her and that you are taking the time you need to grieve.\n\nIf there’s anything you need or anyone you want to take care of you, just let us know. We’re here for you.\n\nTake care and know that you are not alone.\n\nWarm regards,\n\n[Your Name]\n\n---\n\nFeel free to personalize it further to make it even more meaningful for both of you.",
+  "response_sha256": "13236f2672b3bc66607269d01fcc9c01c1eb1947e066a08698335d9589a45ab1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:58:53.276Z",
+  "finished_at": "2026-10-04T01:58:55.577Z"
+}

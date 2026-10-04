@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "ACT-1-C",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 9,
+  "derived_seed": 1650345721,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1650345721
+      },
+      "started_at": "2026-10-03T15:46:12.878Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2264,
+      "done_reason": "stop",
+      "eval_count": 457,
+      "prompt_eval_count": 66,
+      "total_duration_ns": 3658409100,
+      "load_duration_ns": 9864300,
+      "prompt_eval_duration_ns": 24060000,
+      "eval_duration_ns": 3601765000,
+      "wall_ms": 3662,
+      "ended_at": "2026-10-03T15:46:16.540Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1650345721
+  },
+  "eval_count": 457,
+  "response": "I'm sorry to hear that you're going through this. In California, the security deposit law requires landlords to return your deposit within 43 days of you moving out. Since you moved out 45 days ago, it's likely that your landlord is in violation of state law.\n\nHere are some steps you can take:\n\n1. **Send a formal demand letter**: Write a polite but firm letter to your landlord, reiterating your request for the return of your security deposit. Make sure to include the following:\n\t* A statement of your intention to recover the deposit, citing California Civil Code Section 1946.122\n\t* A specific date by which you expect the deposit to be returned\n\t* A copy of your lease agreement\n\t* Your contact information (phone number and/or email)\n2. **Send the letter via certified mail**: Use certified mail with return receipt requested to ensure that your landlord receives the letter and signs for it.\n3. **Keep a record of attempts to contact your landlord**: Document all your attempts to contact your landlord, including dates, times, and methods of communication (e.g., phone calls, texts, emails).\n4. **File a complaint with the California Department of Consumer Affairs (DCA)**: The DCA's Division of Rental Housing Enforcement (DRHE) can help you resolve the issue. You can submit a complaint online or by mail. They may investigate your case and issue a warning or fine to your landlord if necessary.\n5. **Consider small claims court**: If your landlord still refuses to return your deposit, you may want to consider filing a small claims lawsuit. This is a relatively simple and inexpensive process in California. You can file a complaint with the court and seek reimbursement for your deposit.\n6. **Seek assistance from a tenant rights organization**: Organizations like the Tenant Union of California or the California Rental Housing Association may be able to provide you with guidance, support, and representation.\n\nBefore taking any further action, make sure to:\n\n* Review your lease agreement to understand your rights and responsibilities\n* Keep all communication records, including dates, times, and content\n* Document any damage to the property, if applicable\n\nRemember to stay calm and persistent in your efforts to resolve this issue. Good luck!",
+  "response_sha256": "0529b080cfb417d6f0bb2b721d19bc895fb2991e2bead9e9a6b27124f9204372",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:46:12.878Z",
+  "finished_at": "2026-10-03T15:46:16.578Z"
+}

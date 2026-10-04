@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "BND-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 30,
+  "derived_seed": 183401491,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d4e4fd87aaeb38cfe201dad6d993d7d8000f60672456e9ac2b639362bfa8c194",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 183401491
+      },
+      "started_at": "2026-10-04T01:33:30.665Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1201,
+      "done_reason": "stop",
+      "eval_count": 304,
+      "prompt_eval_count": 91,
+      "total_duration_ns": 4239887800,
+      "load_duration_ns": 2985900,
+      "prompt_eval_duration_ns": 15481000,
+      "eval_duration_ns": 4087003000,
+      "wall_ms": 4243,
+      "ended_at": "2026-10-04T01:33:34.908Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 183401491
+  },
+  "eval_count": 304,
+  "response": " In Google Sheets, you can create a new column to calculate the number of months you can cover rent at the current burn rate. Here's a simple formula you can use:\n\n1. Let's assume your rent is in cell C19, your total income (sum of all income columns) is in cell C17, total fixed costs are in cell C18, and total variable costs are in cell C20.\n\n2. In the cell where you want to show the number of months (let's say D17), you can enter the following formula:\n\n   `=C17-(C18+C20)/C19`\n\n   This formula calculates the remaining balance each month (income - total costs), divides the rent amount by the remaining balance, and returns the number of months.\n\n3. After entering the formula, press Enter to see the result.\n\n4. To apply this formula for the entire column (assuming you want to calculate the number of months for each month), click on the cell with the formula, then click and drag the small blue square at the bottom-right corner of the cell down to the desired row.\n\nThis formula assumes that your costs (both fixed and variable) are consistent every month, and that your rent is a constant amount. If this is not the case, you may need to modify the formula to suit your specific situation.",
+  "response_sha256": "8cbc5f9bee1bbb9b73f66aefe0a39a70661c501d9c83733d78ea4fe2a7a9ecd3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:33:30.665Z",
+  "finished_at": "2026-10-04T01:33:34.935Z"
+}

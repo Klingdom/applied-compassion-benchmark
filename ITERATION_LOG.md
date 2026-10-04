@@ -2,6 +2,28 @@
 
 ## Iteration 98 — 2026-10-03 (founder-approved pilot 3: more open models + a length-matched arm; in progress)
 
+**Status update, 2026-10-03 (data complete, verified):**
+- **Replies.** 1,328 of 1,328 subject replies, with 0 failed trials.
+  - D1 was committed before any further reply was generated.
+  - After two host memory stops, the run went in foreground 9-minute chunks with the founder's approval.
+- **Length rule (§9).** The arm-B instruction was effective for llama3.2 and qwen2.5, and ineffective for gemma2 and mistral, whose arm-A medians were already about 250.
+- **Contamination.** Checked through the MCP server for all four builds; none flagged.
+- **Judging.** 2,656 ratings in 171 batches.
+  - 8 batches were voided as incomplete and re-run; jb004 was voided twice and then delivered as halves (§4).
+  - 16 ratings were requoted, 5 of them again in a supplement round.
+- **Judge validity.** On the original answers: fable 1/886, opus 0/885, sonnet 2/885. After requotes, all 0. No judge was excluded.
+- **V2.** The coordinator recomputed all 8 composites from the raw judge files through the canonical scorer; all match `analysis.json` exactly:
+
+| Variant | Arm A | Arm B |
+|---|---|---|
+| gemma2-9b | 29.5 | 28.8 |
+| llama3.2-3b | 24.6 | 26.3 |
+| mistral-7b | 21.9 | 22.0 |
+| qwen2.5-7b | 24.9 | 25.3 |
+
+- **Separation.** Arm A separates 5 of 6 pairs uncorrected and 3 of 6 under Bonferroni (every pair involving gemma2). llama vs qwen is not separated, which repeats pilot-2026-10-02. No B − A difference is separated. Bridge drift: mean |Δ| 0.146.
+- **Publication** follows: wave export, report, claim audit.
+
 **Selected:** founder approval of 2026-10-02 ("Approve the for you stuff and proceed"), covering decision-packet item
 6 and more open models. *Deviation:* this is founder-directed, not the top v2 item.
 

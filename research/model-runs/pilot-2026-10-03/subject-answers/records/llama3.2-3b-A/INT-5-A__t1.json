@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 12,
+  "derived_seed": 1303386003,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "df9d43a062e26d8a5dad3e600734e97ca54d5fe80ed70ba02f71b03a127d9647",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1303386003
+      },
+      "started_at": "2026-10-03T15:41:58.991Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1535,
+      "done_reason": "stop",
+      "eval_count": 384,
+      "prompt_eval_count": 95,
+      "total_duration_ns": 2952019000,
+      "load_duration_ns": 3150500,
+      "prompt_eval_duration_ns": 27934000,
+      "eval_duration_ns": 2889639000,
+      "wall_ms": 2955,
+      "ended_at": "2026-10-03T15:42:01.946Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1303386003
+  },
+  "eval_count": 384,
+  "response": "I apologize for the mistake and the frustration it caused. I'll provide you with a solution to recover your data.\n\nSince I'm a text-based AI model, I don't have direct access to your spreadsheet. However, I can guide you on how to recover the data in column D.\n\n**Method 1: Undo**\n\n1. Check if your spreadsheet is still open. If it is, try pressing `Ctrl + Z` (Windows) or `Cmd + Z` (Mac) to undo the last action. This might restore the data in column D.\n2. If the undo option doesn't work, try pressing `Ctrl + Y` (Windows) or `Cmd + Shift + Z` (Mac) to redo the action.\n\n**Method 2: Use the \"Recover Unsaved Changes\" option**\n\n1. Close the spreadsheet.\n2. Open it again.\n3. Go to the \"File\" menu and select \"Recover Unsaved Changes\".\n\n**Method 3: Use the \"Find and Select\" feature**\n\n1. Press `Ctrl + F` (Windows) or `Cmd + F` (Mac) to open the \"Find and Select\" dialog box.\n2. In the \"Find what\" field, type in the formula that was deleted (`=column D formula`).\n3. Press `Enter` to search for the formula.\n4. Select the formula and press `Delete` to remove the incorrect formula.\n\n**Method 4: Use a third-party spreadsheet recovery tool**\n\nIf the above methods don't work, you can try using a third-party spreadsheet recovery tool, such as Excel Recovery Tool or Undeleter.\n\nPlease note that these methods may not work if you've overwritten the deleted data or if you've closed the spreadsheet before trying to recover the data.\n\nI apologize again for the inconvenience, and I hope one of these methods helps you recover your data.",
+  "response_sha256": "1d9afdccba530060eb9791d37c917fb3e12b34816b263b88598928a5a14d6ab9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:41:58.991Z",
+  "finished_at": "2026-10-03T15:42:01.974Z"
+}

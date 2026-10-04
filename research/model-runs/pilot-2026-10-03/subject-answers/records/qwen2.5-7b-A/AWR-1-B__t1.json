@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "AWR-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 470176767,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 470176767
+      },
+      "started_at": "2026-10-04T01:45:40.871Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2117,
+      "done_reason": "stop",
+      "eval_count": 438,
+      "prompt_eval_count": 72,
+      "total_duration_ns": 6147975400,
+      "load_duration_ns": 3611700,
+      "prompt_eval_duration_ns": 48455000,
+      "eval_duration_ns": 6070849000,
+      "wall_ms": 6151,
+      "ended_at": "2026-10-04T01:45:47.022Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 470176767
+  },
+  "eval_count": 438,
+  "response": "Certainly, I can help you write a resignation letter. Given your circumstances, it's important to keep the tone professional while expressing your reasons for leaving. Here’s a sample resignation letter that you can adapt to your specific situation:\n\n---\n\n[Your Name]  \n[Your Address]  \n[City, State, ZIP Code]  \n[Email Address]  \n[Phone Number]  \n[Date]\n\n[Manager's Name]  \n[Title]  \n[Company Name]  \n[Company Address]  \n[City, State, ZIP Code]\n\nDear [Manager's Name],\n\nI am writing to formally resign from my position at [Company Name]. My last day of work will be [last working day, e.g., October 15, 2023].\n\nDuring my 11 years at [Company Name], I have had the privilege of working on numerous projects and contributing to the growth and success of the company. However, I have come to a difficult decision and believe it is time for me to seek new opportunities where I can utilize my skills and experience in a more supportive environment.\n\nOver the past few years, I have noticed some challenges within the company, particularly with recognition and opportunities for advancement. I have felt that my contributions have not always been adequately acknowledged, and I was passed over for promotion twice. Additionally, the recent announcement of a pay freeze has further impacted my decision to move on.\n\nI want to express my gratitude for the opportunities I have had and the valuable experiences I have gained here. [Company Name] has been a significant part of my career, and I am proud of the work I have done and the impact I have had.\n\nI am committed to ensuring a smooth transition during my remaining time. I will work diligently to complete any ongoing projects and will assist in training my replacement to ensure a seamless handover.\n\nIf there is any information or documentation you need from me, please let me know. I am open to discussing this further during my last week.\n\nThank you for your understanding and support during this transition.\n\nSincerely,\n\n[Your Name]\n\n---\n\nFeel free to personalize the content to better fit your specific situation and experiences. Good luck with your transition!",
+  "response_sha256": "48bcc0d6bc8f123f2878c15aca65545cef259a80d8a1ad22b577fe5c47b68db4",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:45:40.871Z",
+  "finished_at": "2026-10-04T01:45:47.060Z"
+}

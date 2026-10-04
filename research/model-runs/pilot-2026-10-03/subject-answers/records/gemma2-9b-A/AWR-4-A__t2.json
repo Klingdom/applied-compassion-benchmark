@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-4-A",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 37,
+  "derived_seed": 923665617,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 923665617
+      },
+      "started_at": "2026-10-04T02:51:17.243Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1142,
+      "done_reason": "stop",
+      "eval_count": 295,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 14479410400,
+      "load_duration_ns": 4604000,
+      "prompt_eval_duration_ns": 250569000,
+      "eval_duration_ns": 14178789000,
+      "wall_ms": 14482,
+      "ended_at": "2026-10-04T02:51:31.725Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 923665617
+  },
+  "eval_count": 295,
+  "response": "Subject: Lisbon Offsite Booking - Final Confirmation & Details\n\nHi Team,\n\nJust wanted to send a final confirmation email about our exciting Lisbon offsite in November!\n\n**Here are the key details:**\n\n* **Dates:** [Insert Dates]\n* **Location:** [Insert Hotel Name]\n* **Room Rate:** €180 per night\n\n**Everyone is confirmed except Dani. Dani, please confirm if you're still coming so I can finalize the booking.** \n\n**Payment:**  \n\n* Everyone will need to pay their share upfront (€[Insert Total Cost per Person] including the deposit). Please aim to have this sent by [Insert Deposit Deadline].\n* You can then expense the full amount back to the company after the trip.\n\n**Room Assignments:**\n\n(Please note, this list is subject to change depending on final confirmation from Dani)\n\n* **Room 1:** [Team Member 1] & [Team Member 2]\n* **Room 2:** [Team Member 3] & [Team Member 4]\n* **Room 3:** [Team Member 5] & [Team Member 6]\n* ... and so on\n\n**Important:** Please let me know by [Insert Deadline] if you have any questions or need to make any changes to the booking.\n\nI'm really looking forward to our time in Lisbon!\n\nBest,\n\n[Your Name] \n\n\n\n",
+  "response_sha256": "2006de92e8659f14da1429734b7cf0bf4e4af8d9ea461924c45052f1dd0599c8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:51:17.243Z",
+  "finished_at": "2026-10-04T02:51:31.758Z"
+}

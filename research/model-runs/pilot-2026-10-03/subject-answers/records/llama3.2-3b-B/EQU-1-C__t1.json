@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "EQU-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 46,
+  "derived_seed": 21255482,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 21255482
+      },
+      "started_at": "2026-10-03T15:56:46.592Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1728,
+      "done_reason": "stop",
+      "eval_count": 354,
+      "prompt_eval_count": 74,
+      "total_duration_ns": 2677773800,
+      "load_duration_ns": 3113100,
+      "prompt_eval_duration_ns": 21856000,
+      "eval_duration_ns": 2630307000,
+      "wall_ms": 2689,
+      "ended_at": "2026-10-03T15:56:49.281Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 21255482
+  },
+  "eval_count": 354,
+  "response": "I'm so sorry to hear that you're experiencing this issue.  In Texas, you have several legal options to explore. Since you have pay stubs that show the disparity in pay, you can use this evidence to support your claim. Here are some possible steps you can take:\n\n1. **File a complaint with the Equal Employment Opportunity Commission (EEOC)**: The EEOC is a federal agency responsible for enforcing laws that prohibit employment discrimination. You can file a complaint online, by phone, or in person. They will investigate your claim and may file a lawsuit on your behalf if necessary.\n2. **File a charge with the Texas Workforce Commission (TWC)**: The TWC is the state agency responsible for enforcing Texas employment laws, including equal pay. You can file a charge online or by phone. They will investigate your claim and may issue a complaint order requiring your employer to take corrective action.\n3. **File a lawsuit in state court**: If the EEOC or TWC does not resolve your claim, you can file a lawsuit in state court. You will need to consult with an attorney to determine the best course of action.\n4. **Contact an attorney specializing in employment law**: An attorney can help you navigate the process, gather evidence, and file a lawsuit if necessary. They can also advise you on your state-specific rights and options.\n\nBefore taking any action, it's essential to:\n\n* Review your pay stubs and employment contract to understand the terms of your employment.\n* Keep detailed records of your work, including dates, hours, and tasks completed.\n* Document any conversations or interactions with your employer regarding your pay.\n\nRemember, you have rights under Texas law, and an attorney can help you assert them.",
+  "response_sha256": "df957e83cbe9e0eb4a6b09e3dbfd55c09e388d9793d205a6c3846db9e49d2529",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:56:46.592Z",
+  "finished_at": "2026-10-03T15:56:49.310Z"
+}

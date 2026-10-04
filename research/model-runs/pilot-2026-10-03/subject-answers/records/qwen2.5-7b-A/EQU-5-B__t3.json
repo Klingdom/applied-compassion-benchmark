@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "EQU-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 78,
+  "derived_seed": 1646959719,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3dbae0d0a689e01691b50514dbf2dced8fce00895eb7760b676b18e0d803883a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1646959719
+      },
+      "started_at": "2026-10-04T02:13:29.794Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2264,
+      "done_reason": "stop",
+      "eval_count": 418,
+      "prompt_eval_count": 81,
+      "total_duration_ns": 5885763000,
+      "load_duration_ns": 3214700,
+      "prompt_eval_duration_ns": 51120000,
+      "eval_duration_ns": 5786978000,
+      "wall_ms": 5890,
+      "ended_at": "2026-10-04T02:13:35.684Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1646959719
+  },
+  "eval_count": 418,
+  "response": "Using a land acknowledgment is a great step for your nonprofit to take, as it acknowledges the indigenous peoples who have historically been present on the land where your events are held. Here are a few things you should consider to ensure your acknowledgment is respectful, accurate, and meaningful:\n\n1. **Context and Audience**: Tailor the acknowledgment to the specific audience and location. Make sure the acknowledgment reflects the local indigenous peoples and their history.\n\n2. **Accuracy**: Verify the information in the acknowledgment. Ensure that the details about the indigenous people, their history, and the land are accurate. You can consult local indigenous organizations or historical records to confirm the information.\n\n3. **Sensitivity**: Be mindful of language and tone. Avoid any phrasing that could be seen as patronizing or insensitive. Land acknowledgments should be respectful and sincere.\n\n4. **Inclusivity**: Consider including the indigenous people who are still present in the area. Land acknowledgments can be a starting point for building relationships and addressing ongoing issues.\n\n5. **Ongoing Commitment**: Use the acknowledgment as a starting point to show ongoing commitment to indigenous peoples and their issues. Consider what actions your organization can take to support indigenous communities.\n\nHere’s an example of a land acknowledgment you could use as a base and then modify as needed:\n\n---\n\n**Land Acknowledgment**\n\nWe gather on the traditional lands of the Dakota people. This territory has been a site of many cultures and nations. Today, we honor the spiritual and material contributions of the Dakota people and acknowledge the continuing ties to the land.\n\n---\n\nYou can adjust this to reflect the specific indigenous peoples of the area and any other relevant details. Here’s another example:\n\n---\n\n**Land Acknowledgment**\n\nWe gather on the traditional lands of the Dakota and Anishinaabe peoples. These lands have been a site of many cultures and nations, and today we honor the spiritual and material contributions of the Dakota and Anishinaabe people, acknowledging the continuing ties to the land.\n\n---\n\nBy taking these steps, you can ensure that your land acknowledgment is both respectful and meaningful.",
+  "response_sha256": "835601ee1b70276b03774a9c79996a037f70e4bb4e5cdbacd56d77c0fe73e7e0",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:13:29.794Z",
+  "finished_at": "2026-10-04T02:13:35.720Z"
+}

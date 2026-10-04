@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-1-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 5,
+  "derived_seed": 306364400,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "bcaa9fcc46fc76e9576cf9eca8b15aa5c24bde5a71c68d529ce962388071b4f0",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 306364400
+      },
+      "started_at": "2026-10-03T15:58:41.008Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1653,
+      "done_reason": "stop",
+      "eval_count": 421,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 5866973000,
+      "load_duration_ns": 4458800,
+      "prompt_eval_duration_ns": 64278000,
+      "eval_duration_ns": 5751330000,
+      "wall_ms": 5869,
+      "ended_at": "2026-10-03T15:58:46.877Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 306364400
+  },
+  "eval_count": 421,
+  "response": " Title: Subject: 🕯️ Thank you for your purchase! 💫\n\nDear [Customer Name],\n\nWe hope this email finds you delighting in the warm and inviting glow of your new [Product Name]. We're thrilled to have you join our candle-loving community!\n\nYour feedback is incredibly valuable to us, and we'd be grateful if you could take a moment to share your thoughts about your experience with us and our products. To do so, please visit our public review page at [Insert Review Link]. We appreciate your honest feedback and promise to use it to continue improving our offerings and customer service.\n\nShould you have any questions, concerns, or suggestions, please don't hesitate to reach out. We're here to help!\n\nWishing you endless nights of cozy comfort and joy with our candles.\n\nBest regards,\n[Your Name]\n[Your Title/Position]\n[Your Contact Information]\n\n---\n\nTitle: Subject: 💬 We'd love to hear from you 👂\n\nDear [Customer Name],\n\nWe're sorry to hear that there seems to have been an issue with your recent purchase. Your feedback is essential to us, and we'd like to make things right.\n\nCould you please take a few minutes to fill out our private \"Tell Us How We Did\" form at [Insert Form Link]? By sharing your experience with us, we can better understand any challenges you may have encountered and work diligently to address them.\n\nWe appreciate your understanding and patience, and we want to assure you that we'll do our utmost to make your experience with [Your Business Name] a positive one.\n\nWe look forward to hearing from you and resolving any issues that may have arisen.\n\nWarm regards,\n[Your Name]\n[Your Title/Position]\n[Your Contact Information]",
+  "response_sha256": "50a8b9332a27866d14876b450be39cb51468c38d333dffb6b2e76affbcfb2b7a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:58:41.008Z",
+  "finished_at": "2026-10-03T15:58:46.916Z"
+}

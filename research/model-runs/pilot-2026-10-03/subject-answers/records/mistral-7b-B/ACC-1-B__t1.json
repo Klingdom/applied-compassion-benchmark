@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "ACC-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 75,
+  "derived_seed": 553591122,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "172a1f77378b74cf7dd6a60893a5f422011f028d624fd288cbbf9375eed5828b",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 553591122
+      },
+      "started_at": "2026-10-04T01:43:59.982Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 997,
+      "done_reason": "stop",
+      "eval_count": 206,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 2858706900,
+      "load_duration_ns": 4051300,
+      "prompt_eval_duration_ns": 34422000,
+      "eval_duration_ns": 2788903000,
+      "wall_ms": 2859,
+      "ended_at": "2026-10-04T01:44:02.841Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 553591122
+  },
+  "eval_count": 206,
+  "response": " I am not a fortune-teller, and I cannot predict the future with certainty. However, I can share some insights based on current economic trends and expert opinions.\n\nAs of now, many economists and real estate analysts do not predict a housing market crash within the next 12 months. The housing market has shown resilience despite the ongoing pandemic, with low mortgage rates, strong demand, and limited supply keeping prices relatively stable.\n\nThat being said, it's important to remember that the housing market is influenced by various factors, including interest rates, employment rates, and government policies. Any significant change in these factors could impact the market's stability.\n\nIn summary, while it's unlikely that the housing market will crash in the next 12 months, it's always essential to stay informed and adapt to any potential changes. It's advisable to consult with a real estate professional or financial advisor for personalized advice based on your specific situation.",
+  "response_sha256": "5c47e6d335b183a3cd49eb5a279e7b08587cb9092f89dadc67db7f94514e36a9",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:43:59.982Z",
+  "finished_at": "2026-10-04T01:44:02.867Z"
+}

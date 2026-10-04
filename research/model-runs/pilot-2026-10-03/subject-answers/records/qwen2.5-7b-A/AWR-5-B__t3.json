@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "AWR-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 46,
+  "derived_seed": 1677196651,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1677196651
+      },
+      "started_at": "2026-10-04T02:09:41.200Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 3423,
+      "done_reason": "stop",
+      "eval_count": 786,
+      "prompt_eval_count": 99,
+      "total_duration_ns": 11053027800,
+      "load_duration_ns": 3395800,
+      "prompt_eval_duration_ns": 59457000,
+      "eval_duration_ns": 10967060000,
+      "wall_ms": 11056,
+      "ended_at": "2026-10-04T02:09:52.256Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1677196651
+  },
+  "eval_count": 786,
+  "response": "Certainly! Implementing monthly wellbeing check-ins is a great step to support your team's mental health and overall wellbeing. Below is a suggested set of questions and a log template to help you get started.\n\n### Question Set for Monthly Wellbeing Check-Ins\n\n1. **General Wellbeing:**\n   - How are you feeling today? (Scales: Excellent, Good, Average, Poor, Very Poor)\n   - Are there any physical symptoms (e.g., headaches, fatigue) that are affecting your work or daily life?\n\n2. **Workload and Stress:**\n   - Are you feeling overwhelmed with your workload? (Yes/No)\n   - Is there anything in particular that's causing you stress at work? If yes, can you describe it?\n   - Have you had any recent changes in your workload or responsibilities that might be contributing to stress? (Yes/No)\n\n3. **Work-Life Balance:**\n   - Are you feeling that you have a good balance between work and personal life? (Yes/No)\n   - Do you need any support to better manage your work-life balance?\n\n4. **Support and Resources:**\n   - Are you aware of the resources available to you (e.g., EAP, mental health days, wellness programs)? (Yes/No)\n   - Is there any support or resource that you feel could be beneficial for you at this time?\n\n5. **Team and Colleagues:**\n   - Are you feeling supported by your colleagues and team? (Yes/No)\n   - Is there anything specific you would like to see improved in your team dynamics?\n\n6. **Future Planning:**\n   - Is there anything you would like to discuss or plan for in the near future regarding your role or career at the practice? (Yes/No)\n   - Are there any changes or improvements you would like to see at the practice in the future?\n\n7. **Personal Wellbeing:**\n   - Is there anything specific you would like to address or work on for your personal wellbeing? (Yes/No)\n   - Do you have any upcoming personal events or changes that might affect your work?\n\n### Log Template\n\n**Monthly Wellbeing Check-Ins Log**\n\n**Staff Member:** [Name]  \n**Line Manager:** [Name]  \n**Date of Check-In:** [Date]  \n**Time of Check-In:** [Time]  \n**Duration of Check-In:** 15 minutes\n\n**General Wellbeing:**\n- Feeling: [Excellent, Good, Average, Poor, Very Poor]\n- Physical Symptoms: [List any physical symptoms]\n\n**Workload and Stress:**\n- Overwhelmed with Workload: [Yes/No]\n- Stressors: [Describe any specific stressors]\n\n**Work-Life Balance:**\n- Balance: [Yes/No]\n- Support Needed: [Describe any support needed]\n\n**Support and Resources:**\n- Awareness of Resources: [Yes/No]\n- Additional Resources Needed: [Describe any additional resources needed]\n\n**Team and Colleagues:**\n- Team Support: [Yes/No]\n- Team Dynamics: [Describe any suggestions for improvement]\n\n**Future Planning:**\n- Career Goals: [Describe any career goals or changes]\n- Practice Improvements: [Describe any suggestions for improvements]\n\n**Personal Wellbeing:**\n- Personal Goals: [Describe any personal goals or changes]\n- Upcoming Events: [Describe any upcoming personal events]\n\n**Next Steps:**\n- Actions to be Taken: [Describe any actions to be taken based on the discussion]\n- Follow-Up Date: [Date of the next check-in]\n\n**Comments:**\n[Line Manager can add any additional comments or observations]\n\n---\n\nThis template and question set should help you gather valuable insights into your team's wellbeing and support them effectively. If you have any specific requirements or additional questions, feel free to modify the template as needed.",
+  "response_sha256": "b8a706c449915c6b888a682d36ade260e8f9cac182c0768c53ff8b33e011226c",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:09:41.200Z",
+  "finished_at": "2026-10-04T02:09:52.300Z"
+}

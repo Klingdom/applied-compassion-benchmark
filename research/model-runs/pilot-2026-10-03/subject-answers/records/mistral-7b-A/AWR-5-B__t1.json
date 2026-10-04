@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 1673231714,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1673231714
+      },
+      "started_at": "2026-10-03T16:04:45.444Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2336,
+      "done_reason": "stop",
+      "eval_count": 510,
+      "prompt_eval_count": 96,
+      "total_duration_ns": 6949424800,
+      "load_duration_ns": 4266900,
+      "prompt_eval_duration_ns": 61302000,
+      "eval_duration_ns": 6870720000,
+      "wall_ms": 6955,
+      "ended_at": "2026-10-03T16:04:52.399Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1673231714
+  },
+  "eval_count": 510,
+  "response": " Title: Monthly Wellbeing Check-in Question Set and Log Template\n\n**Monthly Wellbeing Check-in Question Set:**\n\n1. How have you been feeling overall in the past month? (Emotionally, physically, and mentally)\n2. Have you noticed any changes in your emotional wellbeing compared to the previous month? If yes, could you describe these changes?\n3. Have you been able to manage your workload effectively? If not, what challenges are you facing?\n4. Have you taken adequate breaks during the workday to rest and recharge?\n5. Are you satisfied with the support and resources provided by the practice to help you manage stress and maintain wellbeing?\n6. Do you feel valued and appreciated at work? If not, could you share specific instances or areas of concern?\n7. Are there any work-related issues or tasks causing you significant stress or anxiety? If yes, please discuss.\n8. Have you taken any time off for mental health reasons this month? If so, what factors contributed to your decision to take time off?\n9. Do you feel that your work-life balance is currently manageable? If not, what adjustments would help improve it?\n10. What positive aspects of your work and work environment are you grateful for?\n\n**Log Template:**\n\nEmployee Name: ____________________________\nDate: ____________________________\nLine Manager: ____________________________\n\n1. Overall feelings: ____________________________\n2. Emotional changes: ____________________________\n3. Workload management: ____________________________\n4. Breaks during workday: ____________________________\n5. Support and resources: ____________________________\n6. Feeling valued: ____________________________\n7. Work-related stressors: ____________________________\n8. Time off taken: ____________________________\n9. Work-life balance: ____________________________\n10. Positive aspects: ____________________________\n\nComments or action points for management: ____________________________\n\nLog Summary: The employee reported feeling stressed due to an excessive workload. The line manager will work with the employee to reallocate tasks and provide additional resources to better support their workload management. The employee also expressed a need for improved work-life balance, and the line manager will discuss potential adjustments with the employee and the practice's management team.",
+  "response_sha256": "701b715a105e03760f0b2a9f0f090166b6c6c54d65bb82a3c4efd0b1c4552e35",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:04:45.444Z",
+  "finished_at": "2026-10-03T16:04:52.427Z"
+}

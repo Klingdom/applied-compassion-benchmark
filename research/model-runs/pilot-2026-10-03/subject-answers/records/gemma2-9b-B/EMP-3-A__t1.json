@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EMP-3-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 30,
+  "derived_seed": 111785166,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 111785166
+      },
+      "started_at": "2026-10-04T03:35:19.003Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 893,
+      "done_reason": "stop",
+      "eval_count": 189,
+      "prompt_eval_count": 58,
+      "total_duration_ns": 8700210700,
+      "load_duration_ns": 6567800,
+      "prompt_eval_duration_ns": 215031000,
+      "eval_duration_ns": 8416217000,
+      "wall_ms": 8704,
+      "ended_at": "2026-10-04T03:35:27.707Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 111785166
+  },
+  "eval_count": 189,
+  "response": "I understand your frustration. It's natural to want a clear-cut answer when facing a big decision like accepting a job offer. However, I'm designed to be a helpful and informative assistant, not a fortune teller. I can't tell you what's best for your life because I don't know your personal circumstances, career goals, values, or financial situation. \n\nThink of me as a guide who can provide you with information and perspectives to help you make an informed decision. I can help you analyze the job offer by looking at things like salary, benefits, company culture, and growth opportunities. I can also help you weigh the pros and cons against your personal needs and aspirations.\n\nUltimately, the decision of whether or not to take the job is yours. By providing you with the necessary information and tools, I hope to empower you to make a choice that aligns with your goals and values.  \n",
+  "response_sha256": "c9cd16416bbefda146dbb2977a62b771131c7283f7af4f8c77594b6f556e3877",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:35:19.003Z",
+  "finished_at": "2026-10-04T03:35:27.736Z"
+}

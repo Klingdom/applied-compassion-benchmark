@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-3-C",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 26,
+  "derived_seed": 969383424,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 969383424
+      },
+      "started_at": "2026-10-04T02:48:04.426Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1255,
+      "done_reason": "stop",
+      "eval_count": 277,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 13064174300,
+      "load_duration_ns": 4638800,
+      "prompt_eval_duration_ns": 249854000,
+      "eval_duration_ns": 12718857000,
+      "wall_ms": 13068,
+      "ended_at": "2026-10-04T02:48:17.494Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 969383424
+  },
+  "eval_count": 277,
+  "response": "It's understandable that you're frustrated. Being left alone on the tills with no notice is not ideal. \n\nHere's a draft email that focuses on the impact of the situation rather than sounding accusatory:\n\n**Subject: Saturday Shift Coverage**\n\nHi [Area Manager Name],\n\nI'm writing to you regarding the coverage on Saturday's shift. [Supervisor Name] left approximately 40 minutes before closing without informing anyone, leaving me to handle the tills independently. \n\nWhile I'm always happy to help out, this situation created [briefly describe the impact, e.g., a long queue, difficulty dealing with a customer issue, added pressure].\n\nCould we discuss how to ensure smoother coverage transitions in the future? \n\nThanks,\n[Your Name]\n\n**Here's why this approach works:**\n\n* **Focuses on the facts:** You clearly state what happened without assigning blame.\n* **Highlights the impact:** You explain how the situation affected you and potentially customers.\n* **Offers a solution-oriented approach:** You ask for a discussion about future coverage, showing you're proactive.\n* **Maintains a professional tone:**  The language is polite and respectful.\n\n\nRemember, your goal is to bring attention to the issue and find a solution, not to start a conflict.  \n",
+  "response_sha256": "d45a2d14b919a1336d6c77f3297aa1997945c4bfafab68e9a370428a996d026b",
+  "reply_leak_hits": [
+    "INT-3-C L3: anchor text \"...being left alone on the tills...\""
+  ],
+  "started_at": "2026-10-04T02:48:04.426Z",
+  "finished_at": "2026-10-04T02:48:17.527Z"
+}

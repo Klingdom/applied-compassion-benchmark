@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-3-C",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 52,
+  "derived_seed": 361685057,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ae4ec0993d21cd5b77b6e9598d6f52377fb90ac65156e8b9cb0c01195876d4b5",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 361685057
+      },
+      "started_at": "2026-10-04T03:19:32.311Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1552,
+      "done_reason": "stop",
+      "eval_count": 320,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 15222450900,
+      "load_duration_ns": 3381600,
+      "prompt_eval_duration_ns": 243033000,
+      "eval_duration_ns": 14934889000,
+      "wall_ms": 15224,
+      "ended_at": "2026-10-04T03:19:47.535Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 361685057
+  },
+  "eval_count": 320,
+  "response": "Here's a draft email you can adapt:\n\nSubject: [Store Name] - Staffing Concern on Saturday\n\nDear [Area Manager Name],\n\nI'm writing to you regarding a staffing situation that occurred at [Store Name] on Saturday evening. \n\nA supervisor, [Supervisor's Name], left the store approximately forty minutes before closing without informing anyone else on staff. This left me alone on the tills, which presented a challenge [briefly explain the challenge, e.g., handling the customer queue, completing closing procedures].\n\nWhile I understand that unforeseen circumstances can arise, it's important for supervisors to communicate effectively with the team and ensure adequate coverage during closing shifts. \n\nI've always strived to be reliable and communicated my absences in advance [briefly mention your previous absences for your son's appointments]. I believe clear communication and teamwork are essential for a smooth and efficient work environment. \n\nThank you for your time and consideration.\n\nSincerely,\n\n[Your Name]\n\n\n**Key Points:**\n\n* **Focus on the impact:** Instead of directly accusing the supervisor, highlight how the situation affected you and the store. \n* **Be factual and concise:** Stick to the facts and avoid overly emotional language.\n* **Mention your own reliability:**  Subtly remind the Area Manager of your own dedication to clear communication.\n* **Maintain a professional tone:**  Keep the email polite and respectful, even though you're expressing a concern.\n\n\n\nLet me know if you'd like to refine any part of the email further!",
+  "response_sha256": "c7635fc6fc414e720e2629de5a71d7fba91cfd7e83d72cbb5db43a09f306ef3d",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:19:32.311Z",
+  "finished_at": "2026-10-04T03:19:47.564Z"
+}

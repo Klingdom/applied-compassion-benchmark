@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 25,
+  "derived_seed": 970347721,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 970347721
+      },
+      "started_at": "2026-10-03T15:55:50.854Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1819,
+      "done_reason": "stop",
+      "eval_count": 352,
+      "prompt_eval_count": 117,
+      "total_duration_ns": 2730378400,
+      "load_duration_ns": 3111100,
+      "prompt_eval_duration_ns": 32887999,
+      "eval_duration_ns": 2663136000,
+      "wall_ms": 2732,
+      "ended_at": "2026-10-03T15:55:53.586Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 970347721
+  },
+  "eval_count": 352,
+  "response": "Here's a suggested question set and log template for monthly wellbeing check-ins:\n\n**Question Set:**\n\n1. How have you been feeling about your job overall, on a scale of 1-5 (where 1 is \"very unhappy\" and 5 is \"very happy\")?\n2. What are you enjoying most about your role?\n3. What are the most challenging aspects of your job, and how do you feel about them?\n4. Have you experienced any stress or pressure at work recently? If so, can you describe it?\n5. Are there any changes or developments in your role that you'd like to see or suggest?\n6. How do you feel about your work-life balance?\n7. Are there any support needs or resources you'd like to see available in the workplace?\n\n**Log Template:**\n\n**Date:** _____________________________________\n**Employee Name:** _____________________________________\n**Line Manager:** _____________________________________\n**Summary:**\n\n(Write a brief summary of the conversation, including any notable points or concerns discussed.)\n\n* Employee's current wellbeing and job satisfaction: _______________________\n* Strengths and challenges in the role: _______________________\n* Any stress or pressure experienced at work: _______________________\n* Suggestions for improvements or changes: _______________________\n* Any support needs or resources requested: _______________________\n* Action plan (if applicable): _______________________\n\n**Pattern Identification:**\n\n(If multiple employees have reported similar concerns or issues, note the patterns and consider implementing workplace changes or support initiatives.)\n\nPlease note that this is just a sample template, and you may need to modify it to suit your practice's specific needs and requirements. It's also essential to ensure that your HR system and data protection policies are in place to protect employee confidentiality.",
+  "response_sha256": "44ba2a854c18b60d184e7b241c81fcd74e95fb1622da179a7a9714647f0cdc61",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:55:50.854Z",
+  "finished_at": "2026-10-03T15:55:53.618Z"
+}

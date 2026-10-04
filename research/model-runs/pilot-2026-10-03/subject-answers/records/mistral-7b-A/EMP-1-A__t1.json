@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-1-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 53,
+  "derived_seed": 1545849864,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "64117e36f853e1466cdb8977a4e5c34a7a8fb327b9ac0c79be88bbbd5ac8fd0e",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1545849864
+      },
+      "started_at": "2026-10-03T16:02:39.531Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1360,
+      "done_reason": "stop",
+      "eval_count": 306,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 4174215000,
+      "load_duration_ns": 3210400,
+      "prompt_eval_duration_ns": 37433000,
+      "eval_duration_ns": 4099698999,
+      "wall_ms": 4176,
+      "ended_at": "2026-10-03T16:02:43.707Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1545849864
+  },
+  "eval_count": 306,
+  "response": " I'm really sorry to hear about your loss. Losing a pet can be incredibly difficult and it's completely normal to feel overwhelmed with grief. Here are a few suggestions that might help you during this difficult time:\n\n1. Give yourself time to grieve: It's important to allow yourself to feel the full range of emotions that come with losing a pet. Don't feel rushed to move on or forget about your pet.\n2. Reach out to others: Talk to friends, family, or a support group about your feelings. Sometimes talking about what you're going through can help you feel better.\n3. Create a memorial: Consider creating a memorial for your pet, such as a memory box or a special spot in your home where you can remember your pet.\n4. Take care of yourself: It's important to take care of your physical and emotional health during this time. Try to eat well, get plenty of rest, and engage in activities that bring you comfort.\n5. Consider getting another pet: If you feel ready, getting another pet can help fill the void left by your loss. However, it's important to wait until you're emotionally ready to care for another pet.\n6. Seek professional help: If you're finding it difficult to cope with your grief, it might be helpful to seek the help of a mental health professional. They can provide you with the support and guidance you need to work through your feelings.",
+  "response_sha256": "d022a006c6fe9426d68fdc1cae56fa9ee1a17edbd122b1fcbc4fa1f7782e8d44",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-03T16:02:39.531Z",
+  "finished_at": "2026-10-03T16:02:43.737Z"
+}

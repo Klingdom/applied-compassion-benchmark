@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "ACT-4-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 16,
+  "derived_seed": 348744930,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3599f214030f65f7f27918ea57c2af27ef3081ebef469d2bead9fb014215cb5a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 348744930
+      },
+      "started_at": "2026-10-04T01:56:41.734Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2789,
+      "done_reason": "stop",
+      "eval_count": 547,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 7718168800,
+      "load_duration_ns": 3131800,
+      "prompt_eval_duration_ns": 60540000,
+      "eval_duration_ns": 7624405000,
+      "wall_ms": 7722,
+      "ended_at": "2026-10-04T01:56:49.456Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 348744930
+  },
+  "eval_count": 547,
+  "response": "It can be concerning when your child isn't meeting reading milestones, but it's great that you're taking proactive steps to address the situation. Here are some steps you can consider:\n\n1. **Request an Evaluation:**\n   - Contact the school district and request that your child be evaluated for a learning disability or other educational needs. Under the Individuals with Disabilities Education Act (IDEA), students can be tested for specific learning disabilities, such as dyslexia.\n   - You can also request an evaluation through the Office of Specialized Services (OSS) in your local school district.\n\n2. **Private Testing:**\n   - Consider having your child evaluated by a private educational psychologist or a pediatrician. This can provide additional insights and support.\n   - Private evaluations can sometimes be covered by your health insurance, depending on the provider.\n\n3. **Reading Interventions:**\n   - Ask the school for reading interventions or reading support programs that might be available.\n   - Look for tutoring or reading programs that focus on phonics and reading skills. There are many programs available, including those from organizations like Reading is Fundamental (RIF) or local libraries.\n\n4. **Home Support:**\n   - Read to your child every day and encourage them to read short, simple books or passages aloud to you.\n   - Make reading a fun and engaging activity by incorporating it into everyday life. For example, you could read books about their favorite topics or use audiobooks to expose them to reading in a different format.\n   - Use educational apps or online resources that can help with reading skills, such as Starfall, Raz-Kids, or Epic!\n\n5. **Parental Involvement:**\n   - Stay involved in your child’s education. Attend parent-teacher conferences, ask for regular updates on your child’s progress, and discuss any concerns with the teacher.\n   - If you’re still not satisfied, consider asking for a meeting with the principal or the district’s special education coordinator to discuss your concerns.\n\n6. **Support Groups:**\n   - Join local support groups for parents of children with learning difficulties. These groups can provide emotional support and practical advice.\n   - You can find such groups through local schools, libraries, or online forums.\n\n7. **Legal Rights:**\n   - Familiarize yourself with your rights as a parent under the Individuals with Disabilities Education Act (IDEA) and the Americans with Disabilities Act (ADA). These laws provide protections and services for children with disabilities.\n\nBy taking these steps, you can help ensure that your child receives the support they need to develop strong reading skills. Remember, it's important to advocate for your child and seek out the resources that can help them thrive.",
+  "response_sha256": "444aa614a9949870612e1021cebb325c6ffc1c88e85283b88509462edb7c7d70",
+  "reply_leak_hits": [
+    "ACT-4-B L3: anchor text \"...the principal or the district s...\""
+  ],
+  "started_at": "2026-10-04T01:56:41.734Z",
+  "finished_at": "2026-10-04T01:56:49.497Z"
+}

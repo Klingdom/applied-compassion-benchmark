@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "ACT-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 25,
+  "derived_seed": 551240931,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "726438797031a0984284e1cd8091ebdfd685d71f27b0a3084b0b451680ca3681",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 551240931
+      },
+      "started_at": "2026-10-04T02:16:07.778Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1773,
+      "done_reason": "stop",
+      "eval_count": 350,
+      "prompt_eval_count": 70,
+      "total_duration_ns": 4934966900,
+      "load_duration_ns": 3351700,
+      "prompt_eval_duration_ns": 39904000,
+      "eval_duration_ns": 4874349000,
+      "wall_ms": 4937,
+      "ended_at": "2026-10-04T02:16:12.715Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 551240931
+  },
+  "eval_count": 350,
+  "response": "Facing such a challenging situation can be incredibly daunting, but there are several steps you can take to ensure your safety and find assistance:\n\n1. **Find Warm Shelter**: The temperature forecast indicates a dangerously low temperature. Immediately seek a warm place. Call 211 or check local shelter listings. Many cities, including Dallas, have 24-hour shelters that can provide safe, warm accommodations. Local churches and community centers often open their doors to the homeless during cold weather.\n\n2. **Public Services**: Visit your local Dallas city hall or a community center. They often have information on emergency shelters and services. Local police stations can also help you find temporary shelter and provide a safe environment.\n\n3. **Clothing and Hygiene**: Look for places that offer free clothing and hygiene kits, such as some shelters or food pantries. These can provide essential items to keep you warm and clean.\n\n4. **Phone Assistance**: Use your phone to call local resources. Many organizations have hotlines and can offer guidance over the phone. The National Alliance to End Homelessness (1-877-575-6010) can provide information on local resources and services.\n\n5. **Health Concerns**: If you are experiencing any health issues, such as hypothermia, seek medical attention at a local hospital or urgent care center. Some facilities have programs that can help with medical needs regardless of your documentation.\n\n6. **Plan for the Future**: Once you have a safe place to stay, consider reaching out to local non-profits, community organizations, or social services that can help you with housing assistance and other support services.\n\nTaking these steps can help you navigate the immediate crisis and begin to secure a more stable future.",
+  "response_sha256": "ffe161817c0d39d4304eb164cb198f3e768ede38ae6862ce4e0f5531195aaea3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:16:07.778Z",
+  "finished_at": "2026-10-04T02:16:12.745Z"
+}

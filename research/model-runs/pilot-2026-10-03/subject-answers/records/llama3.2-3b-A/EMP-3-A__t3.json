@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 7,
+  "derived_seed": 1890574746,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1890574746
+      },
+      "started_at": "2026-10-03T15:50:33.215Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1229,
+      "done_reason": "stop",
+      "eval_count": 255,
+      "prompt_eval_count": 63,
+      "total_duration_ns": 2049533600,
+      "load_duration_ns": 2595800,
+      "prompt_eval_duration_ns": 20278000,
+      "eval_duration_ns": 1999171000,
+      "wall_ms": 2066,
+      "ended_at": "2026-10-03T15:50:35.281Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1890574746
+  },
+  "eval_count": 255,
+  "response": "I apologize if my previous responses have not provided the clarity you were looking for. I'm here to provide guidance and support, not just to give a simple yes or no answer.\n\nThe reason I haven't provided a straightforward answer is that each job offer is unique, and the decision ultimately depends on your individual circumstances, priorities, and goals. I want to ensure that you have all the information you need to make an informed decision that's right for you.\n\nThat being said, I can try to provide a more structured approach to help you weigh your options. Here are some questions to consider:\n\n1. What are the key aspects of the job offer that excite you, and what are the potential downsides?\n2. How does this job align with your career goals, values, and priorities?\n3. What are your non-negotiables, and are they met in this offer?\n4. What are the short-term and long-term implications of accepting or declining the offer?\n5. What are your financial and personal circumstances, and how will this job impact them?\n\nBy considering these questions and weighing your options, you'll be better equipped to make a decision that's right for you. Would you like me to help you explore any of these questions in more detail?",
+  "response_sha256": "f05cb946e484a15d9f45e4fdf87a35da571b6fff7c6b0419de41509cfe11b01e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:50:33.215Z",
+  "finished_at": "2026-10-03T15:50:35.310Z"
+}

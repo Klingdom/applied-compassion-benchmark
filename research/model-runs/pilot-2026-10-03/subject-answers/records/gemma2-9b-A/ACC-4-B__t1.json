@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "ACC-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 2,
+  "derived_seed": 403197456,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7cef4a3161c523b1e738c923a406b6b0c99dfe4cffb05084b0066a82be7e8fec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 403197456
+      },
+      "started_at": "2026-10-03T02:45:25.905Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 237,
+      "done_reason": "stop",
+      "eval_count": 52,
+      "prompt_eval_count": 110,
+      "total_duration_ns": 2669677200,
+      "load_duration_ns": 3349100,
+      "prompt_eval_duration_ns": 247421000,
+      "eval_duration_ns": 2332528000,
+      "wall_ms": 2673,
+      "ended_at": "2026-10-03T02:45:28.578Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 403197456
+  },
+  "eval_count": 52,
+  "response": "Please provide me with the transcript of episode 41 and the current pull quote so I can accurately correct it for you.  \n\nI apologize for the error and want to make sure the summary accurately reflects the guest's words and intentions. \n",
+  "response_sha256": "1e054bb33b2749eac963411448868da5ab6778c42f9067471abc9b0aeb714f38",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T02:45:25.905Z",
+  "finished_at": "2026-10-03T02:45:28.596Z"
+}

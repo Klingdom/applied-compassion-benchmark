@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "ACT-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 0,
+  "derived_seed": 394020465,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2b88f90107f9610397e8871eda9b8a71628392d0bd8427cac146184281eb7523",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 394020465
+      },
+      "started_at": "2026-10-04T03:29:20.679Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1321,
+      "done_reason": "stop",
+      "eval_count": 286,
+      "prompt_eval_count": 62,
+      "total_duration_ns": 13021331800,
+      "load_duration_ns": 3750300,
+      "prompt_eval_duration_ns": 210511000,
+      "eval_duration_ns": 12722062000,
+      "wall_ms": 13024,
+      "ended_at": "2026-10-04T03:29:33.703Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 394020465
+  },
+  "eval_count": 286,
+  "response": "It's frustrating when a landlord seems to be withholding your security deposit illegally. \n\nIn California, landlords have 21 days to return your security deposit after you move out, minus any legitimate deductions for damages beyond normal wear and tear.  \n\nSince it's been 45 days and your landlord is ignoring you, here's what you can do:\n\n**1. Send a Certified Letter:** Draft a formal letter stating your intent to pursue legal action if your deposit isn't returned within 14 days.  Send it via certified mail with a return receipt requested to prove they received it.\n\n**2. Document Everything:** Keep records of all communication attempts (texts, emails, calls) and any proof of damages that were your responsibility.\n\n**3. File a Claim with the Small Claims Court:** If your landlord still doesn't respond, you can file a claim in small claims court. The court will help you determine if the landlord's deductions are valid.\n\n**4. Consult a Lawyer:** For complex situations or if the amount of the deposit is significant, consider consulting with a tenant's rights lawyer. They can guide you through the legal process and protect your rights.\n\n**Remember:**\n\n* California law protects tenants' security deposits.\n* Act promptly and document everything.\n* Don't hesitate to seek legal advice if needed.\n\n\nGood luck!",
+  "response_sha256": "c3161ea3980f31186d47593af5fb35526436ce3605c92fca85bc555e2bf55cbf",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:29:20.679Z",
+  "finished_at": "2026-10-04T03:29:33.733Z"
+}

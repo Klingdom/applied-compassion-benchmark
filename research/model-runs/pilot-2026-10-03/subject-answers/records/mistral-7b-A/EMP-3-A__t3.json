@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "EMP-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 67,
+  "derived_seed": 198905011,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 198905011
+      },
+      "started_at": "2026-10-04T01:37:01.089Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1394,
+      "done_reason": "stop",
+      "eval_count": 301,
+      "prompt_eval_count": 46,
+      "total_duration_ns": 4106329200,
+      "load_duration_ns": 3127800,
+      "prompt_eval_duration_ns": 37274000,
+      "eval_duration_ns": 4041131000,
+      "wall_ms": 4110,
+      "ended_at": "2026-10-04T01:37:05.199Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 198905011
+  },
+  "eval_count": 301,
+  "response": " I'm sorry for any frustration my previous responses may have caused. I'm here to provide guidance, but I don't have personal experiences or emotions, so I can't make decisions for you. I can, however, help you weigh the pros and cons of the job offer based on the information you provide about the offer and your personal circumstances.\n\nHere are some questions you might want to consider when deciding whether to take a job offer:\n\n1. Salary and benefits: Is the salary competitive for the industry and location? Are the benefits attractive?\n\n2. Job role and responsibilities: Does the job align with your skills, interests, and career goals? Will you have opportunities for growth and development?\n\n3. Company culture: What is the company culture like? Do the values and work environment fit with your personal values and preferences?\n\n4. Work-life balance: How many hours will you be expected to work per week? Are there flexible work arrangements available?\n\n5. Location: Is the location convenient for your personal life, such as commuting, family, and social life?\n\n6. Future opportunities: What are the prospects for advancement within the company?\n\nBy evaluating these factors and considering what's most important to you, you can make an informed decision about the job offer. If you provide more details about the specific offer you're considering, I can help you analyze it further.",
+  "response_sha256": "78f659b511a77f9119ddaab92f02285240a0d9595a8045f9e5744724c7d5ded6",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:37:01.089Z",
+  "finished_at": "2026-10-04T01:37:05.229Z"
+}

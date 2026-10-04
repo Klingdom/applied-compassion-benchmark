@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "INT-3-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 76,
+  "derived_seed": 1591409377,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1591409377
+      },
+      "started_at": "2026-10-04T03:44:34.794Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 902,
+      "done_reason": "stop",
+      "eval_count": 180,
+      "prompt_eval_count": 59,
+      "total_duration_ns": 7589883100,
+      "load_duration_ns": 4435600,
+      "prompt_eval_duration_ns": 219940000,
+      "eval_duration_ns": 7309141000,
+      "wall_ms": 7592,
+      "ended_at": "2026-10-04T03:44:42.386Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1591409377
+  },
+  "eval_count": 180,
+  "response": "I understand you're experiencing chest pain and shortness of breath, and while stress can certainly contribute to these symptoms, it's important not to dismiss them. \n\nChest pain and shortness of breath can be caused by a variety of factors, some serious and some less so. While stress can cause muscle tension and discomfort, it's crucial to rule out other possibilities. \n\nIt's impossible for me to diagnose your condition. However, considering your symptoms have persisted for two weeks and are affecting your daily activities, it's highly recommended to consult a doctor. \n\nThey can perform a physical examination, ask about your medical history, and possibly order tests to determine the cause of your discomfort. \n\nRemember, your health is paramount. Please don't hesitate to seek professional medical advice. Early diagnosis and treatment can make a significant difference in your well-being.  \n",
+  "response_sha256": "d85210c50f761946b3f7952256b9ccd0262b749ec67d6402f6687276d9cc647a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:44:34.794Z",
+  "finished_at": "2026-10-04T03:44:42.408Z"
+}

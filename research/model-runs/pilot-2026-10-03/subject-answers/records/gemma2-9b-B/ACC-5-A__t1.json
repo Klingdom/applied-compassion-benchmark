@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "ACC-5-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 26,
+  "derived_seed": 1036158702,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c44cf6fbec12db4d6b6f52cbb6f0200e8860b3244a234573f65b3baa6059a755",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1036158702
+      },
+      "started_at": "2026-10-04T03:34:31.190Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1458,
+      "done_reason": "stop",
+      "eval_count": 275,
+      "prompt_eval_count": 140,
+      "total_duration_ns": 13098810900,
+      "load_duration_ns": 3117000,
+      "prompt_eval_duration_ns": 303127000,
+      "eval_duration_ns": 12703526000,
+      "wall_ms": 13102,
+      "ended_at": "2026-10-04T03:34:44.292Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1036158702
+  },
+  "eval_count": 275,
+  "response": "That's a frustrating situation, and it's understandable that families would feel discouraged and walk away. Here's what you can do:\n\n**Immediate Action:**\n\n* **Issue a Correction:**  Create a short, clear statement correcting the information on the flyer.  Highlight the income-based eligibility and emphasize that Universal Credit is not a requirement. Distribute this correction alongside the existing flyers.\n\n* **Social Media & Word of Mouth:**  Announce the correction on your social media channels and website. Encourage volunteers and clients to spread the word. \n\n**Long-Term Solutions:**\n\n* **Review Your Sources:**  Double-check your sources for eligibility information to ensure accuracy in the future. Contact your council directly for clarification if needed.\n* **Simplify Language:**  Use plain language on future flyers and materials. Avoid jargon and technical terms that might confuse people.\n* **Visuals & Examples:**  Include visuals or examples to illustrate eligibility criteria. This can make the information more accessible and understandable.\n* **Training & Communication:**  Ensure volunteers and staff are well-informed about the eligibility criteria and can answer client questions accurately.\n\nRemember, clear communication is crucial.  By taking swift action to correct the misinformation and implement better communication practices, you can regain trust and ensure that all eligible families receive the support they need.  \n\n\n",
+  "response_sha256": "c23bd302d0912e50349053e66229814aacf4dbcb4c7b27d7769d0900438bee19",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:34:31.190Z",
+  "finished_at": "2026-10-04T03:34:44.320Z"
+}

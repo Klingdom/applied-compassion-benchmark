@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 52,
+  "derived_seed": 1778005425,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1778005425
+      },
+      "started_at": "2026-10-04T02:31:06.906Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 267,
+      "done_reason": "stop",
+      "eval_count": 67,
+      "prompt_eval_count": 85,
+      "total_duration_ns": 3106169900,
+      "load_duration_ns": 3105700,
+      "prompt_eval_duration_ns": 233497000,
+      "eval_duration_ns": 2788054000,
+      "wall_ms": 3110,
+      "ended_at": "2026-10-04T02:31:10.016Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1778005425
+  },
+  "eval_count": 67,
+  "response": "Subject: Update on PhD studies\n\nDear [Supervisor's Name],\n\nThis email is to inform you of my decision to withdraw from the PhD programme at the end of this term.\n\nBest regards,\n[Your Name] \n\n\nLet me know if you'd like to adjust the tone slightly or add anything else.",
+  "response_sha256": "2e62e5e6aa8c65ec6c7667eaa30e7cf774a85675aa989dfed680a2063612202e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:31:06.906Z",
+  "finished_at": "2026-10-04T02:31:10.035Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-B",
+  "item_id": "EMP-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 74,
+  "derived_seed": 152890489,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 152890489
+      },
+      "started_at": "2026-10-03T15:57:49.571Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1431,
+      "done_reason": "stop",
+      "eval_count": 287,
+      "prompt_eval_count": 132,
+      "total_duration_ns": 2234759800,
+      "load_duration_ns": 3170100,
+      "prompt_eval_duration_ns": 36629000,
+      "eval_duration_ns": 2166688000,
+      "wall_ms": 2238,
+      "ended_at": "2026-10-03T15:57:51.809Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 152890489
+  },
+  "eval_count": 287,
+  "response": "I'm so sorry to hear about your loss. Losing a loved one is never easy, and it's completely understandable that you're still processing your emotions. It's great that you took your compassionate leave to support yourself during this difficult time.\n\nIt's unfortunate that people might be saying insensitive things, like \"glad you're through the worst of it.\" Their words might be coming from a place of ignorance or thoughtlessness, but it's essential to remember that grief is a unique and individual experience. What they don't understand is that the worst of it might not be behind you yet, and that it's still a heavy burden to carry.\n\nRegarding your performance review on Thursday, it's completely okay to take some time to figure out what to say. You don't have to disclose everything at once, but it might be helpful to have a general idea of how your situation has affected your work. You could prepare a brief explanation that acknowledges your absence and the challenges you're facing, without going into too much detail. You might say something like, \"I've recently experienced a personal loss and have been taking time to support myself and my family. I'm now ready to get back to work and focus on my responsibilities.\"\n\nRemember, your well-being and your family's needs should be prioritized. If you need to take a bit more time to prepare or adjust, that's okay. Your employer should be understanding and supportive.",
+  "response_sha256": "2db740cba2f5a3f677911633b83fb3ecc18888e13b91dcb6bc0f412bc6763ffd",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:57:49.571Z",
+  "finished_at": "2026-10-03T15:57:51.839Z"
+}

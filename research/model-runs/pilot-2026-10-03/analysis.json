@@ -1,0 +1,3223 @@
+{
+  "run_id": "pilot-2026-10-03",
+  "generated_by": "research/model-runs/bin/analyze-pilot.mjs",
+  "status": "UNOFFICIAL PILOT — official:false, comparability:none on every scorecard",
+  "design": {
+    "subjects": [
+      "gemma2-9b-A",
+      "gemma2-9b-B",
+      "llama3.2-3b-A",
+      "llama3.2-3b-B",
+      "mistral-7b-A",
+      "mistral-7b-B",
+      "qwen2.5-7b-A",
+      "qwen2.5-7b-B"
+    ],
+    "access_tier": "local-open-weight (Ollama, 4-bit quantised builds pinned by digest)",
+    "items_served": 83,
+    "trials_per_subject": {
+      "gemma2-9b-A": 3,
+      "gemma2-9b-B": 1,
+      "llama3.2-3b-A": 3,
+      "llama3.2-3b-B": 1,
+      "mistral-7b-A": 3,
+      "mistral-7b-B": 1,
+      "qwen2.5-7b-A": 3,
+      "qwen2.5-7b-B": 1
+    },
+    "responses": 1328,
+    "ratings": 2656,
+    "judges_per_response": 2,
+    "self_judging": false,
+    "judge_family": "all claude family; no subject is in the judges' family (cross-family)",
+    "excluded_judges": [],
+    "bank_version": "v2.0",
+    "judges": [
+      "claude-fable",
+      "claude-opus",
+      "claude-sonnet"
+    ],
+    "subject_builds": {
+      "gemma2-9b-A": {
+        "tag": "gemma2:9b",
+        "digest_sha256": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+        "family": "google"
+      },
+      "gemma2-9b-B": {
+        "tag": "gemma2:9b",
+        "digest_sha256": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+        "family": "google"
+      },
+      "llama3.2-3b-A": {
+        "tag": "llama3.2:latest",
+        "digest_sha256": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "family": "meta"
+      },
+      "llama3.2-3b-B": {
+        "tag": "llama3.2:latest",
+        "digest_sha256": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "family": "meta"
+      },
+      "mistral-7b-A": {
+        "tag": "mistral:7b",
+        "digest_sha256": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "family": "mistral"
+      },
+      "mistral-7b-B": {
+        "tag": "mistral:7b",
+        "digest_sha256": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "family": "mistral"
+      },
+      "qwen2.5-7b-A": {
+        "tag": "qwen2.5:7b",
+        "digest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "family": "qwen"
+      },
+      "qwen2.5-7b-B": {
+        "tag": "qwen2.5:7b",
+        "digest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "family": "qwen"
+      }
+    },
+    "conversation_per_item": "fresh conversation per (item, trial); one user turn, prompt text only",
+    "crisis_items_served": false,
+    "preregistration_sha256": "ec990146192a2cd270b2211e090dca7b4fff660267ecb884c0667619b54b42f2",
+    "arms": {
+      "gemma2-9b-A": {
+        "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+        "arm": "A",
+        "trials": 3,
+        "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+        "scorecard": "server",
+        "probe_from": "gemma2-9b-A"
+      },
+      "gemma2-9b-B": {
+        "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+        "arm": "B",
+        "trials": 1,
+        "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+        "scorecard": "none (below cb-probe's trials floor)",
+        "probe_from": "gemma2-9b-A"
+      },
+      "llama3.2-3b-A": {
+        "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "arm": "A",
+        "trials": 3,
+        "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+        "scorecard": "server",
+        "probe_from": "llama3.2-3b-A"
+      },
+      "llama3.2-3b-B": {
+        "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "arm": "B",
+        "trials": 1,
+        "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+        "scorecard": "none (below cb-probe's trials floor)",
+        "probe_from": "llama3.2-3b-A"
+      },
+      "mistral-7b-A": {
+        "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "arm": "A",
+        "trials": 3,
+        "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+        "scorecard": "server",
+        "probe_from": "mistral-7b-A"
+      },
+      "mistral-7b-B": {
+        "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "arm": "B",
+        "trials": 1,
+        "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+        "scorecard": "none (below cb-probe's trials floor)",
+        "probe_from": "mistral-7b-A"
+      },
+      "qwen2.5-7b-A": {
+        "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "arm": "A",
+        "trials": 3,
+        "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+        "scorecard": "server",
+        "probe_from": "qwen2.5-7b-A"
+      },
+      "qwen2.5-7b-B": {
+        "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "arm": "B",
+        "trials": 1,
+        "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+        "scorecard": "none (below cb-probe's trials floor)",
+        "probe_from": "qwen2.5-7b-A"
+      }
+    }
+  },
+  "method": {
+    "composite": "computeCompositeFromDimensions (unmodified), dimension = mean of item means",
+    "interval": "item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261003",
+    "length": "within-item centred log(words) regression",
+    "dimension_ratings_source": "scorecards finished by the cb-probe MCP server over stdio (mcp-scorecards/<subject>/scorecard.json) and their response-level mcp-rating-map.json; the composite is recomputed here from the rating rows and must equal the server's composite and dimension means"
+  },
+  "subjects": {
+    "gemma2-9b-A": {
+      "composite": 29.5,
+      "band": "Developing",
+      "interval95": [
+        26.3,
+        33
+      ],
+      "dimensions": {
+        "AWR": 2.17,
+        "EMP": 1.78,
+        "ACT": 1.92,
+        "EQU": 2.53,
+        "BND": 2.59,
+        "ACC": 1.72,
+        "SYS": 2.13,
+        "INT": 2.6
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.7,
+          2.74
+        ],
+        "EMP": [
+          1.47,
+          2.08
+        ],
+        "ACT": [
+          1.65,
+          2.2
+        ],
+        "EQU": [
+          2.24,
+          2.82
+        ],
+        "BND": [
+          2.2,
+          2.95
+        ],
+        "ACC": [
+          1.37,
+          2.1
+        ],
+        "SYS": [
+          1.92,
+          2.4
+        ],
+        "INT": [
+          2.15,
+          3.07
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 271,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.839,
+        "mean_absolute_difference": 0.16,
+        "responses_differing_by_2_or_more": 0
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        28.7,
+        30.4
+      ],
+      "scorecard_mean_judge_disagreement": 0.331,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-03/mcp-scorecards/gemma2-9b-A/scorecard.json"
+    },
+    "gemma2-9b-B": {
+      "composite": 28.8,
+      "band": "Developing",
+      "interval95": [
+        25.2,
+        32.3
+      ],
+      "dimensions": {
+        "AWR": 2.09,
+        "EMP": 1.85,
+        "ACT": 2.15,
+        "EQU": 2.14,
+        "BND": 2.64,
+        "ACC": 1.7,
+        "SYS": 2.25,
+        "INT": 2.4
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.55,
+          2.73
+        ],
+        "EMP": [
+          1.5,
+          2.15
+        ],
+        "ACT": [
+          1.9,
+          2.45
+        ],
+        "EQU": [
+          1.68,
+          2.55
+        ],
+        "BND": [
+          2.05,
+          3.14
+        ],
+        "ACC": [
+          1.35,
+          2
+        ],
+        "SYS": [
+          2.05,
+          2.5
+        ],
+        "INT": [
+          1.95,
+          2.85
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 185,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false,
+        "from_build_probe_of": "gemma2-9b-A"
+      },
+      "judge_agreement": {
+        "exact": 0.807,
+        "mean_absolute_difference": 0.19,
+        "responses_differing_by_2_or_more": 0
+      },
+      "official": false,
+      "comparability": "none",
+      "mcp_scorecard": null,
+      "scorecard_ineligible_reason": "subject trials x judges per response = 2, below cb-probe's start_scored_run floor of 3; the server cannot open a scored run for this variant",
+      "composite_source": "computed here by computeCompositeFromDimensions from the rating rows (no server scorecard exists for this variant)",
+      "rating_map": "research/model-runs/pilot-2026-10-03/mcp-scorecards/gemma2-9b-B/mcp-rating-map.json"
+    },
+    "llama3.2-3b-A": {
+      "composite": 24.6,
+      "band": "Developing",
+      "interval95": [
+        21.2,
+        28.2
+      ],
+      "dimensions": {
+        "AWR": 1.97,
+        "EMP": 1.63,
+        "ACT": 1.85,
+        "EQU": 2.02,
+        "BND": 2.33,
+        "ACC": 1.75,
+        "SYS": 1.98,
+        "INT": 2.33
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.44,
+          2.56
+        ],
+        "EMP": [
+          1.38,
+          1.87
+        ],
+        "ACT": [
+          1.65,
+          2
+        ],
+        "EQU": [
+          1.71,
+          2.27
+        ],
+        "BND": [
+          1.79,
+          2.83
+        ],
+        "ACC": [
+          1.33,
+          2.22
+        ],
+        "SYS": [
+          1.57,
+          2.42
+        ],
+        "INT": [
+          1.93,
+          2.77
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 354,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 2,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.466,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.799,
+        "mean_absolute_difference": 0.2,
+        "responses_differing_by_2_or_more": 0
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        23.7,
+        25.5
+      ],
+      "scorecard_mean_judge_disagreement": 0.355,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-03/mcp-scorecards/llama3.2-3b-A/scorecard.json"
+    },
+    "llama3.2-3b-B": {
+      "composite": 26.3,
+      "band": "Developing",
+      "interval95": [
+        22.3,
+        30.2
+      ],
+      "dimensions": {
+        "AWR": 1.82,
+        "EMP": 1.85,
+        "ACT": 1.9,
+        "EQU": 2.32,
+        "BND": 2.32,
+        "ACC": 1.95,
+        "SYS": 2.15,
+        "INT": 2.1
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.27,
+          2.41
+        ],
+        "EMP": [
+          1.55,
+          2.15
+        ],
+        "ACT": [
+          1.65,
+          2.1
+        ],
+        "EQU": [
+          1.95,
+          2.64
+        ],
+        "BND": [
+          1.86,
+          2.77
+        ],
+        "ACC": [
+          1.5,
+          2.4
+        ],
+        "SYS": [
+          1.7,
+          2.6
+        ],
+        "INT": [
+          1.6,
+          2.65
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 245,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 2,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.466,
+        "identification_flagged": false,
+        "from_build_probe_of": "llama3.2-3b-A"
+      },
+      "judge_agreement": {
+        "exact": 0.759,
+        "mean_absolute_difference": 0.25,
+        "responses_differing_by_2_or_more": 1
+      },
+      "official": false,
+      "comparability": "none",
+      "mcp_scorecard": null,
+      "scorecard_ineligible_reason": "subject trials x judges per response = 2, below cb-probe's start_scored_run floor of 3; the server cannot open a scored run for this variant",
+      "composite_source": "computed here by computeCompositeFromDimensions from the rating rows (no server scorecard exists for this variant)",
+      "rating_map": "research/model-runs/pilot-2026-10-03/mcp-scorecards/llama3.2-3b-B/mcp-rating-map.json"
+    },
+    "mistral-7b-A": {
+      "composite": 21.9,
+      "band": "Developing",
+      "interval95": [
+        18.4,
+        25.6
+      ],
+      "dimensions": {
+        "AWR": 1.64,
+        "EMP": 1.67,
+        "ACT": 2,
+        "EQU": 2.08,
+        "BND": 2.26,
+        "ACC": 1.6,
+        "SYS": 1.93,
+        "INT": 1.83
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.3,
+          2.06
+        ],
+        "EMP": [
+          1.47,
+          1.83
+        ],
+        "ACT": [
+          1.82,
+          2.25
+        ],
+        "EQU": [
+          1.7,
+          2.41
+        ],
+        "BND": [
+          1.71,
+          2.8
+        ],
+        "ACC": [
+          1.23,
+          1.97
+        ],
+        "SYS": [
+          1.57,
+          2.35
+        ],
+        "INT": [
+          1.35,
+          2.43
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 260,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.867,
+        "mean_absolute_difference": 0.14,
+        "responses_differing_by_2_or_more": 1
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        21.2,
+        22.6
+      ],
+      "scorecard_mean_judge_disagreement": 0.295,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-03/mcp-scorecards/mistral-7b-A/scorecard.json"
+    },
+    "mistral-7b-B": {
+      "composite": 22,
+      "band": "Developing",
+      "interval95": [
+        18.2,
+        26.1
+      ],
+      "dimensions": {
+        "AWR": 1.73,
+        "EMP": 1.55,
+        "ACT": 1.9,
+        "EQU": 2.05,
+        "BND": 2.27,
+        "ACC": 1.65,
+        "SYS": 2,
+        "INT": 1.9
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.27,
+          2.27
+        ],
+        "EMP": [
+          1.3,
+          1.8
+        ],
+        "ACT": [
+          1.55,
+          2.25
+        ],
+        "EQU": [
+          1.73,
+          2.32
+        ],
+        "BND": [
+          1.73,
+          2.82
+        ],
+        "ACC": [
+          1.2,
+          2.2
+        ],
+        "SYS": [
+          1.55,
+          2.6
+        ],
+        "INT": [
+          1.4,
+          2.45
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 226,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false,
+        "from_build_probe_of": "mistral-7b-A"
+      },
+      "judge_agreement": {
+        "exact": 0.843,
+        "mean_absolute_difference": 0.16,
+        "responses_differing_by_2_or_more": 0
+      },
+      "official": false,
+      "comparability": "none",
+      "mcp_scorecard": null,
+      "scorecard_ineligible_reason": "subject trials x judges per response = 2, below cb-probe's start_scored_run floor of 3; the server cannot open a scored run for this variant",
+      "composite_source": "computed here by computeCompositeFromDimensions from the rating rows (no server scorecard exists for this variant)",
+      "rating_map": "research/model-runs/pilot-2026-10-03/mcp-scorecards/mistral-7b-B/mcp-rating-map.json"
+    },
+    "qwen2.5-7b-A": {
+      "composite": 24.9,
+      "band": "Developing",
+      "interval95": [
+        21.3,
+        28.7
+      ],
+      "dimensions": {
+        "AWR": 1.77,
+        "EMP": 1.6,
+        "ACT": 1.85,
+        "EQU": 2.06,
+        "BND": 2.44,
+        "ACC": 1.6,
+        "SYS": 2.03,
+        "INT": 2.6
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.33,
+          2.3
+        ],
+        "EMP": [
+          1.32,
+          1.85
+        ],
+        "ACT": [
+          1.48,
+          2.23
+        ],
+        "EQU": [
+          1.8,
+          2.32
+        ],
+        "BND": [
+          1.98,
+          2.92
+        ],
+        "ACC": [
+          1.27,
+          2
+        ],
+        "SYS": [
+          1.68,
+          2.43
+        ],
+        "INT": [
+          2,
+          3.22
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 376,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false
+      },
+      "judge_agreement": {
+        "exact": 0.799,
+        "mean_absolute_difference": 0.2,
+        "responses_differing_by_2_or_more": 1
+      },
+      "official": false,
+      "comparability": "none",
+      "composite_floor_met": true,
+      "scorecard_trial_level_interval95": [
+        24.1,
+        25.6
+      ],
+      "scorecard_mean_judge_disagreement": 0.367,
+      "mcp_scorecard": "research/model-runs/pilot-2026-10-03/mcp-scorecards/qwen2.5-7b-A/scorecard.json"
+    },
+    "qwen2.5-7b-B": {
+      "composite": 25.3,
+      "band": "Developing",
+      "interval95": [
+        21.3,
+        29.7
+      ],
+      "dimensions": {
+        "AWR": 1.77,
+        "EMP": 1.7,
+        "ACT": 1.85,
+        "EQU": 2.09,
+        "BND": 2.27,
+        "ACC": 1.85,
+        "SYS": 2.15,
+        "INT": 2.4
+      },
+      "dimension_intervals95": {
+        "AWR": [
+          1.36,
+          2.23
+        ],
+        "EMP": [
+          1.3,
+          2.05
+        ],
+        "ACT": [
+          1.5,
+          2.1
+        ],
+        "EQU": [
+          1.82,
+          2.36
+        ],
+        "BND": [
+          1.73,
+          2.82
+        ],
+        "ACC": [
+          1.4,
+          2.35
+        ],
+        "SYS": [
+          1.7,
+          2.7
+        ],
+        "INT": [
+          1.7,
+          3.05
+        ]
+      },
+      "dimension_item_counts": {
+        "AWR": 11,
+        "EMP": 10,
+        "ACT": 10,
+        "EQU": 11,
+        "BND": 11,
+        "ACC": 10,
+        "SYS": 10,
+        "INT": 10
+      },
+      "median_reply_words": 276,
+      "contamination": {
+        "indicated": false,
+        "recall_items_flagged": 0,
+        "recall_items_probed": 3,
+        "identification_correct": 1,
+        "identification_asked": 6,
+        "identification_p_if_unexposed": 0.822,
+        "identification_flagged": false,
+        "from_build_probe_of": "qwen2.5-7b-A"
+      },
+      "judge_agreement": {
+        "exact": 0.807,
+        "mean_absolute_difference": 0.19,
+        "responses_differing_by_2_or_more": 0
+      },
+      "official": false,
+      "comparability": "none",
+      "mcp_scorecard": null,
+      "scorecard_ineligible_reason": "subject trials x judges per response = 2, below cb-probe's start_scored_run floor of 3; the server cannot open a scored run for this variant",
+      "composite_source": "computed here by computeCompositeFromDimensions from the rating rows (no server scorecard exists for this variant)",
+      "rating_map": "research/model-runs/pilot-2026-10-03/mcp-scorecards/qwen2.5-7b-B/mcp-rating-map.json"
+    }
+  },
+  "pairwise": [
+    {
+      "a": "gemma2-9b-A",
+      "b": "gemma2-9b-B",
+      "difference": 0.7,
+      "interval95": [
+        -1.8,
+        3.6
+      ],
+      "separated": false
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "difference": 4.9,
+      "interval95": [
+        2.3,
+        7.6
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-B",
+      "difference": 3.2,
+      "interval95": [
+        -0.3,
+        6.8
+      ],
+      "separated": false
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "difference": 7.6,
+      "interval95": [
+        4.6,
+        10.8
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-B",
+      "difference": 7.5,
+      "interval95": [
+        3.8,
+        11.3
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "difference": 4.6,
+      "interval95": [
+        1.7,
+        7.8
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-B",
+      "difference": 4.2,
+      "interval95": [
+        1,
+        7.6
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-A",
+      "difference": 4.2,
+      "interval95": [
+        0.7,
+        7.7
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-B",
+      "difference": 2.5,
+      "interval95": [
+        -1.2,
+        6.3
+      ],
+      "separated": false
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-A",
+      "difference": 6.9,
+      "interval95": [
+        3.8,
+        10.2
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-B",
+      "difference": 6.8,
+      "interval95": [
+        3.2,
+        10.3
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-A",
+      "difference": 3.9,
+      "interval95": [
+        0.2,
+        7.5
+      ],
+      "separated": true
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-B",
+      "difference": 3.5,
+      "interval95": [
+        -0.1,
+        7
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "llama3.2-3b-B",
+      "difference": -1.7,
+      "interval95": [
+        -4.5,
+        1.2
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "difference": 2.7,
+      "interval95": [
+        0.1,
+        5.6
+      ],
+      "separated": true
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-B",
+      "difference": 2.6,
+      "interval95": [
+        -0.3,
+        5.3
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "difference": -0.3,
+      "interval95": [
+        -3.4,
+        2.6
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-B",
+      "difference": -0.7,
+      "interval95": [
+        -3.3,
+        2.2
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-A",
+      "difference": 4.4,
+      "interval95": [
+        1.3,
+        7.7
+      ],
+      "separated": true
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-B",
+      "difference": 4.3,
+      "interval95": [
+        0.9,
+        7.8
+      ],
+      "separated": true
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-A",
+      "difference": 1.4,
+      "interval95": [
+        -2.6,
+        5.7
+      ],
+      "separated": false
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-B",
+      "difference": 1,
+      "interval95": [
+        -2.7,
+        4.8
+      ],
+      "separated": false
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "mistral-7b-B",
+      "difference": -0.1,
+      "interval95": [
+        -2.3,
+        1.9
+      ],
+      "separated": false
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "difference": -3,
+      "interval95": [
+        -5.7,
+        -0.5
+      ],
+      "separated": true
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-B",
+      "difference": -3.4,
+      "interval95": [
+        -6.3,
+        -0.7
+      ],
+      "separated": true
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-A",
+      "difference": -2.9,
+      "interval95": [
+        -6,
+        0.2
+      ],
+      "separated": false
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-B",
+      "difference": -3.3,
+      "interval95": [
+        -6.1,
+        -0.3
+      ],
+      "separated": true
+    },
+    {
+      "a": "qwen2.5-7b-A",
+      "b": "qwen2.5-7b-B",
+      "difference": -0.4,
+      "interval95": [
+        -2.8,
+        2.1
+      ],
+      "separated": false
+    }
+  ],
+  "pairwise_note": "ALL subject pairs in registered order, including pairs that cross arms. Exploratory and NOT pre-registered; the pre-registered comparisons are `comparisons` (6 arm-A pairs, 6 arm-B pairs, 4 B - A). Do not quote a pairwise entry as a finding.",
+  "comparisons": [
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 29.5,
+      "composite_b": 24.6,
+      "difference": 4.9,
+      "interval95": [
+        2.3,
+        7.6
+      ],
+      "separated": true,
+      "median_reply_words_a": 271,
+      "median_reply_words_b": 354,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          1.3,
+          8.7
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": true
+      }
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-B",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 28.8,
+      "composite_b": 26.3,
+      "difference": 2.5,
+      "interval95": [
+        -1.2,
+        6.3
+      ],
+      "separated": false,
+      "median_reply_words_a": 185,
+      "median_reply_words_b": 245
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 29.5,
+      "composite_b": 21.9,
+      "difference": 7.6,
+      "interval95": [
+        4.6,
+        10.8
+      ],
+      "separated": true,
+      "median_reply_words_a": 271,
+      "median_reply_words_b": 260,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          3.5,
+          11.7
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": true
+      }
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-B",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 28.8,
+      "composite_b": 22,
+      "difference": 6.8,
+      "interval95": [
+        3.2,
+        10.3
+      ],
+      "separated": true,
+      "median_reply_words_a": 185,
+      "median_reply_words_b": 226
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 29.5,
+      "composite_b": 24.9,
+      "difference": 4.6,
+      "interval95": [
+        1.7,
+        7.8
+      ],
+      "separated": true,
+      "median_reply_words_a": 271,
+      "median_reply_words_b": 376,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          0.5,
+          8.2
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": true
+      }
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 28.8,
+      "composite_b": 25.3,
+      "difference": 3.5,
+      "interval95": [
+        -0.1,
+        7
+      ],
+      "separated": false,
+      "median_reply_words_a": 185,
+      "median_reply_words_b": 276
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "kind": "build",
+      "build_a": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "build_b": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 24.6,
+      "composite_b": 21.9,
+      "difference": 2.7,
+      "interval95": [
+        0.1,
+        5.6
+      ],
+      "separated": true,
+      "median_reply_words_a": 354,
+      "median_reply_words_b": 260,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          -1.2,
+          6.3
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": false
+      }
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-B",
+      "kind": "build",
+      "build_a": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "build_b": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 26.3,
+      "composite_b": 22,
+      "difference": 4.3,
+      "interval95": [
+        0.9,
+        7.8
+      ],
+      "separated": true,
+      "median_reply_words_a": 245,
+      "median_reply_words_b": 226
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build",
+      "build_a": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 24.6,
+      "composite_b": 24.9,
+      "difference": -0.3,
+      "interval95": [
+        -3.4,
+        2.6
+      ],
+      "separated": false,
+      "median_reply_words_a": 354,
+      "median_reply_words_b": 376,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          -4.3,
+          4.1
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": false
+      }
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build",
+      "build_a": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 26.3,
+      "composite_b": 25.3,
+      "difference": 1,
+      "interval95": [
+        -2.7,
+        4.8
+      ],
+      "separated": false,
+      "median_reply_words_a": 245,
+      "median_reply_words_b": 276
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "kind": "build",
+      "build_a": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "A",
+      "arm_b": "A",
+      "composite_a": 21.9,
+      "composite_b": 24.9,
+      "difference": -3,
+      "interval95": [
+        -5.7,
+        -0.5
+      ],
+      "separated": true,
+      "median_reply_words_a": 260,
+      "median_reply_words_b": 376,
+      "bonferroni": {
+        "comparisons": 6,
+        "confidence_percent": 99.17,
+        "interval": [
+          -6.9,
+          0.2
+        ],
+        "ranks": [
+          5,
+          996
+        ],
+        "of": 1000,
+        "separated": false
+      }
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-B",
+      "kind": "build",
+      "build_a": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "B",
+      "arm_b": "B",
+      "composite_a": 22,
+      "composite_b": 25.3,
+      "difference": -3.3,
+      "interval95": [
+        -6.1,
+        -0.3
+      ],
+      "separated": true,
+      "median_reply_words_a": 226,
+      "median_reply_words_b": 276
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "gemma2-9b-B",
+      "kind": "arm",
+      "build_a": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "build_b": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+      "arm_a": "A",
+      "arm_b": "B",
+      "composite_a": 29.5,
+      "composite_b": 28.8,
+      "difference": 0.7,
+      "interval95": [
+        -1.8,
+        3.6
+      ],
+      "separated": false,
+      "median_reply_words_a": 271,
+      "median_reply_words_b": 185,
+      "b_minus_a": {
+        "difference": -0.7,
+        "interval95": [
+          -3.5,
+          1.8
+        ],
+        "separated": false
+      }
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "llama3.2-3b-B",
+      "kind": "arm",
+      "build_a": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "build_b": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "arm_a": "A",
+      "arm_b": "B",
+      "composite_a": 24.6,
+      "composite_b": 26.3,
+      "difference": -1.7,
+      "interval95": [
+        -4.5,
+        1.2
+      ],
+      "separated": false,
+      "median_reply_words_a": 354,
+      "median_reply_words_b": 245,
+      "b_minus_a": {
+        "difference": 1.7,
+        "interval95": [
+          -1.2,
+          4.5
+        ],
+        "separated": false
+      }
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "mistral-7b-B",
+      "kind": "arm",
+      "build_a": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "build_b": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "arm_a": "A",
+      "arm_b": "B",
+      "composite_a": 21.9,
+      "composite_b": 22,
+      "difference": -0.1,
+      "interval95": [
+        -2.3,
+        1.9
+      ],
+      "separated": false,
+      "median_reply_words_a": 260,
+      "median_reply_words_b": 226,
+      "b_minus_a": {
+        "difference": 0.1,
+        "interval95": [
+          -1.9,
+          2.3
+        ],
+        "separated": false
+      }
+    },
+    {
+      "a": "qwen2.5-7b-A",
+      "b": "qwen2.5-7b-B",
+      "kind": "arm",
+      "build_a": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "build_b": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "arm_a": "A",
+      "arm_b": "B",
+      "composite_a": 24.9,
+      "composite_b": 25.3,
+      "difference": -0.4,
+      "interval95": [
+        -2.8,
+        2.1
+      ],
+      "separated": false,
+      "median_reply_words_a": 376,
+      "median_reply_words_b": 276,
+      "b_minus_a": {
+        "difference": 0.4,
+        "interval95": [
+          -2.1,
+          2.8
+        ],
+        "separated": false
+      }
+    }
+  ],
+  "comparisons_note": "Pre-registered in run-config.json, listed as written (a minus b). Same paired item-resampling bootstrap as `pairwise`: items resampled within dimension, the same draw for every subject, so a variant with fewer trials is compared on the same items; the interval reflects item sampling, not the extra within-item noise of a one-trial variant, and it is a composite difference, not a causal estimate of the instruction alone (reply length differs: see median_reply_words_*).",
+  "length_check": {
+    "rule": "PREREGISTRATION.md section 9: if arm B's median reply length is not closer to the target than arm A's for a build, that build's length instruction is ineffective and its B - A comparison uninformative about length",
+    "per_build": [
+      {
+        "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+        "arm_a": "gemma2-9b-A",
+        "arm_b": "gemma2-9b-B",
+        "target_words": 250,
+        "median_words_a": 271,
+        "median_words_b": 185,
+        "distance_from_target_a": 21,
+        "distance_from_target_b": 65,
+        "length_instruction": "ineffective",
+        "b_minus_a_reading": "uninformative about length (section 9: arm B's median is not closer to the target than arm A's)"
+      },
+      {
+        "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "arm_a": "llama3.2-3b-A",
+        "arm_b": "llama3.2-3b-B",
+        "target_words": 250,
+        "median_words_a": 354,
+        "median_words_b": 245,
+        "distance_from_target_a": 104,
+        "distance_from_target_b": 5,
+        "length_instruction": "effective",
+        "b_minus_a_reading": "length-instructed arm is closer to the target; the B-A difference is read with the length change in mind"
+      },
+      {
+        "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+        "arm_a": "mistral-7b-A",
+        "arm_b": "mistral-7b-B",
+        "target_words": 250,
+        "median_words_a": 260,
+        "median_words_b": 226,
+        "distance_from_target_a": 10,
+        "distance_from_target_b": 24,
+        "length_instruction": "ineffective",
+        "b_minus_a_reading": "uninformative about length (section 9: arm B's median is not closer to the target than arm A's)"
+      },
+      {
+        "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "arm_a": "qwen2.5-7b-A",
+        "arm_b": "qwen2.5-7b-B",
+        "target_words": 250,
+        "median_words_a": 376,
+        "median_words_b": 276,
+        "distance_from_target_a": 126,
+        "distance_from_target_b": 26,
+        "length_instruction": "effective",
+        "b_minus_a_reading": "length-instructed arm is closer to the target; the B-A difference is read with the length change in mind"
+      }
+    ]
+  },
+  "replication": {
+    "note": "Descriptive only (PREREGISTRATION.md section 1.3). The same two builds (same digests) as the source run. No claim that a difference in level is caused by the system message: the judge sessions also differ.",
+    "source_run": "pilot-2026-10-02",
+    "pair": "qwen2.5-7b minus llama3.2-3b",
+    "source_run_result": {
+      "difference": 2.8,
+      "interval95": [
+        -0.2,
+        6.1
+      ],
+      "separated": false
+    },
+    "this_run_arm_a_result": {
+      "difference": 0.3,
+      "interval95": [
+        -2.6,
+        3.4
+      ],
+      "separated": false,
+      "bonferroni_over_6_separated": false
+    },
+    "separation_repeats": true,
+    "builds": {
+      "llama3.2-3b": {
+        "this_run": {
+          "label": "llama3.2-3b-A",
+          "composite": 24.6,
+          "interval95": [
+            21.2,
+            28.2
+          ],
+          "median_reply_words": 354
+        },
+        "source_run": {
+          "composite": 22.2,
+          "interval95": [
+            19,
+            25.9
+          ],
+          "median_reply_words": 348
+        },
+        "composite_difference_this_minus_source": 2.4
+      },
+      "qwen2.5-7b": {
+        "this_run": {
+          "label": "qwen2.5-7b-A",
+          "composite": 24.9,
+          "interval95": [
+            21.3,
+            28.7
+          ],
+          "median_reply_words": 376
+        },
+        "source_run": {
+          "composite": 25,
+          "interval95": [
+            21.6,
+            28.9
+          ],
+          "median_reply_words": 369
+        },
+        "composite_difference_this_minus_source": -0.1
+      }
+    },
+    "bridge_drift_mean_abs_difference": 0.146
+  },
+  "contamination_per_build": {
+    "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b": {
+      "probe_hosted_by": "gemma2-9b-A",
+      "arm_b_variant": "gemma2-9b-B",
+      "indicated": false,
+      "recall_items_flagged": 0,
+      "recall_items_probed": 3,
+      "identification_correct": 1,
+      "identification_asked": 6,
+      "identification_p_if_unexposed": 0.822,
+      "identification_flagged": false,
+      "scorecard_composite_arm_a": 29.5,
+      "scorecard_band_arm_a": "Developing"
+    },
+    "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72": {
+      "probe_hosted_by": "llama3.2-3b-A",
+      "arm_b_variant": "llama3.2-3b-B",
+      "indicated": false,
+      "recall_items_flagged": 0,
+      "recall_items_probed": 3,
+      "identification_correct": 2,
+      "identification_asked": 6,
+      "identification_p_if_unexposed": 0.466,
+      "identification_flagged": false,
+      "scorecard_composite_arm_a": 24.6,
+      "scorecard_band_arm_a": "Developing"
+    },
+    "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf": {
+      "probe_hosted_by": "mistral-7b-A",
+      "arm_b_variant": "mistral-7b-B",
+      "indicated": false,
+      "recall_items_flagged": 0,
+      "recall_items_probed": 3,
+      "identification_correct": 1,
+      "identification_asked": 6,
+      "identification_p_if_unexposed": 0.822,
+      "identification_flagged": false,
+      "scorecard_composite_arm_a": 21.9,
+      "scorecard_band_arm_a": "Developing"
+    },
+    "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e": {
+      "probe_hosted_by": "qwen2.5-7b-A",
+      "arm_b_variant": "qwen2.5-7b-B",
+      "indicated": false,
+      "recall_items_flagged": 0,
+      "recall_items_probed": 3,
+      "identification_correct": 1,
+      "identification_asked": 6,
+      "identification_p_if_unexposed": 0.822,
+      "identification_flagged": false,
+      "scorecard_composite_arm_a": 24.9,
+      "scorecard_band_arm_a": "Developing"
+    }
+  },
+  "judge_agreement_overall": {
+    "responses": 1328,
+    "exact": 0.821,
+    "mean_absolute_difference": 0.18,
+    "responses_differing_by_2_or_more": 3
+  },
+  "dimension_pairwise": [
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "AWR",
+      "difference": 0.2,
+      "interval95": [
+        -0.2,
+        0.7
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "EMP",
+      "difference": 0.15,
+      "interval95": [
+        -0.07,
+        0.35
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "ACT",
+      "difference": 0.07,
+      "interval95": [
+        -0.18,
+        0.28
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "EQU",
+      "difference": 0.51,
+      "interval95": [
+        0.3,
+        0.76
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "BND",
+      "difference": 0.26,
+      "interval95": [
+        -0.12,
+        0.64
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "ACC",
+      "difference": -0.03,
+      "interval95": [
+        -0.35,
+        0.28
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "SYS",
+      "difference": 0.15,
+      "interval95": [
+        -0.25,
+        0.47
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "dimension": "INT",
+      "difference": 0.27,
+      "interval95": [
+        0.02,
+        0.53
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "AWR",
+      "difference": 0.53,
+      "interval95": [
+        0.3,
+        0.83
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "EMP",
+      "difference": 0.11,
+      "interval95": [
+        -0.17,
+        0.35
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "ACT",
+      "difference": -0.08,
+      "interval95": [
+        -0.33,
+        0.17
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "EQU",
+      "difference": 0.45,
+      "interval95": [
+        0.08,
+        0.83
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "BND",
+      "difference": 0.33,
+      "interval95": [
+        -0.02,
+        0.73
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "ACC",
+      "difference": 0.12,
+      "interval95": [
+        -0.17,
+        0.47
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "SYS",
+      "difference": 0.2,
+      "interval95": [
+        -0.17,
+        0.48
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "dimension": "INT",
+      "difference": 0.77,
+      "interval95": [
+        0.2,
+        1.37
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "AWR",
+      "difference": 0.4,
+      "interval95": [
+        0.12,
+        0.73
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EMP",
+      "difference": 0.18,
+      "interval95": [
+        -0.15,
+        0.47
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACT",
+      "difference": 0.07,
+      "interval95": [
+        -0.23,
+        0.3
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EQU",
+      "difference": 0.47,
+      "interval95": [
+        0.26,
+        0.73
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "BND",
+      "difference": 0.15,
+      "interval95": [
+        -0.2,
+        0.55
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACC",
+      "difference": 0.12,
+      "interval95": [
+        -0.07,
+        0.3
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "SYS",
+      "difference": 0.1,
+      "interval95": [
+        -0.3,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "INT",
+      "difference": 0,
+      "interval95": [
+        -0.58,
+        0.62
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "AWR",
+      "difference": 0.33,
+      "interval95": [
+        -0.21,
+        0.76
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "EMP",
+      "difference": -0.04,
+      "interval95": [
+        -0.18,
+        0.12
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "ACT",
+      "difference": -0.15,
+      "interval95": [
+        -0.45,
+        0.1
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "EQU",
+      "difference": -0.06,
+      "interval95": [
+        -0.45,
+        0.38
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "BND",
+      "difference": 0.07,
+      "interval95": [
+        -0.12,
+        0.27
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "ACC",
+      "difference": 0.15,
+      "interval95": [
+        -0.05,
+        0.38
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "SYS",
+      "difference": 0.05,
+      "interval95": [
+        -0.05,
+        0.15
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "dimension": "INT",
+      "difference": 0.5,
+      "interval95": [
+        0.07,
+        0.93
+      ],
+      "separated": true,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "AWR",
+      "difference": 0.2,
+      "interval95": [
+        -0.23,
+        0.55
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EMP",
+      "difference": 0.03,
+      "interval95": [
+        -0.17,
+        0.27
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACT",
+      "difference": 0,
+      "interval95": [
+        -0.42,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EQU",
+      "difference": -0.04,
+      "interval95": [
+        -0.18,
+        0.11
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "BND",
+      "difference": -0.11,
+      "interval95": [
+        -0.53,
+        0.26
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACC",
+      "difference": 0.15,
+      "interval95": [
+        -0.07,
+        0.38
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "SYS",
+      "difference": -0.05,
+      "interval95": [
+        -0.25,
+        0.17
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "INT",
+      "difference": -0.27,
+      "interval95": [
+        -0.82,
+        0.3
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "AWR",
+      "difference": -0.13,
+      "interval95": [
+        -0.39,
+        0.08
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EMP",
+      "difference": 0.07,
+      "interval95": [
+        -0.05,
+        0.2
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACT",
+      "difference": 0.15,
+      "interval95": [
+        -0.08,
+        0.42
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "EQU",
+      "difference": 0.02,
+      "interval95": [
+        -0.36,
+        0.38
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "BND",
+      "difference": -0.18,
+      "interval95": [
+        -0.56,
+        0.12
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "ACC",
+      "difference": 0,
+      "interval95": [
+        -0.23,
+        0.2
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "SYS",
+      "difference": -0.1,
+      "interval95": [
+        -0.28,
+        0.07
+      ],
+      "separated": false,
+      "bonferroni_separated": false,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "dimension": "INT",
+      "difference": -0.77,
+      "interval95": [
+        -1.23,
+        -0.33
+      ],
+      "separated": true,
+      "bonferroni_separated": true,
+      "bonferroni_note": "alpha 1.0e-3 over 48 comparisons; with 1000 replicates the corrected interval is the bootstrap extremes, so this flag is conservative"
+    }
+  ],
+  "dimension_pairwise_note": "48 dimension-level comparisons at 95% each: about 2.4 would be flagged 'separated' by chance alone even if no model differed. Uncorrected; a dimension-level 'separated' flag is not evidence of a real difference unless it also survives the Bonferroni-corrected interval (bonferroni_separated), here over 48 comparisons.",
+  "length": {
+    "pooled_within_item_slope": -0.074,
+    "pooled_within_item_r": -0.062,
+    "within_subject_slopes": {
+      "gemma2-9b-A": 0.097,
+      "gemma2-9b-B": null,
+      "llama3.2-3b-A": 0.276,
+      "llama3.2-3b-B": null,
+      "mistral-7b-A": 0.086,
+      "mistral-7b-B": null,
+      "qwen2.5-7b-A": -0.474,
+      "qwen2.5-7b-B": null
+    },
+    "composite_if_pooled_slope_removed": {
+      "gemma2-9b-A": 29.4,
+      "gemma2-9b-B": 28.2,
+      "llama3.2-3b-A": 24.7,
+      "llama3.2-3b-B": 26,
+      "mistral-7b-A": 21.8,
+      "mistral-7b-B": 21.7,
+      "qwen2.5-7b-A": 25.4,
+      "qwen2.5-7b-B": 25.4
+    },
+    "note": "Removing the pooled within-item slope assumes every rating difference that goes with reply length is caused by length. That is an extreme assumption, so the result is a bound, not an estimate. Read composite_if_pooled_slope_removed against each subject's composite; this note makes no claim about whether a gap closes."
+  },
+  "judges": {
+    "claude-fable": {
+      "ratings_used": 886,
+      "leniency_vs_item_mean": 0.055,
+      "by_subject": {
+        "gemma2-9b-A": 0.21,
+        "gemma2-9b-B": 0.15,
+        "llama3.2-3b-A": 0,
+        "llama3.2-3b-B": 0.13,
+        "mistral-7b-A": -0.08,
+        "mistral-7b-B": -0.07,
+        "qwen2.5-7b-A": 0.07,
+        "qwen2.5-7b-B": 0.08
+      }
+    },
+    "claude-opus": {
+      "ratings_used": 885,
+      "leniency_vs_item_mean": 0.013,
+      "by_subject": {
+        "gemma2-9b-A": 0.18,
+        "gemma2-9b-B": 0.16,
+        "llama3.2-3b-A": 0,
+        "llama3.2-3b-B": 0.06,
+        "mistral-7b-A": -0.11,
+        "mistral-7b-B": -0.16,
+        "qwen2.5-7b-A": -0.02,
+        "qwen2.5-7b-B": -0.01
+      }
+    },
+    "claude-sonnet": {
+      "ratings_used": 885,
+      "leniency_vs_item_mean": -0.068,
+      "by_subject": {
+        "gemma2-9b-A": 0.13,
+        "gemma2-9b-B": 0.1,
+        "llama3.2-3b-A": -0.08,
+        "llama3.2-3b-B": -0.08,
+        "mistral-7b-A": -0.22,
+        "mistral-7b-B": -0.17,
+        "qwen2.5-7b-A": -0.11,
+        "qwen2.5-7b-B": -0.09
+      }
+    }
+  },
+  "operations": {
+    "source": "research/model-runs/pilot-2026-10-03/operations/",
+    "judge_batches": 171,
+    "judge_batches_planned_as_two_halves_before_any_rating": 4,
+    "judge_calls_planned": 175,
+    "judge_calls_planned_note": "one call per batch, except that each batch planned as two halves is two calls",
+    "judge_batches_redelivered_as_two_halves_after_incomplete_answers": [
+      "jb004"
+    ],
+    "judge_calls_accepted": 176,
+    "judge_calls_accepted_whole": 166,
+    "judge_calls_accepted_halves": 10,
+    "judge_calls_accepted_note": "planned calls, plus one extra because a batch re-delivered as two halves replaced the one whole call that was planned for it",
+    "judge_calls_not_two_tool_calls_but_accepted": 0,
+    "judge_calls_voided": 9,
+    "judge_voids_by_reason": {
+      "void-incomplete": 9
+    },
+    "judge_voids_by_judge": {
+      "claude-opus": 1,
+      "claude-fable": 8
+    },
+    "judge_voids_by_batch": {
+      "jb064": 1,
+      "jb004": 2,
+      "jb013": 1,
+      "jb033": 1,
+      "jb039": 1,
+      "jb037": 1,
+      "jb042": 1,
+      "jb045": 1
+    },
+    "judge_files_voided": 9,
+    "requote_batches": 4,
+    "requote_calls_accepted": 4,
+    "requote_calls_voided": 0,
+    "ratings_requoted": 16,
+    "ratings_requoted_by_judge": {
+      "claude-sonnet": 12,
+      "claude-fable": 2,
+      "claude-opus": 2
+    },
+    "ratings_rerouted": 0,
+    "subject_replies": {
+      "gemma2-9b-A": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 9
+      },
+      "gemma2-9b-B": {
+        "planned": 83,
+        "ok": 83,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 83,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 1
+      },
+      "llama3.2-3b-A": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 8
+      },
+      "llama3.2-3b-B": {
+        "planned": 83,
+        "ok": 83,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 83,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 1
+      },
+      "mistral-7b-A": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 3
+      },
+      "mistral-7b-B": {
+        "planned": 83,
+        "ok": 83,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 83,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 1
+      },
+      "qwen2.5-7b-A": {
+        "planned": 249,
+        "ok": 249,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 249,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 5
+      },
+      "qwen2.5-7b-B": {
+        "planned": 83,
+        "ok": 83,
+        "failed": 0,
+        "missing": 0,
+        "attempts_total": 83,
+        "retries_used": 0,
+        "failed_or_missing_rate": 0,
+        "section_9_throughput": "within the 10% limit",
+        "replies_flagged_by_reply_side_phrase_check": 2
+      }
+    },
+    "subject_run_complete": true,
+    "supplement_batches": 2,
+    "supplement_calls_accepted": 2,
+    "supplement_calls_voided": 0,
+    "ratings_requoted_in_supplements": 5,
+    "supplement_note": "ratings_requoted_in_supplements counts slots requoted a second time; each of them is one of the slots requoted in round 1 (checked against judge-key.reroute.json), so the distinct requoted ratings are ratings_requoted_after_both_rounds",
+    "supplement_slots_were_all_round_1_slots": true,
+    "ratings_requoted_after_both_rounds": 16,
+    "ratings_requoted_after_both_rounds_by_judge": {
+      "claude-sonnet": 12,
+      "claude-fable": 2,
+      "claude-opus": 2
+    },
+    "ratings_rerouted_after_both_rounds": 0,
+    "judges_excluded_after_both_rounds": []
+  },
+  "sensitivity": {
+    "question": "Does the primary result depend on the requote round (the ratings re-asked of the same judge after the quote check)?",
+    "method": "The ORIGINAL answers only (judge-answers/, before any requote), same routing, same scorer and bootstrap seed. No judge was excluded in this run. Descriptive only.",
+    "note": "Only the requoted ratings can differ between this view and the primary one; every other rating is the same file entry. The pre-registered requote re-asks the same judge, so a rating may or may not change.",
+    "ratings_used": 2656,
+    "ratings_whose_value_differs_from_the_original": 4,
+    "subjects": {
+      "gemma2-9b-A": {
+        "pilot_composite": 29.4,
+        "interval95": [
+          26.3,
+          32.8
+        ]
+      },
+      "gemma2-9b-B": {
+        "pilot_composite": 28.7,
+        "interval95": [
+          25.1,
+          32.1
+        ]
+      },
+      "llama3.2-3b-A": {
+        "pilot_composite": 24.6,
+        "interval95": [
+          21.2,
+          28.2
+        ]
+      },
+      "llama3.2-3b-B": {
+        "pilot_composite": 26.4,
+        "interval95": [
+          22.5,
+          30.3
+        ]
+      },
+      "mistral-7b-A": {
+        "pilot_composite": 21.8,
+        "interval95": [
+          18.3,
+          25.5
+        ]
+      },
+      "mistral-7b-B": {
+        "pilot_composite": 22,
+        "interval95": [
+          18.2,
+          26.1
+        ]
+      },
+      "qwen2.5-7b-A": {
+        "pilot_composite": 24.9,
+        "interval95": [
+          21.3,
+          28.7
+        ]
+      },
+      "qwen2.5-7b-B": {
+        "pilot_composite": 25.3,
+        "interval95": [
+          21.3,
+          29.7
+        ]
+      }
+    },
+    "pairwise": [
+      {
+        "a": "gemma2-9b-A",
+        "b": "gemma2-9b-B",
+        "difference": 0.7,
+        "interval95": [
+          -1.8,
+          3.5
+        ],
+        "separated": false
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "llama3.2-3b-A",
+        "difference": 4.8,
+        "interval95": [
+          2.2,
+          7.6
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "llama3.2-3b-B",
+        "difference": 3,
+        "interval95": [
+          -0.5,
+          6.6
+        ],
+        "separated": false
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "mistral-7b-A",
+        "difference": 7.6,
+        "interval95": [
+          4.6,
+          10.8
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "mistral-7b-B",
+        "difference": 7.4,
+        "interval95": [
+          3.8,
+          11.3
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "qwen2.5-7b-A",
+        "difference": 4.5,
+        "interval95": [
+          1.7,
+          7.8
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-A",
+        "b": "qwen2.5-7b-B",
+        "difference": 4.1,
+        "interval95": [
+          1,
+          7.5
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "llama3.2-3b-A",
+        "difference": 4.1,
+        "interval95": [
+          0.4,
+          7.6
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "llama3.2-3b-B",
+        "difference": 2.3,
+        "interval95": [
+          -1.5,
+          6
+        ],
+        "separated": false
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "mistral-7b-A",
+        "difference": 6.9,
+        "interval95": [
+          3.8,
+          10.1
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "mistral-7b-B",
+        "difference": 6.7,
+        "interval95": [
+          3.1,
+          10.1
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "qwen2.5-7b-A",
+        "difference": 3.8,
+        "interval95": [
+          0.1,
+          7.3
+        ],
+        "separated": true
+      },
+      {
+        "a": "gemma2-9b-B",
+        "b": "qwen2.5-7b-B",
+        "difference": 3.4,
+        "interval95": [
+          -0.3,
+          6.9
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-A",
+        "b": "llama3.2-3b-B",
+        "difference": -1.8,
+        "interval95": [
+          -4.6,
+          1
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-A",
+        "b": "mistral-7b-A",
+        "difference": 2.8,
+        "interval95": [
+          0.1,
+          5.6
+        ],
+        "separated": true
+      },
+      {
+        "a": "llama3.2-3b-A",
+        "b": "mistral-7b-B",
+        "difference": 2.6,
+        "interval95": [
+          -0.3,
+          5.3
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-A",
+        "b": "qwen2.5-7b-A",
+        "difference": -0.3,
+        "interval95": [
+          -3.4,
+          2.6
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-A",
+        "b": "qwen2.5-7b-B",
+        "difference": -0.7,
+        "interval95": [
+          -3.3,
+          2.2
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-B",
+        "b": "mistral-7b-A",
+        "difference": 4.6,
+        "interval95": [
+          1.6,
+          7.9
+        ],
+        "separated": true
+      },
+      {
+        "a": "llama3.2-3b-B",
+        "b": "mistral-7b-B",
+        "difference": 4.4,
+        "interval95": [
+          1.1,
+          7.9
+        ],
+        "separated": true
+      },
+      {
+        "a": "llama3.2-3b-B",
+        "b": "qwen2.5-7b-A",
+        "difference": 1.5,
+        "interval95": [
+          -2.4,
+          5.8
+        ],
+        "separated": false
+      },
+      {
+        "a": "llama3.2-3b-B",
+        "b": "qwen2.5-7b-B",
+        "difference": 1.1,
+        "interval95": [
+          -2.6,
+          5
+        ],
+        "separated": false
+      },
+      {
+        "a": "mistral-7b-A",
+        "b": "mistral-7b-B",
+        "difference": -0.2,
+        "interval95": [
+          -2.3,
+          1.9
+        ],
+        "separated": false
+      },
+      {
+        "a": "mistral-7b-A",
+        "b": "qwen2.5-7b-A",
+        "difference": -3.1,
+        "interval95": [
+          -5.7,
+          -0.5
+        ],
+        "separated": true
+      },
+      {
+        "a": "mistral-7b-A",
+        "b": "qwen2.5-7b-B",
+        "difference": -3.5,
+        "interval95": [
+          -6.3,
+          -0.7
+        ],
+        "separated": true
+      },
+      {
+        "a": "mistral-7b-B",
+        "b": "qwen2.5-7b-A",
+        "difference": -2.9,
+        "interval95": [
+          -6,
+          0.2
+        ],
+        "separated": false
+      },
+      {
+        "a": "mistral-7b-B",
+        "b": "qwen2.5-7b-B",
+        "difference": -3.3,
+        "interval95": [
+          -6.1,
+          -0.3
+        ],
+        "separated": true
+      },
+      {
+        "a": "qwen2.5-7b-A",
+        "b": "qwen2.5-7b-B",
+        "difference": -0.4,
+        "interval95": [
+          -2.8,
+          2.1
+        ],
+        "separated": false
+      }
+    ],
+    "separation_pattern_unchanged": true
+  },
+  "routing": {
+    "gemma2-9b-A": {
+      "responses_by_judge_pair": {
+        "claude-opus + claude-sonnet": 83,
+        "claude-fable + claude-sonnet": 83,
+        "claude-fable + claude-opus": 83
+      },
+      "ratings_by_provenance": {
+        "original": 496,
+        "rerouted-excluded-judge": 0,
+        "requoted": 2
+      }
+    },
+    "gemma2-9b-B": {
+      "responses_by_judge_pair": {
+        "claude-opus + claude-sonnet": 28,
+        "claude-fable + claude-opus": 28,
+        "claude-fable + claude-sonnet": 27
+      },
+      "ratings_by_provenance": {
+        "original": 165,
+        "rerouted-excluded-judge": 0,
+        "requoted": 1
+      }
+    },
+    "llama3.2-3b-A": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 83,
+        "claude-opus + claude-sonnet": 83,
+        "claude-fable + claude-opus": 83
+      },
+      "ratings_by_provenance": {
+        "original": 498,
+        "rerouted-excluded-judge": 0,
+        "requoted": 0
+      }
+    },
+    "llama3.2-3b-B": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-sonnet": 28,
+        "claude-opus + claude-sonnet": 27,
+        "claude-fable + claude-opus": 28
+      },
+      "ratings_by_provenance": {
+        "original": 163,
+        "rerouted-excluded-judge": 0,
+        "requoted": 3
+      }
+    },
+    "mistral-7b-A": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-opus": 83,
+        "claude-opus + claude-sonnet": 83,
+        "claude-fable + claude-sonnet": 83
+      },
+      "ratings_by_provenance": {
+        "original": 496,
+        "rerouted-excluded-judge": 0,
+        "requoted": 2
+      }
+    },
+    "mistral-7b-B": {
+      "responses_by_judge_pair": {
+        "claude-opus + claude-sonnet": 28,
+        "claude-fable + claude-sonnet": 28,
+        "claude-fable + claude-opus": 27
+      },
+      "ratings_by_provenance": {
+        "original": 165,
+        "rerouted-excluded-judge": 0,
+        "requoted": 1
+      }
+    },
+    "qwen2.5-7b-A": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-opus": 83,
+        "claude-fable + claude-sonnet": 83,
+        "claude-opus + claude-sonnet": 83
+      },
+      "ratings_by_provenance": {
+        "original": 493,
+        "rerouted-excluded-judge": 0,
+        "requoted": 5
+      }
+    },
+    "qwen2.5-7b-B": {
+      "responses_by_judge_pair": {
+        "claude-fable + claude-opus": 28,
+        "claude-fable + claude-sonnet": 28,
+        "claude-opus + claude-sonnet": 27
+      },
+      "ratings_by_provenance": {
+        "original": 164,
+        "rerouted-excluded-judge": 0,
+        "requoted": 2
+      }
+    }
+  },
+  "judge_validity": {
+    "rule": "PREREGISTRATION.md section 5: a judge whose unfound-quote rate (shared normaliser) is strictly greater than the threshold is excluded for the whole run",
+    "reported_as_headline": "measured_on_original_answers",
+    "headline_note": "Reported first because it is the conservative reading: it is measured before the requote round replaced any quote. Section 5 as clarified by D1 states the rate is measured on the final quotes, so measured_on_final_quotes is the pre-registered measurement basis; the verdict is identical on both.",
+    "measured_on_original_answers": {
+      "role": "before any requote",
+      "source": "research/model-runs/pilot-2026-10-03/operations/judge-validity.originals.json",
+      "generated_at": "2026-10-04T04:10:54.506Z",
+      "threshold_percent": 5,
+      "ratings_measured": 2656,
+      "ratings_sha256": "a4f1e39a0c2beccc28be2dafe70830e8795d5a35ee03d354119e86aa71bb3ece",
+      "pairs_superseded_by_a_later_file": 0,
+      "judges": {
+        "claude-fable": {
+          "ratings": 886,
+          "found_as_written": 884,
+          "found_after_normalisation_only": 1,
+          "unfound": 1,
+          "unfound_rate_percent": 0.113,
+          "verdict": "PASS"
+        },
+        "claude-opus": {
+          "ratings": 885,
+          "found_as_written": 883,
+          "found_after_normalisation_only": 2,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-sonnet": {
+          "ratings": 885,
+          "found_as_written": 882,
+          "found_after_normalisation_only": 1,
+          "unfound": 2,
+          "unfound_rate_percent": 0.226,
+          "verdict": "PASS"
+        }
+      },
+      "failing_judges": [],
+      "run_verdict": "ALL-JUDGES-VALID"
+    },
+    "measured_on_final_quotes": {
+      "role": "after the requote round (the D1 basis)",
+      "source": "research/model-runs/pilot-2026-10-03/operations/judge-validity.json",
+      "generated_at": "2026-10-04T04:18:44.625Z",
+      "threshold_percent": 5,
+      "ratings_measured": 2656,
+      "ratings_sha256": "97eb14ee5512aac7d470a7f4bbe08e181f1714272e170b65e08579ccff7cdfe6",
+      "pairs_superseded_by_a_later_file": 21,
+      "judges": {
+        "claude-fable": {
+          "ratings": 886,
+          "found_as_written": 886,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-opus": {
+          "ratings": 885,
+          "found_as_written": 885,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        },
+        "claude-sonnet": {
+          "ratings": 885,
+          "found_as_written": 885,
+          "found_after_normalisation_only": 0,
+          "unfound": 0,
+          "unfound_rate_percent": 0,
+          "verdict": "PASS"
+        }
+      },
+      "failing_judges": [],
+      "run_verdict": "ALL-JUDGES-VALID"
+    },
+    "judges_excluded": []
+  },
+  "bridge_drift": {
+    "note": "Descriptive only (PREREGISTRATION.md section 6). 24 first-pilot replies, 12 per first-pilot subject, were re-rated in this run's batches by the judge(s) of this run that rated them in the first pilot. Bridge ratings are in no composite of either run. Different day, different session, same judge model label; the first-pilot rating is the original.",
+    "replies": 24,
+    "pairs": 48,
+    "mean_abs_difference": 0.146,
+    "max_abs_difference": 1,
+    "exact_match": 41,
+    "per_judge": {
+      "claude-fable": {
+        "pairs": 16,
+        "mean_abs_difference": 0.188,
+        "max_abs_difference": 1,
+        "exact_match": 13,
+        "mean_signed_difference_new_minus_original": -0.062
+      },
+      "claude-opus": {
+        "pairs": 18,
+        "mean_abs_difference": 0.056,
+        "max_abs_difference": 1,
+        "exact_match": 17,
+        "mean_signed_difference_new_minus_original": 0.056
+      },
+      "claude-sonnet": {
+        "pairs": 14,
+        "mean_abs_difference": 0.214,
+        "max_abs_difference": 1,
+        "exact_match": 11,
+        "mean_signed_difference_new_minus_original": 0.214
+      }
+    },
+    "ratings_of_excluded_judges_ignored": 0,
+    "source_run": "pilot-2026-10-02",
+    "seed": 20261003
+  },
+  "self_identifying_replies": {
+    "note": "Replies whose text contains one of the subject's identity_terms from run-config.json. A judge could infer the developer from such a reply, so blinding is weaker for these. They are scored like every other reply.",
+    "count": 14,
+    "by_subject": {
+      "gemma2-9b-A": 8,
+      "gemma2-9b-B": 3,
+      "llama3.2-3b-A": 1,
+      "llama3.2-3b-B": 1,
+      "mistral-7b-A": 0,
+      "mistral-7b-B": 0,
+      "qwen2.5-7b-A": 1,
+      "qwen2.5-7b-B": 0
+    },
+    "replies": [
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "AWR-3-A",
+        "trial": 1
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "BND-5-B",
+        "trial": 1
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "INT-5-B",
+        "trial": 1
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "AWR-3-A",
+        "trial": 2
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "BND-5-B",
+        "trial": 2
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "EQU-2-B",
+        "trial": 2
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "AWR-3-A",
+        "trial": 3
+      },
+      {
+        "subject": "gemma2-9b-A",
+        "item_id": "BND-5-B",
+        "trial": 3
+      },
+      {
+        "subject": "gemma2-9b-B",
+        "item_id": "AWR-3-A",
+        "trial": 1
+      },
+      {
+        "subject": "gemma2-9b-B",
+        "item_id": "BND-5-B",
+        "trial": 1
+      },
+      {
+        "subject": "gemma2-9b-B",
+        "item_id": "EQU-4-A",
+        "trial": 1
+      },
+      {
+        "subject": "llama3.2-3b-A",
+        "item_id": "INT-1-A",
+        "trial": 3
+      },
+      {
+        "subject": "llama3.2-3b-B",
+        "item_id": "EQU-1-A",
+        "trial": 1
+      },
+      {
+        "subject": "qwen2.5-7b-A",
+        "item_id": "ACC-3-B",
+        "trial": 3
+      }
+    ]
+  },
+  "deviations": [
+    {
+      "id": "D1",
+      "date": "2026-10-03",
+      "title": "call order: `gemma2:9b` runs last"
+    }
+  ]
+}

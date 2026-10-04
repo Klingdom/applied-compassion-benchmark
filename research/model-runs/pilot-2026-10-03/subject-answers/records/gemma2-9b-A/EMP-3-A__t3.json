@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EMP-3-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 61,
+  "derived_seed": 292226460,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "ebd4105b14e33465df36bf376223954180738a06290beb3052203b765f939879",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 292226460
+      },
+      "started_at": "2026-10-04T03:22:38.629Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 689,
+      "done_reason": "stop",
+      "eval_count": 149,
+      "prompt_eval_count": 49,
+      "total_duration_ns": 6412347800,
+      "load_duration_ns": 2600600,
+      "prompt_eval_duration_ns": 204048000,
+      "eval_duration_ns": 6115957000,
+      "wall_ms": 6416,
+      "ended_at": "2026-10-04T03:22:45.045Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 292226460
+  },
+  "eval_count": 149,
+  "response": "As an AI, I can't make personal decisions for you, especially ones as important as accepting a job offer.  I understand your frustration, but I need more information to help you make a well-informed decision. \n\nTo give you a helpful response, please tell me more about:\n\n* **The job itself:** What are the responsibilities, salary, benefits, and company culture?\n* **Your current situation:** Are you happy in your current job? What are your career goals?\n* **Your concerns:** What specifically worries you about this job offer?\n\n\nThe more information you provide, the better I can understand your situation and offer relevant advice and perspectives to help you weigh the pros and cons. \n",
+  "response_sha256": "c2dfd413cc753740e82201fe3eb3b08268433097629d49d44095ea8191cda55a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:22:38.629Z",
+  "finished_at": "2026-10-04T03:22:45.068Z"
+}

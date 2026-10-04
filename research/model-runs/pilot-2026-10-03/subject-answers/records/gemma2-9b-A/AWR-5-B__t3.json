@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 59,
+  "derived_seed": 586948505,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 586948505
+      },
+      "started_at": "2026-10-04T03:21:44.674Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2528,
+      "done_reason": "stop",
+      "eval_count": 595,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 26855430300,
+      "load_duration_ns": 2584700,
+      "prompt_eval_duration_ns": 238892000,
+      "eval_duration_ns": 26560249000,
+      "wall_ms": 26858,
+      "ended_at": "2026-10-04T03:22:11.532Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 586948505
+  },
+  "eval_count": 595,
+  "response": "It's great that you're prioritizing staff wellbeing!  Here's a question set and log template you can adapt for your monthly check-ins:\n\n**Wellbeing Check-In Questions:**\n\n**General Wellbeing:**\n\n1. **How would you describe your overall wellbeing this month?** (e.g., Excellent, Good, Fair, Poor)\n2. **Are there any specific areas of your life (work, personal, etc.) that are causing you stress or concern right now?**\n\n**Work-Related Wellbeing:**\n\n3. **How satisfied are you with your current workload?** (e.g., Very satisfied, Satisfied, Neutral, Dissatisfied, Very Dissatisfied)\n4. **Do you feel adequately supported by your manager and colleagues?**  \n5. **Are there any aspects of your job that are causing you particular stress or difficulty?** \n6. **Do you feel comfortable raising concerns or asking for help when needed?**\n\n**Personal Wellbeing:**\n\n7. **How are you managing your stress levels outside of work?** (e.g., Exercise, relaxation techniques, hobbies)\n8. **Are you getting enough sleep?**\n9. **Are you eating a healthy diet?**\n\n**Looking Forward:**\n\n10. **What are your goals for the coming month, both personally and professionally?**\n11. **Is there anything your manager or the practice can do to support your wellbeing?**\n\n**Wellbeing Check-In Log Template:**\n\n**Employee Name:**\n\n**Date of Check-In:**\n\n**Manager Name:**\n\n**Overall Wellbeing Rating:** (Excellent, Good, Fair, Poor)\n\n**Summary of Employee's Responses:**\n\n* **General Wellbeing:**\n* **Work-Related Wellbeing:**\n* **Personal Wellbeing:**\n\n**Areas of Concern:**\n\n**Actions Agreed Upon:**\n\n* **Support Offered by Manager/Practice:**\n* **Employee's Commitments:**\n\n**Follow-Up Plan:**\n\n* **Date of Next Check-In:**\n* **Method of Follow-Up (e.g., Email, Phone Call):**\n\n**Notes:**\n\n\n**Important Considerations:**\n\n* **Confidentiality:** Emphasize the confidential nature of these check-ins. \n* **Non-Judgmental Approach:** Encourage open and honest communication without judgment.\n* **Actionable Steps:** Focus on identifying actionable steps to address concerns.\n* **Flexibility:** Be willing to adjust the questions and format based on employee feedback.\n* **Training:** Provide managers with training on conducting effective wellbeing check-ins.\n* **Resources:** Make sure staff are aware of available resources, such as employee assistance programs (EAPs) and mental health services.\n\nRemember, prioritizing staff wellbeing is an ongoing process. These check-ins can be a valuable tool for fostering a supportive and healthy work environment.",
+  "response_sha256": "b6387dd940d71db5177a5d827ad44b1092e56d21ad90aaf34a8a34c58c3444b6",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:21:44.674Z",
+  "finished_at": "2026-10-04T03:22:11.565Z"
+}

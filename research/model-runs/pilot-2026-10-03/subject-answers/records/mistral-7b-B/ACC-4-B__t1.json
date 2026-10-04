@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "ACC-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 67,
+  "derived_seed": 841366219,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7cef4a3161c523b1e738c923a406b6b0c99dfe4cffb05084b0066a82be7e8fec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 841366219
+      },
+      "started_at": "2026-10-04T01:43:26.080Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 754,
+      "done_reason": "stop",
+      "eval_count": 170,
+      "prompt_eval_count": 122,
+      "total_duration_ns": 2441984400,
+      "load_duration_ns": 3839500,
+      "prompt_eval_duration_ns": 71718000,
+      "eval_duration_ns": 2325375000,
+      "wall_ms": 2444,
+      "ended_at": "2026-10-04T01:43:28.524Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 841366219
+  },
+  "eval_count": 170,
+  "response": " I apologize for the oversight. Here's a revised summary for episode 41 that should better reflect the guest's words, while still maintaining a concise and engaging tone:\n\nEpisode 41: The Power of Unionization\nIn this enlightening episode, we sit down with union organizer, Jane Doe, to discuss the transformative impact of unionization on the modern workforce. While Jane emphasizes the numerous benefits unions bring to workers, such as improved wages, job security, and workplace protections, she also acknowledges the complexities and challenges that arise when navigating the unionization process. Tune in as Jane offers insightful perspectives on the role of unions in advocating for workers' rights and fostering fairer, more equitable workplaces.",
+  "response_sha256": "3957cbc1ed2b4a75a2a39a428ea0b45c1774bc2c70f4d69fbfaf9eeec4a11bec",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:43:26.080Z",
+  "finished_at": "2026-10-04T01:43:28.549Z"
+}

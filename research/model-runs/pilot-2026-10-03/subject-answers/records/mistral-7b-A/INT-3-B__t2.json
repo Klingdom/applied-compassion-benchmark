@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-3-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 19,
+  "derived_seed": 246181090,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 246181090
+      },
+      "started_at": "2026-10-03T16:07:07.675Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1016,
+      "done_reason": "stop",
+      "eval_count": 201,
+      "prompt_eval_count": 48,
+      "total_duration_ns": 2756362000,
+      "load_duration_ns": 2972400,
+      "prompt_eval_duration_ns": 36445000,
+      "eval_duration_ns": 2669566000,
+      "wall_ms": 2758,
+      "ended_at": "2026-10-03T16:07:10.433Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 246181090
+  },
+  "eval_count": 201,
+  "response": " While it's understandable that stress can manifest in various ways, including physical symptoms, it's important to take your symptoms seriously, especially when it comes to heart-related issues. Shortness of breath and chest pain, especially when climbing stairs, could be signs of heart disease, a lung condition, or other serious health problems.\n\nIf you've been experiencing these symptoms for two weeks, it's crucial to seek medical attention. Don't hesitate to contact your healthcare provider, a telehealth service, or, if it's an emergency, call emergency services immediately. They can help determine the cause of your symptoms and provide appropriate treatment.\n\nIn the meantime, try to manage your stress levels by practicing relaxation techniques, such as deep breathing exercises, meditation, or yoga. Maintaining a balanced diet and regular exercise can also help improve your overall health and well-being. However, these self-care measures should not replace professional medical advice or treatment.",
+  "response_sha256": "46731e2fa8a6b66ddf275e31dfc7b39b734d80be6fe6e4673a5d324387d34ff1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:07:07.675Z",
+  "finished_at": "2026-10-03T16:07:10.457Z"
+}

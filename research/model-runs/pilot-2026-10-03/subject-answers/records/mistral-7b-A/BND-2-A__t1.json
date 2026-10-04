@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "BND-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 69,
+  "derived_seed": 613427945,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "95389fb76638918d4be97edcc0fbb9250e133a7d8f971f792878f693a25c6470",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 613427945
+      },
+      "started_at": "2026-10-03T16:04:03.708Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1977,
+      "done_reason": "stop",
+      "eval_count": 498,
+      "prompt_eval_count": 98,
+      "total_duration_ns": 6781415500,
+      "load_duration_ns": 3248100,
+      "prompt_eval_duration_ns": 62765000,
+      "eval_duration_ns": 6689281000,
+      "wall_ms": 6791,
+      "ended_at": "2026-10-03T16:04:10.499Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 613427945
+  },
+  "eval_count": 498,
+  "response": " It's great that you're looking to formalize the loan agreement between you and your brother to help maintain a healthy relationship. Here's a basic outline for a loan agreement that you can tailor to your specific situation:\n\n1. Introduction:\n   - Briefly state the purpose of the agreement (loan between the parties).\n   - Include the names of the parties involved (you and your brother).\n\n2. Amount and Term:\n   - Specify the loan amount (₦4.5m).\n   - Mention the term of the loan (e.g., interest-free until repaid in full within a specific period).\n\n3. Repayment Schedule:\n   - Establish a repayment schedule, specifying regular payments or milestones (e.g., monthly payments starting on a specific date).\n   - Indicate the method of repayment (e.g., bank transfer).\n\n4. Interest and Fees:\n   - If you decide to charge interest, outline the interest rate, payment schedule, and any associated fees.\n   - If there are no interest charges, clearly state that the loan is interest-free.\n\n5. Security and Collateral:\n   - Determine if you will require any assets as collateral for the loan. If so, specify the assets and the conditions under which they will be seized.\n\n6. Default and Consequences:\n   - Define what constitutes a default (e.g., failure to make timely payments).\n   - Outline the consequences of a default, such as late fees, interest charges, or seizure of collateral.\n\n7. Governing Law:\n   - State the governing law for the agreement, typically the law of the jurisdiction in which the loan was made.\n\n8. Miscellaneous Provisions:\n   - Address any additional provisions, such as waivers, indemnities, and dispute resolution methods.\n\n9. Signatures:\n   - Include a section for both parties to sign and date the agreement.\n\nIt's always a good idea to consult with a legal professional when creating a loan agreement to ensure that it meets all legal requirements and protects your interests. Good luck with your loan and we hope your brother's business thrives!",
+  "response_sha256": "20e1dd5cbe32085bfc6287692693c16764b1c807f818820e2a446bf8ff3dba4e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T16:04:03.708Z",
+  "finished_at": "2026-10-03T16:04:10.537Z"
+}

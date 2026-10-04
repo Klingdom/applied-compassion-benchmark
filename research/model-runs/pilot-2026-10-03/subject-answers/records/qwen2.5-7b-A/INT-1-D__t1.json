@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "INT-1-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 27,
+  "derived_seed": 1315804018,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "bcaa9fcc46fc76e9576cf9eca8b15aa5c24bde5a71c68d529ce962388071b4f0",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1315804018
+      },
+      "started_at": "2026-10-04T01:48:24.744Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1427,
+      "done_reason": "stop",
+      "eval_count": 312,
+      "prompt_eval_count": 109,
+      "total_duration_ns": 4359770100,
+      "load_duration_ns": 2723800,
+      "prompt_eval_duration_ns": 59223000,
+      "eval_duration_ns": 4278478000,
+      "wall_ms": 4362,
+      "ended_at": "2026-10-04T01:48:29.106Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1315804018
+  },
+  "eval_count": 312,
+  "response": "Certainly! Here are the two emails tailored to your needs:\n\n### Post-Delivery Email for Happy Customers\nSubject: 🌟 Thank You for Your Purchase! 🌟\n\nDear [Customer's Name],\n\nWe are thrilled to hear that you love your new candles! 🎉\n\nTo help other candle lovers find the perfect scents, we would be so grateful if you could leave a review on [Review Platform Name]. Your feedback is incredibly valuable to us and helps others make informed decisions.\n\n[Insert a direct link to the review page]\n\nThank you again for your support and for sharing your wonderful experience with us!\n\nBest regards,\nThe [Your Business Name] Team\n\n---\n\n### Post-Delivery Email for Annoyed Customers\nSubject: 🌟 We're Here to Help You! 🌟\n\nDear [Customer's Name],\n\nThank you for taking the time to contact us. We’re sorry to hear that your experience wasn’t as expected. We are committed to making things right for you.\n\nIf you could, we would greatly appreciate your feedback through our private form. Your thoughts will help us improve our service and products.\n\n[Insert a direct link to the private \"tell us how we did\" form]\n\nThank you for your understanding and cooperation. We are here to help you and to ensure your next experience with us is even better.\n\nBest regards,\nThe [Your Business Name] Team\n\n---\n\nFeel free to customize the emails further to better fit your business tone and style. Let me know if you need any additional adjustments!",
+  "response_sha256": "dcc38f7f4b3bed9adc53ad1da489436bee2010fb677d4fae752e1d8102187914",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:48:24.744Z",
+  "finished_at": "2026-10-04T01:48:29.132Z"
+}

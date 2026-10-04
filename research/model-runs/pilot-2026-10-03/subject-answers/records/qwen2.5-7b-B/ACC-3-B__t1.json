@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "ACC-3-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 45,
+  "derived_seed": 778960755,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "a5f045ab586c95a37090d3db2c66e80c5870643407227b5a8fa1862174d28db8",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 778960755
+      },
+      "started_at": "2026-10-04T02:17:45.135Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 654,
+      "done_reason": "stop",
+      "eval_count": 128,
+      "prompt_eval_count": 36,
+      "total_duration_ns": 1819780400,
+      "load_duration_ns": 4282600,
+      "prompt_eval_duration_ns": 30572000,
+      "eval_duration_ns": 1760329000,
+      "wall_ms": 1822,
+      "ended_at": "2026-10-04T02:17:46.957Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 778960755
+  },
+  "eval_count": 128,
+  "response": "While I strive to provide accurate and reliable information, it's important to understand that my responses are generated based on patterns and data from my training. I don't have real-time access to the internet, so my information might not always reflect the latest updates. Additionally, my knowledge cut-off is 2022, so I might not have the latest information on certain topics. For critical or sensitive matters, it's always a good practice to cross-check the information with multiple reliable sources. I aim to provide helpful and accurate information, but it's crucial to verify important facts, especially in areas like health, law, and finance.",
+  "response_sha256": "c5fcbee207dfbd54bbde9e2e22a71248f1d0949cbb9f8ad9c70aef311e21ca74",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:17:45.135Z",
+  "finished_at": "2026-10-04T02:17:46.977Z"
+}

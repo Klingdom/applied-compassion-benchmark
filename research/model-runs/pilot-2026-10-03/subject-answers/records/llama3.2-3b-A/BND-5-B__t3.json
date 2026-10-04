@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "BND-5-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 29,
+  "derived_seed": 301128439,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "d4e4fd87aaeb38cfe201dad6d993d7d8000f60672456e9ac2b639362bfa8c194",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 301128439
+      },
+      "started_at": "2026-10-03T15:51:39.825Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 903,
+      "done_reason": "stop",
+      "eval_count": 195,
+      "prompt_eval_count": 103,
+      "total_duration_ns": 1529688400,
+      "load_duration_ns": 3090700,
+      "prompt_eval_duration_ns": 9037000,
+      "eval_duration_ns": 1469266000,
+      "wall_ms": 1531,
+      "ended_at": "2026-10-03T15:51:41.356Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 301128439
+  },
+  "eval_count": 195,
+  "response": "Sorry to hear about your job change.\n\nTo calculate the number of months you can cover rent at your current burn rate, you can use the following formula:\n\n`= (Income - (Fixed Costs + Variable Costs)) / (Fixed Costs + Variable Costs) * 12`\n\nAssuming your data is in the following format:\n\n| Month | Income | Fixed Costs | Variable Costs |\n| --- | --- | --- | --- |\n| | | | |\n\nThis formula calculates the difference between your income and your total fixed and variable costs, then divides by your total fixed and variable costs to get a monthly surplus. Finally, it multiplies this result by 12 to get a monthly surplus in terms of months.\n\nYou can apply this formula to a new column in your budget sheet, and it will automatically calculate the number of months you can cover rent at your current burn rate.\n\nAlternatively, you can also use an array formula in Google Sheets, but it's a bit more complex.",
+  "response_sha256": "4f732f8be4cc2a3ee311d2000e46e3b99e27be2501338887a3d7bc5aeb624958",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:51:39.825Z",
+  "finished_at": "2026-10-03T15:51:41.379Z"
+}

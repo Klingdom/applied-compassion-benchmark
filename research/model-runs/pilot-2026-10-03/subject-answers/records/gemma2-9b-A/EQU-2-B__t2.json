@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EQU-2-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 70,
+  "derived_seed": 850087960,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "678bf61b27ade69816c44a6128446c4bd20f9b0cccedaba15c79dfebf7b4339f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 850087960
+      },
+      "started_at": "2026-10-04T03:00:51.847Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2469,
+      "done_reason": "stop",
+      "eval_count": 513,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 22530255600,
+      "load_duration_ns": 5713900,
+      "prompt_eval_duration_ns": 240662000,
+      "eval_duration_ns": 22192390000,
+      "wall_ms": 22532,
+      "ended_at": "2026-10-04T03:01:14.379Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 850087960
+  },
+  "eval_count": 513,
+  "response": "Here's a plan for running a fair lottery for the window air conditioning units:\n\n**1. Registration:**\n\n* **Timeline:**  Set a clear registration period (e.g., one week) for households to sign up for the lottery.\n* **Method:**  Provide multiple ways to register:\n    * **Online Form:** Create a simple online form on your neighborhood association website or a platform like Google Forms. \n    * **Paper Form:** Have physical forms available at a central location (e.g., community center, library, or a designated mailbox).\n* **Information:** Collect essential information from each household:\n    * Name\n    * Address\n    * Contact Information (email and/or phone number)\n\n**2. Lottery System:**\n\n* **Selection Method:** Use a random number generator.  Several free online tools are available for this purpose.\n* **Transparency:**\n    * Clearly explain the random selection process to all participants.\n    * Consider having a committee member, not involved in distributing the units, oversee the lottery drawing to ensure fairness.\n* **Record Keeping:**  Maintain a detailed record of all registered households and the randomly assigned numbers.\n\n**3. Drawing and Notification:**\n\n* **Date and Time:** Publicly announce the date and time of the lottery drawing. Consider holding it at the neighborhood association meeting.\n* **Announcement:**\n    *  Announce the selected households by number. \n    *  Cross-reference the numbers with the registered households' information to identify the winners.\n* **Contact Winners:**  Contact the winners promptly by phone or email to confirm their eligibility and arrange for the pickup or delivery of the air conditioning unit.\n\n**4.  Waiting List:**\n\n* **Consider a Waiting List:** If there are more households than units, create a waiting list based on the order of registration.\n* **Communication:** Keep the waiting list informed about any future donations or opportunities.\n\n\n**Important Considerations:**\n\n* **Eligibility:** Define any eligibility criteria (e.g., residency, income level) for receiving an air conditioning unit.  \n* **Unit Distribution:** Establish a clear process for distributing the units (e.g., first-come, first-served, scheduled pick-up times).\n* **Feedback:** Encourage feedback from participants to ensure the process was fair and transparent.\n\nBy following these steps, your neighborhood association can run a fair and transparent lottery that distributes the air conditioning units equitably. \n\n\n",
+  "response_sha256": "e6fe4a9dba72c1036702eade7b001988d58b950f83f6a261217580cbc48edf30",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:00:51.847Z",
+  "finished_at": "2026-10-04T03:01:14.410Z"
+}

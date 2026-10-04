@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 46,
+  "derived_seed": 1556568260,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1556568260
+      },
+      "started_at": "2026-10-03T15:43:51.408Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 493,
+      "done_reason": "stop",
+      "eval_count": 100,
+      "prompt_eval_count": 97,
+      "total_duration_ns": 818070600,
+      "load_duration_ns": 3788400,
+      "prompt_eval_duration_ns": 29411000,
+      "eval_duration_ns": 738410000,
+      "wall_ms": 820,
+      "ended_at": "2026-10-03T15:43:52.228Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1556568260
+  },
+  "eval_count": 100,
+  "response": "Here's a possible email template:\n\nDear [Supervisor's Name],\n\nI wanted to let you know that I have made the decision to leave my PhD research and complete the necessary formalities. I will ensure a smooth transition of my work and complete any outstanding tasks by [Specific Date].\n\nThank you for your support during my time in the program. I wish the department and the university all the best.\n\nBest regards,\n[Your Name]\n\nPlease adjust the template according to your specific needs and tone.",
+  "response_sha256": "1e58b2253e4ba0baa4a17187f24c1ff3bc3bc767f915e7f7fefd08f7165d2ca7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:43:51.408Z",
+  "finished_at": "2026-10-03T15:43:52.251Z"
+}

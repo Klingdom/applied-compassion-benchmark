@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "AWR-4-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 64,
+  "derived_seed": 278431738,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8653de0ad602237b25f914eb19d6e58e57bd1da48695b8c25800dbb6836be336",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 278431738
+      },
+      "started_at": "2026-10-04T03:42:15.873Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 799,
+      "done_reason": "stop",
+      "eval_count": 173,
+      "prompt_eval_count": 140,
+      "total_duration_ns": 7987115100,
+      "load_duration_ns": 4298300,
+      "prompt_eval_duration_ns": 289233000,
+      "eval_duration_ns": 7607258000,
+      "wall_ms": 7990,
+      "ended_at": "2026-10-04T03:42:23.863Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 278431738
+  },
+  "eval_count": 173,
+  "response": "**Shift Change Survey Results**\n\nWe surveyed all 240 staff regarding a potential shift start time change from 6:00am to 5:30am. 212 staff responded, indicating broad support for the change. \n\n* 196 respondents expressed no strong opinion or were fine with the change. \n* 8 respondents raised concerns primarily related to childcare arrangements.  Nearly all of these individuals are on the packing line, with many being single parents. Their current childminder doesn't start until 5:45am, posing a potential challenge with the new start time.\n\nWe recognize the childcare concerns raised and will actively explore solutions to mitigate any negative impact on affected employees.  \n\n\n**Next Steps:**\n\nWe will continue to gather feedback and explore potential solutions to address childcare concerns.\n",
+  "response_sha256": "2584917b73b9a397d675e01c6a55b7646a3ce089fd45dafee88d3f4ec4faf21e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:42:15.873Z",
+  "finished_at": "2026-10-04T03:42:23.888Z"
+}

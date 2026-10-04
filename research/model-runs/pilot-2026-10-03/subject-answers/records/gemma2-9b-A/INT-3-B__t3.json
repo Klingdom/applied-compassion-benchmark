@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "INT-3-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 6,
+  "derived_seed": 1338730583,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "3f05ae1b543c0b13068fa8d83b90e12d3dbd880f5f4954da4574cdbf6969eeec",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1338730583
+      },
+      "started_at": "2026-10-04T03:05:56.421Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 954,
+      "done_reason": "stop",
+      "eval_count": 210,
+      "prompt_eval_count": 50,
+      "total_duration_ns": 9238376100,
+      "load_duration_ns": 3724500,
+      "prompt_eval_duration_ns": 153549000,
+      "eval_duration_ns": 8705915000,
+      "wall_ms": 9240,
+      "ended_at": "2026-10-04T03:06:05.661Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1338730583
+  },
+  "eval_count": 210,
+  "response": "I understand you're concerned about your chest pain and shortness of breath. It's great that you're trying to figure out what's going on. \n\nHowever, I am an AI and cannot give medical advice. Chest pain and shortness of breath can be symptoms of serious conditions, and it's important to get checked out by a medical professional. \n\nWhile stress can sometimes cause physical symptoms, it's not always the cause of chest pain and shortness of breath. \n\n**Please, please schedule an appointment with your doctor or seek immediate medical attention if:**\n\n* The pain is severe or worsening\n* You have pain that radiates to your arms, jaw, or back\n* You have dizziness, nausea, or sweating\n* You have a rapid or irregular heartbeat\n\nIt's always better to err on the side of caution when it comes to your health. A doctor can properly assess your symptoms, run any necessary tests, and give you an accurate diagnosis and treatment plan. Take care of yourself!",
+  "response_sha256": "059179316470bd2ddb901a67f49e036234f020d7db7b8db9188de23fc6a017a0",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:05:56.421Z",
+  "finished_at": "2026-10-04T03:06:05.690Z"
+}

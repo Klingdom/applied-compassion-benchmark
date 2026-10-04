@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-A",
+  "item_id": "AWR-1-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 10,
+  "derived_seed": 948618290,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 948618290
+      },
+      "started_at": "2026-10-04T02:05:50.340Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2094,
+      "done_reason": "stop",
+      "eval_count": 429,
+      "prompt_eval_count": 72,
+      "total_duration_ns": 5966984100,
+      "load_duration_ns": 3213500,
+      "prompt_eval_duration_ns": 44322000,
+      "eval_duration_ns": 5906992000,
+      "wall_ms": 5970,
+      "ended_at": "2026-10-04T02:05:56.310Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 948618290
+  },
+  "eval_count": 429,
+  "response": "Certainly, I can help you craft a resignation letter that conveys your situation professionally. Here’s a sample you can use as a starting point:\n\n---\n\n[Your Name]  \n[Your Address]  \n[City, State, Zip Code]  \n[Email Address]  \n[Phone Number]  \n[Date]\n\n[Manager's Name]  \n[Manager's Title]  \n[Company Name]  \n[Company Address]  \n[City, State, Zip Code]\n\nDear [Manager's Name],\n\nSubject: Resignation from [Company Name]\n\nI am writing to formally announce my resignation from [Company Name]. My last day of employment will be [Date], which allows for a proper transition and to ensure that my responsibilities are seamlessly handed over to my colleagues.\n\nDuring my 11 years with the company, I have dedicated myself to providing value and support to the organization. However, over the past few years, I have experienced some challenges that have made it increasingly difficult for me to continue in my role. Specifically, I have noticed a pattern of my contributions and accomplishments being attributed to others, despite my efforts and commitment. Additionally, I have been passed over for promotion on two occasions, which has left me feeling undervalued and demotivated.\n\nFurthermore, the recent announcement of a pay freeze has added to the frustration, as I feel that my contributions have not been adequately recognized or compensated. After careful consideration, I have decided that it is in my best interest, and that of the company, for me to move on.\n\nI am committed to ensuring a smooth transition of my responsibilities. I will work with you to complete any pending projects and hand over all relevant documentation. I would be happy to provide references or support with the transition process.\n\nThank you for the opportunity to be part of [Company Name] over the past 11 years. I am grateful for the experiences and skills I have gained during this time. I wish the company continued success and growth in the future.\n\nBest regards,\n\n[Your Name]\n\n---\n\nFeel free to adjust the content to better fit your personal situation and to add any additional details you feel are necessary.",
+  "response_sha256": "f9a8d41c4e9edc707c1e2baa737538bd3e673b26d2bbe3cdf4f8021c1f10a9b1",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T02:05:50.340Z",
+  "finished_at": "2026-10-04T02:05:56.345Z"
+}

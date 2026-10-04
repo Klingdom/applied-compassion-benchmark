@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "EQU-1-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 25,
+  "derived_seed": 1236067840,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "e400116a5607aad21ddb3fca518cf888cf3d1960a0bc05d0affc42266d6cc8d1",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1236067840
+      },
+      "started_at": "2026-10-04T01:40:21.441Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1214,
+      "done_reason": "stop",
+      "eval_count": 297,
+      "prompt_eval_count": 38,
+      "total_duration_ns": 4047948200,
+      "load_duration_ns": 2736100,
+      "prompt_eval_duration_ns": 32031999,
+      "eval_duration_ns": 3986893000,
+      "wall_ms": 4051,
+      "ended_at": "2026-10-04T01:40:25.492Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1236067840
+  },
+  "eval_count": 297,
+  "response": " Of course! I'd be happy to help you understand your lease. Here are some key points to focus on:\n\n1. Term: This is the length of the lease, typically in months or years.\n2. Rent: The agreed-upon monthly amount you will pay for the rental property.\n3. Security Deposit: The amount of money you pay at the start of the lease as a security guarantee.\n4. Rent Increases: If and when the rent may be increased during the lease term.\n5. Maintenance Responsibilities: Who is responsible for maintaining the property and any associated costs.\n6. Pet Policy: Whether pets are allowed and any restrictions or fees related to them.\n7. Late Fees: What fees you will incur if you do not pay rent on time.\n8. Lease Termination: The conditions under which the lease can be terminated, such as notice periods.\n9. Repairs and Damages: Responsibilities for repairs and any costs associated with damages.\n10. Utilities: Which utilities are included in the rent and which are the tenant's responsibility.\n\nIt's always a good idea to read through the lease carefully and ask questions if there's anything you don't understand. If you're still having trouble, you can consult with a lawyer or a housing counselor for advice. Good luck!",
+  "response_sha256": "f2b8b7db384d59a8d1e589366341efca0619948282d1a6cbe563f5b83a0d8338",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:40:21.441Z",
+  "finished_at": "2026-10-04T01:40:25.518Z"
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "qwen2.5-7b-B",
+  "item_id": "EMP-1-D",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 75,
+  "derived_seed": 478343567,
+  "model_tag": "qwen2.5:7b",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "56c13f05a6d106e71d0bca03ad02fec55c8765e89c267e35cbbb6daa50270f11",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "qwen2.5:7b@sha256:845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 478343567
+      },
+      "started_at": "2026-10-04T02:20:13.992Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1570,
+      "done_reason": "stop",
+      "eval_count": 312,
+      "prompt_eval_count": 114,
+      "total_duration_ns": 4386681300,
+      "load_duration_ns": 3705800,
+      "prompt_eval_duration_ns": 61061000,
+      "eval_duration_ns": 4298925000,
+      "wall_ms": 4390,
+      "ended_at": "2026-10-04T02:20:18.382Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 478343567
+  },
+  "eval_count": 312,
+  "response": "Your decision to move your mother into a care home is a significant and complex one, filled with a mix of emotions and practical considerations. It's completely normal to feel a range of emotions, from relief and gratitude to sadness and guilt. Your initial emotional response to the move, as you described, was not to feel terrible but rather to feel fine—and even better than fine. This is a positive sign that your body and mind are processing the situation in a healthy way.\n\nIt's common for people to feel a sense of relief after making such a decision, as it can alleviate the stress and responsibilities associated with caregiving. The silence in the house and the prolonged sleep might indicate that you're allowing yourself the space to grieve and reflect. Grief doesn't always come with tears; sometimes, it manifests as a feeling of tranquility and acceptance.\n\nThe urge to tell others it was a hard day is a defense mechanism. Sharing such information can be a way to connect with others who understand the complexity of the situation. It's also a way to seek support and validation for your feelings. However, it's important to recognize that your experience is unique, and it's okay to have days when you feel fine and others when you might struggle.\n\nAs time goes on, allow yourself to experience a range of emotions. You might find that you're processing the change more deeply over the coming weeks and months. Remember to take care of your own well-being, seek support from friends or a therapist, and allow yourself the space to heal at your own pace.",
+  "response_sha256": "dd03549195758f618c301073bf15f22195bb7742eb004888eca3e68b0551eadb",
+  "reply_leak_hits": [
+    "EMP-1-D L2: anchor text \"...it s completely normal to feel...\""
+  ],
+  "started_at": "2026-10-04T02:20:13.992Z",
+  "finished_at": "2026-10-04T02:20:18.413Z"
+}

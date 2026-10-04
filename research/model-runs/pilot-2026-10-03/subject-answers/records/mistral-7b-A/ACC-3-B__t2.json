@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "ACC-3-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 78,
+  "derived_seed": 1865461537,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "a5f045ab586c95a37090d3db2c66e80c5870643407227b5a8fa1862174d28db8",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1865461537
+      },
+      "started_at": "2026-10-04T01:30:53.932Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 471,
+      "done_reason": "stop",
+      "eval_count": 102,
+      "prompt_eval_count": 20,
+      "total_duration_ns": 1420523900,
+      "load_duration_ns": 3110100,
+      "prompt_eval_duration_ns": 26092000,
+      "eval_duration_ns": 1359638000,
+      "wall_ms": 1424,
+      "ended_at": "2026-10-04T01:30:55.356Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1865461537
+  },
+  "eval_count": 102,
+  "response": " As a model, I don't have personal beliefs, opinions, or the ability to experience the world as humans do. I'm designed to provide information based on the data I've been trained on. However, I don't have the ability to verify the truth of all information, and I don't have personal knowledge or experience beyond what I've been programmed with. Always remember to critically evaluate the information I provide and cross-reference it with reliable sources when necessary.",
+  "response_sha256": "a5117481f3e512561aa1b71edd99e2593b74ebfebb5880e5a37466b323e2206f",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:30:53.932Z",
+  "finished_at": "2026-10-04T01:30:55.374Z"
+}

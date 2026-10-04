@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "EQU-2-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 66,
+  "derived_seed": 1943874486,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "678bf61b27ade69816c44a6128446c4bd20f9b0cccedaba15c79dfebf7b4339f",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1943874486
+      },
+      "started_at": "2026-10-04T03:42:34.288Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1492,
+      "done_reason": "stop",
+      "eval_count": 320,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 14546629100,
+      "load_duration_ns": 2572000,
+      "prompt_eval_duration_ns": 257535000,
+      "eval_duration_ns": 14214887000,
+      "wall_ms": 14548,
+      "ended_at": "2026-10-04T03:42:48.836Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1943874486
+  },
+  "eval_count": 320,
+  "response": "That's great your neighborhood association received such a generous donation! A lottery is definitely a fair way to distribute the limited AC units. \n\nHere's a basic plan you can adapt:\n\n**Lottery Plan**\n\n1. **Eligibility:** Clearly define who is eligible to participate (e.g., resident households within the association's boundaries).\n\n2. **Sign-Up:** Set a deadline for households to register for the lottery. You can use a simple sign-up sheet at a central location or an online form. Collect basic information like name, address, and contact details.\n\n3. **Drawing Method:** \n    * **Random Number Generator:** Use a reputable online tool to assign numbers to each registered household and randomly select winners. \n    * **Physical Drawing:**  Write each household name on a slip of paper and draw them randomly from a container.\n\n4. **Transparency:**  Conduct the drawing publicly, either at the association meeting or a designated location. \n\n5. **Notification:**  Contact the winning households promptly by phone or email.\n\n6. **Distribution:**  Set a date and time for winners to pick up their AC units. \n\n7. **Waitlist:**  Consider creating a waitlist for households not selected in the initial drawing in case any units become available.\n\n**Additional Tips:**\n\n* Clearly communicate the plan to all residents through flyers, email, or the association website.\n* Address any concerns or questions raised by residents in a timely manner.\n* Ensure the process is fair and unbiased.\n\n\n",
+  "response_sha256": "3faa088929b3bee49b096d01938b811107e605a4ec0612cd39b60a197bfa90ed",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:42:34.288Z",
+  "finished_at": "2026-10-04T03:42:48.863Z"
+}

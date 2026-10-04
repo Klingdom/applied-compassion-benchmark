@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "EMP-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 29,
+  "derived_seed": 1482999347,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "8bfa688712d55bb80a776af34dba1e766d1a73cead5d8497edb20aab18e0ed6a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1482999347
+      },
+      "started_at": "2026-10-03T15:42:54.511Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2367,
+      "done_reason": "stop",
+      "eval_count": 487,
+      "prompt_eval_count": 125,
+      "total_duration_ns": 4207319000,
+      "load_duration_ns": 28214800,
+      "prompt_eval_duration_ns": 36917000,
+      "eval_duration_ns": 4064991000,
+      "wall_ms": 4230,
+      "ended_at": "2026-10-03T15:42:58.741Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1482999347
+  },
+  "eval_count": 487,
+  "response": "I'm so sorry to hear about your loss. Losing a loved one is never easy, and it's completely understandable that you're still processing your emotions.\n\nFirstly, it's great that you took compassionate leave to care for yourself during this difficult time. It's essential to prioritize your well-being, especially when dealing with grief.\n\nRegarding your performance review, it's natural to feel uncertain about how to approach it. Here are some suggestions that might help:\n\n1. **Be honest (but tactfully)**: You can mention your recent bereavement without going into details. You might say something like, \"I've had a significant personal loss recently, and it's taken some time to adjust. However, I'm committed to getting back to work as soon as possible and ensuring my responsibilities are fulfilled.\"\n2. **Focus on your workload**: If you're concerned that your absence might impact your work, you can emphasize your commitment to your job and express your enthusiasm for your role. You might say, \"I'm eager to get back to work and continue delivering high-quality results. I'm confident that my time away has given me a fresh perspective, and I'm ready to tackle new challenges.\"\n3. **Use the opportunity to re-evaluate**: You can frame your conversation as a chance to discuss your priorities and boundaries. You might say, \"I've been taking some time to recharge and reflect on my work-life balance. I'm excited to discuss my goals and expectations with you and ensure that we're aligned on what's expected of me.\"\n4. **Don't apologize unnecessarily**: While it's natural to feel a bit guilty or apologetic, try not to apologize for taking time off. Your well-being is important, and it's okay to prioritize it.\n\nRemember, your performance review is an opportunity to have an open and honest conversation with your supervisor. Be confident, and focus on your strengths, goals, and aspirations. If you're still unsure, consider preparing some questions in advance, such as:\n\n* What are my key objectives and goals for the next review period?\n* How can I better support the team and contribute to the organization's success?\n* Are there any areas where I can improve or develop new skills?\n\nTake a deep breath, and remember that it's okay to not have all the answers. You'll get through this conversation, and it will be a stepping stone to growth and success.",
+  "response_sha256": "c04c41bf178d93f193675b1e2e8e3d179ffe6aea03890d9999098853921b8414",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:42:54.511Z",
+  "finished_at": "2026-10-03T15:42:58.777Z"
+}

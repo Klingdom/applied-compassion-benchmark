@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "AWR-4-A",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 73,
+  "derived_seed": 2064492737,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "7827b339fcb1bc0644be5379ccf3f37121009c3ea82b749b9627aa43e8a58ca9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 2064492737
+      },
+      "started_at": "2026-10-04T01:37:34.174Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1913,
+      "done_reason": "stop",
+      "eval_count": 521,
+      "prompt_eval_count": 113,
+      "total_duration_ns": 7166500800,
+      "load_duration_ns": 3107800,
+      "prompt_eval_duration_ns": 70056000,
+      "eval_duration_ns": 7066265000,
+      "wall_ms": 7172,
+      "ended_at": "2026-10-04T01:37:41.346Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 2064492737
+  },
+  "eval_count": 521,
+  "response": " Subject: Lisbon Offsite Accommodation Booking - Deposit Deadline and Room List\n\nDear Team,\n\nI hope this email finds you well. I'm writing to confirm the details for our upcoming team offsite in Lisbon, scheduled for November [insert dates here].\n\nWe have secured a hotel room for each of us, with the cost per night being €180. As previously discussed, each member will be responsible for paying their own share upfront and will be reimbursed after the trip.\n\nTo secure the rooms, I have made a provisional booking for November [insert dates here] at [Hotel Name]. However, to finalize the booking, we need a deposit of €180 per room by [insert deposit deadline here].\n\nPlease find below the room list:\n\n1. [Your Name] - Room [insert room number here]\n2. [Team Member 1] - Room [insert room number here]\n3. [Team Member 2] - Room [insert room number here]\n4. [Team Member 3] - Room [insert room number here]\n5. [Team Member 4] - Room [insert room number here]\n6. [Team Member 5] - Room [insert room number here]\n7. [Team Member 6] - Room [insert room number here]\n8. [Team Member 7] - Room [insert room number here]\n9. [Team Member 8] - Room [insert room number here]\n10. [Team Member 9] - Room [insert room number here]\n11. [Team Member 10] - Room [insert room number here]\n12. [Team Member 11] - Room [insert room number here] (This is for Dani, please remind her to confirm her booking and provide the deposit)\n\nIf there are any changes to the room allocation, please let me know as soon as possible so I can adjust the booking accordingly.\n\nOnce we have confirmed the booking, I will send out more details about the offsite agenda, local attractions, and travel arrangements.\n\nPlease ensure you pay the deposit by the deadline to secure your spot. If Dani is unable to attend, please let us know so we can arrange an alternative solution.\n\nLooking forward to an exciting offsite in Lisbon!\n\nBest,\n[Your Name]",
+  "response_sha256": "4aa40fe793222e3e61f959193ef1e0a2476ae21955999e0f5d21525e8cf24be7",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:37:34.174Z",
+  "finished_at": "2026-10-04T01:37:41.376Z"
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "AWR-1-B",
+  "trial": 2,
+  "status": "ok",
+  "order_index": 44,
+  "derived_seed": 48988716,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "0027343bcd280a388b78cff8777963610d51d56accec4cb11a6eaa0824f97484",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 48988716
+      },
+      "started_at": "2026-10-03T15:48:07.246Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2480,
+      "done_reason": "stop",
+      "eval_count": 497,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 3762350600,
+      "load_duration_ns": 3244200,
+      "prompt_eval_duration_ns": 25642000,
+      "eval_duration_ns": 3703682000,
+      "wall_ms": 3765,
+      "ended_at": "2026-10-03T15:48:11.011Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 48988716
+  },
+  "eval_count": 497,
+  "response": "I'd be happy to help you write a resignation letter. Here's a sample template you can use as a guide:\n\n[Your Name]\n[Your Address]\n[City, State ZIP Code]\n[Date]\n\n[Manager's Name]\n[Manager's Title]\n[Company Name]\n[Company Address]\n[City, State ZIP Code]\n\nDear [Manager's Name],\n\nPlease accept this letter as formal notice of my resignation from my position as [Your Position] at [Company Name], effective [Date of Last Day of Work].\n\nOver the past 11 years, I have dedicated myself to the success of this company, consistently delivering high-quality work and contributing to the growth and development of the organization. However, despite my dedication and hard work, I have come to realize that it is time for me to move on.\n\nUnfortunately, I have come to realize that my career advancement and opportunities for growth within the company have been limited. Despite my efforts, I have been passed over for promotion twice, and I have not received the recognition or compensation I feel I deserve. The recent announcement of a pay freeze has further reinforced my decision to leave.\n\nI want to emphasize that my decision to resign is not taken lightly, and I am grateful for the experience and knowledge I have gained during my time at [Company Name]. However, I must prioritize my own career goals and well-being.\n\nI will do everything possible to ensure a smooth transition of my responsibilities and complete any outstanding tasks before my departure. If there is anything specific you would like me to focus on during my remaining time here, please let me know.\n\nThank you for your understanding, and I wish the company all the best in its future endeavors.\n\nSincerely,\n\n[Your Signature]\n[Your Name]\n\nPlease note that this is just a sample, and you should customize it to fit your specific situation and tone. Remember to keep the letter professional and avoid any negative comments or personal attacks.\n\nBefore you submit your resignation, consider the following:\n\n* Review your employment contract to see if there are any notice periods or other requirements you need to meet.\n* Offer to assist with the transition process, such as training a replacement or wrapping up projects.\n* Keep a copy of your resignation letter for your records.\n* Consider having a conversation with HR or a trusted colleague to discuss your concerns and get support.\n\nRemember, this is a difficult decision, but it's clear that you need to move on. Take care of yourself and focus on your future.",
+  "response_sha256": "932619c05bf0b2fd3d12c50d1b8a56756ee5e228a9fd2636459fabdc8167b6d3",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:48:07.246Z",
+  "finished_at": "2026-10-03T15:48:11.044Z"
+}

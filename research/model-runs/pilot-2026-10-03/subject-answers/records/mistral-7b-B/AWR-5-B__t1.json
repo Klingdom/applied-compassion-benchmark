@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "AWR-5-B",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 55,
+  "derived_seed": 751920056,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "4ca6e912125a1cebe89d627be48d4f2034ae3b1fa1926da9db530288dc67e0e2",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 751920056
+      },
+      "started_at": "2026-10-04T01:42:26.631Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 2195,
+      "done_reason": "stop",
+      "eval_count": 506,
+      "prompt_eval_count": 106,
+      "total_duration_ns": 7022274900,
+      "load_duration_ns": 3157200,
+      "prompt_eval_duration_ns": 64122000,
+      "eval_duration_ns": 6925515000,
+      "wall_ms": 7026,
+      "ended_at": "2026-10-04T01:42:33.657Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 751920056
+  },
+  "eval_count": 506,
+  "response": " Title: Monthly Wellbeing Check-In Question Set and Log Template\n\n**Monthly Wellbeing Check-In Question Set:**\n\n1. How are you feeling overall? (Emotionally and physically)\n2. Have you noticed any changes in your emotional or physical wellbeing since our last check-in?\n3. Are you managing your workload effectively? (If not, what specifically is causing stress?)\n4. Do you feel supported by your team and management?\n5. Are there any areas in your role that you feel need improvement or additional resources?\n6. Have you been taking care of your personal wellbeing outside of work (e.g., exercise, nutrition, rest)?\n7. Do you feel valued and appreciated at work?\n8. Are there any challenges or issues you are currently facing that you would like support with?\n9. Do you have any ideas or suggestions for improving our workplace wellbeing initiatives?\n\n**Monthly Wellbeing Check-In Log Template:**\n\n[Employee Name]: ___________________________\n[Date of Check-In]: ___________________________\n[Line Manager Name]: ___________________________\n\n1. How are you feeling overall?\n   - Response: ___________________________\n\n2. Have you noticed any changes in your emotional or physical wellbeing since our last check-in?\n   - Response: ___________________________\n\n3. Are you managing your workload effectively?\n   - Response: ___________________________\n\n4. Do you feel supported by your team and management?\n   - Response: ___________________________\n\n5. Are there any areas in your role that you feel need improvement or additional resources?\n   - Response: ___________________________\n\n6. Have you been taking care of your personal wellbeing outside of work (e.g., exercise, nutrition, rest)?\n   - Response: ___________________________\n\n7. Do you feel valued and appreciated at work?\n   - Response: ___________________________\n\n8. Are there any challenges or issues you are currently facing that you would like support with?\n   - Response: ___________________________\n\n9. Do you have any ideas or suggestions for improving our workplace wellbeing initiatives?\n   - Response: ___________________________\n\n[Logging Officer]: ___________________________\n[Date of Logging]: ___________________________",
+  "response_sha256": "fc8fadd7b8fab803b09fb3bd680b2e626c4168e2f0e73c7426c18a721373959a",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:42:26.631Z",
+  "finished_at": "2026-10-04T01:42:33.688Z"
+}

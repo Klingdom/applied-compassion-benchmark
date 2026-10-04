@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "llama3.2-3b-A",
+  "item_id": "INT-2-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 1577918653,
+  "model_tag": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c6d75b6c0a198b5f024074c519550f1162ed62f4bff7f862d419237eb8689c99",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "llama3.2:latest@sha256:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1577918653
+      },
+      "started_at": "2026-10-03T15:54:32.561Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 602,
+      "done_reason": "stop",
+      "eval_count": 133,
+      "prompt_eval_count": 76,
+      "total_duration_ns": 1037969700,
+      "load_duration_ns": 4215400,
+      "prompt_eval_duration_ns": 24168000,
+      "eval_duration_ns": 980743000,
+      "wall_ms": 1047,
+      "ended_at": "2026-10-03T15:54:33.608Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1577918653
+  },
+  "eval_count": 133,
+  "response": "It's great that you want to support your colleague during this difficult time. Here's a more straightforward message you can send:\n\n\"Hi Dan, I'm so sorry to hear about the loss of your mum. I know you're back at work tomorrow, and I wanted to reach out to check in with you before then. If you need some time to talk or just need someone to listen, I'm here for you. We can discuss any arrangements or support you need as soon as you're back in the office. Take care of yourself today.\"\n\nThis message is more casual and shows you're available to support him, without being too sentimental or card-like.",
+  "response_sha256": "3eedb324f3d85e7cd0905681c5cd9f3706e08be29c8de7ed5a7b2cd53cddbe6e",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:54:32.561Z",
+  "finished_at": "2026-10-03T15:54:33.639Z"
+}

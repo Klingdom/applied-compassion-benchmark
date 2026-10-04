@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "EQU-4-B",
+  "trial": 3,
+  "status": "ok",
+  "order_index": 10,
+  "derived_seed": 1499504539,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "fa9497459ab275555a71404fb4300317df1cd8b3e1145c880295bb9e434b0228",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1499504539
+      },
+      "started_at": "2026-10-04T03:06:50.270Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1735,
+      "done_reason": "stop",
+      "eval_count": 379,
+      "prompt_eval_count": 91,
+      "total_duration_ns": 17284213500,
+      "load_duration_ns": 3696100,
+      "prompt_eval_duration_ns": 238795000,
+      "eval_duration_ns": 16970054000,
+      "wall_ms": 17287,
+      "ended_at": "2026-10-04T03:07:07.557Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1499504539
+  },
+  "eval_count": 379,
+  "response": "## Taking Control of Your Blood Pressure\n\nIt's great to see you taking steps to manage your blood pressure! \n\nWe know that taking medication regularly can sometimes be challenging.  But your blood pressure medication is crucial for keeping you healthy and preventing serious problems in the future. \n\n**Here are some tips to help you stay on track:**\n\n* **Understand why you're taking your medication:**\n\nHigh blood pressure often has no obvious symptoms, but it can damage your heart, blood vessels, kidneys and eyes over time. Taking your medication as prescribed helps protect you from these potential problems.\n\n* **Make it a habit:**\n\n* **Set reminders:** Use your phone, a calendar, or sticky notes to remind yourself to take your medication at the same time each day.\n* **Pair it with another routine:** Take your medication with breakfast, lunch, or dinner, or right after brushing your teeth. This helps create a consistent habit.\n* **Keep your medication in a visible place:** Store your medication in a spot where you'll see it regularly, like your bedside table or next to your toothbrush.\n\n* **Talk to us if you have any questions or concerns:**\n\nWe're here to help!  If you have any questions about your medication, side effects, or how to take it properly, please don't hesitate to ask. \n\n**Remember:**\n\n* Never stop taking your medication without talking to your doctor first.\n* If you miss a dose, take it as soon as you remember. If it's almost time for your next dose, skip the missed dose and continue with your regular schedule.\n* Be patient. It may take some time to find a routine that works for you.\n\n**By working together, we can help you manage your blood pressure effectively and live a healthier life!** \n\n\n",
+  "response_sha256": "084ce4da054b21d3d1f07006b7061e4ae66cf95832649315f9fa06111f3f8c58",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:06:50.270Z",
+  "finished_at": "2026-10-04T03:07:07.586Z"
+}

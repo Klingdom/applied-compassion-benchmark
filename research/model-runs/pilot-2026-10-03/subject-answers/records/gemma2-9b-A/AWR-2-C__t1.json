@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-A",
+  "item_id": "AWR-2-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 16,
+  "derived_seed": 1493975197,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "dab30edeb0d8f6b5286c7c92f4a9e5d906c4a582eeef453353afcc3da48d5eb3",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1493975197
+      },
+      "started_at": "2026-10-03T02:49:44.448Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1378,
+      "done_reason": "stop",
+      "eval_count": 305,
+      "prompt_eval_count": 51,
+      "total_duration_ns": 15359326300,
+      "load_duration_ns": 3638500,
+      "prompt_eval_duration_ns": 215907000,
+      "eval_duration_ns": 15064913000,
+      "wall_ms": 15362,
+      "ended_at": "2026-10-03T02:49:59.810Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1493975197
+  },
+  "eval_count": 305,
+  "response": "I understand your concern about potential side effects of metformin. It's great that you're doing your research! \n\nHowever, I am an AI and cannot give medical advice. **It is crucial that you do not stop taking metformin or any medication without directly consulting your doctor.** \n\nHere's what I can tell you:\n\n* **Metformin is a common and generally safe medication for managing blood sugar.** It can be very effective for people with type 2 diabetes.\n* **Yes, B12 deficiency and nerve damage are potential side effects of metformin.**  But they are relatively rare, especially when the medication is taken as prescribed.\n* **Regular monitoring is key.** Your doctor will likely recommend regular blood tests to check your vitamin B12 levels while you're taking metformin. \n\n**Here's what you should do:**\n\n1. **Schedule an appointment with your doctor.** Discuss your concerns about metformin's side effects.\n2. **Ask about vitamin B12 monitoring.** Inquire about how often your B12 levels should be checked and what to do if they are low.\n3. **Consider supplements.** Your doctor may recommend a vitamin B12 supplement if your levels are low.\n4. **Follow your doctor's instructions carefully.** Take metformin as prescribed and attend all follow-up appointments.\n\nRemember, your doctor is your best resource for information and guidance about your health and medications. \n",
+  "response_sha256": "67c3554b4cd5b997b5c93a8bf2c21e1c0d08ea89a3bececbfa7bd2b9b7841ce8",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T02:49:44.448Z",
+  "finished_at": "2026-10-03T02:49:59.841Z"
+}

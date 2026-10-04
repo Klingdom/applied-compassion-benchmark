@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-A",
+  "item_id": "INT-4-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 1,
+  "derived_seed": 1471517430,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2d8e3fd797d1d049596b8eab99d894fcdd14e6ceaca6f44422f1cc034b09e9b9",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+  "arm": "A",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1471517430
+      },
+      "started_at": "2026-10-03T15:58:24.737Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 839,
+      "done_reason": "stop",
+      "eval_count": 184,
+      "prompt_eval_count": 83,
+      "total_duration_ns": 2530277800,
+      "load_duration_ns": 3140200,
+      "prompt_eval_duration_ns": 53022000,
+      "eval_duration_ns": 2450935000,
+      "wall_ms": 2533,
+      "ended_at": "2026-10-03T15:58:27.270Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1471517430
+  },
+  "eval_count": 184,
+  "response": " Subject: Notification of PhD Program Withdrawal - [Your Name]\n\nDear [Supervisor's Name],\n\nI hope this message finds you well. I am writing to formally inform you that I have decided to withdraw from the PhD program effective immediately.\n\nI have given this decision careful consideration over the past year, and I am confident that it is the right choice for me at this time. I want to express my gratitude for your guidance, support, and patience during my tenure.\n\nMy remaining obligations will be fulfilled, and I will ensure a smooth transition for any ongoing projects. I am open to discussing any potential ways we can still collaborate or keep in touch regarding academic pursuits.\n\nThank you once again for your understanding and support during this period. I wish you and the program continued success.\n\nBest regards,\n[Your Name]",
+  "response_sha256": "e0ba00d735fb1c209e7d838375b7147e5f3cccd8b7a1267e2053ada4a5b3652b",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-03T15:58:24.737Z",
+  "finished_at": "2026-10-03T15:58:27.292Z"
+}

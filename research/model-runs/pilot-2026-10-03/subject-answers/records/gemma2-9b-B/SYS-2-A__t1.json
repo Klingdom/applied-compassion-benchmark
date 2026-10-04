@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "gemma2-9b-B",
+  "item_id": "SYS-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 58,
+  "derived_seed": 1751130641,
+  "model_tag": "gemma2:9b",
+  "model_digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "2c8c8f60580897a7bafb918e1ba0b944336878c0c649a840ecd6dcd07876dc5a",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "gemma2:9b@sha256:ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1751130641
+      },
+      "started_at": "2026-10-04T03:40:57.302Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1319,
+      "done_reason": "stop",
+      "eval_count": 279,
+      "prompt_eval_count": 98,
+      "total_duration_ns": 12621451200,
+      "load_duration_ns": 3149100,
+      "prompt_eval_duration_ns": 250418000,
+      "eval_duration_ns": 12280396000,
+      "wall_ms": 12624,
+      "ended_at": "2026-10-04T03:41:09.926Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1751130641
+  },
+  "eval_count": 279,
+  "response": "It sounds like you're in a tough spot! While it's tempting to avoid the bedtime battle, letting your son fall asleep on the sofa might be unintentionally reinforcing the resistance. \n\nHere are a few things to try:\n\n**1. Consistency is Key:** Establish a clear bedtime routine and stick to it every night, even weekends. This predictability can help signal to your son that it's time to wind down.\n\n**2. Gradual Approach:** Instead of abruptly stopping the sofa sleep, gradually move the \"sleep spot\" closer to his bed each night. You could start by having him read a book in his room, then have a quiet cuddle on his bed before lights out.\n\n**3. Positive Reinforcement:** Praise and reward positive bedtime behavior. A sticker chart or small treat for staying in bed can be motivating. \n\n**4. Address Underlying Fears:** Talk to your son about what's causing the bedtime resistance. Is he afraid of the dark? Does he want to stay up and play? Addressing his concerns can make bedtime feel safer and more appealing.\n\n**5. Seek Professional Help:** If the struggles persist, consider talking to your pediatrician or a child psychologist. They can offer additional strategies and support.\n\nRemember, it takes time and patience to establish new bedtime habits. Be consistent, supportive, and understanding with your son.  \n",
+  "response_sha256": "340b5a7ada21b20e0d90d4b2b7138e806e63eafa0985aac985b2498c7fa4ec92",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T03:40:57.302Z",
+  "finished_at": "2026-10-04T03:41:09.957Z"
+}

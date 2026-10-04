@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "INT-2-A",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 72,
+  "derived_seed": 1577574527,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "c1c48799b8f55e4e1f278304cbfe565219840a397123a021611f969d0f9cdd42",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 1577574527
+      },
+      "started_at": "2026-10-04T01:43:46.907Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1258,
+      "done_reason": "stop",
+      "eval_count": 266,
+      "prompt_eval_count": 100,
+      "total_duration_ns": 3721425000,
+      "load_duration_ns": 3281300,
+      "prompt_eval_duration_ns": 53748000,
+      "eval_duration_ns": 3626828000,
+      "wall_ms": 3723,
+      "ended_at": "2026-10-04T01:43:50.630Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 1577574527
+  },
+  "eval_count": 266,
+  "response": " I'm sorry to hear about your travel disruption. In such situations, it's always a good idea to stay on the line with the original airline to discuss your options and potential compensation. If they can't find a solution, you might need to book an alternative flight to reach your destination as soon as possible.\n\nPurchasing a new ticket on another carrier does not necessarily affect your ability to claim compensation from the original airline. However, it's important to document the events thoroughly, including receipts and communication with the airline and the new carrier.\n\nIf you decide to purchase the new ticket, inform the original airline about your decision and ask them to note it in your records. Explain that you were unable to wait any longer due to the urgent nature of your travel. This information can help support your claim for compensation.\n\nRemember, the EU regulation EC 261/2004 entitles passengers to compensation if their flight is cancelled less than 14 days before departure, provided the reasons for the cancellation were within the airline's control. The amount of compensation varies depending on the length of the delayed journey and the notice period given.\n\nI hope this helps! Best of luck with your travel arrangements.",
+  "response_sha256": "575ad06352f4e05eec31b18a1ea9ea92b0e341eec6318d76946033aed1b48751",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:43:46.907Z",
+  "finished_at": "2026-10-04T01:43:50.654Z"
+}

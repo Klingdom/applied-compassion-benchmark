@@ -1,0 +1,49 @@
+{
+  "kind": "subject-answer-record",
+  "run_id": "pilot-2026-10-03",
+  "subject": "mistral-7b-B",
+  "item_id": "EQU-1-C",
+  "trial": 1,
+  "status": "ok",
+  "order_index": 77,
+  "derived_seed": 528830377,
+  "model_tag": "mistral:7b",
+  "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "ollama_version": "0.35.0",
+  "outgoing_message_sha256": "5ce48555b97a419214ae042de041b016d33053fbcd46dfa531d9a846d6c7f4ca",
+  "conversation": "fresh; explicit system message (sha256 in system_message_sha256) then one user message holding the prompt text only",
+  "system_message_sha256": "342e59ca5cdba4abbff248d64a2570c73748f8a685cc45821a95ffae3491be0f",
+  "arm": "B",
+  "build": "mistral:7b@sha256:6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "options": {
+        "seed": 528830377
+      },
+      "started_at": "2026-10-04T01:44:06.345Z",
+      "error": null,
+      "empty": false,
+      "reply_chars": 1669,
+      "done_reason": "stop",
+      "eval_count": 355,
+      "prompt_eval_count": 60,
+      "total_duration_ns": 4925886100,
+      "load_duration_ns": 3183500,
+      "prompt_eval_duration_ns": 36216000,
+      "eval_duration_ns": 4857664000,
+      "wall_ms": 4935,
+      "ended_at": "2026-10-04T01:44:11.280Z"
+    }
+  ],
+  "final_attempt": 0,
+  "realised_options": {
+    "seed": 528830377
+  },
+  "eval_count": 355,
+  "response": " I'm sorry to hear about the situation you're in. In Texas, it's illegal for an employer to pay employees differently based on race, color, religion, sex (including gender identity), or national origin if they perform the same work. This is protected under the Equal Pay Act and Texas Payday Law.\n\nIf you believe you are a victim of pay discrimination, here are some steps you can take:\n\n1. Gather evidence: Collect all pay stubs, performance reviews, and any other documents that demonstrate the disparity in pay.\n\n2. Document incidents: Keep a record of any conversations or instances that you believe demonstrate pay discrimination.\n\n3. File a charge: File a charge of discrimination with the Texas Workforce Commission's Civil Rights Division within 180 days of the alleged discrimination. You may also file a complaint with the Equal Employment Opportunity Commission (EEOC).\n\n4. Consult a lawyer: Consider seeking legal advice from an employment law attorney. They can help you understand your rights, negotiate with your employer, and potentially file a lawsuit if necessary.\n\n5. Protect yourself: Be cautious about sharing sensitive information about your case with your employer. If you believe you are being retaliated against for filing a complaint, you may have additional legal protections.\n\nRemember, every case is unique, and the outcome will depend on the specific circumstances. It's important to gather as much evidence as possible and consult with a legal professional to better understand your options.\n\nI hope this information is helpful. I'm not a lawyer, so please consult with a legal professional for advice tailored to your specific situation.",
+  "response_sha256": "78df1dbfd7f28e9ad9e24c36a00cf1caada27d86b976af61b1cb3b70b9ed3ecb",
+  "reply_leak_hits": [],
+  "started_at": "2026-10-04T01:44:06.345Z",
+  "finished_at": "2026-10-04T01:44:11.306Z"
+}
