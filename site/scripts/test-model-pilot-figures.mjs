@@ -155,7 +155,7 @@ for (const [label, wave] of targets) {
       h.assert(t.indexOf("Primary arm") >= 0 && t.indexOf("Secondary arm") > t.indexOf("Primary arm"), "arm blocks missing");
     });
     await h.check("no figure text uses an ordinal for an arm (the site's ordering-word rule): primary and secondary only", () => {
-      for (const [n, html] of Object.entries(parts)) h.assert(!/(?:first|second|third) arm|(?:first|second)-arm/i.test(text(html)), `${n} says first/second arm`);
+      for (const [n, html] of Object.entries(parts)) h.assert(!/\b(?:first|second|third) arm\b|\b(?:first|second)-arm\b/i.test(text(html)), `${n} says first/second arm`);
     });
   }
 }

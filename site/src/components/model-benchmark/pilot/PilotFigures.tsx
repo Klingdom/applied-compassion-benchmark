@@ -840,7 +840,7 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
   const effective = lc.filter((r) => r.length_instruction === "effective").length;
   const ineffective = lc.filter((r) => r.length_instruction === "ineffective").length;
   must(effective + ineffective === lc.length, "a length verdict is neither effective nor ineffective");
-  const instructionClause = lc.length ? `The length instruction moved the median reply closer to its target for ${numberWord(effective)} of ${numberWord(lc.length)} builds; for ${numberWord(ineffective)} it did not, so that build's second-arm comparison is uninformative about length.` : "";
+  const instructionClause = lc.length ? `The length instruction moved the median reply closer to its target for ${numberWord(effective)} of ${numberWord(lc.length)} builds; for ${numberWord(ineffective)} it did not, so ${ineffective === 1 ? "that build's" : "those builds'"} secondary-arm comparison is uninformative about length.` : "";
   const bNote = `${lengthClause}${slopeClause} ${nonCausal}${instructionClause ? ` ${instructionClause}` : ""}`;
   checkText("G4 panel B note", bNote, wave);
   const bNoteLines = wrapText(bNote);
@@ -915,7 +915,7 @@ export function LengthFigure({ wave, number }: { wave: PilotWave; number: number
         />
         {lc.length > 0 && (
           <DataTable
-            caption="Did the length instruction move each build's median reply toward its target? The pre-registered rule: the secondary arm must be closer to the target than the primary arm, or the build's second-arm comparison is uninformative about length. Unofficial; not a score."
+            caption="Did the length instruction move each build's median reply toward its target? The pre-registered rule: the secondary arm must be closer to the target than the primary arm, or the build's secondary-arm comparison is uninformative about length. Unofficial; not a score."
             head={
               <tr>
                 <th scope="col">Primary-arm variant</th>

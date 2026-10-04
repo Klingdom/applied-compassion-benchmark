@@ -49,6 +49,13 @@
   - The control 29.5 is present.
 - **Open for the founder:** confirm that no developer was contacted for pilot 3; Google and Mistral AI are new.
 
+**The clean pre-push check earned its keep.**
+- `npm run prepush:clean` on commit `e1fc2328` FAILED. `test:no-control-bytes` found 4 raw 0x08 bytes in
+  `test-model-pilot-figures.mjs`: regex `\b` boundaries an agent had lost in transit (DC-23 occurrence 10).
+- They had silently disarmed the assertion banning "first/second arm" in figure text. Once repaired, that assertion
+  immediately caught "second-arm" twice in `PilotFigures.tsx`; both are fixed, and a grammar slip with them.
+- Nothing was pushed until the clean chain passes.
+
 **Selected:** founder approval of 2026-10-02 ("Approve the for you stuff and proceed"), covering decision-packet item
 6 and more open models. *Deviation:* this is founder-directed, not the top v2 item.
 
