@@ -1,5 +1,34 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 99 — 2026-10-08 (founder: "Approve the for you stuff and proceed", plus "We got our first sale!!!! Countries Benchmark Index for $195")
+
+**Founder approvals recorded, all three items from the end of Iteration 98:**
+- (1) **Confirmed:** no model developer (Google, Meta, Mistral AI, Alibaba, Anthropic) was contacted about the third
+  pilot report.
+- (2) A faster pre-push path for record-only commits: built, see below.
+- (3) Non-Claude judges: approved but **not actionable**. A re-check of the environment (names only) found no
+  provider API key. The item stays blocked on keys.
+
+**First sale recorded.**
+- `docs/METRICS_MONETIZATION.md` gains §0, "Recorded actuals (append-only)". It records the Countries Benchmark Index
+  at $195, founder-reported on 2026-10-08, as the BEFORE baseline for every revenue metric (0 → 1 sale).
+- The date, channel and referrer are still to be filled from the Gumroad dashboard; the agent cannot read it.
+- Independence note carried: a purchase grants access to research assets, never influence over a score.
+
+**`npm run prepush:records`** (`prepush-clean.mjs --records-only`).
+- It runs 9 record gates in a clean worktree: control bytes, content loss, health freshness, iteration-log coverage
+  and silence, meta-review cadence, commit-message tokens, backlog ids, and misdated claims.
+- It **refuses** unless every path changed since `origin/main` (or `--base`) is a governance record: the root logs,
+  `docs/**.md` and the run records.
+- **Controls from real history:**
+  - commit `c5b53451`, which touched a test script and a component, is refused, with both paths named;
+  - the records-only commit `57793cdc` passes in **46 s**, against more than 10 minutes for the full chain;
+  - the worktree is cleaned up and `node_modules` is intact.
+- **Not done:** a planted failing record commit was not built; each gate carries its own planted controls.
+
+**Pathspec:** `docs/METRICS_MONETIZATION.md`, `site/scripts/prepush-clean.mjs`, `site/package.json`,
+`ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
+
 ## Iteration 98 — 2026-10-03 (founder-approved pilot 3: more open models + a length-matched arm; in progress)
 
 **Status update, 2026-10-03 (data complete, verified):**

@@ -1,7 +1,7 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 98 (third unofficial pilot DEPLOYED c5b53451 2026-10-04 and verified live; manifest dirty=false; clean pre-push chain caught an agent-introduced raw-byte regex that had disarmed a test, DC-23 occurrence 10; chain 71 steps)
+Last change: Iteration 99 (FIRST SALE recorded: Countries Benchmark Index, 195 USD, revenue baseline 0 to 1; npm run prepush:records added, records-only commits checked in about 46 s; non-Claude judges still blocked on provider keys; production on c5b53451)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)

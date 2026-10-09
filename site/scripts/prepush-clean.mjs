@@ -32,6 +32,40 @@ const expectFail = args.includes("--expect-fail");
 const git = (a, opts = {}) => execFileSync("git", a, { cwd: REPO, encoding: "utf8", ...opts }).trim();
 
 const sha = git(["rev-parse", "--short", ref]);
+
+// --records-only (Iteration 99): a faster path for commits that change ONLY governance records. It runs the gates
+// that read those records instead of the whole chain, still in a clean worktree. It refuses unless every path
+// changed since --base (default origin/main) is a record, so a script, data file or page can never slip through it.
+const recordsOnly = args.includes("--records-only");
+const baseIdx = args.indexOf("--base");
+const baseRef = baseIdx >= 0 ? args[baseIdx + 1] : "origin/main";
+const RECORD_PATHS = [
+  /^ITERATION_LOG\.md$/, /^SYSTEM_HEALTH\.md$/, /^CHANGELOG\.md$/, /^IMPROVEMENT_BACKLOG\.md$/, /^RISKS\.md$/,
+  /^docs\/[^/]+\.md$/, /^docs\/ai-model-report\/.+\.md$/, /^research\/model-assessments\/[^/]+\.md$/,
+];
+const RECORD_GATES = [
+  "test:no-control-bytes", "test:content-loss", "test:health-freshness", "test:iteration-log-coverage",
+  "test:iteration-log-silence", "test:meta-review-cadence", "test:commit-message-tokens", "test:backlog-ids",
+  "test:known-misdated-claims",
+];
+export function nonRecordPaths(paths) {
+  return paths.filter((p) => !RECORD_PATHS.some((re) => re.test(p)));
+}
+let changed = [];
+if (recordsOnly) {
+  changed = git(["diff", "--name-only", `${baseRef}...${sha}`]).split(String.fromCharCode(10)).filter(Boolean);
+  const offending = nonRecordPaths(changed);
+  if (changed.length === 0) {
+    console.error(`prepush-clean: --records-only refused: no change between ${baseRef} and ${sha}; nothing to check.`);
+    process.exit(expectFail ? 0 : 1);
+  }
+  if (offending.length > 0) {
+    console.error(`prepush-clean: --records-only refused: ${offending.length} changed path(s) are not records, so the full chain is required:`);
+    for (const p of offending.slice(0, 10)) console.error("  " + p);
+    process.exit(expectFail ? 0 : 1);
+  }
+  console.log(`prepush-clean: --records-only accepted: ${changed.length} record path(s) changed since ${baseRef}.`);
+}
 const dirtyCount = git(["status", "--porcelain"]).split(String.fromCharCode(10)).filter(Boolean).length;
 if (ref === "HEAD" && dirtyCount > 0) {
   console.warn(`prepush-clean: note: ${dirtyCount} uncommitted path(s) are NOT tested; this checks the commit ${sha} only.`);
@@ -50,14 +84,20 @@ try {
   git(["worktree", "add", "--detach", "-q", wt, sha]);
   linkPath = join(wt, "site", "node_modules");
   symlinkSync(nodeModules, linkPath, process.platform === "win32" ? "junction" : "dir");
-  console.log(`prepush-clean: running the full chain on ${sha} in a clean worktree (${wt})`);
-  const r = spawnSync(process.platform === "win32" ? "npm.cmd" : "npm", ["test"], {
-    cwd: join(wt, "site"),
-    stdio: "inherit",
-    shell: process.platform === "win32",
-    env: { ...process.env, CB_PRE_PUSH_CLEAN: "1" },
-  });
-  status = r.status === null ? 1 : r.status;
+  const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+  const opts = { cwd: join(wt, "site"), stdio: "inherit", shell: process.platform === "win32", env: { ...process.env, CB_PRE_PUSH_CLEAN: "1" } };
+  if (recordsOnly) {
+    console.log(`prepush-clean: running ${RECORD_GATES.length} record gates on ${sha} in a clean worktree (${wt})`);
+    status = 0;
+    for (const g of RECORD_GATES) {
+      const r = spawnSync(npm, ["run", "-s", g], opts);
+      if (r.status !== 0) { console.error(`prepush-clean: record gate ${g} FAILED (exit ${r.status})`); status = 1; }
+    }
+  } else {
+    console.log(`prepush-clean: running the full chain on ${sha} in a clean worktree (${wt})`);
+    const r = spawnSync(npm, ["test"], opts);
+    status = r.status === null ? 1 : r.status;
+  }
 } finally {
   // Remove the link FIRST, then the worktree, then the temp dir.
   try {

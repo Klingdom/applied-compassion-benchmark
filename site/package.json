@@ -92,7 +92,8 @@
     "test:model-wave-isolation": "node --no-warnings scripts/test-model-wave-isolation.mjs",
     "test:model-wave-export": "node --no-warnings scripts/test-model-wave-export.mjs",
     "test:model-reports": "node --no-warnings scripts/test-model-reports.mjs",
-    "prepush:clean": "node scripts/prepush-clean.mjs"
+    "prepush:clean": "node scripts/prepush-clean.mjs",
+    "prepush:records": "node scripts/prepush-clean.mjs --records-only"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",

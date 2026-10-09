@@ -7,6 +7,14 @@
 
 ---
 
+## 0. Recorded actuals (append-only, dated; founder-reported unless a source is named)
+
+| Date recorded | Event | Product | Amount | Source | Note |
+|---|---|---|---|---|---|
+| 2026-10-08 | **First sale** | Countries Benchmark Index (Gumroad `countriesIndex`, `site/src/data/gumroad.ts`) | $195 | Founder report in session (Gumroad dashboard, not read by the agent) | **This is the BEFORE baseline for every revenue metric below:** cumulative sales went from 0 to 1. The sale date, channel and referrer are not yet known; add them from the Gumroad dashboard. Independence: the purchase grants access to research assets only, never influence over any score (CLAUDE.md, independence policy). |
+
+---
+
 ## 1. Event Taxonomy
 
 All events flow through `trackEvent()` in `site/src/lib/analytics.ts`. Umami receives them via the proxied `/u/` endpoint. Event names are stable snake_case identifiers — do not rename without a migration.
