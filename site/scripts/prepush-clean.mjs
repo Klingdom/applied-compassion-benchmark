@@ -76,6 +76,34 @@ if (!existsSync(nodeModules)) {
   process.exit(1);
 }
 
+// Unlink a node_modules junction/symlink WITHOUT following it. Returns false (and says so) if it cannot.
+function unlinkModulesLink(p) {
+  try {
+    if (existsSync(p) && lstatSync(p).isSymbolicLink()) unlinkSync(p);
+    else if (existsSync(p)) { console.error(`prepush-clean: ${p} is not a link; refusing to delete it.`); return false; }
+    return true;
+  } catch (e) {
+    console.error(`prepush-clean: could not unlink ${p}: ${e.message}. Remove it by hand (rmdir), NOT recursively.`);
+    return false;
+  }
+}
+
+// Startup sweep (Iteration 99): a run killed mid-chain (for example by an outer `timeout`) never reaches its
+// finally block, and spawnSync blocks signal handlers, so it leaves a worktree holding a junction to the REAL
+// node_modules. Removing that recursively could follow the junction. So every run first clears orphans the safe
+// way: unlink the junction, check the real node_modules, then remove the worktree.
+for (const line of git(["worktree", "list", "--porcelain"]).split(String.fromCharCode(10))) {
+  if (!line.startsWith("worktree ")) continue;
+  const p = line.slice("worktree ".length).trim();
+  if (!/cb-prepush-[^/\\]+[/\\]wt$/.test(p)) continue;
+  console.warn(`prepush-clean: clearing an orphaned worktree from an interrupted run: ${p}`);
+  if (!unlinkModulesLink(join(p, "site", "node_modules"))) process.exit(1);
+  if (!existsSync(join(nodeModules, "next"))) { console.error("prepush-clean: ALERT the real node_modules looks damaged; stopping."); process.exit(1); }
+  try { git(["worktree", "remove", "--force", p]); } catch { /* prune below */ }
+  rmSync(dirname(p), { recursive: true, force: true });
+}
+git(["worktree", "prune"]);
+
 const base = mkdtempSync(join(tmpdir(), "cb-prepush-"));
 const wt = join(base, "wt");
 let status = 1;
@@ -100,13 +128,7 @@ try {
   }
 } finally {
   // Remove the link FIRST, then the worktree, then the temp dir.
-  try {
-    if (linkPath && existsSync(linkPath) && lstatSync(linkPath).isSymbolicLink()) unlinkSync(linkPath);
-    else if (linkPath && existsSync(linkPath)) rmSync(linkPath, { recursive: false, force: true });
-  } catch (e) {
-    console.error(`prepush-clean: could not remove the node_modules link at ${linkPath}: ${e.message}. Remove it by hand (rmdir), NOT recursively.`);
-    process.exit(1);
-  }
+  if (linkPath && !unlinkModulesLink(linkPath)) process.exit(1);
   if (!existsSync(join(nodeModules, ".package-lock.json")) && !existsSync(join(nodeModules, "next"))) {
     console.error("prepush-clean: ALERT the real node_modules looks damaged after teardown; stopping before deleting anything else.");
     process.exit(1);

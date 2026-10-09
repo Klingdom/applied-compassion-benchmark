@@ -26,6 +26,22 @@
   - the worktree is cleaned up and `node_modules` is intact.
 - **Not done:** a planted failing record commit was not built; each gate carries its own planted controls.
 
+**A near-miss of my own, and the fix.**
+- I ran the full chain under `timeout 560`. It ran past that, the script was killed before its cleanup, and a
+  worktree was orphaned holding a junction to the real `site/node_modules`.
+- My manual cleanup: the `rmdir` of the junction failed on quoting, and `git worktree remove --force` then removed the
+  worktree with the junction inside it.
+- **`node_modules` survived intact.** `npm ls` exits 0 with nothing missing, and next, react, typescript and
+  tailwind resolve. But that was luck, not design.
+- **Fix: a startup sweep in `prepush-clean.mjs`.**
+  - Every run first clears orphaned `cb-prepush-*` worktrees: unlink the junction without following it, check the
+    real `node_modules`, then remove the worktree and prune.
+  - A signal handler cannot do this, because `spawnSync` blocks the event loop.
+  - **Planted control:** an orphan with a junction to the real `node_modules` was created by hand and cleared by the
+    next run. One worktree remains, and `npm ls` exits 0.
+- **Rule:** never wrap the full clean chain in a `timeout` shorter than its run time (now more than 10 minutes). Run
+  it in the background and wait on its result line.
+
 **Pathspec:** `docs/METRICS_MONETIZATION.md`, `site/scripts/prepush-clean.mjs`, `site/package.json`,
 `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
 
