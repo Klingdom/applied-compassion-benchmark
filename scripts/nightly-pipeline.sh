@@ -35,6 +35,8 @@
 #   NIGHTLY_WEBHOOK_URL — if set, POST status on completion (Slack/Discord)
 #   SKIP_DOCKER_REBUILD — if "1", skip stage 8 (useful for local testing)
 #   SKIP_GIT_PUSH       — if "1", skip stages 6-7 (local dry run)
+#   ALLOW_UNATTENDED_PUSH   — must be "1" for stage 7 to push. Default: the commit stays local (AUTONOMY §1b, AUT-3)
+#   ALLOW_UNATTENDED_DEPLOY — must be "1" for stage 8 to rebuild production. Default: withheld (AUTONOMY §1b, AUT-3)
 # =============================================================================
 
 set -o pipefail
@@ -215,8 +217,15 @@ Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>" \
     log ""
     log "==> Stage 7/8: git push origin main"
 
-    git push origin main >> "$LOG_FILE" 2>&1 \
-      || fail "git push failed — check SSH key and remote access"
+    # AUTONOMY.md §1b: every push is a founder action. An unattended run must not push on its own authority
+    # (backlog AUT-3, Iteration 101). The push happens only when the founder has deliberately set
+    # ALLOW_UNATTENDED_PUSH=1 for this run. Otherwise the commit stays local and the log says so.
+    if [ "${ALLOW_UNATTENDED_PUSH:-}" = "1" ]; then
+      git push origin main >> "$LOG_FILE" 2>&1 \
+        || fail "git push failed — check SSH key and remote access"
+    else
+      log "    push WITHHELD: ALLOW_UNATTENDED_PUSH is not 1 (AUTONOMY §1b). The commit is local; a founder pushes it."
+    fi
   fi
 fi
 
@@ -229,6 +238,11 @@ log "==> Stage 8/8: docker compose rebuild"
 
 if [ "${SKIP_DOCKER_REBUILD:-0}" = "1" ]; then
   log "SKIP_DOCKER_REBUILD=1 — skipping rebuild"
+elif [ "${ALLOW_UNATTENDED_DEPLOY:-}" != "1" ]; then
+  # AUTONOMY.md §1b: a deploy is a founder action. Rebuilding the production container is a deploy, and here it would
+  # also serve commits that were never pushed or reviewed. It needs an explicit ALLOW_UNATTENDED_DEPLOY=1 (AUT-3,
+  # Iteration 101).
+  log "    rebuild WITHHELD: ALLOW_UNATTENDED_DEPLOY is not 1 (AUTONOMY §1b). Deploy through the reviewed workflow."
 else
   docker compose build --no-cache web >> "$LOG_FILE" 2>&1 \
     || fail "docker build failed"

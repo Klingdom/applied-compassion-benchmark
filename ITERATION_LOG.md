@@ -1,5 +1,36 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 101 — 2026-10-10 (AUT-3: an unattended script must not push or deploy)
+
+**Backlog review (founder: "review the backlog").**
+- Open rows scoring 13 or more were dominated by **stale MCP rows**. B2–B7 and S2–S4 describe tools that have shipped
+  in `tools/cb-probe` for weeks: all 12 tools, `validate-estimate`, `validate-scorecard`, `projection` and
+  `exposure-probe` exist. They are now marked done, with the evidence named.
+- MCP-B1 and S1 are founder decisions that look moot, because the server shipped and D-40 governs the composite.
+  They are flagged for the founder to confirm or close.
+- The top live, agent-doable item was **AUT-3** (v1 14).
+
+**The defect.** `scripts/nightly-pipeline.sh` is built to run from cron, unattended. Stage 7 ran `git push origin
+main`, and stage 8 rebuilt the production container: a push and a deploy, both on the script's own authority. That
+breaks AUTONOMY §1b. Stage 8 would also serve commits nobody had pushed or reviewed.
+
+**Fix.**
+- **Stage 7** pushes only when `ALLOW_UNATTENDED_PUSH=1`; otherwise the commit stays local and the log says so.
+- **Stage 8** rebuilds only when `ALLOW_UNATTENDED_DEPLOY=1`. Same class, same check, so it is accepted under S5.
+- The header documents both variables. `bash -n` passes.
+
+**Gate:** `research/scripts/test-unattended-authority.mjs`, chain step 72.
+- A small if/elif/else tracker requires every executable `git push` and `docker compose build|up` to sit in a branch
+  entered only by an explicit `"1"` opt-in.
+- **V3:** three planted probes are caught: an unguarded push, an unguarded rebuild, and a push guarded by the wrong
+  variable.
+- **Negative control:** with the old script stashed back, the gate FAILS and names the unguarded push and rebuild.
+  The fix was restored afterwards.
+- `deploy.sh` is out of scope: it is the founder's manual deploy script.
+
+**Pathspec:** `scripts/nightly-pipeline.sh`, `research/scripts/test-unattended-authority.mjs`, `site/package.json`,
+`IMPROVEMENT_BACKLOG.md`, `ITERATION_LOG.md` and `SYSTEM_HEALTH.md`.
+
 ## Iteration 100 — 2026-10-10 (founder: "Check your progress, review the backlog, and continue autonomous development and improvement")
 
 **Unblocking the push.** The full clean pre-push chain now runs past ten minutes, longer than one foreground command,
