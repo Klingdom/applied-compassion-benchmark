@@ -1,5 +1,22 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 100 — 2026-10-10 (founder: "Check your progress, review the backlog, and continue autonomous development and improvement")
+
+**Unblocking the push.** The full clean pre-push chain now runs past ten minutes, longer than one foreground command,
+and background runs keep being stopped for low memory, twice on 2026-10-08. The founder chose to continue.
+
+**Built:** `prepush-clean.mjs --steps FROM:TO`.
+- It runs a slice of the real `test` chain, read from the committed `package.json` in a clean worktree of the same
+  commit. `--steps list` prints the count: 71.
+- The slices `1:25`, `26:50` and `51:71` together cover the whole chain, each in its own fresh worktree.
+- **First run:** the startup sweep cleared the orphan the stopped run had left (`cb-prepush-Ls1a4e`), and
+  `node_modules` stayed intact.
+- **Slice 1:** passed, in 2 minutes.
+- **Slice 2 caught a real gap.** The new code comment says "Iteration 100" and this entry did not exist yet
+  (`test:iteration-log-coverage`). This entry closes it; the slices are re-run on the new commit.
+
+**Pathspec:** `site/scripts/prepush-clean.mjs` and `ITERATION_LOG.md`, plus the two unpushed Iteration 99 commits.
+
 ## Iteration 99 — 2026-10-08 (founder: "Approve the for you stuff and proceed", plus "We got our first sale!!!! Countries Benchmark Index for $195")
 
 **Founder approvals recorded, all three items from the end of Iteration 98:**
