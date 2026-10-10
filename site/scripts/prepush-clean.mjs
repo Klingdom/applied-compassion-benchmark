@@ -17,7 +17,7 @@
  * real node_modules.
  */
 import { execFileSync, spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, symlinkSync, unlinkSync, rmSync, lstatSync } from "node:fs";
+import { existsSync, mkdtempSync, symlinkSync, unlinkSync, rmSync, lstatSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -120,6 +120,33 @@ try {
     for (const g of RECORD_GATES) {
       const r = spawnSync(npm, ["run", "-s", g], opts);
       if (r.status !== 0) { console.error(`prepush-clean: record gate ${g} FAILED (exit ${r.status})`); status = 1; }
+    }
+  } else if (args.includes("--steps")) {
+    // --steps FROM:TO (1-based, inclusive): run a slice of the REAL `test` chain, read from the worktree's own
+    // committed package.json (never a hand list). Added in Iteration 100: the full chain now runs past ten minutes,
+    // longer than one foreground command may run, and background runs are stopped under memory pressure. Running
+    // every slice, each in its own clean worktree of the same commit, covers the whole chain; --steps list shows
+    // the step count.
+    const spec = args[args.indexOf("--steps") + 1] ?? "";
+    const chain = JSON.parse(readFileSync(join(wt, "site", "package.json"), "utf8")).scripts.test
+      .split("&&").map((s) => s.trim()).filter(Boolean);
+    if (spec === "list") {
+      console.log(`prepush-clean: the test chain on ${sha} has ${chain.length} steps`);
+      status = 0;
+    } else {
+      const m = /^(\d+):(\d+)$/.exec(spec);
+      if (!m) { console.error("prepush-clean: --steps needs FROM:TO (1-based, inclusive) or 'list'"); process.exit(2); }
+      const from = Number(m[1]), to = Math.min(Number(m[2]), chain.length);
+      if (from < 1 || from > to) { console.error(`prepush-clean: --steps ${spec} is outside 1:${chain.length}`); process.exit(2); }
+      console.log(`prepush-clean: running steps ${from}..${to} of ${chain.length} on ${sha} in a clean worktree (${wt})`);
+      status = 0;
+      for (let i = from; i <= to; i += 1) {
+        const step = chain[i - 1];
+        const parts = step.split(/\s+/);
+        const r = spawnSync(parts[0] === "npm" ? npm : parts[0], parts.slice(1), opts);
+        if (r.status !== 0) { console.error(`prepush-clean: step ${i} (${step}) FAILED (exit ${r.status})`); status = 1; break; }
+      }
+      if (status === 0) console.log(`prepush-clean: steps ${from}..${to} of ${chain.length} passed`);
     }
   } else {
     console.log(`prepush-clean: running the full chain on ${sha} in a clean worktree (${wt})`);
