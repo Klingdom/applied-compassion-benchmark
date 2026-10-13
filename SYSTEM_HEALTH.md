@@ -1,7 +1,7 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 102 (Meta-review 11, Iterations 97–101: weekly model-wave program recommended, with a frozen protocol, scheduled collection, a drift anchor and a session runbook; host memory exhausted on 2026-10-13, commit charge 61.6 of 63.8 GB, so no model runs until a reboot; production on c5b53451; chain 72 steps)
+Last change: Iteration 103 (WEEKLY-WAVE: frozen weekly-v1 protocol (proposed, awaiting founder ratification), subject queue, weekly-wave plan/check/collect/status, Task Scheduler script (not registered), session runbook; harness tests 203 -> 259; Meta-review 11 done; host memory exhausted 2026-10-13, so no model runs until a reboot; production on c5b53451; chain 72 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)

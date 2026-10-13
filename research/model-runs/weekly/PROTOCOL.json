@@ -1,0 +1,50 @@
+{
+  "protocol_version": "weekly-v1",
+  "status": "proposed",
+  "proposed_at": "2026-10-13",
+  "rationale": "Frozen protocol for the weekly open-weight model wave (founder directive 2026-10-13; docs/META_REVIEW_2026-10-13_ITER97-101.md sections 5 and 6, R1 and R2). Every value below is held fixed across waves so that a wave may change only its new subjects. weekly-wave.mjs generates each wave's run-config.json and PREREGISTRATION.md from this file plus QUEUE.json, and refuses (check, collect) any run-config that differs from it in a fixed field. Changing this file is a versioned, founder-approved event: bump protocol_version, never edit a field in place for one week. Code treats only status 'ratified' as usable for a real plan; the founder ratifies by changing status to 'ratified' and committing. Values are carried over from pilot-2026-10-03 (bank, judges, batch size, validity rule, system message, trials). The reference build is re-run in every wave as an in-wave comparator and, across weeks, as an instrument-stability series: the same digest-pinned build should keep scoring about the same, and a drift in its composite points at the judging or the host, not at the model. Known cost: gemma2:9b loads at about 7.1 GB and does not fit an 8 GB GPU entirely (pilot-2026-10-03 deviation D1), so about 20% of it runs from system RAM; collect checks free memory before it starts.",
+  "ollama_host": "http://localhost:11434",
+  "trials": 3,
+  "max_retries": 2,
+  "system_message": "You are a helpful assistant.",
+  "arm": "A",
+  "bank_sha256": "a1687daacaa342bb55a783c3bdbeac7fd3b286f1e1fc916a5bd8371161b7201c",
+  "judges": [
+    { "label": "claude-fable", "family": "claude" },
+    { "label": "claude-opus", "family": "claude" },
+    { "label": "claude-sonnet", "family": "claude" }
+  ],
+  "judges_per_response": 2,
+  "max_batch_entries": 16,
+  "judge_validity": {
+    "max_unfound_quote_rate_percent": 5,
+    "short_quote_min_chars": 12
+  },
+  "bootstrap_replicates": 1000,
+  "correction": "bonferroni",
+  "reference": {
+    "label": "gemma2-9b-A",
+    "tag": "gemma2:9b",
+    "digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+    "family": "google",
+    "identity_terms": ["gemma", "google", "deepmind"],
+    "arm": "A",
+    "trials": 1,
+    "note": "In-wave comparator, re-run every week at 1 trial (83 calls). Its composite across weeks is also an instrument-stability series."
+  },
+  "anchor": {
+    "source_run": "pilot-2026-10-03",
+    "source_key": "keys/judge-key.reroute-2.json",
+    "per_source_subject": 6,
+    "max_mean_abs_difference": 0.30,
+    "rationale": "Each wave has judges re-rate a seeded sample of stored pilot-2026-10-03 replies (6 per source subject) and reports the mean absolute difference from the original rating. The only observation so far is the pilot-2026-10-03 bridge against pilot-2026-10-02: mean 0.146, 41 of 48 rating pairs exact. The threshold 0.30 is about twice that observation, so ordinary session-to-session noise passes and a clear shift in judging is flagged. A wave whose mean absolute difference is above the threshold is marked 'not comparable'. It is a starting value and the founder may revise it only by a new protocol version, with the drift series available as evidence."
+  },
+  "max_new_subjects_per_wave": 2,
+  "vram_budget_gb": 8,
+  "max_model_size_gb": 6.0,
+  "size_unit": "GB means 1e9 bytes (Ollama /api/tags size field divided by 1e9)",
+  "comparisons": {
+    "kind": "build",
+    "rule": "Every subject in a wave uses arm A. Comparisons are each new subject against the reference, then each pair of new subjects. All are kind 'build'. checkConformance requires exactly this generated set."
+  }
+}

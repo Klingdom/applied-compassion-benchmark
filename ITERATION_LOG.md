@@ -1,5 +1,62 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 103 — 2026-10-13 (WEEKLY-WAVE: the machinery to run the model benchmark every week)
+
+**Selected:** Meta-review 11 R1, which is the founder's directive of 2026-10-13. v1 13. *Deviation:* this is
+founder-directed, not the top v2 item.
+
+**Built by the backend-engineer and verified by the coordinator.**
+- **`research/model-runs/weekly/PROTOCOL.json` (`weekly-v1`, status `proposed`).** Every run field is frozen,
+  carried over from pilot-2026-10-03:
+  - the bank sha, the system message and 3 trials;
+  - the judges (fable, opus and sonnet), 2 per reply, batches of 16, and the 5% validity rule;
+  - B = 1000 and Bonferroni.
+
+  Beyond those, it fixes:
+  - a **reference build** (gemma2:9b, 1 trial) re-run every week as an in-wave comparator and stability series;
+  - an **anchor** of 6 stored pilot-3 replies per source subject, re-judged each wave. Mean absolute drift above
+    **0.30** marks the wave not comparable; 0.30 is about twice the only observation, 0.146.
+- **`weekly/QUEUE.json`:** 9 queued open builds and 4 measured. The rule is: fits in 6 GB, developers not yet measured
+  first, then queue order. The first picks would be phi4-mini (Microsoft) and granite3.3:8b (IBM).
+- **`lib/weekly.mjs` and `bin/weekly-wave.mjs`:** `plan`, `check`, `collect` and `status`.
+  - `plan` refuses a proposed protocol except as a dry run, and prints a pathspec without committing.
+  - `collect` requires the plan to be committed and unmodified (plan before data), takes a lock, runs a free-memory
+    preflight, and writes a status file.
+  - `status` exits 3 on a failed or deferred collect. That is the mandatory failure channel, read first by the
+    runbook.
+- **`weekly/register-task.ps1`:** a daily 02:00 `collect` task, interactive and not elevated. **Not registered:**
+  `-WhatIf` exits 0, and `Get-ScheduledTask` finds 0 tasks.
+- **`.claude/commands/weekly-model-wave.md`:** the session runbook, from status through judging and analysis to the
+  claim audit and an approval packet. It never commits, pushes or deploys.
+
+**Verification (V2/V3):**
+- `weekly-wave.test.mjs`: 56/56, re-run by the coordinator. The harness suite went from 203 to 259 tests.
+- Coordinator probes, written independently of the agent's tests. A clean generated config has 0 problems. **Seven
+  planted changes were all refused:**
+  - judges per reply 3;
+  - batch size 20;
+  - reference trials 3;
+  - a subject-level system message;
+  - a validity threshold of 10;
+  - a dropped comparison;
+  - anchor size 2.
+
+  `anchorVerdict(0.29)` is comparable and `(0.31)` is not.
+- A real `plan` on the proposed protocol exits 1. The dry run exits 0, plans 581 calls and a 48-reply anchor, and
+  writes nothing. `check --all` passes with 0 waves.
+
+**Agent deviations accepted:**
+- The anchor is 48, not 24: pilot 3's key has 8 source subjects, 4 builds × 2 arms.
+- A finished run with failed trials counts as `failed`.
+
+**Open for WEEKLY-1:** `analyze-pilot`, `run-mcp-probe`, `build-judge-batches` and `export-wave` have not yet run on a
+wave-shaped config.
+
+**Pathspec:** `research/model-runs/weekly/**`, `research/model-runs/lib/weekly.mjs`,
+`research/model-runs/bin/weekly-wave.mjs`, `research/model-runs/tests/weekly-wave.test.mjs`,
+`research/model-runs/README.md`, `.claude/commands/weekly-model-wave.md`, `ITERATION_LOG.md`, `SYSTEM_HEALTH.md` and
+`IMPROVEMENT_BACKLOG.md`.
+
 ## Iteration 102 — 2026-10-13 (Meta-review 11; founder: "Continue to expand and improve the AI model analysis. Figure out how you can do this every week.")
 
 **Selected:** Meta-review 11, forced by the cadence gate. Iterations 97–101 were unreviewed, so the next loop would

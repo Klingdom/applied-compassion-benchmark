@@ -106,7 +106,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 - **MR-11 — DONE 2026-10-13 (It. 102):** `docs/META_REVIEW_2026-10-13_ITER97-101.md`, forced by the cadence gate
   (5 unreviewed). R4's stale-row sweep is satisfied for this window by Iteration 101's review of 2026-10-10 (nine MCP
   rows closed with evidence; MCP-B1/S1 flagged to the founder).
-- **WEEKLY-WAVE (MR-11 R1; founder 2026-10-13: "Figure out how you can do this every week").** A weekly model wave
+- **WEEKLY-WAVE — DONE 2026-10-13 (It. 103):** protocol weekly-v1 (proposed), queue, orchestrator, scheduler script, runbook; 7 coordinator-planted protocol changes refused. WEEKLY-ANCHOR shipped inside it (threshold 0.30 in the protocol; anchorVerdict). Original row (MR-11 R1; founder 2026-10-13: "Figure out how you can do this every week").** A weekly model wave
   with:
   - a frozen protocol, where a wave may change only its subjects and a gate refuses any other difference;
   - a subject queue with a written selection rule;

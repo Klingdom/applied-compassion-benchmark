@@ -1,0 +1,125 @@
+{
+  "queue_version": 1,
+  "updated_at": "2026-10-13",
+  "selection_rule": "Only entries with status 'queued' are eligible. An entry is skipped when its approx_size_gb is above the protocol's max_model_size_gb. Eligible entries are ordered: first those whose developer has no measured build (no entry with status 'measured' and the same developer), then queue order. The first max_new_subjects_per_wave entries are picked. The choice is deterministic: the same queue and protocol always give the same picks. After a wave is collected and committed, the founder-approved session changes the picked entries to 'measured' with the wave noted. Set 'skipped' with a note to retire an entry without measuring it.",
+  "sizes_note": "approx_size_gb values are approximate figures for the Ollama library tag. The real digest and size are read from the local Ollama (/api/tags) at plan time, and the plan refuses a pick whose real size is above max_model_size_gb.",
+  "entries": [
+    {
+      "tag": "phi4-mini",
+      "developer": "Microsoft",
+      "family": "microsoft",
+      "identity_terms": ["phi", "microsoft"],
+      "approx_size_gb": 2.5,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "granite3.3:8b",
+      "developer": "IBM",
+      "family": "ibm",
+      "identity_terms": ["granite", "ibm"],
+      "approx_size_gb": 4.9,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "olmo2:7b",
+      "developer": "Allen Institute for AI",
+      "family": "ai2",
+      "identity_terms": ["olmo", "allen", "ai2"],
+      "approx_size_gb": 4.5,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "falcon3:7b",
+      "developer": "TII",
+      "family": "tii",
+      "identity_terms": ["falcon", "tii", "technology innovation institute"],
+      "approx_size_gb": 4.6,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "command-r7b",
+      "developer": "Cohere",
+      "family": "cohere",
+      "identity_terms": ["command", "cohere"],
+      "approx_size_gb": 5.1,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "exaone3.5:7.8b",
+      "developer": "LG AI Research",
+      "family": "lg",
+      "identity_terms": ["exaone", "lg"],
+      "approx_size_gb": 4.8,
+      "status": "queued",
+      "note": ""
+    },
+    {
+      "tag": "llama3.1:8b",
+      "developer": "Meta",
+      "family": "meta",
+      "identity_terms": ["llama", "meta"],
+      "approx_size_gb": 4.9,
+      "status": "queued",
+      "note": "Meta already has a measured build (llama3.2), so this ranks after every unmeasured developer."
+    },
+    {
+      "tag": "qwen3:8b",
+      "developer": "Alibaba",
+      "family": "qwen",
+      "identity_terms": ["qwen", "alibaba"],
+      "approx_size_gb": 5.2,
+      "status": "queued",
+      "note": "May emit thinking traces; check how replies are stored before planning it. Alibaba already has a measured build (qwen2.5)."
+    },
+    {
+      "tag": "gemma3:4b",
+      "developer": "Google",
+      "family": "google",
+      "identity_terms": ["gemma", "google", "deepmind"],
+      "approx_size_gb": 3.3,
+      "status": "queued",
+      "note": "Google already has a measured build (gemma2, the weekly reference)."
+    },
+    {
+      "tag": "llama3.2:latest",
+      "developer": "Meta",
+      "family": "meta",
+      "identity_terms": ["llama", "meta"],
+      "approx_size_gb": 2.0,
+      "status": "measured",
+      "note": "Measured in pilot-2026-10-02 and pilot-2026-10-03."
+    },
+    {
+      "tag": "qwen2.5:7b",
+      "developer": "Alibaba",
+      "family": "qwen",
+      "identity_terms": ["qwen", "alibaba"],
+      "approx_size_gb": 4.7,
+      "status": "measured",
+      "note": "Measured in pilot-2026-10-02 and pilot-2026-10-03."
+    },
+    {
+      "tag": "mistral:7b",
+      "developer": "Mistral AI",
+      "family": "mistral",
+      "identity_terms": ["mistral"],
+      "approx_size_gb": 4.4,
+      "status": "measured",
+      "note": "Measured in pilot-2026-10-03."
+    },
+    {
+      "tag": "gemma2:9b",
+      "developer": "Google",
+      "family": "google",
+      "identity_terms": ["gemma", "google", "deepmind"],
+      "approx_size_gb": 5.4,
+      "status": "measured",
+      "note": "Measured in pilot-2026-10-03. It is the weekly reference build in PROTOCOL.json and is never picked as a new subject."
+    }
+  ]
+}

@@ -186,6 +186,24 @@ count. Everything downstream treats a variant as an ordinary subject (its label 
   and `comparisons` (composite difference a minus b, paired item-resampling bootstrap, same replicates as `pairwise`).
   `primary_comparison` is the two-subject pilot's and is not produced for an arms run.
 
+## Weekly waves (added 2026-10-13, Iteration 103)
+
+From the first weekly wave on, a run is generated, not hand-designed.
+- `weekly/PROTOCOL.json` (`weekly-v1`) freezes every run field except the new subjects. It is `proposed` until the
+  founder ratifies it.
+- `weekly/QUEUE.json` holds the candidate builds and the selection rule.
+- `bin/weekly-wave.mjs` provides `plan`, `check`, `collect` and `status`.
+  - `plan` writes `wave-<date>/` and prints the pathspec. It never commits.
+  - `check` refuses any difference from the protocol.
+  - `collect` runs only when the plan is committed and unmodified, takes a lock, defers on low memory, and writes
+    `operations/collect-status.json`.
+  - `status` exits 3 when the last collect failed or was deferred.
+- `weekly/register-task.ps1` installs the daily `collect` task. The founder runs it.
+- The session runbook is `.claude/commands/weekly-model-wave.md`.
+
+Each wave includes the reference build (`gemma2:9b`, 1 trial) and re-judges an anchor sample of `pilot-2026-10-03`
+replies. A wave whose mean absolute anchor drift is above the protocol threshold is marked not comparable.
+
 ## Runbook
 
 All paths below are relative to the repo root. `RUN=pilot-2026-10-01`. Add `--seed <n>` to any builder for a
