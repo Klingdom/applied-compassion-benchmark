@@ -103,6 +103,27 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - **Tests.** 7, including a refusal control.
 - **DC24-GATE — DONE 2026-10-02 (It. 95).** The public wave projection plus `test:model-machine-leak`; see
   `docs/DEFECT_CLASS_REGISTRY.md` DC-24.
+- **MR-11 — DONE 2026-10-13 (It. 102):** `docs/META_REVIEW_2026-10-13_ITER97-101.md`, forced by the cadence gate
+  (5 unreviewed). R4's stale-row sweep is satisfied for this window by Iteration 101's review of 2026-10-10 (nine MCP
+  rows closed with evidence; MCP-B1/S1 flagged to the founder).
+- **WEEKLY-WAVE (MR-11 R1; founder 2026-10-13: "Figure out how you can do this every week").** A weekly model wave
+  with:
+  - a frozen protocol, where a wave may change only its subjects and a gate refuses any other difference;
+  - a subject queue with a written selection rule;
+  - an orchestrator with `init`, `collect` and `status` steps;
+  - a Task Scheduler entry that runs `collect` only, with a lock, a free-memory preflight, and a status file the
+    session must read;
+  - a session runbook that runs from judging to an approval packet and never publishes.
+
+  *Done when:* a planted protocol change is refused, a dry run plans the next wave from the queue, and the chain passes.
+  v1: I5 S5 L4 C4 − E3 − R2 = **13** · v2: + Dl 0 = **13**, founder-directed.
+- **WEEKLY-ANCHOR (MR-11 R2).** Every wave re-judges a fixed anchor set of stored replies from `pilot-2026-10-03` and
+  reports the drift. Above a protocol threshold, the wave is marked not comparable. *Done when:* the protocol names the
+  anchor and threshold, and the analysis writes the drift and verdict. It ships inside WEEKLY-WAVE when the threshold
+  is in the frozen protocol.
+- **WEEKLY-1 (MR-11 R3).** Run the first weekly wave under the protocol. *Blocked on:* host memory. On 2026-10-13 the
+  commit charge read 61.6 of 63.8 GB, and a git call failed with "paging file is too small". A reboot is needed
+  before any model loads.
 - **MR-10 — DONE 2026-10-02 (It. 96):** docs/META_REVIEW_2026-10-02_ITER92-96.md. Original row: Meta-review 10 due. Iterations 92–95 are unreviewed, and the cadence gate allows 5. Nine consecutive
   loops have been founder-directed. *Done when:* `docs/META_REVIEW_*_ITER92-96.md` exists and the cadence test
   passes with the counter reset.

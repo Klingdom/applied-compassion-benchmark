@@ -1,5 +1,40 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 102 — 2026-10-13 (Meta-review 11; founder: "Continue to expand and improve the AI model analysis. Figure out how you can do this every week.")
+
+**Selected:** Meta-review 11, forced by the cadence gate. Iterations 97–101 were unreviewed, so the next loop would
+have been the sixth. It answers the founder's new direction at the same time.
+
+**Written:** `docs/META_REVIEW_2026-10-13_ITER97-101.md`.
+- **Headline:** each of Meta-review 10's R1–R3 caught a real defect on first use. The clean chain caught DC-23
+  occurrence 10. The plan-first commit made git attest the order. The re-deriving audit caught DC-18 occurrence 4
+  and the missing D2.
+- **The binding constraint is the host, not the method.** There were four memory stops in the window.
+- **The ranked queue went unread for ten loops, so it went stale.** The new rule: every meta-review sweeps the
+  backlog's top 15 for stale rows.
+- **Three pilots, each designed from scratch, cannot become a weekly cadence.** A weekly wave needs four things:
+  - a frozen protocol, where only the subjects change;
+  - a plan generated from a template;
+  - a drift anchor in every wave;
+  - scheduled collection outside the session, with judging, audit and the approval packet done in session.
+
+  Publication stays founder-only.
+- **Recommendations R1–R5.** Backlog rows WEEKLY-WAVE, WEEKLY-ANCHOR and WEEKLY-1 were added.
+
+**Host finding (V1 BEFORE for any model work).** Measured on 2026-10-13:
+- free physical memory was about 450–670 MB of 16 GB;
+- the commit charge was **61.6 of 63.8 GB**;
+- a `git` call failed with "The paging file is too small for this operation to complete."
+
+Process private bytes total far less than the commit charge (the largest process is under 1 GB), so the cause is
+outside the visible processes. The machine has been up since 2026-10-01. **No model is loaded until the host is
+rebooted.** WEEKLY-1 is blocked on that.
+
+**Verification:** the cadence counter resets, and `prepush:records` runs before the push.
+
+**Pathspec:** `docs/META_REVIEW_2026-10-13_ITER97-101.md`, `ITERATION_LOG.md`, `SYSTEM_HEALTH.md` and
+`IMPROVEMENT_BACKLOG.md`.
+
 ## Iteration 101 — 2026-10-10 (AUT-3: an unattended script must not push or deploy)
 
 **Backlog review (founder: "review the backlog").**
