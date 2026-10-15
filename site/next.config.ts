@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderableEntries, reportsIndexRenders } from "./scripts/lib/pilot-render-gate.mjs";
+import { dashboardRoutes, loadDashboardDecision } from "./scripts/lib/dashboard-render-gate.mjs";
 
 /**
  * The unofficial pilot report route lives in `page.pilot.tsx`, which Next only
@@ -14,11 +15,17 @@ import { renderableEntries, reportsIndexRenders } from "./scripts/lib/pilot-rend
  *
  * The reports INDEX (/ai-models/reports) lives in `page.pilotindex.tsx` and is added the same way, but only once
  * two reports render (D-29a item 1: "No reports index until two reports").
+ *
+ * The AI Model Compassion Dashboard has its OWN gate and its OWN extension, so it cannot ride on the pilot-report gate: its pages are
+ * `page.dashboard.tsx`, a page only when "dashboard.tsx" is a page extension, added exactly when dashboardRoutes() is true
+ * (dashboard-render-gate.mjs: dashboard-decision.json status "active" = D-29b ratified, or the local founder preview CB_PREVIEW_DASHBOARD=1,
+ * AND at least one dashboard-eligible wave renders). Closed gate or no dashboard wave: the route does not exist.
  */
 const manifestPath = join(process.cwd(), "src", "data", "model-benchmark", "waves", "manifest.json");
 const manifest: Parameters<typeof renderableEntries>[0] = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : [];
 const pilotRoutes = renderableEntries(manifest).length > 0;
 const pilotIndexRoute = reportsIndexRenders(manifest);
+const dashboardRoute = dashboardRoutes(manifest, process.env, { decision: loadDashboardDecision() });
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -29,6 +36,7 @@ const nextConfig: NextConfig = {
     "tsx", "ts", "jsx", "js",
     ...(pilotRoutes ? ["pilot.tsx"] : []),
     ...(pilotIndexRoute ? ["pilotindex.tsx"] : []),
+    ...(dashboardRoute ? ["dashboard.tsx"] : []),
   ],
 };
 

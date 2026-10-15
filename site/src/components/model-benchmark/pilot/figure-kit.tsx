@@ -17,6 +17,7 @@
  */
 
 import type { ReactNode } from "react";
+import { SHAPES, type ShapeKind, SHAPE_COUNT, assertShapesSuffice, shapeWord, Glyph } from "./glyph";
 import type { PilotWave } from "@/lib/model-wave-facts";
 import { alpha, judgeFamilyName, accessTierLabel } from "@/lib/model-report-facts";
 
@@ -58,8 +59,8 @@ export const armTrials = (wave: PilotWave, arm: string): number | null => {
   return t.size === 1 ? ([...t][0] ?? null) : null;
 };
 
-const SHAPES = ["circle", "square", "triangle", "diamond", "plus", "hexagon"] as const;
-export type ShapeKind = (typeof SHAPES)[number];
+export { SHAPE_COUNT, assertShapesSuffice, shapeWord, Glyph };
+export type { ShapeKind };
 export const shapeFor = (wave: PilotWave, id: string): ShapeKind => {
   if (hasArms(wave)) {
     // One shape per build (both of its arms), so a build is recognised across the panels.
@@ -69,7 +70,6 @@ export const shapeFor = (wave: PilotWave, id: string): ShapeKind => {
   return SHAPES[sortedSubjects(wave).indexOf(id) % SHAPES.length];
 };
 
-export const shapeWord = (k: ShapeKind): string => ({ circle: "circle", square: "square", triangle: "triangle", diamond: "diamond", plus: "plus sign", hexagon: "hexagon" })[k];
 
 /** Greedy word wrap on an approximate character budget. */
 export function wrapText(text: string, max = WRAP_CHARS): string[] {
@@ -102,29 +102,6 @@ export function ModelName({ id, wave }: { id: string; wave: PilotWave }) {
 // ---------------------------------------------------------------------------
 // SVG atoms
 // ---------------------------------------------------------------------------
-
-export function Glyph({ kind, cx, cy, r = 5, hollow = false }: { kind: ShapeKind; cx: number; cy: number; r?: number; hollow?: boolean }) {
-  const cls = hollow ? "pf-hollow" : "pf-fill";
-  switch (kind) {
-    case "circle":
-      return <circle className={cls} cx={cx} cy={cy} r={r} />;
-    case "square":
-      return <rect className={cls} x={cx - r} y={cy - r} width={2 * r} height={2 * r} />;
-    case "triangle":
-      return <polygon className={cls} points={`${cx},${cy - r * 1.2} ${cx + r * 1.15},${cy + r * 0.95} ${cx - r * 1.15},${cy + r * 0.95}`} />;
-    case "diamond":
-      return <polygon className={cls} points={`${cx},${cy - r * 1.25} ${cx + r * 1.25},${cy} ${cx},${cy + r * 1.25} ${cx - r * 1.25},${cy}`} />;
-    case "plus":
-      return <path className="pf-stroke pf-thick" d={`M ${cx - r} ${cy} L ${cx + r} ${cy} M ${cx} ${cy - r} L ${cx} ${cy + r}`} />;
-    case "hexagon":
-      return (
-        <polygon
-          className={cls}
-          points={[0, 1, 2, 3, 4, 5].map((i) => `${(cx + r * 1.2 * Math.cos((Math.PI / 3) * i)).toFixed(2)},${(cy + r * 1.2 * Math.sin((Math.PI / 3) * i)).toFixed(2)}`).join(" ")}
-        />
-      );
-  }
-}
 
 export function SvgText({ x, y, children, anchor = "start", sub = false, bold = false }: { x: number; y: number; children: ReactNode; anchor?: "start" | "middle" | "end"; sub?: boolean; bold?: boolean }) {
   return (
@@ -271,3 +248,6 @@ export function DataTable({ caption, head, rows }: { caption: string; head: Reac
     </table>
   );
 }
+
+// The dashboard's group order ("Not separated" first) lives in the plain-.mjs core so the client, the tests and the prebuild share it.
+export { dashboardBlocks } from "../../../../scripts/lib/model-dashboard-core.mjs";

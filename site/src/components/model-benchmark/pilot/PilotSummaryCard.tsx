@@ -12,8 +12,13 @@ import { numberWord } from "@/lib/model-report-facts";
  * disclosed reasons these are not scores, and one default-variant link-button to the report. No per-model
  * figure, no chart, no table, no model name: the full ranges live only in each report. Nothing is said about
  * how one pilot compares with another. Rendered only when at least one pilot renders.
+ *
+ * The link to the AI Model Compassion Dashboard (/ai-models/dashboard) sits here for the same reason: the dashboard route exists
+ * exactly when the dashboard gate is open and a dashboard wave renders (dashboard-render-gate.mjs; next.config.ts adds the
+ * "dashboard.tsx" page extension on the same rule). The caller passes `showDashboard` from that gate; it defaults to false, so a
+ * closed gate (D-29b not ratified) never links a page that is not built. The sentence names no model and states no figure.
  */
-export default function PilotSummaryCard({ facts, previewRunIds, showReportsIndex = false }: { facts: PilotsPageFacts; previewRunIds: string[]; showReportsIndex?: boolean }) {
+export default function PilotSummaryCard({ facts, previewRunIds, showReportsIndex = false, showDashboard = false }: { facts: PilotsPageFacts; previewRunIds: string[]; showReportsIndex?: boolean; showDashboard?: boolean }) {
   return (
     <section className="py-[30px]" id="pilot-results">
       <Container>
@@ -48,6 +53,12 @@ export default function PilotSummaryCard({ facts, previewRunIds, showReportsInde
             </Panel>
           ))}
         </div>
+        {showDashboard && (
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
+            <a href="/ai-models/dashboard" className="underline underline-offset-2" data-umami-event="dash_open" data-umami-event-surface="ai-models">AI Model Compassion Dashboard</a>
+            {" "}(unofficial pilot): a configurable view of the same pilot data, with ranges, the models the test could not tell apart, what has not been measured yet, and how each figure was produced. Not a score, not a ranking.
+          </p>
+        )}
         {showReportsIndex && (
           <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
             <a href="/ai-models/reports" className="underline underline-offset-2">All unofficial pilot reports</a>, newest first, with a markdown copy and the data file for each.

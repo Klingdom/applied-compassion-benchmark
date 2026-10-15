@@ -19,7 +19,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { withheldValues, extractJsonLd, listFiles, aiModelsFiles, SITE_URL, maskPublishedRanges } from "./model-report-html-gates.mjs";
 import { projectWavePublic, projectionProblems, notSeparatedMembers } from "./model-benchmark-public.mjs";
-import { renderableEntries, REPORTS_INDEX_MIN } from "./pilot-render-gate.mjs";
+import { reportSourceExists, renderableEntries, renderMode, REPORTS_INDEX_MIN } from "./pilot-render-gate.mjs";
 
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const tokRe = (tok) => new RegExp(`(?<![0-9])${escRe(tok)}(?![0-9])`);
@@ -152,12 +152,20 @@ export function machineFiles(outDir) {
 }
 
 /** The wave whose own output a built file is (its public wave file, its markdown alternate, its report page or payload), or null. */
-export function ownerWaveOf(file, waves) {
+export function ownerWaveOf(file, waves, env = process.env) {
   // By run id, longest first, so one id that prefixes another cannot claim its file.
   for (const w of [...waves].sort((a, b) => b.run_id.length - a.run_id.length)) {
-    for (const prefix of [`data/model-waves/${w.run_id}`, `ai-models/reports/${w.run_id}`]) {
-      if (file === `${prefix}.json` || file === `${prefix}.md` || file === `${prefix}.html` || file === `${prefix}.txt` || file.startsWith(`${prefix}/`)) return w;
+    for (const prefix of [`data/model-waves/${w.run_id}`, `data/model-dashboard/${w.run_id}`, `ai-models/reports/${w.run_id}`, `ai-models/dashboard/${w.run_id}`]) {
+      if (file === `${prefix}.json` || file === `${prefix}.md` || file === `${prefix}.csv` || file === `${prefix}.html` || file === `${prefix}.txt` || file.startsWith(`${prefix}/`)) return w;
     }
+  }
+  // /ai-models/dashboard (and its payloads) is the page of the NEWEST dashboard-eligible wave: an unofficial pilot (not `official`)
+  // that renders under the pilot wave rule in `env` (decision active, or proposed with the preview flag) and has a report narrative.
+  // A newer wave that cannot render (official, proposed without the flag, superseded, unresolved, no report) does not own the entry page.
+  if (file === "ai-models/dashboard.html" || file === "ai-models/dashboard.txt" || file.startsWith("ai-models/dashboard/__next")) {
+    const eligible = [...waves].filter((w) => w.official === false && renderMode({ status: "pilot", decision_status: w.publication?.decision_status }, env) !== null && reportSourceExists(w.run_id));
+    const latest = eligible.sort((a, b) => (a.report_date < b.report_date ? 1 : a.report_date > b.report_date ? -1 : b.run_id.localeCompare(a.run_id)))[0];
+    return latest ?? null;
   }
   return null;
 }

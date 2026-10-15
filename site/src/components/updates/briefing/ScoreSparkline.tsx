@@ -80,9 +80,15 @@ interface Props {
   entityName?: string;
   /** If true, renders at half size (for inline use in score cards). */
   compact?: boolean;
+  /**
+   * BRF-MOVE: true only when the plotted readings were applied to the published
+   * index. Defaults to false: readings are then labelled as an unapplied
+   * proposal, never as a score trajectory.
+   */
+  applied?: boolean;
 }
 
-export default function ScoreSparkline({ slug, entityName, compact = false }: Props) {
+export default function ScoreSparkline({ slug, entityName, compact = false, applied = false }: Props) {
   if (!slug) return null;
 
   const history = getEntityHistory(slug);
@@ -114,9 +120,19 @@ export default function ScoreSparkline({ slug, entityName, compact = false }: Pr
   }
 
   const scoreValues = points.map((p) => p.score);
-  const lineColor = trajectoryColor(scoreValues);
+  const lineColor = applied ? trajectoryColor(scoreValues) : COLOR_NEUTRAL;
   const label = trajectoryLabel(points.map((p) => ({ date: p.date, score: p.score })));
   const displayName = entityName ?? slug;
+  // Unapplied readings are proposals: no "trajectory" wording, no direction.
+  const proposedLabel = points
+    .map((p) => `${p.score} on ${p.date}`)
+    .join(", then ");
+  const ariaText = applied
+    ? `Score trajectory for ${displayName}: ${label}`
+    : `New measurement for ${displayName} (not applied to the published score): ${proposedLabel}`;
+  const titleText = applied
+    ? `${displayName} score trajectory: ${label}`
+    : `${displayName} new measurement (not applied to the published score): ${proposedLabel}`;
 
   // Build polyline points string
   const polylinePoints = points.length >= 2
@@ -133,14 +149,14 @@ export default function ScoreSparkline({ slug, entityName, compact = false }: Pr
   return (
     <svg
       role="img"
-      aria-label={`Score trajectory for ${displayName}: ${label}`}
+      aria-label={ariaText}
       viewBox={`0 0 ${W} ${H}`}
       width={scaleW}
       height={scaleH}
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: "block", overflow: "visible" }}
     >
-      <title>{`${displayName} score trajectory: ${label}`}</title>
+      <title>{titleText}</title>
 
       {/* Band boundary gridlines at 20/40/60/80 */}
       {BAND_BOUNDARIES.map((boundary) => {

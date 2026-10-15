@@ -16,6 +16,7 @@ import PilotSummaryCard from "@/components/model-benchmark/pilot/PilotSummaryCar
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { loadRenderableReports, reportsIndexRenders } from "@/lib/model-report-gate";
 import { pilotsPageFacts } from "@/lib/model-report-facts";
+import { dashboardRenders } from "@/lib/model-dashboard-facts";
 import { MODEL_INDEX_FACTS as F, scorableItemsByDimension } from "@/lib/model-index-facts";
 import { RELEASE_WATCH_FACTS as R } from "@/lib/release-watch-facts";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
@@ -399,7 +400,7 @@ export default function AiModelsPage() {
         </Container>
       </section>
 
-      {pilot && <PilotSummaryCard facts={pilot} previewRunIds={pilotPreviewRunIds} showReportsIndex={reportsIndexRenders()} />}
+      {pilot && <PilotSummaryCard facts={pilot} previewRunIds={pilotPreviewRunIds} showReportsIndex={reportsIndexRenders()} showDashboard={dashboardRenders()} />}
 
       {/* The pipeline — what exists and what blocks each stage, in the order a
           model result would actually move through. Every figure quoted below

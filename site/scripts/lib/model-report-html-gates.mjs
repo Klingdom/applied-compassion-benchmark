@@ -373,10 +373,15 @@ export function stripSvgGeometry(text) {
 
 /** `text` with every published range phrase replaced by a space (see publishedRangePhrases). Accepts one wave or a list. */
 export function maskPublishedRanges(text, waveOrWaves) {
+  return makeRangeMasker(waveOrWaves)(text);
+}
+
+/** The same masking with the phrase list and the regular expression built once (a page has thousands of text units; a dashboard page scans each against every withheld point). */
+export function makeRangeMasker(waveOrWaves) {
   const phrases = publishedRangePhrases(waveOrWaves);
-  if (phrases.length === 0) return text;
+  if (phrases.length === 0) return (text) => text;
   const re = new RegExp(`(?<![0-9.])(?:${phrases.map((p) => escRe(p)).join("|")})(?![0-9])`, "g");
-  return text.replace(re, " ");
+  return (text) => text.replace(re, " ");
 }
 
 /**
@@ -412,13 +417,18 @@ export function withheldValues(wave) {
 
 /**
  * G19. `kind`:
- *   "report"  the report route of this wave
- *   "index"   any other /ai-models/** page while this wave renders: no per-model figure at all
+ *   "report"     the report route of this wave
+ *   "dashboard"  the AI Model Compassion Dashboard pages of this wave (/ai-models/dashboard, /ai-models/dashboard/<run_id>): the SAME
+ *                withholding rules as a report (L1 to L6, with a separated subject's point only in a "Point estimate" cell), because the
+ *                dashboard shows the per-model ranges a report shows. L7 would forbid every per-model figure, so it does not apply;
+ *                one extra rule (L6b) keeps a not-separated subject's dimension mean out of every table cell, whatever the table's shape.
+ *   "index"      any other /ai-models/** page while this wave renders: no per-model figure at all
  * `owner` (optional): the wave whose own report this page is, when it is another wave's. That wave's published ranges are legitimate on it, so a
  * range phrase of its own is not read as this wave's withheld point when the digits coincide (see publishedRangePhrases).
  */
 export function leakProblems({ html, wave, kind, owner = null }) {
   const p = [];
+  const reportLike = kind === "report" || kind === "dashboard";
   const w = withheldValues(wave);
   const naming = makeNaming(wave);
   const tables = parseTables(html);
@@ -433,18 +443,23 @@ export function leakProblems({ html, wave, kind, owner = null }) {
   const where = (u) => (u.kind === "cell" ? `table cell "${u.text.slice(0, 40)}" (column "${u.header.slice(0, 50)}")` : `${u.kind} "${u.text.slice(0, 70)}"`);
 
   // L1: group members' composites never appear, in any form.
-  const pct = { naming, allowPercent: kind !== "report" };
+  const pct = { naming, allowPercent: kind === "index" };
   // On the report, a published range phrase (one subject's "lo to hi") is masked before a withheld point is looked for: one decimal makes it likely that a
   // withheld point equals an end of another subject's published range (see publishedRangePhrases). A point written alone is still found.
+  const maskers = [...(reportLike ? [makeRangeMasker(wave)] : []), ...(owner ? [makeRangeMasker(owner)] : [])];
+  const muMemo = new Map();
   const mu = (text) => {
-    let o = text;
-    if (kind === "report") o = maskPublishedRanges(o, wave);
-    if (owner) o = maskPublishedRanges(o, owner);
+    let o = muMemo.get(text);
+    if (o === undefined) {
+      o = text;
+      for (const m of maskers) o = m(o);
+      muMemo.set(text, o);
+    }
     return o;
   };
   for (const tok of w.memberComposites) for (const u of all) if (hasToken(mu(u.text), tok, pct)) p.push(`G19-member-composite: ${tok} (a not-separated model's point estimate) in ${where(u)}`);
 
-  if (kind === "report") {
+  if (reportLike) {
     // L2: a separated model's point only in a cell under a "Point estimate" header.
     for (const tok of w.separatedComposites) for (const u of all) {
       if (!tokRe(tok).test(mu(u.text))) continue;
@@ -487,6 +502,13 @@ export function leakProblems({ html, wave, kind, owner = null }) {
     for (const t of tables.filter((x) => x.figure === "fig-dimensions")) for (const row of t.rows) for (const c of row) {
       if (BARE_NUM.test(c.text) && w.memberDimMeans.includes(c.text) && w.members.some((id) => c.header.includes(id))) p.push(`G19-member-dimension-mean: ${c.text} (a not-separated model's mean) in the dimension table under "${c.header.slice(0, 50)}"`);
     }
+    // L6b (dashboard): the dashboard's tables are shaped by model and dimension, not by the report's figure ids, so a member's dimension mean is looked for
+    // as a bare number in EVERY table cell. (Dimension ranges are written "lo to hi", never as a bare number, so a clean page has none.)
+    if (kind === "dashboard") {
+      for (const t of tables) for (const row of t.rows) for (const c of row) {
+        if (BARE_NUM.test(c.text) && w.memberDimMeans.includes(c.text)) p.push(`G19-member-dimension-mean: ${c.text} (a not-separated model's dimension mean) as a bare number in a table cell under "${c.header.slice(0, 50)}"`);
+      }
+    }
   } else {
     // L7: no per-model figure at all outside the report.
     for (const tok of [...w.allComposites, ...w.allIntervalEnds, ...w.bounds]) for (const u of all) if (hasToken(mu(u.text), tok, pct)) p.push(`G19-index-figure: ${tok} (a per-model figure) in ${where(u)} on a page that is not the report`);
@@ -511,7 +533,7 @@ const metaContent = (html, attr, name) => {
   return c ? decode(c[1]) : null;
 };
 
-const LEADERBOARD_TERMS = /\b(?:top|best|worst|leads?|beats?|wins?|rank(?:s|ed|ing)?|leaderboard|#1|most compassionate|least compassionate|scorecard results)\b/i;
+export const LEADERBOARD_TERMS = /\b(?:top|best|worst|leads?|beats?|wins?|rank(?:s|ed|ing)?|leaderboard|#1|most compassionate|least compassionate|scorecard results)\b/i;
 
 /**
  * G20 over one built report page. `expected` = { runId, title } from the site's own rules

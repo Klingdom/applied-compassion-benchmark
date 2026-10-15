@@ -321,3 +321,27 @@ export function deriveTodayInBrief(updates: any): TodayInBriefItem[] {
 
   return items;
 }
+
+// ─── BRF-MOVE: applied vs proposed score changes ───────────────────────────
+
+/**
+ * True only when a score change for `slug` was actually applied to the
+ * published index. Same source of truth as the DC-03 lint
+ * (scripts/lib/lint-rules.mjs scanUnappliedScoreMovement): when
+ * pipeline.scoreChangesApplied is 0, nothing was applied and any status
+ * "applied" is not trusted. Otherwise the slug must be in appliedChanges, or
+ * carry status "applied" in recentAssessments/topSignals.
+ */
+export function isScoreChangeApplied(updates: any, slug: string | null | undefined): boolean {
+  if (!slug || !updates) return false;
+  const n = updates?.pipeline?.scoreChangesApplied;
+  // Explicit 0 = nothing applied (DC-03 lint). Legacy briefings (2026-05/06) omit the
+  // counter and mark genuinely applied rows with status "applied"; those are trusted.
+  if (n === 0) return false;
+  if (n !== undefined && n !== null && (typeof n !== "number" || n < 0)) return false;
+  const list = (k: string): any[] => (Array.isArray(updates[k]) ? updates[k] : []);
+  if (list("appliedChanges").some((c) => c?.slug === slug)) return true;
+  return [...list("recentAssessments"), ...list("topSignals")].some(
+    (c) => c?.slug === slug && c?.status === "applied",
+  );
+}

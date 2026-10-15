@@ -228,15 +228,18 @@ if (haveOut(h)) {
         await h.check(`${f} (payload, ${wv.run_id})`, () => {
           // A rate written as a percent that shares its digits with a withheld value (a self-run statistic, say) is not a score; a model named beside it still is.
           const seen = maskPublishedRanges(stripSvgGeometry(text), [wv, ...(owner ? [owner] : [])]);
-          const bad = wk.memberComposites.filter((tok) => !explained.has(Number(tok)) && hasToken(seen, tok, { naming: makeNaming(wv), allowPercent: !f.startsWith("ai-models/reports/") }));
+          const bad = wk.memberComposites.filter((tok) => !explained.has(Number(tok)) && hasToken(seen, tok, { naming: makeNaming(wv), allowPercent: !f.startsWith("ai-models/reports/") && !f.startsWith("ai-models/dashboard") }));
           h.assert(bad.length === 0, `member composite(s) ${bad.join(", ")} in the payload`);
         });
         examined += 1;
         continue;
       }
       const isThisReport = f === `ai-models/reports/${wv.run_id}.html`;
+      // The dashboard pages of THIS wave carry the same per-model ranges a report does, so they are held to the report's rules (L1 to L6);
+      // another wave's dashboard page is held to the strict "no per-model figure of this wave" rule, like another wave's report.
+      const isThisDashboard = f.startsWith("ai-models/dashboard") && owner?.run_id === wv.run_id;
       await h.check(`${f} (${wv.run_id})`, () => {
-        const p = leakProblems({ html: text, wave: wv, kind: isThisReport ? "report" : "index", owner: foreign });
+        const p = leakProblems({ html: text, wave: wv, kind: isThisReport ? "report" : isThisDashboard ? "dashboard" : "index", owner: foreign });
         h.assert(p.length === 0, p.slice(0, 6).join(" | "));
       });
       examined += 1;

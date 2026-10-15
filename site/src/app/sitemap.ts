@@ -7,6 +7,8 @@ import { DIMENSIONS } from "@/data/dimensions";
 import { getHistoryManifest } from "@/data/history";
 import { renderableEntries, reportsIndexRenders } from "@/lib/model-report-gate";
 import { reportPath } from "@/lib/model-report-facts";
+import { DASHBOARD_PATH } from "../../scripts/lib/model-dashboard-core.mjs";
+import { waveLinks } from "@/lib/model-dashboard-facts";
 
 // G4 (organic-growth Wave 1, safe-subset additions only): dimension-name
 // slugs for the /dimensions/<slug> pages. Matches the dimension `name`
@@ -111,6 +113,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "weekly" as const,
           priority: 0.7,
         }]
+      : []),
+    // AI Model Compassion Dashboard (proposed D-29b). The route exists only while a wave renders, so the entries do too.
+    // /ai-models/dashboard MOVES whenever a newer wave publishes (the weekly wave program), so it is "weekly" and its lastmod is the
+    // newest wave's report date, never "now". Each wave also has a permanent page /ai-models/dashboard/<run_id> that never changes
+    // (a published wave is immutable; corrections are new dated records): "never", lastmod = that wave's report date, like the reports.
+    // The newest wave's permanent page is canonical to /ai-models/dashboard, so it is not listed separately.
+    ...(waveLinks().length > 0
+      ? [
+          {
+            url: `${BASE}${DASHBOARD_PATH}`,
+            lastModified: waveLinks()[0].reportDate,
+            changeFrequency: "weekly" as const,
+            priority: 0.75,
+          },
+          ...waveLinks().slice(1).map((l) => ({
+            url: `${BASE}${DASHBOARD_PATH}/${l.runId}`,
+            lastModified: l.reportDate,
+            changeFrequency: "never" as const,
+            priority: 0.6,
+          })),
+        ]
       : []),
     ...aiModelPages.map((path) => ({
       url: `${BASE}${path}`,

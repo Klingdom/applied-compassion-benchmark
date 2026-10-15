@@ -14,6 +14,7 @@
  */
 
 import { getBandColor } from "@/components/charts/chartTokens";
+import { isScoreChangeApplied } from "./utils";
 
 // ─── SVG layout constants ────────────────────────────────────────────────────
 
@@ -35,6 +36,8 @@ interface AssessedRow {
   delta: number;
   assessed: number; // 0–100 composite score
   bandColor: string;
+  /** BRF-MOVE: true only when the change was applied to the published index. */
+  applied: boolean;
 }
 
 function buildRows(updates: any): AssessedRow[] {
@@ -62,6 +65,7 @@ function buildRows(updates: any): AssessedRow[] {
   for (const a of recentAssessments) {
     if (!a.slug || seen.has(a.slug)) continue;
     seen.add(a.slug);
+    const slugKey: string = a.slug;
     const change = changeBySlug[a.slug];
     const entity: string = a.entity ?? change?.entity ?? a.slug;
     const delta: number = typeof a.delta === "number" ? a.delta : (typeof change?.delta === "number" ? change.delta : 0);
@@ -72,13 +76,14 @@ function buildRows(updates: any): AssessedRow[] {
         : typeof change?.assessedScore === "number"
           ? change.assessedScore
           : 0;
-    rows.push({ entity, delta, assessed, bandColor: getBandColor(assessed) });
+    rows.push({ entity, delta, assessed, bandColor: getBandColor(assessed), applied: isScoreChangeApplied(updates, slugKey) });
   }
 
   // Add any score changes not already in recentAssessments
   for (const c of [...appliedChanges, ...pendingReview, ...scoreChanges]) {
     if (!c.slug || seen.has(c.slug)) continue;
     seen.add(c.slug);
+    const slugKey: string = c.slug;
     const entity: string = c.entity ?? c.slug;
     const delta: number = typeof c.delta === "number" ? c.delta : 0;
     const assessed: number = typeof c.assessedScore === "number"
@@ -86,7 +91,7 @@ function buildRows(updates: any): AssessedRow[] {
       : typeof c.assessed === "number"
         ? c.assessed
         : 0;
-    rows.push({ entity, delta, assessed, bandColor: getBandColor(assessed) });
+    rows.push({ entity, delta, assessed, bandColor: getBandColor(assessed), applied: isScoreChangeApplied(updates, slugKey) });
   }
 
   // Sort by |delta| descending
@@ -116,20 +121,26 @@ function buildTakeaway(rows: AssessedRow[]): string {
   const upgrades = movers.filter((r) => r.delta > 0).length;
   const downgrades = movers.filter((r) => r.delta < 0).length;
   const holds = rows.length - movers.length;
+  // BRF-MOVE: figures that were not applied are proposals, not movements.
+  const allProposed = movers.length > 0 && movers.every((r) => !r.applied);
 
   const parts: string[] = [];
   parts.push(`${rows.length} assessed`);
   if (movers.length > 0) {
     const moveParts: string[] = [];
-    if (upgrades > 0) moveParts.push(`${upgrades} up`);
-    if (downgrades > 0) moveParts.push(`${downgrades} down`);
+    if (upgrades > 0) moveParts.push(`${upgrades} ${allProposed ? "measured up, not applied" : "up"}`);
+    if (downgrades > 0) moveParts.push(`${downgrades} ${allProposed ? "measured down, not applied" : "down"}`);
     parts.push(moveParts.join(", "));
   }
   if (holds > 0) parts.push(`${holds} hold${holds !== 1 ? "s" : ""}`);
 
   const largest = rows[0]; // already sorted by |delta| desc
   if (largest && largest.delta !== 0) {
-    parts.push(`largest: ${largest.entity} ${formatDelta(largest.delta)}`);
+    parts.push(
+      largest.applied
+        ? `largest: ${largest.entity} ${formatDelta(largest.delta)}`
+        : `largest measured difference (not applied): ${largest.entity} ${formatDelta(largest.delta)}`,
+    );
   }
 
   return parts.join(" · ");
@@ -139,13 +150,30 @@ function buildTakeaway(rows: AssessedRow[]): string {
 
 function buildAriaLabel(rows: AssessedRow[]): string {
   if (rows.length === 0) return "No entities assessed this cycle.";
-  const upgrades = rows.filter((r) => r.delta > 0).length;
+  const appliedRows = rows.filter((r) => r.applied);
+  const proposedRows = rows.filter((r) => !r.applied && r.delta !== 0);
   const holds = rows.filter((r) => r.delta === 0).length;
-  const largest = rows[0];
-  const largestPart = largest && largest.delta !== 0
-    ? `; largest move ${largest.entity} ${formatDelta(largest.delta)}`
-    : "";
-  return `Today's movement: ${upgrades} upgrade${upgrades !== 1 ? "s" : ""}, ${holds} hold${holds !== 1 ? "s" : ""}${largestPart}.`;
+  const holdsPart = `${holds} hold${holds !== 1 ? "s" : ""}`;
+  const parts: string[] = [];
+
+  if (appliedRows.length > 0) {
+    const upgrades = appliedRows.filter((r) => r.delta > 0).length;
+    const largest = appliedRows.find((r) => r.delta !== 0);
+    parts.push(
+      `Applied: ${upgrades} upgrade${upgrades !== 1 ? "s" : ""}${
+        largest ? `; largest move ${largest.entity} ${formatDelta(largest.delta)}` : ""
+      }`,
+    );
+  }
+  if (proposedRows.length > 0) {
+    const largest = proposedRows[0];
+    parts.push(
+      `${proposedRows.length} measured difference${proposedRows.length !== 1 ? "s" : ""} from the published score, not applied; ` +
+        `largest measured difference (not applied) ${largest.entity} ${formatDelta(largest.delta)}`,
+    );
+  }
+  parts.push(holdsPart);
+  return `Today's cycle: ${parts.join("; ")}.`;
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────

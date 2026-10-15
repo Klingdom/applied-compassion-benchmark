@@ -52,6 +52,7 @@ import ForwardTriggerCountdown from "./briefing/ForwardTriggerCountdown";
 import ScoreSparkline from "./briefing/ScoreSparkline";
 import {
   pickLeadSignal,
+  isScoreChangeApplied,
   normalizeBand,
   deltaColor,
   formatIndex,
@@ -581,15 +582,20 @@ export default function DailyBriefing({
         const lead = pickLeadSignal(topSignals);
         const leadSlug: string | null = lead?.slug ?? null;
         if (!leadSlug) return null;
+        // BRF-MOVE: only an applied change is a trajectory; otherwise it is a proposal.
+        const leadApplied = isScoreChangeApplied(updates, leadSlug);
         return (
-          <section className="pt-0 pb-[20px]" aria-label="Score trajectory chart">
+          <section
+            className="pt-0 pb-[20px]"
+            aria-label={leadApplied ? "Score trajectory chart" : "New measurement chart"}
+          >
             <Container>
               <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
-                    Score trajectory — {lead.entity ?? lead.slug}
+                    {leadApplied ? "Score trajectory" : "New measurement (not applied to the published score)"} — {lead.entity ?? lead.slug}
                   </div>
-                  <ScoreSparkline slug={leadSlug} entityName={lead.entity ?? undefined} />
+                  <ScoreSparkline slug={leadSlug} entityName={lead.entity ?? undefined} applied={leadApplied} />
                 </div>
               </div>
             </Container>
