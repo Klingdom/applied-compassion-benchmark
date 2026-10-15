@@ -10718,3 +10718,87 @@ Screened without scoring (15): Pakistan, Barrick Gold, Kingston, Somalia, Myanma
 **Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 36** -- 29 carried forward from 2026-09-24 + 7 new tonight (Valencia, Madrid, University of Glasgow, University of Birmingham, Cornell University, Vietnam, Bangladesh). 0 applied, 0 withdrawn. High priority (band change or delta >15): 25 (21 carried forward + 4 new tonight, all band crossings). Standard (delta 5-15, no band change): 11 (8 carried forward -- Sarcos Technology, Interpublic Group, Abbott Laboratories, Spain, Kenya, Starbucks, Dayton, Abu Dhabi -- + 3 new tonight: Cornell University, Vietnam, Bangladesh). Oldest pending proposal: Rethink Robotics, filed 2026-08-16. Outside this count: 37 files with status "approved" (the 2026-08-20 held batch), 346 "applied", 1 "rejected" (735 files in the directory, 7 dated 2026-10-01).
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this digest.
+
+
+---
+
+## 2026-10-14 -- Two First-Ever City Baselines Proposed (Lisbon, Porto) | Cornell Corroborated | 2 Proposals (2 Band Crossings, 1 Flag-For-Review) | 8 Confirmed | 0 Applied
+
+### Summary -- 2026-10-14
+
+Scan window 2026-09-30 -> 2026-10-14. Eleven organizations assessed (2 proposal-filed, 8 confirmed, 1 corroborates-existing). The scan ran under degraded search quality (stats.degraded_scan_quality): "no evidence" for an entity means "not surfaced", not "confirmed clean".
+
+**Nothing was applied.** Every published score below is the live index value (re-verified against site/src/data/indexes/*.json); every other number is a pending proposal or an unfiled measurement.
+
+Both new proposals are **first-ever measurements** of seeded baselines (uniform 3.5 vectors, no prior individual report). The gap reflects a first full assessment replacing an unchecked starting value, **not a measured decline in conduct**. **RC-2 first-assessment calibration hold: Lisbon and Porto are held with Madrid and Valencia; no first-assessment batch is applied before the calibration study.** Evidence-gap default sensitivity: with no-evidence subdimensions at anchor 3 instead of 2, Lisbon would be 41.9 and Porto 40.6 (both Functional, still band crossings from Established).
+
+Release watch: 0 sources registered -- detection did not run.
+
+---
+
+### High Priority -- 2026-10-14 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Lisbon | global-cities | 60.9 | 35.0 | -25.9 | low | 2026-10-14 | [proposal](change-proposals/lisbon-2026-10-14.json) |
+| Porto | global-cities | 60.9 | 32.5 | -28.4 | low | 2026-10-14 | [proposal](change-proposals/porto-2026-10-14.json) |
+
+- **Lisbon (Established -> Developing, downgrade, RC-2 HOLD):** first municipal baseline. Gloria funicular crash (2025-09-03, 16 dead): city-owned Carris ran a non-certified cable, maintenance logged but not done (GPIAAF preliminary finding, tier 5, via RTP); slow compensation (ECO 2026-08-27; deputy mayor called open cases "normal", RTP 2026-07). Credited: annual homeless count (3,378 -> 3,122), 2024-2030 plan. 11 defaults at anchor 2; at 3 -> 41.9. Band-crossing floor met via GPIAAF. National housing law and PSP policing excluded.
+- **Porto (Established -> Developing, FLAG-FOR-REVIEW, RC-2 HOLD):** first municipal baseline. Council-led removal of a housing-protest camp on 2026-10-12 (PSP + Policia Municipal + Porto Ambiente), council statement "illegal occupation" (Lusa via DNoticias); marches were 2026-10-10 (Euronews published 2026-10-11). Credited: homelessness 730 -> 526 (2021-2025), subsidised rents. 13 defaults at anchor 2; at 3 -> 40.6. Band-crossing evidence rule NOT met (adverse items tier 2), hence flag-for-review, following the Glasgow/Birmingham precedent of 2026-10-01. PSP share not charged to the city.
+
+### Standard -- 2026-10-14 (No Band Change)
+
+No new standard-tier proposals tonight.
+
+**Cornell University (carried; its row stays under 2026-10-01): today's measurement CONFIRMS the pending proposal.** Published 54.7; measured 41.9 on 2026-10-14, exactly matching `cornell-university-2026-10-01` (41.9). No competing proposal was written. Context: Hochul named AG James special prosecutor on 2026-10-01 (Reuters via The Star), citing questions about the Cornell Police investigation; the lawsuit's allegations remain allegations and are not scored as fact.
+
+### Confirmations -- 2026-10-14
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| India | countries | 15.6 | 15.6 | 0.0 | Permanent Mission (Geneva) called OHCHR's 2026-10-10 detention concern "unwarranted interference" (DT Next); Validation 2 -> 1 lowers Empathy but the total is unchanged. |
+| Delhi | global-cities | 32.8 | 28.1 | -4.7 | Delhi Police is a Union Home Ministry force; detentions scored under India. 28.1 for the third consecutive measurement (07-27, 08-01, 10-14). |
+| Texas | us-states | 38.8 | 38.8 | 0.0 | Execution of Jamaal Howard 2026-10-07 after Tennessee's same-drug failure; already-scored practice. 1.2 below the Functional line. |
+| Tennessee | us-states | 30.0 | 29.4 | -0.6 | Commissioner Strada resigning (AP via WBTV 2026-10-03); Ed Stanton leads review. |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | WFP-contracted truck driver killed 2026-10-03; at floor. |
+| United States | countries | 17.5 | 16.3 | -1.2 | ICE detention of an asylum seeker (HRW 2026-10-02); same practice scored 2026-09-17. |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Krasnozavodsk plant explosion 2026-10-01, toll unsettled; at floor. |
+| UAE | countries | 18.4 | 15.0 | -3.4 | First 40-subdimension sidecar; HRW EU letter 2026-10-07 is advocacy. Critical both. |
+
+---
+
+### Boundary Watch -- 2026-10-14
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Cornell University -- measured 41.9 sits 1.9 points above the Developing/Functional line (published 54.7) | NEW tonight | Open since 2026-10-14 |
+| Texas -- published 38.8 sits 1.2 points below the Functional line | NEW tonight | Open since 2026-10-14 |
+| Porto -- with gaps scored at anchor 3 the composite would be 40.6, 0.6 above the Developing/Functional line | NEW tonight | Open since 2026-10-14 |
+| All boundary items listed under 2026-10-01 (Birmingham, Egypt, Barrick Gold, Delta Air Lines, and earlier) | Carried forward, not reviewed this cycle | See 2026-10-01 |
+
+---
+
+### Calibration Flags -- 2026-10-14
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Iberian city seeds: Lisbon 60.9 -> 35.0 and Porto 60.9 -> 32.5 join Madrid (65.6 -> 48.1) and Valencia (60.9 -> 41.9). Review together before applying any (RC-2). | NEW tonight | Open since 2026-10-14 (Madrid/Valencia 2026-10-01) |
+| Evidence-gap default anchor: Madrid used 3; Lisbon/Porto/Valencia used 2. At 3, Lisbon 41.9 and Porto 40.6. Decide one convention. | NEW tonight | Open since 2026-10-14 |
+| First-baseline pattern: 14 first-ever baselines in four proposal cycles (09-22, 09-24, 10-01, 10-14), 13 lower and 1 higher (Abu Dhabi). | Updated tonight | Open since 2026-10-01 |
+| Delhi persistent gap: 28.1 measured three times against published 32.8 (-4.7, just under trigger). | NEW tonight | Open since 2026-07-27 |
+| UAE slug split: June 2026 reports are under united-arab-emirates; index and rotation-state use uae. Align slugs. | NEW tonight | Open since 2026-10-14 |
+| Scanner recurring-misdate defect (SC-1 / DC-13): Portugal protests dated 2026-10-11 by the scanner were held 2026-10-10 (Euronews published 10-11). Not in the ledger. | Reinforced tonight | Open since 2026-08-16 |
+| All other flags listed under 2026-10-01 | Carried forward, not touched tonight | See 2026-10-01 |
+
+---
+
+### Operational Notes -- 2026-10-14
+
+- Scan: 1,329 entities, 312 searches against a derived ceiling of 274 (disclosed overage of 38), 11 evidence-found, 15 dropped candidates. Degraded search quality applies.
+- Assessor: 11 scored, 11 subdimension sidecars; all 11 composites recomputed by the coordinator with scoring.mjs v1.2 and match. No drift; both new proposals' published baselines match the live index.
+- **Publication drift (`check-publication-drift.mjs`):** start of stage `NO DRIFT -- all 2 committed briefings in the window are served.` After tonight's files: `DRIFT -- 1 committed briefing(s) are not served: 2026-10-14` (local, undeployed, expected). Reported, not fixed (deploy is a founder act).
+- Validation: `node site/scripts/validate-daily-briefings.mjs` PASS (88 of 88, exit 0); `node site/scripts/lint-daily-briefings.mjs` PASS (90 files clean, exit 0).
+
+**Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 38** -- 36 carried forward from 2026-10-01 + 2 new tonight (Lisbon, Porto). 0 applied, 0 withdrawn. High priority (band change or delta >15): 27 (25 carried forward + 2 new tonight, both band crossings). Standard (delta 5-15, no band change): 11 (unchanged; Cornell University remains here and is corroborated, not duplicated). Oldest pending proposal: Rethink Robotics, filed 2026-08-16. Outside this count: 37 files with status "approved" (the 2026-08-20 held batch), 346 "applied", 1 "rejected" (738 files in the directory, 2 dated 2026-10-14).
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this stage.

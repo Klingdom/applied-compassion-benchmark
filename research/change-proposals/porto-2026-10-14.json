@@ -1,0 +1,728 @@
+{
+  "entity": "Porto",
+  "slug": "porto",
+  "index": "global-cities",
+  "assessment_date": "2026-10-14",
+  "assessment_file": "research/assessments/porto-2026-10-14.md",
+  "subdim_sidecar_file": "research/assessments/porto-2026-10-14.subdims.json",
+  "first_assessment": true,
+  "published_scores": {
+    "composite": 60.9,
+    "band": "Established",
+    "rank": 34,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 3.5,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 3.5,
+      "INT": 3.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 32.5,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2.0,
+      "ACT": 2.8,
+      "EQU": 2.4,
+      "BND": 2.0,
+      "ACC": 2.2,
+      "SYS": 2.6,
+      "INT": 2.0
+    }
+  },
+  "score_delta": -28.4,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "Why it matters: Porto's published 60.9 was a starting value. This is its first measurement against evidence, and the evidence is thin.",
+    "On 12 October 2026 the city's police and a city company removed a housing-protest camp. The council called it 'illegal occupation'.",
+    "Porto is credited for cutting street homelessness from 730 people in 2021 to 526 in 2025 and for subsidised rents.",
+    "Local charities say Housing First served 'only six people' in 2025 and some people stay in emergency beds for years.",
+    "Porto measures 32.5 of 100 (Developing). The proposal is filed for review, not as a direct downgrade."
+  ],
+  "evidence": [
+    {
+      "quote": "não permitindo a ocupação ilegal e degradação do espaço público",
+      "claim": "Porto council statement justifying the 12 October 2026 removal of the housing-protest camp in Praça D. João I.",
+      "source": "Câmara Municipal do Porto statement (Lusa via DNotícias)",
+      "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+      "publishedDate": "2026-10-12",
+      "sourceTier": 2
+    },
+    {
+      "quote": "ação conjunta entre a PSP, a Polícia Municipal e a Porto Ambiente",
+      "claim": "The removal was a joint action of the national PSP, the municipal police and the municipal company Porto Ambiente.",
+      "source": "Câmara Municipal do Porto statement (Lusa via DNotícias)",
+      "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+      "publishedDate": "2026-10-12",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Não houve justificação",
+      "claim": "A camp participant said no justification was given for the removal.",
+      "source": "RTP",
+      "url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+      "publishedDate": "2026-10-12",
+      "sourceTier": 2
+    },
+    {
+      "quote": "apenas para seis pessoas este ano",
+      "claim": "16 Porto homelessness organisations said Housing First was starting in Porto 'only for six people this year' (2025).",
+      "source": "RTP/Lusa",
+      "url": "https://www.rtp.pt/noticias/lusa/entidades-que-apoiam-sem-abrigo-no-porto-querem-pacto-de-regime-para-manter-respostas_n1661610",
+      "publishedDate": "2025-06-13",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Em 2025 foram registadas 526 pessoas em situação de sem-abrigo",
+      "claim": "Countervailing (credited): council data show 526 homeless people in 2025, down from 730 in 2021.",
+      "source": "Câmara Municipal do Porto data (Lusa via DNotícias)",
+      "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+      "publishedDate": "2026-07-31",
+      "sourceTier": 2
+    },
+    {
+      "quote": "According to the municipality, 66.6% of households benefit from rent subsidies.",
+      "claim": "Countervailing (credited): affordable-rent programme with subsidies.",
+      "source": "Essential Business",
+      "url": "https://www.essential-business.pt/2026/03/27/porto-delivers-436-houses-at-affordable-rents-to-1000-people/",
+      "publishedDate": "2026-03-27",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "v1.2",
+  "integration_premium": 0.0,
+  "published_composite_reconstruction": 60.9,
+  "math_hygiene_reconstruction_diff": 0.0,
+  "filing_trigger": "band-crossing + magnitude (-28.4)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "screening_3e_bis": {
+    "baseline_provenance": "Unassessed seed value; no applied change.",
+    "directionality": "Negative in-window evidence; movement is downward or flat.",
+    "rationale_vs_history": "First baseline; no claim contradicts documented history.",
+    "calibration": "City seed values (Lisbon, Porto, Madrid, Valencia) should be reviewed together before application.",
+    "filing_trigger": "band-crossing + magnitude (-28.4) Proposal filed."
+  },
+  "sensitivity": {
+    "defaults": 13,
+    "composite_if_defaults_at_3": 40.6,
+    "band_if_defaults_at_3": "Functional",
+    "dims": {
+      "AWR": 2.4,
+      "EMP": 2.2,
+      "ACT": 2.8,
+      "EQU": 2.8,
+      "BND": 2.4,
+      "ACC": 2.8,
+      "SYS": 3.0,
+      "INT": 2.6
+    }
+  },
+  "notes": "FIRST ASSESSMENT: the published 60.9 is an unassessed seed (uniform 3.5 vector), not a measurement. Founder backlog RC-2 applies; hold for a city first-baseline calibration study with Lisbon, Madrid and Valencia. Filed on the band-crossing and magnitude triggers (Established -> Developing). Recommendation is flag-for-review, not downgrade: no adverse source at sourceTier >= 4 was fetched (the adverse items are the council's own statement relayed by Lusa and press testimony), matching the Glasgow/Birmingham precedent of 2026-10-01. 13 of 40 subdimensions are evidence-gap defaults at anchor 2; with those at 3 the composite would be 40.6 (Functional), still a band crossing from Established. Confidence low.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "Em 2025 foram registadas 526 pessoas em situação de sem-abrigo"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.porto.pt/pt/noticia/camara-passa-a-coordenar-rede-de-apoio-as-pessoas-em-situacao-de-sem-abrigo",
+          "date": "2020",
+          "quote": "Câmara passa a coordenar rede de apoio às pessoas em situação de sem-abrigo"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://rr.pt/noticia/religiao/2025/06/13/organizacoes-do-porto-pedem-pacto-de-regime-para-sem-abrigo/429032/",
+          "date": "2025-06-13",
+          "claim": "16 Porto homelessness organisations: emergency beds occupied for years (one user about 25 years); migrants largely invisible in data; ask AIMA to join NPISA."
+        },
+        {
+          "tier": 2,
+          "url": "https://observador.pt/2026/02/28/abrigo-noturno-do-porto-da-ami-quase-triplica-apoio-a-estrangeiros-em-cinco-anos/",
+          "date": "2026-02-28",
+          "claim": "AMI night shelter in Porto nearly tripled support to foreigners in five years."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://rr.pt/noticia/religiao/2025/06/13/organizacoes-do-porto-pedem-pacto-de-regime-para-sem-abrigo/429032/",
+          "date": "2025-06-13",
+          "claim": "16 Porto homelessness organisations: emergency beds occupied for years (one user about 25 years); migrants largely invisible in data; ask AIMA to join NPISA."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+          "date": "2026-10-12",
+          "quote": "Não houve justificação"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+          "date": "2026-10-12",
+          "quote": "ação conjunta entre a PSP, a Polícia Municipal e a Porto Ambiente"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.porto.pt/pt/noticia/municipio-atualiza-plano-de-contingencia-para-pessoas-em-situacao-de-sem-abrigo-no-tempo-frio",
+          "date": "2023",
+          "quote": "Município atualiza Plano de Contingência para Pessoas em Situação de Sem-Abrigo no Tempo Frio"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+          "date": "2026-10-12",
+          "quote": "muitas tendas foram para o lixo com pertences nossos"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.rtp.pt/noticias/lusa/entidades-que-apoiam-sem-abrigo-no-porto-querem-pacto-de-regime-para-manter-respostas_n1661610",
+          "date": "2025-06-13",
+          "quote": "discutidas aprofundadamente pela cidade e refletidas nos programas eleitorais dos vários partidos políticos"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+          "date": "2026-10-12",
+          "quote": "não permitindo a ocupação ilegal e degradação do espaço público"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://observador.pt/2026/02/28/abrigo-noturno-do-porto-da-ami-quase-triplica-apoio-a-estrangeiros-em-cinco-anos/",
+          "date": "2026-02-28",
+          "claim": "AMI night shelter in Porto nearly tripled support to foreigners in five years."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.porto.pt/pt/noticia/municipio-atualiza-plano-de-contingencia-para-pessoas-em-situacao-de-sem-abrigo-no-tempo-frio",
+          "date": "2023",
+          "quote": "Município atualiza Plano de Contingência para Pessoas em Situação de Sem-Abrigo no Tempo Frio"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.essential-business.pt/2026/03/27/porto-delivers-436-houses-at-affordable-rents-to-1000-people/",
+          "date": "2026-03-27",
+          "quote": "Porto City Council has allocated 436 affordable rental homes as part of the Affordable Housing Programme"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.essential-business.pt/2026/03/27/porto-delivers-436-houses-at-affordable-rents-to-1000-people/",
+          "date": "2026-03-27",
+          "quote": "According to the municipality, 66.6% of households benefit from rent subsidies."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "Em 2025 foram registadas 526 pessoas em situação de sem-abrigo"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "uma diminuição de 4,9% face a 2024"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "a antiga Escola Básica EB1 de Lordelo seria transformada no Centro de Pernoita em Lordelo"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://rr.pt/noticia/religiao/2025/06/13/organizacoes-do-porto-pedem-pacto-de-regime-para-sem-abrigo/429032/",
+          "date": "2025-06-13",
+          "claim": "16 Porto homelessness organisations: emergency beds occupied for years (one user about 25 years); migrants largely invisible in data; ask AIMA to join NPISA."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.idealista.pt/news/node/73514",
+          "date": "2025",
+          "claim": "Porto council allocated about 300 social homes a year over the last four years."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.essential-business.pt/2026/03/27/porto-delivers-436-houses-at-affordable-rents-to-1000-people/",
+          "date": "2026-03-27",
+          "quote": "According to the municipality, 66.6% of households benefit from rent subsidies."
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://rr.pt/noticia/religiao/2025/06/13/organizacoes-do-porto-pedem-pacto-de-regime-para-sem-abrigo/429032/",
+          "date": "2025-06-13",
+          "claim": "16 Porto homelessness organisations: emergency beds occupied for years (one user about 25 years); migrants largely invisible in data; ask AIMA to join NPISA."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.rtp.pt/noticias/lusa/entidades-que-apoiam-sem-abrigo-no-porto-querem-pacto-de-regime-para-manter-respostas_n1661610",
+          "date": "2025-06-13",
+          "quote": "apenas para seis pessoas este ano"
+        },
+        {
+          "tier": 3,
+          "url": "https://rr.pt/noticia/religiao/2025/06/13/organizacoes-do-porto-pedem-pacto-de-regime-para-sem-abrigo/429032/",
+          "date": "2025-06-13",
+          "claim": "16 Porto homelessness organisations: emergency beds occupied for years (one user about 25 years); migrants largely invisible in data; ask AIMA to join NPISA."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.rtp.pt/noticias/lusa/entidades-que-apoiam-sem-abrigo-no-porto-querem-pacto-de-regime-para-manter-respostas_n1661610",
+          "date": "2025-06-13",
+          "quote": "uma via verde de acesso a cuidados de saúde mental"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.rtp.pt/noticias/pais/nao-consegues-pagar-renda-traz-tenda-policia-desmonta-acampamento-no-porto_n1771142",
+          "date": "2026-10-12",
+          "quote": "Não houve justificação"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+          "date": "2026-10-12",
+          "quote": "não permitindo a ocupação ilegal e degradação do espaço público"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "uma diminuição de 4,9% face a 2024"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.essential-business.pt/2026/03/27/porto-delivers-436-houses-at-affordable-rents-to-1000-people/",
+          "date": "2026-03-27",
+          "quote": "Porto City Council has allocated 436 affordable rental homes as part of the Affordable Housing Programme"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/7/31/501025-porto-com-menos-204-pessoas-em-situacao-de-sem-abrigo-nos-ultimos-5-anos/",
+          "date": "2026-07-31",
+          "quote": "a antiga Escola Básica EB1 de Lordelo seria transformada no Centro de Pernoita em Lordelo"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.porto.pt/pt/noticia/camara-passa-a-coordenar-rede-de-apoio-as-pessoas-em-situacao-de-sem-abrigo",
+          "date": "2020",
+          "quote": "Câmara passa a coordenar rede de apoio às pessoas em situação de sem-abrigo"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-14",
+      "evidence": []
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dnoticias.pt/2026/10/12/508685-acampamento-na-praca-ocupava-indevidamente-o-espaco-publico/",
+          "date": "2026-10-12",
+          "quote": "não permitindo a ocupação ilegal e degradação do espaço público"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-10-14",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.rtp.pt/noticias/lusa/entidades-que-apoiam-sem-abrigo-no-porto-querem-pacto-de-regime-para-manter-respostas_n1661610",
+          "date": "2025-06-13",
+          "quote": "discutidas aprofundadamente pela cidade e refletidas nos programas eleitorais dos vários partidos políticos"
+        }
+      ]
+    }
+  ]
+}
