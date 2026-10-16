@@ -25,6 +25,27 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-15 — Briefings stop calling unapplied proposals score "moves" (NO score changes; pending commit/deploy)
+
+- **What changed:** the movement strip and score chart on every daily briefing now describe a figure that was not applied
+  as a measurement.
+  - Before: "largest move Valencia -19".
+  - After: "largest measured difference (not applied) Valencia -19".
+  - Applied changes keep their old wording.
+- **Why:** the published score for Valencia (and Porto, Amazon and others) never changed. The old wording read as if it
+  had.
+- **Impact:** no score, rank or briefing text changed. Only the generated chart labels changed, on every briefing page
+  that shows them. A build check now fails if a chart label calls an unapplied figure a move or a trajectory.
+
+## 2026-10-14 — Daily briefing: Lisbon and Porto measured for the first time (NO score changes; pending deploy)
+
+- **What changed:** a new public briefing at `/updates/2026-10-14`, the first since 2026-10-01. All 1,329 tracked entities were reviewed for recent evidence, and 11 were reassessed in full.
+- **Scores:** none changed.
+  - Lisbon (published 60.9) measured 35.0 and Porto (published 60.9) measured 32.5. Both are first measurements of starting values that had never been checked against evidence. They are low-confidence proposals awaiting review, not applied.
+  - Cornell's measurement (41.9) matches its proposal of 2026-10-01, which is still pending.
+- **Why:** to keep the published briefing within two weeks of the evidence. The search quality limits are stated in the briefing itself.
+- **Impact:** readers see current evidence on 11 entities. The published rankings are unchanged until a proposal is approved.
+
 ## 2026-10-04 — A third unofficial pilot: four open-weight models, each run two ways, with the plan committed before any data (NO official scores; pending deploy)
 
 - **What it is.** An unofficial pilot report at `/ai-models/reports/pilot-2026-10-03`.

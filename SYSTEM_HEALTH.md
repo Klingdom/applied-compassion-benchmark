@@ -1,54 +1,45 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 103 (WEEKLY-WAVE: frozen weekly-v1 protocol (proposed, awaiting founder ratification), subject queue, weekly-wave plan/check/collect/status, Task Scheduler script (not registered), session runbook; harness tests 203 -> 259; Meta-review 11 done; host memory exhausted 2026-10-13, so no model runs until a reboot; production on c5b53451; chain 72 steps)
+Last change: Iteration 107 (founder decision D-56, 2026-10-15: the tier gate now takes a briefing's tier from the same-date change proposals, scoped to briefings that render tier badges (from 2026-09-17); `test:source-tiers` 20/0 and the 2026-10-14 briefing passes. `docs/MODEL_TESTING_V2_PROPOSAL.md` proposes a hybrid local + hosted design with cross-family API judges and one approval per wave. Production on c5b53451; chain 74 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
-> 2026-10-02 (Iteration 90 — **AI model results: template, report and page**): twelve specialist briefs became one
-> binding standard for every future model assessment (`docs/AI_MODEL_ASSESSMENT_TEMPLATE.md`), and the first report
-> was written against it: ~3,300 words, every one of its 86 figures a build-time token traced to a hash-checked
-> data file. Review changed what it says — **the crisis items were never served, so the pilot says nothing about
-> crisis responses**; the three larger models' points are shown nowhere because alphabetical order equals their
-> point order; and a sensitivity check shows the **separation pattern survives the judge exclusion while the levels
-> move 8–11 points**, so only the pattern is robust. The report is **built but gated off** until D-29a is ratified
-> (default build: 0 report pages, 0 pilot mentions). DC-23 reached eight occurrences, three of them today; the
-> control that worked was the parser, not a regex. Chain **64 steps**.
+> 2026-10-15 (Iteration 107 — **founder decision D-56: tier gate repointed; model-testing redesign**): CS-2 now
+> compares a briefing's tier badge with the change proposal it came from, falling back to the assessment only for
+> URLs no proposal cites. The scope is briefings that render badges (from 2026-09-17), and pre-cutoff comparisons were
+> verified identical (216 pairs, 0 differences). The 2026-10-14 briefing's 9 failures came from comparing two scales
+> and now pass. Applying the rule to older briefings found 14 mismatches and 1 conflict in tier values the site does
+> not render (TIER-PRE). The harness refused to allowlist them as a CI bypass. The model-testing proposal (MT-V2) is
+> written and ratifies nothing.
+
+> 2026-10-15 (Iteration 106 — **founder directive: test every available model; nonprofit; AI model pages; measurement content**):
+> all **9 queued open-weight builds are pulled and smoke-tested** (neutral prompt, no bank item; 8 of 9 fully on GPU at 60–103
+> tok/s, olmo2 at 10.4). A measured wave still needs three founder acts: ratify `weekly-v1`, commit the plan, and run collect
+> with about 6.6 GiB free. Frontier models need credentials (BLK-002). qwen3 returns a thinking trace that the harness
+> would silently drop. **The 2026-10-14 dashboard, never logged, would have shipped in the default build without D-29b.**
+> It now has its own gate, closed by default, and a rebuild shows 0 dashboard pages. **BRF-MOVE is fixed:** a
+> built-HTML gate covers 88 briefing pages. The coordinator caught a new false count in the agent's fix ("12 proposed
+> changes" against 7 filed) and reworded it. **Packet H** (5 documents) completes the nonprofit library. Nothing is
+> committed or deployed.
+
+> 2026-10-14 (Iteration 104 — **the entity research cycle, 13 days after the last one**): 1,329 entities scanned
+> (search quality degraded and disclosed: a clean result means not surfaced, not confirmed clean), 11 assessed, every
+> composite and every published baseline independently recomputed (0 drift). **Lisbon 60.9 → 35.0 and Porto 60.9 →
+> 32.5 are first measurements of seeded values**, held under RC-2 (13 of the last 14 first assessments came in below
+> their seed); the 2-vs-3 evidence-gap default moves them by ~7 points and is now RC-3. Briefing 2026-10-14 validated,
+> **not deployed** — production still serves 2026-10-01 from `c5b53451`. The host was rebooted, so WEEKLY-1 now
+> waits only on founder ratification of `weekly-v1`. A founder directive (AGENT-SELF: agents self-assess and post
+> comments) is logged and blocked on five decisions, the first being whether to reverse the published
+> "no endpoint that accepts a score" commitment.
 
 
-> 2026-10-01 (Iterations 87–89 — **founder directives: Oct 1 research, /ai-models, and running models**): the Oct 1
-> cycle ran end to end (1,329 reviewed, 12 scored, **7 pending proposals, all independently recomputed — 0 baseline
-> drift**; six are first-ever assessments, and 11 of the last 12 first assessments came in below their seed). The
-> `/ai-models` page review's Part A is implemented and validated (a published self-contradiction removed; a
-> count guard extended with a planted-probe proof). **The first blinded cross-model pilot ran:** 4 Claude models ×
-> 3 trials × 83 items, every reply rated by two judges never its own model, 41 files voided and re-run by a
-> tool-count gate, Haiku excluded as a *judge* for quoting text its subjects never wrote (14.7% vs ≤ 0.6%).
-> Result: **fable 69.5 · opus 68.5 · sonnet 67.3 are not separable; haiku 40.2 is, but confounded with reply
-> length.** Auditing those scorecards found **cb-probe silently discarding its own forced-choice contamination test
-> from every scorecard** — DC-18 occurrence 2, fixed test-first (7 controls fail → pass, 188 → 195). **Nothing is
-> deployed:** production still serves 2026-09-25, and the 2026-09-24 briefing returns 404 (D-47).
 
-
-> 2026-09-29 (Iteration 53 — **DC-21**, a regex that could never match): building a drift check between
-> `quote-item.mjs` and Check 6 — they had already diverged, 20 items against 22, which would have handed a
-> verifier a short brief and produced a silent all-clear on items nobody showed them. The assertion then reported
-> the tool returning **zero** while the same regex typed by hand returned 22. Four explanations were tried and
-> discarded, including a **real** `assert(false, msg)` argument-order bug that registered a thrown error as a
-> **pass**. The actual cause was visible only under `od -c`: a heredoc had collapsed `\b` into a literal **0x08**
-> inside the pattern. **Third occurrence of a class never recorded here.** The baseline scan found two more — a
-> raw 0x1f git separator, and a raw **NUL** defining the item hash in the **submission protocol**, where an editor
-> eating that byte would change every hash and reject valid submissions invisibly. Both repaired as explicit
-> escapes, proved behaviour-preserving against an independent re-implementation with a negative control; 29/29
-> submission tests still pass. New `test:no-control-bytes` (chain 44 → 45), baseline 2 of 5,828 measured before
-> building so it ratchets from zero. **Near-miss recorded:** reverting the planted probe I typed `git checkout --`,
-> the DC-14 command that **GI-3 — my own rule from two days ago — forbids**. Nothing lost, but by luck rather than
-> method, and the third such reach this session. GI-3 is a practice rule with no enforcement, and one I break
-> every other day is not a control.
 
 ## Canonical facts
 - **Scored entities: 1,325** in **8 indexes** — countries 191 · US states 51 · Fortune 500 447 · AI labs 50 · robotics labs 92 · US cities 144 · global cities 250 · universities 100. Source of truth `site/src/data/entityCount.ts` (= `site/public/build-manifest.json` `totalEntities`). Never copy into UI copy; import it (guarded by `test:no-stale-counts`, **in the chain and committed** — the "pending commit" note here was stale from 2026-09-15 to 2026-09-30).
-- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-10-01)** — re-read 2026-09-30 from `research/rotation-state.json` `meta.last_scan`, which is also the `last_scanned` value on all 1,329 entities.
+- **Tracked for research: 1,329** (`research/rotation-state.json`); last cycle scanned **1,329 (2026-10-14)** — re-read 2026-10-14 from `research/rotation-state.json` `meta.last_scan`, which is also the `last_scanned` value on all 1,329 entities (`validate-rotation-state` RS-5 stamp agreement: 1 distinct value).
 - **Never individually assessed: 811 of 1,329 (61.0%)** — measured 2026-09-16 and reproduced independently by the coordinator; assessed within 30/60/90 days: 146 / 361 / 397; median assessment age 53 days, oldest 149. Generated by `research/scripts/coverage-report.mjs` → `research/coverage/<date>.{md,json}`, and published on `/methodology` from the generated `site/src/data/neverAssessedCoverage.ts` (never hand-typed). Previous snapshot: 820 / 61.7% on 2026-09-14.
 - **Tracked 1,329 vs published 1,325:** the gap is 4 ai-labs entities tracked for research with no published index row — Reflection AI, Nvidia AI, SpaceX AI, Oracle AI (backlog RS-3; publish-or-delist is founder-gated).
 - **Methodology:** v1.2 (`site/scripts/lib/scoring.mjs`), 8 dimensions, 40 subdimensions, 5 bands.
@@ -67,7 +58,7 @@ Last change: Iteration 103 (WEEKLY-WAVE: frozen weekly-v1 protocol (proposed, aw
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **72 steps**, generated 2026-10-02 — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **74 steps**, generated 2026-10-15 (73: `test:model-dashboard`, 74: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (46, re-run 2026-09-30) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts. **This list names 17 of the 57 chain steps and its per-script counts date from 2026-09-15**; the chain itself is the source of truth, and the step count in the heading above is generated. Do not cite the per-script figures without re-running them.
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (**19,702**/0, re-run 2026-09-30; was 19,687), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (**15** known, shrink-only — re-counted 2026-09-30; the 16 here was stale, and since the list is shrink-only a stale high figure hides a ratchet that has already tightened), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** still `RESULT: PASS`, 0 real gaps — but **62 WARN lines**, not the 25 claimed here until 2026-09-30 (re-counted: 5 alias-slug report, **19** same-date change proposal, and **38** further WARNs in older recording conventions that the 25 never covered). The three figures were wrong in both directions at once, which is what an un-regenerated count does. Previously 25 blocking FAILs, all false (RS-1). Regenerate with `cd site && npm run validate:rotation-state | grep -c "^    ! "`.
@@ -96,7 +87,7 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 | Governance | ✅ `AUTONOMY.md`, `DECISIONS.md`, `RISKS.md`, `INCIDENTS.md`, `OBSERVABILITY.md`, `DISASTER-RECOVERY.md`, `AGENT-ROUTING.md`, `docs/DEFECT_CLASS_REGISTRY.md` |
 | Loop | ✅ `IMPROVEMENT_BACKLOG.md` (scoring model v2 trial), `ITERATION_LOG.md`, `docs/META_REVIEW_2026-09-14_ITER10-12.md` |
 
-## Risks (RISKS.md — **20 rows**, highest id RISK-025; generated 2026-09-30 with `grep -cE "^\| RISK-[0-9]+ \|" RISKS.md`. **No resolved/closed count is published here.** It used to say "8 marked resolved/closed" and that figure cannot be regenerated: the Status cells are free text — *"Mitigated (delivery) — Open (verification gap)"*, *"Open, deliberately unresolved pending a decision"*, *"Open — one face closed"*, *"Open, actively mitigated"*. Literal `resolved|closed` gives 5, adding `mitigated|remediated|fixed` gives 10, and the published number was 8. Three defensible rules, three answers, so the quantity does not exist; read the Status column in RISKS.md. Enforced by `test:health-freshness` check 3b)
+## Risks (RISKS.md — **22 rows**, highest id RISK-027; generated 2026-10-14 with `grep -cE "^\| RISK-[0-9]+ \|" RISKS.md`. **No resolved/closed count is published here.** It used to say "8 marked resolved/closed" and that figure cannot be regenerated: the Status cells are free text — *"Mitigated (delivery) — Open (verification gap)"*, *"Open, deliberately unresolved pending a decision"*, *"Open — one face closed"*, *"Open, actively mitigated"*. Literal `resolved|closed` gives 5, adding `mitigated|remediated|fixed` gives 10, and the published number was 8. Three defensible rules, three answers, so the quantity does not exist; read the Status column in RISKS.md. Enforced by `test:health-freshness` check 3b)
 - **High / urgent:** RISK-014 Score-Watch sold, host NXDOMAIN · RISK-015 waiver cliff — **mitigated 2026-09-16 (D-37)**: the single 2026-12-09 cliff was staggered into six dates, first build failure 2026-11-17. The bare "cliff 2026-12-09" here contradicted both RISKS.md and the Build-and-gates row two sections above · RISK-016 research never run unattended · RISK-017/018 slug collisions (**15**, re-counted 2026-09-30) + accent mismatches (13 as of 2026-09-15, **not re-measured** — do not cite without re-running) · RISK-020 briefing errors pass gates (reduced by It. 13, **committed** — `lint-daily-briefings.mjs` is tracked; "pending" was stale) · RISK-021 approval provenance unverifiable · RISK-001 majority placeholder scores.
 - **RISK-023 — CLOSED, and was presented here as live for two weeks.** 20 Fortune 500 names published with visible HTML entities; **remediated 2026-09-16 (D-35, founder-approved)**, all 20 decoded, and `test:encoded-names` now holds it at 0. This file still headed it "New 2026-09-15" on 2026-09-30, which is the most damaging direction for a health file to be wrong in — a reader would have chased a resolved defect. Fix spec: `docs/REMEDIATION_RISK-023_ENCODED_NAMES_2026-09-15.md`. Also: `validate-rotation-state.mjs` 22 FAILs are all false (evidence exists under older conventions) — backlog RS-1.
 - **Also open:** RISK-002 held proposals · RISK-003 entity-currency defects · RISK-004 deploy verification · RISK-005 two disclosure conventions · RISK-006 band-boundary ambiguity · RISK-007 reputational (mitigated) · RISK-008 rotation-state tracking · RISK-019 formula cliff at 4.0 (copy fixed) · RISK-022 public admin surface / missing HSTS/CSP.
@@ -117,7 +108,7 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 | Area | Status |
 |---|---|
 | Site build | ✅ green (exit 0, re-run 2026-09-30) |
-| Deploy | ⚠️ **founder-operated; the deploy job is skipped on every push.** Production last built 2026-09-25; the live commit is unrecorded (OBS-1). "Build and deploy ✅ green" was one row conflating two different states |
+| Deploy | ⚠️ **founder-operated; the deploy job is skipped on every push.** Production serves **`c5b53451`**, built 2026-10-04T07:30:36Z from a clean tree (re-read 2026-10-14 from the live `/build-manifest.json` `git` field; the old "last built 2026-09-25, commit unrecorded" text was stale). "Build and deploy ✅ green" was one row conflating two different states |
 | Data validation | ✅ automated in build |
 | Research cadence | ⚠️ manual; 62.5% of days with a completed cycle (Apr 15 → Sep 14); never unattended |
 | Commerce | ❌ Score-Watch unfulfillable (RISK-014) |
@@ -127,6 +118,45 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-02 (Iteration 90 — **AI model results: template, report and page**): twelve specialist briefs became one
+> binding standard for every future model assessment (`docs/AI_MODEL_ASSESSMENT_TEMPLATE.md`), and the first report
+> was written against it: ~3,300 words, every one of its 86 figures a build-time token traced to a hash-checked
+> data file. Review changed what it says — **the crisis items were never served, so the pilot says nothing about
+> crisis responses**; the three larger models' points are shown nowhere because alphabetical order equals their
+> point order; and a sensitivity check shows the **separation pattern survives the judge exclusion while the levels
+> move 8–11 points**, so only the pattern is robust. The report is **built but gated off** until D-29a is ratified
+> (default build: 0 report pages, 0 pilot mentions). DC-23 reached eight occurrences, three of them today; the
+> control that worked was the parser, not a regex. Chain **64 steps**.
+
+> 2026-10-01 (Iterations 87–89 — **founder directives: Oct 1 research, /ai-models, and running models**): the Oct 1
+> cycle ran end to end (1,329 reviewed, 12 scored, **7 pending proposals, all independently recomputed — 0 baseline
+> drift**; six are first-ever assessments, and 11 of the last 12 first assessments came in below their seed). The
+> `/ai-models` page review's Part A is implemented and validated (a published self-contradiction removed; a
+> count guard extended with a planted-probe proof). **The first blinded cross-model pilot ran:** 4 Claude models ×
+> 3 trials × 83 items, every reply rated by two judges never its own model, 41 files voided and re-run by a
+> tool-count gate, Haiku excluded as a *judge* for quoting text its subjects never wrote (14.7% vs ≤ 0.6%).
+> Result: **fable 69.5 · opus 68.5 · sonnet 67.3 are not separable; haiku 40.2 is, but confounded with reply
+> length.** Auditing those scorecards found **cb-probe silently discarding its own forced-choice contamination test
+> from every scorecard** — DC-18 occurrence 2, fixed test-first (7 controls fail → pass, 188 → 195). **Nothing is
+> deployed:** production still serves 2026-09-25, and the 2026-09-24 briefing returns 404 (D-47).
+
+> 2026-09-29 (Iteration 53 — **DC-21**, a regex that could never match): building a drift check between
+> `quote-item.mjs` and Check 6 — they had already diverged, 20 items against 22, which would have handed a
+> verifier a short brief and produced a silent all-clear on items nobody showed them. The assertion then reported
+> the tool returning **zero** while the same regex typed by hand returned 22. Four explanations were tried and
+> discarded, including a **real** `assert(false, msg)` argument-order bug that registered a thrown error as a
+> **pass**. The actual cause was visible only under `od -c`: a heredoc had collapsed `\b` into a literal **0x08**
+> inside the pattern. **Third occurrence of a class never recorded here.** The baseline scan found two more — a
+> raw 0x1f git separator, and a raw **NUL** defining the item hash in the **submission protocol**, where an editor
+> eating that byte would change every hash and reject valid submissions invisibly. Both repaired as explicit
+> escapes, proved behaviour-preserving against an independent re-implementation with a negative control; 29/29
+> submission tests still pass. New `test:no-control-bytes` (chain 44 → 45), baseline 2 of 5,828 measured before
+> building so it ratchets from zero. **Near-miss recorded:** reverting the planted probe I typed `git checkout --`,
+> the DC-14 command that **GI-3 — my own rule from two days ago — forbids**. Nothing lost, but by luck rather than
+> method, and the third such reach this session. GI-3 is a practice rule with no enforcement, and one I break
+> every other day is not a control.
+
 
 > 2026-09-30 (Iteration 61 — **TRI-10**, the other 36 cleared items take the test): 40 items administered —
 > the 36 remaining single-prompt tier-4 items plus **4 replicates from Iteration 60** mixed in indistinguishably.

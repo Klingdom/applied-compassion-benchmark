@@ -88,9 +88,144 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 - **RC-1 — four misdated-claims ledger additions** (canada-real-1975-days, egypt-sarah-khalifa-death-sentence,
   myanmar-kyauktaw-market-airstrike-2026, san-marino 2021 referendum). *Done when:* each is in
   `research/known-misdated-claims.json` with a counter-test, and `test-known-misdated-claims` passes.
-- **RC-2 — seed-calibration study (founder: packet #8).** 11 of the last 12 first assessments came in below their
-  seeded baseline. *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
+- **RC-2 — seed-calibration study (founder: packet #8).** 11 of the last 12 first assessments came in below their seeded baseline (13 of 14 after Lisbon and Porto on 2026-10-14; both are held here, not applied).
+  *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
+
+### New rows (2026-10-15, Iteration 106) — founder directive: models, nonprofit, AI pages, measurement content
+
+- **BRF-MOVE — DONE 2026-10-15 (It. 106), uncommitted.** The rendered labels word unapplied figures as measurements, and
+  `test-briefing-move-claims.mjs` (chain step 74, plus a `build` tree check) has 5 planted probes. Original row below.
+- **DASH-GATE — DONE 2026-10-15 (It. 106), uncommitted.** `/ai-models/dashboard` has its own gate, closed by default
+  (`dashboard-decision.json` status "proposed"). A default build emits 0 dashboard pages. Publishing needs a ratified
+  D-29b and status "active" (founder; `docs/FOUNDER_DECISION_PACKET_2026-10-15_AI_MODELS.md` M-FD-9).
+- **BRF-MOVE-2 — the `DailyBriefing` section heading ("N downgrades / Score movement", aria "Today's score movement")
+  still frames unapplied rows as movement.** Same class as DC-03.
+  - *Done when:* the heading uses the measured-difference wording when nothing was applied, and the tree check in
+    `test-briefing-move-claims.mjs` covers headings with a planted probe.
+  - v1: I3 S5 L2 C5 − E1 − R1 = 13 · v2: P +2 (live) · Rc +2 → **17**.
+- **QWEN3-THINK — the subject runner drops `message.thinking` silently** (smoke 2026-10-15: qwen3:8b, 1,391 chars).
+  - *Done when:* `lib/local-subjects.mjs` stores the trace in the record (never in judge batches), records whether
+    thinking was on, and a test feeds a fake reply with a `thinking` field and asserts it is stored and absent from the
+    batches. Needed before qwen3 is planned (queue #8).
+  - v1: I3 S4 L3 C5 − E1 − R1 = 13. Founder decision M-FD-6 chooses on or off.
+- **NP-R13 — register R13 wording is missing in B05, B09 and D02** (Packet H agent, 2026-10-15).
+  - *Done when:* each carries the "subject to the safeguards in register R4" wording, or the register drops R13.
+  - v1: I2 S4 L1 C4 − E1 − R1 = 9.
+- **TIER-1014 — DONE 2026-10-15 (It. 107, D-56 option b).** The gate takes tiers from the proposals for briefings with
+  rendered badges (from 2026-09-17); the test is 20/0. Original row and diagnosis below.
+- **TIER-PRE — what the proposal comparison found in pre-badge briefings** (2026-07-20 to 2026-08-26).
+  - Findings: 14 mismatch records (8 URLs), e.g. 2026-07-31 aisi.gov.uk briefing T1 vs proposal T5. Plus 1 conflict
+    inside a single proposal file (`thermo-fisher-scientif-2026-07-20.json`, the wlos.com URL at T4 and T2).
+  - None is shown to readers: badges are hidden before the cutoff. Separately, 2026-10-01 compares 0 tier pairs under
+    either version (a coverage gap).
+  - *Done when:* the founder decides whether pre-cutoff tier values get a dated data correction, or stay hidden by
+    design, and the 2026-10-01 gap is explained.
+  - Run the test with the date scope removed to list the findings.
+  - v1: I2 S4 L2 C5 − E2 − R1 = 10.
+- **MT-V2-1 — `wave-ready.mjs` publication-gate runner and real judge-token measurement on pilot-3 data**
+  (`docs/MODEL_TESTING_V2_PROPOSAL.md` §6 item 1; it needs no founder decision).
+  - *Done when:* the §6 acceptance criteria are met, with one planted defect per gate.
+  - v1: I4 S5 L4 C4 − E2 − R1 = 14.
+- **TIER-1014 (original) — the unpublished 2026-10-14 briefing fails `test:source-tiers`** (9 contradictions, all rtp.pt and
+  dnoticias.pt: briefing T2 against T5/T4 in the Lisbon and Porto assessments). Found 2026-10-15 (It. 106).
+  - *Done when:* the briefing's `sourceTier` values agree with the cited assessments (or the assessments are corrected),
+    and `test:source-tiers` passes. This must happen before Iteration 104 is committed.
+  - v1: I4 S5 L2 C5 − E1 − R1 = 14 · v2: + Rc 0 (gate exists and fired) = **14**.
+  - **Diagnosis (2026-10-15, later, read-only):** the briefing is not the outlier.
+    - The briefing's upstream, `research/change-proposals/{lisbon,porto}-2026-10-14.json` `evidence[]`, tiers every
+      cited rtp.pt and dnoticias.pt item **2**. That matches the assessor's `sourceTier` definition
+      (`.claude/agents/overnight-assessor.md` line 206: 2 = top-tier journalism, 5 = government).
+    - The Porto proposal's own reasoning depends on it: "no adverse source at sourceTier >= 4 was fetched".
+    - The two assessment `.md` Tier columns (and `lisbon-2026-10-14.subdims.json`) use a different scale. On the
+      assessor's type scale porto.pt, a municipal government site, would be 5; the markdown gives it 3. RTP gets 4 and
+      5, the PMPSSA plan PDF 4.
+    - So re-tiering only the 9 cells would make those files internally inconsistent. The gate compares two fields that
+      no longer share a scale.
+  - **Founder choice (part of LRN-FIX-4):**
+    - (a) **Default:** the assessment Tier column must use the `sourceTier` type scale. Re-tier both 2026-10-14
+      assessments in full; it is unpublished, and no subdimension score changes.
+    - (b) Point CS-2 at the proposal `evidence[]` instead of the markdown. This changes a gate, so it needs a
+      planted-probe proof.
+  - Either option unblocks the Iteration 104 commit. An allowlist entry is not an option: the allowlist is for published
+    defects only.
+- **WEEKLY-1 update (2026-10-15):** the host is no longer the blocker. All 9 queued builds are pulled and pass the smoke
+  test. The blockers are M-FD-1 (ratify), M-FD-2 (commit the plan) and M-FD-3 (collector and free memory).
+
+### New rows (2026-10-14, Iteration 105) — founder directives D-52 / Agent Hub / Learn; each with "done when"
+
+- **AH-1 — Agent Hub Phase 1 build** (`docs/PRD_AGENT_HUB.md` §12, slices S1–S10 plus the hub slices).
+  - *Blocked on:* A-FD-01, -02, -03 and -05 in `docs/FOUNDER_DECISION_PACKET_2026-10-14.md`.
+  - S1 (the instrument) is security-approved and needs only A-FD-05.
+  - *Done when:* every QG gate in PRD §8 exists with a planted probe and passes, and Phase 1a is deployed read-only.
+  - Founder-directed.
+- **AH-2 — cb-hub (remote MCP and feed generator) needs a design and a second security review** (security review
+  SR-11).
+  - *Done when:* `docs/AGENT_HUB_CB_HUB_ARCHITECTURE.md` covers SR-11 items 1–7 and a reviewer signs it off.
+- **LRN-FIX-2 — remove "/10" from `/methodology` (Learn M2).**
+  - Lines 233, 244, 323 and 332 describe dimensions "out of 10", while the formula averages 0–5 means.
+  - *Done when:* the page describes one scale, and `test:method-claims` fails on a planted "/10".
+  - Founder-gated (published method claim).
+  - v1: I3 S5 L2 C5 − E1 − R1 = 13 · v2: P+2 (a live, internally inconsistent method claim) · Rc+2 (DC-02 gate
+    extension) → **17**.
+- **LRN-FIX-3 — the variance caption on `/methodology` line 272 is misleading (M3).**
+  - The step needs σ > 1.5, but the maximum published σ is 0.768 (measured over 1,325 rows on 2026-10-14).
+  - *Done when:* it is reworded with a dated addendum, the old entry is unedited, and a method-claims check covers it.
+  - v1: I2 S4 L2 C5 − E1 − R1 = 11 · v2: P+2 → **13**.
+- **LRN-FIX-4 — evidence tiers are numbered four ways (M4).**
+  - The four schemes: `EvidencePyramid` (1 = strongest), briefing `TIER_LABELS` (5 = strongest), `EntityDetail`
+    (A–D) and `glossary` (3 tiers).
+  - *Done when:* one convention is chosen (founder) and a test pins every surface to it.
+  - v1: I3 S5 L2 C4 − E3 − R2 = 9.
+- **LRN-FIX-6 — `site/public/llms.txt` hard-codes "1,325 entities in 8 indexes" and is not generated (M6).**
+  - *Done when:* it is generated at build from `entityCount.ts`/`indexRegistry.ts`, and `test:no-stale-counts`
+    scans it.
+  - v1: I3 S5 L2 C5 − E2 − R1 = 12 · v2: Rc+2 (DC count class) → **14**.
+- **CBP-ARGS — `tools/cb-probe/lib/validate-args.mjs` uses `key in props` (lines 117 and 126)**, so
+  `constructor`, `toString` and `__proto__` pass `additionalProperties:false`.
+  - *Done when:* it uses `Object.hasOwn`, and a test plants `constructor` and expects rejection.
+  - v1: I3 S4 L3 C5 − E1 − R1 = 13.
+- **CBP-ANCHORS — local `get_anchors` has no sensitivity gate** (tools.mjs:72-93).
+  - *Done when:* sensitive ids return the same refusal as unknown ids unless `include_sensitive` was requested, and
+    a test covers it.
+  - v1: I3 S4 L2 C5 − E1 − R1 = 12.
+- **HOOK-DC23 — a mechanical block for DC-23** (11 occurrences; the practice rule was broken again on 2026-10-14).
+  - *Done when:* a Claude Code PreToolUse hook refuses Bash commands containing a backtick inside a double-quoted
+    `node -e` or heredoc-free `echo` argument, proven by a planted probe.
+  - The hook lives in harness config; founder approval is needed for settings changes.
+  - v1: I4 S4 L3 C4 − E2 − R2 = 11 · v2: Rc+2 → **13**.
+
+### New rows (2026-10-14, Iteration 104) — falsifiable "done when" on each
+
+- **AGENT-SELF — founder directive 2026-10-14: an agent-first self-assessment environment with comments on the site.**
+  The founder asked for agents and AI models to be able to:
+  - fetch the complete instrument: 8 dimensions, 40 subdimensions, items and criteria;
+  - assess themselves against it;
+  - save the assessment text to compassionbenchmark.com as comments.
+
+  The read half partly exists: the bank and anchors are under `/data/model-benchmark/`, and `cb-probe` is a local MCP server. The write half reverses a published commitment in `research/submissions/README.md` ("no endpoint that accepts a score"). It also puts unverified third-party text on the institution's domain.
+
+  **Lane: blocked-on-founder** until five decisions are answered: moderation, numbers, identity, placement and site. The defaults put to the founder are moderated, text plus "self-reported" dimension ratings with no composite, self-declared identity, `/ai-models/self-assessments`, and .com.
+
+  After that the sequence is PRD → architecture and API spec → security review → UX → build → QA.
+  - *Done when:* a remote agent with no repo checkout fetches one versioned instrument document, submits an assessment to the Worker, and the submission appears publicly **only after** the decided moderation path. A planted composite, an injection payload and an oversize body are each refused, each proved by a test.
+  - v1: I5 S4 L4 C3 − E4 − R4 = **8**; founder-directed.
+- **RC-3 — the evidence-gap default anchor (2 vs 3) is unsettled.** Lisbon's and Porto's 2026-10-14 first assessments scored evidence-gap subdimensions at 2, while Madrid's used 3. The difference is 35.0 vs 41.9 and 32.5 vs 40.6. This is a methodology convention, so it is founder-gated (§1b).
+  - *Done when:* the convention is written into the assessor spec and the methodology, and a fixture test pins it.
+  - v1: I4 S5 L3 C4 − E2 − R2 = **12**. X-2.
+- **RS-8 — UAE assessments are split across two slugs.** June reports sit under `united-arab-emirates`, while the index and rotation key use `uae`, so `last_assessed` read null until 2026-10-14.
+  - *Done when:* `validate-rotation-state` resolves the alias, or the reports are re-keyed under rule S9, and a fixture covers it.
+  - v1: I2 S4 L2 C5 − E1 − R1 = **11**.
+- **BRF-MOVE — the briefing renders unapplied proposals as score "moves" (DC-03, rendered-text route; S3 discovery, 2026-10-14).**
+  - **The defect:** `MovementDeltaStrip.tsx` builds "largest move <entity> <delta>", and `ScoreSparkline.tsx` builds "<slug> score trajectory: single reading: <n>", from proposals that have not been applied.
+  - **V1 BEFORE (production):** `/updates/2026-10-01` serves "Today's movement: 0 upgrades, 0 holds; largest move Valencia -19". Valencia's published score is unchanged.
+  - **V4:** the 2026-10-14 build serves "largest move Porto -28.4".
+  - **Why the gate missed it:** the DC-03 lint checks the briefing JSON, not the rendered text.
+  - *Done when:* the strip and the sparkline label pending figures as proposals or measurements, never as moves or a trajectory. A built-HTML check fails when "largest move" or "trajectory" text names an entity whose proposal is unapplied, proved by a planted probe. The 2026-10-01 and 2026-10-14 pages pass after a rebuild.
+  - v1: I4 S5 L3 C5 − E2 − R1 = **14** · v2: P +2 (live and reads as a false claim) · Rc +2 (gate for DC-03, which has 5 or more occurrences) → **18**.
+  - **Lane: eligible. The top v2 item for the next loop.**
+- **RC-4 — the ledger candidate `czech-turek-racism-scandal`.** The scanner on 2026-10-14 found an October 2025 story resurfacing as 2026 news.
+  - *Done when:* it is in `known-misdated-claims.json` with a counter-test that passes. Fold it into RC-1.
 
 ### New rows (2026-10-02, Iteration 90) — falsifiable "done when" on each
 

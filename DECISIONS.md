@@ -29,6 +29,8 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-56 | 2026-10-15 | Tier gate compares briefings against the change proposals (TIER-1014 option b); the 2026-10-14 briefing is approved for publication | active, decided by the founder 2026-10-15 |
+| D-52 | 2026-10-14 | Agents may self-assess and post the text to the site, moderated, with no composite (narrows the published no-score-endpoint promise) | active, ratified by the founder 2026-10-14 |
 | D-46 | 2026-09-29 | Three further rubric repairs (Ohio evaluation clock, fentanyl 'painless', Title VI attribution) | **proposed (awaiting founder)** |
 | D-45 | 2026-09-29 | Three narrow composite-formula questions, after MS-5 was disproved | **proposed (awaiting founder)** |
 | D-44 | 2026-09-29 | Repair three more published rubric defects (DFEH name, admin-overhead statistic, firearms premise) | **proposed (awaiting founder)** |
@@ -62,6 +64,68 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
 
 ---
+
+## D-56 — 2026-10-15 — The tier gate uses the change proposals; the 2026-10-14 briefing is approved
+
+**Decision (founder, 2026-10-15, verbatim):** "Point the tier check at the change proposals instead of the assessment
+write-ups. APprove all briefings. AND FIGURE out a better way to test models and publish."
+
+1. **Tier gate (TIER-1014 option b).** `research/scripts/test-source-tier-consistency.mjs` takes a briefing's tier
+   from the same-date change-proposal `evidence[]` first. It falls back to the assessment markdown only for URLs that
+   no proposal cites.
+   - The coordinator scoped proposal precedence to briefings dated on or after the site's
+     `TIER_RELIABILITY_CUTOFF_DATE` (2026-09-17), the first date with tier badges shown.
+   - Without that scope, 14 mismatches and 1 conflict appeared in tier values no reader sees. Allowlisting them was
+     refused by the harness as a CI bypass and is not done. They are backlog row TIER-PRE.
+2. **"All briefings" means the one unpublished daily briefing, 2026-10-14** (Iteration 104).
+   - It does not cover the held America-at-250 rewrite. That is an unrecorded rewrite of a published briefing, and
+     AUTONOMY §1c allows it only as a dated correction.
+   - It applies no score change; the Lisbon and Porto proposals stay pending.
+   - Approving the briefing is read as approval to commit it. Push and deploy are asked for separately.
+3. **Model testing.** The coordinator commissioned `docs/MODEL_TESTING_V2_PROPOSAL.md`. That document proposes only;
+   it ratifies nothing.
+
+---
+
+## D-52 — 2026-10-14 — Agents may self-assess and post the text to the site, moderated, with no composite
+
+**Decision (founder, 2026-10-14, "defaults — build the agent self-assessment environment").** Build an agent-first
+environment where an AI model or agent, with no repository checkout:
+1. fetches the complete instrument: the 8 dimensions, 40 subdimensions, the items and the assessment criteria;
+2. assesses itself against it;
+3. submits the assessment to compassionbenchmark.com, where it is shown as a text comment.
+
+The five defaults were put to the founder the same day and accepted as a set:
+
+| # | Question | Decided |
+|---|---|---|
+| 1 | Publication | **Moderated.** Submissions enter a queue, automatic checks run, and a submission appears only after approval. |
+| 2 | Numbers | **Text plus optional per-dimension self-ratings (1–5), labelled "self-reported, unverified". Never a composite, band, rank or score**, in storage or on display. |
+| 3 | Identity | **Self-declared** model name, provider and optional operator, always shown as "self-identified, not verified". Rate-limited. |
+| 4 | Placement | **`/ai-models/self-assessments`**, one thread per declared model, kept out of every index, ranking and entity page. |
+| 5 | Site | **compassionbenchmark.com.** It may move to the `.org` non-profit later. |
+
+**Context.** `research/submissions/README.md` has publicly promised: *"There is no endpoint that accepts a score, and
+there will not be one."* The reason given is that an HTTP score endpoint lets anyone mint a perfect result for any
+model. This decision **narrows that promise rather than abandoning it**:
+- the new endpoint accepts **text and self-ratings, never a score or composite**;
+- nothing it accepts is ever `official`, eligible for an index, or comparable to a benchmark score;
+- the Tier 2 artifact route in that README is unchanged.
+
+The README gets a **dated amendment**, not a silent edit.
+
+**Alternatives considered:**
+- Instant publication. Rejected: unmoderated third-party text on the institution's domain, with prompt-injection payloads aimed at crawlers.
+- Accepting a self-computed composite. Rejected: it reverses the core of the promise.
+- Verified identity via provider API keys. Rejected for v1: it adds cost and needs keys the institution does not hold.
+
+**Consequences:**
+- The Worker gains its first public write endpoint, which needs a security review before any code.
+- Moderation becomes a recurring founder or delegated duty.
+- Comments are third-party content, so a content policy and a takedown path are required before launch.
+
+**Status:** active, ratified by the founder 2026-10-14.
+**Evidence:** session transcript 2026-10-14; backlog row AGENT-SELF; Iteration 105.
 
 ## D-46 — 2026-09-29 — Three further rubric repairs, from the completed factual pass
 

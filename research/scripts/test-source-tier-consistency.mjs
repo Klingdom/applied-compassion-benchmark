@@ -25,6 +25,28 @@
  *   allowlist may only shrink, and any NEW mismatch fails. Removing an entry
  *   requires a published correction, not an edit.
  *
+ * TIER SOURCE OF TRUTH (founder decision 2026-10-15, TIER-1014 option b)
+ *   The assessment markdown Tier column and the briefing's sourceTier are on
+ *   DIFFERENT scales (the 2026-10-14 briefing tiers rtp.pt/dnoticias.pt as 2,
+ *   the assessment table says 4/5). The briefing's real upstream is the change
+ *   proposal, whose evidence[] carries sourceTier on the definition in
+ *   .claude/agents/overnight-assessor.md. So, per URL per date:
+ *     1. PROPOSAL   - sourceTier from research/change-proposals/*-<date>.json
+ *                     (any nested object carrying url + sourceTier). Wins.
+ *     2. ASSESSMENT - only for a briefing URL absent from every same-date
+ *                     proposal: compared against the assessment markdown exactly
+ *                     as before, so historical coverage is not weakened.
+ *   Two same-date proposals giving one URL different tiers is itself a failure
+ *   (never first-wins). Unparseable proposal files are counted and reported.
+ *   Every mismatch record carries source: "proposal" | "assessment" and its file.
+ *
+ *   SCOPE: rule 1 applies only to briefings dated on or after the site's
+ *   TIER_RELIABILITY_CUTOFF_DATE (read from the UI file, currently 2026-09-17),
+ *   the first date that renders tier badges. Earlier briefings render none, and
+ *   keep the original assessment-only comparison, verified identical (216 pairs,
+ *   0 differences) on 2026-10-15. Applying rule 1 to them surfaced 14 mismatches
+ *   and 1 in-file proposal conflict in unrendered tier values (backlog TIER-PRE).
+ *
  * Usage:
  *   node research/scripts/test-source-tier-consistency.mjs
  *   node research/scripts/test-source-tier-consistency.mjs --report   # list every mismatch
@@ -38,7 +60,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, "..", "..");
 const BRIEFINGS = join(REPO, "site", "src", "data", "updates", "daily");
 const ASSESSMENTS = join(REPO, "research", "assessments");
+const PROPOSALS = join(REPO, "research", "change-proposals");
 const ALLOWLIST = join(REPO, "research", "known-tier-mismatches.json");
+const TIER_UI = join(REPO, "site", "src", "components", "updates", "briefing", "evidence", "index.tsx");
+
+/**
+ * Proposal precedence applies only from the date the site starts SHOWING tier
+ * badges. Read from the UI constant itself so the two cannot drift. Briefings
+ * before it render no badge (the site prints a notice that earlier briefings
+ * mixed two tier scales), so for them the gate keeps its original behaviour:
+ * assessment comparison only, unchanged.
+ */
+export const BADGE_CUTOFF = (() => {
+  const m = readFileSync(TIER_UI, "utf8").match(/TIER_RELIABILITY_CUTOFF_DATE\s*=\s*"(\d{4}-\d{2}-\d{2})"/);
+  if (!m) throw new Error(`TIER_RELIABILITY_CUTOFF_DATE not found in ${TIER_UI}`);
+  return m[1];
+})();
 
 /** Normalise a URL enough to match across two hand-written citations. */
 export function canonicalUrl(u) {
@@ -115,9 +152,78 @@ export function assessmentTiers(md) {
   return out;
 }
 
+/**
+ * Per-URL tiers from one date's change proposals. Takes [{file, text}] so it can
+ * be exercised on in-memory fixtures. Disagreeing duplicates are collected as
+ * conflicts, unparseable files as parseFailures - neither is swallowed.
+ */
+export function proposalTiersFromFiles(files) {
+  const map = new Map();
+  const conflicts = [];
+  const parseFailures = [];
+  for (const { file, text } of files) {
+    let doc;
+    try {
+      doc = JSON.parse(text);
+    } catch (e) {
+      parseFailures.push({ file, error: e.message });
+      continue;
+    }
+    for (const { url, tier } of briefingTiers(doc)) {
+      const prior = map.get(url);
+      if (!prior) map.set(url, { tier, file });
+      else if (prior.tier !== tier) {
+        conflicts.push({ url, tierA: prior.tier, fileA: prior.file, tierB: tier, fileB: file });
+      }
+    }
+  }
+  return { map, conflicts, parseFailures };
+}
+
+export function proposalTiersForDate(date) {
+  if (!existsSync(PROPOSALS)) return { map: new Map(), conflicts: [], parseFailures: [] };
+  const files = readdirSync(PROPOSALS)
+    .filter((f) => f.endsWith(`-${date}.json`))
+    .sort()
+    .map((f) => ({ file: f, text: readFileSync(join(PROPOSALS, f), "utf8") }));
+  return proposalTiersFromFiles(files);
+}
+
+/**
+ * Pure comparison: proposal wins; assessment is the fallback for URLs the
+ * proposals do not mention. cited / proposals are Maps url -> {tier, file}.
+ */
+export function compareTiers(date, pairs, proposals, cited) {
+  const mismatches = [];
+  let fromProposals = 0;
+  let fromAssessments = 0;
+  for (const { url, tier } of pairs) {
+    const p = proposals.get(url);
+    if (p) {
+      fromProposals += 1;
+      if (p.tier !== tier) {
+        mismatches.push({ date, url, briefingTier: tier, assessmentTier: p.tier, referenceTier: p.tier, source: "proposal", file: p.file });
+      }
+      continue;
+    }
+    const a = cited.get(url);
+    if (!a) continue; // cited in neither; out of scope
+    fromAssessments += 1;
+    if (a.tier !== tier) {
+      mismatches.push({ date, url, briefingTier: tier, assessmentTier: a.tier, referenceTier: a.tier, source: "assessment", file: a.file });
+    }
+  }
+  return { checked: fromProposals + fromAssessments, fromProposals, fromAssessments, mismatches };
+}
+
 export function mismatchesForDate(date) {
+  const empty = { date, checked: 0, fromProposals: 0, fromAssessments: 0, mismatches: [], conflicts: [], parseFailures: [] };
   const bPath = join(BRIEFINGS, `${date}.json`);
-  if (!existsSync(bPath)) return { date, checked: 0, mismatches: [], reason: "no briefing" };
+  if (!existsSync(bPath)) return { ...empty, reason: "no briefing" };
+
+  // Before the badge cutoff: no proposal precedence (original behaviour).
+  const { map: proposals, conflicts, parseFailures } =
+    date >= BADGE_CUTOFF ? proposalTiersForDate(date) : { map: new Map(), conflicts: [], parseFailures: [] };
 
   const cited = new Map();
   for (const f of readdirSync(ASSESSMENTS)) {
@@ -126,17 +232,14 @@ export function mismatchesForDate(date) {
       if (!cited.has(url)) cited.set(url, { tier, file: f });
     }
   }
-  if (cited.size === 0) return { date, checked: 0, mismatches: [], reason: "no same-date assessment citations" };
 
-  const mismatches = [];
-  let checked = 0;
-  for (const { url, tier } of briefingTiers(JSON.parse(readFileSync(bPath, "utf8")))) {
-    const a = cited.get(url);
-    if (!a) continue; // cited nowhere in the same-date assessments; out of scope
-    checked += 1;
-    if (a.tier !== tier) mismatches.push({ date, url, briefingTier: tier, assessmentTier: a.tier, file: a.file });
-  }
-  return { date, checked, mismatches };
+  const r = compareTiers(date, briefingTiers(JSON.parse(readFileSync(bPath, "utf8"))), proposals, cited);
+  return {
+    date,
+    ...r,
+    conflicts: conflicts.map((c) => ({ date, ...c })),
+    parseFailures: parseFailures.map((c) => ({ date, ...c })),
+  };
 }
 
 /**
@@ -240,6 +343,10 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
   const all = dates.map(mismatchesForDate);
   const totalChecked = all.reduce((n, r) => n + r.checked, 0);
   const found = all.flatMap((r) => r.mismatches);
+  const totalFromProposals = all.reduce((n, r) => n + r.fromProposals, 0);
+  const totalFromAssessments = all.reduce((n, r) => n + r.fromAssessments, 0);
+  const proposalConflicts = all.flatMap((r) => r.conflicts);
+  const proposalParseFailures = all.flatMap((r) => r.parseFailures);
 
   // --emit-allowlist prints the exception entries as JSON for a human to paste
   // into known-tier-mismatches.json. It deliberately does NOT write the file:
@@ -249,7 +356,7 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
   if (process.argv.includes("--emit-allowlist")) {
     console.log(
       JSON.stringify(
-        found.map((m) => ({
+        found.filter((m) => m.source === "assessment").map((m) => ({
           date: m.date,
           url: m.url,
           briefingTier: m.briefingTier,
@@ -265,13 +372,13 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
   }
 
   if (process.argv.includes("--report")) {
-    console.log(`briefings: ${dates.length} · url/tier pairs compared: ${totalChecked} · mismatches: ${found.length}\n`);
+    console.log(`briefings: ${dates.length} · url/tier pairs compared: ${totalChecked} (${totalFromProposals} vs proposals, ${totalFromAssessments} vs assessments) · mismatches: ${found.length} · proposal conflicts: ${proposalConflicts.length} · proposal parse failures: ${proposalParseFailures.length}\n`);
     const byDate = {};
     for (const m of found) (byDate[m.date] = byDate[m.date] || []).push(m);
     for (const [d, ms] of Object.entries(byDate)) {
       console.log(`${d} — ${ms.length}`);
       for (const m of ms) {
-        console.log(`   briefing T${m.briefingTier} vs assessment T${m.assessmentTier}  ${m.url.slice(0, 92)}`);
+        console.log(`   briefing T${m.briefingTier} vs ${m.source} T${m.referenceTier} (${m.file})  ${m.url.slice(0, 92)}`);
       }
     }
     process.exit(0);
@@ -300,19 +407,95 @@ if (process.argv[1] && process.argv[1].endsWith("test-source-tier-consistency.mj
     assert(cited.get(pairs[0].url) !== pairs[0].tier, "the fixture is not actually a mismatch");
   });
 
+  // -- TIER-1014 option b: proposal precedence, assessment fallback ----------
+  const FX_BRIEFING = [{ url: "example.com/x", tier: 2 }];
+  const fxProposals = (tier) => proposalTiersFromFiles([
+    { file: "fx-2026-01-01.json", text: JSON.stringify({ evidence: [{ url: "https://example.com/x", sourceTier: tier }] }) },
+  ]).map;
+  const fxCited = (md) => {
+    const m = new Map();
+    for (const [u, t] of assessmentTiers(md)) m.set(u, { tier: t, file: "fx.md" });
+    return m;
+  };
+
+  check("(a) a briefing tier contradicting a proposal tier is detected", () => {
+    const r = compareTiers("2026-01-01", FX_BRIEFING, fxProposals(4), new Map());
+    assert(r.mismatches.length === 1 && r.mismatches[0].source === "proposal", `got ${JSON.stringify(r.mismatches)}`);
+    assert(r.fromProposals === 1 && r.fromAssessments === 0, "pair was not counted against the proposal");
+  });
+
+  check("(b) briefing agrees with proposal while the assessment md disagrees: NOT a mismatch", () => {
+    const r = compareTiers("2026-01-01", FX_BRIEFING, fxProposals(2), fxCited("[T5](https://example.com/x)"));
+    assert(r.mismatches.length === 0, `proposal precedence failed: ${JSON.stringify(r.mismatches)}`);
+    assert(r.fromProposals === 1 && r.fromAssessments === 0, "pair should be compared against the proposal only");
+  });
+
+  check("(c) URL absent from proposals but contradicting the assessment md: still detected (fallback)", () => {
+    const other = proposalTiersFromFiles([
+      { file: "fx-2026-01-01.json", text: JSON.stringify({ evidence: [{ url: "https://other.example/y", sourceTier: 2 }] }) },
+    ]).map;
+    const r = compareTiers("2026-01-01", FX_BRIEFING, other, fxCited("[T5](https://example.com/x)"));
+    assert(r.mismatches.length === 1 && r.mismatches[0].source === "assessment", `got ${JSON.stringify(r.mismatches)}`);
+    assert(r.fromAssessments === 1, "fallback pair was not counted against the assessment");
+  });
+
+  check("(d) two proposals disagreeing on one URL are detected, not first-wins", () => {
+    const mk = (file, tier) => ({ file, text: JSON.stringify({ evidence: [{ url: "https://example.com/x", sourceTier: tier }] }) });
+    const r = proposalTiersFromFiles([mk("a-2026-01-01.json", 2), mk("b-2026-01-01.json", 4)]);
+    assert(r.conflicts.length === 1, `expected 1 conflict, got ${r.conflicts.length}`);
+    const agree = proposalTiersFromFiles([mk("a-2026-01-01.json", 2), mk("b-2026-01-01.json", 2)]);
+    assert(agree.conflicts.length === 0, "agreeing duplicates must not be a conflict");
+  });
+
+  check("a non-JSON proposal is counted as a parse failure, not swallowed", () => {
+    const r = proposalTiersFromFiles([{ file: "bad-2026-01-01.json", text: "{not json" }]);
+    assert(r.parseFailures.length === 1, "parse failure was not reported");
+  });
+
+  check("(e) the proposal extractor is not vacuous on real data (2026-10-14)", () => {
+    const r = proposalTiersForDate("2026-10-14");
+    assert(r.map.size > 0, "no url/sourceTier pairs extracted from the 2026-10-14 proposals");
+    console.log(`      (${r.map.size} distinct urls from 2026-10-14 proposals)`);
+  });
+
+  check(`(f) proposal precedence starts at the badge cutoff read from the UI (${BADGE_CUTOFF})`, () => {
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(BADGE_CUTOFF), "cutoff is not a date");
+    // Real data: 2026-10-14 is after the cutoff and HAS proposal pairs, so it must use them.
+    const post = mismatchesForDate("2026-10-14");
+    assert(post.fromProposals > 0, "a post-cutoff briefing compared nothing against its proposals");
+    // Real data: 2026-07-31 has proposals (openai-2026-07-31.json) but precedes the cutoff, so it must not.
+    assert(proposalTiersForDate("2026-07-31").map.size > 0, "positive control lost: 2026-07-31 has no proposal pairs");
+    const pre = mismatchesForDate("2026-07-31");
+    assert(pre.fromProposals === 0, `a pre-cutoff briefing used proposals (${pre.fromProposals} pairs)`);
+  });
+
+  check(`proposals: no same-date URL carries two tiers (${proposalConflicts.length} conflicts)`, () => {
+    assert(
+      proposalConflicts.length === 0,
+      proposalConflicts.map((c) => `${c.date}: ${c.url} T${c.tierA} (${c.fileA}) vs T${c.tierB} (${c.fileB})`).join("\n    ")
+    );
+  });
+
+  check(`proposals: every same-date change-proposal file parses (${proposalParseFailures.length} failures)`, () => {
+    assert(
+      proposalParseFailures.length === 0,
+      proposalParseFailures.map((c) => `${c.date}: ${c.file}: ${c.error}`).join("\n    ")
+    );
+  });
+
   console.log("\nthe published briefings\n");
 
   const known = existsSync(ALLOWLIST) ? JSON.parse(readFileSync(ALLOWLIST, "utf8")) : { mismatches: [] };
-  const keyOf = (m) => `${m.date}|${m.url}|${m.briefingTier}|${m.assessmentTier}`;
+  const keyOf = (m) => `${m.source === "proposal" ? "proposal|" : ""}${m.date}|${m.url}|${m.briefingTier}|${m.assessmentTier}`;
   const allowed = new Set((known.mismatches || []).map(keyOf));
 
-  check(`no NEW tier contradiction (${totalChecked} pairs compared across ${dates.length} briefings)`, () => {
+  check(`no NEW tier contradiction (${totalChecked} pairs: ${totalFromProposals} vs proposals, ${totalFromAssessments} vs assessments; ${dates.length} briefings)`, () => {
     const unexpected = found.filter((m) => !allowed.has(keyOf(m)));
     assert(
       unexpected.length === 0,
       `${unexpected.length} tier contradiction(s) not in the dated allowlist:\n    ` +
         unexpected
-          .map((m) => `${m.date}: briefing T${m.briefingTier} vs ${m.file} T${m.assessmentTier} — ${m.url}`)
+          .map((m) => `${m.date}: briefing T${m.briefingTier} vs ${m.source} ${m.file} T${m.referenceTier} — ${m.url}`)
           .join("\n    ") +
         "\n    A briefing's tier badge is what a reader uses to judge evidence strength. Correct the briefing " +
         "BEFORE it is published; if it is already published, AUTONOMY §1c forbids a silent edit — publish a " +
