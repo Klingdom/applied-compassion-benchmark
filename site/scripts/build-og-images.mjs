@@ -5,6 +5,8 @@
  * Generates 1200×630 OG card PNGs for:
  *   - Special Briefings: site/public/og/special-<slug>.png
  *   - Daily Briefings:   site/public/og/updates-<date>.png
+ *   - AI Model Watch:    site/public/og/model-watch-<date>.png
+ *   - Insights:          site/public/og/insights-<slug>.png
  *
  * Card design: dark-theme background, "COMPASSION BENCHMARK" eyebrow,
  * title, dek/date, small geometric own-data motif (no third-party imagery).
@@ -398,6 +400,59 @@ try {
   console.warn("[build-og-images] Error processing special briefings:", e.message);
 }
 
+// ─── 5b. AI Model Watch editions and Insights posts ──────────────────────────
+// docs/ARCHITECTURE_AI_MODEL_WATCH.md section 4: cards show the title, the date and a label only. No dek, no model
+// names, no counts. Output: og/model-watch-<date>.png and og/insights-<slug>.png. Same safety rules as every card:
+// a render error warns and moves on, a missing manifest skips.
+
+let watchCount = 0;
+let watchSkipped = 0;
+
+const longDate = (iso) => {
+  const m = typeof iso === "string" ? iso.match(/^(\d{4})-(\d{2})-(\d{2})$/) : null;
+  if (!m) return iso ?? "";
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+};
+
+async function writeLabelCard(file, { title, label, date }) {
+  try {
+    const png = await renderCard({ title, dek: "", label, date: longDate(date) });
+    if (!png) {
+      console.warn(`  [skip] ${file} — render returned null`);
+      watchSkipped++;
+      return;
+    }
+    writeFileSync(join(OUT_DIR, file), png);
+    console.log(`  [ok] ${file} (${png.length} bytes)`);
+    watchCount++;
+  } catch (e) {
+    console.warn(`  [skip] ${file} — error: ${e.message}`);
+    watchSkipped++;
+  }
+}
+
+try {
+  const editionsManifest = join(DATA_DIR, "model-watch", "editions-manifest.json");
+  if (existsSync(editionsManifest)) {
+    for (const e of JSON.parse(readFileSync(editionsManifest, "utf8")).editions ?? []) {
+      await writeLabelCard(`model-watch-${e.date}.png`, {
+        title: `AI Model Watch, ${longDate(e.date)}`,
+        label: "AI Model Watch",
+        date: e.date,
+      });
+    }
+  }
+  const insightsManifest = join(DATA_DIR, "insights", "manifest.json");
+  if (existsSync(insightsManifest)) {
+    for (const p of JSON.parse(readFileSync(insightsManifest, "utf8")).posts ?? []) {
+      await writeLabelCard(`insights-${p.slug}.png`, { title: p.title ?? "", label: "Insights", date: p.date });
+    }
+  }
+} catch (e) {
+  console.warn("[build-og-images] Error processing AI Model Watch / Insights cards:", e.message);
+}
+
 // ─── 6. Generate daily briefing cards ────────────────────────────────────────
 
 let dailyCount = 0;
@@ -478,6 +533,8 @@ try {
 console.log(
   `[build-og-images] Done. Special: ${specialCount} generated` +
   (specialSkipped ? `, ${specialSkipped} skipped` : "") +
+  `. Model Watch and Insights: ${watchCount} generated` +
+  (watchSkipped ? `, ${watchSkipped} skipped` : "") +
   `. Daily: ${dailyCount} generated` +
   (dailySkipped ? `, ${dailySkipped} skipped` : "") +
   `.`,

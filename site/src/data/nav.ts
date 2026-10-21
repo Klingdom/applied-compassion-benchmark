@@ -11,6 +11,19 @@ export const mainNav = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+/**
+ * AI Models submenu (docs/UX_FLOWS_AI_MODEL_WATCH.md section 6). The label for the
+ * leaderboards route says what the page is, not that a model ranking exists.
+ */
+export const aiModelsNav = [
+  { label: "Overview", href: "/ai-models" },
+  { label: "Model tracker", href: "/ai-models/tracker" },
+  { label: "Weekly Watch", href: "/ai-models/watch" },
+  { label: "Why no model ranking", href: "/ai-models/leaderboards" },
+  { label: "Method", href: "/ai-models/methodology" },
+  { label: "Insights", href: "/insights" },
+] as const;
+
 export const footerLinks = {
   // Sourced from the canonical indexRegistry.ts — same 8 indexes, same
   // display order and labels as before; a future index is now added here
@@ -24,6 +37,7 @@ export const footerLinks = {
     { label: "Research", href: "/research" },
     { label: "2026 Report", href: "/updates/special/state-of-institutional-compassion-2026" },
     { label: "Daily Updates", href: "/updates" },
+    { label: "Insights", href: "/insights" },
     { label: "Browse archive", href: "/updates/archive" },
     { label: "Data", href: "/data" },
     { label: "For Press & Researchers", href: "/media" },
@@ -31,6 +45,14 @@ export const footerLinks = {
     { label: "JSON feed", href: "/updates/feed.json" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
+  ],
+  aiModels: [
+    { label: "Overview", href: "/ai-models" },
+    { label: "Model tracker", href: "/ai-models/tracker" },
+    { label: "Weekly Watch", href: "/ai-models/watch" },
+    { label: "Why no model ranking", href: "/ai-models/leaderboards" },
+    { label: "AI model method", href: "/ai-models/methodology" },
+    { label: "Insights", href: "/insights" },
   ],
   services: [
     { label: "Pricing", href: "/pricing" },

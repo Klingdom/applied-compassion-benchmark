@@ -24,7 +24,13 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = join(__dirname, "..");
-const SCAN_ROOTS = [join(SITE_ROOT, "src", "app"), join(SITE_ROOT, "src", "components")];
+const SCAN_ROOTS = [
+  { dir: join(SITE_ROOT, "src", "app"), ext: ".tsx" },
+  { dir: join(SITE_ROOT, "src", "components"), ext: ".tsx" },
+  // Insights post sources (docs/ARCHITECTURE_AI_MODEL_WATCH.md section 6): a post states repo-derived counts with {{TOKENS}}, never digits.
+  // Present only in a full checkout (Docker has no research/). FACT_CHECK files quote counts on purpose and are not posts.
+  { dir: join(SITE_ROOT, "..", "research", "insights"), ext: ".md", skip: /^FACT_CHECK/i },
+];
 
 // ─── Allowlist ────────────────────────────────────────────────────────────────
 // file:substring pairs that are permitted to contain a literal match. Keep
@@ -79,45 +85,72 @@ function isAllowed(fileRel, matchedText, line) {
   );
 }
 
-function collectFiles(dir) {
+function collectFiles(dir, ext = ".tsx", skip = null) {
   const results = [];
   if (!existsSync(dir)) return results;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) {
-      results.push(...collectFiles(full));
-    } else if (entry.isFile() && full.endsWith(".tsx")) {
+      results.push(...collectFiles(full, ext, skip));
+    } else if (entry.isFile() && full.endsWith(ext) && !(skip && skip.test(entry.name))) {
       results.push(full);
     }
   }
   return results;
 }
 
+/** Every pattern hit in one file's content: [{ lineIdx, name, line }]. Shared by the real scan and the planted probes. */
+function scanContent(content, fileRel) {
+  const hits = [];
+  const lines = content.split("\n");
+  for (const { name, re } of PATTERNS) {
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(content)) !== null) {
+      // Report the line the match starts on.
+      const lineIdx = content.slice(0, m.index).split("\n").length - 1;
+      const line = lines[lineIdx];
+      if (isAllowed(fileRel, m[0], line)) continue;
+      hits.push({ lineIdx, name, line });
+    }
+  }
+  return hits;
+}
+
+// Planted-probe negative controls (a planted defect fails; its removal passes). Run before the real scan: a guard whose probes
+// do not behave proves nothing about the files it then reads.
+{
+  const probes = [
+    ["a post stating the scored-entity count as digits", "We score 1,325 entities across the indexes.\n", 1],
+    ["a post stating the index-family count in words", "The site has eight indexes.\n", 1],
+    ["a post stating a stale per-index count", "Only 21 states are scored.\n", 1],
+    ["a post using tokens instead of digits (the defect removed)", "We score {{SCORED_ENTITY_COUNT}} entities across {{INDEX_COUNT}} indexes.\n", 0],
+  ];
+  for (const [label, text, want] of probes) {
+    const got = scanContent(text, "research/insights/probe.md").length > 0 ? 1 : 0;
+    if (got !== want) {
+      console.error("no-stale-counts: PROBE FAILED (" + label + "): wanted " + (want ? "a hit" : "no hit"));
+      process.exit(1);
+    }
+  }
+  console.log("  ok   " + probes.length + " planted probes behave (3 defects trip, 1 clean text passes)");
+}
+
 let failures = [];
 let filesScanned = 0;
 
 for (const root of SCAN_ROOTS) {
-  for (const file of collectFiles(root)) {
+  for (const file of collectFiles(root.dir, root.ext, root.skip)) {
     filesScanned++;
     const fileRel = relative(SITE_ROOT, file).split("\\").join("/");
     const content = readFileSync(file, "utf8");
-    const lines = content.split("\n");
-
-    for (const { name, re } of PATTERNS) {
-      re.lastIndex = 0;
-      let m;
-      while ((m = re.exec(content)) !== null) {
-        // Report the line the match starts on.
-        const lineIdx = content.slice(0, m.index).split("\n").length - 1;
-        const line = lines[lineIdx];
-        if (isAllowed(fileRel, m[0], line)) continue;
-        failures.push(`${fileRel}:${lineIdx + 1}  [${name}]  "${line.trim()}"`);
-      }
+    for (const { lineIdx, name, line } of scanContent(content, fileRel)) {
+      failures.push(`${fileRel}:${lineIdx + 1}  [${name}]  "${line.trim()}"`);
     }
   }
 }
 
-console.log(`\nno-stale-counts: scanned ${filesScanned} files under src/app and src/components\n`);
+console.log(`\nno-stale-counts: scanned ${filesScanned} files under src/app, src/components and research/insights\n`);
 
 if (failures.length > 0) {
   console.log(`  FAIL ${failures.length} stale/hard-coded catalogue count(s) found:\n`);

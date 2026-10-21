@@ -1,10 +1,18 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 107 (founder decision D-56, 2026-10-15: the tier gate now takes a briefing's tier from the same-date change proposals, scoped to briefings that render tier badges (from 2026-09-17); `test:source-tiers` 20/0 and the 2026-10-14 briefing passes. `docs/MODEL_TESTING_V2_PROPOSAL.md` proposes a hybrid local + hosted design with cross-family API judges and one approval per wave. Production on c5b53451; chain 74 steps)
+Last change: Iteration 108 (founder directive D-57, 2026-10-16: AI Model Watch (tracker of 62 sourced models, first weekly edition, model-ranking conditions page) and six fact-checked Insights articles; 6 new chain steps; chain 80 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-10-16 (Iteration 108 — **founder directive D-57: AI Model Watch and Insights**): six new routes. The tracker
+> lists sourced models with no ratings, and the first weekly edition covers 2026-09-01 to 2026-10-16. The leaderboards
+> page says no model ranking is published, lists the conditions for one, and routes to the AI Labs index. /insights has
+> six articles. Catalog and releases were independently fact-checked (42 confirmed, 5 corrected, 0 dropped), and so
+> were the articles (52 of 55 claims confirmed, 3 corrected). A compassion review caught two must-fix items in the agent
+> checklist (consent before forwarding an abuse disclosure; not stopping help at any sign of distress), and both are
+> fixed. The registry and release-watch stores remain empty by design.
 
 > 2026-10-15 (Iteration 107 — **founder decision D-56: tier gate repointed; model-testing redesign**): CS-2 now
 > compares a briefing's tier badge with the change proposal it came from, falling back to the assessment only for
@@ -24,15 +32,6 @@ Last change: Iteration 107 (founder decision D-56, 2026-10-15: the tier gate now
 > changes" against 7 filed) and reworded it. **Packet H** (5 documents) completes the nonprofit library. Nothing is
 > committed or deployed.
 
-> 2026-10-14 (Iteration 104 — **the entity research cycle, 13 days after the last one**): 1,329 entities scanned
-> (search quality degraded and disclosed: a clean result means not surfaced, not confirmed clean), 11 assessed, every
-> composite and every published baseline independently recomputed (0 drift). **Lisbon 60.9 → 35.0 and Porto 60.9 →
-> 32.5 are first measurements of seeded values**, held under RC-2 (13 of the last 14 first assessments came in below
-> their seed); the 2-vs-3 evidence-gap default moves them by ~7 points and is now RC-3. Briefing 2026-10-14 validated,
-> **not deployed** — production still serves 2026-10-01 from `c5b53451`. The host was rebooted, so WEEKLY-1 now
-> waits only on founder ratification of `weekly-v1`. A founder directive (AGENT-SELF: agents self-assess and post
-> comments) is logged and blocked on five decisions, the first being whether to reverse the published
-> "no endpoint that accepts a score" commitment.
 
 
 
@@ -58,7 +57,7 @@ Last change: Iteration 107 (founder decision D-56, 2026-10-15: the tier gate now
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **74 steps**, generated 2026-10-15 (73: `test:model-dashboard`, 74: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **80 steps**, generated 2026-10-16 (AI Model Watch added 21-25: `test:markdown-lite`, `test:model-watch`, `validate:model-watch`, `test:insights-lint`, `lint:insights`, and 67: `test:model-watch-html`; 66: `test:model-dashboard`, 80: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (46, re-run 2026-09-30) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts. **This list names 17 of the 57 chain steps and its per-script counts date from 2026-09-15**; the chain itself is the source of truth, and the step count in the heading above is generated. Do not cite the per-script figures without re-running them.
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (**19,702**/0, re-run 2026-09-30; was 19,687), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (**15** known, shrink-only — re-counted 2026-09-30; the 16 here was stale, and since the list is shrink-only a stale high figure hides a ratchet that has already tightened), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** still `RESULT: PASS`, 0 real gaps — but **62 WARN lines**, not the 25 claimed here until 2026-09-30 (re-counted: 5 alias-slug report, **19** same-date change proposal, and **38** further WARNs in older recording conventions that the 25 never covered). The three figures were wrong in both directions at once, which is what an un-regenerated count does. Previously 25 blocking FAILs, all false (RS-1). Regenerate with `cd site && npm run validate:rotation-state | grep -c "^    ! "`.
@@ -118,6 +117,16 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-14 (Iteration 104 — **the entity research cycle, 13 days after the last one**): 1,329 entities scanned
+> (search quality degraded and disclosed: a clean result means not surfaced, not confirmed clean), 11 assessed, every
+> composite and every published baseline independently recomputed (0 drift). **Lisbon 60.9 → 35.0 and Porto 60.9 →
+> 32.5 are first measurements of seeded values**, held under RC-2 (13 of the last 14 first assessments came in below
+> their seed); the 2-vs-3 evidence-gap default moves them by ~7 points and is now RC-3. Briefing 2026-10-14 validated,
+> **not deployed** — production still serves 2026-10-01 from `c5b53451`. The host was rebooted, so WEEKLY-1 now
+> waits only on founder ratification of `weekly-v1`. A founder directive (AGENT-SELF: agents self-assess and post
+> comments) is logged and blocked on five decisions, the first being whether to reverse the published
+> "no endpoint that accepts a score" commitment.
 
 > 2026-10-02 (Iteration 90 — **AI model results: template, report and page**): twelve specialist briefs became one
 > binding standard for every future model assessment (`docs/AI_MODEL_ASSESSMENT_TEMPLATE.md`), and the first report

@@ -9,6 +9,8 @@ import { renderableEntries, reportsIndexRenders } from "@/lib/model-report-gate"
 import { reportPath } from "@/lib/model-report-facts";
 import { DASHBOARD_PATH } from "../../scripts/lib/model-dashboard-core.mjs";
 import { waveLinks } from "@/lib/model-dashboard-facts";
+import { MODEL_WATCH_FACTS } from "@/lib/model-watch-facts";
+import { INSIGHTS, lastModifiedOf } from "@/lib/insights";
 
 // G4 (organic-growth Wave 1, safe-subset additions only): dimension-name
 // slugs for the /dimensions/<slug> pages. Matches the dimension `name`
@@ -53,7 +55,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // per-model or leaderboard route exists. Unofficial pilot reports
   // (/ai-models/reports/<run_id>, D-29a) are added below from the wave manifest
   // and only while they render.
-  const aiModelPages = ["/ai-models", "/ai-models/methodology"];
+  // The 2026-10-16 founder directive added the tracker, the weekly watch and the leaderboards explainer
+  // (docs/ARCHITECTURE_AI_MODEL_WATCH.md section 4; still no per-model route, anchor or ranking). Editions and
+  // Insights posts are added below from their manifests.
+  const aiModelPages = [
+    "/ai-models",
+    "/ai-models/methodology",
+    "/ai-models/tracker",
+    "/ai-models/watch",
+    "/ai-models/leaderboards",
+  ];
+  const editions = MODEL_WATCH_FACTS.editions;
+  const insightPosts = INSIGHTS;
 
   const infoPages = [
     "/methodology",
@@ -140,6 +153,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.75,
+    })),
+    // AI Model Watch editions: one URL per compiled edition. A published edition is immutable (corrections are appended).
+    ...editions.map((e) => ({
+      url: `${BASE}/ai-models/watch/${e.date}`,
+      lastModified: e.date,
+      changeFrequency: "never" as const,
+      priority: 0.7,
+    })),
+    // Insights: the listing, then each post (lastmod = the later of its date and its latest correction).
+    { url: `${BASE}/insights`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    ...insightPosts.map((p) => ({
+      url: `${BASE}/insights/${p.slug}`,
+      lastModified: lastModifiedOf(p),
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
     })),
     ...infoPages.map((path) => ({
       url: `${BASE}${path}`,

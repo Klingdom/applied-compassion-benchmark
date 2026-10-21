@@ -92,6 +92,44 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
 
+### New rows (2026-10-16, Iteration 108) — AI Model Watch and Insights follow-ups
+
+- **MW-WEEKLY — publish the next AI Model Watch edition within 7 days** (runbook `.claude/commands/weekly-ai-model-watch.md`).
+  - *Done when:* edition 2026-10-23 is compiled, validated and approved for deploy, and its window starts 2026-10-17.
+  - v1: I4 S5 L2 C4 − E2 − R1 = 12 · v2: Dl +3 → **15**.
+- **MW-PRIMARY — `microsoft-mai-thinking-1` has no primary source** (MW-S2 warning).
+  - *Done when:* a Microsoft page is cited, or the row is marked `heldOut`.
+  - v1: I2 S4 L1 C4 − E1 − R1 = 9.
+- **MW-HELD — the GPT-6.1 Astra cancellation is held** because its sources are secondary only.
+  - *Done when:* a primary OpenAI source is found and the item is published in a later edition, or it is confirmed that
+    none exists.
+  - v1: I2 S4 L1 C3 − E1 − R1 = 8.
+- **INS-DIM-NAME — `/ai-labs` FAQ says "Systemic Impact" while `dimensions.ts` says "Systemic Thinking"**
+  (Insights writer, 2026-10-16).
+  - *Done when:* one name is used site-wide and a test pins dimension names to `dimensions.ts`.
+  - v1: I3 S4 L1 C5 − E1 − R1 = 11.
+- **INS-GARCIA — Bloomberg Law reported on 2026-01-08 that Garcia v. Character Technologies settled**
+  (the fact-checker's suggestion, unverified by the coordinator).
+  - *Done when:* the settlement is verified and added to `the-case-for-compassion-first-ai` as a dated correction, or
+    rejected.
+  - v1: I2 S3 L1 C3 − E1 − R1 = 7.
+- **MW-CONDITIONS — three ranking conditions show "unknown"** (judge-panel and agreement-floors were corrected to
+  "not met" on 2026-10-16; claim-audits, legal-review and one-axis remain).
+  - *Done when:* each is derived from a repo fact or a dated founder statement.
+  - v1: I3 S4 L2 C4 − E1 − R1 = 11.
+- **PAGEFIND-SIZE — the search index is 3.44 MB against a 2 MB target** (build warning, 2026-10-16).
+  - *Done when:* the index is under target, or the target is re-set with a reason.
+  - v1: I2 S2 L1 C4 − E2 − R1 = 6.
+- **MW-SIGNUP-TAG — `/ai-models/watch` signup uses `model-watch-hub-list`, while the architecture says
+  `model-watch-edition`.**
+  - *Done when:* analytics picks one and the tag is pinned by a test.
+  - v1: I2 S3 L1 C5 − E1 − R1 = 9.
+- **Founder decisions open from the PRD:**
+  - FD-2: model ranking (default: not yet);
+  - FD-4: weekly automation (default: not yet);
+  - FD-5: the email send process;
+  - FD-6 and FD-9: paid products (default: not yet).
+
 ### New rows (2026-10-15, Iteration 106) — founder directive: models, nonprofit, AI pages, measurement content
 
 - **BRF-MOVE — DONE 2026-10-15 (It. 106), uncommitted.** The rendered labels word unapplied figures as measurements, and

@@ -29,6 +29,7 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-57 | 2026-10-16 | AI Model Watch section (tracker, weekly editions, model-ranking conditions) and an /insights blog; publish | active, directed by the founder 2026-10-16 |
 | D-56 | 2026-10-15 | Tier gate compares briefings against the change proposals (TIER-1014 option b); the 2026-10-14 briefing is approved for publication | active, decided by the founder 2026-10-15 |
 | D-52 | 2026-10-14 | Agents may self-assess and post the text to the site, moderated, with no composite (narrows the published no-score-endpoint promise) | active, ratified by the founder 2026-10-14 |
 | D-46 | 2026-09-29 | Three further rubric repairs (Ohio evaluation clock, fentanyl 'painless', Title VI attribution) | **proposed (awaiting founder)** |
@@ -62,6 +63,30 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-57 — 2026-10-16 — AI Model Watch and Insights
+
+**Directive (founder, 2026-10-16, verbatim):** "Please work autonomously to create a new and improved section of the
+website that focuses on identifying current list of AI models, weekly announcements of new versions and models, weekly
+analysis and reporting of models, and any other helpful information and content for benchmarking and compassion
+leaderboards. Expand and improve on this concept and publish great content, pages, and products related to continuous AI
+model assessments and reporting. Also create blog pages for AI Agents and AI labs that explain the value and benefits of
+compassion first AI and ML."
+
+**What it decides:**
+1. **New routes.** `/ai-models/tracker`, `/ai-models/watch`, `/ai-models/watch/[date]`, `/ai-models/leaderboards`, `/insights` and `/insights/[slug]`.
+   - This amends D-30's "section, not a route" for releases: the content now exists.
+   - Specs: `docs/PRD_AI_MODEL_WATCH.md`, `docs/ARCHITECTURE_AI_MODEL_WATCH.md`, `docs/DATA_MODEL_AI_MODEL_WATCH.md` and `docs/UX_FLOWS_AI_MODEL_WATCH.md`.
+2. **"Publish"** is read as approval to commit and deploy this section, together with the already-validated Iterations 104–107 beneath it.
+
+**What it does not decide:**
+- **A model leaderboard, band or composite is still not published (PRD FD-2, default "not yet").**
+  - The directive asks for "compassion leaderboards". The one that legitimately exists is the AI Labs organisational index, and the new pages feature it.
+  - A model ranking would change the methodology (D-29, D-29a), so it waits on the conditions listed at `/ai-models/leaderboards`.
+- **New paid products** need founder pricing and Gumroad listings (PRD FD-6 and FD-9). The pages link only existing products and the free signup.
+- **Weekly automation** (scheduler, unattended commits) stays founder-gated (FD-4). The runbook is `.claude/commands/weekly-ai-model-watch.md`.
 
 ---
 

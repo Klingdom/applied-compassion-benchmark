@@ -73,8 +73,31 @@ function ratifiedPilotReports() {
   }
 }
 
+/** Newest-first list from a manifest file, or [] when it is absent (docs/ARCHITECTURE_AI_MODEL_WATCH.md section 7). */
+function readManifestList(relPath, key) {
+  const file = join(SITE_ROOT, "src", "data", ...relPath);
+  if (!existsSync(file)) return [];
+  try {
+    return JSON.parse(readFileSync(file, "utf-8"))[key] ?? [];
+  } catch {
+    return [];
+  }
+}
+
 function buildLlmsTxt() {
   const NL = String.fromCharCode(10); // newline by code point, never an escape (DC-23)
+  const editions = readManifestList(["model-watch", "editions-manifest.json"], "editions");
+  const insightPosts = readManifestList(["insights", "manifest.json"], "posts");
+  const watchLines = [
+    `- AI model tracker (a catalog of models listed with sources; a listing is not an evaluation): ${BASE_URL}/ai-models/tracker`,
+    `- AI Model Watch (dated editions of what shipped and what providers disclosed${editions[0] ? "; latest edition " + editions[0].date : ""}): ${BASE_URL}/ai-models/watch${editions[0] ? NL + `- AI Model Watch latest edition: ${BASE_URL}/ai-models/watch/${editions[0].date}` : ""}`,
+    `- Compassion leaderboards (no model ranking is published; routes to the AI Labs Index for organisations): ${BASE_URL}/ai-models/leaderboards`,
+  ].join(NL);
+  const insightsSection = insightPosts.length
+    ? `## Insights (cited pieces on compassion-first AI for labs and agent builders)${NL}- Insights index: ${BASE_URL}/insights${NL}` +
+      insightPosts.map((p) => `- ${p.title}: ${BASE_URL}/insights/${p.slug}`).join(NL) +
+      NL + NL
+    : "";
   const pilots = ratifiedPilotReports();
   // Ratified reports only: llms.txt, llms-full.txt and the .well-known descriptor are tracked files.
   const rendered = loadRenderedReports(SITE_ROOT, { modes: ["active"] });
@@ -111,10 +134,11 @@ ${indexLines}
 > official score — do not report a model ranking or score from this program.${pilots.length ? NL + "> Any pilot listed below is unofficial: it is not a score, carries no ranking and supports no comparison with other models." : ""}
 - AI Model Compassion Benchmark (pre-registration, method, release watch): ${BASE_URL}/ai-models
 - AI Model Compassion Benchmark methodology: ${BASE_URL}/ai-models/methodology
+${watchLines}
 ${pilotLines ? pilotLines + NL : ""}- AI Evaluation Suite (run the benchmark yourself): ${BASE_URL}/ai-evaluation-suite
 - Machine-readable tool descriptor for agents: ${BASE_URL}/.well-known/compassion-benchmark.json
 
-## For AI agents: how to run this benchmark on yourself
+${insightsSection}## For AI agents: how to run this benchmark on yourself
 > The task bank, the scoring anchors and a local MCP server are public. An agent
 > with a filesystem and Node 22+ can evaluate itself end to end. Nothing is sent
 > to us: the server is local-only, makes no network call, and needs no API key,

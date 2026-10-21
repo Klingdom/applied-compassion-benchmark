@@ -1,5 +1,79 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 108 — 2026-10-16 (founder directive D-57: AI Model Watch section and Insights blog; publish)
+
+**Selected by founder directive.** This is a deviation from the top v2 item (BRF-MOVE-2, 17). It is the fourth
+consecutive founder-directed loop (105–108). Meta-review 12 (R2) recommends a founder lane with its own WIP limit, which
+is not yet adopted. The full lifecycle ran: Define → Design → Build → Validate → Deploy.
+
+**Define.**
+- `docs/PRD_AI_MODEL_WATCH.md` (product-manager).
+- **Hard line kept:** no per-model ranking, band or composite. The existing gates (G19, G20, G24, banned lexicon) forbid
+  it, and so do D-29 and D-29a. The "compassion leaderboard" featured is the AI Labs index.
+
+**Design.**
+- `docs/ARCHITECTURE_AI_MODEL_WATCH.md` and `docs/DATA_MODEL_AI_MODEL_WATCH.md` (system-architect).
+- `docs/UX_FLOWS_AI_MODEL_WATCH.md` (ux-designer).
+- **Coordinator decision:** a separate `site/src/data/model-watch/` store. `registry-v1` and `releases-v1` require a hash
+  or archive per row (K9) and a scan record (K12), and research rows have neither. Filling them would invent evidence, so
+  both stay empty and untouched (MW-X3 check: byte-unchanged).
+
+**Research and verification of content.**
+- **Catalog and releases:** a general-purpose agent with web tools produced 62 models from 18 providers and 22 releases
+  dated 2026-09-01 to 2026-10-16. An independent fact-check (`research/ai-model-tracker/FACT_CHECK_2026-10-16.md`)
+  checked all 22 releases and 25 catalog rows: 42 confirmed, 5 corrected, 0 dropped, and 116 URLs all https.
+  - The coordinator applied the 6 MUST-FIX corrections and 5 recommendations through a parser (S8). V2: the coordinator
+    independently confirmed the Fable 5 date and context window with curl ("June 9, 2026", "1M tokens").
+  - Import lexicon gate MW-L1: 8 phrases were reworded with their meaning preserved ("top tier", "recommended",
+    "behind", and the band word "Critical" for OpenAI's Preparedness level).
+  - MW-S2: the GPT-6.1 Astra item has secondary sources only, so it is held out of the log (`heldOut`), not published.
+  - Import: 62 + 21 rows, 0 unsourced, `--check` idempotent.
+- **Edition 2026-10-16:** 21 releases, 10 disclosures, 30 sources.
+  - The compiler showed 3 pilot reports inside the window, which contradicted my first draft ("No model was measured").
+    I recompiled before publication; it was never published, so this is not a retro-edit.
+- **Six Insights posts** (two writer agents):
+  - **Independent fact-check:** 55 claims, 52 confirmed, 3 corrected, 0 fabricated
+    (`research/insights/FACT_CHECK_2026-10-16.md`).
+  - **Compassion-steward review:** 2 must-fix items, both in the agent checklist. M1: an abuse disclosure is forwarded
+    without consent or a safe channel. M2: the task stops on any sign of distress. Both are fixed, along with S1–S7. The
+    judge family is named (Anthropic's Claude), checked against `PROTOCOL.json`.
+  - V2: the Equity-lowest claim was recomputed by the coordinator: EQU 2.424 against 2.603 next, over 50 labs.
+
+**Build.**
+- **Backend (backend-engineer):**
+  - stores, import, edition compiler, validator, `insights` build and lint;
+  - shared `markdown-lite` (special briefings regenerate byte-identical);
+  - 6 new chain steps, with planted probes for every rule.
+- **Frontend (frontend-engineer):** 6 routes, plus hub refresh, nav dropdown, footer, sitemap, llms.txt and OG cards.
+- **Gate corrections before first commit:**
+  - The new HTML gate had 3 false positives: the site-footer `/score-watch` link, model tags inside source URLs, and
+    entity-encoded titles.
+  - Fixed by scoping each rule to `<main>`, to visible text, or to entity-decoded text, with probes and mutation checks.
+  - No rule was loosened. The gate had never been committed.
+  - The coordinator corrected 2 ranking-condition statuses from "unknown" to "not met", verified (all judges are Claude;
+    no agreement floors have been ratified).
+
+**Validation.** See the addendum below for the build, `npm test` and QA results.
+
+**Pathspec:** `.claude/commands/weekly-ai-model-watch.md docs/PRD_AI_MODEL_WATCH.md docs/ARCHITECTURE_AI_MODEL_WATCH.md docs/DATA_MODEL_AI_MODEL_WATCH.md docs/UX_FLOWS_AI_MODEL_WATCH.md research/ai-model-tracker/ research/insights/ research/model-watch/ site/package.json site/public/llms.txt site/public/og/insights-*.png site/public/og/model-watch-2026-10-16.png site/scripts/ site/src/app/ai-models/ site/src/app/insights/ site/src/app/sitemap.ts site/src/components/insights/ site/src/components/model-watch/ site/src/components/layout/Footer.tsx site/src/components/layout/Navbar.tsx site/src/data/nav.ts site/src/data/insights/ site/src/data/model-ranking-conditions.ts site/src/data/model-watch/ site/src/lib/insights.ts site/src/lib/model-watch-facts.ts DECISIONS.md ITERATION_LOG.md SYSTEM_HEALTH.md IMPROVEMENT_BACKLOG.md CHANGELOG.md`.
+Excluded: the held America-at-250 pair and the nonprofit library.
+Added to the pathspec: `docs/ai-model-watch/` (the QA report).
+
+**Validation addendum (2026-10-20).**
+- The first post-fix rebuild and test job was killed by the harness for low memory (no result). It was rerun after
+  the founder said "continue improving", with 2.4 GB free.
+- `npm run build`: exit 0. Pagefind indexed 2,028 of 2,045 HTML files (17 service pages excluded); index 3.44 MB,
+  above the 2 MB target (backlog PAGEFIND-SIZE, already filed).
+- `npm test`: exit 0. No line reports a non-zero `failed` count; 65 lines report `0 failed`.
+- QA H1 (raw tokens) re-checked on the fresh `site/out`: 0 files under `out/insights` or `out/ai-models` contain `{{`.
+  V8 positive control: the same grep finds `{{` in `out/_next/static/chunks/`.
+- QA H2 (summaries shown as quotes): 0 `<blockquote` under `out/insights` or `out/ai-models/watch`. V8 positive control:
+  the same grep finds `<blockquote` in `out/ai-evaluation-suite.html` and `out/ai-models/reports/pilot-2026-10-01.html`.
+- V6 scope: `site/scripts/build-special-briefings.mjs` changed only to call the shared `markdown-lite` renderer; the
+  special-briefing output was byte-identical in the earlier check.
+- **Outcome:** validated. The commit rests on D-57 ("publish"). The push and deploy also ship Iterations 104–107, which
+  were committed earlier, so they wait for an explicit founder go-ahead.
+
 ## Iteration 107 — 2026-10-15 (founder decision D-56: repoint the tier gate, publish the briefings, redesign model testing)
 
 **Selected by founder decision.** The decision text is in `DECISIONS.md` D-56. This is a deviation from the top v2

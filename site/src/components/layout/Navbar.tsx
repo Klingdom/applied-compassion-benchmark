@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { mainNav, footerLinks } from "@/data/nav";
+import { mainNav, footerLinks, aiModelsNav } from "@/data/nav";
 import NavbarSearch from "@/components/layout/NavbarSearch";
 import LogoMark from "@/components/ui/LogoMark";
 
@@ -10,6 +11,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
   const [indexesOpen, setIndexesOpen] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
+  const pathname = usePathname() ?? "";
+  const aiActive = pathname.startsWith("/ai-models") || pathname.startsWith("/insights");
+  const aiRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const indexesRef = useRef<HTMLDivElement>(null);
 
@@ -22,9 +27,23 @@ export default function Navbar() {
       if (indexesRef.current && !indexesRef.current.contains(e.target as Node)) {
         setIndexesOpen(false);
       }
+      if (aiRef.current && !aiRef.current.contains(e.target as Node)) {
+        setAiOpen(false);
+      }
     }
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setAiOpen(false);
+        setIndexesOpen(false);
+        setToolsOpen(false);
+      }
+    }
+    document.addEventListener("keydown", handleKey);
     document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
   }, []);
 
   return (
@@ -76,7 +95,47 @@ export default function Navbar() {
             )}
           </div>
 
-          {mainNav.filter((item) => item.label !== "Indexes").map((item) => (
+          {mainNav.filter((item) => item.label !== "Indexes").map((item) => item.label === "AI Models" ? (
+            <div key={item.href} ref={aiRef} className="relative">
+              {/* Split control: the label is a real link to the hub (works without JavaScript), the chevron opens the submenu. */}
+              <div className={`flex items-center gap-1 text-[0.96rem] ${aiActive ? "text-text" : "text-muted"}`}>
+                <Link
+                  href="/ai-models"
+                  aria-current={pathname === "/ai-models" ? "page" : undefined}
+                  className="hover:text-text transition-colors"
+                >
+                  AI Models
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setAiOpen(!aiOpen)}
+                  aria-expanded={aiOpen}
+                  aria-haspopup="true"
+                  aria-label="AI Models submenu"
+                  className="hover:text-text transition-colors p-1"
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${aiOpen ? "rotate-180" : ""}`}>
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              {aiOpen && (
+                <div className="absolute top-full left-0 mt-2 w-[260px] bg-panel border border-line rounded-[14px] shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden">
+                  {aiModelsNav.map((sub) => (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      onClick={() => setAiOpen(false)}
+                      aria-current={pathname === sub.href ? "page" : undefined}
+                      className="block px-4 py-3 text-[0.95rem] text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)] transition-colors border-b border-line last:border-b-0"
+                    >
+                      {sub.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
             <Link
               key={item.href}
               href={item.href}
@@ -180,7 +239,21 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          {mainNav.filter((item) => item.label !== "Indexes").map((item) => (
+          <div className="py-2 text-muted-subtle text-[0.82rem] font-semibold uppercase tracking-wider mt-1">
+            AI Models
+          </div>
+          {aiModelsNav.map((sub) => (
+            <Link
+              key={sub.href}
+              href={sub.href}
+              onClick={() => setOpen(false)}
+              aria-current={pathname === sub.href ? "page" : undefined}
+              className="block py-2 pl-2 text-muted hover:text-text transition-colors"
+            >
+              {sub.label}
+            </Link>
+          ))}
+          {mainNav.filter((item) => item.label !== "Indexes" && item.label !== "AI Models").map((item) => (
             <Link
               key={item.href}
               href={item.href}

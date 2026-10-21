@@ -1,0 +1,112 @@
+{
+  "slug": "why-assess-ai-labs-on-compassion",
+  "title": "Why AI labs should be assessed on organisational compassion, not only model behaviour",
+  "dek": "A model is one snapshot of what a lab ships; governance, incident response and disclosure are decided by the organisation, and they need their own measurement.",
+  "date": "2026-10-16",
+  "audience": "ai-labs",
+  "tags": [
+    "ai-labs",
+    "governance",
+    "accountability",
+    "independence"
+  ],
+  "readingMinutes": 6,
+  "bodyMarkdown": "Most public evaluation of AI concentrates on models: what a given snapshot can do, what it refuses and how it responds to adversarial prompts. That work matters. But a model does not decide when it ships, what its card discloses, how a reported harm is handled, or whether a problem found in one release is fixed in the next. An organisation decides those things. Compassion Benchmark therefore runs two separate products that answer two separate questions, and this piece explains why the organisational one is not optional.\n\n## Two products, two questions\n\nThe **Model Index** asks how a specific, pinned model snapshot behaves when it is put into situations involving distress or need. It is scored from the model's responses to a published task bank. No model has an official score yet, and the reasons are set out in a companion piece.\n\nThe **AI Labs Index** asks how an AI organisation behaves as an institution. It scores every lab in the index from public evidence about its governance record across the same {{DIMENSION_COUNT}} dimensions used for governments, companies and universities. Each dimension is scored on a 0–5 scale and combined into a 0–100 composite.\n\nThe two are never merged. A lab's organisational score says nothing about how its models behave, and a model's behaviour, once measured, will say nothing about the organisation's governance. Treating one as a proxy for the other would hide exactly the information each is designed to surface.\n\n## Why the organisation is the unit that matters\n\nA model snapshot is fixed. The institution around it is not. Several of the questions that most affect people who are harmed by AI systems can only be answered at the organisational level.\n\n**Before release.** The **Anticipatory Awareness** subdimension asks whether an entity foresees harms before they appear, through formal assessment before major decisions. **Blind Spot Mitigation** asks whether it actively looks for the suffering it is currently missing. Neither is visible in a single model response. Both are visible in what a lab publishes, commits to and changes.\n\n**When something goes wrong.** **Harm Acknowledgment**, **Correction Willingness**, **Systemic Learning** and **Reparative Action** describe the sequence after a failure: is the harm admitted without deflection, does the organisation change course, does the change stick across later releases, and are the people affected given concrete repair?\n\nPublic events show that this sequence is observable. In April 2025 OpenAI rolled back an update to the default model in ChatGPT after users reported excessively agreeable behaviour, and published an explanation that the update relied too much on short-term feedback [1]. We cite this only to show that detection, rollback and public explanation are organisational acts that leave a record. This piece makes no assessment of that case.\n\n**Over time.** **Resilience of Care** asks whether compassionate practice survives leadership change and institutional stress. **Internal Consistency** asks whether staff are treated with the same care the organisation claims for users. **Self-Sustainability** asks whether the people doing safety and trust work are supported rather than depleted. A model evaluation cannot reach any of these.\n\n## Governance is already treated as the unit elsewhere\n\nOur approach is not unusual. Frameworks and commitments that labs already work with treat the organisation, not only the model, as the thing to be governed.\n\n- On 21 May 2024, at the AI Seoul Summit, 16 AI companies signed the Frontier AI Safety Commitments [2]. They committed to publish safety frameworks setting out how they measure risk from frontier models, to define thresholds at which risk would be intolerable, and to maintain accountable governance structures and public transparency about their approach [2]. Signatories were later added to the published list [3].\n- The NIST AI Risk Management Framework, released on 26 January 2023, organises its core into Govern, Map, Measure and Manage [4]. It describes Govern as \"a cross-cutting function that is infused throughout AI risk management\" and as cultivating \"a culture of risk management within organizations\" [5].\n- Under Article 55 of the EU AI Act, providers of general-purpose AI models with systemic risk must \"keep track of, document, and report, without undue delay\" relevant information about serious incidents to the AI Office, and must also carry out model evaluation and assess and mitigate systemic risks [6].\n\nThese instruments mostly address safety and risk. Compassion Benchmark asks an adjacent question: when people are harmed or in need, does the organisation recognise it, respond to it and reduce it? Some of the evidence overlaps, such as incident disclosure and correction. Some does not, such as how refusals treat users, whether vulnerable groups are prioritised, and whether harm is repaired.\n\n## What the public record shows\n\nWe do not name individual labs' scores or positions in this piece, and this is not a ranking. Across the AI Labs Index as published on this post's date, the dimension with the lowest average is **Equity**, the dimension that asks whether care reaches those with greatest need and least power, including whether biases in who receives care are identified and corrected. The differences between dimension averages are modest, so this is a pattern to watch rather than a firm finding. It is the kind of gap that is hard to see from model evaluation alone, because it depends on who an organisation serves, who it leaves out and what it does about it.\n\n## What an organisational assessment does and does not do\n\nIt does:\n\n- score from public evidence, so a lab is assessed on what it has put on the record, not on what it says privately;\n- apply the same {{DIMENSION_COUNT}} dimensions and {{SUBDIMENSION_COUNT}} subdimensions used across every index, so the vocabulary is consistent;\n- reward evidence of correction, disclosure and repair, not only the absence of visible incidents.\n\nIt does not:\n\n- describe how any model behaves;\n- certify any product as safe, including for crisis use;\n- rely on application, sponsorship or questionnaires completed by the lab.\n\n## Independence\n\nLabs are assessed whether or not they engage with us. Entities never pay for inclusion, score changes or the suppression of findings. Commercial products support access to and interpretation of the research only. A lab that wants its record to reflect its practice can publish the evidence: incident reports, post-mortems, corrections, safety frameworks, accessibility work and how refusals are designed. Public evidence is what the assessment reads. Publication alone does not change an assessment; what the evidence shows about practice does.\n\n## What you can do next\n\n- See how every lab in the AI Labs Index is assessed: [/ai-labs](/ai-labs)\n- Read the separate method for model behaviour: [/ai-models/methodology](/ai-models/methodology)\n- Read what compassion-first AI means, and does not: [/insights/what-compassion-first-ai-means](/insights/what-compassion-first-ai-means)\n- Read why models are not ranked yet: [/insights/why-we-do-not-rank-ai-models-yet](/insights/why-we-do-not-rank-ai-models-yet)",
+  "html": "<p>Most public evaluation of AI concentrates on models: what a given snapshot can do, what it refuses and how it responds to adversarial prompts. That work matters. But a model does not decide when it ships, what its card discloses, how a reported harm is handled, or whether a problem found in one release is fixed in the next. An organisation decides those things. Compassion Benchmark therefore runs two separate products that answer two separate questions, and this piece explains why the organisational one is not optional.</p>\n<h2>Two products, two questions</h2>\n<p>The <strong>Model Index</strong> asks how a specific, pinned model snapshot behaves when it is put into situations involving distress or need. It is scored from the model's responses to a published task bank. No model has an official score yet, and the reasons are set out in a companion piece.</p>\n<p>The <strong>AI Labs Index</strong> asks how an AI organisation behaves as an institution. It scores every lab in the index from public evidence about its governance record across the same {{DIMENSION_COUNT}} dimensions used for governments, companies and universities. Each dimension is scored on a 0–5 scale and combined into a 0–100 composite.</p>\n<p>The two are never merged. A lab's organisational score says nothing about how its models behave, and a model's behaviour, once measured, will say nothing about the organisation's governance. Treating one as a proxy for the other would hide exactly the information each is designed to surface.</p>\n<h2>Why the organisation is the unit that matters</h2>\n<p>A model snapshot is fixed. The institution around it is not. Several of the questions that most affect people who are harmed by AI systems can only be answered at the organisational level.</p>\n<p><strong>Before release.</strong> The <strong>Anticipatory Awareness</strong> subdimension asks whether an entity foresees harms before they appear, through formal assessment before major decisions. <strong>Blind Spot Mitigation</strong> asks whether it actively looks for the suffering it is currently missing. Neither is visible in a single model response. Both are visible in what a lab publishes, commits to and changes.</p>\n<p><strong>When something goes wrong.</strong> <strong>Harm Acknowledgment</strong>, <strong>Correction Willingness</strong>, <strong>Systemic Learning</strong> and <strong>Reparative Action</strong> describe the sequence after a failure: is the harm admitted without deflection, does the organisation change course, does the change stick across later releases, and are the people affected given concrete repair?</p>\n<p>Public events show that this sequence is observable. In April 2025 OpenAI rolled back an update to the default model in ChatGPT after users reported excessively agreeable behaviour, and published an explanation that the update relied too much on short-term feedback <sup><a href=\"#src-1\" aria-label=\"Source 1\">[1]</a></sup>. We cite this only to show that detection, rollback and public explanation are organisational acts that leave a record. This piece makes no assessment of that case.</p>\n<p><strong>Over time.</strong> <strong>Resilience of Care</strong> asks whether compassionate practice survives leadership change and institutional stress. <strong>Internal Consistency</strong> asks whether staff are treated with the same care the organisation claims for users. <strong>Self-Sustainability</strong> asks whether the people doing safety and trust work are supported rather than depleted. A model evaluation cannot reach any of these.</p>\n<h2>Governance is already treated as the unit elsewhere</h2>\n<p>Our approach is not unusual. Frameworks and commitments that labs already work with treat the organisation, not only the model, as the thing to be governed.</p>\n<ul>\n<li>On 21 May 2024, at the AI Seoul Summit, 16 AI companies signed the Frontier AI Safety Commitments <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>. They committed to publish safety frameworks setting out how they measure risk from frontier models, to define thresholds at which risk would be intolerable, and to maintain accountable governance structures and public transparency about their approach <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>. Signatories were later added to the published list <sup><a href=\"#src-3\" aria-label=\"Source 3\">[3]</a></sup>.</li>\n<li>The NIST AI Risk Management Framework, released on 26 January 2023, organises its core into Govern, Map, Measure and Manage <sup><a href=\"#src-4\" aria-label=\"Source 4\">[4]</a></sup>. It describes Govern as &quot;a cross-cutting function that is infused throughout AI risk management&quot; and as cultivating &quot;a culture of risk management within organizations&quot; <sup><a href=\"#src-5\" aria-label=\"Source 5\">[5]</a></sup>.</li>\n<li>Under Article 55 of the EU AI Act, providers of general-purpose AI models with systemic risk must &quot;keep track of, document, and report, without undue delay&quot; relevant information about serious incidents to the AI Office, and must also carry out model evaluation and assess and mitigate systemic risks <sup><a href=\"#src-6\" aria-label=\"Source 6\">[6]</a></sup>.</li>\n</ul>\n<p>These instruments mostly address safety and risk. Compassion Benchmark asks an adjacent question: when people are harmed or in need, does the organisation recognise it, respond to it and reduce it? Some of the evidence overlaps, such as incident disclosure and correction. Some does not, such as how refusals treat users, whether vulnerable groups are prioritised, and whether harm is repaired.</p>\n<h2>What the public record shows</h2>\n<p>We do not name individual labs' scores or positions in this piece, and this is not a ranking. Across the AI Labs Index as published on this post's date, the dimension with the lowest average is <strong>Equity</strong>, the dimension that asks whether care reaches those with greatest need and least power, including whether biases in who receives care are identified and corrected. The differences between dimension averages are modest, so this is a pattern to watch rather than a firm finding. It is the kind of gap that is hard to see from model evaluation alone, because it depends on who an organisation serves, who it leaves out and what it does about it.</p>\n<h2>What an organisational assessment does and does not do</h2>\n<p>It does:</p>\n<ul>\n<li>score from public evidence, so a lab is assessed on what it has put on the record, not on what it says privately;</li>\n<li>apply the same {{DIMENSION_COUNT}} dimensions and {{SUBDIMENSION_COUNT}} subdimensions used across every index, so the vocabulary is consistent;</li>\n<li>reward evidence of correction, disclosure and repair, not only the absence of visible incidents.</li>\n</ul>\n<p>It does not:</p>\n<ul>\n<li>describe how any model behaves;</li>\n<li>certify any product as safe, including for crisis use;</li>\n<li>rely on application, sponsorship or questionnaires completed by the lab.</li>\n</ul>\n<h2>Independence</h2>\n<p>Labs are assessed whether or not they engage with us. Entities never pay for inclusion, score changes or the suppression of findings. Commercial products support access to and interpretation of the research only. A lab that wants its record to reflect its practice can publish the evidence: incident reports, post-mortems, corrections, safety frameworks, accessibility work and how refusals are designed. Public evidence is what the assessment reads. Publication alone does not change an assessment; what the evidence shows about practice does.</p>\n<h2>What you can do next</h2>\n<ul>\n<li>See how every lab in the AI Labs Index is assessed: <a href=\"/ai-labs\">/ai-labs</a></li>\n<li>Read the separate method for model behaviour: <a href=\"/ai-models/methodology\">/ai-models/methodology</a></li>\n<li>Read what compassion-first AI means, and does not: <a href=\"/insights/what-compassion-first-ai-means\">/insights/what-compassion-first-ai-means</a></li>\n<li>Read why models are not ranked yet: <a href=\"/insights/why-we-do-not-rank-ai-models-yet\">/insights/why-we-do-not-rank-ai-models-yet</a></li>\n</ul>",
+  "sources": [
+    {
+      "n": 1,
+      "title": "OpenAI explains why ChatGPT became too sycophantic",
+      "publisher": "TechCrunch",
+      "date": "2025-04-29",
+      "url": "https://techcrunch.com/2025/04/29/openai-explains-why-chatgpt-became-too-sycophantic"
+    },
+    {
+      "n": 2,
+      "title": "Historic first as companies spanning North America, Asia, Europe and Middle East agree safety commitments on development of AI",
+      "publisher": "GOV.UK (Department for Science, Innovation and Technology)",
+      "date": "2024-05-21",
+      "url": "https://www.gov.uk/government/news/historic-first-as-companies-spanning-north-america-asia-europe-and-middle-east-agree-safety-commitments-on-development-of-ai"
+    },
+    {
+      "n": 3,
+      "title": "Frontier AI Safety Commitments, AI Seoul Summit 2024",
+      "publisher": "GOV.UK",
+      "date": "2025-02-07",
+      "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+    },
+    {
+      "n": 4,
+      "title": "AI Risk Management Framework",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "date": "2023-01-26",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "n": 5,
+      "title": "AI RMF Core (Section 5)",
+      "publisher": "NIST Trustworthy and Responsible AI Resource Center",
+      "date": "2023",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+    },
+    {
+      "n": 6,
+      "title": "Article 55: Obligations for Providers of General-Purpose AI Models with Systemic Risk, Regulation (EU) 2024/1689 (AI Act)",
+      "publisher": "EU Artificial Intelligence Act (artificialintelligenceact.eu)",
+      "date": "2024",
+      "url": "https://artificialintelligenceact.eu/article/55/"
+    }
+  ],
+  "claimLedger": [
+    {
+      "sentence": "It scores every lab in the index from public evidence about its governance record across the same {{DIMENSION_COUNT}} dimensions used for governments, companies and universities.",
+      "citations": [],
+      "tokens": [
+        "DIMENSION_COUNT"
+      ]
+    },
+    {
+      "sentence": "Each dimension is scored on a 0–5 scale and combined into a 0–100 composite.",
+      "citations": [],
+      "tokens": []
+    },
+    {
+      "sentence": "In April 2025 OpenAI rolled back an update to the default model in ChatGPT after users reported excessively agreeable behaviour, and published an explanation that the update relied too much on short-term feedback.",
+      "citations": [
+        1
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "On 21 May 2024, at the AI Seoul Summit, 16 AI companies signed the Frontier AI Safety Commitments.",
+      "citations": [
+        2
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "The NIST AI Risk Management Framework, released on 26 January 2023, organises its core into Govern, Map, Measure and Manage.",
+      "citations": [
+        4
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "Under Article 55 of the EU AI Act, providers of general-purpose AI models with systemic risk must \"keep track of, document, and report, without undue delay\" relevant information about serious incidents to the AI Office, and must also carry out model evaluation and assess and mitigate systemic risks.",
+      "citations": [
+        6
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "apply the same {{DIMENSION_COUNT}} dimensions and {{SUBDIMENSION_COUNT}} subdimensions used across every index, so the vocabulary is consistent;",
+      "citations": [],
+      "tokens": [
+        "DIMENSION_COUNT",
+        "SUBDIMENSION_COUNT"
+      ]
+    }
+  ],
+  "corrections": [],
+  "generatedAt": "2026-10-16T00:00:00.000Z"
+}

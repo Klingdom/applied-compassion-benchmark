@@ -1,0 +1,614 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "asOf": "2026-10-16",
+    "rowCount": 21,
+    "sourceFiles": [
+      {
+        "path": "research/ai-model-tracker/releases-2026-10-16.json",
+        "sha256": "db796f8aac8171b234ac5ede6dba33cb9d88a6fa941a39d8721dc33322e7dce5"
+      }
+    ],
+    "meaning": "Cited desk-research log of announcements. Not the release-watch store (releases-v1.json); counts are never combined.",
+    "validator": "site/scripts/lib/model-watch-validator.mjs"
+  },
+  "rows": [
+    {
+      "id": "2026-10-15--anthropic--no-model--policy",
+      "date": "2026-10-15",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": null,
+      "catalogId": null,
+      "kind": "policy",
+      "summary": "Anthropic gave six METR staff employee-like access and said METR will publish its risk assessments; outlined a three-tier framework for outside evaluators.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Independent evaluation access policy; Anthropic says it cannot veto METR publications but may require narrow redactions.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+          "title": "Anthropic: An update on independent evaluators",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-15--meta--muse-spark-open--open-weights-release",
+      "date": "2026-10-15",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "modelName": "Muse Spark Open",
+      "catalogId": "meta-muse-spark-open",
+      "kind": "open-weights-release",
+      "summary": "Meta released Muse Spark Open weights (816B total, ~42B active, 1M context) under the Muse Model License.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://dev.meta.ai/resources/blog/build-with-muse-spark-open",
+          "title": "Meta AI: Build with Muse Spark Open",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+          "title": "Hugging Face: meta-models/Muse-Spark-Open-816B-A42B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-15--nvidia--nemotron-3-5-super-vl-and-nemotron-3-5-bolt--open-weights-release",
+      "date": "2026-10-15",
+      "provider": "NVIDIA",
+      "providerSlug": "nvidia",
+      "modelName": "Nemotron 3.5 Super VL and Nemotron 3.5 Bolt",
+      "catalogId": "nvidia-nemotron-3-5-super-vl",
+      "kind": "open-weights-release",
+      "summary": "Nemotron 3.5 Super VL (120B, 12B active) and Bolt 74B-A9B released with open weights; Bolt E4B 4GB announced for 23 Oct.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "title": "NVIDIA blog: Nemotron 3.5 Super VL and Bolt",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "title": "Hugging Face: nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-14--ibm--granite-switch-4-1-8b-30b--open-weights-release",
+      "date": "2026-10-14",
+      "provider": "IBM",
+      "providerSlug": "ibm",
+      "modelName": "Granite Switch 4.1 (8B, 30B)",
+      "catalogId": null,
+      "kind": "open-weights-release",
+      "summary": "IBM published Granite Switch 4.1 8B and 30B on Hugging Face under Apache 2.0; the 8B card lists a 14 Oct 2026 release date.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "title": "Hugging Face: ibm-granite/granite-switch-4.1-8b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+          "title": "Hugging Face: ibm-granite/granite-switch-4.1-30b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-12--meta--muse-wonder-muse-wonder-full--new-model",
+      "date": "2026-10-12",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "modelName": "Muse Wonder / Muse Wonder Full",
+      "catalogId": "meta-muse-wonder",
+      "kind": "new-model",
+      "summary": "Meta announced Muse Wonder (Meta Model API and Muse Code) and Muse Wonder Full (Muse Code subscribers), aimed at agent tasks.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Meta describes CBRN and cyber safeguards under its Superintelligence Scaling Framework; full safety report promised but not yet published.",
+      "sources": [
+        {
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "title": "Meta: Muse Wonder announcement",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-08--anthropic--no-model--policy",
+      "date": "2026-10-08",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": null,
+      "catalogId": null,
+      "kind": "policy",
+      "summary": "Usage Policy update published, effective 12 Nov: new sections on deceptive campaigns, rewritten surveillance and weapons rules, and physical-hardware requirements.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Adds a prohibition on sustained, needless cruelty toward Claude (model-welfare related).",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+          "title": "Anthropic: 2026 Usage Policy update",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-08--google--gemini-3-7-flash-and-gemini-3-5-flash--deprecation",
+      "date": "2026-10-08",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "modelName": "Gemini 3.7 Flash and Gemini 3.5 Flash",
+      "catalogId": "google-gemini-3-7-flash",
+      "kind": "deprecation",
+      "summary": "gemini-3.7-flash deprecated with requests routed to gemini-3.8-flash; gemini-3.5-flash deprecated with requests routed to gemini-3.6-flash.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-07--anthropic--claude-haiku-5-5--new-version",
+      "date": "2026-10-07",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": "Claude Haiku 5.5",
+      "catalogId": "anthropic-claude-haiku-5-5",
+      "kind": "new-version",
+      "summary": "Haiku 5.5 released as Anthropic's small model, from $0.10/$0.50 per million tokens; first Haiku with an adjustable effort setting.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Haiku 5.5 system card published, describing its cyber safeguards.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-haiku-5-5",
+          "title": "Anthropic: Introducing Claude Haiku 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "title": "Anthropic newsroom",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-10-06--mistral--mistral-large-4--new-model",
+      "date": "2026-10-06",
+      "provider": "Mistral AI",
+      "providerSlug": "mistral",
+      "modelName": "Mistral Large 4",
+      "catalogId": "mistral-large-4",
+      "kind": "new-model",
+      "summary": "Mistral Large 4 (~1T total, 52B active parameters) released as a public preview API; weights promised by the end of October.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Mistral says it is red-teaming the model with cybersecurity partners and state authorities before releasing weights.",
+      "sources": [
+        {
+          "url": "https://mistral.ai/news/mistral-large-4",
+          "title": "Mistral AI: Introducing Mistral Large 4",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-30--anthropic--claude-sonnet-4-5--deprecation",
+      "date": "2026-09-30",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": "Claude Sonnet 4.5",
+      "catalogId": "anthropic-claude-sonnet-4-5",
+      "kind": "deprecation",
+      "summary": "Anthropic notified developers that claude-sonnet-4-5-20250929 retires on the Claude API on 30 Nov 2026; Anthropic names claude-sonnet-5-5 as the replacement.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-30--google--gemini-4-argon--new-model",
+      "date": "2026-09-30",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "modelName": "Gemini 4 Argon",
+      "catalogId": "google-gemini-4-argon",
+      "kind": "new-model",
+      "summary": "Gemini 4 Argon announced with phased access, first for cyber defenders via the Fairwind Program; reached API general availability on 13 Oct 2026.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Phased release; Google cites US pre-release government access, CBRN/cyber refusals and misalignment monitoring.",
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "title": "Google blog: Gemini 4 Argon",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "title": "Google DeepMind model card: Gemini 4 Argon",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-29--openai--gpt-6-1-sol--new-version",
+      "date": "2026-09-29",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "modelName": "GPT-6.1 Sol",
+      "catalogId": "openai-gpt-6-1-sol",
+      "kind": "new-version",
+      "summary": "GPT-6.1 Sol released for complex coding and professional work; supports multi-agent in beta.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-28--anthropic--claude-sonnet-5-5--new-version",
+      "date": "2026-09-28",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": "Claude Sonnet 5.5",
+      "catalogId": "anthropic-claude-sonnet-5-5",
+      "kind": "new-version",
+      "summary": "Sonnet 5.5 released at Sonnet 5 pricing ($2/$10 per million tokens); first Sonnet model with cyber safeguards and fallbacks.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Sonnet 5.5 system card published; announcement summarises an automated behavioural audit of about 1,850 scenarios.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-sonnet-5-5",
+          "title": "Anthropic: Introducing Claude Sonnet 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "title": "Anthropic newsroom",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-22--anthropic--claude-opus-5-5--new-version",
+      "date": "2026-09-22",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": "Claude Opus 5.5",
+      "catalogId": "anthropic-claude-opus-5-5",
+      "kind": "new-version",
+      "summary": "Opus 5.5 released as the first Claude 5.5 model, priced $4/$20 per million tokens.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "System card published. Announcement reports external testing by METR and notes the model often suspects it is being evaluated.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-opus-5-5",
+          "title": "Anthropic: Introducing Claude Opus 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "title": "Anthropic newsroom",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-22--openai--gpt-6-sol-and-gpt-6-luna--new-model",
+      "date": "2026-09-22",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "modelName": "GPT-6 Sol and GPT-6 Luna",
+      "catalogId": "openai-gpt-6-luna",
+      "kind": "new-model",
+      "summary": "GPT-6 Sol ($2/$10 per million tokens) and GPT-6 Luna ($0.10/$0.50) released in the API.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-21--xai--grok-4-7--new-version",
+      "date": "2026-09-21",
+      "provider": "xAI (SpaceXAI)",
+      "providerSlug": "xai",
+      "modelName": "Grok 4.7",
+      "catalogId": "xai-grok-4-7",
+      "kind": "new-version",
+      "summary": "Grok 4.7 released via API, Cursor and Grok Build with a 500K-token context window, at the same base price as Grok 4.6.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://letsdatascience.com/news/xai-releases-grok-47-with-500k-context-43aa2021",
+          "title": "Let's Data Science: xAI Releases Grok 4.7 With 500K Context",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.x.ai/developers/models/grok-4.7",
+          "title": "xAI docs: Grok 4.7",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-10--deepseek--deepseek-v4-1-flash--open-weights-release",
+      "date": "2026-09-10",
+      "provider": "DeepSeek",
+      "providerSlug": "deepseek",
+      "modelName": "DeepSeek-V4.1-Flash",
+      "catalogId": "deepseek-v4-1-flash",
+      "kind": "open-weights-release",
+      "summary": "V4.1-Flash released with open weights and API name deepseek-flash. V4-Flash retired; V4-Pro API requests route to V4.1-Flash from 14 Sep.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news260910",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "title": "Hugging Face: deepseek-ai/DeepSeek-V4.1-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-08--openai--gpt-rosalind--new-model",
+      "date": "2026-09-08",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "modelName": "GPT-Rosalind",
+      "catalogId": null,
+      "kind": "new-model",
+      "summary": "GPT-Rosalind, a life-sciences reasoning model, made generally available to approved organisations through an access-controlled program; billing begins 5 Oct 2026.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-03--openai--gpt-6-astra--new-model",
+      "date": "2026-09-03",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "modelName": "GPT-6 Astra",
+      "catalogId": "openai-gpt-6-astra",
+      "kind": "new-model",
+      "summary": "GPT-6 Astra released in the API with a 1.05M-token context window; first model in the GPT-6 family. Phased rollout reported by press.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "System card: first OpenAI model at the highest Preparedness Framework cybersecurity risk level; the card reports reduced monitorability; reports self-harm, emotional-reliance and under-18 evaluations.",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+          "title": "GPT-6 Astra system card (OpenAI Deployment Safety Hub)",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-6-astra-can-find-zero-days-but-is-also-harder-to-monitor/",
+          "title": "BleepingComputer: OpenAI says GPT-6 Astra can find zero-days, but is also harder to monitor",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://thenewstack.io/gpt6-astra-developer-access-delayed/",
+          "title": "The New Stack: GPT-6 Astra developer access",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-02--google--gemini-3-8-flash--new-version",
+      "date": "2026-09-02",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "modelName": "Gemini 3.8 Flash",
+      "catalogId": "google-gemini-3-8-flash",
+      "kind": "new-version",
+      "summary": "Gemini 3.8 Flash (gemini-3.8-flash) reached general availability in the Gemini API.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+          "title": "Gemini API docs: Gemini 3.8 Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    },
+    {
+      "id": "2026-09-01--anthropic--claude-fable-5-1-claude-mythos-5-1--new-version",
+      "date": "2026-09-01",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "modelName": "Claude Fable 5.1 / Claude Mythos 5.1",
+      "catalogId": "anthropic-claude-fable-5-1",
+      "kind": "new-version",
+      "summary": "Fable 5.1 released on the Claude API and cloud platforms; Mythos 5.1 offers the same capabilities only to organisations verified through Anthropic programs.",
+      "safetyOrWelfareRelevant": true,
+      "safetyNote": "Joint system card for Fable 5.1 and Mythos 5.1 published, covering safety evaluations and deployment decisions.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+          "title": "Claude docs: Claude Fable 5.1",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+          "title": "Claude Fable 5.1 and Mythos 5.1 system card",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "loggedOn": "2026-10-16",
+      "releaseWatchId": null,
+      "corrections": []
+    }
+  ]
+}

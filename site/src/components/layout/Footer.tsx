@@ -91,6 +91,18 @@ export default function Footer() {
               </Link>
             ))}
             <h4 className="text-text text-[0.95rem] font-bold mb-2.5 mt-4">
+              AI Models
+            </h4>
+            {footerLinks.aiModels.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-muted hover:text-text mb-2 text-[0.94rem]"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <h4 className="text-text text-[0.95rem] font-bold mb-2.5 mt-4">
               Community
             </h4>
             {footerLinks.community.map((link) => (

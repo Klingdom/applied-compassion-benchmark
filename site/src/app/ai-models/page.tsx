@@ -23,6 +23,12 @@ import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 import { BANDS } from "@/data/dimensions";
 import Link from "next/link";
 import { CB_PROBE_FACTS } from "@/lib/cb-probe-facts";
+import Card from "@/components/ui/Card";
+import Pill from "@/components/ui/Pill";
+import { MODEL_WATCH_FACTS as W, loadEdition } from "@/lib/model-watch-facts";
+import { IndependenceCallout } from "@/components/model-watch/parts";
+import { dateLong } from "@/lib/model-report-facts";
+import type { CompiledEdition, EditionManifestEntry } from "@/components/model-watch/types";
 
 // No Dataset or ItemList JSON-LD is emitted while F.hasResults is false.
 // An empty Dataset advertising 0 entities is a machine-readable non-thing.
@@ -36,6 +42,21 @@ import { CB_PROBE_FACTS } from "@/lib/cb-probe-facts";
 // F.itemsWithTwoReviews (derived from the review log), never reviewedItemCount.
 
 const noModelScored = F.evaluatedModelCount === 0;
+
+// AI Model Watch (docs/UX_FLOWS_AI_MODEL_WATCH.md section 1). The latest edition feeds the "This week" block; with no
+// edition the block shows its zero-state. Counts and dates come from the edition JSON and MODEL_WATCH_FACTS only.
+const latestEntry: EditionManifestEntry | null = W.latestEdition;
+
+const KIND_LABEL: Record<string, string> = {
+  "new-model": "New model",
+  "new-version": "New version",
+  update: "Update",
+  "open-weights-release": "Open-weights release",
+  "api-availability": "API availability",
+  deprecation: "Deprecation",
+  "safety-documentation": "Safety documentation",
+  policy: "Policy notice",
+};
 
 // Unofficial pilot (D-29a). In the default build the wave's decision is "proposed", nothing
 // renders, and NO pilot wording appears anywhere on this page. `pilot` is non-null only when
@@ -121,7 +142,7 @@ const faqItems = [
     question: "What happens when a new model ships?",
     answer:
       "Nothing on this page changes automatically. If release watch has run a scan since the ship date, and a " +
-      "dated, independently checkable primary source exists for it, the release is logged in the tracker as a " +
+      "dated, independently checkable primary source exists for it, the release is logged in the release-watch store as a " +
       "confirmed release with no score. Evaluation — calling the model, scoring its responses, publishing a " +
       "result — is a separate, later step that is not automatic and carries no service-level promise of when, " +
       "or whether, it happens.",
@@ -139,6 +160,7 @@ const faqItems = [
 
 /** Jump-list targets; each must match an `id` on a section below. */
 const JUMP_LINKS: { href: string; label: string }[] = [
+  { href: "#this-week", label: "This week" },
   { href: "#three-objects", label: "Lab is not model" },
   ...(pilot ? [{ href: "#pilot-results", label: "Pilot results (unofficial)" }] : []),
   { href: "#pipeline", label: "The pipeline" },
@@ -159,6 +181,16 @@ const validationHeading =
       : "Every item has been validated";
 
 export default function AiModelsPage() {
+  const latest: CompiledEdition | null = latestEntry ? loadEdition(latestEntry.date) : null;
+  const latestReleases = latest
+    ? latest.releases
+        .slice()
+        .sort((a, b) =>
+          a.date !== b.date ? (a.date < b.date ? 1 : -1) : a.provider.localeCompare(b.provider, "en", { sensitivity: "base" }),
+        )
+    : [];
+  const latestProviderCount = new Set(latestReleases.map((r) => r.provider)).size;
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -182,7 +214,7 @@ export default function AiModelsPage() {
 
       <section className="py-[38px]">
         <Container>
-          <Eyebrow>AI Model Compassion Benchmark · Pre-registration</Eyebrow>
+          <Eyebrow>AI Model Watch</Eyebrow>
           <h1 className="text-[clamp(2rem,4.5vw,3.1rem)] leading-[1.1] mt-3 mb-4">
             How compassionate are AI models?
           </h1>
@@ -191,29 +223,120 @@ export default function AiModelsPage() {
             {pilot && `${pilot.heroSentence} `}
             What exists is the instrument: {F.itemCount} published test items across {F.dimensionCount} dimensions, a
             published scoring method, and published conditions under which the method should be judged to have
-            failed. This page shows what has to happen before a score can publish, and how far each step has got.
+            failed.
           </p>
           <div className="mb-6">
             <SubjectLine />
           </div>
           <div className="flex gap-3 flex-wrap">
-            {pilot ? (
-              <>
-                <Button
-                  href={pilot.latest.href}
-                  variant="primary"
-                  trackAs="report_open"
-                  trackData={{ report_id: pilot.latest.runId, surface: "ai-models", position: "hero" }}
-                >
-                  {pilot.count === 1 ? "Read the pilot report" : "Read the latest pilot report"} (about {pilot.latest.readingMinutes} min)
-                </Button>
-                <Button href="/ai-models/methodology">Read the method</Button>
-              </>
-            ) : (
-              <Button href="/ai-models/methodology" variant="primary">
-                Read the method
+            {latestEntry && (
+              <Button href={`/ai-models/watch/${latestEntry.date}`} variant="primary">
+                Read this week&rsquo;s edition
               </Button>
             )}
+            <Button href="/ai-models/tracker" variant={latestEntry ? "default" : "primary"}>
+              Browse the model list
+            </Button>
+            {pilot && (
+              <Button
+                href={pilot.latest.href}
+                trackAs="report_open"
+                trackData={{ report_id: pilot.latest.runId, surface: "ai-models", position: "hero" }}
+              >
+                {pilot.count === 1 ? "Read the pilot report" : "Read the latest pilot report"} (about {pilot.latest.readingMinutes} min)
+              </Button>
+            )}
+            <Button href="/ai-models/methodology">Read the method</Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* This week in AI models. Edition fields only; the catalog count comes from MODEL_WATCH_FACTS and is never printed
+          without the clause that listed is not evaluated. */}
+      <section className="py-[18px]" id="this-week" aria-labelledby="this-week-heading">
+        <Container>
+          <Panel>
+            <h2 id="this-week-heading" className="text-[clamp(1.3rem,2.5vw,1.7rem)] tracking-tight mb-3">
+              This week in AI models
+            </h2>
+            {latest && latestEntry ? (
+              <>
+                <p className="text-muted text-[0.95rem] mb-1">
+                  Edition <time dateTime={latest.date}>{dateLong(latest.date)}</time>. Window {latest.window.from} to{" "}
+                  {latest.window.to}.
+                </p>
+                <p className="text-text font-medium mb-3">
+                  {latestReleases.length} item{latestReleases.length === 1 ? "" : "s"} (releases, deprecations and policy notices) logged in this edition from{" "}
+                  {latestProviderCount} provider{latestProviderCount === 1 ? "" : "s"}
+                </p>
+                <ul className="grid gap-2 mb-4">
+                  {latestReleases.slice(0, 3).map((r) => (
+                    <li key={r.releaseId} className="flex flex-wrap items-center gap-2 text-muted text-[0.93rem]">
+                      <span className="text-text font-medium">{r.provider}</span>
+                      {r.modelName ? (
+                        <>
+                          <span>{r.modelName}</span>
+                          <Pill>{KIND_LABEL[r.kind] ?? "Other"}</Pill>
+                        </>
+                      ) : (
+                        <span>&middot; {r.kind === "policy" ? "Policy notice" : KIND_LABEL[r.kind] ?? "Notice"}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[0.95rem] mb-3">
+                  <Link href={`/ai-models/watch/${latest.date}`} className="underline underline-offset-2 text-accent">
+                    Read the full edition
+                  </Link>
+                </p>
+              </>
+            ) : (
+              <Callout className="mb-4">
+                <p className="text-muted">
+                  The first edition has not been published. Nothing is implied about the industry.
+                </p>
+              </Callout>
+            )}
+            {W.catalogModelCount > 0 && (
+              <p className="text-[0.88rem] text-muted-subtle">
+                Catalog as of {W.catalogAsOf}: {W.catalogModelCount} models listed with sources. Listed is not evaluated.
+              </p>
+            )}
+          </Panel>
+        </Container>
+      </section>
+
+      {/* Entry cards. The pilot card exists only while the pilot gate renders a report (omitted, never greyed). */}
+      <section className="py-[14px]" aria-labelledby="entry-heading">
+        <Container>
+          <h2 id="entry-heading" className="sr-only">Explore AI Model Watch</h2>
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
+            <Card href="/ai-models/tracker">
+              <h3 className="text-[1.05rem] mb-1.5">Model tracker</h3>
+              <p className="text-muted text-[0.9rem]">A model list with sources, filterable by provider, access and licence.</p>
+            </Card>
+            <Card href="/ai-models/watch">
+              <h3 className="text-[1.05rem] mb-1.5">Weekly Watch</h3>
+              <p className="text-muted text-[0.9rem]">Dated editions of what shipped and what providers disclosed.</p>
+            </Card>
+            <Card href="/ai-models/leaderboards">
+              <h3 className="text-[1.05rem] mb-1.5">Compassion leaderboards</h3>
+              <p className="text-muted text-[0.9rem]">What exists, what does not, and what would have to change.</p>
+            </Card>
+            <Card href="/ai-models/methodology">
+              <h3 className="text-[1.05rem] mb-1.5">Methodology</h3>
+              <p className="text-muted text-[0.9rem]">The published method, task bank and scoring rules.</p>
+            </Card>
+            {pilot && (
+              <Card href={reportsIndexRenders() ? "/ai-models/reports" : pilot.latest.href}>
+                <h3 className="text-[1.05rem] mb-1.5">Pilot reports</h3>
+                <p className="text-muted text-[0.9rem]">Unofficial tests of the test. Not scores.</p>
+              </Card>
+            )}
+            <Card href="/insights">
+              <h3 className="text-[1.05rem] mb-1.5">Insights</h3>
+              <p className="text-muted text-[0.9rem]">Cited pieces on compassion-first AI for labs and agent builders.</p>
+            </Card>
           </div>
         </Container>
       </section>
@@ -257,6 +380,16 @@ export default function AiModelsPage() {
                 value: `${F.dimensionCount} / ${F.subdimensionsCovered} of ${F.subdimensionCount}`,
                 def: "",
               },
+              ...(W.catalogModelCount > 0
+                ? [
+                    {
+                      term: "Models listed in the Model Watch catalog",
+                      value: String(W.catalogModelCount),
+                      def: "A listing is not an evaluation",
+                      link: { href: "/ai-models/tracker", label: "See the model tracker." },
+                    },
+                  ]
+                : []),
               {
                 term: "Release scans completed",
                 value: String(R.completedScanCount),
@@ -433,9 +566,16 @@ export default function AiModelsPage() {
           {R.scanState === "never-scanned" ? (
             <Callout className="mb-5">
               <p className="text-muted">
-                <strong className="text-text">No release scan has ever run.</strong> That is a different fact from
-                &ldquo;nothing has shipped&rdquo; &mdash; it means Compassion Benchmark has not yet looked, not that
-                the AI industry has been quiet. {R.coverageClaimNote}
+                <strong className="text-text">The automated release-watch scanner has not run yet.</strong> That is a
+                different fact from &ldquo;nothing has shipped&rdquo;. Releases are currently tracked by hand in the{" "}
+                <Link href="/ai-models/watch" className="underline underline-offset-2">AI Model Watch</Link>
+                {latestEntry && (
+                  <>
+                    {" "}(latest edition:{" "}
+                    <Link href={`/ai-models/watch/${latestEntry.date}`} className="underline underline-offset-2">{latestEntry.date}</Link>)
+                  </>
+                )}
+                , which is a cited log and is not counted in the figures below. The release-watch store below is evidence about our monitoring, not about the AI industry.
               </p>
             </Callout>
           ) : (
@@ -464,14 +604,14 @@ export default function AiModelsPage() {
           <Panel>
             <h3 className="text-[1.05rem] mb-2">Tracking a release is not evaluating it</h3>
             <p className="text-muted text-[0.93rem] leading-relaxed mb-3">
-              An entry in this tracker records that a model shipped, with a dated, independently checkable primary
+              An entry in the release-watch store records that a model shipped, with a dated, independently checkable primary
               source &mdash; never that it has been tested against the task bank. A tracked release carries no
               score, no band, and no queue position with a promised date. Publishing a result requires a frozen
               snapshot, two independent human raters and adjudication (see the method); none of that is automatic,
               and there is no service-level commitment for when, or whether, a tracked release will be evaluated.
             </p>
             <p className="text-muted text-[0.93rem] leading-relaxed">
-              What not to infer from this section: that no models have shipped (many have &mdash; this tracker is
+              What not to infer from this section: that no models have shipped (many have &mdash; this store is
               evidence about our monitoring, not about the industry); that Compassion Benchmark monitors releases
               continuously today (it does not &mdash; {R.completedScanCount} scan
               {R.completedScanCount === 1 ? " has" : "s have"} ever completed); that a developer or model absent
@@ -479,6 +619,22 @@ export default function AiModelsPage() {
               &mdash; there is no denominator here.
             </p>
           </Panel>
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
+            The{" "}
+            <Link href="/ai-models/watch" className="underline underline-offset-2">Model Watch</Link> keeps a separate cited
+            log of announcements. It does not meet the release-watch evidence bar and is not counted in this section. Models
+            are listed in the{" "}
+            <Link href="/ai-models/tracker" className="underline underline-offset-2">model tracker</Link>
+            {latestEntry && (
+              <>
+                {" "}and the latest edition is{" "}
+                <Link href={`/ai-models/watch/${latestEntry.date}`} className="underline underline-offset-2">
+                  {latestEntry.date}
+                </Link>
+              </>
+            )}
+            .
+          </p>
         </Container>
       </section>
 
@@ -878,24 +1034,30 @@ export default function AiModelsPage() {
         </Container>
       </section>
 
-      {pilot && (
-        <section className="pb-[40px]">
-          <Container>
-            <div className="max-w-[900px]">
-              <NewsletterSignup
-                variant="card"
-                source="ai-models-end"
-                heading="Get the next assessment wave when it publishes"
-                body={pilot.newsletterBody}
-                buttonLabel="Email me the next wave"
-                finePrint="No spam. We never share your email. We never sell it to the companies we assess."
-                successTitle="Subscribed."
-                successBody="You'll get the Friday highlights, where new research is announced."
-              />
-            </div>
-          </Container>
-        </section>
-      )}
+      <section className="pb-[20px]">
+        <Container>
+          <div className="max-w-[900px]">
+            <IndependenceCallout />
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-[40px]">
+        <Container>
+          <div className="max-w-[900px]">
+            <NewsletterSignup
+              variant="card"
+              source="model-watch-hub"
+              heading="Email me when a new edition publishes"
+              body="One email when a new AI Model Watch edition is published. No promise of weekly timing."
+              buttonLabel="Email me new editions"
+              finePrint="Free. No promise of weekly timing. We never share your email."
+              successTitle="Subscribed."
+              successBody="Subscribed. We will email you when an edition publishes."
+            />
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

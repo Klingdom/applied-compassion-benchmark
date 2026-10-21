@@ -25,6 +25,22 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-16 — AI Model Watch and Insights: a model tracker, a weekly edition, and six articles (NO score changes; pending deploy)
+
+- **What changed:** new pages.
+  - `/ai-models/tracker`: a sourced list of current AI models, with no ratings.
+  - `/ai-models/watch` and the first weekly edition `/ai-models/watch/2026-10-16`: releases and provider safety
+    disclosures from 2026-09-01 to 2026-10-16, each linked to its source.
+  - `/ai-models/leaderboards`: why no model ranking is published, the conditions for one, and a link to the AI Labs index.
+  - `/insights`: six articles for AI labs and agent builders on compassion-first AI.
+  - The `/ai-models` hub gains a "This week in AI models" block.
+- **Why:** founder directive D-57. Readers asked what models exist and what changed this week, and the benchmark had no
+  page answering either.
+- **Impact:**
+  - No score, rank or band changed, and no model is rated.
+  - Every catalog row, release and article claim cites a source, and each was independently fact-checked before
+    publication.
+
 ## 2026-10-15 — Briefings stop calling unapplied proposals score "moves" (NO score changes; pending commit/deploy)
 
 - **What changed:** the movement strip and score chart on every daily briefing now describe a figure that was not applied

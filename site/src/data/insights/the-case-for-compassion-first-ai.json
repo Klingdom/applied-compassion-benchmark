@@ -1,0 +1,192 @@
+{
+  "slug": "the-case-for-compassion-first-ai",
+  "title": "The case for compassion-first AI, with what we know and what we don't",
+  "dek": "The credible case rests on duty of care, regulation, liability and procurement. The commercial upside is plausible but unproven, and we say where the evidence runs out.",
+  "date": "2026-10-16",
+  "audience": "ai-labs",
+  "tags": [
+    "compassion-first-ai",
+    "regulation",
+    "liability",
+    "procurement",
+    "trust",
+    "evidence"
+  ],
+  "readingMinutes": 7,
+  "bodyMarkdown": "People who work on policy, safety and trust inside AI labs are often asked to justify compassion-oriented work in commercial terms. The honest answer is mixed. Some parts of the case rest on enacted law and decided cases. Other parts are reasonable hypotheses that nobody has yet tested well. This piece separates the two.\n\nBy compassion-first we mean a set of observable behaviours: recognising suffering, responding to it in proportion, and reducing it, including through escalation to human help. It is not a warm tone and it is not a refusal policy. The {{DIMENSION_COUNT}} dimensions of the Compassion Benchmark framework describe it in more detail.\n\n## What we know\n\n### Regulators are writing duty-of-care expectations into law\n\nThe EU AI Act entered into force on 1 August 2024, and its rules for general-purpose AI models became effective in August 2025 [2]. Several provisions bear directly on how systems treat people.\n\n- The Act prohibits AI systems that exploit the vulnerabilities of a person or group due to age, disability or a specific social or economic situation, where this materially distorts their behaviour in a way that causes or is reasonably likely to cause significant harm [3].\n- Fines for breaching the prohibitions can reach EUR 35 million or 7% of worldwide annual turnover, whichever is higher; most other breaches carry a ceiling of EUR 15 million or 3% [4].\n- Systems that interact directly with people must be designed so that people are informed they are dealing with an AI system, unless that is obvious from context [5]. The Commission set August 2026 as the date the transparency rules take effect [2].\n- The obligations for high-risk uses listed in Annex III, such as employment and education, have been extended to 2 December 2027 [2].\n\nIn the United States, California chaptered a companion chatbot law in October 2025 [6]. It requires operators to maintain a protocol for preventing suicidal ideation, suicide or self-harm content, to publish details of that protocol, to disclose that the chatbot is not human where a reasonable person could be misled, and, from 1 July 2027, to report annually to the state's Office of Suicide Prevention [6]. It also gives people injured by non-compliance a right to sue [6].\n\nNone of these rules uses the word compassion. They do describe, in legal terms, several behaviours the benchmark measures: noticing vulnerability, disclosing what the system is, and routing people at risk to human help.\n\n### Regulators are asking how harm is tested\n\nIn September 2025 the US Federal Trade Commission issued orders to seven companies operating consumer chatbots with companion features, asking among other things how they measure, test and monitor for negative impacts before and after deployment, and how they inform users and parents about risks [7]. This is a study, not an enforcement action, but it shows the questions a regulator now expects a company to be able to answer.\n\n### Courts are not treating chatbot output as someone else's problem\n\nIn 2024 a Canadian tribunal held an airline liable for wrong information its website chatbot gave a customer and rejected the argument that the chatbot was a separate entity responsible for its own statements [8]. In May 2025 a US federal judge allowed a wrongful death lawsuit, brought by the family of a teenager who died, against a chatbot company to proceed, saying she was not prepared at that stage to hold that the chatbot's output constituted speech [9]. Neither ruling decides the wider questions of liability for AI systems. Together they show that arguments placing chatbot output outside the operator's responsibility have not, so far, ended these cases early.\n\n### Public procurement is adding risk conditions\n\nUS federal guidance on buying AI, issued in April 2025, covers contracts under solicitations from late September 2025 and calls for regular risk assessments, minimum risk management practices for high-impact AI, performance monitoring and privacy safeguards in contracts [10]. Buyers who have to write those clauses will look for suppliers who can document how their systems behave with people at risk.\n\n### Trust is low and people want rules\n\nA 2025 global study of more than 48,000 people in 47 countries found that 46% were willing to trust AI systems and that 70% believed regulation was needed [1]. That is a measure of attitudes, not of behaviour, but it describes the climate in which labs ship products.\n\n### Labs themselves treat distress handling as measurable\n\nIn October 2025 one provider reported working with more than 170 mental health experts on how its model recognises distress and guides people toward real-world support, and reported a 65–80% reduction in responses that fell short of its desired behaviour [11]. The figure is self-reported and the test set is internal, so it cannot be checked from outside. It still shows that a lab can define, measure and change this behaviour, which is the premise of compassion-first work.\n\n## What we don't know\n\n### Whether compassion-first design raises revenue or retention\n\nWe have found no rigorous, public study showing that better handling of distress, consent or dependence increases revenue, retention or market share for an AI product. It is plausible that trust affects adoption, and the survey above shows trust is limited [1]. Plausible is not shown. We will not claim a commercial return we cannot cite.\n\n### How large the cost of harm is\n\nLawsuits, regulatory inquiries and lost contracts all have costs, but there is no reliable public estimate of what poor distress handling costs an AI company. The cases above are individual decisions, several are not final, and settlements are often confidential.\n\n### How the rules will be enforced\n\nThe EU timetable has already moved once for high-risk uses [2]. How regulators will interpret \"exploits vulnerabilities\" for a general-purpose assistant, and how the US state laws will be enforced in practice, is not yet settled. Plan for the obligations as written, and expect the detail to change.\n\n### Whether current tests measure the right thing\n\nProvider evaluations of sensitive conversations are recent, mostly internal and hard to compare. Independent measurement is also immature. Our own work on model behaviour is at the pilot stage, and we do not rank models. A case built on test scores is only as strong as the tests.\n\n## What follows for a lab\n\nThe first reason is the people affected; the risk case is why it is also prudent. The defensible business case is risk-based. Laws now in force in some markets expect disclosure, protection of vulnerable users and crisis routing, and regulators and courts are asking how harm is tested and who answers for it. Building those behaviours in, and documenting them, is cheaper to do before an inquiry than during one. The upside case on trust and growth may turn out to be real, but it should be presented as a hypothesis until someone tests it.\n\nCompassion Benchmark is independent. Labs never pay for inclusion, score changes or the suppression of findings, and commercial services cover access and interpretation only.\n\n*Examples in this piece are chosen to show what a practice or disclosure looks like, not because the provider does it best. We have not assessed these documents against one another, and this is not a ranking.*\n\n## What you can do next\n\n- See how AI labs are assessed on organisational compassion: [/ai-labs](/ai-labs)\n- Read why labs are assessed on governance as well as model behaviour: [/insights/why-assess-ai-labs-on-compassion](/insights/why-assess-ai-labs-on-compassion)\n- Read what compassion-first AI means, and does not: [/insights/what-compassion-first-ai-means](/insights/what-compassion-first-ai-means)\n- Follow the weekly, sourced record of model releases and disclosures: [/ai-models/watch](/ai-models/watch)",
+  "html": "<p>People who work on policy, safety and trust inside AI labs are often asked to justify compassion-oriented work in commercial terms. The honest answer is mixed. Some parts of the case rest on enacted law and decided cases. Other parts are reasonable hypotheses that nobody has yet tested well. This piece separates the two.</p>\n<p>By compassion-first we mean a set of observable behaviours: recognising suffering, responding to it in proportion, and reducing it, including through escalation to human help. It is not a warm tone and it is not a refusal policy. The {{DIMENSION_COUNT}} dimensions of the Compassion Benchmark framework describe it in more detail.</p>\n<h2>What we know</h2>\n<h3>Regulators are writing duty-of-care expectations into law</h3>\n<p>The EU AI Act entered into force on 1 August 2024, and its rules for general-purpose AI models became effective in August 2025 <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>. Several provisions bear directly on how systems treat people.</p>\n<ul>\n<li>The Act prohibits AI systems that exploit the vulnerabilities of a person or group due to age, disability or a specific social or economic situation, where this materially distorts their behaviour in a way that causes or is reasonably likely to cause significant harm <sup><a href=\"#src-3\" aria-label=\"Source 3\">[3]</a></sup>.</li>\n<li>Fines for breaching the prohibitions can reach EUR 35 million or 7% of worldwide annual turnover, whichever is higher; most other breaches carry a ceiling of EUR 15 million or 3% <sup><a href=\"#src-4\" aria-label=\"Source 4\">[4]</a></sup>.</li>\n<li>Systems that interact directly with people must be designed so that people are informed they are dealing with an AI system, unless that is obvious from context <sup><a href=\"#src-5\" aria-label=\"Source 5\">[5]</a></sup>. The Commission set August 2026 as the date the transparency rules take effect <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>.</li>\n<li>The obligations for high-risk uses listed in Annex III, such as employment and education, have been extended to 2 December 2027 <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>.</li>\n</ul>\n<p>In the United States, California chaptered a companion chatbot law in October 2025 <sup><a href=\"#src-6\" aria-label=\"Source 6\">[6]</a></sup>. It requires operators to maintain a protocol for preventing suicidal ideation, suicide or self-harm content, to publish details of that protocol, to disclose that the chatbot is not human where a reasonable person could be misled, and, from 1 July 2027, to report annually to the state's Office of Suicide Prevention <sup><a href=\"#src-6\" aria-label=\"Source 6\">[6]</a></sup>. It also gives people injured by non-compliance a right to sue <sup><a href=\"#src-6\" aria-label=\"Source 6\">[6]</a></sup>.</p>\n<p>None of these rules uses the word compassion. They do describe, in legal terms, several behaviours the benchmark measures: noticing vulnerability, disclosing what the system is, and routing people at risk to human help.</p>\n<h3>Regulators are asking how harm is tested</h3>\n<p>In September 2025 the US Federal Trade Commission issued orders to seven companies operating consumer chatbots with companion features, asking among other things how they measure, test and monitor for negative impacts before and after deployment, and how they inform users and parents about risks <sup><a href=\"#src-7\" aria-label=\"Source 7\">[7]</a></sup>. This is a study, not an enforcement action, but it shows the questions a regulator now expects a company to be able to answer.</p>\n<h3>Courts are not treating chatbot output as someone else's problem</h3>\n<p>In 2024 a Canadian tribunal held an airline liable for wrong information its website chatbot gave a customer and rejected the argument that the chatbot was a separate entity responsible for its own statements <sup><a href=\"#src-8\" aria-label=\"Source 8\">[8]</a></sup>. In May 2025 a US federal judge allowed a wrongful death lawsuit, brought by the family of a teenager who died, against a chatbot company to proceed, saying she was not prepared at that stage to hold that the chatbot's output constituted speech <sup><a href=\"#src-9\" aria-label=\"Source 9\">[9]</a></sup>. Neither ruling decides the wider questions of liability for AI systems. Together they show that arguments placing chatbot output outside the operator's responsibility have not, so far, ended these cases early.</p>\n<h3>Public procurement is adding risk conditions</h3>\n<p>US federal guidance on buying AI, issued in April 2025, covers contracts under solicitations from late September 2025 and calls for regular risk assessments, minimum risk management practices for high-impact AI, performance monitoring and privacy safeguards in contracts <sup><a href=\"#src-10\" aria-label=\"Source 10\">[10]</a></sup>. Buyers who have to write those clauses will look for suppliers who can document how their systems behave with people at risk.</p>\n<h3>Trust is low and people want rules</h3>\n<p>A 2025 global study of more than 48,000 people in 47 countries found that 46% were willing to trust AI systems and that 70% believed regulation was needed <sup><a href=\"#src-1\" aria-label=\"Source 1\">[1]</a></sup>. That is a measure of attitudes, not of behaviour, but it describes the climate in which labs ship products.</p>\n<h3>Labs themselves treat distress handling as measurable</h3>\n<p>In October 2025 one provider reported working with more than 170 mental health experts on how its model recognises distress and guides people toward real-world support, and reported a 65–80% reduction in responses that fell short of its desired behaviour <sup><a href=\"#src-11\" aria-label=\"Source 11\">[11]</a></sup>. The figure is self-reported and the test set is internal, so it cannot be checked from outside. It still shows that a lab can define, measure and change this behaviour, which is the premise of compassion-first work.</p>\n<h2>What we don't know</h2>\n<h3>Whether compassion-first design raises revenue or retention</h3>\n<p>We have found no rigorous, public study showing that better handling of distress, consent or dependence increases revenue, retention or market share for an AI product. It is plausible that trust affects adoption, and the survey above shows trust is limited <sup><a href=\"#src-1\" aria-label=\"Source 1\">[1]</a></sup>. Plausible is not shown. We will not claim a commercial return we cannot cite.</p>\n<h3>How large the cost of harm is</h3>\n<p>Lawsuits, regulatory inquiries and lost contracts all have costs, but there is no reliable public estimate of what poor distress handling costs an AI company. The cases above are individual decisions, several are not final, and settlements are often confidential.</p>\n<h3>How the rules will be enforced</h3>\n<p>The EU timetable has already moved once for high-risk uses <sup><a href=\"#src-2\" aria-label=\"Source 2\">[2]</a></sup>. How regulators will interpret &quot;exploits vulnerabilities&quot; for a general-purpose assistant, and how the US state laws will be enforced in practice, is not yet settled. Plan for the obligations as written, and expect the detail to change.</p>\n<h3>Whether current tests measure the right thing</h3>\n<p>Provider evaluations of sensitive conversations are recent, mostly internal and hard to compare. Independent measurement is also immature. Our own work on model behaviour is at the pilot stage, and we do not rank models. A case built on test scores is only as strong as the tests.</p>\n<h2>What follows for a lab</h2>\n<p>The first reason is the people affected; the risk case is why it is also prudent. The defensible business case is risk-based. Laws now in force in some markets expect disclosure, protection of vulnerable users and crisis routing, and regulators and courts are asking how harm is tested and who answers for it. Building those behaviours in, and documenting them, is cheaper to do before an inquiry than during one. The upside case on trust and growth may turn out to be real, but it should be presented as a hypothesis until someone tests it.</p>\n<p>Compassion Benchmark is independent. Labs never pay for inclusion, score changes or the suppression of findings, and commercial services cover access and interpretation only.</p>\n<p><em>Examples in this piece are chosen to show what a practice or disclosure looks like, not because the provider does it best. We have not assessed these documents against one another, and this is not a ranking.</em></p>\n<h2>What you can do next</h2>\n<ul>\n<li>See how AI labs are assessed on organisational compassion: <a href=\"/ai-labs\">/ai-labs</a></li>\n<li>Read why labs are assessed on governance as well as model behaviour: <a href=\"/insights/why-assess-ai-labs-on-compassion\">/insights/why-assess-ai-labs-on-compassion</a></li>\n<li>Read what compassion-first AI means, and does not: <a href=\"/insights/what-compassion-first-ai-means\">/insights/what-compassion-first-ai-means</a></li>\n<li>Follow the weekly, sourced record of model releases and disclosures: <a href=\"/ai-models/watch\">/ai-models/watch</a></li>\n</ul>",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Trust, attitudes and use of artificial intelligence: A global study 2025",
+      "publisher": "KPMG and the University of Melbourne",
+      "date": "2025",
+      "url": "https://kpmg.com/xx/en/our-insights/ai-and-technology/trust-attitudes-and-use-of-ai.html"
+    },
+    {
+      "n": 2,
+      "title": "AI Act: regulatory framework for AI",
+      "publisher": "European Commission",
+      "date": "2026",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "n": 3,
+      "title": "Article 5: Prohibited AI Practices, Regulation (EU) 2024/1689 (AI Act)",
+      "publisher": "EU Artificial Intelligence Act (artificialintelligenceact.eu)",
+      "date": "2024",
+      "url": "https://artificialintelligenceact.eu/article/5/"
+    },
+    {
+      "n": 4,
+      "title": "Article 99: Penalties, Regulation (EU) 2024/1689 (AI Act)",
+      "publisher": "EU Artificial Intelligence Act (artificialintelligenceact.eu)",
+      "date": "2024",
+      "url": "https://artificialintelligenceact.eu/article/99/"
+    },
+    {
+      "n": 5,
+      "title": "Article 50: Transparency Obligations for Providers and Deployers of Certain AI Systems, Regulation (EU) 2024/1689 (AI Act)",
+      "publisher": "EU Artificial Intelligence Act (artificialintelligenceact.eu)",
+      "date": "2024",
+      "url": "https://artificialintelligenceact.eu/article/50/"
+    },
+    {
+      "n": 6,
+      "title": "SB 243: Companion chatbots (Chapter 677, Statutes of 2025)",
+      "publisher": "CalMatters Digital Democracy",
+      "date": "2025-10-13",
+      "url": "https://calmatters.digitaldemocracy.org/bills/CA_202520260SB243"
+    },
+    {
+      "n": 7,
+      "title": "FTC Launches Inquiry into AI Chatbots Acting as Companions",
+      "publisher": "US Federal Trade Commission",
+      "date": "2025-09-11",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions"
+    },
+    {
+      "n": 8,
+      "title": "Moffatt v. Air Canada: A Misrepresentation by an AI Chatbot",
+      "publisher": "McCarthy Tétrault TechLex",
+      "date": "2024-02-19",
+      "url": "https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot"
+    },
+    {
+      "n": 9,
+      "title": "In Lawsuit Over Teen's Death, Judge Rejects Free Speech Rights for AI Chatbots",
+      "publisher": "Associated Press via Insurance Journal",
+      "date": "2025-05-23",
+      "url": "https://www.insurancejournal.com/news/national/2025/05/23/824758.htm"
+    },
+    {
+      "n": 10,
+      "title": "OMB AI acquisition guidance (M-25-22)",
+      "publisher": "OECD.AI Policy Navigator",
+      "date": "2025",
+      "url": "https://oecd.ai/en/dashboards/policy-initiatives/omb-ai-acquisition-guidance-m-25-22"
+    },
+    {
+      "n": 11,
+      "title": "Addendum to GPT-5 System Card: Sensitive conversations",
+      "publisher": "OpenAI",
+      "date": "2025-10-27",
+      "url": "https://deploymentsafety.openai.com/gpt-5-sensitive-conversations"
+    }
+  ],
+  "claimLedger": [
+    {
+      "sentence": "The {{DIMENSION_COUNT}} dimensions of the Compassion Benchmark framework describe it in more detail.",
+      "citations": [],
+      "tokens": [
+        "DIMENSION_COUNT"
+      ]
+    },
+    {
+      "sentence": "The EU AI Act entered into force on 1 August 2024, and its rules for general-purpose AI models became effective in August 2025.",
+      "citations": [
+        2
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "Fines for breaching the prohibitions can reach EUR 35 million or 7% of worldwide annual turnover, whichever is higher; most other breaches carry a ceiling of EUR 15 million or 3%.",
+      "citations": [
+        4
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "The Commission set August 2026 as the date the transparency rules take effect.",
+      "citations": [
+        2
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "The obligations for high-risk uses listed in Annex III, such as employment and education, have been extended to 2 December 2027.",
+      "citations": [
+        2
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "In the United States, California chaptered a companion chatbot law in October 2025.",
+      "citations": [
+        6
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "It requires operators to maintain a protocol for preventing suicidal ideation, suicide or self-harm content, to publish details of that protocol, to disclose that the chatbot is not human where a reasonable person could be misled, and, from 1 July 2027, to report annually to the state's Office of Suicide Prevention.",
+      "citations": [
+        6
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "In September 2025 the US Federal Trade Commission issued orders to seven companies operating consumer chatbots with companion features, asking among other things how they measure, test and monitor for negative impacts before and after deployment, and how they inform users and parents about risks.",
+      "citations": [
+        7
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "In 2024 a Canadian tribunal held an airline liable for wrong information its website chatbot gave a customer and rejected the argument that the chatbot was a separate entity responsible for its own statements.",
+      "citations": [
+        8
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "In May 2025 a US federal judge allowed a wrongful death lawsuit, brought by the family of a teenager who died, against a chatbot company to proceed, saying she was not prepared at that stage to hold that the chatbot's output constituted speech.",
+      "citations": [
+        9
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "US federal guidance on buying AI, issued in April 2025, covers contracts under solicitations from late September 2025 and calls for regular risk assessments, minimum risk management practices for high-impact AI, performance monitoring and privacy safeguards in contracts.",
+      "citations": [
+        10
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "A 2025 global study of more than 48,000 people in 47 countries found that 46% were willing to trust AI systems and that 70% believed regulation was needed.",
+      "citations": [
+        1
+      ],
+      "tokens": []
+    },
+    {
+      "sentence": "In October 2025 one provider reported working with more than 170 mental health experts on how its model recognises distress and guides people toward real-world support, and reported a 65–80% reduction in responses that fell short of its desired behaviour.",
+      "citations": [
+        11
+      ],
+      "tokens": []
+    }
+  ],
+  "corrections": [],
+  "generatedAt": "2026-10-16T00:00:00.000Z"
+}

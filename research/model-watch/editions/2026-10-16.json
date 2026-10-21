@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-16",
+  "window": {
+    "from": "2026-09-01",
+    "to": "2026-10-16"
+  },
+  "lead": "This first edition covers {{WINDOW_DAYS}} days and logs {{RELEASE_COUNT}} releases, deprecations and policy notices from the providers we track, each linked to its source. {{DISCLOSURE_COUNT}} items include a published safety or welfare disclosure, such as the system cards for GPT-6 Astra, Claude Opus 5.5 and Gemini 4 Argon. We summarise what providers say, link each source, and do not assess it. The benchmark's own measurement in this window was limited to unofficial pilot runs, which are not scores.",
+  "coverage": {
+    "scanned": [
+      "Official announcement pages, model cards, system cards and API changelogs from OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek, Alibaba Qwen, Microsoft, Amazon, Cohere, IBM, Ai2, NVIDIA, Moonshot AI, Zhipu AI, TII and LG AI Research",
+      "Hugging Face organisation pages for open-weights releases",
+      "Ollama library tags for the builds the benchmark runs locally"
+    ],
+    "notScanned": [
+      "Providers outside the eighteen listed above, including regional and domain-specific model developers",
+      "Consumer-app feature changes that were not announced as a model release",
+      "Announcements reported only by secondary outlets; one such item is held until a primary source is available"
+    ]
+  },
+  "measuredNote": "The pilot runs listed below were collected in this window and are published only as unofficial pilot reports, which are not scores. The weekly measurement protocol is awaiting approval, so no weekly wave has run yet.",
+  "corrections": []
+}
