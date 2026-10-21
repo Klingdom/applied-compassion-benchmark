@@ -29,6 +29,7 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-58 | 2026-10-21 | Publish the weekly AI model cycle plan at /ai-models/cycle (C-FD-3); C-FD-1, C-FD-2, C-FD-4 stay open | active, directed by the founder 2026-10-21 |
 | D-57 | 2026-10-16 | AI Model Watch section (tracker, weekly editions, model-ranking conditions) and an /insights blog; publish | active, directed by the founder 2026-10-16 |
 | D-56 | 2026-10-15 | Tier gate compares briefings against the change proposals (TIER-1014 option b); the 2026-10-14 briefing is approved for publication | active, decided by the founder 2026-10-15 |
 | D-52 | 2026-10-14 | Agents may self-assess and post the text to the site, moderated, with no composite (narrows the published no-score-endpoint promise) | active, ratified by the founder 2026-10-14 |
@@ -66,7 +67,17 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 ---
 
-## D-57 — 2026-10-16 — AI Model Watch and Insights
+## D-58 — 2026-10-21 — Weekly AI model cycle plan, published
+
+**Directive (founder, 2026-10-21, verbatim):** "i have manually pushed so check all ai model pages, features, reports,
+and content and publish a virtuous weekly cycle plan to analyze and score AI models."
+
+**Recorded as:** approval of C-FD-3 (publish the plan at `/ai-models/cycle`) and of the commit and deploy of that page
+and of the audit fixes made in the same loop. It does **not** ratify the weekly protocol (C-FD-1, v1 or v2), the
+Friday one-reply bundle (C-FD-2), D-29b (C-FD-4), or any change to scoring or the ranking conditions. "Score" on the
+page means the existing per-item rubric rating in unofficial pilots; no model ranking is published (D-29, D-29a).
+Plan: `docs/AI_MODEL_WEEKLY_CYCLE_PLAN.md`. Copy: `research/ai-model-cycle/weekly-cycle-public.md`.
+
 
 **Directive (founder, 2026-10-16, verbatim):** "Please work autonomously to create a new and improved section of the
 website that focuses on identifying current list of AI models, weekly announcements of new versions and models, weekly

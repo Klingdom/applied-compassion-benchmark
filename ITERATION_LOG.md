@@ -1,5 +1,61 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 111 — 2026-10-21 (founder directive D-58: audit every AI model page; publish a weekly cycle plan)
+
+**Selected by founder directive.** Deviation from the top eligible v2 item (MW-WEEKLY 15, due 2026-10-23). This is
+the third founder-directed loop since Meta-review 12 (108, 110, 111); 109 was a ranked selection.
+
+**Deploy of Iterations 104-110 (the 2026-10-21 instruction "fix the applied rule, then push and deploy"):** `main`
+fast-forwarded `c970f627` to `309362ea`; dispatch run `39644977500` succeeded (deploy and post-deploy health
+check). V7: `/build-manifest.json` reports sha `309362ea`, dirty false; `/updates/2026-10-01` reads "12 measured
+differences, not applied"; `/updates/2026-05-21` reads "largest move Croatia -7.8"; the six new routes and
+`/updates/2026-10-14` return 200. The founder also ran a manual deploy at 17:37 UTC whose manifest recorded no SHA;
+the CI deploy at 17:40 replaced it.
+
+**Live audit (qa-engineer):** `docs/ai-model-watch/LIVE_AUDIT_2026-10-21.md`. All AI-model URLs return 200; 155
+internal links and 56 fragments clean; counts consistent; dashboard absent. 1 High, 4 Medium, 7 Low. Coordinator
+rulings:
+- **H1 (point estimate for one model per pilot) is not a defect:** D-29a item 2 (ratified 2026-10-02) allows per-model
+  ranges with a point tick in pilot reports. It did make one Insights sentence false (M6), now corrected.
+- **M6 fixed:** `why-we-do-not-rank-ai-models-yet` said pilots "show ranges rather than single numbers". Rewritten,
+  with a dated `## Corrections` entry (2026-10-21) quoting the original. `lint:insights` 0 findings.
+- **M4 fixed** (coordinator): `model-benchmark-public.mjs` joined two pairs into "A and B and B and C"; pairs are now
+  separated by semicolons ("Two pairs were each separated only without correction ...: A and B; B and C").
+- **M3 fixed** (frontend-engineer): root cause, the layout's `openGraph` was inherited by pages that set only a title.
+  New `src/lib/page-meta.ts` on 8 pages; gate rules MWH-share-* with 9 planted probes.
+- **M2 fixed** (frontend-engineer): the tracker states, from data, that 3 measured builds have no catalog row.
+  The agent declined to call them "older" because the repo has no release dates for them.
+- **M5 (signup goes to Formspree):** by design of the site-wide component when `NEXT_PUBLIC_LISTMONK_URL` is unset;
+  founder question, not changed.
+
+**Weekly cycle plan (product-manager, then frontend-engineer):** internal plan `docs/AI_MODEL_WEEKLY_CYCLE_PLAN.md`;
+public page `/ai-models/cycle` with every count derived (`src/lib/model-cycle-facts.ts`); wired into the hub, nav,
+footer, leaderboards, watch, sitemap and llms.txt; gate `cycleProblems` with 22 probes.
+- V2: the coordinator re-checked the plan's claims: PROTOCOL status "proposed", 9 queued and 4 measured, no
+  `research/model-runs/wave-*` directory, judges all family "claude", and Claude models among pilot-1 subjects.
+- Coordinator corrections to the copy: removed "or negotiate" (no repo source); "no composite is published" and
+  "pilot results are ranges, not scores" were false under D-29a, and now name the point estimate.
+- **Compassion review (compassion-steward):** M1 (the separation sentence implied comparison while claiming none)
+  and M2 (crisis line last, italic, refusal first) fixed; S1, S3, S4, S5 and O2 fixed. S2 (rater protections as part
+  of the ranking condition) changes the conditions, so it goes to the founder (backlog CYC-RATERS).
+- The new gate pinned the superseded sentence; it was repointed to "No official model ranking, band or score is
+  published." (gate uncommitted, probe still trips).
+
+**Validation:** `tsc` exit 0; `test-model-watch-html` 169/0 and tree 2/0; `npm run build` exit 0; `npm test` exit 0
+(81 steps; no line reports a non-zero failed count). V4 on `site/out`: the cycle page opens with the crisis line and
+has no `{{`; per-page og:title and og:url on the hub, tracker, ai-labs and cycle (the homepage og:title differs); the
+pairs sentence is gone from `llms-full.txt` and `/ai-models/reports`; the Insights correction renders.
+
+**Pathspec:** `DECISIONS.md ITERATION_LOG.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md CHANGELOG.md
+docs/AI_MODEL_WEEKLY_CYCLE_PLAN.md docs/ai-model-watch/LIVE_AUDIT_2026-10-21.md research/ai-model-cycle/
+research/insights/why-we-do-not-rank-ai-models-yet.md site/public/llms.txt site/public/llms-full.txt site/scripts/
+site/src/app/ site/src/data/insights/ site/src/data/nav.ts site/src/lib/model-watch-facts.ts
+site/src/lib/model-cycle-facts.ts site/src/lib/page-meta.ts`. Excluded: the America-at-250 pair and the nonprofit
+library.
+
+**Follow-ups:** CYC-RATERS, CYC-FD (C-FD-1, C-FD-2, C-FD-4), SIGNUP-ENDPOINT, AILABS-TITLE, AUDIT-LOWS, MW-WEEKLY
+(due 2026-10-23).
+
 ## Iteration 110 — 2026-10-21 (founder: "fix the applied rule, then push and deploy") — BRF-APPLIED-LEDGER, plus the Iteration 109 fix
 
 **Selected by founder directive**, and it was also the forced next item (backlog BRF-APPLIED-LEDGER, v2 13, S3). v1/v2

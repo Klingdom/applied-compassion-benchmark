@@ -92,6 +92,23 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
 
+### New rows (2026-10-21, Iteration 111) — live audit and weekly cycle plan
+
+- **CYC-RATERS — founder decision:** make the "human rating panel exists" ranking condition require rater protections
+  (opt-out, content warnings, support, pay) before any sensitive item is seen (compassion review S2). Changes
+  `model-ranking-conditions.ts`, so it is a methodology decision. Default: yes, with the protections listed in the protocol.
+- **CYC-FD — founder decisions from the cycle plan §10:** C-FD-1 weekly protocol v1 or v2 (default v2); C-FD-2 one Friday
+  reply for the edition plus any wave that passed its gates (default yes); C-FD-4 ratify D-29b inside the first wave's
+  approval packet (default yes).
+- **SIGNUP-ENDPOINT — founder question:** every "email me" form posts to Formspree `xaqaeeez` because
+  `NEXT_PUBLIC_LISTMONK_URL` is unset in builds (audit M5). *Done when:* the founder confirms Formspree, or the Listmonk
+  URL is set in the build and a test pins it. v1: I3 S3 L1 C4 − E1 − R1 = 9.
+- **AILABS-TITLE — `/ai-labs` title reads "... 2026 — Compassion Benchmark | Compassion Benchmark"** (the page title
+  carries the brand and the template adds it again; live before It. 111). v1: I2 S2 L1 C5 − E1 − R1 = 8.
+- **AUDIT-LOWS — the 7 Low findings in `docs/ai-model-watch/LIVE_AUDIT_2026-10-21.md`** (soft 404, sitemap lastmod is the
+  build time, "Why no model ranking" nav label target, "This week" hub wording, queue date vs catalog date, pilot report
+  og:image, "Not stated" rows). v1: I2 S3 L1 C4 − E2 − R1 = 7.
+
 ### New rows (2026-10-20, Iteration 109) — BRF-MOVE-2 validation failure
 
 - **BRF-LEDGER-LAG (2026-10-21, It. 110)** — the ledger rule matches on proposal date. Some ledger rows were applied

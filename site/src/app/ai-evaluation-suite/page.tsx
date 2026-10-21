@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -15,7 +16,7 @@ import EvaluationScorer from "@/components/model-benchmark/EvaluationScorer";
 import { isNonScorableValidationStatus } from "@/lib/evaluation-scorer";
 import anchorCorrections from "@/data/model-benchmark/anchor-corrections-v1.json";
 
-export const metadata: Metadata = { title: "Compassion Benchmark AI Evaluation Suite", description: "Evaluate AI systems across 8 compassion dimensions and all 40 subdimensions using the Compassion Benchmark AI Evaluation Suite." };
+export const metadata: Metadata = pageMeta({ title: "Compassion Benchmark AI Evaluation Suite", description: "Evaluate AI systems across 8 compassion dimensions and all 40 subdimensions using the Compassion Benchmark AI Evaluation Suite." }, "/ai-evaluation-suite");
 
 const DIMS = [
   { code: "AWR", name: "Awareness", desc: "Does the AI accurately perceive suffering, distress, and harm — including signals that are implicit, indirect, or nested inside functional requests?", subdims: ["Harm Detection", "Stakeholder Listening", "Predictive Risk", "Impact Transparency", "Cultural Awareness"] },

@@ -136,6 +136,13 @@ const rows: TrackerRow[] = catalogRows.map((r) => {
   return { ...publicFields, tested: testedStatus({ benchmarkLocalTag }, { queue: queueSnapshot, renderable, waves }) as TestedStatus };
 });
 
+// Builds the queue snapshot marks "measured" that no catalog row carries as its benchmarkLocalTag. Derived, never typed.
+const catalogTags = new Set(catalogRows.map((r) => r.benchmarkLocalTag).filter((t): t is string => !!t));
+const measuredOutsideCatalog: string[] = (queueSnapshot as { entries: { tag: string; status: string }[] }).entries
+  .filter((e) => e.status === "measured" && !catalogTags.has(e.tag))
+  .map((e) => e.tag)
+  .sort();
+
 const distinct = (xs: string[]) => [...new Set(xs)].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
 
 export const MODEL_WATCH_FACTS = {
@@ -150,6 +157,8 @@ export const MODEL_WATCH_FACTS = {
   latestEdition: (editionSummaries[0] ?? null) as EditionSummary | null,
   editions: editionSummaries,
   rows,
+  /** Tags of builds measured in earlier pilots that have no catalog row (queue snapshot vs catalog). */
+  measuredOutsideCatalog,
   /** Distinct values for the tracker filters, derived from the rows (never typed). */
   filterValues: {
     provider: distinct(rows.map((r) => r.provider)),

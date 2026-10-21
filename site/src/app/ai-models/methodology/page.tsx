@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -37,13 +38,13 @@ type TaskItem = {
 };
 const exampleTask = (tasks as { items: TaskItem[] }).items.find((i) => i.id === "AWR-1-A") ?? null;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "AI Model Compassion Benchmark — Method & Pre-registration",
   description:
     `How Compassion Benchmark scores AI models: ${F.itemCount} task items, ${F.dimensionCount} dimensions, ` +
     `five-anchor rubrics, and the conditions under which this method should be judged to have failed. ` +
     `Published before any official model result exists.`,
-};
+}, "/ai-models/methodology");
 
 const faqItems = [
   {

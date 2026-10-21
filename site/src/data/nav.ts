@@ -20,6 +20,7 @@ export const aiModelsNav = [
   { label: "Model tracker", href: "/ai-models/tracker" },
   { label: "Weekly Watch", href: "/ai-models/watch" },
   { label: "Why no model ranking", href: "/ai-models/leaderboards" },
+  { label: "How the weekly cycle works", href: "/ai-models/cycle" },
   { label: "Method", href: "/ai-models/methodology" },
   { label: "Insights", href: "/insights" },
 ] as const;
@@ -51,6 +52,7 @@ export const footerLinks = {
     { label: "Model tracker", href: "/ai-models/tracker" },
     { label: "Weekly Watch", href: "/ai-models/watch" },
     { label: "Why no model ranking", href: "/ai-models/leaderboards" },
+    { label: "How the weekly cycle works", href: "/ai-models/cycle" },
     { label: "AI model method", href: "/ai-models/methodology" },
     { label: "Insights", href: "/insights" },
   ],

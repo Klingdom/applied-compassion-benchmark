@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -68,7 +69,7 @@ const pilot = pilotsRendered.length > 0 ? pilotsPageFacts(pilotsRendered) : null
 const pilotReportCount = pilotsRendered.length;
 const pilotPreviewRunIds = pilotsRendered.filter((p) => p.mode === "preview").map((p) => p.wave.run_id);
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: noModelScored
     ? "AI Model Compassion Benchmark — Method Published, No Official Model Scores Yet"
     : "AI Model Compassion Benchmark — Method and Results",
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     `${noModelScored ? "No model has an official score." : ""}` +
     `${pilot ? pilot.metaClause : ""}`
   ).trim(),
-};
+}, "/ai-models");
 
 const thin = F.thinnestDimensions.map((d) => `${d.code} (${d.count})`).join(" and ");
 
@@ -322,6 +323,10 @@ export default function AiModelsPage() {
             <Card href="/ai-models/leaderboards">
               <h3 className="text-[1.05rem] mb-1.5">Compassion leaderboards</h3>
               <p className="text-muted text-[0.9rem]">What exists, what does not, and what would have to change.</p>
+            </Card>
+            <Card href="/ai-models/cycle">
+              <h3 className="text-[1.05rem] mb-1.5">How the weekly cycle works</h3>
+              <p className="text-muted text-[0.9rem]">What runs today, what is planned and conditional, and what is not published.</p>
             </Card>
             <Card href="/ai-models/methodology">
               <h3 className="text-[1.05rem] mb-1.5">Methodology</h3>

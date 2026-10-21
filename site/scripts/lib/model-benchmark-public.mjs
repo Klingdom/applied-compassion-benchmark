@@ -276,8 +276,10 @@ function separationWordsArms(wave) {
     if (sep.length) parts.push(`${head}, the test separated ${listWords(sep)} from the other variants.`);
     groups.forEach((g) => parts.push(`${sep.length ? "It" : head + ", the test"} could not tell ${listWords(g)} apart.`));
   }
-  const only = d.separated_uncorrected_only_pairs.map(([a, b]) => `${a} and ${b}`);
-  if (only.length) parts.push(`${listWords(only)} ${only.length === 1 ? "were" : "were each"} separated only without correction for multiple comparisons; that is not stated as a separation.`);
+  // Pairs are separated by semicolons, so two pairs never read as one list (LIVE_AUDIT 2026-10-21 M4).
+  const pairs = d.separated_uncorrected_only_pairs;
+  if (pairs.length === 1) parts.push(`${pairs[0][0]} and ${pairs[0][1]} were separated only without correction for multiple comparisons; that is not stated as a separation.`);
+  else if (pairs.length > 1) parts.push(`${numberWord(pairs.length).replace(/^./, (c) => c.toUpperCase())} pairs were each separated only without correction for multiple comparisons: ${pairs.map(([a, b]) => `${a} and ${b}`).join("; ")}. That is not stated as a separation.`);
   const B = d.range_only_subjects;
   if (B.length) parts.push(`The secondary arm (length instruction, one trial per item) shows ranges only: ${listWords([...B].sort(alpha))}.`);
   parts.push("Not separated is not the same as equal; the pilot cannot say which is higher.");

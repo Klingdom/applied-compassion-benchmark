@@ -92,6 +92,7 @@ function buildLlmsTxt() {
     `- AI model tracker (a catalog of models listed with sources; a listing is not an evaluation): ${BASE_URL}/ai-models/tracker`,
     `- AI Model Watch (dated editions of what shipped and what providers disclosed${editions[0] ? "; latest edition " + editions[0].date : ""}): ${BASE_URL}/ai-models/watch${editions[0] ? NL + `- AI Model Watch latest edition: ${BASE_URL}/ai-models/watch/${editions[0].date}` : ""}`,
     `- Compassion leaderboards (no model ranking is published; routes to the AI Labs Index for organisations): ${BASE_URL}/ai-models/leaderboards`,
+    `- How we analyse AI models every week (what runs today, what is planned and conditional; no model ranking is published): ${BASE_URL}/ai-models/cycle`,
   ].join(NL);
   const insightsSection = insightPosts.length
     ? `## Insights (cited pieces on compassion-first AI for labs and agent builders)${NL}- Insights index: ${BASE_URL}/insights${NL}` +

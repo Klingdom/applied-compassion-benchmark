@@ -13,7 +13,7 @@ People regularly ask Compassion Benchmark for a ranked list of AI models. We do 
 
 Our Model Index has a published method, a published task bank and published conditions under which the method should be judged to have failed. It has no official model scores. The registry of officially evaluated models is empty, and the site says so wherever the Model Index appears.
 
-Unofficial pilot reports exist. They are labelled as pilots, carry no comparability claim, show ranges rather than single numbers, list models alphabetically and contain no ranks. A pilot is a test of the instrument, not a verdict on a model. This is not a ranking, and nothing in a pilot report should be read as one.
+Unofficial pilot reports exist. They are labelled as pilots, carry no comparability claim, show ranges (plus a point estimate inside the range only for a model the test separated from the others), list models alphabetically and contain no ranks. A pilot is a test of the instrument, not a verdict on a model. This is not a ranking, and nothing in a pilot report should be read as one.
 
 There are four reasons for that position.
 
@@ -82,3 +82,6 @@ Compassion Benchmark is independent. No provider pays for inclusion, testing pri
 3. LLM Evaluators Recognize and Favor Their Own Generations, Panickssery, Bowman and Feng — arXiv, 2024-04-15. https://arxiv.org/abs/2404.13076
 4. Defeating Nondeterminism in LLM Inference, Horace He — Thinking Machines Lab, 2025-09-10. https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/
 5. The Leaderboard Illusion, Singh et al. — arXiv, 2025-04-29. https://arxiv.org/abs/2504.20879
+
+## Corrections
+- 2026-10-21: This article first said pilot reports "show ranges rather than single numbers". Two pilot reports also show a point estimate inside the range for the one model the test separated from the others, as founder decision D-29a allows. The sentence now says so.

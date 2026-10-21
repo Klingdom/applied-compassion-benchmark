@@ -22,8 +22,27 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 >
 > The dated entry itself is unchanged.
 
+> **Status note, 2026-10-21 (deploy):** the 2026-10-14, 2026-10-15, 2026-10-16 and 2026-10-21 entries below are live.
+> Production was built from **`309362ea`** at 2026-10-21T17:40:42Z by dispatch run `39644977500`; the deploy and the
+> post-deploy health check both succeeded, and the build manifest reports a clean checkout. Verified live: the AI Model
+> Watch and Insights routes return 200, `/updates/2026-10-01` reads "12 measured differences, not applied", and
+> `/updates/2026-05-21` reads "largest move Croatia -7.8". The dated entries themselves are unchanged.
+
 ---
 
+
+## 2026-10-21 — How we analyse AI models every week, and fixes from a full audit of the AI model pages (NO score changes; pending deploy)
+
+- **New page `/ai-models/cycle`:** what runs every week today (AI Model Watch), what is planned and conditional (a weekly
+  test run of open-weight models), what we publish and what we do not, and what would have to change before any model
+  ranking. Every count on the page is derived from data. It opens with a crisis-support line.
+- **Correction:** the article "Why we do not rank AI models yet" said pilot reports show "ranges rather than single
+  numbers". Two pilot reports also show a point estimate inside the range for one model, as decision D-29a allows. The
+  article now says so, with a dated correction.
+- **Fixes from the audit:** each AI model page now shares its own title and link (they showed the homepage's); a
+  sentence listing two pairs of models no longer reads as one list; the tracker explains why three measured builds
+  have no row.
+- **Impact:** no score, band or rank changes.
 
 ## 2026-10-21 — Briefings label applied and unapplied score changes correctly (NO score changes; pending deploy)
 

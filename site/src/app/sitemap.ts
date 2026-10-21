@@ -64,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-models/tracker",
     "/ai-models/watch",
     "/ai-models/leaderboards",
+    "/ai-models/cycle",
   ];
   const editions = MODEL_WATCH_FACTS.editions;
   const insightPosts = INSIGHTS;

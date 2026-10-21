@@ -42,7 +42,7 @@ Design:
 - Method, as recorded in the wave file: composite: computeCompositeFromDimensions (unmodified), dimension = mean of item means; interval: item resampling stratified by dimension, paired across subjects, 1000 replicates, seed 20261003.
 
 What it found about separation:
-- In the primary arm (no length instruction), after correction for multiple comparisons, the test separated gemma2-9b-A from the other three variants and could not tell llama3.2-3b-A, mistral-7b-A and qwen2.5-7b-A apart (alphabetical order). llama3.2-3b-A and mistral-7b-A and mistral-7b-A and qwen2.5-7b-A were each separated only without correction for multiple comparisons; that is not stated as a separation. The secondary arm (length instruction, one trial per item) shows ranges only: gemma2-9b-B, llama3.2-3b-B, mistral-7b-B and qwen2.5-7b-B. Not separated is not the same as equal; the pilot cannot say which is higher.
+- In the primary arm (no length instruction), after correction for multiple comparisons, the test separated gemma2-9b-A from the other three variants and could not tell llama3.2-3b-A, mistral-7b-A and qwen2.5-7b-A apart (alphabetical order). Two pairs were each separated only without correction for multiple comparisons: llama3.2-3b-A and mistral-7b-A; mistral-7b-A and qwen2.5-7b-A. That is not stated as a separation. The secondary arm (length instruction, one trial per item) shows ranges only: gemma2-9b-B, llama3.2-3b-B, mistral-7b-B and qwen2.5-7b-B. Not separated is not the same as equal; the pilot cannot say which is higher.
 
 95% ranges (alphabetical order, which is not a ranking):
 - gemma2-9b-A: 95% range 26.3 to 33.0 (unofficial pilot figure, not a score); the test separated it from the others, but reply length is an unresolved confound.

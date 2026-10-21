@@ -2,7 +2,7 @@
  * model-watch-gates.mjs -- built-tree HTML gates for the AI Model Watch routes and Insights
  * (docs/ARCHITECTURE_AI_MODEL_WATCH.md section 6, "Built-tree checks"; build item 10).
  *
- * Routes covered: /ai-models/tracker, /ai-models/watch, /ai-models/watch/<date>, /ai-models/leaderboards, /insights, /insights/<slug>,
+ * Routes covered: /ai-models/tracker, /ai-models/watch, /ai-models/watch/<date>, /ai-models/leaderboards, /ai-models/cycle, /insights, /insights/<slug>,
  * plus sitemap.xml and insights/feed.xml. The existing pilot/dashboard gate files are NOT edited; this module IMPORTS them:
  *   G6   ratingSchemaProblems        forbidden JSON-LD types and keys
  *   G19  leakProblems / pilotMentionProblems   on /insights/** (the existing G19 test already walks out/ai-models/**, which holds the new model routes)
@@ -34,6 +34,7 @@ export const ROUTE_LD_ALLOW = {
   watch: ["BreadcrumbList"],
   edition: ["BreadcrumbList"],
   leaderboards: ["BreadcrumbList", "FAQPage", "Question", "Answer"],
+  cycle: ["BreadcrumbList"],
   insightsIndex: ["BreadcrumbList"],
   insightPost: ["BlogPosting", "BreadcrumbList"],
 };
@@ -288,6 +289,54 @@ export function leaderboardsProblems(html, { matcher, itemCount }) {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
+// /ai-models/cycle ("How we analyse AI models every week")
+// ---------------------------------------------------------------------------------------------------------------------
+
+export const CYCLE_NO_RANKING_SENTENCE = "No official model ranking, band or score is published.";
+
+/** Heading levels in document order (h1-h6) inside <main>. */
+const headingLevels = (html) => [...mainHtml(html).matchAll(/<h([1-6])\b/gi)].map((m) => Number(m[1]));
+
+/**
+ * The weekly-cycle explainer. JSON-LD is BreadcrumbList only (no Dataset / ItemList / Rating / Review: G6 + the route allowlist).
+ * Ranking words within 60 characters of a model name fail (near mode, with the G20 negation allowance). The labels "pilot", "planned"
+ * and "conditional" must survive in the rendered text. The loop table keeps a Status column, and every body row fills it.
+ * @param {{matcher:{mentions:(t:string)=>{start:number,end:number}[]}}} ctx
+ */
+export function cycleProblems(html, { matcher }) {
+  const p = [...ldProblems(html, "cycle"), ...commonProblems(html), ...lexiconPageProblems(html, "near", matcher), ...labScoreProblems(mainText(html))];
+  const text = norm(mainText(html));
+  if (!text.includes(CYCLE_NO_RANKING_SENTENCE)) p.push(`MWH-cycle-statement: the page never says "${CYCLE_NO_RANKING_SENTENCE}"`);
+  for (const [word, re] of [["pilot", /\bpilot/i], ["planned", /\bplanned\b/i], ["conditional", /\bconditional\b/i]]) {
+    if (!re.test(text)) p.push(`MWH-cycle-label: the label "${word}" does not survive in the rendered text`);
+  }
+  if (!/\bplanned,\s*conditional\b/i.test(text)) p.push('MWH-cycle-label: the phrase "Planned, conditional" is missing (the weekly test run is labelled as planned and conditional)');
+  // The loop table keeps its Status column, filled in every row; headers carry scope.
+  const tables = [...mainHtml(html).matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)];
+  const loop = tables.find((t) => /<th\b[^>]*>\s*Status\s*<\/th>/i.test(t[1]));
+  if (!loop) p.push("MWH-cycle-table: no table with a Status column header (the loop table keeps its Status column)");
+  else {
+    const head = loop[1].match(/<thead\b[^>]*>([\s\S]*?)<\/thead>/i);
+    const heads = head ? [...head[1].matchAll(/<th\b([^>]*)>([\s\S]*?)<\/th>/gi)] : [];
+    if (!head) p.push("MWH-cycle-table: the loop table has no <thead>");
+    for (const h of heads) if (!/\bscope="col"/i.test(h[1])) p.push(`MWH-cycle-table: header "${norm(h[2].replace(/<[^>]+>/g, " "))}" lacks scope="col"`);
+    const si = heads.findIndex((h) => /^status$/i.test(norm(h[2].replace(/<[^>]+>/g, " "))));
+    const body = loop[1].match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i);
+    const rows = body ? [...body[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)] : [];
+    if (rows.length === 0) p.push("MWH-cycle-table: the loop table has no body rows");
+    rows.forEach((r, i) => {
+      const cells = [...r[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((c) => norm(c[1].replace(/<[^>]+>/g, " ")));
+      if (si >= 0 && (cells.length !== heads.length || !cells[si])) p.push(`MWH-cycle-table: loop row ${i + 1} has no Status cell (${cells.length} cell(s) for ${heads.length} header(s))`);
+    });
+  }
+  // Heading order: one h1, then no level skipped on the way down.
+  const lv = headingLevels(html);
+  if (lv.filter((x) => x === 1).length !== 1) p.push(`MWH-cycle-headings: expected exactly one <h1>, found ${lv.filter((x) => x === 1).length}`);
+  lv.forEach((x, i) => { if (i > 0 && x > lv[i - 1] + 1) p.push(`MWH-cycle-headings: heading level jumps from h${lv[i - 1]} to h${x}`); });
+  return [...new Set(p)];
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
 // /insights and /insights/<slug>
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -358,7 +407,7 @@ export function pilotLeakPageProblems(html, waves, { renderingIds = new Set() } 
 
 export function sitemapProblems(xml, { editions, posts }) {
   const p = [];
-  const need = ["/ai-models/tracker", "/ai-models/watch", "/ai-models/leaderboards", "/insights"];
+  const need = ["/ai-models/tracker", "/ai-models/watch", "/ai-models/leaderboards", "/ai-models/cycle", "/insights"];
   for (const e of editions) need.push(`/ai-models/watch/${e.date}`);
   for (const x of posts) need.push(`/insights/${x.slug}`);
   for (const path of need) if (!new RegExp(`<loc>${escRe(SITE_URL + path)}/?</loc>`).test(xml)) p.push(`MWH-sitemap: ${path} is missing from sitemap.xml`);
@@ -389,6 +438,60 @@ export function feedProblems(text, waves) {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Share metadata (live audit 2026-10-21, finding M3)
+// ---------------------------------------------------------------------------------------------------------------------
+
+/** Pages whose own title and description must reach og:/twitter: tags; [built file, route]. The root layout's openGraph is the homepage's. */
+export const SHARE_META_ROUTES = [
+  ["ai-models.html", "/ai-models"],
+  ["ai-models/tracker.html", "/ai-models/tracker"],
+  ["ai-models/methodology.html", "/ai-models/methodology"],
+  ["ai-models/leaderboards.html", "/ai-models/leaderboards"],
+  ["ai-models/watch.html", "/ai-models/watch"],
+  ["ai-models/cycle.html", "/ai-models/cycle"],
+  ["ai-evaluation-suite.html", "/ai-evaluation-suite"],
+  ["ai-labs.html", "/ai-labs"],
+];
+
+function metaContent(html, key) {
+  for (const m of html.matchAll(/<meta\b[^>]*>/gi)) if ((attr(m[0], "property") ?? attr(m[0], "name")) === key) return attr(m[0], "content");
+  return null;
+}
+function canonicalHref(html) {
+  for (const m of html.matchAll(/<link\b[^>]*>/gi)) if (attr(m[0], "rel") === "canonical") return attr(m[0], "href");
+  return null;
+}
+
+/** The homepage's og:title and og:description, the values a page must NOT inherit. */
+export function homeShareMeta(homeHtml) {
+  return { title: metaContent(homeHtml, "og:title"), description: metaContent(homeHtml, "og:description") };
+}
+
+/**
+ * A page needs its own og:title and og:description (not the homepage's), a rel=canonical, an og:url equal to that canonical,
+ * and its own twitter:title. Fails when the layout's openGraph is inherited.
+ * @param {string} html @param {string} route e.g. "/ai-models" @param {{title:string|null, description:string|null}} home
+ */
+export function shareMetaProblems(html, route, home) {
+  const p = [];
+  const ogTitle = metaContent(html, "og:title");
+  const ogDesc = metaContent(html, "og:description");
+  const ogUrl = metaContent(html, "og:url");
+  const canon = canonicalHref(html);
+  if (!ogTitle) p.push("MWH-share-title: no og:title");
+  else if (home?.title && ogTitle === home.title) p.push(`MWH-share-title: og:title is the homepage's ("${ogTitle.slice(0, 60)}"); set the page's own openGraph`);
+  if (!ogDesc) p.push("MWH-share-desc: no og:description");
+  else if (home?.description && ogDesc === home.description) p.push("MWH-share-desc: og:description is the homepage's; set the page's own openGraph");
+  if (!canon) p.push("MWH-share-canonical: no rel=canonical");
+  else if (!canon.endsWith(route)) p.push(`MWH-share-canonical: canonical "${canon}" does not end with the route ${route}`);
+  if (!ogUrl) p.push("MWH-share-url: no og:url");
+  else if (canon && ogUrl !== canon) p.push(`MWH-share-url: og:url "${ogUrl}" != canonical "${canon}"`);
+  const twTitle = metaContent(html, "twitter:title");
+  if (twTitle && home?.title && twTitle === home.title) p.push("MWH-share-title: twitter:title is the homepage's");
+  return p;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
 // The built tree
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -412,6 +515,16 @@ export function modelWatchTreeProblems({ outDir, ctx, requireRoutes = true }) {
   page("ai-models/watch.html", (h) => watchListProblems(h, { editions: ctx.editions }));
   for (const e of ctx.editions) page(`ai-models/watch/${e.date}.html`, (h) => editionProblems(h, e, { catalog: ctx.catalog }));
   page("ai-models/leaderboards.html", (h) => leaderboardsProblems(h, { matcher: ctx.matcher, itemCount: ctx.itemCount }));
+  page("ai-models/cycle.html", (h) => cycleProblems(h, { matcher: ctx.matcher }));
+  // Share metadata: each route's own og:/canonical, never the homepage's (live audit M3). The four routes with no other gate here are counted as examined.
+  if (exists("index.html")) {
+    const home = homeShareMeta(read("index.html"));
+    for (const [rel, route] of SHARE_META_ROUTES) {
+      if (!exists(rel)) { if (requireRoutes && !["ai-models/tracker.html", "ai-models/watch.html", "ai-models/leaderboards.html", "ai-models/cycle.html"].includes(rel)) problems.push(`MWH-tree-missing: out/${rel} does not exist`); continue; }
+      if (!["ai-models/tracker.html", "ai-models/watch.html", "ai-models/leaderboards.html", "ai-models/cycle.html"].includes(rel)) examined += 1;
+      problems.push(...shareMetaProblems(read(rel), route, home).map((x) => `${rel}: ${x}`));
+    }
+  } else if (requireRoutes) problems.push("MWH-tree-missing: out/index.html does not exist (needed for the share-metadata comparison)");
   page("insights.html", (h) => [...insightsIndexProblems(h, { posts: ctx.posts }), ...pilotLeakPageProblems(h, ctx.waves, { renderingIds: ctx.renderingIds })]);
   for (const post of ctx.posts) {
     page(`insights/${post.slug}.html`, (h) => [

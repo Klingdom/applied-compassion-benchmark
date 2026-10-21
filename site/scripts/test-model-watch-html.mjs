@@ -19,13 +19,13 @@ import { harness, OUT_DIR, WAVES_DIR, REQUIRE_OUT, TREE_ONLY, SITE } from "./lib
 import { loadWaves, withheldValues } from "./lib/model-report-html-gates.mjs";
 import { renderableEntries } from "./lib/pilot-render-gate.mjs";
 import {
-  trackerProblems, watchListProblems, editionProblems, leaderboardsProblems, insightsIndexProblems, insightPostProblems, pilotLeakPageProblems,
-  sitemapProblems, hrefResolveProblems, feedProblems, modelWatchTreeProblems, lexiconPageProblems, ldProblems, makeModelMatcher, SITEWIDE_LD, DISCLOSURE_SUMMARY_LABEL,
+  trackerProblems, watchListProblems, editionProblems, leaderboardsProblems, cycleProblems, insightsIndexProblems, insightPostProblems, pilotLeakPageProblems,
+  sitemapProblems, hrefResolveProblems, feedProblems, modelWatchTreeProblems, shareMetaProblems, homeShareMeta, SHARE_META_ROUTES, lexiconPageProblems, ldProblems, makeModelMatcher, SITEWIDE_LD, DISCLOSURE_SUMMARY_LABEL,
 } from "./lib/model-watch-gates.mjs";
 import { testedStatus } from "./lib/model-watch-tested.mjs";
 import { parsePostSource, buildPost } from "./lib/insights-lint.mjs";
 import { richStores, compiled, QUEUE } from "./lib/model-watch-fixtures.mjs";
-import { trackerHtml, watchListHtml, editionHtml, leaderboardsHtml, insightsIndexHtml, insightPostHtml, sitemapXml, page, breadcrumb, esc } from "./lib/model-watch-html-fixtures.mjs";
+import { trackerHtml, watchListHtml, editionHtml, leaderboardsHtml, cycleHtml, insightsIndexHtml, insightPostHtml, sitemapXml, page, breadcrumb, esc } from "./lib/model-watch-html-fixtures.mjs";
 import { pathsFor, readJsonIf, readEditions, readWaveContext } from "./lib/model-watch-context.mjs";
 
 const h = harness("test-model-watch-html");
@@ -84,11 +84,13 @@ if (!TREE_ONLY) {
   const watchList = watchListHtml([edition]);
   const editionPage = editionHtml(edition);
   const leaderboards = leaderboardsHtml({ itemCount });
+  const cycle = cycleHtml();
   const insightsIndex = insightsIndexHtml([labPost, agentPost]);
 
   const TR = (html, o = {}) => trackerProblems(html, { catalog, expectedTested, ...o });
   const ED = (html) => editionProblems(html, edition, { catalog });
   const LB = (html) => leaderboardsProblems(html, { matcher, itemCount });
+  const CY = (html) => cycleProblems(html, { matcher });
   const IP = (html, post = labPost) => insightPostProblems(html, { post, matcher, gumroadAiLabsIndex: GUM });
 
   // -------------------------------------------------------------------------------------------------------------------
@@ -97,6 +99,7 @@ if (!TREE_ONLY) {
   h.clean("watch listing", watchListProblems(watchList, { editions: [edition] }));
   h.clean("edition", ED(editionPage));
   h.clean("leaderboards", LB(leaderboards));
+  h.clean("cycle", CY(cycle));
   h.clean("insights index", insightsIndexProblems(insightsIndex, { posts: [labPost, agentPost] }));
   h.clean("lab-facing post", IP(labPage));
   h.clean("agent-builder post", IP(agentPage, agentPost));
@@ -187,6 +190,33 @@ if (!TREE_ONLY) {
   h.trips("no agent-tier explanation", LB(leaderboards.replace(/<p>Agent-tier[^<]*<\/p>/, "")), "MWH-leaderboards-agent");
   h.trips("a lab score on the leaderboards page", LB(leaderboards.replace("<h1>", "<p>Acme scores 64/100 on the lab index.</p><h1>")), "MWH-lab-score");
 
+  h.section("cycle probes");
+  const LD = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+  h.trips("Dataset JSON-LD on the cycle page (G6)", CY(cycle.replace("<h1>", LD({ "@type": "Dataset", name: "x" }) + "<h1>")), "G6-type");
+  h.trips("ItemList JSON-LD on the cycle page (G6)", CY(cycle.replace("<h1>", LD({ "@type": "ItemList" }) + "<h1>")), "G6-type");
+  h.trips("Rating JSON-LD on the cycle page (G6)", CY(cycle.replace("<h1>", LD({ "@type": "Rating", ratingValue: 4 }) + "<h1>")), "G6-");
+  h.trips("Review JSON-LD on the cycle page (G6)", CY(cycle.replace("<h1>", LD({ "@type": "Review" }) + "<h1>")), "G6-type");
+  h.trips("FAQPage JSON-LD where the cycle route allows only a breadcrumb", CY(cycle.replace("<h1>", LD({ "@type": "FAQPage", mainEntity: [] }) + "<h1>")), "MWH-ld-type");
+  h.trips("no BreadcrumbList on the cycle page", CY(cycleHtml({ ldBlocks: [] })), "MWH-breadcrumb");
+  h.trips("a ranking word beside a model name on the cycle page (G20 window)", CY(cycle.replace("<h1>", "<p>Alpha 1 is the best assistant this week.</p><h1>")), "MWH-lexicon");
+  h.trips("a leaderboard term beside a model name on the cycle page", CY(cycle.replace("<h1>", "<p>Alpha 1 tops the leaderboard.</p><h1>")), "MWH-lexicon");
+  h.check("a negated ranking phrase beside a model name is allowed on the cycle page", () => h.assert(CY(cycle.replace("<h1>", "<p>This is not a ranking and Alpha 1 is only listed.</p><h1>")).length === 0));
+  h.trips("the no-ranking sentence missing from the cycle page", CY(cycle.replace("No official model ranking, band or score is published.", "Rankings are discussed below.")), "MWH-cycle-statement");
+  h.trips("the word pilot removed from the cycle page", CY(cycle.replace(" Pilot results are unofficial ranges.", "")), "MWH-cycle-label");
+  h.trips("the word planned removed (status cells and prose)", CY(cycle.replace("Planned, conditional:", "Later, conditional:").replace(/\bPlanned\b/g, "Later").replace("Automation planned", "Automation later")), "MWH-cycle-label");
+  h.trips("the word conditional removed from the cycle page", CY(cycle.replace("Planned, conditional:", "Planned:")), "MWH-cycle-label");
+  h.trips("conditional present but the phrase Planned, conditional missing", CY(cycle.replace("Planned, conditional:", "Planned and, if funded, conditional:")), "MWH-cycle-label");
+  h.trips("the loop table losing its Status column", CY(cycle.replace('<th scope="col">Status</th>', '<th scope="col">State</th>')), "MWH-cycle-table");
+  h.trips("the loop table losing a Status cell in a row", CY(cycle.replace("<td>Running today</td>", "")), "MWH-cycle-table");
+  h.trips("a loop table header without scope", CY(cycle.replace('<th scope="col">Link</th>', "<th>Link</th>")), "MWH-cycle-table");
+  h.trips("no table at all on the cycle page", CY(cycle.replace(/<table>[\s\S]*<\/table>/, "")), "MWH-cycle-table");
+  h.trips("an unsubstituted {{TOKEN}} on the cycle page", CY(cycle.replace("<h1>", "<p>{{QUEUED_BUILD_COUNT}} builds</p><h1>")), "MWH-token");
+  h.trips("a skipped heading level on the cycle page (h2 to h4)", CY(cycle.replace("<h2>How each week", "<h4>Sub</h4><h2>How each week")), "MWH-cycle-headings");
+  h.trips("two h1 elements on the cycle page", CY(cycle.replace("<h2>What we publish", "<h1>Second</h1><h2>What we publish")), "MWH-cycle-headings");
+  h.trips("a lab score on the cycle page", CY(cycle.replace("<h1>", "<p>Acme scores 64/100 on the lab index.</p><h1>")), "MWH-lab-score");
+  h.trips("a Gumroad link on the cycle page", CY(cycle.replace("<h1>", '<a href="https://compassionbenchmark.gumroad.com/l/eagls">Buy</a><h1>')), "MWH-gumroad");
+  h.trips("no independence statement on the cycle page", CY(cycle.replace(/<p>Compassion Benchmark is independent[^<]*<\/p>/, "")), "MWH-independence");
+
   h.section("insights probes");
   h.trips("an index missing a post", insightsIndexProblems(insightsIndex, { posts: [labPost, agentPost, mkPost("both", "third-fixture")] }), "MWH-insights-index");
   h.trips("an index linking an unpublished post", insightsIndexProblems(insightsIndex.replace("</ul>", '<li><a href="/insights/ghost">x</a></li></ul>'), { posts: [labPost, agentPost] }), "MWH-insights-index");
@@ -238,10 +268,33 @@ if (!TREE_ONLY) {
   h.check("the feed (G24) is held to the machine-text rule: a clean feed passes", () => h.assert(feedProblems("<feed><entry><title>Reading releases</title></entry></feed>", waves).length === 0));
   if (memberTok) h.trips("a withheld member point in the feed (G24)", feedProblems(`<feed><entry><title>x</title><summary>score ${memberTok}</summary></entry></feed>`, [w]), "G24-member-point-token");
 
+  h.section("share metadata probes (live audit M3)");
+  const HOME_T = "Compassion Benchmark | Global Benchmarking for Institutional Compassion";
+  const HOME_D = "Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering.";
+  const metaHead = ({ route, title = "Own page title | Compassion Benchmark", desc = "Own page description.", url = "https://compassionbenchmark.com" + route, canonical = "https://compassionbenchmark.com" + route }) =>
+    '<meta property="og:title" content="' + title + '"/><meta property="og:description" content="' + desc + '"/>' +
+    (url ? '<meta property="og:url" content="' + url + '"/>' : "") + (canonical ? '<link rel="canonical" href="' + canonical + '"/>' : "") +
+    '<meta name="twitter:title" content="' + title + '"/>';
+  const withHead = (html, head) => html.replace("</head>", head + "</head>");
+  const homeHtml = withHead("<html><head></head></html>", metaHead({ route: "", title: HOME_T, desc: HOME_D, canonical: "https://compassionbenchmark.com/" , url: "https://compassionbenchmark.com/" }));
+  const HOME = homeShareMeta(homeHtml);
+  h.check("the homepage's og:title and og:description are read", () => h.assert(HOME.title === HOME_T && HOME.description === HOME_D, JSON.stringify(HOME)));
+  h.check("every share-metadata route is a distinct path", () => h.assert(new Set(SHARE_META_ROUTES.map((x) => x[1])).size === SHARE_META_ROUTES.length && SHARE_META_ROUTES.length === 8));
+  const okShare = withHead("<html><head></head></html>", metaHead({ route: "/ai-models" }));
+  h.clean("a page with its own og:title, og:description, og:url and canonical passes", shareMetaProblems(okShare, "/ai-models", HOME));
+  h.trips("the homepage og:title copied onto a page", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", title: HOME_T })), "/ai-models", HOME), "MWH-share-title");
+  h.trips("the homepage og:description copied onto a page", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", desc: HOME_D })), "/ai-models", HOME), "MWH-share-desc");
+  h.trips("a page with no og:url", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", url: "" })), "/ai-models", HOME), "MWH-share-url");
+  h.trips("a page with no rel=canonical", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", canonical: "" })), "/ai-models", HOME), "MWH-share-canonical");
+  h.trips("an og:url that differs from the canonical", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", url: "https://compassionbenchmark.com/ai-labs" })), "/ai-models", HOME), "MWH-share-url");
+  h.trips("a canonical that is not the page's route", shareMetaProblems(withHead("<html><head></head></html>", metaHead({ route: "/ai-models", canonical: "https://compassionbenchmark.com/ai-labs", url: "https://compassionbenchmark.com/ai-labs" })), "/ai-models", HOME), "MWH-share-canonical");
+  h.trips("a page with no og tags at all", shareMetaProblems("<html><head></head></html>", "/ai-models", HOME), "MWH-share-title");
+
   h.section("sitemap and hrefs");
   const xml = sitemapXml({ editions: [edition], posts: [labPost, agentPost] });
   h.trips("an edition missing from the sitemap", sitemapProblems(xml.replace(`/ai-models/watch/${edition.date}`, "/x"), { editions: [edition], posts: [labPost, agentPost] }), "MWH-sitemap");
   h.trips("a post missing from the sitemap", sitemapProblems(xml.replace("/insights/lab-fixture", "/x"), { editions: [edition], posts: [labPost, agentPost] }), "MWH-sitemap");
+  h.trips("the cycle page missing from the sitemap", sitemapProblems(xml.replace("/ai-models/cycle", "/x"), { editions: [edition], posts: [labPost, agentPost] }), "MWH-sitemap");
   h.trips("the tracker missing from the sitemap", sitemapProblems(xml.replace("/ai-models/tracker", "/x"), { editions: [edition], posts: [labPost, agentPost] }), "MWH-sitemap");
   h.trips("a sitemap entry for a post that does not exist", sitemapProblems(sitemapXml({ editions: [edition], posts: [labPost, agentPost], extra: ["/insights/ghost"] }), { editions: [edition], posts: [labPost, agentPost] }), "MWH-sitemap");
   const exists = (rel) => ["ai-labs.html", "insights.html"].includes(rel);
@@ -254,22 +307,28 @@ if (!TREE_ONLY) {
     try {
       const put = (rel, text) => { mkdirSync(dirname(join(tmp, rel)), { recursive: true }); writeFileSync(join(tmp, rel), text); };
       const build = ({ extra = {} } = {}) => {
-        put("ai-models/tracker.html", tracker);
-        put("ai-models/watch.html", watchList);
+        put("ai-models/tracker.html", withHead(tracker, metaHead({ route: "/ai-models/tracker" })));
+        put("ai-models/watch.html", withHead(watchList, metaHead({ route: "/ai-models/watch" })));
         put(`ai-models/watch/${edition.date}.html`, editionPage);
-        put("ai-models/leaderboards.html", leaderboards);
+        put("ai-models/leaderboards.html", withHead(leaderboards, metaHead({ route: "/ai-models/leaderboards" })));
+        put("ai-models/cycle.html", withHead(cycle, metaHead({ route: "/ai-models/cycle" })));
+        put("index.html", homeHtml);
+        for (const [rel, route] of [["ai-models.html", "/ai-models"], ["ai-models/methodology.html", "/ai-models/methodology"]]) put(rel, withHead("<html><head></head></html>", metaHead({ route })));
         put("insights.html", insightsIndex);
         put("insights/lab-fixture.html", labPage);
         put("insights/agent-fixture.html", agentPage);
         put("sitemap.xml", sitemapXml({ editions: [edition], posts: [labPost, agentPost] }));
         for (const [k, v] of Object.entries(extra)) put(k, v);
-        for (const f of ["ai-labs.html", "ai-evaluation-suite.html"]) put(f, "<html></html>");
+        for (const [f, route] of [["ai-labs.html", "/ai-labs"], ["ai-evaluation-suite.html", "/ai-evaluation-suite"]]) put(f, withHead("<html><head></head></html>", metaHead({ route })));
       };
       build();
       const ctx = { catalog, editions: [edition], posts: [labPost, agentPost], waves, renderingIds: new Set(waves.map((x) => x.run_id)), matcher, itemCount, gumroadAiLabsIndex: GUM, expectedTested };
       const clean = modelWatchTreeProblems({ outDir: tmp, ctx });
       h.clean("a complete synthetic tree has no problems", clean.problems);
-      h.check("the tree walk examined the 7 pages and the sitemap (no feed in this tree)", () => h.assert(clean.examined === 7 + 1, `examined ${clean.examined}`));
+      h.check("the tree walk examined the 8 pages, the 4 share-metadata-only pages and the sitemap (no feed in this tree)", () => h.assert(clean.examined === 8 + 4 + 1, `examined ${clean.examined}`));
+      rmSync(join(tmp, "ai-models", "cycle.html"));
+      h.trips("the cycle route missing from the built tree", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-tree-missing");
+      put("ai-models/cycle.html", withHead(cycle, metaHead({ route: "/ai-models/cycle" })));
       rmSync(join(tmp, "ai-models", "leaderboards.html"));
       h.trips("a missing route in the built tree", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-tree-missing");
       h.check("a missing route is tolerated only without requireRoutes", () => h.assert(!modelWatchTreeProblems({ outDir: tmp, ctx, requireRoutes: false }).problems.some((p) => p.includes("MWH-tree-missing"))));
@@ -280,8 +339,16 @@ if (!TREE_ONLY) {
       put("insights/ghost.html", labPage);
       h.trips("a stray post page with no published post", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-tree-leak");
       rmSync(join(tmp, "insights", "ghost.html"));
-      put("ai-models/tracker.html", tracker.replace("<h1>", '<a href="/gone">x</a><h1>'));
+      put("ai-models/tracker.html", withHead(tracker.replace("<h1>", '<a href="/gone">x</a><h1>'), metaHead({ route: "/ai-models/tracker" })));
       h.trips("a dangling href inside a built page", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-href");
+      build();
+      put("ai-models.html", withHead("<html><head></head></html>", metaHead({ route: "/ai-models", title: HOME_T })));
+      h.trips("the homepage og:title on the hub in the built tree", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-share-title");
+      put("ai-models/tracker.html", withHead(tracker, metaHead({ route: "/ai-models/tracker", canonical: "" })));
+      h.trips("a tracker with no canonical in the built tree", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-share-canonical");
+      build();
+      rmSync(join(tmp, "ai-labs.html"));
+      h.trips("a share-metadata route missing from the built tree", modelWatchTreeProblems({ outDir: tmp, ctx }).problems, "MWH-tree-missing");
       build();
       put("insights/feed.xml", `<feed><summary>${member}</summary></feed>`);
       if (memberTok) h.trips("a withheld point in the built feed", modelWatchTreeProblems({ outDir: tmp, ctx: { ...ctx, waves: [w] } }).problems, "G24-member-point-token");

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -26,13 +27,12 @@ const pilotRenders = loadRenderableReports().length > 0;
 
 const canonicalPath = "/ai-models/tracker";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "AI model tracker: models listed with sources, not evaluations",
   description:
     "A neutral list of AI models with provider, release date, status, access, licence and cited sources. " +
     "Listed means listed with a source. It does not mean evaluated, and not listed implies nothing about a model.",
-  alternates: { canonical: canonicalPath },
-};
+}, "/ai-models/tracker");
 
 const faqItems = [
   {
@@ -249,6 +249,14 @@ export default function ModelTrackerPage() {
                 work, not a finding about the model.
               </li>
             </ul>
+            {W.measuredOutsideCatalog.length > 0 && (
+              <p className="text-muted text-[0.93rem] leading-relaxed mt-3">
+                {W.measuredOutsideCatalog.length} {W.measuredOutsideCatalog.length === 1 ? "build" : "builds"} measured in earlier pilots
+                ({W.measuredOutsideCatalog.join(", ")}) {W.measuredOutsideCatalog.length === 1 ? "has" : "have"} no row in this catalog, so
+                {W.measuredOutsideCatalog.length === 1 ? " it does" : " they do"} not appear in the table above. See{" "}
+                <Link href="/ai-models/reports" className="underline underline-offset-2">the pilot reports</Link>.
+              </p>
+            )}
             <p className="text-muted text-[0.93rem] leading-relaxed mt-3">
               {W.catalogAsOf && <>Catalog as of {dateLong(W.catalogAsOf)}. </>}
               Entries rest on the cited sources only. See{" "}

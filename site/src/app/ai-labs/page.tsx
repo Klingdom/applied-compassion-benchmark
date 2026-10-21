@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import IndexHero from "@/components/index/IndexHero";
@@ -16,11 +17,11 @@ import IndexPageCharts from "@/components/index/IndexPageCharts";
 import { MODEL_INDEX_FACTS } from "@/lib/model-index-facts";
 import data from "@/data/indexes/ai-labs.json";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Most & Least Compassionate AI Labs 2026 — Compassion Benchmark",
   description:
     `See which AI labs rank most and least compassionate in 2026. Compassion Benchmark scores ${data.rankings.length} leading AI organizations across safety governance, accountability, deployment boundaries, equity, and integrity.`,
-};
+}, "/ai-labs");
 
 const columns: ColumnDef[] = [
   { key: "rank", label: "Rank", type: "number" },

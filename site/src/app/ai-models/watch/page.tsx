@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -18,12 +19,11 @@ import { dateLong } from "@/lib/model-report-facts";
 const editions: EditionManifestEntry[] = [...W.editions]
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "AI Model Watch: dated editions of what shipped, with sources",
   description:
     "Dated editions of what AI providers released and disclosed, with sources. Not a ranking and not an evaluation.",
-  alternates: { canonical: "/ai-models/watch" },
-};
+}, "/ai-models/watch");
 
 function EditionCard({ e, latest }: { e: EditionManifestEntry; latest: boolean }) {
   return (
@@ -71,6 +71,10 @@ export default function WatchListingPage() {
           <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed">
             Looking for the full list of models? See the{" "}
             <Link href="/ai-models/tracker" className="underline underline-offset-2">model tracker</Link>.
+          </p>
+          <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed mt-3">
+            <Link href="/ai-models/cycle" className="underline underline-offset-2">How the weekly cycle works</Link>: what
+            runs today and what is planned.
           </p>
         </Container>
       </section>

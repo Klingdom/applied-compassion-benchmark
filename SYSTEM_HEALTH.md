@@ -1,20 +1,20 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 110 (BRF-APPLIED-LEDGER plus the Iteration 109 BRF-MOVE-2 fix: applied status from the applied-changes ledger; chain 81 steps)
+Last change: Iteration 111 (D-58: live AI-model audit fixes and the weekly cycle plan at /ai-models/cycle; production 309362ea before this commit; chain 81 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-10-21 (Iteration 111 — **founder directive D-58**): production runs `309362ea` (Iterations 104-110, CI dispatch
+> `39644977500`). A live audit of every AI-model page found 0 broken URLs; its Medium findings are fixed (share metadata
+> on 8 pages, a garbled pairs sentence, a tracker note, one Insights correction). The weekly cycle plan is published at
+> `/ai-models/cycle`; it ratifies nothing (C-FD-1, C-FD-2, C-FD-4 open). Chain 81 steps.
 
 > 2026-10-21 (Iteration 110 — **applied rule fixed; push unblocked**): briefings take applied status from a ledger
 > generated from `research/APPLIED_CHANGES.md`, so legacy May-June briefings again show their applied changes as moves
 > (28 rows, 15 dates), while 2026-10-01 keeps "not applied". The Iteration 109 heading fix is validated with it. The
 > chain is 81 steps. The Iteration 109 note below is superseded: the push block is lifted.
-
-> 2026-10-20 (Iteration 109 — BRF-MOVE-2, **validation failed, not committed**): Iteration 108 is committed as
-> `47a1fa00` (build and the 80-step chain exit 0; `prepush:clean` PASS). **Do not push the branch yet:** the unpushed
-> Iteration 106 commit `9255aa23` labels applied changes on legacy briefings "not applied" (22 rows, 14 dates, e.g.
-> Croatia on 2026-05-21; production is currently correct). Backlog BRF-APPLIED-LEDGER is the forced next item.
 
 > 2026-10-16 (Iteration 108 — **founder directive D-57: AI Model Watch and Insights**): six new routes. The tracker
 > lists sourced models with no ratings, and the first weekly edition covers 2026-09-01 to 2026-10-16. The leaderboards
@@ -110,6 +110,11 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-20 (Iteration 109 — BRF-MOVE-2, **validation failed, not committed**): Iteration 108 is committed as
+> `47a1fa00` (build and the 80-step chain exit 0; `prepush:clean` PASS). **Do not push the branch yet:** the unpushed
+> Iteration 106 commit `9255aa23` labels applied changes on legacy briefings "not applied" (22 rows, 14 dates, e.g.
+> Croatia on 2026-05-21; production is currently correct). Backlog BRF-APPLIED-LEDGER is the forced next item.
 
 > 2026-10-15 (Iteration 107 — **founder decision D-56: tier gate repointed; model-testing redesign**): CS-2 now
 > compares a briefing's tier badge with the change proposal it came from, falling back to the assessment only for

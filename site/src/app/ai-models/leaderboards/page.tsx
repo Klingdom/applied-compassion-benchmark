@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -33,13 +34,12 @@ void SHOW_LABS_PREVIEW;
 const labCount = getIndexEntityCount("ai-labs");
 const pilotRenders = loadRenderableReports().length > 0;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Compassion leaderboards: what exists and what does not",
   description:
     "No model ranking is published. The live compassion leaderboard is for organisations: the AI Labs Index. " +
     "This page lists the conditions that would have to hold before any model comparison could open.",
-  alternates: { canonical: "/ai-models/leaderboards" },
-};
+}, "/ai-models/leaderboards");
 
 const faqItems = [
   {
@@ -185,6 +185,7 @@ export default function LeaderboardsPage() {
           <IndependenceCallout />
           <div className="flex gap-3 flex-wrap mt-5">
             <Button href="/ai-models/methodology">Read the method</Button>
+            <Button href="/ai-models/cycle">How the weekly cycle works</Button>
             <Button href="/insights/why-we-do-not-rank-ai-models-yet">Why we do not rank models yet</Button>
           </div>
         </Container>

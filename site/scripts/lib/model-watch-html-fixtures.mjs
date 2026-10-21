@@ -76,6 +76,21 @@ export function leaderboardsHtml({ itemCount }) {
   );
 }
 
+/** /ai-models/cycle: summary, running-today and planned-conditional blocks, a loop table with a Status column, and the no-ranking sentence. */
+export function cycleHtml({ ldBlocks } = {}) {
+  const rows = [["Releases to test queue", "Done by hand today. Automation planned"], ["Tests to the tracker", "Running today"], ["Results to the test items", "Planned"]]
+    .map(([a, s]) => `<tr><th scope="row">${a}</th><td>An output.</td><td>An input.</td><td>${s}</td></tr>`).join("");
+  return page(
+    `<h1>How we analyse AI models every week</h1>${INDEPENDENCE_P}<p>No official model ranking, band or score is published.</p>` +
+    `<h2>What we do every week</h2><p>Running today: a sourced weekly list of releases.</p>` +
+    `<p>Planned, conditional: a weekly test run of open-weight models. This has not started. Pilot results are unofficial ranges.</p>` +
+    `<h2>How each week makes the next one better</h2>` +
+    `<table><caption>Loop</caption><thead><tr><th scope="col">Link</th><th scope="col">This week output</th><th scope="col">Next week input</th><th scope="col">Status</th></tr></thead><tbody>${rows}</tbody></table>` +
+    `<h2>What we publish, and what we do not</h2><p>Judges today are from one family (Alpha 1 is not rated here). We do not publish a ranking of any model.</p>`,
+    { ldBlocks: ldBlocks ?? [breadcrumb("Home", "AI Models", "Cycle")] },
+  );
+}
+
 export function insightsIndexHtml(posts) {
   const items = posts.map((p) => `<li><a href="/insights/${p.slug}">${esc(p.title)}</a><p>${esc(p.dek)}</p></li>`).join("");
   return page(`<h1>Insights</h1>${INDEPENDENCE_P}<ul>${items}</ul>`, { ldBlocks: [breadcrumb("Home", "Insights")] });
@@ -105,6 +120,6 @@ export function insightPostHtml(post, { gumroad = "https://compassionbenchmark.g
 
 export function sitemapXml({ editions, posts, extra = [] }) {
   const base = "https://compassionbenchmark.com";
-  const paths = ["/ai-models/tracker", "/ai-models/watch", "/ai-models/leaderboards", "/insights", ...editions.map((e) => `/ai-models/watch/${e.date}`), ...posts.map((p) => `/insights/${p.slug}`), ...extra];
+  const paths = ["/ai-models/tracker", "/ai-models/watch", "/ai-models/leaderboards", "/ai-models/cycle", "/insights", ...editions.map((e) => `/ai-models/watch/${e.date}`), ...posts.map((p) => `/insights/${p.slug}`), ...extra];
   return `<?xml version="1.0"?><urlset>${paths.map((p) => `<url><loc>${base}${p}</loc></url>`).join("")}</urlset>`;
 }
