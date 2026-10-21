@@ -92,6 +92,29 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
 
+### New rows (2026-10-20, Iteration 109) — BRF-MOVE-2 validation failure
+
+- **BRF-LEDGER-LAG (2026-10-21, It. 110)** — the ledger rule matches on proposal date. Some ledger rows were applied
+  15-25 days after their proposal date; no briefing is affected today (count 0 wins).
+  - *Done when:* `appliedRule.mjs` caps the lag, or a test proves no positive-counter briefing matches a late row.
+  - v1: I2 S4 L2 C4 − E1 − R1 = 10.
+
+- **BRF-APPLIED-LEDGER — DONE 2026-10-21 (It. 110).** Ledger from `research/APPLIED_CHANGES.md`, a shared rule in
+  `appliedRule.mjs`, and a false-"not applied" gate. Original row below.
+- **BRF-APPLIED-LEDGER — applied changes on legacy briefings are labelled "not applied" (blocks push).**
+  - Cause: `isScoreChangeApplied` (Iteration 106, `9255aa23`, unpushed) treats unmarked rows as unapplied. 22 rows on
+    14 dates (2026-05-21 to 2026-06-19) are in `research/APPLIED_CHANGES.md`, e.g. Croatia on 2026-05-21.
+  - *Done when:* applied status for unmarked rows is derived from the applied log, or the row gets neutral wording that
+    makes no applied/not-applied claim when neither source decides. A tree check with a planted probe fails on "not
+    applied" next to a row that is in the log, seeded from 2026-05-21.
+  - v1: I4 S5 L3 C4 − E3 − R2 = 11 · v2: Rc +2 (DC-03) → **13**; selected next under S3 as a score-claim error that a
+    push would make live (it blocks the push of Iterations 104–108).
+- **BRF-MOVE-2 — DONE 2026-10-21 (validated in It. 110 after the gate was scoped).** Earlier status:
+  **built, validation failed 2026-10-20 (Iteration 109).** Rework: scope the label rule to the
+  movement section and dashboard (the header pipeline strip caused 18 false positives), after BRF-APPLIED-LEDGER.
+- **BRF-MOVE-3 — the dashboard tier label "Changes" still sits over unapplied rows** (sub-label fixed in It. 109).
+  - *Done when:* it reads "Measured differences" when nothing was applied, with a probe. v1: I2 S4 L1 C5 − E1 − R1 = 10.
+
 ### New rows (2026-10-16, Iteration 108) — AI Model Watch and Insights follow-ups
 
 - **MW-WEEKLY — publish the next AI Model Watch edition within 7 days** (runbook `.claude/commands/weekly-ai-model-watch.md`).

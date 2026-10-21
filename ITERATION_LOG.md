@@ -1,5 +1,92 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 110 — 2026-10-21 (founder: "fix the applied rule, then push and deploy") — BRF-APPLIED-LEDGER, plus the Iteration 109 fix
+
+**Selected by founder directive**, and it was also the forced next item (backlog BRF-APPLIED-LEDGER, v2 13, S3). v1/v2
+log: BRF-APPLIED-LEDGER 11 / 13 (selected); MW-WEEKLY 12 / 15 (Dl +3); BRF-MOVE-3 10 / 10. Deviation from the top
+eligible v2 item: a founder directive, and the item blocks the push of Iterations 104-109.
+
+**Built (backend-engineer):**
+- `site/scripts/build-applied-ledger.mjs` parses `research/APPLIED_CHANGES.md` into the committed, deterministic
+  `site/src/data/updates/applied-ledger.json` (93 keyed entries). It runs in `prebuild`, skips when `research/` is
+  absent (Docker), and has `--check` (new chain step 80, `test:applied-ledger`; the chain is now 81 steps).
+- `site/src/components/updates/briefing/appliedRule.mjs` is the single rule, imported by `utils.ts` and by the test:
+  count 0 means nothing was applied (unchanged, matches the DC-03 lint); otherwise a row is applied if it is marked, or
+  if the ledger has the slug with `proposalDate` equal to the briefing date.
+- Not guessed: 6 score-change rows with no proposal link and 73 rows linking undated proposal files are reported by the
+  script, not keyed. 32 "confirmed, no movement" lines are not applied changes.
+- Iteration 109 fix: the movement-label scan is scoped to the movement section, the `#score-movements` dashboard and
+  its TOC link (the header pipeline strip caused 18 false positives). New gate `findFalseNotAppliedViolations` fails on
+  "not applied" wording for an entity applied under the rule (probe seeded from 2026-05-21 Croatia).
+
+**Validation (coordinator re-ran everything):**
+- V2: `tsc --noEmit` exit 0; fixtures 60 PASS, 0 FAIL; `build-applied-ledger.mjs --check` PASS.
+- Rows newly applied under the ledger: 28 rows on 15 dates (2026-05-21 to 2026-06-19). Application lag 0-5 days for
+  every one, so "applied" is true today; production already labels them as moves.
+- V4 build exit 0: tree scan "88 briefing pages ... none name an unapplied entity; 65 nothing-applied pages carry no
+  score-movement label". Rendered `/updates/2026-05-21`: "2 downgrades, 3 upgrades", "largest move Croatia -7.8".
+  Rendered `/updates/2026-10-01`: "12 measured differences, not applied", "largest measured difference (not applied):
+  Valencia -19".
+- `npm test` first run: exit 1 at `test:health-freshness` only (S11: heading said 80 steps, chain has 81). Heading
+  corrected, chain re-run: **exit 0, 81 steps**, no line reports a non-zero `failed` count (65 report `0 failed`).
+- V3: the new gate's probes fail as planted; the old rule (empty ledger) is shown to call Croatia unapplied.
+
+**Pathspec (Iterations 109 and 110 share files, one commit):** `site/package.json
+site/scripts/build-applied-ledger.mjs site/scripts/test-briefing-move-claims.mjs
+site/src/components/updates/DailyBriefing.tsx site/src/components/updates/briefing/ScoreMovementDashboard.tsx
+site/src/components/updates/briefing/utils.ts site/src/components/updates/briefing/appliedRule.mjs
+site/src/data/updates/applied-ledger.json site/src/data/insights/ ITERATION_LOG.md IMPROVEMENT_BACKLOG.md
+SYSTEM_HEALTH.md CHANGELOG.md docs/DEFECT_CLASS_REGISTRY.md`. `site/src/data/insights/` carries only the one-time
+`generatedAt` commit-time update noted in Iteration 109. Excluded: the America-at-250 pair and the nonprofit library.
+
+**Follow-ups:** BRF-MOVE-3 ("Changes" tier label); BRF-LEDGER-LAG (if a briefing with a positive counter ever matches
+a ledger row applied days later, cap the lag in `appliedRule.mjs`); MW-WEEKLY due 2026-10-23.
+
+## Iteration 109 — 2026-10-20 (BRF-MOVE-2, top v2 item; founder: "continue improving") — VALIDATION FAILED, not committed
+
+**Selected:** BRF-MOVE-2, v1 13 / v2 17 (P +2 live, Rc +2 DC-03). Alternatives: MW-WEEKLY 12 / 15 (Dl +3, due 2026-10-23);
+QWEN3-THINK 13 / 13. No deviation.
+
+**V1 BEFORE (production `c5b53451`):** `/updates/2026-10-01` shows the heading "12 downgrades" and aria-label
+"Today's score movement"; its JSON has `scoreChangesApplied: 0` and 0 `appliedChanges`.
+
+**Built (frontend-engineer, plus one coordinator edit under S5):**
+- `utils.ts` `anyScoreChangeApplied`; `DailyBriefing.tsx` heading, aria-label and TOC label classified per row with
+  `isScoreChangeApplied`; `ScoreMovementDashboard.tsx` h2, aria-label and subtitle.
+- S5 (same class, same file, same check): the coordinator also reworded the dashboard sub-label "— 12 scores moved" to
+  "— 12 not applied to the published score" when nothing was applied, with a probe.
+- `test-briefing-move-claims.mjs`: `nothingApplied`, `findMovementLabelViolations`; fixtures 34 PASS, 0 FAIL.
+  `tsc --noEmit` exit 0 (coordinator re-run).
+
+**Validation failed (build exit 1).** Two findings:
+1. **Gate over-match (fixable):** the tree scan flagged 18 pages for the header pipeline strip ("0 score changes" ×11,
+   "1 score change" ×5, "4 score changes" ×1). That strip shows `pipeline.scoreChanges`. No briefing has a non-zero
+   value with `scoreChangesApplied: 0` (scan of 88 daily JSON; the same scan found 14 counter-absent non-zero days, so
+   it can find rows). The label rule must be scoped to the movement section and the dashboard, not the whole page.
+2. **Root cause, inherited from Iteration 106 (committed in `9255aa23`, not pushed):** `isScoreChangeApplied` treats
+   every unmarked row as unapplied. Legacy briefings (May to July) do not mark rows, although `research/APPLIED_CHANGES.md`
+   records them as applied. Cross-check: 22 unmarked rows across 14 briefing dates appear in the applied log under the
+   same proposal date (positive control: the log yields 125 proposal links and matches all 5 rows of 2026-05-21).
+   Production `/updates/2026-05-21` says "2 downgrades, 3 upgrades; largest move Croatia", which is true. The current
+   build says "largest measured difference (not applied): Croatia -7.8", which is false. Pushing `9255aa23` would put
+   that false label live, and the Iteration 109 heading would spread it.
+
+**Outcome:** not validated, not committed. The working-tree changes are kept for the rework. *(2026-10-21: fixed and
+validated in Iteration 110, and committed with it.)* **The branch must not be
+pushed until BRF-APPLIED-LEDGER is done** (or until the Iteration 106 wording is reverted).
+
+**Uncommitted files (not a commit pathspec; validation failed):** `site/src/components/updates/DailyBriefing.tsx
+site/src/components/updates/briefing/ScoreMovementDashboard.tsx site/src/components/updates/briefing/utils.ts
+site/scripts/test-briefing-move-claims.mjs`.
+
+**Follow-ups:** BRF-APPLIED-LEDGER (forced next, blocks push); BRF-MOVE-2 rework (gate scope); BRF-MOVE-3 ("Changes"
+tier label). No CHANGELOG entry: nothing shipped.
+
+**Note:** the rebuild rewrote `generatedAt` in the six `site/src/data/insights/*.json` files, from the pre-commit
+fallback (`2026-10-16T00:00:00.000Z`) to the source commit time of `47a1fa00`. That is deterministic, one-time
+churn (`build-insights.mjs` reads `git log -1 --format=%cI`). The files were restored; the next commit should include
+the regenerated values.
+
 ## Iteration 108 — 2026-10-16 (founder directive D-57: AI Model Watch section and Insights blog; publish)
 
 **Selected by founder directive.** This is a deviation from the top v2 item (BRF-MOVE-2, 17). It is the fourth

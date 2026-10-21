@@ -25,6 +25,16 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-10-21 — Briefings label applied and unapplied score changes correctly (NO score changes; pending deploy)
+
+- **What changed:** the daily briefing heading, its dashboard and its chart labels now say "measured differences, not
+  applied" when a briefing's changes were never applied (for example 2026-10-01, which read "12 downgrades"). Changes
+  that were applied keep the words "downgrade", "upgrade" and "largest move". Applied status for older briefings now
+  comes from the applied-changes record, so May and June briefings still show their applied changes as moves.
+- **Why:** a heading must not present a proposal as a published score change, and an applied change must not be
+  called a proposal.
+- **Impact:** no score, band or rank changes. Two new automated checks guard both directions.
+
 ## 2026-10-16 — AI Model Watch and Insights: a model tracker, a weekly edition, and six articles (NO score changes; pending deploy)
 
 - **What changed:** new pages.

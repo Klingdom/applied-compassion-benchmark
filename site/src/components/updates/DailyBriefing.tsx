@@ -53,6 +53,7 @@ import ScoreSparkline from "./briefing/ScoreSparkline";
 import {
   pickLeadSignal,
   isScoreChangeApplied,
+  anyScoreChangeApplied,
   normalizeBand,
   deltaColor,
   formatIndex,
@@ -210,7 +211,11 @@ export default function DailyBriefing({
     (Array.isArray(updates.pendingReview) && (updates.pendingReview as any[]).length > 0) ||
     (scoreChanges as any[]).length > 0;
   if (hasScoreMovements) {
-    presentSections.push({ id: "score-movements", label: "Score movements" });
+    // BRF-MOVE-2: when nothing was applied, these rows are measured differences, not score movements.
+    presentSections.push({
+      id: "score-movements",
+      label: anyScoreChangeApplied(updates) ? "Score movements" : "Measured differences",
+    });
   }
 
   // BoundaryWatch renders when boundaryWatch (current schema) or legacy boundaryWatchEntities is non-empty
@@ -527,38 +532,68 @@ export default function DailyBriefing({
 
         if (!hasRealMovers) return null;
 
-        // Derive a finding-stating heading from the movers
+        // Derive a finding-stating heading from the movers.
+        // BRF-MOVE-2: classify each row with isScoreChangeApplied. Applied rows keep
+        // score-movement wording; unapplied rows are worded as measurements.
+        const anyApplied = anyScoreChangeApplied(updates);
         const allMovers = recentAssessments.filter(
           (a: any) => typeof a.delta === "number" && a.delta !== 0,
         );
-        const upgrades = allMovers.filter((a: any) => a.delta > 0).length;
-        const downgrades = allMovers.filter((a: any) => a.delta < 0).length;
-        const bandCrossings = [...recentAssessments, ...(scoreChanges as any[])].filter(
+        const isApplied = (a: any) => isScoreChangeApplied(updates, a?.slug);
+        const appliedMovers = allMovers.filter(isApplied);
+        const unappliedMovers = allMovers.filter((a: any) => !isApplied(a));
+        const upgrades = appliedMovers.filter((a: any) => a.delta > 0).length;
+        const downgrades = appliedMovers.filter((a: any) => a.delta < 0).length;
+        const allCrossings = [...recentAssessments, ...(scoreChanges as any[])].filter(
           (a: any) => a.bandChange === true,
         );
+        const bandCrossings = allCrossings.filter(isApplied);
+        const proposedCrossings = allCrossings.filter((a: any) => !isApplied(a));
+        const plural = (n: number, w: string) => `${n} ${w}${n !== 1 ? "s" : ""}`;
 
-        let movementHeading = "Score movement";
+        let appliedPart = "";
         if (bandCrossings.length === 1) {
           const bc = bandCrossings[0];
-          movementHeading = `1 band crossing · ${bc.entity ?? bc.slug ?? ""}`;
+          appliedPart = `1 band crossing · ${bc.entity ?? bc.slug ?? ""}`;
         } else if (bandCrossings.length > 1) {
-          movementHeading = `${bandCrossings.length} band crossings`;
+          appliedPart = `${bandCrossings.length} band crossings`;
         } else if (downgrades > 0 && upgrades > 0) {
-          movementHeading = `${downgrades} downgrade${downgrades !== 1 ? "s" : ""}, ${upgrades} upgrade${upgrades !== 1 ? "s" : ""}`;
+          appliedPart = `${plural(downgrades, "downgrade")}, ${plural(upgrades, "upgrade")}`;
         } else if (downgrades > 0) {
-          movementHeading = `${downgrades} downgrade${downgrades !== 1 ? "s" : ""}`;
+          appliedPart = plural(downgrades, "downgrade");
         } else if (upgrades > 0) {
-          movementHeading = `${upgrades} upgrade${upgrades !== 1 ? "s" : ""}`;
-        } else if (appliedChanges.length > 0 || pendingReview.length > 0) {
-          const total = appliedChanges.length + pendingReview.length;
-          movementHeading = `${total} score change${total !== 1 ? "s" : ""}`;
-        } else if ((scoreChanges as any[]).length > 0) {
-          const n = (scoreChanges as any[]).length;
-          movementHeading = `${n} score change${n !== 1 ? "s" : ""}`;
+          appliedPart = plural(upgrades, "upgrade");
         }
 
+        let unappliedPart = "";
+        if (proposedCrossings.length === 1) {
+          const bc = proposedCrossings[0];
+          unappliedPart = `1 proposed band crossing · ${bc.entity ?? bc.slug ?? ""}`;
+        } else if (proposedCrossings.length > 1) {
+          unappliedPart = `${proposedCrossings.length} proposed band crossings`;
+        } else if (unappliedMovers.length > 0) {
+          unappliedPart = `${plural(unappliedMovers.length, "measured difference")}, not applied`;
+        }
+
+        if (!appliedPart && !unappliedPart) {
+          // No delta movers or band crossings: fall back to counting change rows.
+          const rows: any[] = [...appliedChanges, ...pendingReview];
+          const fallback = rows.length > 0 ? rows : (scoreChanges as any[]);
+          const nApplied = fallback.filter(isApplied).length;
+          const nUnapplied = fallback.length - nApplied;
+          if (nApplied > 0) appliedPart = plural(nApplied, "score change");
+          if (nUnapplied > 0) unappliedPart = `${plural(nUnapplied, "measured difference")}, not applied`;
+        }
+
+        const movementHeading =
+          [appliedPart, unappliedPart].filter(Boolean).join("; ") ||
+          (anyApplied ? "Score movement" : "Measured differences");
+
         return (
-          <section className="py-[14px]" aria-label="Today's score movement">
+          <section
+            className="py-[14px]"
+            aria-label={anyApplied ? "Today's score movement" : "Today's measured differences (not applied)"}
+          >
             <Container>
               <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
                 <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-3">

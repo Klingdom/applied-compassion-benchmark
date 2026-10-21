@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
 import ScoreMovementCard from "./ScoreMovementCard";
-import { deltaColor } from "./utils";
+import { anyScoreChangeApplied, deltaColor } from "./utils";
 
 interface Props {
   updates: any;
@@ -84,6 +84,8 @@ export default function ScoreMovementDashboard({ updates }: Props) {
     return Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0);
   });
 
+  // BRF-MOVE-2: when nothing in the briefing was applied, these are measured differences.
+  const anyApplied = anyScoreChangeApplied(updates);
   const hasChanges = sorted.some((a) => Math.abs(a.delta ?? 0) > 0);
 
   // #9 — split into two tiers for visual hierarchy
@@ -94,15 +96,19 @@ export default function ScoreMovementDashboard({ updates }: Props) {
     <section
       id="score-movements"
       className="py-[30px] scroll-mt-24"
-      aria-label="Score movement dashboard"
+      aria-label={anyApplied ? "Score movement dashboard" : "Measured differences dashboard"}
     >
       <Container>
         <div className="flex items-end justify-between gap-4 mb-5 flex-wrap">
           <div>
-            <h2 className="text-[1.25rem] font-bold mb-1">Score movements</h2>
+            <h2 className="text-[1.25rem] font-bold mb-1">
+              {anyApplied ? "Score movements" : "Measured differences"}
+            </h2>
             <p className="text-muted text-[0.88rem]">
               {hasChanges
-                ? "Entities with score changes this cycle, followed by confirmed positions."
+                ? anyApplied
+                  ? "Entities with score changes this cycle, followed by confirmed positions."
+                  : "Entities whose new measurement differs from the published score (not applied), followed by confirmed positions."
                 : "All entities assessed this cycle. No score changes."}
             </p>
           </div>
@@ -116,9 +122,11 @@ export default function ScoreMovementDashboard({ updates }: Props) {
           <div className="mb-5">
             <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-text mb-2 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#fb923c] shrink-0" aria-hidden="true" />
-              Changes
+              {anyApplied ? "Changes" : "Measured differences"}
               <span className="text-muted font-normal normal-case tracking-normal">
-                — {changedRows.length} score{changedRows.length !== 1 ? "s" : ""} moved
+                {anyApplied
+                  ? `— ${changedRows.length} score${changedRows.length !== 1 ? "s" : ""} moved`
+                  : `— ${changedRows.length} not applied to the published score`}
               </span>
             </div>
             <div className="space-y-2">

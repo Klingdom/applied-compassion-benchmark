@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import type { BandLevel } from "@/components/ui/Band";
+import appliedLedger from "../../../data/updates/applied-ledger.json";
+import { isAppliedByRule } from "./appliedRule.mjs";
 
 /** Format a YYYY-MM-DD string to "Apr 16" */
 export function formatDateLabel(dateStr: string): string {
@@ -326,22 +328,31 @@ export function deriveTodayInBrief(updates: any): TodayInBriefItem[] {
 
 /**
  * True only when a score change for `slug` was actually applied to the
- * published index. Same source of truth as the DC-03 lint
- * (scripts/lib/lint-rules.mjs scanUnappliedScoreMovement): when
- * pipeline.scoreChangesApplied is 0, nothing was applied and any status
- * "applied" is not trusted. Otherwise the slug must be in appliedChanges, or
- * carry status "applied" in recentAssessments/topSignals.
+ * published index. The rule lives in appliedRule.mjs (shared with
+ * scripts/test-briefing-move-claims.mjs): pipeline.scoreChangesApplied of 0
+ * means nothing was applied; otherwise the slug must be in appliedChanges,
+ * carry status "applied", or be in the applied ledger
+ * (research/APPLIED_CHANGES.md) with a proposal dated the briefing date
+ * (legacy briefings do not mark their rows).
  */
 export function isScoreChangeApplied(updates: any, slug: string | null | undefined): boolean {
-  if (!slug || !updates) return false;
-  const n = updates?.pipeline?.scoreChangesApplied;
-  // Explicit 0 = nothing applied (DC-03 lint). Legacy briefings (2026-05/06) omit the
-  // counter and mark genuinely applied rows with status "applied"; those are trusted.
-  if (n === 0) return false;
-  if (n !== undefined && n !== null && (typeof n !== "number" || n < 0)) return false;
+  return isAppliedByRule(updates, slug, appliedLedger);
+}
+
+/**
+ * True when at least one row in the briefing (assessments, pending review,
+ * score changes, applied changes, top signals) was actually applied to the
+ * published index. When false, every "movement" in the briefing is a measured
+ * difference, not a score move. Uses isScoreChangeApplied per row.
+ */
+export function anyScoreChangeApplied(updates: any): boolean {
+  if (!updates) return false;
   const list = (k: string): any[] => (Array.isArray(updates[k]) ? updates[k] : []);
-  if (list("appliedChanges").some((c) => c?.slug === slug)) return true;
-  return [...list("recentAssessments"), ...list("topSignals")].some(
-    (c) => c?.slug === slug && c?.status === "applied",
-  );
+  return [
+    ...list("appliedChanges"),
+    ...list("recentAssessments"),
+    ...list("pendingReview"),
+    ...list("scoreChanges"),
+    ...list("topSignals"),
+  ].some((c) => isScoreChangeApplied(updates, c?.slug));
 }

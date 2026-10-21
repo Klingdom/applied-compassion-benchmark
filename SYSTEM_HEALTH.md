@@ -1,10 +1,20 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 108 (founder directive D-57, 2026-10-16: AI Model Watch (tracker of 62 sourced models, first weekly edition, model-ranking conditions page) and six fact-checked Insights articles; 6 new chain steps; chain 80 steps)
+Last change: Iteration 110 (BRF-APPLIED-LEDGER plus the Iteration 109 BRF-MOVE-2 fix: applied status from the applied-changes ledger; chain 81 steps)
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-10-21 (Iteration 110 — **applied rule fixed; push unblocked**): briefings take applied status from a ledger
+> generated from `research/APPLIED_CHANGES.md`, so legacy May-June briefings again show their applied changes as moves
+> (28 rows, 15 dates), while 2026-10-01 keeps "not applied". The Iteration 109 heading fix is validated with it. The
+> chain is 81 steps. The Iteration 109 note below is superseded: the push block is lifted.
+
+> 2026-10-20 (Iteration 109 — BRF-MOVE-2, **validation failed, not committed**): Iteration 108 is committed as
+> `47a1fa00` (build and the 80-step chain exit 0; `prepush:clean` PASS). **Do not push the branch yet:** the unpushed
+> Iteration 106 commit `9255aa23` labels applied changes on legacy briefings "not applied" (22 rows, 14 dates, e.g.
+> Croatia on 2026-05-21; production is currently correct). Backlog BRF-APPLIED-LEDGER is the forced next item.
 
 > 2026-10-16 (Iteration 108 — **founder directive D-57: AI Model Watch and Insights**): six new routes. The tracker
 > lists sourced models with no ratings, and the first weekly edition covers 2026-09-01 to 2026-10-16. The leaderboards
@@ -14,23 +24,6 @@ Last change: Iteration 108 (founder directive D-57, 2026-10-16: AI Model Watch (
 > checklist (consent before forwarding an abuse disclosure; not stopping help at any sign of distress), and both are
 > fixed. The registry and release-watch stores remain empty by design.
 
-> 2026-10-15 (Iteration 107 — **founder decision D-56: tier gate repointed; model-testing redesign**): CS-2 now
-> compares a briefing's tier badge with the change proposal it came from, falling back to the assessment only for
-> URLs no proposal cites. The scope is briefings that render badges (from 2026-09-17), and pre-cutoff comparisons were
-> verified identical (216 pairs, 0 differences). The 2026-10-14 briefing's 9 failures came from comparing two scales
-> and now pass. Applying the rule to older briefings found 14 mismatches and 1 conflict in tier values the site does
-> not render (TIER-PRE). The harness refused to allowlist them as a CI bypass. The model-testing proposal (MT-V2) is
-> written and ratifies nothing.
-
-> 2026-10-15 (Iteration 106 — **founder directive: test every available model; nonprofit; AI model pages; measurement content**):
-> all **9 queued open-weight builds are pulled and smoke-tested** (neutral prompt, no bank item; 8 of 9 fully on GPU at 60–103
-> tok/s, olmo2 at 10.4). A measured wave still needs three founder acts: ratify `weekly-v1`, commit the plan, and run collect
-> with about 6.6 GiB free. Frontier models need credentials (BLK-002). qwen3 returns a thinking trace that the harness
-> would silently drop. **The 2026-10-14 dashboard, never logged, would have shipped in the default build without D-29b.**
-> It now has its own gate, closed by default, and a rebuild shows 0 dashboard pages. **BRF-MOVE is fixed:** a
-> built-HTML gate covers 88 briefing pages. The coordinator caught a new false count in the agent's fix ("12 proposed
-> changes" against 7 filed) and reworded it. **Packet H** (5 documents) completes the nonprofit library. Nothing is
-> committed or deployed.
 
 
 
@@ -57,7 +50,7 @@ Last change: Iteration 108 (founder directive D-57, 2026-10-16: AI Model Watch (
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **80 steps**, generated 2026-10-16 (AI Model Watch added 21-25: `test:markdown-lite`, `test:model-watch`, `validate:model-watch`, `test:insights-lint`, `lint:insights`, and 67: `test:model-watch-html`; 66: `test:model-dashboard`, 80: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **81 steps**, generated 2026-10-21 (Iteration 110 added 80: `test:applied-ledger`, so `test:briefing-move-claims` is now 81; AI Model Watch added 21-25: `test:markdown-lite`, `test:model-watch`, `validate:model-watch`, `test:insights-lint`, `lint:insights`, and 67: `test:model-watch-html`; 66: `test:model-dashboard`, then 80: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (46, re-run 2026-09-30) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts. **This list names 17 of the 57 chain steps and its per-script counts date from 2026-09-15**; the chain itself is the source of truth, and the step count in the heading above is generated. Do not cite the per-script figures without re-running them.
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (**19,702**/0, re-run 2026-09-30; was 19,687), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (**15** known, shrink-only — re-counted 2026-09-30; the 16 here was stale, and since the list is shrink-only a stale high figure hides a ratchet that has already tightened), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** still `RESULT: PASS`, 0 real gaps — but **62 WARN lines**, not the 25 claimed here until 2026-09-30 (re-counted: 5 alias-slug report, **19** same-date change proposal, and **38** further WARNs in older recording conventions that the 25 never covered). The three figures were wrong in both directions at once, which is what an un-regenerated count does. Previously 25 blocking FAILs, all false (RS-1). Regenerate with `cd site && npm run validate:rotation-state | grep -c "^    ! "`.
@@ -117,6 +110,24 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-15 (Iteration 107 — **founder decision D-56: tier gate repointed; model-testing redesign**): CS-2 now
+> compares a briefing's tier badge with the change proposal it came from, falling back to the assessment only for
+> URLs no proposal cites. The scope is briefings that render badges (from 2026-09-17), and pre-cutoff comparisons were
+> verified identical (216 pairs, 0 differences). The 2026-10-14 briefing's 9 failures came from comparing two scales
+> and now pass. Applying the rule to older briefings found 14 mismatches and 1 conflict in tier values the site does
+> not render (TIER-PRE). The harness refused to allowlist them as a CI bypass. The model-testing proposal (MT-V2) is
+> written and ratifies nothing.
+
+> 2026-10-15 (Iteration 106 — **founder directive: test every available model; nonprofit; AI model pages; measurement content**):
+> all **9 queued open-weight builds are pulled and smoke-tested** (neutral prompt, no bank item; 8 of 9 fully on GPU at 60–103
+> tok/s, olmo2 at 10.4). A measured wave still needs three founder acts: ratify `weekly-v1`, commit the plan, and run collect
+> with about 6.6 GiB free. Frontier models need credentials (BLK-002). qwen3 returns a thinking trace that the harness
+> would silently drop. **The 2026-10-14 dashboard, never logged, would have shipped in the default build without D-29b.**
+> It now has its own gate, closed by default, and a rebuild shows 0 dashboard pages. **BRF-MOVE is fixed:** a
+> built-HTML gate covers 88 briefing pages. The coordinator caught a new false count in the agent's fix ("12 proposed
+> changes" against 7 filed) and reworded it. **Packet H** (5 documents) completes the nonprofit library. Nothing is
+> committed or deployed.
 
 > 2026-10-14 (Iteration 104 — **the entity research cycle, 13 days after the last one**): 1,329 entities scanned
 > (search quality degraded and disclosed: a clean result means not surfaced, not confirmed clean), 11 assessed, every
