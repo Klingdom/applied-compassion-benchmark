@@ -29,6 +29,11 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-62 | 2026-10-23 | Commit and deploy Iterations 112–118 as commits C1–C7 (Friday packet item 1) | active, approved by the founder 2026-10-23 |
+| D-61a | 2026-10-22 | Exit, path and S6 terms for the D-61 visual programme (Meta-review 14 A2) | **proposed (awaiting founder)** |
+| D-61 | 2026-10-22 | Programme: visual improvements to the site in agent loops (audit, fix, test, repeat) | active, directed by the founder 2026-10-22 |
+| D-60 | 2026-10-22 | Programme: improve the AI model evaluation mechanism end to end (workflows, setup, instructions, experiments, results review), all agents engaged | active, directed by the founder 2026-10-22 |
+| D-59 | 2026-10-22 | Defaults approved: weekly protocol v2 (C-FD-1), one Friday reply (C-FD-2), D-29b ratified in the first wave's packet (C-FD-4), rater protections required by ranking condition 6 (CYC-RATERS) | active, approved by the founder 2026-10-22 |
 | D-58 | 2026-10-21 | Publish the weekly AI model cycle plan at /ai-models/cycle (C-FD-3); C-FD-1, C-FD-2, C-FD-4 stay open | active, directed by the founder 2026-10-21 |
 | D-57 | 2026-10-16 | AI Model Watch section (tracker, weekly editions, model-ranking conditions) and an /insights blog; publish | active, directed by the founder 2026-10-16 |
 | D-56 | 2026-10-15 | Tier gate compares briefings against the change proposals (TIER-1014 option b); the 2026-10-14 briefing is approved for publication | active, decided by the founder 2026-10-15 |
@@ -64,6 +69,154 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-62 — 2026-10-23 — Commit and deploy C1–C7
+
+**Founder, 2026-10-23, verbatim:** "commit and deploy C1–C7".
+
+**Scope:**
+- Exactly the seven commits in `ITERATION_LOG.md`: C1–C6 from the Iteration 117 table, and C7 as finalised in Iteration 118.
+- Excluded, unchanged:
+  - the America-at-250 pair;
+  - the nonprofit library (`docs/NONPROFIT_*`, `docs/nonprofit-*`).
+- Approves the deploy of what the commits contain.
+- **Does not approve:**
+  - any pending change proposal, including Paris, Portugal and UNC;
+  - D-61a, D-13 or any other Friday packet item;
+  - any methodology change.
+
+**Procedure (as Iteration 111):**
+1. Commit with explicit pathspecs.
+2. Run `npm run prepush:clean` on the tip.
+3. Push the branch and fast-forward `main`.
+4. Dispatch `Deploy to VPS` on `main`.
+5. Verify on production (V7).
+
+---
+
+## D-61a — 2026-10-22 — Exit terms for the D-61 visual programme (proposed)
+
+**Status:** **proposed (awaiting founder).** Written by the coordinator in Iteration 117 under Meta-review 14 A2
+(`docs/META_REVIEW_2026-10-22_ITER112-116.md` §2.2 and §3). It amends nothing until the founder confirms it. D-61 is
+not edited.
+
+**Context.**
+- D-60 states that it overrides the S6 work-in-progress stop. D-61 has no such sentence; its WIP paragraph only
+  promises disjoint file sets "wherever possible".
+- Neither D-60 nor D-61 has an exit. D-61 reads "complete loops with agents to test and continue", with no number of
+  loops and no rule for when the remaining items are founder-gated.
+- Iteration 116 went outside D-61's stated paths: it added two gates under `site/scripts/` and changed
+  `site/package.json`. That was the right engineering call under S4, but it was outside the authority D-61 grants.
+
+**Proposed terms.**
+1. **Paths.** D-61 covers presentational changes under `site/src/`, plus the gates that measure them: new
+   `site/scripts/test-*.mjs` files and their wiring in `site/package.json`. Each loop records any other path it
+   touches as a scope departure in its log entry.
+2. **S6.** D-61 does **not** override the S6 stop. A D-61 loop runs only when at most one validated iteration is
+   uncommitted, or when its file set is disjoint from every pending iteration's, checked with
+   `git ls-files --modified --others --exclude-standard -- <pathspec>`.
+3. **Exit.** The programme pauses, and the next loop is governance or ranked, when any of these happens:
+   - 3 or more iterations are validated but uncommitted;
+   - a loop's agent re-test leaves only founder-gated items;
+   - 2 loops pass with no founder reply.
+
+   It resumes on a founder reply.
+4. **Lane.** D-61 loops are logged `founder (D-61)`, not as deviations. A D-61 loop that passes over an item with a
+   deadline of 7 days or less names the date that item will run.
+
+**Alternatives considered.**
+- Leave D-61 open-ended. Rejected by Meta-review 14: 116 ran with four iterations pending, and its S6 override was
+  inferred, not stated.
+- State an S6 override, as D-60 does. Not proposed, because the commit queue was 5 iterations and 257 paths at the
+  time of the review.
+
+**Consequence if confirmed.** The next D-61 loop (VIS-L3 Loop 3) waits until the C1–C7 commits land, and its SVG
+relayouts are measured by `test:rendered` (backlog RENDERED-GATE), not by scratchpad scripts.
+
+**Evidence.** Meta-review 14 §2.2; DECISIONS.md D-60 ("It overrides the S6 work-in-progress stop") and D-61 ("WIP");
+ITERATION_LOG.md Iteration 116 pathspec.
+
+---
+
+## D-61 — 2026-10-22 — Visual improvement loops
+
+**Directive (founder, 2026-10-22, verbatim):** "Continue with whatever visual improvements you can and complete loops with
+agents to test and continue"
+
+**Recorded as** a loop programme, run like D-60. Each loop:
+1. A rendered-page audit, with screenshots of `site/out` at desktop and mobile widths.
+2. Agents propose and score fixes.
+3. A bounded set is implemented.
+4. Agents and the coordinator test the result: build, `npm test`, and before/after screenshots.
+
+**It authorises** visual and presentational changes to components, layout, styles and page structure under `site/src/`.
+
+**It does not authorise:**
+- changes to `site/src/data/**`, scores or any published figure;
+- new factual claims;
+- changes to methodology wording;
+- commit, push or deploy (AUTONOMY §1b);
+- ranking visuals for AI models (D-29, D-29a).
+
+**WIP:** Iterations 112–115 are uncommitted. This programme keeps its file set separate from theirs wherever possible,
+and records any overlap.
+
+---
+
+## D-60 — 2026-10-22 — AI model evaluation programme
+
+**Directive (founder, 2026-10-22, verbatim):** "Continue improving the AI Model evaluation mechanism.  Engage all agents to
+improve the workflows used to test new models and a complete evaluation setup, instructions, experiments, and results
+review."
+
+**Recorded as** a multi-workstream programme. As with D-57, it may run several work packages in one loop instead of one
+item. It authorises **agent-doable work** only:
+- design documents and instructions under `docs/model-eval/`;
+- research tooling and tests under `research/model-runs/`, kept "proposed" wherever a protocol is concerned;
+- experiments on data already collected (pilot-1 to pilot-3);
+- a results-review procedure.
+
+**It overrides the S6 work-in-progress stop** for this programme. That stop applied because Iterations 112 and 113 are
+uncommitted; to compensate, the programme's file set is kept disjoint from theirs.
+
+**What it does not decide:**
+- No commit, push or deploy (AUTONOMY §1b).
+- No protocol becomes "ratified": PROTOCOL-V2-2 is still founder-owned.
+- No hosted API key or spend (V2 ask 1).
+- No model ranking, band or official score (D-29, D-29a).
+- No change to published copy or `site/src/data/**`.
+- No new model run that needs the scheduler or unattended commits (FD-4).
+
+---
+
+## D-59 — 2026-10-22 — Cycle-plan defaults approved
+
+**Directive (founder, 2026-10-22, verbatim):** "approve the defaults and keep improving"
+
+**Context.** The Iteration 111 report put three numbered decisions to the founder, each with a stated default
+(the cycle plan `docs/AI_MODEL_WEEKLY_CYCLE_PLAN.md` §10 and `IMPROVEMENT_BACKLOG.md` rows CYC-FD, CYC-RATERS,
+SIGNUP-ENDPOINT). This entry records exactly the defaults that were stated, and nothing wider.
+
+**What it decides:**
+1. **C-FD-1: ratify weekly protocol v2** (V2 ask 2 in `docs/MODEL_TESTING_V2_PROPOSAL.md`). No v1 wave exists, so
+   no series is lost.
+2. **C-FD-2: one Friday reply** per week covers the Model Watch edition and any wave that passed its gates.
+3. **C-FD-4: D-29b is ratified inside the first wave's approval packet**, with the v2 §4 gates as publication
+   conditions. It is not ratified before a wave exists, so no dashboard publishes yet.
+4. **CYC-RATERS: ranking condition 6 ("human rating panel exists") requires rater protections** (opt-out, content
+   warnings, support, pay) before any rater sees a sensitive item. This is a methodology change to the ranking
+   conditions; it adds a requirement and loosens nothing.
+
+**What it does not decide:**
+- **SIGNUP-ENDPOINT** had no stated default (the question was "is that intended?"). It stays open; the forms keep
+  posting to Formspree, which is today's behaviour.
+- V2 ask 1 (hosted key and spend ceiling), V2 ask 3 (standing commit authority for `waves/*`), V2 ask 5 (the 02:00
+  task), FD-2 (a model comparison), FD-4 (scheduler and unattended commits) and BLK-005 (panel funding) were not put
+  to the founder in that report and stay open.
+- No model ranking, band or official score is published (D-29, D-29a). No index or score file changes.
+- Commit and deploy are not covered; each still needs approval (AUTONOMY §1b).
 
 ---
 

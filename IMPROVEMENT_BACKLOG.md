@@ -1,6 +1,25 @@
 # IMPROVEMENT BACKLOG — Compassion Benchmark
 
-Generated: 2026-04-14 | Last updated: **Iteration 10 (2026-09-14)** — RISK-019 false formula claim removed
+Generated: 2026-04-14 | Last updated: **Iteration 117 (2026-10-22)**, governance after Meta-review 14 (lane rule, RENDERED-GATE, FEED-COUNT, amendment status). Before that: Iteration 114, the governance sweep after Meta-review 13. The header once read "Iteration 10 (2026-09-14)" and was 104 iterations stale.
+
+**Lane rule (Meta-review 14 A2, adopted 2026-10-22 in Iteration 117).**
+- Every log entry's "Selected" line takes exactly one lane:
+  - `ranked`: the top eligible v2 item, or a named deviation from it;
+  - `forced (S3/S6/S7/S10)`: naming the rule that forced it;
+  - `founder (D-xx)`: naming the decision.
+- Only a `ranked` loop that passes over the top eligible item counts as a deviation for the meta-review trigger.
+- Precedence: **S6 > forced (S3/S7/S10) > founder programme > ranked.** A founder programme overrides S6 only if its
+  decision says so in words.
+- A programme decision must name its paths, its S6 stance (overrides or not) and an exit. The **default exit**
+  applies when any of these happens:
+  - 3 or more iterations are validated but uncommitted;
+  - a loop's agent re-test leaves only founder-gated items;
+  - 2 loops pass with no founder reply.
+- Meta-review 13's deadline guard is kept: a founder loop that passes over an item with Dl ≤ 7 days names the date that
+  item runs.
+- D-61's terms under this rule are proposed as D-61a (DECISIONS.md), awaiting the founder. The rule is written here
+  only; `coordinator.md` Step 5 is not edited in this loop (`.claude/**` is out of scope for Iteration 117), and the
+  check over the log that A2's "done when" asks for is not built.
 
 ## Scoring Model
 
@@ -31,7 +50,7 @@ items into agent-doable X-1 and gated X-2 · S3 mid-session discoveries pre-empt
 ≥ top eligible (or live score/formula/identity/money error), max 1 per 3 loops · S4 recurring class → gate or
 dated waiver · S5 scope expansion accepted only for same class + same verification + no new authority class +
 no new hand-written claim + ≤ ~30% files, logged · S6 ≤ 1 validated-uncommitted iteration unless file sets are
-disjoint; every log entry names its commit pathspec · S7 RISK-015 T-30 (**2026-11-09**) forces R-1.
+disjoint; every log entry names its commit pathspec · S7 RISK-015 T-30 (**2026-11-09**) forces R-1. **Stale (Meta-review 13 §4, checked 2026-10-22):** the earliest waiver (`D13-figure`) expires 2026-11-16, so the real T-30 was 2026-10-17, and R-1 is already done. Until S7-DERIVE lands, read S7 as T-30 of the earliest `expires` in `site/scripts/product-separation-waivers.json`.
 
 **Verification checklist per iteration:** V1 production BEFORE · V2 coordinator re-runs agent claims · V3
 negative-control proof for new guards · V4 grep built output · V5 dated-content check (AUTONOMY §1c) · V6
@@ -92,12 +111,189 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
 
+### New rows (2026-10-22, Iteration 118) — the 2026-10-22 research cycle
+
+- **DONE 2026-10-22 (It. 118, uncommitted): the research cycle and the `/updates/2026-10-22` briefing.** Commit C7
+  (pathspec in the It. 118 log entry).
+  - 3 new pending proposals: Paris, Portugal and UNC Chapel Hill. 41 are pending by `status`. Founder review.
+- **B2 gains a rendered occurrence** (the row is in the table below):
+  - The 10-22 briefing's chart label reads "spain score: 60.0 — in the Functional band (40–60). 0 points to the
+    Established band".
+  - The same text is live on production `/updates/2026-10-14`: 1 hit for "0 points to the".
+  - `getBand(60)` returns Functional, while the `BANDS` ranges print 40–60 / 60–80.
+  - It is still a method-boundary decision, so it stays founder-gated. Score unchanged.
+- **CYCLE-BRIEF — cycle briefs bar `site/src/data/**`, which removes a required output.**
+  - The It. 118 scanner skipped Step 7 (the evidence-review feed) because of the coordinator's brief. The coordinator
+    then derived the feed from the scan.
+  - Generic scratch names (`fix.mjs`, `verify.mjs`) risk overwriting other work in the shared scratchpad.
+  - *Done when:* the cycle brief template in `research/run-pipeline.sh`, or the stage docs, bars only
+    `site/src/data/indexes/**` and requires a per-stage scratch prefix.
+  - v1: I2 S3 L1 C5 − E1 − R1 = 9.
+- **VPS-PROVENANCE — production reports a 2026-10-22T15:10:34Z build with `git.sha` null.**
+  - No GitHub run accounts for it; the newest Deploy-to-VPS run (2026-10-21 workflow_dispatch) **failed**.
+  - It serves committed content only: `/ai-models/watch/2026-10-22` returns 404, and the home page still shows "Top 50".
+  - Related: **OBS-1** (below) records why a build without the `GIT_SHA` build-arg reports null. Open question: which
+    process rebuilt production without it.
+  - *Done when:* the VPS rebuild source is identified, and every production build injects `GIT_SHA`.
+  - Owner: vps-docker-manager. v1: I3 S5 L3 C3 − E2 − R1 = 11.
+
+### New rows (2026-10-22, Iteration 117) — Meta-review 14 (`docs/META_REVIEW_2026-10-22_ITER112-116.md`)
+
+- **DONE 2026-10-22 (It. 117, uncommitted): FEED-COUNT — the feed description said "scored across 1,155 entities".**
+  Founder-requested on 2026-10-22. Live on production `/updates/feed.json` that day (curl). `build-feeds.mjs` now
+  derives the count from the index JSON, giving 1,325, which equals `site/public/build-manifest.json`
+  `totalEntities`. `test-no-stale-counts` now also scans `build-{feeds,llms,og-images}.mjs`: a planted
+  "1,155 entities" line failed it with exit 1, and removing it passed with exit 0. Registry: a DC-01 occurrence. Commit
+  C6 (pathspec in the Iteration 117 log entry).
+- **RENDERED-GATE — `test:rendered`, the DC-26 gate (Meta-review 14 A3, v2 13).**
+  - Runs after `next build` like the other `--require-out` checks, over the 13 routes × 390/720/1366 that It. 116 used.
+  - Fails on any `pageerror` or hydration error, on `scrollWidth` greater than the viewport, and on SVG text rendered
+    below 12px (font-size × CTM) against a ratcheted baseline seeded from the `docs/visual/LOOP2_QA_REPORT.md` counts.
+  - The It. 116 scratchpad probes (`shots.mjs`, `widths.mjs`, `liveerr.mjs`, `l2probe.mjs`, `l2svg.mjs`) move into
+    `site/scripts/`. `smoke-model-dashboard.mjs` (unwired today) is the model to reuse.
+  - *Done when:* each of these fails the gate: a planted SVG `<title>` with two children; a planted 10-unit font in a
+    600-unit viewBox at 390; a planted 900px-wide table. A clean build passes.
+  - Freezes known defects, so VIS-L3 and SVG-SMALL-TEXT stay open as its remediation rows (scoring amendment).
+  - Waiver on DC-26 to 2026-11-06 (owner: the coordinator). The first implementation loop after C1–C7 land.
+  - v1: I3 S4 L3 C4 − E2 − R1 = 11 · v2: Rc +2 (gate for a 2-occurrence class) → **13**. P = 0: the SVG sizes were
+    measured on the build, not on production.
+- **Meta-review 14 amendments, status after Iteration 117:**
+
+  | MR-14 | Status | Where |
+  |---|---|---|
+  | A1 verified commit split | **Applied** (rule and check run by hand); the fixture that fails on a missing untracked file is **pending**; the commit itself is the founder's | ITERATION_LOG It. 116 addendum and It. 117 C1–C7 table |
+  | A2 founder lane and exit terms | **Applied as text** (header above); D-61a **proposed**; `coordinator.md` Step 5 and the log check **pending** | this header; DECISIONS.md D-61a |
+  | A3 DC-26 and `test:rendered` | Registry half **applied** (DC-26 row, waiver to 2026-11-06); gate **pending** (RENDERED-GATE) | `docs/DEFECT_CLASS_REGISTRY.md` |
+  | A4 scope-named status claims, generated counts | **Applied**: CHANGELOG readability bullet scoped to HTML text, catalog count corrected to 5 with Gemini 4 Argon, 112's "3 changed" corrected in an addendum, SYSTEM_HEALTH scope named. The `model-watch:import --check` changed-row count is **pending** (MW-CHECK-COUNT) | CHANGELOG.md; ITERATION_LOG It. 112 note |
+  | A5 Friday packet within 6 asks | **Applied**: 6 asks, 112–117 named | `docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md` |
+
+- **MW-CHECK-COUNT — `model-watch:import --check` prints no changed-row count** (Meta-review 14 A4 "done when").
+  On 2026-10-22 it printed "stores already match the input. 63 catalog row(s)". The substantive count (5) came from a
+  parser diff against HEAD in a scratchpad script.
+  - *Done when:* `--check` (or a dry-run) prints added / substantively changed / verification-date-only counts, and the
+    next MW-WEEKLY log entry quotes that output.
+  - v1: I2 S4 L2 C5 − E1 − R1 = 11.
+- **PATHSPEC-CHECK — the A1 union check as a script.** It. 117 ran it from a scratchpad shell script.
+  - *Done when:* a committed script takes the pending pathspecs and an exclusion list, fails on a fixture pathspec that
+    misses one untracked file, and passes on the real tree.
+  - v1: I3 S4 L2 C5 − E1 − R1 = 12.
+
+### New rows (2026-10-22, Iteration 116) — D-61 visual loop follow-ups (`docs/visual/`)
+
+- **SPECIAL-MD-RENDER — the special-briefing markdown renderer turns "_" in URLs and code into `<em>`** (live; 24
+  occurrences across 9 briefings).
+  - *Done when:* `scripts/build-special-briefings.mjs` leaves URLs and code spans alone. The regenerated files are
+    approved by the founder, because they are published briefings and one of them is held. The inline-spacing waiver is
+    then removed.
+  - The waiver ends 2026-11-30.
+  - v1: I3 S4 L2 C4 − E2 − R2 = 9 · v2: P +2 (live mangled text) → 11. Founder-gated.
+- **DPB-SCALE — `DimensionProfileBar` is fed `round(score × 20)`** (the score/5 scale), so it disagrees with the
+  corrected dimension cards.
+  - Founder-gated: the printed numbers change.
+  - v1: I3 S4 L1 C4 − E1 − R2 = 9.
+- **DIM-SCALE-COPY — the entity section heading says "8 dimensions, scored 0–5"** while the dimension bars run 1–5.
+  This is method wording, so it goes with LRN-FIX-2. Founder.
+- **SVG-SMALL-TEXT — six diagram SVGs** (PipelineFlowDiagram, ConsistencyStepChart, IntegrationPremiumDiagram,
+  EvidencePyramid, BandScaleStrip, AnchorLadder, plus DimensionProfileBar) render text below 12px. The source guard
+  sees only Tailwind classes.
+  - *Done when:* each is relaid out, or a computed-size check on `out/` passes.
+  - v1: I2 S3 L1 C4 − E3 − R1 = 6.
+- **VIS-L3 — Loop 3 candidates, measured by the Loop 2 agent re-test.**
+  - SVG chart text renders at 4–10px (see SVG-SMALL-TEXT; the /methodology consistency chart is 4.2px and overlapping
+    at 390).
+  - MovementDeltaStrip axis labels touch at 390.
+  - At 390, the /countries pinned columns take 309 of 356px.
+  - The pilot figure footer is clipped at the SVG's right edge.
+  - *Done when:* each is fixed, and a computed-size check on `out/` (rendered font-size × SVG scale ≥ 12px) gates SVG
+    text.
+  - v1: I3 S3 L2 C4 − E3 − R1 = 8.
+- **TABLE-STICKY-HEAD — ranking table header rows are not sticky inside the horizontal scroller.**
+  v1: I2 S3 L1 C3 − E3 − R1 = 5.
+- **COPYCITE-CONTRAST — `CopyCiteButton.tsx:71` uses `rgba(148,163,184,0.7)` on a button.**
+  v1: I2 S3 L1 C5 − E1 − R1 = 9.
+
+### New rows (2026-10-22, Iteration 115) — evaluation programme D-60 follow-ups (`docs/model-eval/PROGRAMME.md`)
+
+- **DONE 2026-10-22 (It. 115; uncommitted):**
+  - PROTOCOL-V2-1: `PROTOCOL.v2.json`, proposed, with its validator.
+  - The gate half of MT-V2-1: `wave-ready.mjs`, `audit-wave.mjs` and `wave-gates.mjs`.
+  - The six pilot-3 experiments.
+  - RUNBOOK_V2 and RESULTS_REVIEW_PROCEDURE.
+- **EVAL-WP2 — the planner reads PROTOCOL.v2** (`--protocol v2`, dry run only until ratified).
+  - *Done when:* a dry-run plan from v2 equals the hand-computed subject set for the 7 eligible builds, with a test.
+  - v1: I4 S5 L2 C4 − E2 − R1 = 12.
+- **EVAL-WP3/WP4 — call seam, judge routing, and the harm and decline answer fields** (compassion MF4, S1).
+  - *Done when:* pilot-1 to pilot-3 outputs reproduce byte for byte with the new seam, and the schema carries
+    `critical_harm_triggered`, `critical_harm_rule`, `reply_declines` and `decline_offers_alternative`, with
+    planted probes.
+  - v1: I5 S5 L3 C3 − E4 − R3 = 9. Highest risk: it touches the evidence path.
+- **EVAL-CLAIMAUDIT — G-claim-audit is not built** (report-token claim audit, A18).
+  - *Done when:* wave-ready recomputes every report token from the wave file and fails on a planted wrong figure.
+  - v1: I4 S5 L2 C4 − E3 − R1 = 11 · v2: Rc +2 (DC-25 adjacent) → 13.
+- **EVAL-RENDERLEAK — G-render-leak is not built.**
+  - *Done when:* wave-ready runs the A5, A16 and A17 checks on a preview build, or delegates to them and reads their
+    exit codes.
+  - v1: I3 S4 L1 C4 − E2 − R1 = 9.
+- **EVAL-WP10 — Friday packet generator** (W-5; C-FD-2 is approved).
+  - *Done when:* it generates this week's packet lines from wave-ready JSON plus the open founder rows, with a fixture
+    test.
+  - v1: I3 S4 L2 C4 − E2 − R1 = 10.
+- **EVAL-WP5 — measure real judge token counts** on the stored pilot-3 batches (the token half of MT-V2-1).
+  - v1: I3 S4 L3 C4 − E2 − R1 = 11.
+- **EVAL-KEYHOOK — a pre-commit guard refusing staged `keys/` for unpublished pools** (WP-12, founder-gated hook).
+  - v1: I3 S4 L1 C4 − E1 − R1 = 10.
+- **RUNBOOK-EXPORT — `.claude/commands/weekly-model-wave.md` step 3.8 calls exports "uncommitted drafts".**
+  `export-wave.mjs:40` writes into `site/src/data/model-benchmark/waves/` unless `CB_WAVES_DIR` is set.
+  - *Done when:* the runbook uses `CB_WAVES_DIR` for every export before approval, and a test refuses a default
+    export while a wave is unapproved.
+  - v1: I4 S5 L2 C5 − E1 − R1 = 14.
+- **EVAL-BANK-FLOOR — the instrument is floor-heavy** (pilot-3: no 5s, 18 of 83 items at the floor; experiment E4).
+  - *Done when:* the item-fix register (CYC-W1) lists the 27 doubly-flagged item IDs with a review status, and any bank
+    change is versioned.
+  - v1: I4 S5 L4 C4 − E3 − R1 = 13.
+- **EVAL-PROTO-UPDATE — fold the E2, E5 and E6 findings into the PROTOCOL.v2 open-value defaults** (O9 floor depends on
+  n; 0.30 anchor threshold; interval method).
+  - These are proposals only; the founder decides at PROTOCOL-V2-2.
+  - v1: I4 S5 L2 C4 − E1 − R1 = 13.
+
+### New rows (2026-10-22, Iteration 112) — Meta-review 13 and the D-59 sweep (A5)
+
+- **PROTOCOL-V2 — D-59 ratified weekly protocol v2, but no v2 protocol file exists.** `research/model-runs/weekly/PROTOCOL.json`
+  is `weekly-v1`, status "proposed"; v2 leaves the judge models and agreement floors "chosen at ratification".
+  - **PROTOCOL-V2-1 (eligible):** write `PROTOCOL.v2` as a proposed file from `docs/MODEL_TESTING_V2_PROPOSAL.md`, with
+    every open choice listed (cycle plan item 6). v1: I4 S5 L3 C4 − E3 − R1 = 12.
+  - **PROTOCOL-V2-2 (founder):** choose the open values and set the status to "ratified". This goes in the Friday packet.
+  - The `protocol-ratified` ranking condition stays "not-met" until the file is ratified. It may move to "in-progress",
+    dated 2026-10-22, once V2-1 lands.
+- **MW-BACKFILL — the 2026-10-16 edition missed items found this week:** the OpenAI deprecation notices of 2026-10-01 and
+  2026-10-14, and NVIDIA Nemotron-Labs-Dory1.0-4B (card date 2026-10-16).
+  - *Done when:* each is verified from a primary source and the 2026-10-16 edition gets an `--append-correction`, or the
+    item is logged as out of scope. Never re-compile the published edition.
+  - v1: I3 S4 L2 C4 − E2 − R1 = 10.
+- **DONE 2026-10-22 (It. 113; uncommitted) — DC25-GATE — gate for DC-25 (public copy misdescribes our own publications).** `test:self-description-claims`, chain step 82. Two real dashboard-copy lines were fixed. Waiver ends **2026-10-30** (owner:
+  coordinator).
+  - *Done when:* public copy (Insights, `/ai-models/**`, `llms*.txt`) that asserts "no composite", "single number" or
+    "ranges, not scores" fails while any public wave JSON has a non-null `pilot_composite`. The gate must trip on the
+    original 2026-10-16 sentence and pass on its correction.
+  - v1: I3 S5 L3 C4 − E2 − R1 = 12 · v2: Rc +2 → **14**.
+- **DC25-CORR — the DC-25 gate exempts everything under `## Corrections`** (coordinator V3, It. 113: a planted claim there passes). *Done when:* each Corrections entry must match `- YYYY-MM-DD: ... first said "..."` and other prose there is scanned, with a planted probe. v1: I2 S4 L2 C4 − E2 − R1 = 9.
+- **S7-DERIVE — S7 reads a typed date (Meta-review 13 A2).** *Done when:* the S7 trigger derives T-30 and T-7 from the
+  earliest waiver `expires`, and a fixture 29 days out fails until the log cites it. v1: I3 S4 L2 C5 − E2 − R1 = 11.
+- **CYC-W1 to CYC-W6 — the cycle plan's W items (`docs/AI_MODEL_WEEKLY_CYCLE_PLAN.md` §7), filed per A5.** All are
+  agent-doable and internal:
+  - W-1 item-fix register (v1 9);
+  - W-2 catalog-to-queue candidate report (v1 10);
+  - W-3 judge-panel register (v1 8);
+  - W-4 human-validation queue export (v1 7; reviewers need BLK-005);
+  - W-5 one-reply Friday packet generator (v1 11; C-FD-2 is now approved);
+  - W-6 weekly indicators script (v1 9).
+
 ### New rows (2026-10-21, Iteration 111) — live audit and weekly cycle plan
 
-- **CYC-RATERS — founder decision:** make the "human rating panel exists" ranking condition require rater protections
+- **CYC-RATERS — APPROVED 2026-10-22 (D-59), now eligible:** make the "human rating panel exists" ranking condition require rater protections
   (opt-out, content warnings, support, pay) before any sensitive item is seen (compassion review S2). Changes
-  `model-ranking-conditions.ts`, so it is a methodology decision. Default: yes, with the protections listed in the protocol.
-- **CYC-FD — founder decisions from the cycle plan §10:** C-FD-1 weekly protocol v1 or v2 (default v2); C-FD-2 one Friday
+  `model-ranking-conditions.ts`, so it is a methodology decision. Default: yes, with the protections listed in the protocol. *Done when:* condition `human-panel` in `site/src/data/model-ranking-conditions.ts` names the protections, the cycle and leaderboards pages render them, and a gate pins the text. v2 **12** (Meta-review 13 §5).
+- **CLOSED 2026-10-22 by D-59 — CYC-FD — founder decisions from the cycle plan §10:** C-FD-1 weekly protocol v1 or v2 (default v2); C-FD-2 one Friday
   reply for the edition plus any wave that passed its gates (default yes); C-FD-4 ratify D-29b inside the first wave's
   approval packet (default yes).
 - **SIGNUP-ENDPOINT — founder question:** every "email me" form posts to Formspree `xaqaeeez` because
@@ -129,12 +325,12 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 - **BRF-MOVE-2 — DONE 2026-10-21 (validated in It. 110 after the gate was scoped).** Earlier status:
   **built, validation failed 2026-10-20 (Iteration 109).** Rework: scope the label rule to the
   movement section and dashboard (the header pipeline strip caused 18 false positives), after BRF-APPLIED-LEDGER.
-- **BRF-MOVE-3 — the dashboard tier label "Changes" still sits over unapplied rows** (sub-label fixed in It. 109).
+- **BRF-MOVE-3 — fix LIVE, probe missing (checked 2026-10-22, It. 114).** The tier label fix is in HEAD (`ScoreMovementDashboard.tsx:125`, `anyApplied ? "Changes" : "Measured differences"`) and live since `309362ea`. Production `/updates/2026-10-01` shows ">Measured differences<" 3 times and ">Changes<" 0 times; the positive control `/updates/2026-05-21` shows ">Changes<" once. `test-briefing-move-claims.mjs` has no probe for the tier label. *Remaining done-when:* a planted "Changes" over an unapplied day fails the gate. v1 rescored: I2 S4 L1 C5 − E1 − R1 = 10. Original title: the dashboard tier label "Changes" still sits over unapplied rows (sub-label fixed in It. 109).
   - *Done when:* it reads "Measured differences" when nothing was applied, with a probe. v1: I2 S4 L1 C5 − E1 − R1 = 10.
 
 ### New rows (2026-10-16, Iteration 108) — AI Model Watch and Insights follow-ups
 
-- **MW-WEEKLY — publish the next AI Model Watch edition within 7 days** (runbook `.claude/commands/weekly-ai-model-watch.md`).
+- **DONE 2026-10-22 (It. 112; awaiting commit and deploy approval) — MW-WEEKLY — publish the next AI Model Watch edition within 7 days**. The edition is dated 2026-10-22, window 2026-10-17 to 2026-10-22. The next one is due 2026-10-29: re-file this row each week until a scheduler exists (FD-4). (runbook `.claude/commands/weekly-ai-model-watch.md`).
   - *Done when:* edition 2026-10-23 is compiled, validated and approved for deploy, and its window starts 2026-10-17.
   - v1: I4 S5 L2 C4 − E2 − R1 = 12 · v2: Dl +3 → **15**.
 - **MW-PRIMARY — `microsoft-mai-thinking-1` has no primary source** (MW-S2 warning).
@@ -172,12 +368,12 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
 
 ### New rows (2026-10-15, Iteration 106) — founder directive: models, nonprofit, AI pages, measurement content
 
-- **BRF-MOVE — DONE 2026-10-15 (It. 106), uncommitted.** The rendered labels word unapplied figures as measurements, and
+- **BRF-MOVE — DONE 2026-10-15 (It. 106); committed and live (production `b23e1a26` contains it; the 2026-10-01 "largest move Valencia" claim is gone, verified 2026-10-21 V7).** The rendered labels word unapplied figures as measurements, and
   `test-briefing-move-claims.mjs` (chain step 74, plus a `build` tree check) has 5 planted probes. Original row below.
 - **DASH-GATE — DONE 2026-10-15 (It. 106), uncommitted.** `/ai-models/dashboard` has its own gate, closed by default
   (`dashboard-decision.json` status "proposed"). A default build emits 0 dashboard pages. Publishing needs a ratified
   D-29b and status "active" (founder; `docs/FOUNDER_DECISION_PACKET_2026-10-15_AI_MODELS.md` M-FD-9).
-- **BRF-MOVE-2 — the `DailyBriefing` section heading ("N downgrades / Score movement", aria "Today's score movement")
+- **SUPERSEDED: see the BRF-MOVE-2 DONE row of 2026-10-21 (It. 110) above.** BRF-MOVE-2 — the `DailyBriefing` section heading ("N downgrades / Score movement", aria "Today's score movement")
   still frames unapplied rows as movement.** Same class as DC-03.
   - *Done when:* the heading uses the measured-difference wording when nothing was applied, and the tree check in
     `test-briefing-move-claims.mjs` covers headings with a planted probe.
@@ -205,7 +401,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   (`docs/MODEL_TESTING_V2_PROPOSAL.md` §6 item 1; it needs no founder decision).
   - *Done when:* the §6 acceptance criteria are met, with one planted defect per gate.
   - v1: I4 S5 L4 C4 − E2 − R1 = 14.
-- **TIER-1014 (original) — the unpublished 2026-10-14 briefing fails `test:source-tiers`** (9 contradictions, all rtp.pt and
+- **SUPERSEDED: closed by TIER-1014 DONE (It. 107, D-56); the 2026-10-14 briefing is live.** TIER-1014 (original) — the unpublished 2026-10-14 briefing fails `test:source-tiers` (9 contradictions, all rtp.pt and
   dnoticias.pt: briefing T2 against T5/T4 in the Lisbon and Porto assessments). Found 2026-10-15 (It. 106).
   - *Done when:* the briefing's `sourceTier` values agree with the cited assessments (or the assessments are corrected),
     and `test:source-tiers` passes. This must happen before Iteration 104 is committed.
@@ -259,6 +455,13 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - *Done when:* it is generated at build from `entityCount.ts`/`indexRegistry.ts`, and `test:no-stale-counts`
     scans it.
   - v1: I3 S5 L2 C5 − E2 − R1 = 12 · v2: Rc+2 (DC count class) → **14**.
+  - **Scope folded in (Meta-review 14 §4, S5: same class, same gate), 2026-10-22, It. 117:** the DC-01 "Top N"
+    pattern. The It. 116 home table said robotics "Top 50" (data 92) and US cities "Top 150" (144), and
+    `test:no-stale-counts` missed it because of the phrasing. *Done when (added):* the gate also fails on "Top <n>"
+    near an index name, proven by a planted "Top 50" robotics line, with the real tree passing.
+  - **Progress, It. 117:** the gate now scans `build-{feeds,llms,og-images}.mjs` (FEED-COUNT). `build-llms.mjs`
+    already derives its count with `countScoredEntities()`; whether `site/public/llms.txt` itself is scanned is not
+    re-checked here.
 - **CBP-ARGS — `tools/cb-probe/lib/validate-args.mjs` uses `key in props` (lines 117 and 126)**, so
   `constructor`, `toString` and `__proto__` pass `additionalProperties:false`.
   - *Done when:* it uses `Object.hasOwn`, and a test plants `constructor` and expects rejection.

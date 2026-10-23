@@ -1,5 +1,647 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 118 — 2026-10-22 (founder (direct request): entity research cycle for 2026-10-22)
+
+**Selected: `founder (direct request)`.** The founder asked for "a benchmark-research for Oct 22". The last scan was
+2026-10-14, so the 14-day lookback (2026-10-08 → 10-22) leaves no gap.
+- This is not a ranked deviation: it is a requested publication, like Iteration 104.
+- It ran in parallel with Iteration 117 (governance). The file sets do not overlap, apart from the feed files, which go
+  in C7.
+- **Does not approve any score.** Nothing was applied.
+
+**V1 BEFORE (production, 2026-10-22):**
+- `/updates/feed.json` newest item is 2026-10-14; the positive control is that same item.
+- The feed description said "scored across 1,155 entities". Fixed in Iteration 117 (C6).
+
+**Stages (V2: the coordinator re-ran every headline, not the report):**
+
+| Stage | Agent | Coordinator re-check |
+|---|---|---|
+| Scan | overnight-scanner | `validate-scan 2026-10-22` **PASS**, 0 failures. 1,329 entity reviews and 18 evidence-found. Rotation-state has 1,329 of 1,329 `last_scanned` = 2026-10-22, and `meta.last_scan` = 2026-10-22. `validate:rotation-state` PASS. Searches: the validator counts **306** against a derived ceiling of 274; the scan file's `searches_performed` is **307**. Both are disclosed. |
+| Evidence feed | coordinator | The scanner skipped Step 7 because the coordinator's brief barred `site/src/data/**` writes. That was a brief error, since Iteration 104's cycle wrote this feed (`d501189d`). The coordinator derived `site/src/data/evidence-reviews/2026-10-22.json` mechanically from the validated scan with a scratch script, `evfeed1022.mjs`. No new claim was written. It has 1,329 keys, 18 with evidence, each with ≥ 1 source URL, and `latest.json` is byte-identical. |
+| Assess | overnight-assessor | All **15 composites recomputed** from the 40-subdimension sidecars by importing `site/scripts/lib/scoring.mjs` (`verify1022.mjs`): **0 mismatches**. Every sidecar has 40 subdimensions, 5 per dimension. All 15 published baselines were re-read from `site/src/data/indexes/*.json` by name and match. Rotation-state diff: only `last_scanned` and `last_evidence_touch` (1,329 each), `last_assessed` (15), `last_change_proposal` (3), `meta.last_scan`, and 5 `rank` drift corrections. The rank corrections are allowed by `overnight-assessor.md`:271. All 5 now equal the published index rank (`rankchk.mjs`). |
+| Digest | overnight-digest | `validate:briefings` **89/89 PASS**. `lint:briefings` PASS on 91 files, with 0 unapplied-movement violations. `test:briefing-move-claims` PASS. `latest.json` is byte-identical to the daily file. The newest date in the briefing is 2026-10-22. A grep for move wording ("largest move", "downgrad…") finds 0; the positive control is the same grep form finding 31 "measured/proposed" phrases. **41 pending** proposals, counted by `status` across the 740 change-proposal JSON files, 0 unparseable. |
+
+**Results (nothing applied):**
+- **New proposals, pending, low confidence:**
+  - Paris: published 62.5, measured 40.6. A first assessment of a seeded value (RC-2). It crosses the band either way:
+    50.0 at evidence-gap anchor 3.
+  - UNC Chapel Hill: published 43.8, measured 28.1. A first assessment. **Its band crossing depends on RC-3**: it
+    measures 41.3 at anchor 3.
+  - Portugal: published 60.6, measured 59.4. The proposal is filed under the band-crossing rule: E4, I1 and EQ2 each
+    move from 4 to 3.
+- **Confirm pending proposals:**
+  - Lisbon 35.0 (`lisbon-2026-10-14`).
+  - Valencia 41.9 (`valencia-2026-10-01`).
+  - Spain 51.2 (`spain-2026-08-26`, 50.6).
+- **Measured crossings that were withheld:**
+  - France 52.5: no adverse source at tier 4 or above, and a 62.5 placeholder group (2026-09-14 precedent).
+  - Netflix 58.1: seed rounding alone gives 58.7 (2026-09-15 precedent).
+- **Confirmed at published scores:** Dollar General, Mauritius, Pakistan, CVS Health, Florida, Iran and Turkey.
+- **American Express:** a screening note only. It has no prior 40-subdimension baseline.
+
+**V4 (full build, exit 0; Pagefind 2,032 pages indexed, with a size warning):**
+- `/updates/2026-10-22` renders with title "Compassion Benchmark Daily Briefing — Oct 22". It has no "largest move" or
+  trajectory text, and Paris is labelled "new measurement (not applied to the published score): 40.6".
+- `/city/paris` shows only the published 62.5 (53 occurrences, 0 of 40.6) and its evidence-review date.
+- The feed's newest item is 2026-10-22, and the description says 1,325.
+- `widths.mjs` on `/updates/2026-10-22`, `/updates` and `/city/paris` at 390, 600, 720, 800, 1024 and 1366: no overflow
+  and no page errors.
+- `npm test`: exit 0, 83 steps. It still prints the D-13 duplicate-publication waiver, which expires 2026-11-16 and is
+  in the Friday packet.
+
+**Found during V4, not fixed (logged; existing class):**
+- Spain's chart label reads "60.0 — in the Functional band (40–60). 0 points to the Established band".
+- This is backlog **B2**, band-boundary semantics: `getBand(60)` returns Functional, matching the index label, while
+  the `BANDS` ranges say 40–60 / 60–80.
+- It is already live: production `/updates/2026-10-14` serves "0 points to the" (1 hit).
+- B2 gains this rendered occurrence. The digest flags Mauritius and Spain at 60.0 for index reconciliation and asserts
+  no error.
+
+**Process notes:**
+- **Brief error (coordinator):** barring `site/src/data/**` in the scanner brief removed a required pipeline output.
+  Future cycle briefs bar only `site/src/data/indexes/**`.
+- **Scratchpad collision risk:** the assessor reported that generic scratch names (`fix.mjs`, `verify.mjs`) may
+  overwrite files from other work. Cycle briefs now require unique prefixes; the digest used `dg1022-`.
+- **Production build provenance:** production `/build-manifest.json` reports a build at 2026-10-22T15:10:34Z with
+  `git.sha` null, and no GitHub run accounts for it. The newest Deploy-to-VPS run, a 2026-10-21 workflow_dispatch,
+  **failed**.
+  - Production serves no uncommitted work: `/ai-models/watch/2026-10-22` returns 404, and the home page still shows
+    "Top 50 global labs".
+  - Filed in Iteration 117 as a follow-up for the VPS.
+
+**Commit C7 pathspec (final; re-checked after the cycle with `pathspec-check.sh`):**
+- `research/scans/2026-10-22* research/rotation-state.json research/assessments/*-2026-10-22* research/change-proposals/ research/digests/2026-10-22* research/PENDING_CHANGES.md research/known-misdated-claims.json site/src/data/updates/ site/src/data/evidence-reviews/ site/public/updates/feed.json site/public/updates/feed.xml site/public/og/updates-2026-10-22.png`
+- The share image was the only path unassigned at the re-check. With it added, C7 matches 49 paths, and the union of
+  C1–C7 plus the exclusions equals `git status --short --untracked-files=all` (311 paths), with 0 in two buckets.
+- C7 carries C6's regenerated feed files, and both messages say so.
+
+**Commit and deploy approved (D-62, founder 2026-10-23: "commit and deploy C1–C7").**
+- Commit order: C1, C2, C3, C4, C6, C7, then C5 (governance) at the tip, per Meta-review 14 §2.1.
+- `prepush:clean` runs on the tip.
+- Push the branch, fast-forward `main`, dispatch `Deploy to VPS`.
+- V7 results are recorded in a dated status note after the deploy.
+
+**Follow-ups:**
+- Founder: review the 3 new proposals (Paris, Portugal, UNC) with the other 38. Settling RC-3 decides UNC's band.
+- B2: band-boundary semantics, now with a rendered occurrence.
+- VPS: find out what produced the sha-null production build.
+
+## Iteration 117 — 2026-10-22 (forced (S6): governance after Meta-review 14, plus the founder-requested feed-count fix)
+
+**Selected: `forced (S6)`.** Five validated iterations (112–116) are uncommitted, against an S6 limit of 1, and D-61
+does not state an S6 override (Meta-review 14 §2.2). Meta-review 14 §4 recommends exactly this loop: apply A1, A4 and
+A5, register DC-26 with its waiver (the A3 registry half), and write the A2 rule. Governance only, under S6. The one
+code change is the feed-count fix the founder asked for on 2026-10-22; it is logged as C6, a separate commit. This is
+the first entry to carry a lane tag under the A2 rule, so it is not a deviation.
+
+**V2, checks re-run by the coordinator:**
+- `node research/scripts/test-meta-review-cadence.mjs --checks-only` (from `site/`): "latest review:
+  META_REVIEW_2026-10-22_ITER112-116.md (through Iteration 116)", "unreviewed: 0", 8 passed. Meta-review 14 had
+  measured 5 before it was written.
+- `cd site && node scripts/validate-product-separation.mjs`: "D13-figure … expires 2026-11-16 — 24 day(s) remaining",
+  run at 2026-10-23 05:03 UTC (`date -u`). This matches the review's UTC reading.
+- **Catalog count:** a parser diff by row id and field (scratchpad `catalog-diff.mjs`, against
+  `git show HEAD:site/src/data/model-watch/catalog-v1.json`) gives 1 added, 0 removed, `lastVerifiedOn` changed on
+  62 of 62 existing rows, and 5 substantive changes, including `google-gemini-4-argon`. This confirms Meta-review 14
+  §2.3. `import-model-watch.mjs … --as-of 2026-10-22 --check` exits 0 with "stores already match the input. 63
+  catalog row(s)", and prints no changed-row count.
+- **Live production, 2026-10-22:**
+  - `curl https://compassionbenchmark.com/updates/feed.json` shows "scored across 1,155 entities".
+  - Production `/build-manifest.json` reports `buildDate` 2026-10-22T15:10:34Z and `git.sha` null (source
+    "unavailable"), with `totalEntities` 1325.
+  - The last `deploy.yml` run listed by `gh run list` is `39666073051` on 2026-10-21. So a build happened on 10-22
+    that no dispatch run explains, and the deployed sha cannot be read from the manifest (follow-up below).
+- **Pathspec union** (Meta-review 14 A1; table below): run by hand from a scratchpad shell script.
+
+**The feed-count fix (founder-requested, 2026-10-22; C6).**
+- `site/scripts/build-feeds.mjs` hard-coded the feed description "scored across 1,155 entities". It now sums
+  `rankings.length` over `site/src/data/indexes/*.json`, the same definition `build-llms.mjs` uses.
+- The regenerated `site/public/updates/feed.json` and `feed.xml` say "scored across 1,325 entities". That equals
+  `site/public/build-manifest.json` `totalEntities` (1325, read with `node -e` on the file). `grep -c "1,155"` on both
+  feed files gives 0; the positive control is the same string in HEAD's `feed.json` description, and production
+  still serves it.
+- `site/scripts/build-llms.mjs`: a comment reword only ("every CORE_INDEXES JSON file").
+- `site/scripts/test-no-stale-counts.mjs` now also scans `site/scripts/build-{feeds,llms,og-images}.mjs`.
+  - **Negative control, re-run by the coordinator** (scratchpad `plant-feed.mjs`): a planted
+    "// planted: scored across 1,155 entities" line in `build-feeds.mjs` failed the gate with exit 1, flagged at
+    `scripts/build-feeds.mjs:385`.
+  - The file was restored byte-for-byte (sha256 equal), and the gate then passed with exit 0, "scanned 217 files".
+- Registry: a DC-01 occurrence, live, with its gate extension. Backlog: FEED-COUNT, DONE.
+
+**Applied from Meta-review 14:**
+- **A1:**
+  - the Iteration 116 addendum corrects 112's glob, records the insights `generatedAt` lag, puts
+    `site/package.json` in C4 and corrects 112's catalog count;
+  - the union check passes (table below);
+  - the fixture half (PATHSPEC-CHECK) is filed, not built.
+- **A2:**
+  - the lane rule is in the IMPROVEMENT_BACKLOG.md header;
+  - D-61a (exit terms) is appended to DECISIONS.md as proposed;
+  - `.claude/agents/coordinator.md` Step 5 is not edited, because `.claude/**` is out of this loop's scope.
+- **A3, registry half:**
+  - DC-26 is registered with 2 dated occurrences (text size and bar encoding), with #418 as a related instance, as the
+    review counts them;
+  - gate none, dated waiver to 2026-11-06, owner the coordinator;
+  - remediation rows VIS-L3, SVG-SMALL-TEXT and RENDERED-GATE.
+- **A4:**
+  - the CHANGELOG readability bullet now says HTML text only, and that some chart labels are still smaller;
+  - the Model Watch entry says five corrected rows and adds Gemini 4 Argon;
+  - the SYSTEM_HEALTH Last change line and Tests heading name the text-size gate's scope (Tailwind classes in
+    source only).
+- **A5:** the Friday packet is re-ranked to 6 asks. `grep -c "^## [0-9]"` on it gives 6, and it names 112–117.
+  SIGNUP-ENDPOINT is under "not in this packet". D-61a is in the preamble, because it did not fit under item 1 or 3.
+
+**Pathspec table, C1–C7.** Each row was checked with `git ls-files --modified --others --exclude-standard -- <paths>`.
+The path counts are that command's output, piped through `sort -u | wc -l`, at 2026-10-23 05:00 UTC.
+
+| Commit | Iteration | Paths | Matched |
+|---|---|---|---:|
+| C1 | 112 | `research/ai-model-tracker/catalog-2026-10-22.json research/ai-model-tracker/releases-2026-10-22.json research/ai-model-tracker/FACT_CHECK_2026-10-22.md research/ai-model-tracker/RESEARCH_NOTES_2026-10-22.md research/model-watch/editions/2026-10-22.json site/src/data/model-watch/ site/public/llms.txt site/public/og/model-watch-2026-10-22.png docs/META_REVIEW_2026-10-22_ITER108-111.md` | 12 |
+| C2 | 113 | `site/scripts/lib/self-description-claims.mjs site/scripts/test-self-description-claims.mjs site/src/lib/model-dashboard-copy.ts` (the gate is wired in C4; the message says so) | 3 |
+| C3 | 115 | `docs/model-eval/ research/model-runs/weekly/PROTOCOL.v2.json research/model-runs/lib/protocol-v2.mjs research/model-runs/lib/wave-gates.mjs research/model-runs/bin/wave-ready.mjs research/model-runs/bin/audit-wave.mjs research/model-runs/tests/protocol-v2.test.mjs research/model-runs/tests/wave-gates.test.mjs research/model-runs/experiments/2026-10-22/ research/model-runs/README.md` | 26 |
+| C4 | 116, plus 113's wiring | `site/src/app/ site/src/components/ site/scripts/test-inline-spacing.mjs site/scripts/test-min-text-size.mjs docs/visual/ site/package.json` | 98 |
+| C5 | governance, 112–117 | `ITERATION_LOG.md DECISIONS.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md CHANGELOG.md docs/DEFECT_CLASS_REGISTRY.md docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md docs/META_REVIEW_2026-10-22_ITER112-116.md site/src/data/insights/why-we-do-not-rank-ai-models-yet.json` | 9 |
+| C6 | 117, feed count (founder-requested 2026-10-22) | `site/scripts/build-feeds.mjs site/scripts/build-llms.mjs site/scripts/test-no-stale-counts.mjs`. The regenerated feed files go in C7, and both messages say so | 3 |
+| C7 | 118, the 2026-10-22 research cycle (in progress) | `research/scans/2026-10-22* research/rotation-state.json research/assessments/*-2026-10-22* research/change-proposals/ research/digests/2026-10-22* research/PENDING_CHANGES.md site/src/data/updates/ site/public/updates/feed.json site/public/updates/feed.xml site/src/data/evidence-reviews/ research/known-misdated-claims.json`. It carries C6's regenerated feed files, and both messages say so. The last two paths were added at the re-run (below) | 2 (7 at re-run) |
+| Excluded | held | `research/special-briefings/america-at-250-2026-07-04.md site/src/data/special-briefings/america-at-250-2026-07-04.json docs/NONPROFIT_* docs/nonprofit-*` | 111 |
+
+**Union result:**
+- 12 + 3 + 26 + 98 + 9 + 3 + 2 + 111 = 264. 0 paths fall in two buckets (`uniq -d`).
+- `comm` against `git status --short --untracked-files=all | cut -c4-` (264 lines) gives **0 unassigned** paths
+  either way.
+- **Positive control for 112's old glob:** it matches 2 of the 4 files that `research/ai-model-tracker/` holds.
+- **C7 today matches only the 2 feed files.** The research cycle has not yet written its 2026-10-22 files.
+  - Positive control: the same globs on 2026-10-14 match tracked files: scans 2, assessments 22, digests 2.
+  - `research/change-proposals/` holds 785 tracked files.
+- **Re-run at 2026-10-23 05:10 UTC, after this loop's edits.** `git status --short --untracked-files=all` had grown to
+  269 lines, because the research cycle had started writing.
+  - The given C7 pathspec now matched 4 paths: `research/rotation-state.json`, `research/scans/2026-10-22.json` and
+    the two feed files.
+  - **3 paths were unassigned:** `research/known-misdated-claims.json` (M), `site/src/data/evidence-reviews/latest.json`
+    (M) and `site/src/data/evidence-reviews/2026-10-22.json` (new). All three have mtimes of 23:08–23:09 MDT, the same
+    minutes as the cycle's scan and rotation-state writes. Earlier evidence-review commits came from research cycles,
+    for example `d501189d` (Iteration 104).
+  - So all three are assigned to C7 as research-cycle output, and C7 then matches 7.
+  - With that, 12 + 3 + 26 + 98 + 9 + 3 + 7 + 111 = 269, with 0 in two buckets and **0 unassigned**.
+  - **Re-run again when Iteration 118 completes**, because the cycle is still writing.
+
+**Notes on the split:**
+- **C4 contains `docs/visual/LOOP3_SVG_DESIGN.md`.** Meta-review 14 §2.6 calls it new work, not 116's. It is a
+  design note with no code, and it matches 116's `docs/visual/` glob, so it stays in C4. The founder may prefer it
+  held.
+- Push C1–C7 together, after `cd site && npm run prepush:clean` on the tip. No intermediate commit is chain-valid by
+  itself (Meta-review 14 §2.1, risk 3).
+
+**Tests** (run from `site/` after the edits):
+- `node scripts/test-no-stale-counts.mjs`: exit 0, "scanned 217 files".
+- `npm run test:health-freshness`:
+  - The first run failed: "SYSTEM_HEALTH says Iteration 117, ITERATION_LOG's newest is 118". The 118 stub is the
+    newest heading. That failure also blocked its 7 negative controls.
+  - Fixed: the Last change line now says Iteration 118 is in progress with no health change yet, and then names
+    Iteration 117 as the last completed change.
+  - The rerun gives 12 passed, exit 0.
+- `npm run test:iteration-log-coverage`: PASS, 0 failures.
+- `npm run test:iteration-log-silence`: PASS.
+- `npm run test:backlog-ids`: 5 passed.
+- `node ../research/scripts/test-meta-review-cadence.mjs --checks-only`: 8 passed.
+- `npm run test:content-loss`: 11 passed.
+- `npm run test:artifact-shrink`: 11 passed.
+- `npm run test:no-control-bytes`: PASS.
+
+**Not run:** `npm run build` and the full `npm test`. No product code changed apart from C6. C6's own gate was proven
+by the planted control above, and the feed files are already regenerated.
+
+**Follow-ups:**
+- **Founder:** the Friday packet, 6 asks. Item 1 is the C1–C7 commit and deploy; D-61a is in the preamble.
+- **RENDERED-GATE** (`test:rendered`, v2 13): the first implementation loop after C1–C7 land, before the DC-26 waiver
+  ends on 2026-11-06.
+- **MW-WEEKLY**, the next edition, on or before 2026-10-29. It needs C1 committed first.
+- **LRN-FIX-6** (v2 14), now with the "Top N" DC-01 pattern folded in.
+- **PATHSPEC-CHECK** and **MW-CHECK-COUNT** (filed).
+- **The A2 text in `coordinator.md` Step 5**, in a loop allowed to edit `.claude/**`.
+- **The production manifest:** find out what built production at 2026-10-22T15:10:34Z without a sha. V7 cannot verify
+  a deploy while `git.sha` is null.
+
+## Iteration 116 — 2026-10-22 (founder directive D-61: visual improvement loops 1 and 2)
+
+**Founder, 2026-10-22, verbatim:** "Continue with whatever visual improvements you can and complete loops with agents to
+test and continue". Recorded as **D-61**: presentational changes under `site/src/`, run as loops of audit, fix, agent
+test. Data, figures, methodology wording, commits and ranking visuals for models stay out of scope.
+
+**Selection:** founder-directed, a deviation from the top eligible v2 item (RUNBOOK-EXPORT 14). This is the **third**
+consecutive founder-directed loop (114 was governance), which triggers a meta-review: **Meta-review 14 is due at the
+next loop** (also 4 iterations, 112–115/116, since Meta-review 13).
+
+**Tooling:** a Playwright screenshot harness over `site/out`, at desktop 1366 and mobile 390 (scratchpad
+`shots.mjs`, `widths.mjs`, `liveerr.mjs`). Local 404s on Next.js prefetch files and `/u/script.js` are artefacts of
+the static server; production serves both with 200 (checked).
+
+**V1, production BEFORE (Playwright on https://compassionbenchmark.com):**
+- **React hydration error #418** on `/`, `/updates` and `/ai-labs` (0 on `/ai-models`).
+- **"Uneven profile (std dev 0.00)"** live on `/country/afghanistan`, a false sentence.
+- **Horizontal overflow at tablet widths:**
+  - `/ai-models/tracker` scrollWidth 905 at 720;
+  - `/ai-models/watch/2026-10-16` 864;
+  - `/updates` 777 at 720.
+- **Primary buttons:** computed text `rgb(232,238,251)` on a `#93c5fd`→`#60a5fa` gradient, about 1.5:1.
+- **"published.Where"** in the raw HTML of `/ai-models/cycle`.
+- **The home "Current publication set" table** said robotics "Top 50" (the data has 92) and US cities "Top 150" (144),
+  and listed 7 of the 8 indexes. This is a **DC-01 occurrence that `test:no-stale-counts` did not catch**, because the
+  phrasing was "Top 50".
+
+**Loop 1:**
+- **Audits:** ux-designer (20 issues), a11y-architect (contrast math, root cause of the anchor cascade), dataviz-architect
+  (12, including three honesty issues: a min-max sparkline, 0–5 bars against a 1–5 composite, and unapplied rows drawn
+  as applied, the DC-03 visual route).
+- **Fixes:** frontend-engineer for the four defects, then four parallel streams with disjoint files (A
+  globals/ui/nav/spacing, B charts/entity, C briefing, D tables/AI pages).
+- **Agent tests:** qa-engineer (`LOOP1_QA_REPORT.md`, R1–R7) and an a11y re-check (`LOOP1_A11Y_RECHECK.md`).
+
+**Loop 2:** three parallel streams (E briefing, F AI pages and tables, G charts/entity/ui/home/methodology). The
+coordinator then raised the remaining 35 sub-0.75rem sizes in 15 files, wired `test:min-text-size` as chain step 83,
+and added "which cannot go below zero" to the even-profile sentence.
+
+**Key fixes:**
+- **#418 root cause:** an SVG `<title>` with several children (`BandDistributionBar.tsx`, and the same pattern in
+  `GroupMeanBars.tsx`).
+- **Anchor colours:** the reset moved to `@layer base`. Primary buttons now measure 10.5:1 and 7.45:1.
+- **Missing spaces:** 11 fixed, plus a new build-time gate, `test-inline-spacing.mjs --require-out`. It carries a dated
+  ratchet waiver for 24 special-briefing occurrences (baseline measured 24, expires 2026-11-30), because the markdown
+  renderer turns "_" in URLs and code into `<em>`. Fixing that regenerates published briefing files, including the held
+  America-at-250 one, so it is SPECIAL-MD-RENDER for the founder.
+- **Home table:** generated from the index registry, so all 8 indexes show with real counts.
+- **Even profile:** the sentence is derived from the formula in `scoring.ts` `compositeCore` (premium = 10 ×
+  consistency × max(0, 1 − 0.2 × weak dimensions)).
+- **Honest charts:**
+  - the sparkline has a fixed 0–100 scale with band-edge gridlines and points by date;
+  - dimension bars use (s−1)/4 with "1" and "5" end labels;
+  - the movement strip shows solid bars for applied changes, outlined bars for "not applied", and a key.
+- **Briefing:** band chips with counts and names, neutral severity pills, and a guard on the non-numeric
+  "Today's number".
+- **Tables:** right-aligned tabular numbers with rank and name pinned on mobile; form borders use `line-strong`.
+- **Overflow:** fixed through `relative` table wrappers and the `ScoreMovementCard` breakpoint.
+- **Layout and focus:** the methodology TOC rail now starts at 1600px, and the focus ring colour no longer animates.
+
+**Validation:**
+- `npx tsc --noEmit` clean.
+- `npm run build` exit 0, with all post-build tree gates (inline-spacing: 24 waived, 0 unwaived).
+- `npm test` 83 steps: it failed only on `test:health-freshness` (82 vs 83, fixed) and
+  `test:iteration-log-coverage` (this entry missing); the rerun is in the addendum.
+- **Measured on the Loop 2 build:**
+  - 13 routes × 6 widths (390–1366): no horizontal overflow and no page errors;
+  - sub-12px visible text: `/updates` 338 → 0, `/country/afghanistan` 22 → 0, `/methodology` 11 → 0, `/` 11 → 7
+    in Loop 1 and then fixed in source;
+  - #418: 0 on all routes;
+  - the R2 sentence renders correctly, and "Uneven profile (std dev 0.00)" occurs 0 times.
+- **Agent re-test of Loop 2:** `docs/visual/LOOP2_QA_REPORT.md` (see the addendum).
+
+**Pathspec (in addition to 112–115):**
+`site/src/app/ site/src/components/ site/src/app/globals.css site/scripts/test-inline-spacing.mjs
+site/scripts/test-min-text-size.mjs site/package.json docs/visual/ DECISIONS.md ITERATION_LOG.md IMPROVEMENT_BACKLOG.md
+SYSTEM_HEALTH.md CHANGELOG.md docs/DEFECT_CLASS_REGISTRY.md`
+
+`site/package.json` and the governance files are shared with 113. `site/src/lib/model-dashboard-copy.ts` stays with 113.
+
+**Addendum: agent re-test of Loop 2** (`docs/visual/LOOP2_QA_REPORT.md`).
+
+Passes:
+- HTML text contrast failures: 0 on 11 routes at 390 and 1366. Before, they were 14 / 13 / 13 / 3 / 2–3 / 27.
+- HTML text under 12px: 0.
+- Form borders: 7.27:1, up from 1.35.
+- The focus ring colour is not animated.
+- No overflow.
+- /countries keeps rank and name pinned with no header overlap.
+- Pilot figure top ticks are clean.
+- No new regressions in the screenshots.
+
+Remaining (backlog VIS-L3):
+- SVG chart text renders at 4–10px. Rendered size is font-size × SVG scale, which the source guard cannot see; the
+  worst is the /methodology consistency chart at 390 (4.2px, overlapping).
+- Movement-strip axis labels still touch at 390.
+- At 390, the /countries pinned columns take 309 of 356px.
+- The pilot figure footer is clipped at the SVG's right edge.
+
+The full chain after the governance edits: `npm test` exit 0, 83 steps.
+
+**Follow-ups (backlog):**
+- VIS-L3 (Loop 3 candidates above);
+- SPECIAL-MD-RENDER (founder);
+- DPB-SCALE (DimensionProfileBar still uses score/5; founder, because printed numbers change);
+- DIM-SCALE-COPY ("8 dimensions, scored 0–5" heading; founder, method wording, with LRN-FIX-2);
+- SVG-SMALL-TEXT (diagram SVG text the source guard cannot see);
+- TABLE-STICKY-HEAD;
+- COPYCITE-CONTRAST.
+
+**Addendum, 2026-10-22, Iteration 117 (Meta-review 14 A1 and A4): pathspec and count corrections for 112–116.** The
+lines above and in the 112–115 entries are not rewritten; these corrections supersede them for the commit.
+- **112's glob drops two of its own files.** `research/ai-model-tracker/*-2026-10-22.*` needs a hyphen before the
+  date. `git ls-files --modified --others --exclude-standard -- 'research/ai-model-tracker/*-2026-10-22.*'` returns
+  only `catalog-2026-10-22.json` and `releases-2026-10-22.json`. The positive control, the same command on
+  `research/ai-model-tracker/`, returns all four. **Corrected 112 pathspec:** name the four files,
+  `research/ai-model-tracker/catalog-2026-10-22.json research/ai-model-tracker/releases-2026-10-22.json
+  research/ai-model-tracker/FACT_CHECK_2026-10-22.md research/ai-model-tracker/RESEARCH_NOTES_2026-10-22.md`.
+- **The insights `generatedAt` change is not churn.** 112 says the `site/src/data/insights/` change was "restored".
+  It came back, because `site/scripts/build-insights.mjs` sets `generatedAt` from
+  `git log -1 --format=%cI -- <source>`. For `research/insights/why-we-do-not-rank-ai-models-yet.md` that is
+  `2026-10-21T13:52:41-06:00` (`b23e1a26`), which is the working-tree value. So
+  `site/src/data/insights/why-we-do-not-rank-ai-models-yet.json` in the working tree is the correct steady state: a
+  source and its generated JSON committed together can never carry that commit's own time, so the committed value lags
+  one commit. **Commit it in C5; do not restore it.**
+- **`site/package.json` goes in C4, with both 113's and 116's changes.** The `"test"` script is one JSON line carrying
+  113's `test:self-description-claims` and 116's `test:min-text-size`, and `git add -p` cannot stage half a line. C2's
+  message says the 113 gate is wired in C4; C4's message says it carries 113's wiring.
+- **112's catalog count was wrong.** 112 says "1 added and 3 changed", and its CHANGELOG entry listed four corrected
+  rows. A parser diff of `git show HEAD:site/src/data/model-watch/catalog-v1.json` against the working tree, by row id
+  and field (scratchpad `catalog-diff.mjs`), gives 62 rows at HEAD and 63 now: **1 added**
+  (`deepseek-v4-1-flash-1017`), 0 removed, `lastVerifiedOn` changed on all 62 existing rows, and **5 rows with
+  substantive changes**: `deepseek-v4-pro` (access, notes, sources), `deepseek-v4-1-flash` (status, access, notes,
+  sources), `google-gemini-4-argon` (access, notes, sources), `microsoft-mai-thinking-1` (contextWindowTokens,
+  parameterCount, notes, sources) and `nvidia-nemotron-3-5-bolt-74b` (modalities). The CHANGELOG entry now says five
+  and adds Gemini 4 Argon. `import-model-watch.mjs --check` exits 0 but prints no changed-row count (MW-CHECK-COUNT).
+- The verified C1–C7 split is in the Iteration 117 entry.
+
+## Iteration 115 — 2026-10-22 (founder directive D-60: the AI model evaluation programme, Phases 1–4)
+
+**Founder, 2026-10-22, verbatim:** "Continue improving the AI Model evaluation mechanism. Engage all agents to improve
+the workflows used to test new models and a complete evaluation setup, instructions, experiments, and results review."
+
+**Recorded as D-60.** The programme runs several work packages in one loop. It overrides the S6 stop, because 112 and
+113 are uncommitted, and its files are kept disjoint from theirs. It is agent-doable work only: no commit, no
+ratification, no key, no ranking, no `site/src/data/**` writes.
+
+**Selection: founder-directed. This is a deviation from the top eligible v2 item** (LRN-FIX-6 14 and MT-V2-1 14, tied).
+MT-V2-1's gate half is delivered here as Stream B.
+
+**Phase 1 — eight agents in parallel. Each wrote one doc in `docs/model-eval/`, or returned text the coordinator saved:**
+- system-architect: ARCHITECTURE_EVAL_V2;
+- qa-engineer: TEST_PLAN_EVAL;
+- product-manager: PRD_MODEL_EVALUATION;
+- analytics: METRICS_EVAL;
+- security-reviewer: SECURITY_REVIEW_EVAL;
+- ux-designer: UX_FLOWS_EVAL;
+- compassion-steward: COMPASSION_REVIEW_EVAL;
+- competitive-researcher: METHODS_LANDSCAPE.
+
+**Coordinator V2 on Phase 1:**
+- **FM-6:** `lib/weekly.mjs:717-729` checks only that the plan is committed and unmodified, never commit time
+  against the first record.
+- **FM-8:** `done_reason` is stored and checked nowhere.
+- **F2:** 15 tracked `keys/` paths.
+- **MF1:** 93 items, no `sensitivity` key (the field union was enumerated).
+- **MF4:** `JUDGE_ANSWER_SCHEMA` has no harm field.
+- **README limit 1:** confirmed at lines 268-275.
+- **Analytics baselines:** the coordinator ran the agent's script, and every hand-derived cell matched.
+- **The methods sources were not re-opened.** The doc says so.
+
+**Phase 2 — four build streams with disjoint files** (details and verification in `docs/model-eval/PROGRAMME.md`):
+- **A, PROTOCOL.v2 (proposed) and validator:** 14 tests. Real-file probe: "ratified" gives exit 1; restored gives exit 0.
+- **B, gates:**
+  - `wave-ready`: pilot-3 HOLD, only on 2 gates that are not built yet.
+  - `audit-wave`: finds D1 and D2.
+  - 44 tests.
+  - **Real negative control:** pilot-2 fails G-plan-time. Its first commit is 17:11:58-06:00, after the first record.
+    The published pilot-2 report already discloses "not committed before the data".
+- **C, six pre-registered experiments on pilot-3:**
+  - The hash matches, the pre-registration predates the script and results, and a re-run is byte-identical.
+  - The agent's harness refused the report file, so the coordinator saved REPORT.md from the agent's text and noted
+    that.
+- **D, RUNBOOK_V2, RESULTS_REVIEW_PROCEDURE and README fixes:** confirmed that `export-wave.mjs:40` writes into
+  `site/src/data` by default, which the current runbook calls an "uncommitted draft".
+
+**Headline experiment findings (internal):**
+- A fixed agreement floor of 0.759 fires on noise in 22.9% of waves.
+- The 0.30 anchor threshold is too tight for 48 pairs.
+- Scorer trial-level intervals are about 4 times too narrow.
+- No length effect; one judge shows a batch-position effect.
+- **No rating of 5 anywhere in pilot-3** (independently counted: 1:771, 2:1236, 3:618, 4:100), and 18 of 83 items
+  are at the floor.
+- One published uncorrected separation does not survive item-then-reply resampling. It is correct under its stated
+  method. P-FD-5.
+
+**Validation:**
+- `npm run test:model-runs` passes 317/317 (it was 259).
+- `npm test` exits 0 (82 steps).
+- `node --check` is clean on all new scripts.
+- A control-byte grep over the 7 new untracked scripts finds 0. The positive control is a planted 0x08 in a scratch
+  file, which was found.
+- No pilot directory changed (git status empty).
+- No `site/src/data` write in this iteration.
+- **Not run:** `npm run build`, because no site file changed.
+
+**Pathspec (this iteration only):**
+`docs/model-eval/ research/model-runs/weekly/PROTOCOL.v2.json research/model-runs/lib/protocol-v2.mjs
+research/model-runs/lib/wave-gates.mjs research/model-runs/bin/wave-ready.mjs research/model-runs/bin/audit-wave.mjs
+research/model-runs/tests/protocol-v2.test.mjs research/model-runs/tests/wave-gates.test.mjs
+research/model-runs/experiments/2026-10-22/ research/model-runs/README.md DECISIONS.md ITERATION_LOG.md
+IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md`
+
+The governance files are shared with 112–114.
+
+**Follow-ups (backlog):**
+- EVAL-WP2 (the planner reads v2);
+- EVAL-WP3/WP4 (call seam, judge routing, harm and decline fields; byte-for-byte pilot reproduction);
+- EVAL-WP5 (judge token cost);
+- EVAL-WP10 (Friday packet generator);
+- EVAL-CLAIMAUDIT (G-claim-audit, report-token audit);
+- EVAL-RENDERLEAK (wire the leak gates into wave-ready);
+- EVAL-KEYHOOK (staged-keys hook, founder-gated);
+- RUNBOOK-EXPORT (fix the "uncommitted draft" wording in `.claude/commands/weekly-model-wave.md`);
+- EVAL-BANK-FLOOR (floor-heavy items into the item-fix register).
+
+**Meta-review cadence:** 112–115 is 4 since Meta-review 13. The next is due by 118.
+
+## Iteration 114 — 2026-10-22 (governance only: S6 stop with two iterations pending; Meta-review 13 hygiene and the Friday packet)
+
+**Founder, 2026-10-22, verbatim:** "continue". This is not a commit approval. Iterations 112 and 113 are both validated
+and uncommitted, so S6 allows governance work only. No product code, data or published copy was changed.
+
+**Work done:**
+1. **Friday packet: `docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md`.** This is the first use of C-FD-2 (D-59). It
+   has six asks, ranked by cost of delay, each with a default:
+   - commit and deploy 112 and 113;
+   - D-13 / D13-figure;
+   - LRN-FIX-2;
+   - PROTOCOL-V2;
+   - HOOK-DC23;
+   - SIGNUP-ENDPOINT.
+
+   Audit H1 is not an ask: it was ruled compliant with D-29a in It. 111.
+2. **Backlog hygiene (Meta-review 13 A3):**
+   - The header is updated; it had read "Iteration 10".
+   - BRF-MOVE is marked committed and live.
+   - The old BRF-MOVE-2 and TIER-1014 rows are marked superseded, pointing to their DONE rows.
+   - BRF-MOVE-3 is re-described as "fix live, probe missing".
+3. **Registry:** the DC-23 count cell goes from 10 to 11, matching the occurrence it already cited.
+
+**Verification:**
+- **BRF-MOVE-3 fix is live:** `git show HEAD:...ScoreMovementDashboard.tsx` line 125 has the conditional label.
+  Production `/updates/2026-10-01` shows "Measured differences" 3 times and "Changes" 0 times. The positive control
+  `/updates/2026-05-21` (an applied day) shows "Changes" once (V8).
+- **No probe for it:** `test-briefing-move-claims.mjs` has no tier-label probe. A grep for "Changes" finds only
+  `scoreChanges`/`scoreChangesApplied` keys.
+- **D13-figure:** `validate-product-separation.mjs` prints "D13-figure ... expires 2026-11-16 — 25 day(s) remaining"
+  and "RESULT: PASS WITH WAIVERS".
+- **LRN-FIX-2:** a grep of `methodology/page.tsx` finds "/10" at lines 233, 323 and 332.
+- **Record checks:** `test:health-freshness`, `test:backlog-ids`, `test:content-loss` and `test:iteration-log-coverage`
+  were re-run after the edits; see the status note.
+
+**Pathspec (in addition to 112 and 113, sharing their governance files):**
+`docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md ITERATION_LOG.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md
+docs/DEFECT_CLASS_REGISTRY.md`
+
+**Next:** wait for the Friday reply. Another "continue" without commit approval means more governance work only. The
+remaining hygiene candidates are the registry change-log gap for 2026-10-15 and 2026-10-20, S7-DERIVE as a proposal
+text, and the A1 founder-lane wording.
+
+## Iteration 113 — 2026-10-22 (DC25-GATE: a gate for public copy that misdescribes our own publications)
+
+**Founder, 2026-10-22, verbatim:** "continue". This is not commit or deploy approval, so Iteration 112 is still
+uncommitted. S6 check: one iteration was validated and uncommitted when this loop started. This loop's files are
+disjoint from it except for the shared governance files. With two iterations now pending, **the next loop does
+governance only** until commits are approved.
+
+**Selection: DC25-GATE.** It is the top eligible v2 item, so this is not a deviation.
+
+| Item | v1 | v2 |
+|---|---:|---:|
+| **DC25-GATE** (selected) | 12 | **17** (Rc +2 for a class with 2 dated occurrences; Dl +3 because the DC-25 waiver ends 2026-10-30, 8 days away) |
+| LRN-FIX-6 | 12 | 14 (Rc +2) |
+| MT-V2-1 | 14 | 14 |
+
+Meta-review 13 scored DC25-GATE without the Dl term. The coordinator adds it because the waiver end is a dated deadline:
+S10 would force the item on 2026-10-31.
+
+**Built by the backend-engineer:**
+- `site/scripts/lib/self-description-claims.mjs` and `site/scripts/test-self-description-claims.mjs`, wired as
+  `test:self-description-claims`, step 82 of the chain (81 → 82).
+- **What the gate does:** it derives the fact from the data, by walking every `site/public/data/model-waves/*.json` for
+  a non-null `pilot_composite`. If one is found, it fails five claim patterns: "ranges rather than single numbers",
+  "no composite is published", "ranges, not scores" (where "ranges, not official scores" passes), "only ranges"
+  in a pilot context, and "no point estimate".
+- **What it scans:** 39 public-copy files, enumerated by readdir, with a floor of 20:
+  - Insights markdown and JSON, plus the cycle copy;
+  - `app/ai-models/**` and `app/insights/**`;
+  - `lib/model-*.ts`;
+  - `llms.txt` and `llms-full.txt`.
+- **Exemptions:** a markdown `## Corrections` section, the Insights JSON `corrections` entries, and a quotation
+  directly after "said".
+- **Agent refinement, accepted:** "ranges only" next to "secondary" (the secondary arm withholds the point by design)
+  is skipped by a pattern rule, with a control. It is not a per-line allowlist.
+
+**Two real findings, fixed in this loop (same class, same check, 1 file; S5).** Both are in
+`site/src/lib/model-dashboard-copy.ts`: the `social` line and the "What this is" bullet said "Ranges, not scores." The
+dashboard (panels.tsx:38, `hasPoint`) shows a pilot point for separated models, so the claim was false. It is not live,
+because D-29b is still "proposed", but it would have gone live when D-29b is ratified (D-59, C-FD-4). Both now read
+"Ranges, not official scores."
+
+**Validation:**
+- **Agent controls (22 PASS):** 7 positive controls, including the original 2026-10-16 sentence, both 2026-10-21 draft
+  sentences, a line-wrapped variant and a JSX-entity variant. 8 negative controls, including the corrected sentence, the
+  "single number" headline rule and "no composite should imply otherwise". A scoped-exemption control, an in-memory
+  plant, an N/A control for wave data with no composites, and composite-detector controls.
+- **Coordinator V3, re-run on real files:**
+  - Restoring the old dashboard wording gave exit 1 with `model-dashboard-copy.ts:33 [ranges-not-scores]`; the restore
+    is sha256-identical and gives exit 0.
+  - The original sentence planted in the article body (before `## Corrections`) gave exit 1 at line 86; after the
+    restore, the diff is empty and the gate exits 0.
+  - **Residue found by the coordinator:** the same sentence appended *inside* the Corrections section passes. That is the
+    exemption working as designed, and also a hole: new prose added under Corrections is never checked.
+- **Chain:** `npm test` first failed only at `test:health-freshness` (heading 81, chain 82), which is the gate catching
+  the new step. After the heading update, the full chain exits 0 with 82 steps, and its last line is "All self-description claim
+  checks passed."
+- **Not run:** `npm run build`. The only page-copy change is in the dashboard, which is not exported while D-29b is
+  "proposed".
+
+**Pathspec:**
+`site/scripts/lib/self-description-claims.mjs site/scripts/test-self-description-claims.mjs site/package.json
+site/src/lib/model-dashboard-copy.ts ITERATION_LOG.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md CHANGELOG.md
+docs/DEFECT_CLASS_REGISTRY.md`
+
+This is in addition to the Iteration 112 pathspec, which shares the governance files.
+
+**Follow-ups:**
+- DC25-CORR, the Corrections-section hole: require Corrections entries to start with a date and a quotation, so free
+  prose there is checked.
+- Fact-check briefs list self-referential claims separately (practice rule).
+
+## Iteration 112 — 2026-10-22 (MW-WEEKLY: the second AI Model Watch edition), after Meta-review 13 and D-59
+
+**Founder, 2026-10-22, verbatim:** "approve the defaults and keep improving". Recorded as **D-59**: C-FD-1 weekly
+protocol v2, C-FD-2 one Friday reply, C-FD-4 D-29b inside the first wave's packet, and CYC-RATERS, all at their
+stated defaults. SIGNUP-ENDPOINT had no stated default and stays open. Commit and deploy are not covered.
+
+**Meta-review 13** (`docs/META_REVIEW_2026-10-22_ITER108-111.md`, run first because two consecutive loops had deviated).
+Coordinator V2 re-checks:
+- production `build-manifest.json` reports sha `b23e1a26` and dirty false;
+- the earliest waiver, `D13-figure` in `site/scripts/product-separation-waivers.json`, expires **2026-11-16**, and the
+  validator prints the waivers on every build.
+
+So S7's typed date (2026-11-09) is stale, and the real T-30 passed on 2026-10-17 without a log line. This is the first
+loop to log it: **D-13 needs a founder decision before 2026-11-17, or every build fails.** Amendments A1 to A5 are
+recorded as proposed. A4 (register DC-25 with a waiver to 2026-10-30) and the A5 sweep for D-59 are applied in this loop.
+
+**Selection: MW-WEEKLY**, the top eligible v2 item, so this is not a deviation.
+
+| Item | v1 | v2 |
+|---|---:|---:|
+| **MW-WEEKLY** (selected) | 12 | **15** (Dl +3, due 2026-10-23) |
+| LRN-FIX-6 | 12 | 14 (Rc +2) |
+| MT-V2-1 | 14 | 14 |
+
+No S7 or S10 item is forced: DC-25 has a dated waiver, and R-1 is done. The edition is dated 2026-10-22, not 2026-10-23,
+because the runbook's window ends on the compile day; the 7-day deadline is still met.
+
+**Runbook steps:**
+- **Research (general-purpose agent):** 1 in-window release (DeepSeek-V4.1-Flash-1017, 2026-10-17, two primary sources).
+  The catalog goes from 62 to 63 rows: 1 added and 3 changed. Nothing is held out.
+- **Independent fact-check (second agent):** `FACT_CHECK_2026-10-22.md` checked 21 catalog rows and 1 release. It found
+  6 MUST FIX, 0 SHOULD DROP, and no missed in-window items.
+- **Coordinator V2:**
+  - Re-fetched DeepSeek's pricing page and found `deepseek-flash`, `DeepSeek-V4.1-Flash-1017`, `deepseek-v4-pro` and
+    `DeepSeek-V4-Pro-0813`; the release URL returns 200 after a redirect.
+  - The Nemotron model-card README says "Text, images, and video", and the 1017 card states no parameter count.
+  - Both June 2 Microsoft URLs returned 403. A reader-proxy fetch confirmed the Build keynote transcript names
+    MAI-Thinking-1 but shows no date, so MUST FIX 4 and 5 were **narrowed**: the keynote is added as a primary source,
+    the note still says the 2 Jun date comes from secondary reports, and `releaseDate` is unchanged.
+- **Applied by parser (S8)**, with the coordinator note appended to the fact-check file. Out-of-window items found this
+  week (the OpenAI deprecation notices of 2026-10-01 and 2026-10-14, and NVIDIA Nemotron-Labs-Dory1.0-4B on 2026-10-16)
+  are filed as **MW-BACKFILL**, not put in this edition.
+- **Import:** dry-run, write, then `--check` exit 0, giving 63 catalog rows and 22 log rows. `validate:model-watch`
+  reports 0 failures, 0 warnings and 2 editions.
+- **Compile:** the first attempt was refused by MW-E3, because the lead named "V4.1-Flash", a digit-bearing name that
+  is not in the release log. It was reworded to "its previous Flash model" and recompiled. The result has 1 release and
+  0 disclosures, the lead is 82 words, and `measuredNote` says no measurement ran (no pilot is dated in the window; the
+  waves manifest has pilots 10-01, 10-02 and 10-03 only).
+
+**Validation:**
+- **V1 (BEFORE):** `/ai-models/watch` lists only 2026-10-16 (7 mentions), and `/ai-models/watch/2026-10-22` returns 301.
+- **Build and tests:** `npm run build` exit 0 (Pagefind 2,030 of 2,047 HTML, 3.44 MB). `npm test` exit 0 with 81 steps;
+  the only lines containing "FAIL" are test names and known-severity labels.
+- **V4 on `site/out`:** `ai-models/watch/2026-10-22.html` exists; it names DeepSeek-V4.1-Flash-1017, has 0 unrendered
+  `{{TOKEN}}` (the source file has 3, which is the positive control), and contains "covers 6 days" and "No benchmark
+  measurement ran in this window". Its title is "AI Model Watch, 22 October 2026 | Compassion Benchmark" and its og:url
+  is its own. The hub `watch.html` mentions 2026-10-22 eight times.
+- **V5:** the published 2026-10-16 edition is untouched (the compiler refuses to overwrite).
+- **V6:** the diff is limited to the pathspec below.
+- **V7:** pending, because the deploy is not approved.
+
+**Pathspec:**
+`research/ai-model-tracker/*-2026-10-22.* research/model-watch/editions/2026-10-22.json site/src/data/model-watch/
+ITERATION_LOG.md DECISIONS.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md CHANGELOG.md docs/DEFECT_CLASS_REGISTRY.md
+docs/META_REVIEW_2026-10-22_ITER108-111.md site/public/llms.txt site/public/og/model-watch-2026-10-22.png`
+(the build generates the llms.txt lines and the og image for the new edition).
+
+Excluded: the build-time `generatedAt` churn in `site/src/data/insights/` (restored), the America-at-250 pair and the nonprofit library. The CHANGELOG also carries the uncommitted 2026-10-21
+second-deploy status note.
+
+**Follow-ups:**
+- **Friday reply (C-FD-2):** commit and deploy of this edition, D13-figure (25 days left), PROTOCOL-V2, and
+  SIGNUP-ENDPOINT.
+- **Backlog:** MW-BACKFILL, DC25-GATE (waiver ends 2026-10-30), S7-DERIVE, and CYC-RATERS (now eligible).
+- **Next edition:** due 2026-10-29. NVIDIA Nemotron 3.5 Bolt E4B is expected 2026-10-23, and Mistral Large 4 weights
+  by the end of October (unverified expectations from the research notes).
+
 ## Iteration 111 — 2026-10-21 (founder directive D-58: audit every AI model page; publish a weekly cycle plan)
 
 **Selected by founder directive.** Deviation from the top eligible v2 item (MW-WEEKLY 15, due 2026-10-23). This is

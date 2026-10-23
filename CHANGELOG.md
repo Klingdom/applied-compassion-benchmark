@@ -28,8 +28,82 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 > Watch and Insights routes return 200, `/updates/2026-10-01` reads "12 measured differences, not applied", and
 > `/updates/2026-05-21` reads "largest move Croatia -7.8". The dated entries themselves are unchanged.
 
+> **Status note, 2026-10-21 (second deploy):** the entry "How we analyse AI models every week, and fixes from a full
+> audit of the AI model pages" is live. Production was built from **`b23e1a26`** at 2026-10-21T20:03:15Z by dispatch run
+> `39666073051`; the build manifest reports a clean checkout. Verified live: `/ai-models/cycle` returns 200 and opens with
+> the crisis-support line, the tracker emits its own og:url, the Insights correction renders, and `/llms-full.txt` carries
+> the corrected pairs sentence. The dated entry itself is unchanged.
+
 ---
 
+
+## 2026-10-22 — Daily briefing: Paris and UNC Chapel Hill measured for the first time (NO score changes; pending deploy)
+
+- **What changed:** a new public briefing at `/updates/2026-10-22`, the first since 2026-10-14.
+  - All 1,329 tracked entities were reviewed for evidence dated 2026-10-08 to 2026-10-22; 18 had some.
+  - 15 entities were reassessed in full.
+- **Scores:** none changed.
+  - Paris (published 62.5) measured 40.6, and UNC Chapel Hill (published 43.8) measured 28.1. Both are first
+    measurements of starting values that had never been checked against evidence.
+  - Portugal (published 60.6) measured 59.4, just across the Established/Functional line.
+  - All three are low-confidence proposals awaiting review, not applied.
+  - The Lisbon, Valencia and Spain measurements match proposals already pending.
+- **Why:** to keep the published briefing within two weeks of the evidence. The briefing states its search-quality
+  limits: "no evidence found" means "not surfaced", not "confirmed clean".
+- **Impact:** readers see current evidence on 15 entities, and entity pages show a 2026-10-22 evidence-review date.
+  Published rankings are unchanged until a proposal is approved.
+
+## 2026-10-22 — Correct entity count in the updates feed (NO score changes; pending commit/deploy)
+
+- **Correction:** the description of the daily research feed (`/updates/feed.json` and `/updates/feed.xml`) said
+  "scored across 1,155 entities", an out-of-date figure. The benchmark scores 1,325 entities (the `totalEntities`
+  value in `/build-manifest.json`). The feed now
+  takes its count from the index data when the site is built, so it cannot fall out of date.
+- **New check:** the existing stale-count check now also reads the scripts that write the feed, `llms.txt` and the
+  social preview images.
+- **Impact:** no score, band or rank changes.
+
+## 2026-10-22 — Site readability and display fixes (NO score changes; pending commit/deploy)
+
+- **Correction:** country pages with an even but low profile said "Uneven profile (std dev 0.00)". They now say the
+  profile is even, and that the integration premium is zero because every dimension scores below 4.0.
+- **Correction:** the home page's "Current publication set" listed 7 indexes, with coverage figures that had gone out of
+  date (for example, robotics "Top 50" where the index has 92 labs). It now lists all 8 indexes, with counts taken from
+  the data.
+- **Readability:**
+  - main buttons are readable (their label contrast was far too low);
+  - no HTML text is smaller than 12px; some chart labels, drawn inside scaled charts, still render smaller, and that
+    work continues;
+  - pages no longer scroll sideways on phones and tablets;
+  - a page error on the home, updates and AI labs pages is fixed.
+- **Charts:**
+  - score history uses a fixed 0–100 scale, so small changes no longer look like cliffs;
+  - dimension bars match the 1–5 scale used by the composite;
+  - in briefings, measured differences that were not applied are drawn as outlines, not as score moves.
+- **Impact:** no score, band or rank changes.
+
+## 2026-10-22 — A check that stops our pages misdescribing what we publish (NO score changes; pending commit/deploy)
+
+- **New automatic check:** the build now fails if a page says pilot reports show only ranges, or that no composite is
+  published, while our own public pilot data contains a point estimate. This is the error we corrected on 2026-10-21.
+- **First catch:** two lines in the unpublished model dashboard said "Ranges, not scores". They now say "Ranges, not
+  official scores", because the dashboard shows a pilot point for models the test could tell apart.
+- **Impact:** no score, band or rank changes. Nothing reader-facing changes until the dashboard is published.
+
+## 2026-10-22 — AI Model Watch, second weekly edition (NO score changes; pending commit/deploy)
+
+- **New edition `/ai-models/watch/2026-10-22`:** covers 2026-10-17 to 2026-10-22 and logs one release,
+  DeepSeek-V4.1-Flash-1017, with its primary sources. It was a quiet week, and the log is not padded.
+- **Model tracker:** one model added. Five existing rows were corrected after an independent fact-check:
+  - DeepSeek-V4.1-Flash is now listed as open weights only, because its API name now serves the newer model;
+  - DeepSeek-V4-Pro is listed with API access as well as open weights;
+  - Gemini 4 Argon is listed as available in the Gemini app as well as the API, with Google's 13 October post as a
+    primary source;
+  - MAI-Thinking-1 gains a primary Microsoft source;
+  - Nemotron 3.5 Bolt lists video input.
+
+  Every existing row also has a new verification date.
+- **Impact:** no score, band or rank changes. No model is assessed or ranked.
 
 ## 2026-10-21 — How we analyse AI models every week, and fixes from a full audit of the AI model pages (NO score changes; pending deploy)
 

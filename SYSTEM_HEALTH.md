@@ -1,29 +1,29 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 111 (D-58: live AI-model audit fixes and the weekly cycle plan at /ai-models/cycle; production 309362ea before this commit; chain 81 steps)
+Last change: Iteration 118 (founder-requested entity research cycle for 2026-10-22: 1,329 scanned, 15 assessed with all composites recomputed and 0 mismatches, 3 new pending proposals, no score changes, daily briefing /updates/2026-10-22 validated and built). Iteration 117 before it (forced (S6) governance after Meta-review 14: verified commit split C1-C7, DC-26 registered with a waiver to 2026-11-06, founder lane rule, D-61a proposed, Friday packet re-ranked to 6 asks; founder-requested feed-count fix, feed description 1,155 to 1,325 entities with test-no-stale-counts now scanning the public-copy build scripts). Iteration 116: hydration #418 fixed, primary-button contrast 1.5 to 10.5:1, no overflow 390-1366 on 13 routes, 12px floor gated for Tailwind classes in source only (SVG chart text still renders at 4.2-10.7px), home publication table from registry. Iterations 112-118 uncommitted; production last verified at b23e1a26 on 2026-10-21, and its build-manifest.json now reports a 2026-10-22T15:10:34Z build with git sha null (source unavailable), so the deployed sha is unverified; chain 83 steps
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
 
-> 2026-10-21 (Iteration 111 — **founder directive D-58**): production runs `309362ea` (Iterations 104-110, CI dispatch
-> `39644977500`). A live audit of every AI-model page found 0 broken URLs; its Medium findings are fixed (share metadata
-> on 8 pages, a garbled pairs sentence, a tracker note, one Insights correction). The weekly cycle plan is published at
-> `/ai-models/cycle`; it ratifies nothing (C-FD-1, C-FD-2, C-FD-4 open). Chain 81 steps.
+> 2026-10-22 (Iteration 118 — **research cycle for 2026-10-22, founder request**): 1,329 entities scanned (18 with
+> evidence), 15 assessed, all 15 composites recomputed by the coordinator with 0 mismatches, 3 new pending proposals
+> (Paris, Portugal, UNC Chapel Hill), **no score changes**. The `/updates/2026-10-22` briefing passes validate (89/89),
+> lint and the move-claims test; build exit 0; `npm test` exit 0. Search quality was degraded and disclosed. Production
+> reports a sha-null build at 2026-10-22T15:10Z that no deploy run explains (serves committed content only).
+> **Seven iterations (112–118) await commit approval as C1–C7.**
 
-> 2026-10-21 (Iteration 110 — **applied rule fixed; push unblocked**): briefings take applied status from a ledger
-> generated from `research/APPLIED_CHANGES.md`, so legacy May-June briefings again show their applied changes as moves
-> (28 rows, 15 dates), while 2026-10-01 keeps "not applied". The Iteration 109 heading fix is validated with it. The
-> chain is 81 steps. The Iteration 109 note below is superseded: the push block is lifted.
+> 2026-10-22 (Iteration 117 — **governance, forced (S6)**): Meta-review 14 amendments A1, A4, A5, the registry half of
+> A3 and the A2 rule are applied. The commit split C1–C7 is verified mechanically: its union plus the exclusion list
+> equals `git status --short --untracked-files=all`, with 0 unassigned paths. DC-26 (a source gate passes while the
+> rendered page is wrong) is registered with a waiver to 2026-11-06. The text-size gate covers Tailwind classes in source
+> only. The production feed said "1,155 entities"; the fixed build says 1,325. **Six iterations (112–117) await commit
+> approval; Iteration 118, the 2026-10-22 research cycle, is in progress.**
 
-> 2026-10-16 (Iteration 108 — **founder directive D-57: AI Model Watch and Insights**): six new routes. The tracker
-> lists sourced models with no ratings, and the first weekly edition covers 2026-09-01 to 2026-10-16. The leaderboards
-> page says no model ranking is published, lists the conditions for one, and routes to the AI Labs index. /insights has
-> six articles. Catalog and releases were independently fact-checked (42 confirmed, 5 corrected, 0 dropped), and so
-> were the articles (52 of 55 claims confirmed, 3 corrected). A compassion review caught two must-fix items in the agent
-> checklist (consent before forwarding an abuse disclosure; not stopping help at any sign of distress), and both are
-> fixed. The registry and release-watch stores remain empty by design.
-
+> 2026-10-22 (Iteration 116 — **D-61 visual loops**): production has a React hydration error on 3 routes, 1.5:1 primary
+> buttons, tablet overflow on 3 routes, a false "Uneven profile (std dev 0.00)" sentence and a stale home table. All are
+> fixed in source and verified on the build. New gates: `test-inline-spacing` (build) and `test:min-text-size`
+> (chain step 83). **Five iterations (112–116) await commit approval. Meta-review 14 is due at the next loop.**
 
 
 
@@ -50,7 +50,7 @@ Last change: Iteration 111 (D-58: live AI-model audit fixes and the weekly cycle
 | Worker typecheck | ✅ passes; CI job `worker-typecheck` (non-blocking) | since `beb94ae9` |
 | Build churn | ✅ fixed It. 18 — `generatedAt` derives from the source `.md`'s git commit date, so two consecutive generator runs leave **0 dirty paths** | DC-08 (closed) |
 
-## Tests (`npm run test`, **81 steps**, generated 2026-10-21 (Iteration 110 added 80: `test:applied-ledger`, so `test:briefing-move-claims` is now 81; AI Model Watch added 21-25: `test:markdown-lite`, `test:model-watch`, `validate:model-watch`, `test:insights-lint`, `lint:insights`, and 67: `test:model-watch-html`; 66: `test:model-dashboard`, then 80: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
+## Tests (`npm run test`, **83 steps**, generated 2026-10-22 (Iteration 116 added 83: `test:min-text-size`, the D-61 type floor for Tailwind classes in source only, blind to rendered SVG text (DC-26); Iteration 113 added 82: `test:self-description-claims`, the DC-25 gate; Iteration 110 added 80: `test:applied-ledger`, so `test:briefing-move-claims` is now 81; AI Model Watch added 21-25: `test:markdown-lite`, `test:model-watch`, `validate:model-watch`, `test:insights-lint`, `lint:insights`, and 67: `test:model-watch-html`; 66: `test:model-dashboard`, then 80: `test:briefing-move-claims`) — step 1 is `test:script-syntax`, the DC-23 parse gate; full chain exit 0 — regenerate with `node -e "console.log(require('./site/package.json').scripts.test.split('&&').length)"`. Separately, `tools/cb-probe` runs **223 tests** (re-run 2026-10-02; 195 → 223 with the schema, version, floor-claim, skill-copy and identification-required tests) via `cd tools/cb-probe && node --test` — regenerate with that command; it is **not** part of the site chain.)
 test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (46, re-run 2026-09-30) · test:entity-href (40) · test:product-separation (16) · test:separation-waivers (41, It. 22) · validate:product-separation · test:task-bank (68) · validate:task-bank · test:evaluation-scorer (45) · test:model-registry (38) · test:evaluation-statistics (78) · validate:evaluation-run · test:model-harness (58) · test:model-releases (93) · validate:model-releases · test:no-stale-counts. **This list names 17 of the 57 chain steps and its per-script counts date from 2026-09-15**; the chain itself is the source of truth, and the step count in the heading above is generated. Do not cite the per-script figures without re-running them.
 - **Wired 2026-09-16:** five guards added to the `test` chain, which CI runs before every deploy — `test:entity-records` (**19,702**/0, re-run 2026-09-30; was 19,687), `test:collision-ratchet` (19), `test:coverage-report` (19), `test:encoded-names` (9) and `test:rotation-state` (28), plus a `validate:rotation-state` command. Build-failing behaviour: `export-public-data.mjs` rejects any cross-index slug collision not in the dated `site/scripts/known-collisions.json` (**15** known, shrink-only — re-counted 2026-09-30; the 16 here was stale, and since the list is shrink-only a stale high figure hides a ratchet that has already tightened), and `validate-indexes.mjs` check 17 rejects any HTML entity in a published entity name.
 - **Rotation-state integrity:** still `RESULT: PASS`, 0 real gaps — but **62 WARN lines**, not the 25 claimed here until 2026-09-30 (re-counted: 5 alias-slug report, **19** same-date change proposal, and **38** further WARNs in older recording conventions that the 25 never covered). The three figures were wrong in both directions at once, which is what an un-regenerated count does. Previously 25 blocking FAILs, all false (RS-1). Regenerate with `cd site && npm run validate:rotation-state | grep -c "^    ! "`.
@@ -60,6 +60,7 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 - **Auto-deploy: ❌ NOT IN EFFECT, and the old line here was misleading in the worst way.** It read "9 consecutive successful `Deploy to VPS` runs" and named a last-deployed commit. The *workflow* called "Deploy to VPS" does succeed — but its **deploy job is skipped**, on all 10 of the most recent runs checked 2026-09-30 (`gh run view <id> --json jobs`), because deployment is founder-operated. A green workflow name was being read as a deployment.
 - **Live defect (verified 2026-10-01) — CORRECTED 2026-10-02 after deploy:** this row said the 2026-09-24 briefing returned 301 → /404. The URL that check used was not recorded. The 2026-10-01 BEFORE check used `/updates/daily/<date>`, which is the data-file path, never a page route. That was an absence claim with no positive control (V8). After the deploy, `/updates/2026-09-24` and `/updates/2026-10-01` both return **200** (the route is `/updates/<date>`), and `/updates/daily/<date>` still 301s to /404, as it always would. Whether the 09-24 briefing was actually missing before the deploy cannot now be re-checked.
 - **What is actually live (verified 2026-10-02, post-deploy):** production `build-manifest.json` reports `buildDate` **2026-10-02T23:30:21Z** and `git.sha` **`43e90bcd`**, so the deployed commit is now knowable. It also reports `dirty: true`, which means the VPS checkout has local modifications; not investigated, and flagged for the founder. Deployed by dispatch run `37077608892` (Deploy to VPS and the post-deploy health check both succeeded). The CI SSH block recorded in Iteration 91 did not recur.
+- **Live now (verified 2026-10-22):** `build-manifest.json` reports `git.sha` **`b23e1a26`** and `dirty: false`, deployed by dispatch run `39666073051` (2026-10-21T20:03:15Z). The 2026-10-02 line above is kept as dated history.
 - **Gap:** post-deploy verify does not assert score values (RISK-004).
 - **Worker (Cloudflare):** not deployed; `api.compassionbenchmark.com` does not resolve (RISK-014).
 
@@ -110,6 +111,46 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-22 (Iteration 115 — **D-60 evaluation programme**): eight design docs and four builds, all verified by the coordinator.
+> PROTOCOL.v2 is proposed with 15 open values. `wave-ready` and `audit-wave` now exist; pilot-3 is HOLD only on 2
+> not-built gates. Six pre-registered experiments found that the fixed 0.759 agreement floor would fire on noise, that
+> scorer intervals are about 4 times too narrow, and that pilot-3 has no rating of 5. **No sensitive item can be served:
+> 0 of 93 items are tagged, and there is no harm field.** Model-runs tests 317. Four iterations are uncommitted.
+
+> 2026-10-22 (Iteration 114 — **governance only**): the Friday packet
+> `docs/FOUNDER_DECISION_PACKET_2026-10-23_FRIDAY.md` has six asks with defaults. First: commit and deploy 112 and 113.
+> Second: D-13, because builds fail from 2026-11-17 (25 days left, re-measured). Stale backlog rows were closed, and the
+> DC-23 count is corrected to 11. No product change.
+
+> 2026-10-22 (Iteration 113 — **DC25-GATE**): the DC-25 gate is chain step 82. It fails public copy claiming pilots publish
+> no single number while the public wave data carries a pilot point. It found two false "Ranges, not scores" lines in the
+> unpublished dashboard copy, now fixed. **Two iterations (112, 113) await commit approval, so the next loop is
+> governance only (S6).** Chain 82 steps.
+
+> 2026-10-22 (Iteration 112 — **MW-WEEKLY, after Meta-review 13 and D-59**): the second AI Model Watch edition
+> (2026-10-17 to 2026-10-22) is built and validated: 1 release, catalog 63 rows, 6 fact-check fixes applied. It awaits
+> commit and deploy approval. Production runs `b23e1a26`. **D-13: the earliest waiver expires 2026-11-16 and builds
+> fail from 2026-11-17**; the 30-day warning passed on 2026-10-17. D-59 approved the cycle-plan defaults, but no v2
+> protocol file exists yet (PROTOCOL-V2). Chain 81 steps.
+
+> 2026-10-21 (Iteration 111 — **founder directive D-58**): production runs `309362ea` (Iterations 104-110, CI dispatch
+> `39644977500`). A live audit of every AI-model page found 0 broken URLs; its Medium findings are fixed (share metadata
+> on 8 pages, a garbled pairs sentence, a tracker note, one Insights correction). The weekly cycle plan is published at
+> `/ai-models/cycle`; it ratifies nothing (C-FD-1, C-FD-2, C-FD-4 open). Chain 81 steps.
+
+> 2026-10-21 (Iteration 110 — **applied rule fixed; push unblocked**): briefings take applied status from a ledger
+> generated from `research/APPLIED_CHANGES.md`, so legacy May-June briefings again show their applied changes as moves
+> (28 rows, 15 dates), while 2026-10-01 keeps "not applied". The Iteration 109 heading fix is validated with it. The
+> chain is 81 steps. The Iteration 109 note below is superseded: the push block is lifted.
+
+> 2026-10-16 (Iteration 108 — **founder directive D-57: AI Model Watch and Insights**): six new routes. The tracker
+> lists sourced models with no ratings, and the first weekly edition covers 2026-09-01 to 2026-10-16. The leaderboards
+> page says no model ranking is published, lists the conditions for one, and routes to the AI Labs index. /insights has
+> six articles. Catalog and releases were independently fact-checked (42 confirmed, 5 corrected, 0 dropped), and so
+> were the articles (52 of 55 claims confirmed, 3 corrected). A compassion review caught two must-fix items in the agent
+> checklist (consent before forwarding an abuse disclosure; not stopping help at any sign of distress), and both are
+> fixed. The registry and release-watch stores remain empty by design.
 
 > 2026-10-20 (Iteration 109 — BRF-MOVE-2, **validation failed, not committed**): Iteration 108 is committed as
 > `47a1fa00` (build and the 80-step chain exit 0; `prepush:clean` PASS). **Do not push the branch yet:** the unpushed
