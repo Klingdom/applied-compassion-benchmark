@@ -48,7 +48,7 @@ const CORE_INDEXES = [
   { label: "Universities Index 2026",            url: `${BASE_URL}/universities`,  jsonFile: "universities.json" },
 ];
 
-/** Sum of rankings.length across the 8 index JSON files — never a literal. */
+/** Sum of rankings.length across every CORE_INDEXES JSON file — never a literal. */
 function countScoredEntities() {
   return CORE_INDEXES.reduce((sum, idx) => {
     const data = JSON.parse(readFileSync(join(INDEXES_DIR, idx.jsonFile), "utf-8"));

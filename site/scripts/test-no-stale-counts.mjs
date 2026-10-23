@@ -30,6 +30,9 @@ const SCAN_ROOTS = [
   // Insights post sources (docs/ARCHITECTURE_AI_MODEL_WATCH.md section 6): a post states repo-derived counts with {{TOKENS}}, never digits.
   // Present only in a full checkout (Docker has no research/). FACT_CHECK files quote counts on purpose and are not posts.
   { dir: join(SITE_ROOT, "..", "research", "insights"), ext: ".md", skip: /^FACT_CHECK/i },
+  // Build scripts that write public copy (feed descriptions, llms.txt, OG cards). The feed description said
+  // "1,155 entities" in build-feeds.mjs for months because only .tsx was scanned (DC-01, found 2026-10-22).
+  { dir: join(SITE_ROOT, "scripts"), ext: ".mjs", only: /^build-(feeds|llms|og-images)\.mjs$/ },
 ];
 
 // ─── Allowlist ────────────────────────────────────────────────────────────────
@@ -85,14 +88,14 @@ function isAllowed(fileRel, matchedText, line) {
   );
 }
 
-function collectFiles(dir, ext = ".tsx", skip = null) {
+function collectFiles(dir, ext = ".tsx", skip = null, only = null) {
   const results = [];
   if (!existsSync(dir)) return results;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) {
-      results.push(...collectFiles(full, ext, skip));
-    } else if (entry.isFile() && full.endsWith(ext) && !(skip && skip.test(entry.name))) {
+      results.push(...collectFiles(full, ext, skip, only));
+    } else if (entry.isFile() && full.endsWith(ext) && !(skip && skip.test(entry.name)) && !(only && !only.test(entry.name))) {
       results.push(full);
     }
   }
@@ -140,7 +143,7 @@ let failures = [];
 let filesScanned = 0;
 
 for (const root of SCAN_ROOTS) {
-  for (const file of collectFiles(root.dir, root.ext, root.skip)) {
+  for (const file of collectFiles(root.dir, root.ext, root.skip, root.only)) {
     filesScanned++;
     const fileRel = relative(SITE_ROOT, file).split("\\").join("/");
     const content = readFileSync(file, "utf8");
@@ -150,7 +153,7 @@ for (const root of SCAN_ROOTS) {
   }
 }
 
-console.log(`\nno-stale-counts: scanned ${filesScanned} files under src/app, src/components and research/insights\n`);
+console.log(`\nno-stale-counts: scanned ${filesScanned} files under src/app, src/components, research/insights and the public-copy build scripts\n`);
 
 if (failures.length > 0) {
   console.log(`  FAIL ${failures.length} stale/hard-coded catalogue count(s) found:\n`);

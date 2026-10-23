@@ -24,7 +24,7 @@
  * are not yet in a stable enough shape for feed generation within PR 3 scope.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -38,8 +38,26 @@ const OUTPUT_DIR = join(SITE_ROOT, "public", "updates");
 
 const BASE_URL = "https://compassionbenchmark.com";
 const FEED_TITLE = "Compassion Benchmark — Daily Research";
+const INDEXES_DIR = join(SITE_ROOT, "src", "data", "indexes");
+
+/**
+ * Scored-entity count = sum of rankings.length across every published index JSON
+ * (the same definition as entityCount.ts and build-llms.mjs). Never a literal:
+ * the description said "1,155" long after the catalogue grew (DC-01).
+ */
+function countScoredEntities() {
+  const files = readdirSync(INDEXES_DIR).filter((f) => f.endsWith(".json"));
+  if (files.length === 0) throw new Error("build-feeds: no index JSON files in " + INDEXES_DIR);
+  return files.reduce((sum, f) => {
+    const data = JSON.parse(readFileSync(join(INDEXES_DIR, f), "utf-8"));
+    if (!Array.isArray(data.rankings)) throw new Error(`build-feeds: ${f} has no rankings array`);
+    return sum + data.rankings.length;
+  }, 0);
+}
+
 const FEED_DESCRIPTION =
-  "Daily evidence-linked findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities.";
+  "Daily evidence-linked findings on how institutions recognize, respond to, and reduce suffering — scored across " +
+  `${countScoredEntities().toLocaleString("en-US")} entities.`;
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
