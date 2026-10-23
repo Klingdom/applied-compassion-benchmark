@@ -106,7 +106,7 @@ export default function CyclePage() {
               and disclosed. Part of it is planned: a weekly test run of open-weight models (models whose files anyone can download). None of this produces a ranking.
             </p>
             <p className="text-muted text-[0.98rem] leading-relaxed mb-3">
-              <strong className="text-text">No official model ranking, band or score is published.</strong> Where this page says
+              <strong className="text-text">No official model ranking, band or score is published.</strong>{" "}Where this page says
               &quot;score&quot;, it means one thing: a reply rated from 1 to 5 against a rubric written for one test item, in
               an unofficial pilot run. Pilot results are shown as ranges, in alphabetical order, and are labelled
               &quot;comparability: none&quot;: they test our instrument and are not a basis for choosing between models. Where a
@@ -179,13 +179,13 @@ export default function CyclePage() {
                 sooner, or tested in a particular way.
               </li>
               <li>
-                <strong className="text-text">Judge.</strong> Each reply is rated by two judges against the item&apos;s rubric.
+                <strong className="text-text">Judge.</strong>{" "}Each reply is rated by two judges against the item&apos;s rubric.
                 Today every judge is an AI model from one family (Anthropic&apos;s Claude). Claude models were also among the
                 models tested in the first pilot, so this is a known risk of bias until judges from other families take part.
                 A panel of judges from three families is planned.
               </li>
               <li>
-                <strong className="text-text">Check the instrument.</strong> One reference model is re-run every week. A sample
+                <strong className="text-text">Check the instrument.</strong>{" "}One reference model is re-run every week. A sample
                 of stored replies from an earlier pilot is re-rated each week. If the re-ratings drift beyond a set limit, that
                 week is marked &quot;not comparable&quot;.
               </li>
@@ -209,7 +209,7 @@ export default function CyclePage() {
             Each week&apos;s outputs feed the next week&apos;s inputs. The loop has seven links. Some run today and some are
             planned.
           </p>
-          <div className="overflow-x-auto">
+          <div className="relative overflow-x-auto">
             <table className="w-full min-w-[760px] border-collapse text-left text-[0.92rem]">
               <caption className="sr-only">The seven links of the weekly loop, with the status of each</caption>
               <thead>

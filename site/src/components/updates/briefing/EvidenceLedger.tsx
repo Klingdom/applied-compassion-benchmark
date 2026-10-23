@@ -179,20 +179,20 @@ function EvidenceCard({ item, briefingDate }: EvidenceCardProps) {
       {/* Entity + tier + date meta row */}
       <div className="flex flex-wrap items-center gap-2 mb-2">
         {item.entity && (
-          <span className="text-[0.72rem] font-bold uppercase tracking-wider text-muted">
+          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-muted">
             {item.entity}
           </span>
         )}
         {tierLabel && tierColor && (
           <span
-            className="text-[0.65rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
+            className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
             style={{ color: tierColor, borderColor: `${tierColor}44`, background: `${tierColor}12` }}
           >
             {tierLabel}
           </span>
         )}
         {item.publishedDate && (
-          <span className="text-[0.72rem] text-muted">{item.publishedDate}</span>
+          <span className="text-[0.8125rem] text-muted">{item.publishedDate}</span>
         )}
       </div>
 
@@ -220,7 +220,7 @@ function LegacyRow({ row }: LegacyRowProps) {
       <td className="py-2.5 px-4 font-mono text-[0.82rem] text-text">{row.domain}</td>
       <td className="py-2.5 px-4">
         <span
-          className="text-[0.7rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
+          className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
           style={{ color: typeColor, borderColor: `${typeColor}44`, background: `${typeColor}12` }}
         >
           {SOURCE_TYPE_LABELS[row.sourceType]}
@@ -306,7 +306,7 @@ export default function EvidenceLedger({ updates }: Props) {
                     <th
                       key={h}
                       scope="col"
-                      className="text-left text-[0.72rem] font-bold uppercase tracking-wider text-muted py-3 px-4"
+                      className="text-left text-[0.75rem] font-bold uppercase tracking-wider text-muted py-3 px-4"
                     >
                       {h}
                     </th>

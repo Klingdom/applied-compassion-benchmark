@@ -64,15 +64,15 @@ export default function WatchListingPage() {
           </nav>
           <Eyebrow>AI Model Watch</Eyebrow>
           <h1 className="text-[clamp(2rem,4.5vw,3.1rem)] leading-[1.1] mt-3 mb-4">AI Model Watch</h1>
-          <p className="text-muted max-w-[900px] text-[1.05rem] leading-relaxed mb-3">
+          <p className="text-muted max-w-[68ch] text-[1.05rem] leading-relaxed mb-3">
             Dated editions of what AI providers shipped and what they disclosed about their own releases, each with
             sources. This is not a ranking and not an evaluation.
           </p>
-          <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed">
+          <p className="text-muted max-w-[68ch] text-[0.95rem] leading-relaxed">
             Looking for the full list of models? See the{" "}
             <Link href="/ai-models/tracker" className="underline underline-offset-2">model tracker</Link>.
           </p>
-          <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed mt-3">
+          <p className="text-muted max-w-[68ch] text-[0.95rem] leading-relaxed mt-3">
             <Link href="/ai-models/cycle" className="underline underline-offset-2">How the weekly cycle works</Link>: what
             runs today and what is planned.
           </p>

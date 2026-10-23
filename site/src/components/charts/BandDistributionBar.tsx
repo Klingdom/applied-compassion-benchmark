@@ -3,7 +3,8 @@
  *
  * Server component: renders a horizontal stacked-bar SVG segmented by the
  * five compassion bands (Critical / Developing / Functional / Established /
- * Exemplary), with count + % labels and a legend.
+ * Exemplary). The legend (band, range, count, %) is an HTML row (D-61) so it
+ * reflows and never shrinks with the SVG.
  *
  * Props:
  *   index  — "all" (aggregate across all indexes) | individual index slug |
@@ -109,7 +110,6 @@ function computeCounts(index?: string, counts?: BandCounts): BandCounts {
 const BAR_W = 600;
 const BAR_H = 36;
 const BAR_H_COMPACT = 16;
-const LEGEND_ITEM_H = 22;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -187,15 +187,9 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
   // Compact mode: thinner bar, no legend, no caption
   const barH = compact ? BAR_H_COMPACT : BAR_H;
 
-  // Legend rows: 2 per row on narrow, all 5 in a row
-  const legendY = barH + 10;
-  const legendItemW = BAR_W / 5;
-
-  // SVG total height — add row for caret if highlighting
+  // SVG total height — bar plus a small row for the "you are here" caret
   const caretRowH = (!compact && highlightSeg) ? 14 : 0;
-  const svgH = compact
-    ? barH
-    : barH + LEGEND_ITEM_H + 20 + caretRowH; // bar + caret + legend row + padding
+  const svgH = barH + caretRowH;
 
   return (
     <figure className="w-full" aria-label={ariaLabel}>
@@ -206,7 +200,8 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
         style={{ display: "block", width: "100%", height: "auto" }}
         aria-label={ariaLabel}
       >
-        <title>Band distribution across {total.toLocaleString()} entities</title>
+        {/* single string child: React renders a multi-child <title> empty on the server, causing hydration error #418 */}
+        <title>{`Band distribution across ${total.toLocaleString()} entities`}</title>
 
         {/* Stacked horizontal bar */}
         {segments.map((s) => (
@@ -240,104 +235,54 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
           />
         ))}
 
-        {/* Count + % labels inside segments (only if segment wide enough, and not compact) */}
-        {!compact && segments.map((s) => {
-          if (s.w < 40) return null;
-          const cx = s.x + s.w / 2;
-          const showPct = s.w >= 60;
-          return (
-            <g key={`label-${s.key}`}>
-              <text
-                x={cx}
-                y={showPct ? barH / 2 - 4 : barH / 2 + 5}
-                textAnchor="middle"
-                fill={s.textColor}
-                fontSize="11"
-                fontWeight="700"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-              >
-                {s.count.toLocaleString()}
-              </text>
-              {showPct && (
-                <text
-                  x={cx}
-                  y={barH / 2 + 9}
-                  textAnchor="middle"
-                  fill={s.textColor}
-                  fontSize="9"
-                  fontWeight="500"
-                  opacity="0.75"
-                  fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-                >
-                  {Math.round(s.pct * 100)}%
-                </text>
-              )}
-            </g>
-          );
-        })}
-
-        {/* "You are here" caret below the highlighted segment (not compact) */}
+        {/* "You are here" caret below the highlighted segment (not compact).
+            The words live in the HTML legend below so they stay at readable size. */}
         {!compact && highlightSeg && (() => {
           const cx = highlightSeg.x + highlightSeg.w / 2;
           const cy = barH + 2;
-          // Triangle pointing upward into the segment
           const caretSize = 5;
           const triPoints = `${cx},${cy} ${cx - caretSize},${cy + caretSize * 1.5} ${cx + caretSize},${cy + caretSize * 1.5}`;
           return (
-            <g aria-label={`You are here: ${highlightSeg.key} band`}>
-              <polygon
-                points={triPoints}
-                fill={highlightSeg.color}
-                opacity="0.9"
-              />
-              <text
-                x={cx}
-                y={cy + caretSize * 1.5 + 9}
-                textAnchor="middle"
-                fill={highlightSeg.color}
-                fontSize="8.5"
-                fontWeight="600"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-              >
-                you are here
-              </text>
-            </g>
+            <polygon
+              points={triPoints}
+              fill={highlightSeg.color}
+              opacity="0.9"
+            />
           );
         })()}
-
-        {/* Legend row (not compact) */}
-        {!compact && segments.map((s, i) => {
-          const lx = i * legendItemW;
-          const rowY = legendY + caretRowH;
-          return (
-            <g key={`legend-${s.key}`}>
-              {/* Color swatch */}
-              <rect
-                x={lx}
-                y={rowY}
-                width={10}
-                height={10}
-                fill={s.color}
-                rx={2}
-              />
-              {/* Label text */}
-              <text
-                x={lx + 14}
-                y={rowY + 9}
-                fill="#b8c6de"
-                fontSize="9.5"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-              >
-                {s.key} {s.range}
-              </text>
-            </g>
-          );
-        })}
       </svg>
+
+      {/* Legend (not compact): HTML so it reflows and stays >=12px. Band name + range,
+          count and share are all printed, so meaning never rests on colour alone. */}
+      {!compact && (
+        <ul className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5 text-[0.8125rem] text-muted list-none p-0 m-0">
+          {segments.map((s) => {
+            const isHere = highlightSeg?.key === s.key;
+            return (
+              <li key={s.key} className="inline-flex items-baseline gap-1.5 tabular-nums">
+                <span
+                  className="inline-block w-2.5 h-2.5 rounded-sm shrink-0 self-center"
+                  style={{ backgroundColor: s.color }}
+                  aria-hidden="true"
+                />
+                <span>{s.key} {s.range}</span>
+                <span className="text-text font-semibold">
+                  {s.count.toLocaleString()} ({Math.round(s.pct * 100)}%)
+                </span>
+                {isHere && (
+                  <span className="font-semibold" style={{ color: s.color }}>
+                    · you are here
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
 
       {/* Caption — hidden in compact mode */}
       {!compact && (
-        <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+        <figcaption className="text-[0.75rem] text-muted-subtle mt-1.5 text-right">
           {caption ?? CC_BY_CAPTION}
         </figcaption>
       )}

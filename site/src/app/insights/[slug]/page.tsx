@@ -52,7 +52,7 @@ const PROSE =
   "[&_blockquote]:border-l-2 [&_blockquote]:border-[rgba(125,211,252,0.4)] [&_blockquote]:pl-4 [&_blockquote]:my-4 " +
   "[&_table]:w-full [&_table]:text-[0.9rem] [&_table]:border-collapse [&_th]:text-left [&_th]:py-2 [&_th]:px-3 [&_th]:border-b [&_th]:border-line " +
   "[&_td]:py-2 [&_td]:px-3 [&_td]:border-b [&_td]:border-line/60 [&_td]:align-top " +
-  "[&_.sb-table-wrap]:overflow-x-auto [&_.sb-table-wrap]:border [&_.sb-table-wrap]:border-line [&_.sb-table-wrap]:rounded-[14px] [&_.sb-table-wrap]:mb-4 " +
+  "[&_.sb-table-wrap]:relative [&_.sb-table-wrap]:overflow-x-auto [&_.sb-table-wrap]:border [&_.sb-table-wrap]:border-line [&_.sb-table-wrap]:rounded-[14px] [&_.sb-table-wrap]:mb-4 " +
   "[&_sup_a]:inline-block [&_sup_a]:min-w-[44px] [&_sup_a]:min-h-[44px] [&_sup_a]:text-center [&_sup_a]:leading-[44px] [&_sup_a]:no-underline " +
   "[&_sup]:leading-none";
 
@@ -90,7 +90,7 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
     <ol className="grid gap-1.5 text-[0.9rem]">
       {headings.map((h) => (
         <li key={h.id}>
-          <a href={`#${h.id}`} className="text-muted underline underline-offset-2">
+          <a href={`#${h.id}`} className="text-muted no-underline hover:underline underline-offset-2 hover:text-text break-words">
             {h.text}
           </a>
         </li>
@@ -141,7 +141,7 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
               {post.claimLedger.length > 0 && (
                 <details className="border border-line rounded-[14px] px-4 py-3 mt-8">
                   <summary className="cursor-pointer text-text font-medium">Claims and sources in this post</summary>
-                  <div className="mt-3 overflow-x-auto">
+                  <div className="mt-3 relative overflow-x-auto">
                     <table className="w-full text-[0.88rem] border-collapse min-w-[480px]">
                       <caption className="sr-only">Claims in this post that carry a figure, with their source or derivation</caption>
                       <thead>

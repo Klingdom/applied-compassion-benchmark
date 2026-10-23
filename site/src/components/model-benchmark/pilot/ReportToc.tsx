@@ -7,7 +7,7 @@ export const sectionSlug = (title: string): string => title.toLowerCase().replac
  */
 export default function ReportToc({ sections }: { sections: { id: string; title: string }[] }) {
   return (
-    <nav aria-label="Report contents" className="pilot-toc">
+    <nav aria-label="Report contents" className="pilot-toc [&_a]:no-underline! [&_a:hover]:underline! [&_a]:block! [&_li]:pl-1">
       <p className="pilot-toc-title">On this page</p>
       <ol>
         {sections.map((s) => (

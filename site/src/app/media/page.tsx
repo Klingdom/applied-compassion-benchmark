@@ -117,7 +117,7 @@ export default function MediaPage() {
           <div className="rounded-[20px] border border-[rgba(125,211,252,0.28)] bg-gradient-to-br from-[rgba(125,211,252,0.08)] to-[rgba(96,165,250,0.04)] p-7">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="min-w-0">
-                <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
+                <p className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
                   Flagship Report &mdash; For Journalists
                 </p>
                 <h2 className="text-[clamp(1.2rem,3vw,1.75rem)] font-bold tracking-[-0.02em] leading-tight mb-2.5">
@@ -140,7 +140,7 @@ export default function MediaPage() {
                 </p>
                 {/* Ready-to-cite string for the report */}
                 <div className="rounded-[12px] border border-[rgba(125,211,252,0.18)] bg-[rgba(0,0,0,0.2)] px-4 py-3 mb-3">
-                  <p className="text-[0.72rem] uppercase tracking-[0.1em] text-muted font-semibold mb-1.5">
+                  <p className="text-[0.75rem] uppercase tracking-[0.1em] text-muted font-semibold mb-1.5">
                     Ready-to-cite (report)
                   </p>
                   <p

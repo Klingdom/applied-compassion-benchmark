@@ -160,22 +160,29 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
         )}
 
         {/* Masthead kicker — carries the "Daily Briefing" label demoted from h1 */}
-        <div className="flex items-baseline gap-3 mb-4 flex-wrap">
-          <span className="text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
-            Compassion Benchmark
+        {/* Separators trail their item (inside a nowrap group) so none can start a wrapped line. */}
+        <div className="flex items-baseline gap-x-3 gap-y-1 mb-4 flex-wrap">
+          <span className="inline-flex items-baseline gap-3">
+            <span className="text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+              Compassion Benchmark
+            </span>
+            <span className="text-muted text-[0.78rem]" aria-hidden="true">
+              ·
+            </span>
           </span>
-          <span className="text-muted text-[0.78rem]" aria-hidden="true">
-            ·
+          <span className="inline-flex items-baseline gap-3">
+            <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-[0.14em]">
+              Daily Briefing
+            </span>
+            <span className="text-muted text-[0.78rem]" aria-hidden="true">
+              ·
+            </span>
           </span>
-          <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-[0.14em]">
-            Daily Briefing
-          </span>
-          <span className="text-muted text-[0.78rem]" aria-hidden="true">
-            ·
-          </span>
-          <span className="text-text text-[0.88rem] font-medium">{heroDate}</span>
-          <span className="text-muted text-[0.78rem]" aria-hidden="true">
-            ·
+          <span className="inline-flex items-baseline gap-3">
+            <span className="text-text text-[0.88rem] font-medium">{heroDate}</span>
+            <span className="text-muted text-[0.78rem]" aria-hidden="true">
+              ·
+            </span>
           </span>
           <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider tabular-nums">
             No.&nbsp;{issueNo}
@@ -194,15 +201,15 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
         {/* #4 — Pipeline micro-strip (trust signal; visible only when data exists) */}
         {pipelineParts.length > 0 && (
           <p
-            className="text-[0.73rem] text-muted tabular-nums mb-4 flex flex-wrap gap-x-2 gap-y-0.5 items-center"
+            className="text-[0.8125rem] text-muted tabular-nums mb-4 flex flex-wrap gap-x-2 gap-y-0.5 items-center"
             aria-label="Today's research pipeline"
           >
             {pipelineParts.map((part, i) => (
               <span key={i} className="inline-flex items-center gap-2">
-                {i > 0 && (
+                {part}
+                {i < pipelineParts.length - 1 && (
                   <span className="text-[rgba(255,255,255,0.2)]" aria-hidden="true">·</span>
                 )}
-                {part}
               </span>
             ))}
           </p>
@@ -230,7 +237,7 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           >
             Methodology
           </Link>
-          <span aria-hidden="true" className="text-[rgba(255,255,255,0.2)]">·</span>
+          <span aria-hidden="true" className="text-[rgba(255,255,255,0.2)] hidden sm:inline">·</span>
           <Link
             href="/indexes"
             className="hover:text-text transition-colors underline decoration-dotted underline-offset-2"

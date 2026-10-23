@@ -81,14 +81,14 @@ export default function FloorDesignationsPanel() {
                 >
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="min-w-0">
-                      <p className="text-[0.7rem] uppercase tracking-[0.1em] text-muted mb-0.5">
+                      <p className="text-[0.75rem] uppercase tracking-[0.1em] text-muted mb-0.5">
                         {indexLabel}
                       </p>
                       <p className="text-text font-semibold text-[0.98rem] truncate">
                         {e.name}
                       </p>
                     </div>
-                    <span className="shrink-0 text-[0.72rem] font-bold text-[#f43f5e] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
+                    <span className="shrink-0 text-[0.75rem] font-bold text-[#f43f5e] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
                       Floor
                     </span>
                   </div>
@@ -101,7 +101,7 @@ export default function FloorDesignationsPanel() {
                       return (
                         <span
                           key={code}
-                          className="inline-flex items-center px-1.5 py-0.5 rounded text-[0.7rem] font-semibold"
+                          className="inline-flex items-center px-1.5 py-0.5 rounded text-[0.75rem] font-semibold"
                           style={{
                             color,
                             backgroundColor: `${color}14`,

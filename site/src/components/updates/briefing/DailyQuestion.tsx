@@ -49,7 +49,7 @@ export default function DailyQuestion({ updates }: Props) {
     >
       <Container>
         <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.02)] p-6 sm:p-8">
-          <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-muted mb-4">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-4">
             Closing question
           </div>
           <blockquote className="text-[1.15rem] sm:text-[1.28rem] font-medium leading-relaxed text-text max-w-3xl">

@@ -7,27 +7,16 @@
  * (positive) from a shared center zero line. Bar color = band color of the
  * assessed score. Cap at 12 rows.
  *
- * No client JS, no deps. Hand-rolled SVG following BandPositionStrip pattern.
+ * No client JS, no deps. HTML/CSS bars (responsive, text >= 12px).
+ * D-61: unapplied rows are dashed outline + "not applied"; applied rows are solid.
  * Static-export safe.
  *
  * Data sourcing mirrors ScoreMovementDashboard.tsx exactly.
  */
 
+import type React from "react";
 import { getBandColor } from "@/components/charts/chartTokens";
 import { isScoreChangeApplied } from "./utils";
-
-// ─── SVG layout constants ────────────────────────────────────────────────────
-
-const SVG_W = 600;
-const ROW_H = 22;
-const LABEL_W = 140;  // left gutter for entity name
-const DELTA_W = 42;   // right gutter for "+N.N" label
-const BAR_AREA_W = SVG_W - LABEL_W - DELTA_W; // center bar area
-const BAR_CENTER_X = LABEL_W + BAR_AREA_W / 2; // x of the zero line
-const MAX_BAR_HALF = BAR_AREA_W / 2 - 4;       // max bar half-width (px), leaving 4px margin
-const MIN_BAR_W = 3;  // minimum visible bar width for non-zero deltas
-
-const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 // ─── Data merging (mirrors ScoreMovementDashboard) ───────────────────────────
 
@@ -215,159 +204,94 @@ export default function MovementDeltaStrip({ updates }: Props) {
   }
 
   const maxAbsDelta = Math.max(...rows.map((r) => Math.abs(r.delta)), 1);
-  const svgHeight = rows.length * ROW_H + 28; // 16px top axis, 12px bottom pad
-  const AXIS_Y = 14; // y for the axis band labels
 
   const ariaLabel = buildAriaLabel(rows);
   const takeaway = buildTakeaway(rows);
+  const anyUnapplied = rows.some((r) => !r.applied && r.delta !== 0);
+  const anyApplied = rows.some((r) => r.applied && r.delta !== 0);
+
+  // Name | bar track | delta. Text is HTML (>= 0.75rem) so it never scales down with the
+  // container; only the bars are proportional.
+  const GRID = "grid grid-cols-[minmax(5.5rem,9rem)_minmax(0,1fr)_minmax(4.5rem,6rem)] items-center gap-x-2";
 
   return (
     <div>
       {/* Takeaway line */}
-      <p className="text-[0.75rem] text-muted mb-2 tabular-nums">
+      <p className="text-[0.8125rem] text-muted mb-2 tabular-nums">
         {takeaway}
       </p>
 
-      {/* SVG strip */}
-      <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: "touch" }}>
-        <svg
-          role="img"
-          aria-label={ariaLabel}
-          viewBox={`0 0 ${SVG_W} ${svgHeight}`}
-          width={SVG_W}
-          height={svgHeight}
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ display: "block", minWidth: SVG_W, maxWidth: "100%" }}
-        >
-          <title>{ariaLabel}</title>
+      {/* One-line key (D-61): solid vs outline vs colour. */}
+      <p className="text-[0.75rem] text-muted mb-2">
+        {anyApplied && anyUnapplied
+          ? "Solid = applied to the published score · Outline = measured, not applied · Colour = band of the measurement"
+          : anyUnapplied
+            ? "Outline = measured, not applied to the published score · Colour = band of the measurement"
+            : "Solid = applied to the published score · Colour = band of the measurement"}
+      </p>
 
-          {/* Axis tick labels at top */}
-          <text
-            x={BAR_CENTER_X - MAX_BAR_HALF}
-            y={AXIS_Y}
-            textAnchor="middle"
-            fill="rgba(148,163,184,0.5)"
-            fontSize="7"
-            fontFamily={FONT}
-          >
-            −{maxAbsDelta}
-          </text>
-          <text
-            x={BAR_CENTER_X}
-            y={AXIS_Y}
-            textAnchor="middle"
-            fill="rgba(148,163,184,0.5)"
-            fontSize="7"
-            fontFamily={FONT}
-          >
-            0
-          </text>
-          <text
-            x={BAR_CENTER_X + MAX_BAR_HALF}
-            y={AXIS_Y}
-            textAnchor="middle"
-            fill="rgba(148,163,184,0.5)"
-            fontSize="7"
-            fontFamily={FONT}
-          >
-            +{maxAbsDelta}
-          </text>
+      <div role="img" aria-label={ariaLabel} title={ariaLabel} className="w-full">
+        <div aria-hidden="true">
+          {/* Axis labels */}
+          <div className={`${GRID} text-[0.75rem] text-muted tabular-nums mb-1`}>
+            <span />
+            <div className="flex justify-between whitespace-nowrap">
+              <span>−{maxAbsDelta}</span>
+              <span className="hidden sm:inline">0</span>
+              <span>+{maxAbsDelta}</span>
+            </div>
+            <span />
+          </div>
 
-          {/* Center zero line — full height */}
-          <line
-            x1={BAR_CENTER_X}
-            y1={AXIS_Y + 2}
-            x2={BAR_CENTER_X}
-            y2={svgHeight - 2}
-            stroke="rgba(255,255,255,0.12)"
-            strokeWidth="1"
-          />
-
-          {/* Rows */}
           {rows.map((row, i) => {
-            const rowY = AXIS_Y + 4 + i * ROW_H; // top of the row
-            const barCY = rowY + ROW_H / 2;       // vertical center of bar
-            const barH = 8;
-
-            // Compute bar width
             const absDelta = Math.abs(row.delta);
-            const scaledW = absDelta === 0
-              ? 0
-              : Math.max(MIN_BAR_W, (absDelta / maxAbsDelta) * MAX_BAR_HALF);
-
-            // Bar rect: positive extends right, negative extends left
-            const barX = row.delta >= 0
-              ? BAR_CENTER_X
-              : BAR_CENTER_X - scaledW;
-            const barW = scaledW;
-
-            // Delta label x position
-            const deltaLabelX = SVG_W - DELTA_W + 4;
-
+            const halfPct = absDelta === 0 ? 0 : (absDelta / maxAbsDelta) * 48; // % of track, per side
+            const showUnapplied = !row.applied && absDelta > 0;
+            const barStyle: React.CSSProperties = {
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              minWidth: 3,
+              width: `${halfPct}%`,
+              ...(row.delta >= 0 ? { left: "50%" } : { right: "50%" }),
+              borderRadius: 2,
+              ...(showUnapplied
+                ? {
+                    border: `1.5px dashed ${row.bandColor}`,
+                    background: `repeating-linear-gradient(45deg, ${row.bandColor}40 0 3px, transparent 3px 6px)`,
+                    boxSizing: "border-box",
+                  }
+                : { background: row.bandColor, opacity: 0.75 }),
+            };
             return (
-              <g key={`${row.entity}-${i}`}>
-                {/* Entity name */}
-                <text
-                  x={LABEL_W - 6}
-                  y={barCY + 4}
-                  textAnchor="end"
-                  fill="rgba(226,232,240,0.85)"
-                  fontSize="8.5"
-                  fontFamily={FONT}
-                >
-                  {truncateLabel(row.entity)}
-                </text>
-
-                {/* Background track row (very faint) */}
-                <rect
-                  x={LABEL_W}
-                  y={barCY - barH / 2}
-                  width={BAR_AREA_W}
-                  height={barH}
-                  fill="rgba(255,255,255,0.03)"
-                  rx="2"
-                />
-
-                {/* Delta bar */}
-                {absDelta > 0 && (
-                  <rect
-                    x={barX}
-                    y={barCY - barH / 2}
-                    width={barW}
-                    height={barH}
-                    fill={row.bandColor}
-                    opacity="0.75"
-                    rx="2"
-                  />
-                )}
-
-                {/* Zero tick (delta === 0) */}
-                {absDelta === 0 && (
-                  <rect
-                    x={BAR_CENTER_X - 1}
-                    y={barCY - barH / 2}
-                    width={2}
-                    height={barH}
-                    fill="rgba(148,163,184,0.4)"
-                  />
-                )}
-
-                {/* Delta value label */}
-                <text
-                  x={deltaLabelX}
-                  y={barCY + 4}
-                  textAnchor="start"
-                  fill={absDelta === 0 ? "rgba(148,163,184,0.5)" : row.bandColor}
-                  fontSize="8"
-                  fontWeight={absDelta > 0 ? "700" : "400"}
-                  fontFamily={FONT}
+              <div key={`${row.entity}-${i}`} className={`${GRID} py-[3px]`}>
+                <span className="text-[0.8125rem] text-text/90 text-right truncate" title={row.entity}>
+                  {row.entity}
+                </span>
+                <div className="relative h-3 rounded-[2px] bg-[rgba(255,255,255,0.03)]">
+                  <div className="absolute top-0 bottom-0 left-1/2 w-px bg-[rgba(255,255,255,0.12)]" />
+                  {absDelta > 0 ? (
+                    <div style={barStyle} />
+                  ) : (
+                    <div className="absolute top-0 bottom-0 left-1/2 -ml-px w-0.5 bg-[rgba(148,163,184,0.4)]" />
+                  )}
+                </div>
+                <span
+                  className="text-[0.8125rem] tabular-nums leading-tight"
+                  style={{
+                    color: absDelta === 0 ? "#8fa3be" : row.bandColor,
+                    fontWeight: absDelta > 0 ? 700 : 400,
+                  }}
                 >
                   {formatDelta(row.delta)}
-                </text>
-              </g>
+                  {showUnapplied && (
+                    <span className="block text-[0.75rem] font-normal text-muted">not applied</span>
+                  )}
+                </span>
+              </div>
             );
           })}
-        </svg>
+        </div>
       </div>
     </div>
   );

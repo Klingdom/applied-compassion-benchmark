@@ -55,12 +55,12 @@ export default function ReportsIndexPage() {
         <Container>
           <Eyebrow>AI Model Compassion Benchmark &middot; Unofficial pilots</Eyebrow>
           <h1 className="text-[clamp(2rem,4.5vw,3.1rem)] leading-[1.1] mt-3 mb-4">Unofficial pilot reports</h1>
-          <p className="text-muted max-w-[900px] text-[1.05rem] leading-relaxed mb-3">
+          <p className="text-muted max-w-[68ch] text-[1.05rem] leading-relaxed mb-3">
             No AI model has an official score. Each report below is an unofficial pilot: it tested the test, it is not a
             score, it carries no ranking, and it supports no comparison with the models in another report or with any
             model outside it. Reports are listed newest first, by date.
           </p>
-          <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed">
+          <p className="text-muted max-w-[68ch] text-[0.95rem] leading-relaxed">
             Machine readers can start at the{" "}
             <a href="/data/model-benchmark/index.json" className="underline underline-offset-2">
               program index (JSON)

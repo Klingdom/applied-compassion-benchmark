@@ -27,7 +27,7 @@ export default function Card({
 
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={variant === "service" ? cls : `block ${cls}`}>
         {children}
       </Link>
     );

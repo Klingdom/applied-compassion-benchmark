@@ -233,7 +233,7 @@ export default function CompletionBlock({ updates, prevDate: prevDateProp, nextD
                 )}
                 {entityPills.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5 ml-auto">
-                    <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mr-0.5">
+                    <span className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mr-0.5">
                       In this briefing
                     </span>
                     {entityPills.map((pill) => (
@@ -256,7 +256,7 @@ export default function CompletionBlock({ updates, prevDate: prevDateProp, nextD
             <>
               <div className="border-t border-[rgba(125,211,252,0.12)] mt-5 mb-4" />
               <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                   What we&apos;re watching next
                 </div>
                 <ul className="space-y-1.5">

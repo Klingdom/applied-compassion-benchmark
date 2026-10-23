@@ -175,9 +175,13 @@ function formatMetadata(key: string, value: string | number | undefined): string
   return String(value);
 }
 
-/** Map a 0–5 sub-score to a 0–100 percent for the bar fill. */
+/**
+ * Map a 1–5 dimension score to a 0–100 percent for the bar fill. Same mapping the
+ * composite uses (lib/scoring.ts: (avg − 1) / 4), so a floor score of 1.0 is an empty
+ * bar and the bar colour agrees with the band the same position would get on the composite.
+ */
 function scorePct(score: number): number {
-  return Math.min(100, Math.max(0, (score / 5) * 100));
+  return Math.min(100, Math.max(0, ((score - 1) / 4) * 100));
 }
 
 /** Band color from a 0–100 composite value (matches DimensionProfileBar). */
@@ -332,6 +336,7 @@ function buildConsistencyCallout(
   integrationPremium: number,
   stdDev: number,
   consistencyMult: number,
+  weakDims: number,
 ): string {
   if (hasHarm) {
     return "A dimension at zero — no integration premium applied (harm flag active).";
@@ -339,10 +344,32 @@ function buildConsistencyCallout(
   if (consistencyMult >= 1.0 && integrationPremium >= 9.9) {
     return `Balanced profile — earned the full integration premium (+${integrationPremium.toFixed(1)} pts).`;
   }
+  // scoring.ts: premium = 10 x consistencyMult x max(0, 1 - 0.2 x weakDims), where weakDims counts
+  // dimensions below 4.0. When the profile is even (std dev <= 1.5, multiplier 1.0) the reduction can
+  // only come from the weakness factor, so say that rather than calling the profile uneven.
+  if (consistencyMult >= 1.0) {
+    return `Even profile (std dev ${stdDev.toFixed(2)}); the integration premium is +${integrationPremium.toFixed(1)} pts because ${weakDims} of ${DIMENSIONS.length} dimensions score below 4.0 and each one removes 20% of the 10-point premium${weakDims >= 5 ? ", which cannot go below zero" : ""}.`;
+  }
   if (integrationPremium < 0.1) {
     return `Uneven profile (std dev ${stdDev.toFixed(2)}) — integration premium reduced to +${integrationPremium.toFixed(1)} pts.`;
   }
   return `Moderately uneven profile (std dev ${stdDev.toFixed(2)}) — integration premium reduced to +${integrationPremium.toFixed(1)} pts.`;
+}
+
+/**
+ * D-61 item 8: when every dimension ties, "strongest" and "weakest" would name the same
+ * dimension. Returns the shared value in that case, otherwise null.
+ */
+function evenProfileValue(
+  strongest: { name: string; score: number } | null,
+  weakest: { name: string; score: number } | null,
+): number | null {
+  return strongest && weakest && strongest.score === weakest.score ? strongest.score : null;
+}
+
+/** Wording for an even profile, using only the existing score value. */
+function evenProfileText(score: number): string {
+  return `Even profile: all ${DIMENSIONS.length} dimensions at ${score.toFixed(1)}/5`;
 }
 
 /**
@@ -358,12 +385,15 @@ function buildKeyTakeaway(
 ): { head: string; body: string; citationUrl: string | null } {
   const strongestText = strongest ? strongest.name : "–";
   const weakestText = weakest ? weakest.name : "–";
+  const evenScore = evenProfileValue(strongest, weakest);
 
   if (latestEvent && latestEvent.headline) {
     // Use verbatim headline from the history event
     return {
       head: `Ranks #${entity.rank} of ${entity.indexTotal}.`,
-      body: `Strongest on ${strongestText}, weakest on ${weakestText}. Latest: "${latestEvent.headline}"`,
+      body: evenScore !== null
+        ? `${evenProfileText(evenScore)}. Latest: "${latestEvent.headline}"`
+        : `Strongest on ${strongestText}, weakest on ${weakestText}. Latest: "${latestEvent.headline}"`,
       citationUrl: latestEvent.citationUrl ?? null,
     };
   }
@@ -371,7 +401,9 @@ function buildKeyTakeaway(
   // Fallback: data-only, no fabricated quote
   return {
     head: `Ranks #${entity.rank} of ${entity.indexTotal}.`,
-    body: `Strongest on ${strongestText} (${strongest?.score.toFixed(1) ?? "–"}/5), weakest on ${weakestText} (${weakest?.score.toFixed(1) ?? "–"}/5).`,
+    body: evenScore !== null
+      ? `${evenProfileText(evenScore)}.`
+      : `Strongest on ${strongestText} (${strongest?.score.toFixed(1) ?? "–"}/5), weakest on ${weakestText} (${weakest?.score.toFixed(1) ?? "–"}/5).`,
     citationUrl: null,
   };
 }
@@ -439,6 +471,7 @@ export default function EntityDetail({
 
   // ── Wave 2 #12: best/worst dimensions ────────────────────────────────────
   const { strongest, weakest } = getBestWorstDims(entity.scores);
+  const evenScore = evenProfileValue(strongest, weakest);
 
   // ── Wave 2 #10/#15: composite breakdown ──────────────────────────────────
   const compositeBreakdown = getCompositeBreakdown(entity);
@@ -507,7 +540,7 @@ export default function EntityDetail({
                   if (!val) return null;
                   return (
                     <span key={key} className="text-muted text-[0.95rem]">
-                      <span className="text-[rgba(148,163,184,0.7)]">
+                      <span className="text-muted-subtle">
                         {metadataLabels[key] || key}:
                       </span>{" "}
                       <span className="text-text">{val}</span>
@@ -563,10 +596,16 @@ export default function EntityDetail({
               <div className="text-muted text-[0.82rem] mt-1">out of 100</div>
               {/* S1.3: inline key-takeaway (replaces "if you remember one thing" box + badges) */}
               {strongest && weakest && (
-                <p className="text-[0.78rem] text-muted mt-2 leading-snug">
-                  Strongest: <span className="text-text">{strongest.name}</span>
-                  {" · "}
-                  Weakest: <span className="text-text">{weakest.name}</span>
+                <p className="text-[0.8125rem] text-muted mt-2 leading-snug">
+                  {evenScore !== null ? (
+                    <span className="text-text">{evenProfileText(evenScore)}</span>
+                  ) : (
+                    <>
+                      Strongest: <span className="text-text">{strongest.name}</span>
+                      {" · "}
+                      Weakest: <span className="text-text">{weakest.name}</span>
+                    </>
+                  )}
                 </p>
               )}
             </div>
@@ -585,7 +624,7 @@ export default function EntityDetail({
           {cohortStats && cohortStats.cohortSize >= 3 && (
             <details className="group mt-3 max-w-[480px]">
               <summary className={[
-                "cursor-pointer select-none",
+                "min-h-6 cursor-pointer select-none",
                 "flex items-center gap-2",
                 "text-[0.8rem] text-muted hover:text-text transition-colors",
                 "list-none [&::-webkit-details-marker]:hidden",
@@ -667,7 +706,7 @@ export default function EntityDetail({
                     }`}
                     aria-hidden
                   />
-                  <span className="text-[#7dd3fc] font-semibold uppercase text-[0.72rem]">
+                  <span className="text-[#7dd3fc] font-semibold uppercase text-[0.75rem]">
                     Evidence reviewed
                   </span>
                   <time className="text-text font-medium">{evidenceReview.reviewed_at}</time>
@@ -690,7 +729,7 @@ export default function EntityDetail({
                     return (
                       <span
                         key={tier}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.72rem] font-semibold"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.75rem] font-semibold"
                         style={{
                           color: cfg.color,
                           borderColor: `${cfg.color}44`,
@@ -715,7 +754,7 @@ export default function EntityDetail({
             {evidenceCardProps && (
               <details className="group mt-2">
                 <summary className={[
-                  "cursor-pointer select-none",
+                  "min-h-6 cursor-pointer select-none",
                   "flex items-center gap-2",
                   "text-[0.78rem] text-muted hover:text-text transition-colors",
                   "list-none [&::-webkit-details-marker]:hidden",
@@ -894,7 +933,9 @@ export default function EntityDetail({
                     : undefined
                 }
                 ariaLabel={
-                  strongest && weakest
+                  strongest && weakest && evenScore !== null
+                    ? `Radar chart of ${entity.name}'s 8 dimension scores. ${evenProfileText(evenScore)}.`
+                    : strongest && weakest
                     ? `Radar chart of ${entity.name}'s 8 dimension scores. Strongest dimension: ${strongest.name} (${strongest.score.toFixed(1)}). Weakest dimension: ${weakest.name} (${weakest.score.toFixed(1)}).`
                     : undefined
                 }
@@ -917,7 +958,7 @@ export default function EntityDetail({
               {/* Bar-strip in a <details> — full data without visual overload */}
               <details className="group mt-3">
                 <summary className={[
-                  "cursor-pointer select-none",
+                  "min-h-6 cursor-pointer select-none",
                   "flex items-center gap-2",
                   "text-[0.8rem] text-muted hover:text-text transition-colors",
                   "list-none [&::-webkit-details-marker]:hidden",
@@ -966,13 +1007,14 @@ export default function EntityDetail({
                   compositeBreakdown.integrationPremium,
                   compositeBreakdown.stdDev,
                   compositeBreakdown.consistencyMult,
+                  compositeBreakdown.weakDims,
                 )}
               </p>
 
               {/* Gates detail */}
               <details className="group mt-2">
                 <summary className={[
-                  "cursor-pointer select-none",
+                  "min-h-6 cursor-pointer select-none",
                   "flex items-center gap-2",
                   "text-[0.78rem] text-muted hover:text-text transition-colors",
                   "list-none [&::-webkit-details-marker]:hidden",
@@ -1056,14 +1098,14 @@ export default function EntityDetail({
                       <div className="text-[1.35rem] font-bold leading-none" style={{ color: barColor }}>
                         {score.toFixed(1)}
                       </div>
-                      <div className="text-muted text-[0.7rem]">of 5.0</div>
+                      <div className="text-muted text-[0.75rem]">of 5.0</div>
                     </div>
                   </div>
                   <div
                     className="h-1.5 rounded-full overflow-hidden bg-[rgba(255,255,255,0.06)] mt-2"
                     role="progressbar"
                     aria-valuenow={score}
-                    aria-valuemin={0}
+                    aria-valuemin={1}
                     aria-valuemax={5}
                     aria-label={`${dim.name} score: ${score.toFixed(1)} of 5.0 (${entity.band} band quality)`}
                   >
@@ -1072,11 +1114,16 @@ export default function EntityDetail({
                       style={{ width: `${pct}%`, backgroundColor: barColor }}
                     />
                   </div>
+                  {/* Scale ends: bar runs from 1 (floor) to 5 (top anchor) */}
+                  <div className="mt-1 flex justify-between text-[0.75rem] tabular-nums text-muted" aria-hidden="true">
+                    <span>1</span>
+                    <span>5</span>
+                  </div>
 
                   {/* ── #11 Dimension legend + behavioral reference ──── */}
                   <details className="group mt-3">
                     <summary className={[
-                      "cursor-pointer select-none",
+                      "min-h-6 cursor-pointer select-none",
                       "flex items-center gap-2",
                       "text-[0.75rem] text-muted hover:text-text transition-colors",
                       "list-none [&::-webkit-details-marker]:hidden",
@@ -1091,7 +1138,7 @@ export default function EntityDetail({
                       </p>
                       {/* Level-N behavioral reference — framed as a reference, NOT as claims about this entity */}
                       <div className="rounded-[8px] border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)] p-3">
-                        <p className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-muted mb-2">
+                        <p className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-muted mb-2">
                           Around a score of {anchorLevel}, {dim.name} typically looks like:
                         </p>
                         <ul className="space-y-1">
@@ -1105,7 +1152,7 @@ export default function EntityDetail({
                             </li>
                           ))}
                         </ul>
-                        <p className="mt-2 text-[0.68rem] text-muted/50 italic">
+                        <p className="mt-2 text-[0.75rem] text-muted/50 italic">
                           This is a level-{anchorLevel} reference ladder, not a claim about {entity.name}&rsquo;s subdimension scores (per-subdimension scoring is Wave 3 data).
                         </p>
                       </div>
@@ -1120,7 +1167,7 @@ export default function EntityDetail({
           {hasDimMeans && (
             <details className="group mt-6 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
               <summary className={[
-                "cursor-pointer select-none px-5 py-4",
+                "min-h-6 cursor-pointer select-none px-5 py-4",
                 "flex items-center gap-2",
                 "text-[0.85rem] font-semibold text-muted hover:text-text transition-colors",
                 "list-none [&::-webkit-details-marker]:hidden",
@@ -1146,7 +1193,7 @@ export default function EntityDetail({
             <details className="group mt-4 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
               <summary
                 className={[
-                  "cursor-pointer select-none px-5 py-4",
+                  "min-h-6 cursor-pointer select-none px-5 py-4",
                   "flex items-center gap-2",
                   "text-[0.85rem] font-semibold text-muted hover:text-text transition-colors",
                   "list-none [&::-webkit-details-marker]:hidden",
@@ -1185,7 +1232,7 @@ export default function EntityDetail({
                   <p className="text-[0.78rem] uppercase tracking-[0.12em] text-[#7dd3fc] font-semibold">
                     Score-Watch Alert
                   </p>
-                  <span className="px-2 py-0.5 rounded bg-[rgba(125,211,252,0.18)] border border-[rgba(125,211,252,0.35)] text-[#7dd3fc] text-[0.72rem] font-bold uppercase tracking-wider">
+                  <span className="px-2 py-0.5 rounded bg-[rgba(125,211,252,0.18)] border border-[rgba(125,211,252,0.35)] text-[#7dd3fc] text-[0.75rem] font-bold uppercase tracking-wider">
                     {SCORE_WATCH.priceShort}
                   </span>
                 </div>
@@ -1442,7 +1489,7 @@ function CohortRug({
   entityName: string;
 }) {
   const W = 400;
-  const H = 32;
+  const H = 40;
   const BAND_H = 8;
   const bandY = H / 2 - BAND_H / 2;
 
@@ -1516,9 +1563,9 @@ function CohortRug({
       />
       {/* Entity label */}
       <text
-        x={Math.min(W - 30, Math.max(10, entityX))}
-        y={bandY - 6}
-        fontSize={9}
+        x={Math.min(W - 30, Math.max(14, entityX))}
+        y={bandY - 7}
+        fontSize={12}
         fill="#7dd3fc"
         fontFamily="inherit"
         fontWeight="600"
@@ -1527,8 +1574,8 @@ function CohortRug({
         {entityComposite.toFixed(1)}
       </text>
       {/* Scale labels */}
-      <text x={2} y={H} fontSize={8} fill="rgba(148,163,184,0.5)" fontFamily="inherit">0</text>
-      <text x={W - 14} y={H} fontSize={8} fill="rgba(148,163,184,0.5)" fontFamily="inherit">100</text>
+      <text x={2} y={H} fontSize={12} fill="#b8c6de" fontFamily="inherit">0</text>
+      <text x={W - 26} y={H} fontSize={12} fill="#b8c6de" fontFamily="inherit">100</text>
     </svg>
   );
 }
@@ -1556,7 +1603,7 @@ function DimDeviationBars({
   const maxAbs = Math.max(...dims.map((d) => Math.abs(d.dev)), 0.01);
 
   const ROW_H = 28;
-  const LABEL_W = 100;
+  const LABEL_W = 120;
   const BAR_AREA_W = 240;
   const CENTER_X = LABEL_W + BAR_AREA_W / 2;
   const SVG_W = LABEL_W + BAR_AREA_W + 60; // 60 for value labels
@@ -1601,8 +1648,8 @@ function DimDeviationBars({
             <text
               x={LABEL_W - 6}
               y={y + 4}
-              fontSize={10}
-              fill="rgba(148,163,184,0.85)"
+              fontSize={12}
+              fill="#b8c6de"
               fontFamily="inherit"
               textAnchor="end"
             >
@@ -1625,7 +1672,7 @@ function DimDeviationBars({
             <text
               x={labelX}
               y={y + 4}
-              fontSize={9}
+              fontSize={12}
               fill={isPos ? "#86efac" : "#f87171"}
               fontFamily="inherit"
               fontWeight="600"
@@ -1640,8 +1687,8 @@ function DimDeviationBars({
       <text
         x={SVG_W / 2}
         y={SVG_H - 1}
-        fontSize={7.5}
-        fill="rgba(148,163,184,0.4)"
+        fontSize={11}
+        fill="#8fa3be"
         fontFamily="inherit"
         textAnchor="middle"
       >

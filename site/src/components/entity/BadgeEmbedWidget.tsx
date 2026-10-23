@@ -99,7 +99,7 @@ export default function BadgeEmbedWidget({ slug, entityKind, entityRoute }: Prop
             </pre>
             <button
               onClick={handleCopy}
-              className="absolute top-2 right-2 px-2.5 py-1 rounded-[8px] text-[0.72rem] font-bold border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7dd3fc]"
+              className="absolute top-2 right-2 px-2.5 py-1 rounded-[8px] text-[0.75rem] font-bold border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7dd3fc]"
               style={{
                 background: copied ? "rgba(125,211,252,0.18)" : "rgba(255,255,255,0.06)",
                 borderColor: copied ? "rgba(125,211,252,0.45)" : "rgba(255,255,255,0.12)",

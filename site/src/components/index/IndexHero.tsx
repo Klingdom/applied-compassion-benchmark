@@ -55,13 +55,13 @@ export default function IndexHero({
   return (
     <section className="pt-[72px] pb-[30px]">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-[18px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-[18px] items-stretch">
           <div>
             <Eyebrow>{eyebrow}</Eyebrow>
             <h1 className="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.03em] mb-3.5">
               {title}
             </h1>
-            <p className="text-muted text-[1.08rem] max-w-[820px] mb-[22px]">
+            <p className="text-muted text-[1.08rem] max-w-[68ch] mb-[22px]">
               {description}
             </p>
             {children}
@@ -72,14 +72,16 @@ export default function IndexHero({
             </div>
           </div>
 
-          <Panel>
+          <Panel className="h-full flex flex-col">
             <h3 className="text-[1.08rem] font-bold mb-3">
               Band distribution
             </h3>
-            <BandDistributionBar
-              index={indexSlug ?? "all"}
-              caption={`${eyebrow} · Source: Compassion Benchmark · CC-BY`}
-            />
+            <div className="flex-1 flex flex-col justify-center">
+              <BandDistributionBar
+                index={indexSlug ?? "all"}
+                caption={`${eyebrow} · Source: Compassion Benchmark · CC-BY`}
+              />
+            </div>
           </Panel>
         </div>
       </Container>

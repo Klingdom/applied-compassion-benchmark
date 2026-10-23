@@ -71,7 +71,7 @@ export default function OpeningQuestion({ updates }: Props) {
 
           {/* Label row */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+            <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
               Today&apos;s question
             </div>
             {themes.length > 0 && (
@@ -81,7 +81,7 @@ export default function OpeningQuestion({ updates }: Props) {
                   {themes.map((theme, i) => (
                     <span
                       key={i}
-                      className="text-[0.68rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.28)] bg-[rgba(125,211,252,0.07)] text-[#7dd3fc]"
+                      className="text-[0.75rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.28)] bg-[rgba(125,211,252,0.07)] text-[#7dd3fc]"
                     >
                       {theme}
                     </span>
@@ -106,7 +106,7 @@ export default function OpeningQuestion({ updates }: Props) {
           {/* Entity chips */}
           {tiedToEntities.length > 0 && (
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
-              <span className="text-[0.7rem] font-bold uppercase tracking-wider text-muted mr-1">
+              <span className="text-[0.75rem] font-bold uppercase tracking-wider text-muted mr-1">
                 Related
               </span>
               {tiedToEntities.map((slug) => {

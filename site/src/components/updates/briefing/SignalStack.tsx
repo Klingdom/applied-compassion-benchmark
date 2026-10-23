@@ -172,10 +172,10 @@ export default function SignalStack({ updates }: Props) {
                 {label}
                 {/* Count badge — shows "all" count for "All signals" chip */}
                 <span
-                  className={`text-[0.66rem] font-bold tabular-nums px-1 py-0 rounded ${
+                  className={`text-[0.8125rem] font-bold tabular-nums px-1 py-0 rounded ${
                     isActive
                       ? "text-[#7dd3fc] opacity-80"
-                      : "text-muted opacity-70"
+                      : "text-muted-subtle"
                   }`}
                   aria-hidden="true"
                 >

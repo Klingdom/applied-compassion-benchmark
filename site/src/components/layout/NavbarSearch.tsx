@@ -238,7 +238,7 @@ export default function NavbarSearch() {
                             >
                               {r.composite}
                             </p>
-                            <p className="text-[0.68rem] text-muted mt-0.5">/ 100</p>
+                            <p className="text-[0.75rem] text-muted mt-0.5">/ 100</p>
                           </div>
                         </Link>
                       </li>

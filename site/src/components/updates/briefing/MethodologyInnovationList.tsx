@@ -72,17 +72,17 @@ export default function MethodologyInnovationList({ updates }: Props) {
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                       {cat.anchorTier && (
-                        <span className="text-[0.66rem] font-bold uppercase tracking-wider text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.32)] bg-[rgba(167,139,250,0.08)]">
+                        <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.32)] bg-[rgba(167,139,250,0.08)]">
                           {cat.anchorTier}
                         </span>
                       )}
                       {cat.reviewRequired && (
-                        <span className="text-[0.66rem] font-bold uppercase tracking-wider text-[#fcd34d] px-1.5 py-0.5 rounded border border-[rgba(252,211,77,0.32)] bg-[rgba(252,211,77,0.08)]">
+                        <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#fcd34d] px-1.5 py-0.5 rounded border border-[rgba(252,211,77,0.32)] bg-[rgba(252,211,77,0.08)]">
                           Review required
                         </span>
                       )}
                       {!cat.formalized && (
-                        <span className="text-[0.66rem] font-bold uppercase tracking-wider text-muted px-1.5 py-0.5 rounded border border-line">
+                        <span className="text-[0.75rem] font-bold uppercase tracking-wider text-muted px-1.5 py-0.5 rounded border border-line">
                           Draft
                         </span>
                       )}
@@ -129,7 +129,7 @@ export default function MethodologyInnovationList({ updates }: Props) {
                     {/* First application entity */}
                     {(cat.entity ?? cat.firstApplicationEntity) && (
                       <div className="flex items-center gap-1.5">
-                        <span className="font-bold uppercase tracking-widest text-[0.66rem]">
+                        <span className="font-bold uppercase tracking-widest text-[0.75rem]">
                           First applied to
                         </span>
                         {href ? (
@@ -158,7 +158,7 @@ export default function MethodologyInnovationList({ updates }: Props) {
 
                     {cat.date && (
                       <span>
-                        <span className="font-bold uppercase tracking-widest text-[0.66rem] mr-1.5">
+                        <span className="font-bold uppercase tracking-widest text-[0.75rem] mr-1.5">
                           Dated
                         </span>
                         <time dateTime={cat.date}>{cat.date}</time>
@@ -167,7 +167,7 @@ export default function MethodologyInnovationList({ updates }: Props) {
 
                     {cat.anchorTier && (
                       <span>
-                        <span className="font-bold uppercase tracking-widest text-[0.66rem] mr-1.5">
+                        <span className="font-bold uppercase tracking-widest text-[0.75rem] mr-1.5">
                           Anchor tier
                         </span>
                         {cat.anchorTier}

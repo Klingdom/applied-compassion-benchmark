@@ -101,7 +101,7 @@ export default function ChartFrame({
 
       {/* CC-BY caption + cite affordance */}
       <figcaption className="mt-2 space-y-1">
-        <p className="text-[0.72rem] text-[rgba(148,163,184,0.55)] text-right">
+        <p className="text-[0.75rem] text-muted-subtle text-right">
           {caption ?? CC_BY_CAPTION}
         </p>
 
@@ -110,10 +110,10 @@ export default function ChartFrame({
           <details className="group text-right">
             <summary
               className={[
-                "inline cursor-pointer select-none list-none",
+                "inline-flex min-h-6 items-center py-1 cursor-pointer select-none list-none",
                 "[&::-webkit-details-marker]:hidden",
-                "text-[0.72rem] text-[rgba(148,163,184,0.4)]",
-                "hover:text-[rgba(148,163,184,0.7)] transition-colors",
+                "text-[0.75rem] text-muted-subtle",
+                "hover:text-text transition-colors",
               ].join(" ")}
             >
               Cite this chart

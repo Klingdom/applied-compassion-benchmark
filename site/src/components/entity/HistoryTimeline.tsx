@@ -57,13 +57,13 @@ function DeltaBadge({ delta }: { delta: number | null }) {
 function TypeBadge({ type }: { type: HistoryEvent["type"] }) {
   if (type === "boundary-watch") {
     return (
-      <span className="inline-flex px-2 py-0.5 rounded-full text-[0.72rem] font-bold border border-[rgba(125,211,252,0.25)] text-accent bg-[rgba(125,211,252,0.08)] uppercase tracking-wide">
+      <span className="inline-flex px-2 py-0.5 rounded-full text-[0.75rem] font-bold border border-[rgba(125,211,252,0.25)] text-accent bg-[rgba(125,211,252,0.08)] uppercase tracking-wide">
         Watch
       </span>
     );
   }
   return (
-    <span className="inline-flex px-2 py-0.5 rounded-full text-[0.72rem] font-bold border border-[rgba(251,146,60,0.25)] text-band-orange bg-[rgba(251,146,60,0.08)] uppercase tracking-wide">
+    <span className="inline-flex px-2 py-0.5 rounded-full text-[0.75rem] font-bold border border-[rgba(251,146,60,0.25)] text-band-orange bg-[rgba(251,146,60,0.08)] uppercase tracking-wide">
       Scored
     </span>
   );
@@ -91,7 +91,7 @@ function TimelineEventCard({ event }: { event: HistoryEvent }) {
         </time>
         <TypeBadge type={event.type} />
         {event.cycle && (
-          <span className="text-[0.72rem] text-muted">
+          <span className="text-[0.75rem] text-muted">
             cycle {event.cycle}
           </span>
         )}
@@ -181,7 +181,7 @@ function CompactedRunRow({ run }: { run: CompactedRun }) {
         />
 
         {/* "+N events" chip */}
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.7rem] font-bold border border-[rgba(255,255,255,0.12)] text-[color:var(--color-muted-subtle)] bg-[rgba(255,255,255,0.04)] tabular-nums shrink-0">
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.75rem] font-bold border border-[rgba(255,255,255,0.12)] text-[color:var(--color-muted-subtle)] bg-[rgba(255,255,255,0.04)] tabular-nums shrink-0">
           +{run.count}
         </span>
 
@@ -304,7 +304,7 @@ function ScoreWatchSidebar({
       className="rounded-[18px] border border-line bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] p-6 space-y-4"
     >
       <div>
-        <p className="text-[0.72rem] uppercase tracking-[0.12em] text-muted mb-1">
+        <p className="text-[0.75rem] uppercase tracking-[0.12em] text-muted mb-1">
           Score-Watch
         </p>
         <h3 className="text-[1.05rem] font-bold">{entityName}</h3>

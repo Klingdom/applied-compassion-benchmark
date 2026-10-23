@@ -182,7 +182,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
         {/* Editorial insight lead paragraph (from BrutalInsightCard) */}
         {editorialInsight && (
           <div className="rounded-[16px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] px-5 py-4 mb-4">
-            <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+            <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
               Editorial insight
             </div>
             <p className="text-[0.95rem] leading-relaxed text-text">
@@ -216,7 +216,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
                       <p className="text-[0.95rem] leading-relaxed">{claimText}</p>
                       {whyText && (
                         <p className="text-[0.82rem] text-muted leading-relaxed mt-2">
-                          <span className="text-[0.72rem] font-bold uppercase tracking-wider text-accent mr-1.5">
+                          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-accent mr-1.5">
                             Why it matters
                           </span>
                           {whyText}
@@ -235,7 +235,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
           <div className="mt-4 rounded-[20px] border-t-2 border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.04)] p-6 sm:p-8"
             style={{ borderTopColor: "#7dd3fc" }}>
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+              <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
                 Today&apos;s question
               </div>
               {themes.length > 0 && (
@@ -245,7 +245,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
                     {themes.map((theme: string, i: number) => (
                       <span
                         key={i}
-                        className="text-[0.68rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.28)] bg-[rgba(125,211,252,0.07)] text-[#7dd3fc]"
+                        className="text-[0.75rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.28)] bg-[rgba(125,211,252,0.07)] text-[#7dd3fc]"
                       >
                         {theme}
                       </span>
@@ -264,7 +264,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
             </blockquote>
             {tiedToEntities.length > 0 && (
               <div className="mt-5 flex flex-wrap items-center gap-1.5">
-                <span className="text-[0.7rem] font-bold uppercase tracking-wider text-muted mr-1">
+                <span className="text-[0.75rem] font-bold uppercase tracking-wider text-muted mr-1">
                   Related
                 </span>
                 {tiedToEntities.map((slug: string) => {
@@ -309,7 +309,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {responsibleAction && (
                   <div>
-                    <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#7dd3fc] mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#7dd3fc] mb-2">
                       Responsible action
                     </div>
                     <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -319,7 +319,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
                 )}
                 {wouldImprove && (
                   <div>
-                    <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#86efac] mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#86efac] mb-2">
                       Would improve score
                     </div>
                     <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -329,7 +329,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
                 )}
                 {wouldWorsen && (
                   <div>
-                    <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#f87171] mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#f87171] mb-2">
                       Would worsen score
                     </div>
                     <p className="text-[0.88rem] text-muted leading-relaxed">

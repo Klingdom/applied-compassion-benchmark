@@ -160,7 +160,7 @@ export default function ForwardWatchPage() {
 
           {/* Header */}
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(252,211,77,0.35)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d]">
+            <span className="text-[0.75rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(252,211,77,0.35)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d]">
               Forward watch
             </span>
             <span className="text-muted text-[0.8rem]">
@@ -267,7 +267,7 @@ function TriggerTable({
 }) {
   return (
     <div>
-      <h2 className={`text-[0.72rem] font-bold uppercase tracking-[0.16em] mb-4 ${dimmed ? "text-muted-subtle" : "text-muted"}`}>
+      <h2 className={`text-[0.75rem] font-bold uppercase tracking-[0.16em] mb-4 ${dimmed ? "text-muted-subtle" : "text-muted"}`}>
         {heading}
       </h2>
 
@@ -275,7 +275,7 @@ function TriggerTable({
       <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
         {/* Header row (desktop only) */}
         <div
-          className="hidden md:grid gap-4 px-5 py-2.5 border-b border-line text-[0.68rem] font-bold uppercase tracking-[0.14em] text-muted-subtle"
+          className="hidden md:grid gap-4 px-5 py-2.5 border-b border-line text-[0.75rem] font-bold uppercase tracking-[0.14em] text-muted-subtle"
           style={{ gridTemplateColumns: "90px 180px 1fr 110px 90px" }}
         >
           <span>Due</span>
@@ -310,7 +310,7 @@ function TriggerTable({
                     {daysLabel(entry.daysUntil)}
                   </span>
                   {entry.date && entry.date.toUpperCase() !== "TBD" && (
-                    <span className="text-[0.72rem] text-muted tabular-nums">
+                    <span className="text-[0.75rem] text-muted tabular-nums">
                       {formatDateDisplay(entry.date)}
                     </span>
                   )}
@@ -350,7 +350,7 @@ function TriggerTable({
                 {/* Priority */}
                 <div>
                   <span
-                    className="text-[0.65rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border w-fit inline-block"
+                    className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border w-fit inline-block"
                     style={{
                       color: priorityColor(entry.priority),
                       borderColor: `${priorityColor(entry.priority)}44`,

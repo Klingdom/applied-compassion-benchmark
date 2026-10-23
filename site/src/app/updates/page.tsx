@@ -83,7 +83,7 @@ export default function UpdatesPage() {
                 <path d="M2.5 6h7M6 2.5L9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
-            <span aria-hidden="true" className="text-muted text-[0.7rem]">·</span>
+            <span aria-hidden="true" className="text-muted text-[0.75rem]">·</span>
             <Link
               href="/updates/archive"
               className="inline-flex items-center gap-1.5 text-[0.82rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"

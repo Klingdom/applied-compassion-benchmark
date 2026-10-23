@@ -23,7 +23,7 @@ export default function ScoreLegend({ asSection = false }: Props) {
     <details className="group w-full">
       <summary
         className={[
-          "cursor-pointer select-none",
+          "min-h-6 cursor-pointer select-none",
           "flex items-center gap-2",
           "text-[0.82rem] font-semibold text-muted hover:text-text transition-colors",
           "list-none [&::-webkit-details-marker]:hidden",
@@ -55,7 +55,7 @@ export default function ScoreLegend({ asSection = false }: Props) {
         <section aria-labelledby="legend-bands-heading">
           <h4
             id="legend-bands-heading"
-            className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-muted mb-3"
+            className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-muted mb-3"
           >
             The 0–100 scale — five bands
           </h4>
@@ -96,7 +96,7 @@ export default function ScoreLegend({ asSection = false }: Props) {
         <section aria-labelledby="legend-dims-heading">
           <h4
             id="legend-dims-heading"
-            className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-muted mb-3"
+            className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-muted mb-3"
           >
             The 8 dimensions
           </h4>

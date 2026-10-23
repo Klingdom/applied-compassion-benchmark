@@ -8,7 +8,7 @@ const bandStyles = {
   developing:
     "text-band-orange bg-[rgba(251,146,60,0.10)] border-[rgba(251,146,60,0.25)]",
   critical:
-    "text-band-red bg-[rgba(248,113,113,0.10)] border-[rgba(248,113,113,0.25)]",
+    "text-[#fca5a5] bg-[rgba(248,113,113,0.10)] border-[rgba(248,113,113,0.25)]",
 } as const;
 
 export type BandLevel = keyof typeof bandStyles;

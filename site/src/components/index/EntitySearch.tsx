@@ -231,7 +231,7 @@ export default function EntitySearch() {
                         {r.composite}
                       </div>
                       <div
-                        className="text-[0.72rem] font-bold mt-0.5 uppercase"
+                        className="text-[0.75rem] font-bold mt-0.5 uppercase"
                         style={{ color: bandColor(r.band) }}
                       >
                         {r.band}

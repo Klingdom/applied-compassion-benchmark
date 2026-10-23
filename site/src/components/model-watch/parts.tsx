@@ -70,6 +70,7 @@ function SourceLink({ s }: { s: WatchSource }) {
       target="_blank"
       rel="noopener noreferrer"
       className="underline underline-offset-2 text-accent break-words"
+      title={s.url}
     >
       {label}
       <span className="sr-only"> (opens in a new tab)</span>
@@ -78,11 +79,26 @@ function SourceLink({ s }: { s: WatchSource }) {
 }
 
 /** First two sources inline; any more sit in an expandable details ("+N more"). */
-export function SourceLinks({ sources, max = 2 }: { sources: WatchSource[]; max?: number }) {
+export function SourceLinks({
+  sources,
+  max = 2,
+  compact = false,
+}: {
+  sources: WatchSource[];
+  max?: number;
+  /** Table cells: links sit side by side (wrapping only when the cell is narrow) instead of stacking three deep. */
+  compact?: boolean;
+}) {
   const head = sources.slice(0, max);
   const tail = sources.slice(max);
   return (
-    <div className="flex flex-col gap-1 text-[0.88rem]">
+    <div
+      className={
+        compact
+          ? "flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[0.88rem] [&_a]:whitespace-nowrap"
+          : "flex flex-col gap-1 text-[0.88rem]"
+      }
+    >
       {head.map((s) => (
         <SourceLink key={s.url} s={s} />
       ))}

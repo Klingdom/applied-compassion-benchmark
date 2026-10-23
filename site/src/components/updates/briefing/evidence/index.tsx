@@ -175,13 +175,13 @@ export function SourceChip({
         <ExternalLinkIcon />
       </a>
       {date && (
-        <span className="text-[0.72rem] text-muted" aria-label={`Published ${date}`}>
+        <span className="text-[0.8125rem] text-muted" aria-label={`Published ${date}`}>
           {date}
         </span>
       )}
       {tierLabel && tierColor && (
         <span
-          className="text-[0.65rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
+          className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
           style={{
             color: tierColor,
             borderColor: `${tierColor}44`,
@@ -267,7 +267,7 @@ export function EvidenceQuote({ item, chipOnly = false, briefingDate }: Evidence
             href={item.archivedUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.68rem] text-muted hover:text-text transition-colors underline underline-offset-1"
+            className="text-[0.8125rem] text-muted hover:text-text transition-colors underline underline-offset-1"
             aria-label="Open archived snapshot (opens in new tab)"
           >
             archived
@@ -317,7 +317,7 @@ export function SourcesDisclosure({
         className="cursor-pointer text-[0.75rem] font-semibold text-muted hover:text-text transition-colors select-none list-none flex items-center gap-1"
         aria-label={`Show all ${items.length} sources`}
       >
-        <span className="inline-block w-3 h-3 mr-0.5 text-[0.65rem] details-marker" aria-hidden="true">▸</span>
+        <span className="inline-block w-3 h-3 mr-0.5 text-[0.8125rem] details-marker" aria-hidden="true">▸</span>
         Sources ({items.length})
       </summary>
       <div className="mt-2 space-y-3 pl-1">

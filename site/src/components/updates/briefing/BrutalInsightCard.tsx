@@ -78,7 +78,7 @@ function InsightBlock({ text }: { text: string }) {
               className="shrink-0 mt-[3px] w-[3px] self-stretch rounded-full bg-[#7dd3fc] opacity-70"
             />
             <div>
-              <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
+              <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
                 Editorial insight
               </div>
               <p className="text-text text-[0.97rem] leading-relaxed font-medium">

@@ -155,7 +155,7 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
                 x={barX + BAR_W / 2}
                 y={LABEL_Y + 13}
                 textAnchor="middle"
-                fill="rgba(148,163,184,0.55)"
+                fill="#8fa3be"
                 fontSize="8"
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
               >
@@ -181,11 +181,11 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
         {/* Legend */}
         <g>
           <rect x={10} y={SVG_H - 16} width={12} height={8} fill={BASE_COLOR} opacity={0.7} rx={2} />
-          <text x={26} y={SVG_H - 9} fill="rgba(148,163,184,0.55)" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+          <text x={26} y={SVG_H - 9} fill="#8fa3be" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
             Base composite (0–100 from 8 dimension averages)
           </text>
           <rect x={230} y={SVG_H - 16} width={12} height={8} fill="#86efac" opacity={0.85} rx={2} />
-          <text x={246} y={SVG_H - 9} fill="rgba(148,163,184,0.55)" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+          <text x={246} y={SVG_H - 9} fill="#8fa3be" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
             Integration premium (0–10)
           </text>
         </g>
@@ -196,7 +196,7 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
         <p className="font-semibold text-text text-[0.8rem] mb-1">Consistency factor (σ = std dev across 8 dimension scores):</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-0.5">
           {STEPS.map((step) => (
-            <span key={step.label} className={step.reachable ? undefined : "opacity-50 line-through decoration-1"}>
+            <span key={step.label} className={step.reachable ? undefined : "text-muted-subtle line-through decoration-1"}>
               {step.label} → {step.factor}%
               {!step.reachable && <span className="not-italic"> †</span>}
             </span>
@@ -210,7 +210,7 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
         </p>
       </div>
 
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+      <figcaption className="text-[0.75rem] text-muted-subtle mt-1.5 text-right">
         {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>

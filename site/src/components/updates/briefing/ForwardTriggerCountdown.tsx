@@ -137,7 +137,7 @@ export default function ForwardTriggerCountdown({ triggers, briefingDate }: Prop
         {/* Section header */}
         <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
           <div className="flex items-center gap-2.5">
-            <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(252,211,77,0.35)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d]">
+            <span className="text-[0.75rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(252,211,77,0.35)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d]">
               Forward watch
             </span>
             <span className="text-muted text-[0.8rem]">
@@ -205,7 +205,7 @@ export default function ForwardTriggerCountdown({ triggers, briefingDate }: Prop
 
                     {/* Priority badge */}
                     <span
-                      className="text-[0.65rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
+                      className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
                       style={{
                         color: priorityColor(t.priority),
                         borderColor: `${priorityColor(t.priority)}44`,

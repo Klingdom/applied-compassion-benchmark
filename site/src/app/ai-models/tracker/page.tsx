@@ -111,18 +111,18 @@ export default function ModelTrackerPage() {
           </nav>
           <Eyebrow>AI Model Watch</Eyebrow>
           <h1 className="text-[clamp(2rem,4.5vw,3.1rem)] leading-[1.1] mt-3 mb-4">AI model tracker</h1>
-          <p className="text-muted max-w-[900px] text-[1.05rem] leading-relaxed mb-3">
+          <p className="text-muted max-w-[68ch] text-[1.05rem] leading-relaxed mb-3">
             A neutral list of AI models in alphabetical order by provider, with the sources each entry rests on. Listed means
             listed with a source; it does not mean evaluated, and not listed implies nothing about a model.
           </p>
-          <p className="text-muted max-w-[900px] text-[0.95rem] leading-relaxed mb-6">
+          <p className="text-muted max-w-[68ch] text-[0.95rem] leading-relaxed mb-6">
             This is not a ranking page and the list carries no score. No model has an official Compassion Benchmark score.{" "}
             <Link href="/ai-models/leaderboards" className="underline underline-offset-2">
               Why no model ranking is published
             </Link>
             .
           </p>
-          <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))] max-w-[760px]">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 sm:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))] max-sm:[&>div]:p-3 max-sm:[&_strong]:text-[1.05rem] max-sm:[&_strong]:break-words max-sm:[&_span]:text-[0.78rem] max-sm:[&_span]:leading-snug">
             <Stat value={String(W.catalogModelCount)} label="Models listed in the catalog" />
             <Stat value={String(providerCount)} label="Providers" />
             <Stat value={W.catalogAsOf} label="Catalog as of" />
@@ -154,7 +154,7 @@ export default function ModelTrackerPage() {
             ) : (
               <>
                 {/* Wide screens: table. Below 720px: stacked cards from the same data (CSS only, one is exposed). */}
-                <div className="hidden min-[720px]:block overflow-x-auto border border-line rounded-[14px]">
+                <div className="hidden min-[720px]:block relative overflow-x-auto border border-line rounded-[14px]">
                   <table className="w-full text-[0.9rem] border-collapse min-w-[900px]">
                     <caption className="sr-only">
                       AI models listed with sources, alphabetical by provider then name. Not a ranking.
@@ -178,14 +178,14 @@ export default function ModelTrackerPage() {
                           <td className="py-2.5 px-3 border-b border-line/60 align-top whitespace-nowrap">
                             {r.releaseDate ? <time dateTime={r.releaseDate}>{r.releaseDate}</time> : "Not stated"}
                           </td>
-                          <td className="py-2.5 px-3 border-b border-line/60 align-top">{cap(r.status)}</td>
-                          <td className="py-2.5 px-3 border-b border-line/60 align-top">{accessText(r.access)}</td>
+                          <td className="py-2.5 px-3 border-b border-line/60 align-top whitespace-nowrap">{cap(r.status)}</td>
+                          <td className="py-2.5 px-3 border-b border-line/60 align-top whitespace-nowrap">{accessText(r.access)}</td>
                           <td className="py-2.5 px-3 border-b border-line/60 align-top">{r.licence}</td>
                           <td className="py-2.5 px-3 border-b border-line/60 align-top">
                             <TestedCell t={r.tested} />
                           </td>
-                          <td className="py-2.5 px-3 border-b border-line/60 align-top">
-                            <SourceLinks sources={r.sources} />
+                          <td className="py-2.5 px-3 border-b border-line/60 align-top min-w-[230px]">
+                            <SourceLinks sources={r.sources} compact />
                           </td>
                         </tr>
                       ))}

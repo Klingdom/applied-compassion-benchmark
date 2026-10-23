@@ -108,7 +108,7 @@ export default function AiModelsMethodologyPage() {
           <h1 className="text-[clamp(2rem,4.5vw,3rem)] leading-[1.1] mt-3 mb-4">
             How an AI model is scored for compassion
           </h1>
-          <p className="text-muted max-w-[900px] text-[1.05rem] leading-relaxed mb-5">
+          <p className="text-muted max-w-[68ch] text-[1.05rem] leading-relaxed mb-5">
             A model is not asked whether it is compassionate. It is put into situations and scored on what it does —
             whether it notices unstated distress, whether it responds to the person or only to the request, whether it
             holds a boundary without abandoning someone, and whether it behaves consistently when the person changes
@@ -173,17 +173,17 @@ export default function AiModelsMethodologyPage() {
                 <span className="text-[0.75rem] tracking-wide text-muted-subtle uppercase">
                   {exampleTask.id} · {exampleTask.dimension} · {exampleTask.construct}
                 </span>
-                <span className="text-[0.72rem] px-2 py-0.5 rounded-full border border-line text-muted-subtle">
+                <span className="text-[0.75rem] px-2 py-0.5 rounded-full border border-line text-muted-subtle">
                   {exampleTask.validationStatus ?? "unvalidated"}
                 </span>
               </div>
-              <p className="text-[0.72rem] tracking-wide text-muted-subtle uppercase mb-1">
+              <p className="text-[0.75rem] tracking-wide text-muted-subtle uppercase mb-1">
                 Prompt sent to the model
               </p>
               <p className="text-text text-[0.98rem] leading-relaxed mb-4 border-l-2 border-line pl-4">
                 &ldquo;{exampleTask.prompt}&rdquo;
               </p>
-              <p className="text-[0.72rem] tracking-wide text-muted-subtle uppercase mb-2">
+              <p className="text-[0.75rem] tracking-wide text-muted-subtle uppercase mb-2">
                 Five-anchor rubric a human rater applies to the response
               </p>
               <ul className="text-muted text-[0.88rem] leading-relaxed space-y-1.5">
@@ -193,7 +193,7 @@ export default function AiModelsMethodologyPage() {
                   </li>
                 ))}
               </ul>
-              <p className="text-[0.82rem] text-muted-subtle mt-4 max-w-[900px]">
+              <p className="text-[0.82rem] text-muted-subtle mt-4 max-w-[68ch]">
                 This item&rsquo;s validation status is <strong className="text-muted">
                   {exampleTask.validationStatus ?? "unvalidated"}
                 </strong>{" "}
@@ -214,7 +214,7 @@ export default function AiModelsMethodologyPage() {
             title={`The ${F.dimensionCount} dimensions`}
             description="The same framework used to score governments, corporations and universities. The arithmetic is shared; the evidence and the subject are not, so a model score and an institution score are never placed on one scale or compared."
           />
-          <div className="overflow-x-auto border border-line rounded-[14px]">
+          <div className="relative overflow-x-auto border border-line rounded-[14px]">
             <table className="w-full text-[0.9rem] border-collapse min-w-[560px]">
               <thead>
                 <tr className="text-left text-muted-subtle">
@@ -241,7 +241,7 @@ export default function AiModelsMethodologyPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-[0.82rem] text-muted-subtle mt-3 max-w-[900px]">
+          <p className="text-[0.82rem] text-muted-subtle mt-3 max-w-[68ch]">
             Counts are read from the published task bank at build time. {F.itemsWithTwoReviews} of {F.itemCount} items
             are validated (two human reviews).
           </p>
@@ -332,7 +332,7 @@ export default function AiModelsMethodologyPage() {
         <Container>
           <Callout>
             <h2 className="text-[clamp(1.4rem,3vw,1.9rem)] mb-2">What would show this method is wrong</h2>
-            <p className="text-muted max-w-[920px] mb-3">
+            <p className="text-muted max-w-[68ch] mb-3">
               Stated now, while no result exists to defend. If any of these holds, the finding is a problem with the
               instrument and will be published as one.
             </p>
@@ -364,7 +364,7 @@ export default function AiModelsMethodologyPage() {
 
       <section className="pb-[24px]">
         <Container>
-          <p className="text-[0.86rem] text-muted-subtle border-l-2 border-line pl-4 max-w-[920px] leading-relaxed">
+          <p className="text-[0.86rem] text-muted-subtle border-l-2 border-line pl-4 max-w-[68ch] leading-relaxed">
             <strong className="text-muted">On crisis use.</strong> Crisis-adjacent items exist to locate failures,
             not to certify safety. <span data-duty-of-care="">{DUTY_OF_CARE}</span>
           </p>

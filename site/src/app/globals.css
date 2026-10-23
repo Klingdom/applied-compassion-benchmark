@@ -9,6 +9,8 @@
   --color-muted: #b8c6de;
   --color-muted-subtle: #8fa3be;
   --color-line: rgba(255, 255, 255, 0.10);
+  /* Stronger border for form controls only (WCAG 1.4.11, 3:1 against every surface) */
+  --color-line-strong: #8fa3be;
   /* Brand blue — decoupled from the Exemplary band color.
      --color-accent is now the brand tint (#93c5fd / blue-300) so that links,
      focus rings, and glows are visually distinct from the Exemplary cyan band. */
@@ -27,9 +29,26 @@
   --color-band-cyan: #7dd3fc;
 }
 
+html {
+  /* Keep focused/anchored elements clear of the sticky nav plus sticky jump bars (WCAG 2.4.11) */
+  scroll-padding-top: 8rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .defined-term-tooltip,
+  .defined-term-tooltip[data-state] {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
@@ -44,9 +63,35 @@ body {
   line-height: 1.55;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Anchor reset lives in @layer base so Tailwind utilities (text-*, underline) win.
+   Unlayered CSS beats layered CSS, so it must NOT be unlayered (it flattened
+   button ink and nav colours). The :focus-visible rule below stays unlayered on
+   purpose so `outline-none` utilities cannot remove the keyboard focus ring. */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Links inside running prose are underlined so they are not colour-only (WCAG 1.4.1).
+     Narrow scope: main content paragraphs/list items; skips nav, footer, and any
+     anchor styled as a button, card, block or with an explicit no-underline. */
+  main :is(p, li, dd, blockquote) a:not(nav a, footer a, [class*="no-underline"], [class*="rounded"], [class*="block"], [class*="flex"], [class*="bg-"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  input:not([type="checkbox"], [type="radio"], [type="hidden"], [type="submit"], [type="button"]),
+  select,
+  textarea {
+    border-color: var(--color-line-strong);
+  }
+}
+
+/* Placeholder contrast: 5.6:1+ on every surface (was ~2.6:1) */
+::placeholder {
+  color: #8fa3be;
+  opacity: 1;
 }
 
 /* --- DefinedTerm tooltip animation -------------------------------------
@@ -68,6 +113,13 @@ a {
 :focus-visible {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
+  /* Never animate outline-color: Tailwind transition-colors would otherwise fade the ring in
+     through dark intermediates (D-61 loop 1 recheck). */
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+}
+[role="menu"] a:focus-visible,
+.overflow-hidden > a:focus-visible {
+  outline-offset: -2px;
 }
 .skip-link {
   position: absolute;

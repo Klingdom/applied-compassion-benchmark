@@ -89,7 +89,7 @@ function EventDeltaBadge({ delta }: { delta: number | null }) {
 
 function RulingBadge({ rulingNumber }: { rulingNumber: number }) {
   return (
-    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.72rem] font-bold border border-[rgba(125,211,252,0.25)] text-[#7dd3fc] bg-[rgba(125,211,252,0.08)] uppercase tracking-wide">
+    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.75rem] font-bold border border-[rgba(125,211,252,0.25)] text-[#7dd3fc] bg-[rgba(125,211,252,0.08)] uppercase tracking-wide">
       Ruling #{rulingNumber}
     </span>
   );
@@ -248,7 +248,7 @@ export default function EntityEvidenceCard({
                         {formatShortDate(event.date)}
                       </time>
                       {isFirst && (
-                        <span className="text-[0.72rem] text-muted">
+                        <span className="text-[0.75rem] text-muted">
                           ·{" "}
                           {daysSinceLastChange === 0
                             ? "today"
@@ -303,7 +303,7 @@ export default function EntityEvidenceCard({
           {/* ── Methodology rulings callout (conditional) ────────────────── */}
           {qualifyingRulings.length > 0 && (
             <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
-              <p className="text-[0.72rem] uppercase tracking-[0.1em] text-muted font-semibold mb-2">
+              <p className="text-[0.75rem] uppercase tracking-[0.1em] text-muted font-semibold mb-2">
                 Methodology rulings
               </p>
               <div className="space-y-2">

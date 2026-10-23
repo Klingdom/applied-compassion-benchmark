@@ -214,22 +214,23 @@ export default function AiModelsPage() {
       )}
 
       <section className="py-[38px]">
-        <Container>
+        <Container className="flex flex-col md:block">
           <Eyebrow>AI Model Watch</Eyebrow>
           <h1 className="text-[clamp(2rem,4.5vw,3.1rem)] leading-[1.1] mt-3 mb-4">
             How compassionate are AI models?
           </h1>
-          <p className="text-muted max-w-[900px] text-[1.05rem] leading-relaxed mb-5">
+          <p className="text-muted max-w-[68ch] text-[1.05rem] leading-relaxed mb-5 order-2 md:order-none">
             {noModelScored && "There is no compassion ranking of AI models from Compassion Benchmark, and no model has an official score. "}
             {pilot && `${pilot.heroSentence} `}
             What exists is the instrument: {F.itemCount} published test items across {F.dimensionCount} dimensions, a
             published scoring method, and published conditions under which the method should be judged to have
             failed.
           </p>
-          <div className="mb-6">
+          <div className="mb-6 order-3 md:order-none">
             <SubjectLine />
           </div>
-          <div className="flex gap-3 flex-wrap">
+          {/* On small screens the actions come before the long lead (visual order only; DOM order and copy unchanged). */}
+          <div className="flex gap-3 flex-wrap order-1 mb-6 md:order-none md:mb-0">
             {latestEntry && (
               <Button href={`/ai-models/watch/${latestEntry.date}`} variant="primary">
                 Read this week&rsquo;s edition
@@ -420,7 +421,7 @@ export default function AiModelsPage() {
             ))}
           </dl>
 
-          <p className="text-[0.9rem] text-muted mt-4 max-w-[900px] leading-relaxed">
+          <p className="text-[0.9rem] text-muted mt-4 max-w-[68ch] leading-relaxed">
             <strong className="text-text">Accurate to say:</strong> &ldquo;Compassion Benchmark has published a method
             for scoring AI models for compassion but has given {F.evaluatedModelCount} models an official score.&rdquo;
             &middot; &ldquo;Its AI Labs Index scores organisations, not models.&rdquo;
@@ -433,14 +434,14 @@ export default function AiModelsPage() {
             {noModelScored && (
               <>
                 {" "}
-                <strong className="text-text">Not accurate:</strong> any ranking of AI models attributed to
+                <strong className="text-text">Not accurate:</strong>{" "}any ranking of AI models attributed to
                 Compassion Benchmark; any official model score or ranking from this site; using an AI lab&rsquo;s index
                 score as a score for that lab&rsquo;s models.
                 {pilot && pilot.notAccurateClause}
               </>
             )}
           </p>
-          <p className="text-[0.86rem] text-muted-subtle mt-3 max-w-[900px] leading-relaxed">
+          <p className="text-[0.86rem] text-muted-subtle mt-3 max-w-[68ch] leading-relaxed">
             Not guidance on which AI to talk to in a crisis. If you need support now, contact a local emergency
             service or crisis line.
           </p>
@@ -454,7 +455,7 @@ export default function AiModelsPage() {
             <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-[0.9rem]">
               {JUMP_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-muted underline underline-offset-2">
+                  <a href={l.href} className="text-muted no-underline hover:underline underline-offset-2 hover:text-text">
                     {l.label}
                   </a>
                 </li>
@@ -506,11 +507,11 @@ export default function AiModelsPage() {
 
           <div className="mt-6">
             <h3 className="text-[1.05rem] mb-2">The change test</h3>
-            <p className="text-muted text-[0.93rem] mb-3 max-w-[900px]">
+            <p className="text-muted text-[0.93rem] mb-3 max-w-[68ch]">
               If you can predict which score moves in each row, you have the distinction. If you can only recite the
               definitions, you probably do not.
             </p>
-            <div className="overflow-x-auto border border-line rounded-[14px]">
+            <div className="relative overflow-x-auto border border-line rounded-[14px]">
               <table className="w-full text-[0.9rem] border-collapse min-w-[540px]">
                 <thead>
                   <tr className="text-left text-muted-subtle">
@@ -571,7 +572,7 @@ export default function AiModelsPage() {
           {R.scanState === "never-scanned" ? (
             <Callout className="mb-5">
               <p className="text-muted">
-                <strong className="text-text">The automated release-watch scanner has not run yet.</strong> That is a
+                <strong className="text-text">The automated release-watch scanner has not run yet.</strong>{" "}That is a
                 different fact from &ldquo;nothing has shipped&rdquo;. Releases are currently tracked by hand in the{" "}
                 <Link href="/ai-models/watch" className="underline underline-offset-2">AI Model Watch</Link>
                 {latestEntry && (
@@ -624,7 +625,7 @@ export default function AiModelsPage() {
               &mdash; there is no denominator here.
             </p>
           </Panel>
-          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[68ch]">
             The{" "}
             <Link href="/ai-models/watch" className="underline underline-offset-2">Model Watch</Link> keeps a separate cited
             log of announcements. It does not meet the release-watch evidence bar and is not counted in this section. Models
@@ -686,7 +687,7 @@ export default function AiModelsPage() {
           </div>
 
           <h3 className="text-[1.3rem] tracking-tight mt-8 mb-2">Who has checked the instrument</h3>
-          <p className="text-muted max-w-[900px] mb-4">
+          <p className="text-muted max-w-[68ch] mb-4">
             The task bank was written by AI agents against published rubrics and verified structurally. Structural
             checks say an item is well-formed; they say nothing about whether it measures what it claims to.
           </p>
@@ -746,7 +747,7 @@ export default function AiModelsPage() {
             title="Run log"
             description="Each run, with its verdict first. These are findings about the instrument. No model has an official score."
           />
-          <div className="overflow-x-auto border border-line rounded-[14px] mb-5">
+          <div className="relative overflow-x-auto border border-line rounded-[14px] mb-5">
             <table className="w-full text-[0.9rem] border-collapse min-w-[560px]">
               <caption className="sr-only">Run log</caption>
               <thead>
@@ -845,7 +846,7 @@ export default function AiModelsPage() {
           sits beside it (template F10, H). */}
       <section className="pb-[24px]">
         <Container>
-          <p className="text-[0.86rem] text-muted-subtle border-l-2 border-line pl-4 max-w-[920px] leading-relaxed">
+          <p className="text-[0.86rem] text-muted-subtle border-l-2 border-line pl-4 max-w-[68ch] leading-relaxed">
             <strong className="text-muted">On crisis use.</strong> This benchmark describes how models behave on
             crisis-adjacent test items, which exist to locate failures rather than to certify safety. It is not
             guidance about which AI system to turn to when you or someone else is struggling, and no score here
@@ -940,7 +941,7 @@ export default function AiModelsPage() {
               </div>
             </details>
           </div>
-          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[68ch]">
             Records held:{" "}
             <span className="text-text font-medium">{F.scoreRecordCount}</span> score records across{" "}
             <span className="text-text font-medium">{F.modelsWithScoreHistory}</span> model snapshots.
@@ -1000,7 +1001,7 @@ export default function AiModelsPage() {
               </p>
             </Panel>
           </div>
-          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[900px]">
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-4 max-w-[68ch]">
             <strong className="text-text">Lab, researcher or reader?</strong> If you think a finding on this site is wrong, tell us and
             show us why. A correction is published as a new dated record and the original stays visible. You can also propose a
             model for a future wave. A proposal does not guarantee evaluation, and there is never a fee.{" "}
@@ -1014,7 +1015,7 @@ export default function AiModelsPage() {
             </a>
             .
           </p>
-          <p className="text-muted text-[0.93rem] leading-relaxed mt-3 max-w-[900px]">
+          <p className="text-muted text-[0.93rem] leading-relaxed mt-3 max-w-[68ch]">
             To run it from your own AI tool, see the{" "}
             <Link href="/ai-evaluation-suite#mcp-server" className="underline underline-offset-2">
               MCP server section

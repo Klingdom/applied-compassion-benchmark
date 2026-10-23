@@ -112,11 +112,16 @@ function pointsStr(pts: Array<{ x: number; y: number }>): string {
 
 // ─── SVG layout constants ─────────────────────────────────────────────────────
 
-/** ViewBox dimensions — square to keep the radar centered. */
-const VB_SIZE = 340;
+/**
+ * ViewBox dimensions. D-61 (dataviz item 9): wide enough that labels can be set
+ * at 14-15 units and still render at >=12px at the usual 300px column width
+ * (300/360 = 0.83x). Legend text moved to HTML below the SVG.
+ */
+const VB_W = 360;
+const VB_H = 312;
 /** Center of the radar. */
-const CX = 150;
-const CY = 155;
+const CX = 180;
+const CY = 150;
 /** Maximum radius (score = 5.0 maps here). */
 const MAX_R = 110;
 /** Radial scale maximum (i.e. 5.0). */
@@ -125,6 +130,10 @@ const SCALE_MAX = 5;
 const GRIDLINE_COUNT = SCALE_MAX; // 5
 /** Label offset beyond the axis endpoint. */
 const LABEL_OFFSET = 14;
+/** Label sizes in viewBox units (x0.83 at a 300px column = ~12px+). */
+const CODE_FONT = 15;
+const VALUE_FONT = 14.5;
+const RING_FONT = 14.5;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -222,15 +231,11 @@ export default function DimensionRadar({
     ? `${entityName} — compassion dimension profile radar`
     : "Compassion dimension profile radar";
 
-  // ── Legend Y position ───────────────────────────────────────────────────
-  // Legend sits below the radar circle at a fixed Y
-  const LEGEND_Y = CY + MAX_R + 24;
-
   return (
     <figure className="w-full" aria-label={ariaLabel}>
       <svg
         role="img"
-        viewBox={`0 0 ${VB_SIZE} ${VB_SIZE}`}
+        viewBox={`0 0 ${VB_W} ${VB_H}`}
         xmlns="http://www.w3.org/2000/svg"
         style={{ display: "block", width: "100%", height: "auto", maxWidth: "420px" }}
         aria-label={ariaLabel}
@@ -260,14 +265,18 @@ export default function DimensionRadar({
               />
               {/* Gridline score label — shown on the rightmost spoke, small, muted */}
               {(() => {
-                // Place score labels on the 0° axis (AWR — top) just inside the ring
-                const labelPt = polarPoint(r, 0, DIM_CODES.length, CX, CY);
+                // Ring labels sit on the ring edge midway between the first two spokes
+                // (22.5° clockwise from top) so they never collide with the AWR label.
+                const labelPt = polarPoint(r * Math.cos(Math.PI / DIM_CODES.length), 0.5, DIM_CODES.length, CX, CY);
                 return (
                   <text
                     x={labelPt.x + 3}
-                    y={labelPt.y - 2}
-                    fontSize="6.5"
-                    fill="rgba(148,163,184,0.38)"
+                    y={labelPt.y + 4}
+                    fontSize={RING_FONT}
+                    fill="rgba(184,198,222,0.8)"
+                    stroke="#0b1220"
+                    strokeWidth={3}
+                    paintOrder="stroke"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
                     textAnchor="start"
                   >
@@ -358,7 +367,7 @@ export default function DimensionRadar({
                 x={lx}
                 y={ly + dyAdj}
                 textAnchor={anchor}
-                fontSize="9.5"
+                fontSize={CODE_FONT}
                 fontWeight="700"
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
                 fill={dim.color}
@@ -368,73 +377,47 @@ export default function DimensionRadar({
               {/* Score value below the code label */}
               <text
                 x={lx}
-                y={ly + dyAdj + 10}
+                y={ly + dyAdj + 15}
                 textAnchor={anchor}
-                fontSize="8"
+                fontSize={VALUE_FONT}
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-                fill="rgba(184,198,222,0.7)"
+                fill="#b8c6de"
               >
                 {clampedScores[dim.code].toFixed(1)}
               </text>
             </g>
           );
         })}
-
-        {/* ── Legend ───────────────────────────────────────────────── */}
-        {/* Entity legend item */}
-        <g>
-          {/* Solid line swatch */}
-          <line
-            x1={CX - 60}
-            y1={LEGEND_Y}
-            x2={CX - 44}
-            y2={LEGEND_Y}
-            stroke={bandColor}
-            strokeWidth={2}
-            strokeOpacity={0.85}
-          />
-          <circle cx={CX - 52} cy={LEGEND_Y} r={2} fill={bandColor} fillOpacity={0.9} />
-          <text
-            x={CX - 40}
-            y={LEGEND_Y + 3.5}
-            fontSize="8"
-            fill="rgba(184,198,222,0.75)"
-            fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          >
-            {entityName ?? "This entity"}
-          </text>
-        </g>
-        {/* Overlay legend item (only when overlay provided) */}
-        {hasOverlay && (
-          <g>
-            <line
-              x1={CX + 6}
-              y1={LEGEND_Y}
-              x2={CX + 22}
-              y2={LEGEND_Y}
-              stroke="rgba(184,198,222,0.45)"
-              strokeWidth={1.25}
-              strokeDasharray="3 3"
-            />
-            <text
-              x={CX + 26}
-              y={LEGEND_Y + 3.5}
-              fontSize="8"
-              fill="rgba(184,198,222,0.55)"
-              fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-            >
-              {overlayLabel ?? "Field average"}
-            </text>
-          </g>
-        )}
       </svg>
 
+      {/* ── Legend (HTML so it stays >= 12px and wraps) ─────────────────── */}
+      <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[0.8125rem] text-muted list-none p-0 m-0">
+        <li className="inline-flex items-center gap-2">
+          <span
+            className="inline-block w-4 h-0.5 rounded-full"
+            style={{ backgroundColor: bandColor }}
+            aria-hidden="true"
+          />
+          {entityName ?? "This entity"}
+        </li>
+        {hasOverlay && (
+          <li className="inline-flex items-center gap-2">
+            <span
+              className="inline-block w-4 border-t-2 border-dashed"
+              style={{ borderColor: "rgba(184,198,222,0.7)" }}
+              aria-hidden="true"
+            />
+            {overlayLabel ?? "Field average"}
+          </li>
+        )}
+      </ul>
+
       {/* ── Honesty caveat + source caption ────────────────────────────── */}
-      <figcaption className="text-[0.7rem] text-[rgba(148,163,184,0.5)] mt-1.5 space-y-0.5">
+      <figcaption className="text-[0.8125rem] text-muted mt-1.5 space-y-0.5">
         <p>
           Note: radar area can visually exaggerate differences — read the per-axis values, not the area.
         </p>
-        <p className="text-right">
+        <p className="text-right text-[0.75rem] text-muted-subtle">
           {caption ?? CC_BY_CAPTION}
         </p>
       </figcaption>

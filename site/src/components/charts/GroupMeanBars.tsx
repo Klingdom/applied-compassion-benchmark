@@ -56,7 +56,7 @@ const VB_W = 600;
 const ROW_H = 22;
 const ROW_GAP = 5;
 const LABEL_W = 140;
-const BAR_AREA_W = VB_W - LABEL_W - 60; // leave room for value label
+const BAR_AREA_W = VB_W - LABEL_W - 84; // leave room for value label
 const BAR_H = 14;
 const PAD_Y = 4;
 const MAX_COMPOSITE = 100;
@@ -131,9 +131,7 @@ export default function GroupMeanBars({
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: "block", width: "100%", height: "auto" }}
     >
-      <title>
-        Mean {groupLabel} composite — {indexName}
-      </title>
+      <title>{`Mean ${groupLabel} composite — ${indexName}`}</title>
 
       {/* Reference line at index mean */}
       {refX !== null && (
@@ -168,7 +166,7 @@ export default function GroupMeanBars({
               y={rowY + ROW_H / 2 + 4}
               textAnchor="end"
               fill="rgba(184,198,222,0.75)"
-              fontSize="9.5"
+              fontSize="12"
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
             >
               {g.label.length > 18 ? g.label.slice(0, 17) + "…" : g.label}
@@ -203,7 +201,7 @@ export default function GroupMeanBars({
               y={rowY + ROW_H / 2 + 4}
               textAnchor="start"
               fill={color}
-              fontSize="9.5"
+              fontSize="12"
               fontWeight="700"
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
             >
@@ -212,11 +210,11 @@ export default function GroupMeanBars({
 
             {/* Entity count — muted, after value */}
             <text
-              x={LABEL_W + BAR_AREA_W + 34}
+              x={LABEL_W + BAR_AREA_W + 38}
               y={rowY + ROW_H / 2 + 4}
               textAnchor="start"
               fill="rgba(148,163,184,0.4)"
-              fontSize="8"
+              fontSize="11"
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
             >
               n={g.count}
@@ -231,7 +229,7 @@ export default function GroupMeanBars({
           x={refX + 3}
           y={PAD_Y + 8}
           fill="rgba(184,198,222,0.4)"
-          fontSize="7.5"
+          fontSize="11"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         >
           mean {indexMean.toFixed(1)}

@@ -44,14 +44,14 @@ const DEFAULT_COLOR = "#94a3b8";
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 // SVG layout constants
-const SVG_W        = 540;
-const LEFT_PAD     = 32;  // room for "Today" label
-const RIGHT_PAD    = 36;  // room for end-date label
-const AXIS_Y       = 26;  // vertical centre of axis within SVG
+const SVG_W        = 720;
+const LEFT_PAD     = 40;  // room for "Today" label
+const RIGHT_PAD    = 44;  // room for end-date label
+const AXIS_Y       = 34;  // vertical centre of axis within SVG
 const DOT_R        = 5;
 const TICK_H       = 6;
-const LABEL_OFFSET = 14;  // vertical gap from axis to label text
-const SVG_H        = AXIS_Y + DOT_R + LABEL_OFFSET + 12; // enough room for labels
+const LABEL_OFFSET = 18;  // vertical gap from axis to label text
+const SVG_H        = AXIS_Y + DOT_R + LABEL_OFFSET + 8; // enough room for labels
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -162,7 +162,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
 
   return (
     <div className="mb-5">
-      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+      <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
         Trigger timeline — next {window} days
       </div>
 
@@ -199,8 +199,8 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
               x={LEFT_PAD}
               y={AXIS_Y - TICK_H - 3}
               textAnchor="middle"
-              fill="rgba(148,163,184,0.6)"
-              fontSize="7"
+              fill="#8fa3be"
+              fontSize="12"
               fontFamily={FONT}
             >
               Today
@@ -217,8 +217,8 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
               x={SVG_W - RIGHT_PAD}
               y={AXIS_Y - TICK_H - 3}
               textAnchor="end"
-              fill="rgba(148,163,184,0.6)"
-              fontSize="7"
+              fill="#8fa3be"
+              fontSize="12"
               fontFamily={FONT}
             >
               {endLabel}
@@ -249,7 +249,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
                 ? AXIS_Y - DOT_R - 5
                 : AXIS_Y + DOT_R + LABEL_OFFSET;
               // Clamp label x so it stays within SVG
-              const labelX = Math.min(Math.max(x, LEFT_PAD + 20), SVG_W - RIGHT_PAD - 20);
+              const labelX = Math.min(Math.max(x, LEFT_PAD + 40), SVG_W - RIGHT_PAD - 40);
 
               return (
                 <g key={`${t.entity}-${i}`}>
@@ -286,7 +286,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
                     textAnchor="middle"
                     fill={color}
                     opacity="0.85"
-                    fontSize="7.5"
+                    fontSize="12"
                     fontWeight="600"
                     fontFamily={FONT}
                   >
@@ -305,7 +305,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
       {/* Undated / beyond-window rail */}
       {undatedRail.length > 0 && (
         <div className="mt-3">
-          <div className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-muted mb-1.5">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-1.5">
             Undated triggers (TBD)
           </div>
           <ul className="flex flex-wrap gap-1.5" aria-label="Undated forward triggers">
@@ -314,7 +314,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
               return (
                 <li
                   key={`undated-${t.entity}-${i}`}
-                  className="inline-flex items-center gap-1 rounded-[6px] border px-2 py-0.5 text-[0.72rem] font-medium"
+                  className="inline-flex items-center gap-1 rounded-[6px] border px-2 py-0.5 text-[0.8125rem] font-medium"
                   style={{
                     borderColor: `${color}44`,
                     background: `${color}0d`,
@@ -324,7 +324,7 @@ export default function ForwardTriggerTimeline({ triggers, briefingDate }: Props
                   aria-label={`${t.entity} — ${t.priority} priority, date TBD`}
                 >
                   {t.entity}
-                  <span className="opacity-60 text-[0.62rem] font-bold uppercase tracking-wide ml-0.5">
+                  <span className="text-muted-subtle text-[0.75rem] font-bold uppercase tracking-wide ml-0.5">
                     TBD
                   </span>
                 </li>

@@ -89,7 +89,7 @@ export default function HowToReadBriefing() {
             — Bands, scores, and terms
           </span>
         </div>
-        <span className="text-[0.72rem] uppercase tracking-widest font-bold text-muted shrink-0">
+        <span className="text-[0.75rem] uppercase tracking-widest font-bold text-muted shrink-0">
           Schema guide
         </span>
       </summary>
@@ -99,7 +99,7 @@ export default function HowToReadBriefing() {
 
         {/* (a) Band ladder */}
         <div>
-          <div className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-muted mb-3">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-3">
             The 5 performance bands
           </div>
           <div className="flex flex-col gap-2">
@@ -116,7 +116,7 @@ export default function HowToReadBriefing() {
 
         {/* (b) Two scales */}
         <div>
-          <div className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-muted mb-2">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-2">
             Two scales
           </div>
           <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -130,7 +130,7 @@ export default function HowToReadBriefing() {
 
         {/* (c) Micro-glossary */}
         <div>
-          <div className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-muted mb-3">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-3">
             Key terms
           </div>
           <dl className="space-y-3">

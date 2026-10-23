@@ -373,7 +373,7 @@ export default function IndexesPage() {
             {/* Top row: date label + pipeline stats + CTA */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
               <div className="flex-1 min-w-0">
-                <p className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[rgba(125,211,252,0.7)] mb-1">
+                <p className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-[rgba(125,211,252,0.7)] mb-1">
                   Daily briefing — {briefingDate}
                 </p>
                 <p className="text-muted text-[0.88rem] leading-relaxed line-clamp-2">
@@ -411,7 +411,7 @@ export default function IndexesPage() {
                         color: down ? "#f87171" : "#86efac",
                       }}
                     >
-                      <span className="font-semibold text-[rgba(255,255,255,0.7)] text-[0.72rem]">{a.entity}</span>
+                      <span className="font-semibold text-[rgba(255,255,255,0.7)] text-[0.75rem]">{a.entity}</span>
                       {a.delta > 0 ? "+" : ""}{a.delta}
                     </span>
                   );
@@ -441,7 +441,7 @@ export default function IndexesPage() {
         <Container>
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-[14px] border border-[rgba(134,239,172,0.18)] bg-[rgba(7,31,17,0.46)] px-5 py-4">
             <div className="flex-1 min-w-0">
-              <p className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[rgba(134,239,172,0.7)] mb-1">
+              <p className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-[rgba(134,239,172,0.7)] mb-1">
                 Methodology
               </p>
               <p className="text-muted text-[0.88rem] leading-relaxed">
@@ -490,7 +490,7 @@ export default function IndexesPage() {
       <section className="py-[20px]">
         <Container>
           <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
-            <p className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-muted mb-2">
+            <p className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-muted mb-2">
               How to read every index
             </p>
             {/* #7 — Decode framework jargon inline */}
@@ -553,7 +553,7 @@ export default function IndexesPage() {
                 indexMean={OVERALL_MEAN}
                 indexName="All Indexes"
               />
-              <p className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-2 text-right">
+              <p className="text-[0.75rem] text-[rgba(148,163,184,0.55)] mt-2 text-right">
                 Source: Compassion Benchmark · CC-BY
               </p>
             </div>

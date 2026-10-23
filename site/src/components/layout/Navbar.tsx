@@ -65,10 +65,12 @@ export default function Navbar() {
           <div ref={indexesRef} className="relative">
             <button
               onClick={() => setIndexesOpen(!indexesOpen)}
-              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1"
+              aria-expanded={indexesOpen}
+              aria-haspopup="true"
+              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1 py-2"
             >
               Indexes
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${indexesOpen ? "rotate-180" : ""}`}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 motion-reduce:transition-none ${indexesOpen ? "rotate-180" : ""}`}>
                 <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
@@ -102,7 +104,7 @@ export default function Navbar() {
                 <Link
                   href="/ai-models"
                   aria-current={pathname === "/ai-models" ? "page" : undefined}
-                  className="hover:text-text transition-colors"
+                  className="hover:text-text transition-colors py-2"
                 >
                   AI Models
                 </Link>
@@ -112,9 +114,9 @@ export default function Navbar() {
                   aria-expanded={aiOpen}
                   aria-haspopup="true"
                   aria-label="AI Models submenu"
-                  className="hover:text-text transition-colors p-1"
+                  className="hover:text-text transition-colors p-2 -m-1 inline-flex items-center justify-center min-h-6 min-w-6"
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${aiOpen ? "rotate-180" : ""}`}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 motion-reduce:transition-none ${aiOpen ? "rotate-180" : ""}`}>
                     <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
@@ -139,11 +141,14 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`hover:text-text transition-colors text-[0.96rem] inline-flex items-center gap-1.5 ${item.label === "Updates" ? "text-text" : "text-muted"}`}
+              className={`hover:text-text transition-colors text-[0.96rem] inline-flex items-center gap-1.5 py-2 ${item.label === "Updates" ? "text-text" : "text-muted"}`}
             >
               {item.label}
               {item.label === "Updates" && (
-                <span className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+                <>
+                  <span aria-hidden="true" className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+                  <span className="sr-only">(new)</span>
+                </>
               )}
             </Link>
           ))}
@@ -152,10 +157,12 @@ export default function Navbar() {
           <div ref={toolsRef} className="relative">
             <button
               onClick={() => setToolsOpen(!toolsOpen)}
-              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1"
+              aria-expanded={toolsOpen}
+              aria-haspopup="true"
+              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1 py-2"
             >
               Tools
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${toolsOpen ? "rotate-180" : ""}`}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 motion-reduce:transition-none ${toolsOpen ? "rotate-180" : ""}`}>
                 <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
@@ -262,7 +269,10 @@ export default function Navbar() {
             >
               {item.label}
               {item.label === "Updates" && (
-                <span className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+                <>
+                  <span aria-hidden="true" className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+                  <span className="sr-only">(new)</span>
+                </>
               )}
             </Link>
           ))}

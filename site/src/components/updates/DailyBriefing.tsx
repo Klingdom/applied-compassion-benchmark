@@ -292,7 +292,7 @@ export default function DailyBriefing({
           <section id="today-30s" className="py-[20px] scroll-mt-24" aria-label="Today in 30 seconds" tabIndex={-1}>
             <Container>
               <div className="rounded-[16px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.03)] px-5 py-4">
-                <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
                   Today in 30 seconds
                 </div>
 
@@ -353,7 +353,7 @@ export default function DailyBriefing({
                         />
                       </div>
                       {/* Legend */}
-                      <p className="text-[0.73rem] text-muted tabular-nums flex flex-wrap gap-x-3 gap-y-0.5" aria-label={`Pipeline: ${scanned.toLocaleString()} scanned, ${assessed} assessed, ${moved} moved`}>
+                      <p className="text-[0.8125rem] text-muted tabular-nums flex flex-wrap gap-x-3 gap-y-0.5" aria-label={`Pipeline: ${scanned.toLocaleString()} scanned, ${assessed} assessed, ${moved} moved`}>
                         <span className="inline-flex items-center gap-1.5">
                           <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: "rgba(255,255,255,0.18)" }} />
                           {scanned.toLocaleString()} scanned
@@ -397,10 +397,24 @@ export default function DailyBriefing({
                   if (totalInBands === 0) return null;
                   return (
                     <div className="mb-3">
-                      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
                         Today&apos;s {assessments.length} assessment{assessments.length !== 1 ? "s" : ""} by band
                       </div>
                       <BandDistributionBar counts={bandCounts} compact />
+                      {/* D-61: count + band name as text so the bar is not colour-only */}
+                      <ul className="flex flex-wrap gap-x-3 gap-y-1 mt-1.5 text-[0.8125rem] text-muted list-none p-0 m-0">
+                        {CHART_BANDS.filter((b) => bandCounts[b.key] > 0).map((b) => (
+                          <li key={b.key} className="inline-flex items-center gap-1.5">
+                            <span
+                              aria-hidden="true"
+                              className="inline-block w-2.5 h-2.5 rounded-full"
+                              style={{ background: b.color }}
+                            />
+                            <span className="tabular-nums text-text font-semibold">{bandCounts[b.key]}</span>
+                            <span>{b.key}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   );
                 })()}
@@ -414,18 +428,19 @@ export default function DailyBriefing({
                     const sev: string = (s.severity ?? "medium").toLowerCase();
                     counts[sev] = (counts[sev] ?? 0) + 1;
                   }
-                  // Display order + colors matching SEVERITY_COLORS
-                  const SEVERITY_ORDER: { key: string; color: string }[] = [
-                    { key: "critical", color: "#f87171" },
-                    { key: "high",     color: "#fb923c" },
-                    { key: "medium",   color: "#fcd34d" },
-                    { key: "low",      color: "#94a3b8" },
+                  // D-61: severity has its own neutral weight encoding (not band hues):
+                  // critical/high = filled (critical strongest), medium = outline, low = muted.
+                  const SEVERITY_ORDER: { key: string; cls: string }[] = [
+                    { key: "critical", cls: "bg-[#e2e8f0] text-[#0b1220] border-[#e2e8f0] ring-2 ring-[#e2e8f0]/30" },
+                    { key: "high",     cls: "bg-[#cbd5e1] text-[#0b1220] border-[#cbd5e1]" },
+                    { key: "medium",   cls: "bg-transparent text-[#e2e8f0] border-[#94a3b8] border-dashed" },
+                    { key: "low",      cls: "bg-transparent text-muted border-line" },
                   ];
                   const pills = SEVERITY_ORDER.filter((s) => (counts[s.key] ?? 0) > 0);
                   if (pills.length === 0) return null;
                   return (
                     <div className="mb-3">
-                      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
                         Today&apos;s {topSigs.length} signal{topSigs.length !== 1 ? "s" : ""} by severity
                       </div>
                       <div
@@ -433,16 +448,11 @@ export default function DailyBriefing({
                         role="list"
                         aria-label={`Signal severity breakdown: ${pills.map((p) => `${counts[p.key]} ${p.key}`).join(", ")}`}
                       >
-                        {pills.map(({ key, color }) => (
+                        {pills.map(({ key, cls }) => (
                           <span
                             key={key}
                             role="listitem"
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.72rem] font-bold border"
-                            style={{
-                              color,
-                              borderColor: `${color}44`,
-                              background: `${color}12`,
-                            }}
+                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.75rem] font-bold border ${cls}`}
                           >
                             {/* Colorblind-safe: count + label, not color alone */}
                             <span className="tabular-nums">{counts[key]}</span>
@@ -596,7 +606,7 @@ export default function DailyBriefing({
           >
             <Container>
               <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
-                <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-3">
+                <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-3">
                   {movementHeading}
                 </div>
                 <MovementDeltaStrip updates={updates} />
@@ -627,7 +637,7 @@ export default function DailyBriefing({
             <Container>
               <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1 min-w-0">
-                  <div className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                  <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                     {leadApplied ? "Score trajectory" : "New measurement (not applied to the published score)"} — {lead.entity ?? lead.slug}
                   </div>
                   <ScoreSparkline slug={leadSlug} entityName={lead.entity ?? undefined} applied={leadApplied} />
@@ -781,7 +791,7 @@ export default function DailyBriefing({
                     — {auditSummaryText}
                   </span>
                 </div>
-                <span className="text-[0.72rem] uppercase tracking-widest font-bold text-muted shrink-0">
+                <span className="text-[0.75rem] uppercase tracking-widest font-bold text-muted shrink-0">
                   Methodology records
                 </span>
               </summary>
@@ -1076,7 +1086,7 @@ function LegacyScoreChangesSection({
                           </svg>
                         </>
                       ) : (
-                        <span className="text-[0.7rem] uppercase tracking-[0.1em] text-[#7dd3fc] font-bold px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.32)] bg-[rgba(125,211,252,0.08)]">
+                        <span className="text-[0.75rem] uppercase tracking-[0.1em] text-[#7dd3fc] font-bold px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.32)] bg-[rgba(125,211,252,0.08)]">
                           First baseline
                         </span>
                       )}
@@ -1241,7 +1251,7 @@ function LegacyScoreChangesSection({
                 {typeof change.boundaryWatchResolution === "string" &&
                   change.boundaryWatchResolution.trim() && (
                     <div className="mt-4 rounded-[12px] border border-[rgba(167,139,250,0.32)] bg-[rgba(167,139,250,0.05)] p-3.5">
-                      <div className="text-[0.72rem] font-bold uppercase tracking-widest text-[#a78bfa] mb-1">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-widest text-[#a78bfa] mb-1">
                         Boundary watch resolution
                       </div>
                       <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -1253,7 +1263,7 @@ function LegacyScoreChangesSection({
                 {Array.isArray(change.openWatches) &&
                   change.openWatches.length > 0 && (
                     <div className="mt-4">
-                      <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-2">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-2">
                         Next assessment triggers
                       </div>
                       <ul className="flex flex-wrap gap-1.5">
@@ -1420,19 +1430,19 @@ function ConfirmationsSection({
                         )}
                         {c.boundaryWatch && (
                           <span
-                            className="text-[0.66rem] font-bold uppercase tracking-wider text-[#fcd34d] px-1.5 py-0.5 rounded border border-[rgba(252,211,77,0.4)] bg-[rgba(252,211,77,0.08)]"
+                            className="text-[0.75rem] font-bold uppercase tracking-wider text-[#fcd34d] px-1.5 py-0.5 rounded border border-[rgba(252,211,77,0.4)] bg-[rgba(252,211,77,0.08)]"
                             title="Boundary watch active"
                           >
                             Watch
                           </span>
                         )}
                         {c.firstAgentBaseline && (
-                          <span className="text-[0.66rem] font-bold uppercase tracking-wider text-[#7dd3fc] px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.4)] bg-[rgba(125,211,252,0.08)]">
+                          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#7dd3fc] px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.4)] bg-[rgba(125,211,252,0.08)]">
                             First baseline
                           </span>
                         )}
                         {c.carryForwardActive && (
-                          <span className="text-[0.66rem] font-bold uppercase tracking-wider text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.08)]">
+                          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.08)]">
                             Carry-forward
                             {typeof c.carryForwardDelta === "number" &&
                               ` +${c.carryForwardDelta}`}
@@ -1612,7 +1622,7 @@ function EmergingRisksSection({
                         )}
                         {timeframe && (
                           <span className="text-muted">
-                            <span className="text-[0.7rem] font-bold uppercase tracking-widest text-muted mr-1.5">
+                            <span className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mr-1.5">
                               Window
                             </span>
                             {timeframe}
@@ -1704,11 +1714,11 @@ function FloorConductSection({
                 <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-[#f43f5e] px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
+                      <span className="text-[0.75rem] font-bold uppercase tracking-[0.14em] text-[#f43f5e] px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
                         Floor · {fe.band ?? "Critical"}
                       </span>
                       {fe.newConductCategory && (
-                        <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.32)] bg-[rgba(167,139,250,0.08)]">
+                        <span className="text-[0.75rem] font-bold uppercase tracking-[0.14em] text-[#a78bfa] px-1.5 py-0.5 rounded border border-[rgba(167,139,250,0.32)] bg-[rgba(167,139,250,0.08)]">
                           New category: {fe.newConductCategory}
                         </span>
                       )}
@@ -1738,7 +1748,7 @@ function FloorConductSection({
                 {Array.isArray(fe.conductCategories) &&
                   fe.conductCategories.length > 0 && (
                     <div className="mb-3">
-                      <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-2">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-2">
                         Conduct documented
                       </div>
                       <ul className="space-y-1.5">
@@ -1761,13 +1771,13 @@ function FloorConductSection({
                   )}
                 {Array.isArray(fe.sources) && fe.sources.length > 0 && (
                   <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
-                    <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-2">
                       Primary sources
                     </div>
                     <ol className="space-y-1">
                       {fe.sources.map((src: string, j: number) => (
                         <li key={j} className="flex items-baseline gap-2">
-                          <span className="text-[0.74rem] font-bold text-[#f43f5e] shrink-0">
+                          <span className="text-[0.8125rem] font-bold text-[#f43f5e] shrink-0">
                             {j + 1}.
                           </span>
                           <a
@@ -1911,7 +1921,7 @@ function MathHygienePanel({ data }: { data: any }) {
         )}
         {subThreshold.length > 0 && (
           <div className="text-[0.85rem] text-muted-subtle">
-            <span className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mr-2">
+            <span className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mr-2">
               Sub-threshold candidates
             </span>
             {subThreshold.map((c, i) => (
@@ -2006,7 +2016,7 @@ function HoldsPanel({ items }: { items: any[] }) {
                 >
                   <div className="flex items-start justify-between gap-2 mb-1.5 flex-wrap">
                     <div className="min-w-0">
-                      <p className="text-[0.7rem] uppercase tracking-[0.1em] text-muted mb-0.5">
+                      <p className="text-[0.75rem] uppercase tracking-[0.1em] text-muted mb-0.5">
                         {formatIndex(h.index)}
                       </p>
                       <p className="text-text font-semibold text-[0.98rem]">

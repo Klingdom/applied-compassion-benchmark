@@ -156,7 +156,7 @@ export default function AnalysisSection() {
         <>
           A per-dimension bootstrap that resamples each item&rsquo;s recorded trial ratings and keeps the items fixed (
           {P.defaultBootstrapIterations} iterations, seeded from the run id). It does not cover which items were drawn,
-          so it is <strong className="text-text">not equivalent</strong> to the pilot&rsquo;s interval and should not be
+          so it is <strong className="text-text">not equivalent</strong>{" "}to the pilot&rsquo;s interval and should not be
           read as comparable.
         </>
       ),
@@ -248,7 +248,7 @@ export default function AnalysisSection() {
           </p>
         </div>
 
-        <div className="overflow-x-auto border border-line rounded-[14px]">
+        <div className="relative overflow-x-auto border border-line rounded-[14px]">
           <table className="w-full text-[0.88rem] border-collapse min-w-[1000px]">
             <caption className="sr-only">
               Analysis stages: what the analysis does, what the pilot did, what a local cb-probe run does, and what an

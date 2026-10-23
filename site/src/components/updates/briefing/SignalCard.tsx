@@ -115,13 +115,13 @@ export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
       {/* Top row: category + severity */}
       <div className="flex items-center gap-2 flex-wrap">
         {category && (
-          <span className="text-[0.68rem] font-bold uppercase tracking-wider text-muted">
+          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-muted">
             {category}
           </span>
         )}
-        <span className="text-muted text-[0.65rem]" aria-hidden="true">·</span>
+        <span className="text-muted text-[0.8125rem]" aria-hidden="true">·</span>
         <span
-          className="text-[0.65rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
+          className="text-[0.75rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border"
           style={{
             color,
             borderColor: `${color}44`,
@@ -132,7 +132,7 @@ export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
           {severity}
         </span>
         {signal.actionRequired && (
-          <span className="text-[0.65rem] font-bold uppercase tracking-wider text-[#f87171] px-1.5 py-0.5 rounded border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.08)]">
+          <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#f87171] px-1.5 py-0.5 rounded border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.08)]">
             Action required
           </span>
         )}
@@ -160,7 +160,7 @@ export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
           for all legacy briefings that lack this field. */}
       {typeof signal.whyItMatters === "string" && signal.whyItMatters.trim().length > 0 && (
         <div className="rounded-[8px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] px-3 py-2">
-          <span className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#7dd3fc] mb-0.5">
+          <span className="block text-[0.75rem] font-bold uppercase tracking-[0.16em] text-[#7dd3fc] mb-0.5">
             Why it matters
           </span>
           <p className="text-[0.88rem] text-text leading-relaxed font-medium">
@@ -183,7 +183,7 @@ export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
           Kept visually subordinate to the lead card's full-width strip. */}
       {bandStripScore !== null && (
         <div className="pt-1">
-          <div className="text-[0.58rem] font-bold uppercase tracking-[0.16em] text-muted mb-1">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-1">
             Where this sits
           </div>
           <BandPositionStrip
@@ -241,7 +241,7 @@ export default function SignalCard({ signal, briefingDate }: SignalCardProps) {
           source={topEvidence.source}
           tier={topEvidence.sourceTier}
           briefingDate={briefingDate}
-          className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
+          className="inline-flex items-center gap-1 text-[0.8125rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
         />
       )}
 

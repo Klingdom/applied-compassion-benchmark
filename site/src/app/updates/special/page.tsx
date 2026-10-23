@@ -89,7 +89,7 @@ export default function SpecialBriefingsIndexPage() {
           </nav>
 
           <div className="flex items-center gap-2.5 mb-4 flex-wrap">
-            <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
+            <span className="text-[0.75rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
               Special Briefings
             </span>
             <span className="text-muted text-[0.8rem]">
@@ -217,7 +217,7 @@ function BriefingCard({ briefing }: { briefing: BriefingManifestEntry }) {
     >
       {/* Edition + date meta */}
       <div className="flex items-center gap-3 mb-3 flex-wrap">
-        <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.06)] text-accent">
+        <span className="text-[0.75rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.06)] text-accent">
           {briefing.edition}
         </span>
         <span className="text-muted text-[0.8rem]">

@@ -1157,7 +1157,7 @@ export default function EvaluationScorer({
                           </div>
                         )}
                         {!p.draft && ratingMethods[p.id] && (
-                          <p className="text-[0.7rem] font-mono text-muted-subtle mt-2 uppercase tracking-wide">
+                          <p className="text-[0.75rem] font-mono text-muted-subtle mt-2 uppercase tracking-wide">
                             Rating method: {ratingMethods[p.id]}
                           </p>
                         )}

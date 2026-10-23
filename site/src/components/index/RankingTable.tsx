@@ -62,6 +62,13 @@ type Props = {
     | "university";
 };
 
+/** Decimal places present in a stored value (display-only helper; never rounds). */
+function decimalsOf(v: unknown): number {
+  if (typeof v !== "number" || !Number.isFinite(v)) return 0;
+  const s = String(v);
+  return s.includes(".") ? s.split(".")[1].length : 0;
+}
+
 export default function RankingTable({
   data,
   columns,
@@ -110,6 +117,22 @@ export default function RankingTable({
     return Array.from(values).sort();
   }, [data, filterKey]);
 
+  // Display precision per numeric column: the most decimals any stored value in
+  // that column carries (padding only, never rounding). Composite has at most one
+  // decimal in the data, so it always shows one.
+  const precision = useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const col of columns) {
+      if (col.key === "composite") {
+        out[col.key] = Math.max(1, ...data.map((r) => decimalsOf(r.composite)));
+      } else if (col.key.startsWith("scores.")) {
+        const dim = col.key.replace("scores.", "");
+        out[col.key] = Math.max(0, ...data.map((r) => decimalsOf(r.scores?.[dim])));
+      }
+    }
+    return out;
+  }, [data, columns]);
+
   const filtered = useMemo(() => {
     let rows = data;
 
@@ -133,6 +156,15 @@ export default function RankingTable({
     return rows;
   }, [data, search, filter, filterKey, sortBy]);
 
+  // Numeric columns are right-aligned with tabular figures so digits line up.
+  const isNumericCol = (col: ColumnDef) =>
+    col.key.startsWith("scores.") || col.key === "composite" || col.key === "rank";
+  // The name column stays pinned while the table scrolls sideways on narrow screens.
+  // When a rank column leads, it is pinned too (narrow fixed width) so rank stays beside the name.
+  const rankPinned = columns[0]?.key === "rank";
+  const stickyName = `sticky ${rankPinned ? "left-[3.25rem]" : "left-0"} bg-bg shadow-[1px_0_0_var(--color-line)]`;
+  const stickyRank = "sticky left-0 bg-bg w-[3.25rem] min-w-[3.25rem] max-w-[3.25rem]";
+
   function renderCell(entry: RankingEntry, col: ColumnDef) {
     if (col.type === "band") {
       return <Band level={entry.band as BandLevel} />;
@@ -140,7 +172,7 @@ export default function RankingTable({
     if (col.type === "score" && col.key === "composite") {
       return (
         <span className="text-accent font-bold whitespace-nowrap">
-          {entry.composite}
+          {entry.composite.toFixed(precision[col.key] ?? 1)}
         </span>
       );
     }
@@ -148,7 +180,8 @@ export default function RankingTable({
     // Dimension scores
     if (col.key.startsWith("scores.")) {
       const dim = col.key.replace("scores.", "");
-      return entry.scores[dim];
+      const v = entry.scores[dim];
+      return typeof v === "number" ? v.toFixed(precision[col.key] ?? 0) : v;
     }
 
     // Link the entity name to its detail page when entityKind is provided.
@@ -171,7 +204,7 @@ export default function RankingTable({
               band: entry.band,
             })
           }
-          className="text-text hover:text-[#7dd3fc] transition-colors font-medium"
+          className="text-text hover:text-[#7dd3fc] transition-colors font-medium whitespace-nowrap"
         >
           {entry.name}
         </Link>
@@ -188,14 +221,14 @@ export default function RankingTable({
       <div className="grid grid-cols-1 md:grid-cols-[1fr_220px_180px] gap-3 mb-4">
         <input
           type="text"
-          className="min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 w-full text-base"
+          className="min-h-[48px] rounded-[14px] border border-line-strong bg-panel-2 text-text px-3.5 w-full text-base"
           placeholder={searchPlaceholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         {filterKey && (
           <select
-            className="min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 w-full text-base"
+            className="min-h-[48px] rounded-[14px] border border-line-strong bg-panel-2 text-text px-3.5 w-full text-base"
             value={filter}
             onChange={(e) => {
               const next = e.target.value;
@@ -217,7 +250,7 @@ export default function RankingTable({
           </select>
         )}
         <select
-          className="min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 w-full text-base"
+          className="min-h-[48px] rounded-[14px] border border-line-strong bg-panel-2 text-text px-3.5 w-full text-base"
           value={sortBy}
           onChange={(e) => {
             const next = e.target.value;
@@ -240,7 +273,7 @@ export default function RankingTable({
       <ScoreLegend />
 
       {/* Table */}
-      <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.03)]">
+      <div className="relative overflow-x-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.03)]">
         <table className="w-full border-collapse">
           <thead>
             <tr>
@@ -262,7 +295,9 @@ export default function RankingTable({
                 return (
                   <th
                     key={col.key}
-                    className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line whitespace-nowrap"
+                    className={`text-muted text-[0.86rem] font-semibold py-3 px-2.5 border-b border-line whitespace-nowrap ${
+                      isNumericCol(col) ? "text-right" : "text-left"
+                    } ${col.key === "name" ? `${stickyName} z-[2]` : rankPinned && col.key === "rank" ? `${stickyRank} z-[2]` : ""}`}
                   >
                     {isDimCol ? (
                       // Dimension header: DefinedTerm keyed by lowercase dim code
@@ -288,7 +323,9 @@ export default function RankingTable({
                   {columns.map((col) => (
                     <td
                       key={col.key}
-                      className="py-3 px-2.5 border-b border-line text-[0.95rem]"
+                      className={`py-3 px-2.5 border-b border-line text-[0.95rem] ${
+                        isNumericCol(col) ? "text-right tabular-nums" : ""
+                      } ${col.key === "name" ? `${stickyName} z-[1]` : rankPinned && col.key === "rank" ? `${stickyRank} z-[1]` : ""}`}
                     >
                       {renderCell(entry, col)}
                     </td>

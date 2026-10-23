@@ -52,7 +52,7 @@ export default function DonateCTA({
       <p className="text-muted text-[0.85rem] border-t border-line pt-3">
         {INDEPENDENCE_FIREWALL_LINE}
       </p>
-      <p className="text-[rgba(148,163,184,0.55)] text-[0.72rem] mt-2">
+      <p className="text-[rgba(148,163,184,0.55)] text-[0.75rem] mt-2">
         {TAX_STATUS_NOTE}
       </p>
     </Callout>

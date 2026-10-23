@@ -147,14 +147,14 @@ export default function FailureModeCard({ updates }: Props) {
               key={mode.slug}
               className="rounded-[14px] border border-[rgba(167,139,250,0.25)] bg-[rgba(167,139,250,0.05)] p-4"
             >
-              <div className="text-[0.68rem] font-bold uppercase tracking-widest text-[#a78bfa] mb-1.5">
+              <div className="text-[0.75rem] font-bold uppercase tracking-widest text-[#a78bfa] mb-1.5">
                 Failure mode
               </div>
               <h3 className="text-[0.97rem] font-bold mb-2">{mode.name}</h3>
               <p className="text-[0.85rem] text-muted leading-relaxed mb-3">
                 {mode.definition}
               </p>
-              <div className="text-[0.72rem] text-muted">
+              <div className="text-[0.8125rem] text-muted">
                 <span className="font-bold uppercase tracking-widest mr-1.5">
                   Detected in
                 </span>

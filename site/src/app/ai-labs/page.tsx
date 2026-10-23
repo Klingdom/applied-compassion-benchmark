@@ -124,7 +124,7 @@ export default function AILabsPage() {
       <section className="py-[14px]">
         <Container>
           <p className="text-[0.93rem] text-muted max-w-[900px] leading-relaxed">
-            This index scores AI <strong className="text-text">organisations</strong> on their public governance
+            This index scores AI <strong className="text-text">organisations</strong>{" "}on their public governance
             record. It does not score how their models behave &mdash; that is the separate{" "}
             <Link href="/ai-models" className="underline underline-offset-2">Model Index</Link>, which has scored{" "}
             {MODEL_INDEX_FACTS.evaluatedModelCount} models so far.

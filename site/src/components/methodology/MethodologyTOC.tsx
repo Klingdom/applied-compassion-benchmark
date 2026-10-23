@@ -2,7 +2,8 @@
 /**
  * MethodologyTOC — #5 sticky "On this page" nav + reading progress bar
  *
- * Desktop: sticky right-rail TOC (hidden on mobile).
+ * Desktop (>=1600px): fixed right-rail TOC in the gutter beside the 1200px content column;
+ * below that width the collapsible list is used so the rail never overlaps the hero.
  * Mobile: collapsible <details> list at top of page content.
  * IntersectionObserver tracks active section.
  * Thin top progress bar fills as the user scrolls.
@@ -108,7 +109,7 @@ export default function MethodologyTOC({ items }: Props) {
       {/* Mobile: collapsible "On this page" list */}
       <nav
         aria-label="On this page"
-        className="xl:hidden mb-6 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden"
+        className="min-[1600px]:hidden mb-6 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden"
       >
         <button
           type="button"
@@ -161,12 +162,12 @@ export default function MethodologyTOC({ items }: Props) {
       <nav
         aria-label="On this page"
         className={[
-          "hidden xl:block",
+          "hidden min-[1600px]:block",
           "fixed top-24 right-[max(1.5rem,calc((100vw-1200px)/2-180px))]",
           "w-[160px] z-30",
         ].join(" ")}
       >
-        <p className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-muted mb-2">
+        <p className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-muted mb-2">
           On this page
         </p>
         <ul className="space-y-1" role="list">

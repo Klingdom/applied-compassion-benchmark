@@ -39,7 +39,7 @@ export default function SpecialBriefingCompanionLinks({ currentSlug, date }: Pro
       <div className="max-w-[860px] mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           id="companion-heading"
-          className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-muted mb-4"
+          className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-4"
         >
           Continue reading
         </h2>
@@ -56,12 +56,12 @@ export default function SpecialBriefingCompanionLinks({ currentSlug, date }: Pro
                 >
                   {/* "Read next" label */}
                   <div className="shrink-0 mt-0.5">
-                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.15em] px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.06)] text-accent">
+                    <span className="text-[0.75rem] font-bold uppercase tracking-[0.15em] px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.06)] text-accent">
                       Companion
                     </span>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[0.7rem] text-muted mb-1">{formatDate(b.date)}</p>
+                    <p className="text-[0.8125rem] text-muted mb-1">{formatDate(b.date)}</p>
                     <h3 className="text-[1rem] font-bold leading-snug tracking-tight text-text group-hover:text-accent transition-colors mb-1">
                       {b.title}
                     </h3>
@@ -86,7 +86,7 @@ export default function SpecialBriefingCompanionLinks({ currentSlug, date }: Pro
             className="group flex items-center justify-between gap-4 rounded-[12px] border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)] px-4 py-3 transition-all hover:border-[rgba(125,211,252,0.2)] hover:bg-[rgba(125,211,252,0.02)]"
           >
             <div className="min-w-0">
-              <p className="text-[0.72rem] text-muted mb-0.5">Related daily briefing</p>
+              <p className="text-[0.8125rem] text-muted mb-0.5">Related daily briefing</p>
               <p className="text-[0.88rem] font-semibold text-text group-hover:text-accent transition-colors">
                 {formatDate(date)} — daily benchmark
               </p>

@@ -239,7 +239,7 @@ export default function DimensionProfileBar({
       </svg>
 
       {/* Caption */}
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+      <figcaption className="text-[0.75rem] text-muted-subtle mt-1.5 text-right">
         {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>

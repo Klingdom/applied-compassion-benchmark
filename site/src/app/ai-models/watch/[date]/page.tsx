@@ -114,7 +114,7 @@ export default async function EditionPage({ params }: { params: Promise<{ date: 
     <ol className="flex flex-wrap gap-x-4 gap-y-1.5 text-[0.9rem]">
       {SECTIONS.map((s) => (
         <li key={s.id}>
-          <a href={`#${s.id}`} className="text-muted underline underline-offset-2">
+          <a href={`#${s.id}`} className="text-muted no-underline hover:underline underline-offset-2 hover:text-text">
             {s.label}
           </a>
         </li>
@@ -187,7 +187,7 @@ export default async function EditionPage({ params }: { params: Promise<{ date: 
             <p className="text-muted">No releases logged in this window. See the coverage note above.</p>
           ) : (
             <>
-              <div className="hidden min-[720px]:block overflow-x-auto border border-line rounded-[14px]">
+              <div className="hidden min-[720px]:block relative overflow-x-auto border border-line rounded-[14px]">
                 <table className="w-full text-[0.9rem] border-collapse min-w-[860px]">
                   <caption className="sr-only">Releases logged in this window, newest date first</caption>
                   <thead>
@@ -312,10 +312,17 @@ export default async function EditionPage({ params }: { params: Promise<{ date: 
       {/* 5. Queue status */}
       <section className="py-[18px]" id="queue" aria-labelledby="queue-heading">
         <Container>
-          <h2 id="queue-heading" className={h2}>5. Queue status</h2>
+          <h2 id="queue-heading" className={h2}>
+            5. Queue status
+            {ed.queue.asOf ? (
+              <>
+                , as of <time dateTime={ed.queue.asOf}>{dateLong(ed.queue.asOf)}</time>
+              </>
+            ) : null}
+          </h2>
           <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] max-w-[640px] mb-3">
             <Stat value={String(ed.queue.queued)} label="Queued" />
-            <Stat value={String(ed.queue.measured)} label="Measured" />
+            <Stat value={String(ed.queue.measured)} label="Measured to date" />
             <Stat value={String(ed.queue.skipped)} label="Skipped" />
           </div>
           <p className="text-muted text-[0.93rem]">

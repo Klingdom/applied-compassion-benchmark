@@ -143,7 +143,7 @@ export default function BoundaryWatch({ updates }: Props) {
                   {/* Header */}
                   <div className="flex items-start justify-between gap-3 mb-2.5">
                     <div className="min-w-0">
-                      <div className="text-[0.68rem] font-bold uppercase tracking-wider text-muted mb-0.5">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-wider text-muted mb-0.5">
                         {formatIndex(w.index)}
                       </div>
                       <div className="font-semibold text-[0.97rem]">
@@ -174,7 +174,7 @@ export default function BoundaryWatch({ updates }: Props) {
                       )}
                       {toBandLabel && (
                         <div
-                          className="text-[0.72rem] tabular-nums font-semibold"
+                          className="text-[0.8125rem] tabular-nums font-semibold"
                           style={{ color: mColor }}
                         >
                           {toBandLabel}
@@ -207,7 +207,7 @@ export default function BoundaryWatch({ updates }: Props) {
                       {dirLabel}
                     </span>
                     {typeof w.cycle === "number" && (
-                      <span className="text-[0.72rem] font-mono text-muted">
+                      <span className="text-[0.8125rem] font-mono text-muted">
                         cycle {w.cycle}
                       </span>
                     )}
@@ -216,7 +216,7 @@ export default function BoundaryWatch({ updates }: Props) {
                   {/* Trigger */}
                   {(w.trigger ?? w.note) && (
                     <div className="mt-1.5">
-                      <div className="text-[0.66rem] font-bold uppercase tracking-widest text-muted mb-0.5">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-0.5">
                         Trigger to watch
                       </div>
                       <p className="text-[0.83rem] text-muted leading-relaxed">
@@ -228,7 +228,7 @@ export default function BoundaryWatch({ updates }: Props) {
                   {/* Status */}
                   {w.status && (
                     <div
-                      className="mt-2 text-[0.72rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border inline-block"
+                      className="mt-2 text-[0.75rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border inline-block"
                       style={{
                         color: mColor,
                         borderColor: `${mColor}44`,

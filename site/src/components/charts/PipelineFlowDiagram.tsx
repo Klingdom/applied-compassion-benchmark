@@ -85,7 +85,7 @@ export default function PipelineFlowDiagram({ caption }: { caption?: string }) {
               x={x + STAGE_W / 2}
               y={stageY + 12}
               textAnchor="middle"
-              fill="rgba(148,163,184,0.55)"
+              fill="#8fa3be"
               fontSize="7"
               fontWeight="700"
               textDecoration="none"
@@ -108,7 +108,7 @@ export default function PipelineFlowDiagram({ caption }: { caption?: string }) {
               x={x + STAGE_W / 2}
               y={stageY + 38}
               textAnchor="middle"
-              fill="rgba(148,163,184,0.5)"
+              fill="#8fa3be"
               fontSize="7"
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
             >
@@ -237,7 +237,7 @@ export default function PipelineFlowDiagram({ caption }: { caption?: string }) {
           x={OUT_X + (OUT_W - 5) / 2}
           y={stageY + 30}
           textAnchor="middle"
-          fill="rgba(148,163,184,0.55)"
+          fill="#8fa3be"
           fontSize="7"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         >
@@ -298,7 +298,7 @@ export default function PipelineFlowDiagram({ caption }: { caption?: string }) {
         </text>
       </svg>
 
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+      <figcaption className="text-[0.75rem] text-muted-subtle mt-1.5 text-right">
         {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>

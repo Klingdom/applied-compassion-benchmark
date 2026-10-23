@@ -129,7 +129,7 @@ export default function ConsistencyStepChart({ caption }: { caption?: string }) 
                   x={midX}
                   y={TOP_PAD + chartH + 21}
                   textAnchor="middle"
-                  fill="rgba(148,163,184,0.5)"
+                  fill="#8fa3be"
                   fontSize="6.5"
                   fontStyle="italic"
                   fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
@@ -178,7 +178,7 @@ export default function ConsistencyStepChart({ caption }: { caption?: string }) 
           x={LEFT_PAD + chartW / 2}
           y={VH - 20}
           textAnchor="middle"
-          fill="rgba(148,163,184,0.55)"
+          fill="#8fa3be"
           fontSize="7"
           fontStyle="italic"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
@@ -189,7 +189,7 @@ export default function ConsistencyStepChart({ caption }: { caption?: string }) 
           x={LEFT_PAD + chartW / 2}
           y={VH - 8}
           textAnchor="middle"
-          fill="rgba(148,163,184,0.55)"
+          fill="#8fa3be"
           fontSize="7"
           fontStyle="italic"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
@@ -198,7 +198,7 @@ export default function ConsistencyStepChart({ caption }: { caption?: string }) 
         </text>
       </svg>
 
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1 text-right">
+      <figcaption className="text-[0.75rem] text-muted-subtle mt-1 text-right">
         {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>

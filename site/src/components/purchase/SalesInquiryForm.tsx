@@ -17,7 +17,7 @@ const serviceOptions = [
 ];
 
 const inputClass =
-  "min-h-[44px] rounded-[12px] border border-line bg-[rgba(255,255,255,0.04)] text-text px-3.5 w-full text-[0.95rem] placeholder:text-muted focus:outline-none focus:border-[rgba(125,211,252,0.4)] focus:bg-[rgba(125,211,252,0.04)] transition-colors";
+  "min-h-[44px] rounded-[12px] border border-line-strong bg-[rgba(255,255,255,0.04)] text-text px-3.5 w-full text-[0.95rem] placeholder:text-muted focus:outline-none focus:border-[rgba(125,211,252,0.4)] focus:bg-[rgba(125,211,252,0.04)] transition-colors";
 
 export default function SalesInquiryForm() {
   const [name, setName] = useState("");

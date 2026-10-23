@@ -228,7 +228,7 @@ export default function SelfAssessment() {
                     {i + 1}
                   </div>
                   <div
-                    className="text-[0.72rem] font-bold mt-0.5"
+                    className="text-[0.75rem] font-bold mt-0.5"
                     style={{ color: SCORE_COLORS[i] }}
                   >
                     {label.toUpperCase()}
@@ -427,7 +427,7 @@ export default function SelfAssessment() {
                   key={d.code}
                   onClick={() => goToDim(i)}
                   title={d.name}
-                  className={`w-7 h-7 rounded-lg flex items-center justify-center text-[0.7rem] font-bold cursor-pointer transition-all duration-150 border ${
+                  className={`w-7 h-7 rounded-lg flex items-center justify-center text-[0.75rem] font-bold cursor-pointer transition-all duration-150 border ${
                     isCurrent
                       ? "bg-[rgba(125,211,252,0.15)]"
                       : allScored
@@ -505,7 +505,7 @@ export default function SelfAssessment() {
                         >
                           {v}
                         </div>
-                        <span className="text-[0.7rem] text-muted text-center max-w-[52px]">
+                        <span className="text-[0.75rem] text-muted text-center max-w-[52px]">
                           {SCORE_LABELS[v - 1]}
                         </span>
                       </label>

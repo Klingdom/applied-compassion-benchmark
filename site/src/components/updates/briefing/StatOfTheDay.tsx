@@ -26,6 +26,8 @@ interface Props {
 export default function StatOfTheDayStrip({ stat, date, pageUrl }: Props) {
   const [copied, setCopied] = useState(false);
 
+  const isNumeric = /\d/.test(String(stat.number ?? ""));
+
   // Build the entity href when slug + index are both present
   const href =
     stat.slug && stat.index ? entityHref(stat.index, stat.slug) : null;
@@ -53,47 +55,55 @@ export default function StatOfTheDayStrip({ stat, date, pageUrl }: Props) {
       role="region"
       aria-label="Today's number"
     >
-      {/* Eyebrow */}
-      <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] shrink-0">
-        Today&apos;s number
+      {/* Eyebrow + trailing separator kept together so a separator never starts a wrapped line */}
+      <span className="inline-flex items-center gap-3 shrink-0">
+        <span className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+          Today&apos;s number
+        </span>
+        <span className="text-muted text-[0.8125rem]" aria-hidden="true">·</span>
       </span>
-
-      {/* Separator dot */}
-      <span className="text-muted text-[0.7rem] shrink-0" aria-hidden="true">·</span>
 
       {/* Figure */}
-      <span
-        className="text-[1.55rem] font-bold leading-none tabular-nums shrink-0"
-        aria-label={`${stat.number} — ${stat.label}`}
-      >
-        {stat.number}
-      </span>
+      {/* D-61 / dataviz item 11: only a figure containing a digit gets the big-number slot.
+          A word (e.g. "HIGH") is shown as a small tag instead; text is unchanged. */}
+      {isNumeric ? (
+        <span
+          className="text-[1.55rem] font-bold leading-none tabular-nums shrink-0"
+          aria-label={`${stat.number} — ${stat.label}`}
+        >
+          {stat.number}
+        </span>
+      ) : (
+        <span className="text-[0.75rem] font-bold uppercase tracking-wide leading-none shrink-0 px-2 py-1 rounded-full border border-line text-text">
+          {stat.number}
+        </span>
+      )}
 
       {/* Label */}
-      <span className="text-[0.88rem] text-muted leading-none shrink-0">
+      <span className="text-[0.88rem] text-muted leading-snug min-w-0">
         {stat.label}
       </span>
 
       {/* Entity link or plain name */}
       {stat.entity && stat.entity !== "all indexed entities" && (
         <>
-          <span className="text-muted text-[0.75rem] shrink-0" aria-hidden="true">—</span>
+          <span className="text-muted text-[0.75rem] shrink-0 hidden sm:inline" aria-hidden="true">—</span>
           {href ? (
             <Link
               href={href}
-              className="text-[0.88rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors underline decoration-dotted underline-offset-2 shrink-0"
+              className="text-[0.88rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors underline decoration-dotted underline-offset-2 min-w-0"
             >
               {stat.entity}
             </Link>
           ) : (
-            <span className="text-[0.88rem] font-semibold text-text shrink-0">
+            <span className="text-[0.88rem] font-semibold text-text min-w-0">
               {stat.entity}
             </span>
           )}
         </>
       )}
       {stat.entity === "all indexed entities" && (
-        <span className="text-muted text-[0.88rem] shrink-0">— {stat.entity}</span>
+        <span className="text-muted text-[0.88rem] min-w-0">— {stat.entity}</span>
       )}
 
       {/* Icon-only copy-citation button */}

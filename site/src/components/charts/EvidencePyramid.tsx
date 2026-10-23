@@ -148,7 +148,7 @@ export default function EvidencePyramid({ caption }: { caption?: string }) {
           x={VW / 2}
           y={TIERS.length * TIER_H + 20}
           textAnchor="middle"
-          fill="rgba(148,163,184,0.55)"
+          fill="#8fa3be"
           fontSize="7.5"
           fontStyle="italic"
           fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
@@ -157,7 +157,7 @@ export default function EvidencePyramid({ caption }: { caption?: string }) {
         </text>
       </svg>
 
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+      <figcaption className="text-[0.75rem] text-muted-subtle mt-1.5 text-right">
         {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>

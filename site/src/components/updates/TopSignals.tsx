@@ -390,7 +390,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                     {theme.label} severity
                   </span>
                   <span
-                    className="text-[0.74rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border"
+                    className="text-[0.75rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border"
                     style={{ color: catStyle.color, background: catStyle.bg, borderColor: catStyle.border }}
                   >
                     {category}
@@ -425,7 +425,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                   const pressure = pressureIndicator(signal.severity);
                   return (
                     <div className="mb-4">
-                      <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-1.5">
+                      <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-1.5">
                         Dimensions implicated
                       </div>
                       <div
@@ -450,7 +450,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                             >
                               <span className="leading-none">{code}</span>
                               <span
-                                className="leading-none text-[0.7rem] opacity-90"
+                                className="leading-none text-[0.8125rem] opacity-90"
                                 aria-hidden="true"
                               >
                                 {pressure.glyph}
@@ -466,7 +466,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
 
                 {/* What happened */}
                 <div className="mb-3">
-                  <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-1.5">
+                  <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-1.5">
                     What happened
                   </div>
                   <p className="text-[0.95rem] text-text leading-relaxed">{what}</p>
@@ -475,7 +475,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                 {/* Why it matters (only if there's a separable second clause) */}
                 {why && (
                   <div className="mb-3">
-                    <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-1.5">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-1.5">
                       Why it matters
                     </div>
                     <p className="text-[0.92rem] text-muted leading-relaxed">{why}</p>
@@ -485,7 +485,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                 {/* Action required */}
                 {signal.actionRequired && (
                   <div className="mb-4 p-3 rounded-[12px] border border-[rgba(255,255,255,0.06)] bg-[rgba(0,0,0,0.18)]">
-                    <div className="text-[0.72rem] font-bold uppercase tracking-widest mb-1" style={{ color: theme.color }}>
+                    <div className="text-[0.75rem] font-bold uppercase tracking-widest mb-1" style={{ color: theme.color }}>
                       What's next
                     </div>
                     <p className="text-[0.88rem] text-text leading-relaxed">{signal.actionRequired}</p>
@@ -495,7 +495,7 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                 {/* Affected entities */}
                 {visibleEntities.length > 0 && (
                   <div>
-                    <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-2">
                       Affected entities
                     </div>
                     <div className="flex flex-wrap gap-1.5">
@@ -536,13 +536,13 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                 {/* Sources */}
                 {signal.sources.length > 0 && (
                   <div className="mt-4 pt-3 border-t border-[rgba(255,255,255,0.06)]">
-                    <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-widest text-muted mb-2">
                       Primary sources
                     </div>
                     <ol className="space-y-1">
                       {signal.sources.slice(0, 3).map((src, j) => (
                         <li key={j} className="flex items-baseline gap-2">
-                          <span className="text-[0.74rem] font-bold shrink-0" style={{ color: theme.color }}>
+                          <span className="text-[0.8125rem] font-bold shrink-0" style={{ color: theme.color }}>
                             {j + 1}.
                           </span>
                           <a

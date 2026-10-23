@@ -195,10 +195,10 @@ export default async function SpecialBriefingPage({
 
             {/* Edition + date */}
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
+              <span className="text-[0.75rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
                 Special Briefing
               </span>
-              <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-muted">
+              <span className="text-[0.75rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-muted">
                 {briefing.edition}
               </span>
               <span className="text-muted text-[0.82rem]">
@@ -246,7 +246,7 @@ export default async function SpecialBriefingPage({
             <Container className="max-w-[860px]">
               <h2
                 id="key-findings-heading"
-                className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-5"
+                className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-5"
               >
                 Key Findings
               </h2>
@@ -267,7 +267,7 @@ export default async function SpecialBriefingPage({
           <Container className="max-w-[860px]">
             <h2
               id="field-distribution-heading"
-              className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-2"
+              className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2"
             >
               The field
             </h2>
@@ -659,7 +659,7 @@ function KeyTakeaway({ text }: { text: string }) {
             className="shrink-0 w-1 self-stretch rounded-full bg-[rgba(125,211,252,0.45)] mt-0.5"
           />
           <div className="min-w-0">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
+            <p className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
               If you remember one thing
             </p>
             <p className="text-[0.97rem] leading-relaxed text-text max-w-[68ch]">

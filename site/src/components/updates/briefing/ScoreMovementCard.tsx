@@ -139,17 +139,17 @@ export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
       {/* P1: distanceToBoundary pill */}
       {distanceToBoundary && (
         <div className="flex items-center">
-          <span className="text-[0.72rem] text-muted px-2 py-0.5 rounded border border-line bg-[rgba(255,255,255,0.03)]">
+          <span className="text-[0.8125rem] text-muted px-2 py-0.5 rounded border border-line bg-[rgba(255,255,255,0.03)]">
             {formatBoundaryLabel(distanceToBoundary)}
           </span>
         </div>
       )}
 
       {/* Main row: entity + score movement + pills */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-3">
         {/* Entity + index + whyHeadline */}
         <div className="flex-1 min-w-0">
-          <div className="text-[0.68rem] font-bold uppercase tracking-wider text-muted mb-0.5">
+          <div className="text-[0.75rem] font-bold uppercase tracking-wider text-muted mb-0.5">
             {formatIndex(index)}
           </div>
           <div className="font-semibold text-[0.97rem] leading-tight">
@@ -176,14 +176,14 @@ export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
             </p>
           )}
           {status && !whyHeadline && (
-            <div className="text-[0.72rem] text-muted mt-0.5">
+            <div className="text-[0.8125rem] text-muted mt-0.5">
               {statusLabel(status)}
             </div>
           )}
         </div>
 
         {/* Score movement + P0 dimension chip */}
-        <div className="flex items-center gap-2 shrink-0 flex-wrap">
+        <div className="flex items-center gap-2 lg:shrink-0 flex-wrap">
           {typeof published === "number" && (
             <span className="font-mono text-[0.9rem] text-muted tabular-nums">
               {published}
@@ -215,7 +215,7 @@ export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
           )}
           {dominantDimension && dimColor && dimDeltaColor && (
             <span
-              className="text-[0.72rem] font-semibold px-1.5 py-0.5 rounded border tabular-nums"
+              className="text-[0.8125rem] font-semibold px-1.5 py-0.5 rounded border tabular-nums"
               style={{
                 color: dimDeltaColor,
                 borderColor: `${dimColor}40`,
@@ -229,18 +229,18 @@ export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
         </div>
 
         {/* Band + confidence + boundary pill + #8 named source chip */}
-        <div className="flex items-center gap-2 shrink-0 flex-wrap">
+        <div className="flex items-center gap-2 lg:shrink-0 flex-wrap">
           {band && <Band level={band} />}
           {confidence && (
             <span
-              className="text-[0.72rem] font-semibold px-2 py-0.5 rounded border border-line text-muted"
+              className="text-[0.8125rem] font-semibold px-2 py-0.5 rounded border border-line text-muted"
               aria-label={`Confidence: ${confidence}`}
             >
               {confidence}
             </span>
           )}
           {isBoundary && (
-            <Pill className="border-[rgba(252,211,77,0.4)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d] text-[0.65rem]">
+            <Pill className="border-[rgba(252,211,77,0.4)] bg-[rgba(252,211,77,0.08)] text-[#fcd34d] text-[0.8125rem]">
               Boundary
             </Pill>
           )}
@@ -254,7 +254,7 @@ export default function ScoreMovementCard({ assessment, briefingDate }: Props) {
               source={sourceChipSource}
               tier={sourceChipTier}
               briefingDate={briefingDate}
-              className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
+              className="inline-flex items-center gap-1 text-[0.8125rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
             />
           )}
         </div>

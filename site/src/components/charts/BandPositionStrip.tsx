@@ -5,8 +5,11 @@
  * Answers "is 18.4 bad — compared to what?" for daily briefing score cards.
  *
  * Extended in Wave E1 to accept an optional `medianScore` (renders a faint
- * second marker/tick + tiny "median" label) and to compute a
- * "X pts to <next band>" hint displayed below the track.
+ * second marker/tick) and to compute a "X pts to <next band>" hint.
+ *
+ * D-61 (Loop 1, dataviz item 1): the SVG draws only the track, band zones and
+ * markers. All text (score, median, pts-to-next-band) is HTML beneath the strip
+ * so it never scales below 12px. The aria-label is unchanged.
  *
  * Props:
  *   score        — entity's composite score (0–100)
@@ -40,12 +43,12 @@ function ptsToNextBand(score: number): { pts: number; nextBand: string } | null 
 // ─── SVG dimensions ───────────────────────────────────────────────────────────
 
 const W = 300;
-const TRACK_H = 10;
-const MARKER_R = 5;
-const LABEL_Y = TRACK_H + MARKER_R + 12;
-// extra row for the "X pts to next band" hint
-const HINT_Y = LABEL_Y + 16;
-const SVG_H = HINT_Y + 10;
+// Compact mode is drawn at 0.6x, so its geometry is taller in viewBox units to
+// keep the rendered track and marker legible.
+const GEOM = {
+  regular: { track: 10, markerR: 5, medianR: 3 },
+  compact: { track: 16, markerR: 8, medianR: 4.5 },
+};
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -60,6 +63,8 @@ interface Props {
 export default function BandPositionStrip({ score, entityName, compact = false, medianScore }: Props) {
   if (score < 0 || score > 100) return null;
 
+  const g = compact ? GEOM.compact : GEOM.regular;
+  const TRACK_H = g.track;
   const band = getBand(score);
   const markerX = (score / 100) * W;
   const markerY = TRACK_H / 2;
@@ -78,126 +83,107 @@ export default function BandPositionStrip({ score, entityName, compact = false, 
   ].filter(Boolean).join(" ");
 
   const scaleW = compact ? 180 : W;
-  const scaleH = compact ? Math.round(SVG_H * 0.75) : SVG_H;
+  const scaleH = Math.round(TRACK_H * (scaleW / W) * 10) / 10;
 
   return (
-    <svg
-      role="img"
-      aria-label={ariaLabel}
-      viewBox={`0 0 ${W} ${SVG_H}`}
-      width={scaleW}
-      height={scaleH}
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ display: "block", overflow: "visible" }}
-    >
-      <title>{ariaLabel}</title>
-
-      {/* Band zone segments */}
-      {BANDS.map((b) => {
-        const x = (b.min / 100) * W;
-        const w = ((b.max - b.min) / 100) * W;
-        const isFirst = b.key === "Critical";
-        const isLast = b.key === "Exemplary";
-        return (
-          <rect
-            key={b.key}
-            x={x}
-            y={0}
-            width={w}
-            height={TRACK_H}
-            fill={b.color}
-            opacity="0.25"
-            rx={isFirst || isLast ? 4 : 0}
-            ry={isFirst || isLast ? 4 : 0}
-          />
-        );
-      })}
-
-      {/* Boundary tick marks at 20/40/60/80 */}
-      {[20, 40, 60, 80].map((tick) => {
-        const x = (tick / 100) * W;
-        return (
-          <line
-            key={tick}
-            x1={x}
-            y1={0}
-            x2={x}
-            y2={TRACK_H}
-            stroke="rgba(255,255,255,0.2)"
-            strokeWidth="1"
-          />
-        );
-      })}
-
-      {/* Median marker — faint tick + label (rendered before entity marker so entity is on top) */}
-      {hasMedian && (
-        <>
-          <line
-            x1={medianX}
-            y1={0}
-            x2={medianX}
-            y2={TRACK_H}
-            stroke="rgba(184,198,222,0.55)"
-            strokeWidth="1.5"
-            strokeDasharray="2 2"
-          />
-          <circle
-            cx={medianX}
-            cy={markerY}
-            r={3}
-            fill="rgba(184,198,222,0.45)"
-            stroke="#0b1220"
-            strokeWidth="1"
-          />
-          <text
-            x={Math.min(Math.max(medianX, 20), W - 20)}
-            y={LABEL_Y + 10}
-            textAnchor="middle"
-            fill="rgba(184,198,222,0.5)"
-            fontSize="7.5"
-            fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          >
-            median {medianScore!.toFixed(1)}
-          </text>
-        </>
-      )}
-
-      {/* Entity marker */}
-      <circle
-        cx={markerX}
-        cy={markerY}
-        r={MARKER_R}
-        fill={band.color}
-        stroke="#0b1220"
-        strokeWidth="1.5"
-      />
-
-      {/* Score label below marker */}
-      <text
-        x={Math.min(Math.max(markerX, 12), W - 12)}
-        y={TRACK_H + 11}
-        textAnchor="middle"
-        fill={band.color}
-        fontSize="9.5"
-        fontWeight="700"
-        fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    <div className="max-w-full">
+      <svg
+        role="img"
+        aria-label={ariaLabel}
+        viewBox={`0 0 ${W} ${TRACK_H}`}
+        width={scaleW}
+        height={scaleH}
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ display: "block", overflow: "visible" }}
       >
-        {score.toFixed(1)}
-      </text>
+        <title>{ariaLabel}</title>
 
-      {/* "X pts to next band" hint — centred, muted */}
-      {hint && (
-        <text
-          x={W / 2}
-          y={HINT_Y + 8}
-          textAnchor="middle"
-          fill="rgba(184,198,222,0.45)"
-          fontSize="7.5"
-          fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-        >
-          {hint.pts > 0 ? `${hint.pts} pts to ${hint.nextBand}` : `At ${hint.nextBand} threshold`}
-        </text>
-      )}
-    </svg>
+        {/* Band zone segments (0.45 so the five zones read against the dark panel) */}
+        {BANDS.map((b) => {
+          const x = (b.min / 100) * W;
+          const w = ((b.max - b.min) / 100) * W;
+          const isFirst = b.key === "Critical";
+          const isLast = b.key === "Exemplary";
+          return (
+            <rect
+              key={b.key}
+              x={x}
+              y={0}
+              width={w}
+              height={TRACK_H}
+              fill={b.color}
+              opacity="0.45"
+              rx={isFirst || isLast ? 4 : 0}
+              ry={isFirst || isLast ? 4 : 0}
+            />
+          );
+        })}
+
+        {/* Boundary tick marks at the band edges */}
+        {BANDS.slice(1).map((b) => {
+          const x = (b.min / 100) * W;
+          return (
+            <line
+              key={b.key}
+              x1={x}
+              y1={0}
+              x2={x}
+              y2={TRACK_H}
+              stroke="rgba(255,255,255,0.6)"
+              strokeWidth="1"
+            />
+          );
+        })}
+
+        {/* Median marker — faint dashed tick (rendered before entity marker so entity is on top) */}
+        {hasMedian && (
+          <>
+            <line
+              x1={medianX}
+              y1={0}
+              x2={medianX}
+              y2={TRACK_H}
+              stroke="rgba(184,198,222,0.8)"
+              strokeWidth="1.5"
+              strokeDasharray="2 2"
+            />
+            <circle
+              cx={medianX}
+              cy={markerY}
+              r={g.medianR}
+              fill="rgba(184,198,222,0.6)"
+              stroke="#0b1220"
+              strokeWidth="1"
+            />
+          </>
+        )}
+
+        {/* Entity marker */}
+        <circle
+          cx={markerX}
+          cy={markerY}
+          r={g.markerR}
+          fill={band.color}
+          stroke="#0b1220"
+          strokeWidth="1.5"
+        />
+      </svg>
+
+      {/* Text lives in HTML so it stays at or above the 12px floor */}
+      <p
+        className={`mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-0.5 tabular-nums text-muted ${
+          compact ? "text-[0.75rem]" : "text-[0.8125rem]"
+        }`}
+        aria-hidden="true"
+      >
+        <span className="font-bold" style={{ color: band.color }}>{score.toFixed(1)}</span>
+        {hasMedian && <span>median {medianScore!.toFixed(1)}</span>}
+        {hint && (
+          <span>
+            {hint.pts > 0 ? `${hint.pts} pts to ${hint.nextBand}` : `At ${hint.nextBand} threshold`}
+          </span>
+        )}
+      </p>
+    </div>
   );
 }

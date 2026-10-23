@@ -130,7 +130,7 @@ export default function LeaderboardsPage() {
           <h2 id="conditions-heading" className="text-[clamp(1.35rem,2.6vw,1.85rem)] tracking-tight mb-2">
             What would have to be true first
           </h2>
-          <p className="text-muted max-w-[900px] mb-2">
+          <p className="text-muted max-w-[68ch] mb-2">
             All of these must hold, and the founder must decide. {CONDITIONS_MET} of {CONDITIONS_TOTAL} conditions met. Even
             then, the first form would be groupings with ranges, not an ordered list.
           </p>
@@ -165,7 +165,7 @@ export default function LeaderboardsPage() {
           <h2 id="not-yet-heading" className="text-[clamp(1.35rem,2.6vw,1.85rem)] tracking-tight mb-3">
             Why some models show Not yet
           </h2>
-          <p className="text-muted max-w-[900px] leading-relaxed">
+          <p className="text-muted max-w-[68ch] leading-relaxed">
             The Tested by us column on the{" "}
             <Link href="/ai-models/tracker" className="underline underline-offset-2">model tracker</Link> is derived by rule from
             published records. {pilotRenders ? "A build that was run only as an agent, or in a wave that is not published, " : "A build with no published test "}

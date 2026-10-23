@@ -120,7 +120,7 @@ export default function ScoreMovementDashboard({ updates }: Props) {
         {/* Tier 1 — Changes */}
         {changedRows.length > 0 && (
           <div className="mb-5">
-            <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-text mb-2 flex items-center gap-2">
+            <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-text mb-2 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#fb923c] shrink-0" aria-hidden="true" />
               {anyApplied ? "Changes" : "Measured differences"}
               <span className="text-muted font-normal normal-case tracking-normal">
@@ -151,7 +151,7 @@ export default function ScoreMovementDashboard({ updates }: Props) {
         {confirmedRows.length > 0 && (
           <div>
             {hasChanges && (
-              <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted mb-2 flex items-center gap-2">
+              <div className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-muted mb-2 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[rgba(148,163,184,0.4)] shrink-0" aria-hidden="true" />
                 Confirmed
                 <span className="font-normal normal-case tracking-normal">
@@ -159,7 +159,7 @@ export default function ScoreMovementDashboard({ updates }: Props) {
                 </span>
               </div>
             )}
-            <div className="space-y-2 opacity-70">
+            <div className="space-y-2">
               {confirmedRows.map((assessment: any, i: number) => (
                 <ScoreMovementCard
                   key={`confirmed-${assessment.slug ?? i}-${i}`}

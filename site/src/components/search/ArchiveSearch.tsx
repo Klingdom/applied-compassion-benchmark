@@ -604,7 +604,7 @@ export default function ArchiveSearch({ entries }: ArchiveSearchProps) {
                     role="presentation"
                     className="px-4 pt-3 pb-1.5"
                   >
-                    <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">
+                    <span className="text-[0.75rem] font-bold uppercase tracking-[0.14em] text-muted">
                       Briefings
                     </span>
                   </li>
@@ -654,7 +654,7 @@ export default function ArchiveSearch({ entries }: ArchiveSearchProps) {
                     role="presentation"
                     className="px-4 pt-3 pb-1.5"
                   >
-                    <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">
+                    <span className="text-[0.75rem] font-bold uppercase tracking-[0.14em] text-muted">
                       Entities
                     </span>
                   </li>
@@ -709,7 +709,7 @@ export default function ArchiveSearch({ entries }: ArchiveSearchProps) {
                     role="presentation"
                     className="px-4 pt-3 pb-1.5"
                   >
-                    <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted">
+                    <span className="text-[0.75rem] font-bold uppercase tracking-[0.14em] text-muted">
                       Methodology Rulings
                     </span>
                   </li>

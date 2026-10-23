@@ -38,7 +38,7 @@ const ACCESS_LABEL: Record<string, string> = {
 const TESTED_LABEL: Record<string, string> = { pilot: "Pilot", queued: "Queued", "not-yet": "Not yet" };
 
 const selectCls =
-  "bg-[rgba(255,255,255,0.05)] border border-line rounded-[10px] px-3 py-2 text-[0.92rem] text-text focus:outline-none focus:border-[rgba(125,211,252,0.4)] min-w-[150px]";
+  "bg-[rgba(255,255,255,0.05)] border border-line-strong rounded-[10px] px-3 h-[42px] w-full text-[0.92rem] text-text focus:outline-none focus:border-[rgba(125,211,252,0.4)]";
 
 function parseQuery(search: string): Record<Key, string> {
   const q = new URLSearchParams(search);
@@ -137,7 +137,7 @@ export default function TrackerFilters({ providers, access, licences, statuses, 
       role="search"
       aria-label="Filter models"
       onSubmit={(e) => e.preventDefault()}
-      className="flex flex-wrap items-end gap-3"
+      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 items-end gap-3"
     >
       {field("provider", "Provider", providers.map((p) => ({ value: p, label: p })), idSuffix)}
       {field("access", "Access", access.map((a) => ({ value: a, label: ACCESS_LABEL[a] ?? a })), idSuffix)}
@@ -155,7 +155,7 @@ export default function TrackerFilters({ providers, access, licences, statuses, 
             changed.current = true;
             setOverride({ ...EMPTY });
           }}
-          className="border border-line rounded-[10px] px-4 py-2 text-[0.92rem] font-semibold text-text bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.07)]"
+          className="border border-line-strong rounded-[10px] px-4 h-[42px] text-[0.92rem] font-semibold text-text bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.07)]"
         >
           Reset filters
         </button>
@@ -169,7 +169,7 @@ export default function TrackerFilters({ providers, access, licences, statuses, 
       {/* Below 720px the bar collapses into a details element, open by default only when a filter is active.
           Only one rendering is visible at a time (CSS), so assistive tech meets one set of controls. */}
       <div className="min-[720px]:hidden">
-        <details open={anyActive || undefined} className="border border-line rounded-[14px] px-4 py-3">
+        <details open={anyActive || undefined} className="border border-line-strong rounded-[14px] px-4 py-3">
           <summary className="cursor-pointer text-text font-medium">Filters ({activeCount} active)</summary>
           <div className="mt-3">{bar("narrow")}</div>
         </details>

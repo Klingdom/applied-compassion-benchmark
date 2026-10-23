@@ -374,7 +374,7 @@ export default function MethodologyPage() {
                   Formula substitution: 10 × 1.0 × 0.0 = <strong className="text-text">0.0</strong>.
                 </p>
                 <p className="text-[0.82rem] text-muted border-t border-line pt-2 mt-2">
-                  <strong className="text-text">Teaching note:</strong> Abridge earns no integration premium because the premium rewards entities whose dimension scores clear the 4.0-of-5 bar — a threshold that signals balanced, cross-dimensional strength. All of Abridge&apos;s dimensions sit at 3.0–3.5, so the balance factor collapses to zero and the premium is 0.0. The premium is deliberately hard to earn; see the three-profile diagram above for examples of profiles that do earn a positive premium.
+                  <strong className="text-text">Teaching note:</strong>{" "}Abridge earns no integration premium because the premium rewards entities whose dimension scores clear the 4.0-of-5 bar — a threshold that signals balanced, cross-dimensional strength. All of Abridge&apos;s dimensions sit at 3.0–3.5, so the balance factor collapses to zero and the premium is 0.0. The premium is deliberately hard to earn; see the three-profile diagram above for examples of profiles that do earn a positive premium.
                 </p>
               </div>
 
@@ -430,7 +430,7 @@ export default function MethodologyPage() {
             {/* Band/anchor name-collision disambiguator */}
             <div className="mb-6 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] px-5 py-4 text-muted text-[0.92rem]">
               <p>
-                <strong className="text-text">These labels describe two different things.</strong> Anchor levels score a single subdimension (0–5); bands describe the whole-entity composite (0–100). They share some names by design but are not the same measurement — an entity can have several &lsquo;Established&rsquo; subdimensions and still land in a lower band.
+                <strong className="text-text">These labels describe two different things.</strong>{" "}Anchor levels score a single subdimension (0–5); bands describe the whole-entity composite (0–100). They share some names by design but are not the same measurement — an entity can have several &lsquo;Established&rsquo; subdimensions and still land in a lower band.
               </p>
             </div>
 
@@ -626,7 +626,7 @@ export default function MethodologyPage() {
                   <li><strong className="text-text">Apply the rule symmetrically.</strong> The reverse also holds: if an entity inflicts the same category of harm on its own people by its own choice (rather than having it imposed from outside), that conduct is scored against the entity.</li>
                 </ol>
                 <p className="text-muted text-[0.88rem] mt-3 border-l-2 border-[rgba(125,211,252,0.3)] pl-3">
-                  In the 2026-06-20 cycle this rule was applied at index scale: the entire June 2026 federal campaign against US universities (DOJ funding suits, grant freezes, admissions compliance reviews) was treated as external action inflicted <em>on</em> the universities and attributed to the federal government — so none of it lowered a university&apos;s score. The same convention attributes strikes on Ukraine to Russia, leaving Ukraine&apos;s own conduct profile unchanged.
+                  In the 2026-06-20 cycle this rule was applied at index scale: the entire June 2026 federal campaign against US universities (DOJ funding suits, grant freezes, admissions compliance reviews) was treated as external action inflicted <em>on</em>{" "}the universities and attributed to the federal government — so none of it lowered a university&apos;s score. The same convention attributes strikes on Ukraine to Russia, leaving Ukraine&apos;s own conduct profile unchanged.
                 </p>
               </Panel>
 
@@ -734,6 +734,7 @@ export default function MethodologyPage() {
               description="The Human Assessment Battery uses a structured sequence intended to compare leadership narrative, frontline reality, community experience, and documentary evidence before final score synthesis."
             />
             <Panel>
+              <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <caption className="sr-only">7-session human assessment protocol: session number, participants, primary focus, and typical duration</caption>
                 <thead>
@@ -763,6 +764,7 @@ export default function MethodologyPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </Panel>
           </Container>
         </section>
@@ -857,7 +859,7 @@ export default function MethodologyPage() {
                 <strong className="text-text">Exact definition:</strong> an entity counts as never individually assessed when <span className="font-mono text-[0.92rem]">last_assessed</span> is <span className="font-mono text-[0.92rem]">null</span> in the benchmark&apos;s internal research rotation state — the record the assessment pipeline uses to track, per entity, when it was last scanned for new evidence and when it last went through the 7-session human assessment protocol described above.
               </p>
               <p className="text-muted mb-4 max-w-[920px]">
-                <strong className="text-text">What a never-assessed score is.</strong> Every entity is published with a composite score the day it enters an index. For an entity that has not yet been individually assessed, that score is an <strong className="text-text">inherited starting value</strong> carried over from the index&apos;s initial construction — not the output of the 7-session protocol, not backed by an entity-specific assessment file, and not a claim that the score is wrong. It is a placeholder awaiting individual review, and it is treated with the same evidentiary caution a reader should apply to it.
+                <strong className="text-text">What a never-assessed score is.</strong> Every entity is published with a composite score the day it enters an index. For an entity that has not yet been individually assessed, that score is an <strong className="text-text">inherited starting value</strong>{" "}carried over from the index&apos;s initial construction — not the output of the 7-session protocol, not backed by an entity-specific assessment file, and not a claim that the score is wrong. It is a placeholder awaiting individual review, and it is treated with the same evidentiary caution a reader should apply to it.
               </p>
               <p className="text-muted max-w-[920px]">
                 The benchmark is working through this backlog via the nightly research pipeline and founder-approved score changes described above. This page states what the data shows as of the date above; it does not claim a completion date or a rate of progress, because the pipeline&apos;s cadence has not been consistent enough to support one (see the <a href="#nightly-pipeline" className="text-[#7dd3fc] hover:underline">continuous research pipeline</a> section).
@@ -1434,7 +1436,7 @@ export default function MethodologyPage() {
               {" · "}
               <a href="/contact-sales" className="text-muted hover:text-text underline decoration-muted">Contact Sales</a>
               {" — "}
-              <span className="text-[rgba(148,163,184,0.5)]">commercial relationships do not influence scoring.</span>
+              <span className="text-muted-subtle">commercial relationships do not influence scoring.</span>
             </p>
           </Container>
         </section>

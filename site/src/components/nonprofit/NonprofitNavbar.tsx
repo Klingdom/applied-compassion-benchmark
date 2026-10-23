@@ -46,7 +46,7 @@ export default function NonprofitNavbar() {
             <span className="text-[--color-text]">Compassion </span>
             <span className="text-[#3b82f6] font-[600] tracking-[0.02em]">Benchmark</span>
           </span>
-          <span className="hidden sm:inline-flex items-center text-muted-subtle text-[0.68rem] font-bold uppercase tracking-wider border border-line rounded-full px-2 py-0.5 ml-1">
+          <span className="hidden sm:inline-flex items-center text-muted-subtle text-[0.75rem] font-bold uppercase tracking-wider border border-line rounded-full px-2 py-0.5 ml-1">
             Nonprofit
           </span>
         </Link>

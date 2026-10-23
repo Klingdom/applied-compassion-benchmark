@@ -174,10 +174,10 @@ export default function NewsletterSignup({
             aria-label="Email address for newsletter"
             aria-describedby={status === "error" ? `newsletter-error-${source}` : undefined}
             className={[
-              "w-[160px] sm:w-[190px] bg-[rgba(255,255,255,0.05)] border rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none transition-colors",
+              "w-[160px] sm:w-[190px] bg-[rgba(255,255,255,0.05)] border rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[#8fa3be] focus:outline-none transition-colors",
               status === "error"
                 ? "border-[rgba(248,113,113,0.5)] focus:border-[rgba(248,113,113,0.7)]"
-                : "border-line focus:border-[rgba(125,211,252,0.4)]",
+                : "border-line-strong focus:border-[rgba(125,211,252,0.4)]",
             ].join(" ")}
           />
           <button
@@ -218,7 +218,7 @@ export default function NewsletterSignup({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email for weekly highlights"
           required
-          className="flex-1 min-w-0 bg-[rgba(255,255,255,0.05)] border border-line rounded-lg px-3 py-1.5 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
+          className="flex-1 min-w-0 bg-[rgba(255,255,255,0.05)] border border-line-strong rounded-lg px-3 py-1.5 text-[0.88rem] text-text placeholder:text-[#8fa3be] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
         />
         <button
           type="submit"
@@ -253,7 +253,7 @@ export default function NewsletterSignup({
             placeholder="Enter your email"
             required
             aria-label="Email address for newsletter"
-            className="flex-1 min-w-0 bg-[rgba(255,255,255,0.05)] border border-line rounded-[12px] px-4 py-3 text-[0.95rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)] transition-colors"
+            className="flex-1 min-w-0 bg-[rgba(255,255,255,0.05)] border border-line-strong rounded-[12px] px-4 py-3 text-[0.95rem] text-text placeholder:text-[#8fa3be] focus:outline-none focus:border-[rgba(125,211,252,0.4)] transition-colors"
           />
           <button
             type="submit"
@@ -271,7 +271,7 @@ export default function NewsletterSignup({
             </a>
           </p>
         )}
-        <p className="text-[rgba(148,163,184,0.5)] text-[0.78rem] mt-3">
+        <p className="text-muted-subtle text-[0.78rem] mt-3">
           {finePrint ?? "No spam. Unsubscribe anytime. Your email is never shared."}
         </p>
       </div>
@@ -298,7 +298,7 @@ export default function NewsletterSignup({
             placeholder="Email"
             required
             aria-label="Email address for newsletter"
-            className="w-[180px] sm:w-[200px] bg-[rgba(255,255,255,0.05)] border border-line rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
+            className="w-[180px] sm:w-[200px] bg-[rgba(255,255,255,0.05)] border border-line-strong rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[#8fa3be] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
           />
           <button
             type="submit"

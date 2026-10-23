@@ -124,7 +124,22 @@ export function IntervalFigure({ wave, number }: { wave: PilotWave; number: numb
   const X1 = W - 24;
   const xs = (v: number) => X0 + (v / 100) * (X1 - X0);
   const els: ReactNode[] = [];
-  let y = 8;
+  // Tall figures repeat the 0-100 tick labels at the top so the scale is in view next to the first whisker.
+  // Labels only: same ticks as the bottom axis, no order, point or colour change.
+  const modelCount = panels.reduce((n, p) => n + p.blocks.reduce((m, b) => m + b.ids.length, 0), 0);
+  const topTicks = modelCount > 4;
+  const topAxisH = topTicks ? LH + 2 : 0;
+  const plotTop = 8 + topAxisH;
+  let y = plotTop;
+  if (topTicks) {
+    [0, 25, 50, 75, 100].forEach((t) =>
+      els.push(
+        <SvgText key={`tt${t}`} x={xs(t)} y={8 + LH - 2} anchor="middle" sub>
+          {String(t)}
+        </SvgText>,
+      ),
+    );
+  }
   const panelHead = (p: Panel) => `${armPanelName(wave, p.arm ?? "")}: ${trialsPhrase(wave, p.arm ?? "")}${p.blocks.some((b) => b.rangeOnly) ? ", ranges only" : ""}`;
   panels.forEach((p, pi) => {
     if (arms && p.arm) {
@@ -197,7 +212,7 @@ export function IntervalFigure({ wave, number }: { wave: PilotWave; number: numb
 
   const svg = (
     <>
-      <HAxis x0={X0} x1={X1} y={axisY} min={0} max={100} step={25} grid={axisY - 8} label={axisLabel} />
+      <HAxis x0={X0} x1={X1} y={axisY} min={0} max={100} step={25} grid={axisY - plotTop} label={axisLabel} />
       {els}
       <SvgLines x={12} y={noteY} lines={noteLines} sub />
       <Footer wave={wave} y={footY} />

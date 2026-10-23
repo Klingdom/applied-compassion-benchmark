@@ -20,8 +20,8 @@ import DimensionLegend from "@/components/index/DimensionLegend";
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import updatesRaw from "@/data/updates/latest.json";
-import { SCORED_ENTITY_COUNT, SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
-import { INDEX_COUNT } from "@/data/indexRegistry";
+import { SCORED_ENTITY_COUNT, SCORED_ENTITY_COUNT_FORMATTED, getIndexEntityCount } from "@/data/entityCount";
+import { INDEX_COUNT, INDEX_REGISTRY } from "@/data/indexRegistry";
 import countriesData from "@/data/indexes/countries.json";
 import universitiesData from "@/data/indexes/universities.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -200,7 +200,7 @@ export default function Home() {
                   href="/indexes"
                   className="text-muted text-[0.9rem] hover:text-text underline underline-offset-2 decoration-dotted"
                 >
-                  Browse the {INDEX_COUNT} indexes &rarr;
+                  {`Browse the ${INDEX_COUNT} indexes →`}
                 </Link>
               </p>
 
@@ -230,15 +230,11 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody className="text-muted">
-                  {[
-                    { label: "World Countries",       coverage: `${countriesData.rankings.length} countries and territories`,        href: "/countries" },
-                    { label: "U.S. States",           coverage: "50 states and the District of Columbia", href: "/us-states" },
-                    { label: "Fortune 500",           coverage: "447 published company rankings",        href: "/fortune-500" },
-                    { label: "AI Labs",               coverage: "50 leading AI labs",                    href: "/ai-labs" },
-                    { label: "Humanoid Robotics Labs",coverage: "Top 50 global labs",                    href: "/robotics-labs" },
-                    { label: "U.S. Cities",           coverage: "Top 150 American cities",               href: "/us-cities" },
-                    { label: "Global Cities",         coverage: "Top 250 cities worldwide",              href: "/global-cities" },
-                  ].map(({ label, coverage, href }) => (
+                  {INDEX_REGISTRY.map((entry) => ({
+                    label: entry.navLabel.replace(/ Index$/, ""),
+                    coverage: `${getIndexEntityCount(entry.indexSlug).toLocaleString("en-US")} ${entry.labelPlural}`,
+                    href: entry.indexRoute,
+                  })).map(({ label, coverage, href }) => (
                     <tr
                       key={label}
                       className="hover:bg-[rgba(255,255,255,0.03)] transition-colors"
@@ -284,7 +280,7 @@ export default function Home() {
                 </p>
               )}
             </div>
-            <div className="flex items-center gap-3 flex-wrap shrink-0">
+            <div className="flex items-center gap-3 flex-wrap max-w-full min-w-0">
               {/* #20 — Pipeline vocabulary defined inline so "0 changes" reads as rigor */}
               <span className="text-muted text-[0.88rem]" title="scanned = nightly pipeline coverage · assessed = entities reviewed in this cycle · changes = score proposals passing the evidence threshold">
                 {isQuietDay ? (
@@ -388,7 +384,7 @@ export default function Home() {
                         <div className="flex items-start justify-between gap-3 mb-2">
                           <div className="min-w-0">
                             <span
-                              className="inline-block text-[0.72rem] font-bold uppercase tracking-widest mb-1"
+                              className="inline-block text-[0.75rem] font-bold uppercase tracking-widest mb-1"
                               style={{ color: "#7dd3fc" }}
                             >
                               {typeof signal.actionType === "string"
@@ -400,7 +396,7 @@ export default function Home() {
                             </h3>
                           </div>
                           {typeof signal.severity === "string" && (
-                            <span className="text-[0.72rem] font-bold uppercase tracking-widest text-muted shrink-0">
+                            <span className="text-[0.75rem] font-bold uppercase tracking-widest text-muted shrink-0">
                               {signal.severity}
                             </span>
                           )}
@@ -548,7 +544,7 @@ export default function Home() {
 
           {/* Flagship callout — merged with master bar context */}
           <div className="rounded-[16px] border border-[rgba(125,211,252,0.15)] bg-[rgba(125,211,252,0.03)] p-5 mb-6">
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent mb-1.5">
+            <p className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-accent mb-1.5">
               Flagship Annual Report &mdash; 2026
             </p>
             <h2 className="text-[clamp(1.05rem,2vw,1.35rem)] font-bold tracking-[-0.02em] leading-tight mb-1.5">
@@ -658,7 +654,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p className="text-[0.72rem] text-muted mt-3">
+              <p className="text-[0.75rem] text-muted mt-3">
                 <Link
                   href="/methodology"
                   className="text-accent hover:underline"

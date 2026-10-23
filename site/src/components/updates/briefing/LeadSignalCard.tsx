@@ -178,7 +178,7 @@ export default function LeadSignalCard({ updates }: Props) {
       <Container>
         <div className="mb-4 flex items-center gap-2">
           <span
-            className="text-[0.7rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border"
+            className="text-[0.75rem] font-bold uppercase tracking-[0.18em] px-2 py-0.5 rounded border"
             style={{
               color,
               borderColor: `${color}55`,
@@ -189,7 +189,7 @@ export default function LeadSignalCard({ updates }: Props) {
           </span>
           {severity && (
             <span
-              className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border"
+              className="text-[0.75rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border"
               style={{
                 color,
                 borderColor: `${color}44`,
@@ -200,12 +200,12 @@ export default function LeadSignalCard({ updates }: Props) {
             </span>
           )}
           {lead.actionType === "methodology-evolution" && (
-            <span className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] text-[#a78bfa]">
+            <span className="text-[0.75rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] text-[#a78bfa]">
               Methodology evolution
             </span>
           )}
           {lead.actionType === "band-crossing-finding" && (
-            <span className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(251,146,60,0.4)] bg-[rgba(251,146,60,0.1)] text-[#fb923c]">
+            <span className="text-[0.75rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(251,146,60,0.4)] bg-[rgba(251,146,60,0.1)] text-[#fb923c]">
               Band crossing
             </span>
           )}
@@ -238,7 +238,7 @@ export default function LeadSignalCard({ updates }: Props) {
           {/* ITEM 3: BandPositionStrip — only when a numeric score is resolved */}
           {bandStripScore !== null && (
             <div className="mb-5 rounded-[12px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] px-4 py-3 inline-block">
-              <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+              <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                 Where this sits
               </div>
               <BandPositionStrip
@@ -266,7 +266,7 @@ export default function LeadSignalCard({ updates }: Props) {
             const absStr = absDelta % 1 === 0 ? absDelta : absDelta.toFixed(2);
             return (
               <div className="mb-5 rounded-[12px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] px-4 py-3">
-                <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                   Why it moved — dominant dimension
                 </div>
                 <div className="flex items-center gap-3">
@@ -299,7 +299,7 @@ export default function LeadSignalCard({ updates }: Props) {
               {/* What the evidence shows — verbatim pull-quote zone (#9) */}
               {showPullQuote && topEvidence && (
                 <div>
-                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                  <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                     What the evidence shows
                   </div>
                   <EvidenceQuote item={topEvidence} briefingDate={briefingDate} />
@@ -312,7 +312,7 @@ export default function LeadSignalCard({ updates }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {whatHappened && (
                   <div>
-                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                       What we found
                     </div>
                     <p className="text-[0.95rem] text-text leading-relaxed">
@@ -322,7 +322,7 @@ export default function LeadSignalCard({ updates }: Props) {
                 )}
                 {whyMatters && (
                   <div>
-                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                       Why it matters
                     </div>
                     <p className="text-[0.95rem] text-muted leading-relaxed">
@@ -337,7 +337,7 @@ export default function LeadSignalCard({ updates }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {whatHappened && (
                 <div>
-                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                  <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                     What happened
                   </div>
                   <p className="text-[0.95rem] text-text leading-relaxed">
@@ -347,7 +347,7 @@ export default function LeadSignalCard({ updates }: Props) {
               )}
               {whyMatters && (
                 <div>
-                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                  <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
                     Why it matters
                   </div>
                   <p className="text-[0.95rem] text-muted leading-relaxed">

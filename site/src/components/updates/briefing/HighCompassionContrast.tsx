@@ -90,13 +90,13 @@ export default function HighCompassionContrast({ updates }: Props) {
     >
       <Container>
         <div className="rounded-[18px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] p-5 sm:p-6">
-          <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-muted mb-4">
+          <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-4">
             Compassion contrast &mdash; {entityName}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {responsibleAction && (
               <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#7dd3fc] mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#7dd3fc] mb-2">
                   Responsible action
                 </div>
                 <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -106,7 +106,7 @@ export default function HighCompassionContrast({ updates }: Props) {
             )}
             {wouldImprove && (
               <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#86efac] mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#86efac] mb-2">
                   Would improve score
                 </div>
                 <p className="text-[0.88rem] text-muted leading-relaxed">
@@ -116,7 +116,7 @@ export default function HighCompassionContrast({ updates }: Props) {
             )}
             {wouldWorsen && (
               <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-wider text-[#f87171] mb-2">
+                <div className="text-[0.75rem] font-bold uppercase tracking-wider text-[#f87171] mb-2">
                   Would worsen score
                 </div>
                 <p className="text-[0.88rem] text-muted leading-relaxed">

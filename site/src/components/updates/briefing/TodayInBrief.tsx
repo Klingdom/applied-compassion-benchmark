@@ -23,7 +23,7 @@ export default function TodayInBrief({ items }: Props) {
   return (
     <div>
       {/* Section label */}
-      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+      <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
         Today in Brief
       </div>
 
@@ -39,7 +39,7 @@ export default function TodayInBrief({ items }: Props) {
               {/* Numbered dot */}
               <span
                 aria-hidden="true"
-                className="shrink-0 mt-[3px] w-5 h-5 rounded-full border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-[#7dd3fc] text-[0.7rem] font-bold flex items-center justify-center leading-none tabular-nums"
+                className="shrink-0 mt-[3px] w-5 h-5 rounded-full border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-[#7dd3fc] text-[0.8125rem] font-bold flex items-center justify-center leading-none tabular-nums"
               >
                 {i + 1}
               </span>

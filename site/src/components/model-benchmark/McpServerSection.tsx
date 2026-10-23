@@ -152,7 +152,7 @@ export default function McpServerSection() {
             <p className="text-muted max-w-[900px] mb-3">
               The server can produce two different outputs. Neither is a Compassion Benchmark result.
             </p>
-            <div className="overflow-x-auto border border-line rounded-[14px]">
+            <div className="relative overflow-x-auto border border-line rounded-[14px]">
               <table className="w-full text-[0.9rem] border-collapse min-w-[640px]">
                 <caption className="sr-only">JudgeEstimate compared with SelfRunScorecard</caption>
                 <thead>
@@ -236,7 +236,7 @@ export default function McpServerSection() {
           {/* M3 -- tool list. Source: facts tools[] (name, group, summary), in the order the server lists them. */}
           <div id="mcp-tools">
             <h3 className="text-[1.25rem] font-bold mb-2">Tools ({P.toolCount})</h3>
-            <div className="overflow-x-auto border border-line rounded-[14px]">
+            <div className="relative overflow-x-auto border border-line rounded-[14px]">
               <table className="w-full text-[0.9rem] border-collapse min-w-[640px]">
                 <caption className="sr-only">Tools the cb-probe server exposes</caption>
                 <thead>
@@ -434,7 +434,7 @@ export default function McpServerSection() {
               interval are always reported. The reason: an absent dimension is treated as 1 by the canonical formula, and
               a small change on a thin dimension moves the composite further than the documented swing.
             </p>
-            <div className="overflow-x-auto border border-line rounded-[14px]">
+            <div className="relative overflow-x-auto border border-line rounded-[14px]">
               <table className="w-full text-[0.9rem] border-collapse min-w-[520px]">
                 <caption className="sr-only">Items per dimension in a default run, against the floor</caption>
                 <thead>

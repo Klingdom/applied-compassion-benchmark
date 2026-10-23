@@ -16,7 +16,7 @@ export default function SubscribeCTA() {
         <div className="rounded-[22px] border border-[rgba(125,211,252,0.22)] bg-gradient-to-b from-[rgba(125,211,252,0.07)] to-[rgba(125,211,252,0.02)] p-7 sm:p-10 shadow-[0_24px_60px_rgba(0,0,0,0.32)]">
           {/* Header */}
           <div className="max-w-xl mb-7">
-            <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-3">
+            <div className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-3">
               Weekly score highlights
             </div>
             <h2 className="text-[1.6rem] sm:text-[2rem] font-bold leading-tight mb-3">

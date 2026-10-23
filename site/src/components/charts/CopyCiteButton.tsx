@@ -65,7 +65,7 @@ export default function CopyCiteButton({
       aria-label="Copy citation to clipboard"
       className={[
         "mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px]",
-        "text-[0.72rem] font-medium transition-colors",
+        "text-[0.75rem] font-medium transition-colors",
         copied
           ? "bg-[rgba(134,239,172,0.15)] text-[rgba(134,239,172,0.9)] border border-[rgba(134,239,172,0.25)]"
           : "bg-[rgba(255,255,255,0.05)] text-[rgba(148,163,184,0.7)] border border-[rgba(255,255,255,0.08)]",
