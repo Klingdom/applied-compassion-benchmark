@@ -19,7 +19,7 @@ export const dashboardCopy = {
   /** Meta description: no model name, no figure. */
   metaDescription:
     "An unofficial pilot dashboard of AI model compassion tests: ranges, the models the test could not tell apart, what has not been measured yet, and how every figure was produced. Not a score, not a ranking.",
-  social: "Ranges, not scores. What an unofficial pilot of AI model compassion can and cannot tell apart.",
+  social: "Ranges, not official scores. What an unofficial pilot of AI model compassion can and cannot tell apart.",
 
   banner: {
     main: "Unofficial pilot. Not a Compassion Benchmark score. Not a ranking. No cross-model comparison.",
@@ -30,7 +30,7 @@ export const dashboardCopy = {
     lede: (builds: string, items: string) => `Unofficial pilot tests of ${builds} open-weight AI model builds against ${items} published task items.`,
     isHead: "What this is",
     is: [
-      "Ranges, not scores. Each bar shows what the data are consistent with.",
+      "Ranges, not official scores. Each bar shows what the data are consistent with.",
       "A plan written before the data were collected. Its hash is shown under Provenance.",
       "Every figure traces to one public data file for one wave.",
     ],
