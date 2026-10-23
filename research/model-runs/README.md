@@ -206,6 +206,11 @@ replies. A wave whose mean absolute anchor drift is above the protocol threshold
 
 ## Runbook
 
+> **Pilot-1 procedure (2026-10-01). Do not follow this block for a weekly wave or for any run with arms.** It is kept as the record of how `pilot-2026-10-01` was run.
+> - Batch size: step 3 passes `--batch-size 40`. Weekly waves use 16 (`max_batch_entries`, `research/model-runs/weekly/PROTOCOL.json:18`; `.claude/commands/weekly-model-wave.md` step 3.1).
+> - Assembly: steps 5 and 7 use `assemble-run.mjs`. It refuses a run that uses arms (`research/model-runs/lib/assemble.mjs:243`). Finish an arms run with `bin/run-mcp-probe.mjs --phase finish`.
+> - Current procedure: `docs/model-eval/RUNBOOK_V2.md` (v2, not yet in force) and `.claude/commands/weekly-model-wave.md` (v1, in force today).
+
 All paths below are relative to the repo root. `RUN=pilot-2026-10-01`. Add `--seed <n>` to any builder for a
 reproducible build; otherwise a random seed is recorded in the key.
 
@@ -251,7 +256,7 @@ node $BIN/assemble-run.mjs --run-id $RUN --artifact-root $ART --probe-answers $R
 ```
 
 Tests: `node --test "research/model-runs/tests/*.test.mjs"`. Quote the glob; `node --test <dir>` does not
-work on Node 24. This is **not** wired into `site/package.json`'s `test` chain (see below).
+work on Node 24. It is wired into `site/package.json`'s `test` chain: `npm run test:model-runs` (`site/package.json:39`) runs `site/scripts/test-model-runs.mjs`, which runs every `*.test.mjs` in this folder with `node --test` and fails if fewer than 10 are found. The `test` script includes it (`site/package.json:31`).
 
 Exit codes: 0 ok, 1 refused, 2 usage, 3 `assemble-run` awaiting probe answers.
 

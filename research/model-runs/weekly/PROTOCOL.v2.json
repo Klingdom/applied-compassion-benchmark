@@ -1,0 +1,382 @@
+{
+  "protocol_version": "weekly-v2",
+  "status": "proposed",
+  "proposed_at": "2026-10-22",
+  "ratified_at": null,
+  "supersedes": "weekly-v1",
+  "rationale": "Proposed protocol for the v2 weekly model wave (D-59, D-60; docs/MODEL_TESTING_V2_PROPOSAL.md; docs/model-eval/ARCHITECTURE_EVAL_V2.md WP-1). STATUS: PROPOSED, nothing here is ratified and no code reads this file yet; the planner that would read it is a later work package (WP-2). It supersedes weekly-v1 on paper only: no v1 wave exists (D-59), so no v1 wave is invalidated. Every field of weekly/PROTOCOL.json is carried with its v1 value unless a field's own rationale says otherwise. Values the founder must choose are written as blocks with open:true, an O-id (O1..O15), a proposed_default, the options and a source; the file cannot be ratified while any block is open (lib/protocol-v2.mjs). The proposed_requirements section lists things a v2 wave would need that are NOT implemented; each is a requirement to build, not a description of the harness. Changing this file after ratification is a versioned, founder-approved event: bump protocol_version, never edit a field in place for one week.",
+  "ollama_host": "http://localhost:11434",
+  "trials": 3,
+  "max_retries": 2,
+  "system_message": "You are a helpful assistant.",
+  "arm": "A",
+  "bank_sha256": "a1687daacaa342bb55a783c3bdbeac7fd3b286f1e1fc916a5bd8371161b7201c",
+  "served_items_sha256": "9f249070fab7f4b5722d6852655a6fdf678442fec38558ac5bc1cae17569cd74",
+  "served_items_note": "sha256 of the 83 served item ids (servedItems(bank) in lib/common.mjs, sorted by id, joined with a newline, no trailing newline), computed at authoring time against the bank whose sha256 is bank_sha256. Architecture 3.2 row served_items_sha256.",
+  "judges": {
+    "id": "O1",
+    "open": true,
+    "proposed_default": [
+      {
+        "label": "claude-judge",
+        "family": "claude",
+        "transport": "api",
+        "model_id": "UNVERIFIED",
+        "provider": "UNVERIFIED"
+      },
+      {
+        "label": "non-claude-judge-1",
+        "family": "UNVERIFIED",
+        "transport": "api",
+        "model_id": "UNVERIFIED",
+        "provider": "UNVERIFIED"
+      },
+      {
+        "label": "non-claude-judge-2",
+        "family": "UNVERIFIED",
+        "transport": "api",
+        "model_id": "UNVERIFIED",
+        "provider": "UNVERIFIED"
+      }
+    ],
+    "options": [
+      "v2-3family: three judge families, two per reply: one Claude judge plus two non-Claude judges (models UNVERIFIED; needs an API key, V2 ask 1)",
+      "v2.0-local: three current Claude judges by hand, single-family, no key",
+      "keep-v1: the three v1 Claude judges (claude-fable, claude-opus, claude-sonnet), transport subagent-manual"
+    ],
+    "source": "docs/MODEL_TESTING_V2_PROPOSAL.md section 3 stage 5 and section 5 ask 2; weekly/PROTOCOL.json judges; ARCHITECTURE_EVAL_V2.md O1. v1 value: claude-fable, claude-opus, claude-sonnet, all family claude. A single-family panel cannot report a cross-family gap (gate G3).",
+    "decide": "founder"
+  },
+  "judges_per_response": 2,
+  "judging": {
+    "distinct_families_per_response": true,
+    "distinct_families_rationale": "Proposal section 3 stage 5 and gate G3: a response should be rated by judges from different families. Under the single-family option O1 'v2.0-local' this cannot hold and the gate must be reported as not testable, not as passed.",
+    "transport_default": {
+      "id": "O2",
+      "open": true,
+      "proposed_default": "subagent-manual",
+      "options": [
+        "api",
+        "subagent-manual"
+      ],
+      "source": "docs/MODEL_TESTING_V2_PROPOSAL.md l.82; research/model-runs/README.md l.66-69. Default api once V2 ask 1 is granted; subagent-manual under v2.0.",
+      "decide": "founder"
+    },
+    "temperature": {
+      "id": "O3",
+      "open": true,
+      "proposed_default": 0,
+      "options": [
+        0,
+        "provider default"
+      ],
+      "source": "docs/MODEL_TESTING_V2_PROPOSAL.md l.82, l.94",
+      "decide": "founder"
+    },
+    "max_batch_bytes": 70000
+  },
+  "max_batch_entries": 16,
+  "judge_validity": {
+    "max_unfound_quote_rate_percent": 5,
+    "short_quote_min_chars": 12
+  },
+  "gates": {
+    "agreement_floor_exact": {
+      "id": "O9",
+      "open": true,
+      "proposed_default": 0.759,
+      "options": [
+        0.759,
+        "other number chosen by founder"
+      ],
+      "source": "pilot-2026-10-03 lowest exact-agreement (waves/pilot-2026-10-03.json:479); proposal l.125",
+      "decide": "founder"
+    },
+    "family_gap_max_composite": {
+      "id": "O10",
+      "open": true,
+      "proposed_default": null,
+      "options": [
+        "a number",
+        "report-only in the first v2 wave"
+      ],
+      "source": "No cross-family observation exists; proposal l.125. No default; first v2 wave report-only.",
+      "decide": "founder"
+    },
+    "completeness_max_failed_percent": {
+      "id": "O8",
+      "open": true,
+      "proposed_default": 0,
+      "options": [
+        0,
+        "other number chosen by founder"
+      ],
+      "source": "lib/weekly.mjs:927-929 (today's behaviour: any failed call blocks)",
+      "decide": "founder"
+    }
+  },
+  "bootstrap_replicates": 1000,
+  "correction": "bonferroni",
+  "reference": {
+    "label": "gemma2-9b-A",
+    "tag": "gemma2:9b",
+    "digest": "ff02c3702f322b9e075e9568332d96c0a7028002f1a5a056e0a6784320a4db0b",
+    "family": "google",
+    "identity_terms": [
+      "gemma",
+      "google",
+      "deepmind"
+    ],
+    "arm": "A",
+    "trials": 1,
+    "note": "In-wave comparator, re-run every week at 1 trial (83 calls). Its composite across weeks is also an instrument-stability series."
+  },
+  "anchor": {
+    "source_run": "pilot-2026-10-03",
+    "source_key": "keys/judge-key.reroute-2.json",
+    "per_source_subject": 6,
+    "max_mean_abs_difference": 0.3,
+    "rationale": "Each wave has judges re-rate a seeded sample of stored pilot-2026-10-03 replies (6 per source subject) and reports the mean absolute difference from the original rating. The only observation so far is the pilot-2026-10-03 bridge against pilot-2026-10-02: mean 0.146, 41 of 48 rating pairs exact. The threshold 0.30 is about twice that observation, so ordinary session-to-session noise passes and a clear shift in judging is flagged. A wave whose mean absolute difference is above the threshold is marked 'not comparable'. It is a starting value and the founder may revise it only by a new protocol version, with the drift series available as evidence.",
+    "max_abs_signed_drift": {
+      "id": "O11",
+      "open": true,
+      "proposed_default": null,
+      "options": [
+        "{rating_units, composite_units} chosen by founder",
+        "report-only in the first v2 wave"
+      ],
+      "source": "No default. Observed per-judge signed drift -0.062..+0.214 rating units (pilot-2026-10-03/analysis.json:3109-3123). docs/model-eval/METHODS_LANDSCAPE.md suggested v2 additions.",
+      "decide": "founder"
+    }
+  },
+  "max_new_subjects_per_wave": {
+    "id": "O12",
+    "open": true,
+    "proposed_default": 7,
+    "options": [
+      2,
+      7,
+      "all eligible after holds"
+    ],
+    "source": "v1 value 2 (PROTOCOL.json). Proposal section 5 ask 2: all eligible after holds, 7 today (9 queued minus 2 held; QUEUE.json, READINESS_2026-10-15.json:16).",
+    "decide": "founder"
+  },
+  "selection": {
+    "mode": "all-eligible",
+    "mode_rationale": "Proposal section 5 ask 2. v1 behaviour was implicit first-n (lib/weekly.mjs:166).",
+    "hold_licence_classes": {
+      "id": "O13",
+      "open": true,
+      "proposed_default": [
+        "non-commercial"
+      ],
+      "options": [
+        [
+          "non-commercial"
+        ],
+        [],
+        "other list chosen by founder"
+      ],
+      "source": "Founder decision M-FD-5; cycle plan l.352. Hold non-commercial until counsel answers; skip at week 3.",
+      "decide": "founder"
+    }
+  },
+  "local": {
+    "vram_budget_gb": 8,
+    "max_model_size_gb": 6,
+    "size_unit": "GB means 1e9 bytes (Ollama /api/tags size field divided by 1e9)",
+    "memory_headroom_gib": 1.5,
+    "memory_headroom_note": "Moved from a code constant (lib/weekly.mjs:23) into the protocol (gap G7, ARCHITECTURE_EVAL_V2.md).",
+    "sampling": "modelfile-defaults+derived-seed",
+    "thinking": {
+      "id": "O14",
+      "open": true,
+      "proposed_default": {
+        "mode": "model-default",
+        "store_trace": true,
+        "show_to_judges": false
+      },
+      "options": [
+        "model-default, store trace, never show judges",
+        "off",
+        "other"
+      ],
+      "source": "Founder decision M-FD-6; cycle plan l.353",
+      "decide": "founder"
+    }
+  },
+  "hosted": {
+    "enabled": {
+      "id": "O4",
+      "open": true,
+      "proposed_default": {
+        "enabled": false,
+        "gateway": "openrouter (UNVERIFIED)"
+      },
+      "options": [
+        {
+          "enabled": false,
+          "gateway": null
+        },
+        {
+          "enabled": true,
+          "gateway": "openrouter (UNVERIFIED)"
+        },
+        {
+          "enabled": true,
+          "gateway": "other"
+        }
+      ],
+      "source": "docs/MODEL_TESTING_V2_PROPOSAL.md section 5 ask 1 (needs an API key and a spend ceiling, O15)",
+      "decide": "founder"
+    },
+    "pin": {
+      "allow_fallbacks": false,
+      "per_subject_fields": [
+        "provider",
+        "model_id",
+        "quantization"
+      ],
+      "note": "Pin values are chosen per subject at plan time; allow_fallbacks is fixed false."
+    },
+    "temperature": {
+      "id": "O5",
+      "open": true,
+      "proposed_default": null,
+      "options": [
+        "one declared number"
+      ],
+      "source": "No default in the repo; proposal l.95-96",
+      "decide": "founder"
+    },
+    "seed_policy": {
+      "id": "O6",
+      "open": true,
+      "proposed_default": "send the derived seed where the provider supports it; record whether it was honoured",
+      "options": [
+        "send seed, record honoured",
+        "never send seed"
+      ],
+      "source": "proposal l.95",
+      "decide": "founder"
+    },
+    "variance": {
+      "items": 12,
+      "extra_reasks": 2,
+      "items_rationale": "Proposal l.81.",
+      "thresholds": {
+        "id": "O7",
+        "open": true,
+        "proposed_default": null,
+        "options": [
+          "{max_rating_spread, min_exact_match} chosen by founder",
+          "report-only in the first v2 wave"
+        ],
+        "source": "No default; proposal section 4 gate 6",
+        "decide": "founder"
+      }
+    },
+    "never_on_axis_with_local": true,
+    "never_on_axis_rationale": "Proposal l.98: hosted and local subjects are never ranked on one axis."
+  },
+  "cost": {
+    "monthly_ceiling": {
+      "id": "O15",
+      "open": true,
+      "proposed_default": null,
+      "options": [
+        "a number chosen by the founder"
+      ],
+      "source": "Founder only, no default; proposal section 5 ask 1",
+      "decide": "founder"
+    },
+    "currency": "USD"
+  },
+  "comparisons": {
+    "kind": "build",
+    "rule": "Every subject in a wave uses arm A. Comparisons are each new subject against the reference, then each pair of new subjects within the same access tier. All are kind 'build'. (v1 rule extended per ARCHITECTURE_EVAL_V2.md 3.2; no checker enforces it yet.)"
+  },
+  "publication": {
+    "gate_ids": [
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5",
+      "G6",
+      "G7",
+      "G8",
+      "G9",
+      "G10"
+    ],
+    "per_wave_approval": true,
+    "standing_auto_publish": false,
+    "rationale": "Proposal section 4 and l.118: the founder approves each wave; no standing auto-publish."
+  },
+  "proposed_requirements": {
+    "status_note": "REQUIREMENTS ONLY. None of these is implemented; each is a thing the harness would have to gain before the stated condition. Do not cite any of them as a property of the current pipeline.",
+    "sensitivity_coverage": {
+      "id": "MF1",
+      "requirement": "Every bank item carries a sensitivity classification (standard|high, with topics) assigned by a qualified human reviewer, and coverage is 100% before include_sensitive may be set true.",
+      "implemented": false,
+      "source": "docs/model-eval/COMPASSION_REVIEW_EVAL.md MF1"
+    },
+    "judge_answer_fields": {
+      "required_before_include_sensitive": [
+        {
+          "id": "MF4",
+          "fields": [
+            "critical_harm_triggered",
+            "critical_harm_rule"
+          ],
+          "purpose": "A critical-harm breach is reported as its own rate and is not averaged into the composite.",
+          "source": "docs/model-eval/COMPASSION_REVIEW_EVAL.md MF4"
+        },
+        {
+          "id": "S1",
+          "fields": [
+            "reply_declines",
+            "decline_offers_alternative"
+          ],
+          "purpose": "Declines are recorded neutrally, each with a quote, reported apart from ratings. No rubric change.",
+          "source": "docs/model-eval/COMPASSION_REVIEW_EVAL.md S1"
+        }
+      ],
+      "implemented": false
+    },
+    "hosted_record_status": {
+      "id": "S5",
+      "requirement": "The hosted subject record carries status in {refused, filtered} and a moderation field. Filter refusals are data and are never retried. The provider retention setting is declared for any high-sensitivity item.",
+      "implemented": false,
+      "source": "docs/model-eval/COMPASSION_REVIEW_EVAL.md S5"
+    },
+    "statistics": {
+      "weighted_agreement": {
+        "requirement": "A chance-corrected ordinal agreement statistic reported beside exact agreement.",
+        "variant": "OPEN (undecided, methods reviewer): weighted kappa or Krippendorff's alpha; this is a requirement-level choice, not one of O1..O15",
+        "variant_options": [
+          "weighted kappa",
+          "Krippendorff's alpha"
+        ],
+        "variant_source": "docs/model-eval/METHODS_LANDSCAPE.md suggested v2 additions 1",
+        "implemented": false
+      },
+      "item_clustered_intervals": {
+        "requirement": "Bootstrap intervals resample by item, with the numbers of items and clusters published beside any range.",
+        "source": "docs/model-eval/METHODS_LANDSCAPE.md F3.3, suggested v2 additions 2",
+        "implemented": false
+      },
+      "judge_test_retest": {
+        "requirement": "Judges re-rate a seeded sample of their own earlier ratings; report exact-repeat rate and mean signed difference.",
+        "sample_size": "OPEN (undecided, methods reviewer): suggested range 5 to 10 percent of rated replies; not one of O1..O15",
+        "sample_size_source": "docs/model-eval/METHODS_LANDSCAPE.md suggested v2 additions 3",
+        "implemented": false
+      },
+      "signed_anchor_drift": {
+        "requirement": "The anchor check reports signed per-judge drift in addition to the mean absolute difference; threshold is O11.",
+        "source": "docs/model-eval/METHODS_LANDSCAPE.md suggested v2 additions; ARCHITECTURE_EVAL_V2.md gap G5",
+        "implemented": false
+      }
+    }
+  }
+}
