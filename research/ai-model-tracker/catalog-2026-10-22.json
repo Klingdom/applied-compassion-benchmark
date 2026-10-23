@@ -1,0 +1,2223 @@
+{
+  "asOf": "2026-10-22",
+  "method": "Searched provider newsrooms, API model pages, changelogs and Hugging Face org listings (via the HF API) for each named provider, then read model cards. 'Notable' = a provider's current flagship and current small/efficient general-purpose LLM or multimodal assistant, plus recently superseded/deprecated models referenced by the 2026-09-01..10-16 release log and the benchmark's 10 local Ollama builds. Specialised models (image, video, speech, embeddings, time-series, cyber-only) are excluded. Primary sources preferred; 'secondary' marks press/aggregator sources used only where no primary page could be fetched. Fields that could not be verified are null. contextWindowTokens: exact figure where the source gives one; where a source states 'NK' it is recorded as N*1024 (e.g. 128K = 131072, 256K = 262144), and '1M' as 1000000 unless the source gives 1,048,576. access: 'both' = open weights or a consumer app alongside an API, as verified. Not a rating or assessment.",
+  "models": [
+    {
+      "id": "openai-gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "GPT-6",
+      "releaseDate": "2026-09-03",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1050000,
+      "parameterCount": null,
+      "notes": "Flagship per API docs. Text+image in, text out. System card places it at the highest cybersecurity risk level in OpenAI's Preparedness Framework.",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+          "title": "GPT-6 Astra system card (OpenAI Deployment Safety Hub)",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://openai.com/index/gpt-6-astra/",
+          "title": "GPT-6 Astra: A new generation of intelligence (seen in search results; page returned 403 to fetch)",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "GPT-6",
+      "releaseDate": "2026-09-29",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1050000,
+      "parameterCount": null,
+      "notes": "Mid-tier model; docs describe it as near-Astra performance at lower cost. Released per changelog on 29 Sep 2026.",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "GPT-6",
+      "releaseDate": "2026-09-22",
+      "status": "superseded",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": null,
+      "notes": "Released alongside GPT-6 Luna; GPT-6.1 Sol followed one week later and is the Sol model listed on the models page.",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "GPT-6",
+      "releaseDate": "2026-09-22",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1050000,
+      "parameterCount": null,
+      "notes": "Small/efficient tier: docs call it the most efficient model for high-volume tasks. Priced $0.10/$0.50 per million tokens.",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/api/docs/models",
+          "title": "OpenAI API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "title": "OpenAI API docs: Changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "GPT-5.6",
+      "releaseDate": "2026-07-09",
+      "status": "superseded",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": null,
+      "parameterCount": null,
+      "notes": "Earlier flagship of the GPT-5.6 family (Sol, Terra, Luna). Used as the baseline in the GPT-6 Astra system card.",
+      "sources": [
+        {
+          "url": "https://docs.apiyi.com/en/live/2026-07/gpt-5-6-series-launch",
+          "title": "APIYI: GPT-5.6 series launch",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+          "title": "GPT-6 Astra system card (OpenAI Deployment Safety Hub)",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-oss-120b",
+      "name": "gpt-oss-120b",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "gpt-oss",
+      "releaseDate": "2025-08",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "116.8B total (MoE; HF safetensors count)",
+      "notes": "OpenAI's open-weight reasoning model. No successor open-weight LLM found on the OpenAI Hugging Face org as of this date.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/openai/gpt-oss-120b",
+          "title": "Hugging Face: openai/gpt-oss-120b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20250806-openai-gpt-oss",
+          "title": "GIGAZINE: OpenAI announces open-weight model gpt-oss",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "openai-gpt-oss-20b",
+      "name": "gpt-oss-20b",
+      "provider": "OpenAI",
+      "providerSlug": "openai",
+      "family": "gpt-oss",
+      "releaseDate": "2025-08",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "20.9B total (MoE; HF safetensors count)",
+      "notes": "Smaller open-weight sibling of gpt-oss-120b, intended for local hardware.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/openai/gpt-oss-20b",
+          "title": "Hugging Face: openai/gpt-oss-20b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://gigazine.net/gsc_news/en/20250806-openai-gpt-oss",
+          "title": "GIGAZINE: OpenAI announces open-weight model gpt-oss",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Fable",
+      "releaseDate": "2026-09-01",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Anthropic's model for demanding reasoning and long-horizon agentic work. Text and image in, text out. Joint system card with Mythos 5.1.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+          "title": "Claude docs: Claude Fable 5.1",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/models/overview",
+          "title": "Claude docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-mythos-5-1",
+      "name": "Claude Mythos 5.1",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Mythos",
+      "releaseDate": "2026-09-01",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Same capabilities and pricing as Fable 5.1, offered only to organisations verified through Anthropic programs such as Cyber Verification.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+          "title": "Claude docs: Claude Fable 5.1",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Opus",
+      "releaseDate": "2026-09-22",
+      "status": "current",
+      "access": "both",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Listed as the default choice in Anthropic docs. Usage limits raised on Pro/Max/Team plans.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-opus-5-5",
+          "title": "Anthropic: Introducing Claude Opus 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/models/overview",
+          "title": "Claude docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Sonnet",
+      "releaseDate": "2026-09-28",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Second 5.5-family model. First Sonnet model with cyber safeguards and fallbacks, per the announcement.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-sonnet-5-5",
+          "title": "Anthropic: Introducing Claude Sonnet 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/models/overview",
+          "title": "Claude docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Haiku",
+      "releaseDate": "2026-10-07",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Small/fast tier for high-volume tasks; from $0.10/$0.50 per million tokens. First Haiku with adjustable effort.",
+      "sources": [
+        {
+          "url": "https://www.anthropic.com/news/claude-haiku-5-5",
+          "title": "Anthropic: Introducing Claude Haiku 5.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/models/overview",
+          "title": "Claude docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-fable-5",
+      "name": "Claude Fable 5",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Fable",
+      "releaseDate": "2026-06-09",
+      "status": "superseded",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Listed as a legacy model, still available and Active in the deprecations table; succeeded by Fable 5.1.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/models/overview",
+          "title": "Claude docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/models/fable-5/overview",
+          "title": "Claude docs: Claude Fable 5 overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
+      "provider": "Anthropic",
+      "providerSlug": "anthropic",
+      "family": "Claude Sonnet",
+      "releaseDate": "2025-09-29",
+      "status": "deprecated",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": null,
+      "parameterCount": null,
+      "notes": "Deprecated 30 Sep 2026; retirement on the Claude API scheduled 30 Nov 2026; Anthropic names claude-sonnet-5-5 as the replacement. Date from snapshot ID.",
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "title": "Claude docs: Model deprecations",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemini 4",
+      "releaseDate": "2026-09-30",
+      "status": "current",
+      "access": "both",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image",
+        "video",
+        "audio",
+        "pdf"
+      ],
+      "contextWindowTokens": 1048576,
+      "parameterCount": null,
+      "notes": "Announced 30 Sep with phased access (Fairwind Program for cyber defenders first); API GA 13 Oct 2026. Available in the Gemini app for Google AI Pro and Ultra subscribers per Google's 13 Oct post. Output up to 1M tokens with long decode.",
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "title": "Google blog: Gemini 4 Argon",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+          "title": "Gemini API docs: Gemini 4 Argon",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "title": "Gemini API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "title": "Google DeepMind model card: Gemini 4 Argon",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+          "title": "Google blog: Gemini 4 is now available in the Gemini app",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemini-3-8-flash",
+      "name": "Gemini 3.8 Flash",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemini 3.8",
+      "releaseDate": "2026-09-02",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image",
+        "video",
+        "audio",
+        "pdf"
+      ],
+      "contextWindowTokens": 1048576,
+      "parameterCount": null,
+      "notes": "Stable Flash-tier model; GA on 2 Sep 2026 per changelog. Output limit 65,536 tokens.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+          "title": "Gemini API docs: Gemini 3.8 Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "title": "Gemini API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemini-3-7-flash",
+      "name": "Gemini 3.7 Flash",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemini 3.7",
+      "releaseDate": "2026-08-13",
+      "status": "deprecated",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": null,
+      "parameterCount": null,
+      "notes": "GA 13 Aug 2026; deprecated 8 Oct 2026 with requests routed to gemini-3.8-flash.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "title": "Gemini API docs: Release notes / changelog",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemini-3-5-flash-lite",
+      "name": "Gemini 3.5 Flash-Lite",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemini 3.5",
+      "releaseDate": "2026-07",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image",
+        "video",
+        "audio",
+        "pdf"
+      ],
+      "contextWindowTokens": 1048576,
+      "parameterCount": null,
+      "notes": "Smallest current stable Gemini text model listed on the models page. Page last updated July 2026.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
+          "title": "Gemini API docs: Gemini 3.5 Flash-Lite",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "title": "Gemini API docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemma-4-31b",
+      "name": "Gemma 4 31B",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemma 4",
+      "releaseDate": "2026-03-31",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "30.7B",
+      "notes": "Largest dense Gemma 4 model. Card states 256K context. Gemma release log date; secondary coverage gives 2 Apr 2026.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemma/docs/releases",
+          "title": "Gemma releases log",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/google/gemma-4-31B-it",
+          "title": "Hugging Face: google/gemma-4-31B-it model card",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemma-4-12b",
+      "name": "Gemma 4 12B Unified",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemma 4",
+      "releaseDate": "2026-06-03",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "11.95B",
+      "notes": "Encoder-free ('Unified') multimodal Gemma 4 model, added to the family in June 2026.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemma/docs/releases",
+          "title": "Gemma releases log",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/google/gemma-4-12B-it",
+          "title": "Hugging Face: google/gemma-4-12B-it model card",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemma-4-e4b",
+      "name": "Gemma 4 E4B",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemma 4",
+      "releaseDate": "2026-03-31",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "4.5B effective (8B with embeddings)",
+      "notes": "Small on-device Gemma 4 model. Card states 128K context.",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemma/docs/releases",
+          "title": "Gemma releases log",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/google/gemma-4-E4B-it",
+          "title": "Hugging Face: google/gemma-4-E4B-it model card",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "google-gemma-3-4b",
+      "name": "Gemma 3 4B",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemma 3",
+      "releaseDate": "2025-03-10",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Gemma Terms of Use",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "4.3B (HF safetensors count)",
+      "notes": "Local build used by the benchmark. Superseded by Gemma 4. Context per Ollama tag (128K).",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemma/docs/releases",
+          "title": "Gemma releases log",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/google/gemma-3-4b-it",
+          "title": "Hugging Face: google/gemma-3-4b-it",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/gemma3/tags",
+          "title": "Ollama library tags: gemma3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "gemma3:4b"
+    },
+    {
+      "id": "google-gemma-2-9b",
+      "name": "Gemma 2 9B",
+      "provider": "Google DeepMind",
+      "providerSlug": "google",
+      "family": "Gemma 2",
+      "releaseDate": "2024-06-27",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Gemma Terms of Use",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 8192,
+      "parameterCount": "9.2B (HF safetensors count)",
+      "notes": "Reference local build for the benchmark. Two Gemma generations older than the current release. Context per Ollama tag (8K).",
+      "sources": [
+        {
+          "url": "https://ai.google.dev/gemma/docs/releases",
+          "title": "Gemma releases log",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/google/gemma-2-9b-it",
+          "title": "Hugging Face: google/gemma-2-9b-it",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/gemma2/tags",
+          "title": "Ollama library tags: gemma2",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "gemma2:9b"
+    },
+    {
+      "id": "meta-muse-wonder",
+      "name": "Muse Wonder",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "family": "Muse",
+      "releaseDate": "2026-10-12",
+      "status": "current",
+      "access": "api",
+      "licence": null,
+      "modalities": [],
+      "contextWindowTokens": null,
+      "parameterCount": null,
+      "notes": "Announced with Muse Wonder Full (Muse Code subscribers only). Available via Meta Model API. Full safety report promised but not yet published.",
+      "sources": [
+        {
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "title": "Meta: Muse Wonder announcement",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "meta-muse-spark-open",
+      "name": "Muse Spark Open",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "family": "Muse",
+      "releaseDate": "2026-10-15",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Muse Model License",
+      "modalities": [
+        "text",
+        "image",
+        "video",
+        "audio"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "816B total, ~42B active (MoE)",
+      "notes": "Open-weight version of Muse Spark; Hugging Face weights are access-gated. PyTorch blog calls it Muse Spark 1.2.",
+      "sources": [
+        {
+          "url": "https://dev.meta.ai/resources/blog/build-with-muse-spark-open",
+          "title": "Meta AI: Build with Muse Spark Open",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+          "title": "Hugging Face: meta-models/Muse-Spark-Open-816B-A42B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://pytorch.org/blog/muse-spark-open/",
+          "title": "PyTorch blog: Muse Spark 1.2 Is Now Open Weights (seen in search results)",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "meta-muse-glimmer-30b",
+      "name": "Muse Glimmer 30B",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "family": "Muse",
+      "releaseDate": "2026-08-10",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "29.6B (incl. vision encoder)",
+      "notes": "Meta's smaller open-weight model; text+image in, text out. Model card gives release as August 2026; day from CNBC.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+          "title": "Hugging Face: meta-models/Muse-Glimmer-30B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html",
+          "title": "CNBC: Meta launches Muse Glimmer open-weight AI model (seen in search results)",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "meta-llama-4-maverick",
+      "name": "Llama 4 Maverick",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "family": "Llama 4",
+      "releaseDate": "2025-04-05",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Llama 4 Community License",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "400B total, 17B active (MoE)",
+      "notes": "Most recent Llama-branded open-weight LLM found on the meta-llama Hugging Face org. Meta's newer models are Muse-branded.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+          "title": "Hugging Face: meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://techcrunch.com/2025/04/05/meta-releases-llama-4-a-new-crop-of-flagship-ai-models",
+          "title": "TechCrunch: Meta releases Llama 4",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "meta-llama-3-1-8b",
+      "name": "Llama 3.1 8B Instruct",
+      "provider": "Meta",
+      "providerSlug": "meta",
+      "family": "Llama 3.1",
+      "releaseDate": "2024-07-23",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Llama 3.1 Community License",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "8.0B",
+      "notes": "Local build used by the benchmark. Superseded by Llama 4 and Muse. Context per Ollama tag (128K).",
+      "sources": [
+        {
+          "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+          "title": "Hugging Face: meta-llama/Llama-3.1-8B-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/llama3.1/tags",
+          "title": "Ollama library tags: llama3.1",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "llama3.1:8b"
+    },
+    {
+      "id": "mistral-large-4",
+      "name": "Mistral Large 4",
+      "provider": "Mistral AI",
+      "providerSlug": "mistral",
+      "family": "Mistral Large",
+      "releaseDate": "2026-10-06",
+      "status": "preview",
+      "access": "api",
+      "licence": null,
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "~1T total, 52B active (MoE)",
+      "notes": "Public preview API; weights promised by end of October 2026. Docs list it as open weight, version 26.10.",
+      "sources": [
+        {
+          "url": "https://mistral.ai/news/mistral-large-4",
+          "title": "Mistral AI: Introducing Mistral Large 4",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+          "title": "Mistral docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "mistral-medium-3-5",
+      "name": "Mistral Medium 3.5",
+      "provider": "Mistral AI",
+      "providerSlug": "mistral",
+      "family": "Mistral Medium",
+      "releaseDate": null,
+      "status": "current",
+      "access": "both",
+      "licence": "Modified MIT",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "128B dense",
+      "notes": "Dense 128B model with 256K context; Mistral calls it its first flagship merged model. Docs version 26.04.",
+      "sources": [
+        {
+          "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+          "title": "Mistral docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+          "title": "Hugging Face: mistralai/Mistral-Medium-3.5-128B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "mistral-small-4",
+      "name": "Mistral Small 4",
+      "provider": "Mistral AI",
+      "providerSlug": "mistral",
+      "family": "Mistral Small",
+      "releaseDate": "2026-03",
+      "status": "current",
+      "access": "both",
+      "licence": "Apache-2.0",
+      "modalities": [],
+      "contextWindowTokens": 262144,
+      "parameterCount": "119B total, 6.5B active (MoE)",
+      "notes": "Efficient tier; docs version 26.03. Card states 256K context.",
+      "sources": [
+        {
+          "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+          "title": "Mistral docs: Models overview",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+          "title": "Hugging Face: mistralai/Mistral-Small-4-119B-2603",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "xai-grok-4-7",
+      "name": "Grok 4.7",
+      "provider": "xAI (SpaceXAI)",
+      "providerSlug": "xai",
+      "family": "Grok 4",
+      "releaseDate": "2026-09-21",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 500000,
+      "parameterCount": null,
+      "notes": "Text and image in, text out. Docs list May 2026 knowledge cutoff. Release date from secondary coverage; xAI news page blocked.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/developers/models/grok-4.7",
+          "title": "xAI docs: Grok 4.7",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "title": "xAI docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://letsdatascience.com/news/xai-releases-grok-47-with-500k-context-43aa2021",
+          "title": "Let's Data Science: xAI Releases Grok 4.7 With 500K Context",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "xai-grok-4-6",
+      "name": "Grok 4.6",
+      "provider": "xAI (SpaceXAI)",
+      "providerSlug": "xai",
+      "family": "Grok 4",
+      "releaseDate": "2026-08-12",
+      "status": "superseded",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": 500000,
+      "parameterCount": null,
+      "notes": "Previous flagship; still listed in xAI model docs. Release date from secondary coverage.",
+      "sources": [
+        {
+          "url": "https://docs.x.ai/docs/models",
+          "title": "xAI docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://datanorth.ai/news/xai-releases-grok-4-6",
+          "title": "DataNorth: xAI releases Grok 4.6",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "deepseek-v4-1-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "providerSlug": "deepseek",
+      "family": "DeepSeek V4",
+      "releaseDate": "2026-09-10",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "MIT",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "552B backbone (MoE); 8B active input / 16B active output",
+      "notes": "Open weights. Served on the DeepSeek API as deepseek-flash until DeepSeek-V4.1-Flash-1017 replaced it under that name (pricing page). Retired V4-Flash; V4-Pro API requests routed to it from 14 Sep 2026. DeepSeek released V4.1-Flash-1017 on 17 Oct 2026, described on its model card as a minor update to this model.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news260910",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "title": "Hugging Face: deepseek-ai/DeepSeek-V4.1-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/news/news261017",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash-1017 Release",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "title": "DeepSeek API docs: Models and pricing",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "deepseek-v4-1-flash-1017",
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "providerSlug": "deepseek",
+      "family": "DeepSeek V4",
+      "releaseDate": "2026-10-17",
+      "status": "current",
+      "access": "both",
+      "licence": "MIT",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "763B (HF safetensors count)",
+      "notes": "Minor update to DeepSeek-V4.1-Flash, per the model card. Live on the DeepSeek API, app and website; weights on Hugging Face and ModelScope. Served on the DeepSeek API as deepseek-flash (pricing page). DeepSeek says it is tuned for DeepSeek Harness, Tencent CodeBuddy and WorkBuddy. The model card states no parameter count; the figure here is the Hugging Face file count, and the parent card describes a 552B backbone.",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news261017",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash-1017 Release",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "title": "Hugging Face: deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "title": "DeepSeek API docs: Models and pricing",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek-V4-Pro",
+      "provider": "DeepSeek",
+      "providerSlug": "deepseek",
+      "family": "DeepSeek V4",
+      "releaseDate": "2026-04-24",
+      "status": "deprecated",
+      "access": "both",
+      "licence": "MIT",
+      "modalities": [],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "1.6T total, 49B active (MoE)",
+      "notes": "Released as preview; 0813 checkpoint on Hugging Face. DeepSeek's pricing page lists API model deepseek-v4-pro (model version DeepSeek-V4-Pro-0813); it no longer shows the 14 Sep routing of V4-Pro requests to V4.1-Flash. V4.1-Pro not yet announced.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+          "title": "Hugging Face: deepseek-ai/DeepSeek-V4-Pro-0813",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/news/news260910",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://letsdatascience.com/news/deepseek-v4-preview-adds-open-weight-1m-context-models-4a8f21c6",
+          "title": "Let's Data Science: DeepSeek V4 Preview Adds Open-Weight 1M-Context Models",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "title": "DeepSeek API docs: Models and pricing",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "qwen-qwen3-8-max",
+      "name": "Qwen3.8-Max (open weights: Qwen3.8-2.4T-A95B)",
+      "provider": "Alibaba (Qwen)",
+      "providerSlug": "alibaba-qwen",
+      "family": "Qwen3.8",
+      "releaseDate": "2026-08",
+      "status": "current",
+      "access": "both",
+      "licence": "Qwen3.8-Max licence (custom)",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "2.4T total, 95B active (MoE)",
+      "notes": "Open checkpoint is text-only with 262K native context; hosted Qwen3.8-Max adds vision input and 1M context. Exact date conflicts across sources.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+          "title": "Hugging Face: Qwen/Qwen3.8-2.4T-A95B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://github.com/QwenLM/Qwen3.8",
+          "title": "GitHub: QwenLM/Qwen3.8",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://aireiter.com/blog/qwen3-8-27b",
+          "title": "aireiter: Qwen3.8 27B",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "qwen-qwen3-8-27b",
+      "name": "Qwen3.8-27B",
+      "provider": "Alibaba (Qwen)",
+      "providerSlug": "alibaba-qwen",
+      "family": "Qwen3.8",
+      "releaseDate": "2026-08",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "27B dense",
+      "notes": "Dense mid-size open model. 262K native context, extensible to ~1M. Day of release conflicts (HF repo 5 Aug; secondary reports 14 Aug).",
+      "sources": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "title": "Hugging Face: Qwen/Qwen3.8-27B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.orcarouter.ai/blog/qwen-3-8-27b-release-date",
+          "title": "OrcaRouter: Qwen 3.8 27B release date",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "qwen-qwen3-8-flash-next",
+      "name": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba (Qwen)",
+      "providerSlug": "alibaba-qwen",
+      "family": "Qwen3.8",
+      "releaseDate": "2026-08-28",
+      "status": "preview",
+      "access": "open-weights",
+      "licence": "Qwen Community License 1.0",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "125B total, 6B active (plus 51B n-gram embedding)",
+      "notes": "Efficient tier; described as an experimental preview of the architecture planned for Qwen 4. Hosted Qwen3.8-Flash offers 1M context.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+          "title": "Hugging Face: Qwen/Qwen3.8-Flash-Next",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.yottalabs.ai/post/qwen-4-release-date-what-is-known-how-to-prepare-2026",
+          "title": "Yotta Labs: Qwen 4 release date",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "qwen-qwen3-8b",
+      "name": "Qwen3-8B",
+      "provider": "Alibaba (Qwen)",
+      "providerSlug": "alibaba-qwen",
+      "family": "Qwen3",
+      "releaseDate": "2025-04-29",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 32768,
+      "parameterCount": "8.2B",
+      "notes": "Local build used by the benchmark. Card: 32,768 native context (131K with YaRN); Ollama tag lists 40K.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/Qwen/Qwen3-8B",
+          "title": "Hugging Face: Qwen/Qwen3-8B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/qwen3/tags",
+          "title": "Ollama library tags: qwen3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://simonwillison.net/2025/Apr/29/qwen-3/",
+          "title": "Simon Willison: Qwen 3 release",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "qwen3:8b"
+    },
+    {
+      "id": "microsoft-mai-thinking-1",
+      "name": "MAI-Thinking-1",
+      "provider": "Microsoft",
+      "providerSlug": "microsoft",
+      "family": "MAI",
+      "releaseDate": "2026-06-02",
+      "status": "preview",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "~1T total; 35B active (sparse MoE)",
+      "notes": "Microsoft's first in-house reasoning model, announced in Microsoft's Build 2026 keynote (Microsoft's published transcript); the 2 Jun date is from secondary reports. Microsoft's own post, dated 12 Aug 2026, says it is now in public preview on Microsoft Foundry, with a 256K-token context window and a sparse MoE design of about 1T total and 35B active parameters.",
+      "sources": [
+        {
+          "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+          "title": "Microsoft AI: Introducing MAI-Thinking-1",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://olhardigital.com.br/2026/06/02/inteligencia-artificial/microsoft-lanca-mai-thinking-1-seu-primeiro-modelo-avancado-de-ia/",
+          "title": "Olhar Digital: Microsoft lanca MAI-Thinking-1",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.latent.space/p/ainews-microsoft-build-mai-thinking",
+          "title": "Latent Space AINews: Microsoft Build MAI-Thinking",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://datanorth.ai/news/microsoft-launches-mai-thinking-1-and-mai-code-1-flash",
+          "title": "DataNorth: Microsoft launches MAI-Thinking-1 and MAI-Code-1-Flash",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/",
+          "title": "Microsoft AI: Microsoft Build 2026 MAI keynote transcript",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "microsoft-phi-4-reasoning-vision-15b",
+      "name": "Phi-4-reasoning-vision-15B",
+      "provider": "Microsoft",
+      "providerSlug": "microsoft",
+      "family": "Phi-4",
+      "releaseDate": "2026-03-04",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "MIT",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 16384,
+      "parameterCount": "15B",
+      "notes": "Most recent Phi-branded release found on Hugging Face; combines vision and reasoning.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B",
+          "title": "Hugging Face: microsoft/Phi-4-reasoning-vision-15B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "microsoft-phi-4-mini",
+      "name": "Phi-4-mini-instruct",
+      "provider": "Microsoft",
+      "providerSlug": "microsoft",
+      "family": "Phi-4",
+      "releaseDate": "2025-02",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "MIT",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "3.8B",
+      "notes": "Local build used by the benchmark; Microsoft's small Phi model. Card: 128K context.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+          "title": "Hugging Face: microsoft/Phi-4-mini-instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/phi4-mini/tags",
+          "title": "Ollama library tags: phi4-mini",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "phi4-mini"
+    },
+    {
+      "id": "amazon-nova-2-lite",
+      "name": "Amazon Nova 2 Lite",
+      "provider": "Amazon",
+      "providerSlug": "amazon",
+      "family": "Nova 2",
+      "releaseDate": "2025-12-02",
+      "status": "current",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [
+        "text",
+        "image",
+        "video",
+        "document"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Reasoning model on Amazon Bedrock. Docs: up to 1M tokens context and 65,536 output tokens.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock",
+          "title": "AWS What's New: Amazon Nova 2 foundation models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html",
+          "title": "AWS docs: What is Amazon Nova 2?",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "amazon-nova-2-pro",
+      "name": "Amazon Nova 2 Pro",
+      "provider": "Amazon",
+      "providerSlug": "amazon",
+      "family": "Nova 2",
+      "releaseDate": "2025-12-02",
+      "status": "preview",
+      "access": "api",
+      "licence": "Proprietary",
+      "modalities": [],
+      "contextWindowTokens": 1000000,
+      "parameterCount": null,
+      "notes": "Announced in preview with early access for Nova Forge customers; not listed in the current Nova 2 user guide model table.",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock",
+          "title": "AWS What's New: Amazon Nova 2 foundation models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html",
+          "title": "AWS docs: What is Amazon Nova 2?",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "cohere-command-a-plus",
+      "name": "Command A+",
+      "provider": "Cohere",
+      "providerSlug": "cohere",
+      "family": "Command A",
+      "releaseDate": "2026-05-20",
+      "status": "current",
+      "access": "both",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "218B total, 25B active (MoE)",
+      "notes": "Cohere's first MoE model; open weights plus API (command-a-plus-05-2026). 128K input, 64K output.",
+      "sources": [
+        {
+          "url": "https://docs.cohere.com/changelog/command-a-plus-05-2026",
+          "title": "Cohere changelog: Announcing Command A+",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.cohere.com/docs/models",
+          "title": "Cohere docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
+          "title": "Hugging Face: CohereLabs/command-a-plus-05-2026-bf16",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://www.artificialanalysis.ai/articles/cohere-launches-open-weights-model-command-a-more-than-a-year-since-the-command-a-release",
+          "title": "Artificial Analysis: Cohere launches Command A+",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "cohere-command-r7b",
+      "name": "Command R7B",
+      "provider": "Cohere",
+      "providerSlug": "cohere",
+      "family": "Command R",
+      "releaseDate": "2024-12-13",
+      "status": "current",
+      "access": "both",
+      "licence": "CC-BY-NC-4.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "8.0B",
+      "notes": "Local build used by the benchmark; still live in Cohere docs. Docs: 128K context; Ollama tag page lists 8K.",
+      "sources": [
+        {
+          "url": "https://docs.cohere.com/v1/changelog/command-r-7b",
+          "title": "Cohere changelog: Command R7B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://docs.cohere.com/docs/models",
+          "title": "Cohere docs: Models",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024",
+          "title": "Hugging Face: CohereLabs/c4ai-command-r7b-12-2024",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/command-r7b/tags",
+          "title": "Ollama library tags: command-r7b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "command-r7b"
+    },
+    {
+      "id": "ibm-granite-4-2-30b",
+      "name": "Granite 4.2 30B",
+      "provider": "IBM",
+      "providerSlug": "ibm",
+      "family": "Granite 4.2",
+      "releaseDate": "2026-08-25",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "30B (HF safetensors 29.3B)",
+      "notes": "Largest Granite 4.2 model; dense reasoning model with thinking switch. 128K native context, long-context extension to 512K.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-4.2-30b",
+          "title": "Hugging Face: ibm-granite/granite-4.2-30b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+          "title": "Hugging Face: ibm-granite/granite-4.2-8b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://datanorth.ai/news/ibm-releases-granite-4-2",
+          "title": "DataNorth: IBM releases Granite 4.2",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "ibm-granite-4-2-3b",
+      "name": "Granite 4.2 3B",
+      "provider": "IBM",
+      "providerSlug": "ibm",
+      "family": "Granite 4.2",
+      "releaseDate": "2026-08-25",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "3B (HF safetensors 3.7B)",
+      "notes": "Smallest Granite 4.2 model.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-4.2-3b",
+          "title": "Hugging Face: ibm-granite/granite-4.2-3b",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://datanorth.ai/news/ibm-releases-granite-4-2",
+          "title": "DataNorth: IBM releases Granite 4.2",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "ibm-granite-3-3-8b",
+      "name": "Granite 3.3 8B Instruct",
+      "provider": "IBM",
+      "providerSlug": "ibm",
+      "family": "Granite 3.3",
+      "releaseDate": "2025-04-16",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 131072,
+      "parameterCount": "8B",
+      "notes": "Local build used by the benchmark. Superseded by Granite 4.x. Card: 128K context.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/ibm-granite/granite-3.3-8b-instruct",
+          "title": "Hugging Face: ibm-granite/granite-3.3-8b-instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/granite3.3/tags",
+          "title": "Ollama library tags: granite3.3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "granite3.3:8b"
+    },
+    {
+      "id": "ai2-olmo-3-1-32b-think",
+      "name": "Olmo 3.1 32B Think",
+      "provider": "Allen Institute for AI (Ai2)",
+      "providerSlug": "ai2",
+      "family": "Olmo 3",
+      "releaseDate": "2025-12",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "32B",
+      "notes": "Most recent general Olmo LLM found; Ai2 2026 releases found are specialised (Olmo Hybrid 7B, AstaBrief 8B, Bolmo).",
+      "sources": [
+        {
+          "url": "https://huggingface.co/allenai/Olmo-3.1-32B-Think",
+          "title": "Hugging Face: allenai/Olmo-3.1-32B-Think",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://allenai.org/news",
+          "title": "Ai2 news",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "ai2-olmo-3-7b-instruct",
+      "name": "Olmo 3 7B Instruct",
+      "provider": "Allen Institute for AI (Ai2)",
+      "providerSlug": "ai2",
+      "family": "Olmo 3",
+      "releaseDate": "2025-11",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "7B",
+      "notes": "Small Olmo 3 instruct model; fully open (data, code, checkpoints).",
+      "sources": [
+        {
+          "url": "https://huggingface.co/allenai/Olmo-3-7B-Instruct",
+          "title": "Hugging Face: allenai/Olmo-3-7B-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "ai2-olmo-2-7b",
+      "name": "OLMo 2 7B Instruct (1124)",
+      "provider": "Allen Institute for AI (Ai2)",
+      "providerSlug": "ai2",
+      "family": "OLMo 2",
+      "releaseDate": "2024-11-26",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 4096,
+      "parameterCount": "7.3B",
+      "notes": "Local build used by the benchmark. Superseded by Olmo 3. Context per Ollama tag (4K).",
+      "sources": [
+        {
+          "url": "https://huggingface.co/allenai/OLMo-2-1124-7B-Instruct",
+          "title": "Hugging Face: allenai/OLMo-2-1124-7B-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/olmo2/tags",
+          "title": "Ollama library tags: olmo2",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://techcrunch.com/2024/11/26/ai2-releases-new-language-models-competitive-with-metas-llama/",
+          "title": "TechCrunch: Ai2 releases OLMo 2",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "olmo2:7b"
+    },
+    {
+      "id": "nvidia-nemotron-3-5-super-vl",
+      "name": "Nemotron 3.5 Super VL",
+      "provider": "NVIDIA",
+      "providerSlug": "nvidia",
+      "family": "Nemotron 3.5",
+      "releaseDate": "2026-10-15",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "OpenMDW-1.1",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "120B total, 12B active (hybrid Mamba-MoE)",
+      "notes": "Open weights, datasets and recipes; also offered as NVIDIA NIM. Card: up to 1M tokens context.",
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "title": "NVIDIA blog: Nemotron 3.5 Super VL and Bolt",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "title": "Hugging Face: nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "nvidia-nemotron-3-5-bolt-74b",
+      "name": "Nemotron 3.5 Bolt 74B-A9B",
+      "provider": "NVIDIA",
+      "providerSlug": "nvidia",
+      "family": "Nemotron 3.5",
+      "releaseDate": "2026-10-15",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "OpenMDW-1.1",
+      "modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "74B total, 9B active",
+      "notes": "Edge model fitting 24GB via 2-bit quantisation. A 4GB Bolt E4B is announced for 23 Oct. Card states 256K context.",
+      "sources": [
+        {
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "title": "NVIDIA blog: Nemotron 3.5 Super VL and Bolt",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+          "title": "Hugging Face: nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "moonshot-kimi-k3",
+      "name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "providerSlug": "moonshot",
+      "family": "Kimi K3",
+      "releaseDate": "2026-07-16",
+      "status": "current",
+      "access": "both",
+      "licence": "Kimi K3 License",
+      "modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "contextWindowTokens": 1000000,
+      "parameterCount": "2.8T total, 104B active (MoE)",
+      "notes": "Announced 16 Jul 2026; weights published late July (sources differ on 26 vs 27 Jul). No smaller current Kimi model verified.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/moonshotai/Kimi-K3",
+          "title": "Hugging Face: moonshotai/Kimi-K3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://thenextweb.com/news/moonshot-kimi-k3-largest-open-model",
+          "title": "The Next Web: Moonshot unveils Kimi K3",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://pureai.com/articles/2026/07/17/china-moonshot-ai-releases-kimi-k3.aspx",
+          "title": "Pure AI: Moonshot AI releases Kimi K3",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "zhipu-glm-5-3",
+      "name": "GLM-5.3",
+      "provider": "Zhipu AI (Z.ai)",
+      "providerSlug": "zhipu",
+      "family": "GLM-5",
+      "releaseDate": "2026-08-14",
+      "status": "current",
+      "access": "both",
+      "licence": "GLM-5.3 licence (custom)",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "744B total, 40B active (MoE)",
+      "notes": "Launched 14 Aug via Coding Plan; weights on Hugging Face 25 Aug. Z.ai notes cyber capability grew faster than expected.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/zai-org/GLM-5.3",
+          "title": "Hugging Face: zai-org/GLM-5.3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://github.com/zai-org/GLM-5",
+          "title": "GitHub: zai-org/GLM-5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://datanorth.ai/news/z-ai-releases-glm-5-3",
+          "title": "DataNorth: Z.ai releases GLM-5.3",
+          "sourceType": "secondary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "zhipu-glm-5-3-flash",
+      "name": "GLM-5.3-Flash",
+      "provider": "Zhipu AI (Z.ai)",
+      "providerSlug": "zhipu",
+      "family": "GLM-5",
+      "releaseDate": "2026-08",
+      "status": "current",
+      "access": "both",
+      "licence": "MIT",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "320B total, 18B active",
+      "notes": "Efficient tier; first natively multimodal GLM-5 model, with hybrid sparse/linear attention.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+          "title": "Hugging Face: zai-org/GLM-5.3-Flash",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://github.com/zai-org/GLM-5",
+          "title": "GitHub: zai-org/GLM-5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "tii-falcon-h1r-7b",
+      "name": "Falcon H1R 7B",
+      "provider": "Technology Innovation Institute (TII)",
+      "providerSlug": "tii",
+      "family": "Falcon-H1",
+      "releaseDate": "2026-01-05",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Falcon LLM License",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": null,
+      "parameterCount": "7B",
+      "notes": "Most recent general Falcon LLM found; reasoning-focused hybrid model. No larger 2026 Falcon flagship verified.",
+      "sources": [
+        {
+          "url": "https://falcon-lm.github.io/blog/falcon-h1r-7b",
+          "title": "Falcon blog: Falcon H1R 7B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/tiiuae/Falcon-H1R-7B",
+          "title": "Hugging Face: tiiuae/Falcon-H1R-7B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "tii-falcon3-7b",
+      "name": "Falcon3-7B-Instruct",
+      "provider": "Technology Innovation Institute (TII)",
+      "providerSlug": "tii",
+      "family": "Falcon 3",
+      "releaseDate": "2024-12",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "TII Falcon-LLM License 2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 32768,
+      "parameterCount": "7.5B",
+      "notes": "Local build used by the benchmark. Card: 32K context.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/tiiuae/Falcon3-7B-Instruct",
+          "title": "Hugging Face: tiiuae/Falcon3-7B-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/falcon3/tags",
+          "title": "Ollama library tags: falcon3",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "falcon3:7b"
+    },
+    {
+      "id": "lg-k-exaone-2-0",
+      "name": "K-EXAONE 2.0",
+      "provider": "LG AI Research",
+      "providerSlug": "lg",
+      "family": "K-EXAONE",
+      "releaseDate": "2026-07-31",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "Apache-2.0",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "750B total, 37B active (MoE)",
+      "notes": "Built under Korea's Sovereign AI Foundation Model Project.",
+      "sources": [
+        {
+          "url": "https://www.lgresearch.ai/news/view?seq=678",
+          "title": "LG AI Research: K-EXAONE 2.0",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
+          "title": "Hugging Face: LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "lg-exaone-4-5-33b",
+      "name": "EXAONE 4.5 33B",
+      "provider": "LG AI Research",
+      "providerSlug": "lg",
+      "family": "EXAONE 4.5",
+      "releaseDate": "2026-04",
+      "status": "current",
+      "access": "open-weights",
+      "licence": "EXAONE AI Model License",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "contextWindowTokens": 262144,
+      "parameterCount": "33B (31.7B LM + 1.29B vision encoder)",
+      "notes": "Smaller current EXAONE model; adds a vision encoder to the EXAONE 4.0 framework.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B",
+          "title": "Hugging Face: LGAI-EXAONE/EXAONE-4.5-33B",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": null
+    },
+    {
+      "id": "lg-exaone-3-5-7-8b",
+      "name": "EXAONE 3.5 7.8B Instruct",
+      "provider": "LG AI Research",
+      "providerSlug": "lg",
+      "family": "EXAONE 3.5",
+      "releaseDate": "2024-12-09",
+      "status": "superseded",
+      "access": "open-weights",
+      "licence": "EXAONE AI Model License",
+      "modalities": [
+        "text"
+      ],
+      "contextWindowTokens": 32768,
+      "parameterCount": "7.8B",
+      "notes": "Local build used by the benchmark. Card: 32,768 context.",
+      "sources": [
+        {
+          "url": "https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct",
+          "title": "Hugging Face: LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://ollama.com/library/exaone3.5/tags",
+          "title": "Ollama library tags: exaone3.5",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        },
+        {
+          "url": "https://arxiv.org/abs/2412.04862v3",
+          "title": "arXiv: EXAONE 3.5 technical report",
+          "sourceType": "primary",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "benchmarkLocalTag": "exaone3.5:7.8b"
+    }
+  ],
+  "factCheck": "research/ai-model-tracker/FACT_CHECK_2026-10-22.md (corrections applied 2026-10-22 by the coordinator; MUST FIX 4-5 narrowed, see the coordinator note in that file)"
+}

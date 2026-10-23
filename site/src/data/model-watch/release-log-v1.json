@@ -1,18 +1,57 @@
 {
   "meta": {
     "schemaVersion": "1.0",
-    "asOf": "2026-10-16",
-    "rowCount": 21,
+    "asOf": "2026-10-22",
+    "rowCount": 22,
     "sourceFiles": [
       {
         "path": "research/ai-model-tracker/releases-2026-10-16.json",
         "sha256": "db796f8aac8171b234ac5ede6dba33cb9d88a6fa941a39d8721dc33322e7dce5"
+      },
+      {
+        "path": "research/ai-model-tracker/releases-2026-10-22.json",
+        "sha256": "99b2e75cf9c19c5caa22cf0810a23e6f44e6748436cd26ba58c91247444b1653"
       }
     ],
     "meaning": "Cited desk-research log of announcements. Not the release-watch store (releases-v1.json); counts are never combined.",
     "validator": "site/scripts/lib/model-watch-validator.mjs"
   },
   "rows": [
+    {
+      "id": "2026-10-17--deepseek--deepseek-v4-1-flash-1017--update",
+      "date": "2026-10-17",
+      "provider": "DeepSeek",
+      "providerSlug": "deepseek",
+      "modelName": "DeepSeek-V4.1-Flash-1017",
+      "catalogId": "deepseek-v4-1-flash-1017",
+      "kind": "update",
+      "summary": "DeepSeek-V4.1-Flash-1017, which DeepSeek describes as a minor update to V4.1-Flash, went live on the DeepSeek API, app and website, with MIT-licensed weights on Hugging Face and ModelScope.",
+      "safetyOrWelfareRelevant": false,
+      "safetyNote": null,
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news261017",
+          "title": "DeepSeek API docs news: DeepSeek-V4.1-Flash-1017 Release",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "title": "Hugging Face: deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "title": "DeepSeek API docs: Models and pricing",
+          "sourceType": "primary",
+          "accessed": "2026-10-22"
+        }
+      ],
+      "loggedOn": "2026-10-22",
+      "releaseWatchId": null,
+      "corrections": []
+    },
     {
       "id": "2026-10-15--anthropic--no-model--policy",
       "date": "2026-10-15",

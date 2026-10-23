@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-22",
+  "window": {
+    "from": "2026-10-17",
+    "to": "2026-10-22"
+  },
+  "lead": "This edition covers {{WINDOW_DAYS}} days and logs {{RELEASE_COUNT}} release from the providers we track: DeepSeek-V4.1-Flash-1017, which DeepSeek describes as a minor update to its previous Flash model, with open weights and API access. It was a quiet week, and we do not pad the log. The catalog also records access and sourcing corrections found by this week's fact-check. We summarise what providers say, link each source, and do not assess it. The benchmark ran no measurement of its own in this window.",
+  "coverage": {
+    "scanned": [
+      "Official announcement pages, model cards, API changelogs and deprecation pages from the eighteen providers in the catalog: OpenAI, Anthropic, Google DeepMind, Meta, Mistral AI, xAI, DeepSeek, Alibaba Qwen, Microsoft, Amazon, Cohere, IBM, Ai2, NVIDIA, Moonshot AI, Zhipu AI, TII and LG AI Research",
+      "Hugging Face organisation pages for open-weights releases",
+      "Alibaba Cloud Model Studio's dated list of newly released models"
+    ],
+    "notScanned": [
+      "The OpenAI and xAI news pages refused our requests; we used their changelogs, deprecation pages and model documentation instead",
+      "Qwen, IBM and LG AI Research sites did not render for us; for those providers we checked Hugging Face listings and searches only, so an API-only release could have been missed",
+      "Providers outside the eighteen listed above, including regional and domain-specific model developers",
+      "Consumer-app feature changes that were not announced as a model release",
+      "Notices dated before this window that the previous edition did not log; they are being checked for a dated correction to that edition"
+    ]
+  },
+  "measuredNote": "No benchmark measurement ran in this window. The founder chose the weekly testing protocol this week, but no weekly wave has run yet, and pilot reports remain unofficial and are not scores.",
+  "corrections": []
+}
