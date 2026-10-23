@@ -10802,3 +10802,104 @@ No new standard-tier proposals tonight.
 **Queue total (counted directly from research/change-proposals/*.json with "status": "pending", via grep -l '"status": *"pending"' research/change-proposals/*.json | wc -l): 38** -- 36 carried forward from 2026-10-01 + 2 new tonight (Lisbon, Porto). 0 applied, 0 withdrawn. High priority (band change or delta >15): 27 (25 carried forward + 2 new tonight, both band crossings). Standard (delta 5-15, no band change): 11 (unchanged; Cornell University remains here and is corroborated, not duplicated). Oldest pending proposal: Rethink Robotics, filed 2026-08-16. Outside this count: 37 files with status "approved" (the 2026-08-20 held batch), 346 "applied", 1 "rejected" (738 files in the directory, 2 dated 2026-10-14).
 
 No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this stage.
+
+---
+
+## 2026-10-22 -- Two More First-Ever Baselines (Paris, UNC Chapel Hill) + Portugal Band Line | 3 Proposals (3 Band Crossings, All Flag-For-Review) | 7 Confirmed, 3 Corroborate Pending, 2 Measured-Not-Filed | 0 Applied
+
+### Summary -- 2026-10-22
+
+Scan window 2026-10-08 -> 2026-10-22. Fifteen organizations assessed (3 proposal-filed, 7 confirmed, 3 corroborates-existing, 2 withheld); American Express received a screening note only. The scan ran under degraded search quality: three batches (energy services, homebuilders/real estate, universities) failed twice, and the search tool ignores OR/AND, so "no evidence" means "not surfaced". Searches exceeded the derived ceiling: validate-scan counts 306 against 274 (the scan file records 307).
+
+**Nothing was applied.** Every published score below is the live index value (re-verified against site/src/data/indexes/*.json); every other number is a pending proposal or an unfiled measurement.
+
+Paris and UNC Chapel Hill are **first-ever measurements** of seeded values (62.5 and 43.8, never measured). **RC-2 first-assessment calibration hold applies: most first assessments come in below their seed, and no first-assessment batch is applied before the calibration study.** Evidence-gap sensitivity (RC-3): Paris is 50.0 at defaults of 3 (Functional either way); **UNC is 41.3 at defaults of 3, which would not cross the band** (Functional stays Functional).
+
+Release watch: 0 sources registered -- detection did not run.
+
+---
+
+### High Priority -- 2026-10-22 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Paris | global-cities | 62.5 | 40.6 | -21.9 | low | 2026-10-22 | [proposal](change-proposals/paris-2026-10-22.json) |
+| University of North Carolina at Chapel Hill | universities | 43.8 | 28.1 | -15.7 | low | 2026-10-22 | [proposal](change-proposals/university-of-north-carolina-at-chapel-hill-2026-10-22.json) |
+| Portugal | countries | 60.6 | 59.4 | -1.2 | low | 2026-10-22 | [proposal](change-proposals/portugal-2026-10-22.json) |
+
+- **Paris (Established -> Functional, FLAG-FOR-REVIEW, RC-2 HOLD):** first municipal baseline. Credited: annual night count (3,858 unsheltered on 2026-01-22, record, +10%), 1,000 places since 2023, 253 evicted people sheltered in City gyms (Aug 2026). The 2026-10-19/20 curfew was ordered by the Prefecture de police (national) and is scored under France. 15 defaults at anchor 2; at 3 -> 50.0.
+- **University of North Carolina at Chapel Hill (Functional -> Developing, FLAG-FOR-REVIEW, RC-2 HOLD):** first university baseline. 2026-10-19 voluntary federal settlement of 18 Title VI probes (no payment, no admission, quarterly DOJ reports to 2028); DEI offices closed and 61 positions cut by Aug 2026; Carolina Covenant credited. 21 defaults at anchor 2; **at 3 -> 41.3 (Functional, no band crossing)**.
+- **Portugal (Established -> Functional by 0.6 points, FLAG-FOR-REVIEW):** 2026-10-20 national police (PSP) clearance of Lisbon/Porto housing camps (55 detained); police framed injuries as "resistance"; Amnesty Portugal sought an inquiry into the 12 Oct Porto operation (2026-10-15); eviction bill passed first reading 2026-09-30. E4, EQ2, I1 each 4 -> 3. No adverse source at tier >= 4.
+
+### Standard -- 2026-10-22 (No Band Change)
+
+No new standard-tier proposals tonight.
+
+### Measured, Not Filed -- 2026-10-22
+
+| Entity | Index | Published | Measured | Delta | Reason |
+|--------|-------|-----------|----------|-------|--------|
+| France | countries | 62.5 | 52.5 | -10.0 | Second consecutive 52.5. Band-crossing and magnitude triggers met; not filed: no fetched tier >= 4 source (AP wire reports, tier 2) and 62.5 placeholder-cohort calibration (screening checks 4-5), per the 2026-09-14 precedent. Riots from 2026-10-17 (~2,400 arrests, curfews). No subdimension moved. |
+| Netflix | fortune-500 | 60.9 | 58.1 | -2.8 | Band crossing produced by seed rounding (58.7 on 2026-09-15); only I1 4 -> 3 (~1,000 layoffs) is new, tier 2. Not filed per the 2026-09-15/09-20 precedent. Stays in the 60.9 calibration cohort. |
+
+### Pending Proposals Corroborated -- 2026-10-22 (no new rows)
+
+| Entity | Index | Published | Measured | Pending proposal | Verdict |
+|--------|-------|-----------|----------|------------------|---------|
+| Lisbon | global-cities | 60.9 | 35.0 | [lisbon-2026-10-14](change-proposals/lisbon-2026-10-14.json) (35.0) | Confirms exactly; no duplicate written. Rossio camp cleared 2026-10-20 by Lisbon's Municipal Police (228 structures). |
+| Valencia | global-cities | 60.9 | 41.9 | [valencia-2026-10-01](change-proposals/valencia-2026-10-01.json) (41.9) | Confirms exactly; no duplicate written. City outside the stay-indoors order. |
+| Spain | countries | 60.0 | 51.2 | [spain-2026-08-26](change-proposals/spain-2026-08-26.json) (50.6) | Confirms (0.6 apart); no duplicate written. Storm Adam 2026-10-19/20. |
+
+### Confirmations -- 2026-10-22
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Dollar General | fortune-500 | 21.9 | 21.9 | 0.0 | NY AG settlement 2026-10-15; $1.875M penalty paid as goods, no shopper restitution. |
+| Mauritius | countries | 60.0 | 57.5 | -2.5 | Police shooting, curfews, 94 arrests; E4 4 -> 3. Published 60.0 reconstructs to 58.4 (math hygiene, referred again). |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | ECP DG killed by unidentified gunmen (non-state violence). |
+| CVS Health | fortune-500 | 25.6 | 23.1 | -2.5 | DOJ $315M opioid resolution (2026-10-13), no admission. |
+| Florida | us-states | 38.1 | 37.5 | -0.6 | 17th execution of 2026 (Robertson, 2026-10-13); Thompson paused "for now". |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Amnesty: five protest-related executions 2026-09-30 to 2026-10-05. |
+| Turkey | countries | 10.3 | 7.5 | -2.8 | Halk TV raided and placed under a state trustee 2026-10-14. |
+
+Screening note only: American Express (fortune-500, published 55.5): OCC $350M penalty and cease-and-desist, 2026-10-08 (tier 5). No 40-subdimension sidecar; prioritise for a full assessment.
+
+---
+
+### Boundary Watch -- 2026-10-22
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| UNC Chapel Hill -- measured 28.1 at defaults of 2, but 41.3 at defaults of 3 sits 1.3 points above the Developing/Functional line | NEW tonight | Open since 2026-10-22 |
+| Portugal -- published 60.6 sits 0.6 above the Established/Functional line; measured 59.4 sits 0.6 below | NEW tonight | Open since 2026-10-22 |
+| Netflix -- published 60.9 sits 0.9 above the Established/Functional line; measured 58.1 | Updated tonight | Open since 2026-09-15 |
+| Paris -- measured 40.6 sits 0.6 above the Developing/Functional line (50.0 at defaults of 3) | NEW tonight | Open since 2026-10-22 |
+| Florida -- published 38.1 sits 1.9 below the Functional line | NEW tonight | Open since 2026-10-22 |
+| All boundary items listed under 2026-10-14 and 2026-10-01 | Carried forward, not reviewed this cycle | See earlier entries |
+
+---
+
+### Calibration Flags -- 2026-10-22
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Municipal seeds: Paris 62.5 -> 40.6 joins Lisbon (35.0), Porto (32.5), Valencia (41.9) and Madrid (48.1). Review together under RC-2. | Updated tonight | Open since 2026-10-01 |
+| Evidence-gap default anchor (RC-3): UNC 28.1 at 2 vs 41.3 at 3 (the band flips); Paris 40.6 vs 50.0 (Functional either way). Decide one convention. | Updated tonight | Open since 2026-10-14 |
+| Placeholder cohorts: France (62.5) measured 52.5 twice; Netflix (60.9) measured 58.7 then 58.1; both band crossings not filed pending cohort calibration. | Updated tonight | Open since 2026-09-14 |
+| First-baseline pattern: 16 first-ever baselines in five proposal cycles, 15 lower and 1 higher (Abu Dhabi), by the digest tally. | Updated tonight | Open since 2026-10-01 |
+| Mauritius math hygiene: published 60.0 reconstructs to 58.4 (composite_override without ASSESSOR_OVERRIDE_NAMES); index also labels Mauritius and Spain `functional` at composite 60.0 while BANDS places 60 in Established. | Updated tonight | Open since 2026-10-22 |
+| Misdated claim: Florida "Robertson executed Oct. 15" (mysuncoast body text); true date 2026-10-13. Ledger addition `florida-robertson-execution-date` recommended. | NEW tonight | Open since 2026-10-22 |
+| All other flags listed under 2026-10-14 and 2026-10-01 | Carried forward, not touched tonight | See earlier entries |
+
+---
+
+### Operational Notes -- 2026-10-22
+
+- Scan: 1,329 entities, 306 searches by validate-scan against a derived ceiling of 274 (file records 307), 18 evidence-found, 15 dropped candidates. Degraded search quality applies; three batches failed twice.
+- Assessor: 15 scored, 15 subdimension sidecars; all 15 composites recomputed by the coordinator with scoring.mjs v1.2 and match (0 mismatches). All 15 published baselines match the live index.
+- **Publication drift (`check-publication-drift.mjs`):** start of stage `NO DRIFT -- all 1 committed briefings in the window are served.` After tonight's files: `DRIFT -- 1 committed briefing(s) are not served: 2026-10-22` (local, undeployed, expected). Reported, not fixed (deploy is a founder act).
+- Validation: `npm run validate:briefings` PASS (89 of 89); `npm run lint:briefings` PASS (91 files clean); `npm run test:briefing-move-claims` PASS.
+
+**Queue total (counted by parsing research/change-proposals/*.json for "status": "pending"): 41** -- 38 carried forward from 2026-10-14 + 3 new tonight (Paris, Portugal, UNC Chapel Hill). 0 applied, 0 withdrawn. High priority (band change or delta >15): 30 (27 carried forward + 3 new, all band crossings). Standard (delta 5-15, no band change): 11 (unchanged). Oldest pending proposal: Rethink Robotics, filed 2026-08-16. Outside this count: 37 files with status "approved" (the 2026-08-20 held batch), 346 "applied", 1 "rejected". Lisbon, Valencia and Spain remain pending at their earlier values.
+
+No score was applied by this cycle. site/src/data/indexes/*.json and research/rotation-state.json were not modified by this stage.

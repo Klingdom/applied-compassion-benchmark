@@ -1,0 +1,864 @@
+{
+  "entity": "Paris",
+  "slug": "paris",
+  "index": "global-cities",
+  "assessment_date": "2026-10-22",
+  "assessment_file": "research/assessments/paris-2026-10-22.md",
+  "subdim_sidecar_file": "research/assessments/paris-2026-10-22.subdims.json",
+  "first_assessment": true,
+  "published_scores": {
+    "composite": 62.5,
+    "band": "Established",
+    "rank": 30,
+    "dimensions": {
+      "AWR": 3.5,
+      "EMP": 3.5,
+      "ACT": 4,
+      "EQU": 3,
+      "BND": 3.5,
+      "ACC": 3.5,
+      "SYS": 4,
+      "INT": 3
+    }
+  },
+  "proposed_scores": {
+    "composite": 40.6,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.4,
+      "ACT": 2.8,
+      "EQU": 2.4,
+      "BND": 2.6,
+      "ACC": 2.2,
+      "SYS": 3,
+      "INT": 2.4
+    }
+  },
+  "score_delta": -21.9,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "Why it matters: Paris's published 62.5 has never been measured. This first measurement puts the City of Paris at 40.6 of 100 (Functional), 21.9 points lower.",
+    "The City counts its homeless population every year. On 22 January 2026 it found 3,858 people with no shelter, the highest figure since 2018 and 10% more than in 2025 (Ville de Paris).",
+    "The City gets credit for acting on that count. It added 1,000 shelter places since 2023, sheltered 4,500 people in March 2026, and housed 253 people in its own gyms after a State eviction in August 2026.",
+    "The October 2026 curfew was ordered by the national police authority, not the City, so it is scored under France.",
+    "15 of 40 subdimensions have no usable evidence and are scored at 2. Scored at 3 instead, Paris would be 50.0, still Functional and still below the published band."
+  ],
+  "evidence": [
+    {
+      "claim": "A1 Suffering Detection (score 4): Annual night count (9th edition, 22 January 2026) with ~1,900 counters and an APUR data analysis; results disaggregated by location and group size. Multiple formal pathways with regular review (anchor 4). Not independently audited.",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "3 858 personnes rencontrées étaient sans solution d'hébergement durant la nuit du 22 janvier 2026."
+    },
+    {
+      "claim": "A1 Suffering Detection (score 4): Annual night count (9th edition, 22 January 2026) with ~1,900 counters and an APUR data analysis; results disaggregated by location and group size. Multiple formal pathways with regular review (anchor 4). Not independently audited.",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "L'APUR a publié le rapport d'analyses des données issues du décompte de la 9e édition"
+    },
+    {
+      "claim": "A2 Contextual Sensitivity (score 3): Differentiated pathways for families, young people and isolated vulnerable people (REFLEX heat registry). No evidence of community co-design (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/sans-abrisme-et-plan-zero-enfant-a-la-rue-paris-veut-intensifier-son-action-aupres-des-personnes-sans-domicile-34906",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 5,
+      "quote": "En mars 2026, 4 500 personnes ont été mises à l’abri par la Ville"
+    },
+    {
+      "claim": "A2 Contextual Sensitivity (score 3): Differentiated pathways for families, young people and isolated vulnerable people (REFLEX heat registry). No evidence of community co-design (anchor 3).",
+      "source": "L'Info Durable (AFP)",
+      "url": "https://www.linfodurable.fr/canicule-la-ville-de-paris-active-le-niveau-le-plus-eleve-de-son-plan-51816",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 2,
+      "quote": "sont actuellement contactées par téléphone pour vérifier leur état de santé"
+    },
+    {
+      "claim": "A3 Blind Spot Mitigation (score 3): The count exists to find people who are missed and produced a finding (record count, +10%, growth in large encampments). Process with findings (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "une augmentation de 10% du nombre de personnes décomptées à Paris par rapport à l'année dernière"
+    },
+    {
+      "claim": "A4 Signal Amplification (score 3): Participatory budget with about 35% going to working-class districts and associations supporting residents there; low-power concerns reach decisions in at least some cases (anchor 3).",
+      "source": "Acteurs publics",
+      "url": "https://acteurspublics.fr/articles/a-la-ville-de-paris-25-du-budget-dinvestissement-est-consacre-a-linitiative-citoyenne/",
+      "publishedDate": "2025-01-23",
+      "sourceTier": 2,
+      "quote": "qui représentent environ 35 % du budget global"
+    },
+    {
+      "claim": "E2 Perspective-Taking (score 3): Residents vote on participatory-budget projects (121 winners in one year). A formal mechanism that changes decisions (anchor 3).",
+      "source": "Acteurs publics",
+      "url": "https://acteurspublics.fr/articles/a-la-ville-de-paris-25-du-budget-dinvestissement-est-consacre-a-linitiative-citoyenne/",
+      "publishedDate": "2025-01-23",
+      "sourceTier": 2,
+      "quote": "121 projets ont été lauréats"
+    },
+    {
+      "claim": "E4 Validation (score 3): After a State eviction in August 2026 the City publicly recognised the families' need and sheltered all 253 people. Validation in at least some cases (anchor 3).",
+      "source": "La Gazette France",
+      "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+      "publishedDate": "2026-08-22",
+      "sourceTier": 2,
+      "quote": "au sein de gymnases de la Ville"
+    },
+    {
+      "claim": "E4 Validation (score 3): After a State eviction in August 2026 the City publicly recognised the families' need and sheltered all 253 people. Validation in at least some cases (anchor 3).",
+      "source": "La Gazette France",
+      "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+      "publishedDate": "2026-08-22",
+      "sourceTier": 2,
+      "quote": "jusqu'à ce que les services de l'Etat, dont c'est la responsabilité légale et morale, leur proposent une solution pérenne"
+    },
+    {
+      "claim": "AC3 Efficacy (score 3): Outcome data reviewed annually; the count shows homelessness still rising despite 1,000 places added since 2023. Outcome data reviewed, programme expanded (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "1000 places ont été créées depuis 2023 par la Ville de Paris"
+    },
+    {
+      "claim": "AC4 Resource Mobilization (score 3): Gap acknowledged and additional resources mobilised (1,000 places since 2023, 92 sites on municipal land, vacancy tax obtained). Anchor 3.",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 5,
+      "quote": "la création d'une taxe unique sur la vacance des locaux d'habitation (TLVH), dont le taux pourra être majoré dès 2027."
+    },
+    {
+      "claim": "B2 Autonomy Preservation (score 3): Durable social housing (25% of stock, up from 13%) is a capacity-and-exit route out of shelter (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 5,
+      "quote": "La part des logements sociaux a atteint 25 % (contre 13 % au début des années 2000)."
+    },
+    {
+      "claim": "B2 Autonomy Preservation (score 3): Durable social housing (25% of stock, up from 13%) is a capacity-and-exit route out of shelter (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 5,
+      "quote": "Objectif de 60 000 nouveaux logements sociaux construits durant la nouvelle mandature."
+    },
+    {
+      "claim": "B3 Scope Clarity (score 3): The City states plainly that emergency shelter is a State competence and what it does itself. Scope communicated (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "l'offre d'hébergement d'urgence qui relève de la compétence de l'Etat"
+    },
+    {
+      "claim": "S3 Interconnection Awareness (score 3): The City identified and responded to the knock-on effect of State evictions and shelter cuts (anchor 3).",
+      "source": "La Gazette France",
+      "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+      "publishedDate": "2026-08-22",
+      "sourceTier": 2,
+      "quote": "que 300 places ont été récemment supprimées"
+    },
+    {
+      "claim": "S5 Coalitional Compassion (score 3): Count run with the Métropole, associations and 1,500 volunteers; documented coalition contribution (anchor 3).",
+      "source": "Ville de Paris",
+      "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+      "publishedDate": "2026-07-24",
+      "sourceTier": 5,
+      "quote": "Près de 1 500 bénévoles et 400 professionnels réunis pour la Nuit de la Solidarité 2026."
+    },
+    {
+      "claim": "I5 Resilience of Care (score 3): Emmanuel Grégoire, a former deputy to Anne Hidalgo, was elected mayor of Paris in the second round on 22 March 2026.",
+      "source": "Public Sénat",
+      "url": "https://www.publicsenat.fr/actualites/politique/municipales-2026-a-paris-emmanuel-gregoire-elu-largement-face-a-rachida-dati-selon-nos-estimations",
+      "publishedDate": "2026-03-22",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "methodology_version": "v1.2",
+  "integration_premium": 0,
+  "published_composite_reconstruction": 62.5,
+  "math_hygiene_reconstruction_diff": 0,
+  "filing_trigger": "magnitude (-21.9) + band-crossing (Established -> Functional)",
+  "changed_dimensions": [
+    "AWR",
+    "EMP",
+    "ACT",
+    "EQU",
+    "BND",
+    "ACC",
+    "SYS",
+    "INT"
+  ],
+  "screening_3e_bis": {
+    "baseline_provenance": "Unassessed seed value (62.5); no applied change or prior report.",
+    "directionality": "In-window curfew is Préfecture de police (national) conduct, attributed to France; no city conduct moves the score up or down in-window.",
+    "rationale_vs_history": "First baseline; no claim contradicts documented history.",
+    "calibration": "Seed de-seeding; hold for the RC-2 seed-calibration study with Lisbon, Porto, Madrid and Valencia.",
+    "filing_trigger": "magnitude (-21.9) + band-crossing (Established -> Functional). Filed as flag-for-review."
+  },
+  "sensitivity": {
+    "convention": "first",
+    "defaults": 15,
+    "default_codes": [
+      "E1",
+      "E3",
+      "E5",
+      "EQ3",
+      "EQ4",
+      "EQ5",
+      "B1",
+      "B5",
+      "AB1",
+      "AB2",
+      "AB4",
+      "AB5",
+      "I2",
+      "I3",
+      "I4"
+    ],
+    "composite_if_defaults_at_2": 40.6,
+    "band_if_defaults_at_2": "Functional",
+    "composite_if_defaults_at_3": 50,
+    "band_if_defaults_at_3": "Functional",
+    "dims_if_defaults_at_3": {
+      "AWR": 3.2,
+      "EMP": 3,
+      "ACT": 2.8,
+      "EQU": 3,
+      "BND": 3,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "supersedes": null,
+  "notes": "FIRST ASSESSMENT. Published 62.5 is a seed. RC-2: hold for the seed-calibration study; do not apply alone. RC-3: 15 evidence-gap defaults at 2 (E1, E3, E5, EQ3, EQ4, EQ5, B1, B5, AB1, AB2, AB4, AB5, I2, I3, I4); at 3 the composite is 50 (Functional), still a band crossing from Established. Scope is the Ville de Paris; the 19-20 October 2026 curfew was ordered by the Préfecture de police (national) and is scored under France.",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "3 858 personnes rencontrées étaient sans solution d'hébergement durant la nuit du 22 janvier 2026."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "L'APUR a publié le rapport d'analyses des données issues du décompte de la 9e édition"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/sans-abrisme-et-plan-zero-enfant-a-la-rue-paris-veut-intensifier-son-action-aupres-des-personnes-sans-domicile-34906",
+          "date": "2026-04-14",
+          "quote": "En mars 2026, 4 500 personnes ont été mises à l’abri par la Ville"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.linfodurable.fr/canicule-la-ville-de-paris-active-le-niveau-le-plus-eleve-de-son-plan-51816",
+          "date": "2025-07-01",
+          "quote": "sont actuellement contactées par téléphone pour vérifier leur état de santé"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "3 858 personnes rencontrées étaient sans solution d'hébergement durant la nuit du 22 janvier 2026."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "une augmentation de 10% du nombre de personnes décomptées à Paris par rapport à l'année dernière"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://acteurspublics.fr/articles/a-la-ville-de-paris-25-du-budget-dinvestissement-est-consacre-a-linitiative-citoyenne/",
+          "date": "2025-01-23",
+          "quote": "qui représentent environ 35 % du budget global"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.linfodurable.fr/canicule-la-ville-de-paris-active-le-niveau-le-plus-eleve-de-son-plan-51816",
+          "date": "2025-07-01",
+          "quote": "sont actuellement contactées par téléphone pour vérifier leur état de santé"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://acteurspublics.fr/articles/a-la-ville-de-paris-25-du-budget-dinvestissement-est-consacre-a-linitiative-citoyenne/",
+          "date": "2025-01-23",
+          "quote": "121 projets ont été lauréats"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "au sein de gymnases de la Ville"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "jusqu'à ce que les services de l'Etat, dont c'est la responsabilité légale et morale, leur proposent une solution pérenne"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "au sein de gymnases de la Ville"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/sans-abrisme-et-plan-zero-enfant-a-la-rue-paris-veut-intensifier-son-action-aupres-des-personnes-sans-domicile-34906",
+          "date": "2026-04-14",
+          "quote": "En mars 2026, 4 500 personnes ont été mises à l’abri par la Ville"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/sans-abrisme-et-plan-zero-enfant-a-la-rue-paris-veut-intensifier-son-action-aupres-des-personnes-sans-domicile-34906",
+          "date": "2026-04-14",
+          "quote": "En mars 2026, 4 500 personnes ont été mises à l’abri par la Ville"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "une augmentation de 10% du nombre de personnes décomptées à Paris par rapport à l'année dernière"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "1000 places ont été créées depuis 2023 par la Ville de Paris"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "1000 places ont été créées depuis 2023 par la Ville de Paris"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "la création d'une taxe unique sur la vacance des locaux d'habitation (TLVH), dont le taux pourra être majoré dès 2027."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "jusqu'à ce que les services de l'Etat, dont c'est la responsabilité légale et morale, leur proposent une solution pérenne"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "3 858 personnes rencontrées étaient sans solution d'hébergement durant la nuit du 22 janvier 2026."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/sans-abrisme-et-plan-zero-enfant-a-la-rue-paris-veut-intensifier-son-action-aupres-des-personnes-sans-domicile-34906",
+          "date": "2026-04-14",
+          "quote": "En mars 2026, 4 500 personnes ont été mises à l’abri par la Ville"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "La part des logements sociaux a atteint 25 % (contre 13 % au début des années 2000)."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "Objectif de 60 000 nouveaux logements sociaux construits durant la nouvelle mandature."
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "l'offre d'hébergement d'urgence qui relève de la compétence de l'Etat"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "au sein de gymnases de la Ville"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "3 858 personnes rencontrées étaient sans solution d'hébergement durant la nuit du 22 janvier 2026."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "une augmentation de 10% du nombre de personnes décomptées à Paris par rapport à l'année dernière"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "la création d'une taxe unique sur la vacance des locaux d'habitation (TLVH), dont le taux pourra être majoré dès 2027."
+        },
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "Objectif de 60 000 nouveaux logements sociaux construits durant la nouvelle mandature."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/lutte-contre-la-speculation-et-les-logements-inoccupes-comment-paris-va-s-engager-34842",
+          "date": "2026-04-14",
+          "quote": "La part des logements sociaux a atteint 25 % (contre 13 % au début des années 2000)."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "jusqu'à ce que les services de l'Etat, dont c'est la responsabilité légale et morale, leur proposent une solution pérenne"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "que 300 places ont été récemment supprimées"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "que 300 places ont été récemment supprimées"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "Près de 1 500 bénévoles et 400 professionnels réunis pour la Nuit de la Solidarité 2026."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "au sein de gymnases de la Ville"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.lagazettefrance.fr/article/la-ville-de-paris-annonce-la-mise-a-l-abri-de-253-personnes-d-un-campement",
+          "date": "2026-08-22",
+          "quote": "jusqu'à ce que les services de l'Etat, dont c'est la responsabilité légale et morale, leur proposent une solution pérenne"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-10-22",
+      "evidence": []
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-10-22",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.paris.fr/pages/nuit-de-la-solidarite-2026-33001",
+          "date": "2026-07-24",
+          "quote": "L'APUR a publié le rapport d'analyses des données issues du décompte de la 9e édition"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.publicsenat.fr/actualites/politique/municipales-2026-a-paris-emmanuel-gregoire-elu-largement-face-a-rachida-dati-selon-nos-estimations",
+          "date": "2026-03-22",
+          "claim": "Emmanuel Grégoire, a former deputy to Anne Hidalgo, was elected mayor of Paris in the second round on 22 March 2026."
+        }
+      ]
+    }
+  ]
+}
