@@ -29,6 +29,8 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 
 | ID | Date | Decision | Status |
 |---|---|---|---|
+| D-64 | 2026-10-26 | Commit Iteration 119 and apply the RUNBOOK-CLAUDE step 3.8 text | active, approved by the founder 2026-10-26 |
+| D-63 | 2026-10-26 | Programme: expand the AI model analysis and reporting mechanism (continues D-60) | active, directed by the founder 2026-10-26 |
 | D-62 | 2026-10-23 | Commit and deploy Iterations 112–118 as commits C1–C7 (Friday packet item 1) | active, approved by the founder 2026-10-23 |
 | D-61a | 2026-10-22 | Exit, path and S6 terms for the D-61 visual programme (Meta-review 14 A2) | **proposed (awaiting founder)** |
 | D-61 | 2026-10-22 | Programme: visual improvements to the site in agent loops (audit, fix, test, repeat) | active, directed by the founder 2026-10-22 |
@@ -69,6 +71,56 @@ pinned system date, not inferred. They are collected with defaults and costs-of-
 | D-02 | pre-2026-05 | JSON-first structured data | active |
 | D-01 | pre-2026-05 | Next.js App Router, static export | active |
 | D-00 | 2026-05-21 | Baseline-drift guard: drift > 2.0pt is always a hold | active |
+
+---
+
+## D-64 — 2026-10-26 — Commit Iteration 119
+
+**Founder, 2026-10-26, verbatim:** "approve and commit all".
+
+**Read as the two items awaiting the founder for Iteration 119:**
+- **(1) Commit Iteration 119**, using its pathspec in ITERATION_LOG.md. This includes the three 2026-10-23 post-deploy
+  notes.
+- **(2) RUNBOOK-CLAUDE:** apply the Stream C step 3.8 text to `.claude/commands/weekly-model-wave.md`.
+
+**Not read into it:**
+- **"All"** does not reach the held America-at-250 pair or the nonprofit library. Standing instruction: neither is
+  committed without an explicit word, so both stay uncommitted.
+- **"Approve"** does not ratify PROTOCOL.v2, including O9. It does not decide D-13, approve any change proposal, or
+  push or deploy. Iteration 119 has no site-visible change, so it needs no deploy.
+
+---
+
+## D-63 — 2026-10-26 — AI model analysis and reporting mechanism
+
+**Founder, 2026-10-26, verbatim:** "Continue expanding on AI Model analysis and reporting mechanism".
+
+**Interpretation:** this continues D-60, now on how waves are analysed and how results reach a report. It selects these
+open D-60 rows, all agent-doable:
+- EVAL-CLAIMAUDIT: every report figure is recomputed from the wave file.
+- Item-clustered intervals: experiment finding 4, under EVAL-PROTO-UPDATE.
+- RUNBOOK-EXPORT: no default export into site data while a wave is unapproved.
+- EVAL-WP10: a results-review packet generated from the gates.
+
+**Terms (Meta-review 14 A2):**
+- **Lane:** `founder (D-63)`.
+- **Paths:**
+  - `research/model-runs/**` and `docs/model-eval/**`;
+  - `site/scripts/` only for a test that a stream needs;
+  - the log and status files.
+- **Not covered:**
+  - `site/src/data/**` writes;
+  - published reports or pages;
+  - ratifying PROTOCOL.v2;
+  - keys;
+  - any model ranking or official score;
+  - `.claude/**`;
+  - commit or deploy.
+- **S6:** no override. 0 iterations are validated-uncommitted at the start (`57f3f75e` is live).
+- **Exit:** one iteration (119) with four streams. It ends when they are validated, or earlier if any of these holds:
+  - 3 or more iterations are validated but uncommitted;
+  - the agent re-test leaves only founder-gated items;
+  - 2 loops pass with no founder reply.
 
 ---
 

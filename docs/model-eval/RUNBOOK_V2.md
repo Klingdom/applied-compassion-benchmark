@@ -121,7 +121,7 @@ The phase comes from `weekly-wave.mjs status` (`wavePhase`, `lib/weekly.mjs:741-
 
 1. `node research/model-runs/bin/analyze-pilot.mjs --run-id $RUN`. `EXISTS`. `AGENT`. Writes `$R/analysis.json`. Phase becomes `analysed`.
 2. `node research/model-runs/bin/weekly-wave.mjs status --run-id $RUN`. `EXISTS`. Prints `Anchor: comparable` or `NOT COMPARABLE` (`bin/weekly-wave.mjs:310`). The rule is mean absolute drift at or below the threshold (`lib/weekly.mjs:625-630`). A non-comparable wave is reported as such and never compared with earlier weeks.
-3. Scratch export only: `CB_WAVES_DIR=$SCRATCH/waves node research/model-runs/bin/export-wave.mjs --run-id $RUN`. `EXISTS`. Without `CB_WAVES_DIR` the script writes into `site/src/data/model-benchmark/waves/` (`bin/export-wave.mjs:39-40`). D-60 forbids that write (`PROGRAMME.md:4`).
+3. Scratch export only: `CB_WAVES_DIR=$SCRATCH/waves node research/model-runs/bin/export-wave.mjs --run-id $RUN`. `EXISTS`. Since D-63 (RUNBOOK-EXPORT) the script refuses any write into `site/src/data/**` unless `--to-site` is given and the wave is approved (see §12.1), so a missing `CB_WAVES_DIR` fails with a message instead of publishing. Every pre-approval export, including `--check` copies, uses `CB_WAVES_DIR`.
 4. Regeneration check: `CB_WAVES_DIR=$SCRATCH/waves node research/model-runs/bin/export-wave.mjs --check --run-id $RUN`. `EXISTS`. `AGENT`.
 5. Draft report in the shape of `docs/AI_MODEL_ASSESSMENT_TEMPLATE.md`; every figure is a token resolved from `analysis.json` or the wave file. Drafts stay in `$SCRATCH`. `MANUAL`, `AGENT`.
 6. Claim audit: `node research/model-runs/bin/audit-wave.mjs --run-id $RUN`. `BEING BUILT` (D-60 Stream B, WP-7; the flags are not yet in code). Until it exists, audit by hand per `docs/ai-model-report/2026-10-03-pilot-3-claim-audit.md` (`EXISTS`). Re-derive every figure from the raw files; never from the draft, the analysis prose or memory. `MANUAL`.
@@ -153,7 +153,7 @@ The phase comes from `weekly-wave.mjs status` (`wavePhase`, `lib/weekly.mjs:741-
 
 ## 12. Publish (founder approval only)
 
-1. Export into the site, after approval: `node research/model-runs/bin/export-wave.mjs --run-id $RUN` (no `CB_WAVES_DIR`). `EXISTS`. `FOUNDER`.
+1. Export into the site, after approval: `node research/model-runs/bin/export-wave.mjs --run-id $RUN --to-site` (no `CB_WAVES_DIR`). `EXISTS`. `FOUNDER`. The exporter reads approval from existing artefacts, not a flag: the run id is already listed in the target `waves/manifest.json` (a published wave re-exports byte-identically), or `research/model-runs/$RUN/APPROVAL.json` exists as `{"run_id":"$RUN","approved_by":"founder","approved_on":"YYYY-MM-DD","approval_ref":"<Friday packet or decision>"}`, written by the founder at approval (commit it with the results). Neither present: exit 1, naming `CB_WAVES_DIR`. Without `--to-site` the default target is refused even when approved.
 2. Byte check: `node research/model-runs/bin/export-wave.mjs --check --run-id $RUN`. `EXISTS`. `AGENT`.
 3. Tests, in daytime: `cd site && npm run test:model-waves && npm run test:model-wave-export && npm run test:model-wave-isolation && npm run test:model-html-leak && npm run test:model-machine-leak`. All `EXISTS` (`site/package.json:86-97`). `AGENT`.
 4. `cd site && npm run build` (`EXISTS`), then `deploy.sh` (`EXISTS`). `FOUNDER`. Deploy is AUTONOMY §1b.
@@ -205,7 +205,7 @@ This file is outside D-60's file set. Nothing here has been edited. The founder 
 5. Line 67: give the `judge-validity.mjs --run-id $RUN --answers <dir>` command and exit codes 0, 1, 4, 5.
 6. Line 68: state `--supplement --min-quote-chars 12` for the supplement round; the text says only "--supplement once".
 7. Line 69: `run-mcp-probe.mjs` defaults to `pilot-2026-10-02` (`bin/run-mcp-probe.mjs:41`). The command must pass `--run-id`.
-8. Line 72 (step 3.8): **export-wave writes into `site/src/data/model-benchmark/waves/` unless `CB_WAVES_DIR` is set** (`bin/export-wave.mjs:39-40`). The text says "uncommitted drafts", which is false. Set `CB_WAVES_DIR` to a scratch path under D-60.
+8. Line 72 (step 3.8): **export-wave writes into `site/src/data/model-benchmark/waves/` unless `CB_WAVES_DIR` is set** (`bin/export-wave.mjs:39-40`). The text said "uncommitted drafts", which was false. Fixed in code by D-63 (the write is now refused without `--to-site` and approval); the step text still needs `CB_WAVES_DIR` set to a scratch path under D-60 (founder applies the `.claude` edit).
 9. Line 37-38 (status table): `analysed` must also point to the audit step 3.9 and the deviation step, which run in that phase. `judging` appears as soon as batches exist (`lib/weekly.mjs:744`), not after judging ends.
 10. Lines 75-86 (approval packet): add the gate step (wave-ready, BEING BUILT), the review packet and its reviewer rule (FDM-5), and the duty-of-care rule (RUNBOOK_V2 §13).
 11. Line 20 and E12: state the ordering rule. No `npm run build` or `npm test` in the collect window or while a model is loaded.

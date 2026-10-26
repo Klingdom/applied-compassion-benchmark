@@ -287,7 +287,7 @@ test("variance, spend, hosted: n/a for a local run, not-built (never pass) when 
   for (const g of [gateVariance, gateSpend, gateHosted]) assert.equal(g(local).status, "n/a");
   const hosted = mutate((x) => { x.runConfig.subjects.push({ label: "h", access_tier: "hosted-api", digest: DIGEST }); });
   for (const g of [gateVariance, gateSpend, gateHosted]) assert.equal(g(hosted).status, "not-built");
-  assert.equal(gateClaimAudit().status, "not-built");
+  assert.equal(gateClaimAudit().status, "hold", "no run id: nothing to audit, never a pass"); // the real audit is tested in claim-audit.test.mjs
   assert.equal(gateRenderLeak().status, "not-built");
 });
 
@@ -295,7 +295,7 @@ test("variance, spend, hosted: n/a for a local run, not-built (never pass) when 
 test("verdict: HOLD while any gate is not pass or n/a; READY only when all are", () => {
   const all = runAllGates(fixture());
   assert.equal(verdictOf(all).verdict, "HOLD");
-  assert.deepEqual(verdictOf(all).holding.sort(), ["G-claim-audit", "G-render-leak"]);
+  assert.deepEqual(verdictOf(all).holding.sort(), ["G-claim-audit", "G-render-leak"]); // fx-run has no report: G-claim-audit holds
   const ready = all.filter((r) => r.status === "pass" || r.status === "n/a");
   assert.equal(verdictOf(ready).verdict, "READY");
   assert.equal(verdictOf([...ready, { id: "x", status: "hold", detail: "", evidence: {} }]).verdict, "HOLD");
@@ -408,7 +408,7 @@ test("real data: wave-ready on pilot-2026-10-03 runs, prints a verdict, exits 3 
   assert.equal(by["G-complete"], "pass");
   assert.equal(by["G-digest"], "pass");
   assert.equal(by["G-validity"], "pass");
-  assert.equal(by["G-claim-audit"], "not-built");
+  assert.equal(by["G-claim-audit"], "pass"); // D-63 Stream A: the report-token claim audit is built
   assert.equal(j.verdict, "HOLD");
   assert.equal(gitStatus(), before);
   console.log(`# wave-ready pilot-2026-10-03: ${j.verdict}; holding ${j.holding.join(", ")}; report-only ${j.report_only.join(", ")}`);

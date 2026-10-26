@@ -1,0 +1,472 @@
+{
+  "design": {
+    "items": 83,
+    "ratings": 2656,
+    "replies": 1328,
+    "subjects_alphabetical": [
+      "gemma2-9b-A",
+      "gemma2-9b-B",
+      "llama3.2-3b-A",
+      "llama3.2-3b-B",
+      "mistral-7b-A",
+      "mistral-7b-B",
+      "qwen2.5-7b-A",
+      "qwen2.5-7b-B"
+    ]
+  },
+  "kind": "intervals-analysis",
+  "label": "internal, not-a-score. Pilot data, unofficial, comparability none (PRD FDM-1). Widths and ratios only; no composite point and no interval endpoint is written.",
+  "method": {
+    "composite_function": "computeCompositeFromDimensions (site/scripts/lib/scoring.mjs), unmodified",
+    "excludes_zero": "published convention: interval endpoints rounded to 0.1 before testing against 0",
+    "generators": {
+      "item_clustered": "LCG of lib/paired-bootstrap.mjs",
+      "others": "mulberry32"
+    },
+    "interval": "percentile, 95%: sorted replicates at floor(0.025 B) and floor(0.975 B)",
+    "replicates": 1000,
+    "resampling": {
+      "item_clustered": "single subject: items resampled within dimension (same draw for every subject), all replies and judges of a drawn item kept; lib/paired-bootstrap.mjs unchanged",
+      "item_then_reply": "paired differences: items resampled within dimension (paired across subjects), then whole replies resampled inside each drawn item",
+      "naive_scorer_style": "items fixed; rating rows resampled independently inside each subject-item cell (the scorer's approach; comparison baseline only)",
+      "reply_clustered": "items fixed; whole replies, with all their judge ratings, resampled inside each cell"
+    },
+    "seeds": {
+      "item_clustered": 20261003,
+      "item_then_reply": 20261105,
+      "naive_scorer_style": 20261105,
+      "reply_clustered": 20261105
+    },
+    "width_unit": "composite points"
+  },
+  "not_a_score": true,
+  "paired_differences": [
+    {
+      "a": "gemma2-9b-A",
+      "b": "gemma2-9b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.1111,
+      "ratio_naive_over_item_then_reply": 0.4,
+      "width_item_clustered": 5.4,
+      "width_item_then_reply": 6,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.1321,
+      "ratio_naive_over_item_then_reply": 0.4,
+      "width_item_clustered": 5.3,
+      "width_item_then_reply": 6,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "llama3.2-3b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0423,
+      "ratio_naive_over_item_then_reply": 0.3514,
+      "width_item_clustered": 7.1,
+      "width_item_then_reply": 7.4,
+      "width_naive_scorer_style": 2.6
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0323,
+      "ratio_naive_over_item_then_reply": 0.3438,
+      "width_item_clustered": 6.2,
+      "width_item_then_reply": 6.4,
+      "width_naive_scorer_style": 2.2
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "mistral-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0533,
+      "ratio_naive_over_item_then_reply": 0.2911,
+      "width_item_clustered": 7.5,
+      "width_item_then_reply": 7.9,
+      "width_naive_scorer_style": 2.3
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1,
+      "ratio_naive_over_item_then_reply": 0.377,
+      "width_item_clustered": 6.1,
+      "width_item_then_reply": 6.1,
+      "width_naive_scorer_style": 2.3
+    },
+    {
+      "a": "gemma2-9b-A",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0606,
+      "ratio_naive_over_item_then_reply": 0.3571,
+      "width_item_clustered": 6.6,
+      "width_item_then_reply": 7,
+      "width_naive_scorer_style": 2.5
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0286,
+      "ratio_naive_over_item_then_reply": 0.3333,
+      "width_item_clustered": 7,
+      "width_item_then_reply": 7.2,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "llama3.2-3b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.08,
+      "ratio_naive_over_item_then_reply": 0.321,
+      "width_item_clustered": 7.5,
+      "width_item_then_reply": 8.1,
+      "width_naive_scorer_style": 2.6
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0625,
+      "ratio_naive_over_item_then_reply": 0.3235,
+      "width_item_clustered": 6.4,
+      "width_item_then_reply": 6.8,
+      "width_naive_scorer_style": 2.2
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "mistral-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0282,
+      "ratio_naive_over_item_then_reply": 0.3014,
+      "width_item_clustered": 7.1,
+      "width_item_then_reply": 7.3,
+      "width_naive_scorer_style": 2.2
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 0.9863,
+      "ratio_naive_over_item_then_reply": 0.3194,
+      "width_item_clustered": 7.3,
+      "width_item_then_reply": 7.2,
+      "width_naive_scorer_style": 2.3
+    },
+    {
+      "a": "gemma2-9b-B",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1,
+      "ratio_naive_over_item_then_reply": 0.338,
+      "width_item_clustered": 7.1,
+      "width_item_then_reply": 7.1,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "llama3.2-3b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0877,
+      "ratio_naive_over_item_then_reply": 0.4355,
+      "width_item_clustered": 5.7,
+      "width_item_then_reply": 6.2,
+      "width_naive_scorer_style": 2.7
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.1091,
+      "ratio_naive_over_item_then_reply": 0.377,
+      "width_item_clustered": 5.5,
+      "width_item_then_reply": 6.1,
+      "width_naive_scorer_style": 2.3
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "mistral-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0893,
+      "ratio_naive_over_item_then_reply": 0.3934,
+      "width_item_clustered": 5.6,
+      "width_item_then_reply": 6.1,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0833,
+      "ratio_naive_over_item_then_reply": 0.3692,
+      "width_item_clustered": 6,
+      "width_item_then_reply": 6.5,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "llama3.2-3b-A",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0727,
+      "ratio_naive_over_item_then_reply": 0.4237,
+      "width_item_clustered": 5.5,
+      "width_item_then_reply": 5.9,
+      "width_naive_scorer_style": 2.5
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0781,
+      "ratio_naive_over_item_then_reply": 0.3478,
+      "width_item_clustered": 6.4,
+      "width_item_then_reply": 6.9,
+      "width_naive_scorer_style": 2.4
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "mistral-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0435,
+      "ratio_naive_over_item_then_reply": 0.3611,
+      "width_item_clustered": 6.9,
+      "width_item_then_reply": 7.2,
+      "width_naive_scorer_style": 2.6
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 0.9518,
+      "ratio_naive_over_item_then_reply": 0.3291,
+      "width_item_clustered": 8.3,
+      "width_item_then_reply": 7.9,
+      "width_naive_scorer_style": 2.6
+    },
+    {
+      "a": "llama3.2-3b-B",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0133,
+      "ratio_naive_over_item_then_reply": 0.3289,
+      "width_item_clustered": 7.5,
+      "width_item_then_reply": 7.6,
+      "width_naive_scorer_style": 2.5
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "mistral-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0952,
+      "ratio_naive_over_item_then_reply": 0.4565,
+      "width_item_clustered": 4.2,
+      "width_item_then_reply": 4.6,
+      "width_naive_scorer_style": 2.1
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0769,
+      "ratio_naive_over_item_then_reply": 0.3571,
+      "width_item_clustered": 5.2,
+      "width_item_then_reply": 5.6,
+      "width_naive_scorer_style": 2
+    },
+    {
+      "a": "mistral-7b-A",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 0.9821,
+      "ratio_naive_over_item_then_reply": 0.4182,
+      "width_item_clustered": 5.6,
+      "width_item_then_reply": 5.5,
+      "width_naive_scorer_style": 2.3
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-A",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 0.9677,
+      "ratio_naive_over_item_then_reply": 0.3667,
+      "width_item_clustered": 6.2,
+      "width_item_then_reply": 6,
+      "width_naive_scorer_style": 2.2
+    },
+    {
+      "a": "mistral-7b-B",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0517,
+      "ratio_naive_over_item_then_reply": 0.3607,
+      "width_item_clustered": 5.8,
+      "width_item_then_reply": 6.1,
+      "width_naive_scorer_style": 2.2
+    },
+    {
+      "a": "qwen2.5-7b-A",
+      "b": "qwen2.5-7b-B",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0204,
+      "ratio_naive_over_item_then_reply": 0.48,
+      "width_item_clustered": 4.9,
+      "width_item_then_reply": 5,
+      "width_naive_scorer_style": 2.4
+    }
+  ],
+  "run_id": "pilot-2026-10-03",
+  "status": "internal",
+  "subjects": {
+    "gemma2-9b-A": {
+      "ratio_item_then_reply_over_item_clustered": 0.9403,
+      "ratio_naive_over_item_clustered": 0.2537,
+      "ratio_naive_over_item_then_reply": 0.2698,
+      "replies": 249,
+      "width_item_clustered": 6.7,
+      "width_item_then_reply": 6.3,
+      "width_naive_scorer_style": 1.7,
+      "width_reply_clustered": 1.9
+    },
+    "gemma2-9b-B": {
+      "ratio_item_then_reply_over_item_clustered": 0.9718,
+      "ratio_naive_over_item_clustered": 0.2394,
+      "ratio_naive_over_item_then_reply": 0.2464,
+      "replies": 83,
+      "width_item_clustered": 7.1,
+      "width_item_then_reply": 6.9,
+      "width_naive_scorer_style": 1.7,
+      "width_reply_clustered": 0
+    },
+    "llama3.2-3b-A": {
+      "ratio_item_then_reply_over_item_clustered": 1,
+      "ratio_naive_over_item_clustered": 0.2714,
+      "ratio_naive_over_item_then_reply": 0.2714,
+      "replies": 249,
+      "width_item_clustered": 7,
+      "width_item_then_reply": 7,
+      "width_naive_scorer_style": 1.9,
+      "width_reply_clustered": 2.1
+    },
+    "llama3.2-3b-B": {
+      "ratio_item_then_reply_over_item_clustered": 0.9367,
+      "ratio_naive_over_item_clustered": 0.2532,
+      "ratio_naive_over_item_then_reply": 0.2703,
+      "replies": 83,
+      "width_item_clustered": 7.9,
+      "width_item_then_reply": 7.4,
+      "width_naive_scorer_style": 2,
+      "width_reply_clustered": 0
+    },
+    "mistral-7b-A": {
+      "ratio_item_then_reply_over_item_clustered": 0.9444,
+      "ratio_naive_over_item_clustered": 0.1944,
+      "ratio_naive_over_item_then_reply": 0.2059,
+      "replies": 249,
+      "width_item_clustered": 7.2,
+      "width_item_then_reply": 6.8,
+      "width_naive_scorer_style": 1.4,
+      "width_reply_clustered": 1.6
+    },
+    "mistral-7b-B": {
+      "ratio_item_then_reply_over_item_clustered": 1,
+      "ratio_naive_over_item_clustered": 0.1899,
+      "ratio_naive_over_item_then_reply": 0.1899,
+      "replies": 83,
+      "width_item_clustered": 7.9,
+      "width_item_then_reply": 7.9,
+      "width_naive_scorer_style": 1.5,
+      "width_reply_clustered": 0
+    },
+    "qwen2.5-7b-A": {
+      "ratio_item_then_reply_over_item_clustered": 0.973,
+      "ratio_naive_over_item_clustered": 0.2162,
+      "ratio_naive_over_item_then_reply": 0.2222,
+      "replies": 249,
+      "width_item_clustered": 7.4,
+      "width_item_then_reply": 7.2,
+      "width_naive_scorer_style": 1.6,
+      "width_reply_clustered": 1.8
+    },
+    "qwen2.5-7b-B": {
+      "ratio_item_then_reply_over_item_clustered": 0.9286,
+      "ratio_naive_over_item_clustered": 0.2024,
+      "ratio_naive_over_item_then_reply": 0.2179,
+      "replies": 83,
+      "width_item_clustered": 8.4,
+      "width_item_then_reply": 7.8,
+      "width_naive_scorer_style": 1.7,
+      "width_reply_clustered": 0
+    }
+  },
+  "summary": {
+    "median_ratio_item_then_reply_over_item_clustered_paired": 1.0525,
+    "median_ratio_item_then_reply_over_item_clustered_single_subject": 0.9581,
+    "median_ratio_naive_over_item_then_reply_paired": 0.3589,
+    "median_ratio_naive_over_item_then_reply_single_subject": 0.2343,
+    "reading": "A ratio of naive over clustered below 1 means the scorer-style interval is narrower than the clustered one by that factor."
+  }
+}

@@ -20,6 +20,7 @@ import path from "node:path";
 import { DEFAULT_BANK_PATH, REPO_ROOT, loadBankFile, servedItems, sha256 } from "./common.mjs";
 import { judgeVerdict, collectRatings, readAnswerFiles, loadReplyTexts } from "./judge-validity.mjs";
 import { NORM } from "./normalise.mjs";
+import { auditReport, loadReportInputs, describeMismatches } from "./claim-audit.mjs";
 
 export const GATE_STATUSES = Object.freeze(["pass", "fail", "hold", "n/a", "not-built"]);
 
@@ -439,8 +440,38 @@ export function gateHosted(ctx) {
   if (h.length === 0) return gate("G-hosted", "n/a", "no hosted-api subject in run-config", {});
   return gate("G-hosted", "not-built", "hosted provenance (pin hash, returned model string) checks are not built (WP-3)", { hosted: h.map((s) => s.label) });
 }
-export function gateClaimAudit() {
-  return gate("G-claim-audit", "not-built", "the report-token claim audit (A18) is not built: bin/audit-wave.mjs audits run-level claims only (deviations versus records), not report text", {});
+/**
+ * G-claim-audit (A18). Audits the TOKEN report of this run (site/src/data/model-benchmark/reports/<run_id>.md) against its
+ * wave file, the run's analysis.json and any compiled report, by lib/claim-audit.mjs (which re-uses the build's own
+ * compileReport / verifyCompiled / leak gate; no second formula). pass = zero mismatches; fail = at least one.
+ * hold = nothing to audit yet (no report) or the wave cannot be tied to an analysis.json.
+ * not-built = the only report is a hand-written assessment with literal numbers (research/model-assessments/<run_id>.md):
+ * that shape has no tokens to recompute from, so it is NOT audited and never passes.
+ * ctx.claimAudit ({ shape, md, wave, compiled }) lets a test inject the inputs.
+ */
+export function gateClaimAudit(ctx = {}) {
+  const id = "G-claim-audit";
+  if (!ctx.claimAudit && !ctx.runId) return gate(id, "hold", "no run id: no report to audit", {});
+  const inputs = ctx.claimAudit ?? loadReportInputs(ctx.runId, { repoRoot: ctx.repoRoot ?? REPO_ROOT });
+  switch (inputs.shape) {
+    case "none":
+      return gate(id, "hold", `no report source for ${ctx.runId} (site/src/data/model-benchmark/reports/${ctx.runId}.md): nothing to audit yet`, { shape: "none" });
+    case "literal-assessment":
+      return gate(id, "not-built", "the only report is a hand-written assessment with literal numbers (research/model-assessments/): it has no {{tokens}} to recompute from, so the claim audit cannot audit that shape", { shape: "literal-assessment" });
+    case "wave-missing":
+      return gate(id, "fail", `a report source exists without its wave file (${inputs.waveFile}): a report cannot exist without its wave`, { shape: "wave-missing" });
+    case "token-report": break;
+    default:
+      return gate(id, "hold", `unknown report shape "${inputs.shape}"`, {});
+  }
+  if (!inputs.wave) return gate(id, "fail", "the wave file is unreadable JSON", { shape: inputs.shape });
+  if (inputs.compiledUnreadable) return gate(id, "fail", "the compiled report JSON is unreadable", { shape: inputs.shape });
+  const result = auditReport({ md: inputs.md, wave: inputs.wave, analysis: ctx.analysis ?? null, compiled: inputs.compiled ?? null, repoRoot: ctx.repoRoot ?? REPO_ROOT });
+  const evidence = { shape: inputs.shape, ...result.summary, mismatch_count: result.mismatches.length, mismatches: sample(result.mismatches.map((m) => `[${m.check}${m.line ? ` l.${m.line}` : ""}] ${m.detail}`)) };
+  if (!result.ok) return gate(id, "fail", `${result.mismatches.length} claim(s) not supported by the wave: ${describeMismatches(result.mismatches)}`, evidence);
+  if (!ctx.analysis) return gate(id, "hold", "every token resolves against the wave, but the run has no analysis.json to tie the wave to (stale-wave check not run)", evidence);
+  const how = result.summary.compiled_checked ? "compiled report verified too" : "no compiled report on disk; audited a fresh compile of the source";
+  return gate(id, "pass", `${result.summary.figures} figure token(s) and ${result.summary.literals} literal(s) recomputed from the wave with the build's own code; wave ties to analysis.json; ${how}`, evidence);
 }
 export function gateRenderLeak() {
   return gate("G-render-leak", "not-built", "leak, blinding and render gates (A5, A16, A17) run in npm test on a preview build; wave-ready does not run them", {});

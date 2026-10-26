@@ -1,0 +1,284 @@
+{
+  "asks": {
+    "cap": 6,
+    "overflow": [],
+    "shown": [
+      {
+        "default": "Wait. The wave stays HOLD until the gate exists and passes; do not waive it without a recorded reason.",
+        "gate": "G-render-leak",
+        "kind": "gate",
+        "n": 1,
+        "status": "not-built",
+        "title": "Gate G-render-leak is not built",
+        "why": "leak, blinding and render gates (A5, A16, A17) run in npm test on a preview build; wave-ready does not run them"
+      },
+      {
+        "default": "No default exists. The first wave stays report-only for this value.",
+        "gate": "G-drift-signed",
+        "kind": "protocol-value",
+        "n": 2,
+        "protocol_value": "O11",
+        "status": "open",
+        "title": "Protocol value O11 is open (anchor.max_abs_signed_drift)",
+        "why": "Named by G-drift-signed. Until it is chosen the gate can only report a measurement, not test it. Options: [\"{rating_units, composite_units} chosen by founder\",\"report-only in the first v2 wave\"]."
+      },
+      {
+        "default": "Use the proposed default: 0.759.",
+        "gate": "G-agreement",
+        "kind": "protocol-value",
+        "n": 3,
+        "protocol_value": "O9",
+        "status": "open",
+        "title": "Protocol value O9 is open (gates.agreement_floor_exact)",
+        "why": "Named by G-agreement. Until it is chosen the gate can only report a measurement, not test it. Options: [0.759,\"other number chosen by founder\",\"n-dependent floor (binomial lower 5% point at the wave's pooled rate)\"]."
+      }
+    ]
+  },
+  "audit": {
+    "checks": [
+      {
+        "detail": "gap 1: 12.9 h (46274.462 s) from 2026-10-03T02:49:59.841Z to 2026-10-03T15:41:14.303Z, after 17 records (last subject gemma2-9b-A, next llama3.2-3b-A); explained by D1",
+        "id": "gap-1",
+        "status": "explained"
+      },
+      {
+        "detail": "gap 2: 9.3 h (33524.037 s) from 2026-10-03T16:07:21.464Z to 2026-10-04T01:26:05.501Z, after 454 records (last subject mistral-7b-A, next mistral-7b-A); explained by D2",
+        "id": "gap-2",
+        "status": "explained"
+      },
+      {
+        "detail": "D1: \"17 of 1,328 replies\" is confirmed (17 records precede gap 1)",
+        "id": "claim-D1-17-of-1328",
+        "status": "confirmed"
+      },
+      {
+        "detail": "D2: every one of 1328 records has exactly one attempt",
+        "id": "claim-D2-one-attempt",
+        "status": "confirmed"
+      },
+      {
+        "detail": "D2: the stated window 2026-10-03T16:07:17.000Z to 2026-10-04T01:26:05.000Z equals gap 2 within 60 s",
+        "id": "claim-D2-window",
+        "status": "confirmed"
+      },
+      {
+        "detail": "0 of 1328 records needed more than one attempt",
+        "id": "retries",
+        "status": "noted"
+      },
+      {
+        "detail": "all 1328 records ended with done_reason \"stop\"",
+        "id": "truncation",
+        "status": "confirmed"
+      }
+    ],
+    "deviations": [
+      {
+        "date": "2026-10-03",
+        "id": "D1",
+        "title": "call order: `gemma2:9b` runs last"
+      },
+      {
+        "date": "2026-10-04",
+        "id": "D2",
+        "title": "a second host stop, recorded late (post-hoc)"
+      }
+    ],
+    "first_record": "2026-10-03T02:44:30.992Z",
+    "gaps": [
+      {
+        "ends_at": "2026-10-03T15:41:14.303Z",
+        "explained_by": [
+          "D1"
+        ],
+        "hours": 12.9,
+        "index": 1,
+        "records_before": 17,
+        "starts_at": "2026-10-03T02:49:59.841Z"
+      },
+      {
+        "ends_at": "2026-10-04T01:26:05.501Z",
+        "explained_by": [
+          "D2"
+        ],
+        "hours": 9.3,
+        "index": 2,
+        "records_before": 454,
+        "starts_at": "2026-10-03T16:07:21.464Z"
+      }
+    ],
+    "last_record": "2026-10-04T03:46:07.177Z",
+    "open_items": [],
+    "records": 1328
+  },
+  "date": null,
+  "format": "review-packet-v1",
+  "gates": {
+    "fail": [],
+    "n/a": [
+      {
+        "detail": "local-only run: the variance check (v2 gate 6, A13) applies to hosted subjects only",
+        "id": "G-variance",
+        "report_only": false,
+        "status": "n/a"
+      },
+      {
+        "detail": "no hosted spend: nothing to compare with a ceiling (v2 gate 9, A19)",
+        "id": "G-spend",
+        "report_only": false,
+        "status": "n/a"
+      },
+      {
+        "detail": "no hosted-api subject in run-config",
+        "id": "G-hosted",
+        "report_only": false,
+        "status": "n/a"
+      }
+    ],
+    "not-built": [
+      {
+        "detail": "leak, blinding and render gates (A5, A16, A17) run in npm test on a preview build; wave-ready does not run them",
+        "id": "G-render-leak",
+        "report_only": false,
+        "status": "not-built"
+      }
+    ],
+    "pass": [
+      {
+        "detail": "every plan file was first committed before the first record (2026-10-03T02:44:30.992Z)",
+        "id": "G-plan-time",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "1328 of 1328 planned calls have an ok record; every final attempt ended \"stop\"",
+        "id": "G-complete",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "all 1328 record digests equal the run-config pins",
+        "id": "G-digest",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "every judge is at or under 5% unfound quotes",
+        "id": "G-validity",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "no judge is constant on a subject or quotes only reply prefixes (2656 ratings, 3 judge(s))",
+        "id": "G-judge-sanity",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "REPORT-ONLY (no mean-absolute threshold in the protocol; no signed-drift threshold in the protocol (O11 open)): mean abs 0.146; signed per judge: claude-fable -0.062, claude-opus +0.056, claude-sonnet +0.214",
+        "id": "G-drift-signed",
+        "report_only": true,
+        "status": "pass"
+      },
+      {
+        "detail": "0 of 93 bank items carry a valid sensitivity field (0%); sensitive items are not requested, so the five-id crisis floor governs and coverage is reported only",
+        "id": "G-sensitivity",
+        "report_only": false,
+        "status": "pass"
+      },
+      {
+        "detail": "REPORT-ONLY (pool is public: every bank item has exposureStatus public-permanent): 5 tracked and 0 staged key file(s) under research/model-runs/pilot-2026-10-03/keys/",
+        "id": "G-keys",
+        "report_only": true,
+        "status": "pass"
+      },
+      {
+        "detail": "REPORT-ONLY (no ratified agreement floor, O9 open): lowest per-subject exact agreement 0.759",
+        "id": "G-agreement",
+        "report_only": true,
+        "status": "pass"
+      },
+      {
+        "detail": "192 figure token(s) and 0 literal(s) recomputed from the wave with the build's own code; wave ties to analysis.json; compiled report verified too",
+        "id": "G-claim-audit",
+        "report_only": false,
+        "status": "pass"
+      }
+    ],
+    "waived": []
+  },
+  "kind": "review-packet",
+  "load_problems": [],
+  "open_protocol_values": [
+    "O1",
+    "O2",
+    "O3",
+    "O4",
+    "O5",
+    "O6",
+    "O7",
+    "O8",
+    "O9",
+    "O10",
+    "O11",
+    "O12",
+    "O13",
+    "O14",
+    "O15"
+  ],
+  "provenance": {
+    "command": "node research/model-runs/bin/review-packet.mjs pilot-2026-10-03",
+    "files": [
+      {
+        "path": "research/model-runs/pilot-2026-10-03/PREREGISTRATION.md",
+        "sha256": "47994b94612d124c5f463beb3c88f295a2cf2c8cc11889899db71cf9ae350f22"
+      },
+      {
+        "path": "research/model-runs/pilot-2026-10-03/analysis.json",
+        "sha256": "2a901a8ed9d52e505c49768fdd09a77049dae2eb20599133b6a25e10cc92dc35"
+      },
+      {
+        "path": "research/model-runs/pilot-2026-10-03/operations/judge-validity.json",
+        "sha256": "7afdd5e1715f3ba7d61666239d1c54d772f9197e97fb32471b55fbe7755818e4"
+      },
+      {
+        "path": "research/model-runs/pilot-2026-10-03/run-config.json",
+        "sha256": "5c14131b16bc2056915fb0d456060e70c9a7ee9f4f682551274cfdaf626e9ef9"
+      },
+      {
+        "path": "research/model-runs/weekly/PROTOCOL.v2.json",
+        "sha256": "ac01a32518d6610a0dd2d15ca578ade6767f4721c91b2084a9035c3c358ad268"
+      }
+    ],
+    "format": "review-packet-v1",
+    "tools": [
+      {
+        "name": "research/model-runs/bin/review-packet.mjs",
+        "sha256": "f013ea450fa4bbc25b5417cd669eedd570582299a79376651c6f3962ff96439f"
+      },
+      {
+        "name": "research/model-runs/lib/review-packet.mjs",
+        "sha256": "a40f67340ff8d601e59cacbe650d12653f80321fc56dec6c2c156a91d80f5b04"
+      },
+      {
+        "name": "research/model-runs/lib/wave-gates.mjs",
+        "sha256": "29f07153c3f277d9ad7027a7a834ce17f66c69d54b26fb2951ebb8bac7e73002"
+      },
+      {
+        "name": "research/model-runs/bin/audit-wave.mjs",
+        "sha256": "a4f1ec621c8b6bdb5a67ecfc5e85d4f009cd0e61b019b1db2933cb56c7e4d9fc"
+      }
+    ]
+  },
+  "publishable": {
+    "items": [],
+    "may_publish_nothing": true,
+    "subjects": [],
+    "withheld": []
+  },
+  "verdict": "HOLD",
+  "verdict_reasons": [
+    "1 gate(s) not built: G-render-leak"
+  ],
+  "wave_id": "pilot-2026-10-03"
+}

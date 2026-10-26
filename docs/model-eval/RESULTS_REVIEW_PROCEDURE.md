@@ -20,9 +20,31 @@
 4. **Reviewer's own conflicts.** A reviewer who drafted, audited or judged any part of the wave records that and hands the wave to another reviewer.
 5. **Time.** Target 30 minutes for the packet. Record the time spent.
 
-## 2. Review packet template
+## 2. Review packet
 
-The packet is `$R/REVIEW_PACKET.md`. It is generated from `analysis.json` and `operations/*`, or filled by hand until a generator exists. Numbers are copied from those files and never typed from memory. The sections follow `UX_FLOWS_EVAL.md` §3c, with the source and the withholding rule for each.
+### 2a. The generated gate packet (built, D-63 Stream D, EVAL-WP10)
+
+The mechanical part of the packet is **generated**, not written by hand:
+
+```
+node research/model-runs/bin/review-packet.mjs <wave-id> [--date YYYY-MM-DD] [--waive <gate-id>=<reason>]
+```
+
+It runs the wave gates (`lib/wave-gates.mjs`, the same list as `wave-ready.mjs`) and `audit-wave.mjs` in process, read-only, and writes `research/model-runs/review-packets/<wave-id>.md` and a JSON twin `<wave-id>.json`. `--gates-json` and `--audit-json` read saved `wave-ready --json` and `audit-wave` output instead. Exit 0 is READY, 3 is HOLD (the packet is still written). The same inputs give byte-identical files; the date line appears only with `--date`. Gates are handled by id with no status written in code, so a gate that moves from not-built to pass or fail changes the packet on the next run. The generator lints its own output and refuses to write it if it holds ranking wording, omits a gate that is not passing, lists anything as publishable under HOLD, or has more than 6 asks.
+
+Sections, in order:
+1. **Verdict**: READY or HOLD, with the reasons (failing, held or not-built gates; open audit items; load problems; report-only passes).
+2. **Gates**: every gate with status and reason, grouped as fail (including hold), not built, waived (with the recorded reason), pass, and not applicable.
+3. **Deviations and timeline gaps**: from `audit-wave.mjs`: deviations, gaps mapped to deviations, audit checks, open items. A missing audit is OPEN, never a pass.
+4. **What may be published**: derived only from passing gates. Under HOLD it says "Nothing may be published from this wave". Under READY it lists the items whose required gates all pass, subjects alphabetically, and withholds any item with a required gate that is absent or waived.
+5. **Founder asks**: at most 6, each with a default, from failing or held gates, not-built gates, open audit items and the open protocol values (`PROTOCOL.v2.json`, O-ids) that a gate names. Overflow is summarised, not dropped.
+6. **Provenance**: sha256 of the input files, sha256 of the tool sources, and the generation command.
+
+This generated packet covers the verdict strip, deviations, claim-audit and ask parts of the template below. The reviewer-facing parts that need `analysis.json` figures, the blind sample and the decision (template sections 2, 3, 5, 7, 8 and 10) are still filled by hand until a later generator exists. Gate packets are internal and are never published (§6).
+
+### 2b. Review packet template (hand-filled parts)
+
+The packet is `$R/REVIEW_PACKET.md`. The gate parts are generated as in 2a; the rest is filled by hand until a generator exists. Numbers are copied from those files and never typed from memory. The sections follow `UX_FLOWS_EVAL.md` §3c, with the source and the withholding rule for each.
 
 ```
 # Review packet: <wave-id>   UNOFFICIAL PILOT. Not a score. Comparability: none.

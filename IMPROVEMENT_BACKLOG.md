@@ -111,6 +111,39 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   *Done when:* a study doc reports the first-assessment − seed delta for every first assessment on
   record, with an interval, before any batch of first-assessment downgrades is applied.
 
+### New rows (2026-10-26, Iteration 119) — D-63, the AI model analysis and reporting mechanism
+
+- **DONE 2026-10-26 (It. 119; uncommitted):**
+  - G-claim-audit (EVAL-CLAIMAUDIT): pilot-3 passes, with 192 figures recomputed.
+  - Item-clustered intervals (`analyze-intervals.mjs`), internal only.
+  - The export guard (RUNBOOK-EXPORT).
+  - The per-wave review packet (EVAL-WP10, wave half).
+  - The PROTOCOL.v2 experiment notes (EVAL-PROTO-UPDATE).
+  - `test:model-runs` 379/379.
+- **EVAL-RENDERLEAK is now the only gate holding pilot-3** (row in the Iteration 115 section).
+  - `wave-ready` on pilot-3 gives HOLD, holding only G-render-leak.
+  - Re-scored: v1 I4 S5 L2 C4 − E2 − R1 = **12**. Impact rises because it is the last unbuilt gate on the publication path.
+- **HYGIENE-ALIAS — the composite guard in `tests/e2e-and-hygiene.test.mjs` matches only `computeCompositeFromDimensions(`.**
+  - It. 119 Stream B got past it by calling through an alias, so the import-path check never ran on the new file. The
+    coordinator reverted to a direct call.
+  - *Done when:* any reference to the function in a file outside the allow-list (destructure, property access or alias)
+    fails, comments and strings excluded, with a planted alias probe.
+  - v1: I3 S5 L2 C5 − E1 − R1 = 13.
+- **DONE 2026-10-26 (D-64; applied by the coordinator on founder approval): RUNBOOK-CLAUDE — founder applies the step 3.8 text to `.claude/commands/weekly-model-wave.md` (line 72).**
+  - Agents do not edit `.claude/**`.
+  - Proposed text (It. 119 Stream C): "8. **Wave export and draft report.** `CB_WAVES_DIR=$SCRATCH/waves node
+    research/model-runs/bin/export-wave.mjs --run-id $RUN` writes `$SCRATCH/waves/$RUN.json` outside `site/src/data`.
+    Never export into the site before founder approval: without `CB_WAVES_DIR` the exporter now refuses, and
+    `--to-site` needs `APPROVAL.json` or a published manifest entry (RUNBOOK_V2 §12). Draft the report in the shape of
+    `docs/AI_MODEL_ASSESSMENT_TEMPLATE.md` (every figure a token resolved from the wave file). Both are uncommitted
+    drafts."
+  - Founder-gated.
+- **REVIEW-PACKET-O9 — the generated packet offers O9's `proposed_default` 0.759 as the default.**
+  - The experiment finding recorded in PROTOCOL.v2 says a fixed 0.759 floor fires on noise in about 1 wave in 4.
+  - The packet is faithful to the protocol file. Changing the default is part of the founder's PROTOCOL-V2-2 decision.
+  - *Done when:* PROTOCOL-V2-2 sets O9, and the packet shows the finding next to the default until then.
+  - v1: I2 S4 L1 C5 − E1 − R1 = 10.
+
 ### New rows (2026-10-22, Iteration 118) — the 2026-10-22 research cycle
 
 - **DONE 2026-10-22 (It. 118, uncommitted): the research cycle and the `/updates/2026-10-22` briefing.** Commit C7
@@ -134,6 +167,8 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - It serves committed content only: `/ai-models/watch/2026-10-22` returns 404, and the home page still shows "Top 50".
   - Related: **OBS-1** (below) records why a build without the `GIT_SHA` build-arg reports null. Open question: which
     process rebuilt production without it.
+  - Likely cause: Iteration 111 records a founder manual deploy at 2026-10-21 17:37 UTC whose manifest had no SHA.
+    The 2026-10-22 build fits that pattern. It was replaced on 2026-10-23 by the CI deploy of `57f3f75e`.
   - *Done when:* the VPS rebuild source is identified, and every production build injects `GIT_SHA`.
   - Owner: vps-docker-manager. v1: I3 S5 L3 C3 − E2 − R1 = 11.
 
@@ -227,14 +262,14 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
     `critical_harm_triggered`, `critical_harm_rule`, `reply_declines` and `decline_offers_alternative`, with
     planted probes.
   - v1: I5 S5 L3 C3 − E4 − R3 = 9. Highest risk: it touches the evidence path.
-- **EVAL-CLAIMAUDIT — G-claim-audit is not built** (report-token claim audit, A18).
+- **DONE 2026-10-26 (It. 119; uncommitted): EVAL-CLAIMAUDIT — G-claim-audit is not built** (report-token claim audit, A18).
   - *Done when:* wave-ready recomputes every report token from the wave file and fails on a planted wrong figure.
   - v1: I4 S5 L2 C4 − E3 − R1 = 11 · v2: Rc +2 (DC-25 adjacent) → 13.
 - **EVAL-RENDERLEAK — G-render-leak is not built.**
   - *Done when:* wave-ready runs the A5, A16 and A17 checks on a preview build, or delegates to them and reads their
     exit codes.
   - v1: I3 S4 L1 C4 − E2 − R1 = 9.
-- **EVAL-WP10 — Friday packet generator** (W-5; C-FD-2 is approved).
+- **PARTLY DONE 2026-10-26 (It. 119; the per-wave review packet; the Friday-packet lines remain): EVAL-WP10 — Friday packet generator** (W-5; C-FD-2 is approved).
   - *Done when:* it generates this week's packet lines from wave-ready JSON plus the open founder rows, with a fixture
     test.
   - v1: I3 S4 L2 C4 − E2 − R1 = 10.
@@ -242,7 +277,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - v1: I3 S4 L3 C4 − E2 − R1 = 11.
 - **EVAL-KEYHOOK — a pre-commit guard refusing staged `keys/` for unpublished pools** (WP-12, founder-gated hook).
   - v1: I3 S4 L1 C4 − E1 − R1 = 10.
-- **RUNBOOK-EXPORT — `.claude/commands/weekly-model-wave.md` step 3.8 calls exports "uncommitted drafts".**
+- **DONE 2026-10-26 (It. 119; uncommitted; the `.claude` text is RUNBOOK-CLAUDE): RUNBOOK-EXPORT — `.claude/commands/weekly-model-wave.md` step 3.8 calls exports "uncommitted drafts".**
   `export-wave.mjs:40` writes into `site/src/data/model-benchmark/waves/` unless `CB_WAVES_DIR` is set.
   - *Done when:* the runbook uses `CB_WAVES_DIR` for every export before approval, and a test refuses a default
     export while a wave is unapproved.
@@ -251,7 +286,7 @@ occurrence counts. Each produced a confident wrong answer that later verificatio
   - *Done when:* the item-fix register (CYC-W1) lists the 27 doubly-flagged item IDs with a review status, and any bank
     change is versioned.
   - v1: I4 S5 L4 C4 − E3 − R1 = 13.
-- **EVAL-PROTO-UPDATE — fold the E2, E5 and E6 findings into the PROTOCOL.v2 open-value defaults** (O9 floor depends on
+- **DONE 2026-10-26 (It. 119; uncommitted; notes only, every value still OPEN): EVAL-PROTO-UPDATE — fold the E2, E5 and E6 findings into the PROTOCOL.v2 open-value defaults** (O9 floor depends on
   n; 0.30 anchor threshold; interval method).
   - These are proposals only; the founder decides at PROTOCOL-V2-2.
   - v1: I4 S5 L2 C4 − E1 − R1 = 13.

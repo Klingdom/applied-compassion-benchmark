@@ -1,5 +1,56 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 119 — 2026-10-26 (founder (D-63): the AI model analysis and reporting mechanism)
+
+**Selected: `founder (D-63)`.** Founder, 2026-10-26, verbatim: "Continue expanding on AI Model analysis and reporting
+mechanism".
+- D-63 continues D-60. It takes four open, agent-doable D-60 rows: EVAL-CLAIMAUDIT (v2 13), item-clustered intervals
+  with EVAL-PROTO-UPDATE (13), RUNBOOK-EXPORT (14) and EVAL-WP10 (10).
+- It names its paths, does not override S6, and has an exit (DECISIONS.md D-63), per Meta-review 14 A2.
+- WIP at the start: 0 validated-uncommitted iterations, because `57f3f75e` is live.
+- Not a ranked deviation, under the lane rule.
+
+**Streams (four backend-engineer agents, disjoint files):**
+
+| Stream | Built | Coordinator re-check (V2/V3) |
+|---|---|---|
+| A. G-claim-audit | `lib/claim-audit.mjs` and its tests (27). `gateClaimAudit` is wired into `lib/wave-gates.mjs`. It recomputes every report figure through the build's own `compileReport`, `verifyCompiled` and `leakProblems` (no second formula). It checks that the wave ties to `analysis.json`, and it checks swapped ranges and D-29a point display. Hand-written `research/model-assessments/*.md` stay "not-built" | `wave-ready.mjs research/model-runs/pilot-2026-10-03`: G-claim-audit **pass**, 192 figure tokens, verdict HOLD holding only G-render-leak (before: holding both). **Independent probes** (`v3claim.mjs`, real pilot-3 inputs in memory, no file written): the real report has 0 mismatches; a typed-in number gives 2; a corrupted token path gives 2; "60 to 40" gives 3 |
+| B. Item-clustered intervals | `lib/intervals.mjs`, `bin/analyze-intervals.mjs` and its tests (9). Internal `research/model-runs/analysis/pilot-2026-10-0{1,2,3}/intervals.json` files: alphabetical, labelled internal and not-a-score. The agent reports an exact reproduction of the experiment E5 widths. Naive width is about 0.23–0.25 of clustered. PROTOCOL.v2.json gains `experiment_finding` notes on O9, O11, the anchor threshold and the interval method, edited by parser. Status stays proposed with all 15 values OPEN, and `proposed_default` is unchanged | **Rejected one workaround and fixed it.** The agent got past the hygiene guard ("composite comes from the canonical scorer only"; it pins the files that call `computeCompositeFromDimensions(`) by calling through an alias. The guard's import-path check therefore never ran on the new file. The coordinator changed it to a direct call and added `intervals.mjs` to the allow-list with a dated reason, as `analyze-pilot.mjs` was added on 2026-10-01. Hygiene and intervals tests 18/18. **Determinism:** deleted `pilot-2026-10-02/intervals.json` and regenerated it with `--run-id`: byte-identical. A first attempt with the wrong arguments never rewrote the file, so its "identical" proved nothing (V8). It was re-run correctly |
+| C. Export guard (RUNBOOK-EXPORT) | `bin/export-wave.mjs` refuses to write into `site/src/data/**` without `--to-site`. `--to-site` needs `research/model-runs/<id>/APPROVAL.json` (founder-written) or a published manifest entry. With `CB_WAVES_DIR` set outside site data, it exports as before. Tests: 10, including a guard-stripped copy that writes, as the probe. All three published waves and the manifest re-export byte-identically into a temp dir. `RUNBOOK_V2.md` uses `CB_WAVES_DIR` for every pre-approval export | Default `export-wave.mjs --run-id pilot-2026-10-03` exits **1**, and `git status site/src/data` shows 0 changes (excluding the held file). A first check read `tail`'s exit code and was discarded |
+| D. Review packet (EVAL-WP10, wave half) | `lib/review-packet.mjs`, `bin/review-packet.mjs` and its tests (16). `research/model-runs/review-packets/pilot-2026-10-03.{md,json}`. Sections: verdict; gates by group; deviations and gaps; what may be published ("Nothing" under HOLD); founder asks (≤ 6, each with a default); provenance. It lints its own output for ranking words | Regenerated: exit 3 (HOLD), and the `.md` is byte-identical. A grep for best/top/winner/rank/ranking/worst gives 0; the positive control is the same file giving 8 "pilot" hits. Asks: G-render-leak (wait), O11 (report-only) and O9 (default 0.759, the protocol's `proposed_default`; the experiment finding against it is recorded in PROTOCOL.v2) |
+
+**Chain:**
+- `npm run test:model-runs` passes **379/379**: 317 at Iteration 115, plus 27 + 9 + 10 + 16 new.
+- The new tests run inside `test:model-runs`, so the step count stays 83.
+- `npm test` first failed on `test:iteration-log-coverage`, because the hygiene comment names Iteration 119; this
+  entry fixes that. The re-run result is recorded in the SYSTEM_HEALTH note.
+
+**No published effect:**
+- No `site/src/data/**`, page, report, ranking or score change.
+- PROTOCOL.v2 is not ratified.
+- `.claude/**` is untouched. Stream C's replacement text for `.claude/commands/weekly-model-wave.md` step 3.8 is filed
+  as RUNBOOK-CLAUDE for the founder.
+
+**Exit (D-63):**
+- One iteration, all four streams validated.
+- What remains is either founder-gated (commit, the `.claude` text, ratification) or a new row.
+
+**Pathspec (for the next commit; verify with `git ls-files --modified --others --exclude-standard`):**
+- `research/model-runs/lib/claim-audit.mjs research/model-runs/lib/intervals.mjs research/model-runs/lib/review-packet.mjs research/model-runs/lib/wave-gates.mjs research/model-runs/bin/analyze-intervals.mjs research/model-runs/bin/review-packet.mjs research/model-runs/bin/export-wave.mjs research/model-runs/tests/ research/model-runs/analysis/ research/model-runs/review-packets/ research/model-runs/weekly/PROTOCOL.v2.json docs/model-eval/RUNBOOK_V2.md docs/model-eval/RESULTS_REVIEW_PROCEDURE.md ITERATION_LOG.md DECISIONS.md IMPROVEMENT_BACKLOG.md SYSTEM_HEALTH.md CHANGELOG.md`
+- The last three also carry the 2026-10-23 post-deploy notes.
+
+**Commit approved (D-64, founder 2026-10-26: "approve and commit all").**
+- The coordinator applied the RUNBOOK-CLAUDE step 3.8 text to `.claude/commands/weekly-model-wave.md`, and that file
+  joins the pathspec.
+- The held America-at-250 pair and the nonprofit library are excluded, per the standing instruction.
+- Not pushed or deployed: there is no site-visible change.
+
+**Follow-ups:**
+- **EVAL-RENDERLEAK:** now the only gate holding pilot-3.
+- **HYGIENE-ALIAS:** the composite guard cannot see an aliased call in a file that is not on its list.
+- **RUNBOOK-CLAUDE:** the founder applies the step 3.8 text.
+- The Friday-packet half of EVAL-WP10.
+
 ## Iteration 118 — 2026-10-22 (founder (direct request): entity research cycle for 2026-10-22)
 
 **Selected: `founder (direct request)`.** The founder asked for "a benchmark-research for Oct 22". The last scan was

@@ -1,10 +1,16 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
 Snapshot: **2026-09-15** (coordinator, measured — every figure below was re-run or re-read on this date unless marked)
-Last change: Iteration 118 (founder-requested entity research cycle for 2026-10-22: 1,329 scanned, 15 assessed with all composites recomputed and 0 mismatches, 3 new pending proposals, no score changes, daily briefing /updates/2026-10-22 validated and built). Iteration 117 before it (forced (S6) governance after Meta-review 14: verified commit split C1-C7, DC-26 registered with a waiver to 2026-11-06, founder lane rule, D-61a proposed, Friday packet re-ranked to 6 asks; founder-requested feed-count fix, feed description 1,155 to 1,325 entities with test-no-stale-counts now scanning the public-copy build scripts). Iteration 116: hydration #418 fixed, primary-button contrast 1.5 to 10.5:1, no overflow 390-1366 on 13 routes, 12px floor gated for Tailwind classes in source only (SVG chart text still renders at 4.2-10.7px), home publication table from registry. Iterations 112-118 uncommitted; production last verified at b23e1a26 on 2026-10-21, and its build-manifest.json now reports a 2026-10-22T15:10:34Z build with git sha null (source unavailable), so the deployed sha is unverified; chain 83 steps
+Last change: Iteration 119, uncommitted (D-63 AI model analysis and reporting: G-claim-audit built and passing on pilot-3 with 192 figures, item-clustered intervals tool (internal), export-wave guard against unapproved writes into site data, generated review packet; model-runs suite 379/379). Iteration 118 before it (founder-requested entity research cycle for 2026-10-22: 1,329 scanned, 15 assessed, 3 new pending proposals, no score changes). Iterations 112-118 committed and deployed as 57f3f75e on 2026-10-23 (dispatch run 39992516532, dirty false); chain 83 steps
 **Note 2026-09-30: this file skipped Iterations 54-60**, and an audit of it that day found **18 of 65 checkable claims false** — including a deployment status that read a green workflow name as a deployment. All 18 are corrected or marked not-re-measured (Iteration 62). `test:health-freshness` now holds the last-change line, the chain step count, the RISKS row count and highest id, and every "uncommitted" annotation. **The other claims in this file remain only as true as the last person to re-read them** — a gate on four figures is not a guarantee about the rest.
 
 ## Latest status notes (last 3; older notes archived at the bottom, verbatim)
+
+> 2026-10-26 (Iteration 119 — **D-63, AI model analysis and reporting**): G-claim-audit is built (pilot-3: 192 report
+> figures recomputed from the wave, pass); item-clustered intervals are an internal analysis tool (naive intervals are
+> about a quarter of the honest width); `export-wave` refuses to write unapproved waves into site data; a generated
+> review packet states the verdict and what may be published. pilot-3 is HOLD on G-render-leak only. `test:model-runs`
+> 379/379. Production runs `57f3f75e` (deployed 2026-10-23). **One iteration (119) awaits commit approval.**
 
 > 2026-10-22 (Iteration 118 — **research cycle for 2026-10-22, founder request**): 1,329 entities scanned (18 with
 > evidence), 15 assessed, all 15 composites recomputed by the coordinator with 0 mismatches, 3 new pending proposals
@@ -12,13 +18,6 @@ Last change: Iteration 118 (founder-requested entity research cycle for 2026-10-
 > lint and the move-claims test; build exit 0; `npm test` exit 0. Search quality was degraded and disclosed. Production
 > reports a sha-null build at 2026-10-22T15:10Z that no deploy run explains (serves committed content only).
 > **Seven iterations (112–118) await commit approval as C1–C7.**
-
-> 2026-10-22 (Iteration 117 — **governance, forced (S6)**): Meta-review 14 amendments A1, A4, A5, the registry half of
-> A3 and the A2 rule are applied. The commit split C1–C7 is verified mechanically: its union plus the exclusion list
-> equals `git status --short --untracked-files=all`, with 0 unassigned paths. DC-26 (a source gate passes while the
-> rendered page is wrong) is registered with a waiver to 2026-11-06. The text-size gate covers Tailwind classes in source
-> only. The production feed said "1,155 entities"; the fixed build says 1,325. **Six iterations (112–117) await commit
-> approval; Iteration 118, the 2026-10-22 research cycle, is in progress.**
 
 > 2026-10-22 (Iteration 116 — **D-61 visual loops**): production has a React hydration error on 3 routes, 1.5:1 primary
 > buttons, tablet overflow on 3 routes, a false "Uneven profile (std dev 0.00)" sentence and a stale home table. All are
@@ -60,7 +59,11 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 - **Auto-deploy: ❌ NOT IN EFFECT, and the old line here was misleading in the worst way.** It read "9 consecutive successful `Deploy to VPS` runs" and named a last-deployed commit. The *workflow* called "Deploy to VPS" does succeed — but its **deploy job is skipped**, on all 10 of the most recent runs checked 2026-09-30 (`gh run view <id> --json jobs`), because deployment is founder-operated. A green workflow name was being read as a deployment.
 - **Live defect (verified 2026-10-01) — CORRECTED 2026-10-02 after deploy:** this row said the 2026-09-24 briefing returned 301 → /404. The URL that check used was not recorded. The 2026-10-01 BEFORE check used `/updates/daily/<date>`, which is the data-file path, never a page route. That was an absence claim with no positive control (V8). After the deploy, `/updates/2026-09-24` and `/updates/2026-10-01` both return **200** (the route is `/updates/<date>`), and `/updates/daily/<date>` still 301s to /404, as it always would. Whether the 09-24 briefing was actually missing before the deploy cannot now be re-checked.
 - **What is actually live (verified 2026-10-02, post-deploy):** production `build-manifest.json` reports `buildDate` **2026-10-02T23:30:21Z** and `git.sha` **`43e90bcd`**, so the deployed commit is now knowable. It also reports `dirty: true`, which means the VPS checkout has local modifications; not investigated, and flagged for the founder. Deployed by dispatch run `37077608892` (Deploy to VPS and the post-deploy health check both succeeded). The CI SSH block recorded in Iteration 91 did not recur.
-- **Live now (verified 2026-10-22):** `build-manifest.json` reports `git.sha` **`b23e1a26`** and `dirty: false`, deployed by dispatch run `39666073051` (2026-10-21T20:03:15Z). The 2026-10-02 line above is kept as dated history.
+- **Live now (verified 2026-10-23, V7):** `build-manifest.json` reports `git.sha` **`57f3f75e`**, `dirty: false`, `source: env`.
+  - Built 2026-10-23T17:15:52Z by dispatch run `39992516532`. All 7 jobs succeeded, including the post-deploy health check.
+  - This is Iterations 112–118 (D-62).
+  - The 2026-10-22T15:10Z sha-null build it replaced is VPS-PROVENANCE.
+  - The 2026-10-02 line above is kept as dated history.
 - **Gap:** post-deploy verify does not assert score values (RISK-004).
 - **Worker (Cloudflare):** not deployed; `api.compassionbenchmark.com` does not resolve (RISK-014).
 
@@ -111,6 +114,13 @@ test:scoring (125) · test:lint (11 committed; 99 with It. 13) · test:history (
 ---
 
 ## Archive — earlier status notes (verbatim, moved 2026-09-15; figures are as of their dates and now stale)
+
+> 2026-10-22 (Iteration 117 — **governance, forced (S6)**): Meta-review 14 amendments A1, A4, A5, the registry half of
+> A3 and the A2 rule are applied. The commit split C1–C7 is verified mechanically: its union plus the exclusion list
+> equals `git status --short --untracked-files=all`, with 0 unassigned paths. DC-26 (a source gate passes while the
+> rendered page is wrong) is registered with a waiver to 2026-11-06. The text-size gate covers Tailwind classes in source
+> only. The production feed said "1,155 entities"; the fixed build says 1,325. **Six iterations (112–117) await commit
+> approval; Iteration 118, the 2026-10-22 research cycle, is in progress.**
 
 > 2026-10-22 (Iteration 115 — **D-60 evaluation programme**): eight design docs and four builds, all verified by the coordinator.
 > PROTOCOL.v2 is proposed with 15 open values. `wave-ready` and `audit-wave` now exist; pilot-3 is HOLD only on 2

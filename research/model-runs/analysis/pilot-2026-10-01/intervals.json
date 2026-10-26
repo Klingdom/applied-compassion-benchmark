@@ -1,0 +1,164 @@
+{
+  "design": {
+    "items": 83,
+    "ratings": 1992,
+    "replies": 996,
+    "subjects_alphabetical": [
+      "claude-fable",
+      "claude-haiku",
+      "claude-opus",
+      "claude-sonnet"
+    ]
+  },
+  "kind": "intervals-analysis",
+  "label": "internal, not-a-score. Pilot data, unofficial, comparability none (PRD FDM-1). Widths and ratios only; no composite point and no interval endpoint is written.",
+  "method": {
+    "composite_function": "computeCompositeFromDimensions (site/scripts/lib/scoring.mjs), unmodified",
+    "excludes_zero": "published convention: interval endpoints rounded to 0.1 before testing against 0",
+    "generators": {
+      "item_clustered": "LCG of lib/paired-bootstrap.mjs",
+      "others": "mulberry32"
+    },
+    "interval": "percentile, 95%: sorted replicates at floor(0.025 B) and floor(0.975 B)",
+    "replicates": 1000,
+    "resampling": {
+      "item_clustered": "single subject: items resampled within dimension (same draw for every subject), all replies and judges of a drawn item kept; lib/paired-bootstrap.mjs unchanged",
+      "item_then_reply": "paired differences: items resampled within dimension (paired across subjects), then whole replies resampled inside each drawn item",
+      "naive_scorer_style": "items fixed; rating rows resampled independently inside each subject-item cell (the scorer's approach; comparison baseline only)",
+      "reply_clustered": "items fixed; whole replies, with all their judge ratings, resampled inside each cell"
+    },
+    "seeds": {
+      "item_clustered": 20261001,
+      "item_then_reply": 20261105,
+      "naive_scorer_style": 20261105,
+      "reply_clustered": 20261105
+    },
+    "width_unit": "composite points"
+  },
+  "not_a_score": true,
+  "paired_differences": [
+    {
+      "a": "claude-fable",
+      "b": "claude-haiku",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0323,
+      "ratio_naive_over_item_then_reply": 0.2708,
+      "width_item_clustered": 9.3,
+      "width_item_then_reply": 9.6,
+      "width_naive_scorer_style": 2.6
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-opus",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.0676,
+      "ratio_naive_over_item_then_reply": 0.3544,
+      "width_item_clustered": 7.4,
+      "width_item_then_reply": 7.9,
+      "width_naive_scorer_style": 2.8
+    },
+    {
+      "a": "claude-fable",
+      "b": "claude-sonnet",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0494,
+      "ratio_naive_over_item_then_reply": 0.3176,
+      "width_item_clustered": 8.1,
+      "width_item_then_reply": 8.5,
+      "width_naive_scorer_style": 2.7
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-opus",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0959,
+      "ratio_naive_over_item_then_reply": 0.3625,
+      "width_item_clustered": 7.3,
+      "width_item_then_reply": 8,
+      "width_naive_scorer_style": 2.9
+    },
+    {
+      "a": "claude-haiku",
+      "b": "claude-sonnet",
+      "excludes_zero_item_clustered": true,
+      "excludes_zero_item_then_reply": true,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.125,
+      "ratio_naive_over_item_then_reply": 0.3704,
+      "width_item_clustered": 7.2,
+      "width_item_then_reply": 8.1,
+      "width_naive_scorer_style": 3
+    },
+    {
+      "a": "claude-opus",
+      "b": "claude-sonnet",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": false,
+      "ratio_item_then_reply_over_item_clustered": 1.1864,
+      "ratio_naive_over_item_then_reply": 0.4143,
+      "width_item_clustered": 5.9,
+      "width_item_then_reply": 7,
+      "width_naive_scorer_style": 2.9
+    }
+  ],
+  "run_id": "pilot-2026-10-01",
+  "status": "internal",
+  "subjects": {
+    "claude-fable": {
+      "ratio_item_then_reply_over_item_clustered": 1,
+      "ratio_naive_over_item_clustered": 0.1607,
+      "ratio_naive_over_item_then_reply": 0.1607,
+      "replies": 249,
+      "width_item_clustered": 11.2,
+      "width_item_then_reply": 11.2,
+      "width_naive_scorer_style": 1.8,
+      "width_reply_clustered": 2.1
+    },
+    "claude-haiku": {
+      "ratio_item_then_reply_over_item_clustered": 1.0263,
+      "ratio_naive_over_item_clustered": 0.2763,
+      "ratio_naive_over_item_then_reply": 0.2692,
+      "replies": 249,
+      "width_item_clustered": 7.6,
+      "width_item_then_reply": 7.8,
+      "width_naive_scorer_style": 2.1,
+      "width_reply_clustered": 2.2
+    },
+    "claude-opus": {
+      "ratio_item_then_reply_over_item_clustered": 1.025,
+      "ratio_naive_over_item_clustered": 0.2375,
+      "ratio_naive_over_item_then_reply": 0.2317,
+      "replies": 249,
+      "width_item_clustered": 8,
+      "width_item_then_reply": 8.2,
+      "width_naive_scorer_style": 1.9,
+      "width_reply_clustered": 2
+    },
+    "claude-sonnet": {
+      "ratio_item_then_reply_over_item_clustered": 1.058,
+      "ratio_naive_over_item_clustered": 0.2899,
+      "ratio_naive_over_item_then_reply": 0.274,
+      "replies": 249,
+      "width_item_clustered": 6.9,
+      "width_item_then_reply": 7.3,
+      "width_naive_scorer_style": 2,
+      "width_reply_clustered": 2.5
+    }
+  },
+  "summary": {
+    "median_ratio_item_then_reply_over_item_clustered_paired": 1.0818,
+    "median_ratio_item_then_reply_over_item_clustered_single_subject": 1.0257,
+    "median_ratio_naive_over_item_then_reply_paired": 0.3585,
+    "median_ratio_naive_over_item_then_reply_single_subject": 0.2505,
+    "reading": "A ratio of naive over clustered below 1 means the scorer-style interval is narrower than the clustered one by that factor."
+  }
+}

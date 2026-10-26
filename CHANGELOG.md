@@ -28,6 +28,17 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 > Watch and Insights routes return 200, `/updates/2026-10-01` reads "12 measured differences, not applied", and
 > `/updates/2026-05-21` reads "largest move Croatia -7.8". The dated entries themselves are unchanged.
 
+> **Status note, 2026-10-23 (deploy):** the 2026-10-22 entries below are live.
+> - Production was built from **`57f3f75e`** at 2026-10-23T17:15:52Z by dispatch run `39992516532`. The deploy and the
+>   post-deploy health check both succeeded, and the build manifest reports a clean checkout.
+> - Verified live:
+>   - `/updates/2026-10-22` and `/ai-models/watch/2026-10-22` return 200.
+>   - The feed's newest item is 2026-10-22, and it reads "scored across 1,325 entities".
+>   - The home page has 0 "Top 50 global labs" and reads "Browse the 8 indexes".
+>   - `/country/sudan` reads "Even profile (std dev 0.00)", with 0 "Uneven profile (std dev 0.00)".
+>   - `/`, `/updates`, `/ai-labs` and `/updates/2026-10-22` load with 0 page errors.
+> - The dated entries themselves are unchanged.
+
 > **Status note, 2026-10-21 (second deploy):** the entry "How we analyse AI models every week, and fixes from a full
 > audit of the AI model pages" is live. Production was built from **`b23e1a26`** at 2026-10-21T20:03:15Z by dispatch run
 > `39666073051`; the build manifest reports a clean checkout. Verified live: `/ai-models/cycle` returns 200 and opens with
@@ -36,6 +47,21 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+
+## 2026-10-26 — AI model evaluation: report figures checked against the data, honest intervals, a safer export, a generated review packet (NO score changes; internal; pending commit)
+
+- **Report figure check:** before any pilot or wave report can be published, every figure in it is recomputed from the
+  wave data with the same code that builds the report.
+  - A wrong, typed-in or unsupported figure blocks publication. So do a range printed backwards and a point shown for a
+    model the test did not separate.
+  - All three published pilot reports pass.
+- **Intervals:** a new internal analysis tool computes uncertainty ranges that treat each test item as one unit of
+  evidence. The intervals the scorer prints treat judge ratings as independent, which makes them about four times too
+  narrow. The new ranges are internal only: they change no published report.
+- **Safer export:** the wave export tool no longer writes into the site's published data unless the wave is approved.
+- **Review packet:** after a wave, one generated document lists every check, what may be published ("nothing" while
+  any check is missing or failing), and at most six decisions for the founder.
+- **Impact:** no published page, report, score or ranking changes. The protocol stays proposed.
 
 ## 2026-10-22 — Daily briefing: Paris and UNC Chapel Hill measured for the first time (NO score changes; pending deploy)
 

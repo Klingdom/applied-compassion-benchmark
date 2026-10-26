@@ -87,10 +87,18 @@
       "proposed_default": 0.759,
       "options": [
         0.759,
-        "other number chosen by founder"
+        "other number chosen by founder",
+        "n-dependent floor (binomial lower 5% point at the wave's pooled rate)"
       ],
       "source": "pilot-2026-10-03 lowest exact-agreement (waves/pilot-2026-10-03.json:479); proposal l.125",
-      "decide": "founder"
+      "decide": "founder",
+      "experiment_finding": {
+        "note": "PROPOSAL ONLY (EVAL-PROTO-UPDATE, D-63 Stream B). Not ratified; the value stays OPEN for the founder.",
+        "finding": "A fixed 0.759 would fire on sampling noise alone: under one pooled exact-agreement rate of 0.821 the lowest of 8 subjects falls at or below 0.759 in 22.9% of waves, and 5 of 8 per-subject item-clustered intervals contain 0.759.",
+        "proposed_alternative": "n-dependent floor: the binomial lower 5% point at the wave's pooled rate for the subject's reply count (0.747 at n = 83, 0.779 at n = 249 in pilot-3), or a pooled-only floor.",
+        "proposed_default_unchanged": "proposed_default stays 0.759 until the founder decides; the alternative is a new option.",
+        "source": "research/model-runs/experiments/2026-10-22/REPORT.md (E2, E5, E6); results.json"
+      }
     },
     "family_gap_max_composite": {
       "id": "O10",
@@ -146,7 +154,23 @@
         "report-only in the first v2 wave"
       ],
       "source": "No default. Observed per-judge signed drift -0.062..+0.214 rating units (pilot-2026-10-03/analysis.json:3109-3123). docs/model-eval/METHODS_LANDSCAPE.md suggested v2 additions.",
-      "decide": "founder"
+      "decide": "founder",
+      "experiment_finding": {
+        "note": "PROPOSAL ONLY (EVAL-PROTO-UPDATE, D-63 Stream B). Not ratified; the value stays OPEN for the founder.",
+        "finding": "No judge's signed bridge-drift interval excludes 0 in either bridge; pooled signed drift is +0.021 [-0.083, 0.125] (pilot-2) and +0.063 [-0.021, 0.188] (pilot-3). Day-to-day re-rate drift is about the size of same-day disagreement between judges.",
+        "proposed_alternative": "report-only in the first v2 wave (already an option). If a number is wanted: 0.20 rating units, calibrated on 2 bridges only.",
+        "source": "research/model-runs/experiments/2026-10-22/REPORT.md (E2, E5, E6); results.json"
+      }
+    },
+    "max_mean_abs_difference_experiment_note": {
+      "note": "PROPOSAL ONLY (EVAL-PROTO-UPDATE, D-63 Stream B). Not ratified; the value stays OPEN for the founder. The value 0.30 above is unchanged and is the only one the planner reads.",
+      "finding": "0.30 is too tight for a 48-pair bridge: the upper 95% bound of the pooled mean absolute difference is 0.375 in pilot-2 (observed 0.229) and 0.292 in pilot-3 (observed 0.146).",
+      "options_to_consider": [
+        "a larger anchor sample",
+        "a threshold tested against the upper bound and scaled to n",
+        "about 0.40"
+      ],
+      "source": "research/model-runs/experiments/2026-10-22/REPORT.md (E2, E5, E6); results.json"
     }
   },
   "max_new_subjects_per_wave": {
@@ -364,7 +388,14 @@
       "item_clustered_intervals": {
         "requirement": "Bootstrap intervals resample by item, with the numbers of items and clusters published beside any range.",
         "source": "docs/model-eval/METHODS_LANDSCAPE.md F3.3, suggested v2 additions 2",
-        "implemented": false
+        "implemented": false,
+        "experiment_finding": {
+          "note": "PROPOSAL ONLY (EVAL-PROTO-UPDATE, D-63 Stream B). Not ratified; the value stays OPEN for the founder.",
+          "finding": "Scorer trial-level intervals treat judge ratings as independent and are about 4 times too narrow (median width ratio 0.23 in pilot-3; 0.23 to 0.25 across pilot-1 to pilot-3 re-computed by lib/intervals.mjs).",
+          "proposed_method": "Never quote scorer trial-level intervals. Single subject: item-clustered percentile bootstrap (items resampled within dimension, all replies and judges of a drawn item kept). Paired difference: item-then-reply (items resampled within dimension, paired across subjects, then whole replies resampled). 1000 replicates, fixed seed, 95% percentile interval.",
+          "analysis_module": "research/model-runs/lib/intervals.mjs; bin/analyze-intervals.mjs writes INTERNAL analysis/<wave-id>/intervals.json; tests/intervals.test.mjs reproduces the experiment figures exactly.",
+          "source": "research/model-runs/experiments/2026-10-22/REPORT.md (E2, E5, E6); results.json"
+        }
       },
       "judge_test_retest": {
         "requirement": "Judges re-rate a seeded sample of their own earlier ratings; report exact-repeat rate and mean signed difference.",

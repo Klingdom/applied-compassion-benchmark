@@ -1,0 +1,82 @@
+{
+  "design": {
+    "items": 83,
+    "ratings": 996,
+    "replies": 498,
+    "subjects_alphabetical": [
+      "llama3.2-3b",
+      "qwen2.5-7b"
+    ]
+  },
+  "kind": "intervals-analysis",
+  "label": "internal, not-a-score. Pilot data, unofficial, comparability none (PRD FDM-1). Widths and ratios only; no composite point and no interval endpoint is written.",
+  "method": {
+    "composite_function": "computeCompositeFromDimensions (site/scripts/lib/scoring.mjs), unmodified",
+    "excludes_zero": "published convention: interval endpoints rounded to 0.1 before testing against 0",
+    "generators": {
+      "item_clustered": "LCG of lib/paired-bootstrap.mjs",
+      "others": "mulberry32"
+    },
+    "interval": "percentile, 95%: sorted replicates at floor(0.025 B) and floor(0.975 B)",
+    "replicates": 1000,
+    "resampling": {
+      "item_clustered": "single subject: items resampled within dimension (same draw for every subject), all replies and judges of a drawn item kept; lib/paired-bootstrap.mjs unchanged",
+      "item_then_reply": "paired differences: items resampled within dimension (paired across subjects), then whole replies resampled inside each drawn item",
+      "naive_scorer_style": "items fixed; rating rows resampled independently inside each subject-item cell (the scorer's approach; comparison baseline only)",
+      "reply_clustered": "items fixed; whole replies, with all their judge ratings, resampled inside each cell"
+    },
+    "seeds": {
+      "item_clustered": 20261002,
+      "item_then_reply": 20261105,
+      "naive_scorer_style": 20261105,
+      "reply_clustered": 20261105
+    },
+    "width_unit": "composite points"
+  },
+  "not_a_score": true,
+  "paired_differences": [
+    {
+      "a": "llama3.2-3b",
+      "b": "qwen2.5-7b",
+      "excludes_zero_item_clustered": false,
+      "excludes_zero_item_then_reply": false,
+      "excludes_zero_naive_scorer_style": true,
+      "ratio_item_then_reply_over_item_clustered": 1.0476,
+      "ratio_naive_over_item_then_reply": 0.3636,
+      "width_item_clustered": 6.3,
+      "width_item_then_reply": 6.6,
+      "width_naive_scorer_style": 2.4
+    }
+  ],
+  "run_id": "pilot-2026-10-02",
+  "status": "internal",
+  "subjects": {
+    "llama3.2-3b": {
+      "ratio_item_then_reply_over_item_clustered": 1.058,
+      "ratio_naive_over_item_clustered": 0.2754,
+      "ratio_naive_over_item_then_reply": 0.2603,
+      "replies": 249,
+      "width_item_clustered": 6.9,
+      "width_item_then_reply": 7.3,
+      "width_naive_scorer_style": 1.9,
+      "width_reply_clustered": 2.2
+    },
+    "qwen2.5-7b": {
+      "ratio_item_then_reply_over_item_clustered": 1.0685,
+      "ratio_naive_over_item_clustered": 0.2055,
+      "ratio_naive_over_item_then_reply": 0.1923,
+      "replies": 249,
+      "width_item_clustered": 7.3,
+      "width_item_then_reply": 7.8,
+      "width_naive_scorer_style": 1.5,
+      "width_reply_clustered": 1.7
+    }
+  },
+  "summary": {
+    "median_ratio_item_then_reply_over_item_clustered_paired": 1.0476,
+    "median_ratio_item_then_reply_over_item_clustered_single_subject": 1.0633,
+    "median_ratio_naive_over_item_then_reply_paired": 0.3636,
+    "median_ratio_naive_over_item_then_reply_single_subject": 0.2263,
+    "reading": "A ratio of naive over clustered below 1 means the scorer-style interval is narrower than the clustered one by that factor."
+  }
+}

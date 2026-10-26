@@ -289,10 +289,14 @@ test("the harness contains no scoring arithmetic of its own: composite and band 
   //  - analyze-pilot.mjs (added 2026-10-01): recomputes each composite to verify the scorecard, and computes
   //    item-resampled bootstrap composites WITH the canonical function, so its intervals carry no scoring
   //    arithmetic of their own. It writes only analysis.json, never a scorecard or score store.
+  //  - intervals.mjs (added 2026-10-26, Iteration 119, D-63): item-clustered bootstrap intervals computed WITH the
+  //    canonical function, the same use as analyze-pilot. It writes only analysis/<run>/intervals.json, marked
+  //    internal and not-a-score.
+  const ALLOWED = ["analyze-pilot.mjs", "assemble.mjs", "intervals.mjs"];
   const users = libs.filter((f) => /computeCompositeFromDimensions\(/.test(readFileSync(f, "utf8"))).map((f) => path.basename(f)).sort();
-  assert.deepEqual(users, ["analyze-pilot.mjs", "assemble.mjs"]);
+  assert.deepEqual(users, ALLOWED);
   // ...and every caller imports it from the one canonical module, not a copy.
-  for (const f of libs.filter((x) => ["analyze-pilot.mjs", "assemble.mjs"].includes(path.basename(x)))) {
+  for (const f of libs.filter((x) => ALLOWED.includes(path.basename(x)))) {
     assert.match(readFileSync(f, "utf8"), /site[\\/"', +]*scripts[\\/"', +]*lib[\\/"', +]*scoring\.mjs|from "\.\/scoring-bridge\.mjs"|cb-probe/, `${path.basename(f)} must import the canonical scorer`);
   }
 });

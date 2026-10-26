@@ -12,8 +12,18 @@
  *        PREREGISTRATION.md (subject table and runtime line) and run-config.json
  *        (model families of subjects and judges, and preregistration.as_written_sha256
  *        when the run recorded it); neither is edited.
- * Writes site/src/data/model-benchmark/waves/<run_id>.json and
- *        site/src/data/model-benchmark/waves/manifest.json (committed output).
+ * Writes <run_id>.json and manifest.json into CB_WAVES_DIR (any directory outside site/src/data), or, only with
+ *        --to-site AND founder approval, into site/src/data/model-benchmark/waves/ (committed output).
+ *
+ * WRITE GUARD (D-63 Stream C, RUNBOOK-EXPORT; AUTONOMY section 1b: publishing needs approval). A write that would land in
+ * site/src/data/** is refused unless --to-site is given AND the wave is approved. With no --to-site, the default target
+ * (site/src/data) is refused outright, whatever the approval. Every pre-approval export therefore sets CB_WAVES_DIR:
+ *   CB_WAVES_DIR=<scratch dir outside site/src/data> node research/model-runs/bin/export-wave.mjs --run-id <id>
+ * "Approved" is read from existing artefacts, not a flag:
+ *   (a) the run id is already listed in the target's waves/manifest.json (a published wave re-exports byte-identically); or
+ *   (b) research/model-runs/<run_id>/APPROVAL.json exists, written by the founder at approval, shaped
+ *       {"run_id": "<id>", "approved_by": "founder", "approved_on": "YYYY-MM-DD", "approval_ref": "<packet or decision>"}.
+ * Neither present or valid: refused. --check never writes and is not guarded.
  *
  * Publishing is a deliberate act, so this is run by hand and its output is
  * committed; it is not a build side effect. The Docker build context is site/
@@ -29,13 +39,14 @@
  * Rules and projection: site/scripts/lib/model-wave.mjs. Spec:
  * docs/AI_MODEL_ASSESSMENT_TEMPLATE.md sections A and J.
  */
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, writeFileSync } from "node:fs";
+import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 const SITE = join(ROOT, "site");
-const RUNS = join(ROOT, "research", "model-runs");
+// CB_RUNS_DIR (tests only) points at a scratch copy of the run directories, so an approval fixture never lands in research/.
+const RUNS = process.env.CB_RUNS_DIR ? resolve(process.env.CB_RUNS_DIR) : join(ROOT, "research", "model-runs");
 // CB_WAVES_DIR points the exporter at a scratch copy of waves/ (tests plant defects there, never in the committed files).
 const WAVES = process.env.CB_WAVES_DIR ? resolve(process.env.CB_WAVES_DIR) : join(SITE, "src", "data", "model-benchmark", "waves");
 const MANIFEST = join(WAVES, "manifest.json");
@@ -163,8 +174,60 @@ function readManifest() {
   return existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : [];
 }
 
+// ----- write guard ------------------------------------------------------------
+/** realpath of the nearest existing ancestor plus the not-yet-existing remainder (so 8.3 and symlinked temp paths compare equal). */
+function canonical(p) {
+  let head = resolve(p);
+  const tail = [];
+  while (!existsSync(head) && dirname(head) !== head) {
+    tail.unshift(head.slice(dirname(head).length + 1));
+    head = dirname(head);
+  }
+  return join(realpathSync(head), ...tail);
+}
+function isInside(child, parent) {
+  const r = relative(canonical(parent), canonical(child));
+  return r === "" || (!r.startsWith("..") && !isAbsolute(r));
+}
+/** Protected roots: the real site/src/data, plus CB_SITE_DATA_DIR (tests only: lets a scratch dir stand in for it; it can add a root, never remove one). */
+function protectedRoots() {
+  const roots = [join(SITE, "src", "data")];
+  if (process.env.CB_SITE_DATA_DIR) roots.push(resolve(process.env.CB_SITE_DATA_DIR));
+  return roots;
+}
+/** Approval of a wave, read from existing artefacts. Returns { ok, how } or { ok:false, why }. */
+function approvalOf(runId) {
+  const man = join(WAVES, "manifest.json");
+  if (existsSync(man)) {
+    try {
+      if (JSON.parse(readFileSync(man, "utf8")).some((e) => e.run_id === runId)) return { ok: true, how: "already listed in the published waves/manifest.json" };
+    } catch {
+      /* an unreadable manifest approves nothing */
+    }
+  }
+  const ap = join(RUNS, runId, "APPROVAL.json");
+  if (!existsSync(ap)) return { ok: false, why: `${runId} is not in waves/manifest.json and ${ap} does not exist` };
+  let a;
+  try {
+    a = JSON.parse(readFileSync(ap, "utf8"));
+  } catch {
+    return { ok: false, why: `${ap} is not valid JSON` };
+  }
+  const good = a && a.run_id === runId && a.approved_by === "founder" && /^\d{4}-\d{2}-\d{2}$/.test(a.approved_on ?? "") && typeof a.approval_ref === "string" && a.approval_ref.trim() !== "";
+  return good ? { ok: true, how: `${ap} (approved ${a.approved_on}, ${a.approval_ref})` } : { ok: false, why: `${ap} must be {run_id:"${runId}", approved_by:"founder", approved_on:"YYYY-MM-DD", approval_ref:"..."}` };
+}
+function enforceWriteGuard(runId) {
+  if (!protectedRoots().some((r) => isInside(WAVES, r))) return;
+  const hint = "To export a wave that is not yet approved, set CB_WAVES_DIR to a scratch directory outside site/src/data, e.g. CB_WAVES_DIR=$TMPDIR/waves-draft.";
+  if (!flag("--to-site")) fail(`refusing to write into ${WAVES} (inside site/src/data, published site data) without --to-site. ${hint}`);
+  const a = approvalOf(runId);
+  if (!a.ok) fail(`refusing --to-site: wave ${runId} is not approved (${a.why}). Publishing needs founder approval (AUTONOMY section 1b). ${hint}`);
+  console.log(`export-wave: --to-site allowed; approval: ${a.how}`);
+}
+
 if (!CHECK) {
-  if (!RUN) fail("usage: export-wave.mjs --run-id <id> [--force] | --check [--run-id <id>]");
+  if (!RUN) fail("usage: export-wave.mjs --run-id <id> [--force] [--to-site] | --check [--run-id <id>]");
+  enforceWriteGuard(RUN);
   const { wave, text } = regenerate(RUN);
   const target = join(WAVES, `${RUN}.json`);
   if (existsSync(target) && readFileSync(target, "utf8") !== text && !FORCE) {
